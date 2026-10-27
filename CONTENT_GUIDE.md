@@ -1,8 +1,9 @@
 # Content Guide
 
-All study material lives in plain JavaScript files under `data/class9/` and `data/class10/`,
-one file per subject (`maths.js`, `science.js`, `sst.js`, `english.js`, `hindi.js`, `punjabi.js`).
-They are loaded with `<script>` tags so the app works offline and even from `file://`.
+All study material lives in plain JavaScript files under `data/class1/` … `data/class12/`,
+one file per subject, named after the subject id (`maths.js`, `physics.js`, `evs.js` …).
+`data/registry.js` lists which subjects each class has (`catalog`). The app loads only the
+student's own class, with `<script>` tags, so it works offline and even from `file://`.
 
 Check any file you write with:
 
@@ -65,6 +66,25 @@ StudyData.add(10, "maths", {
   ]
 });
 ```
+
+## Writing for each class
+
+Same format for every class, but match the depth and language to the age.
+
+| Classes | Notes | Terms | Quiz | Style |
+|---|---|---|---|---|
+| 1–2 | 2–3 topics × 2–4 points | 3–5 | 5 very easy | Very short, simple sentences a parent can read aloud. Small numbers, everyday Indian examples (roti, mango, rupee coins, cricket). `qa`: 2 simple questions. |
+| 3–5 | 3–4 topics × 3–5 points | 4–5 | 5 | Simple and friendly. One idea per point. |
+| 6–8 | 3–5 topics × 3–5 points | 4–6 | 5–6 | Like Class 9–10 but gentler. |
+| 9–10 | 3–6 topics × 3–6 points | 4–6 | 5–6 | Board-exam focused. |
+| 11–12 | 4–6 topics × 3–6 points | 5–6 | 6 | Board-exam depth, with entrance-exam (JEE/NEET/CUET) flavoured questions where natural. Thorough `formulas`, 2 solved `examples` for numerical subjects, 3 `qa`. |
+
+Textbooks: follow the current NCERT book for that class. NCERT replaced the Class 1–8 books between 2023 and 2025;
+if you are not sure of a new book's exact chapter list, organise chapters by the standard syllabus topics for that class
+and title them by topic (e.g. "Fractions"), rather than guessing a textbook chapter name.
+
+Literature (English, Hindi, Punjabi stories and poems): only write about chapters you know well. Summarise in your own
+words; never reproduce the text.
 
 ## Rules
 

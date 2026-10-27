@@ -1,10 +1,17 @@
-# Vidya · Class 9 & 10 Study App
+# Vidya · Class 1–12 Study App
 
-An offline study app for Indian school students, following the CBSE / NCERT syllabus for Classes 9 and 10.
+An offline study app for Indian school students, following the CBSE / NCERT syllabus for Classes 1 to 12.
 
 **Open the app: https://navjeetmalli-pixel.github.io/vidya/**: on a phone, open it in Chrome or Safari and choose *Add to Home screen*.
 
-**Subjects:** Mathematics, Science, Social Science, English, Hindi, Punjabi
+**Subjects**
+
+| Classes | Subjects |
+|---|---|
+| 1–2 | Maths, English, Hindi, Punjabi |
+| 3–5 | Maths, EVS, English, Hindi, Punjabi |
+| 6–10 | Maths, Science, Social Science, English, Hindi, Punjabi |
+| 11–12 | Physics, Chemistry, Maths, Biology · Accountancy, Business Studies, Economics · History, Geography, Political Science · English, Hindi, Punjabi |
 
 **For every chapter**
 - **Notes**: revision notes, a formula / key-facts box, and key terms
@@ -47,9 +54,8 @@ js/quiz.js            quiz / test runner and flashcards
 js/timer.js           focus timer
 js/views.js           every screen
 js/app.js             router and navigation
-data/registry.js      subject list
-data/class9/*.js      Class 9 content, one file per subject
-data/class10/*.js     Class 10 content
+data/registry.js      subjects and which class has which (catalog)
+data/class1 … class12 content, one file per subject; only the student's class is loaded
 sw.js                 offline cache
 CONTENT_GUIDE.md      how to write or edit content
 scripts/validate.js   checks content files
@@ -63,6 +69,6 @@ Content is plain JavaScript data. See [CONTENT_GUIDE.md](CONTENT_GUIDE.md) for t
 node scripts/validate.js
 ```
 
-To add a new class (say Class 8): add `8` to `classes` in `data/registry.js`, create `data/class8/*.js`, and add the script tags to `index.html` and the file list in `sw.js`. Bump `CACHE` in `sw.js` whenever you change files, so installed apps pick up the update.
+To add a subject to a class, add its id to that class in `catalog` in `data/registry.js` and create `data/class{N}/{id}.js`. Bump `CACHE` in `sw.js` whenever you change files, so installed apps pick up the update.
 
 The notes are a revision aid written to follow NCERT. Always study from the textbook too, and report anything that looks wrong.

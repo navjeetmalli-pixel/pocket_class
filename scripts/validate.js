@@ -57,6 +57,8 @@ for (const file of files) {
     const expectedDir = `class${cls}`;
     if (!file.includes(expectedDir)) warn("file", `adds class ${cls} content but lives in ${path.dirname(file)}`);
     if (!ctx.StudyData.subject(subj)) err("file", `unknown subject id "${subj}"`);
+    else if (!(ctx.StudyData.catalog[cls] || []).includes(subj)) err("file", `subject "${subj}" is not in the Class ${cls} catalog in data/registry.js`);
+    if (path.basename(file, ".js") !== subj) err("file", `file name should be ${subj}.js`);
     if (!data || !Array.isArray(data.chapters) || data.chapters.length === 0) {
       err("file", "chapters must be a non-empty array");
       continue;

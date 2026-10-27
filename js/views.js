@@ -12,8 +12,27 @@ const Views = (() => {
     english: "Quick reference",
     hindi: "याद रखें",
     punjabi: "ਯਾਦ ਰੱਖੋ",
+    evs: "Remember",
+    physics: "Formulas & laws",
+    chemistry: "Formulas, reactions & laws",
+    biology: "Key facts",
+    accountancy: "Formats & formulas",
+    business: "Key points",
+    economics: "Formulas & key points",
+    history: "Key dates & facts",
+    geography: "Key facts & figures",
+    polsci: "Key facts",
   };
-  const SHEET_LABEL = { maths: "Formula sheet", science: "Formula sheet", sst: "Key facts", english: "Quick reference", hindi: "Quick reference", punjabi: "Quick reference" };
+  const SHEET_LABEL = {
+    maths: "Formula sheet",
+    physics: "Formula sheet",
+    chemistry: "Formula sheet",
+    economics: "Formula sheet",
+    accountancy: "Formula sheet",
+    science: "Formula sheet",
+    history: "Key dates",
+  };
+  const sheetLabel = (id) => sheetLabel(id) || (["english", "hindi", "punjabi"].includes(id) ? "Quick reference" : "Key facts");
   const TERMS_LABEL = { hindi: "मुख्य शब्द", punjabi: "ਮੁੱਖ ਸ਼ਬਦ" };
 
   // ---------- shared pieces ----------
@@ -100,16 +119,22 @@ const Views = (() => {
 
   // ---------- onboarding ----------
 
+  function classGrid(current) {
+    return `<div class="class-pick class-grid" role="group" aria-label="Class">${D.classes
+      .map((n) => `<button data-cls="${n}" class="${n === current ? "on" : ""}" aria-label="Class ${n}"><span class="n">${n}</span></button>`)
+      .join("")}</div>`;
+  }
+
   function onboarding() {
-    let pick = D.classes[D.classes.length - 1];
+    let pick = null;
     return {
       title: "Welcome",
       html: `
         <div class="onboard">
           <div class="brand"><span class="brand-mark">V</span>Vidya</div>
           <div>
-            <h1>Your study partner for Class 9 &amp; 10</h1>
-            <p class="muted" style="margin-top:10px">Notes, flashcards, quizzes and mock tests for Maths, Science, Social Science, English, Hindi and Punjabi. Follows the NCERT syllabus and works offline.</p>
+            <h1>Your study partner from Class 1 to 12</h1>
+            <p class="muted" style="margin-top:10px">Notes, flashcards, quizzes and mock tests for every main subject, from Class 1 maths to Class 12 physics, accountancy and history. Follows the NCERT syllabus and works offline.</p>
           </div>
           <div class="field">
             <label for="ob-name">What should we call you?</label>
@@ -117,11 +142,9 @@ const Views = (() => {
           </div>
           <div class="field">
             <label>Which class are you in?</label>
-            <div class="class-pick">${D.classes
-              .map((n) => `<button data-cls="${n}" class="${n === pick ? "on" : ""}"><span class="n">${n}</span><span class="s">Class ${n}${n === 10 ? " · Boards" : ""}</span></button>`)
-              .join("")}</div>
+            ${classGrid(pick)}
           </div>
-          <button class="btn primary block" data-act="start">Start studying ${icon("arrow")}</button>
+          <button class="btn primary block" data-act="start" disabled>Start studying ${icon("arrow")}</button>
         </div>`,
       mount(el) {
         el.onclick = (e) => {
@@ -130,7 +153,8 @@ const Views = (() => {
           if (b.dataset.cls) {
             pick = Number(b.dataset.cls);
             el.querySelectorAll("[data-cls]").forEach((x) => x.classList.toggle("on", x === b));
-          } else {
+            el.querySelector('[data-act="start"]').disabled = false;
+          } else if (pick) {
             Store.setProfile(el.querySelector("#ob-name").value, pick);
             location.hash = "#/";
             App.render();
@@ -150,7 +174,7 @@ const Views = (() => {
 
     let done = 0;
     let total = 0;
-    D.subjects.forEach((s) => {
+    D.subjectsFor(c).forEach((s) => {
       const x = subjectStats(c, s.id);
       done += x.done;
       total += x.total;
@@ -168,8 +192,7 @@ const Views = (() => {
           <span class="go">${icon("arrow")}</span></a>`;
     }
 
-    const subjects = D.subjects
-      .map((s) => {
+    const card = (s) => {
         const x = subjectStats(c, s.id);
         return `<a class="card subject-card" href="#/subject/${s.id}" style="--c:${s.color}">
           <span class="subject-icon">${s.icon}</span>
@@ -178,8 +201,14 @@ const Views = (() => {
           <span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span>
           <span class="subject-meta">${x.total ? `${x.done} / ${x.total} chapters` : "Coming soon"}</span>
         </a>`;
-      })
-      .join("");
+    };
+    const list = D.subjectsFor(c);
+    const subjects =
+      c >= 11
+        ? [...new Set(list.map((s) => s.stream))]
+            .map((st) => `<h3 class="stream-label">${esc(st)}</h3><div class="subject-grid">${list.filter((s) => s.stream === st).map(card).join("")}</div>`)
+            .join("")
+        : `<div class="subject-grid">${list.map(card).join("")}</div>`;
 
     const mistakes = Store.mistakesFor(c).length;
     const tool = (href, ic, t, sub) =>
@@ -202,7 +231,7 @@ const Views = (() => {
         </div>
         ${cont}
         <h2 class="block-title">Subjects</h2>
-        <div class="subject-grid">${subjects}</div>
+        ${subjects}
         <h2 class="block-title">Study tools</h2>
         <div class="tools">
           ${tool("#/test", "test", "Mock test", "Timed test across chapters")}
@@ -230,7 +259,7 @@ const Views = (() => {
 
   function qotdItem(c) {
     const pool = [];
-    D.subjects.forEach((s) => D.chapters(c, s.id).forEach((ch) => pool.push(...quizItems(c, s, ch))));
+    D.subjectsFor(c).forEach((s) => D.chapters(c, s.id).forEach((ch) => pool.push(...quizItems(c, s, ch))));
     return pool.length ? pool[hash(dayKey() + "/" + c) % pool.length] : null;
   }
 
@@ -311,7 +340,7 @@ const Views = (() => {
               ? `<div class="hero-actions">
                   <a class="btn" href="#/test/${id}">${icon("test")} Subject test</a>
                   <a class="btn" href="#/cards/${id}">${icon("cards")} Flashcards</a>
-                  <a class="btn" href="#/sheet/${id}">${icon("formula")} ${SHEET_LABEL[id]}</a>
+                  <a class="btn" href="#/sheet/${id}">${icon("formula")} ${sheetLabel(id)}</a>
                 </div>`
               : ""
           }
@@ -459,7 +488,7 @@ const Views = (() => {
   const testCfg = { subject: "all", chapters: null, count: 20, timed: true };
 
   function testPool(c) {
-    const subs = testCfg.subject === "all" ? D.subjects : [D.subject(testCfg.subject)];
+    const subs = testCfg.subject === "all" ? D.subjectsFor(c) : [D.subject(testCfg.subject)];
     const groups = [];
     subs.forEach((s) =>
       D.chapters(c, s.id).forEach((ch) => {
@@ -527,7 +556,7 @@ const Views = (() => {
   }
 
   function setupHTML(c) {
-    const withContent = D.subjects.filter((s) => D.chapters(c, s.id).length);
+    const withContent = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length);
     if (!withContent.length) return emptyState("📚", "No chapters are available yet.");
     if (testCfg.subject !== "all" && !withContent.some((s) => s.id === testCfg.subject)) testCfg.subject = "all";
 
@@ -614,7 +643,7 @@ const Views = (() => {
     const c = cls();
     const mistakes = Store.mistakesFor(c).length;
     const marks = Store.state.bookmarks.map((k) => Store.parseKey(k)).filter((k) => k.cls === c);
-    const withContent = D.subjects.filter((s) => D.chapters(c, s.id).length);
+    const withContent = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length);
 
     const bookmarks = marks.length
       ? `<div class="list">${marks
@@ -654,7 +683,7 @@ const Views = (() => {
         <h2 class="block-title">Bookmarked chapters</h2>
         ${bookmarks}
         <h2 class="block-title">Formula &amp; fact sheets</h2>
-        ${subjectLinks("#/sheet/", (s) => SHEET_LABEL[s.id] + " for every chapter")}
+        ${subjectLinks("#/sheet/", (s) => sheetLabel(s.id) + " for every chapter")}
         <h2 class="block-title">Flashcard decks</h2>
         ${subjectLinks("#/cards/", cardCount)}`,
     };
@@ -697,9 +726,9 @@ const Views = (() => {
     const c = cls();
     const chs = D.chapters(c, id).filter((ch) => ch.formulas && ch.formulas.length);
     return {
-      title: `${subj.short} ${SHEET_LABEL[id]}`,
+      title: `${subj.short} ${sheetLabel(id)}`,
       html: `
-        ${topbar(`${subj.short} · ${SHEET_LABEL[id]}`, "#/revise", `<button class="icon-btn" onclick="window.print()" aria-label="Print">${icon("print")}</button>`)}
+        ${topbar(`${subj.short} · ${sheetLabel(id)}`, "#/revise", `<button class="icon-btn" onclick="window.print()" aria-label="Print">${icon("print")}</button>`)}
         <p class="small muted" style="margin:-6px 2px 16px">Class ${c} · ${FORMULA_LABEL[id]} from every chapter, in one place.</p>
         ${
           chs.length
@@ -830,7 +859,7 @@ const Views = (() => {
     const quizzes = st.history.filter((h) => h.cls === c);
     const activeDays = Object.values(st.days).filter((d) => d.acts > 0 || d.min > 0).length;
 
-    const subj = D.subjects
+    const subj = D.subjectsFor(c)
       .map((s) => {
         const x = subjectStats(c, s.id);
         return `<div style="--c:${s.color}">
@@ -912,10 +941,10 @@ const Views = (() => {
 
   function searchResults(raw) {
     const q = raw.trim().toLowerCase();
-    if (q.length < 2) return `<p class="small muted center">Type at least 2 letters. Try "photosynthesis", "AP", "French Revolution" or "समास".</p>`;
+    if (q.length < 2) return `<p class="small muted center">Type at least 2 letters: a chapter name, a topic or a key term.</p>`;
     const c = cls();
     const hits = [];
-    D.subjects.forEach((s) =>
+    D.subjectsFor(c).forEach((s) =>
       D.chapters(c, s.id).forEach((ch) => {
         let score = 0;
         let snip = null;
@@ -967,7 +996,7 @@ const Views = (() => {
         <div class="stack">
           <div class="card stack">
             <div class="field"><label for="name">Your name</label><input id="name" class="input" value="${esc(st.profile.name)}" maxlength="30" placeholder="Your name"></div>
-            <div class="field"><label>Class</label>${seg("cls", D.classes.map((n) => [n, `Class ${n}`]), st.profile.cls)}</div>
+            <div class="field"><label>Class</label>${classGrid(st.profile.cls)}</div>
             <div class="field"><label>Appearance</label>${seg("theme", [["system", "Auto"], ["light", "Light"], ["dark", "Dark"]], st.theme)}</div>
           </div>
           <div class="card">
@@ -984,7 +1013,7 @@ const Views = (() => {
           </div>
           <div class="card small muted">
             <strong style="color:var(--text)">About Vidya</strong><br>
-            Notes, quizzes and tests follow the NCERT syllabus for Classes 9 and 10 (CBSE). Punjabi covers grammar and writing skills for CBSE and PSEB students.
+            Notes, quizzes and tests follow the NCERT syllabus (CBSE) for Classes 1 to 12. Punjabi covers grammar and writing skills for CBSE and PSEB students.
             Use this app for revision alongside your textbook, and check with your teacher if anything looks different from your book.
             Your progress is stored only on this device.
           </div>

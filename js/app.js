@@ -59,9 +59,34 @@ const App = {
       ${SIDE_EXTRA.map((n) => navLink(n, sec)).join("")}`;
   }
 
+  // Asks the service worker to keep a class's files for offline use.
+  function keepOffline(classes) {
+    if (!("serviceWorker" in navigator) || !location.protocol.startsWith("http")) return;
+    const urls = classes.flatMap(StudyData.files);
+    navigator.serviceWorker.ready.then((reg) => reg.active && reg.active.postMessage({ type: "cache", urls }));
+  }
+
   App.render = function (opts = {}) {
     const main = document.getElementById("app");
     const p = path();
+
+    // Only the student's class (and any class a chapter link points to) is loaded.
+    if (Store.state.profile) {
+      const need = [Store.state.profile.cls];
+      const m = p.match(/^chapter\/(\d+)\//);
+      if (m) need.push(Number(m[1]));
+      const missing = need.filter((c) => StudyData.classes.includes(c) && !StudyData.isLoaded(c));
+      if (missing.length) {
+        main.innerHTML = `<div class="empty" style="padding-top:28vh"><div class="big">📚</div>Loading Class ${missing[0]}…</div>`;
+        renderNav(p);
+        Promise.all(missing.map((c) => StudyData.load(c))).then(() => {
+          keepOffline(missing);
+          App.render(opts);
+        });
+        return;
+      }
+    }
+
     let view;
     if (!Store.state.profile) view = Views.onboarding();
     else {
@@ -80,7 +105,7 @@ const App = {
     main.onclick = null;
     if (view.mount) view.mount(main);
     renderNav(p);
-    document.title = view.title ? `${view.title} · Vidya` : "Vidya · Class 9 & 10 Study App";
+    document.title = view.title ? `${view.title} · Vidya` : "Vidya · Class 1–12 Study App";
 
     // Switching tabs inside a chapter keeps your place; any other page starts at the top.
     if (!opts.keepScroll) {

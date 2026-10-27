@@ -556,6 +556,13 @@ details > summary::-webkit-details-marker { display: none; }
 .class-pick button.on { border-color: var(--accent); background: var(--accent-soft); }
 .class-pick button.on .n { color: var(--accent); }
 
+.class-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+@media (min-width: 520px) { .class-grid { grid-template-columns: repeat(6, 1fr); } }
+.class-grid button { padding: 12px 4px; border-radius: 14px; }
+.class-grid button .n { font-size: 24px; }
+.stream-label { font-size: 14px; font-weight: 700; color: var(--muted); margin: 16px 2px 10px; }
+.stream-label:first-of-type { margin-top: 0; }
+
 /* ---------- Search ---------- */
 .search-box { position: relative; }
 .search-box svg.i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--faint); }

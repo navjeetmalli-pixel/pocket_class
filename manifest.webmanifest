@@ -1,7 +1,7 @@
 {
-  "name": "Vidya · Class 9 & 10 Study App",
+  "name": "Vidya · Class 1–12 Study App",
   "short_name": "Vidya",
-  "description": "Notes, flashcards, quizzes and mock tests for CBSE / NCERT Class 9 and 10.",
+  "description": "Notes, flashcards, quizzes and mock tests for CBSE / NCERT Classes 1 to 12.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
