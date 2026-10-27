@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vidya · Class 9 & 10 Study App</title>
+  <meta name="description" content="Notes, flashcards, quizzes and mock tests for CBSE / NCERT Class 9 and 10: Maths, Science, Social Science, English, Hindi and Punjabi. Works offline.">
+  <meta name="theme-color" content="#5b5bd6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Vidya">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    try {
+      var t = (JSON.parse(localStorage.getItem("vidya:v1")) || {}).theme;
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar" aria-label="Main"></nav>
+  <main class="main" id="app"></main>
+  <nav class="tabbar" id="tabbar" aria-label="Main"></nav>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Study content -->
+  <script src="data/registry.js"></script>
+  <script src="data/class9/maths.js"></script>
+  <script src="data/class9/science.js"></script>
+  <script src="data/class9/sst.js"></script>
+  <script src="data/class9/english.js"></script>
+  <script src="data/class9/hindi.js"></script>
+  <script src="data/class9/punjabi.js"></script>
+  <script src="data/class10/maths.js"></script>
+  <script src="data/class10/science.js"></script>
+  <script src="data/class10/sst.js"></script>
+  <script src="data/class10/english.js"></script>
+  <script src="data/class10/hindi.js"></script>
+  <script src="data/class10/punjabi.js"></script>
+
+  <!-- App -->
+  <script src="js/util.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
