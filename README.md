@@ -2,6 +2,8 @@
 
 An offline study app for Indian school students, following the CBSE / NCERT syllabus for Classes 9 and 10.
 
+**Open the app: https://navjeetmalli-pixel.github.io/vidya/**: on a phone, open it in Chrome or Safari and choose *Add to Home screen*.
+
 **Subjects:** Mathematics, Science, Social Science, English, Hindi, Punjabi
 
 **For every chapter**
