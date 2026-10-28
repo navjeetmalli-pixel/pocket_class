@@ -8,8 +8,8 @@ const path = require("path");
 const vm = require("vm");
 
 const root = path.join(__dirname, "..");
-let files = process.argv.slice(2);
-if (files.length === 0) {
+let files = process.argv.slice(2).filter((f) => !/[\/\\]practice[\/\\]/.test(f));
+if (process.argv.length <= 2) {
   files = fs
     .readdirSync(path.join(root, "data"))
     .filter((d) => /^class\d+$/.test(d))
@@ -57,7 +57,8 @@ for (const file of files) {
     const expectedDir = `class${cls}`;
     if (!file.includes(expectedDir)) warn("file", `adds class ${cls} content but lives in ${path.dirname(file)}`);
     if (!ctx.StudyData.subject(subj)) err("file", `unknown subject id "${subj}"`);
-    else if (!(ctx.StudyData.catalog[cls] || []).includes(subj)) err("file", `subject "${subj}" is not in the Class ${cls} catalog in data/registry.js`);
+    else if (![ctx.StudyData.catalog, ...Object.values(ctx.StudyData.boardCatalog)].some((cat) => (cat[cls] || []).includes(subj)))
+      err("file", `subject "${subj}" is not in any Class ${cls} catalog in data/registry.js`);
     if (path.basename(file, ".js") !== subj) err("file", `file name should be ${subj}.js`);
     if (!data || !Array.isArray(data.chapters) || data.chapters.length === 0) {
       err("file", "chapters must be a non-empty array");
@@ -161,6 +162,84 @@ for (const file of files) {
   console.log(`\n${errors.length ? "✗" : "✓"} ${file}`);
   errors.forEach((e) => console.log(`  ERROR ${e}`));
   warns.forEach((w) => console.log(`  warn  ${w}`));
+}
+
+// ---------- practice banks ----------
+const practiceFiles = fs
+  .readdirSync(path.join(root, "data"))
+  .filter((d) => /^class\d+$/.test(d) && fs.existsSync(path.join(root, "data", d, "practice")))
+  .flatMap((d) => fs.readdirSync(path.join(root, "data", d, "practice")).filter((f) => f.endsWith(".js")).map((f) => path.join("data", d, "practice", f)))
+  .filter((f) => process.argv.length <= 2 || process.argv.slice(2).includes(f));
+const AR_OPTION = /^(Both A and R|A is true|A is false)/;
+for (const file of practiceFiles) {
+  const errors = [];
+  const warns = [];
+  const err = (where, msg) => errors.push(`${where}: ${msg}`);
+  const warn = (where, msg) => warns.push(`${where}: ${msg}`);
+  const m = /class(\d+)[\/\\]practice[\/\\](\w+)-(\d+)\.js$/.exec(file);
+  const ctx = { globalThis: {} };
+  ctx.globalThis = ctx;
+  vm.createContext(ctx);
+  try {
+    if (!m) throw new Error("file must be named {subject}-{part}.js");
+    vm.runInContext(fs.readFileSync(path.join(root, "data", "registry.js"), "utf8"), ctx);
+    vm.runInContext(fs.readFileSync(path.join(root, "data", `class${m[1]}`, `${m[2]}.js`), "utf8"), ctx);
+    vm.runInContext(fs.readFileSync(path.resolve(root, file), "utf8"), ctx, { filename: file });
+  } catch (e) {
+    console.log(`\n✗ ${file}\n  Could not load: ${e.message}`);
+    errorCount++;
+    continue;
+  }
+  const [cls, subj, part] = [Number(m[1]), m[2], Number(m[3])];
+  const parts = (ctx.StudyData.practiceCatalog[cls] || {})[subj] || 0;
+  if (part > parts) warn("file", `practiceCatalog in data/registry.js lists ${parts} part(s) for class ${cls} ${subj}, so this file won't load yet`);
+  const chIds = new Set(ctx.StudyData.chapters(cls, subj).map((c) => c.id));
+  const bank = ctx.StudyData;
+  let mcqN = 0, wN = 0;
+  const seen = new Set();
+  const norm = (t) => String(t).replace(/\*\*/g, "").trim().toLowerCase();
+  for (const chId of chIds) {
+    const p = bank.practiceFor(cls, subj, chId);
+    p.mcq.forEach((q, j) => {
+      const at = `${chId} mcq[${j}]`;
+      mcqN++;
+      if (!isStr(q.q)) err(at, "q is required");
+      if (!Array.isArray(q.options) || q.options.length !== 4 || !q.options.every(isStr)) err(at, "options must be exactly 4 non-empty strings");
+      else {
+        if (new Set(q.options.map(norm)).size !== 4) err(at, "options must be distinct");
+        q.options.forEach((o) => {
+          if (!q.keepOrder && (BANNED_OPTION.test(o) || AR_OPTION.test(o))) err(at, `option "${o}" needs keepOrder: true (or rewrite it)`);
+        });
+      }
+      if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer > 3) err(at, "answer must be 0–3");
+      if (!isStr(q.explain)) err(at, "explain is required");
+      if (![1, 2, 3].includes(q.level)) err(at, "level must be 1, 2 or 3");
+      const ident = norm([q.q, ...(q.options || []).slice().sort()].join("|"));
+      if (seen.has(ident)) err(at, "duplicate question");
+      seen.add(ident);
+    });
+    p.written.forEach((x, j) => {
+      const at = `${chId} written[${j}]`;
+      wN++;
+      if (!isStr(x.q) || !isStr(x.a)) err(at, "q and a are required");
+      if (![1, 2, 3, 4, 5].includes(x.marks)) err(at, "marks must be 1–5");
+      if (x.type !== undefined && !["short", "long", "case", "hots"].includes(x.type)) err(at, 'type must be "short", "long", "case" or "hots"');
+    });
+    const all = JSON.stringify(p);
+    if (/<[a-z][^>]*>/i.test(all)) err(chId, "contains HTML tags, use plain text");
+    if (/\\(frac|sqrt|times|theta|pi|alpha|circ)\b|\$[^$]+\$/.test(all)) err(chId, "contains LaTeX, use Unicode");
+  }
+  // Keys that aren't chapters of this subject would be silently ignored.
+  const raw = fs.readFileSync(path.resolve(root, file), "utf8");
+  const keyRe = /^\s{2}"?([a-z0-9-]+)"?:\s*\{/gm;
+  let km;
+  while ((km = keyRe.exec(raw))) if (!chIds.has(km[1])) err(km[1], "not a chapter id in this subject");
+  errorCount += errors.length;
+  warnCount += warns.length;
+  console.log(`\n${errors.length ? "✗" : "✓"} ${file}`);
+  errors.forEach((e) => console.log(`  ERROR ${e}`));
+  warns.forEach((w) => console.log(`  warn  ${w}`));
+  summary.push(`practice class ${cls} ${subj} part ${part}: ${mcqN} MCQs, ${wN} written`);
 }
 
 console.log("\n" + summary.join("\n"));

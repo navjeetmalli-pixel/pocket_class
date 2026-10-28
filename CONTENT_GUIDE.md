@@ -117,3 +117,41 @@ The validator checks structure, duplicates and formatting. It **cannot** tell wh
 - Keep each `points` entry to one or two sentences. Students read this on a phone.
 - Language: English for every subject except Hindi (written fully in Devanagari) and Punjabi (written fully in Gurmukhi). Chapter `id`s are always ASCII kebab-case.
 - Use Indian spellings and context where natural (₹, metres, lakh/crore, Indian examples).
+
+## Practice banks (extra questions)
+
+Each chapter's own `quiz` and `qa` are the core set. For a full year of practice, a class can also have practice
+banks: `data/class{N}/practice/{subject}-{part}.js` (part = 1, 2, … so two writers can split a subject).
+List the number of parts in `practiceCatalog` in `data/registry.js`, e.g. `10: { maths: 2, science: 2 }`.
+They load only when a student opens a quiz, practice tab, mock test or practice sheet.
+
+```js
+StudyData.addPractice(10, "maths", {
+  "real-numbers": {                      // chapter id from data/class10/maths.js
+    mcq: [
+      { q: "…", options: ["…", "…", "…", "…"], answer: 2, explain: "…", level: 1 },   // level: 1 easy, 2 medium, 3 hard
+      {                                   // assertion–reason: fixed options, so set keepOrder
+        q: "Assertion (A): …\nReason (R): …",
+        options: [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true, but R is false.",
+          "A is false, but R is true."
+        ],
+        answer: 0, explain: "…", level: 2, keepOrder: true
+      }
+    ],
+    written: [
+      { q: "…", a: "Model answer, step by step for numericals.", marks: 2 },   // marks: 1, 2, 3, 4 or 5
+      { q: "Case study: <short passage>\n(i) …\n(ii) …\n(iii) …", a: "(i) …\n(ii) …\n(iii) …", marks: 4, type: "case" }
+    ]
+  }
+});
+```
+
+- `type` is optional: "short", "long", "case", "hots".
+- `keepOrder: true` is only for questions whose options must stay in order (assertion–reason). Only these may use
+  "Both A and R…" style options.
+- Maths and physics chapters also get unlimited generated questions from `js/gen.js` (same formula, new numbers).
+  Write the bank for what generators can't do: concepts, proofs, word problems, case studies, "show that" questions.
+- Model answers should be what earns full marks in a board exam: key steps, units, and the final answer.

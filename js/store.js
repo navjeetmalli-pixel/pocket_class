@@ -6,7 +6,7 @@ const Store = (() => {
   const KEY = "vidya:v1";
 
   const defaults = () => ({
-    profile: null, // { name, cls }
+    profile: null, // { name, cls, board: "cbse" | "pseb" }
     theme: "system",
     chapters: {}, // key -> { done, best, attempts, opened }
     bookmarks: [],
@@ -87,8 +87,12 @@ const Store = (() => {
     chapter,
     streak,
 
-    setProfile(name, cls) {
-      state.profile = { name: name.trim(), cls };
+    setProfile(name, cls, board) {
+      state.profile = { name: name.trim(), cls, board: board || (state.profile && state.profile.board) || "cbse" };
+      save();
+    },
+    setBoard(board) {
+      state.profile.board = board;
       save();
     },
     setClass(cls) {

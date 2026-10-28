@@ -12,7 +12,8 @@ const Quiz = (() => {
     el = container;
     s = {
       opts,
-      items: opts.items.map((it) => ({ ...it, order: shuffle([0, 1, 2, 3]), picked: null })),
+      // keepOrder: options that only make sense in a fixed order (assertion–reason).
+      items: opts.items.map((it) => ({ ...it, order: it.keepOrder ? [0, 1, 2, 3] : shuffle([0, 1, 2, 3]), picked: null })),
       i: 0,
       started: Date.now(),
       ended: null,
@@ -201,10 +202,11 @@ const Quiz = (() => {
     s.ended = Date.now();
     let score = 0;
     s.items.forEach((x) => {
-      if (x.picked === x.answer) {
-        score++;
-        Store.clearMistake(x.ref.key);
-      } else Store.addMistake(x.ref.key);
+      if (x.picked === x.answer) score++;
+      // Generated questions have no key: they're new every time, so there's nothing to revisit.
+      if (!x.ref.key) return;
+      if (x.picked === x.answer) Store.clearMistake(x.ref.key);
+      else Store.addMistake(x.ref.key);
     });
     if (s.opts.record) Store.recordQuiz({ ...s.opts.record, title: s.opts.title, score, total: s.items.length });
     render();

@@ -22,6 +22,10 @@ const Views = (() => {
     history: "Key dates & facts",
     geography: "Key facts & figures",
     polsci: "Key facts",
+    sstpb: "Key dates & facts",
+    englishpb: "Quick reference",
+    hindipb: "याद रखें",
+    phc: "ਮੁੱਖ ਤੱਥ / Key facts",
   };
   const SHEET_LABEL = {
     maths: "Formula sheet",
@@ -31,9 +35,25 @@ const Views = (() => {
     accountancy: "Formula sheet",
     science: "Formula sheet",
     history: "Key dates",
+    sstpb: "Key dates",
+    phc: "Key dates",
   };
-  const sheetLabel = (id) => SHEET_LABEL[id] || (["english", "hindi", "punjabi"].includes(id) ? "Quick reference" : "Key facts");
-  const TERMS_LABEL = { hindi: "मुख्य शब्द", punjabi: "ਮੁੱਖ ਸ਼ਬਦ" };
+  const sheetLabel = (id) => SHEET_LABEL[id] || (["english", "hindi", "punjabi", "englishpb", "hindipb"].includes(id) ? "Quick reference" : "Key facts");
+  const TERMS_LABEL = { hindi: "मुख्य शब्द", hindipb: "मुख्य शब्द", punjabi: "ਮੁੱਖ ਸ਼ਬਦ" };
+
+  function boardPicker(current) {
+    return `<div class="seg" role="group" aria-label="Board">${Object.entries({ cbse: "CBSE / NCERT", pseb: "PSEB (Punjab Board)" })
+      .map(([v, l]) => `<button data-board="${v}" class="${current === v ? "on" : ""}">${l}</button>`)
+      .join("")}</div>`;
+  }
+
+  // Shown to PSEB students in a class whose PSEB books aren't in the app yet.
+  function boardNote(c) {
+    if (D.hasBoardContent(c)) return "";
+    return `<div class="card small" style="background:color-mix(in srgb, var(--gold) 14%, var(--surface))">
+      <strong>PSEB books for Class ${c} aren't in the app yet.</strong> You're seeing the CBSE / NCERT version.
+      Many topics overlap with PSEB (especially Maths and Science), but follow your PSEB book. PSEB content is ready for Class 10.</div>`;
+  }
 
   // ---------- shared pieces ----------
 
@@ -95,11 +115,23 @@ const Views = (() => {
     </a>`;
   }
 
-  function quizItems(c, subj, ch) {
-    return ch.quiz.map((q) => ({
-      ...q,
-      ref: { key: `${Store.key(c, subj.id, ch.id)}/${questionId(q)}`, from: `${subj.short} · ${ch.title}` },
-    }));
+  // Every saved MCQ for a chapter: its own quiz plus the extra practice bank (when loaded).
+  function quizItems(c, subj, ch, own = false) {
+    const from = `${subj.short} · ${ch.title}`;
+    const list = own ? ch.quiz : [...ch.quiz, ...D.practiceFor(c, subj.id, ch.id).mcq];
+    return list.map((q) => ({ ...q, ref: { key: `${Store.key(c, subj.id, ch.id)}/${questionId(q)}`, from } }));
+  }
+
+  // Fresh number-changing questions (maths and physics chapters only).
+  function genItems(c, subj, ch, count, seed = Date.now()) {
+    const from = `${subj.short} · ${ch.title}`;
+    return Gen.questions(c, subj.id, ch.id, count, seed).map((q) => ({ ...q, ref: { key: null, from } }));
+  }
+
+  // One chapter quiz round: 10 saved questions plus a few generated ones, different every time.
+  const QUIZ_ROUND = 10;
+  function quizRound(c, subj, ch) {
+    return shuffle([...shuffle(quizItems(c, subj, ch)).slice(0, QUIZ_ROUND), ...genItems(c, subj, ch, 3)]);
   }
 
   const cardKey = (c, subjectId, ch, t) => `${Store.key(c, subjectId, ch.id)}/${itemId("t", t.term)}`;
@@ -129,6 +161,7 @@ const Views = (() => {
 
   function onboarding() {
     let pick = null;
+    let board = "cbse";
     return {
       title: "Welcome",
       html: `
@@ -146,18 +179,25 @@ const Views = (() => {
             <label>Which class are you in?</label>
             ${classGrid(pick)}
           </div>
+          <div class="field">
+            <label>Which board?</label>
+            ${boardPicker(board)}
+          </div>
           <button class="btn primary block" data-act="start" disabled>Start studying ${icon("arrow")}</button>
         </div>`,
       mount(el) {
         el.onclick = (e) => {
-          const b = e.target.closest("[data-cls],[data-act]");
+          const b = e.target.closest("[data-cls],[data-board],[data-act]");
           if (!b) return;
           if (b.dataset.cls) {
             pick = Number(b.dataset.cls);
             el.querySelectorAll("[data-cls]").forEach((x) => x.classList.toggle("on", x === b));
             el.querySelector('[data-act="start"]').disabled = false;
+          } else if (b.dataset.board) {
+            board = b.dataset.board;
+            el.querySelectorAll("[data-board]").forEach((x) => x.classList.toggle("on", x === b));
           } else if (pick) {
-            Store.setProfile(el.querySelector("#ob-name").value, pick);
+            Store.setProfile(el.querySelector("#ob-name").value, pick, board);
             location.hash = "#/";
             App.render();
           }
@@ -231,6 +271,7 @@ const Views = (() => {
           <div class="card stat"><div class="v">${done}<span class="muted small">/${total}</span></div><div class="l">chapters done</div></div>
           <div class="card stat"><div class="v">${avg === null ? "–" : avg + "%"}</div><div class="l">quiz average</div></div>
         </div>
+        ${boardNote(c)}
         ${cont}
         <h2 class="block-title">Subjects</h2>
         ${subjects}
@@ -240,6 +281,7 @@ const Views = (() => {
           ${tool("#/revise/mistakes", "target", "My mistakes", mistakes ? `${mistakes} question${mistakes > 1 ? "s" : ""} to fix` : "Nothing to fix yet")}
           ${tool("#/timer", "timer", "Focus timer", "Study in 25-minute blocks")}
           ${tool("#/revise", "formula", "Formula sheets", "Quick revision lists")}
+          ${tool("#/sheets", "print", "Practice sheets", "Make and print your own")}
         </div>
         ${qotdHTML(c)}`,
       mount(el) {
@@ -261,7 +303,7 @@ const Views = (() => {
 
   function qotdItem(c) {
     const pool = [];
-    D.subjectsFor(c).forEach((s) => D.chapters(c, s.id).forEach((ch) => pool.push(...quizItems(c, s, ch))));
+    D.subjectsFor(c).forEach((s) => D.chapters(c, s.id).forEach((ch) => pool.push(...quizItems(c, s, ch, true))));
     return pool.length ? pool[hash(dayKey() + "/" + c) % pool.length] : null;
   }
 
@@ -357,6 +399,7 @@ const Views = (() => {
                   <a class="btn" href="#/test/${id}">${icon("test")} Subject test</a>
                   <a class="btn" href="#/cards/${id}">${icon("cards")} Flashcards</a>
                   <a class="btn" href="#/sheet/${id}">${icon("formula")} ${sheetLabel(id)}</a>
+                  <a class="btn" href="#/sheets/${id}">${icon("print")} Practice sheets</a>
                 </div>`
               : ""
           }
@@ -387,7 +430,8 @@ const Views = (() => {
     const { subj, chs, idx, ch } = f;
     const k = Store.key(c, subj.id, ch.id);
     const base = `#/chapter/${c}/${subj.id}/${ch.id}`;
-    const hasPractice = (ch.examples && ch.examples.length) || (ch.qa && ch.qa.length);
+    const bank = D.practiceFor(c, subj.id, ch.id);
+    const hasPractice = (ch.examples && ch.examples.length) || (ch.qa && ch.qa.length) || bank.written.length || Gen.forChapter(c, subj.id, ch.id).length;
     const tabs = [["notes", "Notes", "notes"], ["cards", "Flashcards", "cards"], hasPractice && ["practice", "Practice", "practice"], ["quiz", "Quiz", "quiz"]].filter(Boolean);
     if (!tabs.some((t) => t[0] === tab)) tab = "notes";
 
@@ -397,7 +441,7 @@ const Views = (() => {
 
     let body = "";
     if (tab === "notes") body = notesTab(subj, ch, r, base);
-    else if (tab === "practice") body = practiceTab(ch);
+    else if (tab === "practice") body = practiceTab(c, subj, ch, bank);
     else body = `<div id="${tab}-mount"></div>`;
 
     const prev = chs[idx - 1];
@@ -441,7 +485,7 @@ const Views = (() => {
         if (tab === "quiz") {
           const opts = () => ({
             title: `${subj.short} · ${ch.title}`,
-            items: shuffle(quizItems(c, subj, ch)),
+            items: quizRound(c, subj, ch),
             instant: true,
             record: { subject: subj.id, cls: c, kind: "chapter", chapterKey: k },
             backHref: `${base}/notes`,
@@ -450,6 +494,7 @@ const Views = (() => {
           });
           Quiz.mount(el.querySelector("#quiz-mount"), opts());
         }
+        if (tab === "practice") mountGenerated(el, c, subj, ch);
         if (tab === "cards")
           Cards.mount(el.querySelector("#cards-mount"), {
             cards: ch.terms.map((t) => ({ key: cardKey(c, subj.id, ch, t), front: t.term, back: t.meaning })),
@@ -476,8 +521,29 @@ const Views = (() => {
       </div>`;
   }
 
-  function practiceTab(ch) {
-    let h = "";
+  // Written questions grouped by marks, like a board paper.
+  function writtenHTML(list) {
+    const groups = {};
+    list.forEach((x) => (groups[x.marks || 3] = groups[x.marks || 3] || []).push(x));
+    return Object.keys(groups)
+      .sort((a, b) => a - b)
+      .map(
+        (m) => `<h2 class="block-title">${m}-mark question${groups[m].length > 1 ? "s" : ""} <span class="count">${groups[m].length}</span></h2>
+        <div class="stack">${groups[m]
+          .map((x) => `<details class="card qa"><summary><span>${rich(x.q)}</span></summary><div class="a">${rich(x.a)}</div></details>`)
+          .join("")}</div>`
+      )
+      .join("");
+  }
+
+  function practiceTab(c, subj, ch, bank) {
+    const sheet = `#/worksheet/${c}/${subj.id}?ch=${ch.id}`;
+    let h = `<div class="card row no-print" style="gap:12px;margin-bottom:6px">
+      <div class="grow"><strong>Practice sheet</strong><div class="small muted">A printable sheet for this chapter, with an answer key. A new set every time.</div></div>
+      <a class="btn primary" href="${sheet}">${icon("print")} Make sheet</a></div>`;
+    if (Gen.forChapter(c, subj.id, ch.id).length)
+      h += `<h2 class="block-title">Fresh questions <span class="count">new numbers every time</span></h2>
+        <div id="gen-mount"></div>`;
     if (ch.examples && ch.examples.length)
       h += `<h2 class="block-title">Solved examples</h2><div class="stack">${ch.examples
         .map(
@@ -496,7 +562,34 @@ const Views = (() => {
         <div class="stack">${ch.qa
           .map((x) => `<details class="card qa"><summary><span>${rich(x.q)}</span></summary><div class="a">${rich(x.a)}</div></details>`)
           .join("")}</div>`;
+    if (bank.written.length) h += writtenHTML(bank.written);
     return h;
+  }
+
+  function mountGenerated(el, c, subj, ch) {
+    const box = el.querySelector("#gen-mount");
+    if (!box) return;
+    const draw = () => {
+      const qs = Gen.questions(c, subj.id, ch.id, 5, Date.now());
+      box.innerHTML = `<div class="stack">${qs
+        .map(
+          (q, i) => `<article class="card example">
+            <p class="q"><span class="tag">Q${i + 1}</span>${rich(q.q)}</p>
+            <details class="reveal"><summary>Show answer</summary>
+              <ol class="steps">${q.steps.map((st) => `<li>${rich(st)}</li>`).join("")}</ol>
+              <div class="answer">${rich(q.options[0])}</div>
+            </details></article>`
+        )
+        .join("")}</div>
+        <button class="btn block mt" data-act="regen">${icon("reset")} New questions</button>`;
+    };
+    draw();
+    box.onclick = (e) => {
+      if (e.target.closest("[data-act=regen]")) {
+        e.stopPropagation();
+        draw();
+      }
+    };
   }
 
   // ---------- mock test ----------
@@ -510,7 +603,7 @@ const Views = (() => {
     subs.forEach((s) =>
       D.chapters(c, s.id).forEach((ch) => {
         if (testCfg.subject !== "all" && testCfg.chapters && !testCfg.chapters.includes(ch.id)) return;
-        groups.push(shuffle(quizItems(c, s, ch)));
+        groups.push(shuffle([...quizItems(c, s, ch), ...genItems(c, s, ch, 2)]));
       })
     );
     return groups;
@@ -699,6 +792,10 @@ const Views = (() => {
         </div>
         <h2 class="block-title">Bookmarked chapters</h2>
         ${bookmarks}
+        <a class="card row" href="#/sheets" style="gap:16px;margin-top:12px">
+          <div class="ch-num" style="width:52px;height:52px">${icon("print")}</div>
+          <div class="grow"><strong>Practice sheets</strong><div class="small muted">Pick chapters and question types, then print with an answer key.</div></div>
+          ${icon("next")}</a>
         <h2 class="block-title">Formula &amp; fact sheets</h2>
         ${subjectLinks("#/sheet/", (s) => sheetLabel(s.id) + " for every chapter")}
         <h2 class="block-title">Flashcard decks</h2>
@@ -1014,6 +1111,7 @@ const Views = (() => {
           <div class="card stack">
             <div class="field"><label for="name">Your name</label><input id="name" class="input" value="${esc(st.profile.name)}" maxlength="30" placeholder="Your name"></div>
             <div class="field"><label>Class</label>${classGrid(st.profile.cls)}</div>
+            <div class="field"><label>Board</label>${boardPicker(st.profile.board || "cbse")}</div>
             <div class="field"><label>Appearance</label>${seg("theme", [["system", "Auto"], ["light", "Light"], ["dark", "Dark"]], st.theme)}</div>
           </div>
           <div class="card">
@@ -1062,9 +1160,15 @@ const Views = (() => {
           toast("Name saved");
         };
         el.onclick = (e) => {
-          const b = e.target.closest("[data-cls],[data-theme],[data-act]");
+          const b = e.target.closest("[data-cls],[data-board],[data-theme],[data-act]");
           if (!b) return;
-          if (b.dataset.cls) {
+          if (b.dataset.board) {
+            if (b.dataset.board === (st.profile.board || "cbse")) return;
+            Store.setBoard(b.dataset.board);
+            toast(`Switched to ${D.boards[b.dataset.board]}`);
+            location.hash = "#/";
+            return;
+          } else if (b.dataset.cls) {
             if (Number(b.dataset.cls) === st.profile.cls) return;
             Store.setClass(Number(b.dataset.cls));
             toast(`Switched to Class ${b.dataset.cls}`);
@@ -1095,5 +1199,8 @@ const Views = (() => {
     };
   }
 
-  return { onboarding, home, subject, chapter, testSetup, testRun, revise, mistakes, sheet, subjectCards, timer, progress, search, settings, notFound };
+  // Shared with sheets.js.
+  const ui = { topbar, pageHead, emptyState, notFound, quizItems, genItems, findChapter, writtenHTML };
+
+  return { ui, onboarding, home, subject, chapter, testSetup, testRun, revise, mistakes, sheet, subjectCards, timer, progress, search, settings, notFound };
 })();

@@ -28,6 +28,8 @@ const App = {
     [/^revise$/, Views.revise],
     [/^revise\/mistakes$/, Views.mistakes],
     [/^sheet\/(\w+)$/, Views.sheet],
+    [/^sheets(?:\/(\w+))?$/, Sheets.maker],
+    [/^worksheet\/(\d+)\/(\w+)(?:\?(.*))?$/, Sheets.worksheet],
     [/^cards\/(\w+)$/, Views.subjectCards],
     [/^timer$/, Views.timer],
     [/^progress$/, Views.progress],
@@ -62,8 +64,18 @@ const App = {
   // Asks the service worker to keep a class's files for offline use.
   function keepOffline(classes) {
     if (!("serviceWorker" in navigator) || !location.protocol.startsWith("http")) return;
-    const urls = classes.flatMap(StudyData.files);
+    const urls = classes.flatMap((c) => [...StudyData.files(c), ...StudyData.practiceFiles(c)]);
     navigator.serviceWorker.ready.then((reg) => reg.active && reg.active.postMessage({ type: "cache", urls }));
+  }
+
+  // [class, subject or undefined for all] whose practice banks a page needs, or null.
+  function practiceNeeded(p) {
+    let m = p.match(/^chapter\/(\d+)\/(\w+)\//);
+    if (m) return [Number(m[1]), m[2]];
+    m = p.match(/^worksheet\/(\d+)\/(\w+)/);
+    if (m) return [Number(m[1]), m[2]];
+    if (/^(test|sheets|revise\/mistakes)/.test(p)) return [Store.state.profile.cls, undefined];
+    return null;
   }
 
   App.render = function (opts = {}) {
@@ -72,6 +84,7 @@ const App = {
 
     // Only the student's class (and any class a chapter link points to) is loaded.
     if (Store.state.profile) {
+      StudyData.setBoard(Store.state.profile.board);
       const need = [Store.state.profile.cls];
       const m = p.match(/^chapter\/(\d+)\//);
       if (m) need.push(Number(m[1]));
@@ -87,6 +100,21 @@ const App = {
           }
           main.innerHTML = `<div class="empty" style="padding-top:24vh"><div class="big">📡</div>
             <p>Class ${missing[0]} couldn't be loaded. Check your internet connection and try again.</p>
+            <button class="btn primary" data-act="retry">${icon("reset")} Try again</button></div>`;
+          main.onclick = (e) => e.target.closest("[data-act=retry]") && App.render(opts);
+        });
+        return;
+      }
+
+      // Extra practice questions load only on pages that use them.
+      const pr = practiceNeeded(p);
+      if (pr && !StudyData.practiceLoaded(pr[0], pr[1])) {
+        main.innerHTML = `<div class="empty" style="padding-top:28vh"><div class="big">📝</div>Loading practice questions…</div>`;
+        renderNav(p);
+        StudyData.loadPractice(pr[0], pr[1]).then((ok) => {
+          if (ok) return App.render(opts);
+          main.innerHTML = `<div class="empty" style="padding-top:24vh"><div class="big">📡</div>
+            <p>Practice questions couldn't be loaded. Check your internet connection and try again.</p>
             <button class="btn primary" data-act="retry">${icon("reset")} Try again</button></div>`;
           main.onclick = (e) => e.target.closest("[data-act=retry]") && App.render(opts);
         });
