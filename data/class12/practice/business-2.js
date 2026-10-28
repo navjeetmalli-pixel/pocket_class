@@ -184,7 +184,7 @@ StudyData.addPractice(12, "business", {
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
         answer: 2, explain: "A is true. R is false, because a trademark is a brand that has been given legal protection.", level: 3, keepOrder: true
       },
-      { q: "Which of the following correctly describes a three-level channel of distribution?", options: ["Manufacturer → agent → wholesaler → retailer → consumer", "Manufacturer → retailer → consumer", "Manufacturer → consumer", "Manufacturer → wholesaler → retailer → consumer"], answer: 0, explain: "A three-level channel has three intermediaries: agent, wholesaler and retailer. The last option is a two-level channel.", level: 3 },
+      { q: "Which of the following correctly describes a three-level channel of distribution?", options: ["Manufacturer → agent → wholesaler → retailer → consumer", "Manufacturer → retailer → consumer", "Manufacturer → consumer", "Manufacturer → wholesaler → retailer → consumer"], answer: 0, explain: "A three-level channel has three intermediaries: agent, wholesaler and retailer. The last option is a two-level channel.", keepOrder: true, level: 3 },
       { q: "The government fixes a ceiling price for certain essential medicines, so Medico Pharma cannot charge more than that. Which factor affecting price does this show?", options: ["Extent of competition", "Government and legal regulations", "Pricing objectives", "Product cost"], answer: 1, explain: "A price ceiling fixed by law is a government and legal regulation limiting the price a firm can charge.", level: 3 }
     ],
     written: [

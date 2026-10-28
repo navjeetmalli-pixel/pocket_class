@@ -21,7 +21,7 @@ if (process.argv.length <= 2) {
     );
 }
 
-const BANNED_OPTION = /all of (the )?(above|these)|none of (the )?(above|these)|both (a|b)\b|both \(a\)|\(a\) and \(|neither|उपर्युक्त सभी|उपरोक्त सभी|इनमें से कोई नहीं|ये सभी|सभी सही|ਉਪਰੋਕਤ ਸਾਰੇ|ਉਪਰੋਕਤ ਸਭ|ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਈ ਨਹੀਂ|ਇਨ੍ਹਾਂ ਵਿੱਚੋਂ ਕੋਈ ਨਹੀਂ|ਸਾਰੇ ਹੀ/i;
+const BANNED_OPTION = /all of (the )?(above|these)|none of (the )?(above|these)|both (a|b)\b|both \(a\)|\(a\) and \(|neither (of )?(the above|these|a nor b|option)|उपर्युक्त सभी|उपरोक्त सभी|इनमें से कोई नहीं|ये सभी|सभी सही|ਉਪਰੋਕਤ ਸਾਰੇ|ਉਪਰੋਕਤ ਸਭ|ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਈ ਨਹੀਂ|ਇਨ੍ਹਾਂ ਵਿੱਚੋਂ ਕੋਈ ਨਹੀਂ|ਸਾਰੇ ਹੀ/i;
 const isStr = (v) => typeof v === "string" && v.trim().length > 0;
 
 let errorCount = 0;
@@ -132,7 +132,9 @@ for (const file of files) {
           if (!Array.isArray(q.options) || q.options.length !== 4 || !q.options.every(isStr))
             err(qat, "options must be exactly 4 non-empty strings");
           else {
-            if (new Set(q.options.map((o) => o.trim().toLowerCase())).size !== 4) err(qat, "options must be distinct");
+            // English questions may test capital letters, so there "Sunday" and "sunday" count as different.
+            const key = (o) => (subj.startsWith("english") ? o.trim() : o.trim().toLowerCase());
+            if (new Set(q.options.map(key)).size !== 4) err(qat, "options must be distinct");
             q.options.forEach((o) => {
               if (BANNED_OPTION.test(o)) err(qat, `option "${o}" breaks when options are shuffled`);
             });
@@ -171,6 +173,8 @@ const practiceFiles = fs
   .flatMap((d) => fs.readdirSync(path.join(root, "data", d, "practice")).filter((f) => f.endsWith(".js")).map((f) => path.join("data", d, "practice", f)))
   .filter((f) => process.argv.length <= 2 || process.argv.slice(2).includes(f));
 const AR_OPTION = /^(Both A and R|A is true|A is false)/;
+// Options are shuffled, so an explanation must not point at an option by position.
+const POSITIONAL = /\b(option|choice)\s*\(?[a-d1-4]\)?(?![\w-])|\b(first|second|third|fourth|last) (option|choice)\b|(पहला|दूसरा|तीसरा|चौथा|पहले|दूसरे|तीसरे|चौथे) विकल्प|(ਪਹਿਲਾ|ਦੂਜਾ|ਤੀਜਾ|ਚੌਥਾ|ਪਹਿਲੇ|ਦੂਜੇ|ਤੀਜੇ|ਚੌਥੇ) ਵਿਕਲਪ/i;
 for (const file of practiceFiles) {
   const errors = [];
   const warns = [];
@@ -206,7 +210,7 @@ for (const file of practiceFiles) {
       if (!isStr(q.q)) err(at, "q is required");
       if (!Array.isArray(q.options) || q.options.length !== 4 || !q.options.every(isStr)) err(at, "options must be exactly 4 non-empty strings");
       else {
-        if (new Set(q.options.map(norm)).size !== 4) err(at, "options must be distinct");
+        if (new Set(q.options.map((o) => (subj.startsWith("english") ? o.trim() : norm(o)))).size !== 4) err(at, "options must be distinct");
         q.options.forEach((o) => {
           if (!q.keepOrder && (BANNED_OPTION.test(o) || AR_OPTION.test(o))) err(at, `option "${o}" needs keepOrder: true (or rewrite it)`);
         });
@@ -214,6 +218,7 @@ for (const file of practiceFiles) {
       if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer > 3) err(at, "answer must be 0–3");
       if (!isStr(q.explain)) err(at, "explain is required");
       if (![1, 2, 3].includes(q.level)) err(at, "level must be 1, 2 or 3");
+      if (!q.keepOrder && POSITIONAL.test(q.explain || "")) warn(at, "explain refers to an option by position, but options are shuffled; reword it or set keepOrder: true");
       const ident = norm([q.q, ...(q.options || []).slice().sort()].join("|"));
       if (seen.has(ident)) err(at, "duplicate question");
       seen.add(ident);
