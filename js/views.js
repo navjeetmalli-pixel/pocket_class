@@ -32,7 +32,7 @@ const Views = (() => {
     science: "Formula sheet",
     history: "Key dates",
   };
-  const sheetLabel = (id) => sheetLabel(id) || (["english", "hindi", "punjabi"].includes(id) ? "Quick reference" : "Key facts");
+  const sheetLabel = (id) => SHEET_LABEL[id] || (["english", "hindi", "punjabi"].includes(id) ? "Quick reference" : "Key facts");
   const TERMS_LABEL = { hindi: "मुख्य शब्द", punjabi: "ਮੁੱਖ ਸ਼ਬਦ" };
 
   // ---------- shared pieces ----------
