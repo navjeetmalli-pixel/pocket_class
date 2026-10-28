@@ -24,7 +24,7 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 **Practice**
 - **Practice sheets**: choose chapters and question types (MCQ, short and long answer, maths problems), then print with an answer key. Sheets are numbered: the same number always gives the same sheet, the next number a new one.
 - **Fresh maths and physics questions**: 116 question types (from Class 1 addition to Class 12 integrals and Class 8–12 physics numericals) that change the numbers every time, with worked steps.
-- **Practice banks** (Classes 9–12): about 11,800 MCQs at three levels (with assertion–reason and case-based) and 7,500 written questions (1–5 marks) with model answers, across every subject. Each quiz round draws a fresh set.
+- **Practice banks** (Classes 9–12): about 10,200 MCQs at three levels (with assertion–reason and case-based) and 6,500 written questions (1–5 marks) with model answers, across every subject. Each quiz round draws a fresh set.
 
 **Study tools**
 - **Mock test**: timed test across a whole subject, chosen chapters, or all subjects, with a per-chapter score breakdown
