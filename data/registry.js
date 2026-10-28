@@ -62,7 +62,7 @@ globalThis.StudyData = (function () {
   // Extra practice (more MCQs, 1–5 mark written questions) lives in data/class{N}/practice/{subject}-{part}.js
   // and is loaded only when a student practises. This lists how many parts each subject has.
   const practiceCatalog = {
-    10: { maths: 2, science: 2 },
+    10: { maths: 2, science: 2, sst: 2, english: 1, hindi: 1, punjabi: 1 },
   };
 
   const classes = Object.keys(catalog).map(Number);

@@ -19,6 +19,13 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 - **Practice**: solved examples and board-style questions with model answers
 - **Quiz**: MCQs with instant feedback and explanations
 
+**Boards**: CBSE / NCERT for Classes 1–12. PSEB (Punjab Board) for Class 10: NCERT Maths and Science (same as PSEB's), plus PSEB Social Science, English, Hindi and Punjab History and Culture written from PSEB's 2026–27 syllabus. PSEB students in other classes see the CBSE set, with a note.
+
+**Practice**
+- **Practice sheets**: choose chapters and question types (MCQ, short and long answer, maths problems), then print with an answer key. Sheets are numbered: the same number always gives the same sheet, the next number a new one.
+- **Fresh maths and physics questions**: 116 question types (from Class 1 addition to Class 12 integrals and Class 8–12 physics numericals) that change the numbers every time, with worked steps.
+- **Practice banks**: Class 10 (CBSE) has about 1,800 MCQs at three levels and 1,200 written questions (1–5 marks, case-based) with model answers. Each quiz round draws a fresh set.
+
 **Study tools**
 - **Mock test**: timed test across a whole subject, chosen chapters, or all subjects, with a per-chapter score breakdown
 - **My mistakes**: every wrong answer is saved so you can practise it until you get it right
