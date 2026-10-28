@@ -63,6 +63,7 @@ globalThis.StudyData = (function () {
   // and is loaded only when a student practises. This lists how many parts each subject has.
   const practiceCatalog = {
     10: { maths: 2, science: 2, sst: 2, english: 1, hindi: 1, punjabi: 1 },
+    12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 3, hindi: 2, punjabi: 1 },
   };
 
   const classes = Object.keys(catalog).map(Number);

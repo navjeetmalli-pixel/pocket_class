@@ -297,7 +297,7 @@ StudyData.add(12, "history", {
         {
           heading: "Rediscovering the monuments",
           points: [
-            "European scholars first noticed the **Amaravati** stupa; **Colin Mackenzie** surveyed it in 1796; much of it was plundered and removed.",
+            "In 1796 a local raja came upon the ruins of the **Amaravati** stupa and used its stone; a few years later **Colin Mackenzie**, a British official, visited the site. Much of it was later removed to Madras, Calcutta and London.",
             "Archaeologists realised the need to preserve monuments in place, as at Sanchi, rather than carrying them to museums abroad."
           ]
         }
@@ -307,7 +307,7 @@ StudyData.add(12, "history", {
         "Mahavira: 24th Tirthankara of Jainism",
         "Tipitaka: Vinaya, Sutta, Abhidhamma Pitakas",
         "Sanchi stupa: Ashoka's time; preserved by Begums of Bhopal",
-        "1796: Colin Mackenzie at Amaravati",
+        "1796: Amaravati stupa ruins found by a local raja; Colin Mackenzie visited a few years later",
         "Mahayana: Buddha images and bodhisattvas; Theravada: older, monastic tradition"
       ],
       terms: [

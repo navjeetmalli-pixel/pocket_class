@@ -1163,7 +1163,7 @@ StudyData.add(12, "biology", {
           heading: "Biotechnology in Agriculture",
           points: [
             "**Genetically modified (GM) organisms** have had their genes altered by gene manipulation. GM crops are more tolerant to abiotic stress, **reduce post-harvest losses**, are pest-resistant (cutting pesticide use) and can have **enhanced nutrition** (e.g. **Golden Rice**, rich in vitamin A).",
-            "**Bt cotton**: *Bacillus thuringiensis* makes **Cry proteins** (encoded by **cry genes**). **cryIAc and cryIAb** control cotton bollworms; **cryIAb** controls corn borer. The toxin is a **protoxin** (inactive) that becomes active only in the **alkaline gut** of the insect, where it makes **pores** in midgut cells, causing swelling, lysis and death.",
+            "**Bt cotton**: *Bacillus thuringiensis* makes **Cry proteins** (encoded by **cry genes**). **cryIAc and cryIIAb** control cotton bollworms; **cryIAb** controls corn borer. The toxin is a **protoxin** (inactive) that becomes active only in the **alkaline gut** of the insect, where it makes **pores** in midgut cells, causing swelling, lysis and death.",
             "**RNA interference (RNAi)** silences a specific mRNA by a complementary **dsRNA**. It protected tobacco from the nematode ***Meloidogyne incognita***: nematode-specific genes were introduced using *Agrobacterium* so that the plant produced **dsRNA**, silencing the parasite's mRNA.",
             "**Flavr Savr** tomato was the first commercially grown GM food, with delayed ripening."
           ]
@@ -1195,7 +1195,7 @@ StudyData.add(12, "biology", {
       ],
       formulas: [
         "Bt toxin: protoxin → active toxin in alkaline insect gut → pores → cell lysis",
-        "cryIAc, cryIAb: cotton bollworm | cryIAb: corn borer",
+        "cryIAc, cryIIAb: cotton bollworm | cryIAb: corn borer",
         "Insulin: A chain 21 aa + B chain 30 aa, joined by disulphide bridges; C peptide removed",
         "Humulin: Eli Lilly, 1983, E. coli",
         "First gene therapy: 1990, ADA deficiency",
