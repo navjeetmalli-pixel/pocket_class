@@ -64,6 +64,7 @@ globalThis.StudyData = (function () {
   const practiceCatalog = {
     9: { science: 2, maths: 2, sst: 3, english: 3, hindi: 2, punjabi: 2 },
     10: { maths: 2, science: 2, sst: 2, english: 1, hindi: 1, punjabi: 1 },
+    11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 3, hindi: 2, punjabi: 1 },
     12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 3, hindi: 2, punjabi: 1 },
   };
 
