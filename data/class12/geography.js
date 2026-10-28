@@ -1475,3 +1475,697 @@ StudyData.add(12, "geography", {
         }
       ]
     },
+
+    // ───────────── 4. Water Resources ─────────────
+    {
+      id: "water-resources",
+      title: "Water Resources",
+      section: "India: People and Economy",
+      summary: "Surface and ground water resources of India, how water is used in irrigation, industry and homes, the problems of scarcity and quality, and water conservation methods such as watershed management and rainwater harvesting.",
+      notes: [
+        {
+          heading: "Water resources of India",
+          points: [
+            "India has roughly **4% of the world's freshwater resources**, but about one-sixth of the world's population, so water per person is limited.",
+            "**Surface water** comes from four main sources: **rivers, lakes, ponds and tanks**. Rivers such as the **Ganga, Brahmaputra and Indus** carry most of the flow.",
+            "**Ground water** is replenished every year by rainfall and seepage. Only a part of surface and ground water can be used because of **topography, quality and inter-state disputes**.",
+            "Rainfall is uneven in space and time, so large parts of India face **water deficits** in dry seasons even though total precipitation is large."
+          ]
+        },
+        {
+          heading: "Demand and use of water",
+          points: [
+            "**Agriculture (irrigation)** uses by far the **largest share** of water in India, followed by industry and domestic use.",
+            "Irrigation is needed because of the **monsoon's uncertainty**, a long dry season, and water-hungry crops like **rice and sugarcane**.",
+            "Over-use of ground water through tube wells has caused water tables to **fall sharply** in **Punjab, Haryana, western Uttar Pradesh, Rajasthan and Tamil Nadu**. States like **Chhattisgarh, Odisha and Kerala** use only a small part of their ground water potential.",
+            "Industrial and domestic demand is rising fast with **urban growth, industrialisation and a higher standard of living**."
+          ]
+        },
+        {
+          heading: "Water quality and scarcity",
+          points: [
+            "Water quality means its **purity**, free from unwanted substances. It is damaged by **industrial effluents, untreated sewage, fertilisers and pesticides**.",
+            "Rivers like the **Ganga and Yamuna** are heavily polluted in their stretches through cities, and the **Central Pollution Control Board (CPCB)** and State boards monitor quality.",
+            "Scarcity arises from **over-use, unequal distribution, pollution and growing population**; irrigated agriculture, waterlogging and salinisation also degrade land.",
+            "Dams and multipurpose projects store water but raise issues of **displacement and inter-state water sharing**."
+          ]
+        },
+        {
+          heading: "Water conservation and management",
+          points: [
+            "**Watershed management** means efficient management and conservation of **surface and ground water**, using rainwater harvesting, recharge of wells, check dams and afforestation.",
+            "**Rainwater harvesting** collects rain where it falls. Examples: **tankas** (underground tanks) in the Thar desert of Rajasthan, the **200-year-old bamboo drip irrigation** of **Meghalaya**, and rooftop harvesting in **Gendathur (Karnataka)**.",
+            "**Tamil Nadu** made rooftop rainwater harvesting compulsory for all houses.",
+            "Community efforts include **Arvari Pani Sansad** in Alwar (Rajasthan), **Hariyali** and **Neeru-Meeru** (Andhra Pradesh).",
+            "Other steps: **recycling and reuse** of water, efficient irrigation (**drip and sprinkler**), avoiding water-intensive crops in dry areas, and cutting pollution."
+          ]
+        }
+      ],
+      formulas: [
+        "India: about 4% of world's freshwater, about one-sixth of world's population",
+        "Surface water sources: rivers, lakes, ponds, tanks",
+        "Largest user of water: agriculture (irrigation)",
+        "Over-exploited ground water: Punjab, Haryana, western UP, Rajasthan, Tamil Nadu; low use: Chhattisgarh, Odisha, Kerala",
+        "Watershed management = conservation and efficient management of surface and ground water",
+        "Rainwater harvesting: tankas (Rajasthan), bamboo drip (Meghalaya), Gendathur (Karnataka), compulsory in Tamil Nadu",
+        "Community initiatives: Arvari Pani Sansad (Alwar), Hariyali, Neeru-Meeru"
+      ],
+      terms: [
+        { term: "Watershed management", meaning: "Efficient **management and conservation of surface and ground water** resources of a drainage basin." },
+        { term: "Rainwater harvesting", meaning: "Collecting and storing **rainwater** where it falls, for later use or to **recharge ground water**." },
+        { term: "Tanka", meaning: "An **underground tank** in the Thar desert of Rajasthan used to store rainwater." },
+        { term: "Water table", meaning: "The **upper level of ground water**, which falls when water is pumped out faster than it is recharged." },
+        { term: "Waterlogging", meaning: "Saturation of soil with water due to **excess irrigation and poor drainage**, harming crops." },
+        { term: "Effluent", meaning: "**Liquid waste** discharged from factories or sewage works into water bodies." }
+      ],
+      qa: [
+        {
+          q: "Why is water a scarce resource in India despite large rainfall? (3 marks)",
+          a: "1. **Uneven distribution**: rainfall varies greatly from place to place and season to season, so some regions face deficits.\n2. **Growing demand**: population growth, irrigation, industry and urban use raise demand.\n3. **Over-use and pollution**: ground water is over-extracted, and rivers are polluted by sewage and industrial waste, reducing usable water."
+        },
+        {
+          q: "What is rainwater harvesting? Give two examples from India. (3 marks)",
+          a: "1. **Rainwater harvesting** is collecting and storing rainwater where it falls, for direct use or for recharging ground water.\n2. In the **Thar desert of Rajasthan**, rooftop rainwater is stored in underground tanks called **tankas**.\n3. In **Meghalaya**, a roughly 200-year-old **bamboo drip irrigation** system carries stream water to crops; **Gendathur (Karnataka)** is known for rooftop harvesting."
+        },
+        {
+          q: "Describe the problems of ground water use in Punjab and Haryana. (3 marks)",
+          a: "1. Intensive irrigation for **rice and wheat** after the Green Revolution depends heavily on **tube wells**.\n2. Ground water is extracted faster than it is recharged, so the **water table falls**.\n3. Canal irrigation has also caused **waterlogging and salinisation** in some parts, degrading soil."
+        }
+      ],
+      quiz: [
+        {
+          q: "Which sector uses the largest share of water in India?",
+          options: ["Industry", "Domestic use", "Agriculture", "Power generation"],
+          answer: 2,
+          explain: "**Agriculture (irrigation)** is by far the biggest user of water in India."
+        },
+        {
+          q: "The roughly 200-year-old bamboo drip irrigation system is practised in:",
+          options: ["Meghalaya", "Rajasthan", "Kerala", "Himachal Pradesh"],
+          answer: 0,
+          explain: "Farmers in **Meghalaya** use bamboo pipes to carry spring water to plants."
+        },
+        {
+          q: "Underground tanks called 'tankas' are used for rainwater storage in:",
+          options: ["the Western Ghats", "the Ganga plain", "the Thar desert", "the Deccan plateau"],
+          answer: 2,
+          explain: "**Tankas** store rooftop rainwater in the dry **Thar region of Rajasthan**."
+        },
+        {
+          q: "Which state made rooftop rainwater harvesting compulsory for all houses?",
+          options: ["Gujarat", "Tamil Nadu", "Karnataka", "Maharashtra"],
+          answer: 1,
+          explain: "**Tamil Nadu** made rooftop rainwater harvesting compulsory."
+        },
+        {
+          q: "Ground water use is very high in which group of states?",
+          options: ["Chhattisgarh, Odisha and Kerala", "Assam and Arunachal Pradesh", "Sikkim and Mizoram", "Punjab, Haryana, Rajasthan and Tamil Nadu"],
+          answer: 3,
+          explain: "These states have heavy tube well irrigation and falling water tables; Chhattisgarh, Odisha and Kerala use little of their potential."
+        },
+        {
+          q: "Watershed management mainly aims at:",
+          options: ["conserving and managing surface and ground water", "building only large dams", "increasing industrial water supply", "diverting rivers between states"],
+          answer: 0,
+          explain: "**Watershed management** is the efficient conservation and management of surface and ground water."
+        }
+      ]
+    },
+
+    // ───────────── 5. Mineral and Energy Resources ─────────────
+    {
+      id: "mineral-and-energy-resources",
+      title: "Mineral and Energy Resources",
+      section: "India: People and Economy",
+      summary: "Types of minerals and where they are found in India, the major mineral belts, conventional energy sources (coal, petroleum, natural gas, electricity) and non-conventional sources (solar, wind, tidal, biogas, geothermal), and why conservation matters.",
+      notes: [
+        {
+          heading: "Classification and distribution of minerals",
+          points: [
+            "Minerals are classified as **metallic** (ferrous: iron ore, manganese; non-ferrous: bauxite, copper, lead, zinc, gold), **non-metallic** (mica, limestone, salt) and **energy minerals** (coal, petroleum).",
+            "**Iron ore** (haematite and magnetite) is found mainly in **Odisha, Jharkhand, Chhattisgarh, Karnataka and Goa**. **Manganese** is used in steel making and found chiefly in **Odisha**.",
+            "**Bauxite**, the ore of aluminium, is concentrated in **Odisha** and also found in Gujarat, Jharkhand and Maharashtra. **Copper** is mined at **Balaghat (MP), Khetri (Rajasthan) and Singhbhum (Jharkhand)**.",
+            "**Mica** is an electrical insulator, found in the **Koderma-Gaya-Hazaribagh belt of Jharkhand**, Nellore (Andhra Pradesh) and Ajmer (Rajasthan)."
+          ]
+        },
+        {
+          heading: "Mineral belts of India",
+          points: [
+            "**North-eastern plateau belt**: Chotanagpur plateau and Odisha plateau, rich in iron ore, coal, manganese, bauxite and mica.",
+            "**South-western belt**: Karnataka, Goa and adjoining Tamil Nadu uplands and Kerala, rich in ferrous minerals and bauxite, but poor in coal.",
+            "**North-western belt**: along the **Aravalli** range in Rajasthan and Gujarat, with copper, zinc and building stones.",
+            "Most minerals occur in the **peninsular plateau** of ancient crystalline rocks; the Himalayan region has few economic minerals."
+          ]
+        },
+        {
+          heading: "Conventional energy sources",
+          points: [
+            "**Coal** is the most abundant fossil fuel. **Gondwana coal** (about 200 million years old) is found in the **Damodar, Sone, Mahanadi and Godavari valleys**; **lignite** is mined at **Neyveli** (Tamil Nadu).",
+            "**Petroleum** comes from **Assam (Digboi, Naharkatiya), Gujarat and Mumbai High** in the Arabian Sea; it is refined into fuels and feeds the petrochemical industry.",
+            "**Natural gas** is a cleaner fuel, found with oil in the Krishna-Godavari basin, Mumbai High and Gulf of Khambhat; the **Hazira-Bijaipur-Jagdishpur (HBJ)** pipeline carries it. It is used as **CNG** in vehicles.",
+            "**Electricity** is generated as **thermal** (coal, oil, gas), **hydro** and **nuclear** power. Nuclear stations include **Tarapur, Rawatbhata, Kalpakkam, Narora, Kakrapar and Kaiga**.",
+            "Nuclear fuel uses **uranium and thorium**; thorium is available in the monazite sands of **Kerala**."
+          ]
+        },
+        {
+          heading: "Non-conventional energy and conservation",
+          points: [
+            "**Solar energy** is converted by photovoltaic cells; India has strong potential, especially in the sunny west and south.",
+            "**Wind energy**: the largest wind farm cluster is from **Nagercoil to Madurai** in Tamil Nadu; others are in Andhra Pradesh, Karnataka, Gujarat, Kerala, Maharashtra and Lakshadweep.",
+            "**Tidal** potential exists in the **Gulf of Khambhat, Gulf of Kachchh and the Sundarbans**. **Geothermal** energy is tapped at **Manikaran (Parvati valley)** and **Puga valley (Ladakh)**.",
+            "**Biogas** is produced from animal dung and farm waste, mostly in rural areas.",
+            "Minerals and fossil fuels are **non-renewable**, so conservation, recycling, efficient use and shifting to renewable energy are essential."
+          ]
+        }
+      ],
+      formulas: [
+        "Ferrous: iron ore, manganese; non-ferrous: bauxite, copper, lead, zinc; non-metallic: mica, limestone",
+        "Iron ore: Odisha, Jharkhand, Chhattisgarh, Karnataka, Goa; manganese and bauxite: Odisha",
+        "Copper: Balaghat (MP), Khetri (Rajasthan), Singhbhum (Jharkhand)",
+        "Gondwana coal (about 200 million years old): Damodar, Sone, Mahanadi, Godavari valleys; lignite: Neyveli",
+        "Oil: Digboi, Naharkatiya (Assam), Gujarat, Mumbai High; gas pipeline: HBJ",
+        "Nuclear stations: Tarapur, Rawatbhata, Kalpakkam, Narora, Kakrapar, Kaiga",
+        "Wind: Nagercoil to Madurai (Tamil Nadu); geothermal: Manikaran, Puga valley; tidal: Khambhat, Kachchh, Sundarbans"
+      ],
+      terms: [
+        { term: "Ferrous minerals", meaning: "Minerals that **contain iron**, such as iron ore and manganese, used in making steel." },
+        { term: "Lignite", meaning: "Low-grade **brown coal** with high moisture content, mined mainly at Neyveli." },
+        { term: "Non-renewable resource", meaning: "A resource that **does not replenish** in a human lifetime, like coal and petroleum." },
+        { term: "Geothermal energy", meaning: "Energy obtained from the **heat of the Earth's interior**, used at places like Manikaran." },
+        { term: "CNG", meaning: "**Compressed natural gas**, a cleaner fuel used in vehicles." },
+        { term: "Biogas", meaning: "Gas produced by **decomposition of dung and organic waste**, used for cooking and lighting." }
+      ],
+      qa: [
+        {
+          q: "Distinguish between conventional and non-conventional sources of energy, giving examples. (3 marks)",
+          a: "1. **Conventional sources** are traditional, mostly non-renewable and widely used: **coal, petroleum, natural gas and electricity from thermal or nuclear stations**.\n2. **Non-conventional sources** are renewable and less polluting: **solar, wind, tidal, geothermal and biogas**.\n3. Non-conventional sources are being promoted to reduce dependence on fossil fuels and cut pollution."
+        },
+        {
+          q: "Name the main mineral belts of India and the minerals found in them. (3 marks)",
+          a: "1. **North-eastern plateau belt** (Chotanagpur, Odisha plateau): iron ore, coal, manganese, bauxite, mica.\n2. **South-western belt** (Karnataka, Goa, Tamil Nadu, Kerala): iron ore, manganese, bauxite, but poor in coal.\n3. **North-western belt** (Aravalli in Rajasthan and Gujarat): copper, zinc and building stones."
+        },
+        {
+          q: "Why is conservation of mineral and energy resources necessary? (3 marks)",
+          a: "1. Minerals and fossil fuels are **non-renewable** and form over millions of years, so reserves are limited.\n2. Rapid use depletes resources needed by **future generations**, and mining damages land and water.\n3. Conservation through **recycling, efficient use, substitutes and renewable energy** extends their life."
+        }
+      ],
+      quiz: [
+        {
+          q: "Which of these is a ferrous mineral?",
+          options: ["Bauxite", "Copper", "Manganese", "Mica"],
+          answer: 2,
+          explain: "**Manganese** contains iron-group metals and is used in steel making; bauxite and copper are non-ferrous."
+        },
+        {
+          q: "Lignite is mined mainly at:",
+          options: ["Jharia", "Neyveli", "Raniganj", "Digboi"],
+          answer: 1,
+          explain: "**Neyveli** in Tamil Nadu is the main lignite field; Jharia and Raniganj yield Gondwana coal."
+        },
+        {
+          q: "Mumbai High, a major oil producing area, lies in:",
+          options: ["the Bay of Bengal", "Assam", "the Gulf of Kachchh", "the Arabian Sea off Maharashtra"],
+          answer: 3,
+          explain: "**Mumbai High** is an offshore field in the Arabian Sea."
+        },
+        {
+          q: "The HBJ pipeline mainly carries:",
+          options: ["natural gas", "crude oil", "water", "petrol"],
+          answer: 0,
+          explain: "The **Hazira-Bijaipur-Jagdishpur** pipeline carries natural gas."
+        },
+        {
+          q: "Which of these is a nuclear power station?",
+          options: ["Singrauli", "Kakrapar", "Ramagundam", "Neyveli"],
+          answer: 1,
+          explain: "**Kakrapar** (Gujarat) is a nuclear station; the others are thermal."
+        },
+        {
+          q: "The largest cluster of wind farms in India lies between:",
+          options: ["Bhuj and Jaisalmer", "Pune and Nashik", "Nagercoil and Madurai", "Kochi and Kozhikode"],
+          answer: 2,
+          explain: "The **Nagercoil to Madurai** belt in Tamil Nadu has the biggest wind farm cluster."
+        }
+      ]
+    },
+
+    // ───────────── 6. Planning and Sustainable Development in Indian Context ─────────────
+    {
+      id: "planning-and-sustainable-development",
+      title: "Planning and Sustainable Development in Indian Context",
+      section: "India: People and Economy",
+      summary: "What planning is, the target area and target group approaches, case studies of the Indira Gandhi Canal and Bharmaur tribal area, and the idea of sustainable development.",
+      notes: [
+        {
+          heading: "Planning in India",
+          points: [
+            "**Planning** is an organised effort to use resources to meet social and economic goals. Its main tools are **Five-Year Plans**.",
+            "The **Planning Commission** was set up in **1950**; it was replaced by **NITI Aayog** in **2015**.",
+            "Two approaches grew from regional imbalance: **target area planning** (for backward regions) and **target group planning** (for specific groups).",
+            "Examples of **target area programmes**: **Command Area Development, Drought Prone Area Programme, Desert Development Programme and Hill Area Development Programme**."
+          ]
+        },
+        {
+          heading: "Indira Gandhi Canal command area",
+          points: [
+            "The **Indira Gandhi Canal** (earlier the Rajasthan Canal) is one of the largest canal systems in India. It begins at the **Harike barrage**, below the confluence of the **Sutlej and Beas**, and runs through Punjab, Haryana and Rajasthan.",
+            "It brought irrigation to the **arid Thar region** of Rajasthan, enabling crops like wheat, cotton and groundnut.",
+            "Problems that appeared: **waterlogging and salinisation**, and unsuitable crops that use too much water.",
+            "Measures for **sustainable development** include strict **water allowance and crop rotation**, avoiding water-intensive crops like sugarcane and rice, lining canals, afforestation, shelterbelt plantations and pasture development."
+          ]
+        },
+        {
+          heading: "Bharmaur tribal area",
+          points: [
+            "**Bharmaur** is in **Chamba district, Himachal Pradesh**, and is home to the **Gaddi** tribe, who follow seasonal migration between high pastures and lower valleys.",
+            "It is one of the **most backward** areas, with difficult terrain, poor connectivity and low literacy, especially among women.",
+            "An **Integrated Tribal Development Project** began in **1974**, improving roads, schools, health care and drinking water.",
+            "Development brought better literacy and sex ratio, but ecological concerns about **overgrazing and hill slopes** need care."
+          ]
+        },
+        {
+          heading: "Sustainable development",
+          points: [
+            "**Sustainable development** means meeting the needs of the present **without compromising the ability of future generations** to meet theirs.",
+            "The idea was popularised by the **Brundtland Commission** report **'Our Common Future' (1987)**.",
+            "It rests on three pillars: **economic growth, social equity and environmental protection**.",
+            "Planning for sustainability stresses **resource conservation, community participation, and balanced regional development**."
+          ]
+        }
+      ],
+      formulas: [
+        "Planning Commission set up 1950; replaced by NITI Aayog in 2015",
+        "Target area programmes: Command Area Development, Drought Prone Area, Desert Development, Hill Area Development",
+        "Indira Gandhi Canal begins at Harike barrage (Sutlej-Beas confluence); serves Punjab, Haryana, Rajasthan",
+        "Bharmaur: Chamba district, Himachal Pradesh; Gaddi tribe; Integrated Tribal Development Project 1974",
+        "Sustainable development: Brundtland Commission, 'Our Common Future' (1987)",
+        "Three pillars: economic growth, social equity, environmental protection"
+      ],
+      terms: [
+        { term: "Planning", meaning: "An **organised effort** to use resources to achieve set social and economic goals." },
+        { term: "Target area planning", meaning: "Planning for **backward regions** with special problems, like drought-prone or hill areas." },
+        { term: "Target group planning", meaning: "Planning for **specific sections of society**, such as small farmers or tribal people." },
+        { term: "NITI Aayog", meaning: "The government's **policy think-tank** that replaced the Planning Commission in 2015." },
+        { term: "Sustainable development", meaning: "Development that meets present needs **without harming the needs of future generations**." },
+        { term: "Gaddi", meaning: "A **tribal community of Bharmaur** (Himachal Pradesh) practising seasonal migration with livestock." }
+      ],
+      qa: [
+        {
+          q: "What is sustainable development? Mention its main features. (3 marks)",
+          a: "1. **Sustainable development** is development that meets present needs **without compromising future generations' ability** to meet their needs.\n2. It balances **economic growth, social equity and environmental protection**.\n3. It requires conserving resources, using them wisely, and involving local communities in planning."
+        },
+        {
+          q: "Explain the problems of the Indira Gandhi Canal command area and suggest remedies. (3 marks)",
+          a: "1. The canal brought irrigation to arid Rajasthan but caused **waterlogging and salinisation** of soil.\n2. Farmers grew **water-intensive crops** and extended irrigation beyond what the land could bear.\n3. Remedies: strict **water allowance**, growing suitable crops, **canal lining**, afforestation, shelterbelts and pasture development."
+        },
+        {
+          q: "Write a note on the Bharmaur tribal region. (3 marks)",
+          a: "1. **Bharmaur** is in Chamba district of **Himachal Pradesh**, home to the **Gaddi** tribe who migrate seasonally with their livestock.\n2. It was a very **backward** region with rugged terrain, poor connectivity and low literacy.\n3. The **Integrated Tribal Development Project (1974)** improved roads, schools, health and water supply, raising literacy and living standards."
+        }
+      ],
+      quiz: [
+        {
+          q: "The Planning Commission was replaced in 2015 by:",
+          options: ["NITI Aayog", "Finance Commission", "Election Commission", "National Development Council"],
+          answer: 0,
+          explain: "**NITI Aayog** replaced the Planning Commission in 2015."
+        },
+        {
+          q: "The Brundtland Commission report is titled:",
+          options: ["Silent Spring", "Our Common Future", "Limits to Growth", "Earth Summit Report"],
+          answer: 1,
+          explain: "**Our Common Future** (1987) popularised sustainable development."
+        },
+        {
+          q: "The Indira Gandhi Canal begins at the:",
+          options: ["Bhakra Dam", "Farakka Barrage", "Harike Barrage", "Hirakud Dam"],
+          answer: 2,
+          explain: "It begins at the **Harike barrage**, below the Sutlej-Beas confluence."
+        },
+        {
+          q: "Which of these is a target area programme?",
+          options: ["Mid-day meal scheme", "Green Revolution", "Public distribution system", "Drought Prone Area Programme"],
+          answer: 3,
+          explain: "The **Drought Prone Area Programme** targets backward, drought-affected regions."
+        },
+        {
+          q: "Bharmaur, home of the Gaddi tribe, lies in:",
+          options: ["Chamba district, Himachal Pradesh", "Kullu district, Himachal Pradesh", "Pithoragarh, Uttarakhand", "Leh, Ladakh"],
+          answer: 0,
+          explain: "**Bharmaur** is in Chamba district of Himachal Pradesh."
+        },
+        {
+          q: "Which measure is NOT suited to sustainable development of the Indira Gandhi Canal area?",
+          options: ["Afforestation and shelterbelts", "Canal lining", "Pasture development", "Growing water-intensive crops such as paddy"],
+          answer: 3,
+          explain: "Water-intensive crops worsen **waterlogging and salinisation** in this arid region."
+        }
+      ]
+    },
+
+    // ───────────── 7. Transport and Communication ─────────────
+    {
+      id: "india-transport-and-communication",
+      title: "Transport and Communication",
+      section: "India: People and Economy",
+      summary: "India's road, rail, water, air and pipeline transport networks, major ports, and the growth of communication through telecom, mass media and satellites.",
+      notes: [
+        {
+          heading: "Roads",
+          points: [
+            "India has one of the **largest road networks** in the world. Roads suit short distances and give **door-to-door** service.",
+            "Roads are classed as **National Highways, State Highways, district roads and rural roads**. The **National Highways Authority of India (NHAI)** was set up in **1988**.",
+            "The **Golden Quadrilateral Super Highway** links **Delhi, Mumbai, Chennai and Kolkata**; the **North-South corridor** joins Srinagar and Kanyakumari, and the **East-West corridor** joins Silchar and Porbandar.",
+            "The **Border Roads Organisation (1960)** builds roads in remote border areas."
+          ]
+        },
+        {
+          heading: "Railways",
+          points: [
+            "Railways are the **principal mode** for long-distance passengers and bulk goods. The first train ran in **1853** from **Mumbai to Thane**.",
+            "Indian Railways has a network divided into **zones**, with broad, metre and narrow gauges.",
+            "Railways are strongest in the **northern plains** with flat land and dense population, and sparse in hills, deserts and forests.",
+            "**Metro rail** serves big cities, beginning with **Kolkata**."
+          ]
+        },
+        {
+          heading: "Water, air and pipeline transport",
+          points: [
+            "**Inland waterways**: National Waterway-1 (**Prayagraj–Haldia** on the Ganga-Hooghly), NW-2 (**Sadiya–Dhubri** on the Brahmaputra) and NW-3 (**Kerala's West Coast Canal**).",
+            "**Ocean transport** carries most of India's foreign trade through major ports such as **Kandla, Mumbai, Jawaharlal Nehru (Nhava Sheva), Marmagao, New Mangalore, Kochi, Tuticorin, Chennai, Visakhapatnam, Paradip and Kolkata-Haldia**.",
+            "**Air transport** is fastest and costliest, vital for remote and hilly areas like the North-East and for high-value goods. The first flight was in **1911** from Allahabad to Naini.",
+            "**Pipelines** carry crude oil, petroleum products and natural gas (e.g. **Naharkatiya–Barauni**, **HBJ gas pipeline**)."
+          ]
+        },
+        {
+          heading: "Communication",
+          points: [
+            "Communication includes **postal services, telecom, mass media and the internet**. India has a vast postal network.",
+            "**Mobile phones and the internet** have transformed telecom, banking and education, extending links even to villages.",
+            "**Mass media** (newspapers, radio, television, cinema) spreads information and shapes public opinion.",
+            "**Satellites** like the **INSAT** series support telecommunication, broadcasting, weather forecasting and disaster warning."
+          ]
+        }
+      ],
+      formulas: [
+        "NHAI set up 1988; Border Roads Organisation 1960",
+        "Golden Quadrilateral: Delhi-Mumbai-Chennai-Kolkata; N-S: Srinagar-Kanyakumari; E-W: Silchar-Porbandar",
+        "First train: Mumbai to Thane, 1853; first metro: Kolkata",
+        "NW-1: Prayagraj-Haldia; NW-2: Sadiya-Dhubri; NW-3: Kerala West Coast Canal",
+        "First flight in India: Allahabad to Naini, 1911",
+        "Major ports include Kandla, Mumbai, JNPT, Marmagao, New Mangalore, Kochi, Tuticorin, Chennai, Visakhapatnam, Paradip, Kolkata-Haldia",
+        "Satellite system for telecom and weather: INSAT"
+      ],
+      terms: [
+        { term: "National Highway", meaning: "A major road linking **state capitals, ports and big cities**, built and maintained by the Centre." },
+        { term: "Golden Quadrilateral", meaning: "The **six-lane highway network** connecting Delhi, Mumbai, Chennai and Kolkata." },
+        { term: "Inland waterway", meaning: "Navigable **rivers and canals** used for transport of goods and people." },
+        { term: "Port", meaning: "A coastal gateway where **ships load and unload** cargo and passengers." },
+        { term: "INSAT", meaning: "India's **multipurpose satellite system** for telecom, broadcasting and weather services." },
+        { term: "Mass media", meaning: "Channels such as **newspapers, radio and TV** that reach large audiences." }
+      ],
+      qa: [
+        {
+          q: "What are the advantages and limitations of road transport? (3 marks)",
+          a: "1. **Advantages**: lower construction cost than railways, door-to-door service, and ability to reach hills and remote villages.\n2. It suits **short and medium distances** and perishable goods.\n3. **Limitations**: costly for heavy goods over long distances, more accident-prone, and a source of **air pollution**."
+        },
+        {
+          q: "Why are railways more developed in the northern plains? (3 marks)",
+          a: "1. The **flat terrain** keeps the cost of laying tracks low.\n2. A **dense population** and heavy demand for goods and passengers.\n3. Fertile agriculture and industrial centres generate traffic; hills, deserts and forests elsewhere raise costs."
+        },
+        {
+          q: "Explain the importance of satellite communication in India. (3 marks)",
+          a: "1. Satellites like **INSAT** support telecommunication, TV and radio broadcasting.\n2. They enable **weather forecasting** and early warning of cyclones and disasters.\n3. They link remote regions, helping in education, banking and governance."
+        }
+      ],
+      quiz: [
+        {
+          q: "The first railway line in India connected:",
+          options: ["Delhi and Agra", "Kolkata and Howrah", "Chennai and Arakkonam", "Mumbai and Thane"],
+          answer: 3,
+          explain: "The first train ran in **1853** between **Mumbai and Thane**."
+        },
+        {
+          q: "The Golden Quadrilateral links which four metros?",
+          options: ["Delhi, Mumbai, Chennai and Kolkata", "Delhi, Bengaluru, Hyderabad and Pune", "Mumbai, Ahmedabad, Jaipur and Delhi", "Kolkata, Guwahati, Patna and Lucknow"],
+          answer: 0,
+          explain: "It links **Delhi, Mumbai, Chennai and Kolkata**."
+        },
+        {
+          q: "National Waterway-1 runs between:",
+          options: ["Sadiya and Dhubri", "Prayagraj and Haldia", "Kollam and Kottapuram", "Kolkata and Paradip"],
+          answer: 1,
+          explain: "**NW-1** runs on the Ganga-Bhagirathi-Hooghly from Prayagraj to Haldia."
+        },
+        {
+          q: "The Border Roads Organisation was established in:",
+          options: ["1947", "1988", "1960", "1991"],
+          answer: 2,
+          explain: "The **BRO** was set up in **1960**; the NHAI was set up in 1988."
+        },
+        {
+          q: "Jawaharlal Nehru Port at Nhava Sheva was developed mainly to:",
+          options: ["serve the Brahmaputra valley", "ease congestion at Mumbai port", "handle only fishing boats", "serve the Andaman Islands"],
+          answer: 1,
+          explain: "It was developed as a satellite port to **decongest Mumbai port**."
+        },
+        {
+          q: "Which satellite system supports Indian telecom, broadcasting and weather forecasting?",
+          options: ["Landsat", "IRNSS only", "Aryabhata", "INSAT"],
+          answer: 3,
+          explain: "The **INSAT** series provides telecom, broadcasting and meteorological services."
+        }
+      ]
+    },
+
+    // ───────────── 8. International Trade ─────────────
+    {
+      id: "india-international-trade",
+      title: "International Trade",
+      section: "India: People and Economy",
+      summary: "The changing composition, direction and policy of India's foreign trade, major exports and imports, the balance of trade, and ports and airports as gateways of trade.",
+      notes: [
+        {
+          heading: "Growth and policy",
+          points: [
+            "India's foreign trade has a long history, but the **volume and variety** have grown greatly since Independence.",
+            "Early policy stressed **self-reliance and import substitution**; the **1991 economic reforms** (liberalisation, privatisation, globalisation) opened the economy and encouraged exports.",
+            "India is now a member of the **World Trade Organisation (WTO)**, and trade has become an important part of the economy.",
+            "Trade includes **visible trade** (goods) and **invisible trade** (services like software, tourism and banking)."
+          ]
+        },
+        {
+          heading: "Composition of trade",
+          points: [
+            "**Major exports**: engineering goods, gems and jewellery, petroleum products, chemicals, textiles and garments, agricultural products, and **software and IT services**.",
+            "The share of traditional exports like **tea, jute and cotton** has fallen, while **manufactured goods and services** have grown.",
+            "**Major imports**: **crude petroleum**, gold, electronic goods, machinery, chemicals and fertilisers.",
+            "India's trade usually shows a **deficit**, because imports (especially oil) exceed exports."
+          ]
+        },
+        {
+          heading: "Direction of trade",
+          points: [
+            "India trades with many regions: **Asia and ASEAN, the European Union, North America, the Gulf countries (OPEC) and Africa**.",
+            "Important partners include the **USA, China, the UAE, Saudi Arabia and several European countries**.",
+            "Regional agreements and bilateral treaties help widen markets, and neighbours matter for border trade.",
+            "Dependence on oil imports makes the economy sensitive to **global oil prices**."
+          ]
+        },
+        {
+          heading: "Ports and airports as gateways",
+          points: [
+            "Most of India's foreign trade by volume moves by **sea**, through ports, which act as **gateways of trade**.",
+            "**Kandla** (Gujarat) is a **tidal port**; **Jawaharlal Nehru Port** relieves congestion at Mumbai; **Marmagao** is a natural harbour; **Visakhapatnam** is a deep, well-protected port; **Paradip** serves Odisha's iron ore exports.",
+            "**Airports** handle high-value, light and perishable goods and international passengers, in cities like Delhi and Mumbai.",
+            "Land routes carry small border trade with neighbours."
+          ]
+        }
+      ],
+      formulas: [
+        "1991 reforms: liberalisation, privatisation, globalisation",
+        "Visible trade = goods; invisible trade = services (software, tourism, banking)",
+        "Balance of trade = value of exports - value of imports; deficit when imports exceed exports",
+        "Major exports: engineering goods, gems and jewellery, petroleum products, textiles, IT services",
+        "Major imports: crude petroleum, gold, electronics, machinery, fertilisers",
+        "Kandla: tidal port; JNPT: relieves Mumbai; Visakhapatnam: deep, protected harbour",
+        "Most foreign trade by volume moves through sea ports"
+      ],
+      terms: [
+        { term: "Balance of trade", meaning: "The **difference between the value of exports and imports** of goods." },
+        { term: "Trade deficit", meaning: "When the value of **imports exceeds exports**." },
+        { term: "Invisible trade", meaning: "Trade in **services** such as software, tourism and banking." },
+        { term: "Import substitution", meaning: "A policy of **producing goods at home** instead of importing them." },
+        { term: "Liberalisation", meaning: "Reducing **government controls and trade barriers** to open the economy." },
+        { term: "Gateway of trade", meaning: "A **port or airport** through which goods enter and leave a country." }
+      ],
+      qa: [
+        {
+          q: "How did the 1991 economic reforms affect India's foreign trade? (3 marks)",
+          a: "1. Reforms reduced **import controls and tariffs**, opening the economy.\n2. Exports of **manufactured goods and services**, especially IT, grew faster.\n3. Trade became a bigger share of the economy, linking India with global markets under the **WTO**."
+        },
+        {
+          q: "Distinguish between visible and invisible trade. (3 marks)",
+          a: "1. **Visible trade** is trade in **physical goods** such as machinery, textiles or petroleum, which customs can record.\n2. **Invisible trade** is trade in **services** such as software, tourism, banking and transport.\n3. Both together make up a country's total external trade."
+        },
+        {
+          q: "Why do ports act as gateways of international trade? Name two Indian ports. (3 marks)",
+          a: "1. Ports link a country's **hinterland** with overseas markets and handle most trade by volume.\n2. They have facilities for **loading, unloading, storage and shipping**.\n3. Examples: **Kandla** (a tidal port in Gujarat) and **Visakhapatnam** (a deep, well-protected port)."
+        }
+      ],
+      quiz: [
+        {
+          q: "Which is India's largest import by value?",
+          options: ["Crude petroleum", "Fertilisers", "Machinery", "Edible oils"],
+          answer: 0,
+          explain: "**Crude petroleum** and its products make up the biggest import bill."
+        },
+        {
+          q: "Which of these is an example of invisible trade?",
+          options: ["Export of tea", "Import of crude oil", "Export of software services", "Import of machinery"],
+          answer: 2,
+          explain: "Software services are **intangible**, so they form invisible trade."
+        },
+        {
+          q: "A trade deficit means:",
+          options: ["exports exceed imports", "imports exceed exports", "trade is stopped", "trade with one country only"],
+          answer: 1,
+          explain: "A **deficit** arises when imports are greater than exports."
+        },
+        {
+          q: "Kandla is an example of a:",
+          options: ["river port", "fishing port", "naval base", "tidal port"],
+          answer: 3,
+          explain: "**Kandla** in Gujarat is a tidal port."
+        },
+        {
+          q: "India's economic liberalisation, opening trade to the world, began in:",
+          options: ["1991", "1947", "1965", "2005"],
+          answer: 0,
+          explain: "The **1991 reforms** liberalised trade and industry."
+        },
+        {
+          q: "Which port is known as a deep, landlocked and well-protected harbour?",
+          options: ["Kandla", "Kochi", "Visakhapatnam", "Tuticorin"],
+          answer: 2,
+          explain: "**Visakhapatnam** has a deep, well-protected harbour."
+        }
+      ]
+    },
+
+    // ───────────── 9. Geographical Perspective on Selected Issues and Problems ─────────────
+    {
+      id: "selected-issues-and-problems",
+      title: "Geographical Perspective on Selected Issues and Problems",
+      section: "India: People and Economy",
+      summary: "A geographical look at environmental pollution (air, water and solid waste), urban problems including slums, and land degradation, with their causes and remedies.",
+      notes: [
+        {
+          heading: "Environmental pollution",
+          points: [
+            "Pollution is the **addition of harmful substances** to air, water or soil beyond the natural capacity to absorb them.",
+            "**Air pollution** comes from **vehicles, industries, thermal power stations and burning of waste or crop residue**. Major pollutants include **particulates, sulphur dioxide and nitrogen oxides**; it causes respiratory diseases and smog.",
+            "**Water pollution** results from **untreated sewage, industrial effluents, fertilisers and pesticides**. Domestic sewage is a major source for rivers like the Ganga and Yamuna.",
+            "Laws include the **Water Act (1974)**, **Air Act (1981)** and **Environment (Protection) Act (1986)**, enforced by the **Central and State Pollution Control Boards**."
+          ]
+        },
+        {
+          heading: "Urban waste and solid waste",
+          points: [
+            "Rapid urban growth creates huge **municipal solid waste**: household refuse, plastics, markets and construction debris.",
+            "**Open dumping** pollutes soil, spreads disease and sends **leachate** into ground water.",
+            "Better waste management uses **segregation at source, composting, recycling and scientific landfills**.",
+            "The rule of **reduce, reuse and recycle** cuts waste at its source."
+          ]
+        },
+        {
+          heading: "Urban problems and slums",
+          points: [
+            "Rapid **rural-urban migration** strains housing, water, sanitation, transport and jobs in cities.",
+            "**Slums** are overcrowded, poorly built settlements with little access to **clean water, toilets, drainage and electricity**. They are often on unwanted land such as river banks or railway sides.",
+            "Slums arise from **poverty, shortage of affordable housing and migration** in search of work.",
+            "Measures: **affordable housing, in-situ upgrading, basic services, secure tenure and creation of rural jobs** to reduce distress migration."
+          ]
+        },
+        {
+          heading: "Land degradation",
+          points: [
+            "**Land degradation** is a decline in land quality through **soil erosion, salinisation, alkalinisation and waterlogging**.",
+            "Causes include **deforestation, overgrazing, shifting cultivation, unscientific irrigation, mining and excess chemicals**.",
+            "**Waterlogging and salinisation** are common in canal-irrigated areas of **Punjab, Haryana and western Uttar Pradesh**; gully and ravine erosion affect the Chambal region.",
+            "Remedies: **afforestation, check dams, contour farming, shelterbelts, controlled grazing** and stabilising sand dunes by planting thorny bushes and grasses."
+          ]
+        }
+      ],
+      formulas: [
+        "Water Act 1974; Air Act 1981; Environment (Protection) Act 1986",
+        "Air pollutants: particulates, SO₂, NOₓ",
+        "Water pollutants: sewage, industrial effluents, fertilisers, pesticides",
+        "Waste management: segregate, reduce, reuse, recycle, compost",
+        "Slums: lack clean water, sanitation, drainage, electricity",
+        "Land degradation types: erosion, salinisation, alkalinisation, waterlogging",
+        "Waterlogging/salinity belt: Punjab, Haryana, western UP; ravines: Chambal"
+      ],
+      terms: [
+        { term: "Pollution", meaning: "Addition of **harmful substances** to the environment beyond its capacity to absorb them." },
+        { term: "Effluent", meaning: "**Liquid waste** released from industries or sewage into water bodies." },
+        { term: "Slum", meaning: "An **overcrowded settlement** with poor housing and lack of basic services." },
+        { term: "Land degradation", meaning: "**Decline in the quality and productivity** of land." },
+        { term: "Salinisation", meaning: "**Accumulation of salts** in soil that harms crop growth." },
+        { term: "Leachate", meaning: "**Polluted liquid** that seeps from waste dumps into soil and ground water." }
+      ],
+      qa: [
+        {
+          q: "What are the main sources and effects of air pollution in Indian cities? (3 marks)",
+          a: "1. **Sources**: vehicular exhaust, industries, thermal power plants, and burning of waste and crop residue.\n2. **Effects**: respiratory and heart disease, smog, reduced visibility and damage to buildings and crops.\n3. Remedies include cleaner fuels like **CNG**, public transport, emission norms and green cover."
+        },
+        {
+          q: "Why do slums develop in Indian cities, and how can they be improved? (3 marks)",
+          a: "1. Slums arise from **rural-urban migration, poverty and lack of affordable housing**.\n2. They suffer from overcrowding and lack of **water, sanitation, drainage and electricity**.\n3. Improvement needs **affordable housing, basic services, in-situ upgrading** and job creation in rural areas."
+        },
+        {
+          q: "Describe the causes and remedies of land degradation. (3 marks)",
+          a: "1. **Causes**: deforestation, overgrazing, unscientific irrigation causing waterlogging and salinity, mining and heavy chemical use.\n2. **Effects**: loss of soil fertility, lower yields and spread of wasteland.\n3. **Remedies**: afforestation, check dams, shelterbelts, controlled grazing and proper drainage."
+        }
+      ],
+      quiz: [
+        {
+          q: "Which Act was passed in 1981 to control air pollution?",
+          options: ["Water Act", "Environment (Protection) Act", "Forest Conservation Act", "Air (Prevention and Control of Pollution) Act"],
+          answer: 3,
+          explain: "The **Air Act** was passed in **1981**; the Water Act dates from 1974."
+        },
+        {
+          q: "Which is the biggest source of water pollution in Indian rivers?",
+          options: ["Untreated domestic sewage", "Sea spray", "Volcanic ash", "Rainwater runoff only"],
+          answer: 0,
+          explain: "**Untreated sewage** from towns is a leading polluter of rivers."
+        },
+        {
+          q: "Waterlogging and salinisation are common in which region?",
+          options: ["Thar desert interior", "Western Ghats", "Canal-irrigated Punjab and Haryana", "Himalayan snowfields"],
+          answer: 2,
+          explain: "Over-irrigation and poor drainage cause these problems in **canal-irrigated areas**."
+        },
+        {
+          q: "Slums mainly grow because of:",
+          options: ["abundant cheap housing", "rural-urban migration and shortage of affordable housing", "decline in city population", "strict land-use laws"],
+          answer: 1,
+          explain: "Migrants and the poor cannot afford formal housing, so they settle in slums."
+        },
+        {
+          q: "Which measure helps stabilise sand dunes?",
+          options: ["Planting thorny bushes and grasses", "Cutting vegetation", "Increasing grazing", "Building factories"],
+          answer: 0,
+          explain: "Thorny bushes, grasses and shelterbelts **hold the sand** in place."
+        },
+        {
+          q: "Leachate from open waste dumps mainly pollutes:",
+          options: ["the atmosphere only", "ozone", "soil and ground water", "sunlight"],
+          answer: 2,
+          explain: "**Leachate** seeps into soil and ground water, contaminating it."
+        }
+      ]
+    }
+  ]
+});

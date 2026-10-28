@@ -1347,6 +1347,1100 @@ StudyData.add(11, "geography", {
         }
       ]
     }
-    // @@NEXT@@
+    ,
+    // ───────────── 11. World Climate and Climate Change ─────────────
+    {
+      id: "world-climate-and-climate-change",
+      title: "World Climate and Climate Change",
+      section: "Fundamentals of Physical Geography",
+      summary: "Koeppen's scheme of climate classification, the major climatic groups of the world, and the evidence, causes and effects of climate change including global warming.",
+      notes: [
+        {
+          heading: "Koeppen's classification of climates",
+          points: [
+            "**Vladimir Koeppen** (1918) based his scheme on **monthly values of temperature and precipitation**. It is the most widely used empirical classification.",
+            "He identified a close relationship between **vegetation and climate**, so his boundaries follow the limits of natural vegetation.",
+            "Climates are denoted by **letter symbols**. Capital letters **A, C, D and E** stand for humid climates and **B** for dry climates; **H** is used for highland climates.",
+            "Further small letters mark seasonal rainfall and temperature features, e.g. **f** (no dry season), **m** (monsoon), **w** (dry winter), **s** (dry summer), **h** (hot), **T** (tundra), **F** (ice cap)."
+          ]
+        },
+        {
+          heading: "Major climatic groups",
+          points: [
+            "**Group A, Tropical**: average temperature of the coldest month is **18°C or higher**. Types: **Af** (tropical wet), **Am** (tropical monsoon) and **Aw** (tropical wet and dry).",
+            "**Group B, Dry**: potential **evaporation exceeds precipitation**. Types: **BS** (steppe or semi-arid) and **BW** (desert).",
+            "**Group C, Warm temperate (mid-latitude)**: coldest month between **18°C and -3°C**. Types include **Cwa** (humid subtropical), **Cs** (Mediterranean: dry summer, wet winter) and **Cfb** (marine west coast).",
+            "**Group D, Cold snow forest**: coldest month below **-3°C**, warmest above 10°C. **Group E, Polar**: warmest month below 10°C; types **ET** (tundra) and **EF** (ice cap).",
+            "**Group H, Highland**: climate changes with altitude, found in mountain regions."
+          ]
+        },
+        {
+          heading: "Tropical and dry climates",
+          points: [
+            "**Tropical wet (Af)**: found near the equator (Amazon and Congo basins); rain in all months, so **no dry season**; hot and humid with **tropical evergreen** rainforest.",
+            "**Tropical monsoon (Am)**: heavy rain in summer with a short dry season; found in India, Bangladesh and Myanmar, and the Atlantic coast of South America.",
+            "**Tropical wet and dry (Aw)**: a **dry winter**; found in a belt of **savanna** grassland beyond the Af zone.",
+            "**Hot deserts (BW)** lie along the western margins of continents around 15°-30° latitude, with high temperatures, a large daily range and very scanty, erratic rain."
+          ]
+        },
+        {
+          heading: "Evidence and causes of climate change",
+          points: [
+            "Climate is **always changing**. Evidence includes **tree rings**, ice cores, pollen analysis, ocean sediments, glacial deposits and historical records.",
+            "The **Quaternary** period saw alternating **glacial and interglacial** periods; the last major peak of glaciation was around **18,000 years ago**, and the present interglacial (**Holocene**) is warmer.",
+            "**Astronomical causes** are the **Milankovitch cycles**: changes in the earth's orbital **eccentricity**, axial **tilt** and **precession**.",
+            "Other natural causes: changes in **solar output (sunspots)** and **volcanic eruptions**, which throw dust and aerosols into the atmosphere and reduce incoming radiation."
+          ]
+        },
+        {
+          heading: "Global warming",
+          points: [
+            "Human activity, mainly burning **fossil fuels** and deforestation, has raised the concentration of **greenhouse gases** such as **carbon dioxide, methane, nitrous oxide and CFCs**.",
+            "These gases trap outgoing long-wave terrestrial radiation, strengthening the **greenhouse effect** and raising mean global temperature.",
+            "Consequences: melting glaciers and ice sheets, **rising sea level**, flooding of low coastal areas and islands, and shifts in rainfall patterns and ecosystems.",
+            "Global warming is the **enhanced** greenhouse effect; the natural greenhouse effect itself keeps the earth habitable."
+          ]
+        }
+      ],
+      formulas: [
+        "Koeppen (1918): temperature and precipitation, linked to natural vegetation",
+        "A: coldest month 18°C or above; C: coldest month between 18°C and -3°C; D: coldest month below -3°C; E: warmest month below 10°C",
+        "B (dry): potential evaporation is more than precipitation",
+        "Af: no dry season; Am: monsoon; Aw: dry winter; Cs: dry summer (Mediterranean)",
+        "Greenhouse gases: CO₂, CH₄, N₂O, CFCs, water vapour",
+        "Last peak glaciation: about 18,000 years ago"
+      ],
+      terms: [
+        { term: "Koeppen's scheme", meaning: "A climate classification using **monthly temperature and precipitation** with letter symbols for each climate type." },
+        { term: "Savanna (Aw)", meaning: "Tropical **wet and dry** climate with a dry winter and tall-grass vegetation." },
+        { term: "Mediterranean climate", meaning: "A Cs climate with **dry, hot summers and mild, rainy winters**." },
+        { term: "Glacial period", meaning: "A long cold phase when ice sheets spread over large areas; an **interglacial** is a warmer phase between glacials." },
+        { term: "Milankovitch cycles", meaning: "Cyclical changes in earth's **orbit eccentricity, axial tilt and precession** that influence long-term climate." },
+        { term: "Global warming", meaning: "Rise in mean surface temperature of the earth due to increased **greenhouse gases**." }
+      ],
+      qa: [
+        { q: "State the basis of Koeppen's classification of climates.", a: "Koeppen (1918) used **monthly averages of temperature and precipitation**. He also took natural vegetation into account, since vegetation reflects climate. Climates are given letter codes such as A, B, C, D, E and H." },
+        { q: "Distinguish between Af and Aw climates.", a: "**Af (tropical wet)** has rain in all months and no dry season, with equatorial evergreen forests. **Aw (tropical wet and dry)** has a distinct **dry winter** and wet summer, with savanna grassland." },
+        { q: "How do human activities contribute to global warming?", a: "Burning of **fossil fuels**, industries and deforestation increase **CO₂, methane and other greenhouse gases**. These trap more terrestrial radiation, so the earth's mean temperature rises, melting ice and raising sea level." }
+      ],
+      quiz: [
+        {
+          q: "Koeppen's classification of climates is based on:",
+          options: ["Wind systems and air masses", "Monthly temperature and precipitation", "Soil type and altitude", "Latitude alone"],
+          answer: 1,
+          explain: "Koeppen used **monthly values of temperature and precipitation**, linked to natural vegetation."
+        },
+        {
+          q: "Which Koeppen type has a dry summer and a wet winter?",
+          options: ["Aw", "Cfb", "Df", "Cs"],
+          answer: 3,
+          explain: "**Cs** is the Mediterranean climate with dry summers and rainy winters."
+        },
+        {
+          q: "In Koeppen's scheme, group A climates have the coldest month at:",
+          options: ["18°C or above", "Between 10°C and 18°C", "Below -3°C", "Below 0°C but above -3°C"],
+          answer: 0,
+          explain: "Tropical (A) climates are warm throughout, the coldest month being **18°C or higher**."
+        },
+        {
+          q: "The Milankovitch cycles involve changes in:",
+          options: ["Ocean salinity", "Volcanic activity", "Earth's orbit eccentricity, axial tilt and precession", "The number of sunspots"],
+          answer: 2,
+          explain: "They describe cyclical changes in **eccentricity, tilt and precession** of the earth."
+        },
+        {
+          q: "Which of these gases is NOT a greenhouse gas?",
+          options: ["Methane", "Carbon dioxide", "Nitrous oxide", "Argon"],
+          answer: 3,
+          explain: "Argon is an inert gas; **CO₂, methane and N₂O** trap heat."
+        },
+        {
+          q: "Climatic group B is characterised by:",
+          options: ["Potential evaporation exceeding precipitation", "A coldest month below -3°C", "Rain in every month", "Permanent ice cover"],
+          answer: 0,
+          explain: "**Dry climates (B)** are defined by evaporation greater than precipitation."
+        }
+      ]
+    },
+    // ───────────── 12. Water (Oceans) ─────────────
+    {
+      id: "water-oceans",
+      title: "Water (Oceans)",
+      section: "Fundamentals of Physical Geography",
+      summary: "The hydrological cycle, relief of the ocean floor, and the temperature and salinity of ocean water.",
+      notes: [
+        {
+          heading: "Hydrological cycle",
+          points: [
+            "The **hydrological (water) cycle** is the continuous circulation of water between the oceans, the atmosphere and the land through evaporation, condensation, precipitation, run-off and infiltration.",
+            "Water is a **renewable resource** because it is circulated again and again.",
+            "Most of the earth's water is in the **oceans** (salt water); only a small share is fresh water, much of it frozen in ice caps and glaciers."
+          ]
+        },
+        {
+          heading: "Relief of the ocean floor",
+          points: [
+            "The ocean floor has four major divisions: the **continental shelf, continental slope, deep sea plain (abyssal plain) and oceanic deeps (trenches)**. Mid-oceanic ridges, seamounts and canyons are other features.",
+            "**Continental shelf**: the gently sloping seaward extension of the continent, with an average width of about **75 km**. It has rich fishing grounds and petroleum deposits, and ends at the **shelf break**.",
+            "**Continental slope**: connects the shelf with the ocean basin; a steep gradient of about **2°-5°**. **Submarine canyons** and trenches are found here.",
+            "**Deep sea plain**: the gently sloping, flattest regions of the earth, covered with fine-grained sediments such as clay and silt."
+          ]
+        },
+        {
+          heading: "Minor relief features",
+          points: [
+            "**Mid-oceanic ridges**: interlinked mountain chains within the ocean, the **longest mountain chain** on earth, with rift valleys at the centre.",
+            "**Seamounts** are volcanic mountains that rise from the sea floor but do not reach the surface; those with flat tops are **guyots**.",
+            "**Oceanic deeps or trenches** are the deepest parts, about 3-5 km deeper than the surrounding ocean floor; most are in the **Pacific Ocean**, e.g. the **Mariana Trench**.",
+            "**Atolls** are low islands of coral surrounding a lagoon. **Submarine canyons** are deep valleys cut into the continental slope."
+          ]
+        },
+        {
+          heading: "Temperature of ocean water",
+          points: [
+            "Surface water temperature averages about **27°C at the equator** and falls by about **0.5°C per degree of latitude** towards the poles.",
+            "The **thermocline** is the layer in which temperature drops rapidly with depth, between the warm surface layer and the cold deep layer.",
+            "The top layer is about **500 m** thick with temperatures of about **20°-25°C**; below the thermocline the water is very cold, near the freezing point at great depths.",
+            "Ocean temperature is higher in the **Northern Hemisphere** than in the Southern because of more land, and is affected by latitude, prevailing winds and currents."
+          ]
+        },
+        {
+          heading: "Salinity of ocean water",
+          points: [
+            "**Salinity** is the amount of salt in grams per **1,000 grams** of water, expressed as parts per thousand (**‰**). The average ocean salinity is about **35‰**.",
+            "Salinity rises with **high evaporation** and falls with heavy precipitation and **freshwater inflow** from rivers and melting ice.",
+            "**Lake Van** in Turkey (330‰) and the **Dead Sea** (340‰) are among the saltiest water bodies; in these, swimmers float easily.",
+            "Wind and ocean currents redistribute salt, which affects the density of water and so ocean circulation."
+          ]
+        }
+      ],
+      formulas: [
+        "Average ocean salinity: about 35 ‰ (35 g of salt per 1,000 g of water)",
+        "Dead Sea: 340 ‰; Lake Van (Turkey): 330 ‰",
+        "Continental shelf: average width about 75 km; continental slope gradient 2°-5°",
+        "Surface water temperature: about 27°C at the equator; falls about 0.5°C per degree latitude",
+        "Warm surface layer of oceans: about 500 m thick, 20°-25°C",
+        "Ocean floor: shelf → slope → deep sea plain → trenches"
+      ],
+      terms: [
+        { term: "Continental shelf", meaning: "The gently sloping **seaward extension** of a continent, average width about 75 km." },
+        { term: "Thermocline", meaning: "The zone of **rapid fall of temperature** with depth below the surface layer." },
+        { term: "Salinity", meaning: "The amount of **dissolved salt** in 1,000 grams of sea water, expressed in parts per thousand (‰)." },
+        { term: "Mid-oceanic ridge", meaning: "A **long chain of submarine mountains**, the longest mountain system on earth." },
+        { term: "Ocean trench", meaning: "A narrow, very **deep depression** on the ocean floor, found mostly in the Pacific." },
+        { term: "Atoll", meaning: "A ring-shaped **coral island** enclosing a lagoon." }
+      ],
+      qa: [
+        { q: "Describe the continental shelf and its importance.", a: "The **continental shelf** is the gently sloping seaward extension of a continent, with an average width of about 75 km. It is shallow, rich in **plankton and fish**, and holds **petroleum and natural gas**, so it is economically very important." },
+        { q: "What is the thermocline?", a: "It is the layer of ocean water in which **temperature decreases rapidly with depth**. It separates the warm surface layer from the very cold deep water below." },
+        { q: "State the factors affecting the salinity of ocean water.", a: "Salinity depends on **evaporation and precipitation**, **inflow of fresh water** from rivers and ice melt, and **winds and ocean currents** that move water from one region to another." }
+      ],
+      quiz: [
+        {
+          q: "The average salinity of ocean water is about:",
+          options: ["3.5‰", "35‰", "70‰", "340‰"],
+          answer: 1,
+          explain: "Average ocean salinity is about **35 parts per thousand**."
+        },
+        {
+          q: "The gently sloping seaward extension of a continent is the:",
+          options: ["Abyssal plain", "Continental slope", "Ocean trench", "Continental shelf"],
+          answer: 3,
+          explain: "The **continental shelf** is the shallow edge of a continent."
+        },
+        {
+          q: "The deepest parts of the oceans are:",
+          options: ["Oceanic deeps or trenches", "Guyots", "Mid-oceanic ridges", "Submarine canyons"],
+          answer: 0,
+          explain: "**Trenches**, mostly in the Pacific, are the deepest parts of the oceans."
+        },
+        {
+          q: "The thermocline is a layer in which:",
+          options: ["Salinity is highest", "Temperature falls rapidly with depth", "Temperature rises with depth", "Waves are formed"],
+          answer: 1,
+          explain: "In the **thermocline** temperature decreases sharply with depth."
+        },
+        {
+          q: "Flat-topped submarine volcanic mountains are called:",
+          options: ["Atolls", "Sills", "Guyots", "Canyons"],
+          answer: 2,
+          explain: "A **guyot** is a flat-topped seamount."
+        },
+        {
+          q: "Which water body is among the saltiest in the world?",
+          options: ["Lake Superior", "The Baltic Sea", "Lake Victoria", "The Dead Sea"],
+          answer: 3,
+          explain: "The **Dead Sea** has a salinity of about 340‰."
+        }
+      ]
+    },
+    // ───────────── 13. Movements of Ocean Water ─────────────
+    {
+      id: "movements-of-ocean-water",
+      title: "Movements of Ocean Water",
+      section: "Fundamentals of Physical Geography",
+      summary: "Waves, tides and ocean currents: how they form, their types and their effects on climate and human activity.",
+      notes: [
+        {
+          heading: "Waves",
+          points: [
+            "**Waves** are oscillatory movements of surface water, caused mostly by **wind**. Water moves up and down while the wave form travels forward.",
+            "Parts of a wave: **crest** (highest point), **trough** (lowest point), **wave height** (vertical distance from trough to crest) and **wavelength** (horizontal distance between two crests).",
+            "**Wave amplitude** is half the wave height. **Wave period** is the time between the passage of two successive crests; **frequency** is the number of waves passing a point in a second.",
+            "Wave size depends on wind speed, wind duration and the **fetch** (distance over which the wind blows)."
+          ]
+        },
+        {
+          heading: "Tides",
+          points: [
+            "**Tides** are the periodic rise and fall of sea level, once or twice a day, caused by the **gravitational pull of the moon and the sun** (and centrifugal force of the earth).",
+            "**Spring tides**: at **new moon and full moon**, when the sun, moon and earth are in a straight line; the tidal range is greatest.",
+            "**Neap tides**: at the **first and last quarter**, when the sun and moon are at right angles to the earth; the range is lowest. Spring and neap tides come about a week apart.",
+            "When the moon is nearest the earth (**perigee**), tides are higher than normal; at **apogee** they are lower. Tides are also higher when the earth is nearest the sun (perihelion, around 3 January).",
+            "A high tide occurs on the side facing the moon and also on the opposite side; the interval between two high tides is about **12 hours 26 minutes**."
+          ]
+        },
+        {
+          heading: "Importance of tides and tidal types",
+          points: [
+            "Tides help navigation and fishing, allow ships into harbours, and can generate **tidal power**. They also help remove silt and polluted water from estuaries.",
+            "Types by frequency: **semi-diurnal** (two high and two low tides daily), **diurnal** (one high and one low) and **mixed**.",
+            "The **Bay of Fundy** in Canada has some of the highest tides in the world; **Southampton** in England has a double high tide."
+          ]
+        },
+        {
+          heading: "Ocean currents",
+          points: [
+            "**Ocean currents** are regular movements of large masses of water in definite directions, like rivers in the ocean.",
+            "Forces: **heating by the sun**, **wind**, gravity and the **Coriolis force**. Water also differs in density due to temperature and salinity.",
+            "Currents turn **clockwise in the Northern Hemisphere** and **anticlockwise in the Southern Hemisphere**, forming circular **gyres**.",
+            "**Warm currents** flow from low to high latitudes (e.g. Gulf Stream, Kuroshio, Brazil Current); **cold currents** flow from high to low latitudes (e.g. Labrador, Canary, Humboldt/Peru, California, Benguela)."
+          ]
+        },
+        {
+          heading: "Effects of currents; El Nino",
+          points: [
+            "Warm currents raise coastal temperature and bring rain, e.g. the **North Atlantic Drift** keeps ports of north-west Europe ice-free in winter.",
+            "Cold currents along western coasts of continents in tropical and subtropical latitudes cause **fog and deserts**.",
+            "Where warm and cold currents meet, plankton grows in abundance and rich **fishing grounds** form, e.g. the **Grand Banks** off Newfoundland.",
+            "**El Nino** is a warm current that appears off the coast of **Peru** every two to five years, replacing the cold Humboldt Current and disturbing weather, fisheries and monsoon patterns."
+          ]
+        }
+      ],
+      formulas: [
+        "Wave amplitude = wave height ÷ 2",
+        "Spring tide: new moon and full moon (sun, moon, earth in a line); neap tide: first and last quarter (right angles)",
+        "Interval between two high tides: about 12 hours 26 minutes",
+        "Currents: clockwise in the Northern Hemisphere, anticlockwise in the Southern Hemisphere",
+        "Warm: Gulf Stream, Kuroshio, Brazil; Cold: Labrador, Canary, Humboldt, California, Benguela",
+        "El Nino: warm current off Peru every 2-5 years"
+      ],
+      terms: [
+        { term: "Wavelength", meaning: "The **horizontal distance** between two successive wave crests." },
+        { term: "Spring tide", meaning: "The **highest tide**, occurring at new and full moon when the sun, moon and earth are in line." },
+        { term: "Neap tide", meaning: "A **low-range tide** occurring at the first and last quarters of the moon." },
+        { term: "Gyre", meaning: "A **circular system of ocean currents** around an ocean basin." },
+        { term: "Fetch", meaning: "The **distance over which the wind blows** across open water, controlling wave size." },
+        { term: "El Nino", meaning: "A **warm ocean current** off the coast of Peru that replaces the cold Humboldt Current periodically." }
+      ],
+      qa: [
+        { q: "Distinguish between spring tides and neap tides.", a: "**Spring tides** occur at new and full moon, when the sun, moon and earth are in a straight line, producing very high high-tides. **Neap tides** occur at the first and last quarters when the sun and moon are at right angles, so the tidal range is lowest." },
+        { q: "How do ocean currents influence climate? Give an example.", a: "**Warm currents** raise temperatures and bring rainfall to coasts; **cold currents** lower temperatures and cause fog and desert conditions. The North Atlantic Drift keeps north-west European ports ice-free in winter." },
+        { q: "What is El Nino?", a: "It is a **warm current** that appears off the Peruvian coast every **two to five years**, replacing the cold Humboldt Current. It raises sea temperature, harms fisheries and disturbs global weather and monsoon patterns." }
+      ],
+      quiz: [
+        {
+          q: "Spring tides occur when:",
+          options: ["The moon is at its first quarter", "The sun and moon are at right angles", "The sun, moon and earth are in a straight line", "The moon is farthest from the earth"],
+          answer: 2,
+          explain: "At **new and full moon** the sun, moon and earth align, giving the highest tides."
+        },
+        {
+          q: "Which of these is a cold ocean current?",
+          options: ["Humboldt", "Gulf Stream", "Kuroshio", "Brazil"],
+          answer: 0,
+          explain: "The **Humboldt (Peru) Current** is cold; the others are warm."
+        },
+        {
+          q: "Ocean currents in the Northern Hemisphere generally flow:",
+          options: ["Anticlockwise", "East to west only", "Clockwise", "Poleward only"],
+          answer: 2,
+          explain: "Because of the Coriolis force they form **clockwise** gyres in the north."
+        },
+        {
+          q: "Wave amplitude is equal to:",
+          options: ["Wave height", "Half the wave height", "Wavelength", "Twice the wave height"],
+          answer: 1,
+          explain: "**Amplitude = half of the wave height.**"
+        },
+        {
+          q: "Rich fishing grounds form where:",
+          options: ["Only cold currents flow", "Warm and cold currents meet", "Tides are lowest", "Waves are small"],
+          answer: 1,
+          explain: "Mixing of warm and cold currents supports abundant **plankton and fish**, e.g. the Grand Banks."
+        },
+        {
+          q: "El Nino appears off the coast of:",
+          options: ["Japan", "South Africa", "Chile only", "Peru"],
+          answer: 3,
+          explain: "El Nino is a warm current off **Peru**, occurring every 2-5 years."
+        }
+      ]
+    },
+    // ───────────── 14. Biodiversity and Conservation ─────────────
+    {
+      id: "biodiversity-and-conservation",
+      title: "Biodiversity and Conservation",
+      section: "Fundamentals of Physical Geography",
+      summary: "The meaning and levels of biodiversity, its distribution and importance, loss and threats, and conservation approaches including hotspots and international efforts.",
+      notes: [
+        {
+          heading: "What is biodiversity?",
+          points: [
+            "**Biodiversity** (bio + diversity) is the variety of life forms on earth: plants, animals and micro-organisms and the ecosystems they form.",
+            "It has three levels: **genetic diversity** (variety within a species), **species diversity** (variety of species) and **ecosystem diversity**.",
+            "Biodiversity is **richest in the tropics**, e.g. in the Amazon basin; it generally decreases from the equator towards the poles.",
+            "It is the result of millions of years of evolution and is the basis of food, medicines, clean air and water."
+          ]
+        },
+        {
+          heading: "Importance of biodiversity",
+          points: [
+            "It provides **food, fibre, timber, fuel and medicines**, and the raw material for agriculture and industry.",
+            "Ecosystems give **services**: pollination, soil formation, water purification, climate regulation and nutrient cycling.",
+            "It has **cultural, aesthetic and recreational** value and supports tourism."
+          ]
+        },
+        {
+          heading: "Loss of biodiversity",
+          points: [
+            "**Extinction** means the complete disappearance of a species. The **dodo** is a famous example of a species lost to humans.",
+            "Main causes: **habitat loss and fragmentation**, over-exploitation, **poaching**, pollution, introduction of **alien species**, and climate change.",
+            "Species are classed by IUCN categories such as **extinct, endangered and vulnerable** in the **Red List**.",
+            "Loss of biodiversity weakens ecosystems and harms human livelihoods."
+          ]
+        },
+        {
+          heading: "Biodiversity hotspots",
+          points: [
+            "**Biodiversity hotspots** are regions with a very high number of **endemic species** that are under severe threat. The concept was introduced by **Norman Myers** (1988).",
+            "India includes parts of hotspots such as the **Himalaya, Indo-Burma, Western Ghats and Sri Lanka**, and **Sundaland** (Nicobar Islands).",
+            "Hotspots are priority areas for conservation because they hold much biodiversity in small areas."
+          ]
+        },
+        {
+          heading: "Conservation",
+          points: [
+            "**In situ conservation** protects species in their **natural habitats**: national parks, wildlife sanctuaries, biosphere reserves.",
+            "**Ex situ conservation** protects species **outside** their habitats: zoos, botanical gardens, seed and gene banks.",
+            "International efforts: the **Convention on Biological Diversity** signed at the **Earth Summit, Rio de Janeiro (1992)**; **CITES** controls trade in endangered species.",
+            "Individuals can help through sustainable use of resources, less waste, tree planting and protecting local wildlife."
+          ]
+        }
+      ],
+      formulas: [
+        "Three levels: genetic, species, ecosystem diversity",
+        "Hotspot concept: Norman Myers (1988)",
+        "Earth Summit, Rio de Janeiro: 1992 (Convention on Biological Diversity)",
+        "In situ: national parks, sanctuaries, biosphere reserves; Ex situ: zoos, botanical gardens, gene banks",
+        "IUCN Red List categories include extinct, endangered, vulnerable",
+        "Biodiversity is richest in tropical regions"
+      ],
+      terms: [
+        { term: "Biodiversity", meaning: "The **variety of life** on earth at the level of genes, species and ecosystems." },
+        { term: "Endemic species", meaning: "A species found **only in one particular region** and nowhere else." },
+        { term: "Hotspot", meaning: "A region with a **high number of endemic species** under serious threat." },
+        { term: "In situ conservation", meaning: "Protection of species in their **natural habitat**." },
+        { term: "Ex situ conservation", meaning: "Protection of species **outside** their natural habitat, as in zoos and gene banks." },
+        { term: "Extinction", meaning: "The **complete disappearance** of a species from the earth." }
+      ],
+      qa: [
+        { q: "What are the three levels of biodiversity?", a: "**Genetic diversity** is variation within a species; **species diversity** is variety among species in a region; **ecosystem diversity** is the variety of habitats and ecological processes." },
+        { q: "Why are biodiversity hotspots important?", a: "Hotspots hold a large share of **endemic species** in relatively small areas but are heavily threatened. Protecting them saves the most species with limited resources, so they are priority areas for conservation." },
+        { q: "Differentiate between in situ and ex situ conservation.", a: "**In situ** conservation protects species in their natural habitats, e.g. national parks and biosphere reserves. **Ex situ** conservation protects them outside, e.g. in zoos, botanical gardens and gene banks." }
+      ],
+      quiz: [
+        {
+          q: "Biodiversity is generally richest in:",
+          options: ["Polar regions", "Hot deserts", "Tropical regions", "Tundra"],
+          answer: 2,
+          explain: "Warm, moist **tropical** regions support the greatest variety of life."
+        },
+        {
+          q: "The concept of biodiversity hotspots was introduced by:",
+          options: ["Norman Myers", "Charles Darwin", "Alexander von Humboldt", "Vladimir Koeppen"],
+          answer: 0,
+          explain: "**Norman Myers** introduced hotspots in 1988."
+        },
+        {
+          q: "A zoo is an example of:",
+          options: ["In situ conservation", "Ex situ conservation", "A biosphere reserve", "A national park"],
+          answer: 1,
+          explain: "Zoos protect species **outside** their natural habitat, so are **ex situ**."
+        },
+        {
+          q: "The Convention on Biological Diversity was signed at:",
+          options: ["Kyoto, 1997", "Stockholm, 1972", "Paris, 2015", "Rio de Janeiro, 1992"],
+          answer: 3,
+          explain: "It was opened for signature at the **1992 Earth Summit in Rio de Janeiro**."
+        },
+        {
+          q: "Variety within a single species is called:",
+          options: ["Ecosystem diversity", "Species diversity", "Genetic diversity", "Habitat diversity"],
+          answer: 2,
+          explain: "**Genetic diversity** is the variation of genes within a species."
+        },
+        {
+          q: "The most important cause of present biodiversity loss is:",
+          options: ["Habitat destruction", "Natural volcanic eruptions", "Solar flares", "Ocean tides"],
+          answer: 0,
+          explain: "**Habitat loss and fragmentation** are the leading threats."
+        }
+      ]
+    },
+    // ═════════════════ INDIA: PHYSICAL ENVIRONMENT ═════════════════
+    // ───────────── 15. India – Location ─────────────
+    {
+      id: "india-location",
+      title: "India – Location",
+      section: "India: Physical Environment",
+      summary: "India's latitudinal and longitudinal extent, its size, standard time, neighbours and the strategic importance of its location.",
+      notes: [
+        {
+          heading: "Location and extent",
+          points: [
+            "The mainland of India lies between latitudes **8°4' N and 37°6' N** and longitudes **68°7' E and 97°25' E**. Including the islands, the southern tip is **Indira Point (6°45' N)** in the Nicobar Islands.",
+            "The **Tropic of Cancer (23°30' N)** divides the country into almost two equal halves. It passes through **eight states**: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram.",
+            "The north-south extent is about **3,214 km** and the east-west extent about **2,933 km**.",
+            "India's area is about **3.28 million sq km**, nearly **2.4%** of the world's land area, making it the **seventh largest** country.",
+            "India's land frontier is about **15,200 km** and the total coastline, including islands, is **7,516.6 km**."
+          ]
+        },
+        {
+          heading: "Indian Standard Time",
+          points: [
+            "The **Standard Meridian of India** is **82°30' E**. It passes through **Mirzapur** in Uttar Pradesh.",
+            "**Indian Standard Time (IST)** is based on this meridian and is **5 hours 30 minutes ahead of GMT**.",
+            "The longitudinal extent causes a difference of about **two hours** in local time between Gujarat in the west and Arunachal Pradesh in the east.",
+            "Because of the long north-south extent, days and nights vary more in the north than near Kanyakumari."
+          ]
+        },
+        {
+          heading: "India and its neighbours",
+          points: [
+            "India shares land borders with **Pakistan, Afghanistan, China, Nepal, Bhutan, Myanmar and Bangladesh**.",
+            "**Sri Lanka** is separated from India by the **Palk Strait and the Gulf of Mannar**; the **Maldives** lies to the south-west across the Arabian Sea.",
+            "India has about 28 states and 8 Union Territories, including the island groups of **Andaman and Nicobar** (Bay of Bengal) and **Lakshadweep** (Arabian Sea)."
+          ]
+        },
+        {
+          heading: "Strategic importance of location",
+          points: [
+            "India lies in the **centre of the Indian Ocean**, with the Deccan Peninsula jutting into it, giving links with West Asia, Africa, South-East Asia and East Asia.",
+            "The **Suez Canal** (opened 1869) shortened the sea route between India and Europe by about **7,000 km**.",
+            "The **Himalayas** shield India from cold northern winds and give it a monsoon climate.",
+            "India's long coast and ports support trade and a large fishing industry."
+          ]
+        }
+      ],
+      formulas: [
+        "Mainland latitudes: 8°4' N to 37°6' N; longitudes: 68°7' E to 97°25' E",
+        "Tropic of Cancer 23°30' N passes through 8 states",
+        "Standard Meridian: 82°30' E (Mirzapur, Uttar Pradesh); IST = GMT + 5 h 30 min",
+        "Area: about 3.28 million sq km (2.4% of world); 7th largest country",
+        "North-south extent about 3,214 km; east-west about 2,933 km",
+        "Land frontier about 15,200 km; coastline 7,516.6 km (with islands)",
+        "Suez Canal (1869) shortened the route by about 7,000 km"
+      ],
+      terms: [
+        { term: "Tropic of Cancer", meaning: "The parallel at **23°30' N** that passes through the middle of India." },
+        { term: "Standard Meridian", meaning: "The longitude used to fix a country's standard time; for India **82°30' E**." },
+        { term: "Indian Standard Time", meaning: "India's official time, **5 hours 30 minutes ahead of GMT**." },
+        { term: "Indira Point", meaning: "The **southernmost point** of India, in the Nicobar Islands." },
+        { term: "Palk Strait", meaning: "The narrow sea that **separates India from Sri Lanka**, with the Gulf of Mannar." }
+      ],
+      qa: [
+        { q: "Why was the 82°30' E meridian chosen as the Standard Meridian of India?", a: "India extends over about 30° of longitude, causing a time difference of about two hours between east and west. A central meridian, **82°30' E** passing through Mirzapur, was chosen so that one standard time could be used across the country." },
+        { q: "Name the states through which the Tropic of Cancer passes.", a: "Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram." },
+        { q: "How did the Suez Canal affect India's location advantage?", a: "Opened in **1869**, the canal shortened the sea route between India and Europe by about **7,000 km**, increasing India's trade and strategic importance." }
+      ],
+      quiz: [
+        {
+          q: "The Standard Meridian of India passes through:",
+          options: ["Nagpur", "Delhi", "Prayagraj", "Mirzapur"],
+          answer: 3,
+          explain: "The **82°30' E** meridian passes through Mirzapur, Uttar Pradesh."
+        },
+        {
+          q: "Indian Standard Time is ahead of GMT by:",
+          options: ["5 hours 30 minutes", "4 hours 30 minutes", "6 hours", "5 hours"],
+          answer: 0,
+          explain: "IST = **GMT + 5 h 30 min**."
+        },
+        {
+          q: "The Tropic of Cancer does NOT pass through:",
+          options: ["Rajasthan", "Mizoram", "Tripura", "Odisha"],
+          answer: 3,
+          explain: "Odisha lies south of the Tropic of Cancer."
+        },
+        {
+          q: "India's southernmost point (including islands) is:",
+          options: ["Kanyakumari", "Indira Point", "Rameswaram", "Port Blair"],
+          answer: 1,
+          explain: "**Indira Point** in Great Nicobar is the southernmost point; Kanyakumari is the southern tip of the mainland."
+        },
+        {
+          q: "India's rank in the world by area is:",
+          options: ["Fifth", "Sixth", "Seventh", "Eighth"],
+          answer: 2,
+          explain: "India is the **seventh largest** country with about 3.28 million sq km."
+        },
+        {
+          q: "India and Sri Lanka are separated by:",
+          options: ["Palk Strait and Gulf of Mannar", "Ten Degree Channel", "Strait of Malacca", "Bay of Bengal only"],
+          answer: 0,
+          explain: "The **Palk Strait and the Gulf of Mannar** lie between them."
+        }
+      ]
+    },
+    // ───────────── 16. Structure and Physiography ─────────────
+    {
+      id: "structure-and-physiography",
+      title: "Structure and Physiography",
+      section: "India: Physical Environment",
+      summary: "The geological structure of India and its six physiographic divisions: the Northern Mountains, Northern Plain, Peninsular Plateau, Indian Desert, Coastal Plains and Islands.",
+      notes: [
+        {
+          heading: "Geological structure",
+          points: [
+            "The **Peninsular block** is the oldest part, a remnant of **Gondwanaland**, made of ancient crystalline rocks (Archaean gneiss and schist) and rich in minerals.",
+            "The **Himalayas and other peninsular mountains** and the **Indo-Gangetic-Brahmaputra plain** are the other two broad structural divisions.",
+            "The Himalayas are **young fold mountains**, formed by the collision of the Indian plate with the Eurasian plate, and are still rising.",
+            "The **Deccan Trap** is a volcanic region of basalt lava flows; the **Aravalis** are among the oldest fold mountains in the world."
+          ]
+        },
+        {
+          heading: "The Northern Mountains (Himalayas)",
+          points: [
+            "The Himalayas stretch about **2,400 km** from the Indus to the Brahmaputra, with parallel ranges.",
+            "**Himadri (Greater Himalaya)**: the northernmost and highest range, average height about **6,000 m**; includes **Mount Everest (8,848 m)** and **Kanchenjunga (8,598 m)**, India's highest peak.",
+            "**Himachal (Lesser Himalaya)**: heights of about **3,700-4,500 m**; ranges include **Pir Panjal, Dhaula Dhar and Mahabharat**; famous valleys of Kashmir, Kangra and Kullu.",
+            "**Shiwaliks (Outer Himalaya)**: the lowest, about **900-1,100 m**, made of unconsolidated sediments; the valleys between them are called **Duns**.",
+            "The **Purvachal** (Patkai, Naga, Manipur and Mizo hills) forms the eastern hills."
+          ]
+        },
+        {
+          heading: "The Northern Plain",
+          points: [
+            "The plain was formed by the deposits of the **Indus, Ganga and Brahmaputra**, about **3,200 km** long and 150-300 km wide.",
+            "**Bhabar**: a narrow pebbly belt at the foot of the Shiwaliks where streams disappear. **Terai**: a damp, marshy belt to its south with thick forest.",
+            "**Bhangar**: older alluvium, above flood level with kankar nodules. **Khadar**: newer, fertile alluvium deposited by floods each year.",
+            "It is one of the most fertile and densely populated regions of the world."
+          ]
+        },
+        {
+          heading: "Peninsular Plateau, Desert, Coasts and Islands",
+          points: [
+            "The **Peninsular Plateau** includes the **Central Highlands** (Malwa plateau, Chotanagpur plateau) and the **Deccan Plateau**. It is bordered by the **Western Ghats (Sahyadri)** and the **Eastern Ghats**.",
+            "The Western Ghats are higher and continuous; **Anai Mudi (2,695 m)** is the highest peak of peninsular India. The Eastern Ghats are discontinuous and lower, with **Mahendragiri (1,501 m)**.",
+            "The **Indian Desert** lies west of the Aravallis, with sand dunes, **barchans** and the seasonal river **Luni**.",
+            "**Coastal plains**: west coast (Konkan, Kannad, Malabar); east coast (Northern Circars and Coromandel); the **Chilika lagoon** is on the Odisha coast.",
+            "**Islands**: **Lakshadweep** (coral origin) in the Arabian Sea and **Andaman and Nicobar** in the Bay of Bengal, with **Barren Island**, India's only active volcano."
+          ]
+        }
+      ],
+      formulas: [
+        "Himalayas: about 2,400 km long; Greater (Himadri) ~6,000 m, Lesser (Himachal) 3,700-4,500 m, Shiwaliks 900-1,100 m",
+        "Mount Everest 8,848 m; Kanchenjunga 8,598 m (highest peak in India)",
+        "Northern Plain: about 3,200 km long, 150-300 km wide",
+        "Plain belts from north to south: Bhabar, Terai, Bhangar, Khadar",
+        "Anai Mudi (2,695 m): highest peak of peninsular India",
+        "Barren Island: India's only active volcano"
+      ],
+      terms: [
+        { term: "Himadri", meaning: "The **Greater Himalaya**, the highest and northernmost range." },
+        { term: "Dun", meaning: "A **longitudinal valley** between the Lesser Himalaya and the Shiwaliks, e.g. Dehradun." },
+        { term: "Bhangar", meaning: "**Older alluvium** of the Northern Plain, lying above the flood level." },
+        { term: "Khadar", meaning: "**Newer, fertile alluvium** deposited by rivers in flood each year." },
+        { term: "Deccan Trap", meaning: "A region of **basalt lava flows** in the peninsula that gives black soil." },
+        { term: "Barchan", meaning: "A **crescent-shaped sand dune**, common in the Thar Desert." }
+      ],
+      qa: [
+        { q: "Name the three parallel ranges of the Himalaya from north to south.", a: "**Himadri** (Greater Himalaya), **Himachal** (Lesser Himalaya) and **Shiwaliks** (Outer Himalaya)." },
+        { q: "Distinguish between Bhangar and Khadar.", a: "**Bhangar** is old alluvium lying above flood level, often with kankar nodules. **Khadar** is new alluvium deposited by floods, more fertile and renewed every year." },
+        { q: "Why are the Western Ghats higher and more continuous than the Eastern Ghats?", a: "The Western Ghats form a continuous scarp along the west coast with heights of 900-1,600 m. The Eastern Ghats are cut by the rivers flowing east (Godavari, Krishna, Kaveri) into discontinuous, lower hills." }
+      ],
+      quiz: [
+        {
+          q: "The highest peak entirely in India is:",
+          options: ["Mount Everest", "Nanda Devi", "K2", "Kanchenjunga"],
+          answer: 3,
+          explain: "**Kanchenjunga (8,598 m)** is India's highest peak; Everest is in Nepal-Tibet."
+        },
+        {
+          q: "The outermost range of the Himalaya is the:",
+          options: ["Shiwaliks", "Himadri", "Himachal", "Purvachal"],
+          answer: 0,
+          explain: "**Shiwaliks** form the lowest, outermost range."
+        },
+        {
+          q: "The highest peak of peninsular India is:",
+          options: ["Mahendragiri", "Doddabetta", "Anai Mudi", "Gurushikhar"],
+          answer: 2,
+          explain: "**Anai Mudi (2,695 m)** in the Anamalai hills."
+        },
+        {
+          q: "The narrow pebbly belt at the foot of the Shiwaliks is called:",
+          options: ["Terai", "Bhabar", "Khadar", "Bhangar"],
+          answer: 1,
+          explain: "**Bhabar** is the pebbly belt where streams sink and reappear in the Terai."
+        },
+        {
+          q: "India's only active volcano is on:",
+          options: ["Barren Island", "Minicoy", "Kavaratti", "Car Nicobar"],
+          answer: 0,
+          explain: "**Barren Island** in the Andaman Sea is active."
+        },
+        {
+          q: "The peninsular block of India is a part of:",
+          options: ["Pangaea only", "Gondwanaland", "Laurasia", "Eurasia"],
+          answer: 1,
+          explain: "The peninsula is a remnant of the ancient **Gondwanaland**."
+        }
+      ]
+    },
+    // ───────────── 17. Drainage System ─────────────
+    {
+      id: "drainage-system",
+      title: "Drainage System",
+      section: "India: Physical Environment",
+      summary: "The Himalayan and peninsular rivers of India, their origin, courses and tributaries, and the main lakes.",
+      notes: [
+        {
+          heading: "Drainage basics",
+          points: [
+            "A **drainage basin** is the area drained by a river and its tributaries; the upland separating two basins is a **water divide**.",
+            "Indian rivers are classified as **Himalayan** (perennial, snow and rain fed, long courses with gorges and deltas) and **Peninsular** (seasonal, rain fed, shorter courses).",
+            "By destination, rivers drain into the **Bay of Bengal** (the larger share) or the **Arabian Sea**."
+          ]
+        },
+        {
+          heading: "The Indus system",
+          points: [
+            "The **Indus** rises near **Lake Mansarovar** in Tibet and flows through **Ladakh** into Pakistan, falling into the **Arabian Sea** near Karachi; it is about **2,900 km** long.",
+            "Its tributaries in India: **Jhelum, Chenab, Ravi, Beas and Satluj**.",
+            "The Indus Water Treaty (1960) allocated the eastern rivers (Ravi, Beas, Satluj) to India."
+          ]
+        },
+        {
+          heading: "The Ganga and the Brahmaputra systems",
+          points: [
+            "The **Ganga** originates as the **Bhagirathi** from the **Gangotri glacier (Gaumukh)**; it meets the **Alaknanda at Devprayag** and enters the plains at **Haridwar**. Length about **2,525 km**.",
+            "Tributaries: **Yamuna** (joins at Prayagraj), **Ghaghara, Gandak, Kosi** from the Himalaya; **Chambal, Betwa and Son** from the peninsula.",
+            "The **Brahmaputra** rises in Tibet (as the **Tsangpo**), enters India in Arunachal Pradesh as the **Dihang**, and flows through Assam; in Bangladesh it meets the Ganga and forms the **Meghna**.",
+            "The Ganga-Brahmaputra delta, the **Sundarbans**, is the largest delta in the world."
+          ]
+        },
+        {
+          heading: "Peninsular rivers",
+          points: [
+            "**East-flowing** rivers fall into the Bay of Bengal and form deltas: **Mahanadi, Godavari, Krishna and Kaveri**.",
+            "**Godavari** (about 1,465 km, the longest peninsular river, called **Dakshin Ganga**); **Krishna** (about 1,400 km); **Kaveri** rises in the Brahmagiri hills, forms the Shivasamudram falls.",
+            "**Narmada and Tapi** flow west through **rift valleys** into the Arabian Sea and make **estuaries**, not deltas. The Narmada rises at **Amarkantak** and forms the **Dhuandhar falls** near Jabalpur.",
+            "Peninsular rivers have mostly **fixed courses** and shallow valleys, and fluctuating flow."
+          ]
+        },
+        {
+          heading: "Lakes and river issues",
+          points: [
+            "**Wular lake** (J&K) is the largest freshwater lake; **Dal** is another Kashmir lake. **Chilika** (Odisha) is the largest salt-water lagoon; **Sambhar** (Rajasthan) is a saline lake.",
+            "Lakes help in flood control, water supply, irrigation, tourism and local climate.",
+            "Rivers are polluted by sewage, industrial waste and fertiliser run-off; the **Ganga** is a focus of clean-up programmes such as the Ganga Action Plan and Namami Gange."
+          ]
+        }
+      ],
+      formulas: [
+        "Indus: about 2,900 km; tributaries Jhelum, Chenab, Ravi, Beas, Satluj",
+        "Ganga: about 2,525 km; Bhagirathi + Alaknanda at Devprayag",
+        "Godavari: about 1,465 km (longest peninsular river, Dakshin Ganga)",
+        "East-flowing (deltas): Mahanadi, Godavari, Krishna, Kaveri; West-flowing (estuaries): Narmada, Tapi",
+        "Wular: largest freshwater lake; Chilika: largest salt-water lagoon",
+        "Sundarbans: the largest delta in the world (Ganga-Brahmaputra)"
+      ],
+      terms: [
+        { term: "Drainage basin", meaning: "The **area drained** by a river and its tributaries." },
+        { term: "Water divide", meaning: "An **upland** that separates two drainage basins." },
+        { term: "Delta", meaning: "A **triangular landform** made by deposition where a river meets the sea." },
+        { term: "Estuary", meaning: "The **funnel-shaped mouth** of a river where it enters the sea without a delta." },
+        { term: "Perennial river", meaning: "A river that has **water throughout the year**." },
+        { term: "Tributary", meaning: "A **smaller river** that joins a bigger one." }
+      ],
+      qa: [
+        { q: "Distinguish between Himalayan and Peninsular rivers.", a: "**Himalayan rivers** are perennial, fed by snow and rain, have long courses with gorges, meanders and big deltas. **Peninsular rivers** are seasonal, rain fed, shorter, with fixed courses." },
+        { q: "Why do the Narmada and Tapi form estuaries and not deltas?", a: "They flow west through narrow **rift valleys** (faulted troughs) in a straight course and carry little silt, and they enter the sea in a funnel-shaped mouth, so they form **estuaries**." },
+        { q: "Name the sources and confluence of the Ganga's headstreams.", a: "The **Bhagirathi** rises from the **Gangotri glacier (Gaumukh)**, and joins the **Alaknanda at Devprayag**. From there it is called the Ganga and enters the plains at Haridwar." }
+      ],
+      quiz: [
+        {
+          q: "The longest peninsular river is:",
+          options: ["Krishna", "Godavari", "Kaveri", "Narmada"],
+          answer: 1,
+          explain: "**Godavari (about 1,465 km)** is the longest and is called Dakshin Ganga."
+        },
+        {
+          q: "The Bhagirathi and Alaknanda meet at:",
+          options: ["Haridwar", "Rishikesh", "Prayagraj", "Devprayag"],
+          answer: 3,
+          explain: "They join at **Devprayag** to form the Ganga."
+        },
+        {
+          q: "Which river flows through a rift valley and falls into the Arabian Sea?",
+          options: ["Narmada", "Mahanadi", "Krishna", "Kaveri"],
+          answer: 0,
+          explain: "The **Narmada** flows west in a rift valley and forms an estuary."
+        },
+        {
+          q: "The largest freshwater lake in India is:",
+          options: ["Dal", "Chilika", "Wular", "Sambhar"],
+          answer: 2,
+          explain: "**Wular lake** in Jammu and Kashmir is the largest freshwater lake."
+        },
+        {
+          q: "The Brahmaputra is known in Tibet as the:",
+          options: ["Dihang", "Tsangpo", "Jamuna", "Meghna"],
+          answer: 1,
+          explain: "In Tibet it is the **Tsangpo**; in Arunachal Pradesh the Dihang."
+        },
+        {
+          q: "Which is NOT a tributary of the Indus in India?",
+          options: ["Beas", "Chenab", "Ravi", "Gandak"],
+          answer: 3,
+          explain: "The **Gandak** is a tributary of the Ganga."
+        }
+      ]
+    },
+    // ───────────── 18. Climate ─────────────
+    {
+      id: "climate-of-india",
+      title: "Climate",
+      section: "India: Physical Environment",
+      summary: "The monsoon climate of India: controls, mechanism of the monsoon, the four seasons and the pattern of rainfall.",
+      notes: [
+        {
+          heading: "Monsoon climate and its controls",
+          points: [
+            "India has a **tropical monsoon climate**: wind direction reverses with the seasons.",
+            "Controls: **latitude** (the Tropic of Cancer passes through the middle), **altitude**, **pressure and winds**, **distance from the sea**, **ocean currents** and **relief**.",
+            "The **Himalayas** block cold northern winds in winter and stop monsoon winds, causing rain.",
+            "Coastal places have a moderate (equable) climate, while the interior has extremes of temperature (continentality)."
+          ]
+        },
+        {
+          heading: "Mechanism of the monsoon",
+          points: [
+            "In summer the land heats faster than the sea, a **low pressure** develops over north-west India, and the **ITCZ** shifts north, drawing **south-east trade winds** across the equator, where they turn into **south-west monsoon** winds.",
+            "The south-west monsoon splits into the **Arabian Sea branch** and the **Bay of Bengal branch**.",
+            "In winter, high pressure over the land sends **dry north-east monsoon** winds towards the sea.",
+            "The **onset** is around **1 June** at the Kerala coast, and it covers the whole country by about mid-July. **El Nino** can weaken the monsoon."
+          ]
+        },
+        {
+          heading: "The four seasons",
+          points: [
+            "**Cold weather season (December-February)**: clear skies and cold nights; **western disturbances** bring winter rain to the north-west, useful for **rabi crops** such as wheat.",
+            "**Hot weather season (March-May)**: temperatures rise; hot dry **loo** winds blow in the north-west; **mango showers** in Kerala and Karnataka, **Kalbaisakhi** in West Bengal and **Bardoichila** in Assam.",
+            "**Southwest monsoon (June-September)**: about 75% of annual rainfall in most of India; the Western Ghats' windward side and north-east get the heaviest rain.",
+            "**Retreating monsoon (October-November)**: clear skies and high humidity ('October heat'); cyclones form in the Bay of Bengal and bring rain to the Tamil Nadu coast."
+          ]
+        },
+        {
+          heading: "Rainfall distribution",
+          points: [
+            "Average annual rainfall is about **125 cm**, with great variation. The west coast, Western Ghats and north-east get **over 400 cm**.",
+            "**Mawsynram** in Meghalaya receives the highest rainfall in the world (about 1,141 cm).",
+            "Western Rajasthan, Gujarat's Kachchh and parts of Ladakh get **less than 60 cm**; the Deccan interior is in the rain shadow.",
+            "Rainfall is **uncertain and variable**, causing floods in some years and droughts in others.",
+            "The **Tamil Nadu coast** gets most rain from the retreating monsoon, not the southwest monsoon."
+          ]
+        }
+      ],
+      formulas: [
+        "India's climate: tropical monsoon type",
+        "Seasons: Winter Dec-Feb; Summer Mar-May; Southwest monsoon Jun-Sep; Retreating monsoon Oct-Nov",
+        "Monsoon onset at Kerala: about 1 June",
+        "Average annual rainfall: about 125 cm",
+        "Over 400 cm: west coast, Western Ghats, north-east; under 60 cm: western Rajasthan, Ladakh",
+        "Mawsynram (Meghalaya): highest rainfall",
+        "Local storms: Loo, Mango showers, Kalbaisakhi, Bardoichila"
+      ],
+      terms: [
+        { term: "Monsoon", meaning: "Winds that **reverse direction seasonally**, bringing rain in summer." },
+        { term: "ITCZ", meaning: "The **Inter-Tropical Convergence Zone**, a low-pressure belt near the equator where trade winds meet." },
+        { term: "Western disturbances", meaning: "Weather systems from the **Mediterranean** that bring winter rain to north-west India." },
+        { term: "Loo", meaning: "Strong, **hot, dry winds** blowing in the north-western plains in summer." },
+        { term: "Mango showers", meaning: "Pre-monsoon showers in **Kerala and Karnataka** that help ripen mangoes." },
+        { term: "Kalbaisakhi", meaning: "Violent **evening thunderstorms** of West Bengal in the hot season, also called Nor'westers." }
+      ],
+      qa: [
+        { q: "Why does India have a monsoon climate?", a: "Seasonal differences in heating of land and sea reverse the pressure systems and winds. Summer low pressure over the north-west draws moist south-west winds that bring rain; in winter dry north-east winds blow from land to sea." },
+        { q: "What is the importance of western disturbances?", a: "They bring **winter rainfall** to north-west India, which is useful for **rabi crops**, especially wheat." },
+        { q: "Why does Tamil Nadu receive little rain in the south-west monsoon?", a: "It lies in the **rain-shadow** of the Western Ghats and parallel to the Arabian Sea branch, so it receives most of its rainfall from the **retreating (north-east) monsoon** in October-November." }
+      ],
+      quiz: [
+        {
+          q: "The south-west monsoon normally reaches Kerala around:",
+          options: ["1 May", "1 July", "1 August", "1 June"],
+          answer: 3,
+          explain: "The monsoon sets in at Kerala about **1 June**."
+        },
+        {
+          q: "Which place receives the highest rainfall?",
+          options: ["Mawsynram", "Jaisalmer", "Leh", "Chennai"],
+          answer: 0,
+          explain: "**Mawsynram** in Meghalaya is among the wettest places on earth."
+        },
+        {
+          q: "Winter rain in north-west India is brought by:",
+          options: ["South-west monsoon", "Western disturbances", "Loo", "Mango showers"],
+          answer: 1,
+          explain: "**Western disturbances** from the Mediterranean bring winter rain."
+        },
+        {
+          q: "Kalbaisakhi is a thunderstorm in:",
+          options: ["Kerala", "Punjab", "West Bengal", "Rajasthan"],
+          answer: 2,
+          explain: "**Kalbaisakhi** occurs in West Bengal in the hot weather season."
+        },
+        {
+          q: "The Tamil Nadu coast gets much of its rain in:",
+          options: ["June-July", "October-November", "April-May", "January-February"],
+          answer: 1,
+          explain: "The **retreating monsoon** brings rain to the Tamil Nadu coast."
+        },
+        {
+          q: "Which feature gives India its monsoon climate by blocking winds?",
+          options: ["Himalayas", "Aravalli range", "Eastern Ghats", "Vindhyas"],
+          answer: 0,
+          explain: "The **Himalayas** stop the monsoon winds and also shield India from cold northern winds."
+        }
+      ]
+    },
+    // ───────────── 19. Natural Vegetation ─────────────
+    {
+      id: "natural-vegetation",
+      title: "Natural Vegetation",
+      section: "India: Physical Environment",
+      summary: "The major forest types of India, their distribution and trees, the wildlife of India and conservation efforts.",
+      notes: [
+        {
+          heading: "Factors and importance",
+          points: [
+            "Natural vegetation depends on **relief, soil, temperature, rainfall and sunlight**.",
+            "India has great diversity of flora, with over **47,000 plant species**.",
+            "Forests give timber, fuel, fodder, medicines and also protect soil and influence rainfall."
+          ]
+        },
+        {
+          heading: "Tropical evergreen and deciduous forests",
+          points: [
+            "**Tropical evergreen forests**: rainfall **over 200 cm**; in the Western Ghats, Assam, Andaman and Nicobar; tall trees up to 60 m or more with dense canopy; **rosewood, mahogany, ebony**.",
+            "**Tropical deciduous (monsoon) forests** are the most widespread; they shed leaves in the dry season. Rainfall 70-200 cm.",
+            "**Moist deciduous** (100-200 cm): **teak, sal, shisham, sandalwood, mahua**. **Dry deciduous** (70-100 cm): teak, sal, peepal, neem.",
+            "These forests supply valuable timber."
+          ]
+        },
+        {
+          heading: "Thorn forests and montane forests",
+          points: [
+            "**Tropical thorn forests and scrub**: rainfall **below 70 cm**; Rajasthan, Gujarat, Madhya Pradesh and parts of Uttar Pradesh; **acacias, palms, euphorbias and cacti**, with long roots and thorns to save water.",
+            "**Montane forests** change with altitude. In the Himalayas, wet temperate forests at 1,000-2,000 m, then coniferous forests (**pine, deodar, silver fir, spruce**) and at higher levels alpine vegetation and meadows with **juniper** and **birch**.",
+            "In the south, montane forests (**shola**) occur in Nilgiri, Anamalai and Palani hills."
+          ]
+        },
+        {
+          heading: "Mangrove forests and wildlife",
+          points: [
+            "**Mangrove forests** grow in tidal creeks, deltas and mud flats; trees have **breathing roots (pneumatophores)**. The **Sundarbans** (named after the **sundari** tree) is the largest, home to the **Royal Bengal tiger**.",
+            "Mangroves are also found on the Mahanadi, Godavari and Krishna deltas and protect coasts from storms.",
+            "India's wildlife includes the elephant, **one-horned rhinoceros** (Assam), **Asiatic lion** (Gir), tiger, leopard and many birds."
+          ]
+        },
+        {
+          heading: "Conservation of forests and wildlife",
+          points: [
+            "The **National Forest Policy** recommends keeping **33%** of land under forest cover.",
+            "**Project Tiger (1973)** and **Project Elephant (1992)** protect these animals. India has national parks, sanctuaries and **biosphere reserves**; the **Nilgiri** reserve was the first (1986).",
+            "Threats: deforestation, grazing, encroachment, forest fires and poaching."
+          ]
+        }
+      ],
+      formulas: [
+        "Evergreen forests: rainfall over 200 cm; Moist deciduous 100-200 cm; Dry deciduous 70-100 cm; Thorn forests below 70 cm",
+        "Mangroves: Sundarbans (sundari tree), pneumatophores",
+        "Project Tiger 1973; Project Elephant 1992",
+        "National Forest Policy target: 33% under forest",
+        "Over 47,000 plant species in India",
+        "First biosphere reserve in India: Nilgiri (1986)"
+      ],
+      terms: [
+        { term: "Deciduous forest", meaning: "Forest whose trees **shed their leaves** in the dry season." },
+        { term: "Evergreen forest", meaning: "Forest that **stays green all year** and has dense, tall trees." },
+        { term: "Pneumatophores", meaning: "**Breathing roots** that grow up from the mud in mangroves." },
+        { term: "Biosphere reserve", meaning: "A protected area conserving **ecosystems and wildlife**, with local people's use." },
+        { term: "Montane forest", meaning: "Forest whose type **changes with altitude** in hills and mountains." }
+      ],
+      qa: [
+        { q: "Why are tropical deciduous forests called monsoon forests?", a: "They grow in monsoon regions with 70-200 cm of rainfall. The trees **shed leaves in the dry season** to reduce water loss, so they follow the rhythm of the monsoon." },
+        { q: "How are plants of thorn forests adapted to dry conditions?", a: "They have **long roots**, thick bark, small or no leaves and **thorns**, which reduce loss of water by transpiration." },
+        { q: "Why are mangrove forests important?", a: "They protect coasts from cyclones and tidal erosion, give shelter to fish and birds, and are a home to species like the **Royal Bengal tiger** in the Sundarbans." }
+      ],
+      quiz: [
+        {
+          q: "The Sundarbans are named after the tree:",
+          options: ["Teak", "Sal", "Sundari", "Deodar"],
+          answer: 2,
+          explain: "The **sundari** tree gives the Sundarbans their name."
+        },
+        {
+          q: "Teak and sal are typical of:",
+          options: ["Tropical evergreen forests", "Tropical deciduous forests", "Thorn forests", "Alpine meadows"],
+          answer: 1,
+          explain: "They are common in **tropical deciduous** forests."
+        },
+        {
+          q: "Tropical evergreen forests grow in areas with rainfall of:",
+          options: ["Over 200 cm", "Below 70 cm", "70-100 cm", "Below 50 cm"],
+          answer: 0,
+          explain: "Evergreen forests need **more than 200 cm** of rain."
+        },
+        {
+          q: "Acacias and cacti are found in:",
+          options: ["Mangrove forests", "Temperate forests", "Tropical evergreen forests", "Thorn forests and scrub"],
+          answer: 3,
+          explain: "These dry-adapted plants grow in **thorn forests** with under 70 cm rain."
+        },
+        {
+          q: "Project Tiger was launched in:",
+          options: ["1952", "1973", "1992", "1986"],
+          answer: 1,
+          explain: "**Project Tiger** began in 1973."
+        },
+        {
+          q: "Pneumatophores are found in:",
+          options: ["Deodar forests", "Teak forests", "Mangrove forests", "Alpine meadows"],
+          answer: 2,
+          explain: "Mangroves have **breathing roots** for the waterlogged mud."
+        }
+      ]
+    },
+    // ───────────── 20. Natural Hazards and Disasters ─────────────
+    {
+      id: "natural-hazards-and-disasters",
+      title: "Natural Hazards and Disasters",
+      section: "India: Physical Environment",
+      summary: "Natural hazards and disasters, their classification, major disasters in India (earthquakes, tsunami, cyclones, floods, landslides, droughts) and disaster management.",
+      notes: [
+        {
+          heading: "Hazards and disasters",
+          points: [
+            "A **hazard** is a natural or human-made event that may cause harm; a **disaster** is the serious damage to life, property and environment when a hazard strikes a vulnerable community.",
+            "Natural hazards can be **atmospheric** (cyclones, droughts), **terrestrial** (earthquakes, landslides) or **aquatic** (floods, tsunamis).",
+            "Disasters are worse when population density, poverty and lack of preparation increase vulnerability."
+          ]
+        },
+        {
+          heading: "Earthquakes and tsunami",
+          points: [
+            "An **earthquake** is shaking of the earth caused by release of energy in the crust. The point of release is the **focus** and the point directly above on the surface is the **epicentre**.",
+            "Magnitude is measured on the **Richter scale** and intensity on the **Mercalli scale**; the instrument is the **seismograph**.",
+            "The Himalayan belt, with the collision of plates, is highly earthquake-prone; India is divided into **seismic zones** (II to V). Major quakes: Latur (1993), **Bhuj (2001)**.",
+            "A **tsunami** is a series of huge sea waves caused by undersea earthquakes, volcanoes or landslides. The Indian Ocean tsunami of **26 December 2004** badly hit the coasts of Tamil Nadu, Andhra Pradesh and the Andaman and Nicobar Islands."
+          ]
+        },
+        {
+          heading: "Cyclones and floods",
+          points: [
+            "**Tropical cyclones** form over warm oceans and are regional names: **hurricane** (Atlantic), **typhoon** (Western Pacific), **cyclone** (Indian Ocean).",
+            "In India cyclones strike mostly the **east coast** (Odisha, Andhra Pradesh, Tamil Nadu, West Bengal), mainly in October-November, with high winds, heavy rain and a **storm surge**.",
+            "**Floods** occur due to heavy rain, river overflow, and deforestation and encroachment on floodplains. They are frequent along the **Ganga and Brahmaputra** basins, especially in Assam, Bihar and Uttar Pradesh."
+          ]
+        },
+        {
+          heading: "Landslides and droughts",
+          points: [
+            "**Landslides** are the downward movement of rock and soil. They occur in the **Himalayas, Western Ghats and north-east**, triggered by heavy rain, earthquakes, steep slopes and deforestation.",
+            "**Drought** is a prolonged period of abnormally low rainfall. Types: **meteorological, hydrological and agricultural** drought.",
+            "Drought-prone areas include parts of **Rajasthan, Gujarat, Maharashtra, Karnataka** and Andhra Pradesh."
+          ]
+        },
+        {
+          heading: "Disaster management",
+          points: [
+            "The **Disaster Management Act, 2005** set up the **National Disaster Management Authority (NDMA)**.",
+            "Management has stages: **pre-disaster** (prevention, mitigation and preparedness), **during** (rescue, relief) and **post-disaster** (rehabilitation and reconstruction).",
+            "Measures include early warning systems, hazard mapping, earthquake-resistant buildings, afforestation, and community awareness and drills."
+          ]
+        }
+      ],
+      formulas: [
+        "Earthquake: focus (inside earth) and epicentre (on surface above focus)",
+        "Magnitude: Richter scale; intensity: Mercalli scale; instrument: seismograph",
+        "Tsunami (Indian Ocean): 26 December 2004",
+        "Bhuj (Gujarat) earthquake: 2001; Latur earthquake: 1993",
+        "Disaster Management Act: 2005 (NDMA)",
+        "Cyclone names: hurricane (Atlantic), typhoon (W. Pacific), cyclone (Indian Ocean)"
+      ],
+      terms: [
+        { term: "Hazard", meaning: "A natural or human-made **event that can cause harm** to people or property." },
+        { term: "Disaster", meaning: "A **serious loss** of life, property and environment caused when a hazard hits a vulnerable community." },
+        { term: "Epicentre", meaning: "The point on the earth's **surface directly above the focus** of an earthquake." },
+        { term: "Seismograph", meaning: "An instrument that **records earthquake waves**." },
+        { term: "Tsunami", meaning: "A **series of huge sea waves** generated by undersea earthquakes, volcanoes or landslides." },
+        { term: "Storm surge", meaning: "A **rise of sea level** pushed on land by a cyclone's winds." }
+      ],
+      qa: [
+        { q: "Distinguish between a hazard and a disaster.", a: "A **hazard** is a potential threat such as a flood or an earthquake. A **disaster** occurs when the hazard strikes a vulnerable population, causing loss of life, property and livelihood." },
+        { q: "Why are the Himalayas prone to landslides and earthquakes?", a: "The Himalayas are **young fold mountains** at a plate boundary, still rising, so they are tectonically active. Steep slopes, loose rocks, heavy rain and deforestation also make them prone to landslides." },
+        { q: "What measures help reduce the effects of cyclones?", a: "**Early warning** and forecasting, cyclone shelters, evacuation, strong buildings, **mangrove and coastal afforestation**, and training of local communities reduce losses." }
+      ],
+      quiz: [
+        {
+          q: "The point directly above the focus of an earthquake is the:",
+          options: ["Epicentre", "Seismic gap", "Fault line", "Hypocentre"],
+          answer: 0,
+          explain: "The **epicentre** lies on the surface above the focus."
+        },
+        {
+          q: "The Richter scale measures the:",
+          options: ["Intensity of damage", "Magnitude of an earthquake", "Wind speed", "Depth of the sea"],
+          answer: 1,
+          explain: "The **Richter scale** measures magnitude (energy released)."
+        },
+        {
+          q: "Cyclones in India mostly affect the:",
+          options: ["Western Ghats", "Thar Desert", "East coast", "Northern Plain"],
+          answer: 2,
+          explain: "The **east coast** receives most cyclones, in October-November."
+        },
+        {
+          q: "The Indian Ocean tsunami struck on:",
+          options: ["26 January 2001", "26 December 2004", "26 June 2005", "26 December 1999"],
+          answer: 1,
+          explain: "The tsunami was on **26 December 2004**."
+        },
+        {
+          q: "The Disaster Management Act, which created the NDMA, was passed in:",
+          options: ["1995", "2001", "2010", "2005"],
+          answer: 3,
+          explain: "The **Disaster Management Act of 2005** set up the NDMA."
+        },
+        {
+          q: "Floods in Assam are mainly caused by:",
+          options: ["The Brahmaputra and its tributaries", "Tidal waves only", "The Luni river", "Western disturbances"],
+          answer: 0,
+          explain: "The **Brahmaputra** and its tributaries flood Assam in the monsoon."
+        }
+      ]
+    }
   ]
 });
