@@ -57,6 +57,12 @@ function hash(str) {
   return h >>> 0;
 }
 
+// Permanent id for a quiz question or flashcard, taken from its text, so saved
+// mistakes and "known" cards stay attached even if content is reordered.
+// A question's options count too, since some share wording ("Choose the correct spelling").
+const itemId = (prefix, text) => prefix + hash(plain(text).trim().toLowerCase()).toString(36);
+const questionId = (q) => itemId("q", [q.q, ...q.options.slice().sort()].join("|"));
+
 let toastTimer;
 function toast(msg) {
   const el = document.getElementById("toast");
@@ -111,6 +117,8 @@ const ICONS = {
   shuffle: '<path d="M3 6h3.5c2 0 3.3 1 4.5 2.8l2 3.4c1.2 1.8 2.5 2.8 4.5 2.8H21"/><path d="M3 18h3.5c1.4 0 2.4-.5 3.3-1.4"/><path d="M14.2 7.4c.9-.9 1.9-1.4 3.3-1.4H21"/><path d="m18 3 3 3-3 3"/><path d="m18 15 3 3-3 3"/>',
   print: '<path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
   target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+  download: '<path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/>',
+  upload: '<path d="M12 15V4"/><path d="m7 9 5-5 5 5"/><path d="M5 20h14"/>',
   star: '<path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/>',
 };
 

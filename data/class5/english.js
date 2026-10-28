@@ -1,6 +1,8 @@
 // Class 5 English: Grammar, Vocabulary, Writing Skills and Reading Skills.
 // Format: see CONTENT_GUIDE.md. All examples and model answers are original.
 StudyData.add(5, "english", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills, arranged by topic. Textbook lessons are not included.", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {

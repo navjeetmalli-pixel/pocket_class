@@ -2,6 +2,8 @@
 // (Fundamentals of Physical Geography; India: Physical Environment).
 // Format: see CONTENT_GUIDE.md. `formulas` holds key facts and figures to memorise.
 StudyData.add(11, "geography", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Fundamentals of Physical Geography","India: Physical Environment"], reviewed: false},
   chapters: [
     // ═════════════════ FUNDAMENTALS OF PHYSICAL GEOGRAPHY ═════════════════
     // ───────────── 1. Geography as a Discipline ─────────────

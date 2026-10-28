@@ -1,6 +1,8 @@
 // Class 12 Accountancy: current rationalised NCERT textbook (Partnership Accounts, Company Accounts,
 // Analysis of Financial Statements). Format: see CONTENT_GUIDE.md
 StudyData.add(12, "accountancy", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Accountancy Part I","Accountancy Part II"], reviewed: false},
   chapters: [
     // ───────────────────────────── 1. Partnership Fundamentals ─────────────────────────────
     {

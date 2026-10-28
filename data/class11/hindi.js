@@ -1,5 +1,7 @@
 // कक्षा 11 – हिंदी (आधार / Core): साहित्य (आरोह भाग 1), पूरक (वितान भाग 1) और अभिव्यक्ति और माध्यम (लेखन)
 StudyData.add(11, "hindi", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Aroh Bhag 1","Vitan Bhag 1"], note: "A selection of lessons, plus Abhivyakti aur Madhyam (not every chapter).", reviewed: false},
   chapters: [
     {
       id: "namak-ka-daroga",

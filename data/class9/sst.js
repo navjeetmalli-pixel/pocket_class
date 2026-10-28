@@ -1,4 +1,6 @@
 StudyData.add(9, "sst", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["India and the Contemporary World I","Contemporary India I","Democratic Politics I","Economics"], reviewed: false},
   chapters: [
     // ==================================================================
     // HISTORY – India and the Contemporary World I

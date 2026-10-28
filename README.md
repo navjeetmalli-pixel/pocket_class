@@ -27,7 +27,7 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 - **Progress**: daily streak, minutes studied this week, chapter completion, quiz history
 - **Question of the day**, search across all notes, bookmarks, light/dark theme
 
-Progress is saved only on the device (browser storage). No account, no internet needed after the first visit.
+Progress is saved only on the device (browser storage). No account, no internet needed after the first visit. Settings → *Save backup* downloads it as a file, which *Restore backup* loads on another phone.
 
 ## Run it
 
@@ -71,4 +71,18 @@ node scripts/validate.js
 
 To add a subject to a class, add its id to that class in `catalog` in `data/registry.js` and create `data/class{N}/{id}.js`. Bump `CACHE` in `sw.js` whenever you change files, so installed apps pick up the update.
 
-The notes are a revision aid written to follow NCERT. Always study from the textbook too, and report anything that looks wrong.
+## How closely content follows the textbooks
+
+Each subject page says what its chapters follow (the `syllabus` block in each data file):
+
+| Label | Meaning | Where |
+|---|---|---|
+| Current NCERT book | Chapters follow the book's titles and order | Class 6 Maths, Science and SST; Class 7 Science; most Class 9–12 subjects |
+| Older NCERT book | Follows the book used before NCERT's 2024–25 revision; chapters may differ from the new book | Class 7 Maths and SST; Class 8 Maths, Science, SST and Hindi |
+| Topic-based revision | Arranged by syllabus topic, not by any one book | Classes 1–5; English and Hindi in Classes 6–8; Punjabi in every class |
+
+English and Hindi in Classes 9–12 cover grammar, writing and a selection of literature lessons, not every chapter.
+
+**Nothing has been checked by a teacher yet.** All notes, answers and explanations are drafts written to follow NCERT
+and have not been checked against the CBSE 2026–27 curriculum. Use them for revision alongside the textbook, and
+report anything that looks wrong.

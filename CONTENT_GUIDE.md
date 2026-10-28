@@ -17,12 +17,20 @@ node scripts/validate.js data/class10/maths.js
 
 ```js
 StudyData.add(10, "maths", {
+  syllabus: {                             // REQUIRED. What this file follows; shown on the subject page
+    board: "CBSE",
+    match: "textbook",                    // "textbook" (current NCERT book), "older-book", or "topic" (arranged by topic)
+    books: ["Mathematics"],               // NCERT book title(s); [] for "topic"
+    note: "Optional extra line, e.g. 'A selection of lessons, not every chapter.'",
+    reviewed: false                       // after a teacher checks it: "2026-11-15, Mrs Kaur (TGT Maths)"
+  },
   chapters: [
     {
       id: "real-numbers",                 // kebab-case, unique within this file
       title: "Real Numbers",              // NCERT chapter name
       section: "Algebra",                 // group label shown in the chapter list
       summary: "One or two sentences on what this chapter is about.",
+      source: "Mathematics (2023 reprint) Ch 1, pp. 1–14",  // OPTIONAL. Book, edition/year, chapter and pages it was checked against
 
       notes: [                            // 3–6 topics, the core revision notes
         {
@@ -85,6 +93,19 @@ and title them by topic (e.g. "Fractions"), rather than guessing a textbook chap
 
 Literature (English, Hindi, Punjabi stories and poems): only write about chapters you know well. Summarise in your own
 words; never reproduce the text.
+
+## Saved progress and editing
+
+The app remembers a student's mistakes by each question's text **and** options, and "known" flashcards by the term.
+So you can reorder, add or remove questions freely. Rewording a question, changing its options, or renaming a term
+makes it a new item, and any saved mistake or "known" mark for the old version is dropped. That's fine for real fixes,
+just don't reword things for no reason. Two questions in one chapter can't have identical text and options.
+
+## Review and sources
+
+All content is a revision aid and must be checked against the textbook before it's relied on. When a teacher
+reviews a file, set `syllabus.reviewed` to the date and their name, and add `source` to each chapter they checked.
+The validator checks structure, duplicates and formatting. It **cannot** tell whether a fact or answer is correct.
 
 ## Rules
 

@@ -1,6 +1,8 @@
 // Class 7 Mathematics: standard Class 7 syllabus topics, titled by topic.
 // Format: see CONTENT_GUIDE.md
 StudyData.add(7, "maths", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "older-book", books: ["Mathematics"], note: "NCERT has since published a new book for this class, so chapter names and order may differ.", reviewed: false},
   chapters: [
     // ───────────────────────────── 1. Integers ─────────────────────────────
     {

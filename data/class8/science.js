@@ -1,4 +1,6 @@
 StudyData.add(8, "science", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "older-book", books: ["Science"], note: "NCERT has since published a new book for this class, so chapter names and order may differ.", reviewed: false},
   chapters: [
     // ------------------------------------------------------------------
     {

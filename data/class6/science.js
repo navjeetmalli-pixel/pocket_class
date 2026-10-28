@@ -1,6 +1,8 @@
 // Class 6 Science: current NCERT textbook "Curiosity".
 // Format: see CONTENT_GUIDE.md
 StudyData.add(6, "science", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Curiosity"], reviewed: false},
   chapters: [
     // ───────────────────────────── 1. The Wonderful World of Science ─────────────────────────────
     {

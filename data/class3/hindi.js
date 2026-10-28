@@ -1,5 +1,7 @@
 // कक्षा 3 – हिंदी: व्याकरण, शब्द भंडार और रचना (लेखन)
 StudyData.add(3, "hindi", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills, arranged by topic. Textbook lessons are not included.", reviewed: false},
   chapters: [
     {
       id: "varnamala-matra-dohrai",

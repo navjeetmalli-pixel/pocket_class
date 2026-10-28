@@ -1,4 +1,6 @@
 StudyData.add(6, "sst", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Exploring Society: India and Beyond"], reviewed: false},
   chapters: [
     // ==================================================================
     // INDIA AND THE WORLD: LAND AND THE PEOPLE

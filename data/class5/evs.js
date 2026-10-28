@@ -1,6 +1,8 @@
 // Class 5 EVS (Environmental Studies): organised by topic.
 // Format: see CONTENT_GUIDE.md
 StudyData.add(5, "evs", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "topic", books: [], note: "Chapter names and order may not match your textbook.", reviewed: false},
   chapters: [
     // ───────────────────────────── 1. Senses of Animals ─────────────────────────────
     {

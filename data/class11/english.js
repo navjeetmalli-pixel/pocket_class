@@ -1,6 +1,8 @@
 // Class 11 English Core: Grammar, Writing Skills and Literature (Hornbill, Snapshots).
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the textbooks.
 StudyData.add(11, "english", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Hornbill","Snapshots"], note: "Writing skills, plus a selection of lessons (not every chapter).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {

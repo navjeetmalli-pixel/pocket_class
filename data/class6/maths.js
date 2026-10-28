@@ -1,6 +1,8 @@
 // Class 6 Mathematics: current NCERT textbook "Ganita Prakash".
 // Format: see CONTENT_GUIDE.md
 StudyData.add(6, "maths", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Ganita Prakash"], reviewed: false},
   chapters: [
     // ───────────────────────────── 1. Patterns in Mathematics ─────────────────────────────
     {

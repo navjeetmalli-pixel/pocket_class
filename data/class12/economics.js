@@ -2,6 +2,8 @@
 // (NCERT labels these books differently; CBSE moved Microeconomics to Class 11 and Indian Economic Development to Class 12.)
 // Format: see CONTENT_GUIDE.md.
 StudyData.add(12, "economics", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Introductory Macroeconomics","Indian Economic Development"], note: "Arranged as CBSE examines it in Class 12.", reviewed: false},
   "chapters": [
     {
       "id": "macro-introduction",

@@ -1,6 +1,8 @@
 // Class 12 Political Science (NCERT, rationalised):
 // Book 1 – Contemporary World Politics; Book 2 – Politics in India since Independence.
 StudyData.add(12, "polsci", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Contemporary World Politics","Politics in India since Independence"], reviewed: false},
   chapters: [
     // ═════════════════════════════ CONTEMPORARY WORLD POLITICS ═════════════════════════════
     // ───────────── 1. The End of Bipolarity ─────────────

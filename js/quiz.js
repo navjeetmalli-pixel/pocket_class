@@ -33,8 +33,17 @@ const Quiz = (() => {
 
   function render() {
     if (!live()) return stop();
+    const hadFocus = el.contains(document.activeElement);
     el.innerHTML = s.done ? resultHTML() : questionHTML();
+    // Re-rendering replaces the buttons, so put keyboard focus back somewhere sensible.
+    if (hadFocus) {
+      const f = el.querySelector('[data-act="next"], [data-act="submit"], .option.selected, .option, [data-act="retry"]');
+      if (f) f.focus({ preventScroll: true });
+    }
   }
+
+  // Shortcuts only apply while focus is in the quiz (or nowhere in particular).
+  const forUs = (e) => (e.target === document.body || el.contains(e.target)) && !e.metaKey && !e.ctrlKey && !e.altKey;
 
   function questionHTML() {
     const it = s.items[s.i];
@@ -233,14 +242,15 @@ const Quiz = (() => {
   }
 
   document.addEventListener("keydown", (e) => {
-    if (!live() || s.done || e.target.closest("input, textarea, select") || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (!live() || s.done || !forUs(e)) return;
     const it = s.items[s.i];
+    const onButton = e.target.closest("button, a");
     const k = e.key.toLowerCase();
     const idx = "1234".indexOf(k) >= 0 ? "1234".indexOf(k) : "abcd".indexOf(k);
     if (idx >= 0 && k.length === 1) {
       pick(it.order[idx]);
       e.preventDefault();
-    } else if (e.key === "Enter" && (!s.opts.instant || it.picked !== null)) {
+    } else if (e.key === "Enter" && !onButton && (!s.opts.instant || it.picked !== null)) {
       next();
       e.preventDefault();
     } else if (!s.opts.instant && e.key === "ArrowRight") go(s.i + 1);
@@ -270,6 +280,15 @@ const Cards = (() => {
 
   function render() {
     if (!live()) return;
+    const hadFocus = el.contains(document.activeElement);
+    draw();
+    if (hadFocus) {
+      const f = el.querySelector(".flashcard, .result-actions .btn");
+      if (f) f.focus({ preventScroll: true });
+    }
+  }
+
+  function draw() {
     const n = s.deck.length;
     if (!n) {
       el.innerHTML = `<div class="card empty"><div class="big">🎉</div>No cards here right now.</div>`;
@@ -297,19 +316,19 @@ const Cards = (() => {
         <span class="grow"></span>
         <button class="chip" data-act="shuffle">${icon("shuffle").replace('class="i"', 'class="i" style="width:16px;height:16px"')} Shuffle</button>
       </div>
-      <div class="flashcard ${s.flipped ? "flipped" : ""}" data-act="flip" role="button" tabindex="0" aria-label="Flip card">
-        <div class="flashcard-inner">
-          <div class="face front">
+      <button type="button" class="flashcard ${s.flipped ? "flipped" : ""}" data-act="flip" aria-pressed="${s.flipped}" aria-label="${s.flipped ? "Meaning shown. Press to see the term" : "Press to see the meaning"}">
+        <span class="flashcard-inner">
+          <span class="face front" ${s.flipped ? 'aria-hidden="true"' : ""}>
             ${c.from ? `<span class="from">${esc(c.from)}</span>` : ""}
-            <div class="term">${rich(c.front)}</div>
+            <span class="term">${rich(c.front)}</span>
             <span class="hint">Tap to see the meaning</span>
-          </div>
-          <div class="face back">
-            <div class="from">${rich(c.front)}</div>
-            <div class="meaning">${rich(c.back)}</div>
-          </div>
-        </div>
-      </div>
+          </span>
+          <span class="face back" ${s.flipped ? "" : 'aria-hidden="true"'}>
+            <span class="from">${rich(c.front)}</span>
+            <span class="meaning">${rich(c.back)}</span>
+          </span>
+        </span>
+      </button>
       <div class="card-actions">
         <button class="btn bad" data-act="learning">Still learning</button>
         <button class="btn good" data-act="known">I know this</button>
@@ -320,7 +339,13 @@ const Cards = (() => {
   function flip() {
     s.flipped = !s.flipped;
     const f = el.querySelector(".flashcard");
-    if (f) f.classList.toggle("flipped", s.flipped);
+    if (!f) return;
+    f.classList.toggle("flipped", s.flipped);
+    f.setAttribute("aria-pressed", s.flipped);
+    f.setAttribute("aria-label", s.flipped ? "Meaning shown. Press to see the term" : "Press to see the meaning");
+    const hide = (face, hidden) => (hidden ? face.setAttribute("aria-hidden", "true") : face.removeAttribute("aria-hidden"));
+    hide(f.querySelector(".front"), s.flipped);
+    hide(f.querySelector(".back"), !s.flipped);
   }
 
   function mark(status) {
@@ -352,8 +377,10 @@ const Cards = (() => {
   }
 
   document.addEventListener("keydown", (e) => {
-    if (!live() || s.i >= s.deck.length || e.target.closest("input, textarea, select") || e.metaKey || e.ctrlKey) return;
-    if (e.key === " " || (e.key === "Enter" && e.target.closest(".flashcard"))) {
+    if (!live() || s.i >= s.deck.length || e.metaKey || e.ctrlKey || e.altKey) return;
+    // Only while focus is on the cards (or nowhere in particular); buttons handle Space/Enter themselves.
+    if (e.target !== document.body && !el.contains(e.target)) return;
+    if (e.key === " " && e.target === document.body) {
       flip();
       e.preventDefault();
     } else if (e.key === "ArrowLeft") mark("learning");

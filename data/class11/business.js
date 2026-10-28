@@ -2,6 +2,8 @@
 // Part A: Foundations of Business. Part B: Corporate Organisation, Finance and Trade.
 // Format: see CONTENT_GUIDE.md. `formulas` holds lists and facts to memorise.
 StudyData.add(11, "business", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Business Studies"], reviewed: false},
   chapters: [
     // ═════════════════════ PART A: FOUNDATIONS OF BUSINESS ═════════════════════
     // ───────────── 1. Business, Trade and Commerce ─────────────

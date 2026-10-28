@@ -2,6 +2,8 @@
 // (Fundamentals of Human Geography; India: People and Economy).
 // Format: see CONTENT_GUIDE.md. `formulas` holds key facts and figures to memorise.
 StudyData.add(12, "geography", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Fundamentals of Human Geography","India: People and Economy"], reviewed: false},
   chapters: [
     // ═══════════════ FUNDAMENTALS OF HUMAN GEOGRAPHY ═══════════════
     // ───────────── 1. Human Geography: Nature and Scope ─────────────

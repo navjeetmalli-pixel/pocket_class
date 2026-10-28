@@ -64,7 +64,19 @@ for (const file of files) {
       continue;
     }
 
+    const sy = data.syllabus;
+    if (!sy || typeof sy !== "object") err("file", "syllabus is required (see CONTENT_GUIDE.md)");
+    else {
+      if (!isStr(sy.board)) err("syllabus", "board is required");
+      if (!["textbook", "older-book", "topic"].includes(sy.match)) err("syllabus", 'match must be "textbook", "older-book" or "topic"');
+      if (!Array.isArray(sy.books) || !sy.books.every(isStr)) err("syllabus", "books must be an array of book titles");
+      else if (sy.match !== "topic" && sy.books.length === 0) err("syllabus", "name the book(s) this content follows");
+      if (sy.reviewed !== false && !/^\d{4}-\d{2}-\d{2}/.test(String(sy.reviewed))) err("syllabus", "reviewed must be false or the review date (YYYY-MM-DD, reviewer)");
+    }
+
     const ids = new Set();
+    const norm = (t) => String(t).replace(/\*\*/g, "").trim().toLowerCase();
+    const seenQ = new Map();
     let quizCount = 0;
     data.chapters.forEach((ch, i) => {
       const at = `chapter ${i + 1} (${ch && ch.id})`;
@@ -72,6 +84,7 @@ for (const file of files) {
       if (ids.has(ch.id)) err(at, "duplicate id");
       ids.add(ch.id);
       for (const k of ["title", "section", "summary"]) if (!isStr(ch[k])) err(at, `${k} is required`);
+      if (ch.source !== undefined && !isStr(ch.source)) err(at, "source must be a string, e.g. \"Ganita Prakash Ch 3, pp. 45–62\"");
 
       if (!Array.isArray(ch.notes) || ch.notes.length < 2) err(at, "notes needs at least 2 topics");
       else
@@ -89,6 +102,8 @@ for (const file of files) {
         ch.terms.forEach((t, j) => {
           if (!isStr(t.term) || !isStr(t.meaning)) err(`${at} terms[${j}]`, "term and meaning are required");
         });
+      // Saved flashcard progress is keyed by the term's text, so terms must be unique in a chapter.
+      if (Array.isArray(ch.terms) && new Set(ch.terms.map((t) => norm(t.term))).size !== ch.terms.length) err(at, "two terms have the same text");
 
       if (ch.examples !== undefined) {
         if (!Array.isArray(ch.examples)) err(at, "examples must be an array");
@@ -123,6 +138,15 @@ for (const file of files) {
           }
           if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer > 3) err(qat, "answer must be 0–3");
           if (!isStr(q.explain)) err(qat, "explain is required");
+          // Saved mistakes are keyed by the question's text and options, so a repeat in the same chapter is an error.
+          // (Same wording with different options is fine.)
+          const ident = norm([q.q, ...(q.options || []).slice().sort()].join("|"));
+          const prev = seenQ.get(ident);
+          if (prev === ch.id) err(qat, "same question and options appear twice in this chapter");
+          else if (prev) warn(qat, `same question and options also appear in chapter "${prev}"`);
+          else seenQ.set(ident, ch.id);
+          if (isStr(q.explain) && Array.isArray(q.options) && norm(q.explain) === norm(q.options[q.answer] || ""))
+            warn(qat, "explain only repeats the answer; say why it is right");
         });
 
       const all = JSON.stringify(ch);

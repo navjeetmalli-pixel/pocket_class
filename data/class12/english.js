@@ -1,6 +1,8 @@
 // Class 12 English Core: Writing Skills and Literature (Flamingo, Vistas).
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the textbooks.
 StudyData.add(12, "english", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Flamingo","Vistas"], note: "Writing skills, plus a selection of lessons (not every chapter).", reviewed: false},
   chapters: [
     // ───────────────────────────── WRITING SKILLS ─────────────────────────────
     {

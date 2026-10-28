@@ -2,6 +2,8 @@
 // Part A: Principles and Functions of Management. Part B: Business Finance and Marketing.
 // Format: see CONTENT_GUIDE.md. `formulas` holds lists, steps and formulas to memorise.
 StudyData.add(12, "business", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Business Studies Part I","Business Studies Part II"], reviewed: false},
   chapters: [
     // ═════════════ PART A: PRINCIPLES AND FUNCTIONS OF MANAGEMENT ═════════════
     // ───────────── 1. Nature and Significance of Management ─────────────

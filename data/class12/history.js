@@ -1,6 +1,8 @@
 // Class 12 History: "Themes in Indian History" Parts I–III (current rationalised NCERT).
 // Format: see CONTENT_GUIDE.md. `formulas` holds key dates, people and sources.
 StudyData.add(12, "history", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Themes in Indian History Part I","Part II","Part III"], reviewed: false},
   chapters: [
     // ═════════════════════════ PART I – ANCIENT INDIA ═════════════════════════
     // ───────────── 1. Bricks, Beads and Bones ─────────────

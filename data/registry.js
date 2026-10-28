@@ -57,6 +57,12 @@ globalThis.StudyData = (function () {
     return c ? c.chapters : [];
   }
 
+  // What a subject's content follows: { board, match: "textbook" | "older-book" | "topic", books, note?, reviewed }.
+  function syllabus(classNumber, subjectId) {
+    const c = content[classNumber] && content[classNumber][subjectId];
+    return c ? c.syllabus : null;
+  }
+
   function subject(id) {
     return subjects.find((s) => s.id === id);
   }
@@ -67,25 +73,35 @@ globalThis.StudyData = (function () {
 
   const files = (classNumber) => (catalog[classNumber] || []).map((id) => `data/class${classNumber}/${id}.js`);
 
-  // Loads a class's data files in the browser. A missing file just means "coming soon".
+  // Loads a class's data files in the browser. Resolves to true once every file has loaded,
+  // or false if any failed (e.g. no connection); calling it again retries only the failed files.
+  const fileDone = {};
   function load(classNumber) {
     if (!loading[classNumber]) {
       loading[classNumber] = Promise.all(
-        files(classNumber).map(
-          (src) =>
-            new Promise((resolve) => {
-              const s = document.createElement("script");
-              s.src = src;
-              s.onload = s.onerror = resolve;
-              document.head.appendChild(s);
-            })
+        files(classNumber).map((src) =>
+          fileDone[src]
+            ? true
+            : new Promise((resolve) => {
+                const s = document.createElement("script");
+                s.src = src;
+                s.onload = () => resolve((fileDone[src] = true));
+                s.onerror = () => {
+                  s.remove();
+                  resolve(false);
+                };
+                document.head.appendChild(s);
+              })
         )
-      ).then(() => {
-        ready[classNumber] = true;
+      ).then((results) => {
+        const ok = results.every(Boolean);
+        if (ok) ready[classNumber] = true;
+        else delete loading[classNumber];
+        return ok;
       });
     }
     return loading[classNumber];
   }
 
-  return { subjects, classes, catalog, content, add, chapters, subject, subjectsFor, files, load, isLoaded: (c) => !!ready[c] };
+  return { subjects, classes, catalog, content, add, chapters, syllabus, subject, subjectsFor, files, load, isLoaded: (c) => !!ready[c] };
 })();

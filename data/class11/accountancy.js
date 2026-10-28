@@ -1,6 +1,8 @@
 // Class 11 Accountancy: current rationalised NCERT textbook (Financial Accounting, Parts I and II).
 // Format: see CONTENT_GUIDE.md
 StudyData.add(11, "accountancy", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Financial Accounting Part I","Financial Accounting Part II"], reviewed: false},
   chapters: [
     // ───────────────────────────── 1. Introduction to Accounting ─────────────────────────────
     {

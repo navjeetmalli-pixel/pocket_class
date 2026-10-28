@@ -1,6 +1,8 @@
 // Class 5 Mathematics: organised by topic, following the standard CBSE Class 5 syllabus.
 // Format: see CONTENT_GUIDE.md
 StudyData.add(5, "maths", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "topic", books: [], note: "Chapter names and order may not match your textbook.", reviewed: false},
   chapters: [
     // ───────────────────────────── 1. Large Numbers ─────────────────────────────
     {

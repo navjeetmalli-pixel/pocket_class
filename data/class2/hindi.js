@@ -1,5 +1,7 @@
 // कक्षा 2 – हिंदी: मात्राएँ, संयुक्त अक्षर, शब्द, वाक्य और कहानी
 StudyData.add(2, "hindi", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills, arranged by topic. Textbook lessons are not included.", reviewed: false},
   chapters: [
     {
       id: "sabhi-matrayen",

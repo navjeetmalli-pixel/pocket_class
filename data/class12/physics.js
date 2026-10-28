@@ -1,4 +1,6 @@
 StudyData.add(12, "physics", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Physics Part I","Physics Part II"], reviewed: false},
   chapters: [
     // ------------------------------------------------------------------
     {

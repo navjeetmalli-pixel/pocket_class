@@ -79,9 +79,16 @@ const App = {
       if (missing.length) {
         main.innerHTML = `<div class="empty" style="padding-top:28vh"><div class="big">📚</div>Loading Class ${missing[0]}…</div>`;
         renderNav(p);
-        Promise.all(missing.map((c) => StudyData.load(c))).then(() => {
-          keepOffline(missing);
-          App.render(opts);
+        Promise.all(missing.map((c) => StudyData.load(c))).then((ok) => {
+          if (ok.every(Boolean)) {
+            missing.forEach(Store.migrate);
+            keepOffline(missing);
+            return App.render(opts);
+          }
+          main.innerHTML = `<div class="empty" style="padding-top:24vh"><div class="big">📡</div>
+            <p>Class ${missing[0]} couldn't be loaded. Check your internet connection and try again.</p>
+            <button class="btn primary" data-act="retry">${icon("reset")} Try again</button></div>`;
+          main.onclick = (e) => e.target.closest("[data-act=retry]") && App.render(opts);
         });
         return;
       }

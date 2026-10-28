@@ -3,6 +3,8 @@
 //  Democratic Politics II, Understanding Economic Development).
 // Format: see CONTENT_GUIDE.md. `formulas` holds key dates and facts.
 StudyData.add(10, "sst", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["India and the Contemporary World II","Contemporary India II","Democratic Politics II","Understanding Economic Development"], reviewed: false},
   chapters: [
     // ═════════════════════════════ HISTORY ═════════════════════════════
     // ───────────── 1. The Rise of Nationalism in Europe ─────────────

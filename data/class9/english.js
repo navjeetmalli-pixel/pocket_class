@@ -1,6 +1,8 @@
 // Class 9 English: Grammar, Writing Skills and Literature (Beehive).
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the textbook.
 StudyData.add(9, "english", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Beehive"], note: "Grammar and writing, plus a selection of Beehive lessons (not every chapter).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {

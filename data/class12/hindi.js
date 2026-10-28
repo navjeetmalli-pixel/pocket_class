@@ -1,5 +1,7 @@
 // कक्षा 12 – हिंदी (आधार / Core): साहित्य (आरोह भाग 2), पूरक (वितान भाग 2) और अभिव्यक्ति और माध्यम (लेखन)
 StudyData.add(12, "hindi", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Aroh Bhag 2","Vitan Bhag 2"], note: "A selection of lessons, plus Abhivyakti aur Madhyam (not every chapter).", reviewed: false},
   chapters: [
     {
       id: "aatm-parichay-ek-geet",

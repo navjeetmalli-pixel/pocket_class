@@ -1,6 +1,8 @@
 // ਪੰਜਾਬੀ – ਜਮਾਤ 11 (ਭਾਸ਼ਾ ਬਾਰੇ ਜਾਣਕਾਰੀ, ਵਿਆਕਰਨ, ਲੇਖ ਰਚਨਾ)
 // ਫ਼ਾਰਮੈਟ ਲਈ CONTENT_GUIDE.md ਵੇਖੋ।
 StudyData.add(11, "punjabi", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills for CBSE and PSEB students. Textbook lessons are not included.", reviewed: false},
   chapters: [
     {
       id: "gurmukhi-lipi",

@@ -96,11 +96,13 @@ const Views = (() => {
   }
 
   function quizItems(c, subj, ch) {
-    return ch.quiz.map((q, i) => ({
+    return ch.quiz.map((q) => ({
       ...q,
-      ref: { key: `${Store.key(c, subj.id, ch.id)}/${i}`, from: `${subj.short} · ${ch.title}` },
+      ref: { key: `${Store.key(c, subj.id, ch.id)}/${questionId(q)}`, from: `${subj.short} · ${ch.title}` },
     }));
   }
+
+  const cardKey = (c, subjectId, ch, t) => `${Store.key(c, subjectId, ch.id)}/${itemId("t", t.term)}`;
 
   function findChapter(c, subjectId, chapterId) {
     const subj = D.subject(subjectId);
@@ -295,6 +297,20 @@ const Views = (() => {
 
   // ---------- subject ----------
 
+  // Tells the student what the chapters follow, so nobody mistakes topic notes for their textbook.
+  function syllabusLine(c, id) {
+    const sy = D.syllabus(c, id);
+    if (!sy) return "";
+    const books = sy.books.map((b) => `<em>${esc(b)}</em>`).join(", ");
+    const what = {
+      textbook: `Follows the NCERT book${sy.books.length > 1 ? "s" : ""} ${books} (${esc(sy.board)}).`,
+      "older-book": `Follows the older NCERT book${sy.books.length > 1 ? "s" : ""} ${books}.`,
+      topic: "Topic-based revision.",
+    }[sy.match];
+    const review = sy.reviewed ? `Checked by a teacher (${esc(String(sy.reviewed).slice(0, 10))}).` : "Not yet checked by a teacher, so compare with your textbook.";
+    return `<p class="syllabus-line ${sy.match}">${what} ${sy.note ? esc(sy.note) + " " : ""}${review}</p>`;
+  }
+
   function subject([id]) {
     const subj = D.subject(id);
     if (!subj) return notFound();
@@ -345,6 +361,7 @@ const Views = (() => {
               : ""
           }
         </div>
+        ${syllabusLine(c, id)}
         ${filters}
         ${list}`,
       mount(el) {
@@ -435,7 +452,7 @@ const Views = (() => {
         }
         if (tab === "cards")
           Cards.mount(el.querySelector("#cards-mount"), {
-            cards: ch.terms.map((t, i) => ({ key: `${k}/t${i}`, front: t.term, back: t.meaning })),
+            cards: ch.terms.map((t) => ({ key: cardKey(c, subj.id, ch, t), front: t.term, back: t.meaning })),
           });
       },
     };
@@ -667,7 +684,7 @@ const Views = (() => {
     const cardCount = (s) => {
       const chs = D.chapters(c, s.id);
       const all = chs.reduce((a, ch) => a + ch.terms.length, 0);
-      const known = chs.reduce((a, ch) => a + ch.terms.filter((_, i) => Store.state.cards[`${Store.key(c, s.id, ch.id)}/t${i}`] === "known").length, 0);
+      const known = chs.reduce((a, ch) => a + ch.terms.filter((t) => Store.state.cards[cardKey(c, s.id, ch, t)] === "known").length, 0);
       return `${known} of ${all} cards known`;
     };
 
@@ -695,7 +712,7 @@ const Views = (() => {
       .map((qk) => {
         const k = Store.parseKey(qk);
         const f = findChapter(c, k.subject, k.chapterId);
-        return f && f.ch.quiz[k.q] ? quizItems(c, f.subj, f.ch)[k.q] : null;
+        return f ? quizItems(c, f.subj, f.ch).find((it) => it.ref.key === qk) : null;
       })
       .filter(Boolean);
     return {
@@ -750,7 +767,7 @@ const Views = (() => {
     const c = cls();
     const cards = [];
     D.chapters(c, id).forEach((ch) =>
-      ch.terms.forEach((t, i) => cards.push({ key: `${Store.key(c, id, ch.id)}/t${i}`, front: t.term, back: t.meaning, from: ch.title }))
+      ch.terms.forEach((t) => cards.push({ key: cardKey(c, id, ch, t), front: t.term, back: t.meaning, from: ch.title }))
     );
     return {
       title: `${subj.short} flashcards`,
@@ -1007,18 +1024,39 @@ const Views = (() => {
               <li>After the first visit it works without internet.</li>
             </ul>
           </div>
+          <div class="card stack">
+            <div><strong>Back up progress</strong><div class="small muted">Progress is saved only in this browser. Save a backup file before clearing browser data or moving to a new phone, then restore it there.</div></div>
+            <div class="row" style="gap:10px;flex-wrap:wrap">
+              <button class="btn" data-act="backup">${icon("download")} Save backup</button>
+              <button class="btn" data-act="restore">${icon("upload")} Restore backup</button>
+              <input type="file" id="restore" accept=".json,application/json" hidden>
+            </div>
+          </div>
           <div class="card row">
             <div class="grow"><strong>Reset progress</strong><div class="small muted">Clears scores, streaks, bookmarks and mistakes on this device.</div></div>
             <button class="btn bad" data-act="reset">Reset</button>
           </div>
           <div class="card small muted">
             <strong style="color:var(--text)">About Vidya</strong><br>
-            Notes, quizzes and tests follow the NCERT syllabus (CBSE) for Classes 1 to 12. Punjabi covers grammar and writing skills for CBSE and PSEB students.
-            Use this app for revision alongside your textbook, and check with your teacher if anything looks different from your book.
+            Notes, quizzes and tests are written for the CBSE / NCERT syllabus, Classes 1 to 12. Each subject page says whether it follows the current NCERT book, an older one, or is arranged by topic.
+            Punjabi covers grammar and writing skills for CBSE and PSEB students. The content has not yet been checked by teachers,
+            so use it for revision alongside your textbook, and check with your teacher if anything looks different from your book.
             Your progress is stored only on this device.
           </div>
         </div>`,
       mount(el) {
+        el.querySelector("#restore").onchange = (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+          file.text().then((text) => {
+            if (!confirm("Replace the progress on this device with this backup?")) return;
+            if (!Store.importData(text)) return toast("That file isn't a Vidya backup");
+            App.applyTheme();
+            toast("Progress restored");
+            if (location.hash === "#/") App.render();
+            else location.hash = "#/";
+          });
+        };
         el.querySelector("#name").onchange = (e) => {
           Store.setProfile(e.target.value, st.profile.cls);
           toast("Name saved");
@@ -1027,8 +1065,22 @@ const Views = (() => {
           const b = e.target.closest("[data-cls],[data-theme],[data-act]");
           if (!b) return;
           if (b.dataset.cls) {
+            if (Number(b.dataset.cls) === st.profile.cls) return;
             Store.setClass(Number(b.dataset.cls));
             toast(`Switched to Class ${b.dataset.cls}`);
+            // Start the new class from Home so nothing from the old class is left on screen.
+            location.hash = "#/";
+            return;
+          } else if (b.dataset.act === "backup") {
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(new Blob([Store.exportData()], { type: "application/json" }));
+            a.download = `vidya-progress-${dayKey()}.json`;
+            a.click();
+            setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+            return;
+          } else if (b.dataset.act === "restore") {
+            el.querySelector("#restore").click();
+            return;
           } else if (b.dataset.theme) {
             Store.setTheme(b.dataset.theme);
             App.applyTheme();

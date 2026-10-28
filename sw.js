@@ -1,7 +1,7 @@
 // Offline support: caches the app shell on first visit, plus each class's data once it's opened.
 // Online, files come fresh from the network (and refresh the cache);
 // offline or on a very slow connection, the cached copy is used.
-const CACHE = "vidya-v3";
+const CACHE = "vidya-v4";
 
 const FILES = [
   "./",
@@ -36,7 +36,8 @@ self.addEventListener("message", (e) => {
 });
 
 self.addEventListener("activate", (e) => {
-  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))));
+  // Other apps on the same domain share Cache Storage, so only remove Vidya's own old caches.
+  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith("vidya-") && k !== CACHE).map((k) => caches.delete(k)))));
   self.clients.claim();
 });
 

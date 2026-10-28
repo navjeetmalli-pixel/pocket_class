@@ -1,6 +1,8 @@
 // Class 11 Political Science
 // Books: "Indian Constitution at Work" and "Political Theory" (current rationalised NCERT).
 StudyData.add(11, "polsci", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Indian Constitution at Work","Political Theory"], reviewed: false},
   chapters: [
     // ═════════════════════════ INDIAN CONSTITUTION AT WORK ═════════════════════════
     // ───────────── 1. Constitution: Why and How? ─────────────

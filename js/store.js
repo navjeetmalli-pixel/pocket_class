@@ -1,5 +1,6 @@
 // Everything the student does is saved in this browser (localStorage), so the app works offline.
-// Chapter keys look like "10/maths/real-numbers"; question keys add the quiz index: "10/maths/real-numbers/3".
+// Chapter keys look like "10/maths/real-numbers"; question and flashcard keys add an id made
+// from the item's text (see itemId): "10/maths/real-numbers/q1x2y3z", ".../t9k8j7".
 
 const Store = (() => {
   const KEY = "vidya:v1";
@@ -37,8 +38,8 @@ const Store = (() => {
   const key = (cls, subject, chapterId) => `${cls}/${subject}/${chapterId}`;
 
   function parseKey(k) {
-    const [cls, subject, chapterId, q] = String(k).split("/");
-    return { cls: Number(cls), subject, chapterId, q: q === undefined ? undefined : Number(q) };
+    const [cls, subject, chapterId, item] = String(k).split("/");
+    return { cls: Number(cls), subject, chapterId, item };
   }
 
   function today() {
@@ -169,6 +170,47 @@ const Store = (() => {
     setQotd(picked) {
       state.qotd = { day: dayKey(), picked };
       touch();
+    },
+
+    // Older versions keyed questions by position ("…/3") and cards by "…/t3".
+    // Once a class's content is loaded, move those keys to the text-based ids.
+    migrate(cls) {
+      let changed = false;
+      const move = (map, re, list, idOf) => {
+        for (const k of Object.keys(map)) {
+          const p = parseKey(k);
+          const m = p.cls === cls && re.exec(p.item);
+          if (!m) continue;
+          const ch = StudyData.chapters(cls, p.subject).find((x) => x.id === p.chapterId);
+          const it = ch && ch[list][Number(m[1])];
+          if (it) map[key(cls, p.subject, p.chapterId) + "/" + idOf(it)] = map[k];
+          delete map[k];
+          changed = true;
+        }
+      };
+      move(state.mistakes, /^(\d+)$/, "quiz", questionId);
+      move(state.cards, /^t(\d+)$/, "terms", (t) => itemId("t", t.term));
+      if (changed) save();
+    },
+
+    // Backup file: the whole saved state as JSON.
+    exportData() {
+      return JSON.stringify({ app: "vidya", version: 1, saved: Date.now(), state }, null, 1);
+    },
+    // Returns false if the file isn't a Vidya backup.
+    importData(text) {
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        return false;
+      }
+      const s = data && data.app === "vidya" && data.state;
+      if (!s || !s.profile || !StudyData.classes.includes(Number(s.profile.cls))) return false;
+      state = Object.assign(defaults(), s);
+      StudyData.classes.filter(StudyData.isLoaded).forEach(this.migrate);
+      save();
+      return true;
     },
 
     reset() {

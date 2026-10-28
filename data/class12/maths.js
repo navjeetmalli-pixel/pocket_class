@@ -3,6 +3,8 @@
 // Notation: matrices are written row by row with rows separated by semicolons, e.g. [1 2; 3 4];
 // determinants likewise, e.g. |1 2; 3 4|.
 StudyData.add(12, "maths", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Mathematics Part I","Mathematics Part II"], reviewed: false},
   chapters: [
     // ───────────────────────────── 1. Relations and Functions ─────────────────────────────
     {

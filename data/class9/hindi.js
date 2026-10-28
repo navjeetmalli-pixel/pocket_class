@@ -1,5 +1,7 @@
 // कक्षा 9 – हिंदी (पाठ्यक्रम अ): व्याकरण, रचना और साहित्य (क्षितिज भाग 1)
 StudyData.add(9, "hindi", {
+  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
+  syllabus: {board: "CBSE", match: "textbook", books: ["Kshitij Bhag 1"], note: "Grammar and writing, plus a selection of Kshitij lessons (not every chapter).", reviewed: false},
   chapters: [
     {
       id: "upsarg",
