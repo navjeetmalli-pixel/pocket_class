@@ -812,7 +812,7 @@ StudyData.add(7, "english", {
       ],
       terms: [
         { term: "Salutation", meaning: "The greeting at the start of a letter, such as “Dear Sir,”." },
-        { term: "Subject line", meaning: "A short line after the salutation that tells the reader what the letter is about." },
+        { term: "Subject line", meaning: "A short line, placed after the receiver’s address and before the salutation, that tells the reader what the letter is about." },
         { term: "Closing", meaning: "The polite ending before the signature, such as “Yours faithfully”." },
         { term: "Complaint", meaning: "A letter that points out a problem and asks for it to be fixed." },
         { term: "Contraction", meaning: "A short form of two words joined by an apostrophe, such as “can’t” or “won’t”. Avoid these in formal letters." }
