@@ -1067,6 +1067,285 @@ StudyData.add(11, "geography", {
           explain: "**Long, clear, calm winter nights** let the ground cool rapidly, so air near the ground becomes colder than air above."
         }
       ]
+    },
+
+    // ───────────── 9. Atmospheric Circulation and Weather Systems ─────────────
+    {
+      id: "atmospheric-circulation-and-weather-systems",
+      title: "Atmospheric Circulation and Weather Systems",
+      section: "Fundamentals of Physical Geography",
+      summary: "Atmospheric pressure and pressure belts, forces that drive winds, the general circulation of the atmosphere and ENSO, local winds, air masses and fronts, and weather systems such as extra-tropical and tropical cyclones, thunderstorms and tornadoes.",
+      notes: [
+        {
+          heading: "Atmospheric pressure and pressure belts",
+          points: [
+            "**Atmospheric pressure** is the weight of a column of air on a unit area from mean sea level to the top of the atmosphere. It is measured in **millibars (mb)** with a **mercury or aneroid barometer**.",
+            "Average pressure at sea level is **1,013.2 mb**. In the lower atmosphere, pressure **falls by about 1 mb for every 10 m** rise in height.",
+            "**Isobars** are lines joining places of equal pressure (reduced to sea level). Closely spaced isobars show a **steep pressure gradient** and strong winds.",
+            "Pressure belts: **equatorial low** (doldrums) near the equator; **subtropical highs** along **30°N and 30°S**; **sub-polar lows** along **60°N and 60°S**; **polar highs** near the poles.",
+            "The belts **shift** with the apparent movement of the sun: northward in the northern summer and southward in the northern winter."
+          ]
+        },
+        {
+          heading: "Forces affecting the velocity and direction of wind",
+          points: [
+            "**Pressure gradient force**: the rate of change of pressure with distance; air moves from **high to low pressure**. Steeper gradient = faster wind.",
+            "**Frictional force**: slows the wind; greatest at the surface and generally effective up to **1–3 km**; least over the sea surface.",
+            "**Coriolis force**: caused by the earth's rotation; deflects winds to the **right in the northern hemisphere** and to the **left in the southern hemisphere**. Named after the French scientist who described it in **1844**.",
+            "The Coriolis force is directly proportional to the **angle of latitude**: **maximum at the poles, absent at the equator**. This is why tropical cyclones do not form near the equator.",
+            "**Geostrophic wind**: in the upper air, where there is no friction and isobars are straight, the pressure gradient force balances the Coriolis force and the wind blows **parallel to the isobars**."
+          ]
+        },
+        {
+          heading: "General circulation of the atmosphere",
+          points: [
+            "Air rises at the **ITCZ (Inter Tropical Convergence Zone)** near the equator due to convection, creating low pressure; winds from the tropics converge here.",
+            "The risen air moves poleward at the top of the troposphere, accumulates near **30°N and 30°S** and sinks, forming the **subtropical highs**. This loop is the **Hadley cell**; surface winds blowing back to the equator are the **trade winds (easterlies)**.",
+            "In middle latitudes, the **Ferrel cell** produces the **westerlies**. At the poles, cold dense air subsides and blows towards middle latitudes as **polar easterlies** (**polar cell**).",
+            "**Cyclonic circulation** (low pressure): winds blow **anticlockwise in the northern hemisphere** and clockwise in the southern. **Anticyclonic** (high pressure): **clockwise in the northern hemisphere** and anticlockwise in the southern.",
+            "Local winds: **sea breeze** by day and **land breeze** by night; **valley breeze** blows up slopes by day and **mountain breeze** down slopes by night. Cold air draining from high plateaus and ice fields into valleys is a **katabatic wind**."
+          ]
+        },
+        {
+          heading: "El Niño and ENSO",
+          points: [
+            "Warm water from the central Pacific sometimes flows towards the **coast of Peru**, replacing the cold Peruvian current. This appearance of warm water is called **El Niño** ('the child', as it appears around **Christmas**).",
+            "The related change in pressure over the central Pacific and Australia is the **Southern Oscillation**. Together they are called **ENSO**.",
+            "In strong ENSO years, the arid west coast of South America gets **heavy rain**, Australia and sometimes **India face drought**, and China may get floods.",
+            "ENSO is closely monitored and used for **long-range weather forecasting** in many parts of the world."
+          ]
+        },
+        {
+          heading: "Air masses and fronts",
+          points: [
+            "An **air mass** is a large body of air with uniform temperature and humidity, formed over a homogeneous **source region**.",
+            "Five source regions: warm tropical and subtropical **oceans**; subtropical **hot deserts**; relatively cold **high-latitude oceans**; very cold **snow-covered continents** in high latitudes; permanently **ice-covered** Arctic and Antarctica.",
+            "Types: **maritime tropical (mT)**, **continental tropical (cT)**, **maritime polar (mP)**, **continental polar (cP)** and **continental arctic (cA)**.",
+            "A **front** is the boundary zone where two different air masses meet; its formation is **frontogenesis**. Fronts occur in **middle latitudes**.",
+            "Four types: **cold front** (cold air moves towards warm air), **warm front** (warm air moves towards cold air), **stationary front** (neither moves) and **occluded front** (an air mass is fully lifted above the land surface)."
+          ]
+        },
+        {
+          heading: "Cyclones, thunderstorms and tornadoes",
+          points: [
+            "**Extra-tropical cyclones** form in middle and high latitudes along the **polar front**; they have a clear **frontal system**, cover a larger area, form over **land and sea**, and move **west to east**.",
+            "**Tropical cyclones** form only over **warm tropical seas** and dissipate on reaching land; they move **east to west**. Called **cyclones** (Indian Ocean), **hurricanes** (Atlantic), **typhoons** (western Pacific, South China Sea) and **willy-willies** (Western Australia).",
+            "Conditions for tropical cyclones: large sea surface with temperature **above 27°C**, presence of the **Coriolis force**, small variations in vertical wind speed, a pre-existing weak **low-pressure area**, and **upper divergence** above the system. Their energy comes from the **latent heat of condensation**.",
+            "A mature cyclone has a calm centre, the **eye**, surrounded by the **eye wall** with the strongest winds (up to about **250 km/h**) and torrential rain. Over the Bay of Bengal, Arabian Sea and Indian Ocean the storm is **600–1,200 km** across. The place where it crosses the coast is its **landfall**.",
+            "**Thunderstorms** result from intense **convection** on moist hot days, with cumulonimbus clouds, thunder, lightning and sometimes hail. A **tornado** is a spiralling wind descending from a severe thunderstorm like an **elephant's trunk**, mostly in middle latitudes; over the sea it is a **water spout**."
+          ]
+        }
+      ],
+      formulas: [
+        "Average sea-level pressure = 1,013.2 mb; pressure falls ≈ 1 mb per 10 m rise",
+        "Pressure belts: equatorial low (0°); subtropical highs (30°N/S); sub-polar lows (60°N/S); polar highs (90°N/S)",
+        "Coriolis force: right in NH, left in SH; maximum at poles, zero at equator; described in 1844",
+        "Low pressure (cyclone): anticlockwise in NH, clockwise in SH. High pressure (anticyclone): clockwise in NH, anticlockwise in SH",
+        "Cells: Hadley (tropics, trade winds), Ferrel (mid-latitudes, westerlies), Polar (polar easterlies)",
+        "Air masses: mT, cT, mP, cP, cA. Fronts: cold, warm, stationary, occluded",
+        "Tropical cyclones: cyclones (Indian Ocean), hurricanes (Atlantic), typhoons (W Pacific, South China Sea), willy-willies (W Australia)",
+        "Tropical cyclone needs sea surface temperature > 27°C; eye-wall winds up to ≈ 250 km/h; diameter 600–1,200 km over Indian seas",
+        "ENSO = El Niño (warm water off Peru) + Southern Oscillation (pressure change, central Pacific–Australia)"
+      ],
+      terms: [
+        { term: "Isobar", meaning: "A line on a map joining places having **equal atmospheric pressure**." },
+        { term: "Coriolis force", meaning: "A deflecting force due to the **earth's rotation**: winds turn right in the northern hemisphere and left in the southern; zero at the equator." },
+        { term: "Geostrophic wind", meaning: "Upper-air wind that blows **parallel to isobars** because the pressure gradient force is balanced by the Coriolis force." },
+        { term: "ITCZ", meaning: "**Inter Tropical Convergence Zone**: the low-pressure zone near the equator where trade winds converge and air rises." },
+        { term: "Front", meaning: "The boundary zone where **two different air masses** meet; found in middle latitudes." },
+        { term: "El Niño", meaning: "The appearance of **warm water off the coast of Peru** around Christmas, replacing the cold Peruvian current." }
+      ],
+      qa: [
+        {
+          q: "Discuss the factors that affect the speed and direction of wind. (3 marks)",
+          a: "1. **Pressure gradient force**: wind blows from high to low pressure; the steeper the gradient (closer the isobars), the faster the wind.\n2. **Frictional force**: friction with the earth's surface slows the wind; it is greatest at the surface (effective up to 1–3 km) and least over the sea.\n3. **Coriolis force**: the earth's rotation deflects winds to the **right in the northern hemisphere** and to the **left in the southern**; it is maximum at the poles and absent at the equator."
+        },
+        {
+          q: "Describe the general circulation of the atmosphere with the help of the three cells. (5 marks)",
+          a: "1. High insolation at the equator causes air to rise by convection at the **ITCZ**, creating low pressure.\n2. **Hadley cell**: the rising air moves poleward at the top of the troposphere, sinks near **30°N and S** to form the subtropical highs, and returns to the equator as the **trade winds (easterlies)**.\n3. **Ferrel cell**: in middle latitudes, air from the subtropical highs blows towards the poles as the **westerlies**; sinking cold air and rising warm air complete the cell.\n4. **Polar cell**: cold dense air subsides near the poles and blows towards middle latitudes as the **polar easterlies**.\n5. These three cells set the pattern of **pressure belts and planetary winds**, and they also drive the circulation of ocean water, which influences the earth's climate."
+        },
+        {
+          q: "How do tropical cyclones differ from extra-tropical cyclones? (3 marks)",
+          a: "1. **Origin**: tropical cyclones form only over **warm tropical seas** (above 27°C); extra-tropical cyclones form in middle and high latitudes over **both land and sea**.\n2. **Fronts and area**: extra-tropical cyclones have a clear **frontal system** and cover a **larger area**; tropical cyclones have no fronts but are more intense, with a calm **eye** and very strong winds.\n3. **Movement**: extra-tropical cyclones move from **west to east**; tropical cyclones move from **east to west** and dissipate after reaching land."
+        }
+      ],
+      quiz: [
+        {
+          q: "The average atmospheric pressure at mean sea level is:",
+          options: ["1,000 mb", "1,013.2 mb", "1,032.1 mb", "960 mb"],
+          answer: 1,
+          explain: "Average sea-level pressure is **1,013.2 millibars**."
+        },
+        {
+          q: "The Coriolis force is:",
+          options: ["maximum at the equator", "the same at all latitudes", "zero at the poles", "maximum at the poles"],
+          answer: 3,
+          explain: "It is directly proportional to the angle of latitude: **maximum at the poles** and **absent at the equator**."
+        },
+        {
+          q: "In the northern hemisphere, winds around a low-pressure centre blow:",
+          options: ["anticlockwise", "clockwise", "straight towards the centre", "parallel to the equator"],
+          answer: 0,
+          explain: "Cyclonic circulation is **anticlockwise in the northern hemisphere** and clockwise in the southern hemisphere."
+        },
+        {
+          q: "Tropical cyclones in the western Pacific and South China Sea are called:",
+          options: ["hurricanes", "willy-willies", "typhoons", "tornadoes"],
+          answer: 2,
+          explain: "They are **typhoons**; hurricanes are in the Atlantic and willy-willies in Western Australia."
+        },
+        {
+          q: "When warm air moves towards and over a cold air mass, the front formed is a:",
+          options: ["cold front", "occluded front", "stationary front", "warm front"],
+          answer: 3,
+          explain: "A **warm front** forms when warm air advances towards the cold air mass."
+        },
+        {
+          q: "Which condition is necessary for the formation of a tropical cyclone?",
+          options: ["Absence of the Coriolis force", "Sea surface temperature above 27°C", "Strong variations in vertical wind speed", "Location exactly on the equator"],
+          answer: 1,
+          explain: "A large sea surface **warmer than 27°C** is needed; the Coriolis force must be present, so cyclones do not form at the equator."
+        }
+      ]
+    },
+
+    // ───────────── 10. Water in the Atmosphere ─────────────
+    {
+      id: "water-in-the-atmosphere",
+      title: "Water in the Atmosphere",
+      section: "Fundamentals of Physical Geography",
+      summary: "Humidity and its measures, evaporation and condensation, forms of condensation (dew, frost, fog, mist, clouds), types of precipitation and rainfall, and the world distribution of rainfall.",
+      notes: [
+        {
+          heading: "Humidity",
+          points: [
+            "**Humidity** is the water vapour present in the air. It varies from zero to about **4% by volume** of the atmosphere.",
+            "**Absolute humidity**: the actual amount of water vapour in the air, expressed as the **weight of water vapour per unit volume**, in **grams per cubic metre**.",
+            "**Relative humidity**: the **percentage** of moisture present in the air compared to its **full capacity** at that temperature. It is greater over oceans and least over continents.",
+            "Air holding moisture to its full capacity is **saturated**. The temperature at which a sample of air becomes saturated is its **dew point**.",
+            "Warm air can hold more moisture; so when air cools, its relative humidity rises even if the amount of vapour stays the same."
+          ]
+        },
+        {
+          heading: "Evaporation and condensation",
+          points: [
+            "**Evaporation** is the change of water from liquid to gas; **heat** is its main cause. The heat absorbed in the process is the **latent heat of vaporisation**.",
+            "Rate of evaporation increases with **higher temperature**, a larger **saturation deficit** (difference between capacity and actual moisture) and **movement of air** (wind replaces saturated air).",
+            "**Condensation** is the change of water vapour into water, caused by **loss of heat**. It takes place on tiny particles called **hygroscopic condensation nuclei** (dust, smoke, salt).",
+            "Condensation occurs when air is cooled to its dew point with volume constant, when both volume and temperature are reduced, or when moisture is added by evaporation. It depends on the **amount of cooling and relative humidity**."
+          ]
+        },
+        {
+          heading: "Forms of condensation",
+          points: [
+            "**Dew**: moisture deposited as **water droplets** on cool surfaces like grass, leaves and stones. Ideal conditions: **clear sky, calm air, high relative humidity, cold long nights**; the dew point must be **above freezing**.",
+            "**Frost**: forms on cold surfaces when condensation takes place **below 0°C** (dew point at or below freezing); moisture is deposited as **minute ice crystals**.",
+            "**Fog**: a **cloud with its base at or very near the ground**, formed when a moist air mass cools suddenly; visibility becomes poor to zero. **Smog** is fog mixed with smoke, common in urban and industrial areas.",
+            "**Mist** is like fog but contains **more moisture**; each nucleus has a thicker layer of moisture. Mists are frequent over **mountains**, where rising warm air meets cold slopes.",
+            "**Clouds**: masses of minute water droplets or tiny ice crystals formed by condensation in free air at **considerable heights**."
+          ]
+        },
+        {
+          heading: "Types of clouds",
+          points: [
+            "**Cirrus**: high clouds at **8,000–12,000 m**; thin, detached and **feathery**; always white.",
+            "**Cumulus**: look like **cotton wool**; generally at **4,000–7,000 m**; patchy with a **flat base**.",
+            "**Stratus**: **layered** clouds covering large parts of the sky; form by loss of heat or mixing of air masses of different temperatures.",
+            "**Nimbus**: **black or dark grey**, at middle levels or very near the surface; extremely dense and opaque to sunrays; give rain.",
+            "Combinations: high clouds (cirrus, cirrostratus, cirrocumulus); middle (altostratus, altocumulus); low (stratocumulus, nimbostratus); and clouds with extensive vertical development (**cumulus, cumulonimbus**)."
+          ]
+        },
+        {
+          heading: "Precipitation and types of rainfall",
+          points: [
+            "**Precipitation** is the release of moisture after condensation, when drops grow too heavy for the air to hold. **Rainfall** is the liquid form; **snowfall** occurs when the temperature is **below 0°C**.",
+            "**Sleet**: frozen raindrops and refrozen melted snow-water; forms when a layer of air above freezing lies over a sub-freezing layer near the ground. **Hailstones**: rain drops solidified into rounded ice pieces with **several concentric layers** of ice.",
+            "**Convectional rain**: heated air rises, cools and forms **cumulus clouds**, with thunder and lightning; short and heavy; common in **summer afternoons**, **equatorial regions** and continental interiors.",
+            "**Orographic (relief) rain**: moist air is forced up a mountain; the **windward side** gets heavy rain, while the **leeward side**, where air descends and warms, stays dry; this is the **rain-shadow area**.",
+            "**Cyclonic rain** is associated with cyclones (explained under weather systems)."
+          ]
+        },
+        {
+          heading: "World distribution of rainfall",
+          points: [
+            "Rainfall generally **decreases from the equator towards the poles**. **Coastal areas** get more rain than continental interiors, and **oceans** get more than land.",
+            "Between **35° and 40° N and S**, rain is heavier on the **eastern coasts** and decreases westward. Between **45° and 65° N and S**, the **westerlies** bring rain first to the **western margins**.",
+            "**Over 200 cm**: equatorial belt, windward slopes of mountains on western coasts in cool temperate zones, and coastal areas of **monsoon lands**.",
+            "**100–200 cm**: interior continental areas; **50–100 cm**: central parts of tropical lands and eastern and interior parts of temperate lands.",
+            "**Less than 50 cm**: rain-shadow zones, interiors of continents and **high latitudes**."
+          ]
+        }
+      ],
+      formulas: [
+        "Water vapour in air: 0 to about 4% by volume",
+        "Absolute humidity = weight of water vapour per unit volume of air (g/m³)",
+        "Relative humidity = actual moisture ÷ full capacity at that temperature × 100",
+        "Dew: dew point above 0°C. Frost: dew point at or below 0°C",
+        "Cirrus: 8,000–12,000 m (feathery); Cumulus: 4,000–7,000 m (cotton wool, flat base); Stratus: layered; Nimbus: dark, rain-bearing",
+        "Rainfall types: convectional, orographic (relief), cyclonic",
+        "Over 200 cm: equatorial belt, windward western coasts (cool temperate), monsoon coasts; under 50 cm: rain shadow, continental interiors, high latitudes",
+        "35°–40° N/S: more rain on eastern coasts; 45°–65° N/S: more rain on western margins (westerlies)"
+      ],
+      terms: [
+        { term: "Relative humidity", meaning: "The **percentage** of moisture present in the air compared to its **full capacity** at a given temperature." },
+        { term: "Dew point", meaning: "The **temperature at which air becomes saturated** and condensation begins." },
+        { term: "Condensation", meaning: "The change of **water vapour into water** (or ice) caused by loss of heat." },
+        { term: "Smog", meaning: "**Fog mixed with smoke**, common in urban and industrial areas." },
+        { term: "Rain-shadow area", meaning: "The **leeward side** of a mountain that receives little rain because descending air gets warmer and drier." },
+        { term: "Hailstones", meaning: "Rounded pieces of ice with **several concentric layers**, formed when rain drops freeze while passing through colder layers." }
+      ],
+      qa: [
+        {
+          q: "Distinguish between absolute humidity and relative humidity. (3 marks)",
+          a: "1. **Absolute humidity** is the actual amount of water vapour present in the air; it is the **weight of water vapour per unit volume** of air, expressed in grams per cubic metre.\n2. **Relative humidity** is the **percentage** of moisture present in the air compared with its **full capacity** at a given temperature.\n3. Absolute humidity changes only when moisture is added or removed, but relative humidity also changes with **temperature**: it rises when air cools and falls when air warms."
+        },
+        {
+          q: "Explain the three types of rainfall. (5 marks)",
+          a: "1. **Convectional rainfall**: the air near the surface is heated, becomes light and rises in convection currents; it expands, cools and condenses into **cumulus clouds**.\n2. It falls as heavy rain with **thunder and lightning** for a short time, mostly in summer afternoons; it is common in **equatorial regions** and interiors of continents.\n3. **Orographic (relief) rainfall**: a saturated air mass meets a **mountain** and is forced to rise; it cools and gives heavy rain on the **windward slope**.\n4. On the **leeward slope**, the air descends and warms, so its capacity to hold moisture increases and it gives little rain; this is the **rain-shadow area**.\n5. **Cyclonic rainfall**: occurs when warm and cold air meet in cyclones; warm air is forced to rise over cold air along fronts or in tropical cyclones, giving widespread rain."
+        },
+        {
+          q: "Distinguish between dew and frost. (2 marks)",
+          a: "1. **Dew** forms when moisture is deposited as **water droplets** on cool surfaces like grass and leaves; the dew point is **above freezing point**.\n2. **Frost** forms when condensation takes place **below 0°C** (dew point at or below freezing), so moisture is deposited as **tiny ice crystals**. Both need clear skies, calm air and long cold nights."
+        }
+      ],
+      quiz: [
+        {
+          q: "The temperature at which air becomes saturated is called its:",
+          options: ["dew point", "freezing point", "boiling point", "lapse rate"],
+          answer: 0,
+          explain: "The **dew point** is the temperature at which saturation occurs and condensation begins."
+        },
+        {
+          q: "Absolute humidity is expressed in:",
+          options: ["percentage", "millibars", "grams per cubic metre", "degrees Celsius"],
+          answer: 2,
+          explain: "It is the weight of water vapour per unit volume, in **grams per cubic metre**; relative humidity is a percentage."
+        },
+        {
+          q: "High, thin, feathery clouds that are always white are:",
+          options: ["nimbus", "cumulus", "stratus", "cirrus"],
+          answer: 3,
+          explain: "**Cirrus** clouds form at 8,000–12,000 m and look thin and feathery."
+        },
+        {
+          q: "Frost forms when the dew point is:",
+          options: ["above 10°C", "at or below freezing point", "equal to the air temperature at noon", "above freezing point"],
+          answer: 1,
+          explain: "When condensation takes place **at or below 0°C**, moisture is deposited as ice crystals (frost)."
+        },
+        {
+          q: "Rainfall caused when moist air is forced to rise over a mountain is:",
+          options: ["orographic rainfall", "convectional rainfall", "cyclonic rainfall", "frontal drizzle"],
+          answer: 0,
+          explain: "**Orographic (relief) rainfall** falls on the windward side; the leeward side is a rain-shadow area."
+        },
+        {
+          q: "Between 45° and 65° latitudes, the heaviest rainfall is received on:",
+          options: ["eastern coasts", "interiors of continents", "western margins of continents", "polar coasts"],
+          answer: 2,
+          explain: "The **westerlies** bring rain first to the **western margins** of continents in these latitudes."
+        }
+      ]
     }
     // @@NEXT@@
   ]

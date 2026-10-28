@@ -1203,3 +1203,275 @@ StudyData.add(12, "geography", {
         }
       ]
     },
+
+    // ───────────── 2. Human Settlements ─────────────
+    {
+      id: "human-settlements",
+      title: "Human Settlements",
+      section: "India: People and Economy",
+      summary: "Rural settlement types in India and the factors behind them, how urban areas are defined, the evolution of Indian towns, urbanisation, classification of towns by size, and the functional classification of Indian cities.",
+      notes: [
+        {
+          heading: "Rural and urban settlements",
+          points: [
+            "A **human settlement** is a cluster of dwellings of any type or size where people live.",
+            "**Rural settlements** derive their livelihood mainly from **primary activities** like agriculture; **urban settlements** depend on **secondary and tertiary** activities.",
+            "Cities act as nodes of economic growth, providing goods and services to both urban and rural areas.",
+            "Rural settlement types depend on **physical features** (terrain, altitude, climate, water), **cultural and ethnic factors** (social structure, caste, religion) and **security factors** (defence against thefts and robberies)."
+          ]
+        },
+        {
+          heading: "Types of rural settlements",
+          points: [
+            "**Clustered (agglomerated or nucleated)**: a compact, closely built-up area of houses with distinct streets. Found in **fertile alluvial plains** and the **north-eastern states**; in **Bundelkhand** and **Nagaland** for security; in **Rajasthan** because of **scarcity of water**.",
+            "**Semi-clustered (fragmented)**: a dominant community occupies the central part, while lower strata and menial workers settle on the outer flanks. Widespread in the **Gujarat plain** and parts of **Rajasthan**.",
+            "**Hamleted**: a settlement fragmented into several physically separated units with a common name, locally called **panna, para, palli, nagla, dhani**. Found in the **middle and lower Ganga plain, Chhattisgarh and lower Himalayan valleys**.",
+            "**Dispersed (isolated)**: isolated huts or small hamlets in remote jungles or on small hills, due to fragmented terrain. Found in **Meghalaya, Uttarakhand, Himachal Pradesh and Kerala**."
+          ]
+        },
+        {
+          heading: "Definition and evolution of towns",
+          points: [
+            "Census definition of urban: all places with a **municipality, corporation, cantonment board or notified town area committee**, plus places with a **minimum population of 5,000**, at least **75% of male main workers in non-agricultural work**, and a **density of at least 400 persons per sq km**.",
+            "**Ancient towns** (over 2,000 years old, many religious and cultural centres): **Varanasi**, Prayag (Allahabad), Pataliputra (Patna), Madurai.",
+            "**Medieval towns** (headquarters of principalities and kingdoms; fort towns): **Delhi, Hyderabad, Jaipur, Lucknow, Agra, Nagpur**.",
+            "**Modern towns**: European trading ports (**Surat, Daman, Goa, Pondicherry**); British centres **Mumbai, Chennai, Kolkata**; hill stations; industrial towns like **Jamshedpur**.",
+            "After Independence: administrative centres (**Chandigarh, Bhubaneswar, Gandhinagar, Dispur**), industrial towns (**Durgapur, Bhilai, Sindri, Barauni**), and satellite towns around metropolitan cities (e.g. **Ghaziabad, Rohtak, Gurugram** around Delhi)."
+          ]
+        },
+        {
+          heading: "Urbanisation and classification by size",
+          points: [
+            "**Urbanisation** is measured by the share of urban population in the total; it was about **31% in 2011**, still low compared with developed countries.",
+            "A town with **1 lakh or more** people is a **Class I town** (city). Cities with **1 to 5 million** people are **metropolitan cities**; those with **more than 5 million** are **mega cities**.",
+            "Most metropolitan and mega cities are **urban agglomerations (UAs)**.",
+            "An **urban agglomeration** may be: a town and its adjoining urban outgrowths; two or more contiguous towns with or without outgrowths; or a city and one or more adjoining towns with their outgrowths.",
+            "**Outgrowths** include railway colonies, university campuses, port areas and military cantonments on the edge of a town."
+          ]
+        },
+        {
+          heading: "Functional classification of towns",
+          points: [
+            "**Administrative**: Chandigarh, New Delhi, Bhopal, Shillong, Guwahati, Imphal, Srinagar, Gandhinagar, Jaipur, Chennai. **Industrial**: Mumbai, Salem, Coimbatore, Modinagar, **Jamshedpur**, Hugli, **Bhilai**.",
+            "**Transport**: port towns (Kandla, Kochi, Kozhikode, Visakhapatnam) and inland transport hubs (Agra, Dhulia, Mughal Sarai, Itarsi, Katni). **Commercial**: Kolkata, Saharanpur, Satna.",
+            "**Mining**: **Raniganj, Jharia, Digboi**, Ankaleshwar, Singrauli. **Garrison cantonment**: Ambala, Jalandhar, **Mhow**, Babina, Udhampur.",
+            "**Educational**: **Roorkee**, Varanasi, Aligarh, **Pilani**, Allahabad. **Religious and cultural**: Varanasi, Mathura, Amritsar, Madurai, Puri, Ajmer, Pushkar, Tirupati, Kurukshetra, Haridwar, Ujjain.",
+            "**Tourist**: Nainital, Mussoorie, Shimla, Pachmarhi, Jodhpur, Jaisalmer, Udagamandalam (Ooty), Mount Abu. Cities are dynamic and many become **multi-functional** over time."
+          ]
+        },
+        {
+          heading: "Smart Cities Mission",
+          points: [
+            "The **Smart Cities Mission** aims to promote cities that provide **core infrastructure** and a decent quality of life to citizens.",
+            "It focuses on a **clean and sustainable environment** and the application of **'smart solutions'** (e.g. better use of technology and data for services).",
+            "It promotes sustainable and inclusive development that can be replicated in other areas."
+          ]
+        }
+      ],
+      formulas: [
+        "Census urban criteria: population ≥ 5,000; ≥ 75% of male main workers in non-agricultural work; density ≥ 400 persons/sq km",
+        "Class I town: population ≥ 1 lakh; metropolitan city: 1–5 million; mega city: > 5 million",
+        "Urban population of India: about 31% (Census 2011)",
+        "Clustered: alluvial plains, NE states, Bundelkhand, Nagaland, Rajasthan; semi-clustered: Gujarat plain; hamleted: middle and lower Ganga plain, Chhattisgarh; dispersed: Meghalaya, Uttarakhand, HP, Kerala",
+        "Hamlet local names: panna, para, palli, nagla, dhani",
+        "Ancient towns: Varanasi, Prayag, Pataliputra, Madurai; medieval: Delhi, Hyderabad, Jaipur, Lucknow, Agra, Nagpur"
+      ],
+      terms: [
+        { term: "Clustered settlement", meaning: "A **compact, closely built-up** rural settlement with distinct streets, separate from the surrounding fields." },
+        { term: "Hamleted settlement", meaning: "A settlement **fragmented into several separate units** sharing a common name (panna, para, palli, nagla, dhani)." },
+        { term: "Urban agglomeration", meaning: "A **continuous urban spread** of a town and its outgrowths, or two or more adjoining towns with their outgrowths." },
+        { term: "Mega city", meaning: "A city with a population of **more than 5 million**." },
+        { term: "Statutory town", meaning: "A place declared urban by law, having a **municipality, corporation, cantonment board or notified town area committee**." },
+        { term: "Satellite town", meaning: "A town that grows **around a metropolitan city** to absorb its overflow, e.g. Ghaziabad near Delhi." }
+      ],
+      qa: [
+        {
+          q: "Describe the four types of rural settlements found in India, with their areas. (5 marks)",
+          a: "1. **Clustered**: compact, closely built-up houses with recognisable street patterns; found in **fertile alluvial plains** and the **north-eastern states**; also in **Bundelkhand** and **Nagaland** for security, and in **Rajasthan** due to scarcity of water.\n2. **Semi-clustered**: the dominant community occupies the central part while lower strata and menial workers live on the outer flanks; common in the **Gujarat plain** and parts of **Rajasthan**.\n3. **Hamleted**: fragmented into several physically separated units bearing a common name (panna, para, palli, nagla, dhani), often due to social and ethnic factors; found in the **middle and lower Ganga plain, Chhattisgarh and lower Himalayan valleys**.\n4. **Dispersed**: isolated huts or small hamlets in remote jungles or on small hills, due to extremely fragmented terrain; found in **Meghalaya, Uttarakhand, Himachal Pradesh and Kerala**.\n5. Physical, cultural-ethnic and security factors together decide which type develops."
+        },
+        {
+          q: "What are the criteria used by the Census of India to define an urban area? (3 marks)",
+          a: "1. **Statutory towns**: all places with a **municipality, corporation, cantonment board or notified town area committee**.\n2. **Census towns**: other places that satisfy all three conditions: a **minimum population of 5,000**; at least **75% of male main workers engaged in non-agricultural** pursuits; and a **population density of at least 400 persons per sq km**.\n3. Places meeting these criteria are treated as urban; the rest are rural."
+        },
+        {
+          q: "Classify Indian towns on the basis of their evolution in different periods, with examples. (3 marks)",
+          a: "1. **Ancient towns**: developed as religious and cultural centres over 2,000 years ago, e.g. **Varanasi, Prayag (Allahabad), Pataliputra (Patna) and Madurai**.\n2. **Medieval towns**: developed as headquarters of principalities and kingdoms, mostly fort towns, e.g. **Delhi, Hyderabad, Jaipur, Lucknow, Agra and Nagpur**.\n3. **Modern towns**: developed by the British and other Europeans as trading ports (Surat, Daman, Goa, Pondicherry) and colonial centres (**Mumbai, Chennai, Kolkata**); after Independence, planned administrative and industrial towns such as **Chandigarh, Bhubaneswar, Durgapur and Bhilai** were added."
+        }
+      ],
+      quiz: [
+        {
+          q: "Which of these is NOT one of the Census criteria for an urban area?",
+          options: ["Minimum population of 5,000", "Density of at least 400 persons per sq km", "At least 75% of male main workers in non-agricultural work", "At least 50% literacy rate"],
+          answer: 3,
+          explain: "Literacy is not a criterion; the three criteria are **population, density and male non-agricultural workforce**."
+        },
+        {
+          q: "Hamleted settlements are commonly found in:",
+          options: ["the middle and lower Ganga plain", "the Gujarat plain", "the Thar desert", "the Nilgiri hills"],
+          answer: 0,
+          explain: "Hamleted settlements (panna, para, palli, nagla, dhani) are common in the **middle and lower Ganga plain**, Chhattisgarh and lower Himalayan valleys."
+        },
+        {
+          q: "Compact settlements in Rajasthan developed mainly because of:",
+          options: ["security against invaders", "fertile soil", "scarcity of water", "industrial growth"],
+          answer: 2,
+          explain: "**Scarcity of water** forced people to live together to make maximum use of available water."
+        },
+        {
+          q: "A city with a population of more than 5 million is called a:",
+          options: ["Class I town", "mega city", "metropolitan city", "million city"],
+          answer: 1,
+          explain: "Cities of 1–5 million are **metropolitan**; those above **5 million** are **mega cities**."
+        },
+        {
+          q: "Which of these is a medieval town?",
+          options: ["Chandigarh", "Pataliputra", "Durgapur", "Agra"],
+          answer: 3,
+          explain: "**Agra** developed as a medieval fort town; Pataliputra is ancient, Chandigarh and Durgapur are post-Independence."
+        },
+        {
+          q: "Mhow, Ambala and Udhampur are examples of:",
+          options: ["garrison cantonment towns", "mining towns", "educational towns", "religious towns"],
+          answer: 0,
+          explain: "These are **garrison cantonment towns**, built around military establishments."
+        }
+      ]
+    },
+
+    // ───────────── 3. Land Resources and Agriculture ─────────────
+    {
+      id: "land-resources-and-agriculture",
+      title: "Land Resources and Agriculture",
+      section: "India: People and Economy",
+      summary: "Land use categories and changes in India, common property resources, cropping seasons and types of farming, the major crops and where they grow, agricultural development since Independence, and the problems of Indian agriculture.",
+      notes: [
+        {
+          heading: "Land use categories",
+          points: [
+            "**Geographical area** is fixed (measured by the Survey of India); **reporting area** is the area for which land-use records are available.",
+            "Nine land-use categories: **forests; land put to non-agricultural uses; barren and wastelands; permanent pastures and grazing land; miscellaneous tree crops and groves; culturable wasteland; current fallow; fallow other than current fallow; net sown area**.",
+            "**Current fallow**: left uncultivated for **one agricultural year or less**. **Fallow other than current fallow**: **1 to 5 years**. **Culturable wasteland**: left uncultivated for **more than 5 years**.",
+            "**Net sown area**: land on which crops are grown and harvested. Land under miscellaneous tree crops and groves (orchards) is **not** included in net sown area.",
+            "Changes in land use depend on the **size of the economy**, its **composition** (shift from agriculture to industry and services) and the **pressure on agriculture**; land under non-agricultural uses has grown with urbanisation and industry."
+          ]
+        },
+        {
+          heading: "Common property resources",
+          points: [
+            "Land can be under **private ownership** or **common property resources (CPRs)** owned by the state or community.",
+            "CPRs include **community pastures, grazing grounds, village forests, ponds** and village water bodies.",
+            "They provide **fodder for livestock, fuel for households**, and minor forest products like fruits, nuts, fibre and medicinal plants.",
+            "CPRs are especially important for the **landless, marginal farmers and other weaker sections**, and for **women**, who collect fuel and fodder."
+          ]
+        },
+        {
+          heading: "Cropping seasons and types of farming",
+          points: [
+            "**Kharif** (with the south-west monsoon, June–September): rice, cotton, bajra, maize, jowar, tur in the north; rice, maize, ragi, jowar, groundnut in the south.",
+            "**Rabi** (October–November to March): **wheat, gram, rapeseed and mustard, barley** in the north. **Zaid** (April–June, summer): vegetables, fruits and fodder.",
+            "**Irrigated farming**: **protective** irrigation protects crops from moisture deficiency; **productive** irrigation provides enough moisture for high productivity (higher water input).",
+            "**Rainfed farming**: **dryland farming** where rainfall is **less than 75 cm**, with hardy, drought-resistant crops (ragi, bajra, moong, gram, guar); **wetland farming** where rainfall exceeds soil-moisture needs (rice, jute, sugarcane; aquaculture).",
+            "**Cropping intensity** = (gross cropped area ÷ net sown area) × 100; it shows how many times the same land is cropped in a year."
+          ]
+        },
+        {
+          heading: "Foodgrains",
+          points: [
+            "**Rice**: mainly a kharif crop; in **West Bengal** farmers grow three crops: **'aus', 'aman' and 'boro'**. India is the **second largest producer** of rice after China.",
+            "In **Punjab and Haryana**, not traditional rice areas, irrigated rice was introduced in the **1970s** after the Green Revolution; improved varieties, high fertiliser and pesticide use and fewer diseases in the dry climate give high yields.",
+            "**Wheat**: a **rabi** crop of the north and centre: Punjab, Haryana, Uttar Pradesh, Madhya Pradesh and Rajasthan.",
+            "**Coarse cereals**: **jowar** (Maharashtra, Karnataka), **bajra** (hot, dry climate and sandy soils: Rajasthan, Maharashtra, Gujarat, Haryana), **maize** (semi-arid areas, inferior soils).",
+            "**Pulses** are rich in protein and fix nitrogen in the soil; **gram** (rabi) and **tur or arhar** (kharif) are the main pulses. India is a leading producer of pulses."
+          ]
+        },
+        {
+          heading: "Oilseeds, fibres and plantation crops",
+          points: [
+            "**Oilseeds**: groundnut (largely rainfed kharif), **rapeseed and mustard** (rabi; Rajasthan, Haryana, MP), **soyabean** (MP, Maharashtra) and sunflower.",
+            "**Cotton**: a kharif crop of semi-arid areas (Gujarat, Maharashtra, Punjab, Haryana, Telangana); India grows both short-staple and long-staple (American 'narma') varieties. **Jute**: wetland crop of **West Bengal**, Bihar and Assam.",
+            "**Sugarcane**: a tropical crop; **Uttar Pradesh** is the leading producer, followed by Maharashtra, Karnataka and Tamil Nadu.",
+            "**Tea**: plantation crop on well-drained hill slopes; began in the **1840s in the Brahmaputra valley of Assam**; also sub-Himalayan West Bengal (Darjeeling, Jalpaiguri) and the Nilgiri and Cardamom hills.",
+            "**Coffee**: India grows superior-quality **arabica**; **Karnataka** produces more than two-thirds of India's coffee, followed by Kerala and Tamil Nadu."
+          ]
+        },
+        {
+          heading: "Agricultural development and problems",
+          points: [
+            "In the mid-1960s the **Green Revolution** introduced **high-yielding variety (HYV) seeds** of **wheat (from Mexico)** and **rice (from the Philippines)**, with chemical fertilisers, pesticides and assured irrigation. **IADP** and **IAAP** programmes were launched.",
+            "Its benefits were initially confined to irrigated areas (Punjab, Haryana, western UP, Andhra Pradesh, Gujarat), widening regional disparities. In **1988**, **agro-climatic planning** was launched for balanced regional development, with focus on rainfed areas.",
+            "Problems: **dependence on erratic monsoon**, **low productivity**, **financial constraints and indebtedness**, lack of **land reforms**, **small and fragmented farms**, lack of commercialisation, and vast **under-employment** (seasonal unemployment of **4 to 8 months** in unirrigated areas).",
+            "**Degradation of cultivable land**: intensive irrigation causes **salinisation, alkalisation and waterlogging**; excessive chemicals harm soil; rainfed areas suffer **soil erosion**."
+          ]
+        }
+      ],
+      formulas: [
+        "Current fallow ≤ 1 year; fallow other than current fallow: 1–5 years; culturable wasteland: > 5 years uncultivated",
+        "Cropping intensity = (Gross cropped area ÷ Net sown area) × 100",
+        "Kharif: June–September; Rabi: October–March; Zaid: April–June",
+        "Dryland farming: rainfall < 75 cm",
+        "West Bengal rice crops: aus, aman, boro",
+        "Green Revolution (mid-1960s): HYV wheat from Mexico, rice from the Philippines; agro-climatic planning: 1988",
+        "Tea: began 1840s in Assam (Brahmaputra valley); coffee: Karnataka produces more than two-thirds; India grows arabica",
+        "Leading producers: sugarcane – Uttar Pradesh; jute – West Bengal"
+      ],
+      terms: [
+        { term: "Culturable wasteland", meaning: "Land left **uncultivated for more than five years**, which can be brought under cultivation by reclamation." },
+        { term: "Common property resources", meaning: "Land and resources **owned by the state or community** (pastures, village forests, ponds) used by all, especially the poor." },
+        { term: "Cropping intensity", meaning: "**(Gross cropped area ÷ net sown area) × 100**: a measure of how many times land is cropped in a year." },
+        { term: "Dryland farming", meaning: "Rainfed farming in areas with **less than 75 cm rainfall**, growing hardy, drought-resistant crops." },
+        { term: "Protective irrigation", meaning: "Irrigation meant to **protect crops from moisture deficiency**, as a supplement to rainfall." },
+        { term: "Green Revolution", meaning: "The 1960s package of **HYV seeds, fertilisers, pesticides and irrigation** that sharply raised wheat and rice output." }
+      ],
+      qa: [
+        {
+          q: "What are common property resources? Why are they important for the rural poor? (3 marks)",
+          a: "1. **Common property resources (CPRs)** are lands and resources **owned by the state or the community**, such as community pastures, grazing grounds, village forests and ponds.\n2. They provide **fodder** for livestock, **fuel** for households, and minor forest products like fruits, nuts, fibre and medicinal plants.\n3. They are a vital source of livelihood for the **landless, marginal farmers and weaker sections**, and for **women**, who mostly collect fuel and fodder."
+        },
+        {
+          q: "Distinguish between dryland farming and wetland farming. (3 marks)",
+          a: "1. **Rainfall**: dryland farming is practised where annual rainfall is **less than 75 cm**; wetland farming where rainfall **exceeds the soil-moisture requirement** of plants in the rainy season.\n2. **Crops**: dryland areas grow hardy, drought-resistant crops such as **ragi, bajra, moong, gram and guar**; wetland areas grow water-intensive crops such as **rice, jute and sugarcane**, along with aquaculture.\n3. **Problems**: dryland areas need soil-moisture conservation and rainwater harvesting; wetland areas face **floods and soil erosion**."
+        },
+        {
+          q: "Explain any five problems of Indian agriculture. (5 marks)",
+          a: "1. **Dependence on erratic monsoon**: a large part of the cultivated area is rainfed, so droughts and floods cause crop failure.\n2. **Low productivity**: yields of most crops are low compared with international levels.\n3. **Constraints of financial resources and indebtedness**: high input costs and crop failures push farmers into debt.\n4. **Lack of land reforms and small, fragmented holdings**: unequal land distribution and tiny, scattered plots make farming uneconomic and hinder mechanisation.\n5. **Under-employment and land degradation**: unirrigated areas face seasonal unemployment of 4 to 8 months, while intensive irrigation causes salinisation, alkalisation and waterlogging."
+        }
+      ],
+      quiz: [
+        {
+          q: "Land left uncultivated for more than five years is classified as:",
+          options: ["current fallow", "barren land", "culturable wasteland", "fallow other than current fallow"],
+          answer: 2,
+          explain: "**Culturable wasteland** has been uncultivated for over five years; other fallow is 1–5 years."
+        },
+        {
+          q: "'Aus', 'aman' and 'boro' are three crops of rice grown in:",
+          options: ["Punjab", "West Bengal", "Tamil Nadu", "Kerala"],
+          answer: 1,
+          explain: "Farmers in **West Bengal** grow three rice crops a year: aus, aman and boro."
+        },
+        {
+          q: "Dryland farming is practised in areas receiving annual rainfall of less than:",
+          options: ["75 cm", "50 cm", "100 cm", "150 cm"],
+          answer: 0,
+          explain: "Dryland farming is confined to regions with rainfall **less than 75 cm**."
+        },
+        {
+          q: "Under the Green Revolution, HYV seeds of wheat were brought from:",
+          options: ["the Philippines", "the USA", "China", "Mexico"],
+          answer: 3,
+          explain: "HYV **wheat came from Mexico**; HYV rice came from the Philippines."
+        },
+        {
+          q: "Which state produces more than two-thirds of India's coffee?",
+          options: ["Kerala", "Tamil Nadu", "Karnataka", "Assam"],
+          answer: 2,
+          explain: "**Karnataka** dominates coffee production; India grows superior-quality arabica."
+        },
+        {
+          q: "Cropping intensity is calculated as:",
+          options: ["(Net sown area ÷ Gross cropped area) × 100", "(Gross cropped area ÷ Net sown area) × 100", "(Net sown area ÷ Reporting area) × 100", "(Gross cropped area ÷ Geographical area) × 100"],
+          answer: 1,
+          explain: "**Cropping intensity = (GCA ÷ NSA) × 100**; higher values mean land is cropped more often."
+        }
+      ]
+    },

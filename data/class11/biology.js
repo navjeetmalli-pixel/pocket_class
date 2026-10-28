@@ -813,6 +813,279 @@ StudyData.add(11, "biology", {
           explain: "When water is scarce, bulliform cells become **flaccid** and the leaf **curls inward**, cutting water loss."
         }
       ]
+    },
+
+    // ------------------------------------------------------------------
+    {
+      id: "structural-organisation-in-animals",
+      title: "Structural Organisation in Animals",
+      section: "Structural Organisation",
+      summary: "Cells with similar structure and function form tissues. This chapter covers the four basic animal tissues (epithelial, connective, muscular and neural) and the morphology and organ systems of the frog.",
+      notes: [
+        {
+          heading: "Epithelial Tissue",
+          points: [
+            "Epithelium has a **free surface** facing a body fluid or the outside, with compactly packed cells and **little intercellular matrix**.",
+            "**Squamous**: flat cells; lines **blood vessels and air sacs (alveoli) of lungs**, forming a diffusion boundary. **Cuboidal**: in **ducts of glands and tubular parts of nephrons**; PCT cells have **microvilli**.",
+            "**Columnar**: tall cells lining the **stomach and intestine**, for secretion and absorption. **Ciliated** epithelium moves particles or mucus, e.g. in **bronchioles and fallopian tubes**.",
+            "**Compound epithelium** has many layers and protects against chemical and mechanical stress; it covers the **skin** and lines the **buccal cavity, pharynx** and ducts of salivary glands and pancreas.",
+            "Glandular epithelium may be **unicellular** (**goblet cells** of the alimentary canal) or **multicellular** (salivary gland). **Exocrine** glands release products through **ducts**; **endocrine** glands are ductless and release **hormones** directly into the fluid around them.",
+            "Cell junctions: **tight junctions** stop substances leaking across a tissue; **adhering junctions** cement cells together; **gap junctions** connect the cytoplasm of neighbouring cells for rapid transfer of ions and small molecules."
+          ]
+        },
+        {
+          heading: "Connective Tissue",
+          points: [
+            "The **most abundant and widely distributed** tissue. Its cells secrete **collagen or elastin fibres** (except in blood) and a polysaccharide **ground substance (matrix)**.",
+            "**Loose connective tissue**: **areolar** tissue beneath the skin (with **fibroblasts, macrophages and mast cells**) and **adipose** tissue, which stores fat.",
+            "**Dense regular** tissue forms **tendons** (muscle to bone) and **ligaments** (bone to bone); **dense irregular** tissue is found in the skin.",
+            "**Cartilage** has cells (**chondrocytes**) in small cavities in a pliable matrix; it occurs in the tip of the nose, outer ear, and between adjacent vertebrae.",
+            "**Bone** has a hard matrix rich in **calcium salts and collagen**, with **osteocytes** in lacunae; **bone marrow** produces blood cells. **Blood** is a **fluid connective tissue**."
+          ]
+        },
+        {
+          heading: "Muscle and Neural Tissue",
+          points: [
+            "Muscle fibres are long, cylindrical cells containing fine **myofibrils**; they contract in response to stimulation.",
+            "**Skeletal muscle** is **striated** and attached to bones (e.g. biceps). **Smooth muscle** fibres are **fusiform** and **non-striated**, found in walls of blood vessels, stomach and intestine; it is **involuntary**.",
+            "**Cardiac muscle** is found only in the heart. Cell junctions fuse the membranes of cardiac cells, and **communication junctions (intercalated discs)** let the cells **contract as a unit**.",
+            "**Neurons** are excitable cells. **Neuroglia** protect and support neurons and make up **more than half the volume** of neural tissue."
+          ]
+        },
+        {
+          heading: "Frog: Habit and Morphology",
+          points: [
+            "**Rana tigrina** is the common Indian frog. Frogs are **cold-blooded (poikilotherms)**; they show **hibernation** (winter sleep) and **aestivation** (summer sleep).",
+            "The skin is moist and slimy due to **mucus**. Frogs **never drink water**; they absorb it through the skin.",
+            "Body has a **head and trunk**; **neck and tail are absent**. Eyes are protected in water by a **nictitating membrane**; a membranous **tympanum** (ear) receives sound.",
+            "Forelimbs have **four digits**; larger hind limbs have **five webbed digits** for swimming.",
+            "**Male frogs** have **vocal sacs** and a **copulatory pad on the first digit of the forelimb**; these are absent in females."
+          ]
+        },
+        {
+          heading: "Frog: Organ Systems",
+          points: [
+            "The alimentary canal is **short** as frogs are **carnivores**. Prey is caught with a **bilobed tongue**; bile from the liver is stored in the **gall bladder**.",
+            "Respiration: **through the skin (cutaneous)** in water; on land through the **skin, buccal cavity and lungs**. During hibernation and aestivation, only the skin is used.",
+            "**Closed circulation** with a **three-chambered heart** (two atria, one ventricle). The **sinus venosus** opens into the right atrium and the **conus arteriosus** leaves the ventricle. **Hepatic portal and renal portal systems** are present; **RBCs are nucleated**.",
+            "Frogs are **ureotelic** (excrete urea). In males the ureters act as **urinogenital ducts**; in females the ureters and oviducts open **separately** into the cloaca.",
+            "Brain: forebrain (olfactory lobes, cerebral hemispheres, diencephalon), midbrain (**optic lobes**), hindbrain (**cerebellum, medulla oblongata**); **10 pairs of cranial nerves**. Ears serve **hearing and balance**.",
+            "Males have **10–12 vasa efferentia** opening into **Bidder's canal** in the kidney. A female lays **2500–3000 ova** at a time; fertilisation is **external** in water, and a **tadpole** larva undergoes metamorphosis."
+          ]
+        }
+      ],
+      formulas: [
+        "Squamous → blood vessels, alveoli | Cuboidal → gland ducts, nephron tubules | Columnar → stomach, intestine | Ciliated → bronchioles, fallopian tubes",
+        "Cell junctions: tight (stop leakage) | adhering (cement cells) | gap (cytoplasmic connection)",
+        "Tendon: muscle → bone | Ligament: bone → bone",
+        "Neuroglia: more than half the volume of neural tissue",
+        "Frog: forelimb 4 digits; hind limb 5 webbed digits",
+        "Frog heart: 2 atria + 1 ventricle; sinus venosus → right atrium; conus arteriosus from ventricle",
+        "Frog: 10 pairs of cranial nerves | 10–12 vasa efferentia | 2500–3000 ova at a time | ureotelic"
+      ],
+      terms: [
+        { term: "Gap junction", meaning: "Junction that **connects the cytoplasm** of adjoining cells for rapid transfer of ions and small molecules." },
+        { term: "Goblet cell", meaning: "A **unicellular gland** in the lining of the alimentary canal that secretes mucus." },
+        { term: "Ligament", meaning: "Dense regular connective tissue that **joins bone to bone**." },
+        { term: "Neuroglia", meaning: "Cells that **protect and support neurons**; more than half the volume of neural tissue." },
+        { term: "Nictitating membrane", meaning: "A thin membrane that **protects the frog's eye** while it is in water." },
+        { term: "Aestivation (in animals)", meaning: "**Summer sleep**: the frog's inactive state during extreme heat." }
+      ],
+      qa: [
+        {
+          q: "Distinguish between exocrine and endocrine glands.",
+          a: "**Exocrine glands** pour their secretions (mucus, saliva, earwax, oil, milk, digestive enzymes) through **ducts** onto a surface or into a cavity. **Endocrine glands** have **no ducts**; their secretions, called **hormones**, are released directly into the fluid bathing the gland."
+        },
+        {
+          q: "Compare skeletal, smooth and cardiac muscle.",
+          a: "**Skeletal muscle** is **striated**, attached to bones and used in movement and posture. **Smooth muscle** has **fusiform, non-striated** fibres, lines internal organs such as blood vessels, stomach and intestine, and is **involuntary**. **Cardiac muscle** is **striated**, found **only in the heart**, and its cells are joined by **intercalated discs** so that they contract as a unit; it is also involuntary."
+        },
+        {
+          q: "How would you tell a male frog from a female frog?",
+          a: "A male frog has **vocal sacs** that produce sound and a **copulatory pad on the first digit of each forelimb**. Both are **absent in the female**. Internally, the male has testes and ureters that act as **urinogenital ducts**, while in the female the ureters and oviducts open separately into the cloaca."
+        }
+      ],
+      quiz: [
+        {
+          q: "The inner lining of bronchioles and fallopian tubes is made of:",
+          options: ["squamous epithelium", "cuboidal epithelium", "ciliated epithelium", "compound epithelium"],
+          answer: 2,
+          explain: "**Ciliated epithelium** moves mucus or particles in a specific direction, e.g. in bronchioles and fallopian tubes."
+        },
+        {
+          q: "Which cell junctions connect the cytoplasm of adjoining cells for rapid transfer of ions?",
+          options: ["Tight junctions", "Adhering junctions", "Synapses", "Gap junctions"],
+          answer: 3,
+          explain: "**Gap junctions** link the cytoplasm of neighbouring cells. Tight junctions stop leakage; adhering junctions cement cells together."
+        },
+        {
+          q: "A ligament connects:",
+          options: ["muscle to bone", "bone to bone", "muscle to muscle", "skin to muscle"],
+          answer: 1,
+          explain: "**Ligaments** join bone to bone; **tendons** join muscle to bone."
+        },
+        {
+          q: "Intercalated discs are found in:",
+          options: ["cardiac muscle", "smooth muscle", "skeletal muscle", "dense regular connective tissue"],
+          answer: 0,
+          explain: "Communication junctions (**intercalated discs**) let cardiac muscle cells contract as a unit."
+        },
+        {
+          q: "With respect to nitrogenous waste, the frog is:",
+          options: ["ammonotelic", "uricotelic", "ureotelic", "aminotelic"],
+          answer: 2,
+          explain: "The adult frog excretes **urea**, so it is **ureotelic**."
+        },
+        {
+          q: "Which structure is present in male frogs but absent in females?",
+          options: ["Tympanum", "Nictitating membrane", "Cloaca", "Vocal sacs"],
+          answer: 3,
+          explain: "Males have **vocal sacs** and a **copulatory pad** on the first digit of the forelimb."
+        }
+      ]
+    },
+
+    // ------------------------------------------------------------------
+    {
+      id: "cell-the-unit-of-life",
+      title: "Cell: The Unit of Life",
+      section: "Cell: Structure and Function",
+      summary: "The cell is the basic structural and functional unit of life. This chapter covers cell theory, prokaryotic cells, the plasma membrane and cell wall, the endomembrane system, mitochondria, plastids, ribosomes, the cytoskeleton, cilia, centrosome and the nucleus.",
+      notes: [
+        {
+          heading: "Cell Theory and Overview",
+          points: [
+            "**Anton von Leeuwenhoek** first saw and described a live cell; **Robert Brown** discovered the **nucleus**.",
+            "**Schleiden (1838)**, a botanist, and **Schwann (1839)**, a zoologist, proposed that plants and animals are made of cells. Schwann noted that the **cell wall is unique to plant cells**.",
+            "**Rudolf Virchow (1855)** showed that new cells arise from pre-existing cells: **Omnis cellula-e cellula**. Cell theory: all living organisms are made of cells, and all cells arise from pre-existing cells.",
+            "Sizes: **Mycoplasma**, the smallest cell, is about **0.3 μm**; bacteria are 3–5 μm; human RBC is about **7 μm**; the largest single cell is the **ostrich egg**; nerve cells are among the longest.",
+            "**Prokaryotic** cells (bacteria, blue-green algae, mycoplasma, PPLO) lack a membrane-bound nucleus and organelles. **Eukaryotic** cells have a nuclear envelope and membrane-bound organelles."
+          ]
+        },
+        {
+          heading: "Prokaryotic Cell",
+          points: [
+            "Cell envelope has three layers: outer **glycocalyx** (loose **slime layer** or thick **capsule**), **cell wall** and **plasma membrane**. Bacteria are **Gram positive or Gram negative** depending on the stain they take up.",
+            "**Mesosomes** are infoldings of the plasma membrane; they help in **cell wall formation, DNA replication and distribution, respiration and secretion**. In cyanobacteria, membranous **chromatophores** contain pigments.",
+            "A bacterial flagellum has a **filament, hook and basal body**. **Pili** are tubular protein structures; **fimbriae** are small bristles that help attach to rocks and host tissues.",
+            "Genetic material is a **naked circular DNA** (no nuclear membrane). Small extra circular DNA molecules called **plasmids** give traits such as **antibiotic resistance**.",
+            "Ribosomes are **70S** (50S + 30S); several ribosomes on one mRNA form a **polysome**. Inclusion bodies include phosphate, **cyanophycean** and glycogen granules, and **gas vacuoles** in some photosynthetic bacteria."
+          ]
+        },
+        {
+          heading: "Cell Membrane and Cell Wall",
+          points: [
+            "**Fluid mosaic model (Singer and Nicolson, 1972)**: a **lipid bilayer** with polar heads outward and hydrophobic tails inward; proteins are **peripheral** or **integral**. The **quasi-fluid** lipid lets proteins move sideways.",
+            "The human RBC membrane has about **52% protein and 40% lipid**. Membranes also contain **cholesterol** and carbohydrates.",
+            "Passive transport (diffusion, osmosis) needs no energy. **Active transport** uses ATP to move substances against the gradient, e.g. the **Na⁺/K⁺ pump**.",
+            "Plant cell wall: **cellulose, hemicellulose, pectins and proteins**; algal walls have cellulose, galactans, mannans and **calcium carbonate**. The young cell has a **primary wall**; a **secondary wall** forms inside it later.",
+            "The **middle lamella**, mainly **calcium pectate**, glues neighbouring cells. **Plasmodesmata** connect the cytoplasm of adjacent plant cells."
+          ]
+        },
+        {
+          heading: "Endomembrane System",
+          points: [
+            "The **ER, Golgi complex, lysosomes and vacuoles** work in coordination and form the endomembrane system. Mitochondria, chloroplasts and peroxisomes are **not** part of it.",
+            "**Rough ER** has ribosomes, makes and secretes **proteins**, and is continuous with the outer nuclear membrane. **Smooth ER** makes **lipids**; in animal cells it makes **steroid hormones**.",
+            "**Golgi apparatus** (Camillo Golgi, 1898): stacks of flat **cisternae** (0.5–1.0 μm) with a **cis (forming)** and **trans (maturing)** face. It packages materials and is the main site for forming **glycoproteins and glycolipids**.",
+            "**Lysosomes** form from the Golgi and contain **hydrolytic enzymes** (lipases, proteases, carbohydrases) that work best at **acidic pH**.",
+            "**Vacuole**: bound by the **tonoplast**; can occupy up to **90% of a plant cell's volume**. Amoeba has a **contractile vacuole** for excretion and osmoregulation; protists have **food vacuoles**."
+          ]
+        },
+        {
+          heading: "Mitochondria, Plastids and Ribosomes",
+          points: [
+            "**Mitochondria** (0.2–1.0 μm wide, 1.0–4.1 μm long) have a double membrane; the inner membrane folds into **cristae**. The matrix has **circular DNA, RNA and 70S ribosomes**. They are sites of **aerobic respiration** and **divide by fission**.",
+            "**Plastids**: **chloroplasts** (chlorophyll and carotenoids), **chromoplasts** (carotene, xanthophylls: yellow, orange, red) and colourless **leucoplasts**.",
+            "Leucoplasts store food: **amyloplasts** (starch, e.g. potato), **elaioplasts** (oils and fats), **aleuroplasts** (proteins).",
+            "**Chloroplasts** (5–10 μm long): **thylakoids** stack into **grana**, joined by **stroma lamellae**; the **stroma** has enzymes, circular DNA and 70S ribosomes. Chlamydomonas has one chloroplast; mesophyll cells have **20–40**.",
+            "**Ribosomes** (George Palade, 1953) are made of **RNA and proteins** and have **no membrane**. Eukaryotic cytoplasm: **80S (60S + 40S)**; prokaryotes: **70S (50S + 30S)**. 'S' is the **Svedberg unit** of sedimentation."
+          ]
+        },
+        {
+          heading: "Cytoskeleton, Cilia, Centrosome and Nucleus",
+          points: [
+            "The **cytoskeleton** (microtubules, microfilaments, intermediate filaments) gives **mechanical support, motility and shape**.",
+            "Cilia and flagella have an **axoneme** with a **9 + 2** arrangement: nine peripheral **doublet** microtubules and two central singlets. They arise from **basal bodies**.",
+            "The **centrosome** has two perpendicular **centrioles**, each with nine peripheral **triplet** fibrils of tubulin in a **cartwheel** pattern. Centrioles form basal bodies and **spindle fibres** in animal cells.",
+            "The **nucleus** has a double **nuclear envelope** with pores, **chromatin**, and a **nucleolus** (site of **rRNA synthesis**, not membrane-bound). Mammalian RBCs and **sieve tube cells** lack a nucleus.",
+            "Chromatin is DNA with **histones**, non-histone proteins and RNA. A human cell has about **2 m of DNA** in **46 chromosomes**. **Kinetochores** are disc-shaped structures on the **centromere**.",
+            "By centromere position, chromosomes are **metacentric** (middle, equal arms), **sub-metacentric** (slightly off-centre), **acrocentric** (near one end: one very short, one very long arm) or **telocentric** (at the tip)."
+          ]
+        }
+      ],
+      formulas: [
+        "Cell theory: Schleiden (1838) + Schwann (1839); Virchow (1855): Omnis cellula-e cellula",
+        "Fluid mosaic model: Singer and Nicolson (1972)",
+        "Human RBC membrane: about 52% protein, 40% lipid",
+        "Ribosomes: prokaryotes 70S (50S + 30S) | eukaryotes 80S (60S + 40S) | mitochondria and chloroplasts 70S",
+        "Cilia/flagella axoneme: 9 + 2 microtubules | Centriole: 9 triplets, cartwheel",
+        "Mycoplasma 0.3 μm | bacteria 3–5 μm | human RBC about 7 μm | largest cell: ostrich egg",
+        "Mitochondrion: 0.2–1.0 μm wide (average 0.5 μm), 1.0–4.1 μm long",
+        "Chloroplast: 5–10 μm long, 2–4 μm wide; 20–40 per mesophyll cell",
+        "Human cell: about 2 m DNA in 46 chromosomes (23 pairs)",
+        "Vacuole: up to 90% of plant cell volume"
+      ],
+      terms: [
+        { term: "Mesosome", meaning: "**Infolding of the plasma membrane** in prokaryotes; helps in wall formation, DNA replication, respiration and secretion." },
+        { term: "Plasmid", meaning: "**Small circular DNA outside the bacterial chromosome**; may carry traits like antibiotic resistance." },
+        { term: "Plasmodesmata", meaning: "Cytoplasmic strands that **connect neighbouring plant cells** through their walls." },
+        { term: "Tonoplast", meaning: "The **membrane surrounding the vacuole** in plant cells." },
+        { term: "Svedberg unit (S)", meaning: "Unit of **sedimentation coefficient**, an indirect measure of the size and density of particles like ribosomes." },
+        { term: "Kinetochore", meaning: "**Disc-shaped structure on the centromere** where spindle fibres attach." }
+      ],
+      qa: [
+        {
+          q: "State the cell theory. What modification did Rudolf Virchow make?",
+          a: "Schleiden and Schwann's cell theory said that **all plants and animals are made of cells and their products**, but did not explain how new cells form. **Virchow (1855)** showed that cells divide and new cells arise from pre-existing cells (**Omnis cellula-e cellula**). The modern cell theory: (1) **all living organisms are composed of cells** and their products; (2) **all cells arise from pre-existing cells**."
+        },
+        {
+          q: "Describe the fluid mosaic model of the plasma membrane.",
+          a: "Proposed by **Singer and Nicolson (1972)**. The membrane is a **lipid bilayer**: phospholipids have their **polar heads facing outward** and **hydrophobic tails inward**. **Proteins** are either **peripheral** (on the surface) or **integral** (buried partly or fully). The lipid is **quasi-fluid**, so proteins can **move laterally** within the bilayer. This fluidity is important for cell growth, secretion, endocytosis and cell division."
+        },
+        {
+          q: "Classify chromosomes on the basis of the position of the centromere.",
+          a: "(1) **Metacentric**: centromere in the **middle**, two equal arms. (2) **Sub-metacentric**: centromere **slightly away from the middle**, one arm shorter. (3) **Acrocentric**: centromere **close to one end**, one extremely short and one very long arm. (4) **Telocentric**: centromere at the **terminal end**."
+        }
+      ],
+      quiz: [
+        {
+          q: "The fluid mosaic model of the plasma membrane was proposed by:",
+          options: ["Schleiden and Schwann", "Singer and Nicolson", "Watson and Crick", "George Palade"],
+          answer: 1,
+          explain: "**Singer and Nicolson (1972)** proposed the widely accepted fluid mosaic model."
+        },
+        {
+          q: "Infoldings of the plasma membrane in bacteria that help in DNA replication and respiration are called:",
+          options: ["mesosomes", "plasmids", "pili", "fimbriae"],
+          answer: 0,
+          explain: "**Mesosomes** are membrane infoldings (vesicles, tubules, lamellae) in prokaryotes."
+        },
+        {
+          q: "The main site for the formation of glycoproteins and glycolipids is the:",
+          options: ["rough ER", "lysosome", "smooth ER", "Golgi apparatus"],
+          answer: 3,
+          explain: "The **Golgi apparatus** modifies proteins from the ER and is the main site of glycoprotein and glycolipid formation."
+        },
+        {
+          q: "Ribosomes found inside chloroplasts are of the type:",
+          options: ["80S", "60S", "70S", "40S"],
+          answer: 2,
+          explain: "Chloroplasts and mitochondria have **70S ribosomes**, like prokaryotes; eukaryotic cytoplasm has 80S."
+        },
+        {
+          q: "A chromosome with the centromere close to one end, giving one very short and one very long arm, is:",
+          options: ["telocentric", "acrocentric", "metacentric", "sub-metacentric"],
+          answer: 1,
+          explain: "In an **acrocentric** chromosome the centromere is near one end. In a telocentric chromosome it is at the very tip."
+        },
+        {
+          q: "Which of these cells lacks a nucleus at maturity?",
+          options: ["Companion cell", "Guard cell", "Nerve cell", "Mammalian red blood cell"],
+          answer: 3,
+          explain: "**Mammalian erythrocytes** and **sieve tube cells** of plants lack a nucleus."
+        }
+      ]
     }
 
     // @@APPEND@@
