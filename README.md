@@ -77,9 +77,8 @@ Each subject page says what its chapters follow (the `syllabus` block in each da
 
 | Label | Meaning | Where |
 |---|---|---|
-| Current NCERT book | Chapters follow the book's titles and order | Class 6 Maths, Science and SST; Class 7 Science; most Class 9–12 subjects |
-| Older NCERT book | Follows the book used before NCERT's 2024–25 revision; chapters may differ from the new book | Class 7 Maths and SST; Class 8 Maths, Science, SST and Hindi |
-| Topic-based revision | Arranged by syllabus topic, not by any one book | Classes 1–5; English and Hindi in Classes 6–8; Punjabi in every class |
+| Current NCERT book | Chapters follow the book's titles and order | Maths, Science and SST in Classes 6–8 (Ganita Prakash, Curiosity, Exploring Society); Class 8 Hindi literature (Malhar, 5 of 10 lessons); most Class 9–12 subjects |
+| Topic-based revision | Arranged by syllabus topic, not by any one book | Classes 1–5; English in Classes 6–8; Hindi in Classes 6–7; Punjabi in every class |
 
 English and Hindi in Classes 9–12 cover grammar, writing and a selection of literature lessons, not every chapter.
 

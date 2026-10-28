@@ -1,1652 +1,1085 @@
+// Class 7 Social Science, Exploring Society: India and Beyond (Parts 1 and 2), the new NCERT book.
+// Revision aid only. Check against the textbook before relying on it.
 StudyData.add(7, "sst", {
-  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "older-book", books: ["Our Pasts II","Our Environment","Social and Political Life II"], note: "NCERT has since published a new book for this class, so chapter names and order may differ.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Exploring Society: India and Beyond Part 1", "Exploring Society: India and Beyond Part 2"], reviewed: false},
   chapters: [
-    // ==================================================================
-    // HISTORY – Our Pasts II
-    // ==================================================================
     {
-      id: "tracing-changes",
-      title: "Tracing Changes Through a Thousand Years",
-      section: "History",
-      summary: "How historians learn about India's past from coins, inscriptions, buildings and travellers' accounts, and why the way we divide history into periods matters.",
+      id: "geographical-diversity-of-india",
+      title: "Geographical Diversity of India",
+      section: "India and the World: Land and the People",
+      summary: "The major physical divisions of India: mountains, plains, plateau, desert, coasts and islands, and how each shapes life.",
       notes: [
         {
-          heading: "Where Historians Find Information",
+          heading: "The Himalayas",
           points: [
-            "**Archaeological sources** include tools, pottery, coins, inscriptions and monuments.",
-            "**Literary sources** include chronicles, religious texts, biographies and travel accounts.",
-            "**Visual sources** include paintings, sculptures, maps and miniature paintings.",
-            "**Inscriptions** carved on stone pillars and rocks, like the edicts of **Ashoka** written in the Brahmi script, tell us about rulers and their ideas."
+            "The **Himalayas** are young fold mountains in the north. They stretch from west to east and act as a barrier and a source of rivers.",
+            "They have three parallel ranges: **Himadri** (greater, highest), **Himachal** (lesser) and the **Shiwaliks** (outer, lowest).",
+            "**Kanchenjunga** is the highest peak in India. Mount Everest lies in Nepal."
           ]
         },
         {
-          heading: "Travellers Who Wrote About India",
+          heading: "Plains, Plateau and Desert",
           points: [
-            "**Al-Biruni**, a scholar from Central Asia, wrote about Indian customs and beliefs in Arabic around **1030 CE**. He had learnt Sanskrit.",
-            "**Ibn Battuta**, a traveller from Morocco, visited Delhi in the 14th century during the reign of **Muhammad bin Tughlaq** and described its people and markets.",
-            "Such accounts are useful, but a traveller saw only a small part of the country and may have misunderstood some things."
+            "The **Northern Plains** are made of soil (alluvium) deposited by the Indus, Ganga and Brahmaputra. They are flat and fertile, so many people live and farm there.",
+            "The **Peninsular Plateau** is an old, hard rock region with the **Western Ghats** and **Eastern Ghats** on its edges.",
+            "The **Thar** (Indian Desert) in the north-west gets very little rain and has sand dunes."
           ]
         },
         {
-          heading: "Dividing History into Periods",
+          heading: "Coasts and Islands",
           points: [
-            "Historians divide the past into **Ancient**, **Medieval** and **Modern** periods. This helps us study how society changed over time.",
-            "The British historian **James Mill** divided Indian history into 'Hindu', 'Muslim' and 'British' periods, based on the religion of the rulers.",
-            "Historians today reject this division, because the religion of a ruler does not describe the lives of ordinary people in that age."
+            "The **Western Coastal Plain** lies between the Western Ghats and the Arabian Sea. The **Eastern Coastal Plain** lies along the Bay of Bengal and is wider.",
+            "**Lakshadweep** in the Arabian Sea is made of coral. The **Andaman and Nicobar Islands** are in the Bay of Bengal.",
+            "Landforms affect climate, farming, settlement, travel and trade."
           ]
         }
       ],
       formulas: [
-        "Ancient, Medieval and Modern – the three periods historians use",
-        "c. 1030 CE – Al-Biruni writes about India in Arabic",
-        "14th century – Ibn Battuta visits Delhi"
+        "Himalayan ranges (north to south): Himadri, Himachal, Shiwaliks",
+        "Highest peak in India: Kanchenjunga",
+        "Lakshadweep = coral islands; Andaman and Nicobar = islands in the Bay of Bengal"
       ],
       terms: [
-        { term: "Archaeology", meaning: "The study of the past through objects that people made and used, such as tools, pots and buildings." },
-        { term: "Inscription", meaning: "Words carved or written on stone, metal or other hard material." },
-        { term: "Chronicle", meaning: "A historical record of events, usually written in the order they happened." },
-        { term: "Edict", meaning: "An official order or announcement issued by a ruler." },
-        { term: "Periodisation", meaning: "Dividing the past into periods such as Ancient, Medieval and Modern." }
+        { term: "Alluvium", meaning: "Fertile soil carried and deposited by rivers." },
+        { term: "Plateau", meaning: "A raised, fairly flat area of land with steep sides." },
+        { term: "Ghats", meaning: "Hill ranges along the western and eastern edges of the Peninsular Plateau." },
+        { term: "Coral island", meaning: "An island formed from the skeletons of tiny sea creatures called **corals**." }
       ],
       qa: [
-        {
-          q: "Name the three kinds of historical sources and give one example of each.",
-          a: "**Archaeological** sources (coins, pottery, monuments), **literary** sources (chronicles, travel accounts such as Ibn Battuta's) and **visual** sources (paintings, sculptures, maps)."
-        },
-        {
-          q: "Why do historians today not divide Indian history into Hindu, Muslim and British periods?",
-          a: "Because this division is based only on the religion of the rulers. It ignores the changes in society, economy and culture that happened in each period, and the lives of ordinary people."
-        }
+        { q: "Why are the Northern Plains densely populated?", a: "The rivers deposit fertile alluvium, the land is flat, and water is available, so farming, roads and towns develop easily." },
+        { q: "Name the three ranges of the Himalayas.", a: "From north to south: Himadri (greater), Himachal (lesser) and the Shiwaliks (outer)." }
       ],
       quiz: [
-        {
-          q: "Which of these is a literary source?",
-          options: ["A coin of the Gupta period", "Ibn Battuta's travel account", "A stone pillar with Ashoka's edicts", "A temple built by the Cholas"],
-          answer: 1,
-          explain: "Ibn Battuta's account is a **written** source. Coins, pillars and temples are **archaeological** sources."
-        },
-        {
-          q: "During whose reign did Ibn Battuta visit Delhi?",
-          options: ["Akbar", "Harsha", "Muhammad bin Tughlaq", "Shah Jahan"],
-          answer: 2,
-          explain: "Ibn Battuta, a 14th-century traveller from Morocco, visited Delhi during the reign of **Muhammad bin Tughlaq**."
-        },
-        {
-          q: "In which script were most of Ashoka's edicts written?",
-          options: ["Brahmi", "Devanagari", "Persian", "Gurmukhi"],
-          answer: 0,
-          explain: "Most of Ashoka's inscriptions were written in the **Brahmi** script, which was read from left to right."
-        },
-        {
-          q: "Which of these is a visual source?",
-          options: ["A Persian chronicle", "A Buddhist text", "An inscription on a pillar", "A Mughal miniature painting"],
-          answer: 3,
-          explain: "Paintings, sculptures and maps are **visual** sources. They show how people and places looked in the past."
-        },
-        {
-          q: "Which scholar from Central Asia wrote about India around 1030 CE?",
-          options: ["Xuanzang", "Al-Biruni", "Abul Fazl", "Amir Khusrau"],
-          answer: 1,
-          explain: "**Al-Biruni** wrote about Indian customs, beliefs and science in Arabic. Xuanzang was a Chinese pilgrim."
-        }
+        { q: "Which Himalayan range is the outermost and lowest?", options: ["Himadri", "Himachal", "Shiwaliks", "Karakoram"], answer: 2, explain: "The **Shiwaliks** form the outer, lowest range." },
+        { q: "The Northern Plains are fertile mainly because of:", options: ["Black lava soil", "Alluvium deposited by rivers", "Sand blown from the desert", "Coral deposits"], answer: 1, explain: "Rivers like the Ganga and Indus deposit fertile **alluvium**." },
+        { q: "Which island group is made of coral?", options: ["Andaman and Nicobar", "Lakshadweep", "Sri Lanka", "Sundarbans"], answer: 1, explain: "**Lakshadweep** is made of coral islands in the Arabian Sea." },
+        { q: "The Western Ghats and Eastern Ghats lie on the edges of which region?", options: ["Northern Plains", "Thar Desert", "Peninsular Plateau", "Himalayas"], answer: 2, explain: "They border the **Peninsular Plateau**." },
+        { q: "The highest peak located entirely within India is:", options: ["Mount Everest", "K2", "Anamudi", "Kanchenjunga"], answer: 3, explain: "**Kanchenjunga** is India's highest peak. Everest is in Nepal and K2 is in the Karakoram on the border region." }
       ]
     },
     {
-      id: "new-kings-kingdoms",
-      title: "New Kings and Kingdoms",
-      section: "History",
-      summary: "How new dynasties such as the Palas, Rashtrakutas, Cholas and Chalukyas rose in different parts of India, and how the country was invaded from the north-west.",
+      id: "understanding-the-weather",
+      title: "Understanding the Weather",
+      section: "India and the World: Land and the People",
+      summary: "What weather is, the elements that make it up, and how heat, pressure, wind and moisture produce rain.",
       notes: [
         {
-          heading: "Harshavardhana of Kannauj",
+          heading: "Weather and Its Elements",
           points: [
-            "**Harshavardhana** ruled from **Kannauj** from about **606 to 647 CE** and expanded his kingdom across northern India.",
-            "The Chinese traveller **Xuanzang** visited his court and wrote about it.",
-            "Harsha was defeated on the river **Narmada** by the Chalukya king **Pulakeshin II**."
+            "**Weather** is the state of the atmosphere at a place at a particular time, and it can change from hour to hour.",
+            "Its main elements are **temperature**, **air pressure**, **wind**, **humidity** and **precipitation**.",
+            "**Climate** is the average weather of a place over a long period, usually many years."
           ]
         },
         {
-          heading: "The Struggle for Kannauj",
+          heading: "Pressure and Wind",
           points: [
-            "Kannauj was a rich and well-placed city on the Ganga plain. Whoever controlled it could claim power over northern India.",
-            "The **Palas** of Bengal, the **Gurjara-Pratiharas** and the **Rashtrakutas** fought for Kannauj for a long time. This is called the **tripartite struggle**.",
-            "The **Pallavas** ruled from Kanchipuram, and the **Chalukyas** from Badami, in the south."
+            "Warm air is lighter and rises, creating **low pressure**. Cool air is heavier and sinks, creating **high pressure**.",
+            "**Wind** is air moving from a high-pressure area to a low-pressure area.",
+            "Winds are named after the direction they blow **from**. A south-west wind blows from the south-west."
           ]
         },
         {
-          heading: "The Cholas",
+          heading: "Moisture and Rain",
           points: [
-            "**Rajaraja I** (985–1014 CE) built a strong Chola kingdom in Tamil Nadu, with a powerful navy.",
-            "He built the **Brihadeeswara temple** at **Thanjavur**, dedicated to Shiva. It is a magnificent example of Chola architecture.",
-            "**Rajendra I** sent a naval expedition to Southeast Asia, and Chola trade reached many countries across the sea."
-          ]
-        },
-        {
-          heading: "Invasions from the North-West",
-          points: [
-            "In **712 CE**, the Arab general **Muhammad bin Qasim** conquered Sindh.",
-            "In the early 11th century, **Mahmud of Ghazni** raided north India many times and looted temples and cities."
+            "**Humidity** is the amount of water vapour in the air. Warm air can hold more vapour.",
+            "When moist air rises and cools, vapour **condenses** into tiny droplets that form clouds.",
+            "Rain can be **convectional**, **orographic** (relief) or **cyclonic**, depending on how the air is forced to rise."
           ]
         }
       ],
       formulas: [
-        "606–647 CE – Harshavardhana rules from Kannauj",
-        "712 CE – Muhammad bin Qasim conquers Sindh",
-        "985–1014 CE – Rajaraja I rules the Cholas",
-        "c. 1010 CE – Brihadeeswara temple at Thanjavur is completed"
+        "Warm air rises = low pressure; cool air sinks = high pressure",
+        "Wind blows from high pressure to low pressure",
+        "Instruments: thermometer (temperature), barometer (pressure), anemometer (wind speed), rain gauge (rainfall), hygrometer (humidity)"
       ],
       terms: [
-        { term: "Dynasty", meaning: "A family of rulers who pass power from one generation to the next." },
-        { term: "Tripartite struggle", meaning: "The long contest among three powers – the Palas, Pratiharas and Rashtrakutas – for control of Kannauj." },
-        { term: "Naval expedition", meaning: "A military or trading voyage by ships across the sea." },
-        { term: "Raid", meaning: "A quick attack to loot wealth, without staying to rule the area." }
-      ],
-      qa: [
-        {
-          q: "Why did the Palas, Pratiharas and Rashtrakutas fight over Kannauj?",
-          a: "Kannauj was a rich and strategically placed city on the Ganga plain. Whoever controlled it could claim to be the most powerful ruler in northern India, and it brought wealth and prestige."
-        },
-        {
-          q: "What does the Brihadeeswara temple tell us about the Cholas?",
-          a: "It shows that the Chola kings were wealthy and skilled in architecture and sculpture. Large temples were also centres of religious life and local administration."
-        }
-      ],
-      quiz: [
-        {
-          q: "Which city was the capital of Harshavardhana?",
-          options: ["Thanjavur", "Kannauj", "Badami", "Kanchipuram"],
-          answer: 1,
-          explain: "Harshavardhana ruled northern India from **Kannauj**."
-        },
-        {
-          q: "Who conquered Sindh in 712 CE?",
-          options: ["Mahmud of Ghazni", "Muhammad bin Qasim", "Rajaraja I", "Pulakeshin II"],
-          answer: 1,
-          explain: "The Arab general **Muhammad bin Qasim** conquered Sindh in 712 CE."
-        },
-        {
-          q: "The Brihadeeswara temple at Thanjavur was built by:",
-          options: ["Harshavardhana", "Pulakeshin II", "Mahmud of Ghazni", "Rajaraja I"],
-          answer: 3,
-          explain: "**Rajaraja I** built the Brihadeeswara temple, dedicated to Shiva, in the early 11th century."
-        },
-        {
-          q: "Which Chalukya king defeated Harsha on the river Narmada?",
-          options: ["Pulakeshin II", "Dharmapala", "Rajendra I", "Mahmud of Ghazni"],
-          answer: 0,
-          explain: "**Pulakeshin II** of the Chalukyas defeated Harsha on the Narmada."
-        },
-        {
-          q: "The Palas were a dynasty that ruled which region?",
-          options: ["Punjab", "Sindh", "Bengal", "Tamil Nadu"],
-          answer: 2,
-          explain: "The **Palas** ruled Bengal and parts of Bihar, and were one of the three powers in the struggle for Kannauj."
-        }
-      ]
-    },
-    {
-      id: "delhi-sultans",
-      title: "The Delhi Sultans",
-      section: "History",
-      summary: "The five dynasties that ruled Delhi from 1206 to 1526, the rule of Razia Sultan, Alauddin Khalji's market control, and the defeat of the last sultan at Panipat.",
-      notes: [
-        {
-          heading: "The First Sultans",
-          points: [
-            "**Qutb-ud-din Aibak**, a former slave of the Ghurid ruler Muhammad Ghori, became the first Sultan of Delhi in **1206**.",
-            "The **Qutb Minar** in Delhi was begun by Aibak and completed by his successor **Iltutmish**.",
-            "**Razia Sultan**, Iltutmish's daughter, was the only woman to rule Delhi as Sultan. She ruled from **1236 to 1240**."
-          ]
-        },
-        {
-          heading: "Alauddin Khalji and Market Control",
-          points: [
-            "**Alauddin Khalji** (1296–1316) defended the Sultanate from Mongol raids and kept a large army.",
-            "To pay and feed his army, he set fixed prices for grain, cloth and other goods in Delhi's markets.",
-            "He appointed officers to check that shopkeepers followed the rules, and punished those who cheated."
-          ]
-        },
-        {
-          heading: "Muhammad bin Tughlaq",
-          points: [
-            "**Muhammad bin Tughlaq** tried to shift the capital to **Daulatabad** in **1327**, but the plan failed and people suffered.",
-            "He introduced **token currency** made of copper and bronze. People made fake coins at home, and the scheme was given up."
-          ]
-        },
-        {
-          heading: "The End of the Sultanate",
-          points: [
-            "The last dynasty was the **Lodis**. Their ruler **Ibrahim Lodi** was defeated by **Babur** at the **First Battle of Panipat** in **1526**.",
-            "This battle opened the way for the Mughal Empire."
-          ]
-        }
-      ],
-      formulas: [
-        "1206 – Qutb-ud-din Aibak becomes the first Sultan of Delhi",
-        "1236–1240 – Razia Sultan rules Delhi",
-        "1296–1316 – Alauddin Khalji rules",
-        "1327 – Muhammad bin Tughlaq shifts the capital to Daulatabad",
-        "1526 – First Battle of Panipat; the Delhi Sultanate ends"
-      ],
-      terms: [
-        { term: "Sultan", meaning: "The title of a Muslim ruler." },
-        { term: "Iqta", meaning: "Land given to officers, who collected its revenue in return for their service to the Sultan." },
-        { term: "Mongols", meaning: "Central Asian people who raided the northern parts of the Sultanate." },
-        { term: "Token currency", meaning: "Coins made of cheap metal whose value is set by the ruler, not by their metal content." },
-        { term: "Dynasty", meaning: "A family of rulers who pass power from one generation to the next." }
-      ],
-      qa: [
-        {
-          q: "What were the main features of Alauddin Khalji's market control?",
-          a: "He fixed the prices of grain, cloth and other goods, checked shopkeepers and punished those who cheated. This kept prices low and helped him pay and feed a large army."
-        },
-        {
-          q: "Why did Muhammad bin Tughlaq's token currency fail?",
-          a: "People could easily make fake copper and bronze tokens at home. Since they were not trusted, the government had to withdraw the scheme."
-        }
-      ],
-      quiz: [
-        {
-          q: "Who was the first Sultan of Delhi?",
-          options: ["Iltutmish", "Qutb-ud-din Aibak", "Alauddin Khalji", "Razia Sultan"],
-          answer: 1,
-          explain: "**Qutb-ud-din Aibak**, a former slave, became the first Sultan of Delhi in 1206."
-        },
-        {
-          q: "Which Sultan ruled Delhi between 1236 and 1240?",
-          options: ["Alauddin Khalji", "Balban", "Razia Sultan", "Muhammad bin Tughlaq"],
-          answer: 2,
-          explain: "**Razia Sultan** was the only woman to rule Delhi as Sultan."
-        },
-        {
-          q: "Which Sultan fixed the prices of grain and cloth in Delhi?",
-          options: ["Alauddin Khalji", "Ibrahim Lodi", "Qutb-ud-din Aibak", "Babur"],
-          answer: 0,
-          explain: "**Alauddin Khalji** set fixed prices for grain, cloth and other goods to keep his army supplied."
-        },
-        {
-          q: "The Delhi Sultanate ended after which battle?",
-          options: ["Battle of Plassey", "First Battle of Panipat", "Battle of Buxar", "Battle of Talikota"],
-          answer: 1,
-          explain: "Babur defeated Ibrahim Lodi at the **First Battle of Panipat** in 1526, ending the Delhi Sultanate."
-        },
-        {
-          q: "Muhammad bin Tughlaq tried to shift his capital to:",
-          options: ["Agra", "Fatehpur Sikri", "Lahore", "Daulatabad"],
-          answer: 3,
-          explain: "In 1327 he tried to move the capital to **Daulatabad**, but the plan failed."
-        }
-      ]
-    },
-    {
-      id: "mughal-empire",
-      title: "The Mughal Empire",
-      section: "History",
-      summary: "How Babur founded the Mughal Empire, how Akbar built a strong and tolerant administration, and how the empire weakened after Aurangzeb.",
-      notes: [
-        {
-          heading: "Babur and the Foundation",
-          points: [
-            "**Babur**, a ruler from the Fergana valley in Central Asia, defeated Ibrahim Lodi at **Panipat in 1526** and founded the Mughal Empire.",
-            "**Humayun**, Babur's son, lost his kingdom to **Sher Shah Suri** in 1540 and returned to power only after Sher Shah's death.",
-            "Sher Shah's roads, including the route later known as the Grand Trunk Road, helped trade and communication."
-          ]
-        },
-        {
-          heading: "Akbar's Administration",
-          points: [
-            "**Akbar** (1556–1605) expanded the empire and ran it through the **mansabdari** system. Every officer was given a rank, or mansab, that decided his salary and the number of soldiers he had to keep.",
-            "**Todar Mal**, Akbar's revenue minister, introduced the **zabt** system, in which land was measured and the tax was fixed according to its yield.",
-            "Akbar abolished the **jizya**, a tax on non-Muslims, and followed the policy of **sulh-i-kul**, meaning 'peace with all'."
-          ]
-        },
-        {
-          heading: "Later Mughals",
-          points: [
-            "**Shah Jahan** (1628–1658) built the **Taj Mahal** at Agra and the **Red Fort** in Delhi.",
-            "**Aurangzeb** (1658–1707) expanded the empire to the south, but his long wars and strict policies created discontent.",
-            "After Aurangzeb died in 1707, the empire weakened as provincial governors became independent."
-          ]
-        }
-      ],
-      formulas: [
-        "1526 – First Battle of Panipat; Babur founds the Mughal Empire",
-        "1556–1605 – Reign of Akbar",
-        "1540 – Humayun defeated by Sher Shah Suri",
-        "1658–1707 – Reign of Aurangzeb",
-        "1707 – Death of Aurangzeb; the empire starts to decline"
-      ],
-      terms: [
-        { term: "Mansabdar", meaning: "An officer in the Mughal administration, ranked according to his mansab." },
-        { term: "Jizya", meaning: "A tax paid by non-Muslim men under many Muslim rulers. Akbar abolished it." },
-        { term: "Zabt", meaning: "Akbar's revenue system, in which land was measured and the tax was fixed." },
-        { term: "Sulh-i-kul", meaning: "Akbar's policy of 'peace with all', which respected all religions." },
-        { term: "Subedar", meaning: "The governor of a province (subah) in the Mughal Empire." }
-      ],
-      qa: [
-        {
-          q: "What was the mansabdari system?",
-          a: "A system in which every Mughal officer was given a rank called a mansab. The rank decided his salary and the number of horsemen he had to maintain for the emperor."
-        },
-        {
-          q: "What did Akbar's policy of sulh-i-kul mean?",
-          a: "It meant 'peace with all'. Akbar respected all religions, gave non-Muslims important posts in government, and did not force people to follow one faith."
-        }
-      ],
-      quiz: [
-        {
-          q: "Who defeated Ibrahim Lodi at the First Battle of Panipat?",
-          options: ["Humayun", "Babur", "Akbar", "Sher Shah Suri"],
-          answer: 1,
-          explain: "**Babur** defeated Ibrahim Lodi at Panipat in 1526 and founded the Mughal Empire."
-        },
-        {
-          q: "Which Mughal emperor built the Taj Mahal?",
-          options: ["Jahangir", "Akbar", "Shah Jahan", "Aurangzeb"],
-          answer: 2,
-          explain: "**Shah Jahan** built the Taj Mahal at Agra as a tomb for his wife Mumtaz Mahal."
-        },
-        {
-          q: "Which minister introduced the zabt revenue system?",
-          options: ["Todar Mal", "Abul Fazl", "Birbal", "Raja Man Singh"],
-          answer: 0,
-          explain: "**Todar Mal**, Akbar's revenue minister, introduced the zabt system of measuring land and fixing its tax."
-        },
-        {
-          q: "Who introduced the mansabdari system?",
-          options: ["Babur", "Humayun", "Shah Jahan", "Akbar"],
-          answer: 3,
-          explain: "**Akbar** organised his nobles and officers under the mansabdari system."
-        },
-        {
-          q: "Aurangzeb ruled the Mughal Empire from:",
-          options: ["1526 to 1530", "1556 to 1605", "1628 to 1658", "1658 to 1707"],
-          answer: 3,
-          explain: "**Aurangzeb** ruled from 1658 to 1707. He was the last of the strong Mughal emperors."
-        }
-      ]
-    },
-    {
-      id: "rulers-buildings",
-      title: "Rulers and Buildings",
-      section: "History",
-      summary: "How the forts, tombs, towers and temples built by rulers show their power, wealth and tastes, with examples from Delhi, Agra, Fatehpur Sikri and Hampi.",
-      notes: [
-        {
-          heading: "Why Buildings Matter",
-          points: [
-            "Buildings such as forts, palaces, tombs and temples show the **power**, **wealth** and **tastes** of those who built them.",
-            "Historians study buildings, along with inscriptions and texts, to understand how people lived and worked."
-          ]
-        },
-        {
-          heading: "Qutb Minar and the Sultans",
-          points: [
-            "The **Qutb Minar** in Delhi is a tall tower of red sandstone and marble, begun by Qutb-ud-din Aibak and completed by Iltutmish.",
-            "Its carvings and inscriptions show a mix of Indian and Islamic styles."
-          ]
-        },
-        {
-          heading: "Hampi and Vijayanagara",
-          points: [
-            "**Hampi**, on the banks of the river **Tungabhadra**, was the capital of the **Vijayanagara** empire, founded in **1336**.",
-            "Its temples, markets, palaces and water tanks show the wealth and skill of the empire's builders."
-          ]
-        },
-        {
-          heading: "Mughal Buildings",
-          points: [
-            "**Akbar** built **Fatehpur Sikri** near Agra as his capital, but later abandoned it. Its **Buland Darwaza** celebrates his victory in Gujarat.",
-            "**Shah Jahan** built the **Red Fort** in Delhi, which was completed in **1648**, and the **Taj Mahal** at Agra, completed around **1653**.",
-            "The Taj Mahal is made of white marble and is decorated with **pietra dura**, a technique of inlaying precious stones into marble."
-          ]
-        }
-      ],
-      formulas: [
-        "1336 – Vijayanagara empire is founded; Hampi becomes its capital",
-        "c. 1571 – Akbar makes Fatehpur Sikri his capital",
-        "1648 – Red Fort completed in Delhi",
-        "c. 1653 – Taj Mahal completed at Agra"
-      ],
-      terms: [
-        { term: "Mausoleum", meaning: "A building that houses a tomb, such as the Taj Mahal." },
-        { term: "Minaret", meaning: "A tall, slender tower attached to a mosque or other building." },
-        { term: "Jharokha", meaning: "A projecting balcony with a screen, from which rulers could be seen by the public." },
-        { term: "Pietra dura", meaning: "The art of inlaying coloured stones into marble to make patterns." }
-      ],
-      qa: [
-        {
-          q: "How do buildings help historians understand the past? Give two examples.",
-          a: "Buildings show the power, wealth, religion and tastes of rulers. For example, the Taj Mahal shows Shah Jahan's love of marble and symmetry, and the ruins of Hampi show the wealth of the Vijayanagara empire."
-        },
-        {
-          q: "Name two features of Mughal architecture seen in the Taj Mahal.",
-          a: "Its large central dome, arches and tall minarets, marble inlay (pietra dura) and the symmetrical garden layout."
-        }
-      ],
-      quiz: [
-        {
-          q: "On the banks of which river is Hampi located?",
-          options: ["Tungabhadra", "Narmada", "Kaveri", "Yamuna"],
-          answer: 0,
-          explain: "**Hampi**, the capital of Vijayanagara, lies on the banks of the river **Tungabhadra**."
-        },
-        {
-          q: "Which ruler built the city of Fatehpur Sikri?",
-          options: ["Shah Jahan", "Akbar", "Babur", "Iltutmish"],
-          answer: 1,
-          explain: "**Akbar** built Fatehpur Sikri near Agra. Its Buland Darwaza celebrates his victory in Gujarat."
-        },
-        {
-          q: "The Red Fort in Delhi was built by:",
-          options: ["Akbar", "Aurangzeb", "Shah Jahan", "Humayun"],
-          answer: 2,
-          explain: "**Shah Jahan** built the Red Fort, which was completed in 1648."
-        },
-        {
-          q: "The Taj Mahal was built as a tomb for:",
-          options: ["Jodha Bai", "Razia Sultan", "Mumtaz Mahal", "Nur Jahan"],
-          answer: 2,
-          explain: "**Shah Jahan** built the Taj Mahal in memory of his wife **Mumtaz Mahal**."
-        },
-        {
-          q: "What is pietra dura?",
-          options: ["A Mughal tax on temples", "A style of Vijayanagara sculpture", "A form of Sufi music", "A type of marble inlay using precious stones"],
-          answer: 3,
-          explain: "**Pietra dura** is the art of fixing coloured stones into marble to make patterns, seen in the Taj Mahal."
-        }
-      ]
-    },
-    {
-      id: "towns-traders",
-      title: "Towns, Traders and Craftspersons",
-      section: "History",
-      summary: "How towns grew as centres of trade and crafts, how traders and craftspersons organised themselves into guilds, and how money was sent without carrying coins.",
-      notes: [
-        {
-          heading: "Towns as Centres of Trade",
-          points: [
-            "Many towns grew as centres of trade, religion and crafts, such as **Kanchipuram**, **Madurai**, **Varanasi** and **Hampi**.",
-            "**Surat**, a port on the river **Tapti** in Gujarat, became a major trading centre, with ships sailing to Arabia, Persia and Southeast Asia."
-          ]
-        },
-        {
-          heading: "Famous Crafts",
-          points: [
-            "Indian **cotton textiles** and **muslin** from Dhaka were famous across the world.",
-            "**Silk** was woven in Varanasi, and **Bidri ware** – metal objects inlaid with silver – was made in **Bidar**.",
-            "Spices such as **pepper** were in great demand in Europe and West Asia."
-          ]
-        },
-        {
-          heading: "Guilds and Trade Finance",
-          points: [
-            "Craftspersons and traders organised themselves into **guilds**, called **shrenis** in ancient texts. Guilds set standards of quality, trained apprentices and regulated prices.",
-            "Merchants used **hundis**, written orders to pay money, to send money from one city to another without carrying coins over long and dangerous roads."
-          ]
-        }
-      ],
-      formulas: [
-        "Shreni – a guild of craftspersons or traders",
-        "Hundi – a written order that let traders send money safely between towns",
-        "Surat – a major port on the river Tapti in Gujarat"
-      ],
-      terms: [
-        { term: "Guild", meaning: "An association of craftspersons or traders that protected their interests and set standards." },
-        { term: "Apprentice", meaning: "A young person who learnt a craft by working under a skilled master." },
-        { term: "Hundi", meaning: "A written order used by traders to transfer money from one place to another." },
-        { term: "Port", meaning: "A harbour town where ships load and unload goods." },
-        { term: "Bidri ware", meaning: "Metal objects, usually of zinc and copper, decorated with silver inlay, made in Bidar." }
-      ],
-      qa: [
-        {
-          q: "Why did craftspersons form guilds?",
-          a: "Guilds protected the interests of craftspersons, maintained the quality of their goods, trained apprentices and regulated prices and wages."
-        },
-        {
-          q: "What was a hundi and how was it useful?",
-          a: "A hundi was a written order to pay money. A merchant could give money to a banker in one city and receive it in another, so he did not have to carry coins on long and risky journeys."
-        }
-      ],
-      quiz: [
-        {
-          q: "Surat, a famous port, is located on which river?",
-          options: ["Ganga", "Tapti", "Kaveri", "Yamuna"],
-          answer: 1,
-          explain: "**Surat** is on the river **Tapti** in Gujarat."
-        },
-        {
-          q: "Bidri ware, a metal craft with silver inlay, is associated with which town?",
-          options: ["Varanasi", "Dhaka", "Kanchipuram", "Bidar"],
-          answer: 3,
-          explain: "**Bidri ware** is made in **Bidar** in Karnataka. Its designs are inlaid with silver."
-        },
-        {
-          q: "Which of these was a major temple town in Tamil Nadu?",
-          options: ["Madurai", "Bidar", "Surat", "Dhaka"],
-          answer: 0,
-          explain: "**Madurai** is famous for the Meenakshi temple and was a major centre of trade and religion."
-        },
-        {
-          q: "What was a hundi used for?",
-          options: ["Building forts", "Measuring land", "Sending money without carrying coins", "Recording ship arrivals"],
-          answer: 2,
-          explain: "A **hundi** was a written order to pay money, which made trade over long distances safer."
-        },
-        {
-          q: "What was the main purpose of a guild?",
-          options: ["To fight wars for the king", "To protect craftspersons and set standards of quality", "To collect land revenue", "To build forts"],
-          answer: 1,
-          explain: "Guilds protected craftspersons, set standards of quality, trained apprentices and regulated prices."
-        }
-      ]
-    },
-    {
-      id: "devotional-paths",
-      title: "Devotional Paths to the Divine",
-      section: "History",
-      summary: "How bhakti and Sufi saints taught love and devotion to God, challenged rituals and caste distinctions, and used local languages to reach ordinary people.",
-      notes: [
-        {
-          heading: "The Bhakti Tradition",
-          points: [
-            "From around the **6th century**, **bhakti** saints taught that personal love and devotion to God mattered more than rituals and sacrifices.",
-            "The **Alvars** (devotees of Vishnu) and the **Nayanars** (devotees of Shiva) composed Tamil hymns that were sung in temples.",
-            "**Basavanna** in 12th-century Karnataka founded the Virashaiva movement, which rejected caste distinctions."
-          ]
-        },
-        {
-          heading: "Saints of the North",
-          points: [
-            "**Kabir**, a weaver from Varanasi, taught that God is one, and criticised empty rituals and religious divisions.",
-            "**Mirabai**, a Rajput princess, composed devotional songs in praise of **Krishna**.",
-            "**Guru Nanak** (1469–1539) founded **Sikhism**. He taught belief in one God, equality, honest work and sharing with others in a community kitchen, or langar."
-          ]
-        },
-        {
-          heading: "Sufi Saints",
-          points: [
-            "Sufi saints taught love of God and service to all people. **Moinuddin Chishti** is remembered at his dargah in **Ajmer**, and **Nizamuddin Auliya** at his dargah in Delhi.",
-            "Their shrines were visited by people of many faiths. Devotional music called **qawwali** was often sung there."
-          ]
-        },
-        {
-          heading: "Common Ideas",
-          points: [
-            "Both bhakti and Sufi traditions stressed love of God, equality and simple living.",
-            "Many saints used local languages, so their teachings reached ordinary people who could not read Sanskrit or Persian."
-          ]
-        }
-      ],
-      formulas: [
-        "c. 6th–9th century – Alvars and Nayanars compose Tamil hymns",
-        "12th century – Basavanna and the Virashaiva movement in Karnataka",
-        "1469–1539 – Guru Nanak, founder of Sikhism",
-        "Ajmer – dargah of the Sufi saint Moinuddin Chishti"
-      ],
-      terms: [
-        { term: "Bhakti", meaning: "Devotion to God through love and prayer, rather than through rituals." },
-        { term: "Sufi", meaning: "A mystic who seeks a direct and loving experience of God." },
-        { term: "Dargah", meaning: "The shrine of a Sufi saint." },
-        { term: "Alvar", meaning: "A Tamil poet-saint who was devoted to Vishnu." },
-        { term: "Qawwali", meaning: "Devotional music sung at Sufi shrines." },
-        { term: "Langar", meaning: "A community kitchen where everyone sits together and eats the same food, started in Sikhism." }
-      ],
-      qa: [
-        {
-          q: "What did the bhakti saints teach?",
-          a: "They taught that personal devotion and love of God mattered more than rituals and sacrifices, and that all people were equal before God, regardless of caste. Many composed songs in local languages."
-        },
-        {
-          q: "Who were Kabir and Guru Nanak, and what did they teach?",
-          a: "Kabir, a weaver from Varanasi, taught that God is one and criticised empty rituals. Guru Nanak founded Sikhism and taught belief in one God, equality, honest work and sharing with others."
-        }
-      ],
-      quiz: [
-        {
-          q: "Which saints composed Tamil hymns devoted to Vishnu?",
-          options: ["Nayanars", "Alvars", "Chishtis", "Qalandars"],
-          answer: 1,
-          explain: "The **Alvars** were devotees of Vishnu, and their Tamil hymns are still sung in temples."
-        },
-        {
-          q: "The dargah of Moinuddin Chishti is in which city?",
-          options: ["Delhi", "Ajmer", "Pakpattan", "Varanasi"],
-          answer: 1,
-          explain: "The shrine of **Moinuddin Chishti** is at **Ajmer** in Rajasthan."
-        },
-        {
-          q: "Which saint from Karnataka founded the Virashaiva movement?",
-          options: ["Basavanna", "Tukaram", "Chaitanya", "Namdev"],
-          answer: 0,
-          explain: "**Basavanna** of 12th-century Karnataka founded the Virashaiva movement, which rejected caste distinctions."
-        },
-        {
-          q: "Guru Nanak founded which religion?",
-          options: ["Buddhism", "Sikhism", "Jainism", "Vaishnavism"],
-          answer: 1,
-          explain: "**Guru Nanak** (1469–1539) founded **Sikhism**."
-        },
-        {
-          q: "Mirabai, a Rajput princess, composed devotional songs in praise of which god?",
-          options: ["Shiva", "Rama", "Durga", "Krishna"],
-          answer: 3,
-          explain: "**Mirabai** wrote songs of devotion to **Krishna**, which are still sung today."
-        }
-      ]
-    },
-    {
-      id: "eighteenth-century",
-      title: "Eighteenth-Century Political Formations",
-      section: "History",
-      summary: "How the Mughal Empire weakened after 1707 and how new kingdoms such as Bengal, Hyderabad, Awadh, the Marathas, the Sikhs and Mysore rose to power.",
-      notes: [
-        {
-          heading: "Decline of the Mughal Empire",
-          points: [
-            "After **Aurangzeb** died in **1707**, succession disputes and revolts weakened the empire.",
-            "The invasion of **Nadir Shah** in **1739**, who attacked Delhi and carried away its treasures, showed how weak the empire had become.",
-            "Provincial governors, called subedars or nawabs, became independent rulers of their regions."
-          ]
-        },
-        {
-          heading: "New Kingdoms",
-          points: [
-            "**Bengal** under **Murshid Quli Khan**, **Hyderabad** under **Asaf Jah** (Nizam-ul-Mulk) and **Awadh** became largely independent.",
-            "In 1757, the **Battle of Plassey** was won by the East India Company under **Robert Clive** against the Nawab of Bengal, and became a turning point in the history of India."
-          ]
-        },
-        {
-          heading: "The Marathas and the Sikhs",
-          points: [
-            "**Shivaji** was crowned in **1674** and founded a Maratha kingdom. Later, the **Peshwas** became the real leaders of the Maratha confederacy.",
-            "The Marathas were defeated by **Ahmad Shah Abdali** at the **Third Battle of Panipat** in **1761**.",
-            "**Ranjit Singh** united the Sikh misls of the Punjab and became Maharaja in **1801**, with Lahore as his capital."
-          ]
-        },
-        {
-          heading: "Mysore",
-          points: [
-            "**Haidar Ali** and his son **Tipu Sultan** built a strong army and fought several wars against the British.",
-            "Tipu Sultan was killed in **1799** at the Battle of Seringapatam, and Mysore came under British control."
-          ]
-        }
-      ],
-      formulas: [
-        "1707 – Death of Aurangzeb",
-        "1724 – Asaf Jah founds the state of Hyderabad",
-        "1757 – Battle of Plassey",
-        "1761 – Third Battle of Panipat",
-        "1801 – Ranjit Singh becomes Maharaja of Punjab"
-      ],
-      terms: [
-        { term: "Successor states", meaning: "New kingdoms that rose on the ruins of the Mughal Empire." },
-        { term: "Peshwa", meaning: "The prime minister of the Maratha kingdom, who later became the real leader of the Marathas." },
-        { term: "Misl", meaning: "A group or confederacy of Sikh warriors in the Punjab." },
-        { term: "Nawab", meaning: "A title used for a governor or ruler of a province, such as Bengal or Awadh." },
-        { term: "Nizam", meaning: "A title of the ruler of Hyderabad." }
-      ],
-      qa: [
-        {
-          q: "Why did the Mughal Empire decline in the 18th century?",
-          a: "Successors were weak, and there were disputes over the throne. Provincial governors became independent, and revolts and invasions such as Nadir Shah's in 1739 weakened the empire further."
-        },
-        {
-          q: "Name two new powers that rose in the 18th century and say where they were.",
-          a: "The Marathas in Maharashtra and central India, and the Sikhs in Punjab. Other new states included Bengal, Hyderabad, Awadh and Mysore."
-        }
-      ],
-      quiz: [
-        {
-          q: "In which year did Aurangzeb die?",
-          options: ["1707", "1757", "1526", "1674"],
-          answer: 0,
-          explain: "**Aurangzeb** died in **1707**, after which the Mughal Empire began to decline."
-        },
-        {
-          q: "Which Maratha leader was crowned in 1674?",
-          options: ["Baji Rao I", "Tipu Sultan", "Shivaji", "Balaji Vishwanath"],
-          answer: 2,
-          explain: "**Shivaji** was crowned in 1674 and founded the Maratha kingdom."
-        },
-        {
-          q: "Ranjit Singh became Maharaja of Punjab in:",
-          options: ["1757", "1801", "1761", "1724"],
-          answer: 1,
-          explain: "**Ranjit Singh** became Maharaja of Punjab in **1801**, with Lahore as his capital."
-        },
-        {
-          q: "The Battle of Plassey was fought in:",
-          options: ["1739", "1761", "1764", "1757"],
-          answer: 3,
-          explain: "The **Battle of Plassey** was fought in **1757**, and the East India Company won under Robert Clive."
-        },
-        {
-          q: "Which ruler of Mysore fought the British and was known as the 'Tiger of Mysore'?",
-          options: ["Haidar Ali", "Tipu Sultan", "Ranjit Singh", "Asaf Jah"],
-          answer: 1,
-          explain: "**Tipu Sultan**, the son of Haidar Ali, fought several wars against the British and was called the 'Tiger of Mysore'."
-        }
-      ]
-    },
-    // ==================================================================
-    // GEOGRAPHY – Exploring Our Environment
-    // ==================================================================
-    {
-      id: "environment",
-      title: "Environment",
-      section: "Geography",
-      summary: "What the environment is, how its natural and human-made parts depend on each other, and what an ecosystem is.",
-      notes: [
-        {
-          heading: "Natural and Human-Made Environment",
-          points: [
-            "The **environment** is everything around us that affects living things. It has **natural** and **human-made** components.",
-            "Natural components include land, water, air, plants and animals. Human-made components include houses, roads, bridges and dams.",
-            "Humans depend on the environment for food, water, air and materials, and change it through farming, building and industry."
-          ]
-        },
-        {
-          heading: "Biotic and Abiotic Components",
-          points: [
-            "**Biotic** components are living things, such as plants, animals, fungi and bacteria.",
-            "**Abiotic** components are non-living things, such as air, water, soil, sunlight and temperature."
-          ]
-        },
-        {
-          heading: "Ecosystems",
-          points: [
-            "An **ecosystem** is a community of living things interacting with each other and with their non-living surroundings.",
-            "A pond, a forest and a desert are all examples of ecosystems. In a pond, fish, plants, water and sunlight depend on one another."
-          ]
-        },
-        {
-          heading: "Protecting the Environment",
-          points: [
-            "We can **reduce, reuse and recycle** materials, save water and electricity, and plant trees to protect the environment.",
-            "**World Environment Day** is celebrated on **5 June** every year to create awareness about the environment."
-          ]
-        }
-      ],
-      formulas: [
-        "Environment = natural components + human-made components",
-        "Biotic = living things; Abiotic = non-living things",
-        "5 June – World Environment Day"
-      ],
-      terms: [
-        { term: "Environment", meaning: "The surroundings in which living things live, including air, water, land, plants, animals and people." },
-        { term: "Biotic", meaning: "Living components of the environment." },
-        { term: "Abiotic", meaning: "Non-living components of the environment." },
-        { term: "Ecosystem", meaning: "A community of living things and their non-living surroundings, which interact with each other." },
-        { term: "Habitat", meaning: "The place where a plant or animal naturally lives." }
-      ],
-      qa: [
-        {
-          q: "Give two examples each of natural and human-made components of the environment.",
-          a: "Natural components: rivers, mountains, forests and air. Human-made components: roads, bridges, dams and houses."
-        },
-        {
-          q: "What is an ecosystem? Give an example.",
-          a: "An ecosystem is a community of living things and their non-living surroundings, which interact with each other. A pond is an example, where fish, plants, algae, water, soil and sunlight are all connected."
-        }
-      ],
-      quiz: [
-        {
-          q: "Which of these is a biotic component of the environment?",
-          options: ["Water", "Soil", "Sunlight", "Mushrooms"],
-          answer: 3,
-          explain: "**Mushrooms** are living things, so they are biotic. Water, soil and sunlight are non-living, or abiotic."
-        },
-        {
-          q: "Which of these is a human-made component of the environment?",
-          options: ["A forest", "A river", "A bridge", "A mountain"],
-          answer: 2,
-          explain: "A **bridge** is built by people, so it is human-made. Forests, rivers and mountains are natural."
-        },
-        {
-          q: "An ecosystem consists of:",
-          options: ["Only the living things", "Only plants and animals", "Living things and their non-living surroundings", "Only the non-living things"],
-          answer: 2,
-          explain: "An ecosystem is made of **living things and their non-living surroundings**, which interact with each other."
-        },
-        {
-          q: "World Environment Day is celebrated on:",
-          options: ["22 April", "5 June", "15 August", "1 May"],
-          answer: 1,
-          explain: "**World Environment Day** is celebrated on **5 June** every year."
-        },
-        {
-          q: "Which of these is an abiotic component?",
-          options: ["Air", "Bacteria", "Fish", "Trees"],
-          answer: 0,
-          explain: "**Air** is non-living, so it is an abiotic component. Bacteria, fish and trees are living, so they are biotic."
-        }
-      ]
-    },
-    {
-      id: "inside-our-earth",
-      title: "Inside Our Earth",
-      section: "Geography",
-      summary: "The three main layers of the Earth, the types of rocks found in its crust, and how they are formed.",
-      notes: [
-        {
-          heading: "Layers of the Earth",
-          points: [
-            "The Earth has three main layers: the **crust**, the **mantle** and the **core**.",
-            "Temperature and pressure increase as we go deeper into the Earth."
-          ]
-        },
-        {
-          heading: "Crust and Mantle",
-          points: [
-            "The **crust** is the thin outer layer on which we live. It is about 30 to 50 km thick under the continents and about 5 to 10 km thick under the oceans.",
-            "The **mantle** lies below the crust. It is the thickest layer, and is made of hot, partly melted rock."
-          ]
-        },
-        {
-          heading: "The Core",
-          points: [
-            "The **core** is at the centre of the Earth and is made mostly of iron and nickel.",
-            "The **outer core** is liquid, while the **inner core** is solid because of the very high pressure at the centre."
-          ]
-        },
-        {
-          heading: "Rocks and Their Types",
-          points: [
-            "**Igneous rocks** are formed when hot molten magma or lava cools and becomes solid.",
-            "**Sedimentary rocks** are formed when layers of sand, mud and pebbles are pressed and cemented together over a long time.",
-            "**Metamorphic rocks** are formed when existing rocks change because of great heat and pressure inside the Earth."
-          ]
-        }
-      ],
-      formulas: [
-        "Crust – thinnest layer; Mantle – thickest layer; Core – innermost layer",
-        "Igneous – from cooled magma or lava",
-        "Sedimentary – from layers of sediment; Metamorphic – changed by heat and pressure"
-      ],
-      terms: [
-        { term: "Magma", meaning: "Hot, molten rock below the Earth's surface." },
-        { term: "Lava", meaning: "Magma that reaches the Earth's surface through a volcano and cools." },
-        { term: "Mineral", meaning: "A natural substance with a fixed chemical composition, found in rocks." },
-        { term: "Sediment", meaning: "Small particles of sand, mud or rock carried and deposited by water, wind or ice." },
-        { term: "Igneous rock", meaning: "A rock formed by the cooling and hardening of magma or lava." }
-      ],
-      qa: [
-        {
-          q: "Describe the three layers of the Earth.",
-          a: "The **crust** is the thin outer layer of rock on which we live. The **mantle** is the thick layer of hot, partly melted rock below it. The **core** is at the centre, made of iron and nickel; its outer part is liquid and its inner part is solid."
-        },
-        {
-          q: "How are sedimentary rocks formed?",
-          a: "Sand, mud and small pieces of rock are carried by water, wind or ice and deposited in layers. Over a long time, the layers are pressed and cemented together into rock."
-        }
-      ],
-      quiz: [
-        {
-          q: "Which is the thinnest layer of the Earth?",
-          options: ["Core", "Mantle", "Crust", "Magma"],
-          answer: 2,
-          explain: "The **crust** is the thinnest layer. The mantle is the thickest layer of the Earth."
-        },
-        {
-          q: "The outer core of the Earth is:",
-          options: ["Solid iron", "Liquid iron and nickel", "Solid rock", "Gas"],
-          answer: 1,
-          explain: "The **outer core** is liquid iron and nickel. The inner core is solid because of the very high pressure."
-        },
-        {
-          q: "Which type of rock is formed when existing rocks change because of heat and pressure?",
-          options: ["Igneous", "Sedimentary", "Metamorphic", "Volcanic"],
-          answer: 2,
-          explain: "**Metamorphic** rocks are formed when existing rocks are changed by great heat and pressure inside the Earth."
-        },
-        {
-          q: "Igneous rocks are formed from:",
-          options: ["Layers of sediments", "Changed rocks", "Dead plants", "Cooled magma or lava"],
-          answer: 3,
-          explain: "**Igneous rocks** form when hot magma or lava cools and hardens."
-        },
-        {
-          q: "Which layer of the Earth is the thickest?",
-          options: ["Mantle", "Crust", "Outer core", "Inner core"],
-          answer: 0,
-          explain: "The **mantle** is the thickest layer, lying between the crust and the core."
-        }
-      ]
-    },
-    {
-      id: "our-changing-earth",
-      title: "Our Changing Earth",
-      section: "Geography",
-      summary: "How the Earth's crust is broken into moving plates, how mountains, earthquakes and volcanoes are linked to them, and how weathering and erosion reshape the land.",
-      notes: [
-        {
-          heading: "Moving Plates",
-          points: [
-            "The Earth's crust is broken into large pieces called **plates**. These plates move very slowly over the mantle.",
-            "Most earthquakes and volcanoes happen where plates meet."
-          ]
-        },
-        {
-          heading: "Continental Drift",
-          points: [
-            "In **1912**, the German scientist **Alfred Wegener** suggested that all the continents were once joined together in a single landmass called **Pangaea**.",
-            "Over millions of years, the continents have drifted apart and are still moving."
-          ]
-        },
-        {
-          heading: "How the Himalayas Were Formed",
-          points: [
-            "The **Indian plate** moved north and collided with the **Eurasian plate**. The land between them was pushed upwards.",
-            "This collision formed the **Himalayas**, which are still rising by a few centimetres each year."
-          ]
-        },
-        {
-          heading: "Weathering and Erosion",
-          points: [
-            "**Weathering** is the breaking of rocks into smaller pieces by wind, water, ice and changes in temperature.",
-            "**Erosion** is the removal and carrying away of the broken pieces by wind, water, ice or glaciers."
-          ]
-        }
-      ],
-      formulas: [
-        "1912 – Alfred Wegener proposes continental drift",
-        "Pangaea – a single landmass from which the continents drifted apart",
-        "Himalayas – formed by the collision of the Indian and Eurasian plates"
-      ],
-      terms: [
-        { term: "Plate", meaning: "A large, slowly moving piece of the Earth's crust." },
-        { term: "Continental drift", meaning: "The slow movement of continents across the Earth's surface over millions of years." },
-        { term: "Weathering", meaning: "The breaking of rocks into smaller pieces in one place." },
-        { term: "Erosion", meaning: "The carrying away of rock and soil by wind, water, ice or glaciers." },
-        { term: "Epicentre", meaning: "The point on the Earth's surface directly above the place where an earthquake starts." }
-      ],
-      qa: [
-        {
-          q: "Explain how the Himalayas were formed.",
-          a: "The Indian plate moved northwards and collided with the Eurasian plate. The land between them was pushed up into folds, and this uplift formed the Himalayas, which are still rising."
-        },
-        {
-          q: "What is the difference between weathering and erosion?",
-          a: "Weathering breaks rocks into smaller pieces where they are. Erosion moves these broken pieces away, by wind, water, ice or glaciers."
-        }
-      ],
-      quiz: [
-        {
-          q: "Who proposed the theory of continental drift?",
-          options: ["Charles Darwin", "Isaac Newton", "Alfred Wegener", "Albert Einstein"],
-          answer: 2,
-          explain: "The German scientist **Alfred Wegener** proposed continental drift in 1912."
-        },
-        {
-          q: "Which mountain range was formed by the collision of the Indian plate with the Eurasian plate?",
-          options: ["Western Ghats", "Aravallis", "Vindhyas", "Himalayas"],
-          answer: 3,
-          explain: "The **Himalayas** were formed when the Indian plate collided with the Eurasian plate."
-        },
-        {
-          q: "The breaking of rocks into smaller pieces by wind, water and temperature changes is called:",
-          options: ["Erosion", "Weathering", "Deposition", "Sedimentation"],
-          answer: 1,
-          explain: "**Weathering** breaks rocks where they are. Erosion moves the broken material away."
-        },
-        {
-          q: "The removal and carrying away of broken rock material by wind, water or ice is called:",
-          options: ["Erosion", "Weathering", "Magma", "Pangaea"],
-          answer: 0,
-          explain: "**Erosion** carries broken rock material away from its original place."
-        },
-        {
-          q: "Most earthquakes and volcanoes occur:",
-          options: ["In the middle of deserts", "Where the Earth's plates meet", "Only on the ocean floor", "Only in mountains"],
-          answer: 1,
-          explain: "Most earthquakes and volcanoes occur where the Earth's **plates meet**."
-        }
-      ]
-    },
-    {
-      id: "air",
-      title: "Air",
-      section: "Geography",
-      summary: "The gases that make up the air, the layers of the atmosphere, and how weather, air pressure and humidity affect our daily lives.",
-      notes: [
-        {
-          heading: "What Air Is Made Of",
-          points: [
-            "Air is a mixture of gases. It contains about **78% nitrogen** and **21% oxygen**.",
-            "It also contains small amounts of **argon**, **carbon dioxide** (CO₂) and water vapour."
-          ]
-        },
-        {
-          heading: "Layers of the Atmosphere",
-          points: [
-            "The **troposphere** is the layer closest to the Earth, where almost all weather occurs.",
-            "The **stratosphere** contains the **ozone layer**, which absorbs harmful ultraviolet rays from the Sun.",
-            "Above it lie the mesosphere, thermosphere and exosphere."
-          ]
-        },
-        {
-          heading: "Weather and Climate",
-          points: [
-            "**Weather** is the condition of the air at a place over a short period, such as a day.",
-            "**Climate** is the average weather of a place over a long period, usually 30 years or more."
-          ]
-        },
-        {
-          heading: "Air Pressure, Winds and Humidity",
-          points: [
-            "**Air pressure** is the force of the air on a surface. It is higher near sea level and decreases with height.",
-            "Winds blow from **high-pressure** areas towards **low-pressure** areas.",
-            "**Humidity** is the amount of water vapour in the air. When warm moist air rises and cools, the vapour condenses into clouds and rain."
-          ]
-        }
-      ],
-      formulas: [
-        "Nitrogen ≈ 78%, Oxygen ≈ 21% of the air",
-        "Ozone layer – in the stratosphere",
-        "Winds blow from high pressure to low pressure"
-      ],
-      terms: [
-        { term: "Atmosphere", meaning: "The layer of gases surrounding the Earth." },
-        { term: "Troposphere", meaning: "The lowest layer of the atmosphere, where weather occurs." },
-        { term: "Ozone layer", meaning: "A layer in the stratosphere that absorbs most of the Sun's harmful ultraviolet rays." },
+        { term: "Weather", meaning: "The day-to-day condition of the atmosphere at a place." },
         { term: "Humidity", meaning: "The amount of water vapour present in the air." },
-        { term: "Air pressure", meaning: "The force exerted by the weight of air on a surface." }
+        { term: "Precipitation", meaning: "Water falling from clouds as rain, snow, sleet or hail." },
+        { term: "Condensation", meaning: "Water vapour cooling and changing into water droplets." },
+        { term: "Rain gauge", meaning: "An instrument that measures the amount of rainfall." }
       ],
       qa: [
-        {
-          q: "Why is the ozone layer important?",
-          a: "It absorbs most of the harmful ultraviolet rays from the Sun and protects living things from their effects. It lies in the stratosphere."
-        },
-        {
-          q: "What is the difference between weather and climate?",
-          a: "Weather is the condition of the air at a place for a short time, such as a day. Climate is the average weather of a place over a long period of years."
-        }
+        { q: "Differentiate between weather and climate.", a: "Weather is the atmosphere's condition at a place at a given time and changes often. Climate is the average weather over many years." },
+        { q: "Why does wind blow?", a: "Because of differences in air pressure. Air moves from high-pressure areas to low-pressure areas." }
       ],
       quiz: [
-        {
-          q: "The largest gas in the air is:",
-          options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Argon"],
-          answer: 1,
-          explain: "**Nitrogen** makes up about 78% of the air, and oxygen makes up about 21%."
-        },
-        {
-          q: "In which layer of the atmosphere does most weather occur?",
-          options: ["Stratosphere", "Exosphere", "Troposphere", "Mesosphere"],
-          answer: 2,
-          explain: "Almost all weather happens in the **troposphere**, the layer closest to the Earth."
-        },
-        {
-          q: "The ozone layer is found in the:",
-          options: ["Stratosphere", "Troposphere", "Thermosphere", "Exosphere"],
-          answer: 0,
-          explain: "The **ozone layer** lies in the **stratosphere**, and it absorbs harmful ultraviolet rays."
-        },
-        {
-          q: "Winds blow from:",
-          options: ["Low pressure to high pressure", "Cold areas to hot areas only", "High pressure to low pressure", "Ocean to ocean"],
-          answer: 2,
-          explain: "Winds blow from **high-pressure** areas towards **low-pressure** areas."
-        },
-        {
-          q: "The amount of water vapour present in the air is called:",
-          options: ["Humidity", "Pressure", "Climate", "Erosion"],
-          answer: 0,
-          explain: "The amount of water vapour in the air is called **humidity**."
-        }
+        { q: "A wind that blows from the west is called a:", options: ["East wind", "West wind", "North wind", "South wind"], answer: 1, explain: "Winds are named by the direction they come **from**." },
+        { q: "Which instrument measures air pressure?", options: ["Anemometer", "Rain gauge", "Barometer", "Thermometer"], answer: 2, explain: "A **barometer** measures air pressure." },
+        { q: "Warm air tends to:", options: ["Sink and create high pressure", "Rise and create low pressure", "Stay still", "Turn into rain at once"], answer: 1, explain: "Warm air is lighter, so it **rises** and leaves low pressure." },
+        { q: "Clouds form when rising moist air:", options: ["Heats up", "Cools and condenses", "Turns into wind", "Loses all vapour as ice"], answer: 1, explain: "Cooling makes vapour **condense** into droplets." },
+        { q: "Climate differs from weather because climate is:", options: ["Measured only in rain", "The average over a long period", "Only about winter", "Changing every hour"], answer: 1, explain: "Climate is the **long-term average** of weather." }
       ]
     },
     {
-      id: "water",
-      title: "Water",
-      section: "Geography",
-      summary: "How water is distributed on the Earth, how the water cycle moves it between the oceans, air and land, and what causes tides.",
+      id: "climates-of-india",
+      title: "Climates of India",
+      section: "India and the World: Land and the People",
+      summary: "The factors that shape India's climate, the monsoon, and the four seasons of the year.",
       notes: [
         {
-          heading: "Water on the Earth",
+          heading: "Factors Affecting Climate",
           points: [
-            "About **71%** of the Earth's surface is covered by water, mostly in oceans and seas.",
-            "Most of this water is salty. Only a small part is fresh water, and much of it is frozen in glaciers and ice caps."
+            "**Latitude**: places near the equator are hotter. **Altitude**: temperature falls as height increases.",
+            "**Distance from the sea**: coastal places have mild climate; inland places have extremes.",
+            "**Relief** (mountains) and **monsoon winds** also shape India's climate. The Himalayas shield India from cold northern winds."
           ]
         },
         {
-          heading: "The Water Cycle",
+          heading: "The Monsoon",
           points: [
-            "The Sun heats water and it **evaporates** into water vapour.",
-            "The vapour rises, cools and **condenses** into clouds.",
-            "Water falls back as **precipitation** (rain, snow or hail), and flows into rivers and oceans or seeps into the ground."
+            "**Monsoon** winds reverse direction with the seasons. India gets most of its rain from the **south-west monsoon**.",
+            "It arrives around the start of June in Kerala and spreads over the country by about July.",
+            "The monsoon is vital for farming, but too little or too much rain causes drought or floods."
           ]
         },
         {
-          heading: "Oceans and Seas",
+          heading: "The Four Seasons",
           points: [
-            "The **Pacific Ocean** is the largest ocean in the world, followed by the Atlantic, the Indian, the Southern and the Arctic oceans.",
-            "Sea water is salty. On average it contains about **3.5%** dissolved salts."
-          ]
-        },
-        {
-          heading: "Tides",
-          points: [
-            "**Tides** are the regular rise and fall of sea level.",
-            "They are caused mainly by the pull of the **Moon's gravity** on the water of the oceans."
+            "**Summer** (March to May) is hot and dry, with hot winds called **loo** in the north.",
+            "The **south-west monsoon** season (June to September) brings most of the rain.",
+            "The **retreating monsoon** (October-November) is followed by **winter** (December to February), which is cool and dry. North-western India gets some winter rain from western disturbances."
           ]
         }
       ],
       formulas: [
-        "About 71% of the Earth's surface is covered by water",
-        "Pacific Ocean – the largest ocean",
-        "Salinity of sea water ≈ 3.5%"
+        "Summer: March-May; Monsoon: June-September; Retreating monsoon: October-November; Winter: December-February",
+        "Climate factors: latitude, altitude, distance from sea, relief, monsoon winds"
       ],
       terms: [
-        { term: "Evaporation", meaning: "The change of water from liquid to vapour by heat from the Sun." },
-        { term: "Condensation", meaning: "The change of water vapour to liquid, forming clouds or dew." },
-        { term: "Precipitation", meaning: "Water that falls from clouds as rain, snow, sleet or hail." },
-        { term: "Tide", meaning: "The regular rise and fall of the sea level." },
-        { term: "Salinity", meaning: "The amount of dissolved salt in water." }
+        { term: "Monsoon", meaning: "Seasonal winds that change direction, bringing rain to India in summer." },
+        { term: "Loo", meaning: "Hot, dry wind that blows over northern India in summer." },
+        { term: "Altitude", meaning: "Height of a place above sea level." },
+        { term: "Retreating monsoon", meaning: "The period when the monsoon withdraws from India, in October-November." }
       ],
       qa: [
-        {
-          q: "Describe the water cycle in four steps.",
-          a: "(1) **Evaporation**: the Sun heats water and it turns into vapour. (2) **Condensation**: the vapour rises, cools and forms clouds. (3) **Precipitation**: water falls as rain, snow or hail. (4) **Collection**: the water flows into rivers and oceans or seeps into the ground."
-        },
-        {
-          q: "What causes tides?",
-          a: "Tides are caused mainly by the gravitational pull of the Moon on the water of the oceans. The Sun also pulls on the water, but its effect is smaller."
-        }
+        { q: "Why is the monsoon important for India?", a: "Most of India's rainfall comes with it, and farming, water supply and the economy depend on this rain." },
+        { q: "Why do coastal areas have a milder climate than inland areas?", a: "The sea heats and cools slowly, so it keeps temperatures moderate near the coast." }
       ],
       quiz: [
-        {
-          q: "The process by which water changes from liquid to vapour is called:",
-          options: ["Condensation", "Precipitation", "Evaporation", "Infiltration"],
-          answer: 2,
-          explain: "**Evaporation** turns liquid water into vapour, usually when heated by the Sun."
-        },
-        {
-          q: "The largest ocean in the world is the:",
-          options: ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
-          answer: 0,
-          explain: "The **Pacific Ocean** is the largest and deepest ocean on Earth."
-        },
-        {
-          q: "Rain, snow and hail are all forms of:",
-          options: ["Condensation", "Precipitation", "Evaporation", "Erosion"],
-          answer: 1,
-          explain: "Water that falls from clouds is called **precipitation**."
-        },
-        {
-          q: "About what percentage of the Earth's surface is covered by water?",
-          options: ["50%", "71%", "29%", "90%"],
-          answer: 1,
-          explain: "About **71%** of the Earth's surface is covered by water."
-        },
-        {
-          q: "Tides are mainly caused by:",
-          options: ["Strong winds", "Volcanic eruptions", "The heat of the Sun", "The pull of the Moon's gravity"],
-          answer: 3,
-          explain: "Tides are caused mainly by the **gravitational pull of the Moon** on the oceans."
-        }
+        { q: "Most of India's rainfall comes from the:", options: ["North-east monsoon", "South-west monsoon", "Loo", "Western disturbance"], answer: 1, explain: "The **south-west monsoon** brings most of India's rain." },
+        { q: "The hot dry wind of north Indian summers is called:", options: ["Monsoon", "Loo", "Mango shower", "Trade wind"], answer: 1, explain: "It is called **loo**." },
+        { q: "Temperature generally ________ as altitude increases.", options: ["Rises", "Stays equal", "Falls", "Doubles"], answer: 2, explain: "Higher places are **cooler**." },
+        { q: "Which months make up India's winter season?", options: ["March to May", "June to September", "October to November", "December to February"], answer: 3, explain: "Winter is **December to February**." },
+        { q: "What protects India from cold winds from Central Asia?", options: ["Thar Desert", "The Himalayas", "Western Ghats", "Deccan Plateau"], answer: 1, explain: "The **Himalayas** act as a barrier." }
       ]
     },
     {
-      id: "natural-vegetation",
-      title: "Natural Vegetation and Wildlife",
-      section: "Geography",
-      summary: "The types of natural vegetation found in India, how climate affects them, and why forests and wildlife need protection.",
+      id: "new-beginnings-cities-and-states",
+      title: "New Beginnings: Cities and States",
+      section: "Tapestry of the Past",
+      summary: "How new cities, kingdoms and republics grew from about the 6th century BCE, and why Magadha became powerful.",
       notes: [
         {
-          heading: "What Is Natural Vegetation?",
+          heading: "Rise of Cities and Mahajanapadas",
           points: [
-            "**Natural vegetation** is the plant cover that grows in an area without human help.",
-            "It depends on the climate, soil and water of the area."
+            "From about the **6th century BCE**, many towns grew in the Ganga plains, helped by farming, iron tools and trade.",
+            "Larger states called **Mahajanapadas** (great realms) emerged. Texts mention sixteen of them.",
+            "Trade and the use of **punch-marked coins** made exchange easier."
           ]
         },
         {
-          heading: "Types of Forests",
+          heading: "Monarchies and Ganas",
           points: [
-            "**Tropical evergreen** forests grow in very wet regions such as the Western Ghats and the north-east. Their trees keep their leaves all year.",
-            "**Tropical deciduous** forests shed their leaves in the dry season. They cover most of the forest area of India.",
-            "**Thorn forests** and scrub grow in dry regions such as Rajasthan.",
-            "**Montane** forests grow on mountain slopes, with different types of trees at different heights."
+            "Most states were ruled by **kings** (monarchies). Some, called **ganas** or **sanghas**, were ruled by a group of leaders who took decisions together.",
+            "The **Vajji** sangha with its centre at **Vaishali** was a well-known example of such a republic.",
+            "Kings collected **taxes** and kept armies. Forts protected the capitals."
           ]
         },
         {
-          heading: "Mangroves",
+          heading: "The Rise of Magadha",
           points: [
-            "**Mangroves** grow in coastal areas and river deltas, where salt water and fresh water mix.",
-            "The **Sundarbans**, in the Ganga-Brahmaputra delta, is one of the largest mangrove forests in the world."
-          ]
-        },
-        {
-          heading: "Protecting Wildlife",
-          points: [
-            "The **Wildlife (Protection) Act** was passed in **1972** to protect wild animals and plants.",
-            "**Project Tiger** was launched in **1973** to save the Bengal tiger and its habitat.",
-            "Forests and wildlife are important because they keep the ecosystem balanced and provide us with oxygen, water and resources."
+            "**Magadha** became the most powerful state. Rulers such as **Bimbisara** and **Ajatashatru** expanded it.",
+            "It had fertile land, iron ore mines, forests with elephants and river routes for trade.",
+            "Its capital was first **Rajagriha** and later **Pataliputra**."
           ]
         }
       ],
       formulas: [
-        "1972 – Wildlife (Protection) Act is passed",
-        "1973 – Project Tiger is launched",
-        "Sundarbans – a mangrove forest in the Ganga-Brahmaputra delta"
+        "About 6th century BCE: rise of cities and Mahajanapadas",
+        "Magadha capitals: Rajagriha, then Pataliputra",
+        "Early Magadha rulers: Bimbisara, Ajatashatru"
       ],
       terms: [
-        { term: "Natural vegetation", meaning: "Plants that grow naturally in an area without human help." },
-        { term: "Evergreen", meaning: "A tree or forest that keeps its leaves throughout the year." },
-        { term: "Deciduous", meaning: "A tree or forest that sheds its leaves in one season, usually the dry season." },
-        { term: "Mangrove", meaning: "A tree that grows in salty coastal water and has roots above the water." },
-        { term: "Wildlife sanctuary", meaning: "An area set aside where wild animals are protected and not hunted." }
+        { term: "Mahajanapada", meaning: "One of the large states of early India (6th century BCE)." },
+        { term: "Gana / Sangha", meaning: "A state ruled by a group of leaders instead of a single king." },
+        { term: "Punch-marked coin", meaning: "An early coin, usually of silver, with symbols punched on it." },
+        { term: "Tax", meaning: "Money or goods a ruler collects from people." }
       ],
       qa: [
-        {
-          q: "What is the difference between evergreen and deciduous forests?",
-          a: "Evergreen forests keep their leaves all year and grow in areas of very heavy rainfall. Deciduous forests shed their leaves during the dry season and grow where rainfall is moderate."
-        },
-        {
-          q: "Why is it important to conserve forests and wildlife?",
-          a: "Forests provide oxygen, water and habitats for animals and protect the soil. Wild animals keep the food chain balanced. Protecting them maintains the ecosystem for future generations."
-        }
+        { q: "Why did Magadha become powerful?", a: "It had fertile land, iron ore, forests, river routes and strong rulers such as Bimbisara and Ajatashatru." },
+        { q: "How did a gana differ from a monarchy?", a: "A gana was ruled by a group of leaders who decided together, while a monarchy was ruled by a king." }
       ],
       quiz: [
-        {
-          q: "Which type of forest sheds its leaves in the dry season?",
-          options: ["Tropical evergreen", "Tropical deciduous", "Mangrove", "Montane"],
-          answer: 1,
-          explain: "**Tropical deciduous** forests shed their leaves in the dry season and cover most of India's forest area."
-        },
-        {
-          q: "The Sundarbans are a forest of which type?",
-          options: ["Thorn", "Montane", "Evergreen", "Mangrove"],
-          answer: 3,
-          explain: "The **Sundarbans** are a **mangrove** forest in the Ganga-Brahmaputra delta."
-        },
-        {
-          q: "In which year was Project Tiger launched?",
-          options: ["1947", "1972", "1973", "1985"],
-          answer: 2,
-          explain: "**Project Tiger** was launched in **1973** to protect the Bengal tiger."
-        },
-        {
-          q: "Which region is known for thorn forests?",
-          options: ["Western Ghats", "Rajasthan", "Sundarbans", "Assam hills"],
-          answer: 1,
-          explain: "**Thorn forests** grow in dry regions such as **Rajasthan**."
-        },
-        {
-          q: "Which Act was passed in 1972 to protect wild animals and plants?",
-          options: ["Wildlife (Protection) Act", "Forest Conservation Act", "Environment Protection Act", "Factories Act"],
-          answer: 0,
-          explain: "The **Wildlife (Protection) Act** of 1972 protects wild animals and plants in India."
-        }
+        { q: "Early Indian states of the 6th century BCE are called:", options: ["Dynasties", "Mahajanapadas", "Satrapies", "Panchayats"], answer: 1, explain: "They were the **Mahajanapadas**." },
+        { q: "Which was a famous gana (republic) with its centre at Vaishali?", options: ["Magadha", "Kosala", "Vajji", "Avanti"], answer: 2, explain: "The **Vajji** sangha was centred at Vaishali." },
+        { q: "The later capital of Magadha was:", options: ["Taxila", "Ujjain", "Madurai", "Pataliputra"], answer: 3, explain: "**Pataliputra** became the capital after Rajagriha." },
+        { q: "Early coins with symbols stamped on them are called:", options: ["Punch-marked coins", "Gold dinars", "Paper notes", "Cowries"], answer: 0, explain: "These were **punch-marked coins**." },
+        { q: "Which helped Magadha's growth?", options: ["No rivers", "Iron ore and fertile land", "Lack of rulers", "Sea trade alone"], answer: 1, explain: "Fertile land and nearby **iron ore** helped it grow." }
       ]
     },
-
-    // ==================================================================
-    // SOCIAL AND POLITICAL LIFE
-    // ==================================================================
     {
-      id: "on-equality",
-      title: "On Equality",
-      section: "Social and Political Life",
-      summary: "How the Constitution of India promises equality, which articles protect it, and why special help is sometimes given to disadvantaged groups.",
+      id: "the-rise-of-empires",
+      title: "The Rise of Empires",
+      section: "Tapestry of the Past",
+      summary: "The Mauryan empire: Chandragupta Maurya, its administration, and Ashoka's policy of dhamma.",
       notes: [
         {
-          heading: "Equality in the Constitution",
+          heading: "Founding of the Mauryan Empire",
           points: [
-            "The **Constitution of India** came into force on **26 January 1950**.",
-            "Its **Preamble** promises **justice**, **liberty**, **equality** and **fraternity** to all citizens."
+            "**Chandragupta Maurya** founded the Mauryan empire in the late 4th century BCE (about 321 BCE), with its capital at **Pataliputra**.",
+            "He was helped by his minister **Chanakya (Kautilya)**, traditionally linked to the book **Arthashastra** on statecraft.",
+            "The Greek envoy **Megasthenes** lived at his court and wrote about India."
           ]
         },
         {
-          heading: "Articles on Equality",
+          heading: "Administration",
           points: [
-            "**Article 14** guarantees equality before the law and equal protection of the laws to everyone.",
-            "**Article 15** says the state shall not discriminate against any citizen on grounds of religion, race, caste, sex or place of birth.",
-            "**Article 16** gives equal opportunity in matters of public employment."
+            "The empire was divided into provinces governed by officials appointed by the king, who had a large army and spies.",
+            "Taxes on farming and trade paid for the army and government.",
+            "Roads and rivers connected the empire and helped trade."
           ]
         },
         {
-          heading: "Abolition of Untouchability",
+          heading: "Ashoka and Dhamma",
           points: [
-            "**Article 17** abolishes untouchability and forbids its practice in any form.",
-            "Untouchability is a crime under the law, and people who practise it can be punished."
-          ]
-        },
-        {
-          heading: "Equality in Practice",
-          points: [
-            "Equality means that everyone should be treated fairly, but the law also makes special provisions for disadvantaged groups so that they can catch up.",
-            "The **Equal Remuneration Act, 1976** provides equal pay for men and women doing the same work."
+            "**Ashoka** became emperor around 268 BCE. After the bloody **Kalinga war** (about 261 BCE) he felt great sorrow and gave up conquest by war.",
+            "He promoted **dhamma**: kindness, tolerance, respect for elders and care for all living beings.",
+            "He had messages (edicts) carved on rocks and pillars, mostly in the **Brahmi** script. The Lion Capital at **Sarnath** is now India's national emblem."
           ]
         }
       ],
       formulas: [
-        "26 January 1950 – The Constitution of India comes into force",
-        "Article 14 – Equality before the law",
-        "Article 17 – Untouchability is abolished"
+        "Chandragupta Maurya: founder of the Mauryan empire (about 321 BCE)",
+        "Kalinga war: about 261 BCE",
+        "Ashoka's edicts: Brahmi script; emblem from the Sarnath Lion Capital"
       ],
       terms: [
-        { term: "Discrimination", meaning: "Unfair treatment of a person or group because of who they are, such as their caste, religion or sex." },
-        { term: "Equality before law", meaning: "The principle that every person is subject to the same laws and no one is above them." },
-        { term: "Untouchability", meaning: "The practice of treating certain people as impure, which the Constitution has abolished." },
-        { term: "Fraternity", meaning: "A feeling of brotherhood and unity among all people." },
-        { term: "Preamble", meaning: "The introduction to the Constitution, which states its main aims and values." }
+        { term: "Arthashastra", meaning: "An ancient book on government and economics linked to Kautilya." },
+        { term: "Dhamma", meaning: "Ashoka's code of moral conduct: tolerance, non-violence and kindness." },
+        { term: "Edict", meaning: "An official order or message, like those Ashoka had carved on rocks." },
+        { term: "Envoy", meaning: "A representative sent by one ruler to another's court." }
       ],
       qa: [
-        {
-          q: "What does Article 15 of the Constitution say?",
-          a: "It says the state shall not discriminate against any citizen on grounds of religion, race, caste, sex or place of birth. It also allows special provisions for women and children."
-        },
-        {
-          q: "Why does the law make special provisions for some disadvantaged groups?",
-          a: "Some groups have faced discrimination for a long time. Special provisions help them catch up, so that they get a fair chance and real equality."
-        }
+        { q: "How did the Kalinga war change Ashoka?", a: "Seeing the suffering it caused, he gave up war and began to follow and spread dhamma." },
+        { q: "Why did Ashoka have edicts carved on rocks and pillars?", a: "So that his messages about dhamma and governance could be seen and read by many people across the empire." }
       ],
       quiz: [
-        {
-          q: "On which date did the Constitution of India come into force?",
-          options: ["15 August 1947", "26 November 1949", "26 January 1950", "2 October 1950"],
-          answer: 2,
-          explain: "The Constitution came into force on **26 January 1950**. It was adopted on 26 November 1949."
-        },
-        {
-          q: "Which Article of the Constitution abolishes untouchability?",
-          options: ["Article 14", "Article 17", "Article 19", "Article 21"],
-          answer: 1,
-          explain: "**Article 17** abolishes untouchability in any form."
-        },
-        {
-          q: "Which law provides equal pay for men and women doing the same work?",
-          options: ["Equal Remuneration Act, 1976", "Factories Act, 1948", "Right to Information Act, 2005", "Forest Conservation Act, 1980"],
-          answer: 0,
-          explain: "The **Equal Remuneration Act, 1976** provides equal pay for equal work for men and women."
-        },
-        {
-          q: "Which of these is a ground on which Article 15 prohibits discrimination?",
-          options: ["Income", "Height", "Place of birth", "Education"],
-          answer: 2,
-          explain: "Article 15 prohibits discrimination on grounds of religion, race, caste, sex or **place of birth**."
-        },
-        {
-          q: "The Preamble of the Constitution promises:",
-          options: ["Unlimited powers to the Prime Minister", "Rights of the monarch", "Military rule", "Justice, liberty, equality and fraternity"],
-          answer: 3,
-          explain: "The Preamble promises **justice, liberty, equality and fraternity** to all citizens."
-        }
+        { q: "Who founded the Mauryan empire?", options: ["Ashoka", "Bimbisara", "Chandragupta Maurya", "Samudragupta"], answer: 2, explain: "**Chandragupta Maurya** founded it." },
+        { q: "The Kalinga war made Ashoka:", options: ["Expand by more wars", "Follow dhamma", "Leave his throne at once", "Move his capital"], answer: 1, explain: "He turned to **dhamma**." },
+        { q: "Megasthenes was a:", options: ["Chinese monk", "Greek envoy", "Roman trader", "Arab scholar"], answer: 1, explain: "He was a **Greek envoy** at the Mauryan court." },
+        { q: "Most of Ashoka's edicts were written in:", options: ["Persian", "Tamil", "Brahmi", "Devanagari"], answer: 2, explain: "They were mostly in **Brahmi**." },
+        { q: "India's national emblem comes from Ashoka's pillar at:", options: ["Sarnath", "Sanchi", "Nalanda", "Pataliputra"], answer: 0, explain: "It is adapted from the Lion Capital at **Sarnath**." }
       ]
     },
     {
-      id: "state-government",
-      title: "How the State Government Works",
-      section: "Social and Political Life",
-      summary: "The structure of a state government, including the Governor, the Chief Minister, the legislature, and how powers are shared between the Union and the states.",
+      id: "the-age-of-reorganisation",
+      title: "The Age of Reorganisation",
+      section: "Tapestry of the Past",
+      summary: "How new kingdoms and trading links shaped India after the Mauryas, in the north, the Deccan and the far south.",
       notes: [
         {
-          heading: "Three Levels of Government",
+          heading: "After the Mauryas",
           points: [
-            "India has the **Union (central) government**, **state governments** and **local governments** such as panchayats and municipalities.",
-            "Each state has its own government, which looks after many subjects of daily life."
+            "After the Mauryan empire weakened, several regional kingdoms rose, among them the **Shungas** in the north.",
+            "Groups from Central Asia such as the **Shakas** and **Kushanas** settled in parts of north India. **Kanishka** was a famous Kushana ruler.",
+            "Power became divided among many regional rulers."
           ]
         },
         {
-          heading: "Governor and Chief Minister",
+          heading: "The Deccan and the South",
           points: [
-            "The **Governor** is the constitutional head of the state and is appointed by the President.",
-            "The **Chief Minister** is the real head of the state government. He or she leads the council of ministers."
+            "The **Satavahanas** ruled much of the Deccan, and **Gautamiputra Satakarni** was among their well-known kings.",
+            "In the far south, the **Cheras**, **Cholas** and **Pandyas** ruled, and early Tamil literature of the **Sangam** age tells about them.",
+            "Port towns on the coasts grew rich through trade."
           ]
         },
         {
-          heading: "The State Legislature",
+          heading: "Trade and Exchange",
           points: [
-            "The state **legislature** makes laws for the state.",
-            "Most states have one house, the **Vidhan Sabha** (Legislative Assembly). Some states also have a second house, the **Vidhan Parishad** (Legislative Council)."
-          ]
-        },
-        {
-          heading: "Sharing Powers",
-          points: [
-            "The Constitution divides subjects into the **Union List**, the **State List** and the **Concurrent List**.",
-            "Police, public health and agriculture are mainly state subjects. Each state also has a **High Court**."
+            "Trade routes by land (the **Silk Route**) and sea linked India to Central Asia, China and the Roman world.",
+            "Indian goods such as spices, cotton cloth and pearls were in demand abroad.",
+            "Trade also spread ideas, religions and art between regions."
           ]
         }
       ],
       formulas: [
-        "Head of the state: Governor (constitutional head); Head of the government: Chief Minister",
-        "Vidhan Sabha – the Legislative Assembly; Vidhan Parishad – the Legislative Council",
-        "Three lists of subjects: Union, State and Concurrent"
+        "Deccan: Satavahanas",
+        "Far south: Cheras, Cholas, Pandyas (Sangam age)",
+        "Kushana ruler: Kanishka"
       ],
       terms: [
-        { term: "Governor", meaning: "The constitutional head of a state, appointed by the President." },
-        { term: "Chief Minister", meaning: "The head of a state government, who leads the council of ministers." },
-        { term: "Vidhan Sabha", meaning: "The Legislative Assembly of a state, where elected members make laws." },
-        { term: "Vidhan Parishad", meaning: "The Legislative Council, the second house in some states." },
-        { term: "Concurrent List", meaning: "The list of subjects on which both the Union and the state governments can make laws." }
+        { term: "Satavahanas", meaning: "A dynasty that ruled much of the Deccan." },
+        { term: "Sangam literature", meaning: "Early Tamil poetry and texts of the ancient south." },
+        { term: "Silk Route", meaning: "A network of trade routes linking China, Central Asia and the West." },
+        { term: "Dynasty", meaning: "A line of rulers from the same family." }
       ],
       qa: [
-        {
-          q: "What is the difference between the Governor and the Chief Minister?",
-          a: "The Governor is the constitutional head of the state, appointed by the President. The Chief Minister is the real head of the government. He or she is appointed by the Governor and must have the support of the majority in the Vidhan Sabha."
-        },
-        {
-          q: "Name two subjects that are mainly under the state government.",
-          a: "Police, public health, agriculture and local government are mainly state subjects."
-        }
+        { q: "Which three kingdoms ruled the far south in this period?", a: "The Cheras, Cholas and Pandyas." },
+        { q: "How did trade help kingdoms grow?", a: "Taxes on trade and busy port towns brought wealth, and trade also spread ideas and art." }
       ],
       quiz: [
-        {
-          q: "Who is the constitutional head of a state?",
-          options: ["Chief Minister", "Governor", "Speaker", "Prime Minister"],
-          answer: 1,
-          explain: "The **Governor** is the constitutional head of the state."
-        },
-        {
-          q: "Who is the real head of a state's government?",
-          options: ["Chief Justice", "Governor", "Vice-President", "Chief Minister"],
-          answer: 3,
-          explain: "The **Chief Minister** leads the council of ministers and runs the state government."
-        },
-        {
-          q: "The lower house of a state legislature is called:",
-          options: ["Vidhan Parishad", "Vidhan Sabha", "Lok Sabha", "Rajya Sabha"],
-          answer: 1,
-          explain: "The **Vidhan Sabha** is the Legislative Assembly of a state. Lok Sabha and Rajya Sabha are part of the Parliament of India."
-        },
-        {
-          q: "Which of these is a subject in the State List?",
-          options: ["Defence", "Railways", "Police", "Currency"],
-          answer: 2,
-          explain: "**Police** is a subject in the State List. Defence, railways and currency are Union subjects."
-        },
-        {
-          q: "Which is the highest court of a state?",
-          options: ["High Court", "Supreme Court", "District Court", "Lok Adalat"],
-          answer: 0,
-          explain: "Each state has a **High Court**, which is the highest court in the state."
-        }
+        { q: "The Satavahanas ruled mainly in the:", options: ["Deccan", "Ganga plains", "Punjab", "Assam"], answer: 0, explain: "They ruled much of the **Deccan**." },
+        { q: "Which was a famous Kushana ruler?", options: ["Ashoka", "Kanishka", "Harsha", "Bimbisara"], answer: 1, explain: "**Kanishka** was a Kushana ruler." },
+        { q: "Sangam literature is in which language?", options: ["Prakrit", "Persian", "Tamil", "Sanskrit"], answer: 2, explain: "It is in early **Tamil**." },
+        { q: "Which was NOT a kingdom of the far south?", options: ["Chola", "Pandya", "Chera", "Shunga"], answer: 3, explain: "The **Shungas** ruled in the north." },
+        { q: "Trade between India and distant lands spread:", options: ["Only goods", "Goods, ideas and art", "Only coins", "Nothing else"], answer: 1, explain: "Trade carried **ideas and art** too." }
       ]
     },
     {
-      id: "understanding-media",
-      title: "Understanding Media",
-      section: "Social and Political Life",
-      summary: "What the media are, the different kinds of media, how public and private media operate, and why a free press matters in a democracy.",
+      id: "the-gupta-era",
+      title: "The Gupta Era: An Age of Tireless Creativity",
+      section: "Tapestry of the Past",
+      summary: "The Gupta empire, its great rulers and the advances in science, mathematics, literature and art in this period.",
       notes: [
         {
-          heading: "What Is Media?",
+          heading: "Gupta Rulers",
           points: [
-            "**Media** are the means of communication that reach large numbers of people, such as newspapers, radio, television, films and the internet.",
-            "Each medium reaches people differently: a newspaper can be read again and again, while a radio programme is heard only when it is broadcast."
+            "The Gupta empire began around **320 CE** with **Chandragupta I** and had its capital at Pataliputra.",
+            "**Samudragupta** expanded the empire widely. His deeds are recorded in the **Prayag (Allahabad) Pillar** inscription written by Harishena.",
+            "**Chandragupta II** (Vikramaditya) ruled during a time of peace and prosperity. The Chinese monk **Fa-Xian** visited India in his time."
           ]
         },
         {
-          heading: "Kinds of Media",
+          heading: "Science and Learning",
           points: [
-            "**Print media** include newspapers and magazines.",
-            "**Electronic media** include radio and television.",
-            "**Digital media** include websites, mobile apps and social media platforms."
+            "**Aryabhata** (born 476 CE) wrote on mathematics and astronomy and explained that the Earth rotates on its axis.",
+            "**Varahamihira** wrote on astronomy and other sciences.",
+            "The decimal place-value system and the use of **zero** developed in India around this time. **Nalanda** was a famed centre of learning."
           ]
         },
         {
-          heading: "Public and Private Media",
+          heading: "Art, Literature and Metal Work",
           points: [
-            "**All India Radio** and **Doordarshan** are public broadcasters run by the government, through Prasar Bharati.",
-            "Most newspapers, television channels and websites are run by private companies."
-          ]
-        },
-        {
-          heading: "Media and Democracy",
-          points: [
-            "A free press helps citizens learn about government decisions and discuss public issues.",
-            "Freedom of speech and expression is guaranteed under **Article 19(1)(a)** of the Constitution.",
-            "Much of the income of the media comes from **advertisements**, so readers should check whether news is fair and accurate."
+            "The poet and playwright **Kalidasa** wrote works such as *Abhijnanashakuntalam*.",
+            "Gupta temples, sculptures and cave paintings (for example at **Ajanta**) show great skill.",
+            "The **iron pillar** at Delhi, which has hardly rusted, shows advanced metal working."
           ]
         }
       ],
       formulas: [
-        "Article 19(1)(a) – freedom of speech and expression",
-        "Print media – newspapers and magazines; Electronic media – radio and television",
-        "All India Radio and Doordarshan – public broadcasters"
+        "Gupta empire began about 320 CE (Chandragupta I)",
+        "Fa-Xian: Chinese monk in the time of Chandragupta II",
+        "Aryabhata born 476 CE",
+        "Prayag Pillar inscription: Samudragupta, written by Harishena"
       ],
       terms: [
-        { term: "Media", meaning: "The means of communication that reach large numbers of people." },
-        { term: "Print media", meaning: "Media that are printed on paper, such as newspapers and magazines." },
-        { term: "Digital media", meaning: "Media that are delivered through computers and phones, such as websites and social media." },
-        { term: "Advertisement", meaning: "A message or announcement that promotes a product or service." },
-        { term: "Freedom of the press", meaning: "The freedom of newspapers and other media to report and publish news and opinions." }
+        { term: "Inscription", meaning: "Writing carved on stone or metal." },
+        { term: "Astronomy", meaning: "The study of the sun, moon, stars and planets." },
+        { term: "Place-value system", meaning: "A way of writing numbers where a digit's value depends on its position." },
+        { term: "Pilgrim", meaning: "A person who travels to a holy place, like Fa-Xian did." }
       ],
       qa: [
-        {
-          q: "What are the three kinds of media? Give one example of each.",
-          a: "**Print** media (a newspaper), **electronic** media (television or radio) and **digital** media (a news website or social media platform)."
-        },
-        {
-          q: "Why is a free press important in a democracy?",
-          a: "A free press gives citizens information about the government and public issues. It allows people to criticise the government and take part in public discussions."
-        }
+        { q: "Why is the Gupta period called an age of creativity?", a: "It saw major progress in mathematics, astronomy, literature, art and architecture." },
+        { q: "What does the iron pillar at Delhi show?", a: "That Indian metalworkers of the time were highly skilled, since the pillar has resisted rust for centuries." }
       ],
       quiz: [
-        {
-          q: "Which of these is an example of electronic media?",
-          options: ["Newspaper", "Television", "Magazine", "Poster"],
-          answer: 1,
-          explain: "**Television** is electronic media. Newspapers and magazines are print media."
-        },
-        {
-          q: "Which of these is a public broadcaster run by the government of India?",
-          options: ["Star Plus", "Times of India", "Doordarshan", "Hindustan Times"],
-          answer: 2,
-          explain: "**Doordarshan** is a public broadcaster. The other three are private companies."
-        },
-        {
-          q: "Freedom of speech and expression is guaranteed under which Article?",
-          options: ["Article 14", "Article 17", "Article 19", "Article 21"],
-          answer: 2,
-          explain: "**Article 19(1)(a)** guarantees freedom of speech and expression."
-        },
-        {
-          q: "Which of these is a digital medium?",
-          options: ["A radio programme", "A social media platform", "A newspaper", "A poster"],
-          answer: 1,
-          explain: "A **social media platform** is digital media, since it is delivered through computers and phones."
-        },
-        {
-          q: "Where do most newspapers and TV channels get much of their income?",
-          options: ["Government grants only", "Donations from readers only", "Taxes on movies", "Advertisements"],
-          answer: 3,
-          explain: "Much of the income of media comes from **advertisements**."
-        }
+        { q: "Who expanded the Gupta empire widely and is praised in the Prayag Pillar inscription?", options: ["Chandragupta I", "Skandagupta", "Samudragupta", "Kanishka"], answer: 2, explain: "**Samudragupta** is praised in that inscription." },
+        { q: "The Chinese monk who visited during Chandragupta II's reign was:", options: ["Xuanzang", "Fa-Xian", "Marco Polo", "Megasthenes"], answer: 1, explain: "**Fa-Xian** visited then." },
+        { q: "Which scholar wrote on mathematics and said the Earth rotates?", options: ["Kalidasa", "Harishena", "Aryabhata", "Bimbisara"], answer: 2, explain: "**Aryabhata** did." },
+        { q: "Kalidasa was a famous:", options: ["Astronomer", "Chinese traveller", "Warrior", "Poet and playwright"], answer: 3, explain: "Kalidasa was a **poet and playwright**." },
+        { q: "The Gupta capital was:", options: ["Pataliputra", "Delhi", "Kanchipuram", "Ujjain"], answer: 0, explain: "The capital was **Pataliputra**." }
       ]
     },
     {
-      id: "markets-around-us",
-      title: "Markets Around Us",
-      section: "Social and Political Life",
-      summary: "The different kinds of markets, how demand and supply decide prices, and the role of middlemen and cooperatives in buying and selling.",
+      id: "how-the-land-becomes-sacred",
+      title: "How the Land Becomes Sacred",
+      section: "Our Cultural Heritage and Knowledge Traditions",
+      summary: "How rivers, mountains, forests and places of worship came to be seen as sacred in India, and the idea of pilgrimage.",
       notes: [
         {
-          heading: "What Is a Market?",
+          heading: "Sacred Places in Nature",
           points: [
-            "A **market** is a place or system where buyers and sellers meet to exchange goods and services.",
-            "A market can be a physical place, like a local market or a weekly haat, or an online platform."
+            "People in India have long treated rivers such as the **Ganga**, mountains and forests as **sacred**.",
+            "**Sacred groves** are patches of forest protected by local communities because of religious belief. This also helps protect plants and animals.",
+            "Respect for nature is a common thread in many traditions."
           ]
         },
+        {
+          heading: "Pilgrimage",
+          points: [
+            "A **pilgrimage** (tirtha yatra) is a journey to a holy place. Pilgrim routes link regions of the country.",
+            "Examples include the **Char Dham** (Badrinath, Dwarka, Puri and Rameswaram) and the twelve **Jyotirlingas**.",
+            "The **Kumbh Mela** is held at Prayagraj, Haridwar, Ujjain and Nashik."
+          ]
+        },
+        {
+          heading: "Sacred Places of Many Faiths",
+          points: [
+            "India has holy places of many religions, such as Bodh Gaya and Sarnath for Buddhists, and the Golden Temple at Amritsar for Sikhs.",
+            "Jain tirthas, mosques, dargahs and churches are also visited by pilgrims.",
+            "Pilgrimage supports trade, crafts, food and local livelihoods, and brings people of different regions together."
+          ]
+        }
+      ],
+      formulas: [
+        "Char Dham: Badrinath, Dwarka, Puri, Rameswaram",
+        "Kumbh Mela cities: Prayagraj, Haridwar, Ujjain, Nashik"
+      ],
+      terms: [
+        { term: "Pilgrimage", meaning: "A journey to a holy place for religious reasons." },
+        { term: "Sacred grove", meaning: "A patch of forest protected by a community because it is held sacred." },
+        { term: "Tirtha", meaning: "A holy place, often by a river or the sea." },
+        { term: "Shrine", meaning: "A holy place, often a small temple or tomb, where people pray." }
+      ],
+      qa: [
+        { q: "How do sacred groves help the environment?", a: "Because people do not cut trees or hunt there, plants, animals and soil are protected." },
+        { q: "How does pilgrimage help local people?", a: "Pilgrims need food, lodging, transport and offerings, which gives work to local people." }
+      ],
+      quiz: [
+        { q: "A forest protected because of religious belief is a:", options: ["Sacred grove", "Plantation", "Reserve fort", "Orchard"], answer: 0, explain: "It is a **sacred grove**." },
+        { q: "Which is NOT part of the Char Dham?", options: ["Badrinath", "Puri", "Rameswaram", "Varanasi"], answer: 3, explain: "The Char Dham are Badrinath, Dwarka, Puri and Rameswaram." },
+        { q: "The Kumbh Mela is held at:", options: ["Delhi", "Haridwar", "Mumbai", "Kolkata"], answer: 1, explain: "**Haridwar** is one of the four sites." },
+        { q: "A journey to a holy place is called a:", options: ["Expedition", "Trade mission", "Pilgrimage", "Survey"], answer: 2, explain: "It is a **pilgrimage**." },
+        { q: "Bodh Gaya and Sarnath are sacred mainly to:", options: ["Jains", "Buddhists", "Sikhs", "Parsis"], answer: 1, explain: "They are sacred to **Buddhists**." }
+      ]
+    },
+    {
+      id: "from-the-rulers-to-the-ruled",
+      title: "From the Rulers to the Ruled: Types of Governments",
+      section: "Governance and Democracy",
+      summary: "Why we need governments, the main types of government, and why democracy is based on the participation of citizens.",
+      notes: [
+        {
+          heading: "Why Government?",
+          points: [
+            "A **government** makes laws, keeps order, protects people and provides services like roads, schools and hospitals.",
+            "Governments work at different levels: **local**, **state** and **national**.",
+            "The way a country is ruled is its **form of government**."
+          ]
+        },
+        {
+          heading: "Types of Government",
+          points: [
+            "In a **monarchy**, a king or queen rules, often by birth. In a **dictatorship**, one person holds power without the people's consent.",
+            "In an **oligarchy**, a small group rules.",
+            "In a **democracy**, the people have the power to choose their rulers."
+          ]
+        },
+        {
+          heading: "Democracy",
+          points: [
+            "In a **direct democracy**, citizens decide issues themselves. In a **representative democracy**, people elect representatives to decide for them. India is a representative democracy.",
+            "India follows **universal adult franchise**: every citizen aged 18 or above can vote, regardless of religion, caste, gender or wealth.",
+            "Free and fair elections, equal rights and a free press are signs of a healthy democracy."
+          ]
+        }
+      ],
+      formulas: [
+        "India: representative democracy; voting age 18",
+        "Types: monarchy, dictatorship, oligarchy, democracy"
+      ],
+      terms: [
+        { term: "Democracy", meaning: "A form of government in which people choose their rulers." },
+        { term: "Monarchy", meaning: "Rule by a king or queen, usually by birth." },
+        { term: "Representative", meaning: "A person elected to speak and decide on behalf of others." },
+        { term: "Universal adult franchise", meaning: "The right of every adult citizen to vote." }
+      ],
+      qa: [
+        { q: "How is a democracy different from a monarchy?", a: "In a democracy the people choose their rulers by voting, while in a monarchy the ruler usually comes to power by birth." },
+        { q: "What is universal adult franchise?", a: "It is the right of all adult citizens (18 and above in India) to vote, without discrimination." }
+      ],
+      quiz: [
+        { q: "India is best described as a:", options: ["Monarchy", "Dictatorship", "Representative democracy", "Oligarchy"], answer: 2, explain: "Citizens elect **representatives**." },
+        { q: "What is the minimum voting age in India?", options: ["16", "18", "21", "25"], answer: 1, explain: "It is **18** years." },
+        { q: "Rule by a small group is called:", options: ["Democracy", "Oligarchy", "Monarchy", "Republic"], answer: 1, explain: "That is an **oligarchy**." },
+        { q: "In a direct democracy, citizens:", options: ["Never vote", "Decide issues themselves", "Obey one king", "Only elect judges"], answer: 1, explain: "They **decide directly**." },
+        { q: "Which is a function of government?", options: ["Making laws", "Setting school marks for each child", "Growing all food", "Running every shop"], answer: 0, explain: "Governments **make laws** and keep order." }
+      ]
+    },
+    {
+      id: "the-constitution-of-india-an-introduction",
+      title: "The Constitution of India — An Introduction",
+      section: "Governance and Democracy",
+      summary: "What a constitution is, how India's was made, and its main features: the Preamble, fundamental rights, directive principles and duties.",
+      notes: [
+        {
+          heading: "Making of the Constitution",
+          points: [
+            "A **constitution** is the supreme set of rules by which a country is governed.",
+            "India's Constitution was drafted by the **Constituent Assembly**, with **Dr Rajendra Prasad** as its President. **Dr B. R. Ambedkar** chaired the Drafting Committee.",
+            "It was adopted on **26 November 1949** and came into force on **26 January 1950**, celebrated as Republic Day."
+          ]
+        },
+        {
+          heading: "The Preamble",
+          points: [
+            "The **Preamble** introduces the Constitution and states its goals.",
+            "It describes India as **sovereign, socialist, secular, democratic and a republic**.",
+            "It aims to secure **justice, liberty, equality** and **fraternity** for all citizens."
+          ]
+        },
+        {
+          heading: "Rights, Principles and Duties",
+          points: [
+            "**Fundamental Rights** protect citizens, such as equality, freedom and the right against exploitation. Courts can protect them.",
+            "**Directive Principles** guide governments in making policies for the welfare of people.",
+            "**Fundamental Duties** remind citizens of their responsibilities, such as respecting the Constitution, protecting public property and the environment."
+          ]
+        }
+      ],
+      formulas: [
+        "Adopted: 26 November 1949; came into force: 26 January 1950",
+        "Chair of Drafting Committee: Dr B. R. Ambedkar",
+        "Preamble values: justice, liberty, equality, fraternity"
+      ],
+      terms: [
+        { term: "Constitution", meaning: "The supreme law of a country that sets out how it is governed." },
+        { term: "Preamble", meaning: "The introduction to the Constitution stating its aims and values." },
+        { term: "Fundamental Rights", meaning: "Basic rights guaranteed to citizens and protected by courts." },
+        { term: "Republic", meaning: "A country whose head of state is elected, not a hereditary monarch." },
+        { term: "Fraternity", meaning: "A feeling of brotherhood among all citizens." }
+      ],
+      qa: [
+        { q: "Why do we celebrate 26 January as Republic Day?", a: "Because on that day in 1950 the Constitution came into force and India became a republic." },
+        { q: "Why do citizens have duties as well as rights?", a: "Rights work only when people respect the rights of others and take responsibility for their country." }
+      ],
+      quiz: [
+        { q: "The Constitution came into force on:", options: ["15 August 1947", "26 November 1949", "26 January 1950", "2 October 1950"], answer: 2, explain: "It came into force on **26 January 1950**." },
+        { q: "Who chaired the Drafting Committee?", options: ["Jawaharlal Nehru", "B. R. Ambedkar", "Mahatma Gandhi", "Sardar Patel"], answer: 1, explain: "**Dr B. R. Ambedkar** chaired it." },
+        { q: "The part that states the Constitution's goals is the:", options: ["Preamble", "Schedule", "Amendment", "Appendix"], answer: 0, explain: "The **Preamble** states them." },
+        { q: "Which of these is a value in the Preamble?", options: ["Profit", "Fraternity", "Obedience", "Tradition"], answer: 1, explain: "**Fraternity** is one of the four ideals." },
+        { q: "Guidelines for governments to promote welfare are called:", options: ["Fundamental Duties", "Fundamental Rights", "Directive Principles", "Ordinances"], answer: 2, explain: "These are the **Directive Principles**." }
+      ]
+    },
+    {
+      id: "from-barter-to-money",
+      title: "From Barter to Money",
+      section: "Economic Life Around Us",
+      summary: "How trade began with barter, why money replaced it, and how money has changed from coins to digital payments.",
+      notes: [
+        {
+          heading: "Barter",
+          points: [
+            "**Barter** is exchanging goods for other goods without using money.",
+            "It needs a **double coincidence of wants**: each person must have what the other wants.",
+            "Barter is difficult when values differ or goods cannot be divided or stored."
+          ]
+        },
+        {
+          heading: "Coins and Notes",
+          points: [
+            "Early societies used shells, metals and then **coins**. Early Indian **punch-marked coins** were an important step.",
+            "Later, **paper money** replaced heavy coins for large payments.",
+            "In India, currency notes are issued by the **Reserve Bank of India (RBI)**, while coins are minted by the government."
+          ]
+        },
+        {
+          heading: "Modern Money",
+          points: [
+            "Money acts as a **medium of exchange**, a **measure of value** and a **store of value**.",
+            "Today, payments are also made through cheques, cards, mobile apps and **UPI**.",
+            "Digital payments are quick but need care: never share PINs or OTPs."
+          ]
+        }
+      ],
+      formulas: [
+        "Functions of money: medium of exchange, measure of value, store of value",
+        "Currency notes issued by the RBI"
+      ],
+      terms: [
+        { term: "Barter", meaning: "Direct exchange of goods without money." },
+        { term: "Currency", meaning: "The coins and notes used as money in a country." },
+        { term: "Medium of exchange", meaning: "Something accepted by everyone in return for goods and services." },
+        { term: "UPI", meaning: "A system for instant digital payments using a mobile phone." }
+      ],
+      qa: [
+        { q: "What problem does the double coincidence of wants cause?", a: "Barter works only if each person has exactly what the other wants, which is hard to find." },
+        { q: "Why is money better than barter?", a: "Money can be used to buy anything, is easy to carry and divide, and removes the need for a double coincidence of wants." }
+      ],
+      quiz: [
+        { q: "Exchanging goods without money is:", options: ["Banking", "Barter", "Taxation", "Lending"], answer: 1, explain: "That is **barter**." },
+        { q: "Currency notes in India are issued by the:", options: ["Reserve Bank of India", "Finance Minister", "State Bank branches", "Post Office"], answer: 0, explain: "The **RBI** issues them." },
+        { q: "Which is a function of money?", options: ["Cooking", "Store of value", "Producing goods", "Making laws"], answer: 1, explain: "Money is a **store of value**." },
+        { q: "Early Indian coins with marks on them are called:", options: ["Gold sovereigns", "Cheques", "Dinars", "Punch-marked coins"], answer: 3, explain: "They were **punch-marked coins**." },
+        { q: "To keep UPI payments safe, you should:", options: ["Share your PIN with friends", "Keep your PIN secret", "Write it on the phone", "Tell your OTP to callers"], answer: 1, explain: "Never share your **PIN or OTP**." }
+      ]
+    },
+    {
+      id: "understanding-markets",
+      title: "Understanding Markets",
+      section: "Economic Life Around Us",
+      summary: "Different kinds of markets, how goods travel from producer to consumer, and how demand and supply affect prices.",
+      notes: [
         {
           heading: "Kinds of Markets",
           points: [
-            "**Local markets** sell everyday items to people living nearby.",
-            "**Wholesale** markets sell goods in large quantities, usually to other traders.",
-            "**Retail** shops sell goods in small quantities to consumers."
+            "Markets include **weekly markets**, permanent shops, shopping malls and **online markets**.",
+            "**Wholesale** markets sell in bulk to traders. **Retail** markets sell small quantities to consumers.",
+            "Markets bring buyers and sellers together."
           ]
         },
         {
-          heading: "Demand and Supply",
+          heading: "The Market Chain",
           points: [
-            "**Demand** is how much buyers want to buy, and **supply** is how much sellers offer for sale.",
-            "When demand is more than supply, prices rise. When supply is more than demand, prices fall."
+            "Goods often pass from the **producer** to the **wholesaler**, to the **retailer** and then to the **consumer**.",
+            "Each trader adds some cost, so the final price is higher than the producer's price.",
+            "Selling directly to consumers can give producers a better income."
           ]
         },
         {
-          heading: "Middlemen and Cooperatives",
+          heading: "Demand, Supply and Price",
           points: [
-            "**Middlemen** buy from producers and sell to traders, often taking a large share of the profit. This can reduce what farmers earn.",
-            "A **cooperative** is an organisation where members work together to buy and sell. **Amul**, a dairy cooperative, is a well-known example."
+            "**Demand** is how much of a good buyers want. **Supply** is how much sellers offer.",
+            "When demand rises and supply stays the same, prices tend to **rise**. When supply is more than demand, prices tend to **fall**.",
+            "Consumers should check quality, price and the bill, and know their rights."
           ]
         }
       ],
       formulas: [
-        "Prices rise when demand is more than supply",
-        "Wholesale – sells in bulk; Retail – sells to consumers",
-        "Cooperative – members work together for fair prices"
+        "Producer, wholesaler, retailer, consumer: the market chain",
+        "Demand up with supply unchanged: price rises"
       ],
       terms: [
-        { term: "Market", meaning: "A place or system where buyers and sellers meet to exchange goods and services." },
-        { term: "Wholesale", meaning: "Selling goods in large quantities, usually to retailers or other traders." },
-        { term: "Retail", meaning: "Selling goods in small quantities directly to consumers." },
-        { term: "Demand", meaning: "The quantity of a good that buyers want to purchase at a given price." },
-        { term: "Supply", meaning: "The quantity of a good that sellers are ready to offer for sale at a given price." }
+        { term: "Wholesaler", meaning: "A trader who buys and sells goods in large quantities." },
+        { term: "Retailer", meaning: "A trader who sells goods in small quantities to consumers." },
+        { term: "Demand", meaning: "The quantity of a good buyers are willing to buy." },
+        { term: "Supply", meaning: "The quantity of a good sellers are willing to sell." },
+        { term: "Consumer", meaning: "A person who buys goods or services for use." }
       ],
       qa: [
-        {
-          q: "What is the difference between wholesale and retail markets?",
-          a: "Wholesale traders buy goods in large quantities from producers and sell them in bulk to retailers. Retailers sell in small quantities to consumers."
-        },
-        {
-          q: "How do demand and supply affect prices?",
-          a: "If demand is more than supply, prices rise. If supply is more than demand, prices fall."
-        }
+        { q: "Why do vegetable prices often rise in the rainy season?", a: "Heavy rain can damage crops and block transport, so supply falls while demand stays the same, raising prices." },
+        { q: "Why is a product dearer in a shop than at the farm?", a: "Transport, storage and each trader's profit are added as it passes through wholesalers and retailers." }
       ],
       quiz: [
+        { q: "A shopkeeper selling small quantities to customers is a:", options: ["Wholesaler", "Producer", "Retailer", "Importer"], answer: 2, explain: "That is a **retailer**." },
+        { q: "If supply is far more than demand, price usually:", options: ["Falls", "Rises", "Stays fixed forever", "Doubles"], answer: 0, explain: "Excess supply pushes prices **down**." },
+        { q: "Correct order of a market chain is:", options: ["Retailer, producer, consumer", "Consumer, retailer, wholesaler", "Producer, wholesaler, retailer, consumer", "Wholesaler, consumer, producer"], answer: 2, explain: "Goods move from **producer to consumer**." },
+        { q: "Bulk selling to traders happens in a:", options: ["Convenience store", "Wholesale market", "Weekly kitchen", "Hawker stall"], answer: 1, explain: "It happens in a **wholesale market**." },
+        { q: "Why should you take a bill when you buy something?", options: ["To pay more", "It is proof of purchase", "To avoid tax", "To get a discount always"], answer: 1, explain: "A bill is **proof** useful for complaints or returns." }
+      ]
+    },
+    {
+      id: "the-story-of-indian-farming",
+      title: "The Story of Indian Farming",
+      section: "India and the World: Land and the People",
+      summary: "Farming seasons and crops in India, types of farming, irrigation, and how Indian agriculture has changed.",
+      notes: [
         {
-          q: "A weekly haat is an example of:",
-          options: ["A wholesale market", "A local weekly market", "An online store", "A cooperative society"],
-          answer: 1,
-          explain: "A **weekly haat** is a local market that is held on a fixed day each week."
+          heading: "Crop Seasons",
+          points: [
+            "**Kharif** crops are sown with the monsoon (June-July) and harvested in autumn. Examples: **rice**, maize, cotton, jowar.",
+            "**Rabi** crops are sown in winter (October-November) and harvested in spring. Examples: **wheat**, gram, mustard.",
+            "**Zaid** crops are grown for a short time in summer, such as watermelon and cucumber."
+          ]
         },
         {
-          q: "When demand for a good is higher than its supply, its price:",
-          options: ["Falls", "Becomes zero", "Rises", "Stays the same"],
-          answer: 2,
-          explain: "When demand is more than supply, buyers compete for the goods, so prices **rise**."
+          heading: "Types of Farming and Crops",
+          points: [
+            "In **subsistence farming**, farmers grow mainly for their own family. In **commercial farming**, crops are grown to sell.",
+            "**Plantation crops** such as tea, coffee and rubber are grown on large estates.",
+            "Cash crops include sugarcane, cotton and jute. Food crops include rice, wheat and pulses."
+          ]
         },
         {
-          q: "Which type of trader sells goods in large quantities to other traders?",
-          options: ["Retailer", "Wholesaler", "Consumer", "Labourer"],
-          answer: 1,
-          explain: "A **wholesaler** buys in bulk and sells in large quantities to retailers and other traders."
-        },
-        {
-          q: "Amul is an example of:",
-          options: ["A government ministry", "A private bank", "A railway station", "A cooperative"],
-          answer: 3,
-          explain: "**Amul** is a dairy **cooperative**, owned by its members."
-        },
-        {
-          q: "A person who buys from farmers and sells to traders, often earning a share of the profit, is called:",
-          options: ["A middleman", "A consumer", "A retailer", "A cooperative member"],
-          answer: 0,
-          explain: "A **middleman** stands between the producer and the trader, and often takes a share of the profit."
+          heading: "Water, Soil and Change",
+          points: [
+            "Farming depends on soil, rainfall and **irrigation** through canals, wells and tube wells.",
+            "The **Green Revolution** (from the 1960s) used high-yielding seeds, fertilisers and irrigation to raise wheat and rice output.",
+            "Today, careful use of water, **organic farming** and drip irrigation help protect land and water."
+          ]
         }
+      ],
+      formulas: [
+        "Kharif: sown June-July (rice, maize, cotton); Rabi: sown Oct-Nov (wheat, gram, mustard)",
+        "Green Revolution: from the 1960s, mainly wheat and rice"
+      ],
+      terms: [
+        { term: "Kharif", meaning: "Crops sown at the start of the monsoon and harvested in autumn." },
+        { term: "Rabi", meaning: "Crops sown in winter and harvested in spring." },
+        { term: "Irrigation", meaning: "Supplying water to crops by canals, wells or pipes." },
+        { term: "Subsistence farming", meaning: "Growing crops mainly to feed the farmer's own family." },
+        { term: "Organic farming", meaning: "Farming without chemical fertilisers and pesticides." }
+      ],
+      qa: [
+        { q: "Why are rabi crops grown in winter and not summer?", a: "They need cool weather to grow and warm weather to ripen, and rabi crops are watered by winter moisture or irrigation." },
+        { q: "What was the Green Revolution?", a: "A big rise in food-grain output, especially wheat and rice, through high-yielding seeds, fertilisers and irrigation." }
+      ],
+      quiz: [
+        { q: "Which crop is a rabi crop?", options: ["Rice", "Wheat", "Cotton", "Maize"], answer: 1, explain: "**Wheat** is sown in winter." },
+        { q: "Crops grown mainly to be sold are grown by:", options: ["Subsistence farming", "Commercial farming", "Home gardening", "Fallowing"], answer: 1, explain: "That is **commercial farming**." },
+        { q: "Which is a plantation crop?", options: ["Wheat", "Gram", "Tea", "Mustard"], answer: 2, explain: "**Tea** is grown on plantations." },
+        { q: "Kharif crops are sown with the:", options: ["Winter cold", "Monsoon", "Spring", "Autumn harvest"], answer: 1, explain: "They are sown at the start of the **monsoon**." },
+        { q: "Supplying water to crops artificially is:", options: ["Harvesting", "Threshing", "Irrigation", "Ploughing"], answer: 2, explain: "That is **irrigation**." }
+      ]
+    },
+    {
+      id: "india-and-her-neighbours",
+      title: "India and Her Neighbours",
+      section: "India and the World: Land and the People",
+      summary: "India's neighbouring countries, their geography, shared history and ties, and why good relations matter.",
+      notes: [
+        {
+          heading: "Our Neighbours",
+          points: [
+            "India's neighbours include **Pakistan**, **Afghanistan**, **China**, **Nepal**, **Bhutan**, **Bangladesh** and **Myanmar** on land.",
+            "**Sri Lanka** and the **Maldives** are island neighbours in the Indian Ocean. Sri Lanka is separated from India by the **Palk Strait**.",
+            "**Nepal** and **Bhutan** are landlocked Himalayan countries."
+          ]
+        },
+        {
+          heading: "Shared Links",
+          points: [
+            "India shares history, languages, food, festivals and religions with its neighbours. **Buddhism** spread from India to many Asian countries.",
+            "Rivers like the Ganga, Brahmaputra and Indus flow across borders, so countries must cooperate on water.",
+            "Trade, tourism, education and travel connect the people."
+          ]
+        },
+        {
+          heading: "Cooperation",
+          points: [
+            "**SAARC** (South Asian Association for Regional Cooperation) was formed in **1985** to promote cooperation among South Asian countries.",
+            "Neighbours work together on trade, transport, power, health and disaster management.",
+            "Peaceful relations help all countries grow."
+          ]
+        }
+      ],
+      formulas: [
+        "Landlocked neighbours: Nepal, Bhutan",
+        "Island neighbours: Sri Lanka, Maldives",
+        "SAARC formed in 1985"
+      ],
+      terms: [
+        { term: "Landlocked", meaning: "A country with no coastline." },
+        { term: "Strait", meaning: "A narrow stretch of sea between two land areas." },
+        { term: "SAARC", meaning: "An association of South Asian countries formed in 1985 for cooperation." },
+        { term: "Border", meaning: "The line that separates one country from another." }
+      ],
+      qa: [
+        { q: "Why must India and its neighbours cooperate over rivers?", a: "Many rivers cross borders, so use of their water, floods and pollution in one country affect the others." },
+        { q: "Name two ways India is linked to its neighbours.", a: "Shared culture and religions such as Buddhism, and trade, travel and rivers." }
+      ],
+      quiz: [
+        { q: "Which of these is a landlocked neighbour of India?", options: ["Sri Lanka", "Bangladesh", "Bhutan", "Maldives"], answer: 2, explain: "**Bhutan** has no coast." },
+        { q: "The strait between India and Sri Lanka is the:", options: ["Palk Strait", "Strait of Malacca", "Bering Strait", "Hormuz Strait"], answer: 0, explain: "It is the **Palk Strait**." },
+        { q: "SAARC was formed in:", options: ["1947", "1985", "1991", "2005"], answer: 1, explain: "SAARC was formed in **1985**." },
+        { q: "Which is an island neighbour of India?", options: ["Nepal", "Myanmar", "Maldives", "Afghanistan"], answer: 2, explain: "The **Maldives** is an island country." },
+        { q: "Which religion spread from India to many Asian lands?", options: ["Buddhism", "Zoroastrianism", "Judaism", "Shintoism"], answer: 0, explain: "**Buddhism** spread from India." }
+      ]
+    },
+    {
+      id: "empires-and-kingdoms-6th-to-10th-centuries",
+      title: "Empires and Kingdoms: 6th to 10th Centuries",
+      section: "Tapestry of the Past",
+      summary: "Major kingdoms of the 6th to 10th centuries, including Harsha, the Chalukyas, Pallavas, Rashtrakutas and Palas, and their art and learning.",
+      notes: [
+        {
+          heading: "Northern and Central India",
+          points: [
+            "**Harshavardhana** (ruled about 606-647 CE) had his capital at **Kannauj**. The Chinese monk **Xuanzang** visited his kingdom.",
+            "The **Palas** of Bengal and Bihar supported centres of learning such as **Nalanda** and **Vikramashila**.",
+            "The **Palas**, **Pratiharas** and **Rashtrakutas** fought for control of Kannauj."
+          ]
+        },
+        {
+          heading: "The Deccan and the South",
+          points: [
+            "The **Chalukyas** ruled from **Badami**. **Pulakeshin II** was their best known king.",
+            "The **Pallavas** ruled from **Kanchipuram** and built the rock-cut temples at **Mamallapuram**.",
+            "The **Rashtrakutas** are remembered for the great **Kailasa temple at Ellora**, cut from a single rock."
+          ]
+        },
+        {
+          heading: "Features of the Age",
+          points: [
+            "Kings gave land to temples and Brahmins, and temples became centres of wealth and learning.",
+            "Regional languages and literature grew, and sculpture and architecture flourished.",
+            "Trade connected India with Southeast Asia and West Asia."
+          ]
+        }
+      ],
+      formulas: [
+        "Harsha: capital Kannauj; visitor Xuanzang",
+        "Chalukyas: Badami; Pallavas: Kanchipuram, Mamallapuram; Rashtrakutas: Ellora Kailasa temple",
+        "Palas: Nalanda and Vikramashila"
+      ],
+      terms: [
+        { term: "Rock-cut temple", meaning: "A temple carved out of solid rock rather than built with stones." },
+        { term: "Kannauj", meaning: "A city in north India that many kingdoms struggled to control." },
+        { term: "Xuanzang", meaning: "Chinese Buddhist monk who visited India in Harsha's time." },
+        { term: "Land grant", meaning: "Land given by a ruler to a temple or person." }
+      ],
+      qa: [
+        { q: "What is special about the Kailasa temple at Ellora?", a: "It was carved out of a single huge rock and was built under the Rashtrakutas." },
+        { q: "Who was Xuanzang?", a: "A Chinese Buddhist monk who travelled in India during Harsha's reign and wrote about what he saw." }
+      ],
+      quiz: [
+        { q: "Harshavardhana ruled from:", options: ["Badami", "Kannauj", "Madurai", "Pataliputra"], answer: 1, explain: "His capital was **Kannauj**." },
+        { q: "Who built the rock-cut temples at Mamallapuram?", options: ["Palas", "Chalukyas", "Rashtrakutas", "Pallavas"], answer: 3, explain: "The **Pallavas** built them." },
+        { q: "The Kailasa temple at Ellora is linked to the:", options: ["Rashtrakutas", "Gupta", "Mauryas", "Cheras"], answer: 0, explain: "It was built under the **Rashtrakutas**." },
+        { q: "Pulakeshin II was a Chalukya king whose capital was:", options: ["Kanchipuram", "Badami", "Delhi", "Ujjain"], answer: 1, explain: "The Chalukya capital was **Badami**." },
+        { q: "The Palas are known for supporting:", options: ["Nalanda and Vikramashila", "Sanchi and Sarnath", "Ajanta and Ellora", "Taxila only"], answer: 0, explain: "They supported these centres of learning." }
+      ]
+    },
+    {
+      id: "turning-tides-11th-and-12th-centuries",
+      title: "Turning Tides: 11th and 12th Centuries",
+      section: "Tapestry of the Past",
+      summary: "The Cholas at their peak, raids from the north-west, and the rise of regional kingdoms in the 11th and 12th centuries.",
+      notes: [
+        {
+          heading: "The Cholas",
+          points: [
+            "The Cholas became a great power under **Rajaraja I** (ruled from 985 CE) and his son **Rajendra I**.",
+            "Rajaraja I built the **Brihadeeswara temple** at **Thanjavur**. Rajendra I built a new capital, **Gangaikonda Cholapuram**.",
+            "The Cholas had a strong navy and traded and sent expeditions across the sea to Southeast Asia."
+          ]
+        },
+        {
+          heading: "Raids from the North-West",
+          points: [
+            "**Mahmud of Ghazni** raided north India several times in the early 11th century, including the temple at **Somnath** in 1025.",
+            "The scholar **Al-Biruni** came with him and wrote about India's people, sciences and customs.",
+            "Later, **Muhammad Ghori** defeated Prithviraj Chauhan in the Battle of Tarain (1192), a step towards the Delhi Sultanate."
+          ]
+        },
+        {
+          heading: "Other Kingdoms and Writing",
+          points: [
+            "Rajput dynasties such as the **Chahamanas** ruled parts of north and western India. The **Chandelas** are known for the temples at **Khajuraho**.",
+            "**Kalhana** wrote the *Rajatarangini*, a chronicle of the kings of Kashmir.",
+            "Temples, art and literature flourished in many regions."
+          ]
+        }
+      ],
+      formulas: [
+        "Rajaraja I: Brihadeeswara temple, Thanjavur",
+        "Mahmud of Ghazni raided Somnath in 1025",
+        "Battle of Tarain: 1192 (Muhammad Ghori)",
+        "Kalhana: Rajatarangini"
+      ],
+      terms: [
+        { term: "Chronicle", meaning: "A written record of events in the order in which they happened." },
+        { term: "Navy", meaning: "A country's armed force at sea." },
+        { term: "Raid", meaning: "A sudden attack to seize wealth, not to rule the land." },
+        { term: "Dynasty", meaning: "A series of rulers from one family." }
+      ],
+      qa: [
+        { q: "How did the Cholas become a sea power?", a: "They built a strong navy and sent trading and military expeditions to Southeast Asia." },
+        { q: "Who was Al-Biruni?", a: "A scholar who came to India with Mahmud of Ghazni and wrote about Indian society and science." }
+      ],
+      quiz: [
+        { q: "The Brihadeeswara temple at Thanjavur was built by:", options: ["Harsha", "Rajaraja I", "Rajendra III", "Pulakeshin II"], answer: 1, explain: "**Rajaraja I** built it." },
+        { q: "Mahmud of Ghazni attacked which temple in 1025?", options: ["Konark", "Somnath", "Khajuraho", "Madurai"], answer: 1, explain: "He raided **Somnath**." },
+        { q: "Who wrote the Rajatarangini?", options: ["Kalhana", "Al-Biruni", "Kalidasa", "Xuanzang"], answer: 0, explain: "**Kalhana** wrote it." },
+        { q: "Khajuraho temples were built by the:", options: ["Cholas", "Pallavas", "Chandelas", "Palas"], answer: 2, explain: "The **Chandelas** built them." },
+        { q: "The Battle of Tarain in 1192 was fought between Prithviraj Chauhan and:", options: ["Mahmud of Ghazni", "Muhammad Ghori", "Rajendra I", "Harsha"], answer: 1, explain: "It was against **Muhammad Ghori**." }
+      ]
+    },
+    {
+      id: "india-a-home-to-many",
+      title: "India, a Home to Many",
+      section: "Our Cultural Heritage and Knowledge Traditions",
+      summary: "India's diversity of languages, religions, food and festivals, and how many communities came to make it their home.",
+      notes: [
+        {
+          heading: "Diversity of India",
+          points: [
+            "India has hundreds of languages and dialects. The Constitution recognises **22 languages** in its Eighth Schedule.",
+            "People follow many faiths, including **Hinduism, Islam, Christianity, Sikhism, Buddhism, Jainism** and **Zoroastrianism**.",
+            "Food, clothing, music, dance and festivals differ from region to region."
+          ]
+        },
+        {
+          heading: "People Who Settled in India",
+          points: [
+            "Over many centuries people came to India as traders, travellers and settlers and made it their home.",
+            "The **Parsis** came from Persia, and Christian and Jewish communities settled on the Kerala coast.",
+            "They enriched Indian food, language, art and trade."
+          ]
+        },
+        {
+          heading: "Unity in Diversity",
+          points: [
+            "Despite differences, Indians share a feeling of belonging, symbolised by the national flag, anthem and the Constitution.",
+            "Festivals like Diwali, Eid, Christmas, Gurpurab, Pongal and Onam are enjoyed by many together.",
+            "Respecting each other's customs keeps society peaceful."
+          ]
+        }
+      ],
+      formulas: [
+        "Eighth Schedule: 22 recognised languages",
+        "Major religions: Hinduism, Islam, Christianity, Sikhism, Buddhism, Jainism"
+      ],
+      terms: [
+        { term: "Diversity", meaning: "Variety of languages, religions, customs and ways of life." },
+        { term: "Dialect", meaning: "A regional form of a language." },
+        { term: "Migration", meaning: "Moving from one place to live in another." },
+        { term: "Tolerance", meaning: "Respecting people whose beliefs and customs differ from yours." }
+      ],
+      qa: [
+        { q: "What is meant by unity in diversity?", a: "That people of many languages, religions and customs live together as one nation, sharing common values." },
+        { q: "How did settlers enrich India?", a: "They brought new foods, skills, languages and arts that mixed with local traditions." }
+      ],
+      quiz: [
+        { q: "How many languages are in the Eighth Schedule of the Constitution?", options: ["12", "18", "22", "28"], answer: 2, explain: "There are **22**." },
+        { q: "Which community came to India from Persia?", options: ["Parsis", "Sikhs", "Jains", "Buddhists"], answer: 0, explain: "The **Parsis** came from Persia." },
+        { q: "Unity in diversity means:", options: ["Everyone is the same", "Many differences, one nation", "Only one religion", "No festivals"], answer: 1, explain: "It means **unity despite differences**." },
+        { q: "India has:", options: ["One official state religion", "Followers of many religions", "Only one language", "No festivals"], answer: 1, explain: "India has **no** state religion and many faiths live together." },
+        { q: "Respecting others' customs is called:", options: ["Rivalry", "Tolerance", "Migration", "Conquest"], answer: 1, explain: "That is **tolerance**." }
+      ]
+    },
+    {
+      id: "the-state-the-government-and-you",
+      title: "The State, the Government, and You",
+      section: "Governance and Democracy",
+      summary: "The difference between the state and the government, the three organs of government, and how state and local governments work.",
+      notes: [
+        {
+          heading: "State and Government",
+          points: [
+            "The **State** is a political unit with people, a fixed territory, a government and sovereignty. The **government** is the group of people that runs it for a time.",
+            "Governments change after elections, but the State continues.",
+            "Government works at three levels: **Union**, **State** and **local**."
+          ]
+        },
+        {
+          heading: "Three Organs",
+          points: [
+            "The **Legislature** makes laws (Parliament, State Legislative Assemblies).",
+            "The **Executive** carries out laws and runs administration (the Prime Minister or Chief Minister with ministers, and officials).",
+            "The **Judiciary** (courts) interprets laws and settles disputes."
+          ]
+        },
+        {
+          heading: "State and Local Government",
+          points: [
+            "Each State has a **Governor**, a **Chief Minister** with a Council of Ministers, and a **Legislative Assembly** whose members (**MLAs**) are elected by the people.",
+            "Local governments include **Panchayati Raj** in villages and **municipalities** in towns and cities. The Constitution was amended in 1992 to strengthen them.",
+            "The **Gram Sabha**, made up of all adult villagers, discusses village matters."
+          ]
+        }
+      ],
+      formulas: [
+        "Three organs: Legislature (makes laws), Executive (implements), Judiciary (interprets)",
+        "State level: Governor, Chief Minister, Legislative Assembly (MLAs)",
+        "Local: Panchayats (villages), municipalities (towns)"
+      ],
+      terms: [
+        { term: "Legislature", meaning: "The body that makes laws." },
+        { term: "Executive", meaning: "The part of government that carries out laws and runs administration." },
+        { term: "Judiciary", meaning: "The system of courts that interprets laws and gives justice." },
+        { term: "MLA", meaning: "Member of the Legislative Assembly, elected by voters of a constituency." },
+        { term: "Gram Sabha", meaning: "A meeting of all adult villagers in a Panchayat area." }
+      ],
+      qa: [
+        { q: "What is the difference between the State and the government?", a: "The State is the permanent political unit; the government is the temporary group in charge, which changes after elections." },
+        { q: "Why is it important for the three organs to work separately?", a: "So that no single body has too much power, and each can check misuse by the others." }
+      ],
+      quiz: [
+        { q: "Which organ makes laws?", options: ["Executive", "Judiciary", "Police", "Legislature"], answer: 3, explain: "The **legislature** makes laws." },
+        { q: "Members of a State Legislative Assembly are called:", options: ["MPs", "MLAs", "Governors", "Sarpanches"], answer: 1, explain: "They are **MLAs**." },
+        { q: "Which organ settles disputes and interprets laws?", options: ["Judiciary", "Executive", "Legislature", "Cabinet"], answer: 0, explain: "The **judiciary** does this." },
+        { q: "Village-level government is called:", options: ["Municipality", "Panchayat", "Assembly", "Cabinet"], answer: 1, explain: "Villages have a **Panchayat**." },
+        { q: "The head of the State's elected government is the:", options: ["Governor", "Chief Justice", "Chief Minister", "Speaker"], answer: 2, explain: "The **Chief Minister** heads it." }
+      ]
+    },
+    {
+      id: "infrastructure-engine-of-indias-development",
+      title: "Infrastructure: Engine of India's Development",
+      section: "Economic Life Around Us",
+      summary: "What infrastructure is, its main types (transport, power, communication, social), and why it matters for development.",
+      notes: [
+        {
+          heading: "What Is Infrastructure?",
+          points: [
+            "**Infrastructure** means the basic facilities that support an economy and daily life, such as roads, railways, power, water and communication.",
+            "**Economic infrastructure** includes transport, energy and communication. **Social infrastructure** includes schools and hospitals.",
+            "Good infrastructure helps production, trade and quality of life."
+          ]
+        },
+        {
+          heading: "Transport and Energy",
+          points: [
+            "India has roads, **railways**, ports, airports and waterways. The first passenger train ran from **Bombay to Thane** in **1853**.",
+            "Highways like the **Golden Quadrilateral** link the major cities.",
+            "Power comes from coal, water (hydro), nuclear, solar and wind, and many places now use **renewable energy**."
+          ]
+        },
+        {
+          heading: "Communication and Challenges",
+          points: [
+            "Post, telephones, mobile networks and the **internet** connect people and markets.",
+            "Building infrastructure costs a lot and can affect the environment and displace people.",
+            "Maintaining it and making sure villages also benefit are key tasks."
+          ]
+        }
+      ],
+      formulas: [
+        "First passenger train: Bombay to Thane, 1853",
+        "Economic infrastructure: transport, power, communication; social infrastructure: schools, hospitals"
+      ],
+      terms: [
+        { term: "Infrastructure", meaning: "Basic facilities such as roads, power and communication that support an economy." },
+        { term: "Renewable energy", meaning: "Energy from sources that do not run out, such as sun and wind." },
+        { term: "Port", meaning: "A harbour where ships load and unload goods." },
+        { term: "Connectivity", meaning: "How well places are linked by transport and communication." }
+      ],
+      qa: [
+        { q: "Why is infrastructure called the engine of development?", a: "Roads, power and communication let factories, farms and businesses work and grow, raising incomes." },
+        { q: "Give one challenge in building infrastructure.", a: "It needs large funds and can damage the environment or displace people." }
+      ],
+      quiz: [
+        { q: "The first passenger train in India ran between:", options: ["Delhi and Agra", "Bombay and Thane", "Madras and Arcot", "Calcutta and Howrah"], answer: 1, explain: "It ran from **Bombay to Thane** in 1853." },
+        { q: "Which is social infrastructure?", options: ["Hospitals", "Highways", "Power plants", "Ports"], answer: 0, explain: "**Hospitals** serve social needs." },
+        { q: "Solar and wind are examples of:", options: ["Fossil fuels", "Renewable energy", "Nuclear fuel", "Coal power"], answer: 1, explain: "They are **renewable**." },
+        { q: "The Golden Quadrilateral links:", options: ["Only ports", "Major cities by highways", "Rivers", "Air routes"], answer: 1, explain: "It links the **major cities** by highway." },
+        { q: "Which is economic infrastructure?", options: ["A school", "A railway line", "A park", "A temple"], answer: 1, explain: "Railways are **transport** infrastructure." }
+      ]
+    },
+    {
+      id: "banks-and-the-magic-of-finance",
+      title: "Banks and the Magic of Finance",
+      section: "Economic Life Around Us",
+      summary: "How banks keep savings safe, give loans and earn interest, and how to use banks, cards and insurance sensibly.",
+      notes: [
+        {
+          heading: "What Banks Do",
+          points: [
+            "Banks accept **deposits** from people and lend money as **loans** to others.",
+            "Banks pay **interest** on deposits and charge a higher interest on loans; the difference is part of their income.",
+            "The **Reserve Bank of India (RBI)**, set up in 1935, is the central bank. It regulates banks and issues currency."
+          ]
+        },
+        {
+          heading: "Types of Accounts and Interest",
+          points: [
+            "A **savings account** lets you save and withdraw money. A **fixed deposit** keeps money for a fixed time at a higher rate.",
+            "**Simple interest** = (Principal × Rate × Time) ÷ 100.",
+            "Example: ₹1000 at 5% a year for 2 years gives ₹100 as interest."
+          ]
+        },
+        {
+          heading: "Modern Banking and Safety",
+          points: [
+            "Banks offer **ATMs**, debit cards, net banking and **UPI**.",
+            "**Insurance** protects against loss in return for a small payment called a **premium**.",
+            "Keep PINs and OTPs secret, and beware of fraud calls and fake links."
+          ]
+        }
+      ],
+      formulas: [
+        "Simple interest = P × R × T ÷ 100",
+        "RBI set up in 1935; it is India's central bank"
+      ],
+      terms: [
+        { term: "Deposit", meaning: "Money kept in a bank by a customer." },
+        { term: "Loan", meaning: "Money borrowed that must be repaid with interest." },
+        { term: "Interest", meaning: "Extra money paid for using money, as a percentage of the amount." },
+        { term: "Principal", meaning: "The original sum of money deposited or borrowed." },
+        { term: "Premium", meaning: "The payment made for insurance." }
+      ],
+      qa: [
+        { q: "Why is it safer to keep savings in a bank than at home?", a: "Banks protect money from theft and loss, and also pay interest on it." },
+        { q: "Find the simple interest on ₹2000 at 5% a year for 3 years.", a: "SI = 2000 × 5 × 3 ÷ 100 = ₹300." }
+      ],
+      quiz: [
+        { q: "The central bank of India is the:", options: ["SBI", "RBI", "NABARD", "IDBI"], answer: 1, explain: "The **RBI** is the central bank." },
+        { q: "Simple interest on ₹1000 at 10% for 1 year is:", options: ["₹10", "₹1000", "₹100", "₹110"], answer: 2, explain: "1000 × 10 × 1 ÷ 100 = **₹100**." },
+        { q: "Money borrowed from a bank is a:", options: ["Deposit", "Premium", "Loan", "Share"], answer: 2, explain: "It is a **loan**." },
+        { q: "The payment made for insurance is called a:", options: ["Interest", "Premium", "Principal", "Pension"], answer: 1, explain: "It is the **premium**." },
+        { q: "A bank usually charges ________ interest on loans than it pays on deposits.", options: ["Higher", "Lower", "The same", "No"], answer: 0, explain: "Charging **more** on loans than it pays on deposits is how banks earn." }
       ]
     }
   ]

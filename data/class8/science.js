@@ -1,1490 +1,954 @@
+// Class 8 Science: current NCERT textbook "Curiosity".
+// Format: see CONTENT_GUIDE.md
 StudyData.add(8, "science", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "older-book", books: ["Science"], note: "NCERT has since published a new book for this class, so chapter names and order may differ.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Curiosity"], reviewed: false},
   chapters: [
-    // ------------------------------------------------------------------
+    // ───────────────────────────── 1 ─────────────────────────────
     {
-      id: "crop-production-and-management",
-      title: "Crop Production and Management",
-      section: "Biology",
-      summary: "Farmers grow crops through a sequence of field operations: preparing the soil, sowing, feeding and watering the plants, protecting them from weeds and pests, and storing the harvest. This chapter explains each step and the main crop seasons in India.",
+      id: "investigative-world-of-science",
+      title: "Exploring the Investigative World of Science",
+      section: "Doing science",
+      summary: "Science grows through questions, careful observation and experiments. This chapter looks at how scientists investigate, plan fair tests, record data, and why evidence matters more than opinion.",
       notes: [
         {
-          heading: "Agriculture and Crop Seasons",
+          heading: "How scientists investigate",
           points: [
-            "**Agriculture** is the practice of growing crops and rearing animals for food and other needs.",
-            "In India, crops are grown in two main seasons: **Kharif** (sown with the monsoon in June–July, harvested in September–October) and **Rabi** (sown in October–December, harvested in March–May).",
-            "Kharif crops include rice, maize, soyabean, cotton, groundnut and arhar (tur). Rabi crops include wheat, gram (chana), peas, mustard and barley."
+            "Investigation begins with **observation** and a **question**, such as why one object floats and another sinks.",
+            "A **hypothesis** is a testable explanation. It is tested by an experiment, and it may be supported or rejected by the results.",
+            "Steps: observe → question → hypothesis → experiment → record data → analyse → conclusion.",
+            "Scientists share their findings so that others can repeat the work and check it."
           ]
         },
         {
-          heading: "Steps in Crop Production",
+          heading: "Fair tests and variables",
           points: [
-            "**Preparing the soil**: loosening and turning the soil so that roots can grow and air and water can enter.",
-            "**Sowing**: putting seeds into the prepared soil, by hand or with a seed drill, at the right time and spacing.",
-            "**Irrigation**: supplying water to crops at the right times. Much of India's farmland still depends on rain.",
-            "**Weeding**, **harvesting**, **threshing**, **winnowing** and **storage** complete the cycle."
+            "In a **fair test** only one factor, the **variable** you change, is altered. All other factors are kept the same.",
+            "The factor you change is the **independent variable**. The factor you measure is the **dependent variable**.",
+            "A **control** (a set-up where the variable is not changed) gives a fair comparison.",
+            "Repeating a measurement several times and taking the **average** reduces the effect of chance errors."
           ]
         },
         {
-          heading: "Manure and Fertilisers",
+          heading: "Recording and analysing data",
           points: [
-            "**Manure** is natural organic matter, such as cow dung, compost and plant waste. It enriches the soil slowly and improves its structure.",
-            "**Fertilisers** are chemical substances that supply nutrients such as nitrogen, phosphorus and potassium. They act quickly but do not improve soil structure.",
-            "**Green manure** is a green crop, such as dhaincha, that is ploughed back into the soil to add nutrients.",
-            "Using too many chemical fertilisers can harm soil health and pollute water."
+            "Results are noted in **tables** and shown as **graphs** or charts, which make patterns easier to see.",
+            "Use the right instrument and unit, and record readings honestly, even if they differ from what you expected.",
+            "A conclusion must follow from the evidence collected, not from what we wish to be true."
           ]
         },
         {
-          heading: "Protecting Crops and Harvesting",
+          heading: "Scientific attitude and safety",
           points: [
-            "**Weeds** compete with crops for water, nutrients, sunlight and space. They are removed by hand (using a khurpa), with a hoe, or by weedicides.",
-            "**Pests** such as insects, rats and birds damage crops. **Pesticides** control them but must be used carefully.",
-            "**Harvesting** is cutting the ripe crop. **Threshing** separates grain from the stalk, and **winnowing** separates grain from the light husk using wind or a fan.",
-            "Stored grain must be kept dry and protected from insects, rats and fungi."
-          ]
-        },
-        {
-          heading: "Better Farming Methods",
-          points: [
-            "**Mixed cropping** means growing two or more crops together in the same field at the same time, for example wheat and gram.",
-            "**Intercropping** means growing two or more crops in alternate rows of the same field.",
-            "**Crop rotation** means growing different crops in turn on the same land, which keeps the soil fertile and reduces pests."
+            "A scientific attitude means curiosity, honesty, patience and openness to change ideas when evidence changes.",
+            "Be careful with fire, glass, chemicals and electricity during experiments, and follow your teacher's instructions.",
+            "Science and technology improve each other: new instruments reveal new facts, and new facts lead to new technology."
           ]
         }
       ],
       formulas: [
-        "Crop production steps: Soil preparation → Sowing → Manuring and fertilising → Irrigation → Weeding → Harvesting → Threshing → Winnowing → Storage",
-        "Kharif crops are sown in the monsoon; Rabi crops are sown in winter",
-        "Threshing separates grain from stalk; winnowing separates grain from husk"
+        "Steps of investigation: observe → question → hypothesis → experiment → data → conclusion",
+        "Fair test: change **one** variable, keep all others the same",
+        "Average = sum of readings ÷ number of readings"
       ],
       terms: [
-        { term: "Kharif crop", meaning: "A crop sown at the beginning of the **monsoon** (June–July) and harvested in September–October." },
-        { term: "Rabi crop", meaning: "A crop sown in **winter** (October–December) and harvested in spring (March–May)." },
-        { term: "Irrigation", meaning: "Supplying water to crops by **artificial means** at the required times." },
-        { term: "Threshing", meaning: "Separating the **grain** from the stalks of the crop." },
-        { term: "Winnowing", meaning: "Separating the light **husk** from the heavier grain using wind or a fan." },
-        { term: "Manure", meaning: "Organic matter, such as cow dung and compost, that **enriches the soil**." }
-      ],
-      qa: [
-        {
-          q: "Why are weeds harmful to a crop?",
-          a: "Weeds compete with the crop for **water, nutrients, sunlight and space**, so the crop grows poorly and the yield falls."
-        },
-        {
-          q: "What is the difference between manure and fertiliser?",
-          a: "Manure is **natural organic matter** that enriches the soil slowly. A fertiliser is a **chemical or processed** material with concentrated nutrients that acts quickly."
-        },
-        {
-          q: "Why is crop rotation useful to a farmer?",
-          a: "Different crops take different nutrients from the soil. Pulses, for example, **add nitrogen** to the soil, so rotating crops keeps the soil fertile and reduces pests."
-        }
-      ],
-      quiz: [
-        {
-          q: "Which of these is a Rabi crop?",
-          options: ["Rice", "Maize", "Wheat", "Soyabean"],
-          answer: 2,
-          explain: "Wheat is sown in winter (October–December) and harvested in spring. Rice, maize and soyabean are Kharif crops."
-        },
-        {
-          q: "Separating the grain from the husk using wind or a fan is called:",
-          options: ["Winnowing", "Threshing", "Weeding", "Sowing"],
-          answer: 0,
-          explain: "**Winnowing** uses wind or a fan to blow away the light husk. Threshing separates grain from the stalk."
-        },
-        {
-          q: "Which of these is an example of green manure?",
-          options: ["Cow dung", "Urea", "Compost", "Dhaincha"],
-          answer: 3,
-          explain: "Green manure is a green crop, such as dhaincha, ploughed into the soil. Cow dung and compost are ordinary manures, and urea is a fertiliser."
-        },
-        {
-          q: "Growing wheat and gram together in the same field at the same time is called:",
-          options: ["Crop rotation", "Mixed cropping", "Green manuring", "Threshing"],
-          answer: 1,
-          explain: "In **mixed cropping**, two or more crops are grown together in the same field during the same season."
-        },
-        {
-          q: "Why are weeds removed from a field?",
-          options: ["They compete with the crop for water and nutrients", "They add nitrogen to the soil", "They protect the crop from insects", "They loosen the soil"],
-          answer: 0,
-          explain: "Weeds take away water, nutrients, sunlight and space that the crop needs, so they must be removed."
-        }
-      ]
-    },
-
-    // ------------------------------------------------------------------
-    {
-      id: "microorganisms-friend-and-foe",
-      title: "Microorganisms: Friend and Foe",
-      section: "Biology",
-      summary: "Microorganisms are tiny living things that can be seen only under a microscope. Some are useful, helping us make food and medicines, while others cause diseases and spoil food. This chapter explains both sides and how we control harmful microbes.",
-      notes: [
-        {
-          heading: "What Are Microorganisms?",
-          points: [
-            "**Microorganisms** (microbes) are living things too small to be seen with the naked eye.",
-            "They include **bacteria**, **fungi** (such as moulds and yeast), **protozoa**, **algae** and **viruses**. Viruses are even smaller and can multiply only inside other living cells.",
-            "Microbes are found everywhere: in air, water, soil, on our skin and in our food. Most are harmless and many are useful."
-          ]
-        },
-        {
-          heading: "Useful Microorganisms",
-          points: [
-            "**Lactobacillus**, a bacterium, turns milk into curd (dahi).",
-            "**Yeast**, a fungus, is used to make bread dough rise, because it releases carbon dioxide gas. It is also used in making wine and beer.",
-            "**Rhizobium** lives in root nodules of pulse plants such as gram and peas and **fixes nitrogen** from the air into a form that plants can use.",
-            "**Penicillin**, the first antibiotic, is made from a mould called **Penicillium**. Antibiotics kill or stop bacteria that cause infections.",
-            "Microbes break down animal dung and plant waste to produce **biogas**, which can be used as fuel."
-          ]
-        },
-        {
-          heading: "Harmful Microorganisms",
-          points: [
-            "Disease-causing microbes are called **pathogens**.",
-            "Bacteria cause cholera, typhoid and tuberculosis (TB). Viruses cause the common cold, influenza, measles and polio.",
-            "The protozoan Plasmodium causes **malaria**, which spreads through the bite of the female Anopheles mosquito. Viruses such as dengue spread through the Aedes mosquito.",
-            "Pathogens spread through contaminated food and water, through the air when we cough or sneeze, and through mosquitoes."
-          ]
-        },
-        {
-          heading: "Food Spoilage and Preservation",
-          points: [
-            "Microbes multiply in food and spoil it, causing bad smell, change in taste and colour, and mould growth on bread and fruits.",
-            "**Heating** (such as boiling and **pasteurisation** of milk) kills most microbes.",
-            "**Salt, sugar and oil** (used in pickles and murabbas), **drying** and **refrigeration** slow down or stop the growth of microbes.",
-            "Keeping food covered, clean and dry is an everyday way to prevent spoilage."
-          ]
-        },
-        {
-          heading: "Vaccines and Good Hygiene",
-          points: [
-            "A **vaccine** contains killed or weakened microbes, or parts of them. It trains the body's immune system to fight the real disease later.",
-            "Washing hands, drinking boiled or filtered water, and keeping water from stagnating (to prevent mosquitoes from breeding) protect us from many diseases."
-          ]
-        }
-      ],
-      formulas: [
-        "Microorganisms: bacteria, fungi, protozoa, algae and viruses",
-        "Rhizobium fixes nitrogen for pulse plants such as gram and peas",
-        "Pasteurisation: heating milk to kill disease-causing microbes",
-        "Vaccine = killed or weakened microbes that train the immune system"
-      ],
-      terms: [
-        { term: "Microorganism", meaning: "A **tiny living thing**, too small to see without a microscope." },
-        { term: "Pathogen", meaning: "A microbe that **causes disease**." },
-        { term: "Antibiotic", meaning: "A medicine that **kills or stops bacteria**, made from microbes such as moulds." },
-        { term: "Vaccine", meaning: "A preparation of killed or weakened microbes that helps the body **build immunity**." },
-        { term: "Pasteurisation", meaning: "Heating food, such as milk, briefly to **kill harmful microbes**." },
-        { term: "Nitrogen fixation", meaning: "Converting nitrogen from the air into compounds that plants can use, done by bacteria such as Rhizobium." }
-      ],
-      qa: [
-        {
-          q: "Why does milk turn sour if it is left out for a long time?",
-          a: "Microbes multiply in the milk and produce **lactic acid**, which makes it sour and causes it to curdle. Keeping milk cold or boiling it slows this down."
-        },
-        {
-          q: "How does a vaccine protect us?",
-          a: "A vaccine contains **killed or weakened microbes** (or their parts). The body makes **antibodies** against them, so if the real microbe enters later, the body can fight it quickly."
-        },
-        {
-          q: "Why are gram and peas good for the soil?",
-          a: "Their roots have **Rhizobium** in root nodules, which fix nitrogen from the air. This enriches the soil with nitrogen for the next crop."
-        }
-      ],
-      quiz: [
-        {
-          q: "Which microorganism is used to make bread dough rise?",
-          options: ["Lactobacillus", "Yeast", "Plasmodium", "Rhizobium"],
-          answer: 1,
-          explain: "**Yeast**, a fungus, releases carbon dioxide during fermentation, which makes the dough rise."
-        },
-        {
-          q: "Malaria is caused by the protozoan Plasmodium. Which insect spreads it?",
-          options: ["Housefly", "Cockroach", "Female Anopheles mosquito", "Honeybee"],
-          answer: 2,
-          explain: "The female **Anopheles** mosquito carries Plasmodium from one person to another."
-        },
-        {
-          q: "Which of these is a useful activity of bacteria?",
-          options: ["Turning milk into curd", "Causing typhoid", "Causing malaria", "Causing cholera"],
-          answer: 0,
-          explain: "**Lactobacillus** bacteria turn milk into curd. The other three are diseases caused by pathogens."
-        },
-        {
-          q: "Penicillin, the first antibiotic, is obtained from:",
-          options: ["A bacterium", "A virus", "A protozoan", "A mould"],
-          answer: 3,
-          explain: "Penicillin is made from the mould **Penicillium**."
-        },
-        {
-          q: "Which process heats milk briefly to kill harmful microbes?",
-          options: ["Fermentation", "Pasteurisation", "Vaccination", "Germination"],
-          answer: 1,
-          explain: "**Pasteurisation** heats milk to kill disease-causing microbes. Fermentation is the action of microbes, not a way of killing them."
-        },
-        {
-          q: "A vaccine works by:",
-          options: ["Killing all microbes in the body", "Replacing the blood", "Training the immune system with dead or weakened microbes", "Making microbes multiply faster"],
-          answer: 2,
-          explain: "A vaccine gives the body a harmless form of a microbe, so the immune system learns to fight the real one."
-        }
-      ]
-    },
-
-    // ------------------------------------------------------------------
-    {
-      id: "coal-and-petroleum",
-      title: "Coal and Petroleum",
-      section: "Chemistry",
-      summary: "Coal, petroleum and natural gas are fossil fuels formed from the remains of plants and animals buried for millions of years. This chapter explains how they form, how they are processed into useful products, and why their use must be limited.",
-      notes: [
-        {
-          heading: "Fossil Fuels",
-          points: [
-            "**Coal**, **petroleum** (crude oil) and **natural gas** are **fossil fuels**, formed from the remains of plants and animals buried under the earth for millions of years.",
-            "Fossil fuels are **non-renewable**: they form very slowly, so they cannot be replaced as fast as we use them.",
-            "They are the main sources of energy for transport, electricity and industry."
-          ]
-        },
-        {
-          heading: "Coal",
-          points: [
-            "Coal formed from ancient plant matter that was buried and compressed under heat and pressure. As the carbon content rises, the types are **peat**, **lignite**, **bituminous coal** and **anthracite**.",
-            "**Destructive distillation** means heating coal strongly in the absence of air. It gives **coke**, **coal tar**, **coal gas** and ammonia liquor.",
-            "**Coke** is a hard fuel with high carbon content. It is used in blast furnaces to extract iron from its ore."
-          ]
-        },
-        {
-          heading: "Petroleum",
-          points: [
-            "**Crude oil** is a dark, thick liquid found deep underground, usually in rock layers.",
-            "Crude oil is separated into useful **fractions** in a **refinery** by **fractional distillation**, which depends on boiling points.",
-            "In order from the lowest boiling point: **LPG** (cooking gas), **petrol**, **kerosene**, **diesel**, **lubricating oil**, **paraffin wax** and **bitumen** (used for making roads)."
-          ]
-        },
-        {
-          heading: "Natural Gas and Careful Use",
-          points: [
-            "**Natural gas** is mainly **methane**. It burns cleanly and is used as **CNG** for vehicles and as **PNG** in homes.",
-            "Burning fossil fuels releases **CO₂** and other pollutants, such as sulphur dioxide and oxides of nitrogen, which pollute the air and add to global warming.",
-            "We can help by saving fuel, using public transport and using renewable sources such as solar and wind energy."
-          ]
-        }
-      ],
-      formulas: [
-        "Fossil fuels: coal, petroleum and natural gas (non-renewable)",
-        "Fractional distillation separates crude oil into fractions by boiling point",
-        "Destructive distillation of coal → coke + coal tar + coal gas + ammonia liquor",
-        "Natural gas is mainly methane (CH₄)"
-      ],
-      terms: [
-        { term: "Fossil fuel", meaning: "A fuel formed from the **remains of ancient plants and animals** over millions of years." },
-        { term: "Non-renewable", meaning: "A resource that **cannot be replaced** as fast as it is used." },
-        { term: "Coke", meaning: "A hard, **carbon-rich** fuel left behind when coal is heated without air." },
-        { term: "Destructive distillation", meaning: "Heating coal strongly **without air** to obtain coke, coal tar and coal gas." },
-        { term: "Fractional distillation", meaning: "Separating crude oil into **fractions** with different boiling points." },
-        { term: "Refinery", meaning: "A plant where **crude oil is processed** into useful products." }
-      ],
-      qa: [
-        {
-          q: "Why are coal and petroleum called non-renewable resources?",
-          a: "They take **millions of years** to form from dead plants and animals. We use them far faster than they form, so they cannot be replaced in human time."
-        },
-        {
-          q: "Why is CNG preferred over petrol for vehicles in many cities?",
-          a: "CNG burns more completely and produces less smoke and fewer particle pollutants than petrol or diesel, so it reduces **air pollution**."
-        },
-        {
-          q: "What is coke used for?",
-          a: "Coke is used as a **fuel** and as a **reducing agent** in blast furnaces, where it helps extract iron from its ore."
-        }
-      ],
-      quiz: [
-        {
-          q: "Coal is formed from:",
-          options: ["Sand deposits", "Ancient plant remains buried for millions of years", "Volcanic lava", "Salts left by seawater"],
-          answer: 1,
-          explain: "Coal forms from the remains of ancient plants that were buried and compressed over millions of years."
-        },
-        {
-          q: "The fraction of crude oil with the lowest boiling point, used as cooking gas, is:",
-          options: ["Bitumen", "Diesel", "LPG", "Paraffin wax"],
-          answer: 2,
-          explain: "**LPG** has the lowest boiling point of these fractions, so it is collected at the top of the fractionating column."
-        },
-        {
-          q: "Which of these is mainly methane?",
-          options: ["Coke", "Coal tar", "Natural gas", "Bitumen"],
-          answer: 2,
-          explain: "**Natural gas** is mainly methane (CH₄)."
-        },
-        {
-          q: "Bitumen obtained from petroleum is used mainly for:",
-          options: ["Cooking food", "Making roads", "Making cloth", "Preserving food"],
-          answer: 1,
-          explain: "Bitumen is a thick, sticky residue used to make and surface roads."
-        },
-        {
-          q: "Destructive distillation of coal produces:",
-          options: ["Petrol and diesel", "Only coke", "Carbon dioxide only", "Coke, coal tar and coal gas"],
-          answer: 3,
-          explain: "Heating coal without air gives **coke, coal tar and coal gas**, along with ammonia liquor."
-        },
-        {
-          q: "Which gas is a major pollutant released when fossil fuels burn, adding to global warming?",
-          options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Helium"],
-          answer: 2,
-          explain: "Burning fossil fuels releases **carbon dioxide**, which traps heat in the atmosphere."
-        }
-      ]
-    },
-
-    // ------------------------------------------------------------------
-    {
-      id: "combustion-and-flame",
-      title: "Combustion and Flame",
-      section: "Chemistry",
-      summary: "Combustion is the burning of a fuel in oxygen, releasing heat and light. This chapter covers the conditions needed for fire, the parts of a flame, how fires are controlled and why incomplete burning is harmful.",
-      notes: [
-        {
-          heading: "What Is Combustion?",
-          points: [
-            "**Combustion** is a chemical reaction in which a fuel combines with **oxygen** and releases **heat and light**.",
-            "For example, when LPG burns in a kitchen stove, it combines with oxygen from the air to give carbon dioxide, water vapour, heat and light.",
-            "Three things are needed for combustion: a **fuel**, **oxygen** (from air) and a **high enough temperature** to start burning."
-          ]
-        },
-        {
-          heading: "Ignition Temperature",
-          points: [
-            "The **ignition temperature** is the lowest temperature at which a substance catches fire and keeps burning.",
-            "Wood, paper and kerosene have low ignition temperatures. A burning matchstick raises the temperature of the matchbox to its ignition temperature.",
-            "Substances with a low ignition temperature are called **inflammable**, and they must be stored and handled with care."
-          ]
-        },
-        {
-          heading: "Types of Combustion",
-          points: [
-            "**Rapid combustion** is fast burning with a large release of heat and light, such as a wood fire.",
-            "**Spontaneous combustion** is burning that starts on its own without a flame, as in damp heaps of hay or cotton waste.",
-            "**Complete combustion** happens with enough oxygen and gives carbon dioxide and water. **Incomplete combustion** happens with less oxygen and gives **carbon monoxide** and **soot**, which are harmful."
-          ]
-        },
-        {
-          heading: "Structure of a Flame",
-          points: [
-            "A candle or LPG flame has three zones. The **dark zone** is the innermost part, containing unburnt gas.",
-            "The **luminous zone** is the yellow middle part, where incomplete burning produces soot particles that glow.",
-            "The **non-luminous zone** is the outer, blue part, where combustion is complete. It is the **hottest** part of the flame."
-          ]
-        },
-        {
-          heading: "Controlling Fire",
-          points: [
-            "A fire is put out by removing one of the three needs: remove the **fuel**, cut off the **oxygen** (for example with a wet blanket or sand), or **cool** the burning material below its ignition temperature.",
-            "Water is not used on **oil fires**, because oil floats on water and spreads the fire. Water also conducts electricity, so it is not used on **electrical fires**.",
-            "A **carbon dioxide fire extinguisher** cuts off oxygen and is suitable for electrical and oil fires."
-          ]
-        }
-      ],
-      formulas: [
-        "Combustion: Fuel + Oxygen → Carbon dioxide + Water + Heat + Light",
-        "Three needs for fire: fuel, oxygen and ignition temperature",
-        "Complete combustion gives CO₂ and H₂O; incomplete combustion gives CO and soot",
-        "Non-luminous zone is the hottest part of a flame"
-      ],
-      terms: [
-        { term: "Combustion", meaning: "A chemical reaction in which a fuel **burns in oxygen**, releasing heat and light." },
-        { term: "Ignition temperature", meaning: "The **lowest temperature** at which a substance catches fire." },
-        { term: "Inflammable", meaning: "Describes a substance with a **low ignition temperature** that catches fire easily." },
-        { term: "Spontaneous combustion", meaning: "Burning that **starts on its own**, without an external flame." },
-        { term: "Incomplete combustion", meaning: "Burning with **too little oxygen**, which produces carbon monoxide and soot." }
-      ],
-      qa: [
-        {
-          q: "Why does a wet blanket put out a fire?",
-          a: "It **cuts off the supply of oxygen** and also cools the burning material, so the fire cannot continue."
-        },
-        {
-          q: "What is the difference between complete and incomplete combustion?",
-          a: "**Complete combustion** happens with enough oxygen and gives carbon dioxide and water, with a clean blue flame. **Incomplete combustion** happens with less oxygen and gives carbon monoxide and soot, with a yellow, smoky flame."
-        },
-        {
-          q: "Why should a kitchen with a gas stove be well ventilated?",
-          a: "Poor air supply can cause incomplete burning of LPG, which produces **carbon monoxide**, a poisonous gas. Fresh air keeps combustion complete and safe."
-        }
-      ],
-      quiz: [
-        {
-          q: "Combustion needs which of the following?",
-          options: ["Fuel, oxygen and a suitable ignition temperature", "Fuel and water only", "Only sunlight", "Carbon dioxide and nitrogen"],
-          answer: 0,
-          explain: "Combustion needs a **fuel**, **oxygen** and a temperature high enough to start the burning."
-        },
-        {
-          q: "The lowest temperature at which a substance catches fire is called its:",
-          options: ["Melting point", "Boiling point", "Ignition temperature", "Freezing point"],
-          answer: 2,
-          explain: "The **ignition temperature** is the lowest temperature at which a substance catches fire."
-        },
-        {
-          q: "Which part of a candle flame is the hottest?",
-          options: ["The dark zone in the centre", "The yellow luminous zone", "The outer blue non-luminous zone", "The base of the wick"],
-          answer: 2,
-          explain: "The **outer non-luminous zone** is hottest because combustion is complete there."
-        },
-        {
-          q: "Soot and carbon monoxide are formed during:",
-          options: ["Complete combustion", "Incomplete combustion", "Melting", "Dissolving"],
-          answer: 1,
-          explain: "**Incomplete combustion**, caused by a shortage of oxygen, forms soot and carbon monoxide."
-        },
-        {
-          q: "Why should water not be used to put out an oil fire?",
-          options: ["Water is too hot to use", "Oil floats on water and can spread the fire", "Water adds oxygen to the fire", "Oil does not burn in water"],
-          answer: 1,
-          explain: "Oil floats on water, so the burning oil spreads. Sand or a carbon dioxide extinguisher is used instead."
-        },
-        {
-          q: "Which of these is a way of putting out a fire?",
-          options: ["Adding more fuel", "Raising the temperature", "Increasing the air flow", "Cutting off the supply of oxygen"],
-          answer: 3,
-          explain: "Cutting off oxygen, removing fuel or cooling the fuel below its ignition temperature all put out a fire."
-        }
-      ]
-    },
-
-    // ------------------------------------------------------------------
-    {
-      id: "conservation-of-plants-and-animals",
-      title: "Conservation of Plants and Animals",
-      section: "Biology",
-      summary: "Plants and animals are the living wealth of our planet, but human activity has made many species rare or extinct. This chapter explains deforestation, endangered species, and how forests and wildlife are protected through sanctuaries, national parks and biosphere reserves.",
-      notes: [
-        {
-          heading: "Why Conservation Matters",
-          points: [
-            "**Conservation** means protecting plants, animals and their habitats so that they survive for the future.",
-            "Forests give us oxygen, rainfall and protection for soil. Animals help control pests and spread seeds. All living things depend on one another.",
-            "Hunting, pollution, deforestation and the spread of farms and cities destroy habitats. Species then become **endangered** or **extinct**."
-          ]
-        },
-        {
-          heading: "Deforestation",
-          points: [
-            "**Deforestation** is the large-scale cutting of trees for timber, farmland, roads, dams and towns.",
-            "It causes **soil erosion**, floods, reduced rainfall, loss of animal habitats and a rise in carbon dioxide levels.",
-            "**Afforestation** (planting new forests) and careful use of forest wood help restore forests."
-          ]
-        },
-        {
-          heading: "Protected Areas",
-          points: [
-            "**Wildlife sanctuaries** and **national parks** are protected areas where animals live safely. National parks are stricter, and farming and grazing are not allowed in them.",
-            "**Biosphere reserves** protect large natural areas. They have a core zone, a buffer zone and a transition zone, where people live in harmony with nature.",
-            "**Project Tiger**, started in 1973, aims to protect the tiger and its habitat."
-          ]
-        },
-        {
-          heading: "Methods of Conservation",
-          points: [
-            "**In-situ conservation** protects species in their natural habitat, for example in national parks and sanctuaries.",
-            "**Ex-situ conservation** protects species outside their natural habitat, for example in zoos, botanical gardens, seed banks and gene banks.",
-            "The **Red Data Book** lists plants and animals that are rare or endangered.",
-            "The **Chipko movement** (1973), in Uttarakhand, saw villagers hug trees to stop them being cut down."
-          ]
-        },
-        {
-          heading: "What We Can Do",
-          points: [
-            "Save paper, plant trees, and avoid buying products made from endangered animals.",
-            "Do not litter in forests and parks, and keep water sources clean."
-          ]
-        }
-      ],
-      formulas: [
-        "In-situ conservation = protection in the natural habitat",
-        "Ex-situ conservation = protection outside the natural habitat (zoos, botanical gardens, seed banks)",
-        "Biosphere reserve zones: core, buffer and transition"
-      ],
-      terms: [
-        { term: "Conservation", meaning: "Protecting plants, animals and their **habitats** so that they survive." },
-        { term: "Deforestation", meaning: "Large-scale **cutting down of forests**." },
-        { term: "Endangered species", meaning: "Species at risk of **disappearing** completely from the earth." },
-        { term: "Biosphere reserve", meaning: "A large protected area that includes **core, buffer and transition zones** for conservation." },
-        { term: "In-situ conservation", meaning: "Protecting a species in its **natural habitat**." },
-        { term: "Ex-situ conservation", meaning: "Protecting a species **outside its natural habitat**, for example in a zoo." }
-      ],
-      qa: [
-        {
-          q: "What is the difference between a wildlife sanctuary and a national park?",
-          a: "Both protect wildlife, but a national park is more strictly protected. **Human activities such as grazing and farming are not allowed** in it, while a sanctuary may allow some activities."
-        },
-        {
-          q: "How does deforestation lead to floods?",
-          a: "Tree roots hold the soil and absorb rainwater. Without trees, heavy rain runs off quickly, causes **soil erosion** and carries silt into rivers, which can overflow and cause floods."
-        },
-        {
-          q: "Name one in-situ and one ex-situ method of conservation.",
-          a: "In-situ: a national park or wildlife sanctuary. Ex-situ: a zoo, a botanical garden or a seed bank."
-        }
-      ],
-      quiz: [
-        {
-          q: "Protecting species in their natural habitat is called:",
-          options: ["Ex-situ conservation", "In-situ conservation", "Afforestation", "Deforestation"],
-          answer: 1,
-          explain: "**In-situ conservation** protects species in their natural habitat, such as a national park."
-        },
-        {
-          q: "Which of these is a major effect of deforestation?",
-          options: ["Increase in forest cover", "Increase in soil erosion", "Increase in rainfall", "Stronger tree roots"],
-          answer: 1,
-          explain: "Without tree cover, the soil is washed away more easily, so **soil erosion** increases."
-        },
-        {
-          q: "Which of these is an example of ex-situ conservation?",
-          options: ["National park", "Wildlife sanctuary", "Zoo", "Biosphere reserve"],
-          answer: 2,
-          explain: "A zoo protects animals **outside** their natural habitat, so it is ex-situ conservation."
-        },
-        {
-          q: "Which book lists plants and animals that are rare or endangered?",
-          options: ["Almanac", "Red Data Book", "Atlas", "Dictionary"],
-          answer: 1,
-          explain: "The **Red Data Book** records species that are rare, endangered or threatened."
-        },
-        {
-          q: "Project Tiger was started to protect:",
-          options: ["Lions", "Rhinoceros", "Tigers", "Elephants"],
-          answer: 2,
-          explain: "Project Tiger, launched in 1973, aims to protect the tiger and its habitat."
-        },
-        {
-          q: "The movement in which villagers hugged trees to stop them being cut is called:",
-          options: ["Chipko movement", "Green revolution", "Dairy movement", "Operation Flood"],
-          answer: 0,
-          explain: "The **Chipko movement** in Uttarakhand (1973) was a people's campaign to save forests."
-        }
-      ]
-    },
-
-    // ------------------------------------------------------------------
-    {
-      id: "reproduction-in-animals",
-      title: "Reproduction in Animals",
-      section: "Biology",
-      summary: "Animals continue their species by reproduction. This chapter compares asexual and sexual reproduction, explains how fertilisation happens inside or outside the body, and describes egg-laying and live-bearing animals.",
-      notes: [
-        {
-          heading: "Why Animals Reproduce",
-          points: [
-            "**Reproduction** is the process by which living things produce new individuals of their own kind, so that the species continues.",
-            "Animals reproduce in two main ways: **asexual reproduction**, which needs one parent, and **sexual reproduction**, which needs two parents."
-          ]
-        },
-        {
-          heading: "Asexual Reproduction",
-          points: [
-            "In asexual reproduction, the offspring are almost identical to the parent, because no gametes fuse.",
-            "**Binary fission**: the amoeba divides into two identical halves.",
-            "**Budding**: a small bud grows on the body of Hydra, develops into a new individual and then breaks away.",
-            "**Regeneration**: a flatworm, such as planaria, cut into pieces can regrow each piece into a complete worm."
-          ]
-        },
-        {
-          heading: "Sexual Reproduction",
-          points: [
-            "Sexual reproduction involves a **male gamete** (sperm) and a **female gamete** (egg) fusing together. This fusion is called **fertilisation**.",
-            "The fused cell, called the **zygote**, develops into a new individual. Offspring show variation because they inherit traits from both parents.",
-            "**Internal fertilisation** happens inside the female's body, as in birds and mammals. **External fertilisation** happens outside the body, usually in water, as in frogs and most fish."
-          ]
-        },
-        {
-          heading: "Oviparous and Viviparous Animals",
-          points: [
-            "**Oviparous** animals lay eggs, and the young develop outside the mother's body. Examples are hens, frogs, lizards and most fish.",
-            "**Viviparous** animals give birth to young ones that develop inside the mother's body. Examples are cows, dogs and humans.",
-            "Eggs of oviparous animals are protected by a shell or a jelly-like covering."
-          ]
-        }
-      ],
-      formulas: [
-        "Asexual reproduction: one parent, offspring almost identical to the parent",
-        "Sexual reproduction: two parents, gamete fusion → zygote",
-        "Fertilisation: sperm + egg → zygote",
-        "Oviparous = lay eggs; Viviparous = give birth to young ones"
-      ],
-      terms: [
-        { term: "Reproduction", meaning: "The process by which living things produce **new individuals** of their own kind." },
-        { term: "Asexual reproduction", meaning: "Reproduction by **one parent** without the fusion of gametes." },
-        { term: "Gamete", meaning: "A **reproductive cell**, such as a sperm or an egg, that fuses with another to form a new individual." },
-        { term: "Fertilisation", meaning: "The **fusion of a sperm and an egg** to form a zygote." },
-        { term: "Oviparous", meaning: "Describes animals that **lay eggs**, which develop outside the mother's body." },
-        { term: "Viviparous", meaning: "Describes animals that **give birth** to young ones that develop inside the mother's body." }
-      ],
-      qa: [
-        {
-          q: "Why are offspring from asexual reproduction almost identical to the parent?",
-          a: "There is no fusion of gametes, so the young receive genetic material from **only one parent** and are almost exact copies of it."
-        },
-        {
-          q: "What is the difference between internal and external fertilisation? Give one example of each.",
-          a: "In **internal fertilisation** the egg is fertilised inside the female's body, as in humans. In **external fertilisation** the egg and sperm meet outside the body, usually in water, as in frogs."
-        },
-        {
-          q: "Why do offspring from sexual reproduction show more variation than those from asexual reproduction?",
-          a: "In sexual reproduction the genes from **two parents** are mixed, so the offspring differ from each other and from the parents."
-        }
-      ],
-      quiz: [
-        {
-          q: "The amoeba reproduces by:",
-          options: ["Budding", "Binary fission", "Regeneration", "Fertilisation"],
-          answer: 1,
-          explain: "An amoeba divides into two halves by **binary fission**, which is a form of asexual reproduction."
-        },
-        {
-          q: "Hydra reproduces asexually mainly by:",
-          options: ["Binary fission", "Regeneration", "Budding", "Internal fertilisation"],
-          answer: 2,
-          explain: "In **budding**, a bud grows on the Hydra's body and breaks off as a new individual."
-        },
-        {
-          q: "The fusion of a sperm and an egg is called:",
-          options: ["Fertilisation", "Regeneration", "Fission", "Budding"],
-          answer: 0,
-          explain: "The fusion of a male and female gamete is **fertilisation**, which forms a zygote."
-        },
-        {
-          q: "Which of these animals is oviparous?",
-          options: ["Cow", "Human", "Hen", "Dog"],
-          answer: 2,
-          explain: "A hen lays eggs, so it is **oviparous**. The other three give birth to young ones."
-        },
-        {
-          q: "Which type of fertilisation takes place in frogs?",
-          options: ["Internal fertilisation", "External fertilisation", "Binary fission", "Budding"],
-          answer: 1,
-          explain: "Frogs lay eggs in water, where the sperm and eggs meet outside the body. This is **external fertilisation**."
-        },
-        {
-          q: "A flatworm cut into pieces, each of which grows into a complete worm, shows:",
-          options: ["Regeneration", "Sexual reproduction", "Gamete formation", "Fertilisation"],
-          answer: 0,
-          explain: "**Regeneration** is the ability to regrow a whole individual from a part of the body."
-        }
-      ]
-    },
-
-    // ------------------------------------------------------------------
-    {
-      id: "reaching-the-age-of-adolescence",
-      title: "Reaching the Age of Adolescence",
-      section: "Biology",
-      summary: "Adolescence is the period between childhood and adulthood, roughly from 10 to 19 years. The body and mind change during this time. This chapter explains these changes factually, along with the importance of hygiene, healthy habits and talking to trusted adults.",
-      notes: [
-        {
-          heading: "What Is Adolescence?",
-          points: [
-            "**Adolescence** is the stage of growth between childhood and adulthood, roughly from 10 to 19 years of age.",
-            "**Puberty** is the period when the reproductive organs mature and the body changes to become capable of reproduction.",
-            "Puberty usually begins between about 10 and 13 years in girls, and about 12 and 14 years in boys. The age varies from person to person."
-          ]
-        },
-        {
-          heading: "Body Changes",
-          points: [
-            "A rapid increase in height and weight, called the **growth spurt**, is one of the first changes.",
-            "Hair grows under the arms and on the pubic area in both boys and girls. Boys' voices become deeper, and they grow hair on the face.",
-            "Sweat and oil glands become more active, which can cause body odour and pimples.",
-            "Girls begin **menstruation**, a monthly process in which the lining of the uterus is shed through the vagina. It is a normal and healthy process."
-          ]
-        },
-        {
-          heading: "Hormones and Glands",
-          points: [
-            "**Hormones** are chemical messengers made by glands and carried in the blood.",
-            "The **pituitary gland** is often called the master gland. It signals the testes in boys and the ovaries in girls to release hormones.",
-            "The hormones are **testosterone** in boys and **oestrogen** in girls. These hormones bring about the changes of puberty."
-          ]
-        },
-        {
-          heading: "Healthy Habits and Feelings",
-          points: [
-            "Mood swings, shyness and a wish for privacy are normal during adolescence.",
-            "A balanced diet, daily exercise, enough sleep and regular bathing keep the body healthy.",
-            "Use clean cloth or sanitary pads during menstruation, and dispose of used pads properly.",
-            "Talk to parents, teachers or a doctor when you have questions. Do not trust myths or false information."
-          ]
-        }
-      ],
-      formulas: [
-        "Adolescence: about 10 to 19 years of age",
-        "Puberty: girls about 10 to 13 years; boys about 12 to 14 years (varies from person to person)",
-        "Testosterone is the hormone of boys; oestrogen is the hormone of girls"
-      ],
-      terms: [
-        { term: "Adolescence", meaning: "The period of growth from **childhood to adulthood**, roughly 10 to 19 years." },
-        { term: "Puberty", meaning: "The stage when the **reproductive organs mature** and the body becomes capable of reproduction." },
-        { term: "Growth spurt", meaning: "A **rapid increase** in height and weight during adolescence." },
-        { term: "Menstruation", meaning: "The **monthly shedding** of the uterine lining in girls, a normal part of puberty." },
-        { term: "Hormone", meaning: "A **chemical messenger** made by glands that controls body processes." },
-        { term: "Pituitary gland", meaning: "A gland that **controls other glands** and is often called the master gland." }
-      ],
-      qa: [
-        {
-          q: "Why do the voices of boys become deeper during adolescence?",
-          a: "Under the influence of **testosterone**, the voice box (larynx) grows larger and the vocal cords become longer and thicker, so the voice deepens."
-        },
-        {
-          q: "What is the role of hormones during adolescence?",
-          a: "Hormones are **chemical messengers** that trigger the changes of puberty, such as the growth spurt, the development of reproductive organs and the growth of body hair."
-        },
-        {
-          q: "Why is good hygiene important during adolescence?",
-          a: "Sweat and oil glands become more active, so regular bathing and clean clothes prevent **body odour, pimples and infections**."
-        }
-      ],
-      quiz: [
-        {
-          q: "The period of growth between childhood and adulthood is called:",
-          options: ["Infancy", "Adolescence", "Old age", "Gestation"],
-          answer: 1,
-          explain: "**Adolescence** is the stage between childhood and adulthood, roughly 10 to 19 years."
-        },
-        {
-          q: "Which gland is often called the master gland?",
-          options: ["Thyroid gland", "Salivary gland", "Pituitary gland", "Sweat gland"],
-          answer: 2,
-          explain: "The **pituitary gland** controls several other glands, so it is called the master gland."
-        },
-        {
-          q: "The hormone testosterone is produced in:",
-          options: ["Ovaries", "Thyroid", "Testes", "Pancreas"],
-          answer: 2,
-          explain: "Testosterone is produced in the **testes** of boys."
-        },
-        {
-          q: "The monthly process in girls in which the uterine lining is shed is called:",
-          options: ["Menstruation", "Puberty", "Metamorphosis", "Gestation"],
-          answer: 0,
-          explain: "**Menstruation** is the monthly shedding of the uterine lining. It is a normal part of puberty."
-        },
-        {
-          q: "The sudden rapid increase in height and weight during adolescence is called the:",
-          options: ["Moulting", "Growth spurt", "Hibernation", "Gestation period"],
-          answer: 1,
-          explain: "The **growth spurt** is a rapid increase in height and weight during adolescence."
-        },
-        {
-          q: "Which of these is a healthy habit during adolescence?",
-          options: ["Skipping meals to stay thin", "Staying awake all night", "Ignoring cleanliness", "Regular exercise and a balanced diet"],
-          answer: 3,
-          explain: "Regular exercise, a balanced diet, sleep and cleanliness keep the body healthy during adolescence."
-        }
-      ]
-    },
-
-    // ------------------------------------------------------------------
-    {
-      id: "force-and-pressure",
-      title: "Force and Pressure",
-      section: "Physics",
-      summary: "A force is a push or a pull that can change the motion or shape of an object. This chapter explains pressure, which depends on how a force is spread over an area, and how pressure acts in liquids and in the atmosphere.",
-      notes: [
-        {
-          heading: "Force",
-          points: [
-            "A **force** is a push or a pull. Forces can start, stop or change the speed or direction of a moving object, and can change the shape of an object.",
-            "The SI unit of force is the **newton** (N). An object of mass 1 kg has a weight of about 10 N on the earth."
-          ]
-        },
-        {
-          heading: "Thrust and Pressure",
-          points: [
-            "**Thrust** is the force acting perpendicular to a surface.",
-            "**Pressure** is the thrust acting on unit area: **Pressure = Thrust ÷ Area**.",
-            "The SI unit of pressure is the **pascal** (Pa), which equals one newton per square metre (N/m²).",
-            "For the same force, a smaller area gives greater pressure. That is why a sharp knife cuts easily and a pointed nail goes into wood easily."
-          ]
-        },
-        {
-          heading: "Pressure in Everyday Life",
-          points: [
-            "Camels have broad feet, and tractors have wide tyres. They spread their weight over a large area, so they exert less pressure on sand and mud.",
-            "Skis spread a person's weight over snow, so the person sinks less.",
-            "The walls of a dam are made thicker at the bottom because the water pressure is greater there."
-          ]
-        },
-        {
-          heading: "Pressure in Liquids and Air",
-          points: [
-            "Liquids exert pressure in all directions. The pressure in a liquid **increases with depth**.",
-            "The air around us presses on every surface. This is **atmospheric pressure**, which is about 1 × 10⁵ Pa at sea level."
-          ]
-        }
-      ],
-      formulas: [
-        "Pressure = Thrust ÷ Area (P = F ÷ A)",
-        "Unit of force: newton (N); unit of pressure: pascal (Pa) = N/m²",
-        "Pressure in a liquid increases with depth",
-        "Atmospheric pressure at sea level ≈ 1 × 10⁵ Pa"
+        { term: "Hypothesis", meaning: "A testable explanation or prediction that is checked by experiment." },
+        { term: "Variable", meaning: "A factor that can change in an experiment." },
+        { term: "Fair test", meaning: "An experiment in which only one variable is changed and the rest are kept constant." },
+        { term: "Control", meaning: "A set-up without the change, used for comparison." },
+        { term: "Evidence", meaning: "Observations and measurements used to support or reject an idea." }
       ],
       examples: [
         {
-          q: "A force of 200 N acts perpendicular to a surface of area 0.5 m². Find the pressure.",
-          steps: [
-            "Pressure = Thrust ÷ Area",
-            "P = 200 N ÷ 0.5 m²",
-            "P = 400 N/m²"
-          ],
-          answer: "Pressure = 400 Pa"
+          q: "A student times a toy car on a ramp three times: 4.2 s, 4.0 s and 4.1 s. What value should she report?",
+          steps: ["Add the readings: 4.2 + 4.0 + 4.1 = 12.3 s", "Divide by the number of readings: 12.3 ÷ 3 = 4.1 s"],
+          answer: "Average time = 4.1 s"
         }
-      ],
-      terms: [
-        { term: "Force", meaning: "A **push or a pull** that can change the motion or shape of an object." },
-        { term: "Thrust", meaning: "The **force acting perpendicular** to a surface." },
-        { term: "Pressure", meaning: "The **thrust acting on unit area**, found by dividing thrust by area." },
-        { term: "Pascal", meaning: "The SI unit of pressure, equal to **one newton per square metre**." },
-        { term: "Atmospheric pressure", meaning: "The **pressure exerted by the air** around us on every surface." }
       ],
       qa: [
-        {
-          q: "Why does a sharp knife cut better than a blunt knife?",
-          a: "The sharp edge has a very small area, so the same force produces **much greater pressure**, which cuts the material."
-        },
-        {
-          q: "Why are the walls of a dam thicker at the bottom?",
-          a: "Water pressure **increases with depth**, so the bottom of the dam must withstand greater pressure and needs to be thicker and stronger."
-        },
-        {
-          q: "Why does a person on skis sink less into snow?",
-          a: "Skis spread the person's weight over a **larger area**, so the pressure on the snow is less."
-        }
+        { q: "Why must only one variable be changed in an experiment?", a: "If several things change together, we cannot tell which one caused the result. Changing one variable and keeping the rest constant makes the test **fair**." },
+        { q: "What should a scientist do if the results do not support the hypothesis?", a: "Accept the result honestly, revise or reject the hypothesis and test a new idea. Results must never be changed to match the hypothesis." }
       ],
       quiz: [
-        {
-          q: "The SI unit of force is:",
-          options: ["Pascal", "Joule", "Newton", "Metre"],
-          answer: 2,
-          explain: "Force is measured in **newtons** (N)."
-        },
-        {
-          q: "Pressure is defined as:",
-          options: ["Thrust × Area", "Area ÷ Thrust", "Thrust ÷ Area", "Thrust + Area"],
-          answer: 2,
-          explain: "**Pressure = Thrust ÷ Area**."
-        },
-        {
-          q: "A nail is pointed at one end so that:",
-          options: ["It becomes heavier", "It rusts less", "It produces greater pressure for a given force", "It produces less pressure"],
-          answer: 2,
-          explain: "The pointed tip has a small area, so the same push produces greater pressure and the nail enters wood easily."
-        },
-        {
-          q: "Camels have broad feet on sand so that they:",
-          options: ["Can walk faster", "Exert less pressure on the sand", "Exert more pressure on the sand", "Can jump higher"],
-          answer: 1,
-          explain: "A broad foot spreads the camel's weight over a larger area, which reduces the pressure on the sand."
-        },
-        {
-          q: "The SI unit of pressure is:",
-          options: ["Kilogram", "Newton", "Metre per second", "Pascal"],
-          answer: 3,
-          explain: "Pressure is measured in **pascals** (Pa), which is one newton per square metre."
-        },
-        {
-          q: "Pressure in a liquid increases with:",
-          options: ["Colour of the liquid", "Shape of the container", "Width of the container", "Depth"],
-          answer: 3,
-          explain: "The pressure in a liquid increases with **depth**. It does not depend on the colour or the shape of the container."
-        }
+        { q: "A testable explanation that can be checked by an experiment is called a:", options: ["Conclusion", "Hypothesis", "Control", "Unit"], answer: 1, explain: "A hypothesis is a testable explanation made before the experiment; a conclusion comes after it." },
+        { q: "Which is true of a fair test?", options: ["All factors are changed together", "Only one variable is changed", "No readings are taken", "The result is decided in advance"], answer: 1, explain: "Changing only one variable lets us link the result to that single cause." },
+        { q: "Why do we repeat measurements and take the average?", options: ["To make the experiment longer", "To reduce the effect of chance errors", "To change the hypothesis", "To avoid writing a table"], answer: 1, explain: "Chance errors differ in each reading; averaging reduces their effect." },
+        { q: "A conclusion should be based on:", options: ["Evidence collected in the experiment", "What most people believe", "What the student expected", "The most surprising reading only"], answer: 0, explain: "Scientific conclusions follow from evidence, not belief or expectation." },
+        { q: "The set-up in which the variable is not changed, kept for comparison, is the:", options: ["Hypothesis", "Control", "Observation", "Graph"], answer: 1, explain: "A control shows what happens without the change." },
+        { q: "Readings of 10, 12 and 14 units are taken. The average is:", options: ["10", "11", "12", "36"], answer: 2, explain: "(10 + 12 + 14) ÷ 3 = 36 ÷ 3 = 12; 36 is only the sum." }
       ]
     },
-
-    // ------------------------------------------------------------------
+    // ───────────────────────────── 2 ─────────────────────────────
     {
-      id: "friction",
-      title: "Friction",
-      section: "Physics",
-      summary: "Friction is a force that opposes the motion of one surface over another. It helps us walk, write and stop vehicles, but it also wastes energy and wears things out. This chapter explains what affects friction and how it can be increased or reduced.",
+      id: "invisible-living-world",
+      title: "The Invisible Living World: Beyond Our Naked Eye",
+      section: "Living world",
+      summary: "Many living things are too small to see without a microscope. This chapter introduces the microscope, cells as the basic unit of life, unicellular and multicellular organisms, and microorganisms such as bacteria, viruses, fungi and protozoa.",
       notes: [
         {
-          heading: "What Is Friction?",
+          heading: "Seeing the very small",
           points: [
-            "**Friction** is the force that opposes the motion of one surface sliding over another surface in contact.",
-            "Friction always acts in the direction opposite to the motion, or the attempted motion.",
-            "Friction produces heat. Rubbing your palms together makes them warm."
+            "A **microscope** magnifies tiny objects. Robert Hooke first used the word **cell** after seeing the box-like compartments in thin slices of cork.",
+            "Anton van Leeuwenhoek used simple lenses to observe tiny living organisms in water.",
+            "A compound microscope uses two lenses, the **eyepiece** and the **objective**, to give a large image.",
+            "Total magnification = magnification of eyepiece × magnification of objective."
           ]
         },
         {
-          heading: "Types of Friction",
+          heading: "Cells: the basic unit of life",
           points: [
-            "**Static friction** acts on an object at rest and prevents it from starting to move, for example a box lying on the floor.",
-            "**Sliding friction** acts when one surface slides over another, for example a book pushed across a table.",
-            "**Rolling friction** acts when a wheel or ball rolls over a surface. It is much smaller than sliding friction.",
-            "**Fluid friction** acts on objects moving through air or water, for example the resistance of air on a falling parachute."
+            "All living things are made of **cells**. A cell is the smallest structural and functional unit of life.",
+            "Main parts: **cell membrane** (controls what enters and leaves), **cytoplasm** (jelly-like fluid) and **nucleus** (control centre).",
+            "Plant cells also have a **cell wall** and large **vacuole**; green plant cells have **chloroplasts** for photosynthesis.",
+            "A **unicellular** organism has one cell (Amoeba, Paramecium). A **multicellular** organism has many cells (humans, trees)."
           ]
         },
         {
-          heading: "Factors Affecting Friction",
+          heading: "Organisation in the body",
           points: [
-            "Friction depends on the **nature of the surfaces**. Rough surfaces produce more friction than smooth ones.",
-            "Friction increases when the **force pressing the surfaces together** increases. A heavier box experiences more friction.",
-            "Friction does not depend much on the area of contact between the surfaces.",
-            "Static friction is usually greater than sliding friction. That is why it is harder to start pushing a heavy box than to keep it moving."
+            "Similar cells work together as a **tissue**, tissues form an **organ**, and organs working together form an **organ system**.",
+            "Cells differ in shape and size according to their job, such as long nerve cells and round red blood cells."
           ]
         },
         {
-          heading: "Increasing and Reducing Friction",
+          heading: "Microorganisms",
           points: [
-            "**To increase friction:** tyres have treads, shoe soles have grooves, and brakes press against wheels.",
-            "**To reduce friction:** use lubricants such as oil, grease or graphite, use ball bearings or wheels, and streamline the shape of vehicles and aeroplanes.",
-            "Friction is useful for walking, writing and holding objects. However, it wears out machine parts and wastes energy."
+            "Microorganisms (microbes) include **bacteria, viruses, fungi, protozoa and some algae**.",
+            "Many are useful: bacteria make curd, fungi (yeast) help in baking, and some microbes decompose waste.",
+            "Some cause diseases, such as cholera (bacteria), influenza (virus) and malaria (a protozoan, spread by the Anopheles mosquito).",
+            "Viruses are not cells and can multiply only inside a living host cell."
           ]
         }
       ],
       formulas: [
-        "Friction always opposes motion",
-        "Friction depends on the roughness of the surfaces and the force pressing them together",
-        "Rolling friction < Sliding friction",
-        "Static friction is usually greater than sliding friction"
+        "Total magnification = eyepiece magnification × objective magnification",
+        "Cell → tissue → organ → organ system → organism",
+        "Cell wall, large vacuole and chloroplasts are found in plant cells, not animal cells"
       ],
       terms: [
-        { term: "Friction", meaning: "A force that **opposes the motion** of one surface sliding over another." },
-        { term: "Static friction", meaning: "Friction that **prevents an object from starting to move**." },
-        { term: "Sliding friction", meaning: "Friction between two surfaces that **slide over each other**." },
-        { term: "Rolling friction", meaning: "Friction when a **wheel or ball rolls** over a surface; it is usually the smallest." },
-        { term: "Lubricant", meaning: "A substance, such as oil or grease, that **reduces friction** between moving surfaces." },
-        { term: "Streamlining", meaning: "Shaping an object so that it **moves through air or water** with less resistance." }
-      ],
-      qa: [
-        {
-          q: "Why do we walk without slipping on a road?",
-          a: "The rough soles of our shoes and the rough road surface produce **friction**. This friction prevents slipping and pushes us forward as we walk."
-        },
-        {
-          q: "Why is it easier to roll a heavy suitcase on wheels than to drag it?",
-          a: "**Rolling friction** is much smaller than sliding friction, so much less force is needed to move the suitcase."
-        },
-        {
-          q: "How does oil reduce friction in a machine?",
-          a: "Oil forms a thin layer between the moving surfaces, so they slide over each other more easily and the rough parts do not rub directly."
-        }
-      ],
-      quiz: [
-        {
-          q: "Friction acts in which direction?",
-          options: ["In the direction of motion", "Opposite to the direction of motion", "Upwards always", "Sideways always"],
-          answer: 1,
-          explain: "Friction always acts **opposite** to the direction of motion, or attempted motion."
-        },
-        {
-          q: "Which friction acts on a box lying still on the floor until it is pushed hard?",
-          options: ["Rolling friction", "Sliding friction", "Static friction", "Fluid friction"],
-          answer: 2,
-          explain: "**Static friction** holds an object at rest until the applied force is large enough to start it moving."
-        },
-        {
-          q: "Which of these reduces friction?",
-          options: ["Making the tyre treads deeper", "Pressing the brakes", "Sanding a wooden surface", "Adding grease to a bicycle chain"],
-          answer: 3,
-          explain: "**Grease** is a lubricant that reduces friction between the moving parts of a chain."
-        },
-        {
-          q: "Which type of friction is usually the smallest?",
-          options: ["Static friction", "Sliding friction", "Rolling friction", "Friction between two rough blocks"],
-          answer: 2,
-          explain: "**Rolling friction** is much smaller than sliding friction, which is why wheels and ball bearings reduce friction."
-        },
-        {
-          q: "Friction depends mainly on:",
-          options: ["Colour of the surfaces", "Roughness of the surfaces", "Size of the room", "Temperature of the air"],
-          answer: 1,
-          explain: "Friction depends on the **roughness** of the surfaces and the force pressing them together."
-        },
-        {
-          q: "Which of these is a disadvantage of friction?",
-          options: ["It helps us walk", "It helps brakes stop a vehicle", "It helps us hold a pen", "It wears out machine parts"],
-          answer: 3,
-          explain: "Friction wears out machine parts and wastes energy as heat, though it is useful in most other cases."
-        }
-      ]
-    },
-
-    // ------------------------------------------------------------------
-    {
-      id: "sound",
-      title: "Sound",
-      section: "Physics",
-      summary: "Sound is produced by vibrating objects and travels as a wave through a medium. This chapter explains frequency, amplitude, the range of human hearing, the speed of sound, echoes and the uses of ultrasound.",
-      notes: [
-        {
-          heading: "How Sound Is Produced",
-          points: [
-            "Sound is produced by **vibrating** objects. The skin of a tabla, a guitar string and our vocal cords all vibrate to produce sound.",
-            "Sound needs a **medium**, which can be a solid, a liquid or a gas, to travel. It cannot travel through a vacuum, which is why astronauts need radios in space.",
-            "Sound travels as a wave. The particles of the medium vibrate back and forth and pass the energy along."
-          ]
-        },
-        {
-          heading: "Frequency, Amplitude and Pitch",
-          points: [
-            "**Frequency** is the number of vibrations per second. Its unit is the **hertz** (Hz).",
-            "A high-frequency sound has a high **pitch**, like a whistle. A low-frequency sound has a low pitch, like a drum.",
-            "**Amplitude** is the size of the vibration. A larger amplitude gives a **louder** sound. Loudness is measured in **decibels** (dB)."
-          ]
-        },
-        {
-          heading: "Range of Human Hearing",
-          points: [
-            "Humans can hear sounds with frequencies from about **20 Hz to 20,000 Hz**.",
-            "Sounds below 20 Hz are called **infrasonic**, and sounds above 20,000 Hz are called **ultrasonic**. We cannot hear either.",
-            "Dogs, bats and dolphins can hear sounds of higher frequencies than we can."
-          ]
-        },
-        {
-          heading: "Speed of Sound and Echoes",
-          points: [
-            "Sound travels at about **340 m/s** in air. It travels faster in liquids and even faster in solids such as steel.",
-            "An **echo** is a sound reflected back from a hard surface, such as a wall, a cliff or a building.",
-            "To hear a separate echo, the reflecting surface must be at least **17 m** away from the source of the sound."
-          ]
-        },
-        {
-          heading: "Uses of Ultrasound and Noise",
-          points: [
-            "Doctors use ultrasound to scan the body. **SONAR** uses ultrasound to find the depth of the sea and to locate objects under water.",
-            "Ultrasound is also used to clean delicate instruments and to find cracks in metal parts.",
-            "Very loud sounds can damage hearing, so the volume of music and other sounds should be kept moderate."
-          ]
-        }
-      ],
-      formulas: [
-        "Speed of sound in air ≈ 340 m/s",
-        "Human hearing range: 20 Hz to 20,000 Hz",
-        "Distance of reflecting surface = (speed of sound × time for echo) ÷ 2",
-        "Minimum distance for a distinct echo ≈ 17 m"
+        { term: "Cell", meaning: "The smallest structural and functional unit of living things." },
+        { term: "Nucleus", meaning: "The part of the cell that controls its activities." },
+        { term: "Unicellular", meaning: "Made of a single cell." },
+        { term: "Microorganism", meaning: "A living organism too small to be seen without a microscope." },
+        { term: "Tissue", meaning: "A group of similar cells doing the same job." }
       ],
       examples: [
         {
-          q: "A person shouts near a cliff and hears the echo after 0.2 seconds. How far is the cliff? Take the speed of sound in air as 340 m/s.",
-          steps: [
-            "The sound travels to the cliff and back, so the total distance = speed × time",
-            "Total distance = 340 m/s × 0.2 s = 68 m",
-            "Distance to the cliff = 68 m ÷ 2 = 34 m"
-          ],
-          answer: "34 m"
+          q: "A microscope has a 10× eyepiece and a 40× objective. Find the total magnification.",
+          steps: ["Total magnification = eyepiece × objective", "= 10 × 40"],
+          answer: "400×"
         }
-      ],
-      terms: [
-        { term: "Vibration", meaning: "A **rapid back-and-forth movement** that produces sound." },
-        { term: "Frequency", meaning: "The **number of vibrations per second**, measured in hertz (Hz)." },
-        { term: "Amplitude", meaning: "The **size of a vibration**; it determines how loud a sound is." },
-        { term: "Pitch", meaning: "How **high or low** a sound seems to us; it depends on the frequency." },
-        { term: "Echo", meaning: "A **reflected sound** heard again after it bounces off a hard surface." },
-        { term: "Ultrasound", meaning: "Sound with a frequency **above 20,000 Hz**, which humans cannot hear." }
       ],
       qa: [
-        {
-          q: "Why can astronauts not talk to each other directly in open space?",
-          a: "Sound needs a **medium** to travel, and space is almost a vacuum. The sound cannot reach the other astronaut's ears, so radios are used."
-        },
-        {
-          q: "What is the difference between pitch and loudness?",
-          a: "**Pitch** depends on the frequency, which tells how high or low a sound is. **Loudness** depends on the amplitude, which is the size of the vibration."
-        },
-        {
-          q: "Why do we not hear an echo in a small room?",
-          a: "In a small room the reflected sound returns in less than 0.1 second, so it merges with the original sound. An echo needs the reflecting surface to be at least **17 m** away."
-        }
+        { q: "Name three differences between a plant cell and an animal cell.", a: "A plant cell has a **cell wall**, **chloroplasts** and a large central **vacuole**. An animal cell has no cell wall or chloroplasts and has only small vacuoles." },
+        { q: "Why are viruses not considered cells?", a: "Viruses have no cell structure of their own and cannot carry out life processes or multiply outside a host. They reproduce only inside a living cell." }
       ],
       quiz: [
-        {
-          q: "Sound is produced by:",
-          options: ["Vibration of objects", "Heating of objects", "Freezing of objects", "Movement of light"],
-          answer: 0,
-          explain: "All sounds are produced by **vibrating** objects."
-        },
-        {
-          q: "The unit of frequency is:",
-          options: ["Decibel", "Pascal", "Metre", "Hertz"],
-          answer: 3,
-          explain: "Frequency is measured in **hertz** (Hz), or vibrations per second."
-        },
-        {
-          q: "Sound cannot travel through:",
-          options: ["Air", "Water", "Vacuum", "Steel"],
-          answer: 2,
-          explain: "Sound needs a **medium** to travel. It cannot pass through a vacuum."
-        },
-        {
-          q: "The loudness of a sound depends mainly on its:",
-          options: ["Frequency", "Amplitude", "Colour of the source", "Temperature of the room"],
-          answer: 1,
-          explain: "Loudness depends on the **amplitude** of vibration. Frequency controls pitch."
-        },
-        {
-          q: "The range of frequencies audible to most humans is about:",
-          options: ["2 to 200 Hz", "200 to 2,000 Hz", "20 to 20,000 Hz", "20,000 to 200,000 Hz"],
-          answer: 2,
-          explain: "Humans can hear sounds from about **20 Hz to 20,000 Hz**."
-        },
-        {
-          q: "The minimum distance from the source to a reflecting surface needed to hear a distinct echo is about:",
-          options: ["17 m", "5 m", "100 m", "340 m"],
-          answer: 0,
-          explain: "A separate echo needs the reflecting surface to be at least about **17 m** away."
-        }
+        { q: "Who first used the word 'cell' after viewing cork?", options: ["Louis Pasteur", "Robert Hooke", "Charles Darwin", "Edward Jenner"], answer: 1, explain: "Robert Hooke saw box-like compartments in cork and named them cells." },
+        { q: "Which part of the cell controls what enters and leaves it?", options: ["Nucleus", "Cell wall", "Cell membrane", "Chloroplast"], answer: 2, explain: "The cell membrane is selective; the cell wall is a rigid outer layer in plants, not the controller." },
+        { q: "Which of these is a unicellular organism?", options: ["Amoeba", "Earthworm", "Mango tree", "Frog"], answer: 0, explain: "Amoeba is a single cell; the others are multicellular." },
+        { q: "Malaria is caused by a:", options: ["Virus", "Bacterium", "Protozoan", "Fungus"], answer: 2, explain: "The malaria parasite is a protozoan carried by Anopheles mosquitoes." },
+        { q: "The correct order of organisation from smallest to largest is:", options: ["Organ, tissue, cell, system", "Tissue, cell, organ, system", "Cell, tissue, organ, organ system", "Cell, organ, tissue, organ system"], answer: 2, explain: "Cells make tissues, tissues make organs, organs make organ systems." },
+        { q: "A 5× eyepiece with a 20× objective gives a magnification of:", options: ["25×", "4×", "15×", "100×"], answer: 3, explain: "Magnifications multiply: 5 × 20 = 100." }
       ]
     },
-
-    // ------------------------------------------------------------------
+    // ───────────────────────────── 3 ─────────────────────────────
     {
-      id: "chemical-effects-of-electric-current",
-      title: "Chemical Effects of Electric Current",
-      section: "Chemistry",
-      summary: "Electric current can cause chemical changes in some liquids. This chapter explains how solutions conduct electricity, how electrolysis splits water into gases, and how electroplating coats one metal with another.",
+      id: "health-the-ultimate-treasure",
+      title: "Health: The Ultimate Treasure",
+      section: "Living world",
+      summary: "Health means physical, mental and social well-being. This chapter covers balanced diet, hygiene, infectious and non-infectious diseases, how diseases spread, prevention, vaccination and mental well-being.",
       notes: [
         {
-          heading: "Conductors and Electrolytes",
+          heading: "What is health?",
           points: [
-            "Solutions of acids, bases and salts conduct electricity because they contain charged particles called **ions**.",
-            "Pure water and solutions of sugar or alcohol conduct electricity very poorly.",
-            "A substance that conducts electricity in solution and is chemically broken down by it is called an **electrolyte**."
+            "**Health** is not just the absence of disease. It includes **physical, mental and social** well-being.",
+            "A balanced diet, exercise, enough sleep, clean surroundings and good relationships all support health.",
+            "A **balanced diet** has carbohydrates, proteins, fats, vitamins, minerals, fibre and water in the right amounts."
           ]
         },
         {
-          heading: "Electrolysis of Water",
+          heading: "Diseases and how they spread",
           points: [
-            "When electric current passes through **acidified water**, it splits into hydrogen and oxygen gases. This process is called **electrolysis**.",
-            "Hydrogen is collected at the **cathode** (negative electrode) and oxygen at the **anode** (positive electrode).",
-            "The volume of hydrogen is **twice** the volume of oxygen, because each water molecule has two hydrogen atoms for each oxygen atom."
+            "**Infectious diseases** are caused by microorganisms and can spread from person to person. **Non-infectious diseases** (such as diabetes or most cancers) do not spread this way.",
+            "Spread can be through **air** (cold, tuberculosis), **water and food** (cholera, typhoid), **vectors** such as mosquitoes (malaria, dengue) and **direct contact**.",
+            "Poor sanitation, unsafe water and crowding help infections to spread."
           ]
         },
         {
-          heading: "Electroplating",
+          heading: "Prevention and vaccination",
           points: [
-            "**Electroplating** is coating one metal with a thin layer of another metal using electricity.",
-            "The object to be plated is made the **cathode**. The coating metal is the **anode**, and the electrolyte contains ions of the coating metal.",
-            "Electroplating protects iron from rusting, for example with zinc or chromium, and gives a shiny finish to cutlery, jewellery and vehicle parts."
+            "Prevention: wash hands, drink safe water, keep food covered, remove stagnant water where mosquitoes breed, and cover your mouth when you cough.",
+            "A **vaccine** trains the body's defence system to recognise a germ without causing the full disease, giving protection against it later.",
+            "Edward Jenner developed the first vaccine, against smallpox. Smallpox has been eradicated, and polio has been nearly eliminated through vaccination.",
+            "Antibiotics work against bacteria, not viruses, and should be taken only when a doctor prescribes them."
           ]
         },
         {
-          heading: "Safety",
+          heading: "Mental and social well-being",
           points: [
-            "Electricity and water together are dangerous. Never touch electrical switches or appliances with wet hands.",
-            "In school experiments on electrolysis, use a low-voltage battery as instructed by the teacher, never the household mains supply."
+            "Stress, worry and loneliness affect health. Talking to family, friends or a counsellor helps.",
+            "Yoga, play, hobbies and adequate sleep support mental health.",
+            "Avoid tobacco, alcohol and other harmful substances."
           ]
         }
       ],
       formulas: [
-        "Electrolysis of water: 2H₂O → 2H₂ + O₂",
-        "Volume of hydrogen : volume of oxygen = 2 : 1",
-        "Cathode is the negative electrode; anode is the positive electrode",
-        "Electroplating: object = cathode, coating metal = anode"
+        "Health = physical + mental + social well-being",
+        "Vector = an organism that carries a disease-causing germ (e.g. Anopheles for malaria)",
+        "Vaccination gives protection **before** infection; antibiotics treat **bacterial** infections only"
       ],
       terms: [
-        { term: "Electrolyte", meaning: "A substance that **conducts electricity** in solution and is broken down chemically by it." },
-        { term: "Ion", meaning: "A **charged particle** formed when an atom or group of atoms gains or loses electrons." },
-        { term: "Electrolysis", meaning: "The **chemical breakdown** of a substance by passing electric current through it." },
-        { term: "Electroplating", meaning: "Coating a metal object with a thin layer of **another metal** using electricity." },
-        { term: "Cathode", meaning: "The **negative electrode**, where reduction occurs during electrolysis." },
-        { term: "Anode", meaning: "The **positive electrode**, where oxidation occurs during electrolysis." }
+        { term: "Balanced diet", meaning: "A diet containing all nutrients in the right amounts." },
+        { term: "Infectious disease", meaning: "A disease caused by germs that can spread from one person to another." },
+        { term: "Vector", meaning: "An organism, such as a mosquito, that carries a disease-causing germ to others." },
+        { term: "Vaccine", meaning: "A preparation that prepares the body's defences to fight a particular disease." },
+        { term: "Antibiotic", meaning: "A medicine that kills or stops the growth of bacteria." }
       ],
       qa: [
-        {
-          q: "Why is pure water a poor conductor, but salt water a good one?",
-          a: "Pure water has very few **ions**, so it hardly carries current. Dissolving salt adds ions, which carry the electric current through the solution."
-        },
-        {
-          q: "Why are iron objects often electroplated with zinc?",
-          a: "The zinc coating protects the iron from **rusting**, and it also gives the object an attractive finish."
-        },
-        {
-          q: "Why is the volume of hydrogen twice that of oxygen in the electrolysis of water?",
-          a: "Water is H₂O, with two hydrogen atoms for each oxygen atom. The equation 2H₂O → 2H₂ + O₂ shows that the gases form in a **2 : 1** ratio."
-        }
+        { q: "Why are antibiotics not given for the common cold?", a: "The common cold is caused by a **virus**, and antibiotics act only on bacteria. Taking them unnecessarily can make bacteria resistant." },
+        { q: "How does a vaccine protect us?", a: "It introduces a harmless form or part of a germ so the body learns to recognise it. If the real germ enters later, the defence system responds quickly." },
+        { q: "Give two ways to prevent mosquito-borne diseases.", a: "Do not let water stagnate in coolers, pots or tyres, where mosquitoes breed. Use nets and repellents and wear covering clothes." }
       ],
       quiz: [
-        {
-          q: "Which gas is collected at the cathode during electrolysis of acidified water?",
-          options: ["Oxygen", "Hydrogen", "Carbon dioxide", "Nitrogen"],
-          answer: 1,
-          explain: "**Hydrogen** is collected at the cathode, the negative electrode."
-        },
-        {
-          q: "The gas collected at the anode during electrolysis of water is:",
-          options: ["Hydrogen", "Helium", "Oxygen", "Chlorine"],
-          answer: 2,
-          explain: "**Oxygen** is collected at the anode, the positive electrode."
-        },
-        {
-          q: "Electroplating is a process in which:",
-          options: ["A metal is coated with another metal using electricity", "Water is split into gases", "Heat is produced in a wire", "Salt is dissolved in water"],
-          answer: 0,
-          explain: "In **electroplating**, one metal is coated with a thin layer of another metal by passing electric current."
-        },
-        {
-          q: "Which of these is an electrolyte?",
-          options: ["Sugar solution", "Dilute salt solution", "Alcohol", "Glucose syrup"],
-          answer: 1,
-          explain: "A salt solution contains ions, so it conducts electricity. Sugar, alcohol and glucose do not form ions in solution."
-        },
-        {
-          q: "In electroplating, the object to be plated is connected to the:",
-          options: ["Cathode, the negative electrode", "Anode, the positive electrode", "Glass container", "Plastic wire"],
-          answer: 0,
-          explain: "The object to be plated acts as the **cathode**, the negative electrode."
-        },
-        {
-          q: "The volume of hydrogen produced during electrolysis of water, compared with the volume of oxygen, is:",
-          options: ["Half", "Equal", "Twice", "Four times"],
-          answer: 2,
-          explain: "Hydrogen is produced in **twice** the volume of oxygen."
-        }
+        { q: "Health means:", options: ["Absence of disease only", "Physical, mental and social well-being", "Being very strong", "Eating a lot of food"], answer: 1, explain: "Health covers body, mind and social life, not just lack of disease." },
+        { q: "Which is a non-infectious disease?", options: ["Cholera", "Tuberculosis", "Diabetes", "Dengue"], answer: 2, explain: "Diabetes is not caused by a germ and does not spread from person to person." },
+        { q: "Dengue is spread by:", options: ["Contaminated water", "Mosquito vector", "Direct touch", "Cough droplets"], answer: 1, explain: "Dengue virus is carried by Aedes mosquitoes." },
+        { q: "Who developed the first vaccine, against smallpox?", options: ["Edward Jenner", "Alexander Fleming", "Robert Koch", "Ronald Ross"], answer: 0, explain: "Edward Jenner developed the smallpox vaccine." },
+        { q: "Antibiotics are effective against:", options: ["Viruses", "Bacteria", "Allergies", "Cancer"], answer: 1, explain: "Antibiotics target bacteria; viral infections do not respond to them." },
+        { q: "Which habit best prevents water-borne diseases such as typhoid?", options: ["Sleeping late", "Drinking boiled or safe water", "Eating more sugar", "Using more blankets"], answer: 1, explain: "Typhoid spreads through contaminated water and food." }
       ]
     },
-
-    // ------------------------------------------------------------------
+    // ───────────────────────────── 4 ─────────────────────────────
     {
-      id: "some-natural-phenomena",
-      title: "Some Natural Phenomena",
-      section: "Physics",
-      summary: "Lightning, thunder and earthquakes are powerful natural events. This chapter explains how lightning and thunder are produced, how earthquakes happen and how to stay safe, and how the speed of sound helps us estimate the distance of a lightning flash.",
+      id: "electricity-magnetic-and-heating-effects",
+      title: "Electricity: Magnetic and Heating Effects",
+      section: "Physical world",
+      summary: "An electric current produces magnetic and heating effects. This chapter covers the magnetic field around a current-carrying wire, electromagnets, the electric bell, and the heating effect used in heaters, fuses and MCBs.",
       notes: [
         {
-          heading: "Lightning and Thunder",
+          heading: "Magnetic effect of current",
           points: [
-            "**Lightning** is a huge spark of static electricity. It is a discharge between two clouds, or between a cloud and the ground.",
-            "The air along a lightning path is heated suddenly and expands rapidly. This produces a loud sound called **thunder**.",
-            "We see lightning before we hear thunder, because light travels much faster than sound."
+            "Hans Christian Oersted found that a compass needle deflects near a wire carrying current. So **a current produces a magnetic field**.",
+            "Reversing the direction of the current reverses the direction of the deflection.",
+            "A stronger current gives a stronger magnetic field."
           ]
         },
         {
-          heading: "Lightning Safety",
+          heading: "Electromagnets",
           points: [
-            "During a thunderstorm, stay indoors, away from windows and doors. Do not stand under a tall tree or in an open field.",
-            "Avoid using electrical appliances and water taps during a storm.",
-            "A **lightning conductor**, a metal rod joined to the earth by a thick wire, protects tall buildings by giving the lightning current a safe path into the ground."
+            "A coil of insulated wire wound on a **soft iron core** becomes a magnet when current flows. This is an **electromagnet**.",
+            "It is a magnet only while current flows, and its strength can be raised by more turns of wire, more current or a soft iron core.",
+            "Electromagnets lift scrap iron in cranes and are used in electric bells, motors and relays."
           ]
         },
         {
-          heading: "Earthquakes",
+          heading: "Electric bell",
           points: [
-            "An **earthquake** is the sudden shaking of the ground, caused by the sudden movement of rock masses in the Earth's crust.",
-            "The point inside the Earth where the earthquake starts is the **focus**. The point on the surface directly above it is the **epicentre**.",
-            "Earthquakes produce **seismic waves**. These are recorded by an instrument called a **seismograph**.",
-            "The **Richter scale** is used to measure the magnitude of an earthquake."
+            "When the switch is pressed, current flows through the electromagnet, which attracts the iron armature so the hammer strikes the gong.",
+            "The movement breaks the circuit, the electromagnet loses its magnetism and the armature springs back. This repeats rapidly, so the bell keeps ringing."
           ]
         },
         {
-          heading: "Earthquake Safety",
+          heading: "Heating effect of current",
           points: [
-            "If you are indoors during an earthquake, take cover under a strong table, away from windows and heavy objects.",
-            "If you are outdoors, move to an open area away from buildings, trees and electric wires.",
-            "Strong undersea earthquakes can cause tsunamis, which are huge sea waves."
+            "A current heats a conductor because the flow of charge meets resistance. This is used in heaters, geysers, irons and toasters.",
+            "The heating element is made of a material of high resistance and high melting point, such as **nichrome**.",
+            "Heat produced depends on the current, the resistance and the time: H = I²Rt.",
+            "A **fuse** has a thin wire that melts when too much current flows and breaks the circuit. An **MCB** does the same job and can be reset."
           ]
         }
       ],
       formulas: [
-        "Distance of lightning = speed of sound × time between seeing the flash and hearing the thunder",
-        "Speed of sound in air ≈ 340 m/s; light travels almost instantly",
-        "Richter scale measures the magnitude of an earthquake",
-        "Seismograph records seismic waves"
+        "Heat produced H = I²Rt (I in amperes, R in ohms, t in seconds, H in joules)",
+        "Electrical power P = V × I",
+        "Electromagnet strength rises with more turns, more current and a soft iron core"
+      ],
+      terms: [
+        { term: "Electromagnet", meaning: "A coil of wire around an iron core that acts as a magnet when current flows." },
+        { term: "Heating effect", meaning: "Production of heat when current passes through a conductor." },
+        { term: "Fuse", meaning: "A safety device whose thin wire melts when current is too high." },
+        { term: "MCB", meaning: "Miniature circuit breaker, which switches off the circuit automatically when current is too high and can be reset." },
+        { term: "Nichrome", meaning: "An alloy of high resistance and high melting point used in heating elements." }
       ],
       examples: [
         {
-          q: "Thunder is heard 3 seconds after the lightning flash is seen. Find the distance of the lightning. Take the speed of sound as 340 m/s.",
-          steps: [
-            "Light reaches us almost instantly, so the time taken is the time for sound to travel",
-            "Distance = speed × time = 340 m/s × 3 s = 1020 m",
-            "1020 m is about 1 km"
-          ],
-          answer: "About 1 km away"
+          q: "A heater of resistance 50 Ω carries a current of 4 A. Find the heat produced in 10 s.",
+          steps: ["H = I²Rt", "= 4² × 50 × 10 = 16 × 500"],
+          answer: "H = 8000 J"
         }
-      ],
-      terms: [
-        { term: "Lightning", meaning: "A **large electric spark** between clouds or between a cloud and the ground." },
-        { term: "Thunder", meaning: "The **loud sound** produced by the sudden expansion of air heated by lightning." },
-        { term: "Focus", meaning: "The point **inside the Earth** where an earthquake begins." },
-        { term: "Epicentre", meaning: "The point on the **Earth's surface** directly above the focus of an earthquake." },
-        { term: "Seismograph", meaning: "An instrument that **records seismic waves** produced by earthquakes." },
-        { term: "Lightning conductor", meaning: "A **metal rod** that protects buildings by carrying lightning safely into the ground." }
       ],
       qa: [
-        {
-          q: "Why do we see lightning before we hear thunder?",
-          a: "Light travels at about **3 × 10⁸ m/s**, almost instantly, while sound travels only about 340 m/s. So the flash reaches us first, and the thunder arrives after a delay."
-        },
-        {
-          q: "Why is a lightning conductor placed on tall buildings?",
-          a: "It provides a **safe path** for the lightning current to pass into the earth, which protects the building from damage and fire."
-        },
-        {
-          q: "Why do some buildings survive an earthquake better than others?",
-          a: "Buildings with **flexible designs**, strong foundations and proper construction can withstand shaking better, while weak or old structures are more likely to collapse."
-        }
+        { q: "How can the strength of an electromagnet be increased?", a: "Increase the number of turns of the coil, increase the current, and use a soft iron core inside the coil." },
+        { q: "Why is a fuse connected in a circuit?", a: "If the current becomes too high, the thin fuse wire heats up and melts, breaking the circuit. This protects appliances and prevents fires." },
+        { q: "Why is nichrome used as a heating element?", a: "It has high resistance, so it gets very hot, and a high melting point, so it does not melt when hot." }
       ],
       quiz: [
-        {
-          q: "Lightning is a discharge of:",
-          options: ["Heat", "Static electricity", "Sound", "Water vapour"],
-          answer: 1,
-          explain: "Lightning is a huge discharge of **static electricity**."
-        },
-        {
-          q: "Thunder is caused by:",
-          options: ["Rain falling on rocks", "Movement of clouds", "Burning of fuel", "Sudden expansion of heated air"],
-          answer: 3,
-          explain: "Air heated by lightning expands suddenly, producing a loud **thunder** sound."
-        },
-        {
-          q: "A lightning conductor protects a building by:",
-          options: ["Stopping the rain", "Cooling the building", "Giving lightning a safe path to the ground", "Absorbing thunder"],
-          answer: 2,
-          explain: "The conductor carries the lightning current safely into the ground."
-        },
-        {
-          q: "The point on the Earth's surface directly above the focus of an earthquake is called:",
-          options: ["Epicentre", "Crust", "Seismograph", "Magma"],
-          answer: 0,
-          explain: "The **epicentre** is on the surface, directly above the focus where the earthquake starts."
-        },
-        {
-          q: "The instrument that records seismic waves is:",
-          options: ["Thermometer", "Seismograph", "Barometer", "Anemometer"],
-          answer: 1,
-          explain: "A **seismograph** records the seismic waves produced by an earthquake."
-        },
-        {
-          q: "Which scale measures the magnitude of an earthquake?",
-          options: ["Celsius scale", "Decibel scale", "Richter scale", "Hardness scale"],
-          answer: 2,
-          explain: "The **Richter scale** is used to measure the magnitude of an earthquake."
-        }
+        { q: "Who discovered that a current produces a magnetic field?", options: ["Faraday", "Oersted", "Volta", "Newton"], answer: 1, explain: "Oersted saw a compass needle deflect near a current-carrying wire." },
+        { q: "The core of an electromagnet is usually:", options: ["Copper", "Soft iron", "Plastic", "Aluminium"], answer: 1, explain: "Soft iron strongly magnetises when current flows and loses magnetism when it stops." },
+        { q: "A fuse wire should have:", options: ["A high melting point", "A low melting point", "Very high resistance", "A thick cross-section"], answer: 1, explain: "It must melt easily to break the circuit during overload." },
+        { q: "Heat produced in a wire is proportional to:", options: ["I", "I²", "1/I", "I³"], answer: 1, explain: "H = I²Rt, so heat grows with the square of the current." },
+        { q: "In an electric bell, the hammer strikes the gong when the:", options: ["Armature is attracted by the electromagnet", "Fuse melts", "Wire is cooled", "Coil is removed"], answer: 0, explain: "The magnetised core pulls the iron armature, moving the hammer." },
+        { q: "A 10 Ω resistor carries 2 A for 5 s. The heat produced is:", options: ["100 J", "200 J", "50 J", "20 J"], answer: 1, explain: "H = 2² × 10 × 5 = 200 J." }
       ]
     },
-
-    // ------------------------------------------------------------------
+    // ───────────────────────────── 5 ─────────────────────────────
     {
-      id: "light",
-      title: "Light",
-      section: "Physics",
-      summary: "Light is a form of energy that travels in straight lines. This chapter covers reflection and its laws, images formed by plane and curved mirrors, the bending of light, and the splitting of white light into colours.",
+      id: "exploring-forces",
+      title: "Exploring Forces",
+      section: "Physical world",
+      summary: "A force is a push or a pull. This chapter looks at contact and non-contact forces, balanced and unbalanced forces, friction, and forces such as gravity, magnetic and electrostatic force.",
       notes: [
         {
-          heading: "Light and Reflection",
+          heading: "What is a force?",
           points: [
-            "Light travels in **straight lines**. In vacuum it travels at about 3 × 10⁸ m/s.",
-            "**Reflection** is the bouncing back of light from a surface. The incident ray, the reflected ray and the normal all lie in the same plane.",
-            "**First law of reflection**: the angle of incidence equals the angle of reflection."
+            "A **force** is a push or a pull. It can change the speed, direction or shape of an object. Its unit is the **newton (N)**.",
+            "Force has both **magnitude** (size) and **direction**.",
+            "**Contact forces** need touching (muscular force, friction). **Non-contact forces** act at a distance (gravity, magnetic and electrostatic forces)."
           ]
         },
         {
-          heading: "Plane Mirrors",
+          heading: "Balanced and unbalanced forces",
           points: [
-            "A plane mirror forms a **virtual** image that is upright and the same size as the object.",
+            "If forces on an object are **balanced**, the net force is zero and the motion does not change.",
+            "**Unbalanced** forces give a net force, which changes the object's state of motion.",
+            "When two forces act in the same direction they add; in opposite directions the net force is their difference.",
+            "Example: in tug of war the stronger team moves the rope because the forces are unbalanced."
+          ]
+        },
+        {
+          heading: "Friction",
+          points: [
+            "**Friction** opposes motion between surfaces in contact. It is larger for rough surfaces and for greater pressing force.",
+            "Types: **static**, **sliding** and **rolling** friction. Rolling friction is least, which is why wheels and ball bearings are used.",
+            "Friction is useful (walking, brakes) but also causes wear and heating. It is reduced by lubricants and polishing."
+          ]
+        },
+        {
+          heading: "Gravity, magnetic and electrostatic force",
+          points: [
+            "**Gravitational force** pulls every object towards the Earth's centre. It gives an object its **weight**.",
+            "**Magnetic force** acts between magnets (like poles repel, unlike attract) and on magnetic materials.",
+            "A charged object attracts light pieces of paper. **Electrostatic force** can attract or repel: like charges repel, unlike charges attract."
+          ]
+        }
+      ],
+      formulas: [
+        "Unit of force: newton (N)",
+        "Net force (same direction) = F₁ + F₂; (opposite directions) = F₁ − F₂",
+        "Weight = mass × g (g ≈ 10 N/kg on Earth)",
+        "Friction: rolling < sliding < static"
+      ],
+      terms: [
+        { term: "Force", meaning: "A push or a pull that can change an object's speed, direction or shape." },
+        { term: "Friction", meaning: "A force that opposes the relative motion of surfaces in contact." },
+        { term: "Non-contact force", meaning: "A force that acts without the objects touching, such as gravity." },
+        { term: "Net force", meaning: "The single resulting force when all forces on an object are combined." },
+        { term: "Lubricant", meaning: "A substance such as oil that reduces friction." }
+      ],
+      examples: [
+        {
+          q: "Two children push a box in the same direction with 30 N and 20 N. A friction force of 10 N acts against them. Find the net force.",
+          steps: ["Forces in the same direction add: 30 + 20 = 50 N", "Subtract friction in opposite direction: 50 − 10 = 40 N"],
+          answer: "Net force = 40 N in the direction of the push"
+        }
+      ],
+      qa: [
+        { q: "Why are ball bearings used in machines?", a: "Rolling friction is much less than sliding friction. Balls replace sliding surfaces, so wear and heat are reduced." },
+        { q: "Differentiate between contact and non-contact forces with examples.", a: "A contact force acts only when objects touch, for example muscular force or friction. A non-contact force acts at a distance, for example gravity or magnetic force." }
+      ],
+      quiz: [
+        { q: "The SI unit of force is:", options: ["Joule", "Newton", "Pascal", "Watt"], answer: 1, explain: "Force is measured in newtons; the joule measures energy and the pascal measures pressure." },
+        { q: "Which of these is a non-contact force?", options: ["Friction", "Muscular force", "Gravitational force", "Push by a hand"], answer: 2, explain: "Gravity pulls without touching." },
+        { q: "Forces of 15 N and 15 N act in opposite directions on a box. The net force is:", options: ["30 N", "15 N", "0 N", "225 N"], answer: 2, explain: "Equal opposite forces balance; the net force is zero." },
+        { q: "Which type of friction is the smallest?", options: ["Static", "Sliding", "Rolling", "Fluid always"], answer: 2, explain: "Rolling friction is less than sliding or static friction." },
+        { q: "A charged comb attracts small paper bits due to:", options: ["Magnetic force", "Gravitational force", "Electrostatic force", "Muscular force"], answer: 2, explain: "Paper is attracted by the charge on the comb, an electrostatic force." },
+        { q: "To reduce friction between two surfaces we can:", options: ["Make them rougher", "Apply a lubricant", "Press them harder", "Increase the area only"], answer: 1, explain: "A lubricant forms a film between surfaces and lowers friction." }
+      ]
+    },
+    // ───────────────────────────── 6 ─────────────────────────────
+    {
+      id: "pressure-winds-storms-cyclones",
+      title: "Pressure, Winds, Storms, and Cyclones",
+      section: "Earth and space",
+      summary: "Pressure is force acting on an area. This chapter covers pressure in solids, liquids and gases, atmospheric pressure, how pressure differences cause winds, and how thunderstorms and cyclones form.",
+      notes: [
+        {
+          heading: "Pressure",
+          points: [
+            "**Pressure** = force acting perpendicular to a surface ÷ area of that surface. Its unit is the **pascal (Pa)**, where 1 Pa = 1 N/m².",
+            "For the same force, a smaller area gives greater pressure. A sharp knife cuts easily, and a wide school bag strap is comfortable.",
+            "Liquids exert pressure that increases with **depth** and acts in all directions, so dam walls are thicker at the bottom.",
+            "Gases also exert pressure on the walls of their container."
+          ]
+        },
+        {
+          heading: "Atmospheric pressure",
+          points: [
+            "Air has weight, so the atmosphere exerts **atmospheric pressure** on everything. We do not feel it because the pressure inside our bodies balances it.",
+            "Atmospheric pressure decreases as height above the ground increases.",
+            "Examples: a drinking straw, a suction cup and a dropper work due to differences in pressure."
+          ]
+        },
+        {
+          heading: "Winds",
+          points: [
+            "Air moves from a region of **high pressure** to a region of **low pressure**. Moving air is **wind**.",
+            "Warm air is lighter, rises and creates a low-pressure region. Cooler air moves in to take its place.",
+            "A sea breeze blows from the sea to land by day, and a land breeze blows from land to sea at night."
+          ]
+        },
+        {
+          heading: "Thunderstorms and cyclones",
+          points: [
+            "In a **thunderstorm**, warm moist air rises quickly, forms clouds and gives heavy rain, lightning and thunder.",
+            "A **cyclone** forms over warm tropical oceans around a low-pressure centre called the **eye**, with strong spiralling winds and heavy rain.",
+            "Cyclone warnings, shelters, and satellite tracking by the India Meteorological Department (IMD) help to save lives.",
+            "In a storm stay indoors, keep away from tall trees and electric poles, and follow official warnings."
+          ]
+        }
+      ],
+      formulas: [
+        "Pressure = Force ÷ Area (P = F/A)",
+        "1 pascal = 1 N/m²",
+        "Liquid pressure increases with depth",
+        "Wind blows from high pressure to low pressure"
+      ],
+      terms: [
+        { term: "Pressure", meaning: "The force acting per unit area on a surface." },
+        { term: "Pascal", meaning: "The SI unit of pressure; 1 N/m²." },
+        { term: "Atmospheric pressure", meaning: "The pressure exerted by the weight of the air above us." },
+        { term: "Wind", meaning: "Air moving from a high-pressure region to a low-pressure region." },
+        { term: "Cyclone", meaning: "A violent storm with spiralling winds around a low-pressure centre over warm oceans." }
+      ],
+      examples: [
+        {
+          q: "A box exerts a force of 600 N on a floor over an area of 0.5 m². Find the pressure.",
+          steps: ["P = F ÷ A", "= 600 ÷ 0.5"],
+          answer: "P = 1200 Pa"
+        },
+        {
+          q: "The same 600 N acts on an area of 0.1 m². What is the pressure?",
+          steps: ["P = 600 ÷ 0.1"],
+          answer: "P = 6000 Pa. A smaller area gives five times the pressure."
+        }
+      ],
+      qa: [
+        { q: "Why do we not feel the atmospheric pressure acting on us?", a: "The pressure of fluids inside our body is equal to the pressure of the air outside, so the two balance each other." },
+        { q: "Why are the walls of a dam thicker at the bottom?", a: "Pressure in water increases with depth, so the water at the bottom pushes with greater force and the wall must be stronger." },
+        { q: "How does a sea breeze form?", a: "By day land heats faster than sea, so air above the land rises, creating low pressure. Cooler air from the sea blows in to replace it." }
+      ],
+      quiz: [
+        { q: "The SI unit of pressure is:", options: ["Newton", "Pascal", "Joule", "Watt"], answer: 1, explain: "Pressure is measured in pascals (N/m²)." },
+        { q: "A force of 200 N acts on 4 m². The pressure is:", options: ["800 Pa", "50 Pa", "204 Pa", "0.02 Pa"], answer: 1, explain: "P = 200 ÷ 4 = 50 Pa." },
+        { q: "Winds blow from:", options: ["Low to high pressure", "High to low pressure", "Hot to hot regions", "Land to land only"], answer: 1, explain: "Air flows from high pressure to low pressure." },
+        { q: "Nails have sharp pointed ends because:", options: ["The area is small, so pressure is large", "The area is large, so pressure is small", "They weigh less", "They look better"], answer: 0, explain: "A small area gives high pressure for the same force." },
+        { q: "The calm low-pressure centre of a cyclone is called the:", options: ["Crest", "Eye", "Front", "Core wall"], answer: 1, explain: "The eye is the calm centre surrounded by strong winds." },
+        { q: "As we climb a mountain, atmospheric pressure:", options: ["Increases", "Decreases", "Stays the same", "Becomes zero immediately"], answer: 1, explain: "There is less air above, so pressure drops with height." }
+      ]
+    },
+    // ───────────────────────────── 7 ─────────────────────────────
+    {
+      id: "particulate-nature-of-matter",
+      title: "Particulate Nature of Matter",
+      section: "Matter",
+      summary: "All matter is made of tiny particles that are in constant motion with spaces between them. This chapter explains states of matter, diffusion, and changes of state using the particle model.",
+      notes: [
+        {
+          heading: "Matter is made of particles",
+          points: [
+            "Matter is anything that has mass and occupies space. It is made of extremely small **particles**.",
+            "Particles have **spaces** between them and are in **constant motion**.",
+            "Particles attract one another. The strength of this **force of attraction** differs in solids, liquids and gases."
+          ]
+        },
+        {
+          heading: "States of matter",
+          points: [
+            "**Solids:** particles are closely packed and only vibrate in place. Solids have a fixed shape and volume.",
+            "**Liquids:** particles are close but can slide past each other. Liquids have a fixed volume but take the shape of the container.",
+            "**Gases:** particles are far apart and move freely. Gases have no fixed shape or volume and are easily compressed.",
+            "Intermolecular spaces and attraction: gas has the largest spaces and weakest attraction; solid has the smallest spaces and strongest attraction."
+          ]
+        },
+        {
+          heading: "Diffusion",
+          points: [
+            "**Diffusion** is the spreading of one substance into another by the movement of particles, for example the smell of food spreading in a room or ink spreading in water.",
+            "Diffusion is fastest in gases, slower in liquids and very slow in solids.",
+            "A higher temperature makes particles move faster, so diffusion speeds up."
+          ]
+        },
+        {
+          heading: "Changes of state",
+          points: [
+            "On heating, a solid **melts** to a liquid and a liquid **boils (evaporates)** to a gas. On cooling, a gas **condenses** and a liquid **freezes**.",
+            "During a change of state the temperature stays constant; the heat energy is used to overcome attraction between particles.",
+            "Some solids, such as camphor and naphthalene, change directly into gas on heating. This is called **sublimation**.",
+            "Evaporation takes place at any temperature from the surface of a liquid, and causes cooling."
+          ]
+        }
+      ],
+      formulas: [
+        "Solid → liquid: melting; liquid → gas: boiling/evaporation; gas → liquid: condensation; liquid → solid: freezing",
+        "Melting point of ice = 0 °C; boiling point of water = 100 °C (at normal pressure)",
+        "Gas: weakest attraction, largest spaces; solid: strongest attraction, smallest spaces"
+      ],
+      terms: [
+        { term: "Diffusion", meaning: "The mixing of particles of one substance into another by their own motion." },
+        { term: "Sublimation", meaning: "Change of a solid directly into a gas on heating (without becoming liquid)." },
+        { term: "Evaporation", meaning: "Change of a liquid into vapour at the surface, at any temperature." },
+        { term: "Condensation", meaning: "Change of a gas or vapour into a liquid on cooling." },
+        { term: "Melting point", meaning: "The temperature at which a solid changes into a liquid." }
+      ],
+      qa: [
+        { q: "Why can gases be compressed easily but solids cannot?", a: "In gases the particles are far apart with large spaces, so they can be pushed closer. In solids the particles are already tightly packed." },
+        { q: "Why does a drop of ink spread faster in hot water?", a: "Particles of hot water move faster, so they mix with ink particles more quickly. Diffusion is faster at a higher temperature." },
+        { q: "Why does sweating cool the body?", a: "Sweat evaporates by taking heat from the skin. This heat loss makes the body feel cooler." }
+      ],
+      quiz: [
+        { q: "In which state are particles farthest apart?", options: ["Solid", "Liquid", "Gas", "All the same"], answer: 2, explain: "Gas particles have the largest spaces between them." },
+        { q: "The spreading of the smell of incense in a room is an example of:", options: ["Melting", "Diffusion", "Sublimation", "Freezing"], answer: 1, explain: "Particles of the scent mix with air by their own movement." },
+        { q: "Camphor changes directly from solid to gas. This is called:", options: ["Condensation", "Melting", "Sublimation", "Freezing"], answer: 2, explain: "A solid to gas change without a liquid stage is sublimation." },
+        { q: "During melting of ice at 0 °C, the temperature:", options: ["Rises quickly", "Stays constant", "Falls", "Becomes 100 °C"], answer: 1, explain: "Heat energy is used to change the state, not to raise temperature." },
+        { q: "Which has a fixed volume but no fixed shape?", options: ["Solid", "Gas", "Liquid", "Rock"], answer: 2, explain: "A liquid takes the shape of its container but keeps its volume." },
+        { q: "Evaporation differs from boiling because evaporation:", options: ["Happens only at 100 °C", "Happens at the surface at any temperature", "Needs a flame", "Happens only in solids"], answer: 1, explain: "Boiling occurs throughout the liquid at the boiling point; evaporation occurs at the surface at any temperature." }
+      ]
+    },
+    // ───────────────────────────── 8 ─────────────────────────────
+    {
+      id: "elements-compounds-and-mixtures",
+      title: "Nature of Matter: Elements, Compounds, and Mixtures",
+      section: "Matter",
+      summary: "Matter can be classified into pure substances (elements and compounds) and mixtures. This chapter explains their differences, types of mixtures and common methods of separating them.",
+      notes: [
+        {
+          heading: "Elements",
+          points: [
+            "An **element** is a pure substance made of only one kind of atom. It cannot be broken into simpler substances by chemical methods.",
+            "Elements are represented by **symbols**, such as H (hydrogen), O (oxygen), C (carbon), Fe (iron) and Na (sodium).",
+            "Elements are classified as **metals**, **non-metals** and **metalloids**."
+          ]
+        },
+        {
+          heading: "Compounds",
+          points: [
+            "A **compound** is a pure substance formed when two or more elements combine **chemically** in a fixed ratio.",
+            "Examples: water H₂O, carbon dioxide CO₂ and common salt NaCl.",
+            "A compound has properties very different from its elements. Sodium is a reactive metal and chlorine is a poisonous gas, but sodium chloride is a harmless salt.",
+            "Compounds can be broken down only by chemical methods."
+          ]
+        },
+        {
+          heading: "Mixtures",
+          points: [
+            "A **mixture** has two or more substances mixed **physically** in any proportion. Each keeps its own properties.",
+            "A **homogeneous** mixture has uniform composition (salt solution, air). A **heterogeneous** mixture does not (sand and water, soil).",
+            "Mixture components can be separated by physical methods."
+          ]
+        },
+        {
+          heading: "Separating mixtures",
+          points: [
+            "**Handpicking, winnowing, sieving:** for solids of different sizes or weights.",
+            "**Filtration:** to separate an insoluble solid from a liquid. **Evaporation:** to get a dissolved solid back, such as salt from salt water.",
+            "**Distillation:** to separate liquids with different boiling points, or to get pure water from salt water.",
+            "**Magnetic separation:** to remove iron from a mixture. **Chromatography:** to separate coloured substances such as dyes in ink."
+          ]
+        }
+      ],
+      formulas: [
+        "Pure substances: elements and compounds; impure: mixtures",
+        "Compound: fixed ratio, chemical combination; mixture: any ratio, physical mixing",
+        "Water = H₂O; carbon dioxide = CO₂; common salt = NaCl"
+      ],
+      terms: [
+        { term: "Element", meaning: "A pure substance made of one kind of atom." },
+        { term: "Compound", meaning: "A pure substance made of two or more elements chemically combined in a fixed ratio." },
+        { term: "Mixture", meaning: "A combination of two or more substances that are not chemically combined." },
+        { term: "Filtration", meaning: "Separating an insoluble solid from a liquid using filter paper." },
+        { term: "Distillation", meaning: "Separating liquids by evaporating and then condensing them." }
+      ],
+      qa: [
+        { q: "Give three differences between a compound and a mixture.", a: "A compound has a fixed ratio of elements and a mixture has any ratio. A compound is formed by chemical combination, a mixture by physical mixing. A compound has new properties, but the parts of a mixture keep their own properties." },
+        { q: "How would you separate a mixture of sand, salt and iron filings?", a: "First use a magnet to remove iron filings. Then add water to dissolve the salt and filter off the sand. Finally evaporate the filtrate to get salt." }
+      ],
+      quiz: [
+        { q: "Which of these is a compound?", options: ["Oxygen", "Iron", "Water", "Air"], answer: 2, explain: "Water is made of hydrogen and oxygen chemically combined; air is a mixture." },
+        { q: "Air is a:", options: ["Compound", "Homogeneous mixture", "Element", "Heterogeneous mixture of solids"], answer: 1, explain: "Air has uniform composition, so it is a homogeneous mixture." },
+        { q: "Salt can be recovered from salt solution by:", options: ["Filtration", "Magnetic separation", "Evaporation", "Winnowing"], answer: 2, explain: "The dissolved salt passes through a filter, so evaporate the water." },
+        { q: "Which method separates inks into different dyes?", options: ["Chromatography", "Sieving", "Decantation only", "Winnowing"], answer: 0, explain: "Different dyes travel different distances on the paper." },
+        { q: "In a compound the elements are present:", options: ["In any ratio", "In a fixed ratio", "As separate pieces", "Only as gases"], answer: 1, explain: "A compound has a definite composition." },
+        { q: "Which pair is correctly matched?", options: ["Fe – sodium", "Na – iron", "C – carbon", "O – gold"], answer: 2, explain: "C is carbon; Fe is iron, Na is sodium and O is oxygen." }
+      ]
+    },
+    // ───────────────────────────── 9 ─────────────────────────────
+    {
+      id: "solutes-solvents-and-solutions",
+      title: "The Amazing World of Solutes, Solvents, and Solutions",
+      section: "Matter",
+      summary: "A solution is formed when a solute dissolves in a solvent. This chapter covers solubility, saturated solutions, concentration, and the effect of temperature on dissolving.",
+      notes: [
+        {
+          heading: "Solutions",
+          points: [
+            "A **solution** is a homogeneous mixture of two or more substances. The part that dissolves is the **solute** and the part it dissolves in is the **solvent**.",
+            "Example: in salt water, salt is the solute and water is the solvent. Water is called the **universal solvent** because it dissolves many substances.",
+            "In a true solution particles do not settle and cannot be seen, and light passes straight through without scattering.",
+            "Solutions can be solid (alloys), liquid (sugar in water) or gas (air)."
+          ]
+        },
+        {
+          heading: "Solubility and saturation",
+          points: [
+            "A **saturated solution** cannot dissolve any more solute at that temperature. An **unsaturated solution** can dissolve more.",
+            "**Solubility** is the amount of solute that dissolves in 100 g of solvent at a given temperature to form a saturated solution.",
+            "Solubility of most solids increases with temperature. Gases are less soluble in warm water, which is why fish need dissolved oxygen in cooler water.",
+            "Stirring and crushing the solute only speed up dissolving; they do not change how much dissolves."
+          ]
+        },
+        {
+          heading: "Concentration",
+          points: [
+            "**Concentration** tells how much solute is present in a given amount of solution.",
+            "Mass percentage = (mass of solute ÷ mass of solution) × 100.",
+            "A dilute solution has less solute and a concentrated solution has more.",
+            "Mass of solution = mass of solute + mass of solvent."
+          ]
+        },
+        {
+          heading: "Suspensions and colloids",
+          points: [
+            "A **suspension** (muddy water) has larger particles that settle on standing and can be filtered.",
+            "A **colloid** (milk, fog) has particles that do not settle and scatter light (Tyndall effect).",
+            "A **true solution** does not scatter light."
+          ]
+        }
+      ],
+      formulas: [
+        "Solution = solute + solvent",
+        "Mass of solution = mass of solute + mass of solvent",
+        "Concentration (mass %) = (mass of solute ÷ mass of solution) × 100",
+        "Solubility = g of solute in 100 g of solvent in a saturated solution"
+      ],
+      terms: [
+        { term: "Solute", meaning: "The substance that dissolves in a solution." },
+        { term: "Solvent", meaning: "The substance in which the solute dissolves." },
+        { term: "Saturated solution", meaning: "A solution that cannot dissolve more solute at that temperature." },
+        { term: "Solubility", meaning: "The maximum amount of solute that dissolves in a given amount of solvent at a temperature." },
+        { term: "Tyndall effect", meaning: "Scattering of a light beam by particles of a colloid or suspension." }
+      ],
+      examples: [
+        {
+          q: "20 g of sugar is dissolved in 80 g of water. Find the mass percentage of sugar in the solution.",
+          steps: ["Mass of solution = 20 + 80 = 100 g", "Mass % = (20 ÷ 100) × 100"],
+          answer: "20%"
+        },
+        {
+          q: "How much salt is present in 250 g of a 12% salt solution?",
+          steps: ["Mass of salt = (12 ÷ 100) × 250"],
+          answer: "30 g of salt"
+        }
+      ],
+      qa: [
+        { q: "Why is water called the universal solvent?", a: "Water dissolves a large number of solids, liquids and gases, more than any other common liquid." },
+        { q: "How can you make a saturated solution of salt at room temperature?", a: "Keep adding salt to water in small amounts with stirring until no more dissolves and some salt remains undissolved at the bottom." },
+        { q: "Why do aquatic animals face problems in warm water?", a: "The solubility of gases like oxygen decreases as the temperature rises, so warm water holds less dissolved oxygen." }
+      ],
+      quiz: [
+        { q: "In a solution of sugar in water, the solvent is:", options: ["Sugar", "Water", "Sugar and water together", "Air"], answer: 1, explain: "The substance in larger amount that dissolves the solute is water." },
+        { q: "A solution that can dissolve no more solute at a given temperature is:", options: ["Dilute", "Saturated", "Unsaturated", "Colloidal"], answer: 1, explain: "That is the meaning of saturated." },
+        { q: "10 g of salt is dissolved in 90 g of water. The mass percentage of salt is:", options: ["10%", "11.1%", "9%", "90%"], answer: 0, explain: "10 ÷ (10 + 90) × 100 = 10%; 11.1% divides by the water mass only." },
+        { q: "Which of these shows the Tyndall effect?", options: ["Salt solution", "Milk", "Sugar solution", "Clear lemon water"], answer: 1, explain: "Milk is a colloid and scatters light." },
+        { q: "The solubility of most solids in water, with rising temperature, usually:", options: ["Decreases", "Increases", "Stays zero", "Becomes a gas"], answer: 1, explain: "More solute can dissolve in hot water." },
+        { q: "Muddy water is a:", options: ["True solution", "Suspension", "Compound", "Pure element"], answer: 1, explain: "Mud particles settle on standing, so it is a suspension." }
+      ]
+    },
+    // ───────────────────────────── 10 ─────────────────────────────
+    {
+      id: "light-mirrors-and-lenses",
+      title: "Light: Mirrors and Lenses",
+      section: "Physical world",
+      summary: "Light travels in straight lines and is reflected by mirrors and bent by lenses. This chapter covers the laws of reflection, images in plane and curved mirrors, refraction, and convex and concave lenses.",
+      notes: [
+        {
+          heading: "Reflection of light",
+          points: [
+            "Light travels in straight lines. When it falls on a surface and bounces back, it is **reflected**.",
+            "**Laws of reflection:** (1) the angle of incidence equals the angle of reflection; (2) the incident ray, the reflected ray and the normal lie in the same plane.",
+            "Angles are measured from the **normal**, the line perpendicular to the surface at the point of incidence.",
+            "A rough surface reflects light in many directions (**diffuse reflection**). A smooth surface gives **regular reflection**."
+          ]
+        },
+        {
+          heading: "Plane mirror",
+          points: [
+            "The image in a plane mirror is **virtual, upright, the same size** as the object and **laterally inverted**.",
             "The image is as far behind the mirror as the object is in front of it.",
-            "The image is **laterally inverted**, which means left and right appear swapped. Dressing mirrors and periscopes use plane mirrors."
+            "A virtual image cannot be caught on a screen."
           ]
         },
         {
-          heading: "Spherical Mirrors",
+          heading: "Curved mirrors",
           points: [
-            "A **concave mirror** curves inwards. It can form magnified images and is used in torches, headlights and shaving mirrors.",
-            "A **convex mirror** curves outwards. It always forms a virtual, smaller image, but it gives a **wider field of view**, so it is used as a rear-view mirror in vehicles.",
-            "The **pole**, the **centre of curvature** and the **principal focus** are important points. The focus lies halfway between the pole and the centre of curvature."
+            "A **concave mirror** curves inwards. It converges parallel rays to a point called the **focus**. It is used in torches, headlights, shaving mirrors and by dentists.",
+            "A **convex mirror** curves outwards. It always forms a smaller, upright, virtual image with a wide field of view, so it is used as a vehicle rear-view mirror.",
+            "A concave mirror forms a magnified, upright, virtual image when the object is very close to it; otherwise it forms real images."
           ]
         },
         {
-          heading: "Refraction and Dispersion",
+          heading: "Refraction and lenses",
           points: [
-            "**Refraction** is the bending of light when it passes from one medium into another. A pencil in a glass of water looks bent for this reason.",
-            "A glass **prism** splits white light into seven colours: violet, indigo, blue, green, yellow, orange and red. This splitting is called **dispersion**.",
-            "A rainbow forms when sunlight is refracted, reflected and dispersed by water droplets in the air."
+            "**Refraction** is the bending of light when it passes from one transparent medium to another, such as from air into water.",
+            "A **convex lens** is thicker in the middle and converges light. A **concave lens** is thinner in the middle and spreads light out (diverges).",
+            "A convex lens can form real, inverted images, or a magnified, upright, virtual image when the object is close. It is used in magnifying glasses, cameras and spectacles for long-sightedness.",
+            "A concave lens always forms a smaller, upright, virtual image. It corrects short-sightedness."
           ]
         }
       ],
       formulas: [
-        "Angle of incidence = Angle of reflection",
-        "Speed of light in vacuum ≈ 3 × 10⁸ m/s",
-        "Plane mirror: image distance behind the mirror = object distance in front",
-        "Spectrum colours: VIBGYOR (violet, indigo, blue, green, yellow, orange, red)"
+        "Angle of incidence ∠i = angle of reflection ∠r",
+        "Plane mirror: image distance = object distance; image is virtual, upright, same size",
+        "Convex lens: converging; concave lens: diverging",
+        "Convex mirror: always smaller, upright, virtual image"
+      ],
+      terms: [
+        { term: "Normal", meaning: "A line perpendicular to a surface at the point where a ray strikes it." },
+        { term: "Refraction", meaning: "Bending of light when it passes from one medium to another." },
+        { term: "Virtual image", meaning: "An image that cannot be formed on a screen." },
+        { term: "Focus", meaning: "The point where parallel rays meet (or appear to meet) after reflection or refraction." },
+        { term: "Lateral inversion", meaning: "Reversal of left and right in a mirror image." }
       ],
       examples: [
         {
-          q: "A ray of light strikes a plane mirror at an angle of incidence of 35°. Find the angle between the reflected ray and the surface of the mirror.",
-          steps: [
-            "Angle of reflection = angle of incidence = 35°, both measured from the normal",
-            "Angle between the reflected ray and the normal = 35°",
-            "Angle with the mirror surface = 90° − 35° = 55°"
-          ],
-          answer: "55°"
+          q: "A ray strikes a plane mirror making an angle of 35° with the normal. Find the angle of reflection and the angle between the incident and reflected rays.",
+          steps: ["∠i = 35°, so by the law of reflection ∠r = 35°", "Angle between the rays = ∠i + ∠r = 35° + 35°"],
+          answer: "∠r = 35°, and the angle between the rays is 70°"
+        },
+        {
+          q: "A student stands 2 m in front of a plane mirror. How far is she from her image?",
+          steps: ["Image is 2 m behind the mirror", "Distance = 2 + 2"],
+          answer: "4 m"
         }
-      ],
-      terms: [
-        { term: "Reflection", meaning: "The **bouncing back** of light from a surface." },
-        { term: "Normal", meaning: "An **imaginary line perpendicular** to the surface at the point where light strikes it." },
-        { term: "Virtual image", meaning: "An image that **cannot be obtained on a screen**, such as the image in a plane mirror." },
-        { term: "Lateral inversion", meaning: "A **left-right reversal** of an image in a mirror." },
-        { term: "Refraction", meaning: "The **bending of light** as it passes from one medium into another." },
-        { term: "Dispersion", meaning: "The **splitting of white light** into its component colours." }
       ],
       qa: [
-        {
-          q: "Why does a plane mirror show an image that is laterally inverted?",
-          a: "Light from the right side of the object reflects to our eyes as if it came from the left side of the image, so left and right appear swapped."
-        },
-        {
-          q: "Why are convex mirrors used in vehicles?",
-          a: "They give a **wider field of view**, and the image is always upright and smaller, so the driver can see more of the traffic behind."
-        },
-        {
-          q: "What causes a rainbow?",
-          a: "Sunlight is **refracted, reflected and dispersed** inside water droplets in the air. Each colour bends by a slightly different amount, so white light separates into colours."
-        }
+        { q: "Why is a convex mirror used as a rear-view mirror?", a: "It forms an upright image and gives a wide field of view, so the driver sees a larger area behind the vehicle." },
+        { q: "State the laws of reflection.", a: "The angle of incidence equals the angle of reflection. The incident ray, the reflected ray and the normal at the point of incidence all lie in one plane." },
+        { q: "What is the difference between a convex lens and a concave lens?", a: "A convex lens is thick at the centre and converges light. A concave lens is thin at the centre and spreads the light apart." }
       ],
       quiz: [
+        { q: "The angle of incidence is measured between the incident ray and the:", options: ["Mirror surface", "Normal", "Reflected ray", "Focus"], answer: 1, explain: "Angles in reflection are measured from the normal." },
+        { q: "The image formed by a plane mirror is:", options: ["Real and inverted", "Virtual and upright", "Real and magnified", "Virtual and smaller"], answer: 1, explain: "A plane mirror gives a virtual, upright image of the same size." },
+        { q: "A light ray hits a plane mirror at an angle of incidence of 40°. The angle of reflection is:", options: ["50°", "40°", "80°", "20°"], answer: 1, explain: "∠r = ∠i. 50° would be the angle with the mirror surface." },
+        { q: "Which lens converges light?", options: ["Concave", "Convex", "Both", "Plane"], answer: 1, explain: "A convex lens bends rays inward to meet at the focus." },
+        { q: "A dentist uses a ___ mirror to see a magnified image of a tooth.", options: ["Convex", "Plane", "Concave", "Rough"], answer: 2, explain: "A concave mirror gives a magnified, upright image of a close object." },
+        { q: "A person stands 3 m from a plane mirror and walks 1 m towards it. The distance between her and her image is now:", options: ["2 m", "4 m", "3 m", "6 m"], answer: 1, explain: "She is 2 m from the mirror, so the image is 2 m behind it: 2 + 2 = 4 m." }
+      ]
+    },
+    // ───────────────────────────── 11 ─────────────────────────────
+    {
+      id: "keeping-time-with-the-skies",
+      title: "Keeping Time with the Skies",
+      section: "Earth and space",
+      summary: "Early people measured time using the motion of the Sun, Moon and stars. This chapter looks at day, month and year, the phases of the Moon, calendars, and seasons caused by Earth's tilt.",
+      notes: [
         {
-          q: "Light travels in:",
-          options: ["Curved paths", "Straight lines", "Zigzag paths", "Circles"],
-          answer: 1,
-          explain: "Light travels in **straight lines**."
+          heading: "Day, month and year",
+          points: [
+            "A **day** is based on Earth's **rotation** on its axis, about 24 hours.",
+            "A **month** is based on the Moon's cycle of phases, about 29.5 days.",
+            "A **year** is the time Earth takes to **revolve** once around the Sun, about 365¼ days.",
+            "A **leap year** has 366 days to make up for the extra quarter day each year."
+          ]
         },
         {
-          q: "The image formed by a plane mirror is:",
-          options: ["Real and inverted", "Real and magnified", "Virtual and diminished", "Virtual and upright"],
-          answer: 3,
-          explain: "A plane mirror forms a **virtual, upright** image of the same size as the object."
+          heading: "Phases of the Moon",
+          points: [
+            "The Moon shines by **reflecting sunlight**. We see different parts of its lit half as it moves around the Earth. These are its **phases**.",
+            "The cycle is: new moon → crescent → first quarter → gibbous → full moon → waning phases → new moon.",
+            "The Moon takes about 27.3 days to orbit the Earth, and about 29.5 days to go from one new moon to the next.",
+            "We always see the same face of the Moon, because it rotates once for each revolution."
+          ]
         },
         {
-          q: "Which mirror is used in torches and headlights to focus light?",
-          options: ["Convex mirror", "Concave mirror", "Plane mirror", "Prism"],
-          answer: 1,
-          explain: "A **concave mirror** focuses the light it reflects, so it is used in torches and headlights."
+          heading: "Seasons",
+          points: [
+            "Earth's axis is **tilted** about 23.5° from the vertical. As Earth revolves, different parts get more direct sunlight at different times, causing **seasons**.",
+            "Seasons are not caused by Earth being nearer to or farther from the Sun.",
+            "Days are longer in summer and shorter in winter.",
+            "Equinoxes (about 21 March and 23 September) have day and night nearly equal."
+          ]
         },
         {
-          q: "The bending of light when it passes from air into water is called:",
-          options: ["Refraction", "Reflection", "Dispersion", "Diffraction"],
-          answer: 0,
-          explain: "Light bends, or is **refracted**, when it passes from one medium into another."
-        },
-        {
-          q: "The angle of incidence is 40°. The angle of reflection is:",
-          options: ["20°", "50°", "40°", "80°"],
-          answer: 2,
-          explain: "According to the laws of reflection, the angle of reflection equals the angle of incidence."
-        },
-        {
-          q: "Which colour of light bends the most when passing through a prism?",
-          options: ["Red", "Green", "Yellow", "Violet"],
-          answer: 3,
-          explain: "**Violet** light bends the most, and red light bends the least."
+          heading: "Calendars and timekeeping",
+          points: [
+            "Early timekeeping used the shadow of a stick (**sundial**), water clocks and sand clocks.",
+            "India has solar, lunar and lunisolar calendars. Many festivals follow the lunar calendar, so their dates on the English calendar change each year.",
+            "The Pole Star appears almost fixed in the northern sky and has been used for finding direction."
+          ]
         }
+      ],
+      formulas: [
+        "Rotation of Earth ≈ 24 hours (1 day)",
+        "Revolution of Earth ≈ 365¼ days (1 year)",
+        "Lunar month ≈ 29.5 days; Moon's orbit around Earth ≈ 27.3 days",
+        "Earth's axis tilt ≈ 23.5°"
+      ],
+      terms: [
+        { term: "Rotation", meaning: "Spinning of a body on its own axis." },
+        { term: "Revolution", meaning: "Movement of a body around another, such as Earth around the Sun." },
+        { term: "Leap year", meaning: "A year of 366 days that adds one extra day (29 February)." },
+        { term: "Phases of the Moon", meaning: "The changing shapes of the lit part of the Moon seen from Earth." },
+        { term: "Sundial", meaning: "A device that tells time from the position of a shadow cast by the Sun." }
+      ],
+      qa: [
+        { q: "Why do we have seasons?", a: "Earth's axis is tilted and Earth revolves around the Sun. Because of the tilt, different regions receive more direct sunlight and longer days at different times of the year." },
+        { q: "Why do we always see the same face of the Moon?", a: "The Moon takes the same time to rotate once on its axis as to go once around the Earth, so the same side always faces us." },
+        { q: "Why is there a leap year?", a: "Earth takes about 365¼ days to go round the Sun. The extra quarter days add up to one day in four years, which is added as 29 February." }
+      ],
+      quiz: [
+        { q: "A year is the time taken by Earth to:", options: ["Rotate once", "Revolve once around the Sun", "Orbit the Moon", "Tilt once"], answer: 1, explain: "One revolution around the Sun is a year; one rotation is a day." },
+        { q: "The Moon's phases are caused by:", options: ["Earth's shadow always", "Different amounts of its lit half seen from Earth", "Clouds", "The Moon producing light"], answer: 1, explain: "The Moon reflects sunlight and we see varying portions of its lit half." },
+        { q: "Seasons occur mainly because:", options: ["Earth's distance from the Sun changes greatly", "Earth's axis is tilted", "The Sun moves around Earth", "The Moon moves closer"], answer: 1, explain: "The tilt changes how directly sunlight strikes each hemisphere." },
+        { q: "The approximate length of the lunar month is:", options: ["7 days", "14 days", "29.5 days", "365 days"], answer: 2, explain: "A new moon to the next new moon takes about 29.5 days." },
+        { q: "A leap year has:", options: ["365 days", "364 days", "366 days", "360 days"], answer: 2, explain: "An extra day, 29 February, is added." },
+        { q: "The Moon shines because it:", options: ["Reflects sunlight", "Burns like a star", "Makes its own light", "Reflects Earth's light"], answer: 0, explain: "The Moon is not a source of light; it reflects light from the Sun." }
+      ]
+    },
+    // ───────────────────────────── 12 ─────────────────────────────
+    {
+      id: "how-nature-works-in-harmony",
+      title: "How Nature Works in Harmony",
+      section: "Living world",
+      summary: "Living things and their surroundings depend on each other. This chapter covers ecosystems, food chains and webs, flow of energy, nutrient cycles, and why balance in nature matters.",
+      notes: [
+        {
+          heading: "Ecosystem",
+          points: [
+            "An **ecosystem** is a community of living things (**biotic**) interacting with non-living things (**abiotic**) such as air, water, soil and sunlight.",
+            "Examples: a pond, forest, grassland, desert and aquarium.",
+            "Organisms are adapted to their habitat; a camel is adapted to the desert and a fish to water."
+          ]
+        },
+        {
+          heading: "Food chains and webs",
+          points: [
+            "**Producers** (green plants) make their own food by photosynthesis. **Consumers** eat other organisms: herbivores, carnivores and omnivores. **Decomposers** (bacteria and fungi) break down dead matter.",
+            "A **food chain** shows who eats whom: grass → grasshopper → frog → snake → eagle.",
+            "Many food chains linked together form a **food web**.",
+            "Each step in the food chain is called a **trophic level**."
+          ]
+        },
+        {
+          heading: "Energy flow and cycles",
+          points: [
+            "The Sun is the source of energy. Energy flows in **one direction**, from producers to consumers, and much of it is lost as heat at every step.",
+            "Only about 10% of the energy is passed to the next trophic level, so food chains are short.",
+            "Materials such as water, carbon and nitrogen are **recycled** through air, soil and living things.",
+            "Decomposers return nutrients to the soil, keeping the ecosystem going."
+          ]
+        },
+        {
+          heading: "Balance in nature",
+          points: [
+            "If one species is removed or increases greatly, other organisms are affected, so ecosystems must be kept balanced.",
+            "Pollution, cutting of forests and overhunting upset this balance.",
+            "We can help by saving water and energy, planting trees, reducing waste and protecting habitats."
+          ]
+        }
+      ],
+      formulas: [
+        "Food chain: producer → herbivore → carnivore",
+        "Energy passed to the next trophic level ≈ 10%",
+        "Energy flows in one direction; nutrients are recycled"
+      ],
+      terms: [
+        { term: "Ecosystem", meaning: "Living and non-living things in an area interacting with each other." },
+        { term: "Producer", meaning: "An organism, such as a green plant, that makes its own food." },
+        { term: "Decomposer", meaning: "An organism that breaks down dead plants and animals into nutrients." },
+        { term: "Food web", meaning: "Interconnected food chains in an ecosystem." },
+        { term: "Trophic level", meaning: "A feeding level or step in a food chain." }
+      ],
+      qa: [
+        { q: "Why are decomposers important in an ecosystem?", a: "They break down dead plants and animals and waste, returning nutrients to the soil for producers to use. This keeps nutrients cycling." },
+        { q: "Why are food chains usually short?", a: "Only about 10% of energy passes to the next trophic level and the rest is lost as heat. After a few steps there is too little energy to support more levels." },
+        { q: "What would happen if all the frogs in a pond were removed?", a: "Insects, which frogs feed on, would increase, and the animals that eat frogs would lose food. The balance of the ecosystem would be disturbed." }
+      ],
+      quiz: [
+        { q: "In a food chain, the producers are:", options: ["Green plants", "Herbivores", "Carnivores", "Bacteria only"], answer: 0, explain: "Green plants make food by photosynthesis." },
+        { q: "Which organisms break down dead matter?", options: ["Producers", "Decomposers", "Herbivores", "Carnivores"], answer: 1, explain: "Bacteria and fungi decompose dead organisms." },
+        { q: "The ultimate source of energy for almost all ecosystems is the:", options: ["Soil", "Wind", "Sun", "Water"], answer: 2, explain: "Sunlight is trapped by plants through photosynthesis." },
+        { q: "About how much energy passes to the next trophic level?", options: ["90%", "50%", "10%", "1%"], answer: 2, explain: "Roughly 10% passes on and the rest is lost, mostly as heat." },
+        { q: "Which food chain is written correctly?", options: ["Frog → grass → snake", "Grass → grasshopper → frog", "Snake → frog → grass", "Grasshopper → grass → frog"], answer: 1, explain: "The arrow points from the food to the one that eats it." },
+        { q: "Which of these is an abiotic component of an ecosystem?", options: ["Fungus", "Soil", "Insect", "Grass"], answer: 1, explain: "Soil is non-living; the others are living." }
+      ]
+    },
+    // ───────────────────────────── 13 ─────────────────────────────
+    {
+      id: "earth-a-unique-life-sustaining-planet",
+      title: "Our Home: Earth, a Unique Life Sustaining Planet",
+      section: "Earth and space",
+      summary: "Earth is the only known planet that supports life. This chapter looks at what makes Earth special: its distance from the Sun, atmosphere, water, the layers of Earth, and the need to protect our planet.",
+      notes: [
+        {
+          heading: "Why Earth supports life",
+          points: [
+            "Earth is at a suitable **distance from the Sun**, so it is neither too hot nor too cold, and water can exist as a liquid.",
+            "It has an **atmosphere** with oxygen for breathing, and carbon dioxide for plants.",
+            "It has plenty of **liquid water**, about 71% of the surface, which is essential for life.",
+            "The atmosphere also shields living things from harmful rays of the Sun."
+          ]
+        },
+        {
+          heading: "Earth's atmosphere",
+          points: [
+            "Air is mainly **nitrogen (about 78%)** and **oxygen (about 21%)**, with small amounts of argon, carbon dioxide and water vapour.",
+            "The **ozone layer** absorbs much of the Sun's harmful ultraviolet radiation.",
+            "The **greenhouse effect** keeps Earth warm. Too much carbon dioxide and other greenhouse gases causes **global warming**."
+          ]
+        },
+        {
+          heading: "Layers and spheres of Earth",
+          points: [
+            "The solid Earth has three layers: the **crust**, the **mantle** and the **core**. The crust is the thin outer layer on which we live.",
+            "The **lithosphere** is land, the **hydrosphere** is water, the **atmosphere** is air and the **biosphere** is the zone of life.",
+            "The four spheres interact. Rain falls from the atmosphere, fills rivers and soil and supports life."
+          ]
+        },
+        {
+          heading: "Protecting Earth",
+          points: [
+            "Human activities such as burning fuels, deforestation and waste dumping cause pollution and climate change.",
+            "We can protect Earth by saving water and energy, planting trees, using renewable energy and following **reduce, reuse, recycle**.",
+            "Only a very small share of Earth's water is fresh water that is easily available to us, so it must be used wisely."
+          ]
+        }
+      ],
+      formulas: [
+        "Air: nitrogen ≈ 78%, oxygen ≈ 21%",
+        "Water covers ≈ 71% of Earth's surface",
+        "Layers: crust → mantle → core",
+        "Spheres: lithosphere, hydrosphere, atmosphere, biosphere"
+      ],
+      terms: [
+        { term: "Atmosphere", meaning: "The envelope of gases around the Earth." },
+        { term: "Biosphere", meaning: "The part of Earth where life exists." },
+        { term: "Ozone layer", meaning: "A layer in the atmosphere that absorbs harmful ultraviolet rays." },
+        { term: "Greenhouse effect", meaning: "Trapping of heat by certain gases in the atmosphere, which keeps Earth warm." },
+        { term: "Crust", meaning: "The thin, solid outermost layer of the Earth." }
+      ],
+      qa: [
+        { q: "Why is Earth suitable for life?", a: "It is at the right distance from the Sun, has liquid water, an atmosphere with oxygen and an ozone layer that shields from harmful rays." },
+        { q: "What is the role of the ozone layer?", a: "It absorbs most of the harmful ultraviolet rays of the Sun, protecting living things from damage such as skin disease." },
+        { q: "How can we reduce global warming?", a: "Burn less fossil fuel, use renewable energy like solar power, plant trees and avoid wasting energy." }
+      ],
+      quiz: [
+        { q: "Which gas is present in the highest percentage in air?", options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Argon"], answer: 1, explain: "Nitrogen is about 78% of air; oxygen is about 21%." },
+        { q: "The layer of Earth on which we live is the:", options: ["Mantle", "Core", "Crust", "Ozone"], answer: 2, explain: "The crust is the thin outermost solid layer." },
+        { q: "The ozone layer protects us from:", options: ["Infrared heat", "Ultraviolet rays", "Sound", "Rain"], answer: 1, explain: "Ozone absorbs harmful ultraviolet radiation." },
+        { q: "The part of Earth where life exists is the:", options: ["Lithosphere only", "Biosphere", "Core", "Stratosphere only"], answer: 1, explain: "The biosphere includes land, water and air where living things are found." },
+        { q: "Global warming is mainly increased by too much:", options: ["Nitrogen", "Oxygen", "Carbon dioxide", "Helium"], answer: 2, explain: "Carbon dioxide traps heat and raises Earth's average temperature." },
+        { q: "About how much of Earth's surface is covered by water?", options: ["About 29%", "About 50%", "About 71%", "About 95%"], answer: 2, explain: "Water covers about 71% of the surface and land about 29%." }
       ]
     }
   ]

@@ -1,1757 +1,872 @@
+// Class 8 Social Science, Exploring Society: India and Beyond (Parts 1 and 2), the new NCERT book.
+// Revision aid only. Check against the textbook before relying on it.
 StudyData.add(8, "sst", {
-  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "older-book", books: ["Our Pasts III","Resource and Development","Social and Political Life III"], note: "NCERT has since published a new book for this class, so chapter names and order may differ.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Exploring Society: India and Beyond Part 1", "Exploring Society: India and Beyond Part 2"], reviewed: false},
   chapters: [
-    // ==================================================================
-    // HISTORY – Our Pasts III
-    // ==================================================================
     {
-      id: "how-when-where",
-      title: "How, When and Where",
-      section: "History",
-      summary: "How historians divide the past into periods, why some old labels are misleading, and the different sources, from coins and inscriptions to official records and oral memories, that help us reconstruct the past.",
+      id: "natural-resources-and-their-use",
+      title: "Natural Resources and Their Use",
+      section: "India and the World: Land and the People",
+      summary: "What natural resources are, how they are classified, why they are unevenly spread, and how to use them wisely so that future generations are not left short.",
       notes: [
         {
-          heading: "Dividing the Past into Periods",
+          heading: "Kinds of Resources",
           points: [
-            "Historians divide the past into periods such as **ancient**, **medieval** and **modern** to study how things changed over time.",
-            "In 1817, James Mill divided Indian history into **Hindu**, **Muslim** and **British** periods on the basis of religion.",
-            "This division is misleading, because it judges a whole era by the religion of its rulers and ignores changes in economy, society and culture."
+            "A **natural resource** is something found in nature that people use, such as soil, water, air, forests, minerals and sunlight.",
+            "**Renewable** resources (sunlight, wind, water, forests) can be replaced naturally if used with care. **Non-renewable** resources (coal, petroleum, natural gas, minerals) take millions of years to form and can run out.",
+            "Resources can also be **biotic** (from living things, such as forests and fish) or **abiotic** (non-living, such as minerals and water).",
+            "Something becomes a resource only when people have the knowledge and technology to use it."
           ]
         },
         {
-          heading: "Sources of History",
+          heading: "Land, Soil, Water and Minerals",
           points: [
-            "**Archaeological sources** such as tools, pottery, coins, buildings and inscriptions tell us how people lived.",
-            "**Literary sources** such as chronicles, biographies, poems and religious texts describe events and the ideas of their time.",
-            "**Archival sources** are official records, such as the records of the East India Company, kept in archives.",
-            "**Oral sources** such as folk songs and memories of elders help us learn about people who left few written records."
+            "**Land** is used for farming, forests, pasture, settlements and industry. Soil forms very slowly from weathered rock and dead plants and animals.",
+            "**Water** is limited in usable form, as most of the Earth's water is salty. Its supply and demand vary a great deal from place to place and season to season.",
+            "**Minerals** such as iron ore, bauxite and coal are unevenly distributed, so some regions are far richer in them than others.",
+            "Fossil fuels (coal, petroleum, natural gas) are burnt for energy, which adds carbon dioxide to the air."
           ]
         },
         {
-          heading: "Reading Sources with Care",
+          heading: "Conserving Resources",
           points: [
-            "Every source reflects the view of the person who made it, so a historian must ask who wrote it, when and why.",
-            "Different sources give different parts of the picture, and a good historian uses several of them together."
+            "**Sustainable development** means meeting today's needs without harming the ability of future generations to meet theirs.",
+            "Follow the **3 Rs**: **Reduce** use, **Reuse** things, **Recycle** waste.",
+            "Practices such as rainwater harvesting, drip irrigation, planting trees, using public transport and shifting to solar and wind power protect resources.",
+            "Over-use, pollution and waste are the main reasons resources get depleted."
           ]
         }
       ],
       formulas: [
-        "1817 – James Mill's History of British India divides Indian history into Hindu, Muslim and British periods",
-        "Ancient, Medieval, Modern – the most common division of Indian history today"
+        "Renewable: sunlight, wind, water, forests",
+        "Non-renewable: coal, petroleum, natural gas, minerals",
+        "3 Rs: Reduce, Reuse, Recycle",
+        "Sustainable development = meet present needs without harming future generations"
       ],
       terms: [
-        { term: "Periodisation", meaning: "Dividing the past into periods, such as ancient, medieval and modern, to study change over time." },
-        { term: "Archaeology", meaning: "The study of the past through **material remains** such as tools, pottery, coins and buildings." },
-        { term: "Archives", meaning: "Places where **official records** and documents are stored and preserved." },
-        { term: "Oral history", meaning: "Information about the past collected by talking to people and recording their memories." },
-        { term: "Chronicle", meaning: "A historical record of events written in the order in which they happened." }
+        { term: "Natural resource", meaning: "Any useful material or energy source that nature provides." },
+        { term: "Renewable resource", meaning: "A resource that nature can replace in a reasonable time, such as wind." },
+        { term: "Non-renewable resource", meaning: "A resource that takes millions of years to form and can be exhausted, such as coal." },
+        { term: "Sustainable development", meaning: "Growth that meets present needs without harming the needs of future generations." },
+        { term: "Conservation", meaning: "Careful use and protection of resources so that they last." }
       ],
       qa: [
-        {
-          q: "Why is dividing Indian history into Hindu, Muslim and British periods considered misleading?",
-          a: "This division is based on the religion of the rulers and ignores changes in politics, economy and society. Many people of different faiths lived under the same rule, so such labels do not describe their lives."
-        },
-        {
-          q: "Name two kinds of sources historians use and give an example of each.",
-          a: "Archaeological sources, such as coins, pottery and inscriptions, and archival sources, such as the official records of the East India Company. Oral sources, such as folk songs and interviews, are another kind."
-        }
+        { q: "Why must non-renewable resources be used carefully?", a: "They take millions of years to form, so once used up they cannot be replaced in human lifetimes. Careful use, recycling and alternatives like solar energy make them last longer." },
+        { q: "What is meant by sustainable development?", a: "It means using resources and developing in a way that meets the needs of the present without reducing the chances of future generations to meet their own needs." }
       ],
       quiz: [
-        {
-          q: "Who wrote History of British India (1817), which divided Indian history into Hindu, Muslim and British periods?",
-          options: ["Jyotiba Phule", "James Mill", "Charles Wood", "Lord Macaulay"],
-          answer: 1,
-          explain: "**James Mill** based his division on religion, an approach historians now consider misleading."
-        },
-        {
-          q: "Which of these is an archaeological source?",
-          options: ["Official records of the East India Company", "Coins and pottery found in excavations", "Interviews with village elders", "Folk songs passed down orally"],
-          answer: 1,
-          explain: "**Archaeological sources** are material remains, such as coins and pottery, found through excavation."
-        },
-        {
-          q: "Where are official records of a government usually preserved?",
-          options: ["Only in museums", "In archives", "In chronicles", "In oral histories"],
-          answer: 1,
-          explain: "**Archives** are places where official documents and records are stored for future study."
-        },
-        {
-          q: "Which of these is an oral source?",
-          options: ["A folk song remembered by villagers", "A coin of the Gupta period", "A stone inscription at a temple", "A letter kept in an archive"],
-          answer: 0,
-          explain: "**Oral sources** are passed on by word of mouth, such as songs, stories and memories."
-        },
-        {
-          q: "Why do historians examine who wrote a source?",
-          options: ["To find out the exact price of the source", "To decide whether the source is old", "To understand the author's point of view and purpose", "To confirm that the source was printed"],
-          answer: 2,
-          explain: "Every source reflects its author's views, so a historian must **check who wrote it, when and why**."
-        }
+        { q: "Which of these is a renewable resource?", options: ["Coal", "Petroleum", "Wind", "Iron ore"], answer: 2, explain: "**Wind** is naturally replenished. Coal, petroleum and iron ore are non-renewable." },
+        { q: "Sustainable development aims to:", options: ["Stop all use of resources", "Meet present needs without harming future generations", "Use resources as fast as possible", "Depend only on imports"], answer: 1, explain: "It balances present needs with the needs of **future generations**." },
+        { q: "Which choice below is part of the 3 Rs?", options: ["Remove", "Reduce", "Replace", "Refuse to share"], answer: 1, explain: "The 3 Rs are **Reduce, Reuse and Recycle**." },
+        { q: "Biotic resources are those that come from:", options: ["Minerals in rocks", "Living things", "The Sun only", "Machines"], answer: 1, explain: "**Biotic** resources come from living things, such as forests and fish." },
+        { q: "Why are minerals described as non-renewable?", options: ["They are found only in India", "They take millions of years to form", "They are very costly", "They cannot be mined"], answer: 1, explain: "Minerals form over **millions of years**, so they cannot be replaced at the rate we use them." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "trade-to-territory",
-      title: "From Trade to Territory",
-      section: "History",
-      summary: "How the East India Company, which came to India as a trading company, gradually became a political power through alliances, battles and annexation during the decline of Mughal authority.",
+      id: "reshaping-indias-political-map",
+      title: "Reshaping India's Political Map",
+      section: "Tapestry of the Past",
+      summary: "How new powers rose after the 12th century, including the Delhi Sultanate, the Vijayanagara Empire and the Mughals, and how they changed the political map of India.",
       notes: [
         {
-          heading: "From Trade to Political Power",
+          heading: "The Delhi Sultanate",
           points: [
-            "The **East India Company** was given a royal charter in **1600** to trade with the East. It mainly bought textiles and spices.",
-            "In **1717**, a Mughal farman (order) gave the Company duty-free trade in Bengal in return for a fixed payment.",
-            "As Mughal power weakened after Aurangzeb, many provincial rulers became independent, and the Company took advantage of their rivalries."
+            "The Delhi Sultanate was founded in **1206** by **Qutb-ud-din Aibak** and lasted until 1526.",
+            "Five dynasties ruled in turn: Mamluk (Slave), Khalji, Tughluq, Sayyid and Lodi.",
+            "**Alauddin Khalji** expanded the Sultanate and kept a large standing army. **Muhammad bin Tughluq** shifted his capital from Delhi to Daulatabad and tried token currency.",
+            "Sultans collected land revenue and appointed officials to run the provinces."
           ]
         },
         {
-          heading: "Battles that Brought Power",
+          heading: "Vijayanagara and Regional Powers",
           points: [
-            "At the **Battle of Plassey (1757)**, Robert Clive defeated **Siraj-ud-daulah**, Nawab of Bengal, with help from Mir Jafar, the Nawab's own commander.",
-            "At the **Battle of Buxar (1764)**, the Company defeated a combined army of the Nawabs of Bengal and Awadh and the Mughal emperor **Shah Alam II**.",
-            "In **1765**, the Company received the **diwani** (right to collect revenue) of Bengal, Bihar and Orissa from Shah Alam II."
+            "The Vijayanagara Empire was founded in **1336** in the south by **Harihara and Bukka**, with its capital at **Hampi** on the Tungabhadra river.",
+            "**Krishnadevaraya** (early 16th century) was its best-known ruler. The empire was famous for its temples, trade and water management.",
+            "The Bahmani kingdom (founded 1347) was a neighbouring power in the Deccan. In **1565** the Vijayanagara army was defeated at the Battle of **Talikota** by an alliance of Deccan sultanates."
           ]
         },
         {
-          heading: "Alliances and Annexation",
+          heading: "The Mughals",
           points: [
-            "Under the **Subsidiary Alliance**, introduced by Lord Wellesley, Indian rulers had to keep British troops and accept a British Resident at their court.",
-            "Under the **Doctrine of Lapse**, applied by Lord Dalhousie, a ruler who died without a natural heir lost his state. Satara, Jhansi and Nagpur were annexed this way.",
-            "**Tipu Sultan** of Mysore, who resisted the Company, died fighting the British at Seringapatam in **1799**."
+            "**Babur** defeated Ibrahim Lodi at the First Battle of **Panipat** in **1526** and began Mughal rule.",
+            "**Sher Shah Suri** briefly ruled North India. He improved the road later called the **Grand Trunk Road** and introduced a silver coin called the rupee.",
+            "**Akbar** (ruled from 1556) expanded the empire and organised administration through the **mansabdari** system, where officials held ranks (mansabs).",
+            "Land revenue was assessed on the basis of measured land and crops."
           ]
         }
       ],
       formulas: [
-        "1600 – East India Company receives a royal charter",
-        "1717 – Mughal farman gives the Company duty-free trade in Bengal",
-        "1757 – Battle of Plassey",
-        "1764 – Battle of Buxar",
-        "1765 – Company receives the diwani of Bengal",
-        "1799 – Tipu Sultan dies at Seringapatam"
+        "1206: Delhi Sultanate begins (Qutb-ud-din Aibak)",
+        "1336: Vijayanagara Empire founded (Harihara and Bukka)",
+        "1526: First Battle of Panipat, Babur starts Mughal rule",
+        "1556: Akbar becomes emperor",
+        "1565: Battle of Talikota"
       ],
       terms: [
-        { term: "Charter", meaning: "A formal document from a ruler granting rights, such as the right to trade, to a company." },
-        { term: "Diwani", meaning: "The right to **collect revenue** and manage civil affairs in a province." },
-        { term: "Subsidiary Alliance", meaning: "A system under which Indian rulers accepted British troops and a British Resident, and gave up independent foreign relations." },
-        { term: "Doctrine of Lapse", meaning: "A policy under which a state was annexed if its ruler died without a natural heir." },
-        { term: "Annexation", meaning: "Taking over a territory and adding it to another state, usually by force or policy." }
+        { term: "Sultanate", meaning: "A state ruled by a sultan." },
+        { term: "Mansabdar", meaning: "A Mughal official who held a rank (mansab) that fixed his status and the soldiers he kept." },
+        { term: "Land revenue", meaning: "The tax collected by the state from the produce of the land." },
+        { term: "Grand Trunk Road", meaning: "A long highway of North India that Sher Shah improved." }
       ],
       qa: [
-        {
-          q: "Why was the Battle of Plassey important for the Company?",
-          a: "Clive's victory over Siraj-ud-daulah, helped by Mir Jafar, gave the Company control over Bengal's wealth and a firm base for political power in India."
-        },
-        {
-          q: "How did the Subsidiary Alliance weaken Indian rulers?",
-          a: "Rulers had to accept British troops in their territory, pay for them and keep a British Resident at court. They also gave up their independent relations with other states, which slowly reduced their power."
-        },
-        {
-          q: "How did the Doctrine of Lapse lead to annexation?",
-          a: "If a ruler died without a natural heir, the Company refused to recognise an adopted son and took over the state. Satara, Jhansi and Nagpur were annexed in this way."
-        }
+        { q: "Name the five dynasties of the Delhi Sultanate.", a: "Mamluk (Slave), Khalji, Tughluq, Sayyid and Lodi." },
+        { q: "What was the significance of the First Battle of Panipat (1526)?", a: "Babur defeated Ibrahim Lodi, ended the Delhi Sultanate and started the Mughal Empire in India." }
       ],
       quiz: [
-        {
-          q: "The Battle of Plassey (1757) was fought between the East India Company and:",
-          options: ["Siraj-ud-daulah, Nawab of Bengal", "Tipu Sultan of Mysore", "Shah Alam II", "Ranjit Singh of Punjab"],
-          answer: 0,
-          explain: "Clive defeated **Siraj-ud-daulah** at Plassey with the help of Mir Jafar, which gave the Company a strong base in Bengal."
-        },
-        {
-          q: "In which year did the Company receive the diwani of Bengal?",
-          options: ["1757", "1799", "1848", "1765"],
-          answer: 3,
-          explain: "In **1765**, Shah Alam II granted the Company the right to collect revenue in Bengal, Bihar and Orissa."
-        },
-        {
-          q: "Lord Dalhousie used which policy to annex Satara, Jhansi and Nagpur?",
-          options: ["Subsidiary Alliance", "Permanent Settlement", "Ryotwari system", "Doctrine of Lapse"],
-          answer: 3,
-          explain: "Under the **Doctrine of Lapse**, a state was taken over when its ruler died without a natural heir."
-        },
-        {
-          q: "Tipu Sultan died fighting the British at:",
-          options: ["Plassey", "Buxar", "Seringapatam", "Jhansi"],
-          answer: 2,
-          explain: "**Tipu Sultan** of Mysore died at Seringapatam in 1799 while defending his kingdom."
-        },
-        {
-          q: "The Battle of Buxar (1764) was fought against a combined army of the Nawabs of Bengal and Awadh and:",
-          options: ["The Peshwa of Pune", "The Sultan of Mysore", "The Maratha Chhatrapati", "The Mughal emperor Shah Alam II"],
-          answer: 3,
-          explain: "The Company defeated the Nawabs and **Shah Alam II** together at Buxar, which made its power in north India much stronger."
-        },
-        {
-          q: "The Mughal farman of 1717 gave the Company:",
-          options: ["Control over the Mughal army", "The right to coin money in Delhi", "Duty-free trade in Bengal", "Permission to build a fort at Calcutta"],
-          answer: 2,
-          explain: "The **farman of 1717** allowed the Company to trade duty-free in Bengal in return for a fixed payment."
-        }
+        { q: "Who founded the Delhi Sultanate in 1206?", options: ["Alauddin Khalji", "Babur", "Qutb-ud-din Aibak", "Sher Shah Suri"], answer: 2, explain: "**Qutb-ud-din Aibak** founded the Sultanate in 1206." },
+        { q: "The capital of the Vijayanagara Empire was:", options: ["Daulatabad", "Hampi", "Agra", "Bijapur"], answer: 1, explain: "The empire's capital was **Hampi**, on the Tungabhadra." },
+        { q: "Babur defeated Ibrahim Lodi at:", options: ["Plassey", "Buxar", "Talikota", "Panipat"], answer: 3, explain: "The **First Battle of Panipat** (1526)." },
+        { q: "Which ruler shifted his capital from Delhi to Daulatabad?", options: ["Muhammad bin Tughluq", "Akbar", "Krishnadevaraya", "Sher Shah Suri"], answer: 0, explain: "**Muhammad bin Tughluq** moved the capital to Daulatabad." },
+        { q: "The mansabdari system was used by:", options: ["The Mauryas", "The Mughals", "The Marathas", "The Guptas"], answer: 1, explain: "Under **Akbar** the Mughals ranked officials as mansabdars." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "ruling-the-countryside",
-      title: "Ruling the Countryside",
-      section: "History",
-      summary: "How the British changed the systems of land revenue in the countryside, through the Permanent Settlement, the Ryotwari and the Mahalwari systems, and how these changes hurt zamindars and peasants and led to revolts such as the Indigo Revolt.",
+      id: "the-rise-of-the-marathas",
+      title: "The Rise of the Marathas",
+      section: "Tapestry of the Past",
+      summary: "How Shivaji built an independent Maratha state in the 17th century, how it was governed, and how it grew under the Peshwas.",
       notes: [
         {
-          heading: "Land Revenue Systems",
+          heading: "Shivaji and the Maratha State",
           points: [
-            "Land revenue was the Company's main source of income, so it set up new systems to collect it from the countryside.",
-            "Under the **Permanent Settlement** in Bengal (**1793**, Lord Cornwallis), zamindars collected revenue from peasants and paid a fixed sum to the Company every year.",
-            "Under the **Ryotwari system**, used in parts of Madras and Bombay, revenue was collected directly from each cultivator, or ryot, and the amount was often very high.",
-            "Under the **Mahalwari system**, used in the North-Western Provinces and Punjab, revenue was fixed for a whole village or group of villages (mahal)."
+            "**Shivaji** was born in **1630** and built a kingdom in the Western Ghats region of present-day Maharashtra by capturing hill forts.",
+            "He was crowned **Chhatrapati** at **Raigad** in **1674**. He died in 1680.",
+            "Forts were central to Maratha strategy, and fast-moving **guerrilla warfare** helped a smaller army to defeat larger forces."
           ]
         },
         {
-          heading: "Effects on Zamindars and Peasants",
+          heading: "Administration",
           points: [
-            "Under the **sunset law** in Bengal, an estate was auctioned if its revenue was not paid by sunset on the due date, so many zamindars lost their land.",
-            "Peasants often borrowed money from moneylenders to pay high revenue, and many fell into debt and lost their land.",
-            "Many zamindars were **absentee landlords** who lived in cities and left the management of their land to agents."
+            "Shivaji's government included a council of ministers called the **Ashtapradhan**.",
+            "The Marathas collected **chauth** and **sardeshmukhi**, taxes demanded from neighbouring territories.",
+            "A navy was built to protect the western coast. **Kanhoji Angre** later became a famous Maratha admiral."
           ]
         },
         {
-          heading: "Revolts in the Countryside",
+          heading: "After Shivaji",
           points: [
-            "Indigo planters in Bengal forced peasants to grow indigo instead of food crops, often under unfair contracts.",
-            "In **1859–60**, peasants of Bengal refused to grow indigo, and the Indigo Revolt forced the government to appoint an Indigo Commission.",
-            "In **1917**, Mahatma Gandhi supported indigo peasants in Champaran, Bihar."
+            "**Sambhaji**, Shivaji's son, ruled after him and was executed by Aurangzeb in 1689. **Tarabai** led the Maratha resistance after Rajaram.",
+            "Power later passed to the **Peshwas**, the chief ministers, beginning with Balaji Vishwanath. **Baji Rao I** greatly expanded Maratha power towards the north.",
+            "The Marathas were defeated by Ahmad Shah Abdali in the Third Battle of **Panipat** in **1761**.",
+            "**Ahilyabai Holkar** of Indore was a renowned ruler who built temples, ghats and roads."
           ]
         }
       ],
       formulas: [
-        "1793 – Permanent Settlement in Bengal",
-        "1859–60 – Indigo Revolt in Bengal",
-        "1917 – Gandhi supports indigo peasants in Champaran"
+        "1630: Shivaji born",
+        "1674: Shivaji crowned Chhatrapati at Raigad",
+        "1680: Death of Shivaji",
+        "1761: Third Battle of Panipat",
+        "Ashtapradhan = Shivaji's council of eight ministers"
       ],
       terms: [
-        { term: "Permanent Settlement", meaning: "A system in which zamindars paid a **fixed amount** of revenue to the Company every year." },
-        { term: "Zamindar", meaning: "A landholder who collected revenue from peasants and paid it to the government." },
-        { term: "Ryot", meaning: "A peasant or cultivator who farmed the land." },
-        { term: "Sunset law", meaning: "A rule under which an estate was sold if its revenue was not paid by sunset on the due date." },
-        { term: "Absentee landlord", meaning: "A landlord who lives away from his estate and leaves its management to agents." }
+        { term: "Chhatrapati", meaning: "The title taken by Shivaji at his coronation, meaning a sovereign ruler." },
+        { term: "Peshwa", meaning: "The chief minister of the Maratha kings, later the real head of the Maratha state." },
+        { term: "Guerrilla warfare", meaning: "Fighting by surprise attacks and quick retreats." },
+        { term: "Chauth", meaning: "A tax the Marathas collected from neighbouring areas." }
       ],
       qa: [
-        {
-          q: "Why did the Permanent Settlement give the Company a secure income?",
-          a: "The zamindar had to pay a fixed sum every year, whatever the harvest, so the Company knew exactly how much revenue it would receive. Zamindars who failed to pay lost their land."
-        },
-        {
-          q: "How did the Ryotwari system differ from the Permanent Settlement?",
-          a: "In the Ryotwari system the state collected revenue directly from each cultivator, not from a zamindar. The amount was often high and was reassessed from time to time."
-        },
-        {
-          q: "Why did indigo peasants revolt in Bengal?",
-          a: "Planters forced peasants to grow indigo on their best land under unfair contracts and paid very low prices. Peasants lost land for food crops and were left in debt."
-        }
+        { q: "Why were forts important to the Marathas?", a: "Hill forts gave safe bases, protected the territory and helped small forces use guerrilla tactics against larger armies." },
+        { q: "What was the Ashtapradhan?", a: "A council of eight ministers that helped Shivaji govern the kingdom." }
       ],
       quiz: [
-        {
-          q: "Under the Permanent Settlement of 1793, who collected revenue from the peasants?",
-          options: ["The Company's officials directly", "Zamindars", "Moneylenders", "The Mughal emperor"],
-          answer: 1,
-          explain: "Under the Permanent Settlement, **zamindars** collected revenue from peasants and paid a fixed amount to the Company."
-        },
-        {
-          q: "The Ryotwari system collected revenue from:",
-          options: ["The zamindar", "The village as a whole", "The cultivator (ryot)", "The Nawab"],
-          answer: 2,
-          explain: "In the **Ryotwari system**, the state dealt directly with each ryot, or cultivator."
-        },
-        {
-          q: "What was the sunset law in Bengal?",
-          options: ["Land was auctioned if revenue was not paid by sunset on the due date", "Peasants had to work on their fields until sunset", "Zamindars could collect rent only until sunset", "Indigo had to be harvested before sunset"],
-          answer: 0,
-          explain: "Under the **sunset law**, an estate was sold if its revenue was not paid by sunset on the due date, which caused many zamindars to lose land."
-        },
-        {
-          q: "The Indigo Revolt in Bengal took place in:",
-          options: ["1757–58", "1793", "1917", "1859–60"],
-          answer: 3,
-          explain: "Peasants in Bengal refused to grow indigo in **1859–60**, and the revolt led to an Indigo Commission."
-        },
-        {
-          q: "Which leader supported indigo peasants in Champaran in 1917?",
-          options: ["Bal Gangadhar Tilak", "Mahatma Gandhi", "Jyotiba Phule", "Sardar Patel"],
-          answer: 1,
-          explain: "**Gandhi** went to Champaran in 1917 to help indigo peasants who were suffering under planters."
-        },
-        {
-          q: "The Mahalwari system was used mainly in which areas?",
-          options: ["Bengal and Bihar", "Madras and Bombay", "Mysore and Kerala", "North-Western Provinces and Punjab"],
-          answer: 3,
-          explain: "Under the **Mahalwari system**, revenue was fixed for each village or group of villages in the North-Western Provinces and Punjab."
-        }
+        { q: "Shivaji was crowned Chhatrapati in:", options: ["1526", "1565", "1757", "1674"], answer: 3, explain: "His coronation at Raigad was in **1674**." },
+        { q: "The Marathas fought mainly with:", options: ["Guerrilla tactics and hill forts", "Only elephants", "Open-field massed battles", "Naval blockades alone"], answer: 0, explain: "Fast **guerrilla warfare** and forts were key." },
+        { q: "The Peshwa was the Maratha:", options: ["Navy chief", "Tax collector of a village", "Court poet", "Chief minister"], answer: 3, explain: "A **Peshwa** was the chief minister, later the real ruler." },
+        { q: "Which battle of 1761 ended Maratha ambitions in the north?", options: ["Plassey", "Third Battle of Panipat", "Buxar", "Talikota"], answer: 1, explain: "The **Third Battle of Panipat** against Ahmad Shah Abdali." },
+        { q: "Where was Shivaji crowned?", options: ["Raigad", "Pune", "Agra", "Hampi"], answer: 0, explain: "He was crowned at **Raigad** fort." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "tribals-dikus-golden-age",
-      title: "Tribals, Dikus and the Vision of a Golden Age",
-      section: "History",
-      summary: "How colonial forest laws and land policies disrupted the lives of tribal communities, how they resented outsiders called dikus, and how rebellions like the Santhal Rebellion and the Munda Ulgulan led by Birsa Munda expressed their hopes for a golden age.",
+      id: "the-colonial-era-in-india",
+      title: "The Colonial Era in India",
+      section: "Tapestry of the Past",
+      summary: "How the East India Company grew from a trading body into a ruling power, and how colonial rule changed India's land, economy and society.",
       notes: [
         {
-          heading: "Tribal Life Before Colonial Rule",
+          heading: "From Trade to Rule",
           points: [
-            "Many tribal communities lived in forests and hills and depended on the forest for food, fuel, medicines and grazing.",
-            "Many practised **shifting cultivation** (called jhum or podu), clearing a patch of forest, farming it for a few years and then moving on.",
-            "Tribal communities had their own customs and leaders, and many dreamt of a golden age when they lived freely on their own land."
+            "The **East India Company** came to India to trade and set up trading posts. Rivalry and the weakening of the Mughals let it take political power.",
+            "The **Battle of Plassey (1757)** and the **Battle of Buxar (1764)** gave the Company control over Bengal. In **1765** it received the **Diwani** (right to collect revenue) of Bengal, Bihar and Orissa.",
+            "Later the Company expanded through wars, the **Subsidiary Alliance** (Lord Wellesley) and the **Doctrine of Lapse** (Lord Dalhousie).",
+            "**Tipu Sultan** of Mysore was killed defending Seringapatam in 1799."
           ]
         },
         {
-          heading: "Colonial Control over Forests",
+          heading: "Revenue and Economy",
           points: [
-            "The British saw forests as a source of timber and revenue, and considered shifting cultivation harmful to them.",
-            "The **Indian Forest Acts of 1865 and 1878** declared many forests to be state property and restricted tribal use of forest produce.",
-            "Tribals who collected wood or grazed cattle in these forests were treated as criminals, and many were forced to work as labourers."
+            "The **Permanent Settlement** (1793, Lord Cornwallis) fixed the revenue that zamindars paid. Other systems were the **Ryotwari** and **Mahalwari** systems.",
+            "High revenue demands pushed many peasants into debt.",
+            "India became a supplier of raw materials such as cotton and indigo and a market for British goods, which hurt traditional handicrafts.",
+            "The first railway in India ran from **Bombay to Thane** in **1853**, mainly serving trade and administration."
           ]
         },
         {
-          heading: "Dikus and Rebellions",
+          heading: "Revolt and Crown Rule",
           points: [
-            "Tribals called outsiders such as moneylenders, traders and landlords **dikus**, and resented them for taking their land and charging high interest.",
-            "The **Santhal Rebellion (1855–56)**, led by **Sido** and **Kanhu**, was a major uprising against moneylenders, landlords and the colonial government.",
-            "**Birsa Munda** led the **Munda Ulgulan** (Great Tumult) in 1899–1900, demanding an end to forced labour and the restoration of tribal lands. He died in jail in 1900."
+            "The **Revolt of 1857** was a widespread uprising against Company rule involving soldiers, peasants and rulers.",
+            "After it, in **1858**, power passed from the Company to the **British Crown**.",
+            "Macaulay's Minute of **1835** promoted English-medium education, which created a class of educated Indians who later led reform and national movements."
           ]
         }
       ],
       formulas: [
-        "1855–56 – Santhal Rebellion led by Sido and Kanhu",
-        "1865 and 1878 – Indian Forest Acts",
-        "1899–1900 – Munda Ulgulan led by Birsa Munda"
+        "1757: Battle of Plassey",
+        "1764: Battle of Buxar; 1765: Diwani granted",
+        "1793: Permanent Settlement",
+        "1853: First railway, Bombay to Thane",
+        "1857: Revolt; 1858: Crown takes over"
       ],
       terms: [
-        { term: "Diku", meaning: "The term tribals used for outsiders, such as moneylenders, traders and landlords, who entered their lands." },
-        { term: "Shifting cultivation", meaning: "A form of farming in which forest land is cleared, cultivated for a few years and then left to recover." },
-        { term: "Ulgulan", meaning: "A Munda word meaning 'great tumult' or 'uprising', used for Birsa Munda's movement." },
-        { term: "Forest Act", meaning: "A law that brought forests under state control and restricted how local people could use them." },
-        { term: "Begar", meaning: "Forced labour, often without wages, demanded from people by landlords or the government." }
+        { term: "Colony", meaning: "A territory ruled and used economically by another country." },
+        { term: "Diwani", meaning: "The right to collect revenue in a province." },
+        { term: "Subsidiary Alliance", meaning: "A treaty in which an Indian ruler kept British troops and paid for them, losing independence in foreign affairs." },
+        { term: "Zamindar", meaning: "A landholder who collected revenue from peasants and paid it to the Company." }
       ],
       qa: [
-        {
-          q: "Why did the colonial government restrict shifting cultivation?",
-          a: "Officials believed shifting cultivation damaged forests and reduced the supply of timber that the state wanted. They wanted forests for commercial timber and revenue, so they restricted the practice."
-        },
-        {
-          q: "Who were the dikus, and why did tribals resent them?",
-          a: "Dikus were outsiders such as moneylenders, traders and landlords who entered tribal areas. Tribals resented them for taking their land, charging high interest and cheating them."
-        },
-        {
-          q: "What were Birsa Munda's aims?",
-          a: "He wanted to end forced labour, reduce the power of moneylenders and outsiders, and restore tribal lands. He also asked his people to give up drinking and superstition and to live a pure, golden-age life."
-        }
+        { q: "How did the East India Company become a ruling power?", a: "After winning at Plassey (1757) and Buxar (1764) it gained revenue rights in Bengal in 1765, and then expanded through wars and treaties like the Subsidiary Alliance." },
+        { q: "What happened in 1858?", a: "After the Revolt of 1857 the British Crown took direct control of India from the East India Company." }
       ],
       quiz: [
-        {
-          q: "The Santhal Rebellion of 1855–56 was led by:",
-          options: ["Birsa Munda", "Sido and Kanhu", "Tantia Tope", "Alluri Sitarama Raju"],
-          answer: 1,
-          explain: "**Sido and Kanhu** led the Santhal Rebellion against moneylenders, landlords and the colonial government."
-        },
-        {
-          q: "Tribal people called outsiders such as moneylenders and traders:",
-          options: ["Dikus", "Zamindars", "Sepoys", "Ulgulan"],
-          answer: 0,
-          explain: "Tribal communities used the word **diku** for outsiders who took their land and money."
-        },
-        {
-          q: "The Munda Ulgulan (Great Tumult) took place in which years?",
-          options: ["1857–58", "1855–56", "1899–1900", "1917–18"],
-          answer: 2,
-          explain: "Birsa Munda led the **Munda Ulgulan** in 1899–1900 against forced labour and the loss of tribal lands."
-        },
-        {
-          q: "Which law restricted tribal use of forests by declaring many forests state property?",
-          options: ["Permanent Settlement Act", "Regulating Act of 1773", "Indian Forest Act of 1865", "Charter Act of 1833"],
-          answer: 2,
-          explain: "The **Indian Forest Act of 1865** (and the Act of 1878) brought many forests under state control."
-        },
-        {
-          q: "Shifting cultivation is also known as:",
-          options: ["Ryotwari", "Mahalwari", "Begar", "Jhum"],
-          answer: 3,
-          explain: "Shifting cultivation is called **jhum** in parts of north-east India and podu in Odisha and Andhra Pradesh."
-        },
-        {
-          q: "Birsa Munda died in which place?",
-          options: ["Ranchi jail, in 1900", "Seringapatam, in 1799", "Jhansi, in 1858", "Bombay, in 1917"],
-          answer: 0,
-          explain: "**Birsa Munda** died in Ranchi jail in 1900, where he had been imprisoned."
-        }
+        { q: "The Battle of Plassey was fought in:", options: ["1764", "1757", "1857", "1799"], answer: 1, explain: "Plassey was fought in **1757**." },
+        { q: "The Permanent Settlement was introduced by:", options: ["Lord Dalhousie", "Lord Wellesley", "Lord Cornwallis", "Lord Macaulay"], answer: 2, explain: "**Lord Cornwallis** introduced it in 1793." },
+        { q: "The first railway line in India ran between:", options: ["Delhi and Agra", "Calcutta and Patna", "Madras and Madurai", "Bombay and Thane"], answer: 3, explain: "In **1853** the line ran from Bombay to Thane." },
+        { q: "Direct Crown rule began in India in:", options: ["1858", "1757", "1905", "1919"], answer: 0, explain: "After the Revolt of 1857, the Crown took over in **1858**." },
+        { q: "The Doctrine of Lapse is associated with:", options: ["Lord Cornwallis", "Lord Dalhousie", "Robert Clive", "Tipu Sultan"], answer: 1, explain: "**Lord Dalhousie** used the Doctrine of Lapse to annex states." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "rebellion-1857",
-      title: "When People Rebel: 1857 and After",
-      section: "History",
-      summary: "The causes of the Revolt of 1857, how it spread across north India with leaders such as Rani Lakshmibai and Bahadur Shah Zafar, how the British crushed it, and how the British Crown took over the rule of India.",
+      id: "universal-franchise-and-indias-electoral-system",
+      title: "Universal Franchise and India's Electoral System",
+      section: "Governance and Democracy",
+      summary: "How every adult citizen gets an equal vote in India, and how elections are organised and kept free and fair.",
       notes: [
         {
-          heading: "Causes of the Revolt",
+          heading: "Universal Adult Franchise",
           points: [
-            "Rulers and landlords were angry at the **Doctrine of Lapse** and the annexation of Awadh in 1856, which threatened their power and lands.",
-            "Sepoys were upset by the **greased cartridges** for the Enfield rifle, which were rumoured to be coated with cow and pig fat.",
-            "Peasants, artisans and sepoys suffered from heavy taxes, debts, low pay and loss of livelihood."
+            "**Universal adult franchise** means every citizen aged **18 or above** can vote, regardless of caste, religion, gender or wealth. The voting age was lowered from 21 to 18 by the 61st Amendment (1988).",
+            "Each adult has **one vote** and every vote has equal value (one person, one vote).",
+            "Voting is by **secret ballot**, so people can choose without pressure.",
+            "India's first general elections were held in **1951-52**."
           ]
         },
         {
-          heading: "The Revolt Spreads",
+          heading: "Conducting Elections",
           points: [
-            "The revolt began at **Meerut** on **10 May 1857**, when sepoys rose and marched to Delhi.",
-            "**Bahadur Shah Zafar** was proclaimed the leader; **Begum Hazrat Mahal** led the revolt in Lucknow, **Nana Saheb** in Kanpur, **Rani Lakshmibai** in Jhansi and **Kunwar Singh** in Bihar.",
-            "Hindus and Muslims fought together against the British, though the rebels did not have a single leader or a shared plan."
+            "The **Election Commission of India** is an independent constitutional body headed by the **Chief Election Commissioner**. It organises elections to Parliament, State Assemblies and the offices of the President and Vice President.",
+            "The country is divided into **constituencies**, each electing one representative. Some are **reserved** for Scheduled Castes and Scheduled Tribes.",
+            "Candidates in Lok Sabha elections must be at least **25** years old. The candidate with the most votes wins (first-past-the-post).",
+            "Elections are held every **five years** for the Lok Sabha unless it is dissolved earlier."
           ]
         },
         {
-          heading: "Suppression and Changes After 1857",
+          heading: "Voting and Fair Play",
           points: [
-            "The British crushed the revolt by 1858. Bahadur Shah Zafar was tried and exiled to **Rangoon**, where he died in 1862.",
-            "The **Government of India Act, 1858** ended the rule of the East India Company, and power passed to the British Crown.",
-            "The **Queen's Proclamation of 1858** promised respect for the religious beliefs of Indians and an end to annexation. The British recruited more soldiers from groups they considered loyal, and followed a policy of **divide and rule**."
+            "Votes are cast on **Electronic Voting Machines (EVMs)**. A **VVPAT** shows the voter a slip for a few seconds to confirm the choice.",
+            "**NOTA** lets a voter reject all candidates.",
+            "The **Model Code of Conduct** is a set of rules for parties and candidates from the announcement of elections until results. For example, the government cannot announce new schemes to influence voters.",
+            "Voters should check names on the electoral roll and carry valid identity proof."
           ]
         }
       ],
       formulas: [
-        "10 May 1857 – Revolt begins at Meerut",
-        "1858 – Government of India Act; power passes from the Company to the British Crown",
-        "1862 – Bahadur Shah Zafar dies in exile in Rangoon"
+        "Voting age: 18 years (61st Amendment, 1988)",
+        "Minimum age to contest Lok Sabha: 25 years",
+        "Lok Sabha term: 5 years",
+        "First general elections: 1951-52",
+        "EVM = voting machine; VVPAT = paper slip to verify vote"
       ],
       terms: [
-        { term: "Sepoy", meaning: "An Indian soldier serving in the army of the East India Company." },
-        { term: "Annexation", meaning: "Taking over a state and adding it to British territory." },
-        { term: "Divide and rule", meaning: "A policy of keeping different groups divided so that they could not unite against the rulers." },
-        { term: "Queen's Proclamation", meaning: "The 1858 announcement by Queen Victoria that the Crown had taken over India, with promises to respect Indian beliefs." },
-        { term: "Greased cartridge", meaning: "A rifle cartridge that sepoys had to bite open; the rumour that it was greased with animal fat angered both Hindu and Muslim soldiers." }
+        { term: "Franchise", meaning: "The right to vote." },
+        { term: "Constituency", meaning: "An area whose voters elect one representative." },
+        { term: "Model Code of Conduct", meaning: "Guidelines that parties and candidates must follow during elections." },
+        { term: "VVPAT", meaning: "Voter Verifiable Paper Audit Trail, a slip that lets a voter verify the vote cast on the EVM." },
+        { term: "Electoral roll", meaning: "The list of eligible voters." }
       ],
       qa: [
-        {
-          q: "Give two reasons why sepoys revolted in 1857.",
-          a: "The greased cartridges were believed to contain cow and pig fat, which offended both Hindu and Muslim sepoys. Sepoys also resented their low pay, poor treatment and the Company's policies."
-        },
-        {
-          q: "Why did many rulers and common people join the revolt?",
-          a: "The annexation of states under the Doctrine of Lapse and of Awadh threatened the power of rulers. Peasants, artisans and landlords were hit by heavy taxes and loss of land, so they joined the rebels."
-        },
-        {
-          q: "What changes followed the revolt?",
-          a: "The British Crown took over from the East India Company under the Government of India Act, 1858. The army was reorganised to recruit more loyal groups, and the Queen's Proclamation promised respect for religious beliefs."
-        }
+        { q: "What does universal adult franchise mean?", a: "Every citizen aged 18 or above has the right to vote, without discrimination on the basis of caste, religion, gender or wealth, and every vote has equal value." },
+        { q: "State two functions of the Election Commission.", a: "It prepares and updates the electoral rolls and conducts free and fair elections, enforcing the Model Code of Conduct during the campaign." }
       ],
       quiz: [
-        {
-          q: "The revolt of 1857 began at:",
-          options: ["Lucknow", "Kanpur", "Jhansi", "Meerut"],
-          answer: 3,
-          explain: "The revolt began at **Meerut** on 10 May 1857, when sepoys rose and marched to Delhi."
-        },
-        {
-          q: "Who was the leader of the revolt at Jhansi?",
-          options: ["Begum Hazrat Mahal", "Kunwar Singh", "Nana Saheb", "Rani Lakshmibai"],
-          answer: 3,
-          explain: "**Rani Lakshmibai** led the rebels at Jhansi and became one of the best-known leaders of 1857."
-        },
-        {
-          q: "Which rifle's cartridges were rumoured to be greased with cow and pig fat?",
-          options: ["Martini-Henry", "Enfield", "Lee-Metford", "Winchester"],
-          answer: 1,
-          explain: "The **Enfield rifle** cartridges were the immediate cause of the sepoys' anger in 1857."
-        },
-        {
-          q: "The Government of India Act of 1858 transferred power to:",
-          options: ["The Mughal emperor", "The British Crown", "The Indian National Congress", "The Governor of Bengal alone"],
-          answer: 1,
-          explain: "After 1858, India was governed directly by the **British Crown** instead of the East India Company."
-        },
-        {
-          q: "The Queen's Proclamation of 1858 promised:",
-          options: ["Independence to Indian states", "Elections for all Indians", "Respect for the religious beliefs of Indians", "Indian control over the army"],
-          answer: 2,
-          explain: "The **Queen's Proclamation** promised to respect the religious beliefs of Indians and to stop further annexation."
-        },
-        {
-          q: "Bahadur Shah Zafar, the last Mughal emperor, was exiled to:",
-          options: ["Rangoon", "Kabul", "Lahore", "Calcutta"],
-          answer: 0,
-          explain: "After the revolt was crushed, Bahadur Shah Zafar was tried and sent into exile in **Rangoon**, where he died in 1862."
-        }
+        { q: "The minimum age to vote in India is:", options: ["21 years", "25 years", "16 years", "18 years"], answer: 3, explain: "Citizens aged **18** can vote." },
+        { q: "Who conducts elections to Parliament in India?", options: ["The Supreme Court", "The Prime Minister", "The Election Commission", "The Speaker"], answer: 2, explain: "The independent **Election Commission of India** conducts them." },
+        { q: "VVPAT is used to:", options: ["Count votes by hand", "Let a voter verify the vote on a paper slip", "Register voters", "Announce results"], answer: 1, explain: "VVPAT shows a slip so the voter can **verify** the choice." },
+        { q: "The Model Code of Conduct applies:", options: ["From the announcement of elections until results", "Only on polling day", "Only after results", "Throughout the year"], answer: 0, explain: "It applies during the **election period**." },
+        { q: "One person, one vote means:", options: ["Rich voters get more votes", "Each voter's vote has equal value", "Only men vote", "Votes are open to all ages"], answer: 1, explain: "Every vote has **equal value**." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "civilising-educating",
-      title: "Civilising the \"Native\", Educating the Nation",
-      section: "History",
-      summary: "How the British introduced English education in India to create a class of people who could help them govern, how Indian reformers responded by setting up their own schools, and who was left out of education in the nineteenth century.",
+      id: "the-parliamentary-system",
+      title: "The Parliamentary System: Legislature and Executive",
+      section: "Governance and Democracy",
+      summary: "How India's Parliament makes laws and how the executive, led by the Prime Minister and the Council of Ministers, runs the government and answers to the legislature.",
       notes: [
         {
-          heading: "English Education Begins",
+          heading: "Parliament: The Legislature",
           points: [
-            "In **1835**, Lord Macaulay's Minute on Education argued that English should be the medium of higher education in India.",
-            "**Wood's Despatch of 1854** recommended education in local languages at the primary level, English at higher levels, and the setting up of universities.",
-            "Universities were set up at **Calcutta, Bombay and Madras** in **1857**."
+            "The Union **Parliament** has three parts: the **President**, the **Lok Sabha** (House of the People) and the **Rajya Sabha** (Council of States).",
+            "Lok Sabha members are directly elected by the people for **five years**. The Speaker presides over it. The Lok Sabha has a maximum of 552 members, of whom 543 are elected from constituencies.",
+            "The Rajya Sabha has up to **250** members, mostly elected by State Legislative Assemblies. It is a permanent house, and **one-third** of its members retire every **two years**. The Vice President is its chairperson.",
+            "Parliament makes laws, controls the government and approves the budget."
           ]
         },
         {
-          heading: "Indian Efforts in Education",
+          heading: "How a Law is Made",
           points: [
-            "**Raja Rammohun Roy** supported modern education and social reform, and founded the **Brahmo Sabha** in **1828**.",
-            "**Jyotiba Phule** opened a school for girls in **Pune** in **1848**, and **Savitribai Phule** became its first teacher.",
-            "Vernacular newspapers and printing presses spread new ideas, and writers used local languages to reach ordinary people."
+            "A proposed law is called a **Bill**. It is discussed and voted on in both Houses.",
+            "After both Houses pass it, it goes to the **President**, whose assent makes it an **Act**.",
+            "A **Money Bill** deals with taxes and spending and is introduced only in the Lok Sabha, which has the final say on it.",
+            "Members ask questions in **Question Hour** to hold ministers accountable."
           ]
         },
         {
-          heading: "Who Was Left Out",
+          heading: "The Executive",
           points: [
-            "Education was mainly available to upper-caste men in towns. Girls, Dalits and poor peasants had very little access to schools.",
-            "Many schools were run by **missionaries**, who taught English and Christian values, while some local communities also set up their own schools."
+            "The **executive** carries out laws and runs the government. The **President** is the formal head of state, while real powers are exercised by the **Prime Minister** and the **Council of Ministers**.",
+            "The leader of the party or alliance that has the **majority** in the Lok Sabha (at least 272 of 543 seats) is usually appointed Prime Minister.",
+            "The Council of Ministers is **collectively responsible** to the Lok Sabha. If it loses the House's confidence, it must resign.",
+            "The **permanent executive** is made up of civil servants who carry out policy day to day, even when governments change."
           ]
         }
       ],
       formulas: [
-        "1835 – Macaulay's Minute on English education",
-        "1854 – Wood's Despatch on education",
-        "1857 – Universities of Calcutta, Bombay and Madras set up",
-        "1848 – Jyotiba and Savitribai Phule open a girls' school in Pune"
+        "Parliament = President + Lok Sabha + Rajya Sabha",
+        "Lok Sabha: 543 elected seats, term 5 years",
+        "Rajya Sabha: up to 250 members; one-third retire every 2 years",
+        "Majority in Lok Sabha: 272 of 543 seats",
+        "Minimum age: Lok Sabha 25, Rajya Sabha 30"
       ],
       terms: [
-        { term: "Vernacular", meaning: "The language spoken in a particular region, such as Bengali, Marathi or Hindi." },
-        { term: "Despatch", meaning: "An official letter or report sent from the Court of Directors in London to the government in India." },
-        { term: "Medium of instruction", meaning: "The language in which subjects are taught in schools and colleges." },
-        { term: "Missionary", meaning: "A person sent by a religious group to spread its faith, often also running schools and hospitals." },
-        { term: "Minute", meaning: "A formal note or opinion written by an official, which can influence government policy." }
+        { term: "Legislature", meaning: "The body that makes laws; in India, Parliament." },
+        { term: "Executive", meaning: "The part of government that carries out laws and runs administration." },
+        { term: "Bill", meaning: "A draft of a proposed law." },
+        { term: "Council of Ministers", meaning: "The Prime Minister and ministers who run the government and are responsible to the Lok Sabha." },
+        { term: "Speaker", meaning: "The presiding officer of the Lok Sabha." }
       ],
       qa: [
-        {
-          q: "Why did Macaulay want English to be taught in India?",
-          a: "He argued that a class of English-educated Indians would act as interpreters between the British and the people, helping the government run the country. He believed English was the most valuable language of knowledge."
-        },
-        {
-          q: "What did Wood's Despatch of 1854 recommend?",
-          a: "It recommended education in local languages at the primary level, English at higher levels, the training of teachers, and the setting up of universities at Calcutta, Bombay and Madras."
-        },
-        {
-          q: "How did Indian reformers contribute to education?",
-          a: "Reformers like Raja Rammohun Roy and the Phules founded schools and promoted modern learning. Jyotiba and Savitribai Phule opened a school for girls in Pune in 1848, challenging caste and gender barriers."
-        }
+        { q: "How does a Bill become a law?", a: "It is passed by both Houses of Parliament and then receives the assent of the President, after which it becomes an Act." },
+        { q: "What does collective responsibility mean?", a: "The Council of Ministers works as a team and is jointly answerable to the Lok Sabha. If it loses the confidence of the House, the whole government must resign." }
       ],
       quiz: [
-        {
-          q: "Lord Macaulay's Minute of 1835 supported:",
-          options: ["Teaching only Sanskrit", "English as the medium of higher education", "Education only for women", "Closing all schools"],
-          answer: 1,
-          explain: "Macaulay argued that **English** should be the medium of higher education in India."
-        },
-        {
-          q: "The universities of Calcutta, Bombay and Madras were established in:",
-          options: ["1835", "1854", "1882", "1857"],
-          answer: 3,
-          explain: "These universities were set up in **1857**, the same year as the revolt."
-        },
-        {
-          q: "Wood's Despatch of 1854 is known for recommending:",
-          options: ["Education in local languages at the primary level", "Closing all English schools", "Only religious education", "Compulsory military training"],
-          answer: 0,
-          explain: "The Despatch recommended **education in local languages** at the primary level, with English at higher levels."
-        },
-        {
-          q: "Which social reformer founded the Brahmo Sabha in 1828?",
-          options: ["Jyotiba Phule", "Raja Rammohun Roy", "Swami Dayanand Saraswati", "Ishwar Chandra Vidyasagar"],
-          answer: 1,
-          explain: "**Raja Rammohun Roy** founded the Brahmo Sabha in 1828, which later became the Brahmo Samaj."
-        },
-        {
-          q: "Savitribai Phule was:",
-          options: ["The first woman prime minister", "The first teacher of the girls' school in Pune", "A missionary from England", "The author of Macaulay's Minute"],
-          answer: 1,
-          explain: "**Savitribai Phule** became the first teacher of the girls' school that she and Jyotiba Phule opened in Pune in 1848."
-        },
-        {
-          q: "Which group had the least access to education in the nineteenth century?",
-          options: ["Upper-caste men in towns", "Missionaries", "Dalits, girls and poor peasants", "Officials of the Company"],
-          answer: 2,
-          explain: "**Dalits, girls and poor peasants** had very little access to schools, unlike upper-caste men in towns."
-        }
+        { q: "Who presides over the Lok Sabha?", options: ["The President", "The Prime Minister", "The Vice President", "The Speaker"], answer: 3, explain: "The **Speaker** presides over Lok Sabha." },
+        { q: "The Rajya Sabha is called a permanent house because:", options: ["It never meets", "It is never dissolved; one-third retire every two years", "Its members never retire", "It has no elections"], answer: 1, explain: "It is **never dissolved**, and members retire in a staggered manner." },
+        { q: "The Council of Ministers is collectively responsible to:", options: ["The Supreme Court", "The Rajya Sabha", "The Lok Sabha", "The Election Commission"], answer: 2, explain: "It must keep the confidence of the **Lok Sabha**." },
+        { q: "Money Bills are introduced only in the:", options: ["Lok Sabha", "Rajya Sabha", "Supreme Court", "State Assembly"], answer: 0, explain: "Money Bills start in the **Lok Sabha**." },
+        { q: "After both Houses pass a Bill, it becomes an Act when it gets the assent of the:", options: ["Speaker", "Chief Justice", "President", "Prime Minister"], answer: 2, explain: "The **President's assent** is needed." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "women-caste-reform",
-      title: "Women, Caste and Reform",
-      section: "History",
-      summary: "The social evils of the nineteenth century, such as sati, child marriage and caste discrimination, the reformers who fought them, and the laws that changed the status of women and the lives of marginalised castes.",
+      id: "factors-of-production",
+      title: "Factors of Production",
+      section: "Economic Life Around Us",
+      summary: "The resources needed to produce goods and services: land, labour, capital and entrepreneurship, and the income each one earns.",
       notes: [
         {
-          heading: "Social Evils and Early Reforms",
+          heading: "Land and Labour",
           points: [
-            "Practices such as **sati**, child marriage, the denial of widow remarriage and caste discrimination were widespread in nineteenth-century India.",
-            "The **Bengal Sati Regulation (1829)**, passed under Lord William Bentinck, made sati illegal and punishable.",
-            "Reformers such as **Raja Rammohun Roy** and **Ishwar Chandra Vidyasagar** campaigned against sati and for widow remarriage."
+            "**Production** is making goods and services that satisfy human wants. Four **factors of production** are needed: land, labour, capital and entrepreneurship.",
+            "**Land** includes all natural resources: soil, water, forests, minerals. The reward for using land is **rent**.",
+            "**Labour** is the physical and mental effort of people. It can be skilled or unskilled. The reward is **wages**."
           ]
         },
         {
-          heading: "Laws on Women and Marriage",
+          heading: "Capital and Entrepreneurship",
           points: [
-            "The **Widow Remarriage Act of 1856** legalised the remarriage of Hindu widows. Vidyasagar was a leading supporter of this law.",
-            "The **Age of Consent Act, 1891** raised the age of consent for girls from 10 to 12 years, after the Rakhmabai case drew attention to child marriage.",
-            "The **Child Marriage Restraint Act, 1929**, also called the Sarda Act, set the minimum age of marriage at 14 for girls and 18 for boys."
+            "**Capital** is man-made resources used to produce more, such as machines, tools, buildings and money invested. The reward is **interest**.",
+            "Capital can be **fixed** (machines, buildings, used many times) or **working** (raw materials and cash, used up in production).",
+            "An **entrepreneur** organises the other factors, takes risks and starts the enterprise. The reward is **profit**.",
+            "**Human capital** means the skills and health of people, built through education and training."
           ]
         },
         {
-          heading: "Caste and Equality",
+          heading: "Putting It Together",
           points: [
-            "**Jyotiba Phule** founded the **Satyashodhak Samaj** in **1873** to fight caste oppression and promote equal rights.",
-            "In **1927**, **Dr B. R. Ambedkar** led the **Mahad Satyagraha**, asserting the right of Dalits to draw water from a public tank.",
-            "Reform movements often made demands for education and equal rights, and many reformers came from the marginalised communities themselves."
+            "All factors are needed together. A farm needs land, workers, tools and seeds, and someone to plan and take the risk.",
+            "Better education and training raise the quality of labour and productivity.",
+            "Technology and better tools raise how much can be produced from the same inputs."
           ]
         }
       ],
       formulas: [
-        "1829 – Bengal Sati Regulation makes sati illegal",
-        "1856 – Widow Remarriage Act",
-        "1873 – Satyashodhak Samaj founded by Jyotiba Phule",
-        "1891 – Age of Consent Act (age raised to 12)",
-        "1927 – Mahad Satyagraha led by Ambedkar",
-        "1929 – Child Marriage Restraint Act (minimum age 14 for girls, 18 for boys)"
+        "Land earns rent",
+        "Labour earns wages",
+        "Capital earns interest",
+        "Entrepreneur earns profit"
       ],
       terms: [
-        { term: "Sati", meaning: "A cruel practice in which a widow was forced, or pressured, to die on her husband's funeral pyre." },
-        { term: "Widow remarriage", meaning: "The marriage of a widow to another man, which was discouraged in many communities in the nineteenth century." },
-        { term: "Age of Consent", meaning: "The minimum age at which a girl could legally agree to sexual relations, which was raised by law in 1891." },
-        { term: "Satyashodhak Samaj", meaning: "A society founded by Jyotiba Phule in 1873 to promote equality and truth against caste oppression." },
-        { term: "Untouchability", meaning: "The practice of treating certain castes as impure and excluding them from everyday social life." }
+        { term: "Factors of production", meaning: "Resources used to produce goods and services: land, labour, capital and entrepreneurship." },
+        { term: "Entrepreneur", meaning: "A person who organises production and bears the risk." },
+        { term: "Fixed capital", meaning: "Machines, tools and buildings that last for many rounds of production." },
+        { term: "Working capital", meaning: "Raw materials and money used up or turned over in production." },
+        { term: "Human capital", meaning: "Knowledge, skills and health of people." }
       ],
       qa: [
-        {
-          q: "Why was sati banned in 1829?",
-          a: "Sati was a cruel practice that forced or pressured widows to die on their husbands' funeral pyres. Reformers campaigned against it, and the Bengal Sati Regulation of 1829 made it illegal and punishable."
-        },
-        {
-          q: "What was the significance of the Age of Consent Act of 1891?",
-          a: "It raised the age of consent for girls from 10 to 12 years, which protected young girls from sexual exploitation within marriage. It was passed after the Rakhmabai case brought the issue into public debate."
-        },
-        {
-          q: "How did Jyotiba Phule challenge caste?",
-          a: "Phule set up the Satyashodhak Samaj in 1873 to promote equal rights and challenge Brahmin dominance. He also opened schools for low-caste children and girls, and questioned the claim that caste was divinely ordained."
-        }
+        { q: "Name the four factors of production and the reward for each.", a: "Land earns rent, labour earns wages, capital earns interest and entrepreneurship earns profit." },
+        { q: "How is fixed capital different from working capital?", a: "Fixed capital, like machines and buildings, is used again and again. Working capital, like raw materials and cash, is used up or spent in each production cycle." }
       ],
       quiz: [
-        {
-          q: "The Bengal Sati Regulation of 1829 was passed under:",
-          options: ["Lord Dalhousie", "Lord Wellesley", "Lord William Bentinck", "Lord Cornwallis"],
-          answer: 2,
-          explain: "**Lord William Bentinck** got the Bengal Sati Regulation passed in 1829, making sati illegal."
-        },
-        {
-          q: "The Widow Remarriage Act was passed in:",
-          options: ["1829", "1929", "1891", "1856"],
-          answer: 3,
-          explain: "The **Widow Remarriage Act** of 1856 legalised the remarriage of Hindu widows."
-        },
-        {
-          q: "Which law set 14 years as the minimum age of marriage for girls?",
-          options: ["Age of Consent Act, 1891", "Child Marriage Restraint Act, 1929", "Widow Remarriage Act, 1856", "Bengal Sati Regulation, 1829"],
-          answer: 1,
-          explain: "The **Child Marriage Restraint Act, 1929** set the minimum age of marriage at 14 for girls and 18 for boys."
-        },
-        {
-          q: "The Satyashodhak Samaj was founded by:",
-          options: ["Ishwar Chandra Vidyasagar", "Raja Rammohun Roy", "Jyotiba Phule", "Dayanand Saraswati"],
-          answer: 2,
-          explain: "**Jyotiba Phule** founded the Satyashodhak Samaj in 1873 to fight caste oppression."
-        },
-        {
-          q: "Mahad Satyagraha (1927), led by Ambedkar, asserted the right of Dalits to:",
-          options: ["Vote in elections", "Use a public water tank", "Join the Indian National Congress", "Study Sanskrit in colleges"],
-          answer: 1,
-          explain: "Dalits were denied access to a public water tank at Mahad, and Ambedkar led a satyagraha to claim this right."
-        },
-        {
-          q: "Which reformer was a leading supporter of the Widow Remarriage Act?",
-          options: ["Ishwar Chandra Vidyasagar", "Jyotiba Phule", "Bal Gangadhar Tilak", "Sardar Patel"],
-          answer: 0,
-          explain: "**Ishwar Chandra Vidyasagar** campaigned for widow remarriage, which led to the Act of 1856."
-        }
+        { q: "Profit is the reward for:", options: ["Land", "Labour", "Capital", "Entrepreneurship"], answer: 3, explain: "The **entrepreneur** takes risks and earns profit." },
+        { q: "Which of these is fixed capital?", options: ["A tractor", "Seeds", "Fertiliser", "Cash for wages"], answer: 0, explain: "A **tractor** is used for many seasons. Seeds and fertiliser are used up." },
+        { q: "Wages are paid to:", options: ["Landowners", "Workers", "Lenders", "Entrepreneurs"], answer: 1, explain: "**Labour** receives wages." },
+        { q: "Which factor includes soil, water and minerals?", options: ["Capital", "Labour", "Land", "Enterprise"], answer: 2, explain: "**Land** covers all natural resources." },
+        { q: "Interest is the income earned by:", options: ["Workers", "Capital", "Land", "The government"], answer: 1, explain: "**Capital** earns interest." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "national-movement",
-      title: "The Making of the National Movement: 1870s–1947",
-      section: "History",
-      summary: "How the Indian National Congress was founded, how Indians became more critical of British rule, how Gandhi led mass movements such as Non-Cooperation, Civil Disobedience and Quit India, and how India finally became independent in 1947.",
+      id: "world-geography-some-glimpses",
+      title: "World Geography: Some Glimpses",
+      section: "India and the World: Land and the People",
+      summary: "A tour of the Earth's continents, oceans, major landforms and natural regions, and how climate shapes the way people live.",
       notes: [
         {
-          heading: "The Early Phase (1870s–1905)",
+          heading: "Continents and Oceans",
           points: [
-            "The **Indian National Congress** was founded in **1885**. Its early leaders sought reforms through petitions, speeches and debate.",
-            "Many Indians came to believe that British economic policies drained wealth from India and burdened the poor with heavy taxes.",
-            "In **1905**, Lord Curzon partitioned Bengal, which led to large protests and the **Swadeshi movement**."
+            "The Earth has **seven continents**: Asia, Africa, North America, South America, Antarctica, Europe and Australia (Oceania). **Asia** is the largest.",
+            "There are **five oceans**: Pacific, Atlantic, Indian, Southern and Arctic. The **Pacific** is the largest and deepest.",
+            "The **Equator** divides the Earth into the Northern and Southern Hemispheres."
           ]
         },
         {
-          heading: "Swadeshi, Rowlatt Act and Non-Cooperation",
+          heading: "Landforms and Rivers",
           points: [
-            "The Swadeshi movement encouraged people to buy Indian goods and boycott British goods. In **1906** the All-India Muslim League was founded at Dhaka.",
-            "The **Rowlatt Act (1919)** allowed detention without trial. On **13 April 1919**, troops fired on a peaceful crowd at **Jallianwala Bagh**, Amritsar.",
-            "Gandhi launched the **Non-Cooperation Movement** in **1920**, asking people to boycott schools, courts and foreign cloth. It was called off in 1922 after the **Chauri Chaura** incident."
+            "Major mountain ranges include the **Himalayas** (Asia), the **Andes** (South America), the **Rockies** (North America) and the **Alps** (Europe).",
+            "**Mount Everest** is the highest peak above sea level, and the **Mariana Trench** in the Pacific is the deepest known part of the ocean.",
+            "Great rivers include the **Nile** in Africa, the **Amazon** in South America, the **Mississippi** in North America and the **Yangtze** in Asia. Many early civilisations grew along rivers."
           ]
         },
         {
-          heading: "Civil Disobedience and Independence",
+          heading: "Natural Regions and Life",
           points: [
-            "The **Simon Commission** (1928) had no Indian members and was boycotted. At the Lahore session of 1929, Congress demanded **Purna Swaraj**, or complete independence.",
-            "Gandhi's **Dandi March** (12 March to 6 April 1930) against the salt tax began the Civil Disobedience Movement.",
-            "The **Quit India Movement** was launched on **8 August 1942**. India became independent on **15 August 1947**."
+            "Climate and vegetation vary with latitude and altitude: **tropical rainforests** near the Equator, **savanna grasslands**, **hot deserts** like the Sahara, **temperate** grasslands, and cold **tundra** near the poles.",
+            "Plants, animals and the way people live, such as food, housing and clothes, depend on the natural region.",
+            "**Antarctica** is the coldest continent and has no permanent population."
           ]
         }
       ],
       formulas: [
-        "1885 – Indian National Congress founded",
-        "1905 – Partition of Bengal by Lord Curzon",
-        "1919 – Jallianwala Bagh massacre, 13 April",
-        "1930 – Dandi March, 12 March to 6 April",
-        "1942 – Quit India Movement launched, 8 August",
-        "1947 – India becomes independent, 15 August"
+        "7 continents, 5 oceans",
+        "Largest continent: Asia; largest ocean: Pacific",
+        "Highest peak: Mount Everest; deepest trench: Mariana Trench"
       ],
       terms: [
-        { term: "Partition", meaning: "The division of Bengal in 1905, which was seen as a divide-and-rule measure against Bengali nationalists." },
-        { term: "Swadeshi", meaning: "The promotion of Indian-made goods and the boycott of British goods." },
-        { term: "Satyagraha", meaning: "A non-violent protest based on truth and resistance to unjust laws, developed by Gandhi." },
-        { term: "Non-cooperation", meaning: "A movement in which Indians withdrew cooperation from British institutions, such as schools, courts and councils." },
-        { term: "Purna Swaraj", meaning: "Complete independence, demanded by Congress at the Lahore session in 1929." }
+        { term: "Continent", meaning: "A very large landmass on the Earth." },
+        { term: "Equator", meaning: "The imaginary line at 0° latitude that divides the Earth into two hemispheres." },
+        { term: "Tundra", meaning: "A cold, treeless region near the poles with mosses and lichens." },
+        { term: "Savanna", meaning: "A tropical grassland with scattered trees." },
+        { term: "Desert", meaning: "A region receiving very little rainfall." }
       ],
       qa: [
-        {
-          q: "Why did the Swadeshi movement begin?",
-          a: "The partition of Bengal in 1905 was seen as a divide-and-rule measure against Bengali nationalism. It led to boycotts of British goods and the promotion of Indian-made products, which became the Swadeshi movement."
-        },
-        {
-          q: "What was the importance of the Non-Cooperation Movement?",
-          a: "It was the first mass movement against British rule, and students, lawyers and workers joined it. People boycotted schools, courts, foreign cloth and British titles. It was called off after the Chauri Chaura violence in 1922."
-        },
-        {
-          q: "Why did Gandhi choose the Salt March?",
-          a: "The salt tax hit the poor hard, because salt was a basic necessity and the government had a monopoly over it. By marching to Dandi and making salt, Gandhi broke this law and turned Civil Disobedience into a national movement."
-        }
+        { q: "Name the five oceans of the world.", a: "The Pacific, Atlantic, Indian, Southern and Arctic Oceans." },
+        { q: "How does climate affect the way people live?", a: "It decides what crops grow, what homes and clothes people need and what jobs are possible. For example, people in cold tundra regions wear heavy clothing." }
       ],
       quiz: [
-        {
-          q: "The Indian National Congress was founded in:",
-          options: ["1857", "1885", "1905", "1920"],
-          answer: 1,
-          explain: "The **Indian National Congress** was founded in 1885, with Allan Octavian Hume among its founders."
-        },
-        {
-          q: "The Partition of Bengal in 1905 was carried out by:",
-          options: ["Lord Curzon", "Lord Wellesley", "Lord Cornwallis", "Lord Mountbatten"],
-          answer: 0,
-          explain: "**Lord Curzon** partitioned Bengal in 1905, which led to the Swadeshi movement."
-        },
-        {
-          q: "The Jallianwala Bagh massacre took place in:",
-          options: ["Lahore", "Champaran", "Chauri Chaura", "Amritsar"],
-          answer: 3,
-          explain: "On **13 April 1919**, troops fired on a peaceful gathering at Jallianwala Bagh in Amritsar."
-        },
-        {
-          q: "The Non-Cooperation Movement was called off after the incident at:",
-          options: ["Dandi", "Chauri Chaura", "Bardoli", "Jallianwala Bagh"],
-          answer: 1,
-          explain: "Gandhi called off the **Non-Cooperation Movement** in 1922 after violence at Chauri Chaura."
-        },
-        {
-          q: "The Dandi March was held to protest against:",
-          options: ["The tax on salt", "The Rowlatt Act", "The Partition of Bengal", "The Simon Commission"],
-          answer: 0,
-          explain: "Gandhi marched to Dandi in 1930 to make salt in defiance of the **salt tax** and the government's monopoly over salt."
-        },
-        {
-          q: "The Quit India Movement was launched on:",
-          options: ["15 August 1947", "26 January 1930", "8 August 1942", "13 April 1919"],
-          answer: 2,
-          explain: "The **Quit India Movement** was launched on 8 August 1942, demanding an end to British rule."
-        }
+        { q: "The largest continent is:", options: ["Africa", "Asia", "North America", "Europe"], answer: 1, explain: "**Asia** is the largest continent." },
+        { q: "Which ocean is the largest?", options: ["Atlantic", "Indian", "Arctic", "Pacific"], answer: 3, explain: "The **Pacific** is the largest." },
+        { q: "The Andes mountains are in:", options: ["South America", "Europe", "Asia", "Africa"], answer: 0, explain: "The **Andes** run along South America." },
+        { q: "Hot desert such as the Sahara is found in:", options: ["Antarctica", "Australia only", "Africa", "Europe"], answer: 2, explain: "The **Sahara** is in northern Africa." },
+        { q: "Tundra regions are:", options: ["Very hot and wet", "Cold and treeless", "Dense forests near the Equator", "Fertile river plains"], answer: 1, explain: "**Tundra** is cold and treeless." }
       ]
     },
-    // ==================================================================
-    // GEOGRAPHY – Resource and Development
-    // ==================================================================
     {
-      id: "resources",
-      title: "Resources",
-      section: "Geography",
-      summary: "What makes something a resource, how resources are classified, why they must be planned and conserved, and how sustainable development tries to meet present needs without harming the future.",
+      id: "indias-long-road-to-independence",
+      title: "India's Long Road to Independence",
+      section: "Tapestry of the Past",
+      summary: "The major stages of the Indian national movement from 1885 to 1947, the leaders who shaped it, and how India became independent.",
       notes: [
         {
-          heading: "What Is a Resource?",
+          heading: "Early Phase",
           points: [
-            "A **resource** is anything that people use to satisfy their needs. To be a resource, an item must be available, accessible, technologically possible, economically feasible and culturally acceptable.",
-            "Air, water, soil, minerals, forests and wildlife are **natural resources**. Buildings, roads and machines are **human-made resources**.",
-            "Human beings, with their skills, knowledge and health, are also a resource."
+            "The **Indian National Congress** was founded in **1885**.",
+            "The **Partition of Bengal** in **1905** led to the **Swadeshi** movement, which encouraged boycott of foreign goods and use of Indian ones.",
+            "The Muslim League was formed in 1906. Moderate and Extreme leaders such as Gopal Krishna Gokhale and Bal Gangadhar Tilak shaped the early demands."
           ]
         },
         {
-          heading: "Classifying Resources",
+          heading: "Gandhi and Mass Movements",
           points: [
-            "**Renewable resources** such as solar and wind energy, and forests, can be replenished naturally over time.",
-            "**Non-renewable resources** such as coal and petroleum take millions of years to form and cannot be replaced once they are used up.",
-            "**Biotic resources** come from living things, such as forests and animals. **Abiotic resources** are non-living, such as water and minerals."
+            "**Mahatma Gandhi** returned to India in **1915** and led the Champaran satyagraha (1917).",
+            "The **Rowlatt Act** (1919) and the **Jallianwala Bagh** massacre on **13 April 1919** angered Indians. The **Non-Cooperation Movement** (1920-22) followed, but was called off after the Chauri Chaura incident in 1922.",
+            "In **1930** Gandhi led the **Dandi March** (Salt March) from 12 March to 6 April, breaking the salt law and starting the **Civil Disobedience Movement**.",
+            "The Congress demanded **Purna Swaraj** (complete independence) at its Lahore session in 1929."
           ]
         },
         {
-          heading: "Planning and Conservation",
+          heading: "Towards Freedom",
           points: [
-            "Resources are unevenly distributed. Some regions have plenty of one resource and very little of another.",
-            "Over-use and wastage of resources lead to shortages and pollution, so **resource planning** is needed to use them wisely.",
-            "**Sustainable development** means meeting present needs without harming the ability of future generations to meet their own needs."
+            "The **Quit India Movement** began on **8 August 1942** with the call \"Do or Die\".",
+            "**Subhas Chandra Bose** formed the **Indian National Army (INA)** to fight for freedom. Revolutionaries such as Bhagat Singh also inspired young Indians.",
+            "India became independent on **15 August 1947**, with Jawaharlal Nehru as the first Prime Minister. Independence came with the Partition of the country.",
+            "The Constitution came into force on **26 January 1950**."
           ]
         }
       ],
       formulas: [
-        "Resource = available, accessible, technologically possible, economically feasible and culturally acceptable",
-        "1973 – Chipko movement in Uttarakhand, villagers hug trees to stop felling",
-        "1992 – Earth Summit at Rio de Janeiro adopts Agenda 21 for sustainable development"
+        "1885: Indian National Congress founded",
+        "1905: Partition of Bengal; Swadeshi movement",
+        "13 April 1919: Jallianwala Bagh",
+        "1920-22: Non-Cooperation Movement",
+        "1930: Dandi March; 1942: Quit India; 15 August 1947: Independence"
       ],
       terms: [
-        { term: "Resource", meaning: "Anything that is useful to people and can satisfy a need, such as land, water, minerals or skills." },
-        { term: "Renewable resource", meaning: "A resource that can be replenished naturally, such as solar energy or forests." },
-        { term: "Non-renewable resource", meaning: "A resource that cannot be replaced once it is used up, such as coal or petroleum." },
-        { term: "Sustainable development", meaning: "Development that meets present needs without harming the needs of future generations." },
-        { term: "Biotic resource", meaning: "A resource obtained from living things, such as forests, animals and fish." }
+        { term: "Swadeshi", meaning: "Use of goods made in one's own country." },
+        { term: "Satyagraha", meaning: "Gandhi's method of non-violent resistance based on truth." },
+        { term: "Boycott", meaning: "Refusing to buy or use something as a protest." },
+        { term: "Purna Swaraj", meaning: "Complete independence from British rule." }
       ],
       qa: [
-        {
-          q: "What is meant by sustainable development?",
-          a: "It means using resources in a way that meets the needs of the present generation without destroying or using up resources that future generations will need."
-        },
-        {
-          q: "Why should resources be used carefully?",
-          a: "Resources are limited and unevenly distributed, and over-use leads to shortages, pollution and environmental damage. Careful use ensures that future generations also have resources."
-        },
-        {
-          q: "How do renewable and non-renewable resources differ?",
-          a: "Renewable resources, such as solar energy, wind and forests, can be replenished naturally over time. Non-renewable resources, such as coal and petroleum, take millions of years to form and cannot be replaced once used up."
-        }
+        { q: "Why was the Dandi March important?", a: "Gandhi walked to the sea at Dandi and broke the salt law in 1930. It showed how an unjust law could be challenged peacefully and began the Civil Disobedience Movement." },
+        { q: "Why did Gandhi suspend the Non-Cooperation Movement?", a: "After violence at Chauri Chaura in 1922, he called it off because the movement was meant to be strictly non-violent." }
       ],
       quiz: [
-        {
-          q: "Which of these is a non-renewable resource?",
-          options: ["Solar energy", "Wind", "Coal", "Forests"],
-          answer: 2,
-          explain: "**Coal** takes millions of years to form, so it cannot be replaced once used up."
-        },
-        {
-          q: "Agenda 21 for sustainable development was adopted at which conference in 1992?",
-          options: ["Earth Summit at Rio de Janeiro", "Kyoto Protocol talks", "Bretton Woods Conference", "Paris Climate Summit"],
-          answer: 0,
-          explain: "The **Earth Summit at Rio de Janeiro** in 1992 adopted Agenda 21 to promote sustainable development."
-        },
-        {
-          q: "The Chipko movement, in which villagers hugged trees to stop them being cut, was started in:",
-          options: ["Uttarakhand", "Rajasthan", "Odisha", "Kerala"],
-          answer: 0,
-          explain: "The **Chipko movement** began in the Himalayan region of Uttarakhand in 1973 to protect forests."
-        },
-        {
-          q: "Sustainable development means:",
-          options: ["Using all resources as fast as possible", "Meeting present needs without harming future generations", "Developing only natural resources", "Stopping all industries"],
-          answer: 1,
-          explain: "Sustainable development **balances present needs** with the needs of future generations."
-        },
-        {
-          q: "Which of these is a biotic resource?",
-          options: ["Water", "Soil", "Air", "Forests"],
-          answer: 3,
-          explain: "**Forests** come from living things, so they are biotic. Water, soil and air are abiotic."
-        },
-        {
-          q: "Which of these is a human-made resource?",
-          options: ["A forest", "A bridge", "Sunlight", "Iron ore"],
-          answer: 1,
-          explain: "A **bridge** is built by people, so it is a human-made resource."
-        }
+        { q: "The Quit India Movement began in:", options: ["1930", "1919", "1942", "1920"], answer: 2, explain: "It began on **8 August 1942**." },
+        { q: "Which event took place on 13 April 1919?", options: ["Dandi March", "Jallianwala Bagh massacre", "Partition of Bengal", "Chauri Chaura"], answer: 1, explain: "The **Jallianwala Bagh** massacre in Amritsar." },
+        { q: "The Dandi March was against the:", options: ["Rowlatt Act", "Salt law", "Partition of Bengal", "Simon Commission"], answer: 1, explain: "It protested the **salt law** and tax." },
+        { q: "India became independent on:", options: ["26 January 1950", "15 August 1947", "2 October 1947", "15 August 1942"], answer: 1, explain: "Independence was on **15 August 1947**." },
+        { q: "The Swadeshi movement followed the:", options: ["Rowlatt Act", "Quit India call", "Partition of Bengal", "Dandi March"], answer: 2, explain: "It arose after the **Partition of Bengal** in 1905." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "land-soil-water-vegetation-wildlife",
-      title: "Land, Soil, Water, Natural Vegetation and Wildlife Resources",
-      section: "Geography",
-      summary: "How land is used in India, the main types of soil and their uses, how soil erosion can be prevented, the natural vegetation of different regions, and how wildlife is protected.",
+      id: "a-journey-through-indian-architecture",
+      title: "A Journey Through Indian Architecture",
+      section: "Our Cultural Heritage and Knowledge Traditions",
+      summary: "How building styles in India changed over time, from Harappan cities and stupas to temples, Indo-Islamic monuments and colonial buildings.",
       notes: [
         {
-          heading: "Land Use",
+          heading: "Early Architecture",
           points: [
-            "Land is used for forests, pastures, barren land, cultivation, buildings, roads and industries.",
-            "Land use depends on factors such as relief, climate, soil and population. Fertile plains are mostly used for farming."
+            "The **Harappan** cities were carefully planned with grid streets, drains and the **Great Bath** at Mohenjo-daro.",
+            "**Stupas**, such as the one at **Sanchi**, are domed Buddhist structures. Rock-cut caves were carved at **Ajanta** and **Ellora**.",
+            "The **Kailasa temple** at Ellora was carved out of a single rock."
           ]
         },
         {
-          heading: "Types of Soil",
+          heading: "Temples",
           points: [
-            "**Alluvial soil** is the most widespread soil. It is formed from sediments deposited by rivers and is found in the Northern Plains.",
-            "**Black soil** (regur), formed from lava rock, is found in the Deccan plateau and is ideal for growing cotton.",
-            "**Red soil** is found in the south and east, and **laterite soil** in parts of the south and north-east. Both are less fertile."
+            "Temple styles include the **Nagara** style in the north and the **Dravida** style in the south, where towering gateways and a pyramid-shaped tower are common.",
+            "The **Brihadeeswara Temple** at Thanjavur was built by the Chola king **Rajaraja I** and finished around 1010.",
+            "The **Konark Sun Temple** in Odisha is shaped like a chariot. **Khajuraho** temples in Madhya Pradesh are famed for their sculpture.",
+            "The Pallava rulers carved temples at **Mamallapuram**."
           ]
         },
         {
-          heading: "Soil Erosion and Conservation",
+          heading: "Indo-Islamic and Colonial",
           points: [
-            "**Soil erosion** is the removal of the top, fertile layer of soil by wind or water. It is made worse by deforestation and overgrazing.",
-            "Methods to prevent erosion include **contour ploughing**, **terrace farming**, planting **shelter belts** of trees and afforestation.",
-            "The **Bhakra Nangal dam** and other dams store water for irrigation and power, and rainwater harvesting helps conserve water."
-          ]
-        },
-        {
-          heading: "Natural Vegetation and Wildlife",
-          points: [
-            "The main natural vegetation types are **tropical evergreen** forests, **deciduous** (monsoon) forests and thorny bushes in the dry regions.",
-            "The **Wildlife Protection Act, 1972**, protects animals and plants, and **Project Tiger** was launched in **1973** to save the tiger."
+            "Indo-Islamic buildings combined Indian and Persian features: **arches**, **domes** and **minarets**. Examples include the **Qutb Minar**, **Fatehpur Sikri**, the **Red Fort** and the **Gol Gumbaz** at Bijapur.",
+            "The **Taj Mahal** at Agra was built by Shah Jahan in memory of Mumtaz Mahal.",
+            "In the colonial period, buildings like the **Gateway of India** and the **Victoria Memorial** blended European and Indian styles, called Indo-Saracenic."
           ]
         }
       ],
       formulas: [
-        "Alluvial soil – most widespread; Black soil – cotton; Red soil – south and east",
-        "1972 – Wildlife Protection Act",
-        "1973 – Project Tiger launched"
+        "Sanchi = stupa; Ajanta and Ellora = rock-cut caves",
+        "Brihadeeswara Temple, Thanjavur: Rajaraja I (Chola)",
+        "Taj Mahal: Shah Jahan, Agra",
+        "Temple styles: Nagara (north), Dravida (south)"
       ],
       terms: [
-        { term: "Alluvial soil", meaning: "Fertile soil deposited by rivers, found mainly in the Northern Plains and coastal areas." },
-        { term: "Regur soil", meaning: "Black soil formed from lava rock, found in the Deccan plateau and suited to cotton." },
-        { term: "Soil erosion", meaning: "The removal of the top layer of soil by wind or water." },
-        { term: "Contour ploughing", meaning: "Ploughing along the contour lines of a slope to slow down water flow and prevent erosion." },
-        { term: "Deciduous forest", meaning: "A forest whose trees shed their leaves in the dry season, found in most parts of India." }
+        { term: "Stupa", meaning: "A dome-shaped Buddhist monument." },
+        { term: "Rock-cut architecture", meaning: "Buildings and temples carved out of solid rock." },
+        { term: "Minaret", meaning: "A tall slender tower, usually part of a mosque." },
+        { term: "Indo-Saracenic", meaning: "A colonial-era style mixing Indian, Islamic and European features." },
+        { term: "Dome", meaning: "A rounded roof shaped like half a sphere." }
       ],
       qa: [
-        {
-          q: "Why is alluvial soil important for agriculture?",
-          a: "It is formed from sediments deposited by rivers, so it is very fertile. It supports crops such as wheat, rice and sugarcane in the Northern Plains."
-        },
-        {
-          q: "What is soil erosion, and how can it be prevented?",
-          a: "Soil erosion is the removal of the fertile top layer of soil by wind or water. It can be prevented by contour ploughing, terrace farming, planting shelter belts and avoiding overgrazing."
-        },
-        {
-          q: "Why was Project Tiger started?",
-          a: "The number of tigers had fallen sharply because of hunting and loss of habitat. Project Tiger, launched in 1973, set up tiger reserves to protect the species and its habitat."
-        }
+        { q: "What was special about Harappan cities?", a: "They were planned with straight streets, a drainage system and public structures like the Great Bath, showing advanced town planning." },
+        { q: "Name two features of Indo-Islamic architecture.", a: "Arches and domes, and tall minarets, often with decorative inscriptions and carving." }
       ],
       quiz: [
-        {
-          q: "Which soil is the most widespread in India?",
-          options: ["Black soil", "Red soil", "Alluvial soil", "Laterite soil"],
-          answer: 2,
-          explain: "**Alluvial soil** covers the largest area of India, especially the Northern Plains."
-        },
-        {
-          q: "Black soil, which is good for cotton, is found mainly in:",
-          options: ["The Northern Plains", "The Deccan plateau", "Rajasthan", "The north-east hills"],
-          answer: 1,
-          explain: "**Black soil** is formed from lava rock and is found mainly in the Deccan plateau."
-        },
-        {
-          q: "Contour ploughing is a method used to:",
-          options: ["Increase soil salinity", "Grow rice in dry areas", "Prevent soil erosion", "Dig wells"],
-          answer: 2,
-          explain: "Ploughing along the contours **slows the flow of water** and reduces soil erosion on slopes."
-        },
-        {
-          q: "Project Tiger was launched in which year?",
-          options: ["1972", "1865", "1878", "1973"],
-          answer: 3,
-          explain: "**Project Tiger** was launched in 1973, a year after the Wildlife Protection Act of 1972."
-        },
-        {
-          q: "Which type of forest sheds its leaves in the dry season and covers most of India?",
-          options: ["Tropical evergreen forest", "Thorn forest", "Mangrove forest", "Deciduous forest"],
-          answer: 3,
-          explain: "**Deciduous forests** cover a large part of India and shed their leaves during the dry season."
-        },
-        {
-          q: "Shelter belts are rows of trees planted to:",
-          options: ["Provide firewood only", "Protect fields from strong winds", "Mark property boundaries", "Store rainwater"],
-          answer: 1,
-          explain: "**Shelter belts** protect crops and soil from strong winds, which reduces erosion."
-        }
+        { q: "The Great Bath is at:", options: ["Mohenjo-daro", "Sanchi", "Ellora", "Khajuraho"], answer: 0, explain: "The **Great Bath** is in Mohenjo-daro." },
+        { q: "Who built the Brihadeeswara Temple at Thanjavur?", options: ["Shah Jahan", "Rajaraja I", "Akbar", "Ashoka"], answer: 1, explain: "The Chola king **Rajaraja I**." },
+        { q: "The Kailasa temple at Ellora was:", options: ["Built from bricks", "Made of marble", "Carved from a single rock", "A stupa"], answer: 2, explain: "It was **carved out of one rock**." },
+        { q: "Which monument was built by Shah Jahan?", options: ["Fatehpur Sikri", "Qutb Minar", "Gol Gumbaz", "Taj Mahal"], answer: 3, explain: "The **Taj Mahal** at Agra." },
+        { q: "The Sun Temple at Konark is shaped like a:", options: ["Chariot", "Stupa", "Fort", "Lotus pond"], answer: 0, explain: "It is designed as a giant **chariot**." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "agriculture",
-      title: "Agriculture",
-      section: "Geography",
-      summary: "The different types of farming, the Kharif, Rabi and Zaid crop seasons, and how the Green Revolution transformed Indian agriculture, along with the problems farmers still face.",
+      id: "the-role-of-the-judiciary-in-our-society",
+      title: "The Role of the Judiciary in Our Society",
+      section: "Governance and Democracy",
+      summary: "How courts are organised in India, what the judiciary does, why it must be independent, and how people can approach it for justice.",
       notes: [
         {
-          heading: "Types of Farming",
+          heading: "Structure of Courts",
           points: [
-            "**Subsistence farming** grows food mainly for the farmer's own family, using simple tools and family labour.",
-            "**Commercial farming** grows crops for sale in the market and uses modern inputs such as high-yielding seeds, fertilisers and machines.",
-            "**Plantation agriculture** grows a single cash crop, such as tea, coffee, rubber or sugarcane, on large estates."
+            "India has a single, integrated judiciary with three levels: the **Supreme Court** at the top, **High Courts** in the states, and **district and lower (subordinate) courts**.",
+            "The **Supreme Court** is in New Delhi and is headed by the **Chief Justice of India**. Its decisions are binding on all courts.",
+            "Each state (or group of states) has a **High Court**. District courts handle civil and criminal cases locally.",
+            "Courts handle **civil** disputes (property, contracts, family matters) and **criminal** cases (theft, assault)."
           ]
         },
         {
-          heading: "Kharif, Rabi and Zaid Crops",
+          heading: "Functions of the Judiciary",
           points: [
-            "**Kharif** crops are sown with the start of the monsoon (June–July) and harvested in autumn (September–October). Examples are rice, maize, jowar, bajra, cotton and groundnut.",
-            "**Rabi** crops are sown in winter (October–December) and harvested in spring (March–April). Examples are wheat, barley, gram, peas and mustard.",
-            "**Zaid** crops are grown in the short summer season between the Rabi and Kharif seasons, such as watermelon, cucumber and vegetables."
+            "The judiciary **settles disputes** between people, between people and the government, and between governments.",
+            "It **interprets the Constitution and laws**. Through **judicial review**, it can declare a law or action invalid if it goes against the Constitution.",
+            "It protects the **Fundamental Rights** of citizens. A person whose rights are violated can approach the Supreme Court (Article 32) or a High Court."
           ]
         },
         {
-          heading: "The Green Revolution",
+          heading: "Independence and Access to Justice",
           points: [
-            "The **Green Revolution** of the 1960s introduced high-yielding varieties of seeds, along with irrigation, fertilisers and pesticides.",
-            "It greatly increased wheat and rice production, mainly in **Punjab, Haryana and western Uttar Pradesh**, and helped India move towards self-sufficiency in food grains.",
-            "Farmers still face problems such as small landholdings, dependence on the monsoon, debt and poor storage facilities."
+            "An **independent judiciary** can judge fairly without pressure from the government or anyone else. Judges are not elected and cannot be removed easily; removal requires a special process in Parliament.",
+            "Judges' salaries are protected, which helps them work without fear or favour.",
+            "**Public Interest Litigation (PIL)** allows any person or group to approach a court on behalf of those who cannot, for a matter of public concern.",
+            "Legal aid and **Lok Adalats** make justice more affordable and quicker for ordinary people."
           ]
         }
       ],
       formulas: [
-        "Kharif – sown in monsoon (June–July), harvested in September–October",
-        "Rabi – sown in winter (October–December), harvested in spring (March–April)",
-        "1960s – Green Revolution introduces high-yielding varieties"
+        "Courts: Supreme Court > High Courts > District and lower courts",
+        "Judicial review = power to check laws and actions against the Constitution",
+        "PIL = case in public interest, filed on behalf of others",
+        "Article 32 = Right to Constitutional Remedies"
       ],
       terms: [
-        { term: "Subsistence farming", meaning: "Farming in which the crops grown are mainly used to feed the farmer's own family." },
-        { term: "Plantation agriculture", meaning: "The growing of a single cash crop, such as tea or coffee, on a large estate." },
-        { term: "Kharif", meaning: "The crop season that begins with the monsoon, when rice and cotton are sown." },
-        { term: "Rabi", meaning: "The crop season in winter, when wheat and gram are sown." },
-        { term: "Green Revolution", meaning: "A programme of high-yielding seeds, irrigation and chemical fertilisers that increased food grain production from the 1960s." }
+        { term: "Judiciary", meaning: "The branch of government made up of the courts that interpret laws and deliver justice." },
+        { term: "Judicial review", meaning: "The power of courts to examine laws and actions and strike down those that violate the Constitution." },
+        { term: "Public Interest Litigation", meaning: "A case brought to court to protect the interests of the public or of people who cannot approach the court themselves." },
+        { term: "Civil case", meaning: "A dispute about rights, property or contracts." },
+        { term: "Criminal case", meaning: "A case about an offence against the law, such as theft." }
       ],
       qa: [
-        {
-          q: "How does subsistence farming differ from commercial farming?",
-          a: "Subsistence farming produces mainly for the farmer's own family, with few surplus crops to sell. Commercial farming produces crops for sale in the market and uses modern inputs to get high yields."
-        },
-        {
-          q: "What is the difference between Kharif and Rabi crops?",
-          a: "Kharif crops are sown at the start of the monsoon and harvested in autumn, such as rice, maize and cotton. Rabi crops are sown in winter and harvested in spring, such as wheat, gram and mustard."
-        },
-        {
-          q: "What were the effects of the Green Revolution?",
-          a: "It greatly increased the production of wheat and rice and helped India move towards self-sufficiency in food grains. However, its benefits went mostly to farmers who had irrigation and money to buy inputs, and it was concentrated in a few states."
-        }
+        { q: "Why must the judiciary be independent?", a: "So that judges can decide cases fairly, based on the law and the Constitution, without pressure from the government, political parties or powerful people." },
+        { q: "What is Public Interest Litigation?", a: "A petition filed in court by a person or group for a matter of public concern or on behalf of people who cannot approach the court themselves, helping to improve access to justice." }
       ],
       quiz: [
-        {
-          q: "Plantation agriculture is mainly the growing of:",
-          options: ["A single cash crop on large estates", "Many food crops for the family", "Vegetables in kitchen gardens", "Crops only for the government"],
-          answer: 0,
-          explain: "**Plantation agriculture** grows one cash crop, such as tea, coffee or rubber, on large estates."
-        },
-        {
-          q: "Which of these is a Rabi crop?",
-          options: ["Rice", "Cotton", "Wheat", "Maize"],
-          answer: 2,
-          explain: "**Wheat** is sown in winter and harvested in spring, so it is a Rabi crop."
-        },
-        {
-          q: "Kharif crops are sown:",
-          options: ["In winter", "In the monsoon", "In the spring", "Only in the dry summer"],
-          answer: 1,
-          explain: "**Kharif** crops are sown at the beginning of the monsoon, around June and July."
-        },
-        {
-          q: "The Green Revolution began in India in:",
-          options: ["1947", "1960s", "1990s", "1905"],
-          answer: 1,
-          explain: "The **Green Revolution** started in the 1960s with high-yielding varieties of seeds."
-        },
-        {
-          q: "Zaid crops are grown during:",
-          options: ["The monsoon", "The winter", "The autumn", "The short summer season"],
-          answer: 3,
-          explain: "**Zaid** crops such as watermelon and cucumber are grown in the short summer season."
-        },
-        {
-          q: "The Green Revolution benefited mainly which states?",
-          options: ["Punjab and Haryana", "Kerala and Goa", "Assam and Meghalaya", "Gujarat and Odisha"],
-          answer: 0,
-          explain: "The Green Revolution had its greatest impact in **Punjab and Haryana**, along with western Uttar Pradesh."
-        }
+        { q: "The highest court in India is the:", options: ["High Court", "District Court", "Parliament", "Supreme Court"], answer: 3, explain: "The **Supreme Court** is the apex court." },
+        { q: "Judicial review lets courts:", options: ["Make laws", "Strike down laws that violate the Constitution", "Appoint ministers", "Conduct elections"], answer: 1, explain: "Courts can declare such laws **invalid**." },
+        { q: "A court dealing with theft is hearing a:", options: ["Constitutional case", "Civil case", "Criminal case", "PIL by default"], answer: 2, explain: "Theft is an offence, so it is a **criminal case**." },
+        { q: "A Lok Adalat helps by providing:", options: ["Quicker and affordable settlement of disputes", "Laws for Parliament", "Votes for citizens", "Police training"], answer: 0, explain: "Lok Adalats offer **quick, low-cost** settlement." },
+        { q: "Article 32 gives the right to approach the Supreme Court for:", options: ["Free education", "Enforcing Fundamental Rights", "Choosing a Prime Minister", "Tax refunds"], answer: 1, explain: "It is the **Right to Constitutional Remedies**." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "industries",
-      title: "Industries",
-      section: "Geography",
-      summary: "How industries are classified by raw material and ownership, the location of major iron and steel plants, and the environmental problems that industries can cause.",
+      id: "citizenship-rights-and-duties",
+      title: "Citizenship: Rights and Duties",
+      section: "Governance and Democracy",
+      summary: "Who is a citizen of India, what rights and duties come with citizenship, and how rights and duties go together.",
       notes: [
         {
-          heading: "Classifying Industries",
+          heading: "Who is a Citizen?",
           points: [
-            "**Agro-based** industries use farm produce as raw material, such as sugar, cotton textiles and jute. **Forest-based** industries use forest produce, such as paper and furniture.",
-            "**Mineral-based** industries use minerals, such as iron and steel, and cement.",
-            "By ownership, industries are in the **public sector** (owned by the government), the **private sector** (owned by individuals or companies) or the **joint sector** (owned by both together)."
+            "A **citizen** is a full member of a country, with legal rights and duties.",
+            "Under the **Citizenship Act, 1955**, citizenship can be acquired by **birth**, **descent**, **registration** and **naturalisation**.",
+            "India has **single citizenship**; a person is a citizen of India, not of a state.",
+            "A person who is not a citizen is an **alien** or foreigner."
           ]
         },
         {
-          heading: "Iron and Steel",
+          heading: "Fundamental Rights",
           points: [
-            "Iron and steel is a basic industry, because steel is needed for railways, machines, buildings and ships.",
-            "Major steel plants include **Jamshedpur** (Tata Iron and Steel Company, founded in 1907), **Bhilai**, **Rourkela**, **Durgapur**, **Bokaro** and **Salem**.",
-            "Industries are often located near their raw materials, because it is cheaper to transport the finished product than heavy raw materials."
+            "The Constitution guarantees six Fundamental Rights: Right to **Equality**, Right to **Freedom**, Right against **Exploitation**, Right to **Freedom of Religion**, **Cultural and Educational Rights**, and Right to **Constitutional Remedies**.",
+            "These rights can be enforced in a court. Rights have reasonable limits so that one person's rights do not harm others.",
+            "The **Right to Education** for children aged 6 to 14 is part of the Fundamental Rights (Article 21A)."
           ]
         },
         {
-          heading: "Industries and Pollution",
+          heading: "Duties and Responsibilities",
           points: [
-            "Industries provide jobs and goods, but they also cause **air and water pollution**, for example when factory waste flows into rivers.",
-            "Pollution can be reduced through effluent treatment plants, cleaner technology and laws such as the **Water (Prevention and Control of Pollution) Act, 1974**."
+            "**Fundamental Duties** were added to the Constitution in **1976** (42nd Amendment). There are now **11**.",
+            "Duties include respecting the Constitution, the national flag and anthem, protecting public property, promoting harmony, safeguarding the environment and developing scientific temper.",
+            "Rights and duties go together: enjoying rights means respecting the rights of others.",
+            "The **Directive Principles** guide the government in making policy but cannot be enforced in court."
           ]
         }
       ],
       formulas: [
-        "Agro-based, mineral-based and forest-based industries – classified by raw material",
-        "Public, private and joint sector – classified by ownership",
-        "1907 – Tata Iron and Steel Company founded at Jamshedpur",
-        "1974 – Water (Prevention and Control of Pollution) Act"
+        "Citizenship Act: 1955",
+        "Six Fundamental Rights",
+        "Fundamental Duties added: 1976 (42nd Amendment); now 11",
+        "Citizenship by: birth, descent, registration, naturalisation"
       ],
       terms: [
-        { term: "Raw material", meaning: "Natural material, such as cotton, iron ore or wood, that is processed into a finished product." },
-        { term: "Agro-based industry", meaning: "An industry that uses agricultural products as its raw material, such as sugar or cotton textiles." },
-        { term: "Public sector", meaning: "Industries owned and managed by the government, such as the Bhilai steel plant." },
-        { term: "Private sector", meaning: "Industries owned by individuals or companies, usually with the aim of making profit." },
-        { term: "Joint sector", meaning: "Industries owned jointly by the government and private companies." }
+        { term: "Citizen", meaning: "A person who is a legal member of a country and enjoys its rights." },
+        { term: "Fundamental Rights", meaning: "Basic rights guaranteed by the Constitution and enforceable in courts." },
+        { term: "Fundamental Duties", meaning: "Responsibilities that every citizen is expected to follow." },
+        { term: "Naturalisation", meaning: "Acquiring citizenship after living in a country for a prescribed period." }
       ],
       qa: [
-        {
-          q: "Why are some industries located near their raw materials?",
-          a: "Heavy raw materials cost more to transport than the finished product, so industries are set up near them to save cost. For example, sugar mills are located near sugarcane fields, and iron and steel plants near iron ore and coal."
-        },
-        {
-          q: "How does a public sector industry differ from a private sector industry?",
-          a: "A public sector industry is owned and managed by the government, and its main aim is public welfare, as with the Bhilai steel plant. A private sector industry is owned by individuals or companies, which mainly aim to earn profit."
-        },
-        {
-          q: "What causes industrial pollution, and how can it be controlled?",
-          a: "Factories release smoke, chemicals and untreated waste into the air and water. It can be controlled by installing effluent treatment plants, using cleaner technology and enforcing laws such as the Water Act of 1974."
-        }
+        { q: "List the six Fundamental Rights.", a: "Equality; Freedom; Against Exploitation; Freedom of Religion; Cultural and Educational Rights; and Constitutional Remedies." },
+        { q: "Why are duties as important as rights?", a: "Rights can be enjoyed by everyone only when citizens respect each other's rights and perform duties like obeying laws and protecting public property." }
       ],
       quiz: [
-        {
-          q: "Which industry is based on forest products?",
-          options: ["Sugar", "Paper", "Iron and steel", "Cement"],
-          answer: 1,
-          explain: "**Paper** is made from wood and other forest products, so it is a forest-based industry."
-        },
-        {
-          q: "The Tata Iron and Steel Company was set up at:",
-          options: ["Bhilai", "Jamshedpur", "Rourkela", "Bokaro"],
-          answer: 1,
-          explain: "The **Tata Iron and Steel Company** was founded in 1907 at Jamshedpur."
-        },
-        {
-          q: "An industry owned by both the government and private companies together is in the:",
-          options: ["Public sector", "Private sector", "Joint sector", "Mineral sector"],
-          answer: 2,
-          explain: "Industries owned jointly by the **government and private companies** belong to the joint sector."
-        },
-        {
-          q: "Sugar industries are mainly:",
-          options: ["Mineral-based", "Forest-based", "Agro-based", "Information technology"],
-          answer: 2,
-          explain: "**Sugar** is made from sugarcane, an agricultural product, so sugar industries are agro-based."
-        },
-        {
-          q: "Which of these is a major steel plant in the public sector?",
-          options: ["Bhilai", "Jamshedpur", "Ahmedabad", "Mumbai"],
-          answer: 0,
-          explain: "The **Bhilai Steel Plant** was set up by the government in the public sector."
-        },
-        {
-          q: "Which Act was passed to control water pollution in 1974?",
-          options: ["Wildlife Protection Act", "Forest Act", "Factories Act of 1948", "Water (Prevention and Control of Pollution) Act"],
-          answer: 3,
-          explain: "The **Water (Prevention and Control of Pollution) Act, 1974**, was passed to control pollution of rivers and water bodies."
-        }
+        { q: "How many Fundamental Rights are listed in the Constitution?", options: ["Five", "Seven", "Eight", "Six"], answer: 3, explain: "There are **six**." },
+        { q: "Which law governs Indian citizenship?", options: ["Citizenship Act, 1955", "Right to Information Act", "Indian Penal Code", "Companies Act"], answer: 0, explain: "The **Citizenship Act, 1955**." },
+        { q: "Fundamental Duties were added in:", options: ["1950", "1976", "1988", "2002"], answer: 1, explain: "By the **42nd Amendment in 1976**." },
+        { q: "A court can enforce:", options: ["Directive Principles", "Fundamental Rights", "Party manifestos", "Election promises"], answer: 1, explain: "**Fundamental Rights** can be enforced in court." },
+        { q: "Which is a way to acquire Indian citizenship?", options: ["Owning property", "Speaking Hindi", "Birth in India", "Paying income tax"], answer: 2, explain: "Citizenship can be acquired by **birth**, descent, registration or naturalisation." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "human-resources",
-      title: "Human Resources",
-      section: "Geography",
-      summary: "How people become a resource when they are educated, skilled and healthy, and what India's population size, density, sex ratio and literacy tell us about its human resources.",
+      id: "dynamics-of-population",
+      title: "Dynamics of Population",
+      section: "Economic Life Around Us",
+      summary: "How population is counted, why it is unevenly distributed, and what age, sex ratio, literacy and migration tell us about a country.",
       notes: [
         {
-          heading: "People as a Resource",
+          heading: "Counting and Distribution",
           points: [
-            "A large population becomes a **human resource** when people are educated, skilled and healthy. Otherwise, it can become a burden.",
-            "**Human capital** is the knowledge and skills people gain through education and training.",
-            "Investment in health and education improves the quality of human resources."
+            "The **Census** counts the population every **ten years**. Independent India's first Census was in **1951**.",
+            "The **2011 Census** recorded India's population at about **121 crore**, the second-largest in the world at that time.",
+            "**Population density** is the number of people per square kilometre. India's density in 2011 was about **382** per sq km.",
+            "Population is higher where land is flat and fertile, water is available and climate is moderate, such as the Northern Plains, and lower in mountains, deserts and dense forests."
           ]
         },
         {
-          heading: "Population Size and Density",
+          heading: "Population Characteristics",
           points: [
-            "According to the **2011 Census**, India's population was about **1.21 billion**.",
-            "**Population density** is the number of people per square kilometre. The Gangetic plain and Kerala are densely populated, while the Himalayan region and deserts are sparsely populated."
+            "**Birth rate** and **death rate** decide population growth. The **natural growth rate** is the difference between them.",
+            "The **sex ratio** is the number of females per 1000 males. In 2011 it was about 943.",
+            "A **population pyramid** shows how many people there are in each age group and gender.",
+            "**Literacy rate** is the share of people who can read and write; it was about 74% in 2011."
           ]
         },
         {
-          heading: "Sex Ratio and Literacy",
+          heading: "Migration and Human Resource",
           points: [
-            "The **sex ratio** is the number of females per 1,000 males. The 2011 Census recorded **943 females per 1,000 males**.",
-            "The **literacy rate** rose to about **74%** in 2011, but it was lower for women and in rural areas than for men and in cities."
+            "**Migration** is the movement of people from one place to another to live. Reasons include jobs, education, marriage and disaster.",
+            "**Push factors** (lack of jobs, floods) make people leave; **pull factors** (better jobs, schools) attract them.",
+            "A large working-age population can become a **demographic dividend** if people are educated, healthy and employed.",
+            "People are a resource when they have good health, education and skills."
           ]
         }
       ],
       formulas: [
-        "1.21 billion – India's population in the 2011 Census",
-        "943 – females per 1,000 males, 2011 Census",
-        "About 74% – literacy rate, 2011 Census",
-        "Population density = number of people per square kilometre"
+        "Census: every 10 years",
+        "Density = population ÷ area (people per sq km)",
+        "Natural growth = birth rate − death rate",
+        "Sex ratio = females per 1000 males"
       ],
       terms: [
-        { term: "Human resource", meaning: "The skills, knowledge and health of people, which contribute to a country's development." },
-        { term: "Population density", meaning: "The average number of people living in one square kilometre of area." },
-        { term: "Sex ratio", meaning: "The number of females for every 1,000 males in a population." },
-        { term: "Literacy rate", meaning: "The percentage of people aged seven and above who can read and write." },
-        { term: "Human capital", meaning: "The knowledge and skills that people gain through education and training." }
+        { term: "Census", meaning: "A count of the entire population, with details about people, done every ten years." },
+        { term: "Population density", meaning: "The average number of people living in each square kilometre." },
+        { term: "Sex ratio", meaning: "The number of females per 1000 males." },
+        { term: "Migration", meaning: "The movement of people from one place to another to live." },
+        { term: "Demographic dividend", meaning: "The economic benefit of a large share of the population being of working age." }
       ],
       qa: [
-        {
-          q: "Why is a large population not always an advantage?",
-          a: "A large population becomes a burden if people are uneducated and unskilled, because the country cannot create enough jobs or provide basic services. When people are educated and healthy, they become a valuable human resource."
-        },
-        {
-          q: "What is the sex ratio, and why is it important?",
-          a: "The sex ratio is the number of females per 1,000 males. A low sex ratio shows social discrimination against girls and women, and it affects health, marriage and development."
-        },
-        {
-          q: "How does education turn people into a human resource?",
-          a: "Education develops knowledge and skills, which help people take up jobs, start businesses and contribute to the economy. Educated people also make better decisions about their health and their families."
-        }
+        { q: "Why is population unevenly distributed?", a: "People prefer areas with flat, fertile land, water, a moderate climate and job opportunities. Mountains, deserts and thick forests have few people." },
+        { q: "Differentiate between push and pull factors of migration.", a: "Push factors, such as unemployment or floods, force people to leave a place. Pull factors, such as better jobs and schools, attract them to another place." }
       ],
       quiz: [
-        {
-          q: "The number of people living per square kilometre is called:",
-          options: ["Sex ratio", "Literacy rate", "Population density", "Birth rate"],
-          answer: 2,
-          explain: "**Population density** is measured as the number of people per square kilometre."
-        },
-        {
-          q: "According to the 2011 Census, the sex ratio in India was:",
-          options: ["943 females per 1,000 males", "832 females per 1,000 males", "1,210 females per 1,000 males", "600 females per 1,000 males"],
-          answer: 0,
-          explain: "The **2011 Census** recorded 943 females for every 1,000 males."
-        },
-        {
-          q: "Human resource means:",
-          options: ["Machines and buildings", "The skills, knowledge and health of people", "Land and water", "Minerals found in the earth"],
-          answer: 1,
-          explain: "A **human resource** is the skill, knowledge and health of people, which help a country develop."
-        },
-        {
-          q: "Which of these is a sparsely populated region of India?",
-          options: ["The Gangetic plain", "Kerala", "The Himalayan region", "The Ganga-Brahmaputra delta"],
-          answer: 2,
-          explain: "The **Himalayan region** has steep slopes and harsh climate, so it has a low population density."
-        },
-        {
-          q: "Human capital refers to:",
-          options: ["Money invested in banks", "Knowledge and skills gained through education and training", "Factories and machines", "Land owned by the government"],
-          answer: 1,
-          explain: "**Human capital** is the knowledge and skills that people gain through education and training."
-        },
-        {
-          q: "The literacy rate in India in 2011 was about:",
-          options: ["25%", "95%", "50%", "74%"],
-          answer: 3,
-          explain: "The **2011 Census** recorded a literacy rate of about 74%."
-        }
+        { q: "How often is the Census held in India?", options: ["Every 5 years", "Every 10 years", "Every year", "Every 20 years"], answer: 1, explain: "Every **ten years**." },
+        { q: "Sex ratio is expressed as:", options: ["Males per 100 females", "Females per 100 males", "Females per 1000 males", "Males per 1000 people"], answer: 2, explain: "Females per **1000 males**." },
+        { q: "Natural growth rate equals:", options: ["Birth rate − death rate", "Birth rate + death rate", "Death rate − birth rate", "Migration − births"], answer: 0, explain: "Natural growth = **birth rate minus death rate**." },
+        { q: "Which is a pull factor of migration?", options: ["Famine", "Floods", "Unemployment", "Better job opportunities"], answer: 3, explain: "**Better jobs** pull people to a place." },
+        { q: "Population density is measured in:", options: ["People per square kilometre", "People per household", "People per state", "Births per year"], answer: 0, explain: "It is **people per sq km**." }
       ]
     },
-    // ==================================================================
-    // SOCIAL AND POLITICAL LIFE – Social and Political Life III
-    // ==================================================================
     {
-      id: "indian-constitution",
-      title: "The Indian Constitution",
-      section: "Social and Political Life",
-      summary: "What the Constitution is, how it was made, the values declared in the Preamble, and the main parts of the Constitution, including Fundamental Rights, Directive Principles and Fundamental Duties.",
+      id: "indias-urban-landscape",
+      title: "India's Urban Landscape",
+      section: "Economic Life Around Us",
+      summary: "What makes a place urban, how cities grow, the opportunities and problems of urban life, and how cities are planned and governed.",
       notes: [
         {
-          heading: "Why a Constitution?",
+          heading: "What is Urban?",
           points: [
-            "A **constitution** is the basic law of a country. It sets out how the government is formed and what rights citizens have.",
-            "The Constituent Assembly first met on **9 December 1946**. **Dr B. R. Ambedkar** chaired the Drafting Committee.",
-            "The Constitution was adopted on **26 November 1949** and came into force on **26 January 1950**."
+            "**Urbanisation** is the growth in the share of people living in towns and cities.",
+            "The Census defines a **census town** as one with at least **5000** people, a population density of at least **400 per sq km**, and at least **75%** of male workers in non-farm jobs.",
+            "**Statutory towns** are those with a municipality, corporation or similar body, notified by law.",
+            "Cities with a population of **10 lakh** or more are called million-plus cities."
           ]
         },
         {
-          heading: "The Preamble",
+          heading: "Growth and Planning",
           points: [
-            "The Preamble begins with 'We, the people of India' and declares India to be a **Sovereign, Socialist, Secular, Democratic Republic**.",
-            "It promises **Justice, Liberty, Equality and Fraternity** to all citizens.",
-            "The words 'socialist' and 'secular' were added by the **42nd Amendment in 1976**."
+            "Cities grow because of **industry, trade, services** and migration from villages. Many cities grew around rivers, ports and trade routes.",
+            "Ancient cities such as **Mohenjo-daro** were carefully planned. **Jaipur** was planned in the 18th century by Sawai Jai Singh II, and **Chandigarh** was planned after Independence.",
+            "Cities are governed by **municipal corporations** and municipalities, which supply water, roads, sanitation and waste disposal."
           ]
         },
         {
-          heading: "Key Parts of the Constitution",
+          heading: "Opportunities and Challenges",
           points: [
-            "**Fundamental Rights** (Part III) protect individual freedoms such as equality, freedom of speech and the right against exploitation.",
-            "**Directive Principles of State Policy** (Part IV) guide the government towards social and economic welfare. Courts cannot enforce them.",
-            "**Fundamental Duties** (Part IV-A), added in 1976, ask citizens to respect the Constitution, the national flag and the national anthem."
+            "Cities offer jobs, education, healthcare and cultural life.",
+            "Challenges include **overcrowding, housing shortages, slums, traffic, pollution** and waste.",
+            "Solutions include better public transport, green spaces, waste recycling, affordable housing and planning for growth.",
+            "Cities and villages depend on each other: villages supply food and raw materials, and cities provide goods and services."
           ]
         }
       ],
       formulas: [
-        "9 December 1946 – Constituent Assembly first meets",
-        "26 November 1949 – Constitution adopted",
-        "26 January 1950 – Constitution comes into force",
-        "1976 – 42nd Amendment adds 'socialist' and 'secular' to the Preamble"
+        "Census town: 5000+ people, 400+ per sq km, 75%+ male workers in non-farm work",
+        "Million-plus city: population of 10 lakh or more",
+        "Planned cities: Chandigarh, Jaipur"
       ],
       terms: [
-        { term: "Constitution", meaning: "The basic law of a country, which sets out the structure of government and the rights of citizens." },
-        { term: "Preamble", meaning: "The introduction to the Constitution, which states its aims and values." },
-        { term: "Sovereign", meaning: "Having the full power to make its own decisions, without control from any outside authority." },
-        { term: "Fundamental Rights", meaning: "Rights guaranteed to every citizen, such as equality and freedom, which courts can enforce." },
-        { term: "Directive Principles", meaning: "Guidelines given to the government to promote social and economic welfare, which courts cannot enforce." }
+        { term: "Urbanisation", meaning: "The increase in the proportion of people living in towns and cities." },
+        { term: "Census town", meaning: "A settlement that meets the Census criteria of size, density and non-farm work." },
+        { term: "Municipal corporation", meaning: "The local government body that runs a large city." },
+        { term: "Slum", meaning: "A crowded settlement with poor housing and few basic services." }
       ],
       qa: [
-        {
-          q: "What does the Preamble say about the nature of India?",
-          a: "It declares India to be a sovereign, socialist, secular, democratic republic. This means India is independent, aims at social and economic equality, has no official religion, and is governed by elected representatives of the people."
-        },
-        {
-          q: "What is the difference between Fundamental Rights and Directive Principles?",
-          a: "Fundamental Rights protect individual freedoms and can be enforced in courts. Directive Principles are guidelines for the government to achieve social and economic justice, and courts cannot enforce them."
-        },
-        {
-          q: "Why is the Constitution called the supreme law of the land?",
-          a: "No law can go against the Constitution, and courts can declare any law unconstitutional if it violates the Constitution. This makes it the highest law, binding on the government and on citizens."
-        }
+        { q: "Why do people migrate to cities?", a: "For jobs, better education, healthcare and living conditions that are not available in villages." },
+        { q: "Mention two problems of fast-growing cities.", a: "Shortage of housing leading to slums, and traffic congestion and pollution." }
       ],
       quiz: [
-        {
-          q: "The Indian Constitution came into force on:",
-          options: ["15 August 1947", "26 November 1949", "26 January 1950", "2 October 1952"],
-          answer: 2,
-          explain: "The Constitution was adopted on 26 November 1949 and came into force on **26 January 1950**."
-        },
-        {
-          q: "Who chaired the Drafting Committee of the Constituent Assembly?",
-          options: ["Jawaharlal Nehru", "Dr B. R. Ambedkar", "Rajendra Prasad", "Sardar Patel"],
-          answer: 1,
-          explain: "**Dr B. R. Ambedkar** chaired the Drafting Committee, which prepared the draft of the Constitution."
-        },
-        {
-          q: "Which of these words was added to the Preamble by the 42nd Amendment in 1976?",
-          options: ["Sovereign", "Republic", "Socialist", "Democratic"],
-          answer: 2,
-          explain: "The words **'socialist'** and 'secular' were added to the Preamble by the 42nd Amendment in 1976."
-        },
-        {
-          q: "Which part of the Constitution contains the Fundamental Rights?",
-          options: ["Part III", "Part IV", "Part IV-A", "Part I"],
-          answer: 0,
-          explain: "**Fundamental Rights** are in Part III of the Constitution."
-        },
-        {
-          q: "Directive Principles of State Policy are:",
-          options: ["Enforceable in every court", "Only applicable to Parliament", "Guidelines for the government that cannot be enforced in courts", "Duties of citizens"],
-          answer: 2,
-          explain: "**Directive Principles** guide the government, but courts cannot enforce them."
-        },
-        {
-          q: "Fundamental Duties were added to the Constitution in:",
-          options: ["1950", "1992", "1947", "1976"],
-          answer: 3,
-          explain: "**Fundamental Duties** were added by the 42nd Amendment in 1976."
-        }
+        { q: "Which of these is a planned city?", options: ["Chandigarh", "Delhi's old city", "Varanasi", "Kolkata's old city"], answer: 0, explain: "**Chandigarh** was planned after Independence." },
+        { q: "A million-plus city has a population of at least:", options: ["1 lakh", "10 lakh", "1 crore", "5 lakh"], answer: 1, explain: "Million = **10 lakh**." },
+        { q: "Which is a challenge of urban life?", options: ["Fewer schools", "Clean air everywhere", "Traffic and pollution", "No jobs"], answer: 2, explain: "**Traffic and pollution** are common problems." },
+        { q: "Who manages civic services in a large city?", options: ["Gram Panchayat", "Municipal Corporation", "Supreme Court", "Election Commission"], answer: 1, explain: "The **Municipal Corporation**." },
+        { q: "Urbanisation means:", options: ["Fall in city population", "Growth in the share of people living in towns and cities", "Spread of forests", "Return to villages"], answer: 1, explain: "It is the **rising share** of urban population." }
       ]
     },
-    // ------------------------------------------------------------------
     {
-      id: "understanding-secularism",
-      title: "Understanding Secularism",
-      section: "Social and Political Life",
-      summary: "What secularism means in India, how the Constitution protects freedom of religion and equality, and why communalism remains a challenge to a secular state.",
+      id: "cultural-currents-13th-to-17th-centuries",
+      title: "Cultural Currents: 13th to 17th Centuries",
+      section: "Our Cultural Heritage and Knowledge Traditions",
+      summary: "The Bhakti and Sufi movements, new literature, music, painting and architecture that flourished across India between the 13th and 17th centuries.",
       notes: [
         {
-          heading: "What Is Secularism?",
+          heading: "Bhakti and Sufi Traditions",
           points: [
-            "A **secular state** has no official religion and treats all religions equally.",
-            "In India, the state keeps a distance from all religions and does not favour or discriminate against any of them.",
-            "The idea of **sarva dharma sambhava**, or equal respect for all religions, is central to Indian secularism."
+            "The **Bhakti movement** stressed personal devotion to God and rejected rigid social divisions. Saints composed songs in local languages.",
+            "Important Bhakti saints include **Kabir**, **Guru Nanak**, **Mirabai**, **Tulsidas**, **Chaitanya**, **Tukaram**, **Sankardev**, **Ravidas** and **Namdev**.",
+            "**Sufi** saints such as **Khwaja Moinuddin Chishti**, **Nizamuddin Auliya** and **Baba Farid** preached love, tolerance and service. Music, such as qawwali, was part of Sufi gatherings.",
+            "**Guru Nanak** (1469-1539) preached one God, equality, honest work, sharing and remembering God. He started the practice of **langar**, community meals."
           ]
         },
         {
-          heading: "Secularism in the Constitution",
+          heading: "Literature and Music",
           points: [
-            "**Articles 25 to 28** guarantee freedom of religion, so every person can profess, practise and propagate a religion.",
-            "**Article 14** guarantees equality before the law, and **Article 15** prohibits discrimination on grounds of religion, race, caste, sex or place of birth.",
-            "**Article 17** abolished untouchability and made its practice an offence."
+            "Regional languages flourished. Tulsidas wrote the **Ramcharitmanas** in Awadhi, and Kabir's **dohas** are famous.",
+            "**Amir Khusrau**, poet and musician, wrote in Persian and Hindavi and is linked with the growth of qawwali and Hindustani music.",
+            "Hindustani and Carnatic music developed distinct traditions. **Tansen** was a famous musician at Akbar's court."
           ]
         },
         {
-          heading: "Challenges to Secularism",
+          heading: "Art and Architecture",
           points: [
-            "**Communalism** is the belief that people of one religion have interests opposed to those of another. It has led to riots and conflicts.",
-            "Misusing religion for political gain, and religious conflicts, challenge the secular character of the state."
+            "Mughal rulers patronised **miniature painting**, which showed court life, nature and manuscripts.",
+            "Architecture combined Indian and Persian features, as in **Fatehpur Sikri** and the monuments of **Hampi** under Vijayanagara.",
+            "Rulers of many kingdoms supported scholars, artists and poets, creating a shared cultural life."
           ]
         }
       ],
       formulas: [
-        "1976 – 'Secular' added to the Preamble by the 42nd Amendment",
-        "Articles 25–28 – freedom of religion",
-        "Article 17 – untouchability is abolished"
+        "Guru Nanak: 1469-1539",
+        "Ramcharitmanas: Tulsidas, in Awadhi",
+        "Bhakti: devotion; Sufi: love and tolerance",
+        "Tansen: musician at Akbar's court"
       ],
       terms: [
-        { term: "Secularism", meaning: "The principle that the state does not favour any religion and treats all religions equally." },
-        { term: "Communalism", meaning: "The belief that people of one religion have interests against those of another, which can lead to conflict." },
-        { term: "Sarva dharma sambhava", meaning: "Equal respect for all religions, a principle central to Indian secularism." },
-        { term: "Freedom of religion", meaning: "The right of every person to profess, practise and propagate their religion." },
-        { term: "Untouchability", meaning: "The practice of treating some people as impure and excluding them from social life, which is banned by the Constitution." }
+        { term: "Bhakti", meaning: "Loving devotion to God." },
+        { term: "Sufi", meaning: "A mystic tradition of Islam focused on love of God and service to others." },
+        { term: "Langar", meaning: "A community kitchen where everyone eats together, started by Guru Nanak." },
+        { term: "Doha", meaning: "A two-line verse in Hindi poetry." },
+        { term: "Miniature painting", meaning: "A small, detailed painting, often made for books or royal courts." }
       ],
       qa: [
-        {
-          q: "What does secularism mean in India?",
-          a: "It means that the state does not have an official religion, treats all religions equally, and does not discriminate against citizens on grounds of religion. It also protects the freedom of individuals to follow any religion."
-        },
-        {
-          q: "Which articles of the Constitution guarantee freedom of religion?",
-          a: "Articles 25 to 28 guarantee freedom of religion. They allow every person to follow, practise and propagate a religion, and allow religious groups to manage their own religious affairs."
-        },
-        {
-          q: "What is communalism, and why is it a challenge?",
-          a: "Communalism is the belief that people of one religion have interests against those of another. It leads to hatred, riots and division, which threaten the unity and secular character of the country."
-        }
+        { q: "What were the main teachings of the Bhakti saints?", a: "They taught devotion to one God, equality of all people, rejected caste discrimination and rituals, and spread their message in local languages." },
+        { q: "What was the role of langar in Sikhism?", a: "It is a free community meal where people of all backgrounds sit and eat together, promoting equality and service." }
       ],
       quiz: [
-        {
-          q: "A secular state is one that:",
-          options: ["Has an official religion", "Gives special power to religious leaders", "Allows only one religion", "Treats all religions equally and has no official religion"],
-          answer: 3,
-          explain: "A **secular state** has no official religion and treats all religions equally."
-        },
-        {
-          q: "Which Article of the Constitution abolished untouchability?",
-          options: ["Article 14", "Article 25", "Article 32", "Article 17"],
-          answer: 3,
-          explain: "**Article 17** abolished untouchability and made its practice an offence."
-        },
-        {
-          q: "Articles 25 to 28 of the Constitution deal with:",
-          options: ["Freedom of religion", "Elections", "Parliament's powers", "Citizenship"],
-          answer: 0,
-          explain: "**Articles 25 to 28** guarantee freedom of religion to every person."
-        },
-        {
-          q: "The phrase 'sarva dharma sambhava' means:",
-          options: ["Only one religion is true", "Religion should be banned", "Equal respect for all religions", "Religion is the duty of the state"],
-          answer: 2,
-          explain: "**Sarva dharma sambhava** means equal respect for all religions, a principle of Indian secularism."
-        },
-        {
-          q: "The belief that people of one religion have interests opposed to those of another is called:",
-          options: ["Secularism", "Communalism", "Nationalism", "Federalism"],
-          answer: 1,
-          explain: "**Communalism** is the belief that religious communities have opposing interests, which can lead to conflict."
-        },
-        {
-          q: "The word 'secular' was added to the Preamble in:",
-          options: ["1950", "1956", "1976", "1992"],
-          answer: 2,
-          explain: "The word **'secular'** was added to the Preamble by the 42nd Amendment in 1976."
-        }
-      ]
-    },
-    // ------------------------------------------------------------------
-    {
-      id: "parliament-making-laws",
-      title: "Parliament and the Making of Laws",
-      section: "Social and Political Life",
-      summary: "The two Houses of Parliament, how they are elected, the stages a Bill passes through before it becomes an Act, and how Parliament holds the government accountable.",
-      notes: [
-        {
-          heading: "Structure of Parliament",
-          points: [
-            "**Parliament** is the highest law-making body of India. It has two Houses, the **Lok Sabha** and the **Rajya Sabha**, and the **President** is also a part of it.",
-            "Members of the **Lok Sabha** are directly elected by the people. There are **543** elected members.",
-            "The **Rajya Sabha** is elected indirectly by the elected members of state legislative assemblies. It is a permanent house, and one-third of its members retire every two years."
-          ]
-        },
-        {
-          heading: "How a Law Is Made",
-          points: [
-            "A proposal for a law is introduced as a **Bill** in either House. It is discussed and voted on in both Houses.",
-            "A **Money Bill**, which deals with taxes or government spending, can be introduced only in the Lok Sabha. The Rajya Sabha can only make recommendations on it.",
-            "Once both Houses pass a Bill, the **President's assent** makes it an Act, which is a law."
-          ]
-        },
-        {
-          heading: "Parliament and the Government",
-          points: [
-            "Parliament holds the government accountable. MPs ask questions, debate issues and can remove the government through a **no-confidence motion**.",
-            "Parliamentary committees examine bills and government spending in detail, so that laws are carefully scrutinised."
-          ]
-        }
-      ],
-      formulas: [
-        "543 – elected members of the Lok Sabha",
-        "Rajya Sabha members serve six-year terms",
-        "Money Bill – introduced only in the Lok Sabha"
-      ],
-      terms: [
-        { term: "Bill", meaning: "A draft proposal for a law, which is placed before Parliament for discussion and voting." },
-        { term: "Money Bill", meaning: "A bill that deals with taxes or government spending, which can be introduced only in the Lok Sabha." },
-        { term: "Presidential assent", meaning: "The President's approval of a bill passed by both Houses, which turns it into an Act." },
-        { term: "No-confidence motion", meaning: "A motion in the Lok Sabha to test whether the government still has majority support." },
-        { term: "Rajya Sabha", meaning: "The Council of States, the upper House of Parliament, whose members are elected by state legislative assemblies." }
-      ],
-      qa: [
-        {
-          q: "How is a Bill different from an Act?",
-          a: "A Bill is a draft proposal for a law placed before Parliament. Once both Houses pass it and the President gives assent, it becomes an Act, which is a law."
-        },
-        {
-          q: "Why can a Money Bill be introduced only in the Lok Sabha?",
-          a: "The Lok Sabha is directly elected and therefore accountable to the people for taxes and spending. The Rajya Sabha can only make recommendations on a Money Bill, which the Lok Sabha may accept or reject."
-        },
-        {
-          q: "How is the Rajya Sabha different from the Lok Sabha?",
-          a: "The Rajya Sabha is indirectly elected by state legislative assemblies and is a permanent house. Its members serve six-year terms, and one-third of them retire every two years. The Lok Sabha is directly elected by the people."
-        }
-      ],
-      quiz: [
-        {
-          q: "How many elected members are there in the Lok Sabha?",
-          options: ["250", "543", "100", "790"],
-          answer: 1,
-          explain: "The **Lok Sabha** has 543 elected members, directly chosen by the people."
-        },
-        {
-          q: "Who is elected indirectly, by state legislative assemblies?",
-          options: ["Members of the Lok Sabha", "The Prime Minister", "The Chief Justice", "Members of the Rajya Sabha"],
-          answer: 3,
-          explain: "**Members of the Rajya Sabha** are elected by the elected members of state legislative assemblies."
-        },
-        {
-          q: "Which bill deals only with taxes or government spending and is introduced in the Lok Sabha?",
-          options: ["Money Bill", "Private Member's Bill", "Constitution Amendment Bill", "Ordinance"],
-          answer: 0,
-          explain: "A **Money Bill** deals with taxes and government spending, and is introduced only in the Lok Sabha."
-        },
-        {
-          q: "After a bill is passed by both Houses, it becomes law after:",
-          options: ["The Chief Justice's approval", "A vote in the state assemblies", "The Prime Minister's speech", "The President's assent"],
-          answer: 3,
-          explain: "The **President's assent** is the last step, which turns a bill into an Act."
-        },
-        {
-          q: "The motion used to test whether the government still has majority support is called:",
-          options: ["Adjournment motion", "No-confidence motion", "Budget motion", "Question Hour"],
-          answer: 1,
-          explain: "A **no-confidence motion** is moved in the Lok Sabha to test the government's majority."
-        },
-        {
-          q: "The Rajya Sabha is:",
-          options: ["A house that is dissolved every five years", "Elected directly by all adults", "Headed by the President", "A permanent house"],
-          answer: 3,
-          explain: "The **Rajya Sabha** is a permanent house, and only one-third of its members retire every two years."
-        }
-      ]
-    },
-    // ------------------------------------------------------------------
-    {
-      id: "judiciary",
-      title: "Judiciary",
-      section: "Social and Political Life",
-      summary: "The structure of India's courts, why an independent judiciary matters, the power of judicial review, and how Public Interest Litigation has made justice more accessible.",
-      notes: [
-        {
-          heading: "Structure of the Judiciary",
-          points: [
-            "India has an integrated judiciary. The **Supreme Court** is at the top, **High Courts** are in each state or group of states, and subordinate courts work at district and local levels.",
-            "The **Supreme Court** was set up on **28 January 1950**. It is the highest court of appeal and the guardian of the Constitution.",
-            "High Courts hear appeals from subordinate courts and can hear petitions to protect fundamental rights."
-          ]
-        },
-        {
-          heading: "Independence of the Judiciary",
-          points: [
-            "An independent judiciary can decide cases fairly, including cases against the government, without fear or pressure.",
-            "A judge of the Supreme Court or a High Court can be removed only by **impeachment** by Parliament, which is a difficult process."
-          ]
-        },
-        {
-          heading: "Judicial Review and Public Interest Litigation",
-          points: [
-            "**Judicial review** is the power of courts to check laws and government actions. If they go against the Constitution, the courts can declare them invalid.",
-            "**Public Interest Litigation (PIL)** allows any citizen or organisation to approach the court on behalf of people who cannot approach it themselves."
-          ]
-        }
-      ],
-      formulas: [
-        "28 January 1950 – Supreme Court of India set up",
-        "Structure of courts: Supreme Court, High Courts, subordinate courts",
-        "Judicial review – courts can strike down laws that violate the Constitution"
-      ],
-      terms: [
-        { term: "Judiciary", meaning: "The system of courts that interprets laws and delivers justice." },
-        { term: "Judicial review", meaning: "The power of courts to examine laws and government actions and to declare them invalid if they violate the Constitution." },
-        { term: "Public Interest Litigation", meaning: "A case filed in court by a citizen or organisation for the sake of the public or of people who cannot approach the court themselves." },
-        { term: "Impeachment", meaning: "The formal process by which Parliament can remove a judge for misbehaviour or incapacity." },
-        { term: "Subordinate courts", meaning: "District and lower courts that work below the High Courts." }
-      ],
-      qa: [
-        {
-          q: "Why is an independent judiciary important?",
-          a: "An independent judiciary can decide cases fairly, including those against the government, and protect citizens' rights. Without independence, judges could be pressured by the executive or by powerful people."
-        },
-        {
-          q: "What is judicial review?",
-          a: "Judicial review is the power of courts to check whether laws and government actions are consistent with the Constitution. If they are not, the courts can declare them invalid."
-        },
-        {
-          q: "How has Public Interest Litigation made justice more accessible?",
-          a: "PIL allows any citizen or organisation to approach the court for people who cannot approach it themselves, such as poor workers or prisoners. This has made justice more accessible to the poor and the disadvantaged."
-        }
-      ],
-      quiz: [
-        {
-          q: "The Supreme Court of India was set up in:",
-          options: ["1947", "1950", "1976", "1992"],
-          answer: 1,
-          explain: "The **Supreme Court** of India was set up on 28 January 1950, after the Constitution came into force."
-        },
-        {
-          q: "Which is the highest court in India?",
-          options: ["High Court", "District Court", "Family Court", "Supreme Court"],
-          answer: 3,
-          explain: "The **Supreme Court** is at the top of the judicial system and is the highest court of appeal."
-        },
-        {
-          q: "The power of courts to examine whether laws follow the Constitution is called:",
-          options: ["Judicial review", "Public interest litigation", "Impeachment", "Suo motu action"],
-          answer: 0,
-          explain: "**Judicial review** allows courts to declare laws invalid if they violate the Constitution."
-        },
-        {
-          q: "A judge of the Supreme Court can be removed only by:",
-          options: ["The Prime Minister's order", "A vote of the President alone", "Impeachment by Parliament", "A decision of the High Court"],
-          answer: 2,
-          explain: "A judge can be removed only by **impeachment** by Parliament, which is a difficult process."
-        },
-        {
-          q: "Public Interest Litigation allows:",
-          options: ["Only the government to file cases", "Any citizen or organisation to approach the court for others", "Only lawyers to appeal", "Only students to file cases"],
-          answer: 1,
-          explain: "**PIL** allows any citizen or organisation to go to court on behalf of people who cannot do so themselves."
-        },
-        {
-          q: "Which courts sit at the top of each state's judicial system?",
-          options: ["High Courts", "Gram Panchayat courts", "Sessions courts", "Lok Adalats"],
-          answer: 0,
-          explain: "Each state has a **High Court** at the top of its judicial system, below the Supreme Court."
-        }
-      ]
-    },
-    // ------------------------------------------------------------------
-    {
-      id: "understanding-marginalisation",
-      title: "Understanding Marginalisation",
-      section: "Social and Political Life",
-      summary: "Which groups are marginalised in Indian society and why, how the Constitution tries to protect them through the abolition of untouchability and reservation, and the challenges that still remain.",
-      notes: [
-        {
-          heading: "Who Is Marginalised?",
-          points: [
-            "Marginalised groups are communities that are excluded or disadvantaged in society. They include **Scheduled Castes** (Dalits), **Scheduled Tribes** (Adivasis), **Other Backward Classes**, religious minorities, women and persons with disabilities.",
-            "Marginalisation means social exclusion, lack of access to education, jobs, land and public life, and not just poverty.",
-            "It can be caused by caste discrimination, gender discrimination and the loss of land and forests."
-          ]
-        },
-        {
-          heading: "Constitutional Measures",
-          points: [
-            "**Article 17** abolished untouchability and made its practice an offence.",
-            "**Articles 15(4) and 16(4)** allow the government to make special provisions, including **reservation** in education and government jobs, for backward classes, Scheduled Castes and Scheduled Tribes."
-          ]
-        },
-        {
-          heading: "Challenges That Remain",
-          points: [
-            "Despite these measures, discrimination, violence and unequal access to resources continue in many places.",
-            "**Adivasis** often lose their land and forests to mining, dams and other development projects, which increases their marginalisation.",
-            "Marginalised groups need to be included in decision-making, so that their voices are heard in schools, panchayats and other institutions."
-          ]
-        }
-      ],
-      formulas: [
-        "Article 17 – untouchability is abolished",
-        "Articles 15(4) and 16(4) – special provisions and reservation",
-        "Scheduled Castes and Scheduled Tribes – groups listed for special protection"
-      ],
-      terms: [
-        { term: "Marginalisation", meaning: "The process by which a group is pushed to the edges of society and denied equal access to resources and opportunities." },
-        { term: "Scheduled Castes", meaning: "Communities listed in the Constitution as historically disadvantaged, also known as Dalits." },
-        { term: "Scheduled Tribes", meaning: "Communities listed in the Constitution as tribal groups, also known as Adivasis." },
-        { term: "Reservation", meaning: "A system that sets aside a share of seats in education and government jobs for disadvantaged groups." },
-        { term: "Social exclusion", meaning: "Being kept out of ordinary social, economic and political life because of one's identity." }
-      ],
-      qa: [
-        {
-          q: "What is meant by marginalisation?",
-          a: "Marginalisation means being pushed to the edges of society so that a group is denied equal access to education, jobs, land, public services and decision-making. It can result from caste, gender, religion or disability."
-        },
-        {
-          q: "What is the purpose of reservation?",
-          a: "Reservation gives special provision in education and government jobs to communities that have been historically disadvantaged. It aims to bring them into equal participation and to correct past injustice."
-        },
-        {
-          q: "Why are Adivasis particularly vulnerable to marginalisation?",
-          a: "Many Adivasis depend on forests and land, which are often lost to mining, dams and other development projects. Loss of land and forest reduces their livelihoods and makes them more vulnerable."
-        }
-      ],
-      quiz: [
-        {
-          q: "Which group is also called Dalits?",
-          options: ["Scheduled Tribes", "Religious minorities", "Other Backward Classes", "Scheduled Castes"],
-          answer: 3,
-          explain: "**Scheduled Castes** are also known as Dalits."
-        },
-        {
-          q: "Adivasis are officially known as:",
-          options: ["Other Backward Classes", "Scheduled Castes", "Scheduled Tribes", "Religious minorities"],
-          answer: 2,
-          explain: "**Adivasis** are officially listed as **Scheduled Tribes** in the Constitution."
-        },
-        {
-          q: "Which Articles allow special provisions and reservation for backward classes?",
-          options: ["Articles 15(4) and 16(4)", "Articles 25 to 28", "Articles 32 and 226", "Articles 79 and 80"],
-          answer: 0,
-          explain: "**Articles 15(4) and 16(4)** allow special provisions and reservation for backward classes."
-        },
-        {
-          q: "Reservation means:",
-          options: ["Free land for every family", "A ban on all government jobs", "A tax on rich families", "Special provision in education and jobs for disadvantaged groups"],
-          answer: 3,
-          explain: "**Reservation** sets aside seats in education and jobs for disadvantaged groups."
-        },
-        {
-          q: "Which of these is a main reason for the marginalisation of Adivasis?",
-          options: ["Access to schools in cities", "Owning factories", "Loss of land and forests to development projects", "Living in urban areas"],
-          answer: 2,
-          explain: "Many Adivasis have lost their **land and forests** to development projects, which reduces their livelihoods."
-        },
-        {
-          q: "Marginalisation means:",
-          options: ["Living in a rural area", "Being pushed to the edges of society and denied equal access", "Choosing to live separately", "Being the majority in a region"],
-          answer: 1,
-          explain: "**Marginalisation** means being pushed to the edges of society and denied equal access to resources and opportunities."
-        }
+        { q: "Who wrote the Ramcharitmanas?", options: ["Kabir", "Mirabai", "Tulsidas", "Surdas"], answer: 2, explain: "**Tulsidas** wrote it in Awadhi." },
+        { q: "Guru Nanak started the practice of:", options: ["Langar", "Sati", "Jauhar", "Qawwali"], answer: 0, explain: "**Langar**, the community meal." },
+        { q: "Which Sufi saint is linked with Ajmer?", options: ["Baba Farid", "Nizamuddin Auliya", "Khwaja Moinuddin Chishti", "Amir Khusrau"], answer: 2, explain: "**Khwaja Moinuddin Chishti** is linked with Ajmer." },
+        { q: "Bhakti saints often composed in:", options: ["Only Sanskrit", "Local languages", "Only Persian", "English"], answer: 1, explain: "They used **local languages** so ordinary people could understand." },
+        { q: "Tansen was a musician in the court of:", options: ["Shivaji", "Krishnadevaraya", "Akbar", "Shah Jahan"], answer: 2, explain: "Tansen served at **Akbar's** court." }
       ]
     }
   ]

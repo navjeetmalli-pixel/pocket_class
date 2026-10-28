@@ -1,1609 +1,980 @@
-// Class 7 Mathematics: standard Class 7 syllabus topics, titled by topic.
+// Class 7 Mathematics: current NCERT textbook "Ganita Prakash" (Grade 7, Parts I and II).
 // Format: see CONTENT_GUIDE.md
 StudyData.add(7, "maths", {
-  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "older-book", books: ["Mathematics"], note: "NCERT has since published a new book for this class, so chapter names and order may differ.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Ganita Prakash Part I", "Ganita Prakash Part II"], reviewed: false},
   chapters: [
-    // ───────────────────────────── 1. Integers ─────────────────────────────
+    // ───────────────────────────── Part I ─────────────────────────────
     {
-      id: "integers",
-      title: "Integers",
-      section: "Number",
-      summary: "Integers are the whole numbers and their negatives. This chapter shows how to add, subtract, multiply and divide them, using the number line and simple sign rules.",
+      id: "large-numbers-around-us",
+      title: "Large Numbers Around Us",
+      section: "Part I",
+      summary: "We read, write, compare and estimate very large numbers using lakhs and crores, and meet the international system of millions and billions.",
       notes: [
         {
-          heading: "Integers on the number line",
+          heading: "Indian and international systems",
           points: [
-            "Integers are …, −3, −2, −1, 0, 1, 2, 3, … They include positive integers, negative integers and zero.",
-            "On the number line, numbers grow towards the right. So 3 > −2 and −2 > −5.",
-            "Every integer has an **opposite**: 5 and −5 are opposites, and a number plus its opposite is always 0.",
-            "Negative numbers show things like a temperature of −4°C in Shimla, a depth below sea level or money owed."
+            "In the Indian system the place values are ones, tens, hundreds, thousands, **lakhs** and **crores**. 1 lakh = 1,00,000 and 1 crore = 1,00,00,000.",
+            "In the international system the groups are thousands, **millions** and **billions**. 1 million = 10,00,000 (ten lakh) and 1 billion = 100 crore.",
+            "Commas in the Indian system go after the first 3 digits from the right and then after every 2 digits: 12,34,56,789.",
+            "1 crore = 100 lakh = 10 million."
           ]
         },
         {
-          heading: "Adding and subtracting integers",
+          heading: "Comparing and estimating",
           points: [
-            "Same signs: add the numbers and keep the sign. (−4) + (−6) = −10.",
-            "Different signs: subtract the smaller number from the larger and keep the sign of the larger. (−9) + 5 = −4.",
-            "Subtracting an integer is the same as adding its opposite. 7 − (−3) = 7 + 3 = 10.",
-            "Integers are closed under addition and subtraction, and addition is commutative and associative. Subtraction is not commutative: 5 − 3 ≠ 3 − 5."
+            "To compare large numbers, first compare the number of digits. The number with more digits is larger.",
+            "If the digit counts are equal, compare digits from the left, place by place.",
+            "**Estimation** means finding a number close to the real one, for example by rounding to the nearest thousand or lakh.",
+            "Estimates are useful to check whether an exact answer is sensible."
           ]
         },
         {
-          heading: "Multiplying integers",
+          heading: "Powers of 10 and big calculations",
           points: [
-            "Same signs give a positive product, different signs give a negative product. (−3) × (−5) = 15 but (−3) × 5 = −15.",
-            "For many factors, count the negative signs: an **even** number of negatives gives a positive product and an **odd** number gives a negative product.",
-            "Any number × 0 = 0, any number × 1 = itself, and any number × (−1) = its opposite.",
-            "The distributive property helps mental sums: 8 × 99 = 8 × (100 − 1) = 800 − 8 = 792."
-          ]
-        },
-        {
-          heading: "Dividing integers",
-          points: [
-            "Division undoes multiplication: (−12) ÷ 4 = −3 because 4 × (−3) = −12.",
-            "Same signs give a positive quotient and different signs give a negative quotient. (−48) ÷ (−6) = 8, while (−48) ÷ 6 = −8.",
-            "0 ÷ (any non-zero integer) = 0, but division by 0 is **not defined**.",
-            "Integers are not closed under division, e.g. 7 ÷ 2 is not an integer. Division is neither commutative nor associative."
+            "Multiplying by 10, 100, 1000 adds 1, 2, 3 zeroes: 45 × 1000 = 45,000.",
+            "10 × 10 × 10 × 10 × 10 = 10⁵ = 1 lakh, and 10⁷ = 1 crore.",
+            "To work out how long a large count of seconds is, convert step by step: 60 seconds = 1 minute, 60 minutes = 1 hour, 24 hours = 1 day.",
+            "Large numbers appear in populations, distances in space and the money in a national budget."
           ]
         }
       ],
       formulas: [
-        "a + (−a) = 0",
-        "a − b = a + (−b)",
-        "(+) × (+) = +,  (−) × (−) = +,  (+) × (−) = −",
-        "a × (b + c) = a × b + a × c",
-        "a ÷ 0 is not defined;  0 ÷ a = 0  (a ≠ 0)"
+        "1 lakh = 1,00,000 = 10⁵;  1 crore = 1,00,00,000 = 10⁷",
+        "1 million = 10 lakh = 10⁶;  1 billion = 100 crore = 10⁹",
+        "1 crore = 100 lakh = 10 million"
       ],
       terms: [
-        { term: "Integer", meaning: "Any number from the list …, −3, −2, −1, 0, 1, 2, 3, … (positive numbers, negative numbers and zero)." },
-        { term: "Opposite (additive inverse)", meaning: "The integer that gives 0 when added to a number. The opposite of 7 is −7." },
-        { term: "Number line", meaning: "A straight line on which numbers are marked in order; numbers increase towards the right." },
-        { term: "Closure", meaning: "A set is closed under an operation if the result always stays in the set. Integers are closed under +, − and ×, but not ÷." },
-        { term: "Distributive property", meaning: "a × (b + c) = a × b + a × c. Multiplication spreads over addition." }
+        { term: "Lakh", meaning: "A hundred thousand, written 1,00,000." },
+        { term: "Crore", meaning: "A hundred lakh, or ten million, written 1,00,00,000." },
+        { term: "Million", meaning: "One thousand thousand, 10,00,000 (ten lakh)." },
+        { term: "Estimation", meaning: "Finding an approximate value, usually by rounding, instead of the exact one." }
       ],
       examples: [
         {
-          q: "Evaluate (−15) + 8 − (−4).",
-          steps: [
-            "(−15) + 8 = −7",
-            "Subtracting −4 is the same as adding 4: −7 − (−4) = −7 + 4",
-            "−7 + 4 = −3"
-          ],
-          answer: "−3"
-        },
-        {
-          q: "At 8 pm the temperature in Shimla is 4°C and it falls by 2°C every hour. What is the temperature at 1 am?",
-          steps: [
-            "From 8 pm to 1 am is 5 hours.",
-            "Total change = 5 × (−2) = −10°C",
-            "New temperature = 4 + (−10) = −6°C"
-          ],
-          answer: "−6°C"
+          q: "Write 5 crore 36 lakh 4 thousand 7 hundred in figures and in the international system.",
+          steps: ["5 crore = 5,00,00,000 and 36 lakh = 36,00,000", "Add 4 thousand and 700: 5,00,00,000 + 36,00,000 + 4,000 + 700 = 5,36,04,700", "In the international system the same number is 53,604,700"],
+          answer: "5,36,04,700 (53,604,700 in the international system)"
         }
       ],
       qa: [
-        { q: "Why is the product of two negative integers positive? Show with a pattern.", a: "Look at 3 × (−4) = −12, 2 × (−4) = −8, 1 × (−4) = −4, 0 × (−4) = 0. Each time the first number drops by 1, the product goes **up by 4**. Continuing: (−1) × (−4) = 4, (−2) × (−4) = 8, so (−3) × (−4) = **12**, a positive number." },
-        { q: "Is subtraction commutative for integers? Give an example.", a: "No. 5 − 3 = 2 but 3 − 5 = −2. Since the answers differ, a − b ≠ b − a in general." },
-        { q: "Find (−7) × (−5) × (−2).", a: "There are three negative factors (an odd number), so the product is negative. 7 × 5 × 2 = 70, so the answer is **−70**." }
+        { q: "How many lakhs make one crore? How many millions make one billion?", a: "100 lakh make 1 crore. 1000 million make 1 billion." },
+        { q: "Round 4,67,382 to the nearest thousand.", a: "The hundreds digit is 3, which is less than 5, so we round down. The answer is **4,67,000**." }
       ],
       quiz: [
-        {
-          q: "(−7) + 12 = ?",
-          options: ["−19", "−5", "5", "19"],
-          answer: 2,
-          explain: "Signs are different, so subtract 7 from 12 and keep the sign of the larger number (12 is positive): 12 − 7 = 5."
-        },
-        {
-          q: "The value of (−8) − (−3) is:",
-          options: ["−5", "−11", "5", "11"],
-          answer: 0,
-          explain: "Subtracting −3 is the same as adding 3. So −8 + 3 = −5."
-        },
-        {
-          q: "(−6) × (−7) = ?",
-          options: ["−42", "−13", "13", "42"],
-          answer: 3,
-          explain: "Two negative integers multiplied give a positive product: 6 × 7 = 42."
-        },
-        {
-          q: "(−56) ÷ 7 = ?",
-          options: ["8", "−8", "−49", "−63"],
-          answer: 1,
-          explain: "Different signs give a negative quotient. 56 ÷ 7 = 8, so the answer is −8."
-        },
-        {
-          q: "The product (−2) × (−3) × (−4) × (−1) is:",
-          options: ["24", "−24", "10", "−10"],
-          answer: 0,
-          explain: "There are four negative factors (an even number), so the product is positive: 2 × 3 × 4 × 1 = 24."
-        },
-        {
-          q: "Which of the following statements is true?",
-          options: ["−3 > −1", "0 < −4", "−5 < −2", "−7 > −6"],
-          answer: 2,
-          explain: "On the number line −5 lies to the left of −2, so −5 < −2. The other three statements are false."
-        }
+        { q: "How many lakhs make one crore?", options: ["10", "1000", "100", "10,000"], answer: 2, explain: "1 crore = 1,00,00,000 and 1 lakh = 1,00,000, so 1 crore = 100 lakh." },
+        { q: "One million is equal to:", options: ["1 lakh", "10 lakh", "1 crore", "100 lakh"], answer: 1, explain: "1 million = 10,00,000 which is 10 lakh." },
+        { q: "How is 3,40,50,000 read in the Indian system?", options: ["Three crore forty lakh fifty thousand", "Thirty-four lakh fifty thousand", "Three lakh forty thousand fifty", "Three crore four lakh fifty thousand"], answer: 0, explain: "3,40,50,000 has 3 crore, 40 lakh and 50 thousand." },
+        { q: "Which is the greatest number?", options: ["98,99,999", "1,02,345", "9,89,999", "10,00,000"], answer: 0, explain: "98,99,999 has 8 digits while the others have 7 or fewer." },
+        { q: "10⁷ equals:", options: ["1 lakh", "1 million", "1 crore", "1 billion"], answer: 2, explain: "10⁷ = 1,00,00,000 = 1 crore. 1 million is 10⁶." },
+        { q: "1 billion in the Indian system is:", options: ["10 crore", "1000 crore", "100 lakh", "100 crore"], answer: 3, explain: "1 billion = 1000 million = 100 crore." }
       ]
     },
-
-    // ───────────────────────────── 2. Fractions and Decimals ─────────────────────────────
     {
-      id: "fractions-and-decimals",
-      title: "Fractions and Decimals",
-      section: "Number",
-      summary: "Learn to multiply and divide fractions and decimals. Reciprocals and the position of the decimal point are the two big ideas.",
+      id: "arithmetic-expressions",
+      title: "Arithmetic Expressions",
+      section: "Part I",
+      summary: "We read and compare arithmetic expressions, use brackets and the order of operations, and use properties of numbers to calculate smartly.",
+      notes: [
+        {
+          heading: "Order of operations",
+          points: [
+            "Work out brackets first, then multiplication and division (left to right), then addition and subtraction (left to right).",
+            "So 3 + 4 × 5 = 3 + 20 = 23, but (3 + 4) × 5 = 35.",
+            "In 24 ÷ 4 × 2 do the operations from left to right: 6 × 2 = 12.",
+            "Brackets can change the value, so they must be written carefully."
+          ]
+        },
+        {
+          heading: "Properties that help",
+          points: [
+            "**Distributive property**: a × (b + c) = a × b + a × c. For example 7 × 102 = 7 × 100 + 7 × 2 = 714.",
+            "Also a × (b − c) = a × b − a × c. So 99 × 15 = 100 × 15 − 15 = 1485.",
+            "Addition and multiplication can be done in any order and grouping.",
+            "Subtraction and division are not commutative: 8 − 3 ≠ 3 − 8."
+          ]
+        },
+        {
+          heading: "Comparing expressions",
+          points: [
+            "We can often compare two expressions without calculating them fully.",
+            "For example 15 × 12 is bigger than 15 × 11 because one more 15 is added.",
+            "Expressions with the same value can look very different: 6 × 4 and 20 + 4 are both 24.",
+            "Writing a word problem as an expression first makes it easier to solve."
+          ]
+        }
+      ],
+      formulas: [
+        "a × (b + c) = a × b + a × c",
+        "a × (b − c) = a × b − a × c",
+        "Order: Brackets, then × and ÷, then + and − (left to right)"
+      ],
+      terms: [
+        { term: "Expression", meaning: "A combination of numbers and operations, such as 5 × (3 + 2)." },
+        { term: "Distributive property", meaning: "Multiplication spreads over addition or subtraction: a × (b + c) = a × b + a × c." },
+        { term: "Bracket", meaning: "Symbols ( ) that show which operation must be done first." },
+        { term: "Commutative", meaning: "The order does not change the result, as in 4 + 9 = 9 + 4." }
+      ],
+      examples: [
+        {
+          q: "Evaluate 18 + 6 × (10 − 4) ÷ 3.",
+          steps: ["Bracket first: 10 − 4 = 6", "Multiply and divide left to right: 6 × 6 = 36, then 36 ÷ 3 = 12", "Add: 18 + 12 = 30"],
+          answer: "30"
+        }
+      ],
+      qa: [
+        { q: "Use the distributive property to find 48 × 101.", a: "48 × 101 = 48 × (100 + 1) = 4800 + 48 = **4848**." },
+        { q: "Is 12 − 5 − 2 the same as 12 − (5 − 2)?", a: "No. 12 − 5 − 2 = 5, but 12 − (5 − 2) = 12 − 3 = 9. Brackets change the order and the value." }
+      ],
+      quiz: [
+        { q: "The value of 5 + 3 × 4 is:", options: ["32", "17", "20", "12"], answer: 1, explain: "Multiply first: 3 × 4 = 12, then 5 + 12 = 17." },
+        { q: "The value of (5 + 3) × 4 is:", options: ["17", "20", "32", "24"], answer: 2, explain: "Bracket first: 8 × 4 = 32." },
+        { q: "24 ÷ 4 × 2 equals:", options: ["3", "12", "48", "6"], answer: 1, explain: "Left to right: 24 ÷ 4 = 6, then 6 × 2 = 12." },
+        { q: "99 × 25 is easiest worked as:", options: ["100 × 25 + 25", "99 × 20 + 5", "100 × 25 − 25", "100 × 24"], answer: 2, explain: "99 × 25 = (100 − 1) × 25 = 2500 − 25 = 2475." },
+        { q: "Which pair of expressions has equal value?", options: ["8 − 3 and 3 − 8", "6 × (2 + 3) and 6 × 2 + 3", "20 ÷ 4 and 4 ÷ 20", "6 × (2 + 3) and 6 × 2 + 6 × 3"], answer: 3, explain: "By the distributive property both equal 30." }
+      ]
+    },
+    {
+      id: "a-peek-beyond-the-point",
+      title: "A Peek Beyond the Point",
+      section: "Part I",
+      summary: "We extend place value beyond the decimal point to tenths, hundredths and thousandths, and compare, add and subtract decimal numbers.",
+      notes: [
+        {
+          heading: "Place value in decimals",
+          points: [
+            "Digits after the decimal point are tenths, hundredths, thousandths. In 4.375 the 3 is 3 tenths, 7 is 7 hundredths and 5 is 5 thousandths.",
+            "Each place is 10 times the place to its right and one-tenth of the place to its left.",
+            "4.375 = 4 + 3/10 + 7/100 + 5/1000.",
+            "Writing zeroes at the end of a decimal does not change its value: 2.5 = 2.50 = 2.500."
+          ]
+        },
+        {
+          heading: "Comparing decimals",
+          points: [
+            "First compare the whole-number parts. The larger whole part gives the larger number.",
+            "If the whole parts are equal, compare tenths, then hundredths, and so on.",
+            "So 3.52 > 3.5 because 3.52 = 3.52 and 3.5 = 3.50, and 52 hundredths > 50 hundredths.",
+            "Decimals can be placed on a number line by dividing each unit into 10 equal parts."
+          ]
+        },
+        {
+          heading: "Adding and subtracting decimals",
+          points: [
+            "Write the numbers with decimal points one below the other, so that equal places line up.",
+            "Add zeroes to make the number of decimal places equal if needed, then add or subtract as with whole numbers.",
+            "Units help: 1 m = 100 cm, so 2.35 m = 235 cm; 1 kg = 1000 g, so 0.250 kg = 250 g.",
+            "Money is a decimal: ₹45.50 means 45 rupees and 50 paise."
+          ]
+        }
+      ],
+      formulas: [
+        "1 tenth = 1/10 = 0.1;  1 hundredth = 1/100 = 0.01;  1 thousandth = 1/1000 = 0.001",
+        "1 m = 100 cm;  1 cm = 0.01 m;  1 kg = 1000 g;  1 g = 0.001 kg"
+      ],
+      terms: [
+        { term: "Decimal point", meaning: "The dot that separates the whole-number part from the part smaller than 1." },
+        { term: "Tenths", meaning: "The first place after the decimal point; each tenth is 1/10." },
+        { term: "Hundredths", meaning: "The second place after the decimal point; each is 1/100." },
+        { term: "Thousandths", meaning: "The third place after the decimal point; each is 1/1000." }
+      ],
+      examples: [
+        {
+          q: "Add 12.75, 3.6 and 0.485.",
+          steps: ["Make the places equal: 12.750, 3.600, 0.485", "Add: 12.750 + 3.600 = 16.350", "16.350 + 0.485 = 16.835"],
+          answer: "16.835"
+        }
+      ],
+      qa: [
+        { q: "Which is larger, 0.8 or 0.75? Give a reason.", a: "0.8 = 0.80, which is 80 hundredths, while 0.75 is 75 hundredths. So **0.8** is larger." },
+        { q: "Express 2 m 5 cm in metres.", a: "5 cm = 0.05 m, so the length is **2.05 m**." }
+      ],
+      quiz: [
+        { q: "In 6.472, the digit 7 stands for:", options: ["7 tenths", "7 hundredths", "7 thousandths", "7 ones"], answer: 1, explain: "The places after the point are tenths (4), hundredths (7), thousandths (2)." },
+        { q: "Which is the smallest?", options: ["0.5", "0.45", "0.405", "0.54"], answer: 2, explain: "Written with 3 places: 0.500, 0.450, 0.405, 0.540. The smallest is 0.405." },
+        { q: "3.4 + 0.65 equals:", options: ["3.69", "4.05", "9.9", "3.99"], answer: 1, explain: "3.40 + 0.65 = 4.05." },
+        { q: "250 g in kilograms is:", options: ["2.5 kg", "0.025 kg", "25 kg", "0.25 kg"], answer: 3, explain: "250 ÷ 1000 = 0.25 kg." },
+        { q: "Which decimal is equal to 7.5?", options: ["7.05", "7.50", "0.75", "75.0"], answer: 1, explain: "Zeroes at the end of a decimal do not change its value, so 7.5 = 7.50." }
+      ]
+    },
+    {
+      id: "expressions-using-letter-numbers",
+      title: "Expressions using Letter-Numbers",
+      section: "Part I",
+      summary: "Letters can stand for numbers that vary or are unknown. We write rules from patterns as algebraic expressions, simplify them and find their values.",
+      notes: [
+        {
+          heading: "Letter-numbers and expressions",
+          points: [
+            "A letter such as n can stand for any number. It is called a **variable**.",
+            "5n means 5 × n, and n + 3 means 3 more than n. We write 2 × n as 2n, without the × sign.",
+            "A rule from a pattern is an expression: n squares in a row need 3n + 1 matchsticks.",
+            "An expression like 4n + 7 has two **terms**: 4n and 7."
+          ]
+        },
+        {
+          heading: "Simplifying",
+          points: [
+            "**Like terms** have the same letter part, such as 3n and 5n. They can be added: 3n + 5n = 8n.",
+            "Unlike terms such as 3n and 5 cannot be combined: 3n + 5 stays as it is.",
+            "Distributive property works with letters: 2(n + 4) = 2n + 8.",
+            "x × x is written x², and x + x is 2x. These are different."
+          ]
+        },
+        {
+          heading: "Finding values",
+          points: [
+            "To find the value of an expression, replace the letter by a number.",
+            "If n = 5, then 3n + 2 = 3 × 5 + 2 = 17.",
+            "The same expression gives different values for different numbers.",
+            "Expressions help us write general rules, such as the perimeter of a square of side s is 4s."
+          ]
+        }
+      ],
+      formulas: [
+        "Perimeter of a square = 4s;  of a rectangle = 2(l + b)",
+        "nth even number = 2n;  nth odd number = 2n − 1",
+        "ax + bx = (a + b)x"
+      ],
+      terms: [
+        { term: "Variable", meaning: "A letter that stands for a number that can change." },
+        { term: "Term", meaning: "A part of an expression joined by + or −, such as 4n in 4n + 7." },
+        { term: "Like terms", meaning: "Terms with the same letter part, e.g. 3x and 9x." },
+        { term: "Coefficient", meaning: "The number multiplying the letter; in 7y it is 7." }
+      ],
+      examples: [
+        {
+          q: "Simplify 5a + 3b − 2a + 4b and find its value for a = 2, b = 1.",
+          steps: ["Group like terms: (5a − 2a) + (3b + 4b)", "= 3a + 7b", "Put a = 2, b = 1: 3 × 2 + 7 × 1 = 13"],
+          answer: "3a + 7b; value 13"
+        }
+      ],
+      qa: [
+        { q: "Write an expression for the cost of n pens at ₹12 each and a notebook at ₹30.", a: "Cost = 12n + 30 rupees." },
+        { q: "Is 3x + 4y equal to 7xy?", a: "No. 3x and 4y are unlike terms and cannot be added into one term. 3x + 4y stays as it is." }
+      ],
+      quiz: [
+        { q: "In 4n + 7, the coefficient of n is:", options: ["7", "n", "4", "11"], answer: 2, explain: "The number multiplying n is 4." },
+        { q: "Simplify 6x + 2x.", options: ["8x", "12x", "8x²", "62x"], answer: 0, explain: "Like terms: (6 + 2)x = 8x." },
+        { q: "The value of 3n + 2 for n = 4 is:", options: ["9", "24", "14", "34"], answer: 2, explain: "3 × 4 + 2 = 14." },
+        { q: "2(x + 5) equals:", options: ["2x + 5", "x + 10", "2x + 7", "2x + 10"], answer: 3, explain: "Multiply both terms by 2: 2x + 10." },
+        { q: "Which pair are like terms?", options: ["5a and 5b", "3x and 3x²", "4y and 9y", "2n and 2"], answer: 2, explain: "4y and 9y have the same letter part y." },
+        { q: "The perimeter of a square of side s is:", options: ["4s", "s²", "2s", "s + 4"], answer: 0, explain: "A square has four equal sides, so perimeter = s + s + s + s = 4s." }
+      ]
+    },
+    {
+      id: "parallel-and-intersecting-lines",
+      title: "Parallel and Intersecting Lines",
+      section: "Part I",
+      summary: "We study the angles made when lines cross, and when a transversal cuts parallel lines, and use these relations to find unknown angles.",
+      notes: [
+        {
+          heading: "Angles at a point and on a line",
+          points: [
+            "Angles that make a straight line add up to **180°**. Two such angles form a **linear pair**.",
+            "Angles around a point add up to **360°**.",
+            "When two lines intersect, **vertically opposite angles** are equal.",
+            "Two angles adding to 90° are complementary; adding to 180° are supplementary."
+          ]
+        },
+        {
+          heading: "Transversal and parallel lines",
+          points: [
+            "A **transversal** is a line that cuts two or more lines at different points.",
+            "If the two lines are parallel, **corresponding angles** are equal.",
+            "If the lines are parallel, **alternate interior angles** are equal.",
+            "If the lines are parallel, **interior angles on the same side** of the transversal add up to 180°."
+          ]
+        },
+        {
+          heading: "Checking for parallel lines",
+          points: [
+            "The converse is also true: if corresponding angles are equal, the two lines are parallel.",
+            "If alternate interior angles are equal, the lines are parallel.",
+            "If interior angles on the same side add up to 180°, the lines are parallel.",
+            "Parallel lines never meet however far they are extended."
+          ]
+        }
+      ],
+      formulas: [
+        "Linear pair: ∠1 + ∠2 = 180°",
+        "Angles around a point = 360°",
+        "Parallel lines + transversal: corresponding angles equal, alternate interior angles equal, co-interior angles sum to 180°"
+      ],
+      terms: [
+        { term: "Transversal", meaning: "A line that crosses two or more other lines at different points." },
+        { term: "Vertically opposite angles", meaning: "The pairs of equal angles formed opposite each other when two lines cross." },
+        { term: "Corresponding angles", meaning: "Angles in matching positions at the two crossing points of a transversal." },
+        { term: "Alternate interior angles", meaning: "Angles between the two lines on opposite sides of the transversal." }
+      ],
+      examples: [
+        {
+          q: "Two parallel lines are cut by a transversal. One interior angle is 65°. Find the interior angle on the same side.",
+          steps: ["Interior angles on the same side of the transversal are supplementary", "Angle = 180° − 65° = 115°"],
+          answer: "115°"
+        }
+      ],
+      qa: [
+        { q: "Two lines intersect and one of the four angles is 40°. Find the other three.", a: "The vertically opposite angle is also 40°. The other two are each 180° − 40° = **140°**." },
+        { q: "How can you tell that two lines cut by a transversal are parallel?", a: "If a pair of corresponding angles or alternate interior angles is equal, or co-interior angles add up to 180°, the lines are parallel." }
+      ],
+      quiz: [
+        { q: "The angles of a linear pair add up to:", options: ["90°", "360°", "180°", "100°"], answer: 2, explain: "Angles on a straight line sum to 180°." },
+        { q: "Vertically opposite angles are:", options: ["Supplementary", "Equal", "Complementary", "Always 90°"], answer: 1, explain: "When two lines cross, the angles opposite each other are equal." },
+        { q: "If two parallel lines are cut by a transversal, alternate interior angles are:", options: ["Equal", "Supplementary", "Complementary", "Unrelated"], answer: 0, explain: "Alternate interior angles are equal for parallel lines." },
+        { q: "Co-interior angles on parallel lines add up to:", options: ["90°", "360°", "180°", "270°"], answer: 2, explain: "Interior angles on the same side of the transversal are supplementary." },
+        { q: "One angle of a linear pair is 110°. The other is:", options: ["110°", "70°", "250°", "80°"], answer: 1, explain: "180° − 110° = 70°." },
+        { q: "Four angles around a point are 90°, 100°, 120° and x. Then x is:", options: ["60°", "50°", "70°", "40°"], answer: 1, explain: "Angles around a point sum to 360°: 360° − 310° = 50°. So x = 50°." }
+      ]
+    },
+    {
+      id: "number-play",
+      title: "Number Play",
+      section: "Part I",
+      summary: "We explore even and odd numbers, digit puzzles and divisibility tests, and use them to explain why number tricks work.",
+      notes: [
+        {
+          heading: "Even and odd numbers",
+          points: [
+            "Even + even = even, odd + odd = even, and even + odd = odd.",
+            "Even × anything is even; odd × odd is odd.",
+            "The sum of any two consecutive numbers is odd, for example 6 + 7 = 13.",
+            "Such facts help us explain why a number trick always works, not just once."
+          ]
+        },
+        {
+          heading: "Divisibility tests",
+          points: [
+            "By **2**: last digit is 0, 2, 4, 6 or 8. By **5**: last digit is 0 or 5. By **10**: last digit is 0.",
+            "By **3**: the sum of the digits is divisible by 3. By **9**: the sum of the digits is divisible by 9.",
+            "By **4**: the number formed by the last two digits is divisible by 4. By **8**: the last three digits form a number divisible by 8.",
+            "By **11**: the difference between the sum of digits in odd places and in even places is 0 or a multiple of 11. For example 2728: (2 + 2) − (7 + 8) = −11, so it is divisible by 11."
+          ]
+        },
+        {
+          heading: "Digit patterns and puzzles",
+          points: [
+            "A **palindrome** reads the same forwards and backwards, like 4554 or 1221.",
+            "Reversing the digits and adding or subtracting repeatedly can produce interesting patterns and fixed results.",
+            "A number is divisible by 6 if it is divisible by both 2 and 3.",
+            "Writing a number with its digits as a·100 + b·10 + c shows why digit-sum tests work."
+          ]
+        }
+      ],
+      formulas: [
+        "Divisible by 3 (or 9) if the digit sum is divisible by 3 (or 9)",
+        "Divisible by 4 if the last two digits are; by 8 if the last three digits are",
+        "Divisible by 11 if (sum of odd-place digits) − (sum of even-place digits) is 0 or a multiple of 11"
+      ],
+      terms: [
+        { term: "Parity", meaning: "Whether a number is even or odd." },
+        { term: "Divisibility test", meaning: "A quick rule to check whether a number divides another exactly." },
+        { term: "Palindrome", meaning: "A number or word that reads the same from either end." },
+        { term: "Multiple", meaning: "A number obtained by multiplying a given number by a whole number." }
+      ],
+      examples: [
+        {
+          q: "Is 7,38,216 divisible by 3? By 4? By 9?",
+          steps: ["Digit sum = 7 + 3 + 8 + 2 + 1 + 6 = 27, which is divisible by 3 and by 9", "Last two digits 16 are divisible by 4"],
+          answer: "Yes, it is divisible by 3, 4 and 9"
+        }
+      ],
+      qa: [
+        { q: "Is 1,23,456 divisible by 6? Explain.", a: "It is even, so divisible by 2. Its digit sum 1 + 2 + 3 + 4 + 5 + 6 = 21 is divisible by 3. So it is divisible by **6**." },
+        { q: "Show that the sum of three consecutive numbers is divisible by 3.", a: "Let the numbers be n, n + 1, n + 2. Their sum is 3n + 3 = 3(n + 1), which is a multiple of 3." }
+      ],
+      quiz: [
+        { q: "The sum of two odd numbers is always:", options: ["Odd", "Even", "A multiple of 3", "Prime"], answer: 1, explain: "Odd + odd is even, e.g. 3 + 5 = 8." },
+        { q: "Which number is divisible by 9?", options: ["4,321", "5,274", "1,235", "3,457"], answer: 1, explain: "5 + 2 + 7 + 4 = 18, which is divisible by 9." },
+        { q: "A number is divisible by 4 if:", options: ["Its last digit is even", "Its digit sum is a multiple of 4", "Its last two digits form a number divisible by 4", "Its last digit is 4"], answer: 2, explain: "Since 100 is a multiple of 4, only the last two digits matter." },
+        { q: "Which of these is a palindrome?", options: ["1234", "4224", "1231", "2020"], answer: 1, explain: "4224 reads the same in both directions." },
+        { q: "Is 2,728 divisible by 11?", options: ["Yes, difference of alternate digit sums is 11", "No, the digit sum is 19", "No, it is odd", "Yes, it ends in 8"], answer: 0, explain: "(2 + 2) − (7 + 8) = −11, a multiple of 11." }
+      ]
+    },
+    {
+      id: "a-tale-of-three-intersecting-lines",
+      title: "A Tale of Three Intersecting Lines",
+      section: "Part I",
+      summary: "Three lines that intersect pairwise form a triangle. We study its angle sum, exterior angles and the condition on side lengths for a triangle to exist.",
+      notes: [
+        {
+          heading: "Angle sum and exterior angle",
+          points: [
+            "The three interior angles of any triangle add up to **180°**.",
+            "An **exterior angle** is formed when a side is extended. It equals the sum of the two **interior opposite angles**.",
+            "An exterior angle and its adjacent interior angle form a linear pair (180°).",
+            "In a right-angled triangle the two acute angles add up to 90°."
+          ]
+        },
+        {
+          heading: "Types of triangles",
+          points: [
+            "By sides: equilateral (3 equal sides), isosceles (2 equal sides), scalene (no equal sides).",
+            "By angles: acute (all angles below 90°), right (one 90° angle), obtuse (one angle above 90°).",
+            "In an equilateral triangle each angle is 60°.",
+            "In an isosceles triangle the angles opposite the equal sides are equal."
+          ]
+        },
+        {
+          heading: "Triangle inequality",
+          points: [
+            "The sum of any two sides of a triangle is **greater than** the third side.",
+            "So sides 3 cm, 4 cm, 5 cm form a triangle, but 2 cm, 3 cm, 6 cm do not (2 + 3 < 6).",
+            "To check, it is enough to test that the two shorter sides add to more than the longest.",
+            "The longest side is opposite the largest angle."
+          ]
+        }
+      ],
+      formulas: [
+        "Sum of angles of a triangle = 180°",
+        "Exterior angle = sum of the two interior opposite angles",
+        "a + b > c for the sides a, b, c of a triangle (and for every pair)"
+      ],
+      terms: [
+        { term: "Exterior angle", meaning: "The angle formed outside a triangle by extending one of its sides." },
+        { term: "Interior opposite angles", meaning: "The two angles of a triangle not adjacent to a given exterior angle." },
+        { term: "Isosceles triangle", meaning: "A triangle with two equal sides (and two equal angles)." },
+        { term: "Triangle inequality", meaning: "The sum of two sides is always more than the third side." }
+      ],
+      examples: [
+        {
+          q: "In a triangle two angles are 50° and 65°. Find the third angle and an exterior angle at the 65° vertex.",
+          steps: ["Third angle = 180° − 50° − 65° = 65°", "Exterior angle at the 65° vertex = 180° − 65° = 115°"],
+          answer: "Third angle 65°; exterior angle 115°"
+        }
+      ],
+      qa: [
+        { q: "Can a triangle have sides 5 cm, 7 cm and 13 cm?", a: "No. 5 + 7 = 12, which is less than 13, so the triangle inequality fails." },
+        { q: "An exterior angle of a triangle is 120° and one interior opposite angle is 50°. Find the other.", a: "The exterior angle equals the sum of the interior opposite angles, so the other angle is 120° − 50° = **70°**." }
+      ],
+      quiz: [
+        { q: "The angles of a triangle add up to:", options: ["90°", "360°", "270°", "180°"], answer: 3, explain: "Angle sum of any triangle is 180°." },
+        { q: "Which sides can form a triangle?", options: ["2, 3, 6", "4, 4, 9", "5, 6, 10", "1, 2, 3"], answer: 2, explain: "5 + 6 = 11 > 10, and the other pairs fail (e.g. 1 + 2 = 3 is not more than 3)." },
+        { q: "An exterior angle of a triangle equals:", options: ["Sum of interior opposite angles", "180° minus the sum of all angles", "The adjacent interior angle", "Twice an interior angle"], answer: 0, explain: "Exterior angle = sum of the two interior opposite angles." },
+        { q: "Each angle of an equilateral triangle is:", options: ["90°", "45°", "120°", "60°"], answer: 3, explain: "180° ÷ 3 = 60°." },
+        { q: "In a right-angled triangle one acute angle is 35°. The other is:", options: ["45°", "55°", "65°", "145°"], answer: 1, explain: "The acute angles add up to 90°, so 90° − 35° = 55°." }
+      ]
+    },
+    {
+      id: "working-with-fractions",
+      title: "Working with Fractions",
+      section: "Part I",
+      summary: "We multiply and divide fractions, find a fraction of a quantity, use reciprocals, and solve word problems with fractions and mixed numbers.",
       notes: [
         {
           heading: "Multiplying fractions",
           points: [
-            "Multiply numerator by numerator and denominator by denominator: 2/3 × 4/5 = 8/15.",
-            "'Of' means multiplication: 3/5 of 40 = 3/5 × 40 = 24.",
-            "Change mixed numbers to improper fractions first: 1½ × 2/3 = 3/2 × 2/3 = 1.",
-            "The product of two proper fractions is **smaller** than both of them, e.g. 1/2 × 1/3 = 1/6."
+            "To multiply fractions, multiply the numerators and multiply the denominators: 2/3 × 4/5 = 8/15.",
+            "A fraction of a quantity means multiplication: 3/4 of 20 = 3/4 × 20 = 15.",
+            "Convert mixed numbers to improper fractions first: 1½ × 2/3 = 3/2 × 2/3 = 1.",
+            "Multiplying by a fraction smaller than 1 makes the number smaller."
           ]
         },
         {
           heading: "Dividing fractions",
           points: [
-            "The **reciprocal** of a/b is b/a. A number multiplied by its reciprocal gives 1. Zero has no reciprocal.",
-            "To divide by a fraction, multiply by its reciprocal: 3/4 ÷ 3/8 = 3/4 × 8/3 = 2.",
-            "How many halves are there in 6? 6 ÷ 1/2 = 6 × 2 = 12.",
-            "Dividing a number by a fraction smaller than 1 gives a **bigger** number."
+            "The **reciprocal** of a/b is b/a. The product of a fraction and its reciprocal is 1.",
+            "Dividing by a fraction is the same as multiplying by its reciprocal: 3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8.",
+            "Dividing a whole number by a fraction counts how many such parts fit: 3 ÷ 1/2 = 6.",
+            "The reciprocal of 0 does not exist."
           ]
         },
         {
-          heading: "Multiplying decimals",
+          heading: "Word problems",
           points: [
-            "Multiply as if there were no decimal points. Then put the point so that the answer has as many decimal places as both numbers together: 0.3 × 0.4 = 0.12.",
-            "2.5 × 1.2: 25 × 12 = 300, and there are 2 decimal places, so the answer is 3.00 = 3.",
-            "Multiplying by 10, 100 or 1000 shifts the decimal point 1, 2 or 3 places to the **right**: 4.75 × 100 = 475."
-          ]
-        },
-        {
-          heading: "Dividing decimals",
-          points: [
-            "Dividing by 10, 100 or 1000 shifts the point to the **left**: 56.3 ÷ 100 = 0.563.",
-            "To divide a decimal by a whole number, divide as usual and put the point in the quotient when you reach it in the dividend: 7.5 ÷ 5 = 1.5.",
-            "To divide by a decimal, multiply both numbers by 10, 100, … until the divisor is a whole number: 4.5 ÷ 0.9 = 45 ÷ 9 = 5."
+            "Decide first whether a problem needs 'of' (multiply) or 'how many fit in' (divide).",
+            "Write the answer in simplest form by dividing the numerator and denominator by their common factor.",
+            "Check your answer: is it sensible compared with the numbers in the problem?",
+            "Fractions also occur as parts of a whole in recipes, lengths of cloth and shares of land."
           ]
         }
       ],
       formulas: [
         "a/b × c/d = (a × c)/(b × d)",
-        "a/b ÷ c/d = a/b × d/c   (c ≠ 0)",
-        "Reciprocal of a/b is b/a   (a ≠ 0)",
-        "Decimal places in a product = sum of decimal places in the factors",
-        "× by 10, 100, 1000: point moves right;  ÷ by 10, 100, 1000: point moves left"
+        "a/b ÷ c/d = a/b × d/c",
+        "Reciprocal of a/b is b/a (a ≠ 0)"
       ],
       terms: [
-        { term: "Reciprocal", meaning: "The fraction turned upside down. The reciprocal of 3/5 is 5/3, and a number times its reciprocal is 1." },
-        { term: "Proper fraction", meaning: "A fraction whose numerator is smaller than its denominator, e.g. 3/7. Its value is less than 1." },
-        { term: "Improper fraction", meaning: "A fraction whose numerator is equal to or greater than its denominator, e.g. 9/4." },
-        { term: "Mixed number", meaning: "A whole number and a proper fraction together, e.g. 2¼ (which is 9/4)." },
-        { term: "Decimal place", meaning: "The position of a digit after the decimal point. 4.75 has two decimal places." }
+        { term: "Reciprocal", meaning: "The fraction turned upside down; the reciprocal of 2/5 is 5/2." },
+        { term: "Improper fraction", meaning: "A fraction whose numerator is greater than or equal to its denominator." },
+        { term: "Mixed number", meaning: "A whole number and a proper fraction together, like 2¾." },
+        { term: "Simplest form", meaning: "A fraction whose numerator and denominator have no common factor except 1." }
       ],
       examples: [
         {
-          q: "A tailor needs 1¼ m of cloth for one kurta. How many kurtas can he stitch from 10 m of cloth?",
-          steps: [
-            "1¼ = 5/4 m for one kurta",
-            "Number of kurtas = 10 ÷ 5/4",
-            "= 10 × 4/5 = 40/5 = 8"
-          ],
-          answer: "8 kurtas"
-        },
-        {
-          q: "Sugar costs ₹ 45.50 per kg. Find the cost of 2.5 kg.",
-          steps: [
-            "Cost = 45.5 × 2.5",
-            "Multiply without points: 455 × 25 = 11375",
-            "Each number has 1 decimal place, so the answer has 2 decimal places: 113.75"
-          ],
-          answer: "₹ 113.75"
+          q: "A ribbon 3¾ m long is cut into pieces of 3/8 m each. How many pieces are made?",
+          steps: ["3¾ = 15/4", "Number of pieces = 15/4 ÷ 3/8 = 15/4 × 8/3", "= (15 × 8)/(4 × 3) = 120/12 = 10"],
+          answer: "10 pieces"
         }
       ],
       qa: [
-        { q: "Why does dividing by 1/2 give the same result as multiplying by 2?", a: "There are 2 halves in every whole, so dividing by 1/2 counts how many halves fit in the number. The reciprocal of 1/2 is 2, so 3 ÷ 1/2 = 3 × 2 = **6**." },
-        { q: "Is the product of two proper fractions greater or smaller than each of them? Give an example.", a: "It is **smaller**, because we take a part of a part. For example 1/2 × 1/3 = 1/6, which is less than both 1/2 and 1/3." },
-        { q: "Evaluate 0.8 ÷ 0.04.", a: "Multiply both numbers by 100 so that the divisor becomes a whole number: 0.8 ÷ 0.04 = 80 ÷ 4 = **20**." }
+        { q: "Find 2/3 of 4/5.", a: "2/3 × 4/5 = 8/15." },
+        { q: "Why is 6 ÷ 1/3 equal to 18?", a: "In each whole there are 3 thirds, so 6 wholes contain 6 × 3 = 18 thirds. Dividing by 1/3 is multiplying by its reciprocal 3." }
       ],
       quiz: [
-        {
-          q: "2/3 × 9/10 = ?",
-          options: ["11/13", "3/5", "20/27", "5/3"],
-          answer: 1,
-          explain: "Multiply across: (2 × 9)/(3 × 10) = 18/30 = 3/5 in lowest terms."
-        },
-        {
-          q: "The reciprocal of 5/7 is:",
-          options: ["5/7", "−5/7", "1/35", "7/5"],
-          answer: 3,
-          explain: "The reciprocal is found by turning the fraction upside down: 7/5. Check: 5/7 × 7/5 = 1."
-        },
-        {
-          q: "4 ÷ 2/3 = ?",
-          options: ["6", "8/3", "1/6", "12"],
-          answer: 0,
-          explain: "Multiply by the reciprocal: 4 × 3/2 = 12/2 = 6."
-        },
-        {
-          q: "0.6 × 0.5 = ?",
-          options: ["3", "0.03", "0.3", "0.11"],
-          answer: 2,
-          explain: "6 × 5 = 30. The factors have 2 decimal places in all, so the product is 0.30 = 0.3."
-        },
-        {
-          q: "7.2 ÷ 0.9 = ?",
-          options: ["0.8", "80", "72", "8"],
-          answer: 3,
-          explain: "Multiply both numbers by 10: 72 ÷ 9 = 8."
-        },
-        {
-          q: "3.456 × 100 = ?",
-          options: ["0.03456", "345.6", "34.56", "3456"],
-          answer: 1,
-          explain: "Multiplying by 100 shifts the decimal point 2 places to the right: 345.6."
-        }
+        { q: "2/3 × 3/4 equals:", options: ["5/7", "6/7", "1/2", "2/4"], answer: 2, explain: "(2 × 3)/(3 × 4) = 6/12 = 1/2." },
+        { q: "The reciprocal of 5/7 is:", options: ["7/5", "−5/7", "5/7", "2/12"], answer: 0, explain: "Turn the fraction upside down." },
+        { q: "3/4 ÷ 3 equals:", options: ["9/4", "1/4", "4", "9/12"], answer: 1, explain: "3/4 × 1/3 = 1/4." },
+        { q: "3/5 of 40 is:", options: ["8", "120", "24", "16"], answer: 2, explain: "3/5 × 40 = 24." },
+        { q: "How many 1/4 kg packets can be made from 5 kg of sugar?", options: ["20", "5/4", "10", "15"], answer: 0, explain: "5 ÷ 1/4 = 5 × 4 = 20." }
       ]
     },
-
-    // ───────────────────────────── 3. Data Handling ─────────────────────────────
+    // ───────────────────────────── Part II ─────────────────────────────
     {
-      id: "data-handling",
-      title: "Data Handling",
-      section: "Data",
-      summary: "Collect, organise and summarise data using mean, median, mode and range. Bar graphs display data, and probability measures how likely an event is.",
+      id: "geometric-twins",
+      title: "Geometric Twins",
+      section: "Part II",
+      summary: "Figures that have exactly the same shape and size are congruent. We study congruent plane figures and the conditions under which two triangles are congruent.",
       notes: [
         {
-          heading: "Mean (average)",
+          heading: "Congruent figures",
           points: [
-            "Mean = sum of all observations ÷ number of observations. For 4, 7, 9, 12 the mean is 32 ÷ 4 = 8.",
-            "The mean always lies between the smallest and the largest observation.",
-            "A very large or very small value can pull the mean away from the rest. The mean of 10, 12, 14, 100 is 34, which is not typical of the group.",
-            "If you know the mean and the number of observations, the sum = mean × number of observations."
+            "Two figures are **congruent** if one can be placed exactly over the other, by sliding, turning or flipping.",
+            "Congruent figures have equal corresponding sides and equal corresponding angles.",
+            "Two squares with equal sides are congruent; two circles with equal radii are congruent.",
+            "We write △ABC ≅ △PQR, keeping corresponding vertices in the same order."
           ]
         },
         {
-          heading: "Median",
+          heading: "Conditions for congruent triangles",
           points: [
-            "Arrange the data in order (ascending or descending). The **median** is the middle value, with half the observations on each side.",
-            "Odd number of observations: take the middle one. The median of 3, 5, 8, 9, 11 is 8.",
-            "Even number of observations: take the average of the two middle ones. For 4, 7, 9, 10, 12, 15 the middle two are 9 and 10, so the median is 9.5.",
-            "The median is not changed much by extreme values, so it describes things like incomes or house prices better than the mean."
+            "**SSS**: three sides of one triangle equal three sides of the other.",
+            "**SAS**: two sides and the angle between them are equal.",
+            "**ASA**: two angles and the side between them are equal.",
+            "**RHS**: in right-angled triangles, the hypotenuse and one other side are equal."
           ]
         },
         {
-          heading: "Mode and range",
+          heading: "What does not work",
           points: [
-            "The **mode** is the observation that occurs most often. In 2, 3, 3, 4, 5, 3 the mode is 3.",
-            "Data can have more than one mode (2, 2, 5, 5, 7 has modes 2 and 5) or no mode at all if every value is different.",
-            "Mode also works for non-numerical data, such as the most popular shirt size or favourite sport.",
-            "**Range** = highest value − lowest value. It tells us how spread out the data is."
-          ]
-        },
-        {
-          heading: "Bar graphs and probability",
-          points: [
-            "A **bar graph** uses bars of equal width whose heights are proportional to the values. A double bar graph compares two sets of data side by side.",
-            "To read a bar graph, check the title, the scale on the axis and what each bar stands for.",
-            "**Probability** tells how likely an event is: P(event) = favourable outcomes ÷ total equally likely outcomes. For a fair coin, P(head) = 1/2.",
-            "An impossible event has probability 0 and a certain event has probability 1. Every probability lies between 0 and 1."
+            "Equal angles alone (AAA) do not give congruence: a small and a large equilateral triangle have the same angles.",
+            "Two sides and an angle that is **not** between them (SSA) may not fix a unique triangle.",
+            "Once triangles are shown congruent, all remaining corresponding parts are equal (CPCT).",
+            "Congruence is used to prove that segments or angles are equal."
           ]
         }
       ],
       formulas: [
-        "Mean = Sum of observations ÷ Number of observations",
-        "Range = Highest value − Lowest value",
-        "Median: middle value of ordered data (odd number); average of the two middle values (even number)",
-        "Probability = Favourable outcomes ÷ Total equally likely outcomes",
-        "0 ≤ P(event) ≤ 1"
+        "Congruence rules for triangles: SSS, SAS, ASA, RHS",
+        "Congruent figures: corresponding sides equal and corresponding angles equal"
       ],
       terms: [
-        { term: "Mean", meaning: "The average: the sum of all observations divided by how many there are." },
-        { term: "Median", meaning: "The middle value of the data when it is arranged in order." },
-        { term: "Mode", meaning: "The observation that occurs most often in the data." },
-        { term: "Range", meaning: "The difference between the highest and the lowest observation." },
-        { term: "Bar graph", meaning: "A picture of data using bars of equal width; the height of each bar shows the value." },
-        { term: "Probability", meaning: "A number from 0 to 1 that measures how likely an event is to happen." }
+        { term: "Congruent", meaning: "Figures with exactly the same shape and size." },
+        { term: "Corresponding parts", meaning: "Sides or angles that match in position in two congruent figures." },
+        { term: "Included angle", meaning: "The angle between two given sides." },
+        { term: "Hypotenuse", meaning: "The longest side of a right-angled triangle, opposite the right angle." }
       ],
       examples: [
         {
-          q: "Kabir scored 30, 45, 15, 45 and 65 runs in five matches. Find the mean, median, mode and range.",
-          steps: [
-            "Mean = (30 + 45 + 15 + 45 + 65) ÷ 5 = 200 ÷ 5 = 40",
-            "In order: 15, 30, 45, 45, 65. The middle (3rd) value is 45, so the median is 45",
-            "45 appears twice and every other score once, so the mode is 45",
-            "Range = 65 − 15 = 50"
-          ],
-          answer: "Mean = 40, median = 45, mode = 45, range = 50"
-        },
-        {
-          q: "A bag has 3 red, 5 blue and 2 green marbles. One marble is picked without looking. Find P(blue) and P(not red).",
-          steps: [
-            "Total marbles = 3 + 5 + 2 = 10, all equally likely",
-            "P(blue) = 5/10 = 1/2",
-            "Not red means blue or green: 5 + 2 = 7 marbles, so P(not red) = 7/10"
-          ],
-          answer: "P(blue) = 1/2 and P(not red) = 7/10"
+          q: "In △ABC and △PQR, AB = PQ = 5 cm, BC = QR = 7 cm and ∠B = ∠Q = 50°. Are the triangles congruent? Which rule applies?",
+          steps: ["Two sides (AB, BC) equal two sides (PQ, QR)", "The angle between them, ∠B and ∠Q, is equal"],
+          answer: "Yes, △ABC ≅ △PQR by SAS"
         }
       ],
       qa: [
-        { q: "Find the median of 12, 7, 9, 15, 10, 4.", a: "Arrange in order: 4, 7, 9, 10, 12, 15. There are 6 values, so the median is the average of the 3rd and 4th: (9 + 10) ÷ 2 = **9.5**." },
-        { q: "The mean of 5 numbers is 12. A sixth number, 18, is added. What is the new mean?", a: "Sum of the 5 numbers = 12 × 5 = 60. New sum = 60 + 18 = 78. New mean = 78 ÷ 6 = **13**." },
-        { q: "Can the probability of an event be 1.5 or −0.2? Explain.", a: "No. Favourable outcomes can never be more than the total outcomes or less than zero, so a probability always lies between **0 and 1**. 0 means the event is impossible and 1 means it is certain." }
+        { q: "Are two triangles with all angles 60° always congruent?", a: "No. Equal angles only mean the triangles have the same shape. Their sides can differ in length, so they need not be congruent." },
+        { q: "Name the rule: two angles and the side between them are equal.", a: "ASA (angle-side-angle)." }
       ],
       quiz: [
-        {
-          q: "The mean of 3, 5, 7, 9 and 11 is:",
-          options: ["5", "9", "35", "7"],
-          answer: 3,
-          explain: "Sum = 3 + 5 + 7 + 9 + 11 = 35. Mean = 35 ÷ 5 = 7."
-        },
-        {
-          q: "The mode of 2, 3, 3, 4, 5, 3, 6, 2 is:",
-          options: ["2", "3", "4", "5"],
-          answer: 1,
-          explain: "3 occurs three times, 2 occurs twice and every other number once, so the mode is 3."
-        },
-        {
-          q: "The median of 8, 3, 11, 5, 9 is:",
-          options: ["11", "7.2", "8", "9"],
-          answer: 2,
-          explain: "In order the data is 3, 5, 8, 9, 11. The middle value is 8. (11 is the middle of the unsorted list and 7.2 is the mean.)"
-        },
-        {
-          q: "The range of 45, 12, 78, 33 and 5 is:",
-          options: ["73", "83", "78", "33"],
-          answer: 0,
-          explain: "Range = highest − lowest = 78 − 5 = 73."
-        },
-        {
-          q: "A fair die is rolled once. The probability of getting an even number is:",
-          options: ["1/6", "1/2", "1/3", "2/3"],
-          answer: 1,
-          explain: "Even numbers are 2, 4, 6, which is 3 outcomes out of 6. So the probability is 3/6 = 1/2."
-        },
-        {
-          q: "The mean of 6 numbers is 15. Their sum is:",
-          options: ["21", "2.5", "9", "90"],
-          answer: 3,
-          explain: "Sum = mean × number of observations = 15 × 6 = 90."
-        }
+        { q: "Congruent figures have:", options: ["Same shape only", "Same area only", "Same shape and same size", "Same perimeter only"], answer: 2, explain: "Congruent means identical in shape and size." },
+        { q: "Which is NOT a rule for congruence of triangles?", options: ["SSS", "SAS", "ASA", "AAA"], answer: 3, explain: "Equal angles do not make triangles the same size." },
+        { q: "For SAS, the equal angle must be:", options: ["Between the two equal sides", "Opposite the longest side", "Any angle", "A right angle"], answer: 0, explain: "The included angle must be the one between the two given sides." },
+        { q: "If △ABC ≅ △DEF and AB = 6 cm, then:", options: ["EF = 6 cm", "DE = 6 cm", "DF = 6 cm", "AC = 6 cm"], answer: 1, explain: "A↔D and B↔E, so AB corresponds to DE." },
+        { q: "RHS congruence applies to:", options: ["Isosceles triangles", "Equilateral triangles", "Any triangles", "Right-angled triangles"], answer: 3, explain: "RHS stands for right angle, hypotenuse, side." }
       ]
     },
-
-    // ───────────────────────────── 4. Simple Equations ─────────────────────────────
     {
-      id: "simple-equations",
-      title: "Simple Equations",
-      section: "Algebra",
-      summary: "An equation is a balance between two expressions. We solve it by doing the same thing to both sides, and we use equations to solve everyday word problems.",
+      id: "operations-with-integers",
+      title: "Operations with Integers",
+      section: "Part II",
+      summary: "We multiply and divide integers, learn the sign rules and see how the properties of operations extend to negative numbers.",
       notes: [
         {
-          heading: "What is an equation?",
+          heading: "Multiplying integers",
           points: [
-            "An **equation** says that two expressions are equal. It has an equals sign and a variable, such as x + 5 = 12.",
-            "The value of the variable that makes both sides equal is the **solution** (or root). Here x = 7, because 7 + 5 = 12.",
-            "Think of a balance: the left-hand side (LHS) and right-hand side (RHS) must always weigh the same.",
-            "To check a solution, put it back in the equation. Both sides must give the same value."
+            "Multiplication is repeated addition: 3 × (−4) = (−4) + (−4) + (−4) = −12.",
+            "positive × positive = positive; negative × negative = **positive**.",
+            "positive × negative = negative, and negative × positive = negative.",
+            "Any integer × 0 = 0."
           ]
         },
         {
-          heading: "Solving by balancing",
+          heading: "Dividing integers",
           points: [
-            "Whatever you do to one side, do to the other: add, subtract, multiply or divide both sides by the same number (not dividing by 0).",
-            "Solve 3x − 7 = 11: add 7 to both sides to get 3x = 18, then divide by 3 to get x = 6.",
-            "**Transposing** means moving a term to the other side with its sign changed: + becomes −, − becomes +, × becomes ÷.",
-            "Always check: put x = 6 back and 3 × 6 − 7 = 11 ✓."
+            "Division is the opposite of multiplication, so the same sign rules apply.",
+            "(−12) ÷ 3 = −4, 12 ÷ (−3) = −4 and (−12) ÷ (−3) = 4.",
+            "Division by zero is **not defined**, but 0 divided by a non-zero integer is 0.",
+            "Dividing any integer by 1 gives the same integer."
           ]
         },
         {
-          heading: "Brackets, fractions and variables on both sides",
+          heading: "Properties",
           points: [
-            "Open brackets first: 2(x + 3) = 14 → 2x + 6 = 14 → 2x = 8 → x = 4.",
-            "When the variable is on both sides, collect the variable terms on one side and the numbers on the other: 6x + 1 = 2x + 9 → 4x = 8 → x = 2.",
-            "With fractions, multiply both sides by the LCM of the denominators: x/2 + x/3 = 10; multiply by 6 to get 3x + 2x = 60, so x = 12."
-          ]
-        },
-        {
-          heading: "Forming equations from words",
-          points: [
-            "Steps: choose a letter for the unknown, write the story as an equation, solve it, then check against the story.",
-            "'A number increased by 8 is 21' gives x + 8 = 21, so x = 13.",
-            "'Twice a number decreased by 3 is 15' gives 2x − 3 = 15, so x = 9.",
-            "Three consecutive numbers: n, n + 1, n + 2. Three consecutive even (or odd) numbers: n, n + 2, n + 4."
+            "Multiplication of integers is commutative and associative: (−2) × 5 = 5 × (−2).",
+            "The distributive property still works: (−3) × (4 + 2) = (−3) × 4 + (−3) × 2 = −18.",
+            "1 is the multiplicative identity and −1 × a gives the opposite of a.",
+            "A product of an even number of negative integers is positive; of an odd number it is negative."
           ]
         }
       ],
       formulas: [
-        "If a = b, then a + c = b + c and a − c = b − c",
-        "If a = b, then a × c = b × c and a ÷ c = b ÷ c   (c ≠ 0)",
-        "Transposing: a term changes its sign when it moves to the other side",
-        "ax + b = c  →  x = (c − b) ÷ a   (a ≠ 0)",
-        "Three consecutive numbers: n, n + 1, n + 2"
+        "(+)×(+) = +;  (−)×(−) = +;  (+)×(−) = −;  (−)×(+) = −",
+        "a × (b + c) = a × b + a × c",
+        "(−1) × a = −a;  a ÷ 0 is not defined"
       ],
       terms: [
-        { term: "Variable", meaning: "A letter such as x or y that stands for an unknown number." },
-        { term: "Equation", meaning: "A statement that two expressions are equal, like 2x + 1 = 9." },
-        { term: "Solution (root)", meaning: "The value of the variable that makes the two sides of the equation equal." },
-        { term: "LHS and RHS", meaning: "The expressions on the left-hand side and the right-hand side of the equals sign." },
-        { term: "Transposition", meaning: "Moving a term to the other side of the equation and changing its sign." },
-        { term: "Consecutive numbers", meaning: "Numbers that follow one another, each 1 more than the one before, such as 20, 21, 22." }
+        { term: "Integer", meaning: "A positive or negative whole number, or zero." },
+        { term: "Product", meaning: "The result of multiplication." },
+        { term: "Quotient", meaning: "The result of division." },
+        { term: "Multiplicative identity", meaning: "The number 1, since a × 1 = a." }
       ],
       examples: [
         {
-          q: "Solve 5x − 8 = 2x + 7 and check the answer.",
-          steps: [
-            "Bring the x terms to the left and numbers to the right: 5x − 2x = 7 + 8",
-            "3x = 15",
-            "x = 15 ÷ 3 = 5",
-            "Check: LHS = 5 × 5 − 8 = 17 and RHS = 2 × 5 + 7 = 17 ✓"
-          ],
+          q: "Evaluate (−6) × (−4) + (−18) ÷ 3.",
+          steps: ["(−6) × (−4) = 24", "(−18) ÷ 3 = −6", "24 + (−6) = 18"],
+          answer: "18"
+        }
+      ],
+      qa: [
+        { q: "What is the sign of (−2) × (−3) × (−5)?", a: "Three negatives (an odd number) give a negative product: (−2)(−3)(−5) = −30." },
+        { q: "Why is division by zero not defined?", a: "No number multiplied by 0 gives a non-zero number, so a ÷ 0 has no answer for a ≠ 0." }
+      ],
+      quiz: [
+        { q: "(−7) × (−3) equals:", options: ["−21", "10", "21", "−10"], answer: 2, explain: "Negative × negative is positive." },
+        { q: "(−36) ÷ 9 equals:", options: ["4", "−4", "−27", "27"], answer: 1, explain: "Different signs give a negative quotient." },
+        { q: "(−5) × 0 equals:", options: ["−5", "5", "Not defined", "0"], answer: 3, explain: "Any integer times zero is zero." },
+        { q: "The product (−1) × (−1) × (−1) × (−1) is:", options: ["−1", "1", "−4", "4"], answer: 1, explain: "An even number of negative factors gives a positive product." },
+        { q: "(−8) ÷ (−2) equals:", options: ["4", "−4", "16", "−16"], answer: 0, explain: "Negative ÷ negative is positive: 8 ÷ 2 = 4." },
+        { q: "Which expression is not defined?", options: ["0 ÷ (−5)", "(−5) ÷ 1", "(−5) ÷ 0", "(−5) × 0"], answer: 2, explain: "Division by zero is not defined." }
+      ]
+    },
+    {
+      id: "finding-common-ground",
+      title: "Finding Common Ground",
+      section: "Part II",
+      summary: "We study factors, multiples and prime factorisation, and use them to find the HCF and LCM of numbers and to solve everyday problems.",
+      notes: [
+        {
+          heading: "Factors, multiples and primes",
+          points: [
+            "A **factor** divides a number exactly; a **multiple** is got by multiplying by a whole number.",
+            "A **prime** number has exactly two factors, 1 and itself (2, 3, 5, 7, 11, …). 1 is neither prime nor composite.",
+            "Every number greater than 1 can be written as a product of primes in one way (apart from order): 60 = 2² × 3 × 5.",
+            "Two numbers with no common factor except 1 are **co-prime**, like 8 and 15."
+          ]
+        },
+        {
+          heading: "HCF",
+          points: [
+            "The **highest common factor** (HCF) is the greatest number that divides all the given numbers.",
+            "Using prime factorisation: take each common prime with its smallest power. For 36 = 2² × 3² and 48 = 2⁴ × 3, HCF = 2² × 3 = 12.",
+            "HCF is used for the largest equal groups or the biggest tile or piece that fits exactly.",
+            "The HCF of co-prime numbers is 1."
+          ]
+        },
+        {
+          heading: "LCM",
+          points: [
+            "The **lowest common multiple** (LCM) is the smallest number that is a multiple of all the given numbers.",
+            "Using prime factorisation: take every prime with its greatest power. LCM of 36 and 48 = 2⁴ × 3² = 144.",
+            "LCM is used for events that repeat together, like bells ringing at different intervals.",
+            "For two numbers, HCF × LCM = product of the numbers: 12 × 144 = 36 × 48."
+          ]
+        }
+      ],
+      formulas: [
+        "HCF × LCM = product of the two numbers",
+        "HCF: common primes with the smallest powers;  LCM: all primes with the greatest powers",
+        "HCF ≤ each number ≤ LCM"
+      ],
+      terms: [
+        { term: "Prime number", meaning: "A number with exactly two factors, 1 and itself." },
+        { term: "Prime factorisation", meaning: "Writing a number as a product of primes." },
+        { term: "HCF", meaning: "Highest Common Factor: the greatest number dividing all the given numbers." },
+        { term: "LCM", meaning: "Lowest Common Multiple: the smallest number that all the given numbers divide." },
+        { term: "Co-prime", meaning: "Two numbers whose only common factor is 1." }
+      ],
+      examples: [
+        {
+          q: "Find the HCF and LCM of 24 and 60.",
+          steps: ["24 = 2³ × 3 and 60 = 2² × 3 × 5", "HCF = 2² × 3 = 12", "LCM = 2³ × 3 × 5 = 120"],
+          answer: "HCF = 12, LCM = 120"
+        },
+        {
+          q: "Two bells ring every 12 minutes and every 18 minutes. If they ring together at 9:00, when do they next ring together?",
+          steps: ["Find the LCM of 12 and 18: 12 = 2² × 3, 18 = 2 × 3²", "LCM = 2² × 3² = 36", "36 minutes after 9:00"],
+          answer: "At 9:36"
+        }
+      ],
+      qa: [
+        { q: "Is 1 a prime number? Why?", a: "No. A prime has exactly two different factors, but 1 has only one factor." },
+        { q: "The HCF of two numbers is 4 and their LCM is 120. If one number is 24, find the other.", a: "Product of the numbers = 4 × 120 = 480, so the other = 480 ÷ 24 = **20**." }
+      ],
+      quiz: [
+        { q: "Which number is prime?", options: ["21", "27", "29", "33"], answer: 2, explain: "29 has only factors 1 and 29. The others are divisible by 3." },
+        { q: "The HCF of 18 and 24 is:", options: ["3", "12", "72", "6"], answer: 3, explain: "18 = 2 × 3², 24 = 2³ × 3, so HCF = 2 × 3 = 6." },
+        { q: "The LCM of 6 and 8 is:", options: ["24", "48", "2", "14"], answer: 0, explain: "6 = 2 × 3 and 8 = 2³, so LCM = 2³ × 3 = 24." },
+        { q: "Which pair is co-prime?", options: ["12 and 18", "9 and 15", "14 and 21", "8 and 15"], answer: 3, explain: "8 and 15 share no factor other than 1." },
+        { q: "If HCF = 5 and LCM = 60 for two numbers, their product is:", options: ["300", "65", "12", "55"], answer: 0, explain: "Product = HCF × LCM = 5 × 60 = 300." },
+        { q: "The prime factorisation of 72 is:", options: ["2² × 3³", "2³ × 3²", "2⁴ × 3", "6² × 2"], answer: 1, explain: "72 = 8 × 9 = 2³ × 3²." }
+      ]
+    },
+    {
+      id: "another-peek-beyond-the-point",
+      title: "Another Peek Beyond the Point",
+      section: "Part II",
+      summary: "We multiply and divide decimal numbers, including by powers of 10, and use these operations in measurements and money problems.",
+      notes: [
+        {
+          heading: "Multiplying decimals",
+          points: [
+            "Multiply as if there were no decimal points, then put the point so that the answer has as many decimal places as the two numbers together.",
+            "Example: 0.4 × 0.3: 4 × 3 = 12, and there are 2 decimal places in all, so 0.12.",
+            "Multiplying by 10, 100, 1000 moves the decimal point 1, 2, 3 places to the right: 3.27 × 100 = 327.",
+            "Multiplying by a decimal smaller than 1 makes the number smaller."
+          ]
+        },
+        {
+          heading: "Dividing decimals",
+          points: [
+            "Dividing by 10, 100, 1000 moves the decimal point 1, 2, 3 places to the left: 45.6 ÷ 10 = 4.56.",
+            "To divide by a decimal, multiply both numbers by 10, 100, … to make the divisor a whole number: 4.5 ÷ 0.9 = 45 ÷ 9 = 5.",
+            "Dividing by a number less than 1 makes the answer larger.",
+            "Division may end after a few places or keep going with repeating digits, as in 1 ÷ 3 = 0.333…"
+          ]
+        },
+        {
+          heading: "Using decimals",
+          points: [
+            "Cost problems: price per unit × quantity. At ₹12.50 per kg, 3.5 kg costs 12.50 × 3.5 = ₹43.75.",
+            "Measurement problems: 1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g.",
+            "Estimate first to check that the decimal point is in the right place.",
+            "Rounding to a required number of decimal places is often needed for money and measurements."
+          ]
+        }
+      ],
+      formulas: [
+        "Decimal places in a product = places in first number + places in second number",
+        "× 10ⁿ moves the point n places right;  ÷ 10ⁿ moves it n places left",
+        "Total cost = price per unit × quantity"
+      ],
+      terms: [
+        { term: "Decimal places", meaning: "The number of digits after the decimal point." },
+        { term: "Divisor", meaning: "The number by which we divide." },
+        { term: "Quotient", meaning: "The result of division." },
+        { term: "Recurring decimal", meaning: "A decimal in which digits repeat endlessly, like 0.666…" }
+      ],
+      examples: [
+        {
+          q: "Find 2.5 × 1.2 and 7.2 ÷ 0.6.",
+          steps: ["25 × 12 = 300 and there are 2 decimal places, so 2.5 × 1.2 = 3.00 = 3", "7.2 ÷ 0.6 = 72 ÷ 6 = 12"],
+          answer: "3 and 12"
+        }
+      ],
+      qa: [
+        { q: "Why is 0.5 × 0.5 equal to 0.25 and not 2.5?", a: "5 × 5 = 25, and with one place in each number there are two decimal places, so the answer is 0.25. Half of a half is a quarter." },
+        { q: "A rope of 18.6 m is cut into pieces of 0.6 m. How many pieces?", a: "18.6 ÷ 0.6 = 186 ÷ 6 = **31 pieces**." }
+      ],
+      quiz: [
+        { q: "0.6 × 0.3 equals:", options: ["1.8", "0.018", "18", "0.18"], answer: 3, explain: "6 × 3 = 18 with 2 decimal places gives 0.18." },
+        { q: "4.37 × 100 equals:", options: ["437", "43.7", "0.0437", "4370"], answer: 0, explain: "Move the decimal point two places right." },
+        { q: "25.8 ÷ 10 equals:", options: ["258", "2.58", "0.258", "25.08"], answer: 1, explain: "Move the decimal point one place left." },
+        { q: "3.6 ÷ 0.4 equals:", options: ["0.9", "90", "14.4", "9"], answer: 3, explain: "36 ÷ 4 = 9." },
+        { q: "If 1 kg of rice costs ₹48.50, 2 kg cost:", options: ["₹97", "₹96.50", "₹24.25", "₹970"], answer: 0, explain: "48.50 × 2 = 97.00." }
+      ]
+    },
+    {
+      id: "connecting-the-dots",
+      title: "Connecting the Dots…",
+      section: "Part II",
+      summary: "We summarise data with the arithmetic mean, median and mode, find the range and read what each measure tells us about the data.",
+      notes: [
+        {
+          heading: "Mean",
+          points: [
+            "The **arithmetic mean** (average) is the sum of all values divided by the number of values.",
+            "The mean of 4, 7, 9, 12 is (4 + 7 + 9 + 12) ÷ 4 = 32 ÷ 4 = 8.",
+            "The mean lies between the smallest and the largest value.",
+            "If the mean of n values is known, their total is mean × n."
+          ]
+        },
+        {
+          heading: "Median and mode",
+          points: [
+            "The **median** is the middle value when the data is arranged in order. With an even number of values it is the mean of the two middle ones.",
+            "For 3, 5, 8, 9, 12 the median is 8. For 2, 4, 6, 10 the median is (4 + 6) ÷ 2 = 5.",
+            "The **mode** is the value that occurs most often. Data can have more than one mode, or none.",
+            "The median is not affected much by one very large or very small value, but the mean is."
+          ]
+        },
+        {
+          heading: "Range and reading data",
+          points: [
+            "**Range** = highest value − lowest value. It shows how spread out the data is.",
+            "Bar graphs and tables help us arrange data before finding mean, median or mode.",
+            "Choose the measure that suits the question: mode for the most common size, median for a typical middle value, mean for an overall average.",
+            "Always arrange the data in order before finding the median."
+          ]
+        }
+      ],
+      formulas: [
+        "Mean = (sum of all values) ÷ (number of values)",
+        "Range = highest value − lowest value",
+        "Sum of values = mean × number of values"
+      ],
+      terms: [
+        { term: "Mean", meaning: "The sum of the values divided by how many there are; the average." },
+        { term: "Median", meaning: "The middle value of data arranged in order." },
+        { term: "Mode", meaning: "The value that appears most often." },
+        { term: "Range", meaning: "The difference between the highest and the lowest value." }
+      ],
+      examples: [
+        {
+          q: "Find the mean, median, mode and range of 6, 9, 4, 9, 7.",
+          steps: ["Mean = (6 + 9 + 4 + 9 + 7) ÷ 5 = 35 ÷ 5 = 7", "In order: 4, 6, 7, 9, 9; the median is 7", "Mode is 9 (occurs twice); range = 9 − 4 = 5"],
+          answer: "Mean 7, median 7, mode 9, range 5"
+        }
+      ],
+      qa: [
+        { q: "The mean of 5 numbers is 12. What is their sum?", a: "Sum = mean × number of values = 12 × 5 = **60**." },
+        { q: "Find the median of 15, 10, 25, 20.", a: "In order: 10, 15, 20, 25. The two middle values are 15 and 20, so the median is (15 + 20) ÷ 2 = **17.5**." }
+      ],
+      quiz: [
+        { q: "The mean of 2, 4, 6, 8, 10 is:", options: ["5", "6", "30", "8"], answer: 1, explain: "Sum is 30 and 30 ÷ 5 = 6." },
+        { q: "The mode of 3, 5, 5, 7, 5, 9 is:", options: ["5", "3", "7", "6"], answer: 0, explain: "5 occurs three times, more than any other value." },
+        { q: "The median of 9, 3, 7, 1, 5 is:", options: ["7", "9", "5", "1"], answer: 2, explain: "In order: 1, 3, 5, 7, 9. The middle value is 5." },
+        { q: "The range of 12, 7, 20, 15 is:", options: ["13", "20", "7", "8"], answer: 0, explain: "20 − 7 = 13." },
+        { q: "The mean of 4 numbers is 15. Three of them are 10, 12 and 20. The fourth is:", options: ["18", "15", "22", "60"], answer: 0, explain: "Total = 60; 60 − (10 + 12 + 20) = 18. So the fourth number is 18." }
+      ]
+    },
+    {
+      id: "constructions-and-tilings",
+      title: "Constructions and Tilings",
+      section: "Part II",
+      summary: "We construct parallel lines and triangles with a ruler, compass and protractor, and study which shapes can cover a flat surface without gaps or overlaps.",
+      notes: [
+        {
+          heading: "Basic constructions",
+          points: [
+            "Tools: a ruler for straight lines, a compass for arcs and circles, and a protractor for angles.",
+            "A line parallel to a given line through a point can be drawn by copying an angle (equal corresponding angles).",
+            "The **perpendicular bisector** of a segment cuts it into two equal parts at 90°.",
+            "Keep construction arcs visible; they show the method."
+          ]
+        },
+        {
+          heading: "Constructing triangles",
+          points: [
+            "SSS: draw one side, then draw arcs from its ends with the other two side lengths; they meet at the third vertex.",
+            "SAS: draw one side, make the given angle at one end, and mark the second side along it.",
+            "ASA: draw the given side and make the two given angles at its ends; the arms meet at the third vertex.",
+            "A triangle can be constructed only if the sides satisfy the triangle inequality."
+          ]
+        },
+        {
+          heading: "Tilings",
+          points: [
+            "A **tiling** covers a plane with shapes without gaps or overlaps.",
+            "Angles meeting at a point must add up to **360°**.",
+            "Equilateral triangles (60° each, six at a point), squares (90°, four at a point) and regular hexagons (120°, three at a point) tile the plane.",
+            "A regular pentagon has angles of 108°, which do not divide 360° exactly, so it cannot tile alone."
+          ]
+        }
+      ],
+      formulas: [
+        "Angles around a point in a tiling = 360°",
+        "Angle of a regular polygon: triangle 60°, square 90°, pentagon 108°, hexagon 120°"
+      ],
+      terms: [
+        { term: "Compass", meaning: "A tool used to draw arcs and circles of a given radius." },
+        { term: "Perpendicular bisector", meaning: "A line that cuts a segment into two equal halves at right angles." },
+        { term: "Tiling", meaning: "Covering a flat surface with shapes with no gaps and no overlaps." },
+        { term: "Vertex", meaning: "A corner point where sides or tiles meet." }
+      ],
+      examples: [
+        {
+          q: "How many regular hexagons meet at a point in a tiling, if each angle is 120°?",
+          steps: ["Angles at a point must add up to 360°", "Number of hexagons = 360° ÷ 120° = 3"],
+          answer: "3 hexagons"
+        }
+      ],
+      qa: [
+        { q: "Can a triangle with sides 3 cm, 4 cm and 8 cm be constructed?", a: "No. 3 + 4 = 7 is less than 8, so the two arcs will not meet." },
+        { q: "Why can regular octagons not tile a plane on their own?", a: "Each angle of a regular octagon is 135°, which does not divide 360° exactly, so gaps are left." }
+      ],
+      quiz: [
+        { q: "Angles around a point in a tiling add up to:", options: ["180°", "90°", "270°", "360°"], answer: 3, explain: "A full turn around a point is 360°." },
+        { q: "Which regular shape can tile the plane by itself?", options: ["Pentagon", "Square", "Heptagon", "Octagon"], answer: 1, explain: "Four 90° angles make 360°." },
+        { q: "How many equilateral triangles meet at a point in a tiling?", options: ["6", "3", "4", "5"], answer: 0, explain: "360° ÷ 60° = 6." },
+        { q: "To construct a triangle by ASA you need:", options: ["Three sides", "Two sides and an angle", "Two angles and the side between them", "Three angles"], answer: 2, explain: "ASA gives two angles and the included side." },
+        { q: "The perpendicular bisector of a segment:", options: ["Is parallel to it", "Meets it at 90° at its midpoint", "Meets it at 60°", "Is twice as long"], answer: 1, explain: "It halves the segment and meets it at a right angle." }
+      ]
+    },
+    {
+      id: "finding-the-unknown",
+      title: "Finding the Unknown",
+      section: "Part II",
+      summary: "We write simple equations from word problems and solve them by doing the same operation on both sides, then check the answer.",
+      notes: [
+        {
+          heading: "Equations",
+          points: [
+            "An **equation** says that two expressions are equal. It has an unknown such as x and an = sign.",
+            "A **solution** is the value of the unknown that makes both sides equal.",
+            "Example: x + 5 = 12 is true only for x = 7.",
+            "Think of an equation as a balanced pair of scales."
+          ]
+        },
+        {
+          heading: "Solving an equation",
+          points: [
+            "Do the same thing to both sides: add, subtract, multiply or divide by the same number (not zero).",
+            "To solve 3x + 4 = 19: subtract 4 to get 3x = 15, then divide by 3 to get x = 5.",
+            "**Transposing** means moving a term to the other side with the opposite sign.",
+            "Check by putting the solution back: 3 × 5 + 4 = 19."
+          ]
+        },
+        {
+          heading: "Word problems",
+          points: [
+            "Choose a letter for the unknown and write what it stands for.",
+            "Translate the statement into an equation, then solve it.",
+            "Example: a number added to its double gives 36. x + 2x = 36, so 3x = 36 and x = 12.",
+            "Always check that the answer fits the original story."
+          ]
+        }
+      ],
+      formulas: [
+        "If a = b then a + c = b + c, a − c = b − c, a × c = b × c, and a ÷ c = b ÷ c (c ≠ 0)",
+        "ax + b = c  gives  x = (c − b) ÷ a"
+      ],
+      terms: [
+        { term: "Equation", meaning: "A statement that two expressions are equal." },
+        { term: "Unknown", meaning: "The letter whose value we want to find." },
+        { term: "Solution", meaning: "The value of the unknown that makes the equation true." },
+        { term: "Transposing", meaning: "Moving a term to the other side of the equation and changing its sign." }
+      ],
+      examples: [
+        {
+          q: "Solve 5x − 7 = 18.",
+          steps: ["Add 7 to both sides: 5x = 25", "Divide both sides by 5: x = 5", "Check: 5 × 5 − 7 = 18"],
           answer: "x = 5"
         },
         {
-          q: "The sum of three consecutive numbers is 63. Find the numbers.",
-          steps: [
-            "Let the numbers be n, n + 1 and n + 2.",
-            "n + (n + 1) + (n + 2) = 63, so 3n + 3 = 63",
-            "3n = 60, so n = 20",
-            "The numbers are 20, 21, 22 and 20 + 21 + 22 = 63 ✓"
-          ],
-          answer: "20, 21 and 22"
+          q: "Ravi's age is 4 years more than twice Meera's age. Ravi is 18. Find Meera's age.",
+          steps: ["Let Meera's age be m: 2m + 4 = 18", "2m = 14, so m = 7"],
+          answer: "Meera is 7 years old"
         }
       ],
       qa: [
-        { q: "Solve 3(x − 2) = 15 and check your answer.", a: "Divide both sides by 3: x − 2 = 5, so x = **7**. Check: 3 × (7 − 2) = 3 × 5 = 15 ✓." },
-        { q: "Sneha had some money. After spending ₹ 40 she is left with ₹ 85. Form an equation and find how much she had.", a: "Let she had ₹ x. Then x − 40 = 85, so x = 85 + 40 = **₹ 125**." },
-        { q: "A father's age is 3 times his son's age. Together their ages add up to 52 years. Find both ages.", a: "Let the son's age be x years, so the father's age is 3x. Then x + 3x = 52, so 4x = 52 and x = 13. The son is **13 years** and the father is **39 years** old (13 + 39 = 52 ✓)." }
+        { q: "Solve x/3 + 2 = 6.", a: "x/3 = 4, so x = 12." },
+        { q: "The sum of three consecutive numbers is 48. Find them.", a: "Let the numbers be n, n + 1, n + 2. Then 3n + 3 = 48, so n = 15. The numbers are **15, 16, 17**." }
       ],
       quiz: [
-        {
-          q: "The solution of x + 9 = 15 is:",
-          options: ["6", "24", "−6", "9"],
-          answer: 0,
-          explain: "Subtract 9 from both sides: x = 15 − 9 = 6."
-        },
-        {
-          q: "If 4x = 28, then x =",
-          options: ["32", "24", "7", "112"],
-          answer: 2,
-          explain: "Divide both sides by 4: x = 28 ÷ 4 = 7."
-        },
-        {
-          q: "Solve 2x − 5 = 11.",
-          options: ["3", "8", "6", "16"],
-          answer: 1,
-          explain: "Add 5 to both sides: 2x = 16. Divide by 2: x = 8. Check: 2 × 8 − 5 = 11 ✓."
-        },
-        {
-          q: "If y/5 = 3, then y =",
-          options: ["8", "2", "3/5", "15"],
-          answer: 3,
-          explain: "Multiply both sides by 5: y = 3 × 5 = 15."
-        },
-        {
-          q: "Which value of x satisfies 3x + 1 = 10?",
-          options: ["x = 2", "x = 4", "x = 3", "x = 9"],
-          answer: 2,
-          explain: "For x = 3: 3 × 3 + 1 = 10 ✓. The other values give 7, 13 and 28."
-        },
-        {
-          q: "Twice a number added to 7 gives 19. The number is:",
-          options: ["6", "12", "13", "26"],
-          answer: 0,
-          explain: "2n + 7 = 19, so 2n = 12 and n = 6."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 5. Lines and Angles ─────────────────────────────
-    {
-      id: "lines-and-angles",
-      title: "Lines and Angles",
-      section: "Geometry",
-      summary: "Study pairs of angles (complementary, supplementary, linear pair, vertically opposite) and the angles made when a transversal cuts parallel lines.",
-      notes: [
-        {
-          heading: "Pairs of angles",
-          points: [
-            "**Complementary** angles add up to 90°. Each is the complement of the other, e.g. the complement of 30° is 60°.",
-            "**Supplementary** angles add up to 180°. The supplement of 110° is 70°.",
-            "Adjacent angles share a common vertex and a common arm and do not overlap.",
-            "A **linear pair** is two adjacent angles whose outer arms form a straight line, so they always add up to 180°."
-          ]
-        },
-        {
-          heading: "Intersecting lines",
-          points: [
-            "When two lines cross, four angles are formed at the point of intersection.",
-            "**Vertically opposite angles** are equal. If lines AB and CD meet at O, then ∠AOC = ∠BOD and ∠AOD = ∠BOC.",
-            "Any two neighbouring angles among the four form a linear pair, so they add up to 180°.",
-            "Two lines are **perpendicular** (⊥) if they meet at an angle of 90°."
-          ]
-        },
-        {
-          heading: "Transversal",
-          points: [
-            "A **transversal** is a line that cuts two or more lines at different points. The rail on a railway track cuts the sleepers like a transversal.",
-            "A transversal makes 8 angles with two lines.",
-            "Corresponding angles are in the same position at the two crossings. Alternate interior angles lie inside the two lines on opposite sides of the transversal.",
-            "Interior angles on the same side of the transversal lie between the lines, on one side of it."
-          ]
-        },
-        {
-          heading: "Parallel lines and a transversal",
-          points: [
-            "If the lines are parallel (∥), **corresponding angles are equal**.",
-            "**Alternate interior angles are equal**.",
-            "**Interior angles on the same side** of the transversal add up to 180° (they are supplementary).",
-            "The converse is also true: if corresponding angles or alternate interior angles are equal, the two lines are parallel. This is how we test for parallel lines."
-          ]
-        }
-      ],
-      formulas: [
-        "Complementary angles: ∠A + ∠B = 90°",
-        "Supplementary angles / linear pair: ∠A + ∠B = 180°",
-        "Vertically opposite angles are equal",
-        "Parallel lines: corresponding angles are equal; alternate interior angles are equal",
-        "Parallel lines: interior angles on the same side of the transversal add up to 180°"
-      ],
-      terms: [
-        { term: "Complementary angles", meaning: "Two angles whose measures add up to 90°." },
-        { term: "Supplementary angles", meaning: "Two angles whose measures add up to 180°." },
-        { term: "Linear pair", meaning: "Two adjacent angles whose non-common arms form a straight line. Their sum is 180°." },
-        { term: "Vertically opposite angles", meaning: "The pairs of angles facing each other when two lines intersect. They are always equal." },
-        { term: "Transversal", meaning: "A line that crosses two or more other lines at different points." },
-        { term: "Alternate interior angles", meaning: "Angles between two lines that lie on opposite sides of the transversal. They are equal when the lines are parallel." }
-      ],
-      examples: [
-        {
-          q: "Find an angle that is 24° less than its supplement.",
-          steps: [
-            "Let the angle be x. Its supplement is 180° − x.",
-            "x = (180° − x) − 24° = 156° − x",
-            "2x = 156°, so x = 78°",
-            "Check: supplement = 102° and 102° − 78° = 24° ✓"
-          ],
-          answer: "78°"
-        },
-        {
-          q: "Two straight lines cross. One angle is (2x + 10)° and the angle vertically opposite to it is (3x − 20)°. Find x and the angle next to them.",
-          steps: [
-            "Vertically opposite angles are equal: 2x + 10 = 3x − 20",
-            "10 + 20 = 3x − 2x, so x = 30",
-            "Each of the two equal angles = 2 × 30 + 10 = 70°",
-            "The next angle forms a linear pair with 70°: 180° − 70° = 110°"
-          ],
-          answer: "x = 30; the angles are 70° and 110°"
-        }
-      ],
-      qa: [
-        { q: "Can two obtuse angles be supplementary? Give a reason.", a: "No. An obtuse angle is more than 90°, so two obtuse angles add up to **more than 180°**, but supplementary angles must add up to exactly 180°." },
-        { q: "Two parallel lines are cut by a transversal and one of the angles formed is 70°. Find the sizes of all the angles formed.", a: "At each crossing there are two angles of 70° (vertically opposite) and two angles of 110° (linear pair with 70°). The other crossing gives the same by corresponding angles. So **four angles are 70° and four angles are 110°**." },
-        { q: "Find the complement and the supplement of 65°.", a: "Complement = 90° − 65° = **25°**. Supplement = 180° − 65° = **115°**." }
-      ],
-      quiz: [
-        {
-          q: "The complement of 35° is:",
-          options: ["145°", "55°", "65°", "35°"],
-          answer: 1,
-          explain: "Complementary angles add up to 90°, so the complement is 90° − 35° = 55°."
-        },
-        {
-          q: "The supplement of 112° is:",
-          options: ["22°", "78°", "248°", "68°"],
-          answer: 3,
-          explain: "Supplementary angles add up to 180°, so the supplement is 180° − 112° = 68°."
-        },
-        {
-          q: "Two angles form a linear pair. One of them is 74°. The other is:",
-          options: ["106°", "16°", "74°", "286°"],
-          answer: 0,
-          explain: "A linear pair adds up to 180°, so the other angle is 180° − 74° = 106°."
-        },
-        {
-          q: "Two straight lines cross and one of the four angles is 50°. The angle vertically opposite to it is:",
-          options: ["130°", "40°", "50°", "100°"],
-          answer: 2,
-          explain: "Vertically opposite angles are equal, so it is also 50°. (130° is the angle next to it.)"
-        },
-        {
-          q: "Two parallel lines are cut by a transversal. The interior angles on the same side of the transversal add up to:",
-          options: ["90°", "270°", "360°", "180°"],
-          answer: 3,
-          explain: "Interior angles on the same side of a transversal between parallel lines are supplementary: their sum is 180°."
-        },
-        {
-          q: "Two angles are supplementary and one is double the other. The smaller angle is:",
-          options: ["30°", "60°", "90°", "120°"],
-          answer: 1,
-          explain: "Let the smaller angle be x. Then x + 2x = 180°, so 3x = 180° and x = 60°."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 6. The Triangle and its Properties ─────────────────────────────
-    {
-      id: "triangle-and-its-properties",
-      title: "The Triangle and its Properties",
-      section: "Geometry",
-      summary: "Medians, altitudes, the angle sum and exterior angle properties, the triangle inequality and the Pythagoras property of right-angled triangles.",
-      notes: [
-        {
-          heading: "Medians and altitudes",
-          points: [
-            "A **median** joins a vertex to the midpoint of the opposite side. A triangle has 3 medians and they meet at one point, the centroid.",
-            "An **altitude** is the perpendicular from a vertex to the opposite side (extended if needed). The three altitudes also meet at one point.",
-            "In a right-angled triangle, two of the altitudes are the legs themselves. In an obtuse-angled triangle, two altitudes lie outside the triangle."
-          ]
-        },
-        {
-          heading: "Angles of a triangle",
-          points: [
-            "**Angle sum property:** the three angles of any triangle add up to 180°.",
-            "If a side is extended, the angle formed outside at that vertex is an **exterior angle**. It equals the **sum of the two interior opposite angles**.",
-            "An exterior angle is always bigger than each of its interior opposite angles.",
-            "By sides: equilateral (3 equal sides, each angle 60°), isosceles (2 equal sides and equal angles opposite them), scalene (no equal sides)."
-          ]
-        },
-        {
-          heading: "Sides of a triangle",
-          points: [
-            "The sum of any two sides of a triangle is **greater** than the third side.",
-            "The difference of any two sides is **less** than the third side.",
-            "Test: 3 cm, 4 cm, 8 cm cannot form a triangle because 3 + 4 = 7 is less than 8. But 5, 6, 10 can, because 5 + 6 = 11 > 10."
-          ]
-        },
-        {
-          heading: "Right-angled triangles and Pythagoras",
-          points: [
-            "In a right-angled triangle the side opposite the right angle is the **hypotenuse**, and it is the longest side.",
-            "**Pythagoras property:** (hypotenuse)² = (one leg)² + (other leg)². For legs 3 and 4: 9 + 16 = 25, so the hypotenuse is 5.",
-            "Triplets of whole numbers that satisfy it are called Pythagorean triplets: (3, 4, 5), (6, 8, 10), (5, 12, 13), (8, 15, 17).",
-            "The converse holds too: if a² + b² = c² for the sides, the triangle is right-angled. Masons use the 3-4-5 rule to check corners."
-          ]
-        }
-      ],
-      formulas: [
-        "Angle sum: ∠A + ∠B + ∠C = 180°",
-        "Exterior angle = sum of the two interior opposite angles",
-        "Triangle inequality: the sum of any two sides > the third side",
-        "Pythagoras: (hypotenuse)² = (base)² + (height)²",
-        "Pythagorean triplets: (3, 4, 5), (5, 12, 13), (8, 15, 17) and their multiples such as (6, 8, 10)"
-      ],
-      terms: [
-        { term: "Median", meaning: "A line segment from a vertex of a triangle to the midpoint of the opposite side." },
-        { term: "Altitude", meaning: "The perpendicular line segment from a vertex to the opposite side (or its extension)." },
-        { term: "Exterior angle", meaning: "The angle formed outside a triangle when one of its sides is extended." },
-        { term: "Hypotenuse", meaning: "The longest side of a right-angled triangle, opposite the right angle." },
-        { term: "Pythagorean triplet", meaning: "Three whole numbers a, b, c with a² + b² = c², such as 3, 4, 5." },
-        { term: "Centroid", meaning: "The point where the three medians of a triangle meet." }
-      ],
-      examples: [
-        {
-          q: "In △ABC, side BC is extended to D. If ∠A = 55° and ∠B = 45°, find ∠ACD and ∠ACB.",
-          steps: [
-            "∠ACD is the exterior angle at C, so ∠ACD = ∠A + ∠B = 55° + 45° = 100°",
-            "∠ACB and ∠ACD form a linear pair: ∠ACB = 180° − 100° = 80°",
-            "Check: 55° + 45° + 80° = 180° ✓"
-          ],
-          answer: "∠ACD = 100° and ∠ACB = 80°"
-        },
-        {
-          q: "A 13 m ladder rests against a wall with its foot 5 m from the wall. How high up the wall does it reach?",
-          steps: [
-            "The ladder is the hypotenuse (13 m); the ground distance is one leg (5 m).",
-            "height² = 13² − 5² = 169 − 25 = 144",
-            "height = √144 = 12 m"
-          ],
-          answer: "12 m"
-        }
-      ],
-      qa: [
-        { q: "Can a triangle have sides 5 cm, 7 cm and 13 cm? Why?", a: "No. 5 + 7 = 12, which is **less than** 13. The sum of any two sides of a triangle must be greater than the third side." },
-        { q: "Two angles of a triangle are 40° and 65°. Find the third angle and name the type of triangle.", a: "Third angle = 180° − (40° + 65°) = 180° − 105° = **75°**. All three angles are below 90° and all are different, so it is an acute-angled scalene triangle." },
-        { q: "Is a triangle with sides 6 cm, 8 cm and 10 cm right-angled?", a: "6² + 8² = 36 + 64 = 100 = 10². By the converse of the Pythagoras property, **yes**, it is right-angled, with the right angle opposite the 10 cm side." }
-      ],
-      quiz: [
-        {
-          q: "Two angles of a triangle are 60° and 70°. The third angle is:",
-          options: ["130°", "120°", "60°", "50°"],
-          answer: 3,
-          explain: "Third angle = 180° − (60° + 70°) = 180° − 130° = 50°."
-        },
-        {
-          q: "An exterior angle of a triangle is 110° and one interior opposite angle is 45°. The other interior opposite angle is:",
-          options: ["155°", "65°", "70°", "35°"],
-          answer: 1,
-          explain: "Exterior angle = sum of the interior opposite angles, so the other angle is 110° − 45° = 65°."
-        },
-        {
-          q: "Which set of lengths can be the sides of a triangle?",
-          options: ["2 cm, 3 cm, 6 cm", "4 cm, 4 cm, 9 cm", "5 cm, 6 cm, 10 cm", "3 cm, 5 cm, 9 cm"],
-          answer: 2,
-          explain: "5 + 6 = 11 > 10, so 5, 6, 10 works. In the others the two shorter sides add up to less than the longest side (2 + 3 = 5 < 6, 4 + 4 = 8 < 9, 3 + 5 = 8 < 9)."
-        },
-        {
-          q: "The legs of a right-angled triangle are 9 cm and 12 cm. The hypotenuse is:",
-          options: ["15 cm", "21 cm", "10.5 cm", "225 cm"],
-          answer: 0,
-          explain: "Hypotenuse² = 81 + 144 = 225, so the hypotenuse = 15 cm."
-        },
-        {
-          q: "A line segment joining a vertex to the midpoint of the opposite side is called a:",
-          options: ["Altitude", "Median", "Angle bisector", "Transversal"],
-          answer: 1,
-          explain: "A segment from a vertex to the midpoint of the opposite side is a median."
-        },
-        {
-          q: "Which of these is a Pythagorean triplet?",
-          options: ["5, 11, 13", "6, 7, 10", "7, 8, 11", "5, 12, 13"],
-          answer: 3,
-          explain: "5² + 12² = 25 + 144 = 169 = 13². None of the other sets satisfies a² + b² = c²."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 7. Comparing Quantities ─────────────────────────────
-    {
-      id: "comparing-quantities",
-      title: "Comparing Quantities",
-      section: "Number",
-      summary: "Compare quantities using ratio and percentage, find profit, loss and discount in shopping, and calculate simple interest on money lent or deposited.",
-      notes: [
-        {
-          heading: "Ratio and proportion",
-          points: [
-            "A **ratio** compares two quantities of the same kind in the same unit and is written a : b. 40 cm to 1 m is 40 : 100 = 2 : 5.",
-            "Simplify a ratio by dividing both terms by their HCF: 24 : 36 = 2 : 3.",
-            "Four numbers are in **proportion** if a : b = c : d, i.e. a × d = b × c. Example: 3 : 4 = 9 : 12 because 3 × 12 = 4 × 9 = 36.",
-            "The unitary method finds the value of one unit first, then the value of many units."
-          ]
-        },
-        {
-          heading: "Percentage",
-          points: [
-            "**Per cent** means 'per hundred'. x% = x/100, so 35% = 35/100 = 0.35.",
-            "To change a fraction to a percent, multiply by 100: 3/8 = 3/8 × 100 = 37.5%.",
-            "x% of a quantity = x/100 × quantity. 20% of ₹ 450 = ₹ 90.",
-            "Handy values: 50% = 1/2, 25% = 1/4, 75% = 3/4, 20% = 1/5, 10% = 1/10.",
-            "Percentage increase or decrease = (change ÷ original value) × 100."
-          ]
-        },
-        {
-          heading: "Profit, loss and discount",
-          points: [
-            "The **cost price (CP)** is what the shopkeeper pays; the **selling price (SP)** is what the customer pays.",
-            "If SP > CP there is a profit = SP − CP. If CP > SP there is a loss = CP − SP.",
-            "Profit % and loss % are always calculated on the **cost price**: Profit % = (Profit ÷ CP) × 100.",
-            "Discount = Marked price − Selling price. Discount % is calculated on the marked price."
-          ]
-        },
-        {
-          heading: "Simple interest",
-          points: [
-            "Money borrowed or deposited is the **principal (P)**. Interest is the extra money paid for using it. The **rate (R)** is the interest per ₹ 100 per year (p.a.) and **time (T)** is in years.",
-            "SI = (P × R × T) ÷ 100. For ₹ 5000 at 8% p.a. for 2 years: SI = 5000 × 8 × 2 ÷ 100 = ₹ 800.",
-            "Amount = Principal + Interest. In the example above the amount is ₹ 5800.",
-            "In simple interest the interest is the same every year, because it is always worked out on the original principal."
-          ]
-        }
-      ],
-      formulas: [
-        "x% = x/100",
-        "Percentage change = (Change ÷ Original value) × 100",
-        "Profit = SP − CP;  Loss = CP − SP",
-        "Profit % = (Profit ÷ CP) × 100;  Loss % = (Loss ÷ CP) × 100",
-        "SP = CP + Profit = CP − Loss",
-        "Discount = Marked price − Selling price",
-        "Simple interest: SI = (P × R × T) ÷ 100",
-        "Amount = Principal + Simple interest"
-      ],
-      terms: [
-        { term: "Ratio", meaning: "A comparison of two quantities of the same kind by division, written a : b." },
-        { term: "Percentage", meaning: "A fraction with denominator 100. 'Per cent' means 'out of every hundred'." },
-        { term: "Cost price (CP)", meaning: "The price at which an article is bought." },
-        { term: "Selling price (SP)", meaning: "The price at which an article is sold." },
-        { term: "Principal", meaning: "The original sum of money that is borrowed or deposited." },
-        { term: "Simple interest", meaning: "Interest calculated only on the original principal, so it is the same each year." }
-      ],
-      examples: [
-        {
-          q: "Ramesh buys a second-hand cycle for ₹ 3200 and sells it for ₹ 3600. Find his profit and profit percent.",
-          steps: [
-            "SP is more than CP, so there is a profit.",
-            "Profit = 3600 − 3200 = ₹ 400",
-            "Profit % = (400 ÷ 3200) × 100 = 1/8 × 100 = 12.5%"
-          ],
-          answer: "Profit = ₹ 400; profit percent = 12.5%"
-        },
-        {
-          q: "Find the simple interest and the amount on ₹ 8000 at 6% per annum for 3 years.",
-          steps: [
-            "SI = (8000 × 6 × 3) ÷ 100",
-            "= 80 × 18 = 1440",
-            "Amount = 8000 + 1440 = 9440"
-          ],
-          answer: "Simple interest = ₹ 1440; amount = ₹ 9440"
-        }
-      ],
-      qa: [
-        { q: "Divide ₹ 1200 between Asha and Bina in the ratio 3 : 5.", a: "Total parts = 3 + 5 = 8. One part = 1200 ÷ 8 = ₹ 150. Asha gets 3 × 150 = **₹ 450** and Bina gets 5 × 150 = **₹ 750**. (450 + 750 = 1200 ✓)" },
-        { q: "A shirt marked ₹ 800 is sold at a 15% discount. Find its selling price.", a: "Discount = 15% of 800 = 15/100 × 800 = ₹ 120. Selling price = 800 − 120 = **₹ 680**." },
-        { q: "The price of a notebook rises from ₹ 40 to ₹ 50. Find the percentage increase.", a: "Increase = 50 − 40 = ₹ 10. Percentage increase = (10 ÷ 40) × 100 = **25%**." }
-      ],
-      quiz: [
-        {
-          q: "The ratio 24 : 36 in its simplest form is:",
-          options: ["2 : 3", "3 : 2", "4 : 6", "12 : 18"],
-          answer: 0,
-          explain: "HCF of 24 and 36 is 12. Dividing both by 12 gives 2 : 3. The ratios 4 : 6 and 12 : 18 are equal to it but can be simplified further."
-        },
-        {
-          q: "35% of 200 is:",
-          options: ["35", "7", "70", "170"],
-          answer: 2,
-          explain: "35% of 200 = 35/100 × 200 = 70."
-        },
-        {
-          q: "An article bought for ₹ 250 is sold for ₹ 200. The loss percent is:",
-          options: ["50%", "20%", "25%", "80%"],
-          answer: 1,
-          explain: "Loss = 250 − 200 = ₹ 50. Loss % = (50 ÷ 250) × 100 = 20%, because it is calculated on the cost price."
-        },
-        {
-          q: "The simple interest on ₹ 2000 at 5% per annum for 3 years is:",
-          options: ["₹ 30", "₹ 100", "₹ 2300", "₹ 300"],
-          answer: 3,
-          explain: "SI = (2000 × 5 × 3) ÷ 100 = ₹ 300. (₹ 2300 would be the amount.)"
-        },
-        {
-          q: "In a class of 40 students, 15 are girls. The percentage of girls is:",
-          options: ["15%", "25%", "37.5%", "40%"],
-          answer: 2,
-          explain: "Percentage = (15 ÷ 40) × 100 = 37.5%."
-        },
-        {
-          q: "A bicycle bought for ₹ 1500 is sold at a profit of 10%. Its selling price is:",
-          options: ["₹ 1650", "₹ 1510", "₹ 1350", "₹ 1600"],
-          answer: 0,
-          explain: "Profit = 10% of 1500 = ₹ 150. SP = CP + profit = 1500 + 150 = ₹ 1650."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 8. Rational Numbers ─────────────────────────────
-    {
-      id: "rational-numbers",
-      title: "Rational Numbers",
-      section: "Number",
-      summary: "Rational numbers are numbers of the form p/q. We learn their standard form, how to compare them on the number line, how to operate on them and which properties they follow.",
-      notes: [
-        {
-          heading: "What is a rational number?",
-          points: [
-            "A **rational number** can be written as p/q, where p and q are integers and q ≠ 0. Examples: 3/4, −5/7, 6 (= 6/1), 0.25 (= 1/4).",
-            "All integers, fractions and terminating or recurring decimals are rational. Even 0 = 0/5 is rational.",
-            "Equivalent forms come from multiplying or dividing the numerator and denominator by the same non-zero integer: 2/3 = 4/6 = 6/9.",
-            "**Standard form:** the denominator is positive and the numerator and denominator have no common factor except 1. So −12/18 = −2/3 and 3/−5 = −3/5."
-          ]
-        },
-        {
-          heading: "Number line and comparison",
-          points: [
-            "Positive rational numbers lie to the right of 0 and negative ones to the left. To mark −3/4, split the gap between 0 and −1 into 4 equal parts and take 3 parts.",
-            "Every negative rational number is less than 0, and 0 is less than every positive one.",
-            "To compare, write both with the same positive denominator and compare numerators: −3/4 = −9/12 and −2/3 = −8/12, so −2/3 > −3/4.",
-            "Between any two rational numbers there are **infinitely many** rational numbers. One of them is their average, (x + y)/2."
-          ]
-        },
-        {
-          heading: "Operations",
-          points: [
-            "Addition: make the denominators equal, then add the numerators. −3/4 + 5/6 = −9/12 + 10/12 = 1/12.",
-            "Subtraction means adding the additive inverse: 2/3 − 5/6 = 2/3 + (−5/6) = 4/6 − 5/6 = −1/6.",
-            "Multiplication: multiply the numerators and the denominators. (−2/3) × (9/10) = −18/30 = −3/5.",
-            "Division: multiply by the reciprocal. The reciprocal of −3/5 is −5/3. Zero has no reciprocal."
-          ]
-        },
-        {
-          heading: "Properties of rational numbers",
-          points: [
-            "Rational numbers are closed under addition, subtraction and multiplication. They are not closed under division, because division by 0 is not defined.",
-            "Addition and multiplication are commutative and associative. Subtraction and division are not.",
-            "The additive identity is 0 (a + 0 = a) and the multiplicative identity is 1 (a × 1 = a).",
-            "The additive inverse of a/b is −a/b and the multiplicative inverse (reciprocal) of a/b is b/a. Multiplication is distributive over addition."
-          ]
-        }
-      ],
-      formulas: [
-        "Rational number = p/q, where p and q are integers and q ≠ 0",
-        "Standard form: q > 0 and HCF(p, q) = 1",
-        "a/b + c/d = (ad + bc)/(bd)",
-        "a/b × c/d = (ac)/(bd);   a/b ÷ c/d = (ad)/(bc)",
-        "Additive inverse of a/b = −a/b;  reciprocal of a/b = b/a",
-        "A rational number between x and y: (x + y)/2"
-      ],
-      terms: [
-        { term: "Rational number", meaning: "A number that can be written as p/q with integers p and q and q ≠ 0, e.g. −3/8." },
-        { term: "Standard form", meaning: "A rational number written with a positive denominator and with numerator and denominator having no common factor other than 1." },
-        { term: "Equivalent rational numbers", meaning: "Rational numbers with the same value, like 1/2, 2/4 and 5/10." },
-        { term: "Additive inverse", meaning: "The number which, added to a given number, gives 0. For 3/5 it is −3/5." },
-        { term: "Reciprocal", meaning: "The multiplicative inverse. The number that gives 1 when multiplied with a given non-zero number. For −3/5 it is −5/3." }
-      ],
-      examples: [
-        {
-          q: "Simplify −3/4 + 5/6.",
-          steps: [
-            "LCM of 4 and 6 is 12.",
-            "−3/4 = −9/12 and 5/6 = 10/12",
-            "Sum = (−9 + 10)/12 = 1/12"
-          ],
-          answer: "1/12"
-        },
-        {
-          q: "Simplify (−5/8) ÷ (15/16).",
-          steps: [
-            "Dividing means multiplying by the reciprocal of 15/16, which is 16/15.",
-            "(−5/8) × (16/15) = (−5 × 16)/(8 × 15) = −80/120",
-            "Divide numerator and denominator by 40: −2/3"
-          ],
-          answer: "−2/3"
-        }
-      ],
-      qa: [
-        { q: "Write 36/−48 in standard form.", a: "Make the denominator positive: 36/−48 = −36/48. The HCF of 36 and 48 is 12, so divide both by 12 to get **−3/4**." },
-        { q: "Which is greater, −3/4 or −2/3?", a: "LCM of 4 and 3 is 12. −3/4 = −9/12 and −2/3 = −8/12. Since −8 > −9, **−2/3 is greater**." },
-        { q: "Find a rational number between −1/2 and 1/3.", a: "Take their average: (−1/2 + 1/3) ÷ 2 = (−3/6 + 2/6) ÷ 2 = (−1/6) ÷ 2 = **−1/12**. Check: −6/12 < −1/12 < 4/12." }
-      ],
-      quiz: [
-        {
-          q: "Which of these is NOT a rational number?",
-          options: ["0", "−7/3", "3/0", "0.75"],
-          answer: 2,
-          explain: "In p/q the denominator q cannot be 0, so 3/0 is not defined. The others are rational: 0 = 0/1 and 0.75 = 3/4."
-        },
-        {
-          q: "The standard form of −15/35 is:",
-          options: ["−3/7", "3/7", "3/−7", "−7/3"],
-          answer: 0,
-          explain: "HCF of 15 and 35 is 5, so −15/35 = −3/7. The denominator is positive and the numerator and denominator have no common factor."
-        },
-        {
-          q: "−2/5 + 3/10 = ?",
-          options: ["1/10", "−1/5", "−5/15", "−1/10"],
-          answer: 3,
-          explain: "−2/5 = −4/10, so −4/10 + 3/10 = −1/10."
-        },
-        {
-          q: "The additive inverse of −7/9 is:",
-          options: ["−7/9", "7/9", "9/7", "−9/7"],
-          answer: 1,
-          explain: "The additive inverse changes the sign: −7/9 + 7/9 = 0."
-        },
-        {
-          q: "The reciprocal of −3/8 is:",
-          options: ["−8/3", "8/3", "3/8", "−3/8"],
-          answer: 0,
-          explain: "Turn the fraction upside down and keep the sign: −8/3. Check: (−3/8) × (−8/3) = 1."
-        },
-        {
-          q: "(−3/4) × (8/9) = ?",
-          options: ["2/3", "−3/2", "−2/3", "−11/13"],
-          answer: 2,
-          explain: "(−3 × 8)/(4 × 9) = −24/36 = −2/3."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 9. Perimeter and Area ─────────────────────────────
-    {
-      id: "perimeter-and-area",
-      title: "Perimeter and Area",
-      section: "Measurement",
-      summary: "Find the boundary length and the surface area of rectangles, squares, parallelograms, triangles and circles, and learn the units used to measure them.",
-      notes: [
-        {
-          heading: "Rectangles and squares",
-          points: [
-            "**Perimeter** is the length of the boundary, like the fencing needed around a field. **Area** is the surface inside it, measured in square units.",
-            "Rectangle: perimeter = 2(l + b) and area = l × b. Square of side a: perimeter = 4a and area = a².",
-            "Perimeter is in cm, m or km, but area is in cm², m² or km².",
-            "A field 50 m × 30 m has perimeter 2(50 + 30) = 160 m and area 50 × 30 = 1500 m²."
-          ]
-        },
-        {
-          heading: "Parallelograms and triangles",
-          points: [
-            "Area of a parallelogram = base × height. The height is the **perpendicular** distance between the parallel sides, not the slanting side.",
-            "A parallelogram can be cut and rearranged into a rectangle with the same base and height, so their areas are equal.",
-            "A diagonal divides a parallelogram into two equal triangles. So the area of a triangle = ½ × base × height.",
-            "Any side of a triangle can be the base, as long as the height is the matching altitude."
-          ]
-        },
-        {
-          heading: "Circles",
-          points: [
-            "The **circumference** is the perimeter of a circle: C = 2πr = πd, where r is the radius and d = 2r is the diameter.",
-            "Area of a circle = πr².",
-            "π is the ratio circumference ÷ diameter. It is the same for every circle and is about 22/7 or 3.14.",
-            "If the diameter is given, halve it to get the radius before using the formulas."
-          ]
-        },
-        {
-          heading: "Units and combined shapes",
-          points: [
-            "1 m² = 10,000 cm². 1 hectare = 10,000 m². 1 km² = 10,00,000 m².",
-            "For an L-shaped or other combined figure, split it into rectangles and triangles, find each area and add them.",
-            "Area of a path around a field = area of the outer rectangle − area of the inner rectangle.",
-            "Always check that all lengths are in the same unit before you calculate."
-          ]
-        }
-      ],
-      formulas: [
-        "Rectangle: perimeter = 2(l + b);  area = l × b",
-        "Square: perimeter = 4a;  area = a²",
-        "Parallelogram: area = base × height",
-        "Triangle: area = ½ × base × height",
-        "Circle: circumference = 2πr;  area = πr²   (π ≈ 22/7 or 3.14)",
-        "1 m² = 10,000 cm²;  1 hectare = 10,000 m²"
-      ],
-      terms: [
-        { term: "Perimeter", meaning: "The total length of the boundary of a closed figure." },
-        { term: "Area", meaning: "The amount of surface enclosed by a figure, measured in square units." },
-        { term: "Circumference", meaning: "The perimeter of a circle, equal to 2πr." },
-        { term: "Radius", meaning: "The distance from the centre of a circle to its boundary; half the diameter." },
-        { term: "Height (altitude)", meaning: "The perpendicular distance from the base to the opposite side or vertex." },
-        { term: "Parallelogram", meaning: "A four-sided figure whose opposite sides are parallel and equal." }
-      ],
-      examples: [
-        {
-          q: "A rectangular field is 50 m long and 30 m wide. Find its perimeter and area, and the cost of fencing it once at ₹ 25 per metre.",
-          steps: [
-            "Perimeter = 2(50 + 30) = 2 × 80 = 160 m",
-            "Area = 50 × 30 = 1500 m²",
-            "Cost of fencing = 160 × 25 = ₹ 4000"
-          ],
-          answer: "Perimeter = 160 m, area = 1500 m², cost = ₹ 4000"
-        },
-        {
-          q: "A circular park has a radius of 14 m. Find its circumference and area (use π = 22/7).",
-          steps: [
-            "Circumference = 2 × 22/7 × 14 = 2 × 22 × 2 = 88 m",
-            "Area = 22/7 × 14 × 14 = 22 × 2 × 14 = 616 m²"
-          ],
-          answer: "Circumference = 88 m, area = 616 m²"
-        }
-      ],
-      qa: [
-        { q: "Why do we use the perpendicular height, not the slanting side, to find the area of a parallelogram?", a: "Cutting a triangle from one end and moving it to the other end turns the parallelogram into a rectangle whose width is the **perpendicular height**. So a parallelogram with base 10 cm and height 5 cm has area 50 cm², even if its slanting side is 6 cm." },
-        { q: "Find the area of a triangle with base 12 cm and height 7 cm.", a: "Area = ½ × base × height = ½ × 12 × 7 = 6 × 7 = **42 cm²**." },
-        { q: "A square has a perimeter of 36 cm. Find its area.", a: "Side = 36 ÷ 4 = 9 cm. Area = 9 × 9 = **81 cm²**." }
-      ],
-      quiz: [
-        {
-          q: "The perimeter of a rectangle 12 cm long and 7 cm wide is:",
-          options: ["19 cm", "38 cm", "84 cm", "24 cm"],
-          answer: 1,
-          explain: "Perimeter = 2(12 + 7) = 2 × 19 = 38 cm. (84 would be the area, in cm².)"
-        },
-        {
-          q: "The area of a square of side 9 m is:",
-          options: ["36 m²", "18 m²", "27 m²", "81 m²"],
-          answer: 3,
-          explain: "Area = side × side = 9 × 9 = 81 m². (36 m is the perimeter.)"
-        },
-        {
-          q: "A triangle has base 10 cm and height 6 cm. Its area is:",
-          options: ["30 cm²", "60 cm²", "16 cm²", "32 cm²"],
-          answer: 0,
-          explain: "Area = ½ × 10 × 6 = 30 cm². Forgetting the ½ gives 60 cm²."
-        },
-        {
-          q: "A parallelogram has base 8 cm, height 5 cm and a slanting side of 6 cm. Its area is:",
-          options: ["48 cm²", "26 cm²", "40 cm²", "20 cm²"],
-          answer: 2,
-          explain: "Area = base × perpendicular height = 8 × 5 = 40 cm². The slanting side is not used."
-        },
-        {
-          q: "The circumference of a circle of radius 7 cm (π = 22/7) is:",
-          options: ["22 cm", "154 cm", "14 cm", "44 cm"],
-          answer: 3,
-          explain: "C = 2πr = 2 × 22/7 × 7 = 44 cm. (154 is the area in cm².)"
-        },
-        {
-          q: "The area of a circle of diameter 14 cm (π = 22/7) is:",
-          options: ["44 cm²", "154 cm²", "616 cm²", "308 cm²"],
-          answer: 1,
-          explain: "Radius = 14 ÷ 2 = 7 cm. Area = πr² = 22/7 × 7 × 7 = 154 cm². (616 comes from wrongly using 14 as the radius.)"
-        }
-      ]
-    },
-
-    // ───────────────────────────── 10. Algebraic Expressions ─────────────────────────────
-    {
-      id: "algebraic-expressions",
-      title: "Algebraic Expressions",
-      section: "Algebra",
-      summary: "Learn the parts of an algebraic expression, how to add and subtract like terms, how to find the value of an expression and how letters describe number patterns.",
-      notes: [
-        {
-          heading: "Terms and coefficients",
-          points: [
-            "An **expression** is made from variables and constants joined by +, −, × and ÷. Example: 4x² − 3x + 7.",
-            "The parts that are added or subtracted are **terms**: 4x², −3x and 7. The number multiplying the variable is its **coefficient**: 4 for x² and −3 for x.",
-            "Monomial: 1 term (5y). Binomial: 2 terms (a + b). Trinomial: 3 terms (x² + 2x + 1).",
-            "**Like terms** have the same variables with the same powers: 3x and −5x are like terms, but 3x and 3x² are not."
-          ]
-        },
-        {
-          heading: "Adding and subtracting expressions",
-          points: [
-            "Only like terms can be added or subtracted: 7ab + 2ab = 9ab, but 7ab + 2a cannot be combined.",
-            "To add expressions, group the like terms: (3x + 2) + (5x − 7) = 8x − 5.",
-            "To subtract an expression, change the sign of every term in it and then add: (7a − b) − (2a + 5b) = 7a − b − 2a − 5b = 5a − 6b.",
-            "Common mistake: a − (b − c) = a − b + c, not a − b − c."
-          ]
-        },
-        {
-          heading: "Value of an expression",
-          points: [
-            "Put the given number in place of the variable and calculate. For 3x² − 2x + 5 at x = −2: 3(4) + 4 + 5 = 21.",
-            "Use brackets when you substitute a negative number: (−2)² = 4, but −2² = −4.",
-            "The value changes with the variable: 2n + 1 is 3 when n = 1 and 11 when n = 5."
-          ]
-        },
-        {
-          heading: "Expressions for patterns and formulas",
-          points: [
-            "An even number is 2n and an odd number is 2n + 1, where n is a whole number.",
-            "The perimeter of a square of side a is 4a, and the perimeter of a rectangle is 2(l + b).",
-            "Squares made with matchsticks in a row need 3n + 1 sticks for n squares: 4, 7, 10, 13, …",
-            "A rule written in letters works for every case at once, so it is shorter than listing the cases."
-          ]
-        }
-      ],
-      formulas: [
-        "ax + bx = (a + b)x   (like terms only)",
-        "a − (b − c) = a − b + c",
-        "Even number: 2n;  odd number: 2n + 1",
-        "Perimeter of a square = 4a;  of a rectangle = 2(l + b)",
-        "Matchstick squares in a row: 3n + 1 sticks for n squares"
-      ],
-      terms: [
-        { term: "Variable", meaning: "A letter, like x or n, that can take different values." },
-        { term: "Coefficient", meaning: "The number that multiplies a variable in a term. In 5x² it is 5." },
-        { term: "Like terms", meaning: "Terms having the same variables with the same powers, e.g. 4xy and −9xy." },
-        { term: "Monomial", meaning: "An expression with exactly one term, e.g. 6y²." },
-        { term: "Binomial", meaning: "An expression with exactly two terms, e.g. 2a + 3b." },
-        { term: "Trinomial", meaning: "An expression with exactly three terms, e.g. x² − 5x + 6." }
-      ],
-      examples: [
-        {
-          q: "Add 3x² − 5x + 2 and x² + 4x − 7.",
-          steps: [
-            "Group the like terms: (3x² + x²) + (−5x + 4x) + (2 − 7)",
-            "= 4x² + (−x) + (−5)"
-          ],
-          answer: "4x² − x − 5"
-        },
-        {
-          q: "Subtract (2a + 5b − 3) from (7a − b + 4).",
-          steps: [
-            "(7a − b + 4) − (2a + 5b − 3) = 7a − b + 4 − 2a − 5b + 3",
-            "Group like terms: (7a − 2a) + (−b − 5b) + (4 + 3)",
-            "= 5a − 6b + 7"
-          ],
-          answer: "5a − 6b + 7"
-        }
-      ],
-      qa: [
-        { q: "Pick out the like terms: 4xy, −3x, 7xy, 2y, 9x.", a: "4xy and 7xy are like terms (both have xy). −3x and 9x are like terms (both have x). 2y has no like term in the list." },
-        { q: "Find the value of 3x² − 2x + 5 when x = −2.", a: "3(−2)² − 2(−2) + 5 = 3 × 4 + 4 + 5 = 12 + 4 + 5 = **21**." },
-        { q: "Squares are made side by side in a row with matchsticks. Write a rule for the number of sticks needed for n squares.", a: "The first square needs 4 sticks. Each extra square shares a side, so it needs only 3 more. For n squares: 4 + 3(n − 1) = **3n + 1** sticks. Check: 3 squares need 3 × 3 + 1 = 10 sticks." }
-      ],
-      quiz: [
-        {
-          q: "The coefficient of x² in 5x² − 3x + 2 is:",
-          options: ["−3", "2", "x²", "5"],
-          answer: 3,
-          explain: "The coefficient is the number multiplying x², which is 5."
-        },
-        {
-          q: "Which pair is a pair of like terms?",
-          options: ["5x and 5y", "−4p² and 9p²", "3a and 3a²", "2xy and 2x"],
-          answer: 1,
-          explain: "Like terms have the same variable part. −4p² and 9p² both have p²."
-        },
-        {
-          q: "The sum of (4x + 3) and (2x − 5) is:",
-          options: ["6x + 8", "8x − 2", "6x − 2", "6x² − 2"],
-          answer: 2,
-          explain: "(4x + 2x) + (3 − 5) = 6x − 2."
-        },
-        {
-          q: "(5a + 4) − (3a − 2) = ?",
-          options: ["2a + 6", "2a + 2", "8a + 2", "2a − 6"],
-          answer: 0,
-          explain: "5a + 4 − 3a + 2 = 2a + 6. Both signs in the second bracket must change."
-        },
-        {
-          q: "The value of 2x² − 3 when x = 3 is:",
-          options: ["9", "15", "33", "21"],
-          answer: 1,
-          explain: "2x² = 2 × 3² = 2 × 9 = 18, and 18 − 3 = 15."
-        },
-        {
-          q: "For every natural number n, which expression always gives an odd number?",
-          options: ["2n", "n + 2", "3n", "2n + 1"],
-          answer: 3,
-          explain: "2n is always even, so 2n + 1 is always odd. The expressions n + 2 and 3n can be even or odd depending on n."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 11. Exponents and Powers ─────────────────────────────
-    {
-      id: "exponents-and-powers",
-      title: "Exponents and Powers",
-      section: "Number",
-      summary: "Exponents are a short way of writing repeated multiplication. We learn the laws of exponents and use powers of 10 to write very large numbers in standard form.",
-      notes: [
-        {
-          heading: "Powers",
-          points: [
-            "aⁿ means a multiplied by itself n times: 2⁵ = 2 × 2 × 2 × 2 × 2 = 32. Here a is the **base** and n is the **exponent** (power).",
-            "Negative base: (−2)³ = −8 (odd exponent gives a negative value) but (−2)⁴ = 16 (even exponent gives a positive value).",
-            "a¹ = a, and a⁰ = 1 for every a ≠ 0.",
-            "Base and exponent cannot be swapped: 2⁶ = 64 but 6² = 36."
-          ]
-        },
-        {
-          heading: "Laws of exponents (same base)",
-          points: [
-            "Multiplying: aᵐ × aⁿ = aᵐ⁺ⁿ. For example 2³ × 2⁵ = 2⁸.",
-            "Dividing: aᵐ ÷ aⁿ = aᵐ⁻ⁿ. For example 5⁷ ÷ 5⁴ = 5³ = 125.",
-            "Power of a power: (aᵐ)ⁿ = aᵐⁿ. For example (3²)³ = 3⁶ = 729.",
-            "These laws need the **same base**. You cannot add exponents in 2³ × 3²."
-          ]
-        },
-        {
-          heading: "Laws with the same exponent",
-          points: [
-            "aᵐ × bᵐ = (ab)ᵐ. For example 2³ × 5³ = 10³ = 1000.",
-            "aᵐ ÷ bᵐ = (a/b)ᵐ. For example 6⁴ ÷ 3⁴ = 2⁴ = 16.",
-            "These laws make mental sums easy: 4² × 25² = (4 × 25)² = 100² = 10,000."
-          ]
-        },
-        {
-          heading: "Large numbers in standard form",
-          points: [
-            "Powers of 10: 10² = 100, 10³ = 1000, 10⁵ = 1,00,000 (one lakh) and 10⁷ = 1,00,00,000 (one crore).",
-            "Expanded form: 47,561 = 4 × 10⁴ + 7 × 10³ + 5 × 10² + 6 × 10 + 1.",
-            "**Standard form** means a decimal number between 1 and 10 multiplied by a power of 10. So 59,00,000 = 5.9 × 10⁶.",
-            "The speed of light is about 3 × 10⁸ m/s and the Earth is about 1.5 × 10⁸ km from the Sun."
-          ]
-        }
-      ],
-      formulas: [
-        "aᵐ × aⁿ = aᵐ⁺ⁿ",
-        "aᵐ ÷ aⁿ = aᵐ⁻ⁿ   (a ≠ 0)",
-        "(aᵐ)ⁿ = aᵐⁿ",
-        "aᵐ × bᵐ = (ab)ᵐ;   aᵐ ÷ bᵐ = (a/b)ᵐ",
-        "a⁰ = 1   (a ≠ 0);   a¹ = a",
-        "Standard form: k × 10ⁿ with 1 ≤ k < 10"
-      ],
-      terms: [
-        { term: "Base", meaning: "The number that is multiplied repeatedly. In 2⁵ the base is 2." },
-        { term: "Exponent (power)", meaning: "The number that tells how many times the base is multiplied. In 2⁵ the exponent is 5." },
-        { term: "Standard form", meaning: "A number written as a decimal between 1 and 10 times a power of 10, e.g. 3.84 × 10⁵." },
-        { term: "Expanded form", meaning: "A number written as a sum of its digits times powers of 10, e.g. 352 = 3 × 10² + 5 × 10 + 2." },
-        { term: "Power of 10", meaning: "10 multiplied by itself a number of times: 10, 100, 1000 and so on." }
-      ],
-      examples: [
-        {
-          q: "Simplify (2³ × 2⁵) ÷ 2⁴.",
-          steps: [
-            "Multiply with the same base: 2³ × 2⁵ = 2³⁺⁵ = 2⁸",
-            "Divide: 2⁸ ÷ 2⁴ = 2⁸⁻⁴ = 2⁴",
-            "2⁴ = 2 × 2 × 2 × 2 = 16"
-          ],
-          answer: "16"
-        },
-        {
-          q: "The Moon is about 3,84,000 km from the Earth. Write this distance in standard form.",
-          steps: [
-            "Place the point so that one non-zero digit is before it: 3,84,000 = 3.84 × 1,00,000",
-            "1,00,000 = 10⁵",
-            "So 3,84,000 = 3.84 × 10⁵"
-          ],
-          answer: "3.84 × 10⁵ km"
-        }
-      ],
-      qa: [
-        { q: "Why is a⁰ = 1?", a: "By the division law, aᵐ ÷ aᵐ = aᵐ⁻ᵐ = a⁰. But any non-zero number divided by itself is 1, so **a⁰ = 1**. A pattern also shows it: 2³ = 8, 2² = 4, 2¹ = 2, and the next one in the pattern is 2⁰ = 1." },
-        { q: "Is (−2)⁵ positive or negative? Find (−2)⁵ and (−2)⁶.", a: "A negative base with an odd exponent gives a negative value, and with an even exponent a positive value. (−2)⁵ = **−32** and (−2)⁶ = **64**." },
-        { q: "Which is greater, 2⁶ or 6²?", a: "2⁶ = 2 × 2 × 2 × 2 × 2 × 2 = 64 and 6² = 36. So **2⁶ is greater**. Base and exponent cannot be swapped." }
-      ],
-      quiz: [
-        {
-          q: "The value of 3⁴ is:",
-          options: ["81", "12", "64", "27"],
-          answer: 0,
-          explain: "3⁴ = 3 × 3 × 3 × 3 = 81. (12 is 3 × 4 and 64 is 4³.)"
-        },
-        {
-          q: "7⁰ = ?",
-          options: ["0", "7", "1", "70"],
-          answer: 2,
-          explain: "Any non-zero number raised to the power 0 equals 1."
-        },
-        {
-          q: "2⁵ × 2² = ?",
-          options: ["2¹⁰", "2⁷", "4⁷", "2³"],
-          answer: 1,
-          explain: "With the same base, add the exponents: 2⁵⁺² = 2⁷."
-        },
-        {
-          q: "(5²)³ = ?",
-          options: ["5⁵", "5⁸", "25⁵", "5⁶"],
-          answer: 3,
-          explain: "Power of a power: multiply the exponents (2 × 3 = 6), so (5²)³ = 5⁶."
-        },
-        {
-          q: "4.5 × 10⁴ written as an ordinary number is:",
-          options: ["4,500", "4,50,000", "45,000", "45,00,000"],
-          answer: 2,
-          explain: "10⁴ = 10,000, so 4.5 × 10,000 = 45,000."
-        },
-        {
-          q: "(−3)³ = ?",
-          options: ["−27", "27", "−9", "9"],
-          answer: 0,
-          explain: "(−3)³ = (−3) × (−3) × (−3) = 9 × (−3) = −27. An odd exponent keeps the negative sign."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 12. Symmetry ─────────────────────────────
-    {
-      id: "symmetry",
-      title: "Symmetry",
-      section: "Geometry",
-      summary: "A figure has line symmetry when it can be folded onto itself along a line, and rotational symmetry when it looks the same after a turn about a point.",
-      notes: [
-        {
-          heading: "Line symmetry",
-          points: [
-            "A figure has **line symmetry** if a line can be drawn so that the two halves are mirror images and fit exactly on folding. That line is the line (axis) of symmetry.",
-            "A regular polygon has as many lines of symmetry as sides: equilateral triangle 3, square 4, regular pentagon 5, regular hexagon 6.",
-            "Others: rectangle 2, rhombus 2, isosceles triangle 1, kite 1, scalene triangle 0, general parallelogram 0. A circle has infinitely many (every diameter).",
-            "Rangoli patterns, butterflies and the front view of the Taj Mahal show line symmetry."
-          ]
-        },
-        {
-          heading: "Rotational symmetry",
-          points: [
-            "A figure has **rotational symmetry** if it looks exactly the same after a turn of less than 360° about a fixed point, the **centre of rotation**.",
-            "The smallest turn is the **angle of rotation**. The number of times the figure fits on itself during one full turn is its **order** of rotational symmetry.",
-            "Angle of rotation = 360° ÷ order. A square has order 4 and angle 90°; an equilateral triangle has order 3 and angle 120°; a rectangle has order 2 and angle 180°.",
-            "The Ashoka Chakra has 24 equal spokes, so it has rotational symmetry of order 24 (angle 15°)."
-          ]
-        },
-        {
-          heading: "Using both ideas",
-          points: [
-            "Both kinds: square, rectangle, circle and letters H, I, O, X.",
-            "Line symmetry only: isosceles triangle (not equilateral), kite, letters A, M, T.",
-            "Rotational symmetry only: parallelogram (not a rectangle or rhombus), letters S, N, Z.",
-            "Neither: scalene triangle, letters F, G, R. Every figure fits on itself after a full turn of 360° (order 1), but we do not count that as real rotational symmetry."
-          ]
-        }
-      ],
-      formulas: [
-        "A regular polygon with n sides has n lines of symmetry",
-        "Order of rotational symmetry of a regular n-sided polygon = n",
-        "Angle of rotation = 360° ÷ order of rotational symmetry",
-        "Rectangle: 2 lines of symmetry and order 2;  circle: infinitely many lines",
-        "Equilateral triangle: 3 lines and order 3;  square: 4 lines and order 4"
-      ],
-      terms: [
-        { term: "Line of symmetry", meaning: "A line that divides a figure into two halves that are mirror images of each other." },
-        { term: "Mirror image (reflection)", meaning: "The flipped copy of a figure, as seen in a mirror placed along the line of symmetry." },
-        { term: "Rotational symmetry", meaning: "A figure looks the same after being turned by less than 360° about a fixed point." },
-        { term: "Centre of rotation", meaning: "The fixed point about which a figure is turned." },
-        { term: "Angle of rotation", meaning: "The smallest angle through which a figure must be turned to look the same." },
-        { term: "Order of rotational symmetry", meaning: "The number of times a figure fits on itself in one complete turn." }
-      ],
-      examples: [
-        {
-          q: "For a regular hexagon, find the number of lines of symmetry, the order of rotational symmetry and the angle of rotation.",
-          steps: [
-            "A regular hexagon has 6 equal sides, so it has 6 lines of symmetry.",
-            "Its order of rotational symmetry is also 6.",
-            "Angle of rotation = 360° ÷ 6 = 60°"
-          ],
-          answer: "6 lines of symmetry, order 6, angle of rotation 60°"
-        },
-        {
-          q: "A regular polygon has an angle of rotation of 40°. How many sides does it have?",
-          steps: [
-            "Order of rotational symmetry = 360° ÷ 40° = 9",
-            "For a regular polygon, the number of sides equals the order, so it has 9 sides.",
-            "It is a regular nonagon with 9 lines of symmetry."
-          ],
-          answer: "9 sides"
-        }
-      ],
-      qa: [
-        { q: "How many lines of symmetry does a rectangle have? Are its diagonals lines of symmetry?", a: "A rectangle has **2** lines of symmetry: the lines joining the midpoints of opposite sides. Its diagonals are not lines of symmetry, because folding along a diagonal does not make the two triangles fit exactly (unless the rectangle is a square)." },
-        { q: "Does a parallelogram (not a rectangle or rhombus) have line symmetry? Does it have rotational symmetry?", a: "It has **no** line of symmetry. It does have rotational symmetry of order 2 about the point where its diagonals meet, with an angle of rotation of 180°." },
-        { q: "Give one difference between line symmetry and rotational symmetry.", a: "Line symmetry is about **flipping** a figure over a line so that the halves match. Rotational symmetry is about **turning** a figure about a point so that it looks the same. The letter A has line symmetry only, and the letter S has rotational symmetry only." }
-      ],
-      quiz: [
-        {
-          q: "How many lines of symmetry does a square have?",
-          options: ["1", "2", "4", "8"],
-          answer: 2,
-          explain: "A square has 4 lines: 2 through the midpoints of opposite sides and 2 along the diagonals."
-        },
-        {
-          q: "A scalene triangle has how many lines of symmetry?",
-          options: ["0", "1", "2", "3"],
-          answer: 0,
-          explain: "All three sides are different, so no fold makes the two halves match. It has no line of symmetry."
-        },
-        {
-          q: "The order of rotational symmetry of an equilateral triangle is:",
-          options: ["1", "2", "6", "3"],
-          answer: 3,
-          explain: "It fits on itself 3 times in a full turn (at 120°, 240° and 360°), so its order is 3."
-        },
-        {
-          q: "The smallest angle of rotation of a square is:",
-          options: ["45°", "90°", "180°", "360°"],
-          answer: 1,
-          explain: "A square has order 4, so the angle of rotation is 360° ÷ 4 = 90°."
-        },
-        {
-          q: "Which letter has both line symmetry and rotational symmetry?",
-          options: ["H", "S", "A", "F"],
-          answer: 0,
-          explain: "H has line symmetry (two lines) and rotational symmetry of order 2. S has rotational symmetry only, A has line symmetry only and F has neither."
-        },
-        {
-          q: "Which figure has rotational symmetry but no line of symmetry?",
-          options: ["Rectangle", "Rhombus", "Parallelogram (not a rectangle or rhombus)", "Square"],
-          answer: 2,
-          explain: "A general parallelogram looks the same after a half turn (order 2), but no fold makes its halves match. The rectangle, rhombus and square all have lines of symmetry."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 13. Visualising Solid Shapes ─────────────────────────────
-    {
-      id: "visualising-solid-shapes",
-      title: "Visualising Solid Shapes",
-      section: "Geometry",
-      summary: "Look at 3D shapes (solids): their faces, edges and vertices, the nets that fold into them, and how they look from different directions or when sliced.",
-      notes: [
-        {
-          heading: "Plane figures and solids",
-          points: [
-            "Plane (2D) figures like squares and circles are flat. **Solids** (3D shapes) also have height or depth.",
-            "Everyday solids: dice (cube), brick or matchbox (cuboid), tin can (cylinder), ice-cream cone (cone), cricket ball (sphere).",
-            "A solid with flat faces and straight edges is a **polyhedron**: cube, cuboid, prisms and pyramids. Cylinder, cone and sphere are not polyhedra.",
-            "A **prism** has two identical parallel bases joined by rectangles. A **pyramid** has one base and triangular faces meeting at a point called the apex."
-          ]
-        },
-        {
-          heading: "Faces, edges and vertices",
-          points: [
-            "A **face** is a flat surface, an **edge** is where two faces meet and a **vertex** is a corner where edges meet.",
-            "Cube and cuboid: 6 faces, 12 edges, 8 vertices. Triangular prism: 5, 9, 6. Square pyramid: 5, 8, 5. Triangular pyramid: 4, 6, 4.",
-            "**Euler's formula:** for any polyhedron, F + V − E = 2. Check for a cube: 6 + 8 − 12 = 2.",
-            "A cylinder has 2 flat circular faces, 1 curved surface and no vertex. A cone has 1 flat face, 1 curved surface and 1 vertex. A sphere has only a curved surface."
-          ]
-        },
-        {
-          heading: "Nets",
-          points: [
-            "A **net** is a flat pattern that can be folded to make a solid. Cutting open a cardboard box along its edges shows its net.",
-            "Cube: 6 squares. Cuboid: 6 rectangles. Triangular prism: 2 triangles and 3 rectangles. Square pyramid: 1 square and 4 triangles.",
-            "Cylinder: 2 circles and 1 rectangle. Cone: 1 circle and 1 curved sector.",
-            "One solid can have more than one net. A cube has 11 different nets."
-          ]
-        },
-        {
-          heading: "Different views and slices",
-          points: [
-            "A solid looks different from the front, the side and the top. A cube looks like a square from all three.",
-            "An upright cylinder looks like a rectangle from the front and a circle from the top. A cone looks like a triangle from the front and a circle from the top. A sphere looks like a circle from every side.",
-            "Slicing a solid gives a cross-section. A horizontal slice of a cylinder or a cone gives a circle.",
-            "A vertical slice through the middle of a cylinder gives a rectangle, and a vertical slice of a cone through its apex gives a triangle."
-          ]
-        }
-      ],
-      formulas: [
-        "Euler's formula: F + V − E = 2   (for polyhedra)",
-        "Cube / cuboid: F = 6, V = 8, E = 12",
-        "Triangular prism: F = 5, V = 6, E = 9",
-        "Square pyramid: F = 5, V = 5, E = 8",
-        "Triangular pyramid: F = 4, V = 4, E = 6"
-      ],
-      terms: [
-        { term: "Face", meaning: "A flat surface of a solid." },
-        { term: "Edge", meaning: "A line segment where two faces of a solid meet." },
-        { term: "Vertex", meaning: "A corner of a solid where edges meet (plural: vertices)." },
-        { term: "Net", meaning: "A flat, unfolded pattern that can be folded to make a solid." },
-        { term: "Prism", meaning: "A solid with two identical parallel bases joined by rectangular faces." },
-        { term: "Pyramid", meaning: "A solid with one base and triangular faces that meet at a point (the apex)." }
-      ],
-      examples: [
-        {
-          q: "A solid has 8 faces and 12 vertices. Use Euler's formula to find the number of edges.",
-          steps: [
-            "Euler's formula: F + V − E = 2",
-            "8 + 12 − E = 2, so 20 − E = 2",
-            "E = 18"
-          ],
-          answer: "18 edges (for example, a hexagonal prism)"
-        },
-        {
-          q: "Find the number of faces, edges and vertices of a pentagonal pyramid.",
-          steps: [
-            "Faces: 1 pentagon base + 5 triangles = 6",
-            "Vertices: 5 on the base + 1 apex = 6",
-            "Edges: 5 on the base + 5 slanting edges = 10",
-            "Check with Euler: 6 + 6 − 10 = 2 ✓"
-          ],
-          answer: "6 faces, 10 edges, 6 vertices"
-        }
-      ],
-      qa: [
-        { q: "What is the net of a cylinder?", a: "The net is **two circles** (top and base) and **one rectangle**. The length of the rectangle equals the circumference of the circle and its width equals the height of the cylinder. Rolled up, the rectangle forms the curved surface." },
-        { q: "Which common solids have no vertex?", a: "A **sphere** and a **cylinder** have no vertex (corner). A cone has exactly one vertex, its apex." },
-        { q: "What shape do you get by cutting a cone horizontally? And by a vertical cut through its apex?", a: "A horizontal cut (parallel to the base) gives a **circle**. A vertical cut through the apex and the centre of the base gives a **triangle**." }
-      ],
-      quiz: [
-        {
-          q: "A solid has 7 vertices and 12 edges. By Euler's formula, its number of faces is:",
-          options: ["5", "7", "9", "19"],
-          answer: 1,
-          explain: "F + V − E = 2, so F = 2 − V + E = 2 − 7 + 12 = 7. (A hexagonal pyramid is such a solid.)"
-        },
-        {
-          q: "How many edges does a cuboid have?",
-          options: ["6", "8", "10", "12"],
-          answer: 3,
-          explain: "A cuboid has 12 edges: 4 on the top, 4 on the bottom and 4 vertical ones. It has 6 faces and 8 vertices."
-        },
-        {
-          q: "How many vertices does a triangular prism have?",
-          options: ["6", "5", "9", "3"],
-          answer: 0,
-          explain: "A triangular prism has 3 vertices on each triangular end, so 6 in all. (It has 5 faces and 9 edges.)"
-        },
-        {
-          q: "A square pyramid has how many faces?",
-          options: ["4", "6", "5", "8"],
-          answer: 2,
-          explain: "It has 1 square base and 4 triangular faces, so 5 faces."
-        },
-        {
-          q: "An upright cylinder (like a tin can) is viewed from the side. It looks like a:",
-          options: ["Circle", "Triangle", "Semicircle", "Rectangle"],
-          answer: 3,
-          explain: "From the side the curved surface looks like a rectangle. From the top it would look like a circle."
-        },
-        {
-          q: "A net made of 2 triangles and 3 rectangles folds into a:",
-          options: ["Square pyramid", "Triangular prism", "Cuboid", "Triangular pyramid"],
-          answer: 1,
-          explain: "A triangular prism has two triangular ends and three rectangular faces. A square pyramid has 1 square and 4 triangles, and a cuboid has 6 rectangles."
-        }
+        { q: "The solution of x + 9 = 15 is:", options: ["24", "6", "9", "−6"], answer: 1, explain: "Subtract 9 from both sides: x = 6." },
+        { q: "Solve 4x = 28.", options: ["24", "112", "32", "7"], answer: 3, explain: "Divide both sides by 4." },
+        { q: "Solve 2x + 3 = 11.", options: ["4", "7", "5", "14"], answer: 0, explain: "2x = 8, so x = 4." },
+        { q: "Solve x − 5 = −2.", options: ["−7", "7", "3", "−3"], answer: 2, explain: "Add 5 to both sides: x = 3." },
+        { q: "Twice a number decreased by 3 is 17. The number is:", options: ["7", "10", "20", "14"], answer: 1, explain: "2x − 3 = 17, so 2x = 20 and x = 10." }
       ]
     }
   ]
