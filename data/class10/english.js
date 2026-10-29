@@ -1,8 +1,8 @@
-// Class 10 English: Grammar, Writing Skills and Literature (First Flight).
+// Class 10 English: Grammar, Writing Skills and Literature (First Flight and Footprints without Feet).
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the textbook.
 StudyData.add(10, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "textbook", books: ["First Flight"], note: "Grammar and writing, plus a selection of First Flight lessons (not every chapter).", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["First Flight", "Footprints without Feet"], note: "Grammar and writing, plus every lesson of First Flight and Footprints without Feet (summarised in our own words).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
@@ -1117,7 +1117,7 @@ StudyData.add(10, "english", {
     {
       id: "a-letter-to-god",
       title: "A Letter to God",
-      section: "Literature – First Flight",
+      section: "First Flight",
       summary: "G.L. Fuentes's story of Lencho, a poor farmer whose faith leads him to write to God for help after a hailstorm destroys his crop; the kindness of the postmaster ends in irony.",
       notes: [
         {
@@ -1152,7 +1152,7 @@ StudyData.add(10, "english", {
           points: [
             "**Metaphor:** raindrops as **new coins** (big drops are ten-cent pieces, small ones five-cent pieces); hailstones as **frozen pearls**; Lencho as ‘an ox of a man’.",
             "**Simile:** the field looked white, as if covered with salt.",
-            "**Hyperbole:** a plague of locusts would have left more than the hail did.",
+            "**Exaggeration (hyperbole):** Lencho says even a plague of locusts would have left more than the hail did.",
             "**Irony:** Lencho's faith in God makes him distrust the very people who helped him."
           ]
         }
@@ -1226,7 +1226,7 @@ StudyData.add(10, "english", {
     {
       id: "dust-of-snow",
       title: "Dust of Snow",
-      section: "Literature – First Flight",
+      section: "First Flight",
       summary: "A short poem by Robert Frost in which a small, unexpected moment, a crow shaking snow onto the poet from a hemlock tree, lifts his gloomy mood.",
       notes: [
         {
@@ -1331,7 +1331,7 @@ StudyData.add(10, "english", {
     {
       id: "fire-and-ice",
       title: "Fire and Ice",
-      section: "Literature – First Flight",
+      section: "First Flight",
       summary: "Robert Frost's nine-line poem on whether the world will end in fire or in ice, where fire stands for desire and ice for hatred.",
       notes: [
         {
@@ -1434,7 +1434,7 @@ StudyData.add(10, "english", {
     {
       id: "nelson-mandela-long-walk-to-freedom",
       title: "Nelson Mandela: Long Walk to Freedom",
-      section: "Literature – First Flight",
+      section: "First Flight",
       summary: "An extract from Nelson Mandela's autobiography describing his inauguration as South Africa's first Black President on 10 May 1994, and his thoughts on apartheid, courage, duty and freedom.",
       notes: [
         {
@@ -1444,7 +1444,7 @@ StudyData.add(10, "english", {
             "It marked the installation of South Africa's **first democratic, non-racial government**.",
             "**F.W. de Klerk** was sworn in as second deputy president and **Thabo Mbeki** as first deputy president.",
             "Jets, helicopters and troop carriers flew past to show the military's **loyalty to democracy**. Generals who would once have arrested Mandela now saluted him.",
-            "Two national anthems were sung: whites sang ‘Nkosi Sikelel’ iAfrika’ and Blacks sang ‘Die Stem’, the old anthem, a sign of reconciliation."
+            "Two national anthems were played: whites sang ‘Nkosi Sikelel’ iAfrika’ and Blacks sang ‘Die Stem’, the old anthem of the Republic. Neither group yet knew the words of the anthem it once despised, a sign of reconciliation."
           ]
         },
         {
@@ -1552,7 +1552,7 @@ StudyData.add(10, "english", {
     {
       id: "a-tiger-in-the-zoo",
       title: "A Tiger in the Zoo",
-      section: "Literature – First Flight",
+      section: "First Flight",
       summary: "Leslie Norris contrasts a tiger pacing helplessly in a zoo cage with the free, powerful life it would lead in the jungle.",
       notes: [
         {
@@ -1663,7 +1663,7 @@ StudyData.add(10, "english", {
     {
       id: "two-stories-about-flying",
       title: "Two Stories about Flying",
-      section: "Literature – First Flight",
+      section: "First Flight",
       summary: "In ‘His First Flight’ (Liam O'Flaherty), a young seagull overcomes his fear and learns to fly; in ‘The Black Aeroplane’ (Frederick Forsyth), a pilot lost in a storm is guided to safety by a mysterious plane.",
       notes: [
         {
@@ -1678,7 +1678,7 @@ StudyData.add(10, "english", {
         {
           heading: "Part II: The Black Aeroplane",
           points: [
-            "The narrator, a pilot, is flying his old **Dakota** aeroplane at night from Paris back to England, looking forward to breakfast with his family.",
+            "The narrator, a pilot, is flying his old **Dakota** aeroplane at night over France, back to England, dreaming of his holiday and of breakfast with his family. He has just called **Paris Control** on the radio.",
             "He sees huge **black storm clouds**. He decides to take a risk and fly into them instead of turning back to Paris.",
             "In the storm his **compass** and **radio** stop working, and he is running out of fuel. A **black aeroplane with no lights** appears, and its pilot guides him through the clouds.",
             "He lands safely, but the black plane has vanished. The woman in the **control centre** tells him that no other aeroplane was flying that night; only his showed on the radar.",
@@ -1772,16 +1772,224 @@ StudyData.add(10, "english", {
     },
 
     {
+      id: "how-to-tell-wild-animals",
+      title: "How to Tell Wild Animals",
+      section: "First Flight",
+      summary: "Carolyn Wells's comic poem pretends to teach you how to recognise dangerous animals, but the 'clues' are all things you would learn too late.",
+      notes: [
+        {
+          heading: "Summary",
+          points: [
+            "The poet gives a series of **jokey tips** for telling wild animals apart, as if she were writing a field guide.",
+            "A roar heard as you are **dying** marks the **Asian lion**; a beast with black stripes on a yellow ground is the **Bengal tiger** if it eats you.",
+            "A spotted animal that leaps on you is a **leopard**, and it will keep leaping again and again however loudly you cry out.",
+            "A creature that hugs you very hard is a **bear**. Smiling hyenas and weeping crocodiles can be told apart by their expressions.",
+            "The **chameleon** is small, lizard-like, and has no ears and no wings; if the tree seems empty, it is the chameleon, because it blends into its background."
+          ]
+        },
+        {
+          heading: "Humour in the poem",
+          points: [
+            "Each 'identification' needs the animal to **attack you first**, so the advice is useless in real life. This is **dark humour**.",
+            "The poet bends spelling and grammar for fun and for rhyme, e.g. **'dyin''** to rhyme with 'lion', **'lept'** and **'lep'**, and **'nonplus'** used as a verb.",
+            "She plays on popular ideas: **hyenas 'laugh'**, **crocodiles 'weep'** (crocodile tears), and a **bear hug** is a hard squeeze.",
+            "The strong, regular rhythm and rhyming couplets make it sound like a serious guide, which adds to the joke."
+          ]
+        },
+        {
+          heading: "Poetic devices and form",
+          points: [
+            "**Rhyme:** the first stanza rhymes ABAB then a couplet (chance/advance, east/beast, dying/lion).",
+            "**Irony and understatement:** calmly asking you to 'notice if he eats you'.",
+            "**Humorous exaggeration** and **word play** carry the whole poem.",
+            "**Alliteration** in places, such as 'roaming round' and 'beast ... black'."
+          ]
+        },
+        {
+          heading: "Message",
+          points: [
+            "It is a light poem meant to **amuse**, not to teach.",
+            "It shows how a poet can play with language, spelling and rhyme to create humour."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Carolyn Wells",
+        "Animals: Asian lion, Bengal tiger, leopard, bear, crocodile, hyena, chameleon",
+        "Tone: humorous; method: tips that only work after it is too late",
+        "Poet's spelling tricks: 'dyin'', 'lept', 'lep', 'nonplus' as a verb"
+      ],
+      terms: [
+        { term: "Tawny", meaning: "Yellowish-brown, like the colour of a lion." },
+        { term: "Discern", meaning: "To make out or identify something." },
+        { term: "Novice", meaning: "A person who is new to a job or skill." },
+        { term: "Nonplus", meaning: "To puzzle or confuse; the poet uses it as a verb for fun." },
+        { term: "Caress", meaning: "A gentle, loving touch; ironically used for a bear's crushing hug." }
+      ],
+      qa: [
+        {
+          q: "How does the poet suggest you can tell a Bengal tiger from other beasts?",
+          a: "By its **black stripes on a yellow ground**. The joke is that the poet then asks you to 'notice if he eats you', so the identification comes too late to be useful."
+        },
+        {
+          q: "Why does the poet spell words like 'lept' and 'lep' in an unusual way?",
+          a: "She does it to **rhyme** and to create **humour**. The odd spellings suit the playful tone and show that a poet may take liberties with language."
+        },
+        {
+          q: "What makes the poem humorous?",
+          a: "The tips are **absurd** because each one works only after the animal has attacked. Combined with funny word play and ideas such as 'laughing' hyenas and 'weeping' crocodiles, this makes the poem comic."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘How to Tell Wild Animals’?",
+          options: ["Ogden Nash", "Carolyn Wells", "Robin Klein", "Carl Sandburg"],
+          answer: 1,
+          explain: "The poem is by **Carolyn Wells**."
+        },
+        {
+          q: "According to the poem, how do you know an animal is a leopard?",
+          options: ["It hugs you hard", "It has no ears", "It leaps on you and has a spotted hide", "It has a mane"],
+          answer: 2,
+          explain: "A spotted beast that **leaps on you** is the leopard."
+        },
+        {
+          q: "Which animal is said to have no ears and no wings?",
+          options: ["Chameleon", "Hyena", "Bear", "Crocodile"],
+          answer: 0,
+          explain: "The **chameleon** is small, lizard-like and has no ears and no wings."
+        },
+        {
+          q: "What is the dominant tone of the poem?",
+          options: ["Tragic", "Humorous", "Angry", "Solemn"],
+          answer: 1,
+          explain: "The poem is **humorous**, full of absurd advice and word play."
+        },
+        {
+          q: "According to the poem, a smiling animal that starts to weep is really a:",
+          options: ["Crocodile", "Chameleon", "Bear", "Leopard"],
+          answer: 0,
+          explain: "Hyenas come with merry smiles; if they **weep**, they are **crocodiles**."
+        }
+      ]
+    },
+
+    {
+      id: "the-ball-poem",
+      title: "The Ball Poem",
+      section: "First Flight",
+      summary: "John Berryman watches a boy who has lost his ball in the harbour and sees that the boy is learning his first lesson about loss and responsibility.",
+      notes: [
+        {
+          heading: "Summary",
+          points: [
+            "A boy's **ball bounces merrily down the street** and into the **harbour water**. The poet sees it go.",
+            "The boy stands **rigid and trembling**, staring at the water, overcome by **shaking grief**.",
+            "The poet does not offer comfort such as 'there are other balls', and decides **not to intrude** on the boy's sorrow.",
+            "He feels that **money cannot replace** what has been lost, so offering a dime or another ball would be worthless.",
+            "The boy is learning the **'epistemology of loss'**: how to bear loss and **stand up** again, as every grown person must."
+          ]
+        },
+        {
+          heading: "What the boy learns",
+          points: [
+            "He senses his **first responsibility in a world of possessions**: things are lost, and no one can buy them back.",
+            "**Money is external**; it cannot heal inner grief or bring back the memories attached to a thing.",
+            "The ball stands for his **childhood and young days**, so losing it feels like losing a part of himself.",
+            "The repeated line about learning **how to stand up** shows that growing up means facing loss with courage."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Loss and grief:** even a small loss can be deeply felt.",
+            "**Growing up:** facing disappointment is part of maturity.",
+            "**Responsibility:** one must take care of what one owns and accept it when it is gone.",
+            "**Sympathy:** the poet understands without trying to fix the boy's pain."
+          ]
+        },
+        {
+          heading: "Poetic devices",
+          points: [
+            "**Repetition:** 'merrily' (twice) at the start, and 'how to stand up' near the end.",
+            "**Imagery:** the boy 'rigid, trembling', staring into the harbour.",
+            "**Rhetorical question** in the opening line.",
+            "**Free verse** with run-on lines (enjambment), written in a single stanza, which suits a quiet, thoughtful mood."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: John Berryman",
+        "Setting: a street beside a harbour; a boy has lost his ball in the water",
+        "Key phrases: 'epistemology of loss', 'world of possessions', 'money is external'",
+        "Theme: loss, responsibility and growing up"
+      ],
+      terms: [
+        { term: "Shaking grief", meaning: "Sorrow so strong that it makes the person tremble." },
+        { term: "Intrude", meaning: "To enter a situation where one is not wanted." },
+        { term: "Dime", meaning: "A ten-cent coin used in the United States." },
+        { term: "Epistemology of loss", meaning: "Understanding what loss is and what it means to lose something." },
+        { term: "Rigid", meaning: "Stiff and unable to move, like the boy staring at the water." }
+      ],
+      qa: [
+        {
+          q: "Why does the poet say he would not intrude on the boy?",
+          a: "He understands that the boy's grief is **real and personal**. Offering money or another ball would be worthless, because it cannot replace the lost ball or the memories of his young days. He lets the boy feel and learn from the loss."
+        },
+        {
+          q: "What does the poet mean by 'a world of possessions'?",
+          a: "It is a world where people **own things and lose them**. The boy is realising that nothing we own is permanent and that no one can buy back what is truly lost; this is his first sense of responsibility."
+        },
+        {
+          q: "What is the boy learning from the loss of the ball?",
+          a: "He is learning **how to cope with loss and stand up again**, a lesson every grown person must learn. He learns that money is external and cannot take away inner grief."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘The Ball Poem’?",
+          options: ["Robert Frost", "John Berryman", "Leslie Norris", "W.B. Yeats"],
+          answer: 1,
+          explain: "‘The Ball Poem’ is by **John Berryman**."
+        },
+        {
+          q: "Where did the boy's ball go?",
+          options: ["Into the harbour water", "Under a car", "Onto a roof", "Into a drain"],
+          answer: 0,
+          explain: "It bounced down the street and into the **harbour**."
+        },
+        {
+          q: "Why does the poet not offer the boy money for another ball?",
+          options: ["He has no money", "He thinks the boy is rude", "He thinks money cannot replace the loss", "He is in a hurry"],
+          answer: 2,
+          explain: "The poet knows **money is external** and cannot cure the boy's grief."
+        },
+        {
+          q: "What is the central idea of the poem?",
+          options: ["Balls are expensive", "Boys should stay away from harbours", "Neighbours should help each other", "Learning to face loss is part of growing up"],
+          answer: 3,
+          explain: "The poem is about the boy's first **lesson in loss** and how to stand up after it."
+        },
+        {
+          q: "What does the line about learning 'how to stand up' suggest?",
+          options: ["Standing straight while walking", "Facing loss with strength and going on", "Reaching up to catch a ball", "Standing up for one's rights"],
+          answer: 1,
+          explain: "It means finding the **strength to go on** after a loss."
+        }
+      ]
+    },
+
+    {
       id: "from-the-diary-of-anne-frank",
       title: "From the Diary of Anne Frank",
-      section: "Literature – First Flight",
+      section: "First Flight",
       summary: "Extracts from the diary of Anne Frank, a Jewish girl in Amsterdam during the Second World War, in which she explains why she keeps a diary and describes her family, her school and a funny episode with her maths teacher.",
       notes: [
         {
           heading: "Background",
           points: [
             "**Anne Frank** was a Jewish girl who received a diary on her **thirteenth birthday** (12 June 1942) and named it **Kitty**.",
-            "Her family moved from Germany to **Amsterdam, Holland**, in 1933, where her father became Managing Director of the Dutch Opekta Company.",
+            "Her family moved from Germany to **Amsterdam, Holland**, in 1933, when her father emigrated; Anne followed in February.",
             "The family later went into hiding from the Nazis. Anne died in a concentration camp in 1945, and her diary was later published as **The Diary of a Young Girl**."
           ]
         },
@@ -1798,7 +2006,7 @@ StudyData.add(10, "english", {
           heading: "Family and school",
           points: [
             "Her father, whom she adores, married her mother when he was 36 and she was 25. Her sister **Margot** was born in 1926 and Anne in 1929, both in Frankfurt.",
-            "Anne went to a **Montessori nursery school** and later to the **Jewish Lyceum**.",
+            "Anne went to a **Montessori nursery school** and later to a primary school where, in the sixth form, her teacher was the headmistress **Mrs Kuperus**; their parting was tearful.",
             "Her **grandmother died in January 1942**, and Anne still thinks of her often.",
             "She and her classmates are anxious about the teachers' meeting that will decide who moves up to the next class."
           ]
@@ -1891,9 +2099,733 @@ StudyData.add(10, "english", {
     },
 
     {
+      id: "amanda",
+      title: "Amanda!",
+      section: "First Flight",
+      summary: "Robin Klein's playful poem sets a parent's constant orders to a girl against her private daydreams of freedom as a mermaid, an orphan and Rapunzel.",
+      notes: [
+        {
+          heading: "Summary",
+          points: [
+            "Alternate stanzas give two voices: a **parent's nagging commands** (in the odd stanzas) and **Amanda's inner daydreams** (the bracketed stanzas).",
+            "The parent keeps telling her: don't bite your nails, don't hunch, sit up straight, finish homework, tidy the room, clean your shoes, don't eat chocolate, look at me when I speak.",
+            "In her mind Amanda imagines being a **mermaid** floating alone in a calm sea, an **orphan** roaming the streets barefoot in golden silence, and **Rapunzel** in a peaceful tower.",
+            "In the last stanza the parent says she is sulking and moody, and adds that anyone would think the parent nagged her, which is **ironic** because that is exactly what has been happening."
+          ]
+        },
+        {
+          heading: "Understanding the dreams",
+          points: [
+            "**Mermaid:** a free, relaxed life with no one to give orders; she is the only inhabitant of the sea.",
+            "**Orphan:** she imagines having no parents to command her, enjoying a sweet freedom, though not a real wish to be alone.",
+            "**Rapunzel:** she is happy to stay in a tower and never let down her hair, a place where no one can reach and nag her.",
+            "Each dream is about **escape from control** into peace and independence."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Freedom vs control:** children long for independence, while adults keep instructing them.",
+            "**Imagination as escape:** Amanda finds freedom in her mind.",
+            "**Communication gap:** the parent does not listen, and Amanda does not answer aloud.",
+            "Message: adults should avoid constant nagging and give children some room."
+          ]
+        },
+        {
+          heading: "Poetic devices",
+          points: [
+            "**Refrain/repetition:** the name 'Amanda' ends each command.",
+            "**Contrast:** loud commands against quiet, bracketed dreams.",
+            "**Imagery:** the languid sea, soft dust, bright hair.",
+            "**Irony** in the last stanza, and **allusion** to Rapunzel from the fairy tale."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Robin Klein",
+        "Two voices: parent's orders (odd stanzas) and Amanda's daydreams (bracketed even stanzas)",
+        "Her imagined selves: mermaid, orphan, Rapunzel",
+        "Theme: freedom and control, imagination as escape"
+      ],
+      terms: [
+        { term: "Languid", meaning: "Slow, relaxed and without energy or hurry." },
+        { term: "Tranquil", meaning: "Calm and peaceful." },
+        { term: "Rapunzel", meaning: "A fairy-tale girl shut in a tower, with long golden hair." },
+        { term: "Sulking", meaning: "Being silent and bad-tempered out of displeasure." },
+        { term: "Refrain", meaning: "A line or word repeated, like 'Amanda!' at the end of commands." }
+      ],
+      qa: [
+        {
+          q: "Why are stanzas 2, 4 and 6 of the poem given in brackets?",
+          a: "They are Amanda's **private thoughts**, not spoken aloud. The brackets separate her daydreams from the parent's spoken commands and show that the parent is not hearing them."
+        },
+        {
+          q: "Why does Amanda imagine herself as an orphan?",
+          a: "As an orphan she would have **no one to order her about**. She imagines roaming freely with bare feet in peaceful silence, which shows how strongly she longs for freedom."
+        },
+        {
+          q: "What is ironic about the last stanza?",
+          a: "The parent calls Amanda moody and sulking, and says that anyone would think she is nagged, **without realising that the constant nagging is the very reason** for her mood."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who is the poet of ‘Amanda!’?",
+          options: ["Robin Klein", "Ogden Nash", "Adrienne Rich", "Carolyn Wells"],
+          answer: 0,
+          explain: "The poem is by **Robin Klein**."
+        },
+        {
+          q: "Which of these does Amanda NOT imagine herself to be?",
+          options: ["A mermaid", "An orphan", "A queen", "Rapunzel"],
+          answer: 2,
+          explain: "She imagines a mermaid, an orphan and Rapunzel; **not a queen**."
+        },
+        {
+          q: "Why are Amanda's daydreams in brackets?",
+          options: ["They are quotations from a book", "They are her unspoken private thoughts", "They are spoken by her teacher", "They are less important"],
+          answer: 1,
+          explain: "Brackets mark her **inner thoughts**, separate from the spoken commands."
+        },
+        {
+          q: "What does the parent in the poem mainly do?",
+          options: ["Praise Amanda", "Teach her fairy tales", "Give constant instructions and scoldings", "Play with Amanda"],
+          answer: 2,
+          explain: "The parent keeps **giving orders and criticising**."
+        },
+        {
+          q: "What does the poem suggest Amanda longs for?",
+          options: ["More homework", "Freedom and peace", "A bigger house", "More sweets"],
+          answer: 1,
+          explain: "Each dream is about **freedom and peace** away from nagging."
+        }
+      ]
+    },
+
+    {
+      id: "glimpses-of-india",
+      title: "Glimpses of India",
+      section: "First Flight",
+      summary: "Three short pieces on India's variety: a traditional Goan baker, the coffee country of Coorg, and a train journey to a tea estate in Assam.",
+      notes: [
+        {
+          heading: "I. A Baker from Goa",
+          points: [
+            "The writer recalls how Goans still remember the **Portuguese days and their loaves**. The old furnaces still burn and the **baker's bamboo staff** can still be heard in some places.",
+            "The baker is called a **pader**. He came twice a day, and children ran to him for **bread-bangles** while the maid bought the loaves.",
+            "Bread was needed for every occasion: the sweet bread called **bol** for weddings and gifts, sandwiches for engagements, and **cakes and bolinhas** for Christmas.",
+            "The old baker wore a long one-piece frock called a **kabai**. He collected his dues at **month-end**, with accounts pencilled on a wall. A **plump** baker was a sign of a prosperous trade.",
+            "The paders survive today because they perfected **door-to-door delivery**, and the leavened, oven-baked bread is the Portuguese gift to India."
+          ]
+        },
+        {
+          heading: "II. Coorg",
+          points: [
+            "**Coorg (Kodagu)** lies between **Mysore and Mangalore**; it is the **smallest district of Karnataka**, with rainforests, spices and coffee. The best season is **September to March**.",
+            "The proud **Kodavus** may be of **Greek or Arab descent**; one story says part of **Alexander's army** settled there. Their long coat with a waist-belt (**kuppia**) resembles the Arab kuffia.",
+            "The **Coorg Regiment** is among the most decorated in the Indian Army, and **General Cariappa**, the first Indian to head the Army, was a Coorgi. Kodavus are allowed to carry **firearms without a licence**.",
+            "Visitors can enjoy river **rafting, canoeing, rappelling, rock climbing and mountain biking**, walk the trails, climb to **Brahmagiri hills** and cross a rope bridge to the island of **Nisargadhama**.",
+            "Nearby **Bylakuppe** has India's largest Tibetan settlement, where Buddhist monks add to Coorg's charm. **Madikeri** is the district headquarters and gateway."
+          ]
+        },
+        {
+          heading: "III. Tea from Assam",
+          points: [
+            "**Pranjol** (from Assam) and his Delhi friend **Rajvir** travel by train to Pranjol's father's tea estate. A vendor sells tea at the station, and Rajvir says over **eighty crore cups** are drunk daily worldwide.",
+            "Rajvir, who has read about tea, tells two legends: a **Chinese emperor** whose boiling water got leaves blown into it, and **Bodhidharma**, from whose cut eyelids ten tea plants grew.",
+            "Tea was first drunk in **China**, as far back as **2700 BC**, and reached Europe in the **sixteenth century**, first as medicine.",
+            "**Assam has the largest concentration of tea plantations in the world.** They reach **Dhekiabari Tea Estate**, managed by **Mr Barua**, where pluckers collect new leaves; the **second flush (May to July)** yields the best tea."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Diversity of India:** regions, foods, people and occupations differ widely.",
+            "**Tradition and change:** the pader's craft survives by adapting.",
+            "**Travel writing and curiosity:** the pieces mix description, history, legend and information."
+          ]
+        }
+      ],
+      formulas: [
+        "A Baker from Goa: baker = pader; sweet bread = bol; dress = kabai",
+        "Coorg (Kodagu): smallest district of Karnataka; Kodavus; Madikeri is the district headquarters",
+        "Tea from Assam: Pranjol, Rajvir, Mr Barua, Dhekiabari Tea Estate; second flush May to July",
+        "Tea first drunk in China about 2700 BC; Europe in the sixteenth century"
+      ],
+      terms: [
+        { term: "Pader", meaning: "The traditional baker of Goa." },
+        { term: "Kabai", meaning: "The old one-piece long frock worn by Goan bakers." },
+        { term: "Kodavu", meaning: "A person of Coorg (Kodagu), known for martial traditions." },
+        { term: "Second flush", meaning: "The tea-picking season from May to July that gives the best tea." },
+        { term: "Nostalgia", meaning: "A fond memory of the past, with a feeling of longing." }
+      ],
+      qa: [
+        {
+          q: "What is the importance of the baker in a Goan village?",
+          a: "Bread was needed on **every occasion**: the sweet bread **bol** at weddings, sandwiches at engagements, and cakes at Christmas. The baker's furnace was therefore **essential to village life**, and his plump look showed his prosperity."
+        },
+        {
+          q: "What are the different stories about the origin of the Kodavus?",
+          a: "One story says they descend from part of **Alexander's army** that moved south along the coast and settled in Coorg. Another suggests an **Arab origin**, supported by the long black coat and embroidered waist-belt they wear."
+        },
+        {
+          q: "What do the legends of tea mentioned by Rajvir tell us?",
+          a: "They show that **no one knows** who discovered tea. A Chinese emperor's boiled water received tea leaves by chance, and in an Indian legend **Bodhidharma's eyelids** grew into tea plants whose leaves banished sleep."
+        }
+      ],
+      quiz: [
+        {
+          q: "What is a traditional Goan baker called?",
+          options: ["Kabai", "Bol", "Pader", "Bolinha"],
+          answer: 2,
+          explain: "The Goan baker is called a **pader**; the kabai is his frock."
+        },
+        {
+          q: "Coorg lies between which two places?",
+          options: ["Mysore and Mangalore", "Bangalore and Chennai", "Hassan and Goa", "Madikeri and Kochi"],
+          answer: 0,
+          explain: "Coorg is midway between **Mysore and Mangalore**."
+        },
+        {
+          q: "Which person from Coorg became the first Indian to head the Army?",
+          options: ["General Sundarji", "General Cariappa", "Field Marshal Manekshaw", "General Rawat"],
+          answer: 1,
+          explain: "**General Cariappa** was a Coorgi."
+        },
+        {
+          q: "When does the second flush of tea take place?",
+          options: ["January to March", "September to November", "December to February", "May to July"],
+          answer: 3,
+          explain: "The second flush lasts **from May to July** and gives the best tea."
+        },
+        {
+          q: "Which tea estate do Pranjol and Rajvir visit?",
+          options: ["Dhekiabari", "Darjeeling Hills", "Nilgiri Garden", "Munnar Estate"],
+          answer: 0,
+          explain: "They visit **Dhekiabari Tea Estate**, managed by Pranjol's father."
+        },
+        {
+          q: "What makes the paders survive even today?",
+          options: ["Government support", "Door-to-door delivery", "A ban on factory bread", "Foreign tourists"],
+          answer: 1,
+          explain: "They have perfected **door-to-door delivery** of bread."
+        }
+      ]
+    },
+
+    {
+      id: "the-trees",
+      title: "The Trees",
+      section: "First Flight",
+      summary: "Adrienne Rich imagines the potted and indoor trees of a house moving out into the empty forest at night, while the poet stays inside, writing letters.",
+      notes: [
+        {
+          heading: "Summary",
+          points: [
+            "The **forest outside is empty**: no bird can sit, no insect hide, and the sun cannot 'bury its feet in shadow'.",
+            "All night the **roots of the trees inside the house work to free themselves** from cracks in the veranda floor, and the **leaves and twigs strain toward the glass**.",
+            "The boughs shuffle under the roof like **newly discharged patients**, half-dazed, moving towards the clinic doors.",
+            "The poet sits inside writing long letters, but **hardly mentions** that the forest is leaving the house. The night is fresh and the moon is whole.",
+            "At the end the **glass breaks**, the trees stumble into the night, the winds rush to meet them, and the moon is **broken like a mirror**, its pieces flashing in the tallest oak. By morning the forest will be full again."
+          ]
+        },
+        {
+          heading: "Interpretations",
+          points: [
+            "**Nature vs man:** trees kept indoors as decoration are 'imprisoned' and need to break out, like the caged tiger in 'A Tiger in the Zoo'.",
+            "**Trees as human beings:** Rich often uses trees as symbols of people, so the poem can be about **people, especially women, who long to be free** of confinement.",
+            "**Silence about big events:** the poet does not tell anyone about the departure, perhaps because it is unexpected or embarrassing."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Freedom and confinement.**",
+            "**Return to nature** and the need to protect forests.",
+            "**Struggle for liberation**, shown by effort ('exertion', 'strain').",
+            "Message: living things must be free to grow where they belong."
+          ]
+        },
+        {
+          heading: "Poetic devices",
+          points: [
+            "**Personification:** trees with roots that work, leaves that strain and boughs that shuffle.",
+            "**Simile:** boughs like newly discharged patients; the moon broken like a mirror.",
+            "**Imagery:** sound and sight, such as whispers and breaking glass.",
+            "**Free verse** with no regular rhyme; **symbolism** of trees and glass."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Adrienne Rich (born Baltimore, 1929); the poem is free verse",
+        "Key image: trees moving from the house to the forest at night",
+        "Similes: boughs like newly discharged patients; moon like a broken mirror",
+        "Glass = the barrier between confinement and freedom"
+      ],
+      terms: [
+        { term: "Disengage", meaning: "To separate or free oneself from something." },
+        { term: "Bough", meaning: "A large branch of a tree." },
+        { term: "Lichen", meaning: "A crusty or bushy growth on tree trunks or bare ground." },
+        { term: "Personification", meaning: "Giving human actions or feelings to non-human things." },
+        { term: "Veranda", meaning: "A roofed open space along the outside of a house." }
+      ],
+      qa: [
+        {
+          q: "What are the trees doing in the poem?",
+          a: "The trees **inside the house** are freeing their roots from the veranda floor and moving out into the empty forest at night. Their leaves strain toward the glass, and in the end the glass breaks and they walk into the night."
+        },
+        {
+          q: "Why does the poet not mention the departure of the forest in her letters?",
+          a: "It is a **strange and unexpected** event, and people often stay silent about such things. It may also show that she hides her inner feelings or that she is, like the trees, longing to be free but unwilling to speak of it."
+        },
+        {
+          q: "How can the trees be read as a symbol?",
+          a: "They can stand for **nature kept imprisoned** in cities and houses, or for **human beings, particularly women, who long for freedom**. Both readings show a struggle to break out of confinement."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘The Trees’?",
+          options: ["Adrienne Rich", "Carl Sandburg", "Robin Klein", "Robert Frost"],
+          answer: 0,
+          explain: "‘The Trees’ is by **Adrienne Rich**."
+        },
+        {
+          q: "Where are the trees in the poem at the beginning?",
+          options: ["In the empty forest", "In a garden", "On a mountain", "Inside the house"],
+          answer: 3,
+          explain: "The trees are **inside the house**, with roots in the veranda floor."
+        },
+        {
+          q: "What are the boughs compared to?",
+          options: ["Dancers", "Newly discharged patients", "Soldiers", "Sleeping children"],
+          answer: 1,
+          explain: "They shuffle like **newly discharged patients**, half-dazed."
+        },
+        {
+          q: "What happens to the moon at the end of the poem?",
+          options: ["It disappears behind clouds", "It becomes bright red", "It is broken like a mirror", "It sets in the east"],
+          answer: 2,
+          explain: "The moon is **broken like a mirror**, its pieces flashing in the oak."
+        },
+        {
+          q: "What does the glass in the poem stand for?",
+          options: ["A boundary between confinement and freedom", "The poet's fear of storms", "A new window", "The beauty of the house"],
+          answer: 0,
+          explain: "The glass is the **barrier** the trees must break to be free."
+        }
+      ]
+    },
+
+    {
+      id: "mijbil-the-otter",
+      title: "Mijbil the Otter",
+      section: "First Flight",
+      summary: "Gavin Maxwell describes the otter he brought from the marshes of Iraq to London and how Mijbil played, escaped and surprised everyone on the journey.",
+      notes: [
+        {
+          heading: "Getting the otter",
+          points: [
+            "In **1956** Maxwell went to **southern Iraq** hoping to keep an otter instead of a dog at his Scottish cottage, **Camusfearna**. A friend said otters were common in the **Tigris marshes** and tamed by the Arabs.",
+            "At the **Consulate-General in Basra** his mail was delayed; telephone calls failed for three days, and after a long wait **two Arabs brought an otter in a sack** with a note from his friend.",
+            "The creature looked like a small **medieval dragon**, covered in mud, with soft chocolate-brown fur beneath. Zoologists named it **Lutrogale perspicillata maxwelli**, or **Maxwell's otter**."
+          ]
+        },
+        {
+          heading: "Mij's nature",
+          points: [
+            "At first **Mijbil (Mij)** was aloof and indifferent, but on the second night he slept on Maxwell's bed.",
+            "In the bathroom he went **wild with joy in the water**, rolling and splashing. Otters love to spread water everywhere and keep it on the move.",
+            "Two days later he **opened a tap** himself. He played with a rubber ball like a footballer and juggled **marbles** lying on his back.",
+            "He soon followed Maxwell without a lead and answered to his name."
+          ]
+        },
+        {
+          heading: "The journey to England",
+          points: [
+            "The British airline would not carry animals, so Maxwell **flew via Paris** with Mij in a box no more than **eighteen inches square**.",
+            "When he returned after an hour, Mij had **torn the lining** and was bleeding. They rushed to the airport just before the flight.",
+            "A kind **air hostess** offered to let him hold Mij on his lap. Mij **escaped**, caused chaos, and panicked a woman who shouted 'a rat', before returning on his own to Maxwell's knee."
+          ]
+        },
+        {
+          heading: "In London",
+          points: [
+            "In his flat, Mij played with ping-pong balls, marbles and a **terrapin shell** and invented a game with a **sloping suitcase** lid.",
+            "On walks he developed **compulsive habits** such as jumping on a school wall on the way home.",
+            "Londoners guessed he was a **baby seal, squirrel, walrus, beaver, bear cub, leopard, hippo**, or even a brontosaur; otters belong to the **Mustelline** group with badgers, weasels and mongooses.",
+            "The episode shows Mij as intelligent, playful and affectionate; Maxwell as caring and amused."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Gavin Maxwell; home: Camusfearna, Scotland",
+        "Place: Basra, Iraq; marshes of the Tigris; year 1956",
+        "Species named: Lutrogale perspicillata maxwelli (Maxwell's otter)",
+        "Journey: Basra to Paris to London, in a box eighteen inches square"
+      ],
+      terms: [
+        { term: "Thraldom", meaning: "The state of being completely under someone's or something's control." },
+        { term: "Aloof", meaning: "Distant and not friendly or involved." },
+        { term: "Compulsive habit", meaning: "A habit one cannot easily stop, like Mij's wall-running." },
+        { term: "Mustelline", meaning: "A group of animals including otters, weasels, badgers and mongooses." },
+        { term: "Camusfearna", meaning: "Maxwell's cottage in the West Highlands of Scotland." }
+      ],
+      qa: [
+        {
+          q: "How did Maxwell get the otter, and what was it like at first?",
+          a: "Two Arabs brought him an otter in a **sack**, sent by his friend. Covered in mud, it looked like a tiny medieval dragon. For the first day it was **aloof and indifferent**, but soon it grew affectionate."
+        },
+        {
+          q: "What happened on the flight and how was the problem solved?",
+          a: "Mij tore the box lining and was blood-spattered. On the plane he **escaped** from the box, ran down the aisle and caused panic. The calm **air hostess** said she would find him, but Mij came back on his own to Maxwell's lap."
+        },
+        {
+          q: "What does Mij's behaviour tell us about otters?",
+          a: "Otters are **playful, intelligent and fond of water**. They spread water about, juggle small objects, learn quickly (Mij opened a tap) and form close bonds with humans."
+        }
+      ],
+      quiz: [
+        {
+          q: "Where did Maxwell go to get an otter?",
+          options: ["Southern Iraq", "Egypt", "Scotland", "Turkey"],
+          answer: 0,
+          explain: "He travelled to **southern Iraq**, to Basra and the Tigris marshes."
+        },
+        {
+          q: "Why is the otter called Maxwell's otter?",
+          options: ["It was born in his house", "He trained it as a pet", "Zoologists named the new race after him", "He wrote a book about otters"],
+          answer: 2,
+          explain: "The race was **new to science** and was named after Maxwell."
+        },
+        {
+          q: "What did Mij do in the bathroom two days after arrival?",
+          options: ["Slept in the bath", "Broke a window", "Ate fish", "Turned on the tap"],
+          answer: 3,
+          explain: "He **turned the tap** and got the water flowing."
+        },
+        {
+          q: "How was Mij carried on the flight?",
+          options: ["In Maxwell's pocket", "In a box eighteen inches square", "In a cage in the cargo hold", "On the air hostess's lap"],
+          answer: 1,
+          explain: "The airline required a box **not more than eighteen inches square**."
+        },
+        {
+          q: "Which group of animals do otters belong to?",
+          options: ["Rodents", "Felines", "Mustellines", "Primates"],
+          answer: 2,
+          explain: "Otters belong to the **Mustellines**, with weasels, badgers and mongooses."
+        }
+      ]
+    },
+
+    {
+      id: "fog",
+      title: "Fog",
+      section: "First Flight",
+      summary: "In a few lines Carl Sandburg compares the fog creeping over a harbour and a city to a cat that sits quietly and then moves on.",
+      notes: [
+        {
+          heading: "Summary",
+          points: [
+            "The poem is a short **extended metaphor**: the fog comes on **little cat feet**, making no sound.",
+            "Like a cat, it **sits looking over the harbour and the city** on silent haunches.",
+            "Then, like a cat, it **moves on**, quietly leaving."
+          ]
+        },
+        {
+          heading: "The cat comparison",
+          points: [
+            "**Silence:** both fog and a cat arrive without noise.",
+            "**Softness:** fog is soft and light like a cat's paws.",
+            "**Stillness:** the fog settles over the city as a cat sits watching.",
+            "**Temporary visit:** fog stays a while and then drifts away, like a cat that goes when it likes."
+          ]
+        },
+        {
+          heading: "Themes and devices",
+          points: [
+            "**Beauty of nature** seen in everyday life.",
+            "**Metaphor:** fog is a cat; **personification:** it sits, looks and moves.",
+            "**Imagery** of touch, sight and silence; the poem is **free verse** with no rhyme.",
+            "Poet: **Carl Sandburg**; very short, with the comparison carrying the whole poem."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Carl Sandburg",
+        "Central metaphor: fog = a cat",
+        "Form: short free verse, no rhyme",
+        "Setting: harbour and city"
+      ],
+      terms: [
+        { term: "Haunches", meaning: "The hind part of an animal's body, where a cat or dog sits." },
+        { term: "Harbour", meaning: "A sheltered part of the sea where ships stay." },
+        { term: "Metaphor", meaning: "Describing one thing as if it were another, without 'like' or 'as'." },
+        { term: "Personification", meaning: "Giving human or animal qualities to a non-living thing." },
+        { term: "Free verse", meaning: "Poetry that has no regular rhyme or metre." }
+      ],
+      qa: [
+        {
+          q: "Why does the poet compare the fog to a cat?",
+          a: "Fog arrives **silently and softly** and settles over the city, just as a cat creeps on soft paws, sits watching, and then moves on. The comparison makes the fog seem alive and gentle."
+        },
+        {
+          q: "What does the fog do in the second part of the poem?",
+          a: "It **sits looking over the harbour and the city** on silent haunches and then **moves on**, which shows that its stay is short."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘Fog’?",
+          options: ["Carl Sandburg", "Robert Frost", "Ogden Nash", "John Berryman"],
+          answer: 0,
+          explain: "The poem is by **Carl Sandburg**."
+        },
+        {
+          q: "What is the fog compared to?",
+          options: ["A ghost", "A dog", "A cat", "A cloud"],
+          answer: 2,
+          explain: "It comes on **little cat feet**."
+        },
+        {
+          q: "Which poetic device is used in the whole poem?",
+          options: ["Hyperbole", "Metaphor", "Onomatopoeia", "Oxymoron"],
+          answer: 1,
+          explain: "The fog is described as a cat: a **metaphor**."
+        },
+        {
+          q: "Over which places does the fog look?",
+          options: ["Forest and hills", "River and bridge", "Harbour and city", "Village and field"],
+          answer: 2,
+          explain: "It looks over the **harbour and city**."
+        },
+        {
+          q: "What does the phrase 'moves on' suggest about the fog?",
+          options: ["It will return at once", "It stays for a short time and passes", "It becomes thicker", "It freezes"],
+          answer: 1,
+          explain: "Like a cat, the fog **stays briefly** and then leaves."
+        }
+      ]
+    },
+
+    {
+      id: "madam-rides-the-bus",
+      title: "Madam Rides the Bus",
+      section: "First Flight",
+      summary: "Vallikkannan's story of Valli, an eight-year-old who secretly makes her first bus ride to town and back, and learns about death when she sees a dead cow by the road.",
+      notes: [
+        {
+          heading: "Valli's wish and plan",
+          points: [
+            "**Valli** is an **eight-year-old** girl who loves watching the street from her doorway. The thing she finds most fascinating is the **bus** that goes between her village and the nearest town, **six miles** away.",
+            "She secretly collects the facts: the **fare is thirty paise one way**, the trip takes **forty-five minutes**, and she can return on the same bus by paying again.",
+            "She saves **sixty paise** by resisting sweets, toys and even the merry-go-round at the fair, and chooses the time when her **mother naps (about one to four)**."
+          ]
+        },
+        {
+          heading: "The journey",
+          points: [
+            "Valli stops the bus herself. The jolly **conductor** teases her by calling her **'madam'**, but she insists she is not a child and does not need help.",
+            "She stands on the seat to see the **canal, fields, palm trees and mountains**. She is annoyed when an elderly man and then an old woman with a betel-stained mouth ask questions about her.",
+            "She **laughs until she cries** at a young cow running ahead of the bus, and sees trains, shops and crowds. At the terminus she refuses a drink and a walk, and pays another thirty paise to **return on the same bus**.",
+            "On the return she sees the **same cow dead** by the roadside. The sight saddens her and she **stops looking out** of the window."
+          ]
+        },
+        {
+          heading: "The ending",
+          points: [
+            "She reaches home at **3:40**, before her mother has noticed. Her mother and aunt talk about how we cannot know about everything in the world.",
+            "Valli, who has just learned about **death**, agrees quietly. The aunt calls her a 'chit of a girl' who 'pokes her nose in'; Valli **smiles to herself** because they cannot guess her secret."
+          ]
+        },
+        {
+          heading: "Character and themes",
+          points: [
+            "**Valli:** curious, determined, independent, proud, clever at planning, and a little afraid of strangers and the town.",
+            "**The conductor:** kind, jolly and gently humorous.",
+            "**Themes:** a child's longing for **independence and adventure**, the **loss of innocence**, and the gap between *knowing* that death exists and *understanding* it.",
+            "The author views the world through an **eight-year-old's eyes**, e.g. trees 'running' towards the bus."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Vallikkannan (translated from Tamil by K.S. Sundaram)",
+        "Fare: 30 paise one way; distance six miles; trip 45 minutes",
+        "Valli saved 60 paise; her mother naps from about one to four",
+        "Key idea: a child's first brush with the reality of death"
+      ],
+      terms: [
+        { term: "Wistfully", meaning: "In a way that shows longing for something." },
+        { term: "Haughtily", meaning: "In a proud and arrogant manner." },
+        { term: "Thriftily", meaning: "In a way that spends little and saves money carefully." },
+        { term: "Spreadeagled", meaning: "With arms and legs spread wide, as the dead cow lay." },
+        { term: "Conductor", meaning: "The person on a bus who sells tickets and collects fares." }
+      ],
+      qa: [
+        {
+          q: "Why did the conductor call Valli 'madam'?",
+          a: "He found her **independent, serious manner** amusing. She had stopped the bus herself, paid her own fare and said she did not need help, so he joked by treating her as a grand lady."
+        },
+        {
+          q: "Why did Valli refuse to look out of the window on the way back?",
+          a: "She saw the **young cow she had laughed at earlier lying dead** by the road, killed by a fast vehicle. The sight was horrifying, and the memory of the dead cow dampened her enthusiasm."
+        },
+        {
+          q: "What does Valli mean when she agrees with her mother's remark about things happening without our knowledge?",
+          a: "Valli has just learned that **death can come suddenly**, as it did to the cow, even though she knew death existed. She also hints at her own secret journey that her mother did not know about."
+        }
+      ],
+      quiz: [
+        {
+          q: "How far was the town from Valli's village?",
+          options: ["Six miles", "Sixteen miles", "Three miles", "Sixty miles"],
+          answer: 0,
+          explain: "The town was **six miles** away."
+        },
+        {
+          q: "How much was the one-way bus fare?",
+          options: ["Ten paise", "Thirty paise", "Sixty paise", "One rupee"],
+          answer: 1,
+          explain: "The fare was **thirty paise** each way."
+        },
+        {
+          q: "What did Valli do at the end of the bus's journey to town?",
+          options: ["Visited her aunt", "Had a cold drink", "Stayed on the bus and paid for the return trip", "Walked around the town"],
+          answer: 2,
+          explain: "She stayed on and **paid another thirty paise**."
+        },
+        {
+          q: "What made Valli sad on the return journey?",
+          options: ["The bus broke down", "She missed her friends", "The conductor scolded her", "She saw the dead cow"],
+          answer: 3,
+          explain: "She saw the **dead young cow** she had laughed at earlier."
+        },
+        {
+          q: "Which quality best describes Valli at the start of the story?",
+          options: ["Lazy", "Curious and determined", "Fearful and silent", "Careless"],
+          answer: 1,
+          explain: "She is **curious** and plans her ride carefully with great **determination**."
+        },
+        {
+          q: "Why did Valli choose the afternoon to ride the bus?",
+          options: ["The bus was cheaper then", "Her mother was asleep then", "School was closed then", "The conductor was her friend"],
+          answer: 1,
+          explain: "Her mother **napped from about one to four**, so Valli could slip out."
+        }
+      ]
+    },
+
+    {
+      id: "the-tale-of-custard-the-dragon",
+      title: "The Tale of Custard the Dragon",
+      section: "First Flight",
+      summary: "Ogden Nash's comic ballad about Belinda and her brave pets, and a dragon who cries for a safe cage yet is the only one brave enough to defeat a pirate.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "**Belinda** lives in a little white house with a black kitten **Ink**, a grey mouse **Blink**, a yellow dog **Mustard**, and a **dragon called Custard**.",
+            "Belinda is as brave as a barrel full of bears, Ink and Blink chase lions, Mustard is as brave as a tiger in a rage, but **Custard is a coward** who wants a nice safe cage.",
+            "They tease him until a **pirate** climbs in through the window, armed with pistols and a cutlass. Belinda cries for help, **Mustard runs away**, Ink hides at the bottom of the house and Blink hides in a mousehole.",
+            "**Custard** snorts like an engine, clashes his tail, attacks the pirate and **gobbles him up**.",
+            "Afterwards the others say they would have been braver if they had not been flustered, and Custard admits that everybody is braver than he is. The poem ends as it began, with Custard still asking for a **safe cage**."
+          ]
+        },
+        {
+          heading: "Humour and irony",
+          points: [
+            "The **only one who acts bravely** in the crisis is the 'coward'. The boasters run away.",
+            "Custard's looks (sharp teeth, spikes, scales, mouth like a fireplace, nose like a chimney) contrast with his timid nature.",
+            "He **modestly agrees** that everyone is braver, which makes the ending funny and gently ironic.",
+            "The pets use funny names: Ink, Blink and Mustard, and the 'realio, trulio' dragon."
+          ]
+        },
+        {
+          heading: "Poetic devices",
+          points: [
+            "**Ballad:** a humorous story-poem, almost a **parody** of tales of heroism.",
+            "**Rhyme:** rhyming couplets (AABB), with comic rhymes like *Belinda / winda*.",
+            "**Simile:** 'brave as a barrel full of bears', 'brave as a tiger in a rage', 'like a robin at a worm'.",
+            "**Metaphor, onomatopoeia and alliteration:** 'clatter and clank', 'Weeck!', 'snorting like an engine', 'little ... little ... little'.",
+            "**Repetition** of the opening stanza at the close gives the poem a circular shape."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**True courage** shows in action, not in boasting.",
+            "**Appearances can deceive.**",
+            "**Humility:** the dragon does not take credit.",
+            "Message: do not judge others by how they look or how loudly they speak."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Ogden Nash; form: humorous ballad in rhyming couplets",
+        "Characters: Belinda, Ink (kitten), Blink (mouse), Mustard (dog), Custard (dragon), the pirate",
+        "Irony: the cowardly dragon is the only brave one",
+        "Refrain: Custard cries for a nice safe cage"
+      ],
+      terms: [
+        { term: "Ballad", meaning: "A poem or song that tells a story, often in short rhyming verses." },
+        { term: "Parody", meaning: "A comic imitation of a serious style or work." },
+        { term: "Cutlass", meaning: "A short curved sword once used by sailors and pirates." },
+        { term: "Grog", meaning: "A strong alcoholic drink, popular with sailors." },
+        { term: "Gyrate", meaning: "To move around in circles." }
+      ],
+      qa: [
+        {
+          q: "Why does Custard cry for a nice safe cage, and why is he called cowardly?",
+          a: "Custard is afraid of danger and wants the **security of a cage**, unlike the other pets who boast of their courage. The others therefore tease him and call him a **cowardly dragon**."
+        },
+        {
+          q: "How does the poem show that Custard is actually brave?",
+          a: "When the pirate arrives, the others flee, but **Custard attacks and swallows him**. He acts when it matters while the boastful pets run, so his action proves true bravery."
+        },
+        {
+          q: "Is the poem serious or light-hearted? Give reasons.",
+          a: "It is **light-hearted**. It uses funny names, exaggerated similes, comic rhymes and a ridiculous story, and the characters' reactions are humorous."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘The Tale of Custard the Dragon’?",
+          options: ["Ogden Nash", "Carolyn Wells", "Robert Frost", "Leslie Norris"],
+          answer: 0,
+          explain: "The poem is by **Ogden Nash**."
+        },
+        {
+          q: "Who is Mustard?",
+          options: ["The kitten", "The dog", "The mouse", "The pirate"],
+          answer: 1,
+          explain: "**Mustard** is Belinda's little yellow dog."
+        },
+        {
+          q: "How did Custard defeat the pirate?",
+          options: ["He ran away", "He called the police", "He gobbled him up", "He locked him in a cage"],
+          answer: 2,
+          explain: "Custard **gobbled up** the pirate."
+        },
+        {
+          q: "What is ironic in the poem?",
+          options: ["The pirate was a coward", "The house was too small", "Belinda was afraid of cats", "The cowardly dragon proves the bravest"],
+          answer: 3,
+          explain: "The dragon everyone mocks is the only one who is **brave**."
+        },
+        {
+          q: "What kind of poem is this?",
+          options: ["Elegy", "Humorous ballad", "Sonnet", "Free verse"],
+          answer: 1,
+          explain: "It is a **humorous ballad** that tells a story in rhyme."
+        }
+      ]
+    },
+
+    {
       id: "the-sermon-at-benares",
       title: "The Sermon at Benares",
-      section: "Literature – First Flight",
+      section: "First Flight",
       summary: "Betty Renshaw's account of how Prince Siddhartha became the Buddha, and of his sermon at Benares in which he helps the grieving Kisa Gotami understand that death comes to all.",
       notes: [
         {
@@ -1902,7 +2834,7 @@ StudyData.add(10, "english", {
             "Gautama Buddha was born a prince, **Siddhartha Gautama**, in northern India. At twelve he was sent away to study the Hindu scriptures; later he married a princess and had a son.",
             "At about twenty-five he saw a **sick man**, an **old man**, a **funeral procession** and a **monk begging for alms**. Deeply moved by human suffering, he left his royal life to seek enlightenment.",
             "After wandering for seven years, he sat under a **peepal tree** and attained **enlightenment** after seven days. He became the **Buddha** (the Awakened or Enlightened One), and the tree came to be called the **Bodhi tree** (Tree of Wisdom).",
-            "He preached his first sermon in **Benares**, the holy city on the Ganges."
+            "The book says he preached his first sermon in **Benares**, the holy city on the Ganges. (Historically his first sermon was at Sarnath, near Benares; the Kisa Gotami teaching is the one given in this lesson.)"
           ]
         },
         {
@@ -1998,6 +2930,962 @@ StudyData.add(10, "english", {
           options: ["stars that never fade", "rivers that never end", "mountains that never move", "ripe fruits in danger of falling"],
           answer: 3,
           explain: "Mortals are compared to **ripe fruits**, which are always in danger of falling."
+        }
+      ]
+    },
+
+    {
+      id: "for-anne-gregory",
+      title: "For Anne Gregory",
+      section: "First Flight",
+      summary: "In W.B. Yeats's poem a young man says no one can love Anne Gregory for herself because of her beautiful hair, and she replies that she can change it.",
+      notes: [
+        {
+          heading: "Summary",
+          points: [
+            "The poem is a **conversation** between a young man and Anne Gregory.",
+            "The man says that a young man, driven to despair by her **honey-coloured, yellow hair**, will never love her **for herself alone**.",
+            "Anne replies that she can **dye her hair** brown, black or carrot-coloured, so that men may love her for herself and not her yellow hair.",
+            "The man then recalls an old **religious man** who said he had found a text proving that **only God** could love her for herself alone."
+          ]
+        },
+        {
+          heading: "Meaning",
+          points: [
+            "**Outer beauty vs inner worth:** people are often attracted to looks (hair, colour) rather than to character.",
+            "Anne's suggestion to dye her hair shows she wants to be **loved for what she is**, not for something that can be changed.",
+            "The final claim is that only **divine love** is unconditional, while human love is influenced by appearances.",
+            "The tone is gently **ironic** and playful, yet it raises a serious question."
+          ]
+        },
+        {
+          heading: "Poet and devices",
+          points: [
+            "**William Butler Yeats (1865–1939)**: Irish nationalist poet, interested in folklore and mythology, **Nobel Prize for Literature in 1923**.",
+            "**Metaphor:** 'honey-coloured ramparts at your ear' for thick yellow hair, like the high walls of a fort.",
+            "**Repetition:** 'love you for yourself alone and not your yellow hair' ends each stanza.",
+            "**Dialogue form** with three stanzas; the end-sounds despair, ear and hair rhyme loosely in each stanza."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**True love is for the person, not appearance.**",
+            "**Superficial attraction** vs real affection.",
+            "Message: look beyond looks, and value people for their qualities."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: W.B. Yeats (1865–1939), Nobel Prize 1923",
+        "Speakers: a young man and Anne Gregory, then the man quoting an old religious man",
+        "Refrain: love 'for yourself alone and not your yellow hair'",
+        "Theme: inner worth vs outer beauty; only God loves unconditionally"
+      ],
+      terms: [
+        { term: "Ramparts", meaning: "The high, wide walls around a castle or fort." },
+        { term: "Despair", meaning: "Complete loss of hope." },
+        { term: "Hair-dye", meaning: "A substance used to change the colour of hair." },
+        { term: "Honey-coloured", meaning: "Golden-yellow, like honey." },
+        { term: "Unconditional love", meaning: "Love that does not depend on looks, wealth or other qualities." }
+      ],
+      qa: [
+        {
+          q: "What does the young man mean by 'honey-coloured ramparts at your ear'?",
+          a: "He means Anne's thick, **golden-yellow hair** falling at her ears like the high walls of a fort. Young men are 'thrown into despair' by its beauty, so they love the hair rather than the girl."
+        },
+        {
+          q: "Why does Anne say she can use hair-dye?",
+          a: "She wants to be loved **for herself, not for her hair**. By changing its colour she could test whether a young man's love is real or only based on her appearance."
+        },
+        {
+          q: "What does the old religious man claim?",
+          a: "He claims to have found a text proving that **only God** can love a person for herself alone. This suggests that human love is influenced by looks, but divine love is pure and unconditional."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘For Anne Gregory’?",
+          options: ["W.B. Yeats", "John Berryman", "Adrienne Rich", "Robin Klein"],
+          answer: 0,
+          explain: "It is by **William Butler Yeats**."
+        },
+        {
+          q: "What colour is Anne Gregory's hair?",
+          options: ["Black", "Brown", "Yellow", "Red"],
+          answer: 2,
+          explain: "Her hair is **yellow**, honey-coloured."
+        },
+        {
+          q: "What does Anne say she could do to her hair?",
+          options: ["Cut it off", "Cover it", "Grow it longer", "Dye it brown, black or carrot"],
+          answer: 3,
+          explain: "She says she can get a **hair-dye** in a different colour."
+        },
+        {
+          q: "Who, according to the old religious man, can love her for herself alone?",
+          options: ["Her mother", "God", "A king", "Her friends"],
+          answer: 1,
+          explain: "He says **only God** can love her for herself alone."
+        },
+        {
+          q: "What is the central idea of the poem?",
+          options: ["Hair-dye is harmful", "Young men are cruel", "Appearance is a poor basis for love", "Religion forbids marriage"],
+          answer: 2,
+          explain: "True love should be for the **person**, not for looks."
+        }
+      ]
+    },
+
+    {
+      id: "the-proposal",
+      title: "The Proposal",
+      section: "First Flight",
+      summary: "Anton Chekhov's one-act farce in which a nervous landowner comes to propose marriage but ends up quarrelling over land and dogs with the girl and her father.",
+      notes: [
+        {
+          heading: "Plot",
+          points: [
+            "**Lomov**, a large, hearty but very suspicious and nervous landowner, arrives dressed formally to ask **Chubukov** for the hand of his twenty-five-year-old daughter **Natalya**. Chubukov is delighted.",
+            "Alone with Natalya, Lomov begins with their families' friendship, but the talk turns to the **Oxen Meadows**. Each insists the land is theirs, and the argument becomes an insulting shouting match joined by Chubukov.",
+            "Lomov leaves with heart palpitations and a numb foot. When Chubukov tells Natalya he had come to propose, she is horrified and **demands that he be brought back**.",
+            "Back again, they quarrel over whose dog is better, Lomov's **Guess** or Chubukov's **Squeezer**. Lomov faints; they think he is dead.",
+            "When he revives, Chubukov **joins their hands** and orders them to kiss. They agree to marry, but at once start arguing again about the dogs."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Lomov:** 35, hypochondriac, easily excited, fussy and proud; wishes to marry for convenience, but cannot control his temper.",
+            "**Natalya Stepanovna:** shrewd, stubborn and quarrelsome; she is eager to marry but won't give in on any point.",
+            "**Stepan Chubukov:** hospitable and loving at first; hot-tempered, greedy for a good match; a landowner who likes to quarrel.",
+            "All three are **quarrelsome over petty issues**, which makes the proposal almost forgotten."
+          ]
+        },
+        {
+          heading: "Humour and themes",
+          points: [
+            "It is a **farce**: exaggerated situations, comic dialogue, and fainting scenes.",
+            "Marriage is shown as a **business arrangement** between wealthy families rather than love.",
+            "**Pride and ego** make people argue over silly things like meadows worth little, or whose dog is better.",
+            "Chekhov wrote the play in **1888–89**; its original title was 'A Marriage Proposal'."
+          ]
+        }
+      ],
+      formulas: [
+        "Playwright: Anton Chekhov (Russian); one-act farce, 1888–89",
+        "Characters: Ivan Vassilevitch Lomov, Stepan Stepanovitch Chubukov, Natalya Stepanovna",
+        "First quarrel: Oxen Meadows; second quarrel: dogs Guess and Squeezer",
+        "Lomov's age 35; Natalya's age 25"
+      ],
+      terms: [
+        { term: "Farce", meaning: "A comic play with absurd situations and exaggerated characters." },
+        { term: "Palpitation", meaning: "A rapid or irregular heartbeat, which Lomov complains of often." },
+        { term: "Oxen Meadows", meaning: "The piece of land the families quarrel over." },
+        { term: "Squeezer", meaning: "Chubukov's hunting dog." },
+        { term: "Guess", meaning: "Lomov's hunting dog." }
+      ],
+      qa: [
+        {
+          q: "Why does Lomov come to Chubukov's house, and does he succeed?",
+          a: "He comes to **propose to Natalya**. After a series of quarrels, he faints, and Chubukov brings the two together; they agree to marry, so he does succeed, though only after much argument."
+        },
+        {
+          q: "Why is the play called a farce?",
+          a: "A farce uses **absurd situations and exaggerated behaviour** for laughter. Here a proposal is nearly lost to quarrels over meadows and dogs, and characters faint or scream at trifles."
+        },
+        {
+          q: "What does the play show about marriage in that society?",
+          a: "It shows marriage as a **practical, economic arrangement** between wealthy families. Chubukov wants the match for property and security, and Lomov wants a convenient wife, not romance."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘The Proposal’?",
+          options: ["Anton Chekhov", "Leo Tolstoy", "Ruskin Bond", "Guy de Maupassant"],
+          answer: 0,
+          explain: "The play is by the Russian writer **Anton Chekhov**."
+        },
+        {
+          q: "What is the first thing Lomov and Natalya quarrel about?",
+          options: ["Their dogs", "A hunting trip", "The Oxen Meadows", "Money"],
+          answer: 2,
+          explain: "They first argue about who owns the **Oxen Meadows**."
+        },
+        {
+          q: "What are the names of the two dogs?",
+          options: ["Guess and Squeezer", "Ink and Blink", "Sherry and Tricki", "Bruno and Sultan"],
+          answer: 0,
+          explain: "Lomov's dog is **Guess**; Chubukov's is **Squeezer**."
+        },
+        {
+          q: "What problem does Lomov repeatedly complain of?",
+          options: ["Toothache", "Palpitations of the heart", "Bad eyesight", "Back pain"],
+          answer: 1,
+          explain: "He says his **heart palpitates** and a foot has gone numb."
+        },
+        {
+          q: "How does the play end?",
+          options: ["Lomov leaves for good", "Natalya refuses him", "Chubukov leaves home", "They agree to marry but start quarrelling again"],
+          answer: 3,
+          explain: "They are engaged but **begin quarrelling again** about the dogs."
+        }
+      ]
+    },
+
+    {
+      id: "a-triumph-of-surgery",
+      title: "A Triumph of Surgery",
+      section: "Footprints without Feet",
+      summary: "James Herriot, a country vet, cures the pampered, overfed dog Tricki by keeping him at the surgery for two weeks, to the delight of his owner Mrs Pumphrey.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "**Tricki** is a small dog, hugely fat, because his rich owner **Mrs Pumphrey** feeds him sweets, cream cakes, chocolates, malt, cod-liver oil and Horlicks. His only fault is **greed**, and he gets little exercise.",
+            "The narrator, the vet **Mr Herriot**, tells her to cut his diet and exercise him more. Soon she calls: Tricki is **vomiting, refuses food and lies panting**.",
+            "Herriot decides to take him to his **surgery for a fortnight**. Mrs Pumphrey weeps and sends a huge amount of luggage: beds, cushions, toys, bowls and coats.",
+            "At the surgery Tricki **joins the other dogs**, eats normally, runs about and gets fit with no medicine at all. Meanwhile Mrs Pumphrey sends **eggs and wine and brandy** for his 'recovery', which the vets enjoy.",
+            "After two weeks Tricki is lean and hard-muscled. He leaps into his mistress's lap and Mrs Pumphrey, in tears, thanks Herriot for the 'triumph of surgery'."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Mr Herriot:** tactful, sensible and kind; a skilled vet who sees the real problem (overfeeding) and cures it by common sense.",
+            "**Mrs Pumphrey:** wealthy, loving but foolishly indulgent, who spoils her dog.",
+            "**Tricki:** greedy and pampered, but happy when he joins the pack.",
+            "**Tristan** (Herriot's colleague) and **Joe the greyhound** appear at the surgery."
+          ]
+        },
+        {
+          heading: "Themes and irony",
+          points: [
+            "**Over-indulgence harms**; true love needs sense and discipline.",
+            "**Irony:** the 'surgery' involved no operation, just diet and exercise.",
+            "**Humour** arises from Mrs Pumphrey's exaggerated care and the vets' cheerful gain.",
+            "Message: natural food, exercise and company are the best medicine."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: James Herriot (a veterinary surgeon)",
+        "Dog: Tricki; owner: Mrs Pumphrey; Herriot's colleague: Tristan",
+        "Cure: two weeks at the surgery with other dogs; no medicine",
+        "Irony in the title: no surgery was performed"
+      ],
+      terms: [
+        { term: "Surgery", meaning: "Here, a place where a vet treats animals (not an operation)." },
+        { term: "Convalescing", meaning: "Recovering slowly after illness." },
+        { term: "Lithe", meaning: "Slim, flexible and graceful." },
+        { term: "Distraught", meaning: "Extremely worried and upset." },
+        { term: "Listless", meaning: "Without energy or interest." }
+      ],
+      qa: [
+        {
+          q: "Why was Tricki unwell, and how was he cured?",
+          a: "He was **overfed with sweets and rich food** and got no exercise, so he became fat and sick. At the surgery he ate simple food and ran with the other dogs, and in two weeks he became fit **without any medicine**."
+        },
+        {
+          q: "What kind of person is Mr Herriot?",
+          a: "He is **tactful, firm and sensible**. He understands the cause of the problem, deals kindly with Mrs Pumphrey, and uses a humane, natural cure."
+        },
+        {
+          q: "Why does Mrs Pumphrey call the dog's recovery 'a triumph of surgery'?",
+          a: "She does not know the real cure, and she thinks the vet's skill at his **surgery** saved her dog. The title is ironic because Tricki got better through **exercise and a healthy diet**."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who is the narrator of the story?",
+          options: ["Tristan", "Mr Herriot", "Mrs Pumphrey", "Hodgkin"],
+          answer: 1,
+          explain: "The narrator is the vet, **Mr Herriot**."
+        },
+        {
+          q: "What was Tricki's main fault?",
+          options: ["Biting people", "Barking at night", "Greed", "Laziness only"],
+          answer: 2,
+          explain: "His only fault was **greed**, encouraged by his owner."
+        },
+        {
+          q: "How long did Tricki stay at the surgery?",
+          options: ["A day", "A week", "A month", "About a fortnight"],
+          answer: 3,
+          explain: "He stayed for about **two weeks**."
+        },
+        {
+          q: "What did Tricki get as treatment at the surgery?",
+          options: ["Company, exercise and plain food", "An operation", "A strict medicine course", "Cod-liver oil"],
+          answer: 0,
+          explain: "He recovered by **running with other dogs and eating plain food**."
+        },
+        {
+          q: "Why is the title ironic?",
+          options: ["Tricki died", "No actual surgery took place", "Herriot was not a doctor", "The surgery was free"],
+          answer: 1,
+          explain: "There was **no operation**; the cure was natural."
+        }
+      ]
+    },
+
+    {
+      id: "the-thiefs-story",
+      title: "The Thief’s Story",
+      section: "Footprints without Feet",
+      summary: "Ruskin Bond's story of Hari Singh, a fifteen-year-old thief who steals from Anil, then returns the money and is won over by Anil's trust.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "The narrator, a **fifteen-year-old thief** who calls himself **Hari Singh**, meets **Anil**, a kind, simple man of about twenty-five who watches a wrestling match. He asks to work for Anil without wages.",
+            "Anil, a **struggling writer**, takes him in, lets him sleep on the balcony and **teaches him to cook, write his name** and, later, whole sentences.",
+            "Anil trusts him completely, gives him a key, and does not mind if he makes a rupee a day on the shopping. This makes the boy find it **harder to rob him**.",
+            "One night, after Anil sells a book and tucks **600 rupees** under his mattress, Hari steals it and runs to the station but **misses the train**. He sits in the rain at a clock tower.",
+            "He decides he should go back to learn to read and write. He **returns and puts the notes back**. Next morning Anil gives him a (damp) fifty-rupee note, 'You'll be paid regularly', and says they will start writing sentences. Hari realises Anil knows."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Hari Singh:** a clever, experienced young thief who lies easily, but longs to become educated and respected.",
+            "**Anil:** trusting, generous, kind, and a good judge of character, who shows no anger and gives the boy a second chance.",
+            "Anil's silent forgiveness shows his understanding of the boy."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Trust can transform a person.**",
+            "**Education** as a path to a better life.",
+            "**Conscience and second chances.**",
+            "The boy's belief that robbing a **careless man** takes the pleasure out of theft, and his idea of the faces of the robbed (greedy man: fear; rich man: anger; poor man: acceptance; Anil: sadness for lost trust)."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Ruskin Bond",
+        "Thief's assumed name: Hari Singh (a new name each month); age 15",
+        "Money stolen: 600 rupees in fifty-rupee notes; Anil lived over the Jumna Sweet Shop",
+        "Turning point: the thief returns the money; Anil begins to teach him sentences"
+      ],
+      terms: [
+        { term: "Flattery", meaning: "Insincere praise used to win favour." },
+        { term: "Appealing smile", meaning: "An attractive smile that wins sympathy, which Hari often used." },
+        { term: "Trust", meaning: "Firm belief that someone is honest and reliable." },
+        { term: "Maidan", meaning: "A large open ground in or near a town." },
+        { term: "Conscience", meaning: "An inner sense of right and wrong." }
+      ],
+      qa: [
+        {
+          q: "Why did Hari Singh find it difficult to rob Anil, and why did he return the money?",
+          a: "Anil was **trusting and careless**, which made the theft unpleasant. After the theft Hari felt lost and thought of the chance to learn to read and write from Anil, so he decided to **put the money back**."
+        },
+        {
+          q: "Why did Anil not hand the thief to the police?",
+          a: "Anil understood that the boy needed **trust and a chance**. He quietly gave him money and began to teach him, using kindness rather than punishment, to help him change."
+        },
+        {
+          q: "What does the title suggest?",
+          a: "The story is told by the **thief himself**, so it is his account of how kindness changed him; it focuses on his feelings and change, not on the crime."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘The Thief’s Story’?",
+          options: ["Ruskin Bond", "Victor Canning", "H.G. Wells", "K.A. Abbas"],
+          answer: 0,
+          explain: "The story is by **Ruskin Bond**."
+        },
+        {
+          q: "What was Anil's profession?",
+          options: ["Wrestler", "Cook", "Writer", "Shopkeeper"],
+          answer: 2,
+          explain: "Anil **wrote for magazines** and sold books."
+        },
+        {
+          q: "How much money did Hari Singh steal?",
+          options: ["50 rupees", "6,000 rupees", "100 rupees", "600 rupees"],
+          answer: 3,
+          explain: "He stole **600 rupees** in fifty-rupee notes."
+        },
+        {
+          q: "Why did the thief miss the train to Lucknow?",
+          options: ["He hesitated for an unexplained reason", "The train was cancelled", "He lost the ticket", "A policeman stopped him"],
+          answer: 0,
+          explain: "He **hesitated** 'for some reason I can't explain' and lost the chance."
+        },
+        {
+          q: "What did Anil give Hari the next morning?",
+          options: ["A new shirt", "A fifty-rupee note", "A train ticket", "A book"],
+          answer: 1,
+          explain: "He gave him a **fifty-rupee note**, still wet from the rain."
+        }
+      ]
+    },
+
+    {
+      id: "the-midnight-visitor",
+      title: "The Midnight Visitor",
+      section: "Footprints without Feet",
+      summary: "Robert Arthur's story of Ausable, an unlikely secret agent who outwits an armed rival by inventing a balcony that does not exist.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "**Fowler**, a young writer, expects a spy to be glamorous, but meets **Ausable**, a **fat man with an American accent** living in a gloomy hotel room in Paris.",
+            "Ausable says he is expecting an important paper about **new missiles**. When the light comes on, **Max**, a rival agent, is already in the room with a **pistol**, and wants the report.",
+            "Ausable pretends there is a **balcony** through which people entered his room before, so Max says he came by passkey.",
+            "When a knock comes, Ausable says it is the **police**. Max, afraid, says he will wait on the balcony and **climbs out of the window**.",
+            "Max drops from the sill and **screams**: there is **no balcony**, only a long fall from the sixth floor. The knock was actually the waiter **Henry** with a drink."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Ausable:** fat, wheezing and unassuming, but clever, calm, quick-thinking and witty. He uses **presence of mind**.",
+            "**Max:** slender, fox-faced, cunning but gullible under pressure.",
+            "**Fowler:** a young, romantic, inexperienced writer who is shocked."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Appearances deceive:** an unlikely hero.",
+            "**Presence of mind** and mental preparedness.",
+            "**Suspense and a twist ending.**",
+            "Message: intelligence can defeat weapons."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Robert Arthur",
+        "Characters: Ausable (agent), Fowler (writer), Max (rival), Henry (the waiter)",
+        "Setting: the sixth-floor room of a Paris hotel; appointment at 12:30",
+        "Trick: a non-existent balcony and an imaginary police knock"
+      ],
+      terms: [
+        { term: "Espionage", meaning: "The act of spying to obtain secret information." },
+        { term: "Prosaic", meaning: "Ordinary and dull, lacking romance." },
+        { term: "Passkey", meaning: "A key that opens many locks, such as a hotel master key." },
+        { term: "Presence of mind", meaning: "The ability to think and act quickly and calmly in an emergency." },
+        { term: "Authentic", meaning: "Genuine, real." }
+      ],
+      qa: [
+        {
+          q: "How is Ausable different from other secret agents in stories?",
+          a: "He is **fat, wheezy and has an American accent**, so he looks nothing like a glamorous spy. His real strength is his sharp mind and calm nerves."
+        },
+        {
+          q: "How does Ausable get rid of Max?",
+          a: "He **invents a balcony** outside his window and a knock from the 'police'. Frightened of being caught, Max climbs out onto the imaginary balcony and **falls**, since there is no balcony."
+        },
+        {
+          q: "When did Ausable plan his trick?",
+          a: "He seems to have made the plan **on the spot**, using Max's own remark about entering by a balcony, though the arrival of Henry shows he had also arranged help in advance."
+        }
+      ],
+      quiz: [
+        {
+          q: "What is Fowler's profession?",
+          options: ["Policeman", "Writer", "Waiter", "Doctor"],
+          answer: 1,
+          explain: "Fowler is a **young writer**."
+        },
+        {
+          q: "What does Max want from Ausable?",
+          options: ["A passport", "Money", "A report about new missiles", "A hotel room"],
+          answer: 2,
+          explain: "Max wants the **report on new missiles**."
+        },
+        {
+          q: "Who was at the door in the end?",
+          options: ["The police", "Fowler's friend", "Max's partner", "The waiter, Henry"],
+          answer: 3,
+          explain: "It was **Henry**, with a tray and a drink."
+        },
+        {
+          q: "According to Ausable's story, whose balcony could be reached from the empty room two doors down?",
+          options: ["The next apartment's", "The hotel owner's", "Max's own room's", "Fowler's room's"],
+          answer: 0,
+          explain: "He said the balcony **belonged to the next apartment**; in fact there was no balcony at all."
+        },
+        {
+          q: "What quality does Ausable show?",
+          options: ["Presence of mind", "Greed", "Cruelty", "Shyness"],
+          answer: 0,
+          explain: "He thinks quickly and acts calmly: **presence of mind**."
+        }
+      ]
+    },
+
+    {
+      id: "a-question-of-trust",
+      title: "A Question of Trust",
+      section: "Footprints without Feet",
+      summary: "Victor Canning's story of Horace Danby, a lock-maker who robs a safe every year to buy rare books and is tricked by a clever young woman.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "**Horace Danby** is about fifty, unmarried, and a respected **lock-maker**, but once a year he **robs a safe** to pay for the **rare, expensive books** he loves. He once served a sentence in a **prison library**.",
+            "This July he targets the Grange at **Shotover**, after studying the house for two weeks while the family is in London. The two servants go to the cinema.",
+            "A **small dog named Sherry** lies in the kitchen, and Horace calms it by calling it by its right name. In the drawing room the strong scent of **flowers** brings on his **hay fever**.",
+            "A **young woman** in red surprises him and speaks kindly of his sneezing. She asks him to open the safe, saying she **forgot the numbers** and needs her jewels for a party.",
+            "He opens it **without gloves** and leaves happily. Two days later he is **arrested**; the real owner's wife, a grey-haired lady of sixty, denies any such story. He ends up as the **assistant librarian in prison** and is angry when people mention 'honour among thieves'."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Horace Danby:** skilled, careful and polite, but naive and too trusting; a thief who loves books.",
+            "**The young woman:** clever, calm and a skilled actress; she is the **real criminal**.",
+            "**Sherry:** the friendly dog that lets both of them pass."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Trust and deceit:** the honest-looking can be criminal, the criminal can be fooled.",
+            "**Irony:** the thief is cheated by another thief.",
+            "**'Set a thief to catch a thief'** or **'honour among thieves'**: the story shows there is **no honour** among thieves.",
+            "**Crime does not pay.**"
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Victor Canning",
+        "Protagonist: Horace Danby, lock-maker and book collector; the safe held jewels worth about fifteen thousand pounds",
+        "Place: Shotover Grange; the dog is Sherry",
+        "Clue that betrays him: his fingerprints, since he removed his gloves"
+      ],
+      terms: [
+        { term: "Hay fever", meaning: "An allergy to pollen or dust that makes one sneeze." },
+        { term: "Respectable", meaning: "Having a good reputation in society." },
+        { term: "Burglar alarm", meaning: "A device that warns of a break-in." },
+        { term: "Culprit", meaning: "The person who has committed a crime." },
+        { term: "Honour among thieves", meaning: "The idea that even criminals keep faith with one another." }
+      ],
+      qa: [
+        {
+          q: "Why did Horace Danby steal every year?",
+          a: "He loved **rare, expensive books** and needed money to buy them. He robbed a safe once a year, took enough to last a year, and bought his books secretly through an agent."
+        },
+        {
+          q: "Who is the real culprit in the story?",
+          a: "The **young woman** is the real culprit. She made Horace open the safe, took the jewels, and let him take the blame, since his fingerprints were all over the room."
+        },
+        {
+          q: "How does the story illustrate 'honour among thieves'?",
+          a: "It shows that there is **no honour**: one thief tricks another. Horace trusts her and is betrayed, so he gets angry whenever anyone speaks of honour among thieves."
+        }
+      ],
+      quiz: [
+        {
+          q: "What was Horace Danby's profession?",
+          options: ["Librarian", "Policeman", "Doctor", "Lock-maker"],
+          answer: 3,
+          explain: "Horace **made locks** and ran a business."
+        },
+        {
+          q: "What does Horace love to collect?",
+          options: ["Paintings", "Coins", "Rare books", "Stamps"],
+          answer: 2,
+          explain: "He loved **rare, expensive books**."
+        },
+        {
+          q: "What problem troubled Horace in the drawing room?",
+          options: ["A broken tool", "Hay fever caused by the flowers", "A noisy dog", "A locked door"],
+          answer: 1,
+          explain: "The **flowers** set off his hay fever."
+        },
+        {
+          q: "Why was Horace caught by the police?",
+          options: ["His fingerprints were all over the room", "The servants saw him", "The dog barked", "He left his tools"],
+          answer: 0,
+          explain: "He had opened the safe **without gloves**."
+        },
+        {
+          q: "What does Horace do in prison at the end?",
+          options: ["Makes locks", "Works as assistant librarian", "Teaches", "Cooks"],
+          answer: 1,
+          explain: "He becomes the **assistant librarian** in prison."
+        }
+      ]
+    },
+
+    {
+      id: "footprints-without-feet",
+      title: "Footprints without Feet",
+      section: "Footprints without Feet",
+      summary: "An adaptation of H.G. Wells's The Invisible Man, telling how the scientist Griffin becomes invisible, misuses his power and causes chaos in London and the village of Iping.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "Two boys see **fresh muddy footprints** appear on London steps with nobody making them. The maker is **Griffin**, a scientist who has made his body **transparent** by swallowing rare drugs.",
+            "Griffin is **lawless**; after his landlord tries to evict him, he sets fire to the house, and has to escape naked, **invisible, homeless and penniless**.",
+            "In the cold January he hides in a **big London store**, takes clothes and food, and sleeps. He is almost caught, so he takes off the clothes again.",
+            "At a **theatrical shop in Drury Lane** he finds bandages, dark glasses, a false nose, whiskers and a hat. He **attacks the shopkeeper** and robs him.",
+            "He goes by train to **Iping** and takes rooms at an inn. **Mrs Hall** thinks him an eccentric scientist. After he steals a **clergyman's** money and the furniture seems to 'attack' Mrs Hall, the villagers call for the constable, **Mr Jaffers**.",
+            "Griffin angrily **throws off his bandages and clothes**, becoming a headless, then invisible man. He knocks Jaffers unconscious and escapes."
+          ]
+        },
+        {
+          heading: "Characters and themes",
+          points: [
+            "**Griffin:** brilliant but selfish, short-tempered and cruel; he **misuses his discovery**.",
+            "**Mrs Hall:** curious and well-meaning, but frightened by the strange events.",
+            "**Mr Jaffers:** a brave and dutiful constable.",
+            "**Themes:** the **misuse of science**, the lawlessness of power without conscience, and the comic and frightening effects of invisibility."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: H.G. Wells (adapted from The Invisible Man)",
+        "Scientist: Griffin; village: Iping; landlady: Mrs Hall; constable: Mr Jaffers",
+        "London places: a big store and Drury Lane (theatrical shop)",
+        "Key idea: science and discovery misused"
+      ],
+      terms: [
+        { term: "Transparent", meaning: "Clear enough to see through, like glass." },
+        { term: "Eccentric", meaning: "Behaving in a strange or unusual way." },
+        { term: "Lawless", meaning: "Not obeying the law." },
+        { term: "Constable", meaning: "A police officer of the lowest rank." },
+        { term: "Bewildered", meaning: "Confused and puzzled." }
+      ],
+      qa: [
+        {
+          q: "How did Griffin first become visible to others?",
+          a: "He was invisible, but as he walked barefoot he stepped in **mud** and left **footprints**, which two boys noticed and followed until they faded."
+        },
+        {
+          q: "Why does Mrs Hall think the scientist is eccentric?",
+          a: "He covered his face with bandages and spectacles, kept to his rooms, wanted solitude and was **irritable**. She accepted it because he had **paid in advance**."
+        },
+        {
+          q: "What does the story show about the use of scientific discoveries?",
+          a: "It shows that a discovery can become **dangerous when used without responsibility**. Griffin uses invisibility to steal, attack and cause fear instead of doing good."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote the original story?",
+          options: ["Ruskin Bond", "H.G. Wells", "Anton Chekhov", "Robert Arthur"],
+          answer: 1,
+          explain: "It is adapted from **H.G. Wells's** The Invisible Man."
+        },
+        {
+          q: "What did Griffin take to become invisible?",
+          options: ["A magic ring", "A potion from a witch", "A strange machine", "Certain rare drugs"],
+          answer: 3,
+          explain: "He **swallowed rare drugs** that made his body transparent."
+        },
+        {
+          q: "Where did Griffin go after London?",
+          options: ["Oxford", "Bath", "Iping", "Brighton"],
+          answer: 2,
+          explain: "He took the train to the village of **Iping**."
+        },
+        {
+          q: "Who tried to arrest Griffin in the inn?",
+          options: ["Mr Jaffers", "Mrs Hall", "The clergyman", "Mr Hall"],
+          answer: 0,
+          explain: "The village constable, **Mr Jaffers**, tried to arrest him."
+        },
+        {
+          q: "Why did Griffin wear bandages and dark glasses?",
+          options: ["To protect from cold", "To hide the fact that he had no visible face", "To look like a doctor", "For a film"],
+          answer: 1,
+          explain: "He wanted to **hide his invisibility** and appear like a normal person."
+        }
+      ]
+    },
+
+    {
+      id: "the-making-of-a-scientist",
+      title: "The Making of a Scientist",
+      section: "Footprints without Feet",
+      summary: "Robert W. Peterson's account of Richard Ebright, whose boyhood passion for butterflies grew into a career in science marked by curiosity, hard work and a will to win for the right reasons.",
+      notes: [
+        {
+          heading: "Childhood and early interests",
+          points: [
+            "At 22 **Richard Ebright** and his room-mate **James Wong** published a new theory on how cells work in the *Proceedings of the National Academy of Science*; it was the first time **college students** had been published there.",
+            "An **only child** in Pennsylvania, he started **collecting butterflies** in kindergarten, and also rocks, fossils, coins and stars. His mother encouraged him with trips, **telescopes, microscopes and cameras**; his father died when he was in third grade.",
+            "By second grade he had collected **all twenty-five species** of butterflies near his home.",
+            "The children's book **The Travels of Monarch X** opened the world of science to him; he wrote to **Dr Frederick Urquhart** and began tagging monarch butterflies, even raising thousands in his basement."
+          ]
+        },
+        {
+          heading: "Science fairs and research",
+          points: [
+            "In seventh grade he **lost** at a county science fair with a display of slides and learned that winners had done a **real experiment**.",
+            "Next year he tried to find the cause of a **viral disease** of monarch caterpillars, and this time he **won**. Later he tested whether **viceroys copy monarchs** by using a starling.",
+            "In high school he found that the **gold spots on a monarch pupa** make a **hormone** needed for its development, which won him fairs and summer lab work at the Walter Reed Army Institute.",
+            "At Harvard he used X-ray photographs of a hormone to form a **theory of how the cell reads the DNA blueprint**; he graduated **second in his class of 1,510**."
+          ]
+        },
+        {
+          heading: "Qualities and message",
+          points: [
+            "**Curiosity, hard work and a love for learning**, plus support from his mother and teacher **Mr Weiherer**.",
+            "He also excelled in debate, public speaking, canoeing and photography.",
+            "His teacher said he competed 'for the right reasons': to do his best, not simply to win.",
+            "Message: the making of a scientist needs **a first-rate mind, curiosity, and the will to win for the right reasons**."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Robert W. Peterson; subject: Richard H. Ebright",
+        "Spark: butterfly collecting, and the book The Travels of Monarch X",
+        "Research: gold spots on the monarch pupa produce a hormone; later the DNA 'blueprint' theory",
+        "Ingredients of a scientist: first-rate mind + curiosity + will to win for the right reasons"
+      ],
+      terms: [
+        { term: "Monarch", meaning: "A large orange and black butterfly that migrates long distances." },
+        { term: "Pupa", meaning: "The stage between caterpillar and adult butterfly." },
+        { term: "Hormone", meaning: "A chemical made in the body that controls growth or function." },
+        { term: "Tagging", meaning: "Attaching a small label to an animal to track its movements." },
+        { term: "DNA", meaning: "The substance in a cell's nucleus that carries the instructions for life." }
+      ],
+      qa: [
+        {
+          q: "How did a book become a turning point in Ebright's life?",
+          a: "His mother gave him **The Travels of Monarch X**, which told how monarchs migrate and invited readers to tag them for research. This turned collecting into **real scientific work**."
+        },
+        {
+          q: "What lesson did Ebright learn when he lost at the science fair?",
+          a: "He learned that the winners had done **real experiments**, not just neat displays. He then decided to do genuine research, which led to his later success."
+        },
+        {
+          q: "What are the qualities that go into the making of a scientist?",
+          a: "A **first-rate mind**, **curiosity**, hard work, and the **will to win for the right reasons**, that is, to do one's best rather than to win prizes."
+        }
+      ],
+      quiz: [
+        {
+          q: "What did Richard Ebright first collect?",
+          options: ["Coins", "Butterflies", "Fossils", "Stamps"],
+          answer: 1,
+          explain: "He began with **butterflies** in kindergarten."
+        },
+        {
+          q: "Which book opened the world of science to him?",
+          options: ["The Insect World", "A Child's Guide to Science", "The Travels of Monarch X", "The Starry Sky"],
+          answer: 2,
+          explain: "**The Travels of Monarch X** gave him his turning point."
+        },
+        {
+          q: "What did he discover about the gold spots on the monarch pupa?",
+          options: ["They are ornamental", "They scare birds", "They hold water", "They produce a hormone"],
+          answer: 3,
+          explain: "The spots produce a **hormone** necessary for development."
+        },
+        {
+          q: "Who helped Ebright with ideas for experiments?",
+          options: ["Dr Frederick Urquhart", "Mr Weiherer", "James Wong", "His father"],
+          answer: 0,
+          explain: "**Dr Urquhart** of the University of Toronto sent him ideas."
+        },
+        {
+          q: "Who encouraged Ebright most in his childhood?",
+          options: ["His father", "His teacher", "His mother", "His room-mate"],
+          answer: 2,
+          explain: "His **mother** bought him equipment and supported his interests."
+        }
+      ]
+    },
+
+    {
+      id: "the-necklace",
+      title: "The Necklace",
+      section: "Footprints without Feet",
+      summary: "Guy de Maupassant's story of Mathilde Loisel, who borrows a diamond necklace for a ball, loses it, spends ten years in poverty to replace it, and learns that the original was false.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "**Mathilde Loisel** is pretty but unhappy, married to a **petty clerk**; she dreams of luxury, jewels and fine dinners and is ashamed of her poor home.",
+            "Her husband brings an **invitation to the Minister's ball**, but she weeps because she has nothing to wear. He gives her the **four hundred francs** he had saved for a gun, to buy a dress.",
+            "She still wants jewels, so she borrows a **diamond necklace** from her rich friend **Mme Forestier**. At the ball she is the **belle of the evening**.",
+            "On returning home she finds the **necklace lost**. After a fruitless search, they buy an identical one for **thirty-six thousand francs**, using his father's **eighteen thousand** and heavy loans.",
+            "For **ten years** they live in poverty, doing hard labour to repay the debt. She grows old and rough.",
+            "When she meets Mme Forestier, she tells the truth. Mme Forestier reveals that her necklace was **false**, worth at most five hundred francs."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Mathilde:** beautiful but vain, discontented and proud; later brave and hardworking.",
+            "**M. Loisel:** kind, loving, simple and self-sacrificing.",
+            "**Mme Forestier:** rich, generous but a little careless; she never checks the returned necklace."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Vanity and false pride** lead to ruin.",
+            "**Appearances vs reality**: the necklace was a fake.",
+            "**Irony of fate:** ten years of suffering for a worthless piece of jewellery.",
+            "Message: be content with what we have and be honest; a small lie or silence can cost heavily."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Guy de Maupassant",
+        "Dress money: 400 francs; replacement necklace: 36,000 francs; the real one: at most 500 francs",
+        "Time spent repaying the debt: ten years",
+        "Irony: the borrowed necklace was false"
+      ],
+      terms: [
+        { term: "Franc", meaning: "The old French unit of money." },
+        { term: "Usurer", meaning: "A person who lends money at very high interest." },
+        { term: "Vanity", meaning: "Excessive pride in one's looks or possessions." },
+        { term: "Ecstatic", meaning: "Extremely happy." },
+        { term: "Irony", meaning: "A result that is the opposite of what is expected." }
+      ],
+      qa: [
+        {
+          q: "Why was Mathilde always unhappy?",
+          a: "She felt she was born for **luxury** but had a poor life. Her small home, plain clothes and lack of jewels made her feel she was in the wrong class."
+        },
+        {
+          q: "What mistake did Mathilde make, and what was its consequence?",
+          a: "She did not tell Mme Forestier that the necklace was lost. She replaced it with an expensive one, and the Loisels paid for it with **ten years of poverty** and hard work."
+        },
+        {
+          q: "What is the irony at the end of the story?",
+          a: "Mathilde suffered ten years to replace a necklace that was **only imitation**, worth at most five hundred francs. All her sacrifice was for nothing."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘The Necklace’?",
+          options: ["Guy de Maupassant", "K.A. Abbas", "Victor Canning", "James Herriot"],
+          answer: 0,
+          explain: "The story is by the French writer **Guy de Maupassant**."
+        },
+        {
+          q: "How much money did M. Loisel give her for the dress?",
+          options: ["Forty thousand francs", "Eighteen thousand francs", "Four hundred francs", "Five hundred francs"],
+          answer: 2,
+          explain: "He gave her **four hundred francs**, saved for a gun."
+        },
+        {
+          q: "From whom did Mathilde borrow the necklace?",
+          options: ["Her mother", "A shopkeeper", "The Minister's wife", "Mme Forestier"],
+          answer: 3,
+          explain: "She borrowed it from her rich friend **Mme Forestier**."
+        },
+        {
+          q: "How long did the Loisels take to repay the debt?",
+          options: ["One year", "Ten years", "Five years", "Twenty years"],
+          answer: 1,
+          explain: "It took **ten years**."
+        },
+        {
+          q: "What was the truth about the original necklace?",
+          options: ["It was real diamond", "It was stolen", "It was made of false stones", "It was an heirloom"],
+          answer: 2,
+          explain: "It was **false** and worth about five hundred francs."
+        }
+      ]
+    },
+
+    {
+      id: "bholi",
+      title: "Bholi",
+      section: "Footprints without Feet",
+      summary: "K.A. Abbas's story of Sulekha, nicknamed Bholi, a neglected girl who finds courage and confidence through education and refuses a greedy bridegroom.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "**Sulekha**, called **Bholi** (simpleton), is the youngest of Numberdar Ramlal's seven children. A fall in infancy and **smallpox** left her slow, pock-marked and **stammering**, and she is neglected by her family.",
+            "When she is **seven**, a girls' school opens in the village. Ramlal does not dare to disobey the Tehsildar, and his wife suggests sending Bholi, as she is unlikely to marry.",
+            "The **kind teacher** speaks softly, helps her say her name, and promises that if she learns, no one will laugh at her. Bholi feels a **new hope**.",
+            "Years later, her parents accept the marriage proposal of **Bishamber Nath**, a rich, older, lame grocer who asks for no dowry, because Bholi is pock-marked.",
+            "At the wedding Bishamber sees her face and demands **five thousand rupees**. Ramlal pays. Bholi then throws the garland into the fire, **speaks without stammering**, and refuses to marry such a greedy man.",
+            "She promises to look after her parents and **teach at the same school**. The teacher watches with deep satisfaction."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Bholi:** timid and neglected at first, then brave, confident, self-respecting and sensible.",
+            "**The teacher:** kind, patient and encouraging; the person who changes Bholi's life.",
+            "**Ramlal and his wife:** weak, conventional parents who care for izzat and dowry.",
+            "**Bishamber Nath:** greedy and heartless."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Power of education** to build confidence.",
+            "**Women's empowerment** and the fight against **dowry**.",
+            "**Kindness and encouragement** can transform lives.",
+            "Message: a girl's worth does not depend on her looks."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: K.A. Abbas",
+        "Real name: Sulekha; nickname: Bholi; father: Numberdar Ramlal",
+        "Groom: Bishamber Nath, who demanded five thousand rupees",
+        "Turning point: Bholi refuses to marry and speaks without stammer"
+      ],
+      terms: [
+        { term: "Simpleton", meaning: "A person thought to be foolish or easily fooled." },
+        { term: "Dowry", meaning: "Money or gifts demanded from the bride's family at marriage." },
+        { term: "Numberdar", meaning: "A village official who collects revenue." },
+        { term: "Izzat", meaning: "Honour or family reputation." },
+        { term: "Stammer", meaning: "To speak with difficulty, repeating sounds." }
+      ],
+      qa: [
+        {
+          q: "Why did Bholi's parents send her to school?",
+          a: "Ramlal was told by the **Tehsildar** to set an example. His wife suggested sending Bholi, since she was unlikely to marry and **the teachers could worry about her**."
+        },
+        {
+          q: "How did the teacher change Bholi?",
+          a: "She spoke **gently**, encouraged Bholi to say her name and promised she would speak without fear if she studied. This gave her **confidence and hope**, and she learned to speak clearly."
+        },
+        {
+          q: "Why did Bholi refuse to marry Bishamber Nath?",
+          a: "He had demanded **five thousand rupees** after seeing her pock-marks. Bholi saw him as **greedy and mean**, so she threw the garland into the fire and refused."
+        }
+      ],
+      quiz: [
+        {
+          q: "What was Bholi's real name?",
+          options: ["Radha", "Champa", "Mangla", "Sulekha"],
+          answer: 3,
+          explain: "Her real name was **Sulekha**."
+        },
+        {
+          q: "Why was Bholi's speech affected?",
+          options: ["She had a stammer", "She was shy only", "She was deaf", "She spoke another language"],
+          answer: 0,
+          explain: "She **stammered**, from childhood."
+        },
+        {
+          q: "Who changed Bholi's life by being kind?",
+          options: ["Her mother", "The Tehsildar", "The teacher", "Her sister"],
+          answer: 2,
+          explain: "The **kind teacher** gave her hope and confidence."
+        },
+        {
+          q: "What did Bishamber Nath demand at the wedding?",
+          options: ["A house", "Five thousand rupees", "A horse", "Two thousand rupees"],
+          answer: 1,
+          explain: "He demanded **five thousand rupees**."
+        },
+        {
+          q: "What does Bholi decide to do at the end?",
+          options: ["Leave the village", "Marry later", "Work in a shop", "Teach in the same school and care for her parents"],
+          answer: 3,
+          explain: "She will serve her parents and **teach at the school**."
         }
       ]
     }

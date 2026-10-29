@@ -2,7 +2,7 @@
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the textbooks.
 StudyData.add(12, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "textbook", books: ["Flamingo","Vistas"], note: "Writing skills, plus a selection of lessons (not every chapter).", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Flamingo","Vistas"], note: "Writing skills, plus every lesson of Flamingo and Vistas in the current NCERT books (summarised in our own words).", reviewed: false},
   chapters: [
     // ───────────────────────────── WRITING SKILLS ─────────────────────────────
     {
@@ -745,7 +745,7 @@ StudyData.add(12, "english", {
     {
       id: "the-last-lesson",
       title: "The Last Lesson",
-      section: "Literature – Flamingo",
+      section: "Flamingo",
       summary: "A story by Alphonse Daudet, set in Alsace after a Prussian victory, in which a schoolboy named Franz attends the last French lesson ever taught in his village school and learns to value his language too late.",
       notes: [
         {
@@ -856,7 +856,7 @@ StudyData.add(12, "english", {
     {
       id: "lost-spring",
       title: "Lost Spring",
-      section: "Literature – Flamingo",
+      section: "Flamingo",
       summary: "Anees Jung's account of two sets of children robbed of their childhood by poverty: Saheb, a ragpicker boy from Bangladesh who lives in Seemapuri, Delhi, and Mukesh, who is born into the bangle-making families of Firozabad.",
       notes: [
         {
@@ -872,7 +872,7 @@ StudyData.add(12, "english", {
           heading: "Part 2: Mukesh and the bangle-makers",
           points: [
             "In **Firozabad**, the centre of India's glass-bangle industry, families work in dark, hot, poorly ventilated workshops, often for generations.",
-            "Their eyesight suffers, and they remain trapped in debt to moneylenders, middlemen, the police and politicians.",
+            "Their eyesight suffers, and they remain trapped in a vicious circle of moneylenders (sahukars), middlemen, the police, bureaucrats and politicians.",
             "Mukesh dreams of becoming a **motor mechanic**. He wants to work in a garage, walking there on his own. His dream shows that hope survives even in hardship."
           ]
         },
@@ -889,7 +889,7 @@ StudyData.add(12, "english", {
           heading: "Literary points",
           points: [
             "The title **‘Lost Spring’** is a metaphor: spring is childhood, which is lost to hardship.",
-            "Contrast: the writer's invitation to Saheb to study is only a promise that cannot be kept; the school she mentions does not exist yet.",
+            "The writer's half-joking offer to start a school for Saheb is a promise she admits she did not really mean; such promises, she says, abound in the children's bleak world.",
             "The tone is sympathetic yet realistic; the writer is an observer who reports facts about the children's lives."
           ]
         }
@@ -910,11 +910,11 @@ StudyData.add(12, "english", {
       qa: [
         {
           q: "Why did Saheb's family leave Dhaka?",
-          a: "Storms repeatedly destroyed their fields and homes in **Dhaka, Bangladesh**, so they left to look for food and a livelihood in Delhi, where they settled in Seemapuri."
+          a: "Many storms swept away their fields and homes in **Dhaka, Bangladesh**, so they left to look for food and a livelihood in Delhi, where they settled in Seemapuri."
         },
         {
           q: "Why does the writer call the bangle-makers' lives a vicious circle?",
-          a: "Families remain **poor and indebted** to moneylenders, middlemen and officials. Children follow their parents into the trade, so no one can break away; fear and tradition keep them trapped."
+          a: "Families remain **poor** and caught between moneylenders, middlemen, the police and officials who profit from them. Children follow their parents into the trade, so no one can break away; fear and tradition keep them trapped."
         },
         {
           q: "What does Mukesh's dream show?",
@@ -964,7 +964,7 @@ StudyData.add(12, "english", {
     {
       id: "deep-water",
       title: "Deep Water",
-      section: "Literature – Flamingo",
+      section: "Flamingo",
       summary: "William O. Douglas recalls how a childhood near-drowning left him with a deep fear of water, and how patient training and willpower finally helped him overcome that fear.",
       notes: [
         {
@@ -979,18 +979,18 @@ StudyData.add(12, "english", {
         {
           heading: "Lasting fear",
           points: [
-            "The experience left him with an intense **fear of water** that lasted for years. He avoided canoeing, fishing and swimming trips.",
-            "The fear spoilt his enjoyment of nature and outdoor activities he loved.",
-            "He felt that this fear had robbed him of pleasure and made him a coward."
+            "The experience left him with an intense **fear of water**. He avoided water whenever he could, and on lakes and rivers the terror returned and froze his legs.",
+            "It ruined his fishing trips and deprived him of the joy of canoeing, boating and swimming.",
+            "He tried many ways to overcome it, but the fear held him firmly for years."
           ]
         },
         {
           heading: "Overcoming it",
           points: [
-            "He hired a swimming instructor who worked with him patiently for months, teaching him to put his face in water, to float, and to kick and breathe.",
-            "Through slow, repeated practice he gained confidence, then practised on his own at other lakes and streams.",
+            "One October he hired a swimming instructor. Five days a week, an hour a day, he was moved across the pool in a belt fastened to a rope and pulley, and after about three months the tension began to ease. He then learnt to put his face under water and breathe, and to kick.",
+            "Bit by bit the instructor built a swimmer. Douglas then tested himself alone in the pool, swam two miles across Lake Wentworth, and finally swam across Warm Lake in the mountains.",
             "The instructor's method helped him master the muscles; but he realised that he still had to master the fear in his mind.",
-            "Eventually he went to the lake and swam. He had conquered the fear, learning that fear itself is what we must fight."
+            "He had conquered his fear, and recalled Roosevelt's words that the only thing to fear is fear itself."
           ]
         },
         {
@@ -999,7 +999,7 @@ StudyData.add(12, "english", {
             "**Fear and courage:** fear is overcome by facing it.",
             "**Willpower and perseverance:** determination and practice defeat weakness.",
             "**Role of a teacher:** a patient guide helps a learner overcome obstacles.",
-            "**Life lesson:** the author says he later used this lesson whenever fear returned."
+            "**Life lesson:** having felt both the sensation of dying and the terror of fearing it, his will to live grew stronger and he felt free to walk the trails and climb the peaks."
           ]
         }
       ],
@@ -1024,7 +1024,7 @@ StudyData.add(12, "english", {
         },
         {
           q: "How did the instructor help the author?",
-          a: "He worked **slowly and patiently** for months, training each part of the body: floating, breathing and kicking. This built the author's confidence and skill step by step."
+          a: "He worked **slowly and patiently** for months, using a belt and rope on a pulley and then teaching breathing with the face under water and kicking. Each piece of swimming was perfected and then put together, which built Douglas's confidence step by step."
         },
         {
           q: "What is the message of ‘Deep Water’?",
@@ -1074,7 +1074,7 @@ StudyData.add(12, "english", {
     {
       id: "the-rattrap",
       title: "The Rattrap",
-      section: "Literature – Flamingo",
+      section: "Flamingo",
       summary: "Selma Lagerlöf's story of a poor peddler who sells rattraps and sees the world as a big rattrap, until an act of kindness from an ironmaster's daughter awakens the goodness in him.",
       notes: [
         {
@@ -1082,9 +1082,9 @@ StudyData.add(12, "english", {
           points: [
             "A poor **peddler** makes and sells small wire rattraps and sometimes begs or steals to survive. He thinks the whole world is a **rattrap**, offering bait, wealth and comfort, only to trap those who take it.",
             "One evening he is given shelter by an old **crofter** who treats him kindly. When the crofter leaves for the night, the peddler steals his thirty kronor and runs into the forest, where he loses his way and feels trapped like a rat.",
-            "He reaches the **Ramsjö ironworks**, where the master blacksmith lets him warm himself. The **ironmaster** mistakes him for an old comrade, Captain von Stahle, and invites him home.",
-            "The peddler declines at first but the ironmaster’s daughter, **Edla**, kindly urges him to come for Christmas. On the next day the ironmaster comes to know the truth, but Edla still treats him with respect.",
-            "He leaves a small rattrap as a Christmas present with a letter and the stolen money, signed ‘Captain von Stahle’."
+            "He reaches the **Ramsjö ironworks**, where the master blacksmith lets him warm himself. The **ironmaster** mistakes him for an old regimental comrade, **Nils Olof**, and invites him home for Christmas.",
+            "The peddler refuses, fearing the stolen money will be discovered, so the ironmaster sends his daughter **Edla**, who kindly persuades him to come. Next morning, seeing the clean, dressed-up man in daylight, the ironmaster realises his mistake and is angry, but Edla asks that the guest be allowed to stay and enjoy a peaceful Christmas Eve.",
+            "After he leaves, the family learns from church that a rattrap seller has robbed a crofter, but the peddler has left a small rattrap holding the stolen money, with a letter signed ‘Captain von Stahle’ asking that it be returned."
           ]
         },
         {
@@ -1118,7 +1118,7 @@ StudyData.add(12, "english", {
         "Author: Selma Lagerlöf",
         "Peddler’s view: the whole world is a rattrap",
         "Theft: thirty kronor from the crofter",
-        "Mistaken identity: the ironmaster thinks he is Captain von Stahle",
+        "Mistaken identity: the ironmaster takes him for an old comrade, Nils Olof (the peddler later signs as ‘Captain von Stahle’)",
         "Turning point: Edla’s kindness leads to his change of heart"
       ],
       terms: [
@@ -1135,11 +1135,11 @@ StudyData.add(12, "english", {
         },
         {
           q: "Why did Edla’s kindness succeed where the ironmaster’s mistaken kindness did not?",
-          a: "The ironmaster invited a stranger by **mistake**, and anger followed when he knew the truth. Edla knew the man was a vagrant, yet **treated him with respect and trust**, which touched his heart and made him repent."
+          a: "The ironmaster invited a stranger by **mistake**, and anger followed when he saw the truth. Edla suspected the man was a thief or an escaped prisoner, yet **treated him with respect and trust** like a guest, which touched his heart and made him repent."
         },
         {
           q: "What is the significance of the peddler’s Christmas gift?",
-          a: "He leaves a **rattrap** with the stolen money and a note saying he had escaped the world’s trap by being decent. It shows his change of heart and that he has **avoided the trap of temptation**."
+          a: "He leaves a **rattrap** holding the stolen money and a letter, signed ‘Captain von Stahle’, saying he was raised to captain by her kindness and so could clear himself. It shows his change of heart: he has **escaped the world’s trap**."
         }
       ],
       quiz: [
@@ -1157,9 +1157,9 @@ StudyData.add(12, "english", {
         },
         {
           q: "Whom did the ironmaster mistake the peddler for?",
-          options: ["His brother", "A tax officer", "A doctor", "An old regimental comrade, Captain von Stahle"],
+          options: ["His brother", "A tax officer", "A doctor", "An old regimental comrade, Nils Olof"],
           answer: 3,
-          explain: "He thought the man was **Captain von Stahle**."
+          explain: "He thought the man was his old comrade **Nils Olof**."
         },
         {
           q: "Who invited the peddler to spend Christmas Eve at the manor?",
@@ -1185,7 +1185,7 @@ StudyData.add(12, "english", {
     {
       id: "indigo",
       title: "Indigo",
-      section: "Literature – Flamingo",
+      section: "Flamingo",
       summary: "Louis Fischer’s account of how Gandhi, at the request of a peasant named Rajkumar Shukla, went to Champaran in Bihar in 1917 and helped the poor indigo sharecroppers win relief from the landlords.",
       notes: [
         {
@@ -1193,22 +1193,22 @@ StudyData.add(12, "english", {
           points: [
             "Rajkumar Shukla, a poor sharecropper from Champaran, met Gandhi at the **1916 Lucknow Congress** and urged him to visit his district.",
             "He followed Gandhi to Kanpur, Ahmedabad and Calcutta until Gandhi agreed to go.",
-            "The peasants were forced under the **tinkathia system** to grow indigo on part of their land and give it to the British landlords."
+            "Under the **tinkathia system** the landlords, mostly Englishmen, compelled tenants to plant **15 per cent** (three-twentieths) of their holdings with indigo and hand over the whole indigo crop as rent. When synthetic indigo arrived from Germany, the landlords extracted compensation to release the peasants from this arrangement, and the peasants later wanted it back."
           ]
         },
         {
           heading: "Events in Champaran",
           points: [
-            "Gandhi went first to **Muzaffarpur** and then **Motihari**, where he met lawyers such as Rajendra Prasad and Brajkishore Prasad. He gathered the peasants’ statements.",
-            "He was ordered to **leave the district**, but he refused and prepared to face the court as an act of civil disobedience.",
-            "Thousands of peasants gathered at the court. The magistrate postponed the judgement and the case was **withdrawn**.",
-            "A commission of inquiry, of which Gandhi was a member, found the landlords at fault. The landlords agreed to refund **25 per cent** of the money they had taken."
+            "Gandhi went first to **Muzaffarpur**, where lawyers briefed him and he told them that the real relief for the peasants was freedom from fear, then to **Motihari**. He gathered facts and thousands of peasants’ statements.",
+            "He was ordered to **leave the district**, but he signed the notice with a note that he would disobey, and was summoned to court. There he pleaded guilty, explaining that he followed ‘the voice of conscience’.",
+            "Thousands of peasants gathered at the court. The judgement was postponed and the Lieutenant-Governor then ordered the case to be **dropped**, a first triumph of civil disobedience in modern India.",
+            "An official commission of inquiry (Gandhi was the peasants’ sole representative) gathered a mountain of evidence against the planters. Gandhi asked for a 50 per cent refund, but accepted the planters’ offer of **25 per cent**."
           ]
         },
         {
           heading: "Gandhi’s methods and lessons",
           points: [
-            "Gandhi insisted on **self-reliance**: the peasants must not depend on outside help. He sent away C.F. Andrews so that people learned to stand on their own.",
+            "Gandhi insisted on **self-reliance**: the peasants must not depend on outside help. He refused to let C.F. Andrews, an Englishman, stay on to help the lawyers, telling them to rely on themselves.",
             "He combined **truth, non-violence and civil disobedience**.",
             "He also worked for the villagers’ **education, hygiene and health**, arranging for volunteers to teach and serve.",
             "He realised that the real relief for the peasants was to be freed from fear, and the movement gave India courage to oppose British rule."
@@ -1249,7 +1249,7 @@ StudyData.add(12, "english", {
         },
         {
           q: "Why did Gandhi settle for a 25 per cent refund?",
-          a: "He felt that the money was less important than the **principle**: the landlords had to give up part of what they had taken wrongfully. It also **broke their prestige**, and the peasants were freed from fear."
+          a: "He had asked for 50 per cent, but when the planters offered 25 per cent he accepted. He felt that the amount mattered less than the fact that the landlords had to **surrender part of the money and part of their prestige**. The peasants learned they had rights and defenders."
         }
       ],
       quiz: [
@@ -1278,10 +1278,10 @@ StudyData.add(12, "english", {
           explain: "The landlords agreed to refund **25 per cent**."
         },
         {
-          q: "Why did Gandhi send C.F. Andrews away?",
+          q: "Why did Gandhi object to C.F. Andrews staying to help in Champaran?",
           options: ["They disagreed on religion", "He wished the peasants to be self-reliant", "He was ill", "The court banned him"],
           answer: 1,
-          explain: "Gandhi wanted the people to **fight their own battle**."
+          explain: "Gandhi wanted the people to **rely on themselves**, not on an Englishman as a prop."
         },
         {
           q: "The Champaran episode is important because it:",
@@ -1293,9 +1293,346 @@ StudyData.add(12, "english", {
     },
 
     {
+      id: "poets-and-pancakes",
+      title: "Poets and Pancakes",
+      section: "Flamingo",
+      summary: "A humorous memoir by the Tamil writer Asokamitran about his years at Gemini Studios in Madras, covering its make-up room, its poets and its odd visitors, and ending with the mystery of an English poet's visit that is solved only years later.",
+      notes: [
+        {
+          heading: "Gemini Studios and the make-up room",
+          points: [
+            "**Pancake** was the brand name of the make-up material the studio bought by the truck-load. The make-up department was upstairs in a building said to have been Robert Clive's stables.",
+            "The room looked like a hair-cutting salon, with hot incandescent lights around large mirrors. The writer jokes about the ‘fiery misery’ of those being made up.",
+            "The staff came from many regions (a Bengali, a Maharashtrian, a Kannadiga, an Andhra, an Indian Christian, an Anglo-Burmese and local Tamils), which the writer calls national integration before radio and television preached it.",
+            "There was a strict **hierarchy**: the chief make-up man worked on the chief actors, his senior assistant on the second hero and heroine, and the ‘office boy’ slapped paint on the crowd players."
+          ]
+        },
+        {
+          heading: "The people of the studio",
+          points: [
+            "The **office boy** was in his early forties. He had joined hoping to become an actor, writer or director, felt neglected and blamed **Kothamangalam Subbu** for his failure.",
+            "**Subbu** was the Boss's No. 2: a cheerful, loyal and endlessly inventive story man who also wrote popular ‘story poems’, a novel (*Thillana Mohanambal*) and acted well in small roles. His house supported many relatives and friends.",
+            "The **legal adviser** was called ‘the opposite’ by everyone. Once he secretly recorded an angry film actress and played her tirade back to her, which frightened her so much that her acting career ended.",
+            "He wore a coat and tie among khadi-clad dreamers. When the Boss shut down the Story Department, it was the one case of a lawyer losing his job because the poets were sent home."
+          ]
+        },
+        {
+          heading: "Visitors to the studio",
+          points: [
+            "The studio was a favourite haunt of poets, who enjoyed its mess and its coffee. Most wore khadi and admired Gandhi but knew little politics and feared ‘Communism’.",
+            "About 1952 the **Moral Re-Armament (MRA)** group visited Madras and was warmly hosted. Its plays left a mark on Tamil theatre, where sunrise and sunset scenes became common.",
+            "Soon after, a tall, serious English visitor was received with a long speech from the Boss. Nobody understood his talk or accent, and the visit stayed an **unexplained mystery**."
+          ]
+        },
+        {
+          heading: "The mystery solved",
+          points: [
+            "The writer later saw a short-story contest by the British magazine *The Encounter* and found that its editor was the same visitor: the poet **Stephen Spender**.",
+            "Years later he bought a cheap copy of *The God That Failed*, in which six writers describe their disillusionment with Communism; one of them was Spender.",
+            "This explained the warm welcome: the Boss and his circle were wary of Communism and so liked an anti-Communist guest, even though they knew nothing of his poetry."
+          ]
+        },
+        {
+          heading: "Style and themes",
+          points: [
+            "Gentle **humour** and mild satire point at human weaknesses such as vanity, flattery, jealousy and bureaucracy without cruelty.",
+            "The style is chatty and rambling: one thought leads to another and is dwelt on at length.",
+            "The piece shows how the film world, politics and literature mixed in early Indian cinema, and how little the studio staff knew of the wider world."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Asokamitran (1931–2017), Tamil writer; excerpt from *My Years with Boss*",
+        "Gemini Studios: Chennai (Madras), set up in 1940 by S. S. Vasan, called ‘the Boss’",
+        "The writer's job: cutting newspaper clippings and filing them",
+        "Kothamangalam Subbu: No. 2 at the studio, poet, novelist and actor",
+        "The English visitor: poet Stephen Spender, editor of *The Encounter*",
+        "Book that solved the mystery: *The God That Failed*"
+      ],
+      terms: [
+        { term: "Pancake", meaning: "The brand of make-up used at Gemini Studios, applied thickly to film faces." },
+        { term: "Moral Re-Armament", meaning: "An international group that visited Madras in 1952 with two plays; the writer later learned it opposed Communism." },
+        { term: "Incongruity", meaning: "Something out of place, like an English poet lecturing at a Tamil film studio." },
+        { term: "Satire", meaning: "Mild or sharp humour that exposes the weaknesses of people and institutions." },
+        { term: "Hierarchy", meaning: "A strict ranking of people by position, as in the make-up department." }
+      ],
+      qa: [
+        {
+          q: "Why was the English visitor's visit an ‘unexplained mystery’ to the studio staff?",
+          a: "No one knew who he was or why a poet-editor had come to a Tamil film studio. His speech and accent were not understood, so the whole staff left puzzled, and the poet looked puzzled too."
+        },
+        {
+          q: "Why was Kothamangalam Subbu considered No. 2 at Gemini Studios?",
+          a: "He was the Boss's most trusted creative helper. He could offer many ideas for any scene, was loyal and cheerful, and gave direction to the studio in its golden years. Besides this, he was a poet, novelist and good actor."
+        },
+        {
+          q: "How does the writer use humour in this piece?",
+          a: "He teases people gently: the studio's ‘national integration’, the office boy's grand ambitions, the legal adviser in a coat of mail among khadi-wearers, and the confused welcome to a poet. The humour points at human foibles but never mocks cruelly."
+        }
+      ],
+      quiz: [
+        {
+          q: "What was the writer's job at Gemini Studios?",
+          options: ["Acting in small roles", "Cutting out newspaper clippings and filing them", "Directing crowd scenes", "Writing songs"],
+          answer: 1,
+          explain: "He clipped newspapers on many subjects and stored them in files."
+        },
+        {
+          q: "Who was the Boss of Gemini Studios?",
+          options: ["Kothamangalam Subbu", "Stephen Spender", "S. S. Vasan", "Robert Clive"],
+          answer: 2,
+          explain: "S. S. Vasan founded the studio and was called the Boss."
+        },
+        {
+          q: "Why was the legal adviser nicknamed ‘the opposite’?",
+          options: ["He rarely smiled", "He was the Boss's rival", "People joked that he was the opposite of a legal adviser", "He disagreed with every film"],
+          answer: 2,
+          explain: "The staff jokingly said he was the reverse of what his title suggested."
+        },
+        {
+          q: "Which English poet visited the studio?",
+          options: ["Stephen Spender", "T. S. Eliot", "Lord Byron", "John Keats"],
+          answer: 0,
+          explain: "He was Stephen Spender, editor of *The Encounter*."
+        },
+        {
+          q: "How did the writer finally understand the reception for the poet?",
+          options: ["Through a letter from the Boss", "From a film magazine", "By reading Spender's essay in *The God That Failed*", "By meeting him in London"],
+          answer: 2,
+          explain: "Spender was one of the six writers in that book on disillusionment with Communism."
+        },
+        {
+          q: "Who suffered because the legal adviser played back a recording?",
+          options: ["The producer", "A temperamental actress", "The office boy", "The make-up chief"],
+          answer: 1,
+          explain: "The actress was so shaken that her acting career ended."
+        }
+      ]
+    },
+
+    {
+      id: "the-interview",
+      title: "The Interview",
+      section: "Flamingo",
+      summary: "In Part I, Christopher Silvester discusses what interviews are worth and why many famous people dislike them. Part II is an extract from Mukund Padmanabhan's interview with the Italian scholar and novelist Umberto Eco.",
+      notes: [
+        {
+          heading: "Part I: views on the interview",
+          points: [
+            "The interview is about **130 years old** and has become a common form of journalism. Almost every literate person has read one, and many celebrities have been interviewed repeatedly.",
+            "Some praise it as a source of truth and even an art. Others, mostly celebrities, find it an unwelcome intrusion that diminishes them, like the belief in some cultures that a photograph steals the soul.",
+            "Famous objectors include V. S. Naipaul, Lewis Carroll, Rudyard Kipling (who called it immoral), H. G. Wells and Saul Bellow, who compared it to thumbprints on his windpipe.",
+            "Yet it is a very useful medium. Denis Brian says most of our vivid impressions of people today come through interviews, so the interviewer holds unusual power and influence."
+          ]
+        },
+        {
+          heading: "Part II: Umberto Eco",
+          points: [
+            "Eco was a professor at the University of Bologna, famous for work on semiotics (the study of signs) before his 1980 novel *The Name of the Rose* made him a household name.",
+            "He says he is always doing the same thing: pursuing a few ethical and philosophical interests through scholarship, novels and children's books about peace and non-violence.",
+            "His ‘secret’ is the use of **interstices**, the empty gaps in life such as waiting for a lift. He works in these gaps.",
+            "He sees himself as ‘a professor who writes novels on Sundays’ and prefers to be counted among academics, not novelists."
+          ]
+        },
+        {
+          heading: "Eco's views on writing and success",
+          points: [
+            "His scholarly writing is personal and tells the story of the research, including trials and errors. A professor once noted this about his first dissertation, and Eco decided scholarly books should be written that way.",
+            "He began writing novels late, at about 50, and almost by accident, to satisfy his taste for narration.",
+            "He rejects the idea that readers only like easy books. A serious novel can attract large readership because many readers want a demanding experience, at least sometimes.",
+            "His American publisher expected to sell about 3,000 copies, but millions sold. Eco calls the book's success a **mystery** that nobody can predict."
+          ]
+        },
+        {
+          heading: "Features of the piece",
+          points: [
+            "The text combines an essay (Part I) with a question-and-answer interview (Part II), so students see two forms of interview writing.",
+            "Eco's answers are witty and modest, with small stories told ‘like a Chinese wise man’.",
+            "The questions move from his many roles to his writing style, his identity and the reasons for his novel's success."
+          ]
+        }
+      ],
+      formulas: [
+        "Part I author: Christopher Silvester, from the introduction to *The Penguin Book of Interviews*",
+        "Part II: interview of Umberto Eco by Mukund Padmanabhan of *The Hindu*",
+        "Eco's novel: *The Name of the Rose* (1980)",
+        "Eco's self-description: a professor who writes novels on Sundays",
+        "Eco's term for empty gaps in life: interstices"
+      ],
+      terms: [
+        { term: "Interview", meaning: "A conversation in which one person asks questions and another answers, usually published or broadcast." },
+        { term: "Interstice", meaning: "Eco's word for the small empty gaps in a day, such as waiting for a lift, that he uses for work." },
+        { term: "Semiotics", meaning: "The study of signs and symbols and how they carry meaning." },
+        { term: "Dissertation", meaning: "A long piece of research written for a university degree." },
+        { term: "Celebrity", meaning: "A well-known person, such as a writer or film star, who is often interviewed." }
+      ],
+      qa: [
+        {
+          q: "Why do many celebrities dislike being interviewed?",
+          a: "They feel an interview is an intrusion into their lives and that it takes something away from them. Naipaul says people are wounded by interviews, Kipling called them immoral and Bellow compared them to thumbprints on his windpipe."
+        },
+        {
+          q: "How does Umberto Eco find time to do so much work?",
+          a: "He uses the **interstices**, the empty moments in life such as the minutes spent waiting for a lift. He says he can finish an article in such a gap. He also says all his work follows the same few interests."
+        },
+        {
+          q: "What does Eco say about the success of *The Name of the Rose*?",
+          a: "He thinks it cannot be fully explained. A serious book reached a big audience because many readers want challenging reading, and his publisher had expected only about 3,000 American sales. Written ten years earlier or later, it might not have worked, so its success remains a mystery."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote Part I of ‘The Interview’?",
+          options: ["Mukund Padmanabhan", "Christopher Silvester", "Umberto Eco", "Denis Brian"],
+          answer: 1,
+          explain: "Part I is by Christopher Silvester."
+        },
+        {
+          q: "Who interviewed Umberto Eco in Part II?",
+          options: ["Mukund Padmanabhan", "David Lodge", "Roland Barthes", "Saul Bellow"],
+          answer: 0,
+          explain: "Mukund Padmanabhan of *The Hindu* conducted the interview."
+        },
+        {
+          q: "Which of these is NOT among the celebrities who disliked interviews?",
+          options: ["Rudyard Kipling", "Lewis Carroll", "V. S. Naipaul", "Umberto Eco in Part II"],
+          answer: 3,
+          explain: "Eco answers the interview willingly; the other three are named as objectors in Part I."
+        },
+        {
+          q: "At what age did Eco begin writing novels?",
+          options: ["About 22", "About 30", "About 50", "About 70"],
+          answer: 2,
+          explain: "He began around the age of 50, partly by accident."
+        },
+        {
+          q: "What does Eco mean by ‘interstices’?",
+          options: ["Academic conferences", "Empty gaps in daily life", "Types of semiotics", "Chapters of a novel"],
+          answer: 1,
+          explain: "He works in the small empty spaces in life, like waiting for a lift."
+        },
+        {
+          q: "How does Eco describe himself?",
+          options: ["A novelist who teaches on weekdays", "A journalist who writes history", "A professor who writes novels on Sundays", "A poet who studies signs"],
+          answer: 2,
+          explain: "He identifies himself with the academic community."
+        }
+      ]
+    },
+
+    {
+      id: "going-places",
+      title: "Going Places",
+      section: "Flamingo",
+      summary: "A short story by A. R. Barton about Sophie, a schoolgirl from a poor family who dreams of owning a boutique and invents a meeting with the footballer Danny Casey. It explores adolescent fantasy and the gap between dreams and reality.",
+      notes: [
+        {
+          heading: "Plot",
+          points: [
+            "Sophie tells her friend Jansie she will own a boutique, or be an actress or fashion designer. Jansie, who knows both girls are bound for the biscuit factory, tries to bring her down to earth.",
+            "At home Sophie sees her family's poor, crowded life. She admires her silent elder brother **Geoff**, a mechanic, and dreams of riding with him into a wonderful world.",
+            "She claims she met the young footballer **Danny Casey** in an arcade and that he promised to give an autograph if she met him again. Geoff half believes her; her father scoffs.",
+            "Sophie waits for Danny by the canal, knowing deep down that he will not come. She imagines the scene again, picturing the meeting and later the goal she watched him score."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Sophie:** imaginative, restless and eager to escape her surroundings. She lives in a world of dreams.",
+            "**Jansie:** practical and loyal, a little gawky; she accepts reality but can be nosey.",
+            "**Geoff:** quiet, three years out of school and an apprentice mechanic; Sophie sees him as her link to the wider world.",
+            "**Father:** blunt, tired and disdainful of her stories; he loves football. **Mother:** overworked and stooped, with a delicate bow on her apron."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Adolescent fantasy and hero worship:** Sophie turns a famous footballer into a hero who notices her.",
+            "**Class and poverty:** the cramped home, the father's grimy work and the biscuit factory show the limited choices of working-class children.",
+            "**Dreams versus reality:** hope helps her endure, yet she is left sad when the dream cannot be shown to others."
+          ]
+        },
+        {
+          heading: "Craft",
+          points: [
+            "The story seems realistic until the last part, where narration shifts to the present tense and second person (‘You realise…’) as Sophie imagines the meeting. This reveals that she never met him.",
+            "The only time she actually saw Danny was from the stands on Saturday, when he scored.",
+            "The detail of the mother's delicate bow on a crooked back shows contrast between hope and hardship."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: A. R. Barton, a modern writer who lives in Zurich and writes in English",
+        "Main characters: Sophie, Jansie, Geoff, their father, little Derek",
+        "Footballer: Danny Casey, a young Irish player for the team the family supports (United)",
+        "Sophie's dream: boutique, then actress or fashion designer",
+        "Reality: the meeting was imagined; she saw him only at a match"
+      ],
+      terms: [
+        { term: "Hero worship", meaning: "Extreme admiration for someone, often a famous person." },
+        { term: "Boutique", meaning: "A small shop selling fashionable clothes." },
+        { term: "Prodigy", meaning: "A young person with exceptional talent, as Danny Casey is called." },
+        { term: "Fantasising", meaning: "Imagining things that are not real, usually pleasant ones." },
+        { term: "Incongruity", meaning: "A sharp contrast between things that do not fit, like the dainty bow on the tired mother's back." }
+      ],
+      qa: [
+        {
+          q: "Why does Jansie discourage Sophie's dreams?",
+          a: "Jansie knows that both girls will probably go to the biscuit factory, that shop work pays poorly and that Sophie's father would not allow it. She wants Sophie to be sensible."
+        },
+        {
+          q: "Did Sophie really meet Danny Casey? How do we know?",
+          a: "No. At the end she waits by the canal, knows he will not come and imagines the meeting in detail. The scene is written as a daydream. The only time she saw him was at the match from the crowd."
+        },
+        {
+          q: "What does Geoff mean to Sophie?",
+          a: "He is the one person she trusts and likes best. His silence and his work in far places make him a symbol of the unknown world she wants to reach, and she imagines going there on his motorcycle."
+        }
+      ],
+      quiz: [
+        {
+          q: "What does Sophie say she will own when she leaves school?",
+          options: ["A boutique", "A football club", "A biscuit factory", "A motorcycle shop"],
+          answer: 0,
+          explain: "She dreams of a boutique, later adding acting and fashion design."
+        },
+        {
+          q: "Who is Danny Casey?",
+          options: ["Sophie's cousin", "A young Irish footballer", "An English actor", "Geoff's friend"],
+          answer: 1,
+          explain: "He is the young footballer whom the family admires."
+        },
+        {
+          q: "What is Geoff's job?",
+          options: ["Factory worker", "Footballer", "Apprentice mechanic", "Shop assistant"],
+          answer: 2,
+          explain: "He is three years out of school and an apprentice mechanic."
+        },
+        {
+          q: "Why did Sophie not want Jansie to know the whole story?",
+          options: ["Jansie was Danny's fan", "She feared it would spread and cause trouble with her father", "She had been paid to be silent", "She disliked football"],
+          answer: 1,
+          explain: "She thought Jansie would tell the neighbourhood and her father would be angry."
+        },
+        {
+          q: "Where did Sophie wait for Danny?",
+          options: ["Outside the stadium", "In the arcade", "By the canal", "At the biscuit factory"],
+          answer: 2,
+          explain: "She waited on a bench near the canal."
+        },
+        {
+          q: "What is the main theme of the story?",
+          options: ["Success in football", "Adolescent fantasy and the gap with reality", "Friendship among neighbours", "The joy of travel"],
+          answer: 1,
+          explain: "The story shows a young girl's dreams in a harsh, ordinary setting."
+        }
+      ]
+    },
+
+    {
       id: "my-mother-at-sixty-six",
       title: "My Mother at Sixty-six",
-      section: "Literature – Flamingo",
+      section: "Flamingo",
       summary: "Kamala Das’s poem about a car journey to the airport, during which the poet sees her ageing mother’s pale face, feels a childhood fear of losing her, and hides her anxiety behind a smile.",
       notes: [
         {
@@ -1407,14 +1744,14 @@ StudyData.add(12, "english", {
     {
       id: "keeping-quiet",
       title: "Keeping Quiet",
-      section: "Literature – Flamingo",
+      section: "Flamingo",
       summary: "Pablo Neruda’s poem asks people to keep still and silent for a moment, so that they may stop harming each other and the earth and understand themselves and the value of life.",
       notes: [
         {
           heading: "Summary of the poem",
           points: [
             "The poet asks us to **count up to twelve** and then keep still and silent. For once, we should not speak any language or move our arms so much.",
-            "It would be a strange moment without hurry, engines or noise, in which everyone is together.",
+            "It would be a strange, exotic moment without hurry, engines or noise, in which everyone is together.",
             "Fishermen would stop harming whales in the sea, and the man gathering salt would look at his hurt hands.",
             "People who make **wars** with gas and fire, and victories with no survivors, should put on clean clothes and walk in the shade with their brothers, doing nothing.",
             "Keeping quiet is not death or total inactivity. Life goes on, and the earth can teach us if we are quiet. Then the poet will count to twelve and go."
@@ -1436,7 +1773,7 @@ StudyData.add(12, "english", {
             "**Free verse:** no rhyme or fixed metre; a calm conversational tone.",
             "**Repetition:** ‘count to twelve’ at the beginning and end holds the poem together.",
             "**Imagery:** fishermen, whales, the salt-gatherer and wartime images.",
-            "**Paradox:** the earth is lifeless when we seem inactive, but silence teaches us about life.",
+            "**Paradox:** stillness and apparent deadness can hide life, as the earth seems dead and later proves alive; ‘doing nothing’ can be a way of learning.",
             "**Imperatives** and the pronoun ‘we’ invite the reader to join in."
           ]
         },
@@ -1473,7 +1810,7 @@ StudyData.add(12, "english", {
         },
         {
           q: "What can the earth teach us?",
-          a: "If we stay quiet, the earth shows that **life continues even in apparent stillness**, like a seed that looks dead in winter. We learn to live in harmony and not to destroy."
+          a: "If we stay quiet, the earth shows that **life continues even in apparent stillness**: when everything seems dead, it later proves to be alive. This suggests that a pause can lead to renewal and to understanding ourselves, so we stop threatening one another with death."
         }
       ],
       quiz: [
@@ -1517,9 +1854,232 @@ StudyData.add(12, "english", {
     },
 
     {
+      id: "a-thing-of-beauty",
+      title: "A Thing of Beauty",
+      section: "Flamingo",
+      summary: "An opening passage from John Keats's long poem Endymion, praising beauty as a lasting joy that lifts us above sorrow, dullness and the lack of noble people.",
+      notes: [
+        {
+          heading: "Central idea",
+          points: [
+            "A beautiful thing is a **joy for ever**: its loveliness grows and never fades into nothing.",
+            "Beauty gives us a calm retreat, restful sleep full of sweet dreams, health and quiet breathing.",
+            "Every morning we weave a ‘flowery band’ of beauty that ties us to the earth despite our troubles."
+          ]
+        },
+        {
+          heading: "What causes sorrow, and what lifts it",
+          points: [
+            "The poem names **despondence**, the lack of noble people, gloomy days and unhealthy, dark paths we must walk.",
+            "In spite of all this, some shape of beauty draws the veil of gloom from our spirits.",
+            "Things of beauty include the sun, the moon, young and old trees giving shade to sheep, daffodils, clear streams, and musk-rose blooms in forest thickets."
+          ]
+        },
+        {
+          heading: "Beauty in stories and the past",
+          points: [
+            "The poet adds the grand fates we imagine for the mighty dead, and all the lovely tales we hear or read.",
+            "These are compared to an endless fountain of immortal drink that pours down on us from the edge of heaven.",
+            "Beauty therefore comes from nature and also from human imagination and memory."
+          ]
+        },
+        {
+          heading: "Poetic features",
+          points: [
+            "The lines are rhymed in couplets (joy for ever / never), with regular line length.",
+            "The poem is an excerpt from *Endymion: A Poetic Romance*, based on a Greek legend of a shepherd-poet who sees the moon goddess Cynthia.",
+            "Keats belongs to the Romantic movement, which loved nature, imagination and emotion.",
+            "Imagery such as the ‘flowery band’, ‘cooling covert’ and ‘endless fountain’ is rich and sensuous."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: John Keats (1795–1821), English Romantic poet",
+        "Source: *Endymion: A Poetic Romance*",
+        "Theme: beauty is a lasting joy that heals sorrow",
+        "Images of beauty: sun, moon, trees, daffodils, streams, musk-rose, stories of great people",
+        "Final image: an endless fountain of immortal drink"
+      ],
+      terms: [
+        { term: "Bower", meaning: "A shady, pleasant place under trees; a quiet resting place." },
+        { term: "Despondence", meaning: "A feeling of low spirits and loss of hope." },
+        { term: "Rill", meaning: "A small stream." },
+        { term: "Brake", meaning: "A thick mass of ferns or bushes." },
+        { term: "Romantic poetry", meaning: "Poetry of the early 19th century that values nature, feeling and imagination." }
+      ],
+      qa: [
+        {
+          q: "What does the line about a ‘flowery band’ to bind us to the earth suggest?",
+          a: "It suggests that beauty gives us a bond with life. Each day we gather beautiful things like a garland, and they keep us attached to the world despite sorrow and disappointment."
+        },
+        {
+          q: "What makes human beings love life in spite of troubles?",
+          a: "The presence of beauty in nature and in stories. Some shape of beauty removes the dark covering from our spirits, so we keep hope and enjoy living."
+        },
+        {
+          q: "Why does the poet call beauty ‘a joy for ever’?",
+          a: "Because beauty does not vanish. Its loveliness increases with time, and its memory brings peace, sweet dreams and health, so it gives joy that lasts."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘A Thing of Beauty’?",
+          options: ["Robert Frost", "John Keats", "Pablo Neruda", "Kamala Das"],
+          answer: 1,
+          explain: "The lines are from Keats's *Endymion*."
+        },
+        {
+          q: "According to the poem, a thing of beauty:",
+          options: ["fades with time", "belongs only to the rich", "is a joy for ever", "causes sorrow"],
+          answer: 2,
+          explain: "Its loveliness increases and never passes into nothingness."
+        },
+        {
+          q: "Which of these is mentioned as a thing of beauty in the poem?",
+          options: ["Daffodils", "Cities", "Machines", "Mountains of snow"],
+          answer: 0,
+          explain: "Daffodils live with the green world they inhabit."
+        },
+        {
+          q: "What does the poet say is lacking and causes sorrow?",
+          options: ["Fresh water", "Noble natures", "Sunlight", "Good books"],
+          answer: 1,
+          explain: "He refers to the ‘inhuman dearth of noble natures’."
+        },
+        {
+          q: "The ‘endless fountain of immortal drink’ stands for:",
+          options: ["A real spring in the forest", "The lasting bounty of beauty that flows to us", "The wine of ancient kings", "Water from a river"],
+          answer: 1,
+          explain: "It is an image of beauty's unending gift to humanity."
+        },
+        {
+          q: "The poem is taken from:",
+          options: ["Endymion", "Paradise Lost", "Birches", "Ode to the West Wind"],
+          answer: 0,
+          explain: "It is an excerpt from Keats's *Endymion: A Poetic Romance*."
+        }
+      ]
+    },
+
+    {
+      id: "a-roadside-stand",
+      title: "A Roadside Stand",
+      section: "Flamingo",
+      summary: "Robert Frost's poem about poor rural people who set up a roadside stand hoping that passing city motorists will buy, while indifferent drivers pass by and well-meaning officials plan to ‘help’ them in ways that do them little good.",
+      notes: [
+        {
+          heading: "The stand and the passing cars",
+          points: [
+            "A small new shed stands in front of a little old house at the edge of a busy road. It pleads, not for charity, but for **some of the money** that sustains the cities.",
+            "The polished traffic passes with its mind on the destination. Those who do stop are annoyed at the ugly signs spoiling the scenery.",
+            "The signs offer wild berries, golden squash and other farm goods. The poet's attitude: the people's hurt is not about the scenery but about their trusting hope."
+          ]
+        },
+        {
+          heading: "The plea of the poor",
+          points: [
+            "The country folk wish to feel some city money in hand so that their lives can ‘expand’ and match the promise of the movies.",
+            "They suspect that the party in power is keeping that good life from them.",
+            "Their sadness waits at the window, hoping that someone will stop to ask about prices."
+          ]
+        },
+        {
+          heading: "The helpers who are not helpful",
+          points: [
+            "The poet attacks the ‘greedy good-doers’ and ‘beneficent beasts of prey’, who plan to move the poor into villages near the theatre and store.",
+            "Their schemes are meant to soothe people ‘out of their wits’ and take away their independent thinking. Their benefits make them dependent.",
+            "This shows the double standards of those who claim to help while profiting from others' needs."
+          ]
+        },
+        {
+          heading: "Disappointment and the poet's pain",
+          points: [
+            "Cars do stop, but only to turn around, to ask the way or to buy petrol. The farmer's hope of a sale is not met.",
+            "The poet feels the childish longing of the poor is in vain, since the money and lift of spirit in the country never arrive.",
+            "In a moment of despair he wishes to end their pain at one stroke. Next day, sane again, he asks how he himself would like to be offered such a ‘gentle’ end. The thought exposes the cruelty of such mercy."
+          ]
+        },
+        {
+          heading: "Features",
+          points: [
+            "The poem sets rural and urban worlds in contrast, and questions how a country's wealth is shared.",
+            "Rhyme is mostly regular but sometimes shifts, with thought dominating sound; stanza breaks mark shifts in idea.",
+            "The tone moves from gentle sympathy to anger at officials to deep, troubled sorrow."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Robert Frost (1874–1963), American poet",
+        "Subject: rural poor, roadside stand, indifferent city travellers",
+        "Targets of criticism: careless motorists and ‘good-doers’ whose help harms",
+        "Theme: urban–rural economic divide and the dignity of the poor",
+        "Final thought: the poet recoils from the idea of ending the poor's pain by force"
+      ],
+      terms: [
+        { term: "Roadside stand", meaning: "A small stall by the road where farmers or villagers sell produce to passing travellers." },
+        { term: "Dole", meaning: "Charity given to the needy, such as money or food." },
+        { term: "Squash", meaning: "A kind of gourd vegetable." },
+        { term: "Quart", meaning: "An old measure of volume; here, a container for berries." },
+        { term: "Beneficent", meaning: "Doing good, or appearing to do good." }
+      ],
+      qa: [
+        {
+          q: "What did the people who put up the roadside stand plead for?",
+          a: "They did not want charity. They wanted some of the city's money to flow to them in return for their goods, so that their lives could improve and they could live with dignity."
+        },
+        {
+          q: "Why does the poet call the social-service agencies ‘greedy good-doers’?",
+          a: "They claim to help but plan to move the poor into villages and make them dependent. Their plans calm the poor ‘out of their wits’ and benefit the planners more than the people they claim to serve."
+        },
+        {
+          q: "What is the ‘childish longing’ of the poor and why is it in vain?",
+          a: "It is their simple hope that someone will stop and buy from them. It is in vain because cars pass by, or stop only for directions, petrol or to turn around, so the poor remain unhelped."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘A Roadside Stand’?",
+          options: ["John Keats", "Adrienne Rich", "Robert Frost", "Kamala Das"],
+          answer: 2,
+          explain: "It is a poem by the American poet Robert Frost."
+        },
+        {
+          q: "What do the people of the stand hope for from passing cars?",
+          options: ["A lift to the city", "A little of the city's money", "A donation of bread", "Votes for their party"],
+          answer: 1,
+          explain: "They plead not for charity but for some of the money that flows through the cities."
+        },
+        {
+          q: "Why did most drivers who looked at the stand feel annoyed?",
+          options: ["The prices were too high", "The signs spoiled the scenery", "The stand blocked the road", "The goods were poor"],
+          answer: 1,
+          explain: "They were out of sorts at the artless paint marring the landscape."
+        },
+        {
+          q: "What is the poet's attitude towards the rural poor?",
+          options: ["Mockery", "Indifference", "Deep sympathy", "Fear"],
+          answer: 2,
+          explain: "He feels their trusting sorrow deeply."
+        },
+        {
+          q: "Why do some cars stop at the stand?",
+          options: ["To buy fruit", "To turn around, ask the way or buy petrol", "To meet the farmer", "To photograph the sign"],
+          answer: 1,
+          explain: "None of the stops brought the sales the farmers hoped for."
+        },
+        {
+          q: "What does the poet realise the next day, after wishing to end the poor's pain?",
+          options: ["That the farmers will soon be rich", "That the idea would be unbearable if offered to himself", "That the stand is closed", "That the officials are right"],
+          answer: 1,
+          explain: "Back in his senses, he considers how he would feel if offered such a ‘gentle’ end."
+        }
+      ]
+    },
+
+    {
       id: "aunt-jennifers-tigers",
       title: "Aunt Jennifer’s Tigers",
-      section: "Literature – Flamingo",
+      section: "Flamingo",
       summary: "Adrienne Rich’s poem about Aunt Jennifer, a woman oppressed in her marriage, who embroiders fearless tigers that express the freedom and strength she cannot have in her own life.",
       notes: [
         {
@@ -1579,7 +2139,7 @@ StudyData.add(12, "english", {
         },
         {
           q: "How does the poet show that Aunt Jennifer is oppressed?",
-          a: "Her fingers **flutter** with fear and the **heavy wedding band** makes even simple needlework a burden. Even after her death, her hands remain marked by ordeals."
+          a: "Her fingers **flutter** weakly through the wool and the **heavy wedding band** makes even simple needlework a burden. Even after her death, her hands remain marked by ordeals."
         },
         {
           q: "What does the last stanza suggest?",
@@ -1630,25 +2190,25 @@ StudyData.add(12, "english", {
     {
       id: "the-third-level",
       title: "The Third Level",
-      section: "Literature – Vistas",
+      section: "Vistas",
       summary: "Jack Finney’s fantasy about Charley, a New Yorker who finds a mysterious third level at Grand Central Station that leads to the peaceful America of 1894, and who longs to escape there from the pressures of modern life.",
       notes: [
         {
           heading: "Plot",
           points: [
-            "Charley says that Grand Central Station in New York has two levels, but he once found a **third level** by mistake while hurrying through the station.",
-            "On it he saw an old-fashioned ticket booth, gas lamps, men in old clothes and an engine with an open-top smokestack. He realised that the year was **1894**.",
-            "He tried to buy tickets to **Galesburg, Illinois**, but the clerk refused his modern money. He later got some old-style currency but could not afford enough tickets.",
-            "His psychiatrist friend **Sam** told him it was a dream, a wish to escape the stress of modern life. Later Sam also became fascinated and began collecting old money.",
-            "Charley finds a **first-day cover** of an old stamp addressed to him by Sam, postmarked from Galesburg in 1894: Sam had gone there, and Charley and his wife Louisa plan to follow."
+            "Charley, a 31-year-old stamp collector, says Grand Central Station in New York has a **third level**. One night, hurrying home to his wife Louisa, he got lost in a tunnel and came out in a small old-fashioned station with gaslights, a wooden information booth and people dressed in the style of the 1890s. A newspaper told him the date was **June 1894**.",
+            "He tried to buy two tickets to **Galesburg, Illinois**, his boyhood town. The clerk refused his modern notes, saying they were not money, and Charley hurried away.",
+            "Next day he drew three hundred dollars from the bank and bought old-style currency at a premium, but he never found the corridor again. His psychiatrist friend had called the experience a waking-dream wish to escape modern worries.",
+            "Later their friend **Sam Weiner** disappeared. Charley found an old **first-day cover** in his collection, mailed to his grandfather in Galesburg on 18 July 1894, with a letter inside from Sam: he had found the third level and was living happily in Galesburg.",
+            "Charley and Louisa, who had first been worried, now search for the third level every weekend. The last twist: Sam was Charley's psychiatrist."
           ]
         },
         {
           heading: "Characters",
           points: [
             "**Charley:** the narrator, a stressed city dweller who is drawn towards the peaceful past.",
-            "**Louisa:** Charley’s wife, who supports him and agrees to join him.",
-            "**Sam Weiner:** a psychiatrist friend, first sceptical, then a believer."
+            "**Louisa:** Charley’s wife, who was worried at first but joins his weekend search for the third level.",
+            "**Sam Weiner:** Charley’s psychiatrist friend, who first called the third level an escape wish and then found it himself, starting a new life in 1894."
           ]
         },
         {
@@ -1664,8 +2224,8 @@ StudyData.add(12, "english", {
           heading: "Literary points",
           points: [
             "A **fantasy / science fiction** story told in the first person, which makes the strange events seem believable.",
-            "The psychiatrist gives a scientific ‘explanation’ (an escape wish), but the first-day cover offers physical proof.",
-            "The ending is open: the reader is left to imagine that Charley will make it to the third level."
+            "The psychiatrist gives a rational ‘explanation’ (an escape wish), but the first-day cover seems to offer physical proof. The story mixes fantasy with realistic detail.",
+            "The ending is open: the reader is left to imagine that Charley and Louisa will find the third level, and the twist that Sam was the psychiatrist adds irony."
           ]
         }
       ],
@@ -1673,8 +2233,8 @@ StudyData.add(12, "english", {
         "Author: Jack Finney",
         "Place: Grand Central Station, New York; hidden ‘third level’",
         "Year seen: 1894; destination: Galesburg, Illinois",
-        "Psychiatrist friend: Sam; wife: Louisa",
-        "Evidence: a first-day cover letter from Sam, from the past"
+        "Friend and psychiatrist: Sam Weiner; wife: Louisa",
+        "Evidence: a letter from Sam dated 18 July 1894, found in a first-day cover addressed to Charley's grandfather"
       ],
       terms: [
         { term: "Third level", meaning: "A hidden level of Grand Central Station through which the narrator reaches the year 1894." },
@@ -1686,15 +2246,15 @@ StudyData.add(12, "english", {
       qa: [
         {
           q: "How did Sam, the psychiatrist, explain Charley’s experience?",
-          a: "Sam said it was a **waking dream**: Charley wished to escape from the insecurity and stress of modern life, so his mind created an earlier, quieter world."
+          a: "Sam called it a **waking-dream wish fulfilment**: the modern world is full of insecurity, fear, war and worry, so Charley wished to escape from it. Charley's stamp collecting, he said, was also a refuge from reality."
         },
         {
           q: "What proof did Charley find that the third level was real?",
-          a: "He received a **first-day cover** addressed to him in Sam’s writing, dated and postmarked in Galesburg in 1894. It suggested that Sam had passed through the third level into the past."
+          a: "Charley found among his old stamp collection a **first-day cover** mailed to his grandfather from Galesburg in 1894. Inside was a letter from Sam to Charley, dated July 1894, saying he had found the third level and was happily living there. Since the cover could not have been mailed in the present, it suggested Sam had passed into the past."
         },
         {
           q: "Why does the narrator want to go to Galesburg?",
-          a: "Galesburg is a **peaceful, friendly small town** from the past, where life seems simple and secure, unlike the worry-filled life in New York of today."
+          a: "Galesburg, where Charley went to school, is a **peaceful, friendly small town** with big lawns and tall trees. In 1894 its summer evenings are calm and neighbours sit out together, far from the wars and worries of the later century."
         }
       ],
       quiz: [
@@ -1738,19 +2298,246 @@ StudyData.add(12, "english", {
     },
 
     {
+      id: "the-tiger-king",
+      title: "The Tiger King",
+      section: "Vistas",
+      summary: "Kalki's satire about the Maharaja of Pratibandapuram, who is foretold to die by a tiger and sets out to kill a hundred of them, only to meet his end in a quite unexpected way.",
+      notes: [
+        {
+          heading: "The prophecy and the vow",
+          points: [
+            "At the birth of Jilani Jung Jung Bahadur, astrologers foretell that he will be a great warrior but will die. The ten-day-old prince asks how, and is told that death will come from a **tiger**.",
+            "He grows up in an English-style royal upbringing and, at twenty, takes charge of the state. He begins killing tigers, seeing it as self-defence.",
+            "The state astrologer warns him to take special care of the **hundredth tiger**; the Maharaja threatens to burn the astrology books if he kills it safely."
+          ]
+        },
+        {
+          heading: "The hunt",
+          points: [
+            "Tiger hunting by anyone else is banned on pain of confiscation. The Maharaja himself kills seventy tigers in ten years, until the state's tigers run out.",
+            "When a British officer wants to hunt a tiger, the Maharaja refuses. To save his throne he sends diamond rings to the officer's wife and ends up with a bill for **three lakh rupees**.",
+            "He marries a princess from a state rich in tigers and kills five or six on every visit, so ninety-nine skins decorate the palace.",
+            "His minister the dewan is afraid of him and obeys every order, even when it is silly or harsh."
+          ]
+        },
+        {
+          heading: "The hundredth tiger",
+          points: [
+            "When the hundredth tiger cannot be found, the Maharaja's temper rises. He orders the land tax doubled and many officers lose their jobs.",
+            "The dewan secretly brings a tiger from a Madras park, but the Maharaja's shot misses and the stunned animal only faints. The hunters then shoot it themselves so he never learns the truth.",
+            "The Maharaja celebrates his vow, buries the tiger in a tomb and turns his attention to his three-year-old son."
+          ]
+        },
+        {
+          heading: "The ironic end",
+          points: [
+            "For his son's birthday, he buys a cheap wooden tiger for two annas and a quarter. The shopkeeper, scared of the Emergency rules, quotes three hundred rupees.",
+            "A sliver from the rough toy pierces the Maharaja's hand. The wound becomes infected and spreads, and surgeons operate.",
+            "The surgeons announce that the operation was a success and the Maharaja is dead. Thus the ‘hundredth tiger’ takes its revenge, in the form of a toy."
+          ]
+        },
+        {
+          heading: "Themes and techniques",
+          points: [
+            "**Satire** on power: the vanity, cruelty and foolishness of rulers and the fear-driven flattery of those around them.",
+            "**Irony** and **dramatic irony**: the reader knows the hundredth tiger was not truly killed by him, though he believes it, and the prophecy is fulfilled in an unexpected way.",
+            "A comment on **cruelty to wildlife** and on colonial-era rulers who bowed to British officers while ruling their own people harshly.",
+            "Exaggeration and humour make the story both comic and sharp."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Kalki (R. Krishnamurthy), a Tamil writer",
+        "State: Pratibandapuram; Maharaja Sir Jilani Jung Jung Bahadur, ‘the Tiger King’",
+        "Prophecy: death would come from a tiger",
+        "Tigers killed himself: 70 in ten years, 99 after marrying into a tiger-rich state, then the 100th staged",
+        "Cost of keeping the British officer content: three lakh rupees (diamond rings)",
+        "Cause of death: infection from a wooden toy tiger bought for two annas and a quarter"
+      ],
+      terms: [
+        { term: "Satire", meaning: "A work that uses humour and exaggeration to criticise people in power or social faults." },
+        { term: "Dramatic irony", meaning: "When the reader knows more than a character does, so a character's words or actions mean something else to us." },
+        { term: "Dewan", meaning: "The chief minister of a princely state." },
+        { term: "Prophecy", meaning: "A prediction of the future, here by the astrologers." },
+        { term: "Sycophant", meaning: "A person who flatters the powerful to gain favour." }
+      ],
+      qa: [
+        {
+          q: "How does the story show the Maharaja's vanity and power?",
+          a: "He bans others from hunting tigers, threatens ministers, raises taxes in anger, and orders processions and a tomb for a tiger. Everyone around him obeys through fear, which feeds his pride and blinds him to the truth."
+        },
+        {
+          q: "How is the prophecy fulfilled?",
+          a: "The Maharaja believes he has escaped by killing the hundredth tiger. But a splinter from a wooden toy tiger infects his hand, and he dies after surgery. The tiger's death is ironically avenged by a toy tiger."
+        },
+        {
+          q: "What does the story say about the people around the Maharaja?",
+          a: "The dewan, hunters, shopkeeper and surgeons act out of fear for their jobs or safety. They hide the truth, stage the hundredth kill and flatter the king, which shows how power cuts a ruler off from honest advice."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘The Tiger King’?",
+          options: ["Pearl S. Buck", "Jack Finney", "Kalki", "Susan Hill"],
+          answer: 2,
+          explain: "The story is by the Tamil writer Kalki."
+        },
+        {
+          q: "According to the astrologers, how would the Maharaja die?",
+          options: ["By a tiger", "In battle", "By poison", "By a fall from an elephant"],
+          answer: 0,
+          explain: "The chief astrologer said death would come from the Tiger, as the prince was born in the hour of the Bull."
+        },
+        {
+          q: "How did the Maharaja keep his throne when he refused the British officer a tiger hunt?",
+          options: ["He gave him land", "He sent expensive diamond rings to the officer's wife", "He hunted a tiger for him", "He signed a treaty"],
+          answer: 1,
+          explain: "The gift cost him a bill of three lakh rupees."
+        },
+        {
+          q: "What happened to the hundredth tiger that the Maharaja shot at?",
+          options: ["It was killed at once", "It escaped into the forest", "It fainted, and a hunter then shot it", "It was caught alive and sent to a zoo"],
+          answer: 2,
+          explain: "The shot missed; the tiger fainted and the hunters finished it so the Maharaja would not know."
+        },
+        {
+          q: "What finally killed the Maharaja?",
+          options: ["A tiger's claw", "A hunting accident", "A snakebite", "An infected wound from a wooden toy tiger"],
+          answer: 3,
+          explain: "A sliver of wood from the toy caused an infection."
+        },
+        {
+          q: "The main literary form of the story is:",
+          options: ["Satire", "Travelogue", "Tragedy", "Fantasy adventure"],
+          answer: 0,
+          explain: "It mocks the vanity of power and the flattery of those around it."
+        }
+      ]
+    },
+
+    {
+      id: "journey-to-the-end-of-the-earth",
+      title: "Journey to the End of the Earth",
+      section: "Vistas",
+      summary: "Tishani Doshi describes her expedition to Antarctica with the Students on Ice programme and shows how this frozen continent holds the record of Earth's past and warns of its future under climate change.",
+      notes: [
+        {
+          heading: "The journey and the continent",
+          points: [
+            "The writer travelled from Madras on a Russian research ship, the **Akademik Shokalskiy**, to Antarctica, the coldest, driest and windiest continent. The journey took more than 100 hours and crossed nine time zones.",
+            "Antarctica holds about **90 per cent** of the Earth's ice. It has no trees, billboards or buildings, and long summer days with silence broken only by avalanches or breaking ice.",
+            "Visitors lose their usual sense of scale and time and place themselves in the context of Earth's history."
+          ]
+        },
+        {
+          heading: "Antarctica and Earth's history",
+          points: [
+            "Long ago India and Antarctica were part of one southern supercontinent, **Gondwana**. It slowly broke apart, and the drifting of its pieces shaped the continents we know, even helping to raise the Himalayas as India moved north.",
+            "The moving of South America opened the Drake Passage and set up a cold current around Antarctica, keeping it frozen.",
+            "Ice layers in Antarctica trap carbon records half a million years old, so it is the place to study Earth's past, present and future."
+          ]
+        },
+        {
+          heading: "Human impact and climate change",
+          points: [
+            "Human civilisation is only about 12,000 years old, a moment on the geological clock, yet we have crowded the planet and burned fossil fuels, wrapping it in carbon dioxide and raising temperatures.",
+            "Antarctica has never had a settled human population, so it is relatively untouched, which makes it ideal for studying change.",
+            "Its simple ecosystem shows how small changes can have large effects. Visible glaciers retreating and ice shelves collapsing make the threat real."
+          ]
+        },
+        {
+          heading: "Students on Ice and the lessons",
+          points: [
+            "The programme, led by Canadian **Geoff Green**, takes high-school students to the polar regions so that the future decision-makers can learn, respect the planet and act.",
+            "The tiny **phytoplankton**, which feed the Southern Ocean's food chain through photosynthesis, are threatened by ozone depletion. The writer's lesson: take care of the small things and the big things will follow.",
+            "Near the Antarctic Circle the ship was stuck in thick ice, and all 52 people walked on the frozen ocean, with seals sunning nearby. The writer felt that everything is connected.",
+            "She ends with hope drawn from the idealism of the teenagers."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Tishani Doshi; first published in *The Hindu*",
+        "Ship: Akademik Shokalskiy (Russian research vessel)",
+        "Programme: Students on Ice, headed by Geoff Green",
+        "Antarctica holds about 90% of the world's ice",
+        "Supercontinent: Gondwana, which included India and Antarctica",
+        "Lesson: take care of the small things and the big things will follow"
+      ],
+      terms: [
+        { term: "Gondwana", meaning: "An ancient southern supercontinent that later broke up into Antarctica, India, Africa, Australia and South America." },
+        { term: "Phytoplankton", meaning: "Microscopic ocean plants that carry out photosynthesis and form the base of the marine food chain." },
+        { term: "Ice core", meaning: "A long cylinder of ice drilled out of an ice sheet; its layers record past climate." },
+        { term: "Global warming", meaning: "The slow rise in Earth's average temperature, largely caused by greenhouse gases from burning fossil fuels." },
+        { term: "Austral summer", meaning: "Summer in the Southern Hemisphere, when Antarctica has near-continuous daylight." }
+      ],
+      qa: [
+        {
+          q: "Why is Antarctica the best place to understand the Earth's past, present and future?",
+          a: "Its ice holds records of ancient climate and carbon, it was once joined to India, and it has never had a settled human population. Its simple ecosystem also shows quickly how small changes affect the whole planet."
+        },
+        {
+          q: "Why does Geoff Green include high-school students in his expeditions?",
+          a: "He wants young people, who will soon make decisions, to experience the poles at an age when they can learn and act. Seeing melting ice makes the danger of climate change real to them."
+        },
+        {
+          q: "What is the lesson of the phytoplankton?",
+          a: "These tiny plants support the whole Southern Ocean food chain, and ozone depletion threatens them. The lesson is that if we look after small things, big things will fall into place."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote ‘Journey to the End of the Earth’?",
+          options: ["Susan Hill", "Pearl S. Buck", "Louis Fischer", "Tishani Doshi"],
+          answer: 3,
+          explain: "The essay is by Tishani Doshi."
+        },
+        {
+          q: "Which ship carried the writer to Antarctica?",
+          options: ["Akademik Shokalskiy", "Discovery", "Endurance", "Titanic"],
+          answer: 0,
+          explain: "It was a Russian research vessel."
+        },
+        {
+          q: "What proportion of the Earth's ice does Antarctica hold, according to the essay?",
+          options: ["About 10 per cent", "About half", "About 25 per cent", "About 90 per cent"],
+          answer: 3,
+          explain: "The essay says 90 per cent of the Earth's total ice volume is stored there."
+        },
+        {
+          q: "What is Gondwana?",
+          options: ["An Antarctic research station", "An ancient supercontinent that included India and Antarctica", "A type of glacier", "A sea near the South Pole"],
+          answer: 1,
+          explain: "It was a large southern landmass that later broke up."
+        },
+        {
+          q: "Why does Antarctica help us study climate change?",
+          options: ["It has dense forests", "It never had a settled human population and its ice holds old carbon records", "It is the warmest continent", "It has many large cities"],
+          answer: 1,
+          explain: "It is relatively pristine, and its ice-cores store half-million-year-old records."
+        },
+        {
+          q: "The programme the writer travelled with takes which group to Antarctica?",
+          options: ["Retired scientists", "High-school students", "Film-makers", "Ship engineers"],
+          answer: 1,
+          explain: "Students on Ice aims to educate future decision-makers."
+        }
+      ]
+    },
+
+    {
       id: "the-enemy",
       title: "The Enemy",
-      section: "Literature – Vistas",
+      section: "Vistas",
       summary: "Pearl S. Buck’s story set in Japan during a war, in which Dr Sadao Hoki, a surgeon, saves the life of a wounded American prisoner washed up on his beach, putting his duty as a doctor before his duty as a patriot.",
       notes: [
         {
           heading: "Plot",
           points: [
             "Dr **Sadao Hoki**, a skilled Japanese surgeon trained in America, lives by the sea with his wife **Hana**. One evening they find a badly wounded white man washed ashore.",
-            "Sadao realises that the man is an American prisoner of war and knows that sheltering him is dangerous. But as a doctor he cannot let him die, so he carries him in and operates on him.",
-            "The servants are horrified and leave. Hana, although upset, helps to nurse the patient.",
-            "Sadao informs the **General**, who is ill and depends on him as his doctor. The General promises to send private assassins, but they never come.",
-            "Sadao finally gives the man food, supplies and a boat, and tells him where to go to meet a Korean fishing boat. The man sets off, and Sadao feels relieved."
+            "The man is an escaped American prisoner of war with a bullet wound. The couple first think of putting him back into the sea, but neither can do it; as a doctor, Sadao carries him in, operates and removes the bullet, while Hana gives the anaesthetic after a moment of faintness.",
+            "The servants refuse to serve the ‘white man’ and, a week later, leave. Hana nurses the patient herself, and the man says his name is Tom.",
+            "Sadao begins a report to the police but leaves it unfinished. When the old **General**, whom Sadao treats for a painful illness, sends for him, Sadao tells him about the prisoner. The General offers to send his private assassins, but they never come.",
+            "Sadao finally gives Tom his boat, food, quilts and a flashlight, and tells him to wait on a nearby island until a Korean fishing boat passes. Later the General admits that he forgot his promise because he was in pain, and Sadao is safe. He finds the island empty and wonders why he could not kill the man."
           ]
         },
         {
@@ -1758,8 +2545,8 @@ StudyData.add(12, "english", {
           points: [
             "**Sadao:** professional, humane and patriotic; torn between duty as a doctor and as a Japanese.",
             "**Hana:** a loyal wife, who shows kindness despite her fear and prejudice.",
-            "**The General:** powerful but selfish; he forgets his promise because he needs his doctor.",
-            "**The American soldier (Tom):** a sailor, grateful and silent."
+            "**The General:** powerful and self-absorbed; he depends on Sadao and forgets his promise while suffering.",
+            "**Tom, the American sailor:** young, frightened at first, then warm and grateful to Sadao."
           ]
         },
         {
@@ -1776,7 +2563,7 @@ StudyData.add(12, "english", {
           points: [
             "The title is **ironic**: the ‘enemy’ is not an enemy to the doctor.",
             "The story shows the clash of **duty versus conscience** through both Sadao and Hana.",
-            "The ending leaves Sadao hoping that the man will survive."
+            "The ending leaves Sadao wondering why he could not kill the man he called his enemy, which shows the quiet victory of humanity over hatred."
           ]
         }
       ],
@@ -1801,11 +2588,11 @@ StudyData.add(12, "english", {
         },
         {
           q: "Why did the General fail to send the assassins?",
-          a: "The General was **ill and relied on Sadao** as his doctor. His own comfort and health mattered more than the promise, so he forgot to send anyone."
+          a: "The General was **in pain and relied on Sadao** as his doctor. He admitted that he thought only of himself and forgot his promise, so the assassins never came."
         },
         {
           q: "How does the story show the conflict between patriotism and humanity?",
-          a: "Sadao fears the **risk to his reputation and family** if he helps an enemy, yet he cannot ignore the dying man. His final act of helping the soldier escape shows **humanity wins over hatred**."
+          a: "Sadao fears the **risk to his family and position** if he helps an enemy, yet he cannot ignore the dying man. His final act of helping the soldier escape shows **humanity wins over hatred**."
         }
       ],
       quiz: [
@@ -1851,25 +2638,24 @@ StudyData.add(12, "english", {
     {
       id: "on-the-face-of-it",
       title: "On the Face of It",
-      section: "Literature – Vistas",
+      section: "Vistas",
       summary: "Susan Hill’s one-act play about Derry, a lonely boy with a badly burnt face who hides from the world, and Mr Lamb, an old man with an artificial leg who tries to help him see life differently.",
       notes: [
         {
           heading: "Plot",
           points: [
-            "**Derry**, a boy with one side of his face badly burnt, goes into Mr Lamb’s lovely garden. He is shy and defensive because people avoid or stare at him.",
-            "**Mr Lamb**, an old man, welcomes him kindly. He has a **tin leg**, and he does not hide it.",
-            "Mr Lamb says that everyone has something wrong with them, and he invites Derry to come and look at the garden, apples and herbs, and to talk freely.",
-            "Derry is initially bitter, saying his mother cannot bear to look at him and that he wants to be alone. He says he will not return.",
-            "Gradually he begins to open up. Mr Lamb urges him to face the world, saying that life is for living, not hiding. Derry leaves, hesitant, and the play ends on a hopeful note."
+            "**Scene 1:** Fourteen-year-old **Derry**, whose face was burnt by acid, climbs into old **Mr Lamb’s** garden. He is defensive, sure that everyone fears and pities him. Mr Lamb, who has a **tin leg** (the real one was blown off in a war), treats him as an ordinary boy and invites him to help pick crab apples.",
+            "Mr Lamb talks of the weeds, the bees that ‘sing’ and his open gate, and tells Derry that hating people harms a person more than acid. Derry, who is bitter about people's cruel remarks and his mother's kiss, slowly opens up. He says he will go but promises to come back.",
+            "**Scene 2:** At home, Derry's mother, who has heard rumours about the old man, forbids him to return. Derry insists that the visits matter to him; if he does not go back, he will never go anywhere in the world again. He runs out.",
+            "**Scene 3:** In the garden, Mr Lamb is picking apples when the ladder falls and he is hurt or killed. Derry arrives, shouting that he came back as he had promised, kneels beside him and weeps."
           ]
         },
         {
           heading: "Characters",
           points: [
-            "**Derry:** sensitive, lonely, angry; hurt by people’s cruelty and by his mother’s attitude.",
-            "**Mr Lamb:** cheerful, wise and compassionate; he accepts his own disability and spreads warmth.",
-            "**The children** who tease Derry, mentioned in the story, show how cruel people can be."
+            "**Derry:** sensitive, lonely and angry; he fears people’s stares, yet longs for the world and for a friend.",
+            "**Mr Lamb:** cheerful, wise and compassionate; he accepts his own disability, keeps his gate open to everyone and spreads warmth.",
+            "**Derry's mother:** protective but anxious; her fears and fussing keep Derry shut away. Mr Lamb says people worry."
           ]
         },
         {
@@ -1885,15 +2671,15 @@ StudyData.add(12, "english", {
           heading: "Literary points",
           points: [
             "The title suggests that **appearances can be deceptive**: ‘on the face of it’ is how things look at first sight.",
-            "**Symbols:** the garden stands for life and hope; the locked gate for Derry’s isolation.",
-            "A short play full of dialogue, with Mr Lamb’s humour easing the tension."
+            "**Symbols:** the garden, with weeds, flowers, bees and an always-open gate, stands for life and acceptance; Derry's wish to enter it shows his hunger for the world.",
+            "A short play in three scenes, full of dialogue, where Mr Lamb's humour (such as the story of the man who locked himself in a room) eases the tension. The sad ending is tragic irony: Derry has just learned to come back."
           ]
         }
       ],
       formulas: [
         "Author: Susan Hill (a one-act play)",
         "Characters: Derry (burnt face), Mr Lamb (artificial leg)",
-        "Setting: Mr Lamb’s garden",
+        "Setting: Mr Lamb’s garden, then Derry's home, then the garden again (three scenes)",
         "Message: do not judge by outer appearance; face life with courage"
       ],
       terms: [
@@ -1906,15 +2692,15 @@ StudyData.add(12, "english", {
       qa: [
         {
           q: "Why does Derry hide himself from people?",
-          a: "People **stare or turn away** from his burnt face, and children tease him. Hurt and ashamed, he withdraws and decides to live alone."
+          a: "People **stare, turn away or whisper cruel remarks** about the acid-burnt side of his face, and he believes they are afraid of him. Hurt and ashamed, he avoids people."
         },
         {
           q: "How does Mr Lamb help Derry?",
-          a: "He treats Derry as an ordinary person and **shares his own experience**, joking about his tin leg. He invites Derry into the garden and urges him to enjoy life instead of hiding."
+          a: "He treats Derry as an ordinary person, **speaks openly** about his own tin leg and says there is no real difference between them. He shows Derry the garden, bees and weeds, offers his open gate and friendship, and says hate harms more than acid."
         },
         {
           q: "What does the title of the play suggest?",
-          a: "‘On the face of it’ means ‘at first appearance’. The play shows that **outward appearance is not the whole truth**: the real person lies behind the face."
+          a: "‘On the face of it’ means ‘at first appearance’. The title points to Derry's burnt face and the way people judge by it; the play shows that **outward appearance is not the whole truth**."
         }
       ],
       quiz: [
@@ -1960,24 +2746,24 @@ StudyData.add(12, "english", {
     {
       id: "memories-of-childhood",
       title: "Memories of Childhood",
-      section: "Literature – Vistas",
+      section: "Vistas",
       summary: "Two autobiographical accounts of discrimination: Zitkala-Sa, a Native American girl, recalls the shock of having her long hair cut at a boarding school, and Bama, a Dalit woman from Tamil Nadu, recalls how she learnt about untouchability and was inspired to study.",
       notes: [
         {
           heading: "Part 1: The Cutting of My Long Hair (Zitkala-Sa)",
           points: [
-            "The writer is a young Native American (Sioux) girl in a boarding school run by white teachers. Her mother and her community have strong cultural customs.",
-            "In her culture only **cowards** and mourners have their hair cut, so she is terrified when she hears that her long hair will be cut.",
-            "She hides **under a bed** upstairs, but is dragged out, tied to a chair and her hair is cut. She cries and feels like a little animal, helpless and defeated.",
+            "The writer is a young Native American girl on her first day at a boarding school run by white teachers. Bells, stiff shoes, tight clothes and rules about sitting and eating by signal leave her bewildered and in tears.",
+            "Her friend Judewin warns her that the long hair will be cut. In her people's custom, **mourners** wore short hair and **cowards** had their hair shingled, so she is horrified and says she will struggle rather than submit.",
+            "She hides **under a bed** in a dim upstairs room, but is found, dragged out kicking and scratching, tied to a chair and one braid is cut off. She calls for her mother, who is not there, and feels like one of many little animals driven by a herder.",
             "The incident shows how her **dignity, identity and individuality** were taken away by forced conformity."
           ]
         },
         {
           heading: "Part 2: We Too Are Human Beings (Bama)",
           points: [
-            "Bama, a young girl from a Dalit family, walks home from school and sees an elderly man of her community carrying a packet of food by a string, careful not to touch it, and handing it to a landlord’s man.",
-            "At first she finds it funny, but her elder brother, **Annan**, explains that it is because of **untouchability**: the upper castes consider Dalits polluting.",
-            "She is angry and sad. Annan advises her to study hard and make progress, because education will win respect and the power to resist.",
+            "Bama, a Dalit girl in the third class, loves dawdling home through the bazaar. One day she sees an elder of her street carrying a packet of snacks by its string, without touching it, and bowing as he hands it to the landlord.",
+            "At first she finds it funny, but her elder brother, **Annan**, explains that it is because of **untouchability**: those who think themselves upper caste believe they would be polluted if they were touched.",
+            "She is sad and angry, thinking ‘we too are human beings’. Annan tells her that community members are denied honour and dignity, but by studying hard and making progress they can throw away these indignities.",
             "She follows his advice, studies well and stands first in her class, and many people become her friends."
           ]
         },

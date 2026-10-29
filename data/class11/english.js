@@ -2,7 +2,7 @@
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the textbooks.
 StudyData.add(11, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "textbook", books: ["Hornbill","Snapshots"], note: "Writing skills, plus a selection of lessons (not every chapter).", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Hornbill","Snapshots"], note: "Grammar and writing skills, plus every lesson of Hornbill and Snapshots (summarised in our own words).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
@@ -1279,7 +1279,8 @@ StudyData.add(11, "english", {
     {
       id: "the-portrait-of-a-lady",
       title: "The Portrait of a Lady",
-      section: "Literature – Hornbill",
+      section: "Hornbill",
+      source: "Hornbill (Reprint 2026-27) Ch 1, pp. 3–9",
       summary: "Khushwant Singh's affectionate sketch of his grandmother: their close bond in the village, the growing distance as he moved to the city and went abroad, and her peaceful death, mourned by thousands of sparrows.",
       notes: [
         {
@@ -1316,7 +1317,7 @@ StudyData.add(11, "english", {
             "Her happiest half-hour was in the afternoon, when she fed the **sparrows** in the courtyard; they perched on her legs, shoulders and even her head.",
             "When he left for **five years of study abroad**, she came to the railway station, silent and praying, and kissed his forehead. He felt it might be their last meeting.",
             "When he returned, she seemed not a day older. That evening, for the first time, she did not pray: she gathered the women of the neighbourhood and sang and beat an old drum for hours to celebrate his homecoming.",
-            "The next morning she fell ill. Sure that her end had come, she refused to talk, lay praying and telling her beads, and died peacefully with the rosary slipping from her fingers.",
+            "The next morning she fell ill. She was sure her end had come, since she had missed her prayers the evening before and did not want to waste more time talking. She lay praying and telling her beads, and died peacefully with the rosary slipping from her lifeless fingers.",
             "Thousands of sparrows came and sat silently around her body. They ignored the crumbs the author's mother threw, and flew away quietly when her body was carried off."
           ]
         },
@@ -1401,13 +1402,14 @@ StudyData.add(11, "english", {
     {
       id: "were-not-afraid-to-die",
       title: "We're Not Afraid to Die... if We Can All Be Together",
-      section: "Literature – Hornbill",
+      section: "Hornbill",
+      source: "Hornbill (Reprint 2026-27) Ch 2, pp. 12–18",
       summary: "A true account of a family's round-the-world voyage that turns into a fight for survival when a giant wave wrecks their boat in the southern Indian Ocean, and how courage, teamwork and the children's bravery see them through.",
       notes: [
         {
           heading: "The voyage",
           points: [
-            "In **July 1976**, the narrator, his wife **Mary**, son **Jonathan** (6) and daughter **Suzanne** (7) set sail from **Plymouth, England**, hoping to repeat the round-the-world voyage made by Captain James Cook.",
+            "In **July 1976**, the narrator (a 37-year-old businessman, Gordon Cook), his wife **Mary**, son **Jonathan** (6) and daughter **Suzanne** (7) set sail from **Plymouth, England**, hoping to repeat the round-the-world voyage made by Captain James Cook.",
             "Their boat, the **Wavewalker**, was a 23-metre, 30-ton wooden-hulled ship that they had fitted out carefully and tested in rough weather.",
             "The first part of the voyage, down the west coast of Africa to **Cape Town**, was pleasant.",
             "For the difficult stretch across the southern Indian Ocean, they took on two crewmen: **Larry Vigil**, an American, and **Herb Seigler**, a Swiss."
@@ -1425,11 +1427,11 @@ StudyData.add(11, "english", {
         {
           heading: "The fight to survive",
           points: [
-            "The electric pump short-circuited, but they found a spare hand pump and kept pumping for hours.",
+            "The hand pumps clogged with debris, the electric pump short-circuited and the two spare hand pumps were swept overboard. The narrator then remembered **another electric pump** under the chartroom floor, connected it, and it worked. They pumped for about **36 hours**.",
             "**Sue** had been badly hurt on the head but said nothing, because she did not want to disturb her father while he was trying to save them all.",
             "**Jonathan** told his father that the children were not afraid of dying if the whole family could be together, the words that give the story its title.",
             "Sue later made a funny card with drawings of her parents to cheer them up.",
-            "With hardly any proper instruments, the narrator worked out their position to reach **Ile Amsterdam**, a tiny French scientific base in the Indian Ocean. When the island came into view, Jonathan called him the best daddy and the best captain in the world."
+            "Having lost the main compass, the narrator worked out the course with a spare compass and a sextant, aiming for **Ile Amsterdam**, a tiny French scientific base in the Indian Ocean. He dozed off, sure they had missed it, but the children woke him, hugged him as the best daddy and captain, and told him they had **sighted the island**; 28 people there helped them ashore."
           ]
         },
         {
@@ -1469,11 +1471,11 @@ StudyData.add(11, "english", {
       qa: [
         {
           q: "What role did the children play during the crisis?",
-          a: "The children showed courage beyond their age. **Sue** was badly injured on the head but kept quiet so as not to distract her father, and later made a funny card to cheer her parents. **Jon** told his father that they were not afraid of dying if they could all be together, and praised him as the best captain when the island was sighted. Their calm and love gave the adults strength to keep going."
+          a: "The children showed courage beyond their age. **Sue** was badly injured on the head but kept quiet so as not to distract her father, and later made a funny card to cheer her parents. **Jon** told his father that they were not afraid of dying if they could all be together, and later told him he was the best daddy and captain, just before they sighted the island. Their calm and love gave the adults strength to keep going."
         },
         {
           q: "What steps did the narrator take to save the boat after the wave struck?",
-          a: "He organised the pumping with Larry and Herb, found the smashed sections and **stretched canvas and waterproof hatch covers** across the holes to keep the water out, found a **spare hand pump** when the electric pump failed, and, without proper instruments, **calculated their position** to steer the damaged boat to Ile Amsterdam."
+          a: "He organised the pumping with Larry and Herb, found the smashed sections and **stretched canvas and waterproof hatch covers** across the holes to keep the water out, connected **another electric pump** when the first pump failed, and, with a spare compass, **calculated their position** to steer the damaged boat to Ile Amsterdam."
         },
         {
           q: "Explain the title of the story.",
@@ -1523,35 +1525,38 @@ StudyData.add(11, "english", {
     {
       id: "discovering-tut",
       title: "Discovering Tut: the Saga Continues",
-      section: "Literature – Hornbill",
+      section: "Hornbill",
+      source: "Hornbill (Reprint 2026-27) Ch 3, pp. 21–29",
       summary: "An account of how scientists in 2005 used a CT scanner to study the mummy of the boy-king Tutankhamun, more than 3,300 years after his death, in an effort to find out how he lived and died.",
       notes: [
         {
           heading: "Who was Tutankhamun?",
           points: [
-            "**Tutankhamun (Tut)** was a pharaoh of ancient Egypt who became king as a boy and died at about **nineteen**. He was the last heir of a powerful family that had ruled Egypt for centuries.",
+            "**Tutankhamun (Tut)** was a pharaoh of ancient Egypt who became king as a boy and died in his **late teens** (about nineteen). He was the last heir of a powerful family that had ruled Egypt for centuries.",
             "**Amenhotep III**, a powerful pharaoh, was probably his father or grandfather.",
             "**Amenhotep IV** promoted the worship of the **Aten** (the sun disk), changed his name to **Akhenaten**, and moved the religious capital from Thebes to a new city, Amarna.",
             "The boy king, first named **Tutankhaten**, changed his name to **Tutankhamun** (‘living image of Amun’) and restored the old ways of worship.",
-            "He ruled for only a few years and died unexpectedly; his death has long been a mystery."
+            "He reigned for about **nine years** and then died unexpectedly; his death has long been a mystery."
           ]
         },
         {
           heading: "Howard Carter's discovery",
           points: [
             "The British archaeologist **Howard Carter** discovered Tut's tomb in **1922**.",
-            "The tomb was crammed with treasures, such as a solid gold coffin, jewellery, chariots, weapons, games, food and wine: things the Egyptians believed the king would need in the **afterlife**.",
-            "Ritual **resins** poured over the body had hardened and cemented the mummy to the bottom of its gold coffin; even the hot Egyptian sun could not loosen it.",
-            "Carter's team cut the mummy apart to remove it, separating the head and many joints, and later put the pieces together again in a box of sand."
+            "The tomb, though hastily ransacked in ancient times, was surprisingly complete: it held gold ornaments, a solid gold coffin and mask, and everyday things such as board games, a bronze razor, linen underclothes, food and wine, all meant for the **afterlife**.",
+            "Ritual **resins** poured over the body had hardened and cemented the mummy to the bottom of its gold coffin; Carter left it in blazing sun (it heated to 149°F) but nothing budged, so the resin had to be **chiselled away**.",
+            "Carter's men removed the head and cut through nearly every major joint to free the mummy from its gold, and later reassembled it on a layer of sand in a wooden box. Carter had little choice: thieves would otherwise have ripped the mummy apart for the gold."
           ]
         },
         {
           heading: "The 2005 CT scan",
           points: [
-            "On **5 January 2005**, a team led by the Egyptian archaeologist **Zahi Hawass** took the mummy out of its tomb in the Valley of the Kings and scanned it in a portable **CT scanner**.",
+            "On **5 January 2005**, with **Zahi Hawass** (Secretary General of Egypt's Supreme Council of Antiquities) present, the mummy was taken out of its tomb in the Valley of the Kings and scanned in a portable **CT scanner** at night.",
             "**CT (computed tomography)** takes many X-ray images in cross-section, which a computer combines into a detailed three-dimensional picture.",
-            "The scan produced about 1,700 digital X-ray images of the king's body.",
-            "Scientists hoped the images would help settle questions about his age, health and cause of death."
+            "The scan produced about **1,700** digital X-ray images, from head to toe. An earlier X-ray in **1968** had shown that his breast-bone and front ribs are missing.",
+            "The scanner stopped because sand clogged a cooler fan; a guard joked about the ‘curse of the pharaoh’. Spare fans fixed it, and Tut was back in his tomb in under three hours.",
+            "Scientists hoped the images would help settle two big questions: **how old he was** and **how he died**, and give data for an accurate forensic reconstruction.",
+            "The article ends with the constellation **Orion**, the soul of Osiris (god of the afterlife), watching over the boy king."
           ]
         },
         {
@@ -1567,8 +1572,8 @@ StudyData.add(11, "english", {
       formulas: [
         "Author: A.R. Williams",
         "Tomb discovered: 1922, by Howard Carter",
-        "CT scan: 5 January 2005, team led by Zahi Hawass",
-        "Tut died at about 19",
+        "CT scan: 5 January 2005, with Zahi Hawass present; about 1,700 images",
+        "Tut died in his late teens (about 19); he reigned about nine years",
         "Akhenaten: worship of the Aten (sun disk) → Tutankhamun: restored the old ways"
       ],
       terms: [
@@ -1582,11 +1587,11 @@ StudyData.add(11, "english", {
       qa: [
         {
           q: "Why did Howard Carter's team cut Tut's mummy apart?",
-          a: "Ritual **resins** poured over the body had hardened and **cemented the mummy to the bottom of the solid gold coffin**. Exposure to the scorching sun failed to loosen it, so, to free the mummy and remove the gold ornaments, Carter's men cut it apart, separating the head and many joints, and later reassembled it."
+          a: "Ritual **resins** poured over the body had hardened and **cemented the mummy to the bottom of the solid gold coffin**. Heating it in the sun failed to loosen it, so, to free the mummy from its gold ornaments, Carter's men removed the head and cut through nearly every major joint, then reassembled the body on sand in a wooden box."
         },
         {
           q: "How did the CT scan help in the study of Tut's mummy?",
-          a: "A CT scanner takes **hundreds of X-ray images in cross-section** and a computer puts them together into a detailed three-dimensional picture. The 2005 scan produced about 1,700 images, allowing scientists to examine the king's body without damaging it and to look for clues to his **age, health and cause of death**."
+          a: "A CT scanner takes **hundreds of X-ray images in cross-section** and a computer puts them together into a detailed three-dimensional picture. The 2005 scan produced about 1,700 images, allowing scientists to examine the king's body without damaging it further and to look for clues to his **age at death and cause of death**."
         },
         {
           q: "What religious changes took place in Egypt before and during Tut's reign?",
@@ -1604,7 +1609,7 @@ StudyData.add(11, "english", {
           q: "At about what age did Tut die?",
           options: ["About 29", "About 39", "About 19", "About 9"],
           answer: 2,
-          explain: "Tut died at about **nineteen**."
+          explain: "Tut died in his **late teens**, at about nineteen."
         },
         {
           q: "What did Akhenaten promote?",
@@ -1628,7 +1633,7 @@ StudyData.add(11, "english", {
           q: "Who led the team that scanned Tut's mummy in 2005?",
           options: ["Howard Carter", "Zahi Hawass", "Akhenaten", "Lord Carnarvon"],
           answer: 1,
-          explain: "The scan was led by Egyptian archaeologist **Zahi Hawass**."
+          explain: "The scan was carried out with **Zahi Hawass**, head of Egypt's Supreme Council of Antiquities, overseeing."
         }
       ]
     },
@@ -1636,14 +1641,15 @@ StudyData.add(11, "english", {
     {
       id: "a-photograph",
       title: "A Photograph",
-      section: "Literature – Hornbill",
+      section: "Hornbill",
+      source: "Hornbill (Reprint 2026-27) Ch 1, poem on pp. 10–11",
       summary: "A poem in which the poet looks at an old seaside photograph of her mother as a girl and reflects on the passing of time, memory, and her grief at her mother's death.",
       notes: [
         {
           heading: "Stanza 1: the photograph",
           points: [
             "The photograph, mounted on cardboard, shows the poet's mother as a girl of about **twelve**, on a beach with her two cousins, **Betty and Dolly**.",
-            "The three girls stand holding hands with the sea water washing over their feet; the photograph was taken by their **uncle**.",
+            "The two cousins each hold one of the mother's hands, and all three stand still and smile through their hair at the **uncle** with the camera, while sea water washes their feet.",
             "The mother, the eldest of the three, has a sweet face and is smiling.",
             "The **sea** has hardly changed since then, while the people in the photo were only passing through: human life is brief."
           ]
@@ -1651,7 +1657,7 @@ StudyData.add(11, "english", {
         {
           heading: "Stanza 2: the mother's laughter",
           points: [
-            "Some twenty or thirty years later, the mother would laugh at the snapshot, amused at how Betty and Dolly had been dressed for the beach.",
+            "Some twenty or thirty years later, the mother would laugh at the snapshot, pointing out Betty and Dolly and joking about how the grown-ups had dressed the girls for the beach.",
             "For the mother, the seaside holiday had become her **past**; for the poet, the mother's laughter has now become her past.",
             "Both feel a **sense of loss**: the mother for her lost childhood, the poet for her lost mother."
           ]
@@ -1671,7 +1677,7 @@ StudyData.add(11, "english", {
             "**Contrast:** the unchanging sea against short-lived human beings.",
             "**Alliteration:** ‘terribly transient’.",
             "**Play on words:** ‘its silence silences’ shows grief that leaves the poet speechless.",
-            "Three stanzas of unequal length with no regular rhyme scheme; the stanzas move from the photo, to the mother's memory, to the poet's grief."
+            "Three stanzas with no regular rhyme scheme; the stanzas move from the photo, to the mother's memory, to the poet's grief."
           ]
         }
       ],
@@ -1743,15 +1749,131 @@ StudyData.add(11, "english", {
     },
 
     {
+      id: "the-laburnum-top",
+      title: "The Laburnum Top",
+      section: "Hornbill",
+      summary: "Ted Hughes's short poem about a still, silent laburnum tree that bursts into noisy life when a goldfinch slips inside to feed her young, and falls empty again when she flies off.",
+      source: "Hornbill (Reprint 2026-27), poem following Ch 3",
+      notes: [
+        {
+          heading: "Outline of the poem",
+          points: [
+            "The poem opens on a **silent, motionless** laburnum tree in yellow September afternoon sunlight, with a few yellowing leaves and all its seeds fallen.",
+            "Suddenly a **goldfinch** arrives at the end of a branch with a twitching chirp, and the quiet is broken.",
+            "She slips, sleek and quick, into the thick leaves, and the whole tree fills with chittering, trilling and a **tremor of wings**.",
+            "After feeding her family she hops out to a branch-end, shows her face markings, whispers a delicate call and flies away into the open sky.",
+            "The tree **goes empty and quiet again**, just as it began."
+          ]
+        },
+        {
+          heading: "Imagery and figures of speech",
+          points: [
+            "**Simile:** the bird is ‘sleek as a lizard’, which stresses her smooth, darting, alert movement.",
+            "**Metaphor:** the tree becomes a **machine or engine** that starts up and that the bird fuels, the engine of her family. The bird feeds the hungry, noisy young hidden in the leaves, as a stoker feeds fuel to an engine.",
+            "**Personification:** the whole tree trembles and thrills as if it were alive and excited.",
+            "The **mask** image pictures the goldfinch's striped face pattern as a mask that identifies her.",
+            "**Sound words:** twitching, chirrup, chitterings, trillings, whistle-chirrup, whisperings. **Movement words:** twitching, enters, flirts out, launches, trembles."
+          ]
+        },
+        {
+          heading: "Structure and mood",
+          points: [
+            "The poem begins and ends with **stillness and emptiness**; the burst of activity sits in the middle, so the arrival and departure of the bird frame it like a brief scene.",
+            "The dominant colour is **yellow**: the sunlight, the yellowing leaves and the goldfinch itself.",
+            "Short bursts of sound against long stretches of silence give a feeling of sudden life breaking in.",
+            "The last lines, where she flies off towards infinity, make the bird's departure feel open and boundless."
+          ]
+        },
+        {
+          heading: "Themes and poet",
+          points: [
+            "**Theme:** the sudden vitality that a living creature brings to a still scene; the energy of parenthood and nature's busy, hidden life.",
+            "The poet wants us to notice **small moments in nature** with fresh, precise attention.",
+            "**Ted Hughes** (1930–1998) was an English poet known for vivid, energetic poems about animals and nature.",
+            "The poem is placed after the lesson on Tut because that lesson mentions plant names."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Ted Hughes",
+        "Subject: a goldfinch visiting a laburnum tree in September",
+        "Simile: ‘sleek as a lizard’; Metaphor: the tree as a machine/engine of her family",
+        "Dominant colour: yellow",
+        "Structure: stillness → burst of sound and movement → stillness"
+      ],
+      terms: [
+        { term: "Laburnum", meaning: "A short tree with hanging branches, yellow flowers and poisonous seeds." },
+        { term: "Goldfinch", meaning: "A small singing bird with yellow patches on its wings." },
+        { term: "Chirrup", meaning: "A short, sharp chirping sound made by small birds." },
+        { term: "Stoke", meaning: "To feed fuel into a fire or engine; here, the bird feeding her young." },
+        { term: "Simile", meaning: "A direct comparison using ‘like’ or ‘as’, e.g. ‘sleek as a lizard’." },
+        { term: "Imagery", meaning: "Words that create pictures or sounds in the reader's mind." }
+      ],
+      qa: [
+        {
+          q: "What do you notice about the beginning and the ending of the poem?",
+          a: "The poem **begins** with the laburnum tree silent and still, and **ends** with the tree subsiding to emptiness after the goldfinch leaves. The noisy activity in between is only a brief interruption, so the ending returns to the quiet of the opening."
+        },
+        {
+          q: "Why does the poet compare the tree to an engine?",
+          a: "When the goldfinch enters the thick leaves, the tree fills with **chittering, trilling and the tremor of wings**, like a machine starting up. The bird feeds her young and keeps the sound and movement going, like a stoker fuelling an engine, so the tree becomes the engine of her family."
+        },
+        {
+          q: "What does the poet mean by calling the goldfinch's face an identity mask?",
+          a: "It describes the **striped pattern on the goldfinch's face**, which marks her out as clearly as a mask. As she sits at the branch-end the pattern identifies her as the goldfinch."
+        }
+      ],
+      quiz: [
+        {
+          q: "In which month does the poem take place?",
+          options: ["June", "September", "December", "March"],
+          answer: 1,
+          explain: "The poem is set in the yellow sunlight of a September afternoon."
+        },
+        {
+          q: "What breaks the silence of the laburnum tree?",
+          options: ["A sudden storm", "A group of children", "A goldfinch", "A falling branch"],
+          answer: 2,
+          explain: "The **goldfinch** arrives with a twitching chirp."
+        },
+        {
+          q: "The bird is compared to a lizard because she is:",
+          options: ["sleek, alert and quick in movement", "green in colour", "slow and heavy", "afraid of people"],
+          answer: 0,
+          explain: "‘Sleek as a lizard’ is a **simile** for her smooth, darting movement."
+        },
+        {
+          q: "What is the dominant colour in the poem?",
+          options: ["Red", "Green", "Blue", "Yellow"],
+          answer: 3,
+          explain: "Yellow runs through the sunlight, the leaves and the goldfinch."
+        },
+        {
+          q: "What does the machine that starts up in the tree stand for?",
+          options: ["A noisy flurry of chirps and wings in the tree", "A car passing by", "A mill nearby", "A clock striking"],
+          answer: 0,
+          explain: "It is a **metaphor** for the tree full of sound and movement."
+        },
+        {
+          q: "How does the poem end?",
+          options: ["The tree blossoms", "The laburnum subsides to empty", "The bird builds a nest", "Night falls"],
+          answer: 1,
+          explain: "After the bird flies off, the tree is quiet and **empty** again."
+        }
+      ]
+    },
+
+    {
       id: "the-voice-of-the-rain",
       title: "The Voice of the Rain",
-      section: "Literature – Hornbill",
+      section: "Hornbill",
+      source: "Hornbill (Reprint 2026-27), poem following the Laburnum Top, pp. 33–34",
       summary: "Walt Whitman's short poem in which the rain itself answers the poet, describing its endless cycle from earth to sky and back, and comparing itself to a song that returns to its source.",
       notes: [
         {
           heading: "Summary",
           points: [
-            "The poet asks the soft-falling shower who it is, and the rain answers that it is the **Poem of Earth**.",
+            "The poet asks the soft-falling shower who it is and, ‘strange to tell’, the rain answers (the poem presents the reply as a translation of the rain's voice): it is the **Poem of Earth**.",
             "It rises, **impalpable** (too fine to be touched), out of the land and the bottomless sea up to the sky, where it changes form but stays the same in essence.",
             "It comes down to wash the droughts, the dust and the tiny particles of the earth, and gives life to seeds that would otherwise lie hidden and unborn.",
             "Day and night it gives life back to its own origin and makes it pure and beautiful."
@@ -1769,7 +1891,7 @@ StudyData.add(11, "english", {
         {
           heading: "Rain and song",
           points: [
-            "In brackets, the poet adds that a **song** behaves the same way: it rises from its birthplace (the poet's heart), wanders, fulfils its purpose and, whether noticed or not, returns with love to its source.",
+            "In brackets, the poet adds that a **song** behaves the same way: it comes out of its birthplace, wanders, fulfils its purpose and, whether noticed or not, returns with love to its source.",
             "Like rain, poetry and music give life and beauty to the world.",
             "The brackets show this is the **poet's own reflection**, set apart from the rain's words."
           ]
@@ -1780,7 +1902,7 @@ StudyData.add(11, "english", {
             "**Personification:** the rain speaks and calls itself the Poem of Earth.",
             "**Free verse:** no regular rhyme or metre, typical of Whitman.",
             "**Comparison:** the cycle of rain is compared to the journey of a song.",
-            "**Alliteration:** ‘soft-falling shower’.",
+            "**Opposites:** rise and descend, seeds ‘unborn’ and life, day and night, changed and yet the same.",
             "The poem is a **dialogue** between the poet and the rain, with old-fashioned words such as ‘thou’ and ‘reck'd’."
           ]
         }
@@ -1807,7 +1929,7 @@ StudyData.add(11, "english", {
         },
         {
           q: "How is the rain like a song or poem?",
-          a: "A song rises from its **birthplace**, the poet's heart, travels out into the world and fulfils its purpose, whether people value it or not, and then returns with love to its source. In the same way rain rises from the earth, gives life, and returns to it. Both **give and return** in an endless cycle."
+          a: "A song comes out of its **birthplace**, travels out into the world and fulfils its purpose, whether people value it or not, and then returns with love to its source. In the same way rain rises from the earth, gives life, and returns to it. Both **give and return** in an endless cycle."
         },
         {
           q: "Why are the last two lines placed in brackets?",
@@ -1855,9 +1977,137 @@ StudyData.add(11, "english", {
     },
 
     {
+      id: "the-ailing-planet",
+      title: "The Ailing Planet: the Green Movement's Role",
+      section: "Hornbill",
+      summary: "Nani Palkhivala's 1994 essay on the Green Movement: the earth is a living organism in poor health, forests and other life-support systems are being destroyed, population growth makes it worse, and everyone, including industry, must act responsibly for future generations.",
+      source: "Hornbill (Reprint 2026-27) Ch 4, pp. 35–40",
+      notes: [
+        {
+          heading: "The Green Movement and a new view of the earth",
+          points: [
+            "The essay was written by the lawyer **Nani Palkhivala** and published in *The Indian Express* on **24 November 1994**.",
+            "No other movement has caught the human imagination so quickly as the **Green Movement**, begun about twenty-five years earlier; the first nationwide Green party was founded in **New Zealand in 1972**.",
+            "It marks a shift from a **mechanistic** view of the world to a **holistic and ecological** view, as revolutionary as Copernicus showing that the earth goes round the sun.",
+            "For the first time people see the earth as a **living organism** with its own vital processes; its vital signs show a patient in declining health.",
+            "**Sustainable development** (popularised in 1987 by the World Commission on Environment and Development) means meeting present needs without harming the ability of future generations to meet theirs."
+          ]
+        },
+        {
+          heading: "The most dangerous animal",
+          points: [
+            "In the zoo at **Lusaka, Zambia**, a cage labelled ‘The world's most dangerous animal’ holds no animal, only a **mirror** in which the visitor sees himself.",
+            "The point: human beings are the real danger to the planet, but a new awareness is dawning, a shift from **domination to partnership** with nature.",
+            "About **1.4 million** living species have been catalogued; biologists think three to a hundred million more remain unnamed.",
+            "The Brandt Commission (one of whose members was the Indian L.K. Jha) warned against leaving our successors a ruined, desert-ridden planet."
+          ]
+        },
+        {
+          heading: "Biological systems and forests",
+          points: [
+            "Lester Brown names four principal **biological systems**: **fisheries, forests, grasslands and croplands**. They feed us and supply most industrial raw materials except minerals and petroleum-based products.",
+            "Human demands on them are becoming unsustainable: fisheries collapse, forests vanish, grasslands become barren wastelands and croplands deteriorate.",
+            "In poor countries forests are cut for **firewood**, which now costs more than the food cooked on it; burning dung for fuel also robs the soil of natural fertiliser.",
+            "Tropical forests, which a scientist calls the powerhouse of evolution, are shrinking by **forty to fifty million acres a year**, so many species face extinction. Forests precede mankind; deserts follow.",
+            "**India:** Article 48A of the Constitution asks the State to protect the environment, forests and wildlife, but laws are not enforced. Forests are vanishing at about **3.7 million acres a year**, and the real loss may be about **eight times** the official figure."
+          ]
+        },
+        {
+          heading: "Population",
+          points: [
+            "Humanity took over a million years to reach its first billion (about **1800**); the second billion came by **1900**, and the 20th century added 3.7 billion more, making **5.7 billion** (as the essay counts it).",
+            "World population grows by about a million **every four days**.",
+            "Fertility falls as incomes, education and health improve, so **development is the best contraceptive**; yet continued growth may make development impossible.",
+            "The author argues for **voluntary** family planning, not compulsion, saying the real choice is between population control and continued poverty.",
+            "India's population (about 920 million then) was larger than Africa's and South America's combined."
+          ]
+        },
+        {
+          heading: "The Era of Responsibility",
+          points: [
+            "Humanity now has a **transcending concern**: the survival not just of people but of the planet. The environmental crisis, he says, is our passport to the future, not the end.",
+            "The new world-vision is an **ecological** one: the world is an integrated whole, not a collection of separate parts.",
+            "**Industry** has a crucial role. The chairman of Du Pont, Edgar Woolard, styled himself the company's chief environmental officer, saying a leading manufacturer must excel in environmental performance.",
+            "Margaret Thatcher said that no generation owns the earth outright; we hold only a life tenancy that obliges us to keep it in repair. Lester Brown says we have **borrowed the earth from our children**, not inherited it.",
+            "**Tone:** serious, argumentative and urgent, backed by facts and figures."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Nani Palkhivala; published in The Indian Express, 24 November 1994",
+        "First nationwide Green party: New Zealand, 1972",
+        "Sustainable development defined in 1987 (World Commission on Environment and Development)",
+        "Four biological systems (Lester Brown): fisheries, forests, grasslands, croplands",
+        "Tropical forests lost: 40–50 million acres a year; India: 3.7 million acres a year",
+        "Population: 1 billion (about 1800), 2 billion (1900), 5.7 billion (essay's figure)"
+      ],
+      terms: [
+        { term: "Holistic", meaning: "Treating something as a whole rather than as separate parts." },
+        { term: "Sustainable development", meaning: "Growth that meets today's needs without using up what future generations will need." },
+        { term: "Inter alia", meaning: "A Latin phrase meaning ‘among other things’." },
+        { term: "Decimated", meaning: "Destroyed in very large numbers; the essay says forests are being decimated for firewood." },
+        { term: "Languish", meaning: "To remain neglected and unattended; unnamed species languish in darkness." },
+        { term: "Depletion", meaning: "The using up or serious reduction of a resource." }
+      ],
+      qa: [
+        {
+          q: "What does the cage in the Lusaka zoo signify?",
+          a: "The cage carries a notice calling its occupant the world's most dangerous animal, yet it holds only a **mirror**. A visitor sees his own reflection: **human beings** are the most dangerous creature because their greed and carelessness are destroying the planet. The author adds that a new awareness is spreading, a move from domination to partnership with nature."
+        },
+        {
+          q: "How are the earth's principal biological systems being depleted?",
+          a: "Lester Brown names **fisheries, forests, grasslands and croplands**. Human demands on them have become unsustainable: **over-fishing** is common, forests are **cut down for firewood** and cleared, grasslands turn into **barren wastelands**, and croplands deteriorate. Tropical forests alone are shrinking by forty to fifty million acres a year."
+        },
+        {
+          q: "Why does the author say population growth distorts the future of human society?",
+          a: "Population has exploded: 5.7 billion people now, with a million more every four days. The poor have more children and remain poor, and **more children do not mean more workers, only more people without work**. Rising numbers can block the very development that would slow growth, so the choice is between population control and perpetuating poverty. He prefers **voluntary** family planning."
+        }
+      ],
+      quiz: [
+        {
+          q: "Where was the world's first nationwide Green party founded?",
+          options: ["Germany", "Britain", "New Zealand", "India"],
+          answer: 2,
+          explain: "It was founded in **New Zealand in 1972**."
+        },
+        {
+          q: "What did the mirror in the Lusaka zoo cage show?",
+          options: ["A reflection of the visitor, the most dangerous animal", "A rare species", "A map of Africa", "A warning about poachers"],
+          answer: 0,
+          explain: "The visitor saw **himself**, since humans are the most dangerous animal."
+        },
+        {
+          q: "Which is NOT one of the four principal biological systems named by Lester Brown?",
+          options: ["Fisheries", "Mineral deposits", "Forests", "Croplands"],
+          answer: 1,
+          explain: "The four are **fisheries, forests, grasslands and croplands**; minerals are not among them."
+        },
+        {
+          q: "According to the essay, why is development called the best contraceptive?",
+          options: ["It makes children expensive to raise", "It bans large families", "It stops marriages", "Fertility falls as incomes, education and health improve"],
+          answer: 3,
+          explain: "Rising **incomes, education and better health** lower fertility."
+        },
+        {
+          q: "Which Article of the Indian Constitution asks the State to protect the environment and wildlife?",
+          options: ["Article 14", "Article 48A", "Article 21", "Article 370"],
+          answer: 1,
+          explain: "**Article 48A** directs the State to protect the environment, forests and wildlife."
+        },
+        {
+          q: "The author says we have not inherited the earth from our forefathers. What have we done?",
+          options: ["Conquered it", "Bought it", "Borrowed it from our children", "Shared it with other planets"],
+          answer: 2,
+          explain: "In Lester Brown's words, we have **borrowed the earth from our children**."
+        }
+      ]
+    },
+
+    {
       id: "childhood",
       title: "Childhood",
-      section: "Literature – Hornbill",
+      section: "Hornbill",
+      source: "Hornbill (Reprint 2026-27), poem following Ch 4, pp. 41–42",
       summary: "A reflective poem in which the poet asks when his childhood ended, and suggests it was lost as he began to think logically, saw through adults' hypocrisy and discovered his own individuality.",
       notes: [
         {
@@ -1972,9 +2222,254 @@ StudyData.add(11, "english", {
     },
 
     {
+      id: "the-adventure",
+      title: "The Adventure",
+      section: "Hornbill",
+      summary: "Jayant Narlikar's science-fiction story: after a road accident, historian Gangadharpant Gaitonde finds himself in a Bombay where the Marathas won the Battle of Panipat and the British never took over India. His scientist friend Rajendra explains it through catastrophe theory and parallel worlds.",
+      source: "Hornbill (Reprint 2026-27) Ch 5, pp. 43–53 (adapted version)",
+      notes: [
+        {
+          heading: "Plot: the strange journey",
+          points: [
+            "**Professor Gangadharpant Gaitonde**, a historian from Pune, is hit by a truck while thinking about the **catastrophe theory** and how it applies to history. He then finds himself on the **Jijamata Express** to Bombay, in a world that is subtly different.",
+            "A fellow passenger, **Khan Sahib**, a businessman bound for Peshawar by the Frontier Mail, tells him the train reaches Sarhad, **where British territory begins**. The suburban trains carry a small Union Jack, and Bombay's staff are mostly Anglo-Indians and Parsees.",
+            "Outside Victoria Terminus he is shocked to see **East India House, headquarters of the East India Company**, still flourishing. In the Forbes building the receptionist finds no record of his son **Vinay Gaitonde**.",
+            "Hornby Road looks like an English high street, with Boots, Woolworth, Lloyds and Barclays."
+          ]
+        },
+        {
+          heading: "The library and the different history",
+          points: [
+            "In the library of the Asiatic Society (Town Hall) he reads the five volumes of his own history. The first four match his world; the change appears in volume five, at the **Battle of Panipat**.",
+            "In this world the **Marathas won**, routing Abdali, and the East India Company, shaken, shelved its plans of expansion. Vishwasrao later became the Peshwa, and the Company was left with small pockets of influence near Bombay, Calcutta and Madras.",
+            "Over time India built its own science centres, moved to **democracy**, and kept the Mughal ruler as a mere figurehead. It had never been enslaved by the white man and had self-respect. Britain held only Bombay, on a lease due to end in 2001.",
+            "The clue to *how* the Marathas won lies in a Marathi chronicle, **Bhausahebanchi Bakhar**: Vishwasrao rode into the fighting and a shot just missed his ear, taken as an omen by the army.",
+            "(In real history the Marathas **lost** the Third Battle of Panipat in 1761 to Ahmad Shah Abdali.)"
+          ]
+        },
+        {
+          heading: "Azad Maidan and the return",
+          points: [
+            "Absent-mindedly he carries off the **Bakhar** in his pocket. That evening at a lecture in Azad Maidan he sees an **empty presiding chair** and tries to take it, as he is used to chairing meetings.",
+            "The audience, who long ago abolished such customs, objects to his speech and pelts him with tomatoes and eggs. In the crowd he vanishes.",
+            "He is found in Azad Maidan the next morning, back in the world he knows, after two days away. He tells his friend **Rajendra Deshpande**.",
+            "Proof: a **page torn out of the Bakhar** survives in his pocket. It says Vishwasrao escaped the bullet, whereas his own copy says the bullet hit Vishwasrao."
+          ]
+        },
+        {
+          heading: "Rajendra's explanation",
+          points: [
+            "**Catastrophe theory:** in a face-to-face battle on open ground, one critical moment can decide everything. If Vishwasrao had not been killed, the army's morale and the whole battle might have gone the other way.",
+            "**Quantum theory:** the behaviour of tiny systems like electrons cannot be predicted exactly, only given as odds. Imagine many possible worlds, each with the electron in a different place.",
+            "Rajendra suggests Gangadharpant **made a transition from one world to another and back**, as an electron jumps between energy states. He did not travel in time; he experienced a different present.",
+            "Why the transition happened is unknown, perhaps triggered by the neurons in his brain as he thought about the collision and the battle."
+          ]
+        },
+        {
+          heading: "Ending, themes and style",
+          points: [
+            "Gangadharpant decides he will never again preside over a meeting, because the professor who preached from the chair vanished at his thousandth address. He cancels his Panipat seminar.",
+            "**Themes:** a single event can change history; reality may not be unique; science and history can be connected; the ruled need not copy the ruler.",
+            "**Genre:** science fiction / alternative history, written with humour and a historian's curiosity.",
+            "**Author:** Jayant Narlikar, an Indian astrophysicist and popular science writer."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Jayant Narlikar; genre: science fiction (alternative history)",
+        "Protagonist: Professor Gangadharpant Gaitonde; his friend: Rajendra Deshpande",
+        "Turning point of history: the Battle of Panipat (Marathas win; a shot misses Vishwasrao)",
+        "Evidence: Bhausahebanchi Bakhar, a page torn out of it",
+        "Explanation: catastrophe theory + many-worlds idea from quantum theory"
+      ],
+      terms: [
+        { term: "Catastrophe theory", meaning: "The idea that a small change at a critical moment can bring a sudden, large change in the outcome." },
+        { term: "Bakhar", meaning: "A Marathi historical chronicle; the one in the story is Bhausahebanchi Bakhar." },
+        { term: "Determinism", meaning: "The idea that future events can be exactly predicted from known laws; quantum theory lacks it." },
+        { term: "Figurehead", meaning: "A ruler or head with no real power, who merely approves what others decide." },
+        { term: "De facto", meaning: "In reality, even if not officially so; the Peshwas were de facto rulers." },
+        { term: "Bifurcation", meaning: "A splitting into two branches; here, the history of the world splitting at Panipat." }
+      ],
+      qa: [
+        {
+          q: "How did Gangadharpant realise that he was in a different India?",
+          a: "He noticed small differences first: the **Union Jack on the suburban trains**, the British-run Sarhad border and the Anglo-Indian staff. In Bombay he saw **East India House** still flourishing and a high street of British shops and banks. The library's volume five of his own history, describing a **Maratha victory at Panipat**, confirmed that history had taken a different path."
+        },
+        {
+          q: "Explain how Rajendra uses science to account for Gangadharpant's experience.",
+          a: "Rajendra applies the **catastrophe theory**, saying a crucial moment such as Vishwasrao's death or escape could turn the battle either way. He then uses **quantum theory**: since tiny systems have many possible outcomes, there may be many worlds with different histories. He suggests the professor **moved from one world to another and back**, experiencing a different present rather than travelling in time."
+        },
+        {
+          q: "Why does the professor decide never to preside over a meeting again?",
+          a: "His urge to occupy the **empty presiding chair** at Azad Maidan led to his disappearance from that world. He feels the professor who vanished defending his chair at his thousandth address will never preside again, and he has informed the organisers of the Panipat seminar. It is a humorous ending that shows he has been changed by the adventure."
+        }
+      ],
+      quiz: [
+        {
+          q: "What was Professor Gaitonde thinking about before the collision with the truck?",
+          options: ["The Industrial Revolution", "The catastrophe theory and its role in history", "A new train timetable", "His son's career"],
+          answer: 1,
+          explain: "He was thinking about the **catastrophe theory** and its implications for history."
+        },
+        {
+          q: "Which building showed him that the East India Company still existed?",
+          options: ["Forbes building", "The Town Hall", "East India House", "Handloom House"],
+          answer: 2,
+          explain: "He saw **East India House**, the Company's headquarters."
+        },
+        {
+          q: "At which battle had the history of the other world taken a different turn?",
+          options: ["Plassey", "Waterloo", "Haldighati", "Panipat"],
+          answer: 3,
+          explain: "In that world the Marathas **won the Battle of Panipat**."
+        },
+        {
+          q: "What proof did the professor bring back from the other world?",
+          options: ["A page torn out of the Bakhar", "A railway ticket", "A photograph", "A coin"],
+          answer: 0,
+          explain: "A **torn page of Bhausahebanchi Bakhar** survived in his pocket."
+        },
+        {
+          q: "Why did the audience at Azad Maidan object to Gaitonde?",
+          options: ["He arrived late", "He took the empty presiding chair, though they had abolished such customs", "He spoke in English", "He criticised the speaker's ideas"],
+          answer: 1,
+          explain: "The lecture series had **no chairperson**; he insisted on presiding."
+        },
+        {
+          q: "According to Rajendra, what exactly did Gangadharpant do?",
+          options: ["Travelled into the past", "Travelled into the future", "Experienced a different world by moving between possible worlds", "Dreamt the whole thing"],
+          answer: 2,
+          explain: "He **neither travelled to the past nor the future**; he experienced a different present."
+        }
+      ]
+    },
+
+    {
+      id: "silk-road",
+      title: "Silk Road",
+      section: "Hornbill",
+      summary: "Nick Middleton's travelogue of his journey through Tibet towards Mount Kailash: crossing a 5,500-metre pass with his driver Tsetan, falling ill with a cold and altitude trouble at Darchen, and finding a companion in Norbu for the kora.",
+      source: "Hornbill (Reprint 2026-27) Ch 6, pp. 57–67 (adapted version)",
+      notes: [
+        {
+          heading: "The drive from Ravu",
+          points: [
+            "The author is leaving **Ravu** on the Changtang plateau. Lhamo, a nomad woman, gives him a **sheepskin coat** as a farewell present, since he plans the **kora**, the pilgrim walk round **Mount Kailash**.",
+            "His driver **Tsetan** and guide-interpreter **Daniel** take a short cut south-west across plains where gazelles bound away and a herd of **kyang** (wild ass) gallops in tight formation, raising dust.",
+            "They pass nomads (**drokbas**) and their dark tents, guarded by huge black **Tibetan mastiffs** that rush at the car. These dogs were once taken along the Silk Road to China's imperial courts as hunting dogs, sent as tribute from Tibet."
+          ]
+        },
+        {
+          heading: "Snow, the pass and the salt lake",
+          points: [
+            "On the climb they meet patches of snow with an icy surface. Tsetan tests the snow and spreads soil over it for grip, and the men get out to lighten the car; at another blockage he drives round the snow over rocks.",
+            "At **5,210 m** the author's ears are under pressure; past **5,400 m** his head throbs. The pass top, at **5,515 m**, is marked by a cairn hung with white silk scarves and prayer flags, and travellers circle it **clockwise** by tradition.",
+            "Tsetan loosens the petrol cap and it hisses: the low air pressure lets the fuel expand. He jokes, ‘no smoking’.",
+            "Lunch is at a workcamp by a dry **salt lake**. The salt flats and brackish lakes are traces of the ancient **Tethys Ocean**, which lay beside Tibet before the continental collision that lifted the plateau."
+          ]
+        },
+        {
+          heading: "Hor, Manasarovar and Darchen",
+          points: [
+            "They reach **Hor**, on the old trade route between Lhasa and Kashmir, after two punctures. Daniel goes back to Lhasa by truck.",
+            "Hor is bleak and littered, though it stands on the shore of **Lake Manasarovar**, Tibet's holiest water, believed in Hindu and Buddhist tradition to be the source of the Indus, Ganges, Sutlej and Brahmaputra (in fact only the Sutlej flows from it).",
+            "The author contrasts this with earlier travellers: the Japanese monk **Ekai Kawaguchi** (1900) wept at the lake's sanctity, and the Swede **Sven Hedin** was also deeply moved.",
+            "At **Darchen** (4,760 m) he cannot sleep: lying down blocks his nose and makes his chest heavy, and he is afraid he might not wake. A Tibetan doctor at the new medical college diagnoses a cold and altitude effects, and prescribes a five-day course of powders and pellets. He then sleeps ‘like a log’."
+          ]
+        },
+        {
+          heading: "Waiting, and meeting Norbu",
+          points: [
+            "Tsetan leaves, joking that, as a Buddhist, he knew the author's death would not matter much but would be bad for business.",
+            "Darchen is dusty and half-derelict, but the sun and a view of the Himalayas and **Gurla Mandhata** cheer him. There are **no pilgrims**, as he has arrived too early in the season, and he is unsure if snow still blocks the kora route.",
+            "In the cafe he meets **Norbu**, a Tibetan scholar from Beijing's Chinese Academy of Social Sciences who has written about the kora but never walked it. He is overweight, not very devout, and plans to hire yaks for luggage.",
+            "The two decide to team up, ‘academics who have escaped from the library’. The author thinks Norbu may be the ideal companion."
+          ]
+        },
+        {
+          heading: "Style and themes",
+          points: [
+            "**Genre:** a travelogue in the first person, in lively active-voice sentences with humour and vivid pictures, such as the half-moon in a blue sky.",
+            "**Themes:** the hardships and thrill of a high-altitude journey; the kindness of local people; the gap between legendary places and their reality; the old **Silk Road** trade route connecting cultures.",
+            "**Title:** the route follows the old trade road, the mastiffs travelled the Silk Road as tribute, and the author jokes that Chinese plastic is a Silk Road export today.",
+            "**Words:** *kora* (pilgrim circuit), *drokba* (nomad), *kyang* (wild ass) are Tibetan."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Nick Middleton; genre: travelogue",
+        "Destination: Mount Kailash (kora = walk round the mountain)",
+        "Heights: snow patch 5,210 m; pass 5,515 m; Darchen 4,760 m",
+        "People: Tsetan (driver), Daniel (guide), Lhamo (nomad), Norbu (Tibetan scholar)",
+        "Lake Manasarovar: only the Sutlej flows out of it"
+      ],
+      terms: [
+        { term: "Kora", meaning: "The Tibetan pilgrim walk round a sacred mountain, here Mount Kailash." },
+        { term: "Drokba", meaning: "A Tibetan nomad herder." },
+        { term: "Kyang", meaning: "The Tibetan wild ass." },
+        { term: "Cairn", meaning: "A heap of stones set up as a landmark; here hung with silk scarves and prayer flags." },
+        { term: "Travelogue", meaning: "An account of a journey, usually in the first person." },
+        { term: "Tethys Ocean", meaning: "An ancient ocean that once lay where the Tibetan plateau now stands." }
+      ],
+      qa: [
+        {
+          q: "Why was the author's experience at Hor in stark contrast to earlier accounts?",
+          a: "Earlier travellers such as **Ekai Kawaguchi** and **Sven Hedin** were deeply moved by the holiness of Lake Manasarovar; Kawaguchi even burst into tears. The author found Hor **dirty, grim and full of rubbish**, with ugly concrete buildings, a filthy cafe and no vegetation, so the sacred lake did not match the legend."
+        },
+        {
+          q: "How did Tsetan help the author during the journey?",
+          a: "Tsetan was a **skilful and cheerful driver**: he tested the icy snow, spread soil on it and found a way round the blockages. He got the punctures mended, took the author to the Darchen medical college when he fell ill, and stayed until he was sure he would live. He also gave him confidence with his humour."
+        },
+        {
+          q: "Why did the author consider Norbu an ideal companion for the kora?",
+          a: "Norbu was **Tibetan, spoke English and was a scholar** who had written about the kora but never done it, so both were beginners and equally ill-prepared. He planned to hire yaks for the luggage and had **no intention of prostrating himself** all the way round. His cheerful, easy-going nature suited the author, who did not want to go alone."
+        }
+      ],
+      quiz: [
+        {
+          q: "What does the word ‘kora’ mean in the lesson?",
+          options: ["A kind of tent", "A type of dog", "A Tibetan medicine", "A pilgrim walk round Mount Kailash"],
+          answer: 3,
+          explain: "The **kora** is the pilgrimage circuit round Mount Kailash."
+        },
+        {
+          q: "At what height did the author reach the top of the pass?",
+          options: ["5,515 metres", "4,760 metres", "3,210 metres", "6,500 metres"],
+          answer: 0,
+          explain: "The pass top was at **5,515 metres**."
+        },
+        {
+          q: "Why were Tibetan mastiffs popular in China's imperial courts?",
+          options: ["As pets for children", "As hunting dogs, sent as tribute along the Silk Road", "To pull carts", "To guard the Great Wall"],
+          answer: 1,
+          explain: "They were prized as **hunting dogs** and brought along the Silk Road as tribute."
+        },
+        {
+          q: "What did the Tibetan doctor in Darchen say was wrong with the author?",
+          options: ["Pneumonia", "A broken rib", "A cold and the effects of altitude", "Food poisoning"],
+          answer: 2,
+          explain: "He said it was **a cold and the effects of altitude**."
+        },
+        {
+          q: "Why was the author disappointed with Darchen at first?",
+          options: ["The food was bad", "There were no pilgrims, as the season had barely begun", "There was no hotel", "The doctors were rude"],
+          answer: 1,
+          explain: "He arrived **too early** in the pilgrimage season and found no pilgrims."
+        },
+        {
+          q: "Which river actually flows out of Lake Manasarovar?",
+          options: ["The Ganges", "The Indus", "The Brahmaputra", "The Sutlej"],
+          answer: 3,
+          explain: "Only the **Sutlej** flows from the lake; the others rise nearby."
+        }
+      ]
+    },
+
+    {
       id: "father-to-son",
       title: "Father to Son",
-      section: "Literature – Hornbill",
+      section: "Hornbill",
+      source: "Hornbill (Reprint 2026-27), poem following Ch 6, pp. 68–69",
       summary: "A father's lament about the gap between himself and his grown-up son: though they live in the same house, they cannot understand each other, and both long for a reconciliation they cannot achieve.",
       notes: [
         {
@@ -1997,8 +2492,8 @@ StudyData.add(11, "english", {
         {
           heading: "Stanza 4: the empty hand",
           points: [
-            "Father and son must live on the same earth, yet when the son speaks, the father cannot understand him.",
-            "The father cannot understand himself either: why his grief turns into anger.",
+            "Father and son must live on the same earth and land, and yet they stay apart.",
+            "Then the **son speaks**: he says he cannot understand himself, or why anger grows out of grief.",
             "Each stretches out an **empty hand**, longing for something to forgive: both want reconciliation, but neither knows how to reach the other."
           ]
         },
@@ -2008,16 +2503,17 @@ StudyData.add(11, "english", {
             "**Generation gap** and the failure of communication between parent and child.",
             "**Parental love and possessiveness:** the father wants the son close, but on his own terms.",
             "**Longing for reconciliation:** both are hurt, and both wish to forgive.",
-            "The poem is not one-sided: the father admits his own anger and confusion."
+            "The poem is not one-sided: the son too is confused by his own anger and grief."
           ]
         },
         {
           heading: "Poetic devices",
           points: [
-            "**Monologue:** the poem is spoken by the father in the first person.",
+            "**Monologue:** the poem is mostly the father's first-person voice; the son's words are only reported.",
             "**Metaphor:** the seed and the land stand for the son's upbringing and his independent life.",
             "**Allusion:** the biblical parable of the prodigal son.",
-            "**Imagery:** silence surrounding them, and the empty hand stretched out."
+            "**Imagery:** silence surrounding them, and the empty hand stretched out.",
+            "**Rhyme:** loose and irregular, with some full rhymes and some half-rhymes (sign / design, air / share), so there is no consistent scheme."
           ]
         }
       ],
@@ -2094,15 +2590,16 @@ StudyData.add(11, "english", {
     {
       id: "the-summer-of-the-beautiful-white-horse",
       title: "The Summer of the Beautiful White Horse",
-      section: "Literature – Snapshots",
+      section: "Snapshots",
+      source: "Snapshots (Reprint 2026-27) Ch 1, pp. 1–8",
       summary: "A humorous story about two poor Armenian boys, Aram and his cousin Mourad, who secretly keep a farmer's white horse to enjoy riding it, and finally return it because their family is known for its honesty.",
       notes: [
         {
           heading: "The family and the characters",
           points: [
-            "The narrator, **Aram**, is nine years old and belongs to the **Garoghlanian** tribe, a poor Armenian immigrant family in California.",
-            "The family is famous for its **honesty**: they are poor, but proud and honest, and would never steal.",
-            "His cousin **Mourad**, thirteen, is thought to be crazy by almost everyone except Aram; he has a natural way with animals, especially horses.",
+            "The narrator, **Aram**, is nine years old and belongs to the **Garoghlanian** tribe, a poor Armenian family living in California's San Joaquin Valley.",
+            "The family is famous for its **honesty**: they are poor, but proud, and have been famous for honesty for about eleven centuries.",
+            "His older cousin **Mourad** is thought to be crazy by almost everyone except Aram; he has a natural way with animals, especially horses.",
             "**Uncle Khosrove** is a huge man with a fierce temper and a large moustache; whatever the trouble, he roars that it is no harm and that nobody should pay attention to it."
           ]
         },
@@ -2112,7 +2609,8 @@ StudyData.add(11, "english", {
             "One summer morning at about four o'clock, Mourad wakes Aram; he is sitting on a beautiful **white horse**.",
             "Aram knows Mourad could not have bought the horse, but persuades himself it is not stealing, because it would become stealing only if they tried to sell it.",
             "Aram longs to ride. Mourad lets him ride alone, and the horse throws him off and runs away; Mourad finds it again.",
-            "The boys hide the horse in an abandoned barn in a deserted vineyard and ride it secretly early every morning."
+            "The boys hide the horse in the barn of a deserted vineyard and ride it secretly early every morning for about two weeks; every time Aram rides alone, it throws him and runs off.",
+            "Mourad insists the horse must go back to its true owner, since a Garoghlanian cannot steal."
           ]
         },
         {
@@ -2120,7 +2618,7 @@ StudyData.add(11, "english", {
           points: [
             "**John Byro**, an Assyrian farmer, visits Aram's home and tells them his white horse was stolen a month ago.",
             "Without the horse his surrey is useless, so he has to walk.",
-            "Uncle Khosrove dismisses his complaint in his usual way, saying that the loss is no harm."
+            "Uncle Khosrove dismisses his complaint in his usual way (we have all lost our homeland, so why cry over a horse) and storms out; Aram's mother explains that he has a gentle heart and is simply homesick."
           ]
         },
         {
@@ -2129,7 +2627,7 @@ StudyData.add(11, "english", {
             "One morning the boys meet John Byro on the road while riding the horse.",
             "He looks the horse over closely, even its teeth, and says he would swear it was his horse if he did not know the boys' parents, whose honesty is well known.",
             "He does not accuse them, and the boys understand they must return the horse.",
-            "They leave it in Byro's vineyard. Later Byro tells Aram's mother that his horse has come back **stronger and better-tempered** than before."
+            "Early next morning they take it to Byro's vineyard; the dogs do not bark. Later Byro tells Aram's mother that his horse has come back **stronger and better-tempered** than before."
           ]
         },
         {
@@ -2144,7 +2642,7 @@ StudyData.add(11, "english", {
       ],
       formulas: [
         "Author: William Saroyan",
-        "Narrator: Aram (9); cousin: Mourad (13)",
+        "Narrator: Aram (9); older cousin: Mourad",
         "Family: the Garoghlanian tribe (Armenian), famous for honesty",
         "Owner of the horse: John Byro, an Assyrian farmer",
         "Uncle Khosrove's refrain: it is no harm, pay no attention to it"
@@ -2167,7 +2665,7 @@ StudyData.add(11, "english", {
         },
         {
           q: "Describe the character of Mourad.",
-          a: "Mourad is thirteen, adventurous and full of life, and is thought to be **crazy** by the family. He has a remarkable **understanding of animals**: he can make the wild horse obey him. He takes the horse out of his love for riding, not greed, and returns it, which shows that he too shares the family's basic honesty."
+          a: "Mourad is older than Aram, adventurous and full of life, and is thought to be **crazy** by the family. He has a remarkable **understanding of animals**: he can make the wild horse obey him. He takes the horse out of his love for riding, not greed, and returns it, which shows that he too shares the family's basic honesty."
         }
       ],
       quiz: [
@@ -2175,7 +2673,7 @@ StudyData.add(11, "english", {
           q: "How old was Aram when the story took place?",
           options: ["Seven", "Nine", "Thirteen", "Eleven"],
           answer: 1,
-          explain: "Aram was **nine**; Mourad was thirteen."
+          explain: "Aram was **nine**, and Mourad was older."
         },
         {
           q: "To which tribe did the boys belong?",
@@ -2213,16 +2711,17 @@ StudyData.add(11, "english", {
     {
       id: "the-address",
       title: "The Address",
-      section: "Literature – Snapshots",
+      section: "Snapshots",
+      source: "Snapshots (Reprint 2026-27) Ch 2, pp. 9–13",
       summary: "Set after the Second World War, this story follows a young Jewish woman who visits the address where her mother had left the family's possessions, and decides to forget it when she finds the objects have lost their meaning.",
       notes: [
         {
           heading: "Background",
           points: [
-            "The narrator's family was **Jewish**; during the Second World War, Jews in occupied Europe were persecuted.",
+            "The story is set in Holland during and after the Second World War. The family seems to be **Jewish** (note the Hanukkah candle-holder), and Jews in occupied Europe were persecuted.",
             "During the war, an acquaintance, **Mrs Dorling**, had repeatedly visited the narrator's mother and taken away their valuable possessions, saying she would keep them safe.",
             "The mother told her daughter the address: **46, Marconi Street**.",
-            "After the war, the narrator, whose mother is no longer alive, goes to the address out of curiosity to see her mother's things."
+            "After the war the narrator is at first afraid of those stored things, but as life becomes more normal she grows curious and goes to see, touch and remember them. Her mother never came back."
           ]
         },
         {
@@ -2238,7 +2737,7 @@ StudyData.add(11, "english", {
           heading: "The second visit",
           points: [
             "On her second visit, Mrs Dorling's **teenage daughter** opens the door and lets her wait in the living room.",
-            "There she sees her family's things: the **table-cloth with a burn mark** made by her mother's iron, the **Hanukkah candle-holder** and the family's silver cutlery.",
+            "There she sees her family's things: the **woollen table-cloth with an unrepaired burn mark**, the still life with the apple, the plates on the wall and the antique-looking box of spoons; the **Hanukkah candle-holder** hangs in the passage. The girl cheerfully says they use everything, and starts looking for the cutlery.",
             "In these strange surroundings the objects seem out of place and **lose their value**; they no longer feel like hers.",
             "She leaves without waiting for Mrs Dorling and decides to **forget the address**."
           ]
@@ -2265,7 +2764,7 @@ StudyData.add(11, "english", {
         "Author: Marga Minco",
         "Setting: after the Second World War",
         "Address: 46, Marconi Street (Mrs Dorling's house)",
-        "Objects recognised: green knitted cardigan, table-cloth with a burn mark, Hanukkah candle-holder, silver cutlery"
+        "Objects recognised: green knitted cardigan, table-cloth with a burn mark, Hanukkah candle-holder, still life, box of spoons"
       ],
       terms: [
         { term: "Hanukkah", meaning: "A Jewish festival of lights, celebrated with a special candle-holder." },
@@ -2315,9 +2814,9 @@ StudyData.add(11, "english", {
         },
         {
           q: "What mark did the family table-cloth have?",
-          options: ["An ink stain", "A torn corner", "Embroidered initials", "A burn mark from an iron"],
+          options: ["An ink stain", "A torn corner", "Embroidered initials", "An old burn mark that had never been repaired"],
           answer: 3,
-          explain: "It had a **burn mark** made by her mother's iron."
+          explain: "It had a **burn mark** that had never been repaired, which she recognised."
         },
         {
           q: "What is the main theme of the story?",
@@ -2331,13 +2830,15 @@ StudyData.add(11, "english", {
     {
       id: "mothers-day",
       title: "Mother's Day",
-      section: "Literature – Snapshots",
+      section: "Snapshots",
+      source: "Snapshots (Reprint 2026-27) Ch 3, pp. 14–33",
       summary: "A comic one-act play in which an overworked, neglected housewife, Mrs Pearson, swaps personalities with her bold neighbour Mrs Fitzgerald, who then teaches the Pearson family to respect her.",
       notes: [
         {
           heading: "The characters",
           points: [
-            "**Mrs Annie Pearson:** a pleasant, nervous, overworked housewife who is taken for granted by her family.",
+            "The play (written in the 1950s) is set in the living room of the Pearsons' house in a **London suburb**, on an afternoon in early autumn.",
+            "**Mrs Annie Pearson:** a pleasant, nervous, overworked housewife in her forties, taken for granted by her family.",
             "**Mrs Fitzgerald:** her neighbour, a bold, strong-willed woman who tells fortunes and says she learnt such things in the East.",
             "**George Pearson:** the pompous husband who spends his evenings at the club.",
             "**Doris:** the selfish daughter, about to go out with Charlie Spence. **Cyril:** the careless, rude son."
@@ -2354,7 +2855,7 @@ StudyData.add(11, "english", {
         {
           heading: "Teaching the family a lesson",
           points: [
-            "She sits smoking and refuses to make tea, iron clothes or wait on anyone.",
+            "She sits smoking and playing cards, and refuses to make tea, iron Doris's yellow silk dress, mend Cyril's things or wait on anyone; she even drinks stout and announces a forty-hour week with weekends off.",
             "She mocks Doris's choice of Charlie Spence and tells Cyril to look after himself.",
             "She tells George that people at the club laugh at him behind his back and call him ‘Pompy-ompy Pearson’.",
             "The family is shocked and confused; their selfishness is exposed."
@@ -2365,7 +2866,7 @@ StudyData.add(11, "english", {
           points: [
             "The real Mrs Pearson (in Mrs Fitzgerald's body) is upset to see her family humiliated, and they swap back.",
             "Back in her own self, Mrs Pearson stays firm, as Mrs Fitzgerald advised.",
-            "The chastened family agrees to stay home for a family game of cards and to help while she prepares supper."
+            "The chastened family agrees to stay home for a family game of **rummy**; the children will get the supper ready while Mrs Pearson talks to her husband. Mrs Fitzgerald warns her to keep a firm hand and not to apologise or explain."
           ]
         },
         {
@@ -2448,22 +2949,23 @@ StudyData.add(11, "english", {
     {
       id: "birth",
       title: "Birth",
-      section: "Literature – Snapshots",
+      section: "Snapshots",
+      source: "Snapshots (Reprint 2026-27) Ch 4, pp. 34–38",
       summary: "An episode from A.J. Cronin's novel The Citadel in which a young doctor, Andrew Manson, attends a difficult birth in a Welsh mining town and brings an apparently stillborn baby back to life.",
       notes: [
         {
           heading: "The setting",
           points: [
-            "**Andrew Manson**, a newly qualified doctor, is working in a mining town in Wales.",
-            "Returning home near midnight, he finds **Joe Morgan**, a miner, waiting for him: Joe's wife **Susan** is about to give birth.",
+            "**Andrew Manson**, a newly qualified doctor, is an assistant to Dr Edward Page in the small Welsh mining town of **Blaenelly**. He is returning home after a disappointing evening with Christine, the girl he loves.",
+            "Near midnight he finds **Joe Morgan**, a burly miner, waiting for him: Joe's wife **Susan** is about to give birth.",
             "The couple have been married for nearly **twenty years**, and this is their first child.",
-            "Susan's mother and an old midwife are with her."
+            "Susan's mother and a stout, elderly midwife (the nurse) are with her in a poor but clean bedroom lit by an oil lamp. Andrew waits, drinking tea in the kitchen, and thinks of the unhappy marriages he has seen. Joe cannot bear to come in and paces the street."
           ]
         },
         {
           heading: "A difficult delivery",
           points: [
-            "The labour is long, and Andrew waits through the night.",
+            "The labour is long and hard; at about half-past three Andrew begins his work, and the child is born at the first light of dawn.",
             "When the child is born it appears **lifeless**, and the mother too is in danger.",
             "Andrew first attends to **Susan** and revives her.",
             "Meanwhile the midwife, thinking the baby stillborn, has laid it under the bed."
@@ -2475,7 +2977,7 @@ StudyData.add(11, "english", {
             "Andrew finds the baby limp and pale, and recalls a case of **asphyxia pallida** he had seen and its treatment.",
             "He dips the baby alternately in **hot and cold water**, rubs it, and presses and releases its chest to make it breathe.",
             "After about half an hour of desperate effort, the child gives a gasp and begins to breathe.",
-            "The amazed midwife takes the baby; Andrew walks home feeling that he has at last done something real."
+            "The nurse sobs that the child has come alive, and Susan's mother prays silently. Andrew tells the waiting Joe that both are all right, and walks off among miners going to work, feeling that he has at last done something real."
           ]
         },
         {
@@ -2559,7 +3061,8 @@ StudyData.add(11, "english", {
     {
       id: "the-tale-of-melon-city",
       title: "The Tale of Melon City",
-      section: "Literature – Snapshots",
+      section: "Snapshots",
+      source: "Snapshots (Reprint 2026-27) Ch 5, pp. 39–44",
       summary: "A humorous verse tale by Vikram Seth about a ‘just and placid’ king whose foolish orders lead to his own hanging, after which a melon is crowned king: a satire on rulers and the crowd.",
       notes: [
         {
@@ -2575,7 +3078,7 @@ StudyData.add(11, "english", {
           points: [
             "The chief of builders blamed the **workmen**; the workmen blamed the **masons** for the size of the bricks; the masons blamed the **architect**.",
             "The architect reminded the king that **he himself** had changed the plans.",
-            "Confused, the king called for the **wisest man** in the country.",
+            "Furious but still ‘just’, the king called for the **wisest man** in the country, who was so old that he could neither walk nor see and had to be carried in.",
             "The wise man declared that **the arch** was the real culprit and must be hanged."
           ]
         },
@@ -2590,10 +3093,10 @@ StudyData.add(11, "english", {
         {
           heading: "The melon king",
           points: [
-            "The ministers decided that the next person to pass the city gate would choose the new king.",
+            "The ministers (relieved, since an unruly town might have turned against the Crown) decided, by custom, that the next person to pass the city gate would choose the new king.",
             "The man who came by was an **idiot**; asked who should be king, he said ‘A melon’, his answer to every question.",
             "A **melon** was crowned and placed on the throne.",
-            "The people did not mind, as long as they were left in peace and free to live as they liked."
+            "Asked years later, the people say they do not mind, as long as they are left in peace and liberty; the poet ends by saying the principle of **laissez faire** (leave people alone) is well established there."
           ]
         },
         {
@@ -2601,7 +3104,7 @@ StudyData.add(11, "english", {
           points: [
             "**Satire** on foolish, impulsive rulers and on a crowd that demands punishment without thought.",
             "**Irony:** the king who ordered a hanging is hanged himself; a melon becomes king.",
-            "**Form:** a narrative poem in **rhyming couplets (AABB)**, told like a ballad.",
+            "**Form:** a narrative poem in **rhyming couplets (AABB)**, retelling an old tale (after Idries Shah) in a light, humorous style; it comes from Seth's collection *Mappings* (1981).",
             "**Humour** through repetition, exaggeration and absurd logic."
           ]
         }
