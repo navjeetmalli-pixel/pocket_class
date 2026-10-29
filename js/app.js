@@ -63,7 +63,8 @@ const App = {
 
   // Asks the service worker to keep a class's files for offline use.
   function keepOffline(classes) {
-    if (!("serviceWorker" in navigator) || !location.protocol.startsWith("http")) return;
+    // The store apps already contain every file.
+    if (Native.is || !("serviceWorker" in navigator) || !location.protocol.startsWith("http")) return;
     const urls = classes.flatMap((c) => [...StudyData.files(c), ...StudyData.practiceFiles(c)]);
     navigator.serviceWorker.ready.then((reg) => reg.active && reg.active.postMessage({ type: "cache", urls }));
   }
@@ -186,7 +187,7 @@ const App = {
   App.applyTheme();
   App.render();
 
-  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  if (!Native.is && "serviceWorker" in navigator && location.protocol.startsWith("http")) {
     navigator.serviceWorker.register("sw.js").catch(() => {});
   }
 })();

@@ -221,7 +221,7 @@ const Sheets = (() => {
         <div class="ws-toolbar no-print">
           <a class="btn" href="${base}${query({ ...o, n: o.n - 1 })}" ${o.n > 1 ? "" : 'aria-disabled="true" tabindex="-1" style="opacity:.45;pointer-events:none"'}>${icon("back")} Sheet ${Math.max(1, o.n - 1)}</a>
           <a class="btn" href="${base}${query({ ...o, n: o.n + 1 })}">New sheet ${icon("next")}</a>
-          <button class="btn primary" onclick="window.print()" ${empty ? "disabled" : ""}>${icon("print")} Print</button>
+          <button class="btn primary" onclick="printPage()" ${empty ? "disabled" : ""}>${icon("print")} Print</button>
           <label class="ws-keytoggle"><input type="checkbox" id="ws-key" ${o.k ? "checked" : ""}> Answer key</label>
         </div>
         ${

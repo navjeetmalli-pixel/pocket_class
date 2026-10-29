@@ -261,7 +261,7 @@ const Views = (() => {
         <div class="home-head">
           <div class="grow">
             <h1>Namaste${st.profile.name ? `, ${esc(st.profile.name)}` : ""} 🙏</h1>
-            <div class="sub">${greet} · Class ${c} · NCERT</div>
+            <div class="sub">${greet} · Class ${c} · ${st.profile.board === "pseb" ? "PSEB" : "CBSE"}</div>
           </div>
           <a class="icon-btn" href="#/search" aria-label="Search">${icon("search")}</a>
           <a class="icon-btn" href="#/settings" aria-label="Settings">${icon("settings")}</a>
@@ -345,7 +345,9 @@ const Views = (() => {
     if (!sy) return "";
     const books = sy.books.map((b) => `<em>${esc(b)}</em>`).join(", ");
     const what = {
-      textbook: `Follows the NCERT book${sy.books.length > 1 ? "s" : ""} ${books} (${esc(sy.board)}).`,
+      textbook: sy.board === "PSEB"
+        ? `Follows the PSEB syllabus: ${books}.`
+        : `Follows the NCERT book${sy.books.length > 1 ? "s" : ""} ${books} (${esc(sy.board)}).`,
       "older-book": `Follows the older NCERT book${sy.books.length > 1 ? "s" : ""} ${books}.`,
       topic: "Topic-based revision.",
     }[sy.match];
@@ -842,7 +844,7 @@ const Views = (() => {
     return {
       title: `${subj.short} ${sheetLabel(id)}`,
       html: `
-        ${topbar(`${subj.short} · ${sheetLabel(id)}`, "#/revise", `<button class="icon-btn" onclick="window.print()" aria-label="Print">${icon("print")}</button>`)}
+        ${topbar(`${subj.short} · ${sheetLabel(id)}`, "#/revise", `<button class="icon-btn" onclick="printPage()" aria-label="Print">${icon("print")}</button>`)}
         <p class="small muted" style="margin:-6px 2px 16px">Class ${c} · ${FORMULA_LABEL[id]} from every chapter, in one place.</p>
         ${
           chs.length
@@ -1130,13 +1132,17 @@ const Views = (() => {
               <input type="file" id="restore" accept=".json,application/json" hidden>
             </div>
           </div>
+          ${Native.is ? "" : `<div class="card row">
+            <div class="grow"><strong>Save every class for offline</strong><div class="small muted" id="offline-status">Your own class is saved automatically. Use this if brothers or sisters share this phone (about 17 MB).</div></div>
+            <button class="btn" data-act="offline-all">Save all</button>
+          </div>`}
           <div class="card row">
             <div class="grow"><strong>Reset progress</strong><div class="small muted">Clears scores, streaks, bookmarks and mistakes on this device.</div></div>
             <button class="btn bad" data-act="reset">Reset</button>
           </div>
           <div class="card small muted">
             <strong style="color:var(--text)">About Vidya</strong><br>
-            Notes, quizzes and tests are written for the CBSE / NCERT syllabus, Classes 1 to 12. Each subject page says whether it follows the current NCERT book, an older one, or is arranged by topic.
+            Notes, quizzes and tests are written for the CBSE / NCERT and PSEB syllabi, Classes 1 to 12. Each subject page says whether it follows the current NCERT book, an older one, or is arranged by topic.
             Punjabi covers grammar and writing skills for CBSE and PSEB students. The content has not yet been checked by teachers,
             so use it for revision alongside your textbook, and check with your teacher if anything looks different from your book.
             Your progress is stored only on this device.
@@ -1176,11 +1182,10 @@ const Views = (() => {
             location.hash = "#/";
             return;
           } else if (b.dataset.act === "backup") {
-            const a = document.createElement("a");
-            a.href = URL.createObjectURL(new Blob([Store.exportData()], { type: "application/json" }));
-            a.download = `vidya-progress-${dayKey()}.json`;
-            a.click();
-            setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+            saveTextFile(`vidya-progress-${dayKey()}.json`, Store.exportData()).catch(() => {});
+            return;
+          } else if (b.dataset.act === "offline-all") {
+            saveAllOffline(el.querySelector("#offline-status"), b);
             return;
           } else if (b.dataset.act === "restore") {
             el.querySelector("#restore").click();
@@ -1197,6 +1202,20 @@ const Views = (() => {
         };
       },
     };
+  }
+
+  // Fetches every class's files through the service worker, which keeps a copy of each one.
+  async function saveAllOffline(status, btn) {
+    const urls = D.classes.flatMap((c) => [...D.files(c), ...D.practiceFiles(c)]);
+    btn.disabled = true;
+    let done = 0, failed = 0;
+    for (let i = 0; i < urls.length; i += 6) {
+      await Promise.all(urls.slice(i, i + 6).map((u) => fetch(u, { cache: "no-cache" }).then((r) => { if (!r.ok) failed++; }).catch(() => failed++)));
+      done = Math.min(i + 6, urls.length);
+      status.textContent = `Saving… ${Math.round((done / urls.length) * 100)}%`;
+    }
+    btn.disabled = false;
+    status.textContent = failed ? `${failed} files couldn't be saved. Check your connection and try again.` : "All classes are saved on this device and work offline.";
   }
 
   // Shared with sheets.js.

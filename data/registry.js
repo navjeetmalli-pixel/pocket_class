@@ -25,6 +25,8 @@ globalThis.StudyData = (function () {
     { id: "sstpb",       name: "Social Science",    short: "SST",         native: "ਸਮਾਜਿਕ ਸਿੱਖਿਆ",       icon: "🌏", color: "#e5821c" },
     { id: "englishpb",   name: "English",           short: "English",     native: "ਅੰਗਰੇਜ਼ੀ",            icon: "📖", color: "#3a7bd5", stream: "Languages" },
     { id: "hindipb",     name: "Hindi",             short: "Hindi",       native: "हिंदी",              icon: "✍️", color: "#d6409f", stream: "Languages" },
+    { id: "mathspb",     name: "Mathematics",       short: "Maths",       native: "ਗਣਿਤ",              icon: "➗", color: "#5b5bd6" },
+    { id: "sciencepb",   name: "Science",           short: "Science",     native: "ਵਿਗਿਆਨ",            icon: "🔬", color: "#12a594" },
     { id: "phc",         name: "Punjab History and Culture", short: "Punjab Hist.", native: "ਪੰਜਾਬ ਦਾ ਇਤਿਹਾਸ ਅਤੇ ਸੱਭਿਆਚਾਰ", icon: "🏰", color: "#a0612a" },
   ];
 
@@ -52,7 +54,18 @@ globalThis.StudyData = (function () {
   const boards = { cbse: "CBSE", pseb: "PSEB" };
   const boardCatalog = {
     pseb: {
+      // Classes 1–5: PSEB sets learning outcomes rather than lesson lists; the topic-based content covers them.
+      1: catalog[1], 2: catalog[2], 3: catalog[3], 4: catalog[4], 5: catalog[5],
+      // Classes 6–8: PSEB uses the earlier NCERT Maths and Science books and its own SST and English.
+      6: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindi", "punjabi"],
+      7: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindi", "punjabi"],
+      8: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindi", "punjabi"],
+      // Class 9: NCERT Maths and Science, PSEB SST and English.
+      9: ["maths", "science", "sstpb", "englishpb", "hindi", "punjabi"],
       10: ["maths", "science", "sstpb", "englishpb", "hindipb", "punjabi", "phc"],
+      // Classes 11–12: these subjects follow the same NCERT units. PSEB English, Hindi, History and Political Science differ and aren't written yet.
+      11: ["physics", "chemistry", "maths", "biology", "accountancy", "business", "economics", "punjabi"],
+      12: ["physics", "chemistry", "maths", "biology", "accountancy", "business", "economics", "punjabi"],
     },
   };
   let board = "cbse";

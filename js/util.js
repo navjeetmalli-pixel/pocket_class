@@ -63,6 +63,43 @@ function hash(str) {
 const itemId = (prefix, text) => prefix + hash(plain(text).trim().toLowerCase()).toString(36);
 const questionId = (q) => itemId("q", [q.q, ...q.options.slice().sort()].join("|"));
 
+// Inside the iOS / Android app (Capacitor) some browser features need native help.
+const Native = {
+  is: !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()),
+  // Plugins registered at startup appear in Capacitor.Plugins. The app's own VidyaPrint is registered
+  // after that list is built, so it's called directly through the bridge.
+  plugin(name) {
+    const C = window.Capacitor;
+    if (!C) return null;
+    if (C.Plugins && C.Plugins[name]) return C.Plugins[name];
+    if (!C.nativePromise) return null;
+    return new Proxy({}, { get: (_, method) => (method === "then" ? undefined : (options = {}) => C.nativePromise(name, method, options)) });
+  },
+};
+
+// window.print() does nothing in an app web view, so the app uses a small native print plugin.
+function printPage() {
+  const p = Native.is && Native.plugin("VidyaPrint");
+  if (p) p.print({ title: document.title }).catch(() => toast("Printing isn't available on this device"));
+  else window.print();
+}
+
+// Saves a text file: a download in the browser, the share sheet (Files, Drive, WhatsApp…) in the app.
+async function saveTextFile(name, text, type = "application/json") {
+  const fsys = Native.is && Native.plugin("Filesystem");
+  const share = Native.is && Native.plugin("Share");
+  if (fsys && share) {
+    const { uri } = await fsys.writeFile({ path: name, data: text, directory: "CACHE", encoding: "utf8" });
+    await share.share({ title: name, files: [uri] });
+    return;
+  }
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([text], { type }));
+  a.download = name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
 let toastTimer;
 function toast(msg) {
   const el = document.getElementById("toast");

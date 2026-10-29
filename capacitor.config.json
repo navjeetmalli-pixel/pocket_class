@@ -1,0 +1,7 @@
+{
+  "appId": "io.github.navjeetmallipixel.vidya",
+  "appName": "Vidya",
+  "webDir": "www",
+  "ios": { "contentInset": "never" },
+  "android": { "allowMixedContent": false }
+}

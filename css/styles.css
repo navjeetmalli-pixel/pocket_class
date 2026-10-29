@@ -91,7 +91,8 @@ svg.i { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor;
 .main {
   max-width: 780px;
   margin: 0 auto;
-  padding: 16px 16px calc(var(--nav-h) + 28px + env(safe-area-inset-bottom));
+  /* Keep clear of the notch / status bar and rounded corners on phones. */
+  padding: calc(16px + env(safe-area-inset-top)) max(16px, env(safe-area-inset-left)) calc(var(--nav-h) + 28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-right));
   min-height: 100vh;
 }
 .sidebar { display: none; }

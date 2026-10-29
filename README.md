@@ -19,7 +19,7 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 - **Practice**: solved examples and board-style questions with model answers
 - **Quiz**: MCQs with instant feedback and explanations
 
-**Boards**: CBSE / NCERT for Classes 1–12. PSEB (Punjab Board) for Class 10: NCERT Maths and Science (same as PSEB's), plus PSEB Social Science, English, Hindi and Punjab History and Culture written from PSEB's 2026–27 syllabus. PSEB students in other classes see the CBSE set, with a note.
+**Boards**: CBSE / NCERT for Classes 1–12. PSEB (Punjab Board), from its 2026–27 syllabus: Classes 1–5 use the topic-based content (PSEB sets learning outcomes, not lesson lists); Classes 6–8 have the earlier NCERT Maths and Science books that PSEB still uses, plus PSEB Social Science and English; Class 9–10 have NCERT Maths and Science plus PSEB Social Science and English (Class 10 also Hindi and Punjab History and Culture); Classes 11–12 have the subjects that follow NCERT units (sciences, maths, commerce, Punjabi). English lessons are included only where the story is well known; PSEB English, Hindi, History and Political Science for Classes 11–12 are not written yet.
 
 **Practice**
 - **Practice sheets**: choose chapters and question types (MCQ, short and long answer, maths problems), then print with an answer key. Sheets are numbered: the same number always gives the same sheet, the next number a new one.
@@ -49,6 +49,10 @@ node scripts/serve.js
 Then open http://localhost:8765.
 
 To use it on a phone, host the folder on any static host (GitHub Pages, Netlify, etc.), open it in Chrome or Safari, and choose **Add to Home screen**.
+
+Settings → *Save every class for offline* keeps all classes on the device, not just the student's own.
+
+**Phone apps**: `ios/` and `android/` are Capacitor projects that pack every file inside the app, so it works offline from the first launch, with native printing and sharing. `npm install`, then `npm run sync` after any change. See [STORE_GUIDE.md](STORE_GUIDE.md) for building and publishing to the App Store and Google Play.
 
 ## Project layout
 
