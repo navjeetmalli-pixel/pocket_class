@@ -1,9 +1,8 @@
-// Class 6 English (PSEB): Grammar, Vocabulary, Writing and well-known literature lessons.
-// Written from the PSEB syllabus, not from the book's own text. All examples are original.
-// Lessons not included (not confidently known): The Farmhouse Cows, The Lake of the Moon, The Peacock and the Crow,
-// Playing Kabaddi, Rosy's Meeting with Nessy, A Forgotten Wish, My Furry Friend, I am Writing a Letter, I am Happy with who I am.
+// Class 6 English (PSEB): Grammar, Vocabulary, Writing and all 13 lessons of My English Companion 6.
+// Lessons summarised in our own words from the PSEB textbook (2023–24 edition); grammar and writing follow the syllabus.
+// Every lesson in the book is covered; no syllabus lesson was left out.
 StudyData.add(6, "englishpb", {
-  syllabus: {board: "PSEB", match: "textbook", books: ["My English Companion (PSEB, Class 6)"], note: "Grammar, vocabulary and writing from the PSEB 2026–27 syllabus, plus the lessons whose stories are well known. Written from the syllabus, not the PSEB book's own text.", reviewed: false},
+  syllabus: {board: "PSEB", match: "textbook", books: ["English (PSEB, Class 6)"], note: "Follows the PSEB 2026–27 syllabus; lessons summarised in our own words from the PSEB textbook (2023–24 edition).", reviewed: false},
   chapters: [
     {
       id: "pb-nouns",
@@ -592,202 +591,666 @@ StudyData.add(6, "englishpb", {
       ]
     },
     {
+      id: "pb-farmhouse-cows",
+      title: "The Farmhouse Cows",
+      section: "Lessons",
+      summary: "Rajinder has moved from a city to a farm and is afraid of cows until his mother shows him how many good things the cows give the family.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 1, pp. 1–4",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "Rajinder is delighted that his parents have bought a farm in a village. Green lanes, big trees and many animals replace busy streets and tall buildings.",
+            "He counts the animals: thirty-two goats, six kids, nine horses, two rabbits and about twelve ducks. His mother reminds him about the cows.",
+            "Rajinder says he does not like cows because of their big horns and because they \"roar\". His mother explains that lions roar and cows only moo.",
+            "The story is adapted from Enid Blyton's *Five O'Clock Tales*."
+          ]
+        },
+        {
+          heading: "What the cows give",
+          points: [
+            "At breakfast the milk he drinks comes from the cow. At lunch his sweetened apples come with thick cream, which he pours over them.",
+            "At teatime his mother has home-made cheese from the cow's milk, and Rajinder asks to have some on his bread too.",
+            "He is surprised that one animal gives so much milk that so many things can be made from it."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "Fear often comes from not knowing; learning the facts can turn a fear into friendship.",
+            "Animals are useful to us and deserve thanks.",
+            "In the end Rajinder is no longer afraid and wants to thank the cows at the gate to the cow field."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Farm", meaning: "Land with buildings where crops are grown and animals are kept."},
+        {term: "Moo", meaning: "The sound a cow makes."},
+        {term: "Cream", meaning: "The thick, rich part of milk."},
+        {term: "Cheese", meaning: "A food made from milk."}
+      ],
+      qa: [
+        {q: "Why did Rajinder say he did not like cows?", a: "He thought their big horns were frightening and believed they roared like lions."},
+        {q: "How did Rajinder's mother change his mind?", a: "She showed him that milk, cream and cheese all come from the cow, so the cow is a kind and useful friend."}
+      ],
+      quiz: [
+        {q: "Where did Rajinder's family move to?", options: ["A hill station", "A farm in a village", "A flat in a city", "A forest"], answer: 1, explain: "His parents bought a farm in a village."},
+        {q: "Rajinder's mother says that lions roar, but cows only:", options: ["bark", "neigh", "moo", "bleat"], answer: 2, explain: "A cow's sound is a moo."},
+        {q: "What did Rajinder pour on his apples at lunch?", options: ["Thick cream", "Honey", "Custard", "Jam"], answer: 0, explain: "The cow's gift that day was a small jug of thick cream."},
+        {q: "What was on the table at teatime besides bread and jam?", options: ["Cake", "Home-made cheese", "Rice pudding", "Butter only"], answer: 1, explain: "Mother lifted the lid of the cheese dish."},
+        {q: "At the end, Rajinder:", options: ["still fears cows", "wants to sell the cows", "wants to thank the cows and likes them", "asks to go back to the city"], answer: 2, explain: "He decides to go and say thank you to the cows."}
+      ]
+    },
+    {
+      id: "pb-my-furry-friend",
+      title: "My Furry Friend (Poem)",
+      section: "Lessons",
+      summary: "A light-hearted poem by Vandana Lunyal about a pet puppy that grows from a tiny, playful pup into a hungry, frowning, full-grown dog.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 2, pp. 13–16",
+      notes: [
+        {
+          heading: "What the poem says",
+          points: [
+            "The poet brings home a small puppy with soft brown eyes and a black-and-white coat. He looks very happy.",
+            "As a puppy he sleeps day and night, nibbles like a mouse and eats whatever he finds in the house.",
+            "He makes funny noises when he tears his toys apart, joins in the fun, sits between the family and makes a fuss, and growls loudly when told to go away.",
+            "Now fully grown, he frowns, is moody if his food is touched, is always hungry for meat and is quick on his feet when offered a treat."
+          ]
+        },
+        {
+          heading: "Poet and features",
+          points: [
+            "The poem is by **Vandana Lunyal**.",
+            "It uses rhyme at the ends of lines, such as light and bite, and simple, playful language.",
+            "It shows a loving, humorous attitude towards a pet and how a pet changes as it grows."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "A pet becomes a real member of the family, bringing fun and affection along with a little trouble.",
+            "The poem celebrates the bond between people and animals."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Puppy", meaning: "A young dog."},
+        {term: "Nibble", meaning: "To eat with small bites."},
+        {term: "Frown", meaning: "To wrinkle the forehead to show displeasure."},
+        {term: "Treat", meaning: "A small special food given as a reward."}
+      ],
+      qa: [
+        {q: "What did the poet bring home?", a: "The poet brought home a small puppy with soft brown eyes."},
+        {q: "How does the puppy change when he is fully grown?", a: "He has a frown on his forehead, gets moody if anyone touches his food, and is always hungry, especially for meat."}
+      ],
+      quiz: [
+        {q: "Who wrote “My Furry Friend”?", options: ["Margaret G Rhodes", "Vandana Lunyal", "Shel Silverstein", "H W Longfellow"], answer: 1, explain: "The poem is by Vandana Lunyal."},
+        {q: "The puppy nibbles like a:", options: ["rabbit", "squirrel", "mouse", "parrot"], answer: 2, explain: "The poem says he nibbles like a mouse."},
+        {q: "When the puppy is told to go, he:", options: ["runs away", "growls loudly to say no", "wags his tail", "sleeps"], answer: 1, explain: "He growls loudly to say no."},
+        {q: "The grown-up dog is always hungry for:", options: ["meat", "grass", "fruit", "bread only"], answer: 0, explain: "He loves to eat and is hungry for meat."},
+        {q: "The tone of the poem is:", options: ["sad and serious", "playful and affectionate", "angry", "frightening"], answer: 1, explain: "The poet writes with humour and love."}
+      ]
+    },
+    {
+      id: "pb-lake-of-the-moon",
+      title: "The Lake of The Moon",
+      section: "Lessons",
+      summary: "During a drought, a herd of elephants tramples a colony of rabbits on the way to a lake. A clever little rabbit tricks the elephant king into leaving the rabbits alone by showing him the Moon in the water.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 3, pp. 23–27",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "A drought dries up the rivers and ponds, so the elephant king sends his herd in different directions to look for water.",
+            "One elephant finds a large lake in a far-off jungle, and the herd goes there. On the way they pass through a rabbit colony and crush thousands of rabbits.",
+            "The rabbit king calls a meeting. A little rabbit offers to go to the elephant king as a messenger."
+          ]
+        },
+        {
+          heading: "The trick",
+          points: [
+            "The rabbit climbs a rock and says he brings a message from the Moon: the elephants have dirtied the Moon's holy lake and killed rabbits, who are under the Moon's special protection.",
+            "The shocked elephant king agrees to be taken to the Moon. At the lake, the Moon is reflected in the still water.",
+            "When the elephant dips his trunk to worship, the ripples make the Moon shake, and the rabbit says the Moon is angrier still.",
+            "The elephant king promises never to touch the water or harm the rabbits again, and the herd leaves. Soon rain comes and the elephants live happily. They never learn they were fooled."
+          ]
+        },
+        {
+          heading: "Theme and language",
+          points: [
+            "**Brains beat strength**: a small, clever creature can save its people by using wit.",
+            "Fear of punishment can make even the mighty change course.",
+            "Collective nouns appear in the lesson: a herd of elephants, a colony of rabbits."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Drought", meaning: "A long period with very little or no rain."},
+        {term: "Colony", meaning: "A group of animals living together in one place."},
+        {term: "Messenger", meaning: "A person who carries a message from one to another."},
+        {term: "Reflection", meaning: "An image seen in water or a mirror."}
+      ],
+      qa: [
+        {q: "Why did the elephants go to the lake near the rabbit colony?", a: "A long drought had dried up their water sources, and the lake was the water they found for the herd."},
+        {q: "How did the little rabbit save his people?", a: "He pretended to be the Moon's messenger, told the elephant king the Moon was angry, and showed him the Moon's reflection that shook when the elephant touched the water."}
+      ],
+      quiz: [
+        {q: "What caused the elephants to search for water?", options: ["A flood", "A forest fire", "A drought", "A storm"], answer: 2, explain: "No rain fell for years and the water bodies dried up."},
+        {q: "Who went to speak to the elephant king?", options: ["The rabbit king himself", "A little rabbit", "A crow", "The Moon"], answer: 1, explain: "A little rabbit volunteered as messenger."},
+        {q: "The rabbit pretended to bring a message from:", options: ["the Sun", "the Moon", "a river god", "the rabbit king"], answer: 1, explain: "He claimed to be a messenger of the mighty Moon."},
+        {q: "What did the elephant see in the lake?", options: ["The reflection of the Moon", "A rabbit king", "A crocodile", "A fire"], answer: 0, explain: "The Moon was reflected in the still water."},
+        {q: "A group of rabbits is called a:", options: ["herd", "colony", "flock", "pack"], answer: 1, explain: "The lesson names rabbits living in a colony."}
+      ]
+    },
+    {
       id: "pb-giving-tree",
       title: "The Giving Tree",
       section: "Lessons",
-      summary: "Shel Silverstein's well-known story of a tree that keeps giving to a boy as he grows up. The PSEB lesson may differ in detail; this chapter covers the story's idea and theme.",
+      summary: "Shel Silverstein's story of a tree that gives the boy she loves her apples, branches and trunk as he grows up, and in the end offers her stump for him to rest on.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 4, pp. 37–39",
       notes: [
         {
-          heading: "The story in brief",
+          heading: "The story",
           points: [
-            "The story is by the American author Shel Silverstein. It is about a tree and a boy who loves her.",
-            "As a child the boy plays happily with the tree. As he grows older he returns again and again, asking for something.",
-            "The tree gives him what she can, even though it means losing parts of herself.",
-            "In the end the old tree has little left, but she is still glad to offer the boy a place to rest."
+            "A tree loves a little boy who comes every day to eat her apples, swing from her branches and play.",
+            "When the boy is older, he says he is too big to play and wants money. The tree tells him to sell her apples in the city.",
+            "Later he wants a house to get married, and the tree lets him cut off her branches to build one.",
+            "Still later he wants a boat to sail to another city for business, and the tree tells him to cut down her trunk. The tree is happy, but not really.",
+            "At last the boy, now an old man, returns. The tree says she is only an old stump, and the tired man simply sits on her stump to rest. The tree is happy."
           ]
         },
         {
           heading: "Theme and message",
           points: [
-            "The story is about **selfless love and generosity**: giving without expecting anything back.",
-            "It also invites readers to think about taking things for granted and about how we treat those who give to us.",
-            "The tree can be read as a parent, or as nature itself, which gives us so much."
+            "The story is about **selfless love and giving** without expecting anything in return.",
+            "It also shows how easily we can take those who love us for granted and come back only when we need something.",
+            "The tree can be seen as a parent, or as nature, which keeps giving to us."
           ]
         },
         {
-          heading: "Characters",
+          heading: "Characters and author",
           points: [
-            "**The tree**: loving, generous, patient.",
-            "**The boy**: happy as a child, but later always wanting something more.",
-            "The story is simple and told in short sentences, which makes it easy to read but rich in meaning."
+            "**The tree**: loving, generous, patient and always willing to give.",
+            "**The boy**: happy as a child, but later busy and always asking for more.",
+            "The story is by the American author **Shel Silverstein**."
           ]
         }
       ],
       terms: [
         {term: "Selfless", meaning: "Caring more about others' needs than your own."},
         {term: "Generous", meaning: "Willing to give freely to others."},
-        {term: "Theme", meaning: "The central idea or message of a story."},
+        {term: "Stump", meaning: "The part of a tree left in the ground after it is cut down."},
         {term: "Take for granted", meaning: "To expect something without being thankful for it."}
       ],
       qa: [
-        {q: "Who wrote “The Giving Tree”, and what is it about?", a: "It was written by Shel Silverstein. It is about a tree that gives generously to a boy throughout his life."},
+        {q: "What did the boy take from the tree as he grew up?", a: "He took her apples to sell for money, her branches to build a house, and her trunk to make a boat."},
         {q: "What does the story teach us?", a: "It teaches the value of selfless love and giving, and that we should be thankful to those who give to us, including nature."}
       ],
       quiz: [
         {q: "The author of “The Giving Tree” is:", options: ["Shel Silverstein", "Rabindranath Tagore", "R. K. Narayan", "Ruskin Bond"], answer: 0, explain: "Shel Silverstein wrote The Giving Tree."},
-        {q: "The main theme of the story is:", options: ["selfless giving", "winning a race", "fear of the dark", "finding treasure"], answer: 0, explain: "The tree gives without expecting anything."},
-        {q: "The tree in the story can be seen as a symbol of:", options: ["a loving parent or nature", "a cruel king", "a thief", "a teacher in a school"], answer: 0, explain: "Readers often see the tree as a giving parent or as nature."},
-        {q: "How does the boy change as he grows up?", options: ["He stops visiting and later asks for things", "He becomes a farmer in the same garden", "He becomes a bird", "He forgets how to talk"], answer: 0, explain: "He comes back mostly when he needs something."},
-        {q: "“Selfless” means:", options: ["thinking only of oneself", "putting others first", "being afraid", "being silent"], answer: 1, explain: "A selfless person puts others' needs first."}
+        {q: "What did the boy build from the tree's branches?", options: ["A boat", "A house", "A swing", "A fence"], answer: 1, explain: "He wanted a house after deciding to get married."},
+        {q: "The boy made a boat from the tree's:", options: ["apples", "leaves", "trunk", "roots"], answer: 2, explain: "The tree told him to cut down her trunk."},
+        {q: "What did the old man finally want?", options: ["Money", "A quiet place to sit and rest", "A new house", "More apples"], answer: 1, explain: "He was very tired and wanted a quiet place to rest."},
+        {q: "The main theme of the story is:", options: ["winning a race", "fear of the dark", "selfless giving", "finding treasure"], answer: 2, explain: "The tree gives without expecting anything."}
+      ]
+    },
+    {
+      id: "pb-how-beautiful-rain",
+      title: "How Beautiful is the Rain! (Poem)",
+      section: "Lessons",
+      summary: "A poem by Henry Wadsworth Longfellow, taken from his “Rain in Summer”, welcoming the summer rain that falls after dust and heat.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 5, pp. 50–52",
+      notes: [
+        {
+          heading: "The poem and the poet",
+          points: [
+            "The poem is by the American poet **Henry Wadsworth Longfellow** (1807–1882). It is the opening part of his poem “Rain in Summer”.",
+            "The poet welcomes the summer rain after the dust and heat, in broad, fiery streets and narrow lanes.",
+            "The rain clatters along the roofs, rushes out of the overflowing spout, pours across the window-pane and runs down the gutter in a muddy stream."
+          ]
+        },
+        {
+          heading: "Theme and ideas",
+          points: [
+            "The theme is **delight in rain**, which brings relief from heat and dust.",
+            "The first line is repeated to show how strongly the poet feels.",
+            "The last line calls the rain \"the welcome rain\" because it is so needed."
+          ]
+        },
+        {
+          heading: "Poetic features",
+          points: [
+            "**Simile**: the rain on the roofs is compared to the tramp of hoofs, and the water in the gutter to a roaring river.",
+            "**Sound words** such as clatters, gushes and roars let readers hear the rain.",
+            "The poem uses **rhyme** (heat–street, rain–lane–pane) and **repetition**."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Simile", meaning: "A comparison using “like” or “as”."},
+        {term: "Spout", meaning: "A pipe or opening from which water pours out."},
+        {term: "Gutter", meaning: "A channel at the edge of a roof or street that carries away rainwater."},
+        {term: "Imagery", meaning: "Words that create pictures in the reader's mind."}
+      ],
+      qa: [
+        {q: "Why does the poet call the rain beautiful?", a: "Because it comes as a welcome relief after the dust and heat of summer."},
+        {q: "Name two comparisons the poet uses.", a: "The rain on the roofs is like the tramp of hoofs, and the water in the gutter is like a roaring river."}
+      ],
+      quiz: [
+        {q: "The poem is by:", options: ["William Wordsworth", "Sarojini Naidu", "Henry Wadsworth Longfellow", "Robert Frost"], answer: 2, explain: "It comes from Longfellow's “Rain in Summer”."},
+        {q: "Which rain does the poet welcome?", options: ["Winter rain", "Summer rain", "Snow", "Hail"], answer: 1, explain: "The poet welcomes rain after dust and heat."},
+        {q: "The sound of rain on the roofs is compared to:", options: ["the tramp of hoofs", "a song", "a drum in a temple", "thunder"], answer: 0, explain: "The poem says it clatters like the tramp of hoofs."},
+        {q: "Which pair rhymes in the poem?", options: ["rain–sun", "rain–lane", "rain–stone", "rain–tree"], answer: 1, explain: "Rain and lane end with the same sound."},
+        {q: "The mood of the poem is:", options: ["gloomy", "joyful", "fearful", "angry"], answer: 1, explain: "The poet delights in the rain."}
+      ]
+    },
+    {
+      id: "pb-peacock-and-crow",
+      title: "The Peacock and the Crow",
+      section: "Lessons",
+      summary: "A crow who dislikes his black feathers covers himself with peacock feathers, is rejected by both peacocks and crows, and learns to accept himself.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 6, pp. 58–60",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "A crow dislikes his black feathers and wishes he were a peacock. He keeps calling the other crows dull and plain.",
+            "He finds peacock feathers on the ground, sticks them on his wings, tail and head, and admires himself in a river.",
+            "Proud of his looks, he ignores his friends and tells them to stay away.",
+            "He joins a pride of peacocks, but they laugh and say feathers will not make him a peacock.",
+            "Ashamed, he goes back to the crows, who also laugh, since he had insulted them."
+          ]
+        },
+        {
+          heading: "The lesson learned",
+          points: [
+            "An old wise crow tells him to accept himself and not to copy others blindly: peacock feathers are heavy for a crow and he cannot fly well.",
+            "The crow realises his mistake, tears off the feathers and apologises to his friends, who accept him. He is finally happy."
+          ]
+        },
+        {
+          heading: "Theme and characters",
+          points: [
+            "**Be yourself**: borrowed beauty does not make us someone else, and pride in false looks costs us friends.",
+            "**The crow**: vain at first, later humble and sorry.",
+            "**The peacocks**: proud and unkind. **The old wise crow**: sensible and gives good advice."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Perch", meaning: "To sit on a branch or other raised place."},
+        {term: "Reflection", meaning: "An image seen in water or a mirror."},
+        {term: "Insult", meaning: "To speak or act in a way that hurts someone's pride."},
+        {term: "Apologise", meaning: "To say sorry."}
+      ],
+      qa: [
+        {q: "Why did the peacocks not accept the crow?", a: "They knew he was only a crow wearing peacock feathers, and told him feathers would not make him a peacock."},
+        {q: "What did the old wise crow advise?", a: "He said we should accept ourselves as we are and not copy others blindly."}
+      ],
+      quiz: [
+        {q: "Why was the crow unhappy at the start?", options: ["He had no food", "He disliked his black feathers", "He could not fly", "He had no friends"], answer: 1, explain: "He wanted the colourful look of a peacock."},
+        {q: "Where did the crow look at his reflection?", options: ["In a mirror", "In a river", "In a pond near the house", "On a window"], answer: 1, explain: "He flew to a river to see himself."},
+        {q: "How did the other crows react to him when he returned?", options: ["They welcomed him at once", "They laughed at him and did not accept him", "They gave him food", "They did not see him"], answer: 1, explain: "He had insulted them earlier, so they would not take him back."},
+        {q: "Who gave the crow wise advice?", options: ["A peacock", "A parrot", "An old wise crow", "A farmer"], answer: 2, explain: "An old wise crow told him to accept himself."},
+        {q: "The moral of the story is:", options: ["Peacocks are the best birds", "Accept yourself and do not copy others blindly", "Never visit a river", "Always wear colourful things"], answer: 1, explain: "The crow was happy only after he accepted his plain self."}
+      ]
+    },
+    {
+      id: "pb-playing-kabaddi",
+      title: "Playing Kabaddi",
+      section: "Lessons",
+      summary: "A short informative passage describing the game of kabaddi, how it is played, and how it has become an international sport.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 7, pp. 67–70",
+      notes: [
+        {
+          heading: "About the game",
+          points: [
+            "Sports keep us young and healthy. Kabaddi is a popular, entertaining team game played in villages, especially across Punjab.",
+            "Players need to be strong and quick on their feet, and able to control and hold their breath for a long time.",
+            "A line drawn on the ground divides the two teams. Each team has **seven players**."
+          ]
+        },
+        {
+          heading: "How it is played",
+          points: [
+            "A player from one team crosses the line into the other camp, saying \"Kabaddi, Kabaddi\" while holding their breath.",
+            "If the player touches one or two opponents and returns to their own side without running out of breath, the touched players are out.",
+            "If the player is caught and cannot get back while holding breath and saying the word, the player is out.",
+            "A team wins when all the members of the other team are out."
+          ]
+        },
+        {
+          heading: "Kabaddi worldwide",
+          points: [
+            "Kabaddi is becoming popular around the world. The Kabaddi World Cup is an indoor international competition organised by the International Kabaddi Federation, for men's and women's national teams.",
+            "The competition began in 2004, and India has won most of the tournaments."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Breath", meaning: "The air that goes in and out of the nose or mouth."},
+        {term: "Opponent", meaning: "A person on the other team."},
+        {term: "Out", meaning: "Not allowed to continue to play in that round."},
+        {term: "Tournament", meaning: "A series of matches to find the best team."}
+      ],
+      qa: [
+        {q: "What qualities are needed to play kabaddi?", a: "Players must be strong, quick on their feet, and able to control and hold their breath for a long time."},
+        {q: "When is a player out in kabaddi?", a: "A player is out if touched by the raider, or if caught on the other side and unable to return while holding breath and saying 'Kabaddi'."}
+      ],
+      quiz: [
+        {q: "How many players are there in a kabaddi team?", options: ["Five", "Seven", "Nine", "Eleven"], answer: 1, explain: "Each team has seven players."},
+        {q: "While going into the other camp, the player keeps saying:", options: ["Out, out", "Kabaddi, kabaddi", "Hurray", "Run, run"], answer: 1, explain: "The player chants the word while holding breath."},
+        {q: "A team wins when:", options: ["it scores the most runs", "all members of the other team are out", "the whistle blows", "the line is crossed"], answer: 1, explain: "That ends the game."},
+        {q: "Who organises the Kabaddi World Cup, according to the lesson?", options: ["The International Kabaddi Federation", "The Olympic Committee", "FIFA", "A school board"], answer: 0, explain: "The International Kabaddi Federation organises it."},
+        {q: "The lesson describes kabaddi as:", options: ["only an indoor game", "a team game", "a single-player game", "a board game"], answer: 1, explain: "It is a team game."}
+      ]
+    },
+    {
+      id: "pb-writing-a-letter",
+      title: "I am Writing a Letter (Poem)",
+      section: "Lessons",
+      summary: "Margaret G Rhodes's cheerful poem about a child carefully writing a letter to Mummy and posting it.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 8, pp. 76–78",
+      notes: [
+        {
+          heading: "What the poem says",
+          points: [
+            "The child is writing a letter to send by the evening post to the person cared for most. The letter begins \"Dearest Mummy\".",
+            "The child writes the date clearly and puts the right address on the envelope.",
+            "The new pen moves slowly across the long sheet because the child is anxious to keep it neat.",
+            "The child blots the ink with pink blotting-paper, turns the page and finishes with kisses, with room for exactly ten.",
+            "The envelope is ready, the stamp goes on, and the child runs to the postbox: the letter has gone."
+          ]
+        },
+        {
+          heading: "Poet and features",
+          points: [
+            "The poem is by **Margaret G Rhodes**.",
+            "It has a simple, rhyming, singsong style and shows the steps of letter-writing in order.",
+            "The feelings it shows are love for the mother, care and excitement."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "A letter written with care shows love.",
+            "The poem also teaches the basic parts of a letter: date, address, greeting, message and ending."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Anxious", meaning: "Worried or eager that something goes well."},
+        {term: "Envelope", meaning: "A paper cover in which a letter is posted."},
+        {term: "Blotting paper", meaning: "Soft paper used to soak up extra ink."},
+        {term: "Postbox", meaning: "A box in which letters are posted."}
+      ],
+      qa: [
+        {q: "To whom is the poet writing the letter?", a: "To \"Mummy\", the person the child cares for most."},
+        {q: "Why does the pen move slowly?", a: "The child is anxious to keep the letter neat."}
+      ],
+      quiz: [
+        {q: "Who wrote “I am Writing a Letter”?", options: ["Vandana Lunyal", "Margaret G Rhodes", "Enid Blyton", "Tagore"], answer: 1, explain: "Margaret G Rhodes wrote the poem."},
+        {q: "The letter begins with:", options: ["Dear Sir", "Dearest Mummy", "Respected Teacher", "Hello friend"], answer: 1, explain: "The child addresses Mummy."},
+        {q: "The ink is dried with:", options: ["a cloth", "a fan", "pink blotting-paper", "the sun"], answer: 2, explain: "The poem mentions nice pink blotting-paper."},
+        {q: "The letter is sent by:", options: ["the evening post", "a friend", "email", "a courier from school"], answer: 0, explain: "The poem says it will go by the evening post."},
+        {q: "Which of these is NOT put on the envelope in the poem?", options: ["The right address", "A stamp", "A photograph", "The postbox"], answer: 2, explain: "The child uses an address and stamp and posts it in a postbox."}
       ]
     },
     {
       id: "pb-kabuliwala",
       title: "Kabuliwala",
       section: "Lessons",
-      summary: "Rabindranath Tagore's famous short story of friendship between a little girl and an Afghan fruit seller. The lesson may be adapted; this chapter covers the well-known story and themes.",
+      summary: "Rabindranath Tagore's story of five-year-old Mini and Rehman, a Kabuliwala, whose friendship survives his time in prison and ends with a father's generous gift.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 9, pp. 88–90",
       notes: [
         {
           heading: "Author and story",
           points: [
-            "“Kabuliwala” is a short story by **Rabindranath Tagore**, the Nobel Prize winner for Literature in 1913.",
-            "It is about Mini, a talkative little girl in Calcutta (Kolkata), and Rahmat, a fruit seller (a “Kabuliwala”) from Afghanistan.",
-            "Rahmat becomes her friend. He sees in her a reminder of his own little daughter far away in his homeland.",
-            "Rahmat is later jailed after an incident, and years pass before he returns."
+            "“Kabuliwala” is by **Rabindranath Tagore**, the first Asian winner of the Nobel Prize for Literature (1913).",
+            "Mini is a five-year-old chatterbox who tells her father about Bhola's idea of an elephant in the clouds. She spots a Kabuliwala from the window and is terrified, because she has heard such men catch children in their sacks.",
+            "Her father introduces them, and Mini soon loses her fear. The big, bearded Pathan, named **Rehman**, becomes a daily visitor.",
+            "They joke together; when Mini asks what is in his bag he answers \"an elephant\". Once a year Rehman visits his own country."
           ]
         },
         {
-          heading: "Theme",
+          heading: "The second half",
           points: [
-            "The story shows the **love between a father and a daughter**, felt by both Rahmat and Mini's father.",
-            "It shows that real friendship and affection cross age, country and culture.",
-            "It reminds us not to judge people by outward appearances or by what others fear about them."
+            "One day Rehman stabs a man who owed him money and is sent to prison. Mini forgets him as she grows up.",
+            "On the night of Mini's wedding, Rehman visits. Mini's father is busy with ceremonies and tells him to come another day.",
+            "Rehman gives him a packet of raisins, nuts and almonds for \"the little one\", saying he has a little daughter too.",
+            "Moved to tears, the father calls Mini, dressed as a bride. Rehman realises his own daughter must have grown up too.",
+            "The father gives him money to go home to his daughter and cuts down the wedding costs, skipping the military band and electric lights."
           ]
         },
         {
-          heading: "Characters",
+          heading: "Theme and characters",
           points: [
-            "**Mini**: curious, chatty and fearless.",
-            "**Rahmat**: a kind, homesick man, honest at heart.",
-            "**Mini's father** (the narrator): at first suspicious, but later understanding and generous."
+            "The story is about the love between a father and daughter, shared by Rehman and Mini's father.",
+            "It shows that friendship and affection cross age, country and culture, and warns against judging people by fear and rumour.",
+            "**Mini**: talkative and curious. **Rehman**: kind, homesick and affectionate. **Mini's father**: the thoughtful, generous narrator."
           ]
         }
       ],
       terms: [
         {term: "Kabuliwala", meaning: "A man from Kabul in Afghanistan; the title of the story."},
-        {term: "Narrator", meaning: "The person who tells the story."},
-        {term: "Homesick", meaning: "Feeling sad because you are away from home."},
-        {term: "Short story", meaning: "A brief work of fiction that can be read in one sitting."}
+        {term: "Chatterbox", meaning: "A person who talks all the time."},
+        {term: "Ceremony", meaning: "An important social or religious event, such as a wedding."},
+        {term: "Afford", meaning: "To have enough money to pay for something."}
       ],
       qa: [
-        {q: "Who wrote “Kabuliwala”?", a: "Rabindranath Tagore, the Bengali poet and writer who won the Nobel Prize for Literature in 1913."},
-        {q: "Why does Rahmat become so fond of Mini?", a: "She reminds him of his own young daughter back in Afghanistan, whom he misses."}
+        {q: "Why was Mini afraid of the Kabuliwala at first?", a: "She had heard that Kabuliwalas caught children and carried them off in their sacks."},
+        {q: "How did Mini's father help Rehman at the end?", a: "He gave Rehman money to go and see his daughter, even though it meant cutting down the wedding expenses."}
       ],
       quiz: [
-        {q: "The author of “Kabuliwala” is:", options: ["Rabindranath Tagore", "Premchand", "Rudyard Kipling", "R. K. Narayan"], answer: 0, explain: "Tagore wrote the story."},
-        {q: "Rahmat comes from:", options: ["Afghanistan", "Nepal", "Sri Lanka", "Bhutan"], answer: 0, explain: "A Kabuliwala is a man from Kabul."},
-        {q: "What does Rahmat sell?", options: ["Dry fruits and fruits", "Books", "Toys only", "Clothes"], answer: 0, explain: "He is a fruit seller."},
-        {q: "Why is Mini important to Rahmat?", options: ["She reminds him of his daughter", "She pays him well", "She is his student", "She is his sister"], answer: 0, explain: "He misses his own little girl."},
-        {q: "The main message of the story is:", options: ["affection can cross borders and differences", "fruit is expensive", "children should not talk", "strangers are always dangerous"], answer: 0, explain: "The story shows that human bonds matter more than differences."}
+        {q: "How old was Mini?", options: ["Three", "Four", "Five", "Seven"], answer: 2, explain: "Mini was five years old."},
+        {q: "What was the Kabuliwala's name?", options: ["Rahim", "Rehman", "Armaan", "Bhola"], answer: 1, explain: "His name was Rehman."},
+        {q: "Why was Rehman sent to prison?", options: ["He stole fruit", "He stabbed a man who owed him money", "He broke a window", "He lost his bag"], answer: 1, explain: "A man who owed him money was stabbed."},
+        {q: "What did Rehman bring for Mini on her wedding day?", options: ["Toys", "A packet of dried fruit and nuts", "A necklace", "Clothes"], answer: 1, explain: "He brought raisins, nuts and almonds."},
+        {q: "Because of the money given to Rehman, the wedding had no:", options: ["feast", "military band and electric lights", "guests", "music of any kind"], answer: 1, explain: "The father could not afford the band and lights."}
       ]
     },
     {
       id: "pb-cracked-pot",
       title: "The Cracked Pot",
       section: "Lessons",
-      summary: "A popular folk tale about a water-carrier's cracked pot that finds it has a hidden value. Details vary between retellings; this chapter covers the central story and moral.",
+      summary: "A water-bearer in India has two pots, one cracked. After two years the cracked pot says sorry for its flaw, and learns that its crack has watered a path of flowers.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 10, pp. 97–99",
       notes: [
         {
-          heading: "The tale in brief",
+          heading: "The story",
           points: [
-            "A water-carrier has two pots. He carries them on a pole across his shoulders to bring water from a stream to his master's house.",
-            "One pot is perfect. The other has a crack and arrives half empty. It feels ashamed of its flaw.",
-            "The water-carrier then points out that flowers grow along the cracked pot's side of the path, because it has been watering them every day.",
-            "He has been taking those flowers home to decorate the house."
+            "A water-bearer in India carries two large pots on a pole across his shoulders, bringing water from the river to his master's house.",
+            "One pot is perfect and arrives full. The other has a crack, so it arrives half filled. This goes on daily for two years.",
+            "The perfect pot is proud; the cracked pot is ashamed and sad that it brings only half the water.",
+            "After two years it apologises, saying that the leak means he does not get full value for his efforts."
+          ]
+        },
+        {
+          heading: "The flowers",
+          points: [
+            "The water-bearer asks the pot to notice the beautiful flowers along the path on the way back. The pot is happy to see them, but at the end still feels bad about the leak.",
+            "He explains that the flowers grow only on the cracked pot's side. He knew about the crack, sowed seeds on that side, and the leaking water has watered them every day.",
+            "Without the pot being just the way it is, they would not have those beautiful flowers."
           ]
         },
         {
           heading: "Moral",
           points: [
-            "Everyone has **flaws**, but even our weaknesses can be useful in unexpected ways.",
-            "We should not feel ashamed of how we are, nor compare ourselves with others.",
-            "We should be kind to others and see the good in them."
-          ]
-        },
-        {
-          heading: "Characters",
-          points: [
-            "**The cracked pot**: sad and self-critical at first, later cheerful.",
-            "**The perfect pot**: does its job well but never knows what the other does.",
-            "**The water-carrier**: wise and kind, who notices the value in the cracked pot."
+            "Everyone has **flaws**, but they can still be useful in unexpected ways.",
+            "We should not feel ashamed of who we are, or compare ourselves with others.",
+            "**The water-bearer**: kind and wise, who sees the value in the pot."
           ]
         }
       ],
       terms: [
         {term: "Flaw", meaning: "A fault or weakness in someone or something."},
-        {term: "Folk tale", meaning: "A traditional story passed on by word of mouth."},
-        {term: "Moral", meaning: "The lesson a story teaches."},
-        {term: "Water-carrier", meaning: "A person who carries water from a source to a house."}
+        {term: "Water-bearer", meaning: "A person who carries water from a source to a house."},
+        {term: "Ashamed", meaning: "Feeling bad about something you think is wrong with you."},
+        {term: "Moral", meaning: "The lesson a story teaches."}
       ],
       qa: [
         {q: "What was the cracked pot's problem?", a: "It leaked on the way and arrived half empty, so it felt ashamed and thought it was less useful than the perfect pot."},
-        {q: "What is the moral of the story?", a: "Our weaknesses can be a source of good too, so we should not be ashamed of who we are."}
+        {q: "What did the water-bearer do about the crack?", a: "He knew about it and sowed flower seeds on the cracked pot's side of the path, so the leaking water watered them daily."}
       ],
       quiz: [
-        {q: "Why did flowers grow along one side of the path?", options: ["The cracked pot watered them", "It rained there", "The master planted them", "The stream flowed there"], answer: 0, explain: "Water leaked from the cracked pot onto that side."},
-        {q: "How did the cracked pot feel at first?", options: ["ashamed", "proud", "angry at the master", "sleepy"], answer: 0, explain: "It felt bad about arriving half empty."},
-        {q: "The moral of the story is:", options: ["Our flaws can have value", "Always be first", "Never share", "Keep pots at home"], answer: 0, explain: "Even the crack turned out to be useful."},
-        {q: "A “folk tale” is:", options: ["a traditional story", "a newspaper report", "a science lesson", "a recipe"], answer: 0, explain: "Folk tales are passed down over generations."},
-        {q: "Who showed the cracked pot its value?", options: ["The water-carrier", "The master", "The stream", "The flowers' seller"], answer: 0, explain: "The water-carrier pointed out the flowers."}
+        {q: "How long did the daily routine go on before the pot spoke?", options: ["One month", "Six months", "Two years", "Ten years"], answer: 2, explain: "It went on for two years."},
+        {q: "How did the cracked pot feel at first?", options: ["proud", "ashamed", "angry at the master", "sleepy"], answer: 1, explain: "It was sad that it brought only half the water."},
+        {q: "Why did flowers grow only along one side of the path?", options: ["It rained there", "The master planted them", "The cracked pot's leaking water fell on seeds the bearer sowed", "The river flowed there"], answer: 2, explain: "The water-bearer sowed seeds on that side."},
+        {q: "How many pots did the water-bearer carry?", options: ["One", "Two", "Three", "Four"], answer: 1, explain: "He carried two large pots, one on each end of a pole."},
+        {q: "The moral of the story is:", options: ["Always be first", "Never share", "Keep pots at home", "Our flaws can have value"], answer: 3, explain: "Even the crack turned out to be useful."}
       ]
     },
     {
-      id: "pb-how-beautiful-rain",
-      title: "How Beautiful is the Rain!",
+      id: "pb-happy-with-who-i-am",
+      title: "I am Happy with who I am (Poem)",
       section: "Lessons",
-      summary: "A poem about the joy of rain, taken from Henry Wadsworth Longfellow's longer poem “Rain in Summer”. This chapter covers its theme and style in our own words.",
+      summary: "Vandana Lunyal's poem about looking in the mirror and feeling confident, unique and happy with oneself.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 11, pp. 105–107",
       notes: [
         {
-          heading: "The poem and the poet",
+          heading: "What the poem says",
           points: [
-            "The poem is by the American poet **Henry Wadsworth Longfellow** (1807–1882). It is the opening part of his poem “Rain in Summer”.",
-            "It celebrates the fresh, welcome rainfall after hot, dusty days.",
-            "The poem describes how rain affects streets, roofs, fields, trees and people, with a feeling of delight."
+            "The poet often looks into the mirror and likes what she sees. The mirror seems to wag its finger and say that no one else can be like her.",
+            "The mirror tells her she is unique and precious, that she matters, and that the world needs her if she smiles and makes it better.",
+            "It tells her to be confident and happy whatever she is.",
+            "She believes in herself, her size, her shape and her colour, and says she is happy with who she is."
           ]
         },
         {
-          heading: "Theme and ideas",
+          heading: "Poet and features",
           points: [
-            "The theme is **joy in nature**: rain refreshes the earth and lifts our spirits.",
-            "Rain brings relief and new life to plants, animals and children alike.",
-            "The poet seems to say that rain is a gift for everyone."
+            "The poem is by **Vandana Lunyal**.",
+            "The poet imagines the mirror speaking, which is **personification**.",
+            "The language is simple and the repeated idea \"no one can be like me\" makes it easy to remember."
           ]
         },
         {
-          heading: "Poetic features",
+          heading: "Theme",
           points: [
-            "The poem uses **rhyme** and a regular rhythm, which suggest the steady fall of rain.",
-            "It uses **sound words** and vivid pictures (imagery) so that readers can almost hear and see the rain.",
-            "The poet uses an exclamation in the title to show strong feeling."
+            "**Self-acceptance and self-confidence**: each person is unique and valuable.",
+            "We should not feel bad about our looks, size or colour."
           ]
         }
       ],
       terms: [
-        {term: "Poet", meaning: "A person who writes poems."},
-        {term: "Imagery", meaning: "Words that create pictures in the reader's mind."},
-        {term: "Rhyme", meaning: "Words with the same ending sound, like rain and plain."},
-        {term: "Rhythm", meaning: "The beat or flow of a poem."}
+        {term: "Unique", meaning: "The only one of its kind."},
+        {term: "Precious", meaning: "Very valuable or loved."},
+        {term: "Confident", meaning: "Sure of your own abilities and worth."},
+        {term: "Personification", meaning: "Giving human qualities to a non-living thing."}
       ],
       qa: [
-        {q: "Who wrote “How Beautiful is the Rain!”?", a: "Henry Wadsworth Longfellow, an American poet. It is the opening of his poem “Rain in Summer”."},
-        {q: "What feeling does the poem express?", a: "Joy and delight at rain refreshing the world."}
+        {q: "What does the mirror tell the poet?", a: "It tells her that she is unique and precious, that she matters, and that she should be confident and happy."},
+        {q: "What is the message of the poem?", a: "We should accept and love ourselves as we are, because each of us is unique."}
       ],
       quiz: [
-        {q: "The poem is by:", options: ["Henry Wadsworth Longfellow", "William Wordsworth", "Sarojini Naidu", "Robert Frost"], answer: 0, explain: "It comes from Longfellow's “Rain in Summer”."},
-        {q: "The mood of the poem is:", options: ["joyful", "gloomy", "angry", "fearful"], answer: 0, explain: "The poet delights in the rain."},
-        {q: "Which pair rhymes?", options: ["rain–plain", "rain–sun", "rain–stone", "rain–tree"], answer: 0, explain: "Rain and plain end with the same sound."},
-        {q: "“Imagery” means:", options: ["words that paint pictures", "a list of rules", "a kind of drum", "a map"], answer: 0, explain: "Imagery helps readers see, hear or feel things."},
-        {q: "The main subject of the poem is:", options: ["rain", "a king", "a train", "a school"], answer: 0, explain: "The poem is about rainfall."}
+        {q: "Who wrote “I am Happy with who I am”?", options: ["Vandana Lunyal", "Margaret G Rhodes", "Shel Silverstein", "Longfellow"], answer: 0, explain: "The poem is by Vandana Lunyal."},
+        {q: "In the poem, who speaks to the poet?", options: ["A friend", "The mirror", "A teacher", "A bird"], answer: 1, explain: "The poet imagines the mirror speaking."},
+        {q: "“Unique” means:", options: ["common", "one of a kind", "very tall", "shy"], answer: 1, explain: "A unique person is the only one of that kind."},
+        {q: "Which of these does the poet say she believes in?", options: ["Her size, shape and colour", "Winning every race", "Wealth", "Magic"], answer: 0, explain: "She is happy with her size, shape and colour."},
+        {q: "The theme of the poem is:", options: ["fear of mirrors", "self-confidence and self-acceptance", "love of sleeping", "pride in being rich"], answer: 1, explain: "The poet is happy with who she is."}
+      ]
+    },
+    {
+      id: "pb-rosy-meets-nessy",
+      title: "Rosy's Meeting with Nessy",
+      section: "Lessons",
+      summary: "Bored on a visit to her aunt in Scotland, Rosy throws stones into Loch Ness and meets Nessy, a gentle plant-eating monster, who gives her a ride.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 12, pp. 111–116",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "Rosy is visiting her aunt Teena in Scotland, near Loch Ness, a deep lake. Feeling bored, she asks to go to the lake to throw stones and watch the ripples.",
+            "Her aunt warns her not to go too near because the lake is deep and dangerous. Rosy passes a board about the Loch Ness Monster and smiles, since her parents told her it is a myth.",
+            "She sits on a big rock and throws stones; each makes a splash. Then a voice says \"Eeks!\" and asks her to stop because it hurts."
+          ]
+        },
+        {
+          heading: "Meeting Nessy",
+          points: [
+            "Rosy sees a huge green dinosaur-like creature with small horns, a long neck and spikes. It is Nessy, who says she is not harmful.",
+            "Rosy is afraid at first, but sees plants hanging from Nessy's mouth and realises she is a herbivore.",
+            "Nessy says people call her a monster because they do not know her. She belongs to the dinosaur family and eats only plants.",
+            "She gives Rosy a fun ride around the lake. Rosy cannot see Nessy's cave that day because it is getting late.",
+            "They agree to meet again after Rosy's trip to Edinburgh. Rosy now has a friend in Scotland."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "Do not judge by size or by what others say; the \"monster\" turns out to be gentle.",
+            "A new friend can turn a dull place into an exciting one.",
+            "Also learn: a **myth** is a story that may not be true, and **homophones** sound the same but differ in meaning."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Loch", meaning: "The Scottish word for a lake."},
+        {term: "Myth", meaning: "A story about something that may not be true."},
+        {term: "Herbivore", meaning: "An animal that eats only plants."},
+        {term: "Ripples", meaning: "Small waves on water."}
+      ],
+      qa: [
+        {q: "Why did Rosy go to the lake?", a: "She was bored at her aunt's house and wanted to throw stones into the water and watch the ripples."},
+        {q: "How did Rosy realise Nessy was not dangerous?", a: "She saw bits of plants hanging from Nessy's mouth and understood that she was a herbivore."}
+      ],
+      quiz: [
+        {q: "Where was Rosy's aunt's home?", options: ["Near Loch Ness in Scotland", "In Wales", "In London", "In Ireland"], answer: 0, explain: "Teena lived in Scotland near Loch Ness."},
+        {q: "What sound did the stones make?", options: ["Eeks", "Splash", "Ouch", "Boom"], answer: 1, explain: "Each stone said splash."},
+        {q: "What was Nessy like?", options: ["A small blue fish", "A huge green dinosaur-like animal", "A white bear", "A fierce crocodile"], answer: 1, explain: "Nessy was huge and green."},
+        {q: "Nessy eats:", options: ["meat", "plants", "fish only", "children"], answer: 1, explain: "Nessy is a herbivore."},
+        {q: "Where was Rosy going the next day?", options: ["Edinburgh", "Glasgow", "London", "Home"], answer: 0, explain: "She told Nessy she would go to Edinburgh for sightseeing."}
+      ]
+    },
+    {
+      id: "pb-forgotten-wish",
+      title: "A Forgotten Wish",
+      section: "Lessons",
+      summary: "Bebe needs eye surgery during the Covid-19 flight ban. Her daughter Khwahish takes care of it, and Bebe finally agrees to live with her.",
+      source: "My English Companion 6 (PSEB, 2023–24 edition), Lesson 13, pp. 122–125",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "Bebe, an elderly mother in Talwandi, Punjab, needs a cataract operation. Her son Sunny, who lives in Canada, cannot travel because flights are cancelled due to Covid-19. He sees her tears on a video call.",
+            "For fifteen years Sunny had visited every year with his wife and two daughters. His elder sister Khwahish lives in Ludhiana and is sixteen years older than Sunny.",
+            "Khwahish has cared for Sunny like a parent and now promises to arrange Bebe's surgery, though Bebe thinks a married daughter belongs to her husband's family and has never wanted to trouble her."
+          ]
+        },
+        {
+          heading: "The surgery and the wish",
+          points: [
+            "Khwahish speaks to the doctor, fixes the appointment, withdraws money and prepares a room at her home.",
+            "The surgery succeeds. Bebe is proud to see her daughter's confidence but feels bad to burden her family.",
+            "After a month, Bebe wants to go back, but Khwahish asks her to live with them. Bebe agrees and says Khwahish, true to her name (it means \"wish\"), is the child she always wished for.",
+            "She says sorry for treating her son and daughter differently."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "**Daughters and sons are equal**; a daughter can care for parents as well as a son.",
+            "Family love sometimes means accepting help.",
+            "Also learn about prepositions in this lesson."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Cataract", meaning: "A clouding of the eye's lens that makes it hard to see clearly."},
+        {term: "Surgery", meaning: "A medical operation."},
+        {term: "Partial", meaning: "Favouring one person over another unfairly."},
+        {term: "Anxiety", meaning: "A feeling of worry."}
+      ],
+      qa: [
+        {q: "Why couldn't Sunny come to meet his mother?", a: "All flights were cancelled around the world because of Covid-19."},
+        {q: "What is the message of the story?", a: "Daughters are as caring as sons, and parents should not treat them differently."}
+      ],
+      quiz: [
+        {q: "Why did Bebe need surgery?", options: ["A broken leg", "A cataract in both eyes", "A toothache", "A heart problem"], answer: 1, explain: "The cataract in her eyes was getting worse."},
+        {q: "Where does Sunny live?", options: ["Ludhiana", "Canada", "Talwandi", "Delhi"], answer: 1, explain: "He flew down from Canada every year."},
+        {q: "Who arranged the surgery?", options: ["Sunny", "A neighbour", "Khwahish", "The doctor alone"], answer: 2, explain: "Khwahish got the surgery done."},
+        {q: "How much older than Sunny is Khwahish?", options: ["Six years", "Ten years", "Sixteen years", "Twenty years"], answer: 2, explain: "Sunny says he is sixteen years younger."},
+        {q: "At the end, Bebe decides to:", options: ["return to Talwandi alone", "live with Khwahish", "move to Canada", "sell the house"], answer: 1, explain: "She agrees to live with Khwahish."}
       ]
     }
   ]

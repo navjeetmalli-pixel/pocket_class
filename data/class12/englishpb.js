@@ -1,10 +1,8 @@
 // Class 12 General English (PSEB): A Rainbow of English + English Grammar and Composition for XI and XII.
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the PSEB books.
-// Literature chapters are written from the well-known works; the PSEB book may print an abridged version.
-// NOT covered (not known well enough to summarise): Hassan's Attendance Problem; Thinking Out of the Box: Lateral Thinking;
-// In Celebration of Being Alive; Prayer of the Woods; The Gold Frame; The Bull beneath the Earth.
+// Literature chapters were checked against A Rainbow of English (PSEB 2023–24 edition); all 20 lessons of Sections A, B and C are covered.
 StudyData.add(12, "englishpb", {
-  syllabus: {board: "PSEB", match: "textbook", books: ["A Rainbow of English (PSEB, Class 12)", "English Grammar and Composition for XI and XII (PSEB)"], note: "Follows the PSEB 2026–27 syllabus; lessons are summarised in our own words, not the PSEB book's text.", reviewed: false},
+  syllabus: {board: "PSEB", match: "textbook", books: ["A Rainbow of English (PSEB, Class 12)", "English Grammar and Composition for XI and XII (PSEB)"], note: "Follows the PSEB 2026–27 syllabus; lessons summarised in our own words from the PSEB textbook (2023–24 edition).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
@@ -641,298 +639,522 @@ StudyData.add(12, "englishpb", {
     },
     // ───────────────────────────── PROSE ─────────────────────────────
     {
-      id: "the-march-king",
-      title: "The March King",
+      id: "hassans-attendance-problem",
+      title: "Hassan's Attendance Problem",
       section: "Prose",
-      summary: "A biographical sketch of John Philip Sousa, the American bandmaster and composer known as the March King, from his musical childhood in Washington to worldwide fame. The PSEB version may be abridged.",
+      summary: "Sudha Murthy, a teacher of computer applications, recalls Hassan, a gifted but irregular student who always begged for attendance and still scored first class. Years later he turns up as a door-to-door salesman, having drifted through jobs because of his lazy habits, and she urges him to start again.",
       notes: [
         {
-          heading: "Early life",
+          heading: "Hassan in college",
           points: [
-            "John Philip Sousa was born in Washington, D.C., in 1854; his father played the trombone in the United States Marine Band.",
-            "He showed great musical talent as a child and studied the violin and other instruments.",
-            "As a boy he was enrolled as an apprentice in the Marine Band, which helped to channel his energy into music."
+            "The narrator teaches Computer Science to Master's students in Bangalore; Hassan, tall, handsome and with a sharp memory, is the only son of a rich family.",
+            "He rarely attended class and appeared mainly before tests and exams. Each semester he pleaded for attendance, apologised and promised to improve, and the soft-hearted teacher gave in.",
+            "He still got first class by studying just before exams, guessing questions and skipping chapters.",
+            "When she called his parents, his father was too busy to take it seriously, his mother wept that Hassan stayed up all night with music and friends, and the parents ended by blaming each other."
           ]
         },
         {
-          heading: "Career",
+          heading: "The meeting years later",
           points: [
-            "He became leader of the US Marine Band in 1880 and raised it to a high standard.",
-            "Later he formed his own civilian band and toured the United States and Europe to great applause.",
-            "He composed marches, including The Stars and Stripes Forever (1896) and The Washington Post, and also operettas."
+            "A plump, balding man of about thirty-five comes to her office to sell educational software for high-school Maths, Physics and Chemistry. She recognises him as Hassan, 'the perpetual latecomer'.",
+            "He says that what he remembers from her class are the moral lessons, not the programming.",
+            "He confesses that his lazy, careless habits continued at work: he was late, unreliable and short of real knowledge, and he lost one job after another. His father finally asked him to live separately.",
+            "He used to laugh at hard-working classmates as 'nerds', yet they are now millionaires."
           ]
         },
         {
-          heading: "Why 'the March King'",
+          heading: "Message",
           points: [
-            "His marches had a stirring rhythm and clear melody that people could easily remember.",
-            "He is credited with lifting the march to an art form, and the sousaphone is named after him.",
-            "He died in 1932; The Stars and Stripes Forever is the national march of the USA."
+            "Marks without knowledge, and working only for marks or money, lead nowhere.",
+            "Discipline and good habits matter as much as talent; excellence comes from practice.",
+            "It is never too late to begin again. The teacher encourages Hassan, he promises to try, and she hopes to meet him again happy and successful."
           ]
         }
       ],
       formulas: [
-        "Subject: John Philip Sousa (1854–1932), US bandmaster and composer.",
-        "Famous march: The Stars and Stripes Forever (1896); instrument named after him: the sousaphone."
+        "Author: Sudha Murthy, teacher, social worker and philanthropist, wife of Infosys founder N. R. Narayana Murthy.",
+        "Narrator: the teacher herself; main character: Hassan, a bright but irregular student.",
+        "Theme: bad habits waste talent; real knowledge and discipline are needed for success."
       ],
       terms: [
-        {term: "March", meaning: "A piece of music with a strong regular beat, written for marching."},
-        {term: "Bandmaster", meaning: "The conductor or leader of a band."},
-        {term: "Apprentice", meaning: "A young person learning a trade or skill from an expert."},
-        {term: "Composer", meaning: "A person who writes music."},
-        {term: "Operetta", meaning: "A light, short opera with spoken dialogue."}
+        {term: "Affluent", meaning: "Wealthy and prosperous."},
+        {term: "Perpetual", meaning: "Continuous; never stopping."},
+        {term: "Nerd", meaning: "A word used by Hassan for a hard-working, bookish student."},
+        {term: "Glimpse", meaning: "A very brief look at something."},
+        {term: "Bump into", meaning: "To meet someone by chance."}
       ],
       qa: [
-        {q: "Why was Sousa called the March King?", a: "Because his many stirring marches won huge popularity and he turned the march into a respected musical form, so people honoured him with this title."},
-        {q: "How did his father influence his career?", a: "His father was a trombonist in the Marine Band, so Sousa grew up around music and was placed in the band as a boy, which started his career."}
+        {q: "Why did the teacher keep giving Hassan attendance?", a: "He was bright and always apologised with a promise to improve, and she could not bear his missing the final exam over attendance. A good teacher wants the best for her student, so she melted each time."},
+        {q: "What lesson does Hassan's story teach?", a: "That talent without discipline and real knowledge is wasted. Hassan relied on guesswork and good luck, his habits ruined his career, and he saw too late that the 'nerds' he mocked had worked steadily for their success."}
       ],
       quiz: [
-        {q: "John Philip Sousa was a famous:", options: ["Painter", "Bandmaster and composer", "Poet", "Explorer"], answer: 1, explain: "He is known for his marches and band leadership."},
-        {q: "Which band did Sousa lead from 1880?", options: ["The Royal Navy Band", "The US Marine Band", "The Boston Pops", "The Salvation Army Band"], answer: 1, explain: "He led the United States Marine Band."},
-        {q: "Which of these is a famous Sousa march?", options: ["The Stars and Stripes Forever", "Jana Gana Mana", "Colonel Bogey", "Waltzing Matilda"], answer: 0, explain: "It is his best-known march."},
-        {q: "The sousaphone is named after:", options: ["A city", "Sousa", "Its maker's wife", "A composer's pupil"], answer: 1, explain: "It honours John Philip Sousa."},
-        {q: "'The March King' is the title of:", options: ["A poem about a king", "A biographical lesson on a musician", "A speech", "A play"], answer: 1, explain: "The lesson is a biographical sketch."}
+        {q: "The lesson 'Hassan's Attendance Problem' is by:", options: ["Sudha Murthy", "Ruskin Bond", "R. K. Narayan", "Anita Desai"], answer: 0, explain: "The narrator is the author herself, a teacher."},
+        {q: "What subject does the narrator teach?", options: ["Computer Science", "History", "Commerce", "Biology"], answer: 0, explain: "She teaches MCA students in Bangalore."},
+        {q: "Why did Hassan finally come to meet her?", options: ["To sell educational software", "To ask for a job", "To return a book", "To invite her to a wedding"], answer: 0, explain: "He was selling software for high-school teaching."},
+        {q: "What did Hassan say he remembered from her classes?", options: ["Moral lessons", "Database commands", "Programming in C", "Pascal"], answer: 0, explain: "He recalled the moral lessons, not the software."},
+        {q: "According to Hassan, who had become millionaires?", options: ["The 'nerds' he had mocked", "His relatives", "His teachers", "His employers"], answer: 0, explain: "He laughed at hard workers, who later became rich."}
+      ]
+    },
+    {
+      id: "the-march-king",
+      title: "The March King",
+      section: "Prose",
+      summary: "A biographical sketch of John Philip Sousa, from the boy in Washington who vowed to be a musician to the bandmaster of the US Marine Band known as the March King. It shows how a boy who tried other careers returned to his true calling, music.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section A, Lesson 2",
+      notes: [
+        {
+          heading: "Philip's boyhood",
+          points: [
+            "As a small boy Philip watches the Marine Band parade with his father among the brass players, and he vows to become a musician. At seven he starts at a music school and excels on the violin.",
+            "At eleven he is chosen to play a solo at the school concert but spends the day playing baseball. With his laundry not back, he borrows a very large shirt from his teacher Mr Esputa, and Mrs Esputa pins it to fit.",
+            "During the solo the pins give way, the shirt slips off his neck, the audience laughs and he rushes off in tears. His teacher scolds him and denies him refreshments; Philip never again mixes work with play."
+          ]
+        },
+        {
+          heading: "Baker and circus",
+          points: [
+            "At twelve, after a quarrel over a trifle, he gives up music and says he wants to be a baker. His father arranges it but insists he continue schooling.",
+            "After three exhausting nights, including falling asleep while rocking the baker's baby, he admits he would rather die than be a baker, and he returns to Mr Esputa as a friend.",
+            "At thirteen he is a known violinist. A circus bandleader tempts him to join secretly. His friend Ed lets the secret slip, and his father quietly enlists him as an apprentice in the Marine Band, trusting his sense of duty."
+          ]
+        },
+        {
+          heading: "The March King",
+          points: [
+            "He rises to lead the Marine Band, the President's official band, serving five Presidents and taking it on tours abroad.",
+            "He composes more than a hundred marches and is called the March King.",
+            "For a Washington Post essay-contest prize day he composes a march, The Washington Post, which thousands applaud, including boys perched in trees who may dream of music like him.",
+            "Theme: one succeeds by following the work that suits one's aptitude and inborn taste."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Katherine Little Bakeless (1895–1992), American biographer and playwright.",
+        "Subject: John Philip Sousa, leader of the US Marine Band; teacher: Professor Esputa.",
+        "Known as the March King for more than a hundred marches, including The Washington Post."
+      ],
+      terms: [
+        {term: "March", meaning: "A musical piece with a strong regular beat for marching."},
+        {term: "Apprentice", meaning: "A young person learning a skill from an expert."},
+        {term: "Elated", meaning: "Very happy and excited."},
+        {term: "Barracks", meaning: "Buildings where soldiers live."},
+        {term: "Fiddle", meaning: "An informal word for a violin."}
+      ],
+      qa: [
+        {q: "Why did Philip's concert become a failure?", a: "He played baseball all day, then found his clean shirt missing. The oversized borrowed shirt was held by pins that came loose as he played, the audience laughed and he stopped, embarrassed."},
+        {q: "How did Philip's father make him return to music?", a: "He agreed to let Philip become a baker but insisted on schooling too. The tiring nights at the bakery made Philip give up the idea himself, and he went back to music."}
+      ],
+      quiz: [
+        {q: "Which instrument did young Philip play best?", options: ["Violin", "Drum", "Trumpet", "Piano"], answer: 0, explain: "He excelled at the violin."},
+        {q: "Why did Philip want to become a baker?", options: ["He quarrelled with his music teacher", "He loved bread", "His father told him to", "He failed an exam"], answer: 0, explain: "A heated argument over a trifle made him quit music."},
+        {q: "How did the father stop Philip from running off with a circus?", options: ["He enlisted him in the Marine Band", "He locked him at home", "He sent him to a bakery", "He sent him abroad"], answer: 0, explain: "Philip became an apprentice in the Marine Band."},
+        {q: "How many presidents did Sousa serve as bandmaster?", options: ["Five", "Two", "Ten", "One"], answer: 0, explain: "He served five different presidents."},
+        {q: "The Washington Post march was composed for:", options: ["A school essay-contest prize day", "A war victory", "A royal wedding", "A circus"], answer: 0, explain: "The newspaper held an essay contest for Washington pupils."}
+      ]
+    },
+    {
+      id: "thinking-out-of-the-box-lateral-thinking",
+      title: "Thinking Out of the Box: Lateral Thinking",
+      section: "Prose",
+      summary: "Adapted from an article on lateral thinking. Through the tale of a clever girl who defeats a cunning moneylender and a millionaire who 'parks' his car in a bank, the lesson shows that creative, unconventional thinking can solve problems that logic alone cannot.",
+      notes: [
+        {
+          heading: "The pebble story",
+          points: [
+            "A poor farmer owes money to an old, ugly moneylender who wants to marry his beautiful daughter. He offers to cancel the debt if she picks the right pebble from a bag holding one black and one white pebble.",
+            "Picking black means marrying him, picking white means freedom, and refusing means jail for her father. While picking pebbles from the path the moneylender secretly drops two black ones in the bag, and the girl sees it.",
+            "Logical choices (refuse, expose the cheat, or sacrifice herself) are all bad. Instead she drops the pebble she took into the pebbles on the path and says the colour of the remaining pebble will show what she picked. It is black, so she must have picked white, and the moneylender cannot expose his own cheating."
+          ]
+        },
+        {
+          heading: "What is lateral thinking?",
+          points: [
+            "It is creative, non-linear thinking: doing something new and unconventional rather than following the usual steps.",
+            "Edward de Bono, who popularised it, holds that intelligence is a potential and thinking is the skill to use it; a person can be a good thinker without being an intellectual.",
+            "Logic works with the given pieces, like chess, while lateral thinking changes the pieces themselves by changing perception."
+          ]
+        },
+        {
+          heading: "More examples",
+          points: [
+            "A millionaire, Thomas, borrows 5000 dollars against his expensive new Ferrari, leaves for two weeks and repays the loan with about 15 dollars interest. He had found a cheap, safe place to park his car in a busy city.",
+            "In cricket, Kerry Packer's day-night matches and coloured clothing broke tradition and were adopted worldwide; T20 matches are another example.",
+            "Moral: the most complex problems have solutions, and we find them if we are willing to look in a new direction."
+          ]
+        }
+      ],
+      formulas: [
+        "Source: adapted from an article on lateral thinking (lifepositive.com).",
+        "Edward de Bono: Oxford professor, psychologist and author of 40+ books, known for lateral thinking.",
+        "Examples: the pebble trick (girl) and the Ferrari loan (Thomas)."
+      ],
+      terms: [
+        {term: "Lateral thinking", meaning: "Solving problems by looking at them in new, imaginative ways."},
+        {term: "Collateral", meaning: "Property offered as security for a loan."},
+        {term: "Dilemma", meaning: "A difficult choice between two or more options."},
+        {term: "Providence", meaning: "God or fate (here, leaving the matter to chance)."},
+        {term: "Fumble", meaning: "To handle something clumsily."}
+      ],
+      qa: [
+        {q: "How did the girl outwit the moneylender?", a: "She saw him put two black pebbles in the bag, so she took one out and let it fall among the pebbles on the path. She said the remaining pebble would show her choice. It was black, so hers had to be white, and he could not call her a liar without admitting his own cheating."},
+        {q: "How did lateral thinking help the millionaire?", a: "Thomas borrowed 5000 dollars against his Ferrari and the bank safely kept the car. He paid back the loan and about 15 dollars interest on return, so he paid just 15 dollars to park his valuable car securely for two weeks."}
+      ],
+      quiz: [
+        {q: "What did the moneylender want in return for cancelling the debt?", options: ["The farmer's daughter in marriage", "The farmer's land", "The farmer's cow", "A bag of gold"], answer: 0, explain: "He wanted to marry the farmer's daughter."},
+        {q: "What trick did the moneylender play with the pebbles?", options: ["He put two black pebbles in the bag", "He hid the white pebble", "He used two white pebbles", "He changed the bag"], answer: 0, explain: "Both pebbles in the bag were black."},
+        {q: "Who popularised the idea of lateral thinking?", options: ["Edward de Bono", "Kerry Packer", "Thomas", "Albert Einstein"], answer: 0, explain: "De Bono was a psychologist who popularised the term."},
+        {q: "How much interest did Thomas pay on the loan?", options: ["About 15 dollars", "About $500", "Nothing", "5000 dollars"], answer: 0, explain: "He returned 5000 dollars plus roughly 15 dollars."},
+        {q: "Which cricket innovator is mentioned as a lateral thinker?", options: ["Kerry Packer", "Don Bradman", "Kapil Dev", "W. G. Grace"], answer: 0, explain: "Packer introduced day-night matches and coloured kits."}
       ]
     },
     {
       id: "on-saying-please",
       title: "On Saying 'Please'",
       section: "Prose",
-      summary: "An essay by A. G. Gardiner (writing as Alpha of the Plough) about everyday courtesy, arguing that small words like 'please' and 'thank you' make social life smoother and that rudeness harms the person who is rude. The PSEB version may be abridged.",
+      summary: "A. G. Gardiner begins with a lift-man who threw out a passenger for not saying 'please' and was fined. He argues that although bad manners are not a crime, they poison social life, and he praises a cheerful bus conductor who shows that courtesy lightens everyone's day.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section A, Lesson 4",
       notes: [
         {
-          heading: "The main idea",
+          heading: "The lift-man incident",
           points: [
-            "Good manners are like small change: they cost nothing but are needed all the time.",
-            "Politeness is not weakness. It shows respect for people whatever their job or rank.",
-            "Rudeness to those who serve us, such as lift operators, conductors and shop assistants, is a failure of character."
+            "A lift-man in a city office hurled a passenger out of his lift after the man said just 'Top' without 'please', and the lift-man was fined.",
+            "Gardiner says he was wrong: discourtesy is not a legal offence, and the law does not allow violence in return for rudeness. If it did, everyone would be fighting all day.",
+            "Still, the insult may hurt more than a physical blow, and bad temper spreads from person to person like an infection."
           ]
         },
         {
-          heading: "Illustrations in the essay",
+          heading: "Courtesy is older than law",
           points: [
-            "Gardiner uses a small incident involving a lift operator to show how a harsh word can hurt, and how courtesy returns courtesy.",
-            "He observes that people who are busy and tired still deserve politeness.",
-            "He contrasts two people: one who behaves roughly, and one who treats everyone gently."
+            "The law cannot make people polite, but an older social custom asks us to be civil. 'Please' and 'thank you' are the small change of social life and keep it running smoothly.",
+            "Rude commanding comes from a vulgar mind; politeness turns service into friendly co-operation."
           ]
         },
         {
-          heading: "Message",
+          heading: "The polite conductor",
           points: [
-            "Courtesy is a social duty, and a society run on mutual respect is happier and works better.",
-            "The tone is gentle, conversational and humorous, with a moral purpose.",
-            "Gardiner wrote many such essays on daily life under the name Alpha of the Plough."
+            "The author once boarded a bus without money. The conductor kindly booked him through and asked him to pay some other day; by luck he found a shilling.",
+            "Later the conductor stepped on his toe, apologised so warmly that the author assured him it did not hurt. He was gentle with the old, children and the blind and cheered everyone.",
+            "Good manners are as infectious as bad ones, and his cheerfulness lightened his own work too.",
+            "Gardiner suggests the lift-man's better revenge would have been extra politeness, as Lord Chesterfield stepped aside into the road for a man who refused to give way to scoundrels, winning a moral victory."
           ]
         }
       ],
       formulas: [
         "Author: A. G. Gardiner (1865–1946), English essayist; pen-name Alpha of the Plough.",
-        "Theme: courtesy and respect for all, regardless of occupation."
+        "'Please' and 'Thank you' are called the small change of social life.",
+        "Illustrations: the lift-man, the polite bus conductor, Chesterfield's story."
       ],
       terms: [
-        {term: "Courtesy", meaning: "Polite and respectful behaviour towards others."},
-        {term: "Essay", meaning: "A short prose piece on a single subject, giving the writer's views."},
-        {term: "Pen-name", meaning: "A name that a writer uses instead of their real name."},
-        {term: "Etiquette", meaning: "Accepted rules of polite behaviour."},
-        {term: "Rudeness", meaning: "Impolite or offensive behaviour."}
+        {term: "Discourtesy", meaning: "Rude, impolite behaviour."},
+        {term: "Retaliate", meaning: "To hit back or take revenge."},
+        {term: "Civility", meaning: "Polite and respectful behaviour."},
+        {term: "Boorish", meaning: "Rough and bad-mannered."},
+        {term: "Panegyric", meaning: "A speech or writing in praise of someone."}
       ],
       qa: [
-        {q: "What does Gardiner mean when he links manners with small change?", a: "He means that small courtesies cost nothing but are used constantly, and without them everyday life becomes harsh. Politeness keeps social dealings smooth."},
-        {q: "What is the central message of the essay?", a: "People should show courtesy to everyone, especially to those who serve them, because respect and kind words make society more humane."}
+        {q: "Why does Gardiner say the lift-man was wrong?", a: "Because rudeness is not a crime and the law does not allow violence as a reply to bad manners. He should have borne the insult or answered it with extra politeness."},
+        {q: "What does the polite conductor teach us?", a: "That even a humble job can be dignified by good temper. His kindness and good humour spread to passengers and made travel pleasant, showing that good manners are as infectious as bad ones."}
       ],
       quiz: [
-        {q: "Who wrote On Saying 'Please'?", options: ["A. G. Gardiner", "Charles Lamb", "Oscar Wilde", "George Orwell"], answer: 0, explain: "It is an essay by A. G. Gardiner."},
-        {q: "Gardiner's pen-name was:", options: ["Elia", "Alpha of the Plough", "Saki", "Boz"], answer: 1, explain: "He wrote as Alpha of the Plough."},
-        {q: "The essay mainly deals with:", options: ["Politeness in daily life", "Politics", "Travel", "Science"], answer: 0, explain: "It is about everyday courtesy."},
-        {q: "The tone of the essay is:", options: ["Gentle and humorous", "Furious", "Technical", "Tragic"], answer: 0, explain: "Gardiner writes in a conversational, light tone."},
-        {q: "Which of the following is a lesson of the essay?", options: ["Be polite to everyone", "Ignore service staff", "Manners are useless", "Money matters most"], answer: 0, explain: "Respect for all is the core message."}
+        {q: "What word did the passenger fail to say to the lift-man?", options: ["Please", "Sorry", "Thanks", "Sir"], answer: 0, explain: "He just said 'Top'."},
+        {q: "What happened to the lift-man?", options: ["He was fined", "He was praised", "He was jailed for a year", "He was promoted"], answer: 0, explain: "He was fined for the offence."},
+        {q: "Why did the conductor not ask the author to get off the bus?", options: ["He trusted him and booked him through", "He knew him", "The author paid", "The bus was free"], answer: 0, explain: "The conductor kindly gave him a ticket."},
+        {q: "'Please' and 'thank you' are compared to:", options: ["Small change", "Gold", "A weapon", "A law"], answer: 0, explain: "They are the small change of social life."},
+        {q: "Whose story does Gardiner recommend to the lift-man?", options: ["Chesterfield", "Wordsworth", "Keats", "Captain Absolute"], answer: 0, explain: "Chesterfield stepped aside with a bow to a rude man."}
       ]
     },
     {
       id: "the-story-of-my-life",
       title: "The Story of My Life",
       section: "Prose",
-      summary: "An extract from Helen Keller's autobiography about how her teacher, Anne Sullivan, helped her, a deaf-blind child, to understand language and the world. The PSEB version may be abridged.",
+      summary: "An extract from Helen Keller's autobiography. She recalls 3 March 1887, the day her teacher Anne Sullivan arrived, and the day at the well-house when she suddenly grasped that everything has a name, which opened the world of language to her.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section A, Lesson 5",
       notes: [
         {
           heading: "About Helen Keller",
           points: [
-            "Born in 1880 in Tuscumbia, Alabama, USA; an illness in infancy left her deaf and blind.",
-            "She grew up isolated and frustrated, unable to express herself.",
-            "She later graduated from Radcliffe College and became a writer and campaigner for people with disabilities."
+            "Born in 1880, she lost sight and hearing to a fever at nineteen months. She learnt Braille and a way of lip-reading by touch, and wrote The Story of My Life (1903) while in college.",
+            "She calls the day her teacher, Anne Mansfield Sullivan, came to her, the most important day of her life; she was nearly seven.",
+            "Before this she was anxious and bitter, like a ship lost in thick fog, crying wordlessly for light."
           ]
         },
         {
-          heading: "The arrival of Anne Sullivan",
+          heading: "Learning words",
           points: [
-            "In March 1887 Anne Sullivan came as her teacher, a day Keller called the most important of her life.",
-            "Sullivan spelled words into Keller's hand using the manual alphabet.",
-            "The famous breakthrough came at a water pump, when Keller understood that the letters spelled into her hand stood for the water running over it."
+            "The next morning Miss Sullivan gave her a doll and spelled 'd-o-l-l' into her hand. Helen copied the finger movements like a monkey, without knowing they stood for words, and learnt pin, hat, cup, sit, stand and walk this way.",
+            "She mixed up 'mug' and 'water', became impatient and smashed the new doll, feeling neither sorrow nor regret then."
           ]
         },
         {
-          heading: "What the breakthrough meant",
+          heading: "The well-house",
           points: [
-            "Once she grasped that everything has a name, she asked for the names of many things and learned very rapidly.",
-            "Language opened up the world, bringing her thought, love and joy.",
-            "The lesson shows the power of patience, devoted teaching and determination."
+            "On a walk to the honeysuckle-covered well-house, as cool water ran over one hand, the teacher spelled 'water' into the other. Helen suddenly understood that the word meant that flowing thing.",
+            "That living word, she says, woke her soul and gave it light, hope and joy. She was eager to learn and learnt many words that day, such as mother, father, sister and teacher.",
+            "Back home she remembered the broken doll and felt repentance and sorrow for the first time. She went to bed a very happy child, longing for the next day."
           ]
         }
       ],
       formulas: [
-        "Author: Helen Keller (1880–1968); the autobiography The Story of My Life was published in 1903.",
-        "Teacher: Anne Sullivan (Macy), who arrived in 1887."
+        "Author: Helen Keller (1880–1968); autobiography published 1903.",
+        "Teacher: Anne Mansfield Sullivan, who arrived on 3 March 1887.",
+        "The breakthrough word: 'water', at the well-house."
       ],
       terms: [
-        {term: "Autobiography", meaning: "The story of a person's life written by that person."},
-        {term: "Manual alphabet", meaning: "A system of finger spelling for the deaf, spelled into the hand for the deaf-blind."},
-        {term: "Deaf-blind", meaning: "Unable to hear or see."},
-        {term: "Perseverance", meaning: "Continuing to try despite difficulties."},
-        {term: "Breakthrough", meaning: "A sudden important discovery or achievement."}
+        {term: "Languor", meaning: "A pleasant feeling of tiredness and lack of energy."},
+        {term: "Tussle", meaning: "A short struggle or argument."},
+        {term: "Repentance", meaning: "Sorrow for something wrong that one has done."},
+        {term: "Hearth", meaning: "The floor of a fireplace."},
+        {term: "Quiver", meaning: "To shake or tremble slightly."}
       ],
       qa: [
-        {q: "How did Anne Sullivan teach Helen Keller?", a: "She spelled words into Helen's palm with finger letters, linking each word to the object. After the water-pump moment, Helen understood that words name things and began to learn quickly."},
-        {q: "What does the lesson teach us?", a: "That with a patient teacher and determination, even great handicaps can be overcome, and that language is the key to understanding the world."}
+        {q: "How did Helen come to understand that everything has a name?", a: "At the well-house, cool water flowed over her hand while Miss Sullivan spelled 'water' into the other. Helen suddenly saw that the finger-signs meant the water, and she realised every thing has a name."},
+        {q: "Why did Helen feel sorrow after returning to the house?", a: "Her new understanding of words and feelings made her remember the doll she had smashed in anger. She tried to piece it together, realised what she had done and wept with repentance for the first time."}
       ],
       quiz: [
-        {q: "Helen Keller lost her sight and hearing:", options: ["At birth", "After an illness in infancy", "In a school accident", "At the age of twenty"], answer: 1, explain: "A childhood illness left her deaf and blind."},
-        {q: "Who was Helen Keller's teacher?", options: ["Anne Sullivan", "Maria Montessori", "Emily Dickinson", "Florence Nightingale"], answer: 0, explain: "Anne Sullivan taught her."},
-        {q: "What was the key moment in her learning?", options: ["Visiting a zoo", "Understanding the word 'water' at the pump", "Reading a book in Braille", "Winning a prize"], answer: 1, explain: "The pump showed her that words name things."},
-        {q: "The Story of My Life is a(n):", options: ["Novel", "Autobiography", "Play", "Poem"], answer: 1, explain: "Keller wrote about her own life."},
-        {q: "Helen Keller was born in the:", options: ["USA", "UK", "India", "Canada"], answer: 0, explain: "She was born in Alabama, USA."}
+        {q: "On which date did Anne Sullivan arrive?", options: ["3 March 1887", "1 January 1880", "15 August 1890", "3 March 1903"], answer: 0, explain: "It was three months before Helen turned seven."},
+        {q: "What did Miss Sullivan give Helen the morning after she arrived?", options: ["A doll", "A book", "A necklace", "A hat"], answer: 0, explain: "She spelled the word 'doll' into Helen's hand."},
+        {q: "Which two words did Helen confuse?", options: ["mug and water", "cup and hat", "pin and doll", "sit and stand"], answer: 0, explain: "She persisted in confusing 'mug' and 'water'."},
+        {q: "Where did Helen learn the meaning of 'water'?", options: ["At the well-house", "In the school", "In the kitchen", "In the garden"], answer: 0, explain: "She felt the water over her hand at the well-house."},
+        {q: "What did Helen do to the new doll?", options: ["Smashed it on the floor", "Hid it", "Gave it away", "Dressed it"], answer: 0, explain: "She dashed it down in impatience."}
       ]
     },
     {
       id: "two-gentlemen-of-verona",
       title: "Two Gentlemen of Verona",
       section: "Prose",
-      summary: "A. J. Cronin's story of two young brothers in post-war Verona who work at every odd job to pay for their sister's treatment for tuberculosis. The PSEB version may be abridged.",
+      summary: "A. J. Cronin's story of two poor Italian boys, Nicola and Jacopo, who work at every odd job in Verona to pay the hospital fees of their sister Lucia, who has tuberculosis of the spine. The narrator discovers their secret and is deeply moved.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section A, Lesson 6",
       notes: [
         {
-          heading: "Story outline",
+          heading: "Meeting the boys",
           points: [
-            "The narrator and his driver, touring Italy, buy wild strawberries from two boys near Verona, **Nicola** and **Jacopo**, aged about thirteen and twelve.",
-            "They see the boys every day doing all kinds of work: shining shoes, selling fruit and newspapers, and guiding tourists round the town.",
-            "The boys ask the narrator to drive them to Poleta, a village outside the city, and he learns their secret only when he goes there.",
-            "Their sister **Lucia** is a patient in a hospital (sanatorium) there with tuberculosis of the spine. Their father died in the war and their home was destroyed.",
-            "The boys pay for her treatment from their earnings and visit her every week; they keep it secret and carry their burden with quiet dignity."
+            "The narrator and his friend, driven by Luigi, buy wild strawberries from two ragged boys near Verona: Nicola, 13, and Jacopo, nearly 12.",
+            "Next day they find the boys polishing shoes in the square, and later they hire them as guides. The boys sell fruit and newspapers, run errands and show tourists the town, even late at night, looking tired but never complaining.",
+            "When asked what they do with their money, Nicola turns pale and says only that they have 'plans'."
           ]
         },
         {
-          heading: "Themes",
+          heading: "The secret at Poleta",
           points: [
-            "Selfless love and sacrifice within a family.",
-            "Hard work and dignity in poverty; the boys never beg or complain.",
-            "First impressions can be wrong: the narrator first thinks the boys are just money-minded, then sees their nobility."
+            "Jacopo asks the narrator to drive them to Poleta, 30 km away, where they go every Sunday. Nicola is annoyed at the request.",
+            "They stop at a big villa that is now a hospital, and the narrator follows. A nurse shows him the boys sitting beside a girl of about twenty, Lucia, their sister.",
+            "The nurse tells him their father, a singer, died early in the war and a bomb destroyed their home. The boys lived in rubble, joined the resistance, and after the war found Lucia with spinal tuberculosis. They brought her to the hospital and pay her fees every week by their earnings."
           ]
         },
         {
-          heading: "The title",
+          heading: "Theme",
           points: [
-            "It echoes Shakespeare's comedy of the same name, but here the 'gentlemen' are two poor boys.",
-            "They are true gentlemen because of their character, not their wealth or class."
+            "Selfless love and sacrifice for family, and maturity beyond their age.",
+            "Dignity in hardship: they never beg and keep their secret. The narrator, moved, says nothing so that they may keep it.",
+            "The title echoes Shakespeare's play; here the real 'gentlemen' are two poor boys whose nobility shows in conduct."
           ]
         }
       ],
       formulas: [
-        "Author: A. J. Cronin (1896–1981), Scottish doctor and novelist.",
-        "Setting: Verona, Italy, after the Second World War.",
-        "Characters: Nicola, Jacopo, their sister Lucia, the narrator, the driver Luigi."
+        "Author: A. J. Cronin (1896–1981), doctor and novelist; first novel Hatter's Castle.",
+        "Characters: Nicola (13), Jacopo (12), sister Lucia, narrator, driver Luigi.",
+        "Setting: Verona and Poleta, Italy, soon after the Second World War."
       ],
       terms: [
-        {term: "Sanatorium", meaning: "A hospital for people with long illnesses such as tuberculosis."},
-        {term: "Tuberculosis", meaning: "An infectious disease; here it affects the spine."},
-        {term: "Dignity", meaning: "Self-respect that does not depend on money or position."},
-        {term: "Resistance", meaning: "The underground movement that fought the German occupation in the war."}
+        {term: "Demeanour", meaning: "The way a person looks and behaves."},
+        {term: "Errand", meaning: "A short trip to deliver or fetch something."},
+        {term: "Vexation", meaning: "Annoyance."},
+        {term: "Tuberculosis", meaning: "A serious infectious disease, here affecting the spine."},
+        {term: "Rubble", meaning: "Broken bricks and stones from ruined buildings."}
       ],
       qa: [
-        {q: "Why did Nicola and Jacopo work so hard?", a: "To pay for the treatment of their sister Lucia, who was in a sanatorium with tuberculosis of the spine. They had no parents to help them."},
-        {q: "Why are the boys called 'gentlemen'?", a: "Because of their noble character: they worked honestly, kept their troubles to themselves, and sacrificed their own comfort for their sister."},
-        {q: "How does the narrator's view of the boys change?", a: "At first he thinks they are simply eager to make money; when he learns about Lucia he is moved by their love, maturity and self-respect."}
+        {q: "Why did Nicola and Jacopo work so hard?", a: "They needed money for the weekly fees of the hospital where their sister Lucia was being treated for spinal tuberculosis. They had no one else, so they shined shoes, sold fruit and papers and guided tourists."},
+        {q: "Why was the narrator deeply moved at the end?", a: "He learnt that two small boys, after suffering war and loss, were selflessly supporting their sick sister and hiding it. Their devotion showed him a nobility that gave hope for humanity."}
       ],
       quiz: [
-        {q: "Two Gentlemen of Verona was written by:", options: ["A. J. Cronin", "A. G. Gardiner", "E. V. Lucas", "Oscar Wilde"], answer: 0, explain: "Cronin was a Scottish doctor and novelist."},
-        {q: "The two boys were:", options: ["Nicola and Jacopo", "Luigi and Nicola", "Jacopo and Luigi", "Marco and Nicola"], answer: 0, explain: "Luigi was the narrator's driver."},
-        {q: "Their sister Lucia was suffering from:", options: ["Tuberculosis of the spine", "Malaria", "A broken leg", "Blindness"], answer: 0, explain: "She was being treated in a sanatorium at Poleta."},
-        {q: "The boys earned money mainly to:", options: ["Pay for their sister's treatment", "Go to America", "Buy a house", "Start a shop"], answer: 0, explain: "All their savings went to Lucia's hospital fees."},
-        {q: "The main theme of the story is:", options: ["Selfless love and sacrifice", "Adventure", "Revenge", "Greed"], answer: 0, explain: "The boys give up their childhood for their sister."}
+        {q: "Which two things did the boys sell when first met?", options: ["Wild strawberries", "Flowers", "Pens", "Toys"], answer: 0, explain: "They were selling strawberries by the road."},
+        {q: "Where did the boys go every Sunday?", options: ["Poleta", "Padua", "Rome", "Milan"], answer: 0, explain: "A village 30 kilometres from Verona."},
+        {q: "What illness did Lucia have?", options: ["Tuberculosis of the spine", "Blindness", "Malaria", "A broken leg"], answer: 0, explain: "She was being treated in a hospital."},
+        {q: "What had their father been?", options: ["A singer", "A farmer", "A doctor", "A shopkeeper"], answer: 0, explain: "He was a well-known singer killed in the war."},
+        {q: "Why did the narrator say nothing to the boys on the way back?", options: ["So they could keep their secret", "He was angry", "He was sleepy", "He was lost"], answer: 0, explain: "He knew they preferred to think their secret was safe."}
+      ]
+    },
+    {
+      id: "in-celebration-of-being-alive",
+      title: "In Celebration of Being Alive",
+      section: "Prose",
+      summary: "Dr Christian Barnard, the heart-transplant pioneer, reflects on why people suffer. A hospital 'Grand Prix' run by a blind boy and a one-armed boy on a breakfast trolley teaches him that suffering does not ennoble us, but that life should be lived joyfully with what we have left.",
+      notes: [
+        {
+          heading: "Barnard's gloomy thoughts",
+          points: [
+            "Near the end of his career he often wonders why there is so much suffering, especially among children; of the 125 million born in a year, many die young or are disabled.",
+            "His thoughts stem from a car accident in which he suffered eleven broken ribs and a punctured lung and his wife a fractured shoulder. He felt agony, fear and anger.",
+            "His father would have said it was God's test, but Barnard, as a doctor, sees nothing noble in pain. A mouldy half-eaten biscuit his father once showed him recalled a baby brother who died of a heart defect."
+          ]
+        },
+        {
+          heading: "The Grand Prix",
+          points: [
+            "At Cape Town's Red Cross Children's Hospital he saw two patients commandeer an unattended breakfast trolley: a totally blind boy of about seven pushing and a boy with one arm steering with his foot.",
+            "The blind boy had lost his eyes and been terribly burned when his drunk mother hurled a lantern. The driver, whose heart Barnard had once repaired, had a bone tumour, and his arm and shoulder had just been amputated.",
+            "The boys laughed, cheered by the ward, and said proudly that they had won, with only the wheels needing oil."
+          ]
+        },
+        {
+          heading: "The lesson",
+          points: [
+            "Barnard realised the business of living is joy, the celebration of being alive.",
+            "Suffering does not make one better, but having known suffering one appreciates joy, as one values light after darkness and warmth after cold.",
+            "What matters is not what you have lost but what you have been left with."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Dr Christian Barnard (South African surgeon who performed the first human heart transplant).",
+        "Setting of the key incident: the Red Cross Children's Hospital, Cape Town.",
+        "Message: celebrate what you have left; the business of living is joy."
+      ],
+      terms: [
+        {term: "Ennoble", meaning: "To make someone more noble."},
+        {term: "Intrepid", meaning: "Fearless."},
+        {term: "Solace", meaning: "Comfort in distress."},
+        {term: "Malignant", meaning: "Cancerous and life-threatening."},
+        {term: "Amputate", meaning: "To cut off a limb by surgery."}
+      ],
+      qa: [
+        {q: "What lesson did Dr Barnard learn from the two boys?", a: "That the business of living is joy and the celebration of being alive. Despite blindness and a lost arm, they played happily, showing that what counts is what one has left, not what one has lost."},
+        {q: "How did Barnard's view of suffering change?", a: "He had thought suffering ennobles. He came to see that it does not improve us, but those who have known suffering appreciate happiness more, as we value light because we have known darkness."}
+      ],
+      quiz: [
+        {q: "Who is the author of this lesson?", options: ["Dr Christian Barnard", "Albert Schweitzer", "A. J. Cronin", "Dr Kalam"], answer: 0, explain: "It is condensed from a speech by the heart surgeon."},
+        {q: "What did the two boys use for their 'race'?", options: ["A breakfast trolley", "A wheelchair", "A bed", "A bicycle"], answer: 0, explain: "A nurse had left a breakfast trolley unattended."},
+        {q: "Why was the 'mechanic' unable to see?", options: ["A lantern thrown by his mother burned his eyes", "He was born blind", "A car accident", "A disease"], answer: 0, explain: "A lantern broke over his head, burning him and costing his eyes."},
+        {q: "What was the driver suffering from?", options: ["A malignant bone tumour", "Polio", "Burns", "Deafness"], answer: 0, explain: "His arm and shoulder were amputated."},
+        {q: "What did the mouldy biscuit remind Barnard of?", options: ["His brother who died of a heart defect", "His wife", "A hospital meal", "His school"], answer: 0, explain: "It was the last biscuit his brother ate."}
       ]
     },
     {
       id: "ghadari-babas-in-kalapani-jail",
       title: "Ghadari Babas in Kalapani Jail",
       section: "Prose",
-      summary: "An account by the historian Harish K. Puri of the Ghadar Party revolutionaries from Punjab who were transported to the Cellular Jail at Port Blair in the Andaman Islands, called Kalapani, and of their suffering and courage. The PSEB version may be abridged.",
+      summary: "An account by Dr Harish K. Puri of the Ghadar Party revolutionaries, mostly older men called Babas, who were sent to the Cellular Jail at Port Blair (Kala Pani). It describes the harsh treatment they faced and how their strikes and spirit forced some reforms.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section A, Lesson 8",
       notes: [
         {
-          heading: "The Ghadar movement",
+          heading: "The Ghadar Party and the jail",
           points: [
-            "The Ghadar Party was founded in 1913 by Indian migrants on the Pacific coast of North America; Sohan Singh Bhakna was its first president and Lala Har Dayal was a leading figure.",
-            "Its paper Ghadar (meaning revolt) called for an armed overthrow of British rule.",
-            "At the start of the First World War in 1914, many members returned to India to rouse a revolt in 1915."
+            "The Ghadar Party was formed in 1913 by Indian immigrants and exiles such as Lala Har Dayal in the USA and Canada, to overthrow British rule by armed struggle.",
+            "Thousands returned to India from October 1914. Leaders included Baba Sohan Singh Bhakna, Baba Nidhan Singh, Kartar Singh Sarabha and Vishnu Ganesh Pingley. The rising planned for February 1915 failed; many were hanged and others given long jail terms.",
+            "The Cellular Jail at Port Blair in the Andamans, opened in 1906, was called the Devil's Island and Kala Pani. Bengal revolutionaries of the Alipore case and the Savarkar brothers came first. Forty Ghadarites of the Lahore Conspiracy Case arrived in December 1915; they were the largest group, and many were old, hence called Babas."
           ]
         },
         {
-          heading: "Arrests and trials",
+          heading: "Life in the jail",
           points: [
-            "The plan was discovered, and many were arrested and tried in the Lahore Conspiracy Cases (1915–16).",
-            "Several were hanged, including the young Kartar Singh Sarabha; many others were given transportation for life.",
-            "The sentence of transportation sent prisoners to the Cellular Jail, known as Kalapani (black water)."
+            "The climate was harsh, with mosquitoes and leeches, and the food was poor, so many fell ill with dysentery, fever, TB and asthma.",
+            "Daily hard labour included working the oil mill (kohlu) to produce at least 30 pounds of coconut oil and pounding coconut husk. Failure meant abuse and up to 30 lashes in public.",
+            "Each prisoner was kept in a small dark cell with no contact with others. Jailor David Barry and Superintendent Murray were called butchers, and warders and petty officers, picked from hardened criminals, enjoyed torturing."
           ]
         },
         {
-          heading: "Life in the Cellular Jail",
+          heading: "Resistance",
           points: [
-            "The Cellular Jail at Port Blair was built by the British, completed in 1906, with solitary cells.",
-            "Prisoners did hard labour and faced harsh treatment and poor food.",
-            "The Ghadarites kept up their spirit, and political prisoners later staged hunger strikes against ill-treatment."
-          ]
-        },
-        {
-          heading: "Significance",
-          points: [
-            "The lesson honours the sacrifice of the Babas, who gave up their comfort, property and liberty for freedom.",
-            "Harish K. Puri is a historian known for his studies of the Ghadar movement."
+            "The Ghadarites resolved to resist indignity. Parma Nand Jhansi hit the jailor and was beaten; Chattar Singh slapped the Superintendent and was caged in standing bar chains. Eight Ghadarites died in the jail.",
+            "They held work strikes and long hunger strikes, led by Sohan Singh Bhakna, Prithvi Singh, Udham Singh Kasel and Wasakha Singh, at times with about 100 strikers. Prithvi Singh fasted for four months, and Jyotish Chandra Pal lost his sanity after a month's fast.",
+            "The authorities had to end some practices. The prisoners sang patriotic songs and recited Gurbani, and were released by 1921 or moved to mainland jails. Their suffering was called harder than death on the gallows."
           ]
         }
       ],
       formulas: [
-        "Ghadar Party: founded 1913; Lahore Conspiracy Cases: 1915–16.",
-        "Cellular Jail, Port Blair (Andaman), completed 1906; called Kalapani."
+        "Author: Dr Harish K. Puri, former professor of political science at Guru Nanak Dev University, Amritsar.",
+        "Ghadar Party: 1913; Cellular Jail opened 1906; 40 Ghadarites arrived December 1915.",
+        "Eight Ghadarites died; strikes lasted months; release by 1921 or transfer to the mainland."
       ],
       terms: [
-        {term: "Ghadar", meaning: "Revolt or mutiny; the name of the party and its newspaper."},
-        {term: "Kalapani", meaning: "Black water; the name for the Andaman penal settlement across the sea."},
-        {term: "Transportation", meaning: "A colonial punishment of sending a convict to a distant penal colony."},
-        {term: "Revolutionary", meaning: "A person who works to overthrow an existing government."},
-        {term: "Cellular Jail", meaning: "The prison at Port Blair built of individual cells."}
+        {term: "Kala Pani", meaning: "'Black water'; the Cellular Jail in the Andamans."},
+        {term: "Kohlu", meaning: "A crude oil-press; prisoners were made to turn it in place of bullocks."},
+        {term: "Conspiracy case", meaning: "A trial for a secret plan against the government."},
+        {term: "Retaliation", meaning: "Action taken against someone who has harmed you."},
+        {term: "Living martyr", meaning: "A person who gives up everything for a cause but survives."}
       ],
       qa: [
-        {q: "Why were the Ghadar revolutionaries sent to the Andamans?", a: "After the failed plan for revolt in 1915, many were convicted in the Lahore Conspiracy Cases and sentenced to transportation for life, which meant imprisonment in the Cellular Jail at Port Blair."},
-        {q: "Why is the jail called Kalapani?", a: "Because it was across the 'black water' of the sea, from which return seemed unlikely and where prisoners suffered harshly."}
+        {q: "Why were the Ghadarites called 'Babas'?", a: "Unlike other political prisoners, many were elderly, such as Nidhan Singh at 60, Kehar Singh at 62 and Sohan Singh Bhakna at over 45, so people respectfully addressed them as Babas."},
+        {q: "How did the Ghadarites resist the cruelty of the jail?", a: "They refused to accept abuse quietly, struck work and went on long hunger strikes, sang patriotic songs and recited Gurbani. Their large strikes forced the authorities to give up some practices."}
       ],
       quiz: [
-        {q: "The Ghadar Party was founded in:", options: ["1857", "1913", "1930", "1947"], answer: 1, explain: "It was set up in 1913 by Indians in North America."},
-        {q: "Kalapani refers to the jail at:", options: ["Lahore", "Port Blair in the Andamans", "Mandalay", "Ahmednagar"], answer: 1, explain: "The Cellular Jail at Port Blair."},
-        {q: "Who was the first president of the Ghadar Party?", options: ["Sohan Singh Bhakna", "Bhagat Singh", "Lala Lajpat Rai", "Udham Singh"], answer: 0, explain: "Sohan Singh Bhakna was its president."},
-        {q: "The word 'Ghadar' means:", options: ["Trade", "Revolt", "Prayer", "Festival"], answer: 1, explain: "It means revolt or mutiny."},
-        {q: "The author of the lesson, Harish K. Puri, is known as a:", options: ["Historian of the Ghadar movement", "Cricketer", "Film-maker", "Mathematician"], answer: 0, explain: "He has written on the Ghadar movement."}
+        {q: "Where is the Cellular Jail?", options: ["Port Blair", "Alipore", "Lahore", "Nasik"], answer: 0, explain: "It is in the Andaman Islands."},
+        {q: "In which year was the Cellular Jail opened?", options: ["1906", "1857", "1913", "1921"], answer: 0, explain: "The newly constructed jail opened in 1906."},
+        {q: "Who was the jailor called a butcher by prisoners?", options: ["David Barry", "Murray", "Savarkar", "Prithvi Singh"], answer: 0, explain: "Jailor David Barry is named in the accounts."},
+        {q: "How many Ghadarites died in the Cellular Jail?", options: ["Eight", "Two", "Forty", "None"], answer: 0, explain: "Altogether eight lost their lives."},
+        {q: "What was the task of the oil mill (kohlu)?", options: ["Extracting at least 30 pounds of coconut oil daily", "Grinding wheat", "Weaving cloth", "Building roads"], answer: 0, explain: "Failing to meet the quota brought punishment."}
       ]
     },
     // ───────────────────────────── POETRY ─────────────────────────────
     {
+      id: "prayer-of-the-woods",
+      title: "Prayer of the Woods",
+      section: "Poetry",
+      summary: "In this short anonymous poem the woods speak in the first person, listing the many gifts trees give to humans, from warmth and shade to furniture and the coffin, and end with a plea to passers-by not to harm them.",
+      notes: [
+        {
+          heading: "What the woods say",
+          points: [
+            "The trees give warmth in the winter hearth, shade in summer and fruits that quench thirst.",
+            "They provide the beam of the house, the board of the table, the bed, the timber of a boat, the handle of a hoe, the door of the home and the wood of the cradle.",
+            "Even the coffin is made of wood, so they serve humans from birth to death.",
+            "They also give kindness, like bread, and beauty, like a flower. Finally they plead: 'Harm me not.'"
+          ]
+        },
+        {
+          heading: "Poetic devices",
+          points: [
+            "Personification: the woods speak and pray like a person.",
+            "Metaphor: 'I am the heat of your hearth' and 'the bread of kindness and the flower of beauty'.",
+            "Repetition of 'I am...' gives a prayer-like rhythm, and the lines build like a list of gifts."
+          ]
+        },
+        {
+          heading: "Message",
+          points: [
+            "Trees are lifelong friends and useful in all stages of human life, so we should protect and plant them.",
+            "The plea is gentle, not angry, which makes it more moving."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Anonymous; form: short free-verse lyric in the first person (a prayer).",
+        "Central idea: woods serve humans from cradle to coffin and ask only not to be harmed.",
+        "Devices: personification, metaphor, repetition."
+      ],
+      terms: [
+        {term: "Hearth", meaning: "The floor of a fireplace; the home's fire."},
+        {term: "Draught", meaning: "A mouthful or drink of liquid."},
+        {term: "Quench", meaning: "To satisfy thirst by drinking."},
+        {term: "Homestead", meaning: "A farmhouse with its land."},
+        {term: "Personification", meaning: "Treating non-human things as if human."}
+      ],
+      qa: [
+        {q: "What is the central idea of the poem?", a: "The woods give humans warmth, shade, food, shelter and furniture throughout life and ask in return only that we do not harm them."},
+        {q: "Which figure of speech is used when the woods speak?", a: "Personification, because the trees are given a human voice and the power to pray."}
+      ],
+      quiz: [
+        {q: "Who is the poet of 'Prayer of the Woods'?", options: ["Anonymous", "Robert Frost", "Kahlil Gibran", "William Blake"], answer: 0, explain: "The poem's author is not known."},
+        {q: "Who is the speaker of the poem?", options: ["The woods", "A woodcutter", "A child", "A farmer"], answer: 0, explain: "The woods address passers-by."},
+        {q: "What is the woods' final plea?", options: ["Harm me not", "Plant more", "Give me water", "Protect the birds"], answer: 0, explain: "The prayer ends with a request not to harm them."},
+        {q: "The 'refreshing draughts' refer to:", options: ["The juice of fruits that quench thirst", "Cold wind", "Rain", "A river"], answer: 0, explain: "Fruits that refresh travellers."},
+        {q: "The figure of speech in 'the friendly shade' is:", options: ["Personification", "Simile", "Hyperbole", "Pun"], answer: 0, explain: "Shade is called friendly like a person."}
+      ]
+    },
+    {
       id: "on-friendship",
       title: "On Friendship",
       section: "Poetry",
-      summary: "A prose-poem by Kahlil Gibran, from his book The Prophet, in which the speaker describes friendship as an answer to our needs and as a bond of deep, unselfish companionship. The PSEB version may be abridged.",
+      summary: "A prose-poem by Kahlil Gibran, from his book The Prophet, in which the speaker describes friendship as an answer to our needs and as a bond of deep, unselfish companionship.",
       notes: [
         {
           heading: "What the poem says",
           points: [
-            "A friend is the answer to our needs, someone we meet with love and who gives us back thanks.",
-            "True friends can speak their mind freely, for friendship is based on honesty, so there is no fear of saying 'no'.",
+            "A friend is the answer to our needs: a field we sow with love and reap with thanksgiving, and a board and a fireside to which we come with hunger and for peace.",
+            "True friends can speak their mind freely, so there is no fear of saying 'no' or holding back a 'yes'; in silence their hearts still listen to each other.",
+            "In parting we do not grieve, because what we love most in a friend is clearer in absence, as a mountain is clearer to the climber from the plain.",
             "Friendship has no purpose except the deepening of the spirit; seeking anything else is not real friendship.",
-            "We should give our best to a friend, and share laughter and small joys, for the heart finds its morning there."
+            "We should give our best to a friend, seek him with hours to live and not hours to kill, and share laughter and small joys, for the heart finds its morning in the dew of little things."
           ]
         },
         {
@@ -976,15 +1198,15 @@ StudyData.add(12, "englishpb", {
         {
           heading: "Scene and movement",
           points: [
-            "The poem opens with the rising sun, birds singing and the joy of spring.",
-            "Children play on the green, and the old folk sit under an oak and watch them, remembering their own youthful games.",
+            "The poem opens with the rising sun, merry bells welcoming spring, and the skylark and thrush singing louder around the green.",
+            "Children play on the green, and old John with white hair, laughing away care under the oak among the old folk, says such were the joys of their own youth.",
             "As the sun sets, the tired children go home to rest in their mothers' laps, and the green becomes quiet."
           ]
         },
         {
           heading: "Ideas",
           points: [
-            "The poem moves through the day, which also stands for the stages of human life: childhood, old age and the end of the day.",
+            "The poem moves from a spring morning to sunset, which can also stand for the stages of human life: childhood, old age and rest.",
             "Innocence is shown as joy, play and harmony between humans and nature.",
             "The old people take delight in the young, so there is continuity between generations."
           ]
@@ -1000,7 +1222,7 @@ StudyData.add(12, "englishpb", {
       ],
       formulas: [
         "Poet: William Blake (1757–1827); collection: Songs of Innocence (1789).",
-        "Structure: morning → noon → evening, like childhood → age → rest."
+        "Structure: spring morning → play → sunset and rest, like childhood → age → rest."
       ],
       terms: [
         {term: "Green", meaning: "An open grassy common space in a village."},
@@ -1032,7 +1254,8 @@ StudyData.add(12, "englishpb", {
           points: [
             "The speaker, a father, compares the sincere laughter and warm greetings of the past with the empty, insincere behaviour of adults today.",
             "People have learned to wear many faces and to smile with their teeth while their eyes show nothing.",
-            "The speaker admits that he too has learned these ways and wants to unlearn them."
+            "Hosts say 'Feel at home' and 'Come again', but after a second or third visit the doors are shut; their handshakes hide a hand searching empty pockets.",
+            "The speaker has learned to wear faces like dresses (homeface, officeface, streetface) and to say 'Goodbye' while meaning 'Good riddance'. His own smile in the mirror looks like the bare fangs of a snake, so he asks his son to teach him to laugh again."
           ]
         },
         {
@@ -1078,53 +1301,58 @@ StudyData.add(12, "englishpb", {
       id: "father-returning-home",
       title: "Father Returning Home",
       section: "Poetry",
-      summary: "A poem by the Marathi-English poet Dilip Chitre about a tired middle-class father returning home on a suburban train in the evening, and the distance between him and his family.",
+      summary: "Dilip Chitre's poem, from the collection Travelling in a Cage, pictures an ageing father travelling home on a late-evening Mumbai suburban train, lonely even in a crowd, cut off from his sullen children, and dreaming of ancestors and descendants.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section B, Poem 5",
       notes: [
         {
-          heading: "The scene",
+          heading: "The journey and homecoming",
           points: [
-            "The father travels home from work by a crowded Mumbai suburban train, tired after a long day.",
-            "He is described as an ordinary, ageing man, simple and rather shabby, with his routine and small worries.",
-            "He reaches home to find his family waiting, but he is mostly silent."
+            "The speaker, the poet as a son, sees his father standing among silent commuters in the yellow light, his eyes unseeing as suburbs slide past.",
+            "He is soaked, his raincoat mud-stained, and his bag crammed with books is falling apart; his eyes, dimmed by age, fade into the humid monsoon night.",
+            "He steps off like a word dropped from a long sentence, hurries along the grey platform, over the line and into the lane in muddy chappals.",
+            "At home he drinks weak tea, eats a stale chapati and reads. He goes to the toilet to ponder man's estrangement from a man-made world, then trembles at the sink as cold water runs over his hands."
           ]
         },
         {
-          heading: "Themes",
+          heading: "Loneliness and dreams",
           points: [
-            "The weariness and quiet loneliness of the ordinary working man.",
-            "The distance between generations: his children do not really know his inner world.",
-            "The poem is a tender but unsentimental picture of a father seen by his grown-up son, the poet."
+            "His sullen children have often refused to share jokes and secrets with him.",
+            "He goes to sleep to the static of the radio, dreaming of his ancestors and grandchildren and of nomads entering a subcontinent through a narrow pass.",
+            "His mind moves to the distant past and future, a refuge from a present in which he feels unneeded."
           ]
         },
         {
-          heading: "Style",
+          heading: "Theme and style",
           points: [
-            "Free verse in plain language, with concrete everyday images of the train and the evening.",
-            "Dilip Chitre (1938–2010) wrote in both Marathi and English; the PSEB text is his English poem."
+            "Modern man's alienation in a busy urban world, and the neglect of the old by the young.",
+            "Free verse in plain language with sharp images: the simile of the dropped word and the sensory details of rain, mud, tea and static.",
+            "Dilip Chitre (1938–2009) wrote in Marathi and English."
           ]
         }
       ],
       formulas: [
-        "Poet: Dilip Chitre (1938–2010), Indian poet in Marathi and English.",
-        "Theme: a father's silent struggle and the generation gap."
+        "Poet: Dilip Chitre (1938–2009), Indian poet in Marathi and English.",
+        "Collection: Travelling in a Cage; form: free verse.",
+        "Simile: the father is like a word dropped from a long sentence.",
+        "Theme: alienation, loneliness and the generation gap."
       ],
       terms: [
         {term: "Commuter", meaning: "A person who travels regularly between home and work."},
-        {term: "Generation gap", meaning: "A difference in outlook between older and younger people."},
-        {term: "Free verse", meaning: "Poetry without a fixed rhyme or metre."},
-        {term: "Imagery", meaning: "Descriptive language that appeals to the senses."},
-        {term: "Alienation", meaning: "Feeling distant or cut off from others."}
+        {term: "Estrangement", meaning: "Feeling of being distant or cut off."},
+        {term: "Sullen", meaning: "Silent, bad-tempered and unwilling to talk."},
+        {term: "Nomad", meaning: "A person who moves from place to place with no fixed home."},
+        {term: "Alienation", meaning: "Feeling isolated from society or family."}
       ],
       qa: [
-        {q: "What impression of the father does the poem give?", a: "That of a hard-working, tired, quiet man, whose inner life and sacrifices are not fully understood by his family."},
-        {q: "What is the poem's theme?", a: "The silent struggle of an ordinary father and the emotional distance between parents and children."}
+        {q: "What impression of the father does the poem give?", a: "He is an old, tired, lonely man who works hard and returns in wet, muddy clothes. His children do not share jokes or secrets with him, so he lives in his own thoughts and dreams."},
+        {q: "What does the simile 'like a word dropped from a long sentence' suggest?", a: "That the father is a small, unnoticed figure in the crowd, getting off the train as if he does not belong to the busy world around him."}
       ],
       quiz: [
-        {q: "Father Returning Home is by:", options: ["Dilip Chitre", "Robert Frost", "Gabriel Okara", "William Blake"], answer: 0, explain: "He was a Marathi-English poet."},
-        {q: "The father returns home by:", options: ["Suburban train", "Aeroplane", "Ship", "Bullock cart"], answer: 0, explain: "The setting is a Mumbai suburban train."},
-        {q: "The father in the poem is mainly shown as:", options: ["Tired and ordinary", "Wealthy", "Angry", "A soldier"], answer: 0, explain: "He is a weary working man."},
-        {q: "One theme of the poem is:", options: ["The generation gap", "Space travel", "Politics", "Sports"], answer: 0, explain: "The son and father are emotionally distant."},
-        {q: "The poem is written in:", options: ["Free verse", "A sonnet", "Rhymed couplets", "Ballad stanzas"], answer: 0, explain: "It has no fixed rhyme scheme."}
+        {q: "Father Returning Home is by:", options: ["Dilip Chitre", "Robert Frost", "Gabriel Okara", "William Blake"], answer: 0, explain: "Chitre wrote it in his collection Travelling in a Cage."},
+        {q: "The father travels by:", options: ["A late-evening suburban train", "A bus", "A boat", "A bullock cart"], answer: 0, explain: "The setting is a Mumbai local train."},
+        {q: "What does the father eat and drink at home?", options: ["Weak tea and a stale chapati", "Milk and fruit", "Rice and dal", "Sweets"], answer: 0, explain: "A picture of his plain, tired evening."},
+        {q: "How do the children treat the father?", options: ["They refuse to share jokes and secrets with him", "They greet him warmly", "They serve him dinner", "They ask for money"], answer: 0, explain: "The poem calls them sullen."},
+        {q: "He falls asleep to the sound of:", options: ["Static on the radio", "Music", "The rain", "A lullaby"], answer: 0, explain: "He dreams of ancestors and grandchildren."}
       ]
     },
     {
@@ -1240,209 +1468,336 @@ StudyData.add(12, "englishpb", {
       id: "the-school-for-sympathy",
       title: "The School for Sympathy",
       section: "Extensive Study",
-      summary: "E. V. Lucas's essay about Miss Beam's unusual school, where children learn kindness by spending a day blind, lame, deaf, dumb or with an injured arm. The PSEB version may be abridged.",
+      summary: "E. V. Lucas visits Miss Beam's unusual school, where children learn sympathy by spending a day blind, lame, deaf, maimed or dumb. Led around by him, a blind-for-the-day girl shows how real the lesson is, and Miss Beam feels her system is justified.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section C, Lesson 1",
       notes: [
         {
-          heading: "What the narrator sees",
+          heading: "The visit",
           points: [
-            "The narrator visits **Miss Beam's** school, having heard that its methods are new and unusual.",
-            "He sees a girl with her eyes bandaged being led by a younger boy, and other children who seem lame or unable to use an arm.",
-            "Miss Beam explains that the children are not really hurt: each term every child has a **blind day**, a **lame day**, a **deaf day**, a **maimed day** and a **dumb day**.",
-            "On the blind day the child must rely on others, and the helper must describe the world and lead the 'blind' child carefully."
+            "The narrator has long heard of Miss Beam's school. At the gate he sees a bandaged girl of about twelve being led by a boy four years younger.",
+            "Miss Beam is middle-aged, kindly and authoritative. Only simple lessons such as spelling, sums and writing are taught, and the rest is reading and illustrated talks.",
+            "Her real aim is to instil thoughtfulness, humanity and citizenship rather than just thought."
           ]
         },
         {
-          heading: "The purpose",
+          heading: "The special days",
           points: [
-            "The school teaches ordinary lessons too, but its real aim is to make children **thoughtful, helpful and sympathetic**.",
-            "By experiencing a disability for a day, children understand the difficulties others face.",
-            "Helping a 'blind' or 'lame' friend teaches patience and responsibility.",
-            "The girl the narrator talks to says the blind day is the hardest, and that being the helper is also a lesson."
+            "From the window he sees children who seem blind or lame and a girl with a crutch, but Miss Beam laughs that it is only her lame day.",
+            "Every child has in a term one blind, one lame, one deaf, one maimed and one dumb day. On the blind day the eyes are bandaged overnight and it is a point of honour not to peep. Others help and lead them, which educates both.",
+            "She says the blind day is the worst, though some children dread the dumb day most, as only will power keeps the mouth shut."
           ]
         },
         {
-          heading: "Message",
+          heading: "Walking with a blind girl",
           points: [
-            "Sympathy is best learnt through experience, not just from books.",
-            "Education should build character and kindness, not only knowledge."
+            "A bandaged girl tells him that peeping would be cheating, that being blind is frightening and gives her a headache from dodging imaginary objects, and that hopping on a crutch is almost fun.",
+            "While he guides her, naming the head girl Millie, the gardener Peter and Beryl on crutches, he finds he has become more thoughtful and that describing things makes them more interesting.",
+            "On leaving, he is sorry to go, and Miss Beam says there is something in her system after all. He recalls lines asking how one can see another's woe without sharing the sorrow."
           ]
         }
       ],
       formulas: [
-        "Author: E. V. Lucas (1868–1938), English essayist.",
-        "The days: blind, lame, deaf, maimed (injured arm) and dumb."
+        "Author: E. V. Lucas (1868–1938), English essayist and one-time assistant editor of Punch.",
+        "The five days: blind, lame, deaf, maimed and dumb.",
+        "Theme: sympathy and humanity are learnt through experience."
       ],
       terms: [
-        {term: "Sympathy", meaning: "Understanding and sharing the feelings of others."},
+        {term: "Sympathy", meaning: "Sharing the feelings of someone in trouble."},
         {term: "Maimed", meaning: "Injured so that a limb cannot be used."},
-        {term: "Bandage", meaning: "A strip of cloth wrapped over a wound or, here, over the eyes."}
+        {term: "Privation", meaning: "Lack of something needed."},
+        {term: "Affliction", meaning: "Something causing pain or suffering."},
+        {term: "In a nutshell", meaning: "Said very briefly."}
       ],
       qa: [
-        {q: "What was unusual about Miss Beam's school?", a: "Each child spent one day as blind, one as lame, one as deaf, one as maimed and one as dumb, so that they would learn to understand and help people with disabilities."},
-        {q: "Which day did the girl find hardest, and why?", a: "The blind day, because she could not see anything and was afraid of being hurt; the other days were easier as one could still see what was happening."}
+        {q: "What is the real aim of Miss Beam's school?", a: "To teach thoughtfulness, humanity and good citizenship rather than just facts. Children feel the difficulties of the handicapped by living through them for a day."},
+        {q: "How did the experience benefit the narrator?", a: "While guiding the blind girl he found himself more thoughtful than he had realised and saw that describing the surroundings made them more interesting. It confirmed Miss Beam's belief in her system."}
       ],
       quiz: [
-        {q: "The School for Sympathy was written by:", options: ["E. V. Lucas", "A. G. Gardiner", "Charles Lamb", "A. J. Cronin"], answer: 0, explain: "Lucas was an English essayist."},
-        {q: "The school was run by:", options: ["Miss Beam", "Miss Lucia", "Mrs Pearson", "Miss Havisham"], answer: 0, explain: "Miss Beam explained her methods to the narrator."},
-        {q: "The main aim of the school was to teach:", options: ["Thoughtfulness and sympathy", "Mathematics", "Sports", "Music"], answer: 0, explain: "Ordinary lessons were taught too, but kindness was the real aim."},
-        {q: "The day the children found hardest was the:", options: ["Blind day", "Lame day", "Deaf day", "Dumb day"], answer: 0, explain: "Not being able to see made them most dependent."},
-        {q: "On a blind day, the helper had to:", options: ["Lead and describe things to the 'blind' child", "Do the child's homework", "Stay away", "Carry the child"], answer: 0, explain: "Helping also taught responsibility."}
+        {q: "Who runs the school in the lesson?", options: ["Miss Beam", "Miss Marple", "Mrs Lucas", "Miss Sullivan"], answer: 0, explain: "The narrator visits Miss Beam's school."},
+        {q: "How many special days does each child have in a term?", options: ["Five", "Three", "Seven", "Ten"], answer: 0, explain: "Blind, lame, deaf, maimed and dumb."},
+        {q: "On the blind day the child's eyes are:", options: ["Bandaged overnight", "Closed in sleep", "Covered with a cap", "Painted"], answer: 0, explain: "They wake blind."},
+        {q: "Which day do some children dread most?", options: ["The dumb day", "The deaf day", "The lame day", "The maimed day"], answer: 0, explain: "Only will power stops speech."},
+        {q: "Who is the head girl whom the narrator describes to the bandaged child?", options: ["Millie", "Beryl", "Peter", "Devi"], answer: 0, explain: "The child recognised her by her light hair and clothes."}
       ]
     },
     {
       id: "a-chameleon",
       title: "A Chameleon",
       section: "Extensive Study",
-      summary: "A satirical short story by Anton Chekhov in which a police inspector keeps changing his opinion about a dog that has bitten a man, according to who he thinks the owner is. The PSEB version may be abridged.",
+      summary: "Anton Chekhov's satire in which a police superintendent, Otchumyelov, keeps changing his judgement of a puppy that bit a goldsmith's finger, depending on whether the dog turns out to belong to a powerful General or his brother.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section C, Lesson 2",
       notes: [
         {
-          heading: "Story outline",
+          heading: "The scene",
           points: [
-            "Police Inspector Ochumelov crosses the market square, followed by a constable, and sees a crowd round a goldsmith, Khryukin, whose finger has been bitten by a puppy.",
-            "At first Ochumelov is firm: the dog must be found and punished, and the owner must pay.",
-            "Then someone in the crowd says the dog may belong to a General, and Ochumelov at once changes his tone and blames the goldsmith.",
-            "Each time a new guess about the owner is made, his opinion switches again, and he asks to have his coat taken off or put on.",
-            "In the end the dog is said to belong to the General's brother, and Ochumelov threatens the goldsmith and walks away."
+            "Otchumyelov crosses a silent market square in a new overcoat, a parcel under his arm, followed by a red-haired policeman, Yeldyrin, carrying a sieve of confiscated gooseberries.",
+            "A crowd gathers around the goldsmith Hryukin, who shows a bleeding finger. A white puppy with a yellow patch, which bit him, sits trembling.",
+            "Hryukin demands damages, saying he is a working man and cannot use the finger for a week."
           ]
         },
         {
-          heading: "Theme and satire",
+          heading: "The changing opinions",
           points: [
-            "The title shows that the inspector, like a chameleon, changes colour to suit the power of the person he faces.",
-            "Chekhov satirises officials who are servile to the powerful and harsh to the weak.",
-            "Justice depends on rank, not on truth, in the world of the story."
+            "At first Otchumyelov is stern: find the owner, fine him, and destroy the dog as it may be mad.",
+            "When someone says it may be General Zhigalov's, he feels hot, takes off his coat and suspects Hryukin of scratching his finger to get money.",
+            "The policeman then says it is not the General's dog, and the superintendent calls it a low stray. Told it may be the General's, he puts his coat back on, feels cold and orders the dog taken to the General's.",
+            "The General's cook, Prohor, says it is not theirs. Otchumyelov calls it a stray to be destroyed. Prohor then says it belongs to the General's brother, who is visiting. Now Otchumyelov smiles, calls it a nice pup, and threatens Hryukin as he leaves."
           ]
         },
         {
-          heading: "Author and setting",
+          heading: "Theme",
           points: [
-            "Anton Chekhov (1860–1904) was a Russian short-story writer and dramatist.",
-            "The story is set in a small Russian town in the nineteenth century, with a bustling market square."
+            "Like a chameleon, the officer changes his colours to please the powerful and harass the weak.",
+            "Satire on corruption and servility in officials; justice follows rank, not truth.",
+            "Anton Chekhov (1860–1904) was a Russian doctor, short-story writer and dramatist."
           ]
         }
       ],
       formulas: [
-        "Author: Anton Chekhov (1860–1904), Russia; the story was first published in 1884.",
-        "Characters: Inspector Ochumelov, constable Eldyrin, goldsmith Khryukin."
+        "Author: Anton Chekhov (1860–1904), Russian writer and physician.",
+        "Characters: Police Superintendent Otchumyelov, policeman Yeldyrin, goldsmith Hryukin, the General's cook Prohor.",
+        "The dog belongs to General Zhigalov's brother, Vladimir Ivanitch."
       ],
       terms: [
-        {term: "Chameleon", meaning: "A lizard that changes colour; used for a person who changes their opinion to suit the situation."},
-        {term: "Satire", meaning: "Writing that exposes human folly or corruption through humour."},
-        {term: "Servility", meaning: "Excessive eagerness to please those in power."},
-        {term: "Inspector", meaning: "A police officer in charge of a district or area."},
-        {term: "Irony", meaning: "A contrast between what happens and what one expects."}
+        {term: "Chameleon", meaning: "A lizard that changes colour; here, a person who keeps changing opinions."},
+        {term: "Confiscated", meaning: "Officially taken away as a punishment."},
+        {term: "Servile", meaning: "Too eager to obey or please those in power."},
+        {term: "Satire", meaning: "Writing that mocks faults of people or society."},
+        {term: "Thoroughbred", meaning: "Of pure, good breed."}
       ],
       qa: [
-        {q: "Why is the story called 'A Chameleon'?", a: "Because Inspector Ochumelov keeps changing his stand about the dog, like a chameleon changes colour, depending on who he thinks the owner is."},
-        {q: "What does the story criticise?", a: "The corruption and servility of officials, who favour the rich and powerful and treat the common man unfairly."}
+        {q: "Why is the story called 'A Chameleon'?", a: "The superintendent keeps changing his mind about whether the dog is guilty, as the supposed owner changes from a stray to the General or his brother, just as a chameleon changes colour."},
+        {q: "What does the story say about officials of the time?", a: "That they are flatterers of the rich and powerful and unfair to the poor. Justice depends on who owns the dog, not on right and wrong."}
       ],
       quiz: [
-        {q: "A Chameleon was written by:", options: ["Anton Chekhov", "Leo Tolstoy", "Maxim Gorky", "Charles Dickens"], answer: 0, explain: "Chekhov was a Russian master of the short story."},
-        {q: "Who is bitten by the dog?", options: ["A goldsmith", "A policeman", "A General", "A child"], answer: 0, explain: "The goldsmith Khryukin."},
-        {q: "The inspector's attitude changes according to:", options: ["Who owns the dog", "The weather", "The crowd's size", "His coat"], answer: 0, explain: "His opinion follows the rank of the supposed owner."},
-        {q: "The story is an example of:", options: ["Satire", "Tragedy", "Epic", "Fantasy"], answer: 0, explain: "It mocks officials' behaviour."},
-        {q: "The word 'chameleon' here refers to:", options: ["Ochumelov", "The dog", "The goldsmith", "The constable"], answer: 0, explain: "The inspector shifts his views like a chameleon."}
+        {q: "Who is bitten by the puppy?", options: ["The goldsmith Hryukin", "Otchumyelov", "Yeldyrin", "Prohor"], answer: 0, explain: "Hryukin shows his bleeding finger."},
+        {q: "What is Yeldyrin carrying?", options: ["A sieve of confiscated gooseberries", "A gun", "A parcel", "A file"], answer: 0, explain: "The red-haired policeman follows the superintendent."},
+        {q: "Who finally says the dog belongs to the General's brother?", options: ["Prohor, the cook", "Hryukin", "Yeldyrin", "The General"], answer: 0, explain: "He then takes the dog away."},
+        {q: "When the dog is said to be the General's, the superintendent suddenly:", options: ["Blames Hryukin", "Punishes the owner", "Shoots the dog", "Goes home"], answer: 0, explain: "He says Hryukin scratched his finger on a nail."},
+        {q: "The story is an example of:", options: ["Satire", "Tragedy", "Epic", "Fantasy"], answer: 0, explain: "It mocks officials' double standards."}
       ]
     },
     {
       id: "bholi",
       title: "Bholi",
       section: "Extensive Study",
-      summary: "A story by K. A. Abbas about Sulekha, nicknamed Bholi, a plain and shy girl who finds confidence through education and refuses to marry a greedy man. The PSEB version may be abridged.",
+      summary: "K. A. Abbas tells of Sulekha, called Bholi, the simpleton, the neglected, pock-marked and stammering youngest child of a village numberdar. Sent to a new school, she gains confidence and at her wedding boldly rejects a greedy bridegroom.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section C, Lesson 3",
       notes: [
         {
-          heading: "Plot",
+          heading: "Bholi's childhood",
           points: [
-            "Bholi is the youngest child of Ramlal, a village revenue official; smallpox in childhood marked her face and slowed her speech, so people called her 'simple' (bholi).",
-            "Her sisters are married, but her parents think she has no future and are persuaded to send her to the new village school.",
-            "At school a kind teacher gives her confidence and teaches her to speak, and she slowly changes.",
-            "Years later her marriage is fixed with a well-off but older man; at the wedding the groom's side demands a large dowry, and Bholi, now confident, refuses to marry a greedy man.",
-            "She decides to teach in the village school and look after her parents."
+            "Sulekha, the fourth daughter of Numberdar Ramlal, fell from a cot at ten months and was thought slow, so she was nicknamed Bholi.",
+            "At two, smallpox left her pock-marked, and she spoke late and stammered, so children mocked her. Her three brothers were sent to city schools, and her sisters were healthy and good-looking.",
+            "At seven, when a girls' primary school opened, the Tehsildar urged Ramlal to send his daughters. Her mother said to send Bholi, since she had little chance of marriage anyway."
           ]
         },
         {
-          heading: "Themes",
+          heading: "School",
           points: [
-            "The transforming power of education, especially for girls.",
-            "Criticism of the dowry system and of treating daughters as burdens.",
-            "Courage and self-respect: a timid girl takes a bold decision about her own life."
+            "A terrified Bholi is given a clean dress and left at school. A kind teacher's soft voice and patience help her say her own name and promise to return.",
+            "The teacher tells her that with learning no one will laugh at her and that her stammer will vanish. Bholi feels a new hope.",
+            "Years later the village becomes a town and the school a high school."
           ]
         },
         {
-          heading: "Author",
+          heading: "The wedding",
           points: [
-            "Khwaja Ahmad Abbas (1914–1987) was an Indian writer, journalist and film-maker.",
-            "He wrote in a simple, realistic style on social issues."
+            "Her parents accept the proposal of Bishamber Nath, a lame, middle-aged grocer who asks for no dowry at first.",
+            "At the wedding he sees her pock-marked face and demands 5,000 rupees. Ramlal puts his turban at his feet, begs and pays.",
+            "Bholi looks him in the eye with contempt, throws the garland into the fire and tells her father to take the money back. She would have married a lame old man for her father's honour but will not marry a greedy coward.",
+            "She says she will serve her parents and teach in the school where she learnt so much."
           ]
         }
       ],
       formulas: [
-        "Author: K. A. Abbas; main character: Sulekha (Bholi).",
-        "Themes: education and empowerment, dowry, courage."
+        "Author: K. A. Abbas (1914–1987), Indian writer, journalist and film-maker.",
+        "Characters: Sulekha (Bholi), father Ramlal, the teacher, Bishamber Nath.",
+        "Themes: education and courage, dowry, women's self-respect."
       ],
       terms: [
-        {term: "Dowry", meaning: "Money or goods demanded from the bride's family at marriage; a social evil and an offence under Indian law."},
-        {term: "Smallpox", meaning: "A disease that once caused scars on the face; now eradicated."},
-        {term: "Empowerment", meaning: "Gaining the confidence and power to control one's own life."},
-        {term: "Self-respect", meaning: "Pride in oneself and one's worth."},
-        {term: "Realism", meaning: "A style that shows life as it is."}
+        {term: "Numberdar", meaning: "A village revenue official who collects land revenue."},
+        {term: "Stammer", meaning: "To pause or repeat sounds while speaking."},
+        {term: "Dowry", meaning: "Money or gifts demanded from the bride's family at marriage."},
+        {term: "Izzat", meaning: "Honour or family reputation."},
+        {term: "Pock-marks", meaning: "Scars left on the skin by smallpox."}
       ],
       qa: [
-        {q: "How did school change Bholi?", a: "A kind teacher encouraged her and taught her to speak, which removed her fear and made her self-confident and ready to make her own decisions."},
-        {q: "Why did Bholi refuse to marry?", a: "Because the groom's family demanded dowry at the wedding. She would not marry a greedy man and chose instead to teach in the village school and look after her parents."}
+        {q: "How did education change Bholi?", a: "The teacher's kindness and encouragement removed her fear and made her confident. By the time of her wedding she could speak firmly and act on her own judgement."},
+        {q: "Why did Bholi refuse to marry Bishamber Nath?", a: "After first agreeing to marry him for the family's honour, she saw him demand 5,000 rupees on seeing her face. She called him mean and greedy and refused to marry such a man."}
       ],
       quiz: [
-        {q: "Bholi was written by:", options: ["K. A. Abbas", "R. K. Narayan", "Mulk Raj Anand", "Ruskin Bond"], answer: 0, explain: "Khwaja Ahmad Abbas wrote the story."},
-        {q: "Bholi's real name is:", options: ["Sulekha", "Radha", "Champa", "Kamla"], answer: 0, explain: "Sulekha was nicknamed Bholi."},
-        {q: "What marked Bholi's face?", options: ["Smallpox", "A burn", "An injury", "A birthmark"], answer: 0, explain: "A childhood illness left scars."},
-        {q: "What does Bholi decide in the end?", options: ["To teach in the village school", "To move to the city", "To marry quietly", "To run away"], answer: 0, explain: "She becomes a teacher and cares for her parents."},
-        {q: "The story's main theme is:", options: ["Education empowers girls", "War", "Politics", "Travel"], answer: 0, explain: "Education transforms Bholi."}
+        {q: "What was Bholi's real name?", options: ["Sulekha", "Radha", "Champa", "Mangla"], answer: 0, explain: "Bholi means the simpleton."},
+        {q: "What made her speak with a stammer?", options: ["A natural difficulty after smallpox and neglect", "A fall from a mountain", "A cold", "A wound in the throat"], answer: 0, explain: "She spoke late and stammered, and children laughed at her."},
+        {q: "Who suggested sending Bholi to school?", options: ["Her mother", "The Tehsildar", "Her teacher", "Her sister"], answer: 0, explain: "Her mother said there was little chance she would be married."},
+        {q: "How much money did Bishamber Nath demand at the wedding?", options: ["5,000 rupees", "500 rupees", "2,000 rupees", "Nothing"], answer: 0, explain: "He had earlier asked for no dowry."},
+        {q: "What did Bholi do with the garland?", options: ["Threw it into the sacred fire", "Put it on the groom", "Gave it to her father", "Tore the veil"], answer: 0, explain: "It marked her refusal."}
+      ]
+    },
+    {
+      id: "the-gold-frame",
+      title: "The Gold Frame",
+      section: "Extensive Study",
+      summary: "R. K. Laxman's humorous story of Datta, a silent frame-maker, who ruins a customer's cherished photograph of his late grandfather and secretly frames a lookalike. The customer's only complaint is that the mount is square rather than oval.",
+      notes: [
+        {
+          heading: "The shop and the order",
+          points: [
+            "Datta's Modern Frame Works is a large packing case on wobbly legs between a drug store and a radio shop, crammed with frames, glue, glass and pictures. Datta is silent, thin and hard-working.",
+            "A rustic customer brings an old sepia photograph of a great man and wants the best frame at any price. Datta recommends a gold frame, 'imported from Germany', and a cut mount; the customer chooses the oval one on the wall.",
+            "The cost is 17 rupees, and Datta promises it in two weeks. The customer returns four days early."
+          ]
+        },
+        {
+          heading: "The disaster and the trick",
+          points: [
+            "Datta tries to find his pencil by shaking out his dhoti, as always, and knocks over a tin of white enamel paint. It falls on the sacred photograph.",
+            "In panic he rubs it and takes off the filmy surface, losing half the old man's face and his turban. Out of ideas, he notices a portrait on the wall that faintly resembles the old man.",
+            "He searches a box of unclaimed photographs, picks an old print of a similar man and sets it in a gold frame, ready to bluff if challenged."
+          ]
+        },
+        {
+          heading: "The ending",
+          points: [
+            "The customer arrives, praises Datta, and falls silent at the glittering frame; Datta nervously expects to be found out.",
+            "Instead the customer angrily says that he asked for an oval cut mount and this is square. He never notices that the photograph is not his grandfather.",
+            "The comedy lies in this irony, and in how people see what they expect, and a frame matters more than the face."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: R. K. Laxman (born 1924), cartoonist famous for The Common Man.",
+        "Characters: Datta, the frame-maker; the rustic customer.",
+        "Irony: the customer overlooks the substituted photo but objects to the shape of the mount."
+      ],
+      terms: [
+        {term: "Laconic", meaning: "Using very few words."},
+        {term: "Mount", meaning: "A card border placed between a picture and its frame."},
+        {term: "Incongruity", meaning: "A strange mismatch of things."},
+        {term: "Transfixed", meaning: "Unable to move from shock."},
+        {term: "Venerable", meaning: "Respected because of age."}
+      ],
+      qa: [
+        {q: "How did the photograph get damaged?", a: "While searching for a lost pencil stub, Datta shook his dhoti so violently that a tin of white enamel paint fell on the photograph. In wiping it off in a hurry, he rubbed away much of the old man's face and turban."},
+        {q: "What is ironic about the ending?", a: "Datta fears being caught for the substitution, but the customer does not notice that the picture is of a different man. He complains only that the cut mount is square instead of oval."}
+      ],
+      quiz: [
+        {q: "Who is the author of 'The Gold Frame'?", options: ["R. K. Laxman", "R. K. Narayan", "Ruskin Bond", "K. A. Abbas"], answer: 0, explain: "He is known as India's great cartoonist."},
+        {q: "Who is Datta?", options: ["A frame-maker", "A photographer", "A painter", "A shopkeeper selling clocks"], answer: 0, explain: "He runs the Modern Frame Works."},
+        {q: "What did the customer's photograph show?", options: ["His late grandfather", "His wife", "A god", "A king"], answer: 0, explain: "He worshipped the man as a saint."},
+        {q: "What spilled on the photograph?", options: ["White enamel paint", "Ink", "Glue", "Tea"], answer: 0, explain: "The tin fell as Datta shook his dhoti."},
+        {q: "What was the customer's complaint at the end?", options: ["The mount was square, not oval", "The frame was plastic", "The picture was torn", "It was late"], answer: 0, explain: "He never noticed the changed photograph."}
       ]
     },
     {
       id: "the-barbers-trade-union",
       title: "The Barber's Trade Union",
       section: "Extensive Study",
-      summary: "Mulk Raj Anand's story of Chandu, a young village barber who stands up to the high-caste men of his village and starts a 'barbers' trade union'. The PSEB version may be abridged.",
+      summary: "Mulk Raj Anand recalls Chandu, the barber's son and his boyhood hero, who dresses like a doctor, is insulted by the high-caste elders, buys a bicycle, goes on strike and organises the barbers into one of the first trade unions.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section C, Lesson 5",
       notes: [
         {
-          heading: "Story outline",
+          heading: "Chandu and the narrator",
           points: [
-            "The narrator remembers his childhood friend **Chandu**, the son of the village barber, who takes over his father's work after his father dies.",
-            "Chandu is clever and modern. He copies the dress of a doctor from the city: a white coat, and a leather bag for his tools, and he starts riding a bicycle.",
-            "The village elders, especially the landlord and the moneylender, are angry; they say his new look is pride, and they refuse to be shaved by him.",
-            "Chandu refuses to change. Instead he goes to the town, where he earns more by shaving people there, and he stops going to the high-caste men's houses.",
-            "Their beards grow long and they become a laughing stock; in the end they have to come to him on his terms. The narrator calls this the first 'barbers' trade union'."
+            "Chandu, about six months older, leads the boyhood games and is an expert at catching wasps and making kites. He is a gifted reciter but weak at sums, and he was apprenticed early to his father's trade.",
+            "The narrator's mother disapproves of this friendship with a low-caste barber's son, but the narrator is a devoted admirer who envies his freedom and clothes.",
+            "After his father dies of plague Chandu shaves the elders each morning, then rides to town on the footrest of Lalla Hukam Chand's carriage. He admires the dress of the town dentist, Kalan Khan."
           ]
         },
         {
-          heading: "Themes",
+          heading: "The insult and the strike",
           points: [
-            "Dignity of labour: no honest work is low.",
-            "Protest against caste pride and the exploitation of working people in villages.",
-            "Self-respect and courage: one person's stand can change old customs.",
-            "Humour and irony are used to make a serious social point."
+            "One day Chandu appears in a white turban, white rubber coat, pumps and a leather bag, dressed like a doctor, and goes to shave the landlord Bijay Chand.",
+            "The landlord drives him out for 'defiling' the house with leather and foreign clothes; the Sahukar and Pandit Parmanand abuse him too.",
+            "Chandu decides to teach the orthodox elders a lesson. He earns a rupee shaving in town, buys a cheap bicycle for five rupees and learns to ride it despite the Sahukar's mocking."
+          ]
+        },
+        {
+          heading: "Result",
+          points: [
+            "He stops serving the village elders. Soon the landlord and the Sahukar sit in the shop with long unshaved beards, and the narrator and the peasants laugh.",
+            "The elders threaten Chandu with the police, but his prospering mother stands up to them. They turn to the barber of Verka, who is offered more money.",
+            "Chandu persuades the barbers within seven miles to open a roadside shop together so that the elders must come to them. This 'barbers' trade union' was followed by many others."
           ]
         }
       ],
       formulas: [
-        "Author: Mulk Raj Anand (1905–2004), Indian novelist in English, known for writing about the poor and the oppressed (e.g. Untouchable, Coolie)."
+        "Author: Mulk Raj Anand (1905–2004), pioneer Indian novelist in English; story from 'The Barber's Trade Union and Other Stories' (1944).",
+        "Characters: Chandu, the narrator, the landlord Bijay Chand, the Sahukar, Pandit Parmanand, Chandu's mother.",
+        "Themes: dignity of labour, caste prejudice, collective action."
       ],
       terms: [
-        {term: "Trade union", meaning: "An organisation of workers formed to protect their rights and wages."},
-        {term: "Dignity of labour", meaning: "The idea that all honest work deserves respect."},
-        {term: "Orthodox", meaning: "Holding strictly to old customs and beliefs."}
+        {term: "Trade union", meaning: "An organisation of workers formed to protect their interests."},
+        {term: "Sahukar", meaning: "A village moneylender and shopkeeper."},
+        {term: "Orthodox", meaning: "Holding strictly to old beliefs and customs."},
+        {term: "Crestfallen", meaning: "Sad after a disappointment."},
+        {term: "Apprentice", meaning: "A learner working under a skilled person."}
       ],
       qa: [
-        {q: "Why did the village elders boycott Chandu?", a: "They were offended that a barber dressed like a city doctor, carried a leather bag and rode a bicycle; they saw it as pride above his caste."},
-        {q: "How did Chandu win?", a: "He refused to give in, earned his living in the town instead, and stopped shaving the elders at home; their unshaved faces made them look foolish until they had to accept his terms."}
+        {q: "Why did the village elders insult Chandu?", a: "He came dressed like a doctor in a rubber coat, leather bag and shoes. As a low-caste barber, they thought he was defiling their houses and putting on airs above his station."},
+        {q: "How did Chandu's strike succeed?", a: "He stopped serving the elders and earned more in town. Their beards grew untidy and they were laughed at, and he united other barbers into a shop, forcing the elders to come to them."}
       ],
       quiz: [
-        {q: "The Barber's Trade Union was written by:", options: ["Mulk Raj Anand", "R. K. Narayan", "K. A. Abbas", "Premchand"], answer: 0, explain: "Anand wrote about the struggles of ordinary Indians."},
-        {q: "Chandu dressed like a:", options: ["City doctor", "Soldier", "Policeman", "Priest"], answer: 0, explain: "A white coat and a leather bag for his tools."},
-        {q: "The village elders objected to Chandu because they thought he was:", options: ["Too proud for his caste", "Lazy", "Dishonest", "Unskilled"], answer: 0, explain: "Caste pride lay behind their anger."},
-        {q: "Chandu's response was to:", options: ["Work in the town and refuse to give in", "Leave barbering", "Apologise", "Leave the village forever"], answer: 0, explain: "He kept his self-respect and his new ways."},
-        {q: "A central theme of the story is:", options: ["Dignity of labour", "Love of nature", "War", "Travel"], answer: 0, explain: "No honest work is low."}
+        {q: "The Barber's Trade Union was written by:", options: ["Mulk Raj Anand", "R. K. Narayan", "K. A. Abbas", "Premchand"], answer: 0, explain: "It is from his 1944 story collection."},
+        {q: "Chandu dressed himself like:", options: ["A doctor", "A soldier", "A policeman", "A priest"], answer: 0, explain: "He copied Kalan Khan, the town dentist."},
+        {q: "How did Chandu earn money after the strike began?", options: ["Shaving people in town", "Selling kites", "Farming", "Working for the landlord"], answer: 0, explain: "He earned a rupee near the court."},
+        {q: "What did the narrator shout while running past the elders' shop?", options: ["Beavers", "Barber", "Strike", "Thief"], answer: 0, explain: "It mocked their unshaved faces."},
+        {q: "A central theme of the story is:", options: ["Dignity of labour and protest against caste prejudice", "Love of travel", "War", "Nature"], answer: 0, explain: "A humble barber stands up to the powerful."}
+      ]
+    },
+    {
+      id: "the-bull-beneath-the-earth",
+      title: "The Bull beneath the Earth",
+      section: "Extensive Study",
+      summary: "K. S. Virk's story of Mann Singh, a soldier on leave who visits his friend Karam Singh's village, and finds the family oddly cold. He later learns they have already received news of Karam Singh's death and are hiding their grief to spare him.",
+      source: "A Rainbow of English (PSEB Class 12, 2023–24 edn), Section C, Lesson 6",
+      notes: [
+        {
+          heading: "The friends",
+          points: [
+            "Mann Singh, a naik, and Karam Singh, a havildar, are close friends in the same battalion on the Burma front. Karam Singh is a famed marksman, and his father is a hearty man who enjoys war tales.",
+            "Karam Singh could not get leave, so he urges Mann Singh to visit his village and family on his way back."
+          ]
+        },
+        {
+          heading: "The cold welcome",
+          points: [
+            "Karam Singh's father greets him absent-mindedly and busies himself with the buffalo calf and the mare. His mother only quivers her lips as she serves tea.",
+            "The family shows no interest in Mann Singh's praise of Karam Singh's shooting. When he asks Karam Singh's little son to come to his father, the old man shouts for the child to be taken away.",
+            "The younger brother Jaswant takes him to gurdwaras in the neighbourhood but is silent and asks only why Mann Singh's friend joined the army."
+          ]
+        },
+        {
+          heading: "The truth",
+          points: [
+            "A postman mentions papers about Karam Singh's pension. Mann Singh, shocked, learns the death letter arrived fifteen days earlier.",
+            "The father weeps with him and explains they did not want to spoil his holiday. Mann Singh sees that the old man, shaped by the border land's heroic history, bears his own grief while sparing others.",
+            "The title refers to a legend of a bull bearing the earth on its head; to Mann Singh the father seems such a kind soul, bent under his own load but sharing others' burdens."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Kulwant Singh Virk (1921–1987), Punjabi and English short-story writer; Sahitya Akademi Award 1968.",
+        "Characters: Mann Singh, Karam Singh (dead), his father, mother, brother Jaswant, the postman.",
+        "Theme: selfless endurance and consideration for others in grief."
+      ],
+      terms: [
+        {term: "Havildar", meaning: "A rank of non-commissioned officer in the Indian Army."},
+        {term: "Perturbed", meaning: "Anxious and worried."},
+        {term: "Benevolent", meaning: "Kind and generous."},
+        {term: "Filial", meaning: "Relating to a son or daughter's behaviour towards parents."},
+        {term: "Numbness", meaning: "Inability to feel."}
+      ],
+      qa: [
+        {q: "Why did Karam Singh's family treat Mann Singh coldly?", a: "They had already learnt of Karam Singh's death and were hiding the news so as not to spoil Mann Singh's holiday. Their grief and effort to conceal it made them quiet and uneasy."},
+        {q: "Why is the story called 'The Bull beneath the Earth'?", a: "Mann Singh remembers the belief that a bull carries the earth's burden. Karam Singh's father, bearing his own grief yet sparing others, seems like that bull."}
+      ],
+      quiz: [
+        {q: "What was Karam Singh's rank in the army?", options: ["Havildar", "Naik", "Subedar", "Captain"], answer: 0, explain: "Mann Singh had just become a naik."},
+        {q: "Where were the friends serving?", options: ["Burma front", "Kashmir", "Ladakh", "Africa"], answer: 0, explain: "They served together in a battalion there."},
+        {q: "What upset Karam Singh's father when Mann Singh spoke to the child?", options: ["Mann Singh offered to take the child to his father", "The child cried", "The child hit him", "The child was rude"], answer: 0, explain: "The words pierced the old man's heart."},
+        {q: "How did Mann Singh find out about the death?", options: ["From the postman", "From a letter", "From Jaswant", "From the mother"], answer: 0, explain: "The postman spoke of Karam Singh's pension papers."},
+        {q: "How long before had the news of Karam Singh's death come?", options: ["Fifteen days", "One day", "A year", "A month"], answer: 0, explain: "The postman said the letter arrived fifteen days earlier."}
       ]
     }
   ]

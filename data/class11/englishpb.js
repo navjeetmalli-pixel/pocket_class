@@ -1,11 +1,9 @@
 // Class 11 General English (PSEB): A Panorama of Life + English Grammar and Composition for XI and XII.
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the PSEB books.
-// Literature chapters are written from the well-known works; the PSEB book may print an abridged version.
-// Mother's Day is left out: PSEB lists it as a poem, and we could not identify which one.
-// NOT covered (not known well enough to summarise): Gender Bias; Liberty and Discipline; A President Speaks; The Earth is not Ours;
-// Let's Not Forget the Martyrs; Water – A True Elixir; No Time for Fear; Sparrows (K. A. Abbas); The Peasant's Bread.
+// All literature lessons in the textbook (2023-24 edition) are covered and were checked against it: eight prose lessons,
+// six poems (including Mother's Day) and six extensive-study stories. Nothing from the syllabus is left out.
 StudyData.add(11, "englishpb", {
-  syllabus: {board: "PSEB", match: "textbook", books: ["A Panorama of Life (PSEB, Class 11)", "English Grammar and Composition for XI and XII (PSEB)"], note: "Follows the PSEB 2026–27 syllabus; lessons are summarised in our own words, not the PSEB book's text.", reviewed: false},
+  syllabus: {board: "PSEB", match: "textbook", books: ["A Panorama of Life (PSEB, Class 11)", "English Grammar and Composition for XI and XII (PSEB)"], note: "Follows the PSEB 2026–27 syllabus; lessons summarised in our own words from the PSEB textbook (2023–24 edition).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
@@ -823,33 +821,92 @@ StudyData.add(11, "englishpb", {
     },
     // ───────────────────────────── PROSE ─────────────────────────────
     {
+      id: "gender-bias",
+      title: "Gender Bias",
+      section: "Prose",
+      summary: "Sudha Murthy recalls how, as the only girl in her postgraduate class at the Indian Institute of Science, she saw a Telco job advertisement closed to women, wrote a protest postcard to J. R. D. Tata, was called for an interview, and became the first woman engineer on the company's shop floor.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "In April 1974 the author was in the final year of her master's course in Computer Science at the Indian Institute of Science, Bangalore, and planned to go abroad for a doctorate; she had scholarship offers from American universities.",
+            "On the notice board she saw a Telco (now Tata Motors) advertisement asking for bright engineers, with a small line saying women need not apply. It was her first meeting with gender discrimination, and she took it as a challenge.",
+            "Not knowing who headed Telco, she wrote a postcard to J. R. D. Tata protesting against the discrimination (Sumant Moolgaokar was actually the chairman then).",
+            "Within ten days she got a telegram calling her for an interview in Pune at the company's cost. Her hostel mates urged her to go and to bring back Pune saris for them.",
+            "A panel of six people interviewed her. She was sure she would not be selected, so she stayed relaxed, and she even spoke rudely, which she later regretted. She answered every technical question.",
+            "An elderly panellist explained that Telco had never employed women on the shop floor and suggested that she belonged in a research laboratory. She replied that a beginning must be made somewhere or no woman would ever work in the factories.",
+            "She was selected, worked in Pune, met her future husband there, and was later transferred to Bombay, where she first met J. R. D. Tata (affectionately called 'Appro JRD') while showing reports to Mr Moolgaokar, who introduced her as the first woman on the Telco shop floor."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Sudha Murthy**: brilliant, bold, idealistic, outspoken; she admits she was a bit rude in the interview.",
+            "**J. R. D. Tata**: the head of the Tata Group, called the uncrowned king of Indian industry, who is admired and remembered with warmth.",
+            "**The elderly panellist**: affectionate in tone but bound by the old belief that factories were no place for women."
+          ]
+        },
+        {
+          heading: "Themes and author",
+          points: [
+            "Gender discrimination can be challenged by courage and merit; academic excellence alone is not enough for success.",
+            "A small beginning opens doors for many: today nearly half of engineering students are girls and women work on shop floors.",
+            "Sudha Murthy (born 1950) is a social worker and author, chairperson of the Infosys Foundation, and a Padma Shri awardee (2006). The essay is from her collection How I Taught My Grandmother to Read."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Sudha Murthy; setting: IISc Bangalore, Telco (Pune), 1974.",
+        "Advertisement: women candidates were told not to apply; she wrote a postcard to J. R. D. Tata.",
+        "Result: interview in Pune, panel of six, selected; first woman on Telco's shop floor."
+      ],
+      terms: [
+        {term: "Gender discrimination", meaning: "Treating people unfairly because they are male or female."},
+        {term: "Shop floor", meaning: "The area of a factory where goods are made."},
+        {term: "Pioneer", meaning: "A person who is first to do something that others then follow."},
+        {term: "Idealistic", meaning: "Having high and noble ideas about how things should be."},
+        {term: "Perseverance", meaning: "Continuing to try in spite of difficulty."}
+      ],
+      qa: [
+        {q: "Why did Sudha Murthy write to J. R. D. Tata?", a: "She was angry that Telco's advertisement told women not to apply. She wrote a postcard to the head of the Tata Group to protest against the discrimination, though she was not even keen on the job."},
+        {q: "What reason did the panel give for not hiring women, and how did she answer?", a: "They said women had never worked on the shop floor and should stay in research labs. She replied that a start had to be made somewhere, otherwise no woman would ever work in their factories."}
+      ],
+      quiz: [
+        {q: "Gender Bias is written by:", options: ["Sudha Murthy", "Kiran Desai", "Shashi Deshpande", "Anita Desai"], answer: 0, explain: "It is an essay by Sudha Murthy."},
+        {q: "The company that advertised the job was:", options: ["Infosys", "Telco", "Wipro", "Bajaj"], answer: 1, explain: "The advertisement was from Telco, now Tata Motors."},
+        {q: "How did the author protest against the advertisement?", options: ["By writing a postcard to J. R. D. Tata", "By holding a public meeting", "By going on strike", "By telephoning the chairman"], answer: 0, explain: "She addressed a postcard to JRD."},
+        {q: "Why did the hostel mates want her to go to Pune?", options: ["To visit a temple", "To buy them Pune saris cheaply", "To meet JRD Tata", "To see a college"], answer: 1, explain: "They asked her to use the free trip to buy saris."},
+        {q: "The interview panel in Pune had:", options: ["Two members", "Three members", "Six members", "Ten members"], answer: 2, explain: "Six people sat on the panel."}
+      ]
+    },
+    {
       id: "the-portrait-of-a-lady",
       title: "The Portrait of a Lady",
       section: "Prose",
-      summary: "Khushwant Singh's affectionate sketch of his grandmother: their close bond in the village, the growing distance as he moved to the city and abroad, and her peaceful death mourned by sparrows. The PSEB version may be abridged.",
+      summary: "Khushwant Singh's affectionate sketch of his grandmother: their close bond in the village, the growing distance as he moved to the city and abroad, and her peaceful death mourned by sparrows.",
       notes: [
         {
           heading: "The grandmother",
           points: [
-            "She was old, small and plump, dressed in white, and spent her days in prayer with her rosary; the author finds it hard to imagine her young.",
+            "She was old, short, fat and slightly bent, with a face full of wrinkles, dressed in spotless white and always telling her rosary; the author finds it hard to imagine her young, but says she was beautiful in her serene whiteness, like a winter mountain landscape.",
             "In the village she looked after the boy, woke him, got him ready and walked him to the school attached to the temple.",
-            "She fed stray dogs with stale chapattis and, in the afternoons, fed the sparrows."
+            "She carried stale chapattis for the village dogs that followed them home from school."
           ]
         },
         {
           heading: "Growing apart",
           points: [
-            "When the family moved to the city, the author went to a city school and they shared a room, but she could no longer help him with studies, as the lessons in English and science were beyond her.",
-            "She was hurt when he stopped going to the temple school, but she settled to spinning and feeding the sparrows.",
-            "When he went to university and then abroad for five years, she saw him off calmly, with no tears, and spent her time praying and spinning."
+            "When his parents called them to the city, they shared a room, but she no longer walked him to school: he went to an English school by motor bus. She took to feeding sparrows in the courtyard. She could not help with his lessons in English and science, and was upset that God and the scriptures were not taught.",
+            "When he mentioned music lessons she was disturbed, since she associated music with beggars and low company, and her silence showed disapproval. At university he had a room of his own, and she accepted her seclusion, spinning and praying from morning to evening, with the half hour for the sparrows as her happiest.",
+            "When he went abroad for five years, she saw him off at the station calmly, lost in prayer, and only kissed his forehead. After five years she met him at the station looking no older."
           ]
         },
         {
           heading: "Her death",
           points: [
-            "On his return she welcomed him, then spent the next days spinning, and the evening before her death she sang to the beat of a drum with the women of the neighbourhood.",
-            "She died peacefully the next morning after a short illness, praying.",
-            "Thousands of sparrows sat silently around her body, refusing the crumbs, and flew away after she was carried out, as if in mourning."
+            "On the evening of his return she did not pray; she gathered the women of the neighbourhood and sang for hours to the beat of an old drum, songs of the warriors' homecoming, and had to be persuaded to stop.",
+            "Next morning she had a mild fever, but she said her end was near and that, having missed her prayers the evening before, she would not waste time talking. She died peacefully, praying with her rosary.",
+            "Thousands of sparrows sat silently around her body; they ignored the crumbs the author's mother threw as she used to, and flew away quietly when the body was carried out."
           ]
         },
         {
@@ -884,12 +941,346 @@ StudyData.add(11, "englishpb", {
         {q: "Where did the author study after leaving the village?", options: ["A city school and then abroad", "Only at the temple", "A forest ashram", "He never studied"], answer: 0, explain: "He went to the city, then to a university and abroad."}
       ]
     },
+    {
+      id: "liberty-and-discipline",
+      title: "Liberty and Discipline",
+      section: "Prose",
+      summary: "Field Marshal Sir William Slim argues that liberty and discipline go together: discipline is a restraint on freedom, yet every society must have it, and the real question is whether it comes from within, by understanding, or is forced from outside. A leader must first discipline himself.",
+      notes: [
+        {
+          heading: "Main points",
+          points: [
+            "Choosing where to drive is liberty; keeping to the left of the road is discipline. We do so for four reasons: our own advantage, consideration for others, confidence in our fellows and fear of punishment.",
+            "The weight we give to each reason decides the kind of discipline, from pure self-discipline to the enforced discipline of fear.",
+            "Everyone dislikes restraint, but a modern person living among others who depend on him cannot avoid discipline.",
+            "When a nation loses its sense of order through idleness, weakness or faction, its economy decays and either a stronger power or a dictator imposes discipline. So the real question is not whether but how we accept it: by force and fear, or by consent and understanding.",
+            "Dictatorship, with its shouting and bullying, is not true discipline. Real discipline is voluntary and reasoned, and applies to everybody from top to bottom."
+          ]
+        },
+        {
+          heading: "The author's own lesson",
+          points: [
+            "As a young second-lieutenant he returned a soldier's salute carelessly with a wave. His Colonel made him practise saluting the Sergeant Major's staff in front of the whole battalion.",
+            "The Colonel's only comment was that discipline begins with the officers: a leader must demand more of himself than of those he leads, and win his team by understanding, not just orders.",
+            "Cromwell wanted every soldier to know what he fights for and love what he knows; the same holds for workers in industry."
+          ]
+        },
+        {
+          heading: "Conclusion",
+          points: [
+            "Self-imposed discipline is ennobling and builds character and initiative, unlike totalitarian discipline that submerges the individual. The British railway signalmen who stayed at their posts during the bombing show it.",
+            "No nation has risen out of an economic or military crisis without discipline, backed by healthy public opinion.",
+            "You can have discipline without liberty, but not liberty without discipline."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Field Marshal Sir William Slim; essay condensed from an article in The Fortnightly (London).",
+        "Four reasons for discipline: own advantage, consideration for others, confidence in fellows, fear of punishment.",
+        "Key idea: discipline begins with the leader; liberty cannot exist without discipline."
+      ],
+      terms: [
+        {term: "Liberty", meaning: "Freedom to live and act as one chooses within limits."},
+        {term: "Discipline", meaning: "Training to obey rules and order, whether imposed by oneself or by others."},
+        {term: "Totalitarian", meaning: "Ruled by one party or leader who allows no opposition."},
+        {term: "Faction", meaning: "A small group inside a larger one with its own separate aims."},
+        {term: "Shirk", meaning: "To avoid a duty."}
+      ],
+      qa: [
+        {q: "How does the author show the difference between liberty and discipline?", a: "A driver is free to choose his destination, which is liberty, but he must keep to the left of the road, which is discipline. Discipline limits liberty so that all can use it safely."},
+        {q: "What did the Colonel teach the young Slim?", a: "By making him practise saluting a staff before the battalion, the Colonel taught him that discipline begins with the officers: the leader must first discipline himself before he demands it from others."}
+      ],
+      quiz: [
+        {q: "Liberty and Discipline was written by:", options: ["Sir William Slim", "Oliver Cromwell", "Winston Churchill", "Lord Mountbatten"], answer: 0, explain: "The essay is by Field Marshal Sir William Slim."},
+        {q: "Which is NOT one of the four reasons given for keeping to the left?", options: ["Own advantage", "Fear of punishment", "Confidence in fellows", "Desire for fame"], answer: 3, explain: "Desire for fame is not among the four reasons."},
+        {q: "According to the author, discipline begins with:", options: ["The workers", "The officers or leaders", "The children", "The police"], answer: 1, explain: "The Colonel told him discipline begins with the officers."},
+        {q: "What did the signalmen show during the bombing?", options: ["Fear of the enemy", "Loyalty to their post and sense of duty", "Disobedience", "Desire for rewards"], answer: 1, explain: "They stayed at their posts although bombs were falling."},
+        {q: "The author's conclusion is that:", options: ["Liberty can exist without discipline", "Discipline can exist without liberty but liberty cannot exist without discipline", "Discipline should be avoided", "Only soldiers need discipline"], answer: 1, explain: "That is the closing idea of the essay."}
+      ]
+    },
+    {
+      id: "a-president-speaks",
+      title: "A President Speaks",
+      section: "Prose",
+      summary: "In a speech at Hyderabad, Dr A. P. J. Abdul Kalam states his three visions for India - freedom, development and standing up to the world - and urges Indians to stop only complaining and to do their part, by keeping the country clean, obeying rules and taking responsibility.",
+      notes: [
+        {
+          heading: "Three visions",
+          points: [
+            "**Freedom**: in three thousand years of history foreign powers invaded India, yet India never conquered another nation. The first vision of freedom came in 1857, and it must be protected.",
+            "**Development**: India has been a developing nation for fifty years; it should now see itself as a developed, self-reliant and self-assured nation, as it is among the leading economies with falling poverty.",
+            "**Standing up to the world**: only strength is respected by strength, so India must be strong both militarily and economically.",
+            "He recalls his luck in working with Vikram Sarabhai, Satish Dhawan and Brahm Prakash."
+          ]
+        },
+        {
+          heading: "Success stories and a challenge",
+          points: [
+            "India has many achievements it does not acknowledge, for example in milk production, remote sensing satellites, and wheat and rice output.",
+            "Indians are obsessed with foreign goods, though self-respect comes from self-reliance.",
+            "A fourteen-year-old girl told him she wanted to live in a developed India; for her, today's citizens must build it."
+          ]
+        },
+        {
+          heading: "What 'you' must do",
+          points: [
+            "Citizens blame the government for every fault, yet behave well abroad (in Singapore, Dubai, London, Washington, Tokyo) and carelessly at home - littering, breaking rules, avoiding responsibility.",
+            "Mr Tinaikar, a former municipal commissioner of Bombay, pointed out that pet owners in America and Japan clean up after their dogs but Indians expect the authorities to do it.",
+            "People vote and then give up responsibility, make loud speeches about dowry or the girl child but do the opposite at home, and run abroad when problems come.",
+            "Kalam ends by echoing J. F. Kennedy: ask what we can do for India and do what has to be done."
+          ]
+        }
+      ],
+      formulas: [
+        "Speaker: Dr A. P. J. Abdul Kalam (1931-2015), Bharat Ratna 1997; speech delivered in Hyderabad.",
+        "Three visions: freedom, development, standing up to the world.",
+        "Message: do your own part; the system consists of every citizen."
+      ],
+      terms: [
+        {term: "Self-reliance", meaning: "Depending on one's own abilities and resources."},
+        {term: "GDP", meaning: "Gross Domestic Product, the total value of goods and services a country produces in a year."},
+        {term: "Introspection", meaning: "Careful examination of one's own thoughts and behaviour."},
+        {term: "Obsession", meaning: "A fixed idea that fills a person's mind."},
+        {term: "Nurture", meaning: "To care for and help something grow."}
+      ],
+      qa: [
+        {q: "What are Kalam's three visions for India?", a: "Freedom, which India must protect; development, so that it sees itself as a developed nation; and standing up to the world, being strong both militarily and economically so that others respect it."},
+        {q: "What does Kalam criticise in the behaviour of Indians?", a: "He criticises citizens who blame the government yet litter, break rules and shun responsibility at home, while following rules strictly in other countries. He asks them to do their duty and not wait for others to change the system."}
+      ],
+      quiz: [
+        {q: "Kalam was awarded the Bharat Ratna in:", options: ["1990", "1997", "2002", "2007"], answer: 1, explain: "He received India's highest civilian honour in 1997."},
+        {q: "Which of these is NOT one of Kalam's visions?", options: ["Freedom", "Development", "Standing up to the world", "Expansion of territory"], answer: 3, explain: "India has never conquered others, as Kalam points out."},
+        {q: "The speech was delivered at:", options: ["Chennai", "Hyderabad", "Delhi", "Mumbai"], answer: 1, explain: "He was giving a lecture in Hyderabad."},
+        {q: "Who is quoted at the end of the speech?", options: ["Mahatma Gandhi", "J. F. Kennedy", "Abraham Lincoln", "Winston Churchill"], answer: 1, explain: "Kalam echoes Kennedy's call to ask what you can do for your country."},
+        {q: "Kalam says self-respect comes with:", options: ["Wealth", "Self-reliance", "Foreign goods", "Power"], answer: 1, explain: "He criticises the obsession with imports."}
+      ]
+    },
+    {
+      id: "the-earth-is-not-ours",
+      title: "The Earth is not Ours",
+      section: "Prose",
+      summary: "In his address to the Millennium Summit of the United Nations in 2000, Secretary General Kofi Annan describes globalisation and groups the world's problems under three freedoms: freedom from want, freedom from fear and the freedom of future generations to live on this planet.",
+      notes: [
+        {
+          heading: "Globalisation",
+          points: [
+            "The Millennium Summit (6-8 September 2000) was the occasion for humanity to celebrate and to reflect.",
+            "Globalisation connects the world as never before, so people interact across borders. Its dangers include crime, narcotics, terrorism, disease and weapons moving quickly; its benefits include growth, higher living standards and better understanding.",
+            "The opportunities are not equally shared: half of humanity has yet to make a phone call. The challenge is to make globalisation mean more than bigger markets by governing better and together."
+          ]
+        },
+        {
+          heading: "The three freedoms",
+          points: [
+            "**Freedom from want**: over a billion people struggle on very little money a day, without safe water or sanitation, while others worry about stock markets.",
+            "**Freedom from fear**: wars between states are fewer, but internal wars have killed millions and weapons of mass destruction remain. Conflict is best prevented by fair political representation, human and minority rights and broad economic development, since most conflicts occur in poor, badly governed countries.",
+            "**The freedom of future generations**: we are plundering our children's heritage through unsustainable practices. We must preserve forests, fisheries and species, need a new ethic of stewardship, informed public, and policies that reduce pollution and over-consumption."
+          ]
+        },
+        {
+          heading: "Message and title",
+          points: [
+            "The title comes from an old African saying he learnt as a child: the earth is not ours, it is a treasure we hold in trust for our descendants.",
+            "The United Nations will be judged by how it handles these everyday problems of people, since it was founded in the name of 'We, the Peoples'."
+          ]
+        }
+      ],
+      formulas: [
+        "Speaker: Kofi Annan, UN Secretary General; occasion: Millennium Summit, September 2000.",
+        "Three freedoms: from want, from fear, and of future generations to sustain their lives.",
+        "Title idea: the earth is held in trust for descendants."
+      ],
+      terms: [
+        {term: "Globalisation", meaning: "The growing connection of countries and economies around the world."},
+        {term: "Millennium", meaning: "A period of one thousand years."},
+        {term: "Stewardship", meaning: "Careful looking after of something that belongs to all."},
+        {term: "Sustain", meaning: "To keep going at the same level without exhausting resources."},
+        {term: "Heritage", meaning: "What is passed down from earlier generations."}
+      ],
+      qa: [
+        {q: "What does Kofi Annan say about the benefits and dangers of globalisation?", a: "Its benefits are faster growth, higher living standards and better understanding between nations; its dangers are that crime, drugs, terrorism, disease and weapons also move faster. Its opportunities are also unequally shared."},
+        {q: "What does the title 'The Earth is not Ours' mean?", a: "It comes from an African saying that the earth is a treasure we hold in trust for our descendants. We must therefore protect it instead of using up its resources."}
+      ],
+      quiz: [
+        {q: "The speech was given by:", options: ["Kofi Annan", "Ban Ki-moon", "Nelson Mandela", "Boutros Boutros-Ghali"], answer: 0, explain: "He was Secretary General of the UN at the time."},
+        {q: "How many fundamental freedoms does the speaker discuss?", options: ["Two", "Three", "Four", "Five"], answer: 1, explain: "Freedom from want, freedom from fear and the freedom of future generations."},
+        {q: "Most conflicts, according to Annan, occur in:", options: ["Rich nations", "Poor and badly governed countries", "Island nations", "Neutral states"], answer: 1, explain: "Poor, badly governed countries with unfair distribution of power are most affected."},
+        {q: "The 'old African wisdom' he mentions is that the earth:", options: ["Is a treasure held in trust for descendants", "Belongs to the strongest", "Is endless", "Belongs to the rulers"], answer: 0, explain: "This is the source of the title."},
+        {q: "Annan says half of humanity has yet to:", options: ["Vote in elections", "Make or receive a telephone call", "Go to school", "Own land"], answer: 1, explain: "He uses it to show that globalisation's benefits are unequal."}
+      ]
+    },
+    {
+      id: "lets-not-forget-the-martyrs",
+      title: "Let's Not Forget the Martyrs",
+      section: "Prose",
+      summary: "Compiled by Vandana Sehgal, this piece recalls five winners of the Param Vir Chakra, India's highest gallantry award: Major Somnath Sharma, Major Dhan Singh Thapa, Havildar Abdul Hamid, Flying Officer Nirmal Jit Singh Sekhon and Captain Vikram Batra.",
+      notes: [
+        {
+          heading: "The heroes",
+          points: [
+            "**Major Somnath Sharma** (1923-1947), 4 Kumaon, the first Param Vir Chakra winner. On 3 November 1947 his company, with his hand in plaster, held Badgam against about seven times their number of raiders. He kept loading magazines until a shell killed him. His stand helped save Srinagar.",
+            "**Major Dhan Singh Thapa**, 8 Gorkha Rifles: in October 1962 he held the Sirijap post near Chushul in Ladakh through three Chinese attacks. He fought hand to hand, was captured, was believed dead but survived as a prisoner of war, retired as Lieutenant-Colonel and died in 2005.",
+            "**Havildar Abdul Hamid**, the Grenadiers: in the 1965 war at Khem Karan in Punjab he destroyed Pakistani Patton tanks with a recoilless gun mounted on a jeep until he was killed.",
+            "**Flying Officer Nirmal Jit Singh Sekhon** (1943-1971), a Gnat pilot at Srinagar: on 14 December 1971 he took off under attack and fought six Sabre jets alone before he was shot down.",
+            "**Captain Vikram Batra** (1974-1999), 13 JAK Rifles, nicknamed Sher Shah: in the 1999 Kargil War he led the capture of Point 5140 and other peaks, and died while rescuing an injured officer at Point 4875."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "Supreme courage and sacrifice in defence of the motherland; the nation sleeps in peace because of its soldiers.",
+            "A duty to remember those who gave their lives; the award honours exemplary bravery, often given after death."
+          ]
+        }
+      ],
+      formulas: [
+        "Compiled by: Vandana Sehgal. Award: Param Vir Chakra, India's highest gallantry award.",
+        "Somnath Sharma - Badgam 1947; Dhan Singh Thapa - Ladakh 1962; Abdul Hamid - Khem Karan 1965; Sekhon - Srinagar 1971; Vikram Batra - Kargil 1999."
+      ],
+      terms: [
+        {term: "Martyr", meaning: "A person who dies for a great cause."},
+        {term: "Gallantry", meaning: "Courage shown especially in battle."},
+        {term: "Posthumous", meaning: "Given or happening after a person's death."},
+        {term: "Infiltrator", meaning: "A person who secretly enters an area for hostile purposes."},
+        {term: "Param Vir Chakra", meaning: "India's highest military decoration for courage in the face of the enemy."}
+      ],
+      qa: [
+        {q: "Who was the first recipient of the Param Vir Chakra and why was he honoured?", a: "Major Somnath Sharma. He was honoured after his death for holding the Badgam position near Srinagar in 1947 with a broken hand, outnumbered, which stopped the raiders and helped save Srinagar."},
+        {q: "How did Abdul Hamid show his courage?", a: "In the 1965 war he went forward on a jeep with a recoilless gun and knocked out enemy Patton tanks under heavy fire until he was killed, inspiring his comrades to beat back the attack."}
+      ],
+      quiz: [
+        {q: "The first Param Vir Chakra was awarded to:", options: ["Major Somnath Sharma", "Captain Vikram Batra", "Havildar Abdul Hamid", "Major Dhan Singh Thapa"], answer: 0, explain: "Somnath Sharma was the first recipient."},
+        {q: "Vikram Batra was nicknamed:", options: ["Sher Shah", "Sher Khan", "Veer", "Bahadur"], answer: 0, explain: "The lesson says he was called Sher Shah."},
+        {q: "Abdul Hamid fought in the Khem Karan sector in the war of:", options: ["1947", "1962", "1965", "1971"], answer: 2, explain: "It was the Indo-Pak war of 1965."},
+        {q: "Flying Officer Sekhon defended the air base at:", options: ["Pathankot", "Srinagar", "Leh", "Jaipur"], answer: 1, explain: "He defended Srinagar air base in 1971."},
+        {q: "Dhan Singh Thapa was believed to be dead but was later found to have been:", options: ["Taken prisoner", "In hiding", "Wounded in hospital", "Promoted"], answer: 0, explain: "He was a prisoner of war and returned to service."}
+      ]
+    },
+    {
+      id: "water-a-true-elixir",
+      title: "Water - A True Elixir",
+      section: "Prose",
+      summary: "Dr D. V. Jindal explains why water is the most precious resource after air, how little of it is drinkable, how ancient societies conserved it, and why the falling water table in Punjab, caused by paddy and heavy tubewell use, calls for urgent conservation.",
+      notes: [
+        {
+          heading: "Why water matters",
+          points: [
+            "Water and air are the two lifelines of the planet and both are being polluted; if we ignore the warning we rob future generations of the right to live.",
+            "Water covers most of the planet, but almost all of it is salty ocean water, and most fresh water is frozen in ice; only a tiny share is available for drinking. No new water is being made, so its quality must be preserved.",
+            "C. V. Raman said the true elixir of life is plain water. That is why civilisations grew on river banks; the Indus Valley people had covered drains and advanced sewage systems."
+          ]
+        },
+        {
+          heading: "Forests and beauty",
+          points: [
+            "Forests let water seep into the ground, feeding wells, lakes and rivers; ancient Indians worshipped forests as 'mothers' of rivers.",
+            "Water also adds beauty and joy to nature, like the eyes in a human face."
+          ]
+        },
+        {
+          heading: "The Punjab problem",
+          points: [
+            "Growing population, industry and farming have raised the demand for water; dams, reservoirs, recycling and desalination are used, but conservation is the need of the day.",
+            "Punjab, the food bowl of India, is drying up: tubewells have multiplied, groundwater is falling in most of the state (the minister admitted this in the Vidhan Sabha), and nitrates and heavy metals are rising.",
+            "The rice-wheat cropping pattern uses huge quantities of water (rice needs thousands of litres per kilogram), forcing farmers to dig deeper and use costlier pumps, which hurts small farmers.",
+            "Remedies: change the cropping pattern, use water-saving methods such as sprinkler and drip irrigation, form water users' associations, recharge groundwater artificially, and have departments work together."
+          ]
+        },
+        {
+          heading: "Conclusion",
+          points: [
+            "Millions in rural and poor urban India lack clean water; women and girls walk long distances to fetch it.",
+            "Every drop of water is precious and each person must help save it."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Dr D. V. Jindal, an English teacher and author from Ludhiana.",
+        "Key idea: only a small fraction of Earth's water is drinkable; Punjab's water table is falling fast.",
+        "Remedies: crop change, drip and sprinkler irrigation, recharge, awareness."
+      ],
+      terms: [
+        {term: "Elixir", meaning: "A magical liquid believed to give long life or cure illness."},
+        {term: "Water table", meaning: "The level below the ground at which the soil is saturated with water."},
+        {term: "Catchment", meaning: "An area from which rain water flows into a river or lake."},
+        {term: "Potable", meaning: "Safe to drink."},
+        {term: "Desalination", meaning: "Removing salt from sea water."}
+      ],
+      qa: [
+        {q: "Why is only a small part of the Earth's water fit for drinking?", a: "Most of the water is salty ocean water, and most of the fresh water is frozen in glaciers and ice caps, so only a very small share is available for us to drink."},
+        {q: "Why is the water table falling in Punjab?", a: "Heavy tubewell use for the water-hungry rice-wheat cropping pattern, along with growing demand, takes out more water than nature restores, so farmers must dig deeper and use costlier pumps."}
+      ],
+      quiz: [
+        {q: "'Water - A True Elixir' is written by:", options: ["Dr D. V. Jindal", "C. V. Raman", "Kofi Annan", "Vandana Sehgal"], answer: 0, explain: "It is by Dr D. V. Jindal."},
+        {q: "Who called plain water the true elixir of life?", options: ["Rabindranath Tagore", "C. V. Raman", "Mahatma Gandhi", "A. P. J. Abdul Kalam"], answer: 1, explain: "The lesson quotes C. V. Raman."},
+        {q: "Which civilisation had covered drains beneath its streets?", options: ["Roman", "Indus Valley", "Egyptian", "Mesopotamian"], answer: 1, explain: "Mohenjodaro and Harappa show this."},
+        {q: "Which crops use the major share of Punjab's water?", options: ["Rice and wheat", "Cotton and sugarcane", "Maize and pulses", "Fruits and vegetables"], answer: 0, explain: "The rice-wheat cropping system is named."},
+        {q: "Which is a water-saving method mentioned?", options: ["Flood irrigation", "Drip irrigation", "More tubewells", "Deeper wells"], answer: 1, explain: "Sprinkler and drip methods are suggested."}
+      ]
+    },
+    {
+      id: "no-time-for-fear",
+      title: "No Time for Fear",
+      section: "Prose",
+      summary: "Philip Yancey tells the true story of Malcolm Aspeslet, a nineteen-year-old Canadian who saved his girlfriend Barb Beck from a grizzly bear in 1971, was terribly injured, and was loved and married by Barb in spite of his scars.",
+      notes: [
+        {
+          heading: "The attack",
+          points: [
+            "On a day off, Malcolm (19) and Barb (18), who worked in the kitchen of a park lodge in Glacier National Park, British Columbia, hiked to Balu Pass. A sudden snow flurry forced them to spend the night in an alpine cabin.",
+            "On 1 October 1971 they started down. Barb wore smooth-soled boots and kept slipping. They saw two bear cubs near the trail, and a mother grizzly charged.",
+            "Malcolm flung Barb into the snow and was knocked senseless by the bear's paw. When he recovered, the bear was on top of Barb. He felt no fear, only the need to act, grabbed his hunting knife, jumped on the bear's back and stabbed her neck.",
+            "The bear threw him off, broke his wrist, ripped his scalp and face and mauled him. When he stopped struggling and lay still, she covered him with dirt and left."
+          ]
+        },
+        {
+          heading: "Rescue and recovery",
+          points: [
+            "Barb, though hurt, ran to the lodge for help. Rescuers, including warden Gordy Peyto, found Malcolm still conscious. A helicopter took him to hospital in Revelstoke, where surgeons worked seven hours and used more than a thousand stitches.",
+            "He later had dozens of skin-graft operations in Edmonton. Seeing himself in a mirror, he sank into despair and refused to see anyone.",
+            "Barb wrote to him faithfully, several letters a week, then travelled to see him and sent a marriage proposal, joking that it was a leap year. They married on 21 July 1973.",
+            "Malcolm received several awards for bravery, including the Stanhope Gold Medal. Barb says scars do not change the person."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "Instinctive courage and selfless love: he acted without time for fear.",
+            "True love looks beyond outward appearance; faithful, patient love restores hope.",
+            "Acceptance of handicaps and the strength to rebuild a life."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Philip Yancey; characters: Malcolm Aspeslet, Barb Beck, Gordy Peyto.",
+        "Setting: Glacier National Park, British Columbia, 1 October 1971.",
+        "Outcome: Malcolm survives; Barb marries him in 1973."
+      ],
+      terms: [
+        {term: "Grizzly", meaning: "A large brown bear of North America."},
+        {term: "Instinct", meaning: "An unthinking natural urge to act in a certain way."},
+        {term: "Skin graft", meaning: "An operation to replace damaged skin with skin from another part of the body."},
+        {term: "Despondency", meaning: "A state of low spirits and hopelessness."},
+        {term: "Heroism", meaning: "Great bravery."}
+      ],
+      qa: [
+        {q: "Why is the lesson titled 'No Time for Fear'?", a: "When Malcolm saw the grizzly attacking Barb he did not stop to think or be afraid; he grabbed his knife and rushed at the bear at once."},
+        {q: "How did Barb help Malcolm recover from despair?", a: "She wrote to him every week even though he never replied, visited him, and finally proposed marriage, convincing him that she loved him as he was."}
+      ],
+      quiz: [
+        {q: "No Time for Fear is written by:", options: ["Philip Yancey", "Ernest Hemingway", "Jack London", "Ruskin Bond"], answer: 0, explain: "It is by Philip Yancey."},
+        {q: "The attacking animal was a:", options: ["Grizzly bear", "Tiger", "Wolf", "Leopard"], answer: 0, explain: "A mother grizzly with cubs attacked."},
+        {q: "Malcolm's weapon against the bear was a:", options: ["Hunting knife", "Axe", "Rifle", "Stick"], answer: 0, explain: "He pulled a hunting knife from his belt."},
+        {q: "What made the hikers spend a night in a cabin?", options: ["A sudden snow flurry", "A lost trail", "An injured ankle", "A flood"], answer: 0, explain: "They were caught in a freak snow flurry at the top."},
+        {q: "Barb's marriage proposal came by:", options: ["Mail", "Phone", "A friend", "A telegram"], answer: 0, explain: "It was a proposal sent by post, with the leap-year joke."}
+      ]
+    },
     // ───────────────────────────── POETRY ─────────────────────────────
     {
       id: "lines-written-in-early-spring",
       title: "Lines Written in Early Spring",
       section: "Poetry",
-      summary: "William Wordsworth's reflective poem in which the poet, lying in a grove in spring, feels the joy of nature and mourns what humans have done to humans. The PSEB version may differ in how much is printed.",
+      summary: "William Wordsworth's reflective poem in which the poet, lying in a grove in spring, feels the joy of nature and mourns what humans have done to humans.",
       notes: [
         {
           heading: "What the poet sees and feels",
@@ -902,7 +1293,7 @@ StudyData.add(11, "englishpb", {
         {
           heading: "The sad thought",
           points: [
-            "He grieves for how man has treated man: the links between nature and the human soul are broken by cruelty, greed and inequality.",
+            "He recalls that Nature linked her fair works to the human soul, and he grieves over what man has made of man: human cruelty and inequality spoil that link.",
             "The refrain-like thought 'what man has made of man' runs through the poem as its sorrow.",
             "He feels that, as part of nature, humans should live in harmony with each other."
           ]
@@ -912,7 +1303,7 @@ StudyData.add(11, "englishpb", {
           points: [
             "Contrast between the harmony of nature and the disharmony of human society.",
             "Typical Romantic ideas: nature as a teacher and the faith that nature is full of joy.",
-            "Written in simple four-line stanzas in the ballad style of Lyrical Ballads (1798)."
+            "Written in simple four-line stanzas in the ballad style of Lyrical Ballads (1798). Wordsworth lived in the Lake District, which gave him the name 'Lakeland Poet'."
           ]
         }
       ],
@@ -940,78 +1331,134 @@ StudyData.add(11, "englishpb", {
       ]
     },
     {
+      id: "mothers-day",
+      title: "Mother's Day",
+      section: "Poetry",
+      summary: "Shiv K. Kumar's short poem rejects the Western custom of honouring a mother once a year with a card or bouquet. For the poet, in India a mother deserves respect every day, like a deity worshipped at every sunrise.",
+      notes: [
+        {
+          heading: "What the poet says",
+          points: [
+            "'We do it differently in this dark continent': the poet contrasts the Indian attitude with the Western Mother's Day, which is marked once a year by a few false verses inside a bouquet.",
+            "His mother is 'more demanding': she is owed respect every sunrise, like the humble offering of rice a devotee scatters for the birds.",
+            "Holding a lamp before an idol only once a year would be disrespect to it; in the same way, honouring a mother on a single day insults her.",
+            "Whenever he sees small things in nature, such as a caterpillar creeping towards a flower, or hears the voices of his ancestors in the howl of the wind, he remembers his deity, his mother, even twice a day."
+          ]
+        },
+        {
+          heading: "Ideas and style",
+          points: [
+            "Theme: a mother is to be honoured daily with love and reverence, not by a token yearly ritual; commercial gestures are hollow ('spurious').",
+            "Figures of speech: a simile (like a devotee throwing rice to the birds), a metaphor (the mother as deity), and images drawn from Indian worship.",
+            "Free verse in simple language with a tone of quiet pride in Indian culture."
+          ]
+        },
+        {
+          heading: "Poet",
+          points: [
+            "Shiv K. Kumar (born in Lahore in 1921) was a professor of English at the University of Hyderabad, a poet, novelist and short-story writer, and received the Padma Bhushan in 2001.",
+            "His poems have appeared in Indian and foreign journals and have been translated into several languages."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Shiv K. Kumar; theme: respect for the mother every day, not one day a year.",
+        "Images: a bouquet of false verses, a devotee's rice for birds, a lamp before an idol, a mother as deity."
+      ],
+      terms: [
+        {term: "Obeisance", meaning: "A gesture of deep respect, such as bowing."},
+        {term: "Spurious", meaning: "False, not genuine."},
+        {term: "Desecrate", meaning: "To treat something sacred with disrespect."},
+        {term: "Invoke", meaning: "To call upon, especially a deity."},
+        {term: "Deity", meaning: "A god or goddess; here, the mother."}
+      ],
+      qa: [
+        {q: "What does the poet object to about Mother's Day?", a: "He objects to honouring a mother only once a year with false verses in a bouquet; for him that makes the love superficial, while a mother deserves daily respect."},
+        {q: "Why does he compare the mother to a deity?", a: "He pays her respect at every sunrise and remembers her, like a god, even twice a day; honouring her once a year would be like worshipping an idol with a lamp only once a year, which would disrespect her."}
+      ],
+      quiz: [
+        {q: "Mother's Day is a poem by:", options: ["Shiv K. Kumar", "Ogden Nash", "Rabindranath Tagore", "William Blake"], answer: 0, explain: "It is by the Indian poet Shiv K. Kumar."},
+        {q: "The poet says Indians honour their mothers:", options: ["Every day", "Once a year", "Never", "Only at festivals"], answer: 0, explain: "Respect is a daily act, not a yearly one."},
+        {q: "The mother is compared to a:", options: ["Deity", "Queen", "Teacher", "Friend"], answer: 0, explain: "He invokes his mother as his deity."},
+        {q: "The 'bouquet shaped like a Chinese house of dreams' stands for:", options: ["A shallow, commercial gift", "A real home", "A temple", "A garden"], answer: 0, explain: "It represents the artificial gesture of a yearly card or bouquet."},
+        {q: "'Like a devotee throwing a handful of yellow rice to the birds' is a:", options: ["Simile", "Metaphor", "Personification", "Alliteration"], answer: 0, explain: "It uses 'like' to compare."}
+      ]
+    },
+    {
       id: "upagupta",
       title: "Upagupta",
       section: "Poetry",
-      summary: "Rabindranath Tagore's narrative poem about the Buddhist monk Upagupta, who meets the dancing girl Vasavadatta in Mathura and later comforts her when she is abandoned and ill. The PSEB version may be abridged.",
+      summary: "Rabindranath Tagore's narrative poem about the young Buddhist ascetic Upagupta, who politely declines the invitation of the dancing girl Vasavadatta in Mathura, and returns less than a year later to nurse her when she is abandoned with smallpox.",
       notes: [
         {
           heading: "Story",
           points: [
-            "Upagupta, a disciple of Buddha, sleeps one night on the dust beside the city wall of Mathura.",
-            "Vasavadatta, a beautiful dancing girl, passing in the dark, stumbles against him and lights a lamp to see his face; she is struck by his calm, handsome appearance.",
-            "She invites him to her house, but he says that the time for him to visit has not come yet.",
-            "Months later, in the spring, the young woman is struck by a deadly disease and is driven out of the town by the people and left alone under the city wall.",
-            "Upagupta finds her there, lays her head on his lap, wets her lips with water and applies balm; when she asks who he is, he says the time has come and he has come."
+            "On a dark, cloudy August night Upagupta, a disciple of Buddha, lies asleep in the dust by the city wall of Mathura.",
+            "A dancing girl, glittering with jewels, wearing a pale blue mantle and 'drunk with the wine of her youth', stumbles against him. She lowers her lamp and sees his plain, beautiful young face.",
+            "She asks him to come to her house since the dusty earth is no fit bed. He answers that when the time is ripe he will come to her. Lightning flashes and thunder rumbles, and she trembles with fear of an unknown danger.",
+            "Less than a year later, on a spring evening in April when the townspeople are at the flower festival, Upagupta walks out through the city gates and finds a woman lying at the foot of the rampart in a mango grove.",
+            "She is covered with the sores of smallpox and has been hurriedly driven out of town to avoid contagion. He sits by her, rests her head on his knees, wets her lips with water and smears her body with sandal balm.",
+            "When she asks who he is, he replies that the time has at last come to visit her and he is there."
           ]
         },
         {
           heading: "Themes",
           points: [
-            "Compassion and service of those in need, which was a mark of the Buddhist ideal.",
-            "True love is shown in times of suffering, not in times of pleasure.",
-            "A person's worth is not judged by social status; society abandons the sick, while the monk serves her."
+            "Compassion and service of the suffering; the ascetic goes to her when everyone else has deserted her.",
+            "Youth and physical beauty are impermanent, while love for humanity lasts.",
+            "A society's cruelty to the sick contrasts with the monk's mercy."
           ]
         },
         {
-          heading: "Form",
+          heading: "Style and poet",
           points: [
-            "A narrative poem in the form of a story from Buddhist tradition; Tagore wrote it in Bengali and it is available in English translation.",
-            "Simple, dramatic and moving in tone."
+            "Narrative poem with a striking contrast of scenes: the dark stormy night against the festive spring evening; personification in 'the black night showed its teeth'.",
+            "Rabindranath Tagore (1861-1941), the first Indian Nobel laureate (1913, for Gitanjali), also wrote the national anthem."
           ]
         }
       ],
       formulas: [
-        "Poet: Rabindranath Tagore (1861–1941), Nobel Prize 1913.",
-        "Characters: Upagupta (monk), Vasavadatta (dancing girl); setting: Mathura."
+        "Poet: Rabindranath Tagore (1861-1941); Nobel Prize in Literature 1913 (Gitanjali).",
+        "Characters: Upagupta (ascetic), Vasavadatta (dancing girl); setting: Mathura.",
+        "Message: true service comes when it is needed most."
       ],
       terms: [
-        {term: "Narrative poem", meaning: "A poem that tells a story."},
-        {term: "Monk", meaning: "A man who gives up worldly life for religion."},
-        {term: "Compassion", meaning: "Sympathy and concern for the suffering of others."},
-        {term: "Disciple", meaning: "A follower of a teacher."},
+        {term: "Ascetic", meaning: "A person who gives up worldly pleasures for spiritual life."},
+        {term: "Mantle", meaning: "A loose cloak worn over other clothes."},
+        {term: "Rampart", meaning: "The protective wall of a fort or town."},
+        {term: "Contagion", meaning: "The spreading of a disease by contact."},
         {term: "Balm", meaning: "A soothing ointment."}
       ],
       qa: [
-        {q: "Why did Upagupta refuse Vasavadatta's first invitation?", a: "He told her that the time to come to her had not yet arrived; he would visit when she truly needed him, not for pleasure."},
-        {q: "What does the poem teach?", a: "It teaches compassion and service. Upagupta comes to the abandoned, sick woman when everyone else turns away."}
+        {q: "Why did Upagupta refuse Vasavadatta's first invitation?", a: "He told her that the time was not ripe; he would come when she needed him. He was a monk and was not interested in pleasure."},
+        {q: "What does the poem teach?", a: "It teaches compassion and selfless service. Upagupta comes to the sick woman, abandoned by the town, and nurses her; physical beauty fades but love for humanity lasts."}
       ],
       quiz: [
-        {q: "Upagupta was written by:", options: ["Rabindranath Tagore", "Sarojini Naidu", "Wordsworth", "Premchand"], answer: 0, explain: "It is a Tagore poem."},
-        {q: "Upagupta was a:", options: ["Buddhist monk", "King", "Merchant", "Soldier"], answer: 0, explain: "He was a disciple of Buddha."},
-        {q: "The dancing girl's name was:", options: ["Vasavadatta", "Sita", "Radha", "Urmila"], answer: 0, explain: "She is the heroine."},
-        {q: "The city where the story is set is:", options: ["Mathura", "Delhi", "Amritsar", "Patna"], answer: 0, explain: "Upagupta sleeps by Mathura's wall."},
-        {q: "When Upagupta comes the second time he:", options: ["Nurses her", "Scolds her", "Ignores her", "Takes her away to a feast"], answer: 0, explain: "He lays her head on his lap and tends her."}
+        {q: "Upagupta was written by:", options: ["Rabindranath Tagore", "Sarojini Naidu", "William Wordsworth", "Premchand"], answer: 0, explain: "It is a Tagore poem."},
+        {q: "Upagupta was a:", options: ["Buddhist ascetic", "King", "Merchant", "Soldier"], answer: 0, explain: "He was a disciple of Buddha."},
+        {q: "The dancing girl's name was:", options: ["Sita", "Vasavadatta", "Radha", "Urmila"], answer: 1, explain: "Vasavadatta is the heroine."},
+        {q: "The disease from which the woman suffered was:", options: ["Smallpox", "Cholera", "Malaria", "Leprosy"], answer: 0, explain: "Her body was spotted with sores of smallpox."},
+        {q: "Where did Upagupta find the woman the second time?", options: ["At the foot of the town wall in a mango grove", "In her house", "In a temple", "On a river bank"], answer: 0, explain: "She was left outside the city gates under the rampart."}
       ]
     },
     {
       id: "confessions-of-a-born-spectator",
       title: "Confessions of a Born Spectator",
       section: "Poetry",
-      summary: "Ogden Nash's humorous poem in which the poet confesses that he is a watcher, not a doer, and playfully admires and teases sportsmen and sportswomen. The PSEB version may be abridged.",
+      summary: "Ogden Nash's humorous poem in which the poet confesses that he is a watcher, not a doer, and playfully admires and teases sportsmen and sportswomen.",
       notes: [
         {
           heading: "What the poem is about",
           points: [
-            "The speaker describes himself as a person who prefers to watch games and sports rather than to play them.",
-            "He treats sportspeople with comic admiration, praising their strength and skill while admitting that he cannot match them.",
+            "The speaker is glad that he is not one of the jockeys, boxers, footballers or riders; he admires athletes who sweat for fun or hire but is happy to watch their heroic deeds from the stands.",
+            "His ego might like to swap places with them, but athletes play so rough, injuring bones and giving no thought to each other's feelings, that prudence wins over ego. He pays dearly for tickets to watch them and reassures himself that he is not them.",
             "Nash uses exaggeration and light, witty rhyme to make fun of both himself and sporting heroes."
           ]
         },
         {
           heading: "Style and tone",
           points: [
-            "Ogden Nash (1902–1971), an American poet, is famous for comic verse, unusual rhymes and lines of uneven length.",
+            "Ogden Nash (1902–1971), an American poet born in Rye, New York, is famous for comic verse, unusual rhymes and lines of uneven length.",
             "The tone is light, self-mocking and good-humoured; the 'confession' in the title is a joke, not a real guilt.",
             "The poem shows how a spectator, too, has a role in sport."
           ]
@@ -1051,7 +1498,7 @@ StudyData.add(11, "englishpb", {
       id: "the-little-black-boy",
       title: "The Little Black Boy",
       section: "Poetry",
-      summary: "William Blake's poem, from Songs of Innocence, in which a black child tells how his mother taught him that God loves all and that colour is only a cloud that will fade in heaven. The PSEB version may be abridged.",
+      summary: "William Blake's poem, from Songs of Innocence, in which a black child tells how his mother taught him that God loves all and that colour is only a cloud that will fade in heaven.",
       notes: [
         {
           heading: "Argument",
@@ -1105,7 +1552,7 @@ StudyData.add(11, "englishpb", {
       id: "a-thing-of-beauty",
       title: "A Thing of Beauty",
       section: "Poetry",
-      summary: "The opening lines of John Keats's long poem Endymion, which declare that beauty brings lasting joy, drives away sorrow and links us with the world around us. The PSEB version may print only the opening passage.",
+      summary: "The opening lines of John Keats's long poem Endymion, which declare that beauty brings lasting joy, drives away sorrow and links us with the world around us.",
       notes: [
         {
           heading: "Main ideas",
@@ -1154,114 +1601,186 @@ StudyData.add(11, "englishpb", {
       id: "an-astrologers-day",
       title: "An Astrologer's Day",
       section: "Extensive Study",
-      summary: "R. K. Narayan's story of a street astrologer who guesses well without real knowledge and is surprised one evening by a client from the past, whom he had once tried to kill. The PSEB version may be abridged.",
+      summary: "R. K. Narayan's story of a roadside astrologer who earns by shrewd guessing rather than knowledge of the stars, and is startled one night when a client turns out to be the man he once stabbed and left for dead.",
       notes: [
         {
           heading: "Plot",
           points: [
-            "The astrologer sets up under a tamarind tree in a busy part of town in Malgudi each day; his charm is in his appearance, voice and manner, not in knowledge of the stars.",
-            "At dusk, as he is about to close, a stranger stops and asks for his fortune; the astrologer recognises him and in the dim light says things that startle the man.",
-            "He tells him that he was once stabbed and left for dead in a well, that his enemy is dead (crushed under a lorry) and that he should go home and never return to his village.",
-            "The relieved man leaves, and the astrologer goes home and tells his wife that the man he thought he had killed is alive and now he is free of guilt."
+            "Each day at midday the astrologer spreads out his cowrie shells, charts and notebook under a tamarind tree on a path through the Town Hall Park, wearing sacred ash, vermilion and a saffron turban. The look of his forehead and eyes impresses simple clients.",
+            "The park is crowded and lit by flares and lamps, which suits him, as he had never meant to become an astrologer and knows as little of the stars as his customers. He reads people through long practice, charging three pies a question.",
+            "At night, as the groundnut vendor blows out his flare, a stranger challenges him: if the astrologer's answers are wrong he must return the money with interest. The astrologer, shaking when he sees the man's face by matchlight, tries to escape but is held.",
+            "He tells the stranger that he was stabbed and thrown into a well and left for dead, that the man who did it is dead and he should go home and never travel south again. He even names him as Guru Nayak.",
+            "The stranger, delighted, pays him and leaves. At home the astrologer tells his wife that a great load is off his mind: he had run away from his village, believing he had killed a man in a quarrel when they were drunk and gambling young men. The man is alive."
           ]
         },
         {
           heading: "Themes",
           points: [
-            "Irony: the astrologer's real past is the source of his 'prophecy', and his own crime is closed by his skill.",
-            "Chance and appearances: he earns a living from clever reading of people.",
-            "Guilt and relief, and the idea that people who run away from a past still meet it."
+            "Irony and the surprise ending: the fortune-teller's real knowledge comes from his own past.",
+            "Guilt and relief; the past catches up with a person.",
+            "Appearance versus reality: showmanship and psychology, not the stars, make the astrologer successful."
           ]
         },
         {
           heading: "Author",
           points: [
-            "R. K. Narayan (1906–2001) created the imaginary town of Malgudi, and wrote with gentle humour.",
-            "Famous works include Swami and Friends, The Guide and Malgudi Days."
+            "R. K. Narayan (1906-2001) wrote about everyday Indian life in simple English; works include Swami and Friends (1935), The Guide (1958) and the collection An Astrologer's Day and Other Stories. He received the Padma Bhushan.",
+            "He is known for the imaginary town of Malgudi that appears in many of his stories."
           ]
         }
       ],
       formulas: [
-        "Author: R. K. Narayan; setting: Malgudi.",
-        "Key twist: the client is the man the astrologer once tried to kill."
+        "Author: R. K. Narayan; title story of his collection An Astrologer's Day and Other Stories.",
+        "The client: Guru Nayak, whom the astrologer had stabbed in his village.",
+        "Charge: three pies per question; the client pays him twelve and a half annas in all."
       ],
       terms: [
-        {term: "Astrologer", meaning: "A person who claims to foretell events by the stars."},
-        {term: "Irony", meaning: "A contrast between what is expected and what happens."},
-        {term: "Malgudi", meaning: "Narayan's imaginary South Indian town."},
-        {term: "Twist", meaning: "An unexpected turn at the end of a story."},
-        {term: "Guilt", meaning: "A feeling of having done wrong."}
+        {term: "Astrologer", meaning: "A person who claims to foretell events from the positions of stars and planets."},
+        {term: "Irony", meaning: "A contrast between what is expected and what actually happens."},
+        {term: "Sting in the tail", meaning: "A surprise at the very end of a story."},
+        {term: "Cowrie", meaning: "A small shell used as a tool by fortune-tellers."},
+        {term: "Shrewd", meaning: "Sharp in judging people and situations."}
       ],
       qa: [
-        {q: "How did the astrologer earn his living?", a: "By guessing well from long experience of people and by his impressive manner, not by knowledge of astrology."},
-        {q: "What is the twist in the story?", a: "His client is the man he had once stabbed and left for dead; he is alive, so the astrologer is relieved of his guilt."}
+        {q: "How did the astrologer earn his living?", a: "He had no real knowledge of astrology. Through long practice he judged people's worries about marriage, money and relationships, let them talk first, and gave general answers, helped by his striking dress and appearance."},
+        {q: "What is the twist in the story?", a: "The stranger he advises is the man he once stabbed and left in a well. He was alive, so the astrologer is freed of the guilt of murder, and the stranger believes in his powers."}
       ],
       quiz: [
-        {q: "An Astrologer's Day is by:", options: ["R. K. Narayan", "Mulk Raj Anand", "Premchand", "Ruskin Bond"], answer: 0, explain: "It is a Malgudi story."},
-        {q: "The astrologer sat:", options: ["Under a tree", "In a palace", "On a train", "In a school"], answer: 0, explain: "He worked in a public place under a tree."},
-        {q: "His clients were convinced by his:", options: ["Manner and guesses", "Large books", "Exams", "Machines"], answer: 0, explain: "He had no real stellar knowledge."},
-        {q: "The final twist reveals that the client:", options: ["Was the man he thought he had killed", "Was a policeman", "Was his brother", "Was a king"], answer: 0, explain: "The astrologer is relieved to find him alive."},
-        {q: "The story is set in the town of:", options: ["Malgudi", "Mathura", "Ludhiana", "Mumbai"], answer: 0, explain: "Narayan's fictional setting."}
+        {q: "An Astrologer's Day is by:", options: ["R. K. Narayan", "Mulk Raj Anand", "Premchand", "Ruskin Bond"], answer: 0, explain: "It is Narayan's story."},
+        {q: "The astrologer sat under a:", options: ["Tamarind tree", "Banyan tree", "Neem tree", "Mango tree"], answer: 0, explain: "He sat under a spreading tamarind tree."},
+        {q: "He charged his clients:", options: ["Three pies per question", "A rupee for each visit", "Eight annas", "Nothing"], answer: 0, explain: "His charge was three pies per question."},
+        {q: "The stranger's name, as told by the astrologer, was:", options: ["Guru Nayak", "Ramu", "Jumman", "Baldeo"], answer: 0, explain: "The astrologer named him Guru Nayak."},
+        {q: "The astrologer felt relieved at the end because:", options: ["The man he thought he had killed was alive", "He earned a lot of money", "He found his village", "He was made head of the market"], answer: 0, explain: "His guilt of murder was lifted."}
       ]
     },
     {
       id: "the-tiger-in-the-tunnel",
       title: "The Tiger in the Tunnel",
       section: "Extensive Study",
-      summary: "Ruskin Bond's story of a railway lineman in a forest who has to face a tiger in a tunnel to protect an approaching train. The PSEB version may be abridged; the outline below follows the usual text.",
+      summary: "Ruskin Bond's story of Baldeo, a tribal watchman at a lonely jungle signal post, who fights a tiger with his axe to protect his sleeping son and the line, and dies; the tiger is killed by the mail train, and his twelve-year-old son Tembu takes over his duty.",
       notes: [
         {
           heading: "Outline",
           points: [
-            "**Baldeo** is the watchman (chowkidar) at a lonely railway tunnel in the jungle; his job is to signal that the line is clear for the night mail train.",
-            "One night a tiger, wounded and angry, enters the tunnel just as the train is due. Baldeo faces it with only his axe and strikes it, but is mauled and killed.",
-            "The train rushes through the tunnel and the tiger, still in the cutting, is killed by the engine.",
-            "His young son **Tembu** takes over his father's job, showing that duty goes on; life in the jungle continues as before."]
+            "On a moonless night, **Baldeo**, a tribal watchman (khalasi), wakes near midnight to light the signal lamp at the tunnel cutting for the overland mail. His twelve-year-old son **Tembu** sleeps in their hut by the line; the family lives three miles away in a village.",
+            "Baldeo carries his small axe, which was made by his father and which he is skilled in using; he walks to the cutting, relights the lamp and checks the tunnel.",
+            "While he waits for the late train he hears a tiger's grunt from above the cutting. The tiger, used to men, comes down towards him; fearing for Tembu in the hut, Baldeo stands with his back to the signal post.",
+            "He dodges the first blow and wounds the tiger's shoulder with the axe, but the axe sticks in the bone. Unarmed, he is killed.",
+            "The wounded tiger, trapped by the cutting, runs into the tunnel just as the train enters and is cut in two by the engine; the driver finds its body at the next station.",
+            "Tembu sits beside his father's body all night, guarding it from jackals. After two days of mourning, he takes over his father's job, lighting the lamp three nights later with his father's axe."
+          ]
         },
         {
           heading: "Themes",
           points: [
-            "Duty and responsibility in a dangerous situation.",
-            "Courage mixed with fear: bravery is acting despite fear.",
-            "Man and wild animals sharing the forest, a theme common in Ruskin Bond's writing."
+            "Duty and courage: Baldeo faces the tiger instead of fleeing, protecting the line and his son.",
+            "Resilience: Tembu does not let grief stop him; life and work must go on.",
+            "Man and nature: the jungle, its sounds and its dangers form the setting."
           ]
         },
         {
           heading: "Author",
           points: [
-            "Ruskin Bond (born 1934) is an Indian writer in English who lives in Landour, Mussoorie.",
-            "He writes simply and with a deep love of the hills and nature."
+            "Ruskin Bond (born 1934) is an Indian writer in English. His first novel, The Room on the Roof, written at nineteen, won the John Llewellyn Rhys Prize. He lives in Landour, Mussoorie.",
+            "His writing is simple and shows a deep love of nature and the hills."
           ]
         }
       ],
       formulas: [
-        "Author: Ruskin Bond; setting: forest railway line and tunnel.",
-        "Themes: duty, courage, man and wildlife."
+        "Author: Ruskin Bond; characters: Baldeo (watchman), Tembu (son, aged 12), the tiger.",
+        "Setting: a jungle signal post and tunnel on the railway.",
+        "Outcome: Baldeo and the tiger both die; Tembu takes up the duty."
       ],
       terms: [
-        {term: "Lineman", meaning: "A railway worker who watches over a stretch of track."},
-        {term: "Tunnel", meaning: "An underground passage cut through a hill."},
-        {term: "Presence of mind", meaning: "Ability to act sensibly in an emergency."},
-        {term: "Wildlife", meaning: "Animals living in their natural habitat."},
-        {term: "Duty", meaning: "A task one is bound to do."}
+        {term: "Khalasi", meaning: "A railway worker who does signalling and similar jobs."},
+        {term: "Cutting", meaning: "A passage dug through a hill for a railway line."},
+        {term: "Ballast", meaning: "Broken stones laid under railway tracks."},
+        {term: "Cow-catcher", meaning: "The metal frame in front of an engine that clears the track."},
+        {term: "Premonition", meaning: "A feeling that something is going to happen."}
       ],
       qa: [
-        {q: "What qualities does the story praise?", a: "Courage, a sense of duty and presence of mind in a dangerous situation."},
-        {q: "What theme links this story to Ruskin Bond's other work?", a: "A love of nature and respect for wild animals, along with the closeness of humans and wildlife."}
+        {q: "Why did Baldeo not run away from the tiger?", a: "In the dark the tiger would have been more sure-footed and would have attacked from behind, and he feared the tiger might reach his sleeping son Tembu, so he stood his ground with his axe."},
+        {q: "How did the tiger die and what did Tembu do afterwards?", a: "The wounded tiger ran into the tunnel and was cut in half by the oncoming train. Tembu, after mourning his father, took up his duty of lighting the signal lamp."}
       ],
       quiz: [
         {q: "The Tiger in the Tunnel is by:", options: ["Ruskin Bond", "K. A. Abbas", "Oscar Wilde", "Premchand"], answer: 0, explain: "A Ruskin Bond story."},
-        {q: "The animal in the story is a:", options: ["Tiger", "Lion", "Bear", "Wolf"], answer: 0, explain: "The title says so."},
-        {q: "The setting involves a:", options: ["Railway and tunnel", "Ship", "Desert palace", "Mountain monastery"], answer: 0, explain: "The tunnel is on the railway line."},
-        {q: "The central quality shown is:", options: ["Courage", "Greed", "Laziness", "Cruelty"], answer: 0, explain: "The lineman acts bravely."},
-        {q: "Ruskin Bond lives in:", options: ["Landour, Mussoorie", "Chennai", "Amritsar", "Kolkata"], answer: 0, explain: "He is closely linked to the hills of Mussoorie."}
+        {q: "Baldeo's job was that of a:", options: ["Signal watchman (khalasi)", "Train driver", "Forest officer", "Hunter"], answer: 0, explain: "He signalled whether the tunnel was clear."},
+        {q: "Baldeo's weapon was a:", options: ["Small axe", "Spear", "Gun", "Knife"], answer: 0, explain: "He carried his father's axe."},
+        {q: "The tiger was finally killed by:", options: ["The train", "Tembu", "Villagers", "A forest guard"], answer: 0, explain: "The engine cut it in two in the tunnel."},
+        {q: "Tembu's age was:", options: ["Twelve", "Five", "Twenty", "Thirty"], answer: 0, explain: "He was twelve."}
+      ]
+    },
+    {
+      id: "sparrows",
+      title: "Sparrows",
+      section: "Extensive Study",
+      summary: "K. A. Abbas's story of Rahim Khan, a hard-hearted peasant hated by his village, who was embittered when his youthful dreams were crushed by tradition. A pair of sparrows nesting in his hut bring out his hidden kindness, but too late.",
+      notes: [
+        {
+          heading: "Plot",
+          points: [
+            "Rahim Khan, a strong man of about fifty, walks home from the fields with a proud, unfriendly air; the villagers whisper that he is a cruel man who beats children, bullocks and his wife. His sons Bundu and Nuru ran away long ago.",
+            "That evening he is told that his wife has gone to her brother's house, and he is angry and uncomfortable; she had been the target of all his anger for thirty years.",
+            "Looking back, we learn that as a young man he was the village's best wrestler. He loved Radha, a shopkeeper's daughter, and wanted to join a travelling circus, but his parents forbade both: circus work was low, and she was Hindu. Radha was married elsewhere and he was married by his parents' arrangement to a girl he never chose.",
+            "On his wedding night he vowed to take revenge on his family and society, and took it out on his wife and everyone around him for thirty years. The villagers never understood why the cheerful youth had turned into a brute.",
+            "The next morning, cleaning his hut, he finds a nest of two baby sparrows in the thatch. The mother attacks him, and he is amused and spares the nest.",
+            "He grows fond of the family of sparrows, names the young ones Nuru and Bundu after his lost sons, and stops beating his bullocks Nathoo and Chhiddoo; the villagers are astonished but suspicious.",
+            "On a stormy evening he mends the leaking roof over the nest in the rain, catches a fever and lies delirious calling the sparrows. His wife comes with her sons and neighbours, and they break in to find him lying still and silent, with four sparrows fluttering around."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Rahim Khan**: cruel on the surface, yet a man wounded by frustrated love and ambition; he shows tenderness to the birds.",
+            "**The villagers**: quick to label him 'bad' and never ask why.",
+            "**The sparrows**: symbols of innocence and love that touch his heart."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "Society divides people into 'good' and 'bad' and punishes without asking what made someone a criminal; social conditions, tradition and religion can crush a young person's dreams.",
+            "Even a hardened person can be changed by love and kindness.",
+            "Criticism of forced marriage and the lack of freedom for the young."
+          ]
+        },
+        {
+          heading: "Author",
+          points: [
+            "Khwaja Ahmad Abbas (1914-1987) was a journalist, film-maker and writer in English and Urdu.",
+            "He is also known for his films and for a long-running newspaper column."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: K. A. Abbas; protagonist: Rahim Khan; setting: a village.",
+        "Cause of his bitterness: his dreams of the circus and of marrying Radha were denied.",
+        "Change: the sparrows, named Nuru and Bundu, soften him."
+      ],
+      terms: [
+        {term: "Ostracism", meaning: "Exclusion from a society or group."},
+        {term: "Embittered", meaning: "Made angry and resentful by bad experiences."},
+        {term: "Chaupal", meaning: "A village platform where people sit and talk."},
+        {term: "Zaildar", meaning: "A village revenue official."},
+        {term: "Delirium", meaning: "A confused state caused by high fever."}
+      ],
+      qa: [
+        {q: "Why did Rahim Khan become cruel?", a: "His parents crushed his youthful ambitions: they stopped him from joining the circus and from marrying the girl he loved, and forced him into a marriage. He took revenge on his wife, sons and everyone else, and no one tried to understand him."},
+        {q: "How did the sparrows change Rahim Khan?", a: "The mother sparrow's brave defence of her nest amused him and awakened his tenderness. He fed the birds, named them after his sons, stopped beating his bullocks and even mended their roof in a storm."}
+      ],
+      quiz: [
+        {q: "Sparrows is written by:", options: ["K. A. Abbas", "Premchand", "Mulk Raj Anand", "R. K. Narayan"], answer: 0, explain: "It is a story by K. A. Abbas."},
+        {q: "Rahim Khan named the baby sparrows:", options: ["Radha and Nuru", "Nuru and Bundu", "Nathoo and Chhiddoo", "Kallu and Nanha"], answer: 1, explain: "He named them after his runaway sons."},
+        {q: "As a young man Rahim Khan wished to join a:", options: ["Circus", "Army", "Theatre company", "Wrestling club"], answer: 0, explain: "He wanted to join a travelling circus."},
+        {q: "Where had Rahim Khan's wife gone?", options: ["To her brother at Nurpur", "To the city", "To a temple", "To her sons"], answer: 0, explain: "A neighbour said she had gone to her brother."},
+        {q: "How does the story end?", options: ["Rahim Khan is found lying still among the sparrows", "He leaves the village", "He marries Radha", "He kills the sparrows"], answer: 0, explain: "He falls ill after repairing the roof and the neighbours find him silent, with the four sparrows nearby."}
       ]
     },
     {
       id: "the-model-millionaire",
       title: "The Model Millionaire",
       section: "Extensive Study",
-      summary: "Oscar Wilde's short story in which a kind-hearted, poor young man, Hughie Erskine, gives a coin to a shabby beggar who turns out to be a very rich baron, and is rewarded with a wedding gift. The PSEB version may be abridged.",
+      summary: "Oscar Wilde's short story in which a kind-hearted, poor young man, Hughie Erskine, gives a coin to a shabby beggar who turns out to be a very rich baron, and is rewarded with a wedding gift.",
       notes: [
         {
           heading: "Plot",
@@ -1315,55 +1834,117 @@ StudyData.add(11, "englishpb", {
       id: "panch-parmeshwar",
       title: "Panch Parmeshwar",
       section: "Extensive Study",
-      summary: "Premchand's story of two friends, Jumman Sheikh and Algu Chaudhary, who each give a fair judgement as panch against the other, showing that the seat of judge brings out honesty. The PSEB translation may be abridged.",
+      summary: "Premchand's story of two close friends, Jumman Sheikh and Algu Chowdhari. Each, when made sarpanch in a dispute involving the other, puts justice before friendship, showing that a seat of judgement makes a person speak like God.",
       notes: [
         {
           heading: "Plot",
           points: [
-            "Jumman Sheikh's old aunt (khala) gives her property to him on his promise of care, but after the deed is done he and his wife neglect and insult her.",
-            "She asks Algu Chaudhary, Jumman's close friend, to hold a panchayat and be the sarpanch; he is torn between friendship and justice, but decides according to the right and rules that Jumman must pay the aunt a fixed monthly maintenance or give back the property.",
-            "Jumman feels angry and plans revenge; Algu has sold a bullock to a trader, Samajh Sahu, which dies after hard work, and the trader demands the money back.",
-            "A panchayat is called with Jumman as sarpanch; he remembers the dignity of the post and gives a just verdict that Algu must pay a fair price.",
-            "The two men are reconciled, understanding that when one sits as a judge, God speaks through him."
+            "Jumman Sheikh and Algu Chowdhari are close friends of different religions who trust each other so much that each leaves his house in the other's care when away.",
+            "Jumman's old aunt gives him her land on the promise of care, but after the transfer deed is registered, he and his wife Kariman treat her badly. When she asks for a small allowance, he scoffs at her.",
+            "She goes from village to village for support and asks Algu to attend the panchayat. Algu hesitates because of his friendship, but she asks whether he will turn his back on justice. At the meeting she names Algu as head panch, and Jumman agrees, sure that his friend will favour him.",
+            "Algu, however, questions Jumman closely and rules that the aunt must be paid a monthly allowance from the income of her land or the transfer deed be cancelled. Jumman is shocked and the friendship ends in cold greetings.",
+            "Jumman wants revenge. A month later one of Algu's two prized oxen dies, and Algu suspects Jumman. Algu sells the other ox to the trader Samjhu Sahu on credit.",
+            "Samjhu overworks it and it collapses and dies. His cash and goods are stolen during the night, and when Algu asks for the price, Samjhu refuses to pay, accusing him of selling a sick animal.",
+            "A panchayat is called and Samjhu names Jumman as sarpanch. Algu is alarmed but agrees. Remembering the dignity of the seat, Jumman gives a just verdict that Samjhu must pay the full price because the ox was healthy when sold and died from overwork and neglect.",
+            "Algu is delighted, and Jumman embraces him, admitting that as a panch he is neither friend nor foe, only a seeker of justice. Their tears wash away the bitterness."
           ]
         },
         {
           heading: "Themes",
           points: [
-            "Justice must be above friendship and enmity: the panch is like God (Parmeshwar).",
-            "Responsibility changes people: a seat of judgement makes them honest.",
-            "Friendship restored through fairness; criticism of ingratitude to the old."
+            "Justice is above friendship and enmity: God speaks through the lips of a panch.",
+            "Responsibility changes people and brings out their conscience.",
+            "True friendship survives fairness; the story praises village self-government (the panchayat) as a source of justice, and criticises ingratitude toward the old."
           ]
         },
         {
           heading: "Author",
           points: [
-            "Premchand (1880–1936) is the great Hindi and Urdu writer who depicted village life and social justice.",
-            "Other works include Godan, Gaban and Idgah."
+            "Munshi Premchand (1880-1936), the great Hindi-Urdu storyteller, wrote of village life and social issues. He resigned a government job in 1920 under Gandhi's influence. The story first appeared in 1916.",
+            "His other works include Godan, Gaban and Idgah."
           ]
         }
       ],
       formulas: [
-        "Author: Premchand; characters: Jumman Sheikh, Algu Chaudhary, the khala.",
-        "Moral: a judge must be just, whoever is the party."
+        "Author: Munshi Premchand; characters: Jumman Sheikh, Algu Chowdhari, the aunt, Samjhu Sahu.",
+        "Theme: justice above personal feelings; 'Panch Parmeshwar' means the panch is like God.",
+        "Two verdicts: Algu against Jumman (aunt's allowance); Jumman against Samjhu (price of the ox)."
       ],
       terms: [
-        {term: "Panchayat", meaning: "A village council of five persons that settles disputes."},
-        {term: "Sarpanch", meaning: "The head of the panchayat."},
-        {term: "Parmeshwar", meaning: "God; the panch is considered to speak with divine authority."},
-        {term: "Verdict", meaning: "The decision of a judge or jury."},
-        {term: "Maintenance", meaning: "Money paid for someone's support."}
+        {term: "Panchayat", meaning: "A village council that settles disputes."},
+        {term: "Sarpanch", meaning: "The head of a panchayat."},
+        {term: "Parmeshwar", meaning: "God; the panch is believed to speak with God's voice."},
+        {term: "Verdict", meaning: "The decision of a judge or council."},
+        {term: "Allowance", meaning: "A fixed amount of money paid regularly for support."}
       ],
       qa: [
-        {q: "Why did Algu decide against his friend Jumman?", a: "He knew that Jumman had ill-treated the old aunt, and as sarpanch he put justice before friendship."},
-        {q: "What changed Jumman's behaviour when he became a sarpanch?", a: "The responsibility of the post made him remember his duty to be fair, so he gave a just verdict, even though he was still angry with Algu."}
+        {q: "Why did Algu decide against his friend Jumman?", a: "Jumman had ill-treated his old aunt after taking her property. Algu, as sarpanch, remembered that a panch must be just and not favour a friend, so he ordered Jumman to pay her an allowance or return the property."},
+        {q: "What made Jumman give a fair verdict in Algu's case?", a: "When Samjhu chose him as sarpanch, Jumman felt the responsibility of his seat and believed God speaks through a panch. He therefore judged fairly, though Algu was the man he held a grudge against."}
       ],
       quiz: [
-        {q: "Panch Parmeshwar is by:", options: ["Premchand", "R. K. Narayan", "Wilde", "Ruskin Bond"], answer: 0, explain: "Premchand wrote the original Hindi story."},
-        {q: "Algu Chaudhary and Jumman Sheikh were initially:", options: ["Close friends", "Enemies", "Brothers", "Strangers"], answer: 0, explain: "Their friendship is tested."},
-        {q: "The story shows that a sarpanch should be:", options: ["Impartial", "Partial to friends", "Rich", "Silent"], answer: 0, explain: "A panch speaks as the voice of justice."},
-        {q: "Who was cheated and wronged by Jumman at the start?", options: ["His aunt (khala)", "His father", "His wife", "A trader"], answer: 0, explain: "He neglected her after taking her property."},
-        {q: "The story's main theme is:", options: ["Justice above friendship and enmity", "Travel", "Wealth", "Magic"], answer: 0, explain: "The panch must be impartial."}
+        {q: "Panch Parmeshwar is by:", options: ["Premchand", "R. K. Narayan", "Oscar Wilde", "Ruskin Bond"], answer: 0, explain: "Premchand wrote the original Hindi story."},
+        {q: "Who named Algu Chowdhari as the head panch in the first dispute?", options: ["Jumman's aunt", "Jumman", "Ramdhan Misra", "Samjhu Sahu"], answer: 0, explain: "The aunt proposed Algu's name."},
+        {q: "Whom did Samjhu Sahu propose as sarpanch?", options: ["Jumman Sheikh", "Ramdhan Misra", "Jhagru Sahu", "Algu Chowdhari"], answer: 0, explain: "He nominated Jumman, to Algu's alarm."},
+        {q: "The dispute between Algu and Samjhu was about:", options: ["The price of an ox", "A field", "A house", "A debt of grain"], answer: 0, explain: "Samjhu had not paid for the ox that died."},
+        {q: "The story's main message is that:", options: ["Justice must be above friendship and enmity", "Friends should always help each other", "Traders are dishonest", "Old people are a burden"], answer: 0, explain: "The panch speaks as God does, without favour."}
+      ]
+    },
+    {
+      id: "the-peasants-bread",
+      title: "The Peasant's Bread",
+      section: "Extensive Study",
+      summary: "Leo Tolstoy's moral tale in which an imp fails to make a poor peasant swear when his only bread is stolen, then succeeds by giving him surplus grain, which the peasant turns into vodka, showing how excess brings out the animal in man.",
+      notes: [
+        {
+          heading: "Plot",
+          points: [
+            "A poor peasant goes to plough, leaving his bread wrapped in his coat under a bush. An imp steals it, hoping the peasant will curse. Instead he says it cannot be helped and hopes it does the taker good.",
+            "The imp reports to the devil, who angrily threatens him with a dunking in holy water if he does not conquer the peasant within three years.",
+            "Disguised as a labourer, the imp advises the peasant to sow in a damp low place in a dry year, and the next year on the hill in a wet year; both seasons give him fine crops, far more than he needs.",
+            "The imp then teaches him to make vodka. At a party the peasant scolds his wife for spilling a drop and refuses a drink to a poor passer-by.",
+            "The guests turn first like foxes (flattering and lying), then like wolves (shouting and fighting), and finally like pigs. The devil is delighted.",
+            "The imp explains that he only gave the peasant more corn than he needed: with just enough, the wild animal in a man stays under control, but surplus makes him seek pleasure. The devil rewards him."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "Contentment and moderation: need keeps people decent, excess leads to vice.",
+            "Drink degrades a person; selfishness and greed grow with wealth.",
+            "Wealth is not bad in itself, but how we use it decides whether it destroys or helps us.",
+            "Forgiving and accepting loss gracefully shows a good heart."
+          ]
+        },
+        {
+          heading: "Author",
+          points: [
+            "Leo Tolstoy (1828-1910), Russian novelist and moral thinker, wrote War and Peace and Anna Karenina and influenced Mahatma Gandhi.",
+            "The tale is a short parable in simple language with a clear moral."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Leo Tolstoy; characters: the poor peasant, an imp, the devil.",
+        "Three beasts in drink: fox (cunning), wolf (fierceness), pig (stupidity).",
+        "Moral: surplus without self-control corrupts."
+      ],
+      terms: [
+        {term: "Imp", meaning: "A small mischievous devil."},
+        {term: "Vodka", meaning: "A strong Russian alcoholic drink."},
+        {term: "Surplus", meaning: "An amount more than is needed."},
+        {term: "Parable", meaning: "A simple story that teaches a moral lesson."},
+        {term: "Vice", meaning: "A bad habit or immoral conduct."}
+      ],
+      qa: [
+        {q: "Why was the imp upset after stealing the bread?", a: "He expected the peasant to swear and curse the thief, but the peasant calmly said he hoped the taker would benefit, so the imp failed in his mission and had to face the devil's anger."},
+        {q: "What does the story teach about wealth?", a: "When the peasant had only what he needed he stayed good, but when he had grain to spare he made vodka and turned selfish and cruel. It shows that excess without self-control brings out the worst in a person."}
+      ],
+      quiz: [
+        {q: "The Peasant's Bread is written by:", options: ["Leo Tolstoy", "Anton Chekhov", "Oscar Wilde", "Maxim Gorky"], answer: 0, explain: "It is a tale by Tolstoy."},
+        {q: "What did the peasant say when his bread was stolen?", options: ["He cursed the thief", "May it do him good", "He called the police", "He wept"], answer: 1, explain: "He said whoever took it needed it."},
+        {q: "The imp advised the peasant in the first year to sow:", options: ["On the hill", "In a damp low place", "Near the road", "In his garden"], answer: 1, explain: "The year was dry, so the low damp land gave a fine crop."},
+        {q: "What did the imp teach the peasant to make with the extra grain?", options: ["Bread", "Vodka", "Oil", "Flour"], answer: 1, explain: "He taught him to crush the grain and make vodka."},
+        {q: "The guests became like foxes, then wolves, and finally like:", options: ["Pigs", "Sheep", "Crows", "Tigers"], answer: 0, explain: "The third glass made them behave like pigs."}
       ]
     }
   ]

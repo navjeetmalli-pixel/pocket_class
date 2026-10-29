@@ -83,18 +83,19 @@ globalThis.StudyData = (function () {
     4: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
     5: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
     6: { maths: 2, science: 2, sst: 2, english: 2, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 3 },
-    7: { maths: 2, science: 2, sst: 3, english: 2, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 3 },
-    8: { maths: 2, science: 2, sst: 2, english: 2, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 3 },
-    9: { science: 2, maths: 2, sst: 3, english: 3, hindi: 2, punjabi: 2, sstpb: 3, englishpb: 4 },
+    7: { maths: 2, science: 2, sst: 3, english: 2, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4 },
+    8: { maths: 2, science: 2, sst: 2, english: 2, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 4 },
+    9: { science: 2, maths: 2, sst: 3, english: 3, hindi: 2, punjabi: 2, sstpb: 3, englishpb: 5 },
     10: { maths: 2, science: 2, sst: 2, english: 1, hindi: 1, punjabi: 1, sstpb: 4, phc: 2, englishpb: 3, hindipb: 2 },
-    11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 3, hindi: 2, punjabi: 1, historypb: 4, polscipb: 3, englishpb: 4, hindipb: 2 },
-    12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 3, hindi: 2, punjabi: 1, historypb: 4, polscipb: 4, englishpb: 4, hindipb: 3 },
+    11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 3, hindi: 2, punjabi: 1, historypb: 4, polscipb: 3, englishpb: 5, hindipb: 2 },
+    12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 3, hindi: 2, punjabi: 1, historypb: 4, polscipb: 4, englishpb: 5, hindipb: 3 },
   };
 
   // Labelled diagrams live in data/class{N}/diagrams/{subject}.js, one file per subject, and load with the
   // practice files. This lists the subjects that have one.
   const diagramCatalog = {
-    10: ["science"],
+    9: ["science", "maths"],
+    10: ["science", "maths"],
   };
 
   const classes = Object.keys(catalog).map(Number);

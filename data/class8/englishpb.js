@@ -1,9 +1,8 @@
-// Class 8 English (PSEB): Grammar, Vocabulary, Writing and well-known literature lessons.
-// Written from the PSEB syllabus, not from the book's own text. All examples are original.
-// Lessons not included (not confidently known): Value of Money; The Old Sage and the Brothers;
-// Smashing the Glass Ceiling; poems The Earth Needs You, We Who Love Books, My Dear Soldiers.
+// Class 8 English (PSEB): Grammar, Vocabulary, Writing and all 13 lessons of My English Companion 8.
+// Grammar and writing written from the PSEB syllabus; lessons summarised in our own words from the PSEB textbook (2023-24 edition).
+// All 13 lessons of the book are covered (Value of Money to Smashing the Glass Ceiling). Nothing from the syllabus is left out.
 StudyData.add(8, "englishpb", {
-  syllabus: {board: "PSEB", match: "textbook", books: ["English (PSEB, Class 8)"], note: "Grammar, vocabulary and writing from the PSEB 2026–27 syllabus, plus the lessons whose stories are well known. Written from the syllabus, not the PSEB book's own text.", reviewed: false},
+  syllabus: {board: "PSEB", match: "textbook", books: ["My English Companion 8"], note: "Follows the PSEB 2026–27 syllabus; lessons summarised in our own words from the PSEB textbook (2023–24 edition).", reviewed: false},
   chapters: [
     {
       id: "pb-sentence-kinds",
@@ -697,346 +696,716 @@ StudyData.add(8, "englishpb", {
       ]
     },
     {
-      id: "pb-aged-mother",
-      title: "The Aged Mother",
+      id: "pb-value-of-money",
+      title: "Value of Money",
       section: "Lessons",
-      summary: "A Japanese folk tale about a son ordered to abandon his old mother on a mountain, who cannot bring himself to do it, and how her wisdom later saves the people. Versions of the tale differ, and the PSEB version may differ in detail.",
+      summary: "A first-person story in which a fourteen-year-old works hard through the summer holidays to afford the newest computer, and learns from a shop assistant how quickly technology gets replaced. She decides to save the money instead.",
       notes: [
         {
-          heading: "The tale",
+          heading: "The story",
           points: [
-            "In a village of old Japan, a ruler issues a harsh order that people who have grown too old must be taken to a mountain and left there.",
-            "A son carries his aged mother on his back up the mountain, as the order requires.",
-            "On the way she quietly breaks off twigs and drops them along the path, so that her son will be able to find his way back down."
+            "The narrator, aged 14, already owns a working computer but keeps seeing adverts for a new Bell Computer with a very fast processor and huge storage, and starts to long for it.",
+            "Her parents refuse to buy it, but offer a deal: she may earn the money by doing house chores and save up.",
+            "She does the dishes, takes out the garbage, mows the lawn, cleans the house and washes the car. She grows so keen that she begs her father for more chores.",
+            "After a few months she has enough money and goes to the Bell Center a week before her birthday to order the computer."
           ]
         },
         {
           heading: "The turning point",
           points: [
-            "Moved by her thought for him even at that moment, the son cannot leave her. He carries her home and hides her.",
-            "Later a problem faces the ruler or the village, and the old mother's experience and wisdom supply the solution.",
-            "The ruler realises the worth of the old, and the cruel order is withdrawn."
+            "The shop employee tells her not to buy that model, because a faster one with double the storage is about to be released.",
+            "The new model would cost so much that she would need two more months of chores.",
+            "She realises that technology changes fast and a better machine always follows, so she decides not to spend her hard-earned money on something that will soon lose value.",
+            "She puts all of it into a savings account."
           ]
         },
         {
-          heading: "Theme",
+          heading: "Theme and lesson",
           points: [
-            "Respect and care for elders; the worth of age and experience.",
-            "A mother's selfless love, shown even when she is being abandoned.",
-            "Wisdom is not a matter of youth or strength."
+            "Earning money through effort teaches its true worth.",
+            "Do not chase every new gadget; think about needs, not wants (the narrator calls herself a consumerist).",
+            "Saving and investing is wiser than spending on things that quickly become outdated.",
+            "The story also hints that overworking oneself at fourteen is unwise."
+          ]
+        },
+        {
+          heading: "About the lesson",
+          points: [
+            "The author given in the book is Vandana Lunyal.",
+            "It is told in the first person, looking back on an event from the narrator's teenage years."
+          ]
+        }
+      ],
+      formulas: [
+        "Age of narrator: 14. Item wanted: the Bell Computer. How she earned: house chores for a few months.",
+        "Decision: she saved the money in a bank savings account instead of buying the computer."
+      ],
+      terms: [
+        {term: "Consumerist", meaning: "Someone who strongly wants to keep buying new things."},
+        {term: "Obsessed", meaning: "Unable to stop thinking about one thing."},
+        {term: "Chores", meaning: "Small regular jobs done around the house."},
+        {term: "Efficient", meaning: "Doing something quickly without wasting effort."},
+        {term: "Savings account", meaning: "A bank account in which money is kept safe and earns interest."}
+      ],
+      qa: [
+        {q: "Why did the narrator finally decide not to buy the computer?", a: "The shop employee told her a faster model with double the storage was coming soon. She saw that technology keeps changing and a costly machine soon loses value, so she saved the money."},
+        {q: "How did the narrator earn the money?", a: "Her parents let her earn it through house chores such as washing dishes, taking out the garbage, mowing the lawn, cleaning the house and washing the car."}
+      ],
+      quiz: [
+        {q: "How old was the narrator when she learned the value of money?", options: ["10", "12", "14", "18"], answer: 2, explain: "She says she was 14."},
+        {q: "How did the narrator earn the money for the computer?", options: ["By selling old books", "By doing house chores", "By winning a prize", "By working at a shop"], answer: 1, explain: "Her parents offered to pay her for chores."},
+        {q: "Why did the shop employee advise her against buying that computer?", options: ["It was out of order", "A faster model with double storage was coming soon", "It was too heavy", "The shop was closing"], answer: 1, explain: "A newer, better model was about to be released."},
+        {q: "What did she do with the money in the end?", options: ["Bought the newer model", "Gave it to her father", "Put it in a savings account", "Bought a phone"], answer: 2, explain: "She invested it in a savings account."},
+        {q: "The lesson of the story is mainly that:", options: ["Gadgets never lose value", "Money should be spent at once", "Hard-earned money should be used wisely, not on passing wants", "Parents should buy everything"], answer: 2, explain: "She learned to value money and think before spending."}
+      ]
+    },
+    {
+      id: "pb-earth-needs-you",
+      title: "The Earth Needs You",
+      section: "Lessons",
+      summary: "A short anonymous poem that urges every reader to cut down on single-use plastic, which lasts almost for ever and ends up polluting oceans, rivers and trees.",
+      notes: [
+        {
+          heading: "What the poem says",
+          points: [
+            "The Earth appeals to \"you\", meaning every reader, to change daily habits month by month and day by day.",
+            "The poet says the changes are easy and that each person can make a difference.",
+            "Single-use plastic is cheap but not clever, because it lasts almost for ever."
+          ]
+        },
+        {
+          heading: "The harm done",
+          points: [
+            "Plastic that is dropped does not stay where it falls; it travels on.",
+            "It ends up in oceans, rivers and seas, and the wind carries it so that it gets tangled in trees.",
+            "If people used less plastic, the world would be a better place."
+          ]
+        },
+        {
+          heading: "Message and form",
+          points: [
+            "The future is in our hands, so we should cut down on plastic use.",
+            "Small steps taken by many people can protect the environment.",
+            "The poem is short, in simple rhyming language, and the book lists the poet as anonymous."
           ]
         }
       ],
       terms: [
-        {term: "Folk tale", meaning: "A traditional story passed on by word of mouth."},
-        {term: "Aged", meaning: "Very old."},
-        {term: "Selfless", meaning: "Caring more about others than oneself."},
-        {term: "Decree", meaning: "An official order given by a ruler."}
+        {term: "Single-use plastic", meaning: "Plastic items such as bags, straws and cups that are used once and thrown away."},
+        {term: "Anonymous", meaning: "Written by an unknown author."},
+        {term: "Tangle", meaning: "To twist together so that it is hard to separate."},
+        {term: "Pollution", meaning: "Harmful waste that spoils air, water or land."}
       ],
       qa: [
-        {q: "Why did the mother drop twigs on the way up the mountain?", a: "So that her son could find his way back home safely."},
-        {q: "What does the story teach about old people?", a: "That they deserve love and respect, and that their experience and wisdom can help everyone."}
+        {q: "Why does the poet call single-use plastic \"not very clever\"?", a: "Although it is cheap, it lasts almost for ever and ends up harming oceans, rivers and trees."},
+        {q: "What does the poet want readers to do?", a: "To change their habits and cut down on single-use plastic, because each person can make a difference."}
       ],
       quiz: [
-        {q: "The Aged Mother is a folk tale from:", options: ["Japan", "Brazil", "Egypt", "Norway"], answer: 0, explain: "It is a Japanese folk tale."},
-        {q: "The son carried his mother to the:", options: ["sea", "mountain", "market", "palace"], answer: 1, explain: "The ruler's order was to leave the old on a mountain."},
-        {q: "The mother's dropping of twigs showed her:", options: ["anger", "fear", "love and concern for her son", "wish to escape"], answer: 2, explain: "She wanted him to return safely."},
-        {q: "The son finally:", options: ["left her", "took her back home", "sold her", "sent her away by boat"], answer: 1, explain: "He could not abandon her."},
-        {q: "The main theme of the story is:", options: ["respect for elders", "greed", "hunting", "travel"], answer: 0, explain: "It values age, experience and a mother's love."}
+        {q: "Who does the word \"you\" in the poem refer to?", options: ["Only the poet", "Every reader", "Only scientists", "Only the government"], answer: 1, explain: "The Earth speaks to every reader."},
+        {q: "According to the poem, single-use plastic:", options: ["decays quickly", "lasts almost for ever", "is very costly", "is made from paper"], answer: 1, explain: "The poem says it lasts almost for ever."},
+        {q: "Where does the dropped plastic end up?", options: ["Only in dustbins", "In oceans, rivers, seas and trees", "Only in factories", "Underground only"], answer: 1, explain: "It reaches water bodies and gets tangled in trees."},
+        {q: "What does the poet want us to do?", options: ["Use more plastic", "Cut down on plastic", "Burn plastic", "Sell plastic"], answer: 1, explain: "The poem ends by asking us to cut down."},
+        {q: "The main message of the poem is:", options: ["Plastic is cheap, so use it", "Small changes by each person can protect the Earth", "Only governments can help", "Oceans do not matter"], answer: 1, explain: "It stresses that each person's choices count."}
+      ]
+    },
+    {
+      id: "pb-aged-mother",
+      title: "The Aged Mother",
+      section: "Lessons",
+      summary: "A Japanese folk tale about a cruel governor who ordered old people to be put to death. A farmer takes his mother up the mountain, but her loving care for him makes him bring her home, and her wisdom later saves the province and ends the law.",
+      notes: [
+        {
+          heading: "The cruel law",
+          points: [
+            "Long ago a province in Japan called Shining was ruled by a despotic governor, a good warrior who disliked anything that suggested weakness or failing health.",
+            "He ordered that all aged people in the province be put to death, and in those harsh times abandoning the old was not unusual.",
+            "A poor farmer who lived with his widowed mother at the foot of a mountain was filled with sorrow, but felt he had to obey."
+          ]
+        },
+        {
+          heading: "On the mountain",
+          points: [
+            "At sunset the farmer cooked unwhitened rice, tied it in a cloth, carried a pot of water, and lifted his mother onto his back to climb the mountain called Obatsuyama.",
+            "The mother noticed that her son kept changing paths and might lose his way home. She quietly snapped twigs and dropped them along the route.",
+            "At the top he made her a soft seat of pine needles and bade farewell in tears. She told him to follow the twigs to get back safely.",
+            "Her selfless thought for him broke his heart; he refused to leave her and carried her home."
+          ]
+        },
+        {
+          heading: "The rope of ash",
+          points: [
+            "The farmer hid his mother in a walled closet beneath the kitchen floor.",
+            "Later the governor demanded that his subjects bring him a rope of ash, and the whole province trembled.",
+            "The old mother advised twisting a rope of straw, stretching it over flat stones and burning it on a windless night, so that the ash kept the rope's shape.",
+            "The governor praised the clever farmer, learned the truth, and realised that old age brings wisdom. He then abolished the cruel law."
+          ]
+        },
+        {
+          heading: "Theme and source",
+          points: [
+            "Respect and care for the old; experience matters as much as youthful strength.",
+            "A mother's selfless love, shown even when she is being abandoned.",
+            "The book credits the adaptation to Matsuo Basho, the Japanese haiku poet of the seventeenth century, but the tale itself is a traditional Japanese folk tale."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Despotic", meaning: "Ruling with total power and without kindness."},
+        {term: "Abandon", meaning: "To leave someone behind for good."},
+        {term: "Barbarous", meaning: "Cruel and uncivilised."},
+        {term: "Frailty", meaning: "Physical weakness."},
+        {term: "Abolish", meaning: "To put an end to a law or custom."}
+      ],
+      qa: [
+        {q: "Why did the mother drop twigs on the way up the mountain?", a: "She saw that her son was taking many different paths, so she dropped twigs to mark the way and let him find his way back safely."},
+        {q: "How did the mother save the people of Shining?", a: "When the governor demanded a rope of ash, she told her son to burn a twisted straw rope on flat stones on a windless night. The ash kept the rope's shape, and the governor repealed the law."}
+      ],
+      quiz: [
+        {q: "What was the name of the province in the story?", options: ["Shining", "Obatsu", "Kyoto", "Sunrise"], answer: 0, explain: "The province is called Shining."},
+        {q: "Where did the farmer hide his mother?", options: ["In the forest", "In a closet beneath the kitchen floor", "In the governor's palace", "In a cave on the mountain"], answer: 1, explain: "He hid her in a walled closet under the kitchen floor."},
+        {q: "What did the governor demand that nobody could easily make?", options: ["A rope of ash", "A golden cup", "A silk robe", "A bridge of twigs"], answer: 0, explain: "He asked for a rope of ash."},
+        {q: "How was the rope of ash made?", options: ["By grinding ash into paste", "By burning a twisted straw rope on flat stones", "By melting metal", "By weaving wet cloth"], answer: 1, explain: "A straw rope burned on stones keeps its shape as ash."},
+        {q: "What did the governor realise at the end?", options: ["Youth is stronger than age", "Old age means experience, not weakness", "Farmers are clever", "Mountains are dangerous"], answer: 1, explain: "He cancelled the law because age brings wisdom."}
       ]
     },
     {
       id: "pb-saint-ravidas",
       title: "Saint Ravidas",
       section: "Lessons",
-      summary: "A short life of Saint Ravidas, the Bhakti saint of the fifteenth to sixteenth century whose hymns are included in the Guru Granth Sahib. The PSEB version may differ in detail.",
+      summary: "A short life of Saint Ravidas, the Bhakti saint of Banaras, who left school unhappy at caste bias, became a disciple of Swami Ramanand, saved a deer from a hunter, and taught that all humans are equal.",
       notes: [
         {
-          heading: "Life",
+          heading: "Early life",
           points: [
-            "Ravidas (also called Raidas) was born in Varanasi (Kashi) and, as tradition says, belonged to a family of leather workers (cobblers).",
-            "He earned his living by his craft and lived a simple life of devotion and honest work.",
-            "He lived in the Bhakti movement period, around the fifteenth to sixteenth century; exact dates are debated."
+            "The book says Ravidas was born in 1377 in Banaras, the son of a cobbler. Some traditions give a later date, so his exact dates are debated.",
+            "His parents sent him to school, but he saw how a child of low caste was treated badly, and he left school unhappy.",
+            "He often sat alone in deep thought, as if in meditation, and cared more for spiritual matters than for material things."
           ]
         },
         {
-          heading: "Teachings",
+          heading: "Guru and mission",
           points: [
-            "He taught devotion to one God and the equality of all human beings, and spoke against caste distinctions.",
-            "Worship through honest work, humility and love, rather than empty rituals.",
-            "He imagined a city without sorrow and inequality, which he called Begumpura."
+            "He sought a spiritual teacher and became a disciple of Swami Ramanand, whose sermons changed his life.",
+            "When the guru felt the spiritual flame was lit for good, he sent Ravidas home to live as he wished.",
+            "Ravidas chose Banaras for his work and prepared a quiet spot in a forest for meditation."
           ]
         },
         {
-          heading: "Legacy",
+          heading: "The deer and the hunter",
           points: [
-            "About forty of his hymns are included in the **Guru Granth Sahib**.",
-            "His followers are called Ravidassias, and he is honoured especially in Punjab and across north India.",
-            "Tradition links him with other Bhakti voices such as Kabir; stories also link Mirabai with him, though historians differ on details."
+            "One day he saw a she-deer caught in a hunter's net while her three fawns watched helplessly.",
+            "He told the hunter that all living beings are children of the same God, so every creature should be loved.",
+            "The hunter was moved, changed his heart, and promised never to harm anyone."
+          ]
+        },
+        {
+          heading: "Teachings and legacy",
+          points: [
+            "He was humble and spoke simply; he said that caste, colour and creed are man-made, and called untouchability a sin against humanity.",
+            "He gave hope and courage to the poor and weak.",
+            "About forty of his hymns are included in the **Guru Granth Sahib**, and his followers are called Ravidassias.",
+            "He imagined an ideal city without sorrow, Begumpura."
           ]
         }
       ],
       terms: [
         {term: "Bhakti movement", meaning: "A medieval devotional movement stressing love of God above ritual and caste."},
-        {term: "Hymn", meaning: "A religious song or poem of praise."},
-        {term: "Caste", meaning: "A social division based on birth, which Ravidas opposed."},
+        {term: "Disciple", meaning: "A follower and student of a teacher."},
+        {term: "Samadhi", meaning: "A state of deep meditation."},
+        {term: "Compassionate", meaning: "Showing pity and care for those who suffer."},
         {term: "Begumpura", meaning: "Ravidas's vision of an ideal, sorrowless city."}
       ],
       qa: [
-        {q: "What was Saint Ravidas's message about people?", a: "That all human beings are equal, and that devotion and honest work matter more than birth or ritual."},
-        {q: "Why is Ravidas important to Sikhs?", a: "A number of his hymns (about forty) are included in the Guru Granth Sahib."}
+        {q: "Why could Ravidas not continue with his studies?", a: "At school he saw that children of low caste were treated badly, and in that unfriendly atmosphere he could not put his heart into studies."},
+        {q: "How did Ravidas save the deer family?", a: "He spoke kindly to the hunter, saying that all creatures are children of the same God and must be loved. The hunter was moved and gave up harming them."}
       ],
       quiz: [
-        {q: "Saint Ravidas belonged to the:", options: ["Bhakti movement", "Quit India Movement", "Green Revolution", "Swadeshi Movement"], answer: 0, explain: "He was a Bhakti saint."},
-        {q: "He was born in:", options: ["Varanasi", "Amritsar", "Lahore", "Mumbai"], answer: 0, explain: "Varanasi (Kashi)."},
-        {q: "His hymns appear in the:", options: ["Rigveda", "Guru Granth Sahib", "Quran only", "Panchatantra"], answer: 1, explain: "About forty are included."},
-        {q: "Ravidas spoke against:", options: ["honest work", "caste distinctions", "devotion", "kindness"], answer: 1, explain: "He taught equality."},
-        {q: "His imagined ideal city was called:", options: ["Anandpur", "Begumpura", "Kashipur", "Lahore"], answer: 1, explain: "Begumpura, a city without sorrow."}
-      ]
-    },
-    {
-      id: "pb-punjab-glimpse",
-      title: "The Punjab: A Glimpse",
-      section: "Lessons",
-      summary: "A factual overview of Punjab: its name, rivers, farming, culture, festivals and food. The PSEB lesson may stress different details.",
-      notes: [
-        {
-          heading: "Land and rivers",
-          points: [
-            "“Punjab” means the land of five rivers (panj = five, ab = water): the Jhelum, Chenab, Ravi, Beas and Sutlej.",
-            "Indian Punjab lies in the north-west of India; Chandigarh is its capital (shared with Haryana). The present state took shape on 1 November 1966.",
-            "Its fertile plains are watered by rivers and canals, and it has long been called the granary of India for wheat and rice."
-          ]
-        },
-        {
-          heading: "People and culture",
-          points: [
-            "The language is Punjabi, written in the Gurmukhi script in India.",
-            "Folk dances: bhangra for men and giddha for women. Music, folk songs and the dhol are part of every celebration.",
-            "Famous places: the Golden Temple (Harmandir Sahib) in Amritsar, Anandpur Sahib and Jallianwala Bagh."
-          ]
-        },
-        {
-          heading: "Festivals and food",
-          points: [
-            "Festivals: Baisakhi, Lohri, Teeyan, Diwali and the Gurpurabs.",
-            "Food: makki di roti with sarson da saag, parathas, lassi, dal and kheer.",
-            "Punjabis are known for hard work, hospitality and the tradition of langar, the free community meal."
-          ]
-        }
-      ],
-      terms: [
-        {term: "Punjab", meaning: "“Land of five rivers”."},
-        {term: "Gurmukhi", meaning: "The script in which Punjabi is written in India."},
-        {term: "Bhangra", meaning: "A lively folk dance of Punjab."},
-        {term: "Langar", meaning: "The free community kitchen in a gurdwara."}
-      ],
-      qa: [
-        {q: "What does the word Punjab mean?", a: "Land of five rivers — from panj (five) and ab (water)."},
-        {q: "Why is Punjab called the granary of India?", a: "Because its fertile plains produce large amounts of wheat and rice for the country."}
-      ],
-      quiz: [
-        {q: "Punjab means:", options: ["land of five rivers", "land of seven hills", "land of lakes", "land of deserts"], answer: 0, explain: "Panj = five, ab = water."},
-        {q: "The capital of Punjab (India) is:", options: ["Ludhiana", "Chandigarh", "Jalandhar", "Patiala"], answer: 1, explain: "Chandigarh serves Punjab and Haryana."},
-        {q: "Giddha is performed by:", options: ["men", "women", "only soldiers", "only children"], answer: 1, explain: "Giddha is the women's folk dance."},
-        {q: "A festival of Punjab is:", options: ["Baisakhi", "Pongal", "Onam", "Bihu"], answer: 0, explain: "Baisakhi is a harvest festival."},
-        {q: "A typical Punjabi dish is:", options: ["sarson da saag", "sushi", "pizza", "pasta"], answer: 0, explain: "It is usually eaten with makki di roti."}
-      ]
-    },
-    {
-      id: "pb-charge-for-love",
-      title: "Charge for Love",
-      section: "Lessons",
-      summary: "A well-known short story in which a boy presents his mother with a bill for the little jobs he has done, and her reply shows that a mother's love can never be paid for. The PSEB version may differ in detail.",
-      notes: [
-        {
-          heading: "The story",
-          points: [
-            "A young boy writes out a list of the small tasks he has done at home and sets a price for each one, then leaves the bill by his mother's plate.",
-            "His mother says nothing at first. Later he finds a bill from her beside his own.",
-            "Her bill lists the things she has done for him over the years, and beside each one she has written that there is no charge."
-          ]
-        },
-        {
-          heading: "The outcome",
-          points: [
-            "The boy reads her list and understands how much she does for him, freely and with love.",
-            "He is ashamed of his bill and, in the usual ending, tears it up or says sorry and offers to help without payment.",
-            "The tale is often told with a gentle, emotional ending."
-          ]
-        },
-        {
-          heading: "Theme",
-          points: [
-            "A parent's love is selfless and cannot be measured in money.",
-            "Family duties are shared out of love, not for reward.",
-            "Gratitude towards parents."
-          ]
-        }
-      ],
-      terms: [
-        {term: "Bill", meaning: "A written list of charges to be paid."},
-        {term: "Selfless", meaning: "Not thinking of oneself or of reward."},
-        {term: "Gratitude", meaning: "A feeling of thankfulness."},
-        {term: "Priceless", meaning: "Too valuable to be measured by money."}
-      ],
-      qa: [
-        {q: "What did the boy do to hurt his mother?", a: "He asked to be paid for the small jobs he did at home, treating family duty as a business."},
-        {q: "What does the mother's reply teach us?", a: "That her love and care are given freely and cannot be bought or repaid with money."}
-      ],
-      quiz: [
-        {q: "The boy gave his mother a:", options: ["gift", "bill for his chores", "letter of thanks", "ticket"], answer: 1, explain: "He charged for his small tasks."},
-        {q: "Her reply beside each item was:", options: ["pay now", "no charge", "double", "later"], answer: 1, explain: "Her love was free."},
-        {q: "The boy felt:", options: ["proud and angry", "ashamed", "bored", "hungry"], answer: 1, explain: "He understood her love."},
-        {q: "The story shows that parents' love is:", options: ["costly", "selfless", "limited", "temporary"], answer: 1, explain: "Love given without a price."},
-        {q: "The story is mainly about:", options: ["a sports match", "a mother's love", "a journey", "a festival"], answer: 1, explain: "Its theme is a mother's selfless love."}
-      ]
-    },
-    {
-      id: "pb-safety-driving",
-      title: "Safety while Driving",
-      section: "Lessons",
-      summary: "Basic road-safety rules for drivers and riders, and why following them saves lives. The PSEB lesson may contain different specific points.",
-      notes: [
-        {
-          heading: "Personal safety",
-          points: [
-            "Wear a seat belt in a car and a helmet on a two-wheeler; helmets are required by law in India.",
-            "Never drive after drinking alcohol or while very tired.",
-            "Do not use a mobile phone while driving; it takes your attention from the road."
-          ]
-        },
-        {
-          heading: "Rules of the road",
-          points: [
-            "Drive on the left in India, obey speed limits, and keep a safe distance from the vehicle ahead.",
-            "Obey traffic signals: red means stop, amber means get ready, green means go.",
-            "Use indicators before turning, give way to pedestrians at crossings, and do not overtake on bends."
-          ]
-        },
-        {
-          heading: "Being responsible",
-          points: [
-            "Drive only with a valid licence, and keep your vehicle in good condition (brakes, tyres and lights).",
-            "Avoid overloading, especially on two-wheelers; children should travel safely seated.",
-            "Pedestrians, too, should use footpaths and zebra crossings."
-          ]
-        }
-      ],
-      terms: [
-        {term: "Seat belt", meaning: "A strap that holds a passenger firmly in the seat during a crash."},
-        {term: "Zebra crossing", meaning: "Black-and-white stripes on a road where pedestrians cross."},
-        {term: "Overtake", meaning: "To pass a vehicle moving in the same direction."},
-        {term: "Licence", meaning: "Official permission to drive."}
-      ],
-      qa: [
-        {q: "Give three safe-driving rules.", a: "Wear a seat belt or helmet, obey speed limits and signals, and never use a phone or drive after drinking."},
-        {q: "Why should one not use a mobile phone while driving?", a: "It distracts the driver and increases the chance of an accident."}
-      ],
-      quiz: [
-        {q: "A two-wheeler rider should wear a:", options: ["cap", "helmet", "scarf only", "crown"], answer: 1, explain: "A helmet protects the head."},
-        {q: "A red traffic light means:", options: ["go", "stop", "speed up", "turn only"], answer: 1, explain: "Red is for stop."},
-        {q: "Vehicles in India drive on the:", options: ["left", "right", "both sides", "centre"], answer: 0, explain: "India drives on the left side."},
-        {q: "Which habit is unsafe?", options: ["Using indicators", "Keeping a safe distance", "Talking on a phone while driving", "Wearing a seat belt"], answer: 2, explain: "It distracts the driver."},
-        {q: "Zebra crossings are meant for:", options: ["parking", "pedestrians", "racing", "buses only"], answer: 1, explain: "They are for people on foot."}
-      ]
-    },
-    {
-      id: "pb-marco-polo",
-      title: "Marco Polo",
-      section: "Lessons",
-      summary: "The life of Marco Polo, the Venetian merchant-traveller who journeyed along the Silk Road to the court of Kublai Khan in China and wrote about his experiences. The PSEB version may differ in detail.",
-      notes: [
-        {
-          heading: "The journey",
-          points: [
-            "Marco Polo was born in Venice, Italy, around 1254. His father Niccolò and uncle Maffeo were merchants who had already travelled to the east.",
-            "In 1271, as a teenager, he set out with them, travelling overland through Asia on the Silk Road trade routes.",
-            "They reached the court of Kublai Khan, the Mongol emperor who ruled China, after a journey of several years."
-          ]
-        },
-        {
-          heading: "In China and the return",
-          points: [
-            "Marco stayed for many years in the service of Kublai Khan and travelled widely on his behalf.",
-            "The Polos returned to Venice around 1295, mostly by sea.",
-            "While in prison after a war between Venice and Genoa, Marco told his stories to a writer, Rustichello of Pisa, who wrote them down; the book is known as the Travels of Marco Polo."
-          ]
-        },
-        {
-          heading: "Importance",
-          points: [
-            "His book introduced many Europeans to the wealth and customs of Asia.",
-            "It inspired later explorers and mapmakers.",
-            "Some details are debated by historians, but his book remains a famous travel account."
-          ]
-        }
-      ],
-      terms: [
-        {term: "Silk Road", meaning: "The ancient trade routes linking Asia and Europe."},
-        {term: "Merchant", meaning: "A person who buys and sells goods."},
-        {term: "Kublai Khan", meaning: "The Mongol ruler of China in the thirteenth century."},
-        {term: "Travelogue", meaning: "A written account of a journey."}
-      ],
-      qa: [
-        {q: "Who was Marco Polo and where did he travel?", a: "He was a merchant-traveller from Venice who travelled along the Silk Road to China and served at Kublai Khan's court."},
-        {q: "How do we know about his travels?", a: "He told his stories to Rustichello of Pisa, who wrote them down in the book called the Travels of Marco Polo."}
-      ],
-      quiz: [
-        {q: "Marco Polo came from:", options: ["Venice", "Beijing", "Cairo", "Madrid"], answer: 0, explain: "He was a Venetian."},
-        {q: "He served at the court of:", options: ["Akbar", "Kublai Khan", "Napoleon", "Alexander"], answer: 1, explain: "Kublai Khan was ruler of China."},
-        {q: "The route he travelled is known as the:", options: ["Grand Trunk Road", "Silk Road", "Spice Road", "Panama Canal"], answer: 1, explain: "The Silk Road linked Asia and Europe."},
-        {q: "His stories were written down by:", options: ["Rustichello", "Columbus", "Dante", "Marco himself in China"], answer: 0, explain: "Rustichello of Pisa wrote them while they were in prison."},
-        {q: "He began his journey in:", options: ["1271", "1971", "1171", "1871"], answer: 0, explain: "He left Venice in 1271."}
+        {q: "In which city was Ravidas born, according to the lesson?", options: ["Banaras", "Amritsar", "Lahore", "Delhi"], answer: 0, explain: "He was born in Banaras."},
+        {q: "Who was Ravidas's spiritual guru?", options: ["Swami Ramanand", "Guru Nanak", "Kabir", "Tulsidas"], answer: 0, explain: "He became a disciple of Swami Ramanand."},
+        {q: "Whom did Ravidas save from a hunter?", options: ["A she-deer and her fawns", "A tiger", "A child", "A bird"], answer: 0, explain: "A she-deer was caught in a net."},
+        {q: "What did Ravidas call untouchability?", options: ["A custom", "A sin against humanity", "A law", "A duty"], answer: 1, explain: "He opposed it strongly."},
+        {q: "His hymns are included in the:", options: ["Rigveda", "Guru Granth Sahib", "Panchatantra", "Ramayana"], answer: 1, explain: "About forty of his hymns appear there."}
       ]
     },
     {
       id: "pb-dont-quit",
       title: "Don't Quit",
       section: "Lessons",
-      summary: "A popular motivational poem, often printed anonymously, that urges readers to keep going when things are hard because success may be near. The PSEB text may differ.",
+      summary: "A motivational poem by Edgar A. Guest that urges readers to keep trying when life is hard, because success may be much closer than it seems.",
       notes: [
         {
           heading: "What the poem says",
           points: [
-            "Life is full of ups and downs, and sometimes everything seems to go wrong.",
-            "When you are tired or discouraged you may be tempted to give up, but you should rest rather than quit.",
-            "Many people have given up when success was only a little way ahead."
+            "When things go wrong, money is short and worries press down, you may feel like giving up. The poet says to rest if you must, but never to quit.",
+            "Life has odd twists and turns, and many people fail only because they stopped just before winning.",
+            "Even if progress is slow, you may succeed with one more effort."
           ]
         },
         {
-          heading: "Message",
+          heading: "Images and ideas",
           points: [
-            "**Perseverance**: keep trying despite setbacks.",
-            "Failure is part of the road to success, not the end of it.",
-            "Patience, courage and hope help us in difficult times."
+            "The goal is often nearer than a tired, wavering person thinks.",
+            "Many strugglers gave up when the prize was almost in reach and realised it too late.",
+            "Success is described as failure turned inside out, a silver lining in the clouds of doubt.",
+            "You can never tell how close you are, so keep fighting when things are worst."
           ]
         },
         {
-          heading: "About the poem",
+          heading: "Message and poet",
           points: [
-            "It is a short poem in simple language with regular rhyme.",
-            "Authorship is uncertain: it is often printed as anonymous, though several poets have been credited.",
-            "It is widely used in schools and speeches for motivation."
+            "**Perseverance**: continue despite setbacks.",
+            "Hard times test courage and patience.",
+            "The poem is credited in the book to Edgar A. Guest, an American poet of the early twentieth century. It uses simple language and regular rhyme."
           ]
         }
       ],
       terms: [
         {term: "Perseverance", meaning: "Continuing to try in spite of difficulty."},
+        {term: "Trudge", meaning: "To walk slowly with heavy steps."},
         {term: "Setback", meaning: "A problem that delays progress."},
-        {term: "Discouraged", meaning: "Having lost confidence or hope."},
-        {term: "Anonymous", meaning: "Written by an unknown author."}
+        {term: "Faltering", meaning: "Losing strength or confidence."}
       ],
       qa: [
-        {q: "What advice does the poem give when things go wrong?", a: "To rest if necessary, but not to quit, because success may be close."},
-        {q: "Why is the poem said to be anonymous?", a: "Because its author is not certainly known; different poets have been named."}
+        {q: "What advice does the poet give when things go wrong?", a: "The poet says one may rest if necessary but must not quit, because success may be near."},
+        {q: "What does the poet mean by saying that success is failure turned inside out?", a: "Failure and success are close; if one keeps trying after a failure, it can turn into success."}
       ],
       quiz: [
-        {q: "The central message of “Don't Quit” is:", options: ["give up quickly", "keep trying", "avoid work", "wait for luck"], answer: 1, explain: "It encourages perseverance."},
-        {q: "The poem is best described as:", options: ["motivational", "humorous", "a war song", "a riddle"], answer: 0, explain: "It inspires people to go on."},
-        {q: "According to the poem, failure is:", options: ["the end", "a part of the road to success", "a shame", "a prize"], answer: 1, explain: "Setbacks come on the way."},
-        {q: "A synonym of “quit” is:", options: ["continue", "give up", "begin", "win"], answer: 1, explain: "Quit = stop or give up."},
-        {q: "The word “perseverance” means:", options: ["laziness", "steady effort", "anger", "silence"], answer: 1, explain: "It is persistence."}
+        {q: "The poem was written by:", options: ["Edgar A. Guest", "Ruskin Bond", "A P J Abdul Kalam", "Rabindranath Tagore"], answer: 0, explain: "The book credits Edgar A. Guest."},
+        {q: "The central message of the poem is:", options: ["Give up early", "Keep trying", "Avoid hard work", "Wait for luck"], answer: 1, explain: "It encourages perseverance."},
+        {q: "What may you do if you are tired, according to the poet?", options: ["Quit", "Rest", "Blame others", "Sleep forever"], answer: 1, explain: "Rest if you must, but do not quit."},
+        {q: "According to the poet, the goal is often:", options: ["Far away", "Nearer than it seems", "Impossible", "Already won"], answer: 1, explain: "A tired person may not see how close the goal is."},
+        {q: "The word \"trudging\" suggests walking:", options: ["quickly", "slowly and with effort", "happily", "in a race"], answer: 1, explain: "To trudge is to walk heavily and wearily."}
+      ]
+    },
+    {
+      id: "pb-old-sage-brothers",
+      title: "The Old Sage and the Brothers",
+      section: "Lessons",
+      summary: "A rich farmer sends his three lazy sons to find work. On the road a sage tests them, rewards each with a magic gift and makes them promise to help the poor. Only the youngest keeps his word and keeps his good fortune.",
+      notes: [
+        {
+          heading: "The setting out",
+          points: [
+            "An old rich farmer calls his three lazy sons, Harry, Raman and Sandeep, and says he will divide his three fields and three houses only among those who prove worthy.",
+            "He tells them to find work and return after six months with their earnings.",
+            "On the road they rest under a banyan tree, where a hungry old sage asks for food."
+          ]
+        },
+        {
+          heading: "The three gifts",
+          points: [
+            "Harry gives the sage a chapatti and receives a magic cloth; he wishes for a big house and ten cows.",
+            "Raman carries the sage across a stream on his back and receives a magic stick; he wishes for a big house and a poultry farm.",
+            "Sandeep fetches water for the thirsty sage in a desert and receives a magic rope; he wishes for a big house and a field.",
+            "Each brother promises never to refuse a poor person who asks for milk, eggs or food respectively."
+          ]
+        },
+        {
+          heading: "The ending",
+          points: [
+            "Later Sandeep visits his brothers and finds their houses, cows and poultry farm gone.",
+            "The sage tells him that they broke their promise and did not help the poor, so what they got was taken away.",
+            "Sandeep kept his word, so he may enjoy his fortune as long as he remembers his promise."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "Kindness to strangers and helping the needy are rewarded.",
+            "Keeping a promise matters more than wealth.",
+            "Good fortune can be lost through selfishness."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Sage", meaning: "A wise old holy man."},
+        {term: "Summon", meaning: "To call someone to come."},
+        {term: "Promise", meaning: "A solemn word to do or not do something."},
+        {term: "Needy", meaning: "Poor and in want of help."}
+      ],
+      qa: [
+        {q: "What did each brother promise the sage?", a: "Each promised never to refuse a poor man: Harry for milk and its products, Raman for eggs, and Sandeep for food such as rice, wheat and fruit."},
+        {q: "Why did only Sandeep keep his good fortune?", a: "His brothers broke their promise and did not help the poor, so their gifts were taken back. Sandeep kept his word."}
+      ],
+      quiz: [
+        {q: "What did the farmer want his sons to do?", options: ["Study law", "Find work and earn", "Go on a pilgrimage", "Join the army"], answer: 1, explain: "They had to return with earnings after six months."},
+        {q: "What gift did Raman receive from the sage?", options: ["A cloth", "A stick", "A rope", "A bowl"], answer: 1, explain: "Raman got a magic stick."},
+        {q: "What did Sandeep do for the sage in the desert?", options: ["Carried him", "Fetched water", "Gave him a chapatti", "Gave him a blanket"], answer: 1, explain: "He brought water for the thirsty sage."},
+        {q: "Why did Harry and Raman lose their wealth?", options: ["They were robbed", "They broke their promise to help the poor", "The sage cursed the village", "A flood came"], answer: 1, explain: "They did not help the needy as promised."},
+        {q: "The story teaches that:", options: ["Luck is everything", "Keeping promises and helping the needy is rewarded", "Magic solves every problem", "Laziness is good"], answer: 1, explain: "Sandeep was rewarded for keeping his word."}
+      ]
+    },
+    {
+      id: "pb-punjab-glimpse",
+      title: "The Punjab: A Glimpse",
+      section: "Lessons",
+      summary: "A teacher, Mr Mathew, takes his students round a Punjab pavilion at Amritsar and tells them about the state's brave people, freedom fighters, history, the Bhakra Dam, Golden Temple, Chandigarh and its industries.",
+      notes: [
+        {
+          heading: "People and freedom fighters",
+          points: [
+            "The Bhangra dance shows the energy and zest for life of the Punjabis, who are hard-working, self-respecting and brave.",
+            "Punjab gave the country freedom fighters such as Lala Lajpat Rai (Sher-e-Punjab), Bhagat Singh (Shaheed-e-Azam), Sukhdev, Udham Singh and Kartar Singh Sarabha.",
+            "Lala Lajpat Rai died after a lathi charge on a procession in 1928; Bhagat Singh, Sukhdev and Rajguru were hanged, Bhagat Singh at the age of 23."
+          ]
+        },
+        {
+          heading: "History",
+          points: [
+            "On 13 April 1919, a crowd of about 20,000 people gathered at Jallianwala Bagh, Amritsar. The British troops blocked the exits and fired without warning; about 1000 were killed. The firing was ordered by General Dyer, though the lesson names O'Dwyer.",
+            "Partition in 1947 brought bloodshed, and thousands lived in refugee camps. Punjabis rebuilt their state through hard work, and the Green Revolution made Punjab the granary of India.",
+            "In 1966 Punjab was reorganised on the basis of language: Haryana was formed and some hill areas went to Himachal Pradesh. Chandigarh became the joint capital and a Union Territory. The new Punjab came into being on 1 November 1966."
+          ]
+        },
+        {
+          heading: "Places",
+          points: [
+            "The Bhakra Dam is about 740 feet high; its reservoir is Govind Sagar, and the dam gives irrigation and electricity to several states. Nehru called it the temple of modern India.",
+            "The Golden Temple (Harmandir Sahib) in Amritsar stands in a square tank, with a marble path leading to it. It holds the Guru Granth Sahib, compiled by Guru Arjun Dev, the fifth Guru.",
+            "Anandpur Sahib on the Sutlej was founded by Guru Teg Bahadur; Khalsa was founded here by Guru Gobind Singh in 1699.",
+            "Chandigarh, designed by the French architect Le Corbusier, lies at the foot of the Shivalik hills and is famous for its Rose Garden."
+          ]
+        },
+        {
+          heading: "Industries and food",
+          points: [
+            "Jalandhar is a major centre for sports goods.",
+            "Ludhiana produces most of the country's woollen hosiery.",
+            "Amritsari jalebis end the trip."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Punjab", meaning: "\"Land of five rivers\"."},
+        {term: "Green Revolution", meaning: "The big rise in farm output from new seeds and methods in the 1960s."},
+        {term: "Reservoir", meaning: "A large lake that stores water, often behind a dam."},
+        {term: "Union Territory", meaning: "An area ruled directly by the central government."},
+        {term: "Zest", meaning: "Great enthusiasm and energy."}
+      ],
+      qa: [
+        {q: "What happened at Jallianwala Bagh on 13 April 1919?", a: "British troops blocked the exits of the Bagh and fired on a peaceful crowd without warning, killing about 1000 people."},
+        {q: "What changes took place in Punjab in 1966?", a: "Punjab was reorganised on the basis of language, Haryana was formed, some hill areas joined Himachal Pradesh, and Chandigarh became the joint capital and a Union Territory."}
+      ],
+      quiz: [
+        {q: "Who is called Sher-e-Punjab?", options: ["Bhagat Singh", "Lala Lajpat Rai", "Udham Singh", "Sukhdev"], answer: 1, explain: "Lala Lajpat Rai bears the title."},
+        {q: "Who designed Chandigarh?", options: ["Le Corbusier", "Lutyens", "Nehru", "Akbar"], answer: 0, explain: "The French architect Le Corbusier designed it."},
+        {q: "What is the reservoir of the Bhakra Dam called?", options: ["Dal Lake", "Govind Sagar", "Harike", "Wular"], answer: 1, explain: "It is Govind Sagar."},
+        {q: "Which city of Punjab is known for sports goods?", options: ["Ludhiana", "Patiala", "Jalandhar", "Bathinda"], answer: 2, explain: "Jalandhar is a sports-goods centre."},
+        {q: "The reorganised Punjab came into being on:", options: ["15 August 1947", "1 November 1966", "26 January 1950", "13 April 1919"], answer: 1, explain: "1 November 1966."}
+      ]
+    },
+    {
+      id: "pb-we-who-love-books",
+      title: "We who Love Books",
+      section: "Lessons",
+      summary: "A short poem by Ruskin Bond in which the speaker says some old, worn books will always stay on his shelves as lasting friends that give joy and free the mind.",
+      notes: [
+        {
+          heading: "What the poem says",
+          points: [
+            "The speaker will never give away certain books, even though they are old and the binding is torn.",
+            "They stay on his shelves, still read and still fresh each dawn, and their magic moments never fade.",
+            "They are familiar friends, timeless tales he has known since he was ten, and turning their pages he feels the old refrain again."
+          ]
+        },
+        {
+          heading: "The ending",
+          points: [
+            "Great verse and great thoughts stand the test of time, even as time passes quickly.",
+            "These good companions never fail to give joy and to nourish the mind.",
+            "Those who love books are lucky because their minds are set free."
+          ]
+        },
+        {
+          heading: "Message and poet",
+          points: [
+            "Books are lifelong friends and sources of joy and knowledge.",
+            "Good literature does not grow old.",
+            "The poem is by Ruskin Bond, the Indian author of English stories and poems, who lives in Mussoorie."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Binding", meaning: "The cover that holds a book's pages together."},
+        {term: "Timeless", meaning: "Not losing value or charm with time."},
+        {term: "Refrain", meaning: "A line or phrase repeated in a poem or song."},
+        {term: "Nourish", meaning: "To feed and help to grow."}
+      ],
+      qa: [
+        {q: "Why will the speaker never give away some books?", a: "He treats them as old friends. They give him joy, stay fresh each time he reads them, and hold magic moments he never wants to lose."},
+        {q: "Why does the poet call book lovers lucky?", a: "Books give joy and nourish the mind, so those who love them have minds that are free."}
+      ],
+      quiz: [
+        {q: "Who wrote \"We who Love Books\"?", options: ["Ruskin Bond", "Edgar A. Guest", "A P J Abdul Kalam", "Vandana Lunyal"], answer: 0, explain: "The poem is by Ruskin Bond."},
+        {q: "The speaker calls his favourite books:", options: ["burdens", "familiar friends", "enemies", "strangers"], answer: 1, explain: "He calls them familiar friends."},
+        {q: "Since what age has he known these books?", options: ["Five", "Ten", "Fifteen", "Twenty"], answer: 1, explain: "They have been with him since he was ten."},
+        {q: "Why are book lovers lucky, according to the poem?", options: ["They become rich", "Their minds are set free", "They never get tired", "They travel a lot"], answer: 1, explain: "Books free and nourish the mind."},
+        {q: "The condition of the books the speaker keeps is:", options: ["new and shiny", "old and worn", "torn out", "lost"], answer: 1, explain: "They are old with torn bindings."}
+      ]
+    },
+    {
+      id: "pb-charge-for-love",
+      title: "Charge for Love",
+      section: "Lessons",
+      summary: "A shop owner has puppies for sale. A small boy with a leg brace asks to buy the lame puppy, insisting on paying full price because it deserves the same worth as the others.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "A shop owner puts up a board saying \"Puppies For Sale\". A little boy comes and asks the price; the owner says 30 to 50 dollars each.",
+            "The boy has only 2.37 dollars in change and asks if that is enough to take a look.",
+            "The owner whistles for Dolly, who runs out with four little puppies. A fifth, smaller pup follows, hobbling behind them."
+          ]
+        },
+        {
+          heading: "The lame puppy",
+          points: [
+            "The vet had found that the puppy has no hip socket, so it will always limp.",
+            "The boy says he wants that one. The owner offers to give it free, saying it will never run and play like the others.",
+            "The boy rolls up his trouser legs to show a steel brace on his badly twisted left leg and says the puppy needs someone who understands."
+          ]
+        },
+        {
+          heading: "The ending",
+          points: [
+            "With tears in his eyes the owner hands over the pup and says there can be no charge for love.",
+            "The boy insists on paying: the puppy is worth as much as the others, so he will pay 2.37 dollars now and 50 cents a month until the price is cleared.",
+            "He does not want to lower the pup's worth by taking it free."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "Empathy: the boy understands the puppy because he too is disabled.",
+            "Every living being has equal worth, whatever its weakness.",
+            "Love cannot be priced, but things of value deserve respect, not charity."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Lame", meaning: "Unable to walk properly because of an injured or weak leg."},
+        {term: "Brace", meaning: "A metal support worn on a weak limb."},
+        {term: "Empathy", meaning: "Understanding what another feels because you have felt something similar."},
+        {term: "Veterinarian", meaning: "A doctor who treats animals."}
+      ],
+      qa: [
+        {q: "Why did the boy choose the lame puppy?", a: "He too had a twisted leg and wore a brace, so he knew the puppy would need someone who understood it."},
+        {q: "Why did the boy refuse to take the puppy for free?", a: "He felt that taking it free would suggest it was worth less than the other puppies. He wanted to pay the full price because it was just as valuable."}
+      ],
+      quiz: [
+        {q: "How much money did the boy have?", options: ["2.37 dollars", "30 dollars", "50 dollars", "5 dollars"], answer: 0, explain: "He had 2.37 dollars in change."},
+        {q: "What was wrong with the puppy?", options: ["It was blind", "It had no hip socket and limped", "It was sick", "It was too small to eat"], answer: 1, explain: "The vet found it lacked a hip socket."},
+        {q: "What did the boy show the shop owner?", options: ["A photograph", "A steel brace on his twisted leg", "A bigger sum of money", "A letter"], answer: 1, explain: "He rolled up his trousers to show the brace."},
+        {q: "What did the shop owner say about love?", options: ["It is costly", "There can be no charge for love", "It should be paid in cash", "It is a gift for the rich"], answer: 1, explain: "He said there can be no charge for love."},
+        {q: "How did the boy plan to pay the full price?", options: ["Pay all at once", "2.37 dollars now and 50 cents a month", "Work at the shop", "Give his toys"], answer: 1, explain: "He promised monthly instalments."}
+      ]
+    },
+    {
+      id: "pb-safety-driving",
+      title: "Safety while Driving",
+      section: "Lessons",
+      summary: "Seema tells how, at fourteen, she and her friend Bhavya secretly took her mother's car out and were stopped by police. The experience taught them that knowing about cars does not make a safe driver.",
+      notes: [
+        {
+          heading: "The incident",
+          points: [
+            "Seema loves cars and reads about them online, so she feels she knows everything about driving.",
+            "When her mother went to Delhi, she invited her friend Bhavya, who could ride a mobike and had helped her father move the family car.",
+            "They planned a trip to Sector 17, a large shopping complex. They sneaked out with the keys, and Bhavya drove the car out of the garage."
+          ]
+        },
+        {
+          heading: "Caught by the police",
+          points: [
+            "Two traffic policemen stopped them at the end of the road and asked Bhavya for a licence, but both girls were only fourteen with no licence.",
+            "The police took names, ages and addresses, called the parents, and impounded the car as two minors were in it.",
+            "At the station they were counselled about the risk of accidents and shown pictures of crashes, one with a child who had died."
+          ]
+        },
+        {
+          heading: "Lessons",
+          points: [
+            "The girls decided never to repeat such a blunder and to learn at a driving school when they turn eighteen.",
+            "Knowing how a car works does not make a good driver; driving is a skill learned with practice.",
+            "Drivers should be patient, considerate and quick to react; pedestrians should be patient, cautious and alert. Safety must come first."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Impound", meaning: "To take a vehicle into official custody."},
+        {term: "Minor", meaning: "A person under 18 years of age."},
+        {term: "Pedestrian", meaning: "A person who walks on the road."},
+        {term: "Reflexes", meaning: "Quick automatic reactions."},
+        {term: "Itinerary", meaning: "A planned route or schedule for a trip."}
+      ],
+      qa: [
+        {q: "Why did the police impound the car?", a: "Two minors without a licence were in the car, and one of them was driving."},
+        {q: "What lesson did the girls learn?", a: "Knowing how cars work does not make one a good driver. Driving needs practice, a licence and knowledge of road rules, so they decided to learn at a driving school at eighteen."}
+      ],
+      quiz: [
+        {q: "How old was Seema when she took the car out?", options: ["Ten", "Fourteen", "Eighteen", "Twenty"], answer: 1, explain: "She and Bhavya were fourteen."},
+        {q: "Who drove the car first?", options: ["Seema", "Bhavya", "Seema's mother", "A policeman"], answer: 1, explain: "Bhavya sat in the driving seat."},
+        {q: "Where did they plan to go?", options: ["Delhi", "Sector 17 shopping complex", "A school", "A temple"], answer: 1, explain: "They planned to visit Sector 17."},
+        {q: "What did the police do with the car?", options: ["Returned it", "Impounded it", "Sold it", "Repaired it"], answer: 1, explain: "It was impounded as minors were driving."},
+        {q: "What did the girls decide at the end?", options: ["To drive again", "To learn driving at a driving school at eighteen", "To buy a car", "To stop travelling"], answer: 1, explain: "They resolved to wait until they were eighteen."}
+      ]
+    },
+    {
+      id: "pb-my-dear-soldiers",
+      title: "My Dear Soldiers",
+      section: "Lessons",
+      summary: "A short poem by Dr A P J Abdul Kalam that honours soldiers who guard the nation's borders on land, sea and in the air through every season, and prays for their well-being.",
+      notes: [
+        {
+          heading: "What the poem says",
+          points: [
+            "The poet addresses soldiers as defenders of the borders and great sons of the land.",
+            "While others sleep, they stay awake and stay true to their duty.",
+            "They remain on guard through windy and snowy seasons and the scorching, sweltering heat."
+          ]
+        },
+        {
+          heading: "Where they serve",
+          points: [
+            "They walk the lonely stretches like yogis, climb heights and stride through valleys.",
+            "They defend the desert, guard the marshes, keep watch at sea and secure the air.",
+            "They give the prime of their youth to the nation."
+          ]
+        },
+        {
+          heading: "Message and poet",
+          points: [
+            "Gratitude and respect for soldiers' sacrifice and devotion to duty.",
+            "The poem ends with a prayer asking that the Lord bless them all.",
+            "A P J Abdul Kalam (1931-2015) was a scientist and the eleventh President of India."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Defender", meaning: "A person who protects something from attack."},
+        {term: "Scorching", meaning: "Extremely hot."},
+        {term: "Surveillance", meaning: "Close watch kept over an area."},
+        {term: "Marsh", meaning: "Low, wet, muddy land."}
+      ],
+      qa: [
+        {q: "How does the poet describe the soldiers' dedication?", a: "They stay awake and guard the nation in every season, whether it is windy, snowy or scorching hot, while the rest of us sleep."},
+        {q: "Where do the soldiers guard the country, according to the poem?", a: "On heights and in valleys, in deserts and marshes, at sea and in the air."}
+      ],
+      quiz: [
+        {q: "Who wrote \"My Dear Soldiers\"?", options: ["Ruskin Bond", "Dr A P J Abdul Kalam", "Edgar A. Guest", "Sarojini Naidu"], answer: 1, explain: "The poet is Dr A P J Abdul Kalam."},
+        {q: "What does the poet call the soldiers?", options: ["Defenders of borders", "Merchants", "Travellers", "Kings"], answer: 0, explain: "They are defenders of the borders."},
+        {q: "Soldiers walk the lonely expanses like:", options: ["birds", "yogis", "kings", "children"], answer: 1, explain: "The poem compares them to yogis."},
+        {q: "What does the poem end with?", options: ["A complaint", "A prayer for the soldiers", "A warning", "A joke"], answer: 1, explain: "The poet prays that the Lord bless them."},
+        {q: "The word \"scorching\" describes:", options: ["cold", "very hot", "wet", "windy"], answer: 1, explain: "Scorching means extremely hot."}
+      ]
+    },
+    {
+      id: "pb-marco-polo",
+      title: "Marco Polo",
+      section: "Lessons",
+      summary: "The life of Marco Polo, the Venetian merchant who travelled with his father and uncle from Italy to China, spent 17 years there, and whose stories were written down in The Travels of Marco Polo.",
+      notes: [
+        {
+          heading: "The journey east",
+          points: [
+            "Marco Polo was born in Venice, Italy, in 1254. At 17 he set out with his father Niccolo and uncle Maffeo for China.",
+            "The journey took three years. On the way he saw Jerusalem, the Hindu Kush, Persia and the Gobi Desert.",
+            "He was fascinated by the wealth of the Chinese cities and the grand court of Kublai Khan; the capital Kinsay was large, clean and well organised."
+          ]
+        },
+        {
+          heading: "Life in China and return",
+          points: [
+            "He lived in China for many years (17 years in all), learned the local language and travelled widely, serving the emperor as a messenger and spy.",
+            "He also visited parts of Western Asia, North Africa and Southern Europe.",
+            "After about twenty-four years of travelling, they left Venice in 1271 and returned in 1295."
+          ]
+        },
+        {
+          heading: "Later life and the book",
+          points: [
+            "Venice fought a war with Genoa, and Marco was captured and held in a Genoese prison until 1299.",
+            "In prison he told his journeys to a well-known story writer, who wrote them in The Travels of Marco Polo.",
+            "The book was translated into many languages; it is said Columbus was inspired by it.",
+            "Marco became a wealthy merchant, married Donata Badoer, had three children, and died on 8 January 1324 aged 70."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Caravan", meaning: "A group of travellers or merchants journeying together, often with camels."},
+        {term: "Voyage", meaning: "A long journey, especially by sea."},
+        {term: "Kublai Khan", meaning: "The Mongol emperor of China whom Marco Polo served."},
+        {term: "Genoa", meaning: "An Italian city that fought wars with Venice."}
+      ],
+      qa: [
+        {q: "How did Marco Polo serve the Chinese emperor?", a: "He learned the local language, travelled widely and served as a messenger and spy for the emperor."},
+        {q: "How did the stories of Marco's journeys come to be written?", a: "Marco was held in a Genoese prison after a war between Venice and Genoa. There he told his stories to a famous writer, who wrote them in The Travels of Marco Polo."}
+      ],
+      quiz: [
+        {q: "Marco Polo was born in:", options: ["Venice", "Rome", "Beijing", "Cairo"], answer: 0, explain: "He was born in Venice in 1254."},
+        {q: "Who travelled with Marco on his first journey?", options: ["His brother", "His father and uncle", "Kublai Khan", "A friend from Genoa"], answer: 1, explain: "Niccolo and Maffeo went with him."},
+        {q: "Where was Marco imprisoned?", options: ["In China", "In a Genoese prison", "In Persia", "In Jerusalem"], answer: 1, explain: "He was captured in the Venice-Genoa war."},
+        {q: "Which explorer is said to have been inspired by the book?", options: ["Vasco da Gama", "Christopher Columbus", "Magellan", "Captain Cook"], answer: 1, explain: "Columbus is believed to have carried it."},
+        {q: "In which year did the Polos return to Venice?", options: ["1271", "1295", "1299", "1324"], answer: 1, explain: "They left in 1271 and came back in 1295."}
+      ]
+    },
+    {
+      id: "pb-glass-ceiling",
+      title: "Smashing the Glass Ceiling",
+      section: "Lessons",
+      summary: "Two childhood friends meet after twenty-five years. Geet, once a topper, was not allowed to work after marriage, while Paramjeet, a house help's daughter, built a successful business and offers Geet a place in it.",
+      notes: [
+        {
+          heading: "The meeting",
+          points: [
+            "The lesson begins by explaining that a glass ceiling is an unfair barrier that stops women from reaching important jobs and positions.",
+            "Paramjeet meets Geet after twenty-five years. Paramjeet's widowed mother had been a house help in Geet's home, and Geet's parents treated Paramjeet as their daughter.",
+            "Geet is surprised to see how well Paramjeet has done, though Paramjeet had been very poor as a child."
+          ]
+        },
+        {
+          heading: "Two life stories",
+          points: [
+            "Geet went abroad after marriage and looked after her husband, his parents and her two sons. She had been a topper in studies and sports but was not allowed to work. Her nest is now lonely.",
+            "Paramjeet barely finished school because her mother had arthritis. A charitable agency taught her computer and internet skills, desktop publishing and money skills, and helped with a bank account and a loan.",
+            "She started a shop with four women partners, later bought them out, and is now the sole owner.",
+            "The shop designs posters and cards, does photography, and helps with Aadhaar registration, online tickets and banking. It employs local girls."
+          ]
+        },
+        {
+          heading: "The ending",
+          points: [
+            "Paramjeet's husband, parents-in-law and mother share the work at home as a team.",
+            "Geet asks for work. Paramjeet asks her to help the business reach foreign customers by writing about the women's work.",
+            "Geet feels she has found her nest again."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "Women should get equal chances to work and grow.",
+            "Training, skills and support can lift anyone out of poverty.",
+            "Real qualification comes from effort and achievement, not only degrees."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Glass ceiling", meaning: "An unfair barrier that stops women from reaching top positions."},
+        {term: "Desktop publishing", meaning: "Using a computer and printer to produce books, magazines and other printed material."},
+        {term: "Role model", meaning: "A person whom others look up to and copy."},
+        {term: "Sole owner", meaning: "The only owner."},
+        {term: "Arthritis", meaning: "A disease that makes the joints stiff and painful."}
+      ],
+      qa: [
+        {q: "How did Paramjeet become a successful businesswoman?", a: "A charitable agency taught her computer, internet, desktop publishing and money skills and helped her with a bank account and loan. She started a shop with other women and later became its sole owner."},
+        {q: "Why was Geet unhappy with her life?", a: "Although she was a topper, she was not allowed to work after marriage and spent her life looking after her family. Now her sons have left home and she feels lonely."}
+      ],
+      quiz: [
+        {q: "How many years had passed since the friends met?", options: ["Ten", "Fifteen", "Twenty-five", "Thirty"], answer: 2, explain: "They met after twenty-five years."},
+        {q: "Why was Paramjeet's schooling cut short?", options: ["She moved abroad", "Her mother caught arthritis and she had to earn", "She failed", "She married early"], answer: 1, explain: "She had to earn for her mother's treatment."},
+        {q: "What skill did the agency NOT teach Paramjeet?", options: ["Desktop publishing", "Money skills", "Computer and internet skills", "Deep-sea diving"], answer: 3, explain: "Diving was never mentioned."},
+        {q: "What does the glass ceiling stand for?", options: ["A kind of window", "An unfair barrier for women", "A rooftop garden", "A school award"], answer: 1, explain: "It blocks women from top positions."},
+        {q: "What does Geet offer to do for Paramjeet's business?", options: ["Lend money", "Promote it to foreign customers", "Close it", "Buy it"], answer: 1, explain: "She will write stories and promote the business."}
       ]
     }
   ]

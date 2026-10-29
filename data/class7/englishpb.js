@@ -1,9 +1,8 @@
-// Class 7 English (PSEB): Grammar, Vocabulary, Writing and well-known literature lessons.
-// Written from the PSEB syllabus, not from the book's own text. All examples are original.
-// Lessons not included (not confidently known): Rent for Water; Mountaineers; The Princess Who Never Smiled;
-// A Treasure Hunt; A Gift for Sidhak; poems Trains, The Hunter and the Deer, An Earthquake.
+// Class 7 English (PSEB): Grammar, Vocabulary, Writing and all 13 lessons of My English Companion 7.
+// Lessons summarised in our own words from the PSEB textbook (2023–24 edition); grammar and writing follow the syllabus.
+// Every lesson in the book is covered; no syllabus lesson was left out.
 StudyData.add(7, "englishpb", {
-  syllabus: {board: "PSEB", match: "textbook", books: ["English (PSEB, Class 7)"], note: "Grammar, vocabulary and writing from the PSEB 2026–27 syllabus, plus the lessons whose stories are well known. Written from the syllabus, not the PSEB book's own text.", reviewed: false},
+  syllabus: {board: "PSEB", match: "textbook", books: ["English (PSEB, Class 7)"], note: "Follows the PSEB 2026–27 syllabus; lessons summarised in our own words from the PSEB textbook (2023–24 edition).", reviewed: false},
   chapters: [
     {
       id: "pb-nouns-pronouns",
@@ -600,115 +599,488 @@ StudyData.add(7, "englishpb", {
       ]
     },
     {
-      id: "pb-birbals-khichdi",
-      title: "Birbal's Khichdi",
+      id: "pb-rent-for-water",
+      title: "Rent for Water",
       section: "Lessons",
-      summary: "The well-known Akbar–Birbal tale of a poor man, a cold night and a pot of khichdi cooked far from the fire. The PSEB version may differ in detail; this is a summary in our own words.",
+      summary: "A short tale in which Tenali Raman settles a quarrel between a farmer and his greedy neighbour over a well that was sold without its water.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 1, pp. 1–12",
       notes: [
         {
           heading: "The story in brief",
           points: [
-            "Emperor Akbar once said that a man could not stand all night in a cold lake; a poor man took up the challenge for a reward.",
-            "He stood in the water through the night, looking at a lamp burning far away on the palace wall.",
-            "Akbar refused the reward, claiming the lamp's heat had warmed the man, so he had not truly won."
+            "A man sells his well to a farmer, who wants it to water his fields. Next day the seller refuses to let him draw water, saying he sold only the well, not the water.",
+            "Unable to settle the quarrel, the two go to the court of King Krishna Dev Rai, who is hearing his people's complaints.",
+            "The farmer says he is poor and has paid in full. The seller still insists the water in the well is his."
           ]
         },
         {
-          heading: "Birbal's reply",
+          heading: "Tenali Raman's judgement",
           points: [
-            "Birbal stayed away from court. When Akbar sent for him, he said his khichdi was still cooking.",
-            "Akbar found the pot hung high above, with a fire lit far beneath it. He laughed that it could never cook.",
-            "Birbal answered that if a distant lamp could warm a man in a lake, then a distant fire could cook the khichdi. Akbar understood, and the poor man was rewarded."
+            "The king finds the case interesting and hands it to Tenali Raman, the wisest minister in his court.",
+            "Tenali Raman gets both men to agree that the well is the farmer's and the water is the neighbour's.",
+            "He rules that the neighbour must take his water out at once or pay the farmer two gold coins as rent for storing it in the farmer's well. The farmer will pay one gold coin a month for the water he draws.",
+            "The king smiles at how a tricky problem was solved and justice done."
           ]
         },
         {
           heading: "Characters and message",
           points: [
-            "**Akbar**: powerful but, here, unfair. **Birbal**: witty and wise. **The poor man**: patient and honest.",
-            "The tale teaches that unfairness is best shown up by wit, not anger.",
-            "It shows Birbal's habit of using a comic situation to teach a king a lesson."
+            "**Farmer**: poor, honest, and hopeful of justice. **Neighbour**: greedy and dishonest. **Tenali Raman**: quick-witted and fair. **King Krishna Dev Rai**: a ruler who listens to his people.",
+            "Greed does not pay, and dishonesty is punished.",
+            "A clever, fair argument can settle a dispute without anger."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Neighbour", meaning: "A person who lives next door or nearby."},
+        {term: "Draw water", meaning: "To take water out of a well."},
+        {term: "Rent", meaning: "Money paid for using something that belongs to someone else."},
+        {term: "Minister", meaning: "A senior adviser who helps a king run the kingdom."}
+      ],
+      qa: [
+        {q: "What argument did the neighbour give for not letting the farmer use the water?", a: "He said he had sold the well, not the water inside it."},
+        {q: "How did Tenali Raman solve the problem?", a: "He used the neighbour's own claim. If the water was his, he had to pay rent for keeping it in the farmer's well, or take it out."}
+      ],
+      quiz: [
+        {q: "Which king heard the case?", options: ["Akbar", "Krishna Dev Rai", "Ashoka", "Shah Jahan"], answer: 1, explain: "The farmer and neighbour went to King Krishna Dev Rai's court."},
+        {q: "The farmer bought the well so that he could:", options: ["sell water", "water his fields", "dig a new well", "build a house"], answer: 1, explain: "He needed water for his fields."},
+        {q: "Who solved the problem?", options: ["The farmer", "The neighbour", "Tenali Raman", "Birbal"], answer: 2, explain: "The king gave the case to Tenali Raman."},
+        {q: "How much rent was the neighbour told to pay for keeping his water in the well?", options: ["Five gold coins", "Two gold coins", "One gold coin a year", "Ten silver coins"], answer: 1, explain: "Tenali Raman set the rent at two gold coins."},
+        {q: "The story shows that:", options: ["greed is not good", "kings are always right", "wells are costly", "farmers are rich"], answer: 0, explain: "The greedy neighbour was punished for his dishonesty."}
+      ]
+    },
+    {
+      id: "pb-trains",
+      title: "Trains",
+      section: "Lessons",
+      summary: "A short, rhythmic poem by James S. Tippett that follows trains as they rush across mountains, plains and rivers, bringing passengers, mail and goods safely to their stations.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 2, pp. 13–19",
+      notes: [
+        {
+          heading: "What the poem says",
+          points: [
+            "Trains travel over mountains, plains and rivers, and the poet announces each arrival with “Here come the trains”.",
+            "They carry passengers and mail and bring these precious loads to their destination without fail.",
+            "Freight cars, thousands of them, keep rushing on through day and darkness, dusk and dawn."
+          ]
+        },
+        {
+          heading: "Poet and form",
+          points: [
+            "The poem is by **James S. Tippett**, who wrote simple poems for children.",
+            "It is short, with simple rhyme and a steady beat that imitates the rhythm of a moving train.",
+            "The repeated “Over the…” lines add to this beat."
+          ]
+        },
+        {
+          heading: "Ideas",
+          points: [
+            "Trains are a very important means of land transport and run at all hours.",
+            "The poem calls passengers and mail “precious” loads: both matter, and trains deliver them reliably.",
+            "The mood is lively and admiring."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Freight", meaning: "Goods carried by train, ship or lorry."},
+        {term: "Mail", meaning: "Letters and parcels sent through the post."},
+        {term: "Plains", meaning: "Large areas of flat land."},
+        {term: "Dusk", meaning: "The time of fading light just after sunset."}
+      ],
+      qa: [
+        {q: "What do the trains in the poem carry?", a: "They carry passengers and mail, and the freight cars carry goods."},
+        {q: "What do “day and darkness” and “dusk and dawn” tell us?", a: "That trains run at every hour, night and day."}
+      ],
+      quiz: [
+        {q: "The poem “Trains” was written by:", options: ["Robert Frost", "James S. Tippett", "John Keats", "Vandana Lunyal"], answer: 1, explain: "James S. Tippett is the poet."},
+        {q: "The trains in the poem go over mountains, plains and:", options: ["rivers", "deserts", "oceans", "clouds"], answer: 0, explain: "The poem lists mountains, plains and rivers."},
+        {q: "The poet calls the passengers and mail:", options: ["heavy loads", "precious loads", "unwanted loads", "late loads"], answer: 1, explain: "They are described as precious loads."},
+        {q: "The steady beat and repeated “Over the…” lines in the poem imitate:", options: ["a school bell", "the rhythm of a moving train", "the sound of rain", "a marching band"], answer: 1, explain: "The rhythm makes the reader feel the train moving."},
+        {q: "“Freight” means:", options: ["a kind of ticket", "goods carried by train", "the engine driver", "a railway signal"], answer: 1, explain: "Freight cars carry goods."}
+      ]
+    },
+    {
+      id: "pb-birbals-khichdi",
+      title: "Birbal's Khichdi",
+      section: "Lessons",
+      summary: "On a freezing winter night Akbar cheats a poor brahmin of his reward, and Birbal shows him his unfairness by cooking khichdi a yard above the fire.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 3, pp. 20–33",
+      notes: [
+        {
+          heading: "The challenge",
+          points: [
+            "It is winter and the ponds near Akbar's palace are frozen. Akbar asks Birbal whether a man will do anything for money, and Birbal says yes.",
+            "Birbal brings a very poor brahmin whose family is starving. Akbar offers him two thousand gold coins to stand all night in the frozen pond without clothes.",
+            "The man, who has no other choice, stands there shivering till morning."
+          ]
+        },
+        {
+          heading: "Akbar breaks his word",
+          points: [
+            "In the morning the brahmin explains that he kept looking at the faint lights of the palace, a mile away, and thought of his family getting food.",
+            "Akbar sternly says he cheated, since he got warmth from the palace lights, and refuses the reward.",
+            "Birbal protests that light so far away cannot give warmth, but Akbar does not listen."
+          ]
+        },
+        {
+          heading: "Birbal's khichdi",
+          points: [
+            "Birbal stays away from court and sends word that he will come when his khichdi is cooked. After five days Akbar goes to his house.",
+            "He finds the pot of uncooked khichdi hung a yard above the fire, and says Birbal has proved him wrong in thinking him the wisest.",
+            "Birbal says that if warmth can reach a man from lights a mile away, the khichdi a yard above the fire should cook too.",
+            "Akbar realises his mistake and gives the brahmin the two thousand gold coins."
+          ]
+        },
+        {
+          heading: "Characters and message",
+          points: [
+            "**Akbar**: powerful but unfair here, yet willing to admit his mistake. **Birbal**: witty and wise. **The brahmin**: poor, honest and patient.",
+            "A clever, gentle argument can correct a ruler without anger.",
+            "A promised reward should be paid fairly."
           ]
         }
       ],
       terms: [
         {term: "Khichdi", meaning: "A simple dish of rice and lentils cooked together."},
         {term: "Wit", meaning: "Quick, clever humour and intelligence."},
-        {term: "Reward", meaning: "A prize given for doing something."},
-        {term: "Courtier", meaning: "A person in attendance at a royal court, like Birbal."}
+        {term: "Stern", meaning: "Serious and strict in manner."},
+        {term: "Reward", meaning: "A prize given for doing something."}
       ],
       qa: [
-        {q: "Why did Akbar refuse to reward the poor man?", a: "He claimed the distant lamp had given the man warmth, so he had not really stood in the cold."},
-        {q: "How did Birbal make Akbar see his mistake?", a: "He cooked khichdi in a pot hung high above a distant fire, showing that the same logic would make the khichdi cook."}
+        {q: "Why did Akbar refuse to pay the brahmin?", a: "He claimed the man had got warmth from the palace lights, so he had not really stood in the cold unaided."},
+        {q: "How did Birbal make Akbar see his mistake?", a: "He hung a pot of khichdi a yard above a fire, arguing that if far-off lights could warm a man, the nearer fire could cook the khichdi."}
       ],
       quiz: [
-        {q: "Birbal was a courtier of:", options: ["Shah Jahan", "Akbar", "Babur", "Jahangir"], answer: 1, explain: "The Akbar–Birbal tales are among India's best-loved folk stories."},
-        {q: "The poor man stood through the night in a:", options: ["desert","lake","garden","tent"], answer: 1, explain: "The challenge was to stand in the cold water."},
-        {q: "Akbar's excuse for not paying was that the man was warmed by a:", options: ["blanket", "lamp", "fire in the lake", "companion"], answer: 1, explain: "He said the distant lamp gave the man heat."},
-        {q: "Birbal showed his point by cooking:", options: ["kheer","rotis","khichdi","halwa"], answer: 2, explain: "The khichdi pot hung high above a far-off fire."},
-        {q: "The main quality Birbal shows is:", options: ["laziness","greed","fear","wit"], answer: 3, explain: "He uses clever humour to make Akbar see sense."}
+        {q: "Birbal was a courtier of:", options: ["Shah Jahan", "Akbar", "Babur", "Jahangir"], answer: 1, explain: "The story is set in Akbar's court."},
+        {q: "The brahmin was asked to stand all night in a:", options: ["frozen pond", "desert", "garden", "river boat"], answer: 0, explain: "It was winter and the ponds were frozen."},
+        {q: "The reward promised was:", options: ["one hundred gold coins", "two thousand gold coins", "a village", "a horse"], answer: 1, explain: "Akbar promised two thousand gold coins."},
+        {q: "Akbar's excuse for not paying was that the man had taken warmth from:", options: ["a blanket", "the palace lights", "a campfire", "a friend"], answer: 1, explain: "He said the lights gave the man warmth."},
+        {q: "Birbal hung the khichdi pot above the fire at a height of about:", options: ["a mile", "a yard", "ten miles", "a hand's width"], answer: 1, explain: "The pot was one yard above the fire."}
       ]
     },
     {
       id: "pb-glass-of-milk",
       title: "A Glass of Milk",
       section: "Lessons",
-      summary: "A story of kindness repaid, about a poor boy, a glass of milk and the doctor he later became. The PSEB version may differ in detail; this is the commonly told version in our own words.",
+      summary: "A three-scene play, adapted by Vandana Lunyal, about a poor book-seller named Howard Kelly, the woman who gave him milk, and how he repaid her kindness years later as a doctor.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 4, pp. 34–46",
       notes: [
         {
-          heading: "The story in brief",
+          heading: "Scene 1: Blackpool",
           points: [
-            "In the commonly told version, a poor boy sells goods door to door to pay for his schooling.",
-            "One day, tired and hungry, with almost no money, he asks a woman at a house for a drink of water.",
-            "She guesses he is hungry and brings him a large glass of milk instead. He drinks it and asks how much he owes. She says nothing, since she believes kindness should not be charged for."
+            "A small boy, Howard Kelly, goes door to door in the English town of Blackpool selling books to pay his school fee.",
+            "Hungry and thirsty on a hot afternoon, he asks a lady at one house for water.",
+            "She sees he is weak and brings him a glass of milk. When he asks what he owes, she says nothing, because her mother taught her not to take payment for kindness.",
+            "She then buys a book for 4 pounds 70 pence, gives him 5 pounds and tells him to keep the change. He leaves happy and stronger."
           ]
         },
         {
-          heading: "Years later",
+          heading: "Scenes 2 and 3: the hospital",
           points: [
-            "The boy grows up to be a doctor — in the popular telling, Dr Howard Kelly.",
-            "The woman later falls seriously ill and is sent to the hospital where he works. He recognises the town and is determined to help her.",
-            "After her treatment, he marks her bill as paid in full with one glass of milk."
+            "Many years later, Dr Howard Kelly works in a big city hospital. Dr Peter Brown tells him about a seriously ill woman from Blackpool whom other doctors could not diagnose.",
+            "Dr Kelly recognises his home town, looks in on her, and promises to do his best.",
+            "After she recovers, a nurse hands her the bill, which she fears will take a lifetime to pay. Across it, Dr Kelly has written that it was paid in full years ago with a glass of milk.",
+            "She is moved to tears and says her faith in God and in the goodness of people is stronger."
           ]
         },
         {
-          heading: "Theme",
+          heading: "Theme and form",
           points: [
             "**Kindness returns to the giver**, often in unexpected ways.",
-            "Small acts of generosity can matter greatly to someone in need.",
-            "Gratitude should be shown when the chance comes."
+            "A small kindness can mean a great deal to someone in need, and gratitude should be shown when the chance comes.",
+            "The lesson is a **play** in three scenes, with stage directions in brackets and dialogue between characters."
           ]
         }
       ],
       terms: [
+        {term: "Scene", meaning: "A part of a play set in one place and time."},
         {term: "Gratitude", meaning: "A feeling of thankfulness for a kindness received."},
-        {term: "Generosity", meaning: "Willingness to give or help freely."},
         {term: "Bill", meaning: "A written request for payment for a service."},
-        {term: "Door to door", meaning: "Going from house to house, usually to sell something."}
+        {term: "Diagnose", meaning: "To find out what illness a patient has."}
       ],
       qa: [
-        {q: "What did the woman give the boy when he asked for water?", a: "A glass of milk, because she saw he was hungry."},
-        {q: "What is the message of the story?", a: "Kindness is never wasted; a good deed can come back to help the giver."}
+        {q: "What did the lady give Howard when he asked for water?", a: "A glass of milk, because she saw that he was weak and had not eaten for days."},
+        {q: "What did Dr Kelly write on the lady's bill, and why?", a: "That it was paid in full years ago with a glass of milk, to repay her old kindness."}
       ],
       quiz: [
-        {q: "The boy first asked the woman for:", options: ["food","water","money","milk"], answer: 1, explain: "He asked for a drink of water."},
-        {q: "The woman refused payment because she believed:", options: ["he was rich","the milk was spoiled","kindness should be free","she was a doctor"], answer: 2, explain: "She felt a kind act should not be charged for."},
-        {q: "The boy later became a:", options: ["pilot","soldier","farmer","doctor"], answer: 3, explain: "He became the doctor who treated her."},
-        {q: "The hospital bill was marked paid with:", options: ["gold","one glass of milk","a letter","nothing"], answer: 1, explain: "The story is named for this."},
-        {q: "The story mainly shows that:", options: ["milk is costly","doctors are rich","kindness comes back","the weather changes"], answer: 2, explain: "A good deed returned in the end."}
+        {q: "Howard Kelly sold:", options: ["newspapers", "books", "milk", "toys"], answer: 1, explain: "He sold books door to door to pay his school fee."},
+        {q: "The first scene is set in:", options: ["London", "Blackpool", "Tokyo", "Delhi"], answer: 1, explain: "Blackpool is a small town in England."},
+        {q: "The lady refused payment for the milk because:", options: ["she was rich", "her mother taught her not to take payment for kindness", "the milk was old", "she knew Howard"], answer: 1, explain: "Kindness, she felt, should not be charged for."},
+        {q: "Years later, Howard Kelly had become:", options: ["a teacher", "a pilot", "a doctor", "a shopkeeper"], answer: 2, explain: "He was Dr Howard Kelly in a city hospital."},
+        {q: "The bill was marked as paid in full with:", options: ["a glass of milk", "five pounds", "a book", "a letter"], answer: 0, explain: "The title of the lesson refers to this."}
+      ]
+    },
+    {
+      id: "pb-hunter-and-deer",
+      title: "The Hunter and the Deer",
+      section: "Lessons",
+      summary: "An anonymous poem in which a hunter, ready to shoot a buck, is moved by the animal's plea and its family, and goes home happy after befriending the deer.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 5, pp. 47–59",
+      notes: [
+        {
+          heading: "What happens",
+          points: [
+            "A hunter sets out on a journey to find deer meat. He sees a buck, looks into its eyes and sees a plea for its life.",
+            "A doe and a fawn come from behind; they need the buck in their lives.",
+            "The hunter still raises his gun, but he sees the buck's young son. It is so sweet that killing the buck would make him feel like a beast."
+          ]
+        },
+        {
+          heading: "The change of heart",
+          points: [
+            "Looking at the deer again, the hunter feels something new growing inside him.",
+            "He gathers nuts and feeds the deer, and notices that the deer show no fear of him.",
+            "He smiles a great big smile, stays with them a while, and goes home feeling great."
+          ]
+        },
+        {
+          heading: "Theme and features",
+          points: [
+            "**Compassion** and mercy are stronger than the urge to hurt; seeing a creature's family makes us see it as a feeling being.",
+            "Animals and humans can trust each other when treated kindly.",
+            "The poem has simple language with rhyming couplets in places. Its poet is **unknown (anonymous)**."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Buck", meaning: "A male deer."},
+        {term: "Doe", meaning: "A female deer."},
+        {term: "Fawn", meaning: "A young deer."},
+        {term: "Plea", meaning: "A request made in a begging or urgent way."}
+      ],
+      qa: [
+        {q: "Why did the hunter not shoot the buck?", a: "He saw the buck's plea and its doe and young fawn who needed it, and killing it would have made him feel like a beast."},
+        {q: "What did the hunter do instead?", a: "He gathered nuts and fed the deer, stayed with them a while and went home happy."}
+      ],
+      quiz: [
+        {q: "The hunter went out to find:", options: ["fish", "deer meat", "rabbits", "birds"], answer: 1, explain: "He went on a journey to find deer meat."},
+        {q: "In the buck's eyes the hunter saw:", options: ["anger", "a plea for life", "joy", "sleep"], answer: 1, explain: "The buck seemed to beg for its life."},
+        {q: "Who came from behind the buck?", options: ["A wolf and a cub", "A doe and a fawn", "Two hunters", "A dog"], answer: 1, explain: "The buck's family appeared."},
+        {q: "The hunter fed the deer:", options: ["nuts", "fish", "bread", "meat"], answer: 0, explain: "He gathered some nuts."},
+        {q: "The poet of this poem is:", options: ["James S. Tippett", "unknown", "John Keats", "Vandana Lunyal"], answer: 1, explain: "The poem is credited to Anonymous."}
+      ]
+    },
+    {
+      id: "pb-mountaineers",
+      title: "Mountaineers",
+      section: "Lessons",
+      summary: "An informative lesson on climbing Mount Everest: the first climbers, the first Indian to reach the top in 1965, and the dangers of the “death zone”.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 6, pp. 60–72",
+      notes: [
+        {
+          heading: "Everest and its first climbers",
+          points: [
+            "Mount Everest is the highest point on Earth, at 29,028 feet above sea level. Reaching it takes huge funds, tough training and good luck.",
+            "The first people to stand on top were Tenzing Norgay, a local climber, and Sir Edmund Hillary of New Zealand, in **1953**.",
+            "Many have climbed it since, including some Indians."
+          ]
+        },
+        {
+          heading: "The first Indian on top",
+          points: [
+            "**Captain Avtar Singh Cheema** (1933–1989) of the Parachute Regiment reached the summit on **20 May 1965**, the 16th person in the world to do so. He was later promoted to Colonel.",
+            "He was part of the third Indian expedition, led by Commander **M. S. Kohli** of the Indo-Tibetan Border Police.",
+            "Both were given the Arjuna Award, and then the Padma Shri (Cheema) and Padma Bhushan (Kohli). Kohli also received the Nishan-e-Khalsa from the Punjab Government.",
+            "A postage stamp marked the success of the 1965 expedition."
+          ]
+        },
+        {
+          heading: "Dangers of the climb",
+          points: [
+            "The climb needs months of physical training and weeks of acclimatisation, getting used to the thin air.",
+            "The route between about 26,000 and 29,020 feet is the **“death zone”**, where the body cannot get enough oxygen. It must be crossed in less than a day.",
+            "More climbers now go each year, and the long waits for a turn at the peak add to the danger, but they do not stop adventurous people."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Summit", meaning: "The highest point of a mountain."},
+        {term: "Expedition", meaning: "An organised journey made for a special purpose, such as climbing a mountain."},
+        {term: "Acclimatisation", meaning: "Getting used to new conditions, such as thin air at height."},
+        {term: "Felicitated", meaning: "Honoured publicly for an achievement."}
+      ],
+      qa: [
+        {q: "Who was the first Indian to climb Mount Everest, and when?", a: "Captain Avtar Singh Cheema, on 20 May 1965."},
+        {q: "What is the “death zone”?", a: "The part of the route between about 26,000 and 29,020 feet, where the body does not get enough oxygen and begins to fail."}
+      ],
+      quiz: [
+        {q: "Mount Everest is how high above sea level?", options: ["20,196 feet", "29,028 feet", "30,102 feet", "29,000 metres"], answer: 1, explain: "The lesson gives 29,028 feet."},
+        {q: "The first to stand on Everest, in 1953, were Tenzing Norgay and:", options: ["Avtar Singh Cheema", "M. S. Kohli", "Edmund Hillary", "Bachendri Pal"], answer: 2, explain: "Hillary came from New Zealand."},
+        {q: "Avtar Singh Cheema reached the top in:", options: ["1953", "1965", "1989", "1970"], answer: 1, explain: "He summited on 20 May 1965."},
+        {q: "The 1965 Indian expedition was led by:", options: ["Tenzing Norgay", "Avtar Singh Cheema", "M. S. Kohli", "Edmund Hillary"], answer: 2, explain: "Commander M. S. Kohli led it."},
+        {q: "The oxygen-starved stretch near the top is called the:", options: ["last zone", "death zone", "ice zone", "base camp"], answer: 1, explain: "It is called the death zone."}
+      ]
+    },
+    {
+      id: "pb-princess-never-smiled",
+      title: "The Princess Who Never Smiled",
+      section: "Lessons",
+      summary: "A Russian tale told as a play-style story: a kind boy named Ivan, helped by a fish, a mouse and a grasshopper, finally makes the sad Princess Tanya laugh.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 7, pp. 73–86",
+      notes: [
+        {
+          heading: "The sad princess",
+          points: [
+            "Princess Tanya of Russia is beautiful but never smiles or laughs, which worries her father the king and the queen.",
+            "The king calls a magician and a clown, and the clown even performs a mime, but each time Tanya says it is good and still does not smile.",
+            "He then announces that whoever makes the princess laugh will marry her. Many try and fail."
+          ]
+        },
+        {
+          heading: "Ivan and his three friends",
+          points: [
+            "Ivan, a poor boy who works for a farmer, sets out for the palace with three gold coins from the farmer.",
+            "On the way he meets a Fish in a dirty lake, a Mouse in a field with little food, and a Grasshopper in a forest turned too hot. Each needs a new home.",
+            "He gives one coin to each, ending the journey hungry, tired and with no money."
+          ]
+        },
+        {
+          heading: "The laughter",
+          points: [
+            "At the palace the nervous Ivan sees Tanya looking at him from her window and falls into a hole. The three animals appear and pull him out.",
+            "Tanya finds the sight so funny that she laughs and laughs. The king, queen, ministers, servants, guards and all the people laugh too.",
+            "The king keeps his promise, Ivan and Tanya marry, and Ivan's friends live in the palace. It becomes a happy place."
+          ]
+        },
+        {
+          heading: "Characters and message",
+          points: [
+            "**Ivan**: poor, kind and generous. **Tanya**: sad but gentle. **The king**: a loving father who keeps his word.",
+            "Kindness is rewarded, and laughter spreads from one person to many.",
+            "True friends help us in our time of need."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Mime", meaning: "A performance using actions and expressions but no words."},
+        {term: "Scarce", meaning: "Not enough in supply; hard to find."},
+        {term: "Nervous", meaning: "Worried and tense."},
+        {term: "Magician", meaning: "A performer who does clever tricks."}
+      ],
+      qa: [
+        {q: "Why was the king worried about Tanya?", a: "She was beautiful but never smiled or laughed."},
+        {q: "How did Ivan finally make the princess laugh?", a: "He fell into a hole out of nervousness, and the sight of him being pulled out by the fish, mouse and grasshopper made her laugh."}
+      ],
+      quiz: [
+        {q: "The princess's name was:", options: ["Tanya", "Rani", "Anna", "Sita"], answer: 0, explain: "Princess Tanya of Russia."},
+        {q: "Which three animals did Ivan meet on his journey?", options: ["Lion, eagle, sheep", "Fish, mouse, grasshopper", "Dog, cat, crow", "Camel, owl, turtle"], answer: 1, explain: "Ivan helped a fish, a mouse and a grasshopper."},
+        {q: "Ivan began his journey with how many gold coins?", options: ["One", "Two", "Three", "Five"], answer: 2, explain: "The farmer gave him three, and he gave all of them away."},
+        {q: "What made the princess laugh?", options: ["A magician's trick", "The clown's mime", "Ivan falling into a hole", "A song"], answer: 2, explain: "She saw Ivan fall and be pulled out."},
+        {q: "The king's promise was that the person who made her laugh would:", options: ["get a chest of gold", "marry the princess", "become a minister", "rule the kingdom"], answer: 1, explain: "He kept this promise when Ivan won."}
+      ]
+    },
+    {
+      id: "pb-an-earthquake",
+      title: "An Earthquake",
+      section: "Lessons",
+      summary: "A short poem by Vandana Lunyal in which the speaker lies awake as a quake shakes the bed and then sees the town, houses and trees reduced to rubble.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 8, pp. 87–95",
+      notes: [
+        {
+          heading: "What the poem describes",
+          points: [
+            "The poet lies awake when the bed begins to shake. She wonders if her fear is real, and the trembling fan confirms there is a quake.",
+            "Houses come crashing down and the whole town cries out in fear.",
+            "A moment ago the town stood tall; now it lies broken on the ground."
+          ]
+        },
+        {
+          heading: "After the quake",
+          points: [
+            "Houses, roads, parks and trees are turned to rubble and debris, and everything is lying on the ground.",
+            "People rush out of their cosy homes, and some of the houses have become tombs."
+          ]
+        },
+        {
+          heading: "Poem and ideas",
+          points: [
+            "The poem is by **Vandana Lunyal**, a short rhyming piece with a quick pace that matches the sudden quake.",
+            "It shows how sudden and destructive a natural disaster can be, and the contrast between “stood tall” and “fragmented”.",
+            "The lesson also separates natural disasters (earthquake, floods, cyclones, landslides, droughts) from man-made ones (war, industrial accidents, terrorism)."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Quake", meaning: "A shaking of the ground; an earthquake."},
+        {term: "Rubble", meaning: "Broken pieces of stone and brick from a fallen building."},
+        {term: "Debris", meaning: "Scattered broken pieces left after something is destroyed."},
+        {term: "Tomb", meaning: "A grave or a burial place; here, a house that has become a grave."}
+      ],
+      qa: [
+        {q: "How did the poet know an earthquake was happening?", a: "Her bed began to shake and the trembling fan confirmed that it was a quake."},
+        {q: "What happened to the town?", a: "The houses crashed down and the town, roads, parks and trees turned to rubble and debris."}
+      ],
+      quiz: [
+        {q: "The poem “An Earthquake” is by:", options: ["John Keats", "James S. Tippett", "Vandana Lunyal", "Anonymous"], answer: 2, explain: "Vandana Lunyal wrote it."},
+        {q: "What confirmed the poet's fear of a quake?", options: ["A loud bell", "The trembling fan", "A phone call", "Her neighbour"], answer: 1, explain: "The poem says the trembling fan confirmed it."},
+        {q: "“Rubble” means:", options: ["fresh flowers", "broken stones and bricks", "heavy rain", "a kind of tree"], answer: 1, explain: "Rubble is what is left of fallen buildings."},
+        {q: "Which of these is a natural disaster?", options: ["War", "Industrial accident", "Flood", "Bomb explosion"], answer: 2, explain: "Floods happen in nature; the rest are man-made."},
+        {q: "Some of the fallen houses have become:", options: ["tombs", "markets", "parks", "temples"], answer: 0, explain: "The last lines call them tombs."}
+      ]
+    },
+    {
+      id: "pb-treasure-hunt",
+      title: "A Treasure Hunt",
+      section: "Lessons",
+      summary: "Sagar finds a treasure map in an old book and gathers a lion, eagle, sheep, camel and turtle on the way, only to learn from an owl that friendship is the real treasure.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 9, pp. 96–105",
+      notes: [
+        {
+          heading: "The journey",
+          points: [
+            "In a library Sagar finds an ancient book with a folded treasure map, and sets off on a treasure hunt.",
+            "In the forest he asks a lion to come along; at the mountains he meets an eagle with sharp eyes; in the valley a sheep who can keep them warm.",
+            "In the desert a camel, “the ship of the desert”, carries them across; at the ocean a turtle swims them over the rough waves."
+          ]
+        },
+        {
+          heading: "The treasure",
+          points: [
+            "Across the ocean an old owl congratulates them: they have found the treasure.",
+            "The owl says they crossed the forest, climbed the mountains, braved the desert and swam the ocean together, and could never have done it without one another.",
+            "They realise that the greatest treasure they found is friendship."
+          ]
+        },
+        {
+          heading: "Theme and characters",
+          points: [
+            "**Friendship and teamwork** matter more than gold; each friend had a skill that helped.",
+            "**Sagar**: friendly and brave, who helps others too (he catches the lion when it slips).",
+            "**Owl**: wise. Each animal is chosen for a particular strength."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Ancient", meaning: "Very old."},
+        {term: "Huddled", meaning: "Pressed close together, usually for warmth."},
+        {term: "Craggy", meaning: "Rough, with steep, rocky edges."},
+        {term: "Thrilling", meaning: "Very exciting."}
+      ],
+      qa: [
+        {q: "What did Sagar find in the library?", a: "An ancient book with a treasure map folded inside."},
+        {q: "What was the real treasure, according to the owl?", a: "Friendship, which the group found by helping one another across the forest, mountains, desert and ocean."}
+      ],
+      quiz: [
+        {q: "Sagar found the map in:", options: ["a cave", "a library book", "a boat", "his school bag"], answer: 1, explain: "It was folded inside an ancient book."},
+        {q: "The first animal to join Sagar was a:", options: ["lion", "eagle", "camel", "sheep"], answer: 0, explain: "He met the lion in the forest."},
+        {q: "The camel is called:", options: ["the king of the forest", "the ship of the desert", "the guard of the valley", "the eye of the sky"], answer: 1, explain: "Sagar uses this phrase for the camel."},
+        {q: "Who took the group across the ocean?", options: ["The turtle", "The eagle", "The owl", "The sheep"], answer: 0, explain: "The turtle swam skilfully across."},
+        {q: "The greatest treasure they found was:", options: ["gold coins", "jewels", "friendship", "a map"], answer: 2, explain: "The owl said they had found friendship."}
       ]
     },
     {
       id: "pb-hole-in-fence",
       title: "A Hole in the Fence",
       section: "Lessons",
-      summary: "A short moral tale about anger, a father and nails in a wooden fence. The PSEB version may differ in detail; this is the widely told version in our own words.",
+      summary: "A short moral tale about a boy with a bad temper, a father who sets him a task with nails, and the holes left in a fence.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 10, pp. 106–118",
       notes: [
         {
           heading: "The story in brief",
           points: [
-            "A boy has a very bad temper and often says hurtful things. His father gives him a bag of nails.",
-            "Each time the boy loses his temper, he must hammer a nail into the wooden fence.",
-            "On the first day he hammers many nails; as he learns to control his anger, he needs fewer."
+            "A boy lives in a small village and has a bad temper. He has no friends because he uses bad language in anger, and ignores his parents' advice. His father gives him a bag of nails and a hammer.",
+            "Each time the boy loses his temper, he must hammer a nail into the back of the fence.",
+            "On the first day he hammers thirty nails; as he finds it easier to control his anger than to hammer, the number falls."
           ]
         },
         {
@@ -716,7 +1088,7 @@ StudyData.add(7, "englishpb", {
           points: [
             "When the boy goes a whole day without losing his temper, his father tells him to pull out one nail for each calm day.",
             "Finally, all the nails are gone. The father takes him to the fence and shows the holes left behind.",
-            "He explains that angry words leave scars, like the holes, even when we say sorry."
+            "He explains that angry words leave a scar like the holes, and a wound made with words is as bad as one made with a knife, however often we say sorry."
           ]
         },
         {
@@ -747,81 +1119,33 @@ StudyData.add(7, "englishpb", {
       ]
     },
     {
-      id: "pb-hachiko",
-      title: "Hachiko – The World's Most Loyal Dog",
-      section: "Lessons",
-      summary: "The true story of Hachiko, the Akita dog who kept returning to Shibuya railway station in Tokyo to wait for his dead master. The PSEB version may differ in detail.",
-      notes: [
-        {
-          heading: "The true story",
-          points: [
-            "Hachiko was an Akita dog born in Japan in the 1920s. His owner was Professor Hidesaburo Ueno of the University of Tokyo.",
-            "Each day Hachiko walked with the professor to Shibuya station and returned in the evening to meet him.",
-            "In 1925 the professor died suddenly at work and never returned."
-          ]
-        },
-        {
-          heading: "Years of waiting",
-          points: [
-            "Hachiko kept coming to the station at the time of the evening train, for about nine years, until his own death in 1935.",
-            "Commuters and station staff came to know him, and newspapers wrote about his faithfulness.",
-            "A bronze statue of Hachiko stands at Shibuya station, where people meet and remember him."
-          ]
-        },
-        {
-          heading: "Theme",
-          points: [
-            "**Loyalty**: Hachiko's devotion has made him a symbol in Japan and around the world.",
-            "The bond between humans and animals can be deep and lasting.",
-            "The story has been retold in films and books."
-          ]
-        }
-      ],
-      terms: [
-        {term: "Akita", meaning: "A large breed of dog that began in Japan."},
-        {term: "Loyal", meaning: "Faithful to a person or cause."},
-        {term: "Commuter", meaning: "A person who travels regularly to and from work."},
-        {term: "Statue", meaning: "A figure of a person or animal made in stone or metal."}
-      ],
-      qa: [
-        {q: "Why did Hachiko go to Shibuya station every evening?", a: "To meet Professor Ueno, and after the professor died, he kept waiting for him there for years."},
-        {q: "How is Hachiko remembered today?", a: "By a bronze statue at Shibuya station and by films and books."}
-      ],
-      quiz: [
-        {q: "Hachiko belonged to which breed?", options: ["Beagle","Akita","Pug","Poodle"], answer: 1, explain: "He was an Akita from Japan."},
-        {q: "He waited at the station in the city of:", options: ["Osaka","Beijing","Tokyo","Seoul"], answer: 2, explain: "Shibuya station is in Tokyo."},
-        {q: "Hachiko waited for roughly:", options: ["one week","one month","fifty years","nine years"], answer: 3, explain: "From 1925 to 1935."},
-        {q: "The main quality shown by Hachiko is:", options: ["anger","loyalty","greed","laziness"], answer: 1, explain: "He stayed faithful to his master."},
-        {q: "At Shibuya station today there is a:", options: ["zoo","school","bronze statue of Hachiko","dog race"], answer: 2, explain: "The statue is a popular meeting place."}
-      ]
-    },
-    {
       id: "pb-naughty-boy",
       title: "There was a Naughty Boy",
       section: "Lessons",
-      summary: "A light, humorous poem by John Keats about a boy who runs away to Scotland and finds that nothing there is very different from home. The PSEB version may differ in detail.",
+      summary: "A light, humorous poem by John Keats about a boy who runs away from England to Scotland and finds everything there much the same as at home.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 11, pp. 119–125",
       notes: [
         {
           heading: "The poet and form",
           points: [
-            "It is by the English Romantic poet **John Keats** (1795–1821), written as a comic verse in a letter in 1818.",
-            "It is a short **nonsense-style narrative poem**, with simple rhyming lines and a playful tone.",
+            "It is by the English Romantic poet **John Keats** (1795–1821), who wrote it as a comic verse in a letter in 1818.",
+            "It is a short **nonsense-style narrative poem** with short, quickly rhyming lines and a playful tone.",
             "Keats is better known for serious poems such as “Ode to a Nightingale”, so this one shows his funny side."
           ]
         },
         {
           heading: "What happens",
           points: [
-            "A naughty boy runs away from home to see the people of Scotland.",
-            "He looks around, but finds the houses, people and things much like those he knew, and nothing remarkable.",
-            "He returns home as he left it — his adventure has taught him little, and the poem ends in gentle humour."
+            "A naughty boy runs away from England to Scotland to see the people there.",
+            "There he finds that the ground is as hard, a yard as long, a song as merry, and a door as wooden, as in England.",
+            "He stands in his shoes and wonders. The poem ends on this puzzled wondering rather than a lesson."
           ]
         },
         {
           heading: "Ideas and features",
           points: [
             "The poem pokes fun at the idea that far-off places must be wonderfully different.",
-            "It uses a **simple rhyme scheme**, short lines and a repeated pattern for a nursery-rhyme feel.",
+            "The poem repeats the “as… as” pattern, joking that ordinary things are just the same everywhere.",
             "The tone is light and amusing."
           ]
         }
@@ -834,14 +1158,115 @@ StudyData.add(7, "englishpb", {
       ],
       qa: [
         {q: "Who wrote “There was a Naughty Boy”?", a: "John Keats, the English poet."},
-        {q: "What does the boy discover in Scotland?", a: "That things there are not so different from those at home."}
+        {q: "What does the boy discover in Scotland?", a: "That things there are just the same as in England: the ground is as hard, a yard as long, and so on."}
       ],
       quiz: [
-        {q: "The poem was written by:", options: ["Rabindranath Tagore","Robert Frost","Henry Longfellow","John Keats"], answer: 3, explain: "It is Keats's comic verse."},
-        {q: "The boy runs away to see:", options: ["Australia","Scotland","Japan","Punjab"], answer: 1, explain: "He goes to Scotland."},
-        {q: "The mood of the poem is:", options: ["sad","angry","light and funny","frightening"], answer: 2, explain: "It is playful."},
-        {q: "The poem is best described as:", options: ["an epic","a play","a letter","a nonsense-style narrative"], answer: 3, explain: "It is a short comic story in verse."},
-        {q: "Keats is also famous for:", options: ["Gitanjali","Ode to a Nightingale","The Jungle Book","Hamlet"], answer: 1, explain: "A well-known serious poem."}
+        {q: "The poem was written by:", options: ["Rabindranath Tagore", "Robert Frost", "Henry Longfellow", "John Keats"], answer: 3, explain: "It is Keats's comic verse."},
+        {q: "The boy runs away from England to see the people of:", options: ["Australia", "Scotland", "Japan", "Punjab"], answer: 1, explain: "He goes to Scotland."},
+        {q: "The mood of the poem is:", options: ["sad", "angry", "light and funny", "frightening"], answer: 2, explain: "It is playful."},
+        {q: "At the end of the poem the boy:", options: ["gets lost", "stands in his shoes and wonders", "meets a king", "buys a gift"], answer: 1, explain: "The poem ends with his puzzled wondering."},
+        {q: "Keats is also famous for:", options: ["Gitanjali", "Ode to a Nightingale", "The Jungle Book", "Hamlet"], answer: 1, explain: "A well-known serious poem."}
+      ]
+    },
+    {
+      id: "pb-hachiko",
+      title: "Hachiko – The World's Most Loyal Dog",
+      section: "Lessons",
+      summary: "The true story of Hachiko, the Akita dog who went to Shibuya station in Tokyo at the same time every day to wait for his dead master.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 12, pp. 126–138",
+      notes: [
+        {
+          heading: "Hachiko and his master",
+          points: [
+            "Hachiko was a golden-brown **Akita** dog, born on 10 November 1923 on a farm in Japan.",
+            "In 1924 Professor Hidesaburo Ueno, who taught agriculture at Tokyo Imperial University, adopted him and took him to live in Shibuya near Tokyo.",
+            "Each morning Hachiko went with the professor to Shibuya station. In the afternoon he came back at **3 pm** to meet him and walk home."
+          ]
+        },
+        {
+          heading: "Waiting for years",
+          points: [
+            "In May 1925 Professor Ueno suffered a sudden brain haemorrhage while teaching and died.",
+            "Hachiko still came to the station at 3 pm, and kept coming day after day, week after week, for years.",
+            "Station workers at first were unfriendly but later brought him food and treats and kept him company.",
+            "A former student, Hirokichi Saito, an expert on Akitas, followed Hachiko to the home of Ueno's former gardener, Kuzaburo Kobayashi, who had adopted him. Hachiko waited only for Ueno."
+          ]
+        },
+        {
+          heading: "Remembered as a symbol",
+          points: [
+            "For nearly ten years after his master's death Hachiko came to the same spot, until he died aged eleven on **8 March 1935**.",
+            "He became a symbol of **loyalty** and was called “Chuken-Hachiko”, the faithful dog Hachiko.",
+            "Statues were built in Shibuya, including one where he met his master, and his body is preserved in a museum."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Akita", meaning: "A large breed of dog that began in Japan."},
+        {term: "Loyal", meaning: "Faithful to a person or cause."},
+        {term: "Routine", meaning: "A fixed way of doing things at the same time each day."},
+        {term: "Devoted", meaning: "Deeply loving and loyal."}
+      ],
+      qa: [
+        {q: "What was Hachiko's daily routine after Professor Ueno died?", a: "He went to Shibuya station at 3 pm every day and waited for the professor, who never came."},
+        {q: "How is Hachiko remembered today?", a: "As a symbol of loyalty. There are statues of him in Shibuya and his body is kept in a museum."}
+      ],
+      quiz: [
+        {q: "Hachiko belonged to which breed?", options: ["Beagle", "Akita", "Pug", "Poodle"], answer: 1, explain: "He was an Akita from Japan."},
+        {q: "He waited at the railway station of:", options: ["Osaka", "Kyoto", "Shibuya", "Hiroshima"], answer: 2, explain: "Shibuya is a town near Tokyo."},
+        {q: "Hachiko arrived at the station every day at:", options: ["8 am", "3 pm", "6 pm", "noon"], answer: 1, explain: "The professor returned by the 3 pm train."},
+        {q: "Professor Ueno died in:", options: ["1923", "1925", "1935", "1945"], answer: 1, explain: "He died of a brain haemorrhage in May 1925."},
+        {q: "Hachiko was remembered by calling him:", options: ["Chuken-Hachiko", "Hachiko the Brave", "Shibuya-san", "Akita-ko"], answer: 0, explain: "It means Hachiko the faithful dog."}
+      ]
+    },
+    {
+      id: "pb-gift-for-sidhak",
+      title: "A Gift for Sidhak",
+      section: "Lessons",
+      summary: "On Republic Day, nine-year-old Sidhak, who wanted a toy kitchen set, sees a woman fighter pilot on TV and dreams of flying jets, with her grandfather's support.",
+      source: "My English Companion 7 (PSEB, 2023–24 edition), Lesson 13, pp. 139–149",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "Sidhak is annoyed that her grandfather Daarji will not buy her the kitchen set she has asked for. She had her ninth birthday last month.",
+            "On Republic Day Daarji calls her to watch the parade at Rajpath, New Delhi, on television.",
+            "She is amazed to see Flight Lieutenant Bhawna Kanth, one of the first women fighter pilots, and the first to take part in the parade."
+          ]
+        },
+        {
+          heading: "Visit to the Air Force Museum",
+          points: [
+            "Sidhak asks many questions about fighter jets. Daarji promises a visit to the Air Force Museum to meet Uncle Baldev.",
+            "Over lunch of rajma and rice that Daarji cooks, she praises his cooking and he says he loves cooking.",
+            "At the museum she admires photographs and models of Indian aircraft, and feels proud to be an Indian. Uncle Baldev gives her a miniature fighter jet."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "**Gender equality**: girls can choose any career, and boys can enjoy cooking.",
+            "Daarji lets Sidhak's interests grow, and promises to help her become a fighter pilot.",
+            "Role models can change what a child dreams of. Daarji is an **unbiased** grandparent."
+          ]
+        }
+      ],
+      terms: [
+        {term: "Parade", meaning: "A public march or display, as on Republic Day."},
+        {term: "Museum", meaning: "A place where objects of history, art or science are kept for people to see."},
+        {term: "Miniature", meaning: "A very small model of something."},
+        {term: "Unbiased", meaning: "Fair, without a fixed idea of what boys or girls should do."}
+      ],
+      qa: [
+        {q: "Why was Sidhak annoyed with her grandfather at the start?", a: "He kept refusing to buy her the kitchen set she wanted."},
+        {q: "How did the Republic Day parade change Sidhak's wish?", a: "She saw a woman fighter pilot, became curious about jets, and now wants to become a fighter pilot."}
+      ],
+      quiz: [
+        {q: "Sidhak lives with her:", options: ["uncle", "grandfather, Daarji", "teacher", "brother"], answer: 1, explain: "Daarji is her grandfather."},
+        {q: "Which woman pilot did Sidhak see on TV?", options: ["Bhawna Kanth", "Kalpana Chawla", "Indira Gandhi", "Sunita Williams"], answer: 0, explain: "Flight Lieutenant Bhawna Kanth took part in the parade."},
+        {q: "Daarji cooked which meal for lunch?", options: ["Khichdi", "Rajma and rice", "Pizza", "Noodles"], answer: 1, explain: "Sidhak enjoyed rajma curry and rice."},
+        {q: "Where did Daarji and Sidhak go the next day?", options: ["Toy shop", "Air Force Museum", "Zoo", "Rajpath"], answer: 1, explain: "They visited the museum and met Uncle Baldev."},
+        {q: "The story shows that:", options: ["girls should play only with kitchen toys", "children can follow any dream regardless of gender", "toys are not important", "cooking is only for women"], answer: 1, explain: "It encourages equal opportunity."}
       ]
     }
   ]

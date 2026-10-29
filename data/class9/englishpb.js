@@ -1,11 +1,11 @@
 // Class 9 English (PSEB): Grammar, Vocabulary, Writing, Main Course Book, Poems, Supplementary Reader.
-// Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the PSEB books.
-// The PSEB versions of the lessons may differ in detail from these summaries.
-// Lessons NOT covered (not known well enough to write honestly): Main Course Book: Journey by Night,
-// The Discovery of Moon, Three Great Indians. Supplementary Reader: The Magic Violin, Wishes Come True,
-// In the Flood, The Bewitched Jacket, The King Who Limped.
+// Format: see CONTENT_GUIDE.md. Main Course Book lessons and poems are summarised in our own words from the PSEB textbook (2023–24 edition);
+// no text is reproduced.
+// All 7 Main Course Book lessons and 3 poems are covered. Supplementary Reader: only the PSEB Main Course Book is available online, so these
+// lessons were NOT checked against the book and are kept as they were (A Letter to God, The Last Leaf); not covered: The Magic Violin,
+// Wishes Come True, In the Flood, The Bewitched Jacket, The King Who Limped.
 StudyData.add(9, "englishpb", {
-  syllabus: {board: "PSEB", match: "textbook", books: ["English Main Course Book (PSEB, Class 9)", "English Supplementary Reader (PSEB, Class 9)"], note: "Grammar, vocabulary and writing from the PSEB 2026–27 syllabus, plus the lessons whose stories are well known. Written from the syllabus, not the PSEB books' own text.", reviewed: false},
+  syllabus: {board: "PSEB", match: "textbook", books: ["English Main Course Book (PSEB, Class 9)", "English Supplementary Reader (PSEB, Class 9)"], note: "Follows the PSEB 2026–27 syllabus; lessons summarised in our own words from the PSEB textbook (2023–24 edition).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
@@ -815,180 +815,405 @@ StudyData.add(9, "englishpb", {
       id: "grooming-of-a-boy",
       title: "Grooming of a Boy",
       section: "Main Course Book",
-      summary: "A lesson on the childhood of Swami Vivekananda (Narendranath Datta), showing how the curiosity, fearlessness, generosity and upbringing of the boy shaped the great man he became. The PSEB text may stress different incidents from the ones below.",
+      summary: "A letter attributed to Abraham Lincoln, written to his young son's teacher. He asks the teacher to help mould the boy into a good human being: honest, brave, independent in thought, kind and humble, yet firm when he knows he is right.",
+      source: "English Main Course Book IX (PSEB, 2023–24) Ch 1, pp. 1–5",
       notes: [
         {
-          heading: "Who was Narendranath?",
+          heading: "The setting and the request",
           points: [
-            "Swami Vivekananda was born as **Narendranath Datta** in Calcutta (Kolkata) on 12 January 1863. His father, Vishwanath Datta, was a lawyer, and his mother, Bhuvaneshwari Devi, was a deeply religious and strong-minded woman.",
-            "As a boy he was lively, intelligent and fearless, with a very good memory and a love of reading and music.",
-            "Later he became the disciple of Sri Ramakrishna Paramahamsa and carried the message of Indian spirituality and service to the world."
+            "Abraham Lincoln (1809–1865), later the 16th President of the United States, writes to his son's teacher as the boy begins school.",
+            "He admits that the teacher will have to teach the boy hard truths: **not all people are just or true**.",
+            "But he asks that the boy also be shown the other side: for every rascal there is a hero, for every selfish politician a dedicated leader, for every enemy a friend.",
+            "He ends modestly: it is a big request, but he asks the teacher to see what can be done for his dear little son."
           ]
         },
         {
-          heading: "How the boy was groomed",
+          heading: "What the father wants taught",
           points: [
-            "His **mother** taught him stories from the epics and gave him values of truth and courage; he often said later that he owed much to her influence.",
-            "His home welcomed learned guests and people of different faiths, which broadened his outlook.",
-            "He questioned things and wanted to test ideas himself rather than accept them blindly; this became a lifelong habit.",
-            "Generosity and compassion: he was ready to share what he had with the poor."
+            "Money earned by honest work is worth more than money found by luck; the boy should learn to accept defeat gracefully and to enjoy winning.",
+            "He should keep away from envy, learn quiet laughter, and know that bullies are the easiest to defeat.",
+            "He should enjoy books but also have quiet time to wonder at birds, bees and flowers.",
+            "In school it is more honourable to fail than to cheat.",
+            "He should trust his own ideas even when everyone calls them wrong, and not follow the crowd; he should listen to all but filter what he hears through the 'screen of truth'."
           ]
         },
         {
-          heading: "Message of the lesson",
+          heading: "Character qualities in the letter",
           points: [
-            "A child's character is shaped by home, parents and early habits.",
-            "Fearlessness, truthfulness and a questioning mind are valuable qualities.",
-            "Greatness is built in childhood through discipline and good values."
+            "**Gentle and tough in the right measure:** gentle with the gentle, tough with the tough; the boy may cry without shame and laugh even when sad.",
+            "**Self-respect:** he may sell his skills and intelligence to the highest bidder but must never put a price on his heart and soul.",
+            "**Courage and patience:** to stand and fight for what he believes is right; to be brave enough to be impatient and patient enough to be brave.",
+            "**Faith in himself**, which leads to faith in mankind.",
+            "A child should be treated gently but not over-pampered, because only the test of fire makes fine steel."
           ]
         }
       ],
       formulas: [
-        "Born: 12 January 1863, Calcutta; original name Narendranath Datta.",
-        "Guru: Sri Ramakrishna Paramahamsa. 12 January is celebrated as National Youth Day in India.",
-        "Spoke at the Parliament of the World's Religions, Chicago, 1893."
+        "Writer: Abraham Lincoln (16th US President), to his son's teacher.",
+        "Honesty first: better to fail than to cheat.",
+        "Never put a price on one's heart and soul.",
+        "Faith in oneself leads to faith in mankind."
       ],
       terms: [
-        {term: "Grooming", meaning: "Training and preparing a person, especially a young one, for the future."},
-        {term: "Fearless", meaning: "Without fear; brave."},
-        {term: "Curiosity", meaning: "A strong wish to know or learn something."},
-        {term: "Disciple", meaning: "A follower and pupil of a teacher."},
-        {term: "Compassion", meaning: "Sympathy for the suffering of others."}
+        {term: "Scoundrel", meaning: "A dishonest, unprincipled person."},
+        {term: "Bully", meaning: "A person who uses strength to frighten or hurt weaker people."},
+        {term: "Cynic", meaning: "A person who believes that everyone acts only from selfish motives."},
+        {term: "Ponder", meaning: "To think about something carefully for a long time."},
+        {term: "Sublime", meaning: "Of the highest kind; noble."},
+        {term: "Dedicated", meaning: "Committed to a cause or duty."}
       ],
       qa: [
-        {q: "What qualities of Narendranath's childhood are highlighted in the lesson?", a: "He was curious, intelligent, fearless and generous, with a strong memory and a habit of questioning ideas. His mother's teaching helped develop truthfulness and courage."},
-        {q: "What does the lesson teach about the upbringing of a child?", a: "It shows that the home, the mother's influence and good habits begun in childhood decide a person's character, and that a great man's qualities usually begin to show in his boyhood."}
+        {q: "Why does Lincoln remain hopeful even though not all people are just and true?", a: "He believes the world balances bad people with good ones: for every scoundrel there is a hero, for every selfish politician a dedicated leader and for every enemy a friend. So he wants his son to see both sides and keep hope."},
+        {q: "Why does Lincoln ask the teacher not to cuddle his son?", a: "He feels that too much pampering weakens a child. Only the test of fire makes fine steel, so the boy should be treated gently but allowed to face difficulties and grow strong."},
+        {q: "List any four qualities that make a good human being according to the lesson.", a: "Honesty (preferring failure to cheating), courage to stand for what is right, independent thinking, kindness and gentleness, freedom from envy, and faith in oneself and in mankind."}
       ],
       quiz: [
-        {q: "Swami Vivekananda's childhood name was:", options: ["Narendranath Datta", "Gadadhar", "Mohandas", "Rabindranath"], answer: 0, explain: "He was born as Narendranath Datta."},
-        {q: "Vivekananda's spiritual teacher was:", options: ["Sri Ramakrishna Paramahamsa", "Swami Dayanand", "Raja Ram Mohan Roy", "Sri Aurobindo"], answer: 0, explain: "Ramakrishna was his guru."},
-        {q: "He was born in which city?", options: ["Calcutta", "Madras", "Delhi", "Lahore"], answer: 0, explain: "He was born in Calcutta in 1863."},
-        {q: "Which quality was strongly shaped by his mother?", options: ["Truth and courage", "Love of money", "Fear of questions", "Dislike of study"], answer: 0, explain: "His mother taught him values through stories from the epics."},
-        {q: "National Youth Day is celebrated on his:", options: ["birthday, 12 January", "death anniversary, 4 July", "birthday, 2 October", "birthday, 14 November"], answer: 0, explain: "India observes 12 January as National Youth Day."}
+        {q: "The letter in the lesson is addressed to:", options: ["the boy's teacher", "the boy himself", "a newspaper editor", "the boy's mother"], answer: 0, explain: "A father asks his son's teacher to mould the boy."},
+        {q: "According to the letter, it is more honourable in school to:", options: ["fail than to cheat", "cheat than to fail", "copy than to ask", "win than to lose"], answer: 0, explain: "Honesty matters more than success."},
+        {q: "The father says the boy should never put a price tag on his:", options: ["heart and soul", "time", "books", "talent"], answer: 0, explain: "He may sell his skills but not his conscience."},
+        {q: "'Only the test of fire makes fine steel' is said to explain why the boy should:", options: ["not be over-pampered", "avoid all work", "obey everyone", "dislike books"], answer: 0, explain: "Difficulty builds strength, as fire does for steel."},
+        {q: "The writer of the letter was:", options: ["Abraham Lincoln", "George Washington", "Winston Churchill", "Nelson Mandela"], answer: 0, explain: "The letter is attributed to Lincoln."}
       ]
     },
     {
       id: "plants-also-breathe-and-feel",
       title: "Plants also Breathe and Feel",
       section: "Main Course Book",
-      summary: "A lesson on the scientist Jagadish Chandra Bose, whose experiments showed that plants respond to touch, heat, chemicals and electricity much as animals do. The PSEB text may highlight particular experiments.",
+      summary: "A lesson on the scientist Jagadish Chandra Bose, who built the crescograph, an instrument that records the growth of plants, and showed that plants respond to light, noise, manure and other stimuli much as living creatures do. It also tells of his fight for equal pay and his love for India.",
+      source: "English Main Course Book IX (PSEB, 2023–24) Ch 2, pp. 6–11",
       notes: [
         {
-          heading: "J. C. Bose and his work",
+          heading: "The discovery and the crescograph",
           points: [
-            "Jagadish Chandra Bose (1858–1937) was an Indian scientist, physicist and plant physiologist. He did pioneering work on radio waves and microwaves before turning to plants.",
-            "He invented very sensitive instruments, including the **crescograph**, which could magnify the tiny growth and movement of a plant by a very large factor.",
-            "He founded the **Bose Institute** in Calcutta in 1917."
+            "Scientists at the **Paris Congress of Science (1900)** were amazed by an instrument that could measure the growth of plants. Its inventor, Jagadish Chandra Bose, called it the **crescograph**.",
+            "When asked where it was made, he answered 'In India'. The reply surprised them, since India was known for arts, literature and philosophy but had not advanced much in science.",
+            "The crescograph magnifies the movement of plant tissues about **ten thousand times** and records how plants react to manures, noise and other stimuli.",
+            "The lesson says it showed that plants have a sense of sight, react to rays of light and wireless waves, and even sense when a stranger approaches."
           ]
         },
         {
-          heading: "What his experiments showed",
+          heading: "Bose's life and struggle",
           points: [
-            "Plants respond to stimuli such as touch, light, heat, chemicals and electric shocks, and their reactions can be recorded as pulses and movements.",
-            "He compared the responses of living plants with those of animals and found similarities in how they behave when stimulated, tired, or poisoned.",
-            "He studied sensitive plants like the **touch-me-not (Mimosa pudica)**, whose leaves fold up when touched."
+            "Bose was born in 1858 in a Bengal village, studied Physics at Calcutta University, graduated from Cambridge, and became Professor of Physics at Presidency College, Calcutta.",
+            "In British days an Indian was paid two-thirds of a European professor's salary; as Bose's post was temporary he was offered only half. He believed that **equal work deserves equal pay** and refused to touch any of his salary for three years.",
+            "After a three-year struggle he won. The lesson says that discoveries come from doubters and rebels, not from yes-men; Bose was a rebel by nature."
           ]
         },
         {
-          heading: "Message of the lesson",
+          heading: "Unity of nature",
           points: [
-            "Plants are living beings that respond to their surroundings, so we should not harm them thoughtlessly.",
-            "Careful observation, patience and inventing instruments can reveal hidden truths of nature.",
-            "Bose's work gave India a place in modern science."
+            "His wireless receiver seemed to get 'tired' after long use and recovered after rest, which set him thinking about living and non-living things.",
+            "Until the Middle Ages the world was seen as one unity; after Galileo and Newton sciences were studied separately. Bose again saw a **unity** in all of nature and said animals, plants and minerals have much in common.",
+            "People laughed at him, but he proved his ideas with the crescograph."
+          ]
+        },
+        {
+          heading: "His love for India",
+          points: [
+            "He had deep faith in the ability of Indians. At the University of Mysore convocation in **November 1927** he said that India's past glory came from action, not idleness.",
+            "He believed no individual can be happy until happiness is won for all, and wanted his countrymen to keep undying hope and faith in the future."
           ]
         }
       ],
       formulas: [
-        "Scientist: Sir Jagadish Chandra Bose (1858–1937).",
-        "Instrument: crescograph, to measure plant growth and response.",
+        "Scientist: Sir Jagadish Chandra Bose (1858–1937); instrument: crescograph.",
+        "Shown at the Paris Congress of Science, 1900; magnifies growth about 10,000 times.",
+        "Fought three years for equal pay; refused his salary meanwhile.",
         "Bose Institute, Calcutta, founded 1917."
       ],
       terms: [
-        {term: "Stimulus", meaning: "Anything that causes a living thing to react (touch, light, heat)."},
-        {term: "Crescograph", meaning: "A device invented by Bose to measure very small plant growth."},
-        {term: "Mimosa pudica", meaning: "The touch-me-not plant, whose leaves fold when touched."},
-        {term: "Physiology", meaning: "The study of how living things function."},
-        {term: "Experiment", meaning: "A test carried out to find out or prove something."}
+        {term: "Crescograph", meaning: "An instrument by Bose that magnifies and records plant growth."},
+        {term: "Stimulus", meaning: "Anything that causes a living thing to react (plural: stimuli)."},
+        {term: "Rebel", meaning: "A person who goes against accepted rules or ideas."},
+        {term: "Indomitable", meaning: "Unable to be defeated; here, refers to spirit."},
+        {term: "Unique", meaning: "Matchless; having no equal."},
+        {term: "Undying", meaning: "Everlasting; never fading."}
       ],
       qa: [
-        {q: "What did J. C. Bose prove through his experiments?", a: "He showed that plants are sensitive living things: they respond to touch, light, heat, chemicals and electric stimuli in ways that can be measured and that resemble the responses of animals."},
-        {q: "Name the instrument invented by Bose to study plants and state its use.", a: "The crescograph. It magnifies a plant's very small movements and growth so that they can be measured and recorded."}
+        {q: "Why were the scientists at the Paris Congress surprised?", a: "They were amazed by an instrument that could measure plant growth and show that plants respond like living beings. They were even more surprised that it was made in India, a country not then known for science."},
+        {q: "Why did Bose refuse his salary for three years?", a: "As an Indian professor he was offered a lower salary than a European doing the same work. He felt that equal work should get equal pay, so he refused to touch any salary for three years until he won."},
+        {q: "What did Bose believe about living and non-living things?", a: "He believed that animals, plants and minerals are one and have much in common. His wireless receiver seemed to tire and recover, and he held that plants and metals too could be 'tired' or 'happy'."}
       ],
       quiz: [
-        {q: "The scientist associated with this lesson is:", options: ["J. C. Bose", "C. V. Raman", "S. Chandrasekhar", "Homi Bhabha"], answer: 0, explain: "J. C. Bose studied plant responses."},
-        {q: "Bose's instrument that measures plant growth is the:", options: ["crescograph", "telescope", "stethoscope", "barometer"], answer: 0, explain: "The crescograph magnifies tiny growth."},
-        {q: "The Bose Institute was founded in:", options: ["Calcutta, 1917", "Delhi, 1947", "Bombay, 1900", "Chennai, 1930"], answer: 0, explain: "It was set up in Calcutta in 1917."},
-        {q: "Which plant folds its leaves when touched?", options: ["Mimosa pudica", "Banyan", "Neem", "Mango"], answer: 0, explain: "The touch-me-not is highly sensitive to touch."},
-        {q: "What is the main idea of the lesson?", options: ["Plants are living and respond to stimuli", "Plants cannot live", "Animals do not respond", "Only trees grow"], answer: 0, explain: "Bose's experiments showed that plants respond like living things."}
+        {q: "The instrument invented by Bose to measure plant growth is the:", options: ["crescograph", "telescope", "stethoscope", "barometer"], answer: 0, explain: "The crescograph magnifies tiny plant movements."},
+        {q: "The crescograph was shown to scientists at:", options: ["the Paris Congress of Science, 1900", "a Delhi fair", "the Royal Society, 1858", "Calcutta University, 1947"], answer: 0, explain: "The great men at Paris were amazed."},
+        {q: "Bose refused his salary for three years because he wanted:", options: ["equal pay for equal work", "a higher post", "a holiday", "a new laboratory"], answer: 0, explain: "He fought against unequal pay for Indians."},
+        {q: "Bose spoke at the University of Mysore convocation in:", options: ["November 1927", "March 1900", "May 1858", "January 1947"], answer: 0, explain: "He spoke of India's past glory and future hope."},
+        {q: "After Cambridge, Bose became a professor of Physics at:", options: ["Presidency College, Calcutta", "Delhi University", "Mysore University", "Oxford"], answer: 0, explain: "He returned to India as Professor at Presidency College."}
       ]
     },
     {
       id: "budgeting-your-time",
       title: "Budgeting Your Time",
       section: "Main Course Book",
-      summary: "A lesson on managing time wisely, like managing money in a budget, so that important work gets done and there is time to rest and play. The PSEB text may use its own examples.",
+      summary: "An essay by Dr D. V. Jindal arguing that time is even more powerful than money, because lost money can be regained but lost time never returns. It urges punctuality, doing work 'now', and treating every second as precious.",
+      source: "English Main Course Book IX (PSEB, 2023–24) Ch 3, pp. 14–19",
       notes: [
         {
-          heading: "Why budget time?",
+          heading: "Time is more valuable than money",
           points: [
-            "Time is limited and cannot be stored or bought back. Everybody gets the same 24 hours a day.",
-            "Like a money budget, a time budget decides how much time each activity gets.",
-            "Planning prevents last-minute rush, stress and wasted hours."
+            "People say money is the most important thing, but the power of time is greater: money lost can be regained, **time lost is lost for ever**.",
+            "'Time and tide wait for none.' One must take time by the forelock (make the best use of it) or be doomed.",
+            "The essay recalls Shakespeare's lines (from Julius Caesar) that there is a tide in human affairs which, if taken at the flood, leads to fortune; if missed, life is bound in shallows and miseries.",
+            "A rare precious moment can make or mar a person's future, so it must not pass unnoticed."
           ]
         },
         {
-          heading: "How to do it",
+          heading: "Every second counts",
           points: [
-            "Make a **daily timetable** that includes study, school, rest, play, hobbies and family time.",
-            "Put the **most important tasks first**; do difficult subjects when you are fresh.",
-            "Avoid time-wasters such as aimless TV, games, or putting work off (**procrastination**).",
-            "Review the plan regularly and adjust it."
+            "Seconds add up to minutes, hours, days and months; 'many a trickle makes a mickle'. Not saving them means wasting a lot of time.",
+            "Life is short and uncertain: 'art is long and time is fleeting'. There is much to do and little time.",
+            "Those who waste time have to repent later, when there is no remedy."
+          ]
+        },
+        {
+          heading: "Punctuality and 'Now'",
+          points: [
+            "Punctuality is needed in all activities; those who are behind time lag behind in life. Being late may cost a train, a flight, a job or admission to a good course.",
+            "It is no use crying over spilt milk or blaming the stars for failure that is one's own.",
+            "In the Mahabharata, Yaksha asked Yudhishthira the best time for doing a thing; the answer was **'Now'**. 'Now or Never' should be our guiding principle.",
+            "In an age of globalisation, super-computers and space travel, even a fraction of a second can spell disaster, so budgeting one's time is catching on."
           ]
         },
         {
           heading: "Message",
           points: [
-            "Success depends on using time wisely, not only on talent.",
-            "Habits such as punctuality and regularity make life orderly.",
-            "A balanced routine includes sleep, exercise and recreation."
+            "We can hope for a good tomorrow only if we know the value of today.",
+            "We owe a happy and prosperous future to coming generations, which is possible only if we value the present.",
+            "Author: Dr D. V. Jindal, who has written many books on English and taught it for over forty years."
           ]
         }
       ],
       formulas: [
-        "Plan → prioritise → act → review.",
-        "Time lost can never be recovered."
+        "Money lost can be regained; time lost is lost for ever.",
+        "Yudhishthira's answer to Yaksha: the best time is 'Now'.",
+        "Guiding principle: 'Now or Never'.",
+        "Author: Dr D. V. Jindal."
       ],
       terms: [
-        {term: "Budget", meaning: "A plan for spending a limited resource, such as money or time."},
-        {term: "Priority", meaning: "Something that is more important and must be done first."},
-        {term: "Procrastination", meaning: "Putting off work that should be done now."},
-        {term: "Timetable", meaning: "A schedule showing when things are to be done."},
-        {term: "Punctual", meaning: "Arriving or doing things at the right time."}
+        {term: "Take time by the forelock", meaning: "To make the best use of time; to act without delay."},
+        {term: "Make or mar", meaning: "To bring complete success or complete ruin."},
+        {term: "Squander", meaning: "To waste carelessly."},
+        {term: "Punctual", meaning: "Doing things at the proper time."},
+        {term: "Detrimental", meaning: "Harmful."},
+        {term: "Prosperous", meaning: "Successful and having good fortune."}
       ],
       qa: [
-        {q: "Why is time compared to money in the lesson?", a: "Both are limited resources that must be spent wisely. Just as a money budget prevents wasteful spending, a time budget helps use each hour for something useful."},
-        {q: "What are the steps in budgeting time?", a: "List the tasks, decide which are most important, fix a timetable that allows for rest and play, follow it regularly and review it from time to time."}
+        {q: "Why does the author say time is greater than money?", a: "Money that is lost can be earned again, but time once lost never returns. Time also waits for nobody, so its power is greater."},
+        {q: "What question did Yaksha ask Yudhishthira and what was the reply?", a: "Yaksha asked what is the best time for doing a thing. Yudhishthira, the wise son of Kunti, replied 'Now', meaning the present is the most important time to do the work in hand."},
+        {q: "Why is punctuality important?", a: "Those who are late lag behind in life and may miss a train, a flight, a job or an admission. An opportunity missed is lost for ever, and blaming others or the stars afterwards is useless."}
       ],
       quiz: [
-        {q: "Budgeting time means:", options: ["planning how to use time", "wasting time", "stopping work", "buying clocks"], answer: 0, explain: "It is planning the use of time like money."},
-        {q: "Putting off work is called:", options: ["procrastination", "punctuality", "priority", "revision"], answer: 0, explain: "Procrastination means delaying needlessly."},
-        {q: "Which task should come first in a timetable?", options: ["The most important one", "The easiest one only", "TV", "Sleeping"], answer: 0, explain: "Important work is given priority."},
-        {q: "A daily timetable should include:", options: ["rest and play along with study", "study only", "play only", "nothing"], answer: 0, explain: "Balance is the aim."},
-        {q: "'Lost time is never found again' teaches us to:", options: ["value every moment", "work all night", "ignore plans", "forget the past"], answer: 0, explain: "Time cannot be recovered, so use it well."}
+        {q: "The author says that, unlike money, time once lost:", options: ["can never be regained", "can be borrowed", "can be saved in a bank", "returns next year"], answer: 0, explain: "Time lost is lost for ever."},
+        {q: "Yudhishthira told Yaksha the best time for doing a thing is:", options: ["Now", "Tomorrow", "Morning", "Never"], answer: 0, explain: "The present is the most important time."},
+        {q: "The lines 'There is a tide in the affairs of men' are attributed in the essay to:", options: ["Shakespeare", "Wordsworth", "Tagore", "Keats"], answer: 0, explain: "They come from Shakespeare's Julius Caesar."},
+        {q: "'Many a trickle makes a mickle' is used to stress the value of:", options: ["saving every second", "heavy rain", "spending money", "big efforts only"], answer: 0, explain: "Small bits of time add up."},
+        {q: "The guiding principle suggested for life is:", options: ["Now or Never", "Wait and watch", "Slow and steady", "Better late than never"], answer: 0, explain: "The essay states 'Now or Never'."}
+      ]
+    },
+    {
+      id: "journey-by-night",
+      title: "Journey by Night",
+      section: "Main Course Book",
+      summary: "A true-to-life adventure story by Norah Burke. Twelve-year-old Sher Singh carries his seriously ill little brother Kunwar through eighty kilometres of dangerous jungle at night, past elephants and a flooded river, to the hospital at Kalaghat, and earns the title 'Bahadur' (the Brave).",
+      source: "English Main Course Book IX (PSEB, 2023–24) Ch 4, pp. 20–26",
+      notes: [
+        {
+          heading: "Outline of the story",
+          points: [
+            "Kunwar, Sher Singh's younger brother, lies in their hut at Laldwani village with a worsening stomach pain. Hot cloths do not help; their mother says he must be taken to the hospital at Kalaghat.",
+            "Sher Singh knows that jungle people go to hospital only as a last resort, so he understands that his brother is dying. His father, the famous hunter Sher Singh Bahadur, is away with an expedition, and every man of the village is away as a beater.",
+            "His mother must stay to look after the cattle and the land. She makes a sling from one of her two saris, and Sher Singh sets out at dusk with Kunwar on his back, hoping for a lift on a bullock cart or truck at the end.",
+            "At night he sees bear tracks and rests on a cliff above a river-bed. A herd of elephants with a big tusker passes below; the tusker senses the boys but, after a tense moment, moves on angrily.",
+            "At the second river, swollen by melted snow, the bamboo bridge has been drowned and then broken by a floating tree. Sher Singh ties himself and Kunwar together with a grass rope and struggles across, keeping the child's head above water.",
+            "Exhausted, he stumbles to a road and a village; people help them onto a bullock cart and then a truck to the hospital. The doctor, hearing who he is, calls him Sher Singh Bahadur and says Kunwar will live."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Sher Singh:** a small, cheerful, twelve-year-old child of the jungle; brave, responsible, determined and prayerful.",
+            "**Kunwar:** his much younger brother, burning with fever and half-conscious.",
+            "**The mother:** calm and strong; she has lost other children to cholera and influenza yet does not weep.",
+            "**The father:** a well-known hunter who earned the title 'Bahadur' and carries a scar from rescuing a comrade from a tiger."
+          ]
+        },
+        {
+          heading: "Themes and author",
+          points: [
+            "**Courage and responsibility:** bravery does not depend on age; love for a brother gives strength.",
+            "**Determination against nature:** wild animals, darkness and a flooded river cannot stop a boy with a mission.",
+            "**Poverty and hardship** of jungle families, far from medical help.",
+            "Author **Norah Burke** was a 20th-century British writer who lived for years near the Himalayan forests."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Norah Burke. Place: Laldwani village to Kalaghat hospital, 80 km.",
+        "Sher Singh is 12; his father's title 'Bahadur' means the Brave.",
+        "Obstacles: bear tracks, elephant herd, a tiger's prints, a flooded second river.",
+        "Ending: the doctor says Kunwar will live and names Sher Singh 'Bahadur'."
+      ],
+      terms: [
+        {term: "Sling", meaning: "A strip of cloth used to carry a load on the back or shoulder."},
+        {term: "Tusker", meaning: "An elephant with large tusks."},
+        {term: "Delirious", meaning: "Confused and talking wildly because of high fever."},
+        {term: "Maelstrom", meaning: "A powerful whirlpool."},
+        {term: "Beater", meaning: "A man who drives animals from the jungle towards hunters."},
+        {term: "Poach", meaning: "To hunt animals illegally."}
+      ],
+      qa: [
+        {q: "Why did Sher Singh have to carry his brother to the hospital himself?", a: "His father was away on an expedition and all the village men were away as beaters. His mother had to stay to look after the cattle and land, otherwise the family would starve, so only Sher Singh could take Kunwar."},
+        {q: "How did Sher Singh cross the second river?", a: "The bridge was drowned and broken by a floating tree. He tied Kunwar to himself with a rope plaited from grass, entered the water above the bridge, and edged along the wreck, struggling against the cold and the logs while holding the child's head above water."},
+        {q: "Write a short character sketch of Sher Singh.", a: "Sher Singh is only twelve but brave, caring and determined. He faces the dark jungle, a wild elephant herd and a flooded river without turning back, prays when frightened, and does not give up until his brother is safe. He is also modest: he feels shy of the big hospital, and he earns the title 'Bahadur' like his father."}
+      ],
+      quiz: [
+        {q: "Sher Singh set out for the hospital at:", options: ["Kalaghat", "Laldwani", "Dehradun", "Amritsar"], answer: 0, explain: "Kalaghat was 80 kilometres away."},
+        {q: "Why were there no men in Laldwani?", options: ["They were away with the hunting expedition as beaters", "They were at a fair", "They were ill", "They had left the village for good"], answer: 0, explain: "The men had gone into the jungle with the expedition."},
+        {q: "How did Sher Singh carry Kunwar?", options: ["In a sling made from his mother's sari", "On a cart", "On a horse", "In a basket"], answer: 0, explain: "His mother made a sling from one of her two saris."},
+        {q: "What stopped him at the second river?", options: ["A flood had drowned the bridge", "A tiger", "A broken boat", "Heavy fog"], answer: 0, explain: "Melted snow flooded the river and the bridge was broken."},
+        {q: "What did the doctor call Sher Singh at the end?", options: ["Sher Singh Bahadur, the Brave", "A hunter", "A beater", "A fool"], answer: 0, explain: "He earned the title his father already held."}
+      ]
+    },
+    {
+      id: "the-discovery-of-moon",
+      title: "The Discovery of Moon",
+      section: "Main Course Book",
+      summary: "An informative lesson on the exploration of the Moon: the first landing by American astronauts in 1969, the Soviet use of robot spacecraft, what research has shown about the Moon's surface and conditions, and some basic facts about our natural satellite.",
+      source: "English Main Course Book IX (PSEB, 2023–24) Ch 5, pp. 29–34",
+      notes: [
+        {
+          heading: "The landing and the space race",
+          points: [
+            "On **20 July 1969** two American astronauts, **Neil Armstrong and Edwin (Buzz) Aldrin**, became the first humans to set foot on the Moon during the Apollo-11 mission. They collected lunar soil and left instruments that kept sending data to Earth.",
+            "A third astronaut, **Michael Collins**, stayed in orbit around the Moon waiting for them. (The lesson speaks of Apollo-11 and 'Eagle-2'; in the actual mission the landing craft was called Eagle and the orbiting craft Columbia.)",
+            "More Apollo flights followed and corrected many wrong ideas about the Moon.",
+            "The USA and the USSR planned lunar exploration: the USA sent astronauts, while the Soviet Union sent unmanned spacecraft."
+          ]
+        },
+        {
+          heading: "Soviet robots and what research found",
+          points: [
+            "The Soviet Union felt it unnecessary to risk human life; in **September 1970** it sent **Luna-16**, which carried a robot onto the Moon's surface. A robot can do experiments as well as a man, is cheaper and does not endanger life.",
+            "Research over three decades broke old beliefs: the Moon is a **desolate place with no water and no air**, and was declared unfit for human habitation.",
+            "Useful metals such as **aluminium, titanium and iron** are found there, though nobody has been tempted to mine them. Some scientists think it could become habitable if oxygen were separated from oxygen-bearing materials."
+          ]
+        },
+        {
+          heading: "Facts about the Moon",
+          points: [
+            "It is the Earth's only natural satellite, about a quarter of the Earth's diameter (**3476 km**), and **384,405 km** away.",
+            "It orbits the Earth once a month, always keeping the same face towards us. Its surface is pitted with craters made by meteorites.",
+            "It is about **4,600 million years old**, the same age as the Earth, and is not self-luminous; it shines by reflecting sunlight.",
+            "Different parts of its sunlit half are seen as it orbits, giving the **phases of the moon**; moonrise and moonset are about 50 minutes later each day.",
+            "It has no atmosphere; daytime rock temperature reaches about 110 °C, while in shadow it falls below -100 °C.",
+            "Despite these 'dull' facts, poets and lovers still sing of its beauty."
+          ]
+        }
+      ],
+      formulas: [
+        "First landing: 20 July 1969; Armstrong and Aldrin; Collins in orbit.",
+        "Luna-16: Soviet unmanned craft, September 1970.",
+        "Diameter 3476 km; distance 384,405 km; age about 4,600 million years.",
+        "No air, no water; temperatures about 110 °C to below -100 °C."
+      ],
+      terms: [
+        {term: "Astronaut", meaning: "A person trained to travel in a spacecraft."},
+        {term: "Satellite", meaning: "A body that orbits a larger one; the Moon is Earth's natural satellite."},
+        {term: "Desolate", meaning: "Empty, barren and lifeless."},
+        {term: "Inhabitable", meaning: "Fit for people to live in."},
+        {term: "Misconception", meaning: "A wrong idea based on a misunderstanding."},
+        {term: "Crater", meaning: "A bowl-shaped hollow, here made by a meteorite hitting the Moon."}
+      ],
+      qa: [
+        {q: "Who were the first men on the Moon and when did they land?", a: "Neil Armstrong and Edwin (Buzz) Aldrin of the American Apollo-11 mission landed on 20 July 1969. Michael Collins waited in orbit."},
+        {q: "Why did the Soviet Union send robots instead of men?", a: "It thought it more suitable to explore with machines. A robot can carry out experiments as well as a man, it costs less, and human life is not put in danger."},
+        {q: "Why is the Moon unfit for human life?", a: "It has no air and no water, and its temperature swings from about 110 °C in sunlight to below -100 °C in shadow, so research has declared it unfit for living."}
+      ],
+      quiz: [
+        {q: "The first men to set foot on the Moon were:", options: ["Armstrong and Aldrin", "Collins and Gagarin", "Armstrong and Collins", "Aldrin and Shepard"], answer: 0, explain: "Collins stayed in orbit."},
+        {q: "The Soviet spacecraft sent in September 1970 was:", options: ["Luna-16", "Apollo-11", "Sputnik", "Voyager"], answer: 0, explain: "Luna-16 carried a robot to the Moon."},
+        {q: "Which metal is NOT named in the lesson as found on the Moon?", options: ["Gold", "Aluminium", "Titanium", "Iron"], answer: 0, explain: "The lesson names aluminium, titanium and iron."},
+        {q: "The Moon's distance from the Earth is about:", options: ["384,405 km", "3,476 km", "4,600 km", "50 km"], answer: 0, explain: "3476 km is its diameter."},
+        {q: "The Moon shines because it:", options: ["reflects sunlight", "makes its own light", "burns gas", "is hot inside"], answer: 0, explain: "It is not self-luminous."}
+      ]
+    },
+    {
+      id: "three-great-indians",
+      title: "Three Great Indians",
+      section: "Main Course Book",
+      summary: "Short biographical sketches of three freedom fighters: Satguru Ram Singh, founder of the Kuka (Namdhari) movement; Rani Laxmi Bai of Jhansi, heroine of 1857; and Udham Singh, who avenged the Jallianwala Bagh massacre.",
+      source: "English Main Course Book IX (PSEB, 2023–24) Ch 6, pp. 37–44",
+      notes: [
+        {
+          heading: "I. Satguru Ram Singh",
+          points: [
+            "Born on **3 February 1816** at Raiyan village, Ludhiana. Guru Balak Singh declared him a guru, and he preached from **Bhaini Sahib**; his first sermon was on Baisakhi 1857.",
+            "He taught belief in one God, simple honest living, helping the poor and working for the country's freedom; he opposed child marriage, female foeticide, dowry, intoxicants, casteism and fanaticism.",
+            "Against the British 'Divide and Rule' he gave the slogan 'Unite and Fight', began non-cooperation and boycott, and promoted 'Be Indian, buy Indian'.",
+            "'Kuka' means a roar; his followers became known as Kukas or **Namdharis**. In 1871 nine Namdhari Sikhs were hanged, and in 1872 sixty-five were blown from cannons at Malerkotla, among them a twelve-year-old, Bishan Singh, who refused pardon in return for disowning the cause.",
+            "Satguru Ram Singh was arrested and exiled to Burma; his followers still preach brotherhood, unity and simple living."
+          ]
+        },
+        {
+          heading: "II. Rani Laxmi Bai",
+          points: [
+            "The Rani of Jhansi became the most popular leader of the **First War of Independence (1857)**; even her enemies admired her spirit, and folk songs and ballads honour her.",
+            "Her childhood name was **Manikarnika (Manu)**. Born in Varanasi, she grew up at Bithur, learning horse-riding and martial arts, and married Raja Gangadhar Rao of Jhansi. Her young son and her husband both died.",
+            "She adopted a son, but the British, under the 'Policy of Lapse', refused to recognise him and annexed Jhansi. In June 1857 the sepoys at Jhansi rebelled and the Rani took charge.",
+            "Sir Hugh Rose besieged Jhansi; she left the fort and joined **Tantia Tope** at Kalpi, where they were again defeated. She was fatally wounded in battle in **June 1858** and died fighting."
+          ]
+        },
+        {
+          heading: "III. Udham Singh",
+          points: [
+            "Born in **1899** at Sunam, district Sangrur, Punjab; jailed several times for anti-government activity.",
+            "The Jallianwala Bagh massacre at Amritsar on Baisakhi 1919, where a peaceful gathering was fired on, haunted him, and he vowed to avenge it.",
+            "After reaching England in 1937 he shot **Sir Michael O'Dwyer**, the former Punjab governor, in London on **13 March 1940**, in front of a crowd. (The lesson calls the victim the officer who ordered the firing; historically General Dyer gave that order, while O'Dwyer, the Lieutenant-Governor, supported it.)",
+            "He was arrested, tried and hanged in July 1940. His life teaches unity and warns against dividing people in the name of religion."
+          ]
+        }
+      ],
+      formulas: [
+        "Ram Singh: born 3 Feb 1816; Kuka (Namdhari) movement; exiled to Burma.",
+        "Rani Laxmi Bai: Manikarnika; Jhansi; died June 1858; ally: Tantia Tope.",
+        "Udham Singh: born 1899 at Sunam; Jallianwala Bagh 1919; London 13 March 1940.",
+        "Slogans: 'Unite and Fight'; 'Be Indian, buy Indian'."
+      ],
+      terms: [
+        {term: "Kuka", meaning: "A Punjabi word meaning 'roar'; name of Satguru Ram Singh's followers."},
+        {term: "Policy of Lapse", meaning: "A British rule by which a state without a natural heir could be annexed."},
+        {term: "Annex", meaning: "To take over a territory and add it to one's own."},
+        {term: "Martyr", meaning: "A person who dies for a cause or belief."},
+        {term: "Indomitable", meaning: "Impossible to defeat or subdue."},
+        {term: "Avenge", meaning: "To punish someone for a wrong done to oneself or others."}
+      ],
+      qa: [
+        {q: "What did Satguru Ram Singh teach his followers?", a: "He taught them to believe in one God, live simply and honestly, help the poor and work for the freedom of the country. He opposed social evils such as child marriage, dowry, female foeticide, casteism and intoxicants."},
+        {q: "How did the Rani of Jhansi come to fight the British?", a: "After her husband and son died, the British refused to recognise her adopted son and annexed Jhansi. When the sepoys revolted in 1857, she took command, defended Jhansi against Sir Hugh Rose and then joined Tantia Tope at Kalpi."},
+        {q: "Why did Udham Singh go to England and what did he do there?", a: "He wanted to avenge the Jallianwala Bagh massacre of 1919. He went to England in 1937 and in March 1940 shot Sir Michael O'Dwyer in London. He was arrested and later hanged."}
+      ],
+      quiz: [
+        {q: "Satguru Ram Singh's headquarters were at:", options: ["Bhaini Sahib", "Jhansi", "Sunam", "Kalpi"], answer: 0, explain: "He preached from Bhaini Sahib in Ludhiana district."},
+        {q: "The word 'Kuka' means:", options: ["a roar", "a soldier", "a saint", "a flag"], answer: 0, explain: "Followers who raised a loud voice came to be called Kukas."},
+        {q: "The childhood name of Rani Laxmi Bai was:", options: ["Manikarnika", "Padmini", "Savitri", "Durgavati"], answer: 0, explain: "She was also called Manu."},
+        {q: "Rani Laxmi Bai joined her forces at Kalpi with:", options: ["Tantia Tope", "Bahadur Shah", "Nana Sahib alone", "Hugh Rose"], answer: 0, explain: "Tantia Tope was her ally."},
+        {q: "Udham Singh was born at:", options: ["Sunam", "Raiyan", "Varanasi", "Amritsar"], answer: 0, explain: "Sunam is in Sangrur district."}
       ]
     },
     {
       id: "the-death-of-abhimanyu",
       title: "The Death of Abhimanyu",
       section: "Main Course Book",
-      summary: "An episode from the Mahabharata: on the thirteenth day of the Kurukshetra war the young Abhimanyu enters Drona's chakravyuha, fights heroically but is killed. The PSEB text may be a retelling with differences in detail.",
+      summary: "An episode from the Mahabharata, retold from S. B. Srivastava: Drona becomes the Kaurava commander, and on the thirteenth day of the war the young Abhimanyu enters his chakravyuha, fights heroically and is killed. Arjuna then vows to avenge him and kills Jayadratha.",
       notes: [
         {
           heading: "Background",
           points: [
+            "After Bhishma fell, Karna declined to become Kaurava commander in favour of the older, more experienced **Drona**, whom Duryodhana asked to plan to capture Yudhishthira. On the eleventh day Susharma's sons attacked Arjuna so that Drona could try for Yudhishthira, but Bhima helped save the day.",
             "Abhimanyu was the young son of **Arjuna** and **Subhadra** and a nephew of Krishna.",
             "On the thirteenth day of the war the Kauravas' commander **Drona** arranged his army in the **chakravyuha**, a circular, many-layered battle formation that only a few warriors could break.",
-            "Arjuna, who knew how to break it, was drawn away to another part of the field by the Samshaptaka warriors."
+            "Only Arjuna, Krishna, Pradyumna and Abhimanyu knew how to pierce it. Arjuna was drawn away to fight Susharma's sons, Pradyumna was far off and Krishna would not fight."
           ]
         },
         {
@@ -1002,7 +1227,8 @@ StudyData.add(9, "englishpb", {
         {
           heading: "Aftermath and themes",
           points: [
-            "Arjuna, grief-stricken, vowed to kill Jayadratha before sunset the next day.",
+            "Arjuna, grief-stricken, vowed to kill Jayadratha before sunset the next day or end his own life. Jayadratha, terrified, was guarded by the whole Kaurava army, and Duryodhana fought Arjuna in a duel wearing a magic armour.",
+            "Krishna covered the sun with thick mist so that the Kauravas thought it had set; Arjuna then reached Jayadratha at the centre of the army and killed him, avenging Abhimanyu.",
             "The episode shows **courage, duty and sacrifice**, and the tragedy of a young hero.",
             "It also shows the breaking of fair rules of war and the cost of treachery."
           ]
@@ -1011,7 +1237,7 @@ StudyData.add(9, "englishpb", {
       formulas: [
         "Abhimanyu: son of Arjuna and Subhadra.",
         "Day 13 of the Kurukshetra war; formation: chakravyuha, arranged by Drona.",
-        "Arjuna vowed to kill Jayadratha the next day."
+        "Jayadratha, king of the Sindhus, dealt the final blow; Arjuna killed him the next day."
       ],
       terms: [
         {term: "Chakravyuha", meaning: "A circular, wheel-like battle formation in the Mahabharata."},
@@ -1037,7 +1263,7 @@ StudyData.add(9, "englishpb", {
       id: "open-thy-eyes-and-see-thy-god",
       title: "Open Thy Eyes and See Thy God",
       section: "Poems",
-      summary: "A poem by Rabindranath Tagore (from Gitanjali) saying that God is not found in empty rituals in a closed temple but with the humble workers who toil on the soil, and that we should serve people rather than only chant and pray. The PSEB text may be an abridgement or adaptation.",
+      summary: "A poem by Rabindranath Tagore (from Gitanjali) saying that God is not found in empty rituals in a closed temple but with the humble workers who toil on the soil, and that we should serve people rather than only chant and pray.",
       notes: [
         {
           heading: "Central idea",
@@ -1051,7 +1277,7 @@ StudyData.add(9, "englishpb", {
           heading: "Message",
           points: [
             "The poet asks the worshipper to give up fine robes and to come out onto the dusty earth to work with the toilers.",
-            "Freedom (salvation) is not got by renouncing the world but by doing one's duty in the world with a joyful heart.",
+            "Freedom (deliverance) is not found by renouncing the world: the Master himself has joyfully taken on the bonds of creation and is bound with us all for ever.",
             "**Dignity of labour:** the working man is closer to God than the idle priest."
           ]
         },
@@ -1091,7 +1317,7 @@ StudyData.add(9, "englishpb", {
       id: "no-men-are-foreign",
       title: "No Men Are Foreign",
       section: "Poems",
-      summary: "A poem by the English poet James Kirkup arguing that all human beings share the same basic nature, and that war against other people is a wrong done to the whole human family and to the earth we share. The poem is in the CBSE Class 9 book too; the PSEB text should be the same poem.",
+      summary: "A poem by the English poet James Kirkup arguing that all human beings share the same basic nature, and that war against other people is a wrong done to the whole human family and to the earth we share.",
       notes: [
         {
           heading: "Central idea",
@@ -1112,7 +1338,7 @@ StudyData.add(9, "englishpb", {
         {
           heading: "About the poet",
           points: [
-            "James Kirkup (1918–2009) was an English poet and translator.",
+            "James Kirkup (1918–2009) was an English poet and translator who won the Atlantic Award for Literature in 1950 and taught English at universities in Sweden and Japan.",
             "The poem uses simple language, repeated ideas and a direct, conversational tone to persuade the reader."
           ]
         }
@@ -1145,23 +1371,23 @@ StudyData.add(9, "englishpb", {
       id: "the-nightingale-and-the-glow-worm",
       title: "The Nightingale and the Glow-worm",
       section: "Poems",
-      summary: "A short fable in verse by William Cowper: a hungry nightingale spots a glow-worm's light in the dark and prepares to eat it, but the glow-worm reminds the bird that each has its own gift, and the bird spares it. The PSEB text may be the whole or a part of the poem.",
+      summary: "A short fable in verse by William Cowper: a hungry nightingale spots a glow-worm's light in the dark and prepares to eat it, but the glow-worm reminds the bird that each has its own gift, and the bird spares it.",
       notes: [
         {
           heading: "The story",
           points: [
             "A nightingale sings sweetly through the day and as night comes feels hungry. It sees a tiny glow-worm shining in the grass.",
-            "The bird, thinking only of its hunger, threatens to eat the little creature.",
+            "The bird, thinking only of its hunger, stoops down from the hawthorn to eat it.",
             "The glow-worm calmly says that it, too, is doing its work: it shines to light the way as the bird sings to delight the ear. Each is a gift of the same Creator.",
-            "The nightingale listens, spares the glow-worm, and the two live in peace."
+            "The nightingale listens, praises the speech, lets the glow-worm go and looks for supper elsewhere."
           ]
         },
         {
           heading: "Moral",
           points: [
             "Everybody has a gift and a purpose; the strong should not harm the weak.",
-            "Quarrelling and cruelty are foolish when all are part of the same creation.",
-            "Cowper ends by applying the lesson to people: those who quarrel should see that their true interest lies in peace and brotherhood. (Check the PSEB version for the exact closing lines.)"
+            "Cruelty to others is foolish when all are part of the same creation.",
+            "The poem ends with the nightingale freeing the glow-worm and finding food elsewhere; the lesson is to live together in mutual respect."
           ]
         },
         {
