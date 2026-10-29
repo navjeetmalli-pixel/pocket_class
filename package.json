@@ -2,7 +2,7 @@
   "name": "vidya",
   "version": "1.0.0",
   "private": true,
-  "description": "Vidya: offline study app for Classes 1–12 (CBSE / NCERT and PSEB).",
+  "description": "Pocket Class India: offline study app for Classes 1–12 (CBSE / NCERT and PSEB).",
   "scripts": {
     "validate": "node scripts/validate.js",
     "build:www": "node scripts/build-www.js",

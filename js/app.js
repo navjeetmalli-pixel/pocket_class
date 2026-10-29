@@ -55,7 +55,7 @@ const App = {
     if (!show) return;
     tabbar.innerHTML = NAV.map((n) => navLink(n, sec)).join("");
     sidebar.innerHTML = `
-      <div class="brand"><span class="brand-mark">V</span>Vidya</div>
+      <div class="brand"><span class="brand-mark">P</span>Pocket Class</div>
       ${NAV.map((n) => navLink(n, sec)).join("")}
       <span class="spacer"></span>
       ${SIDE_EXTRA.map((n) => navLink(n, sec)).join("")}`;
@@ -141,7 +141,7 @@ const App = {
     main.onclick = null;
     if (view.mount) view.mount(main);
     renderNav(p);
-    document.title = view.title ? `${view.title} · Vidya` : "Vidya · Class 1–12 Study App";
+    document.title = view.title ? `${view.title} · Pocket Class` : "Pocket Class India · Class 1–12 Study App";
 
     // Switching tabs inside a chapter keeps your place; any other page starts at the top.
     if (!opts.keepScroll) {

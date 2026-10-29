@@ -1,6 +1,6 @@
 {
   "appId": "io.github.navjeetmallipixel.vidya",
-  "appName": "Vidya",
+  "appName": "Pocket Class",
   "webDir": "www",
   "ios": { "contentInset": "never" },
   "android": { "allowMixedContent": false }

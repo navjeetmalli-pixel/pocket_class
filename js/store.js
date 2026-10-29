@@ -201,7 +201,7 @@ const Store = (() => {
     exportData() {
       return JSON.stringify({ app: "vidya", version: 1, saved: Date.now(), state }, null, 1);
     },
-    // Returns false if the file isn't a Vidya backup.
+    // Returns false if the file isn't a Pocket Class backup.
     importData(text) {
       let data;
       try {

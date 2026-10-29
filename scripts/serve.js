@@ -36,4 +36,4 @@ http
       res.end(data);
     });
   })
-  .listen(port, () => console.log(`Vidya running at http://localhost:${port}`));
+  .listen(port, () => console.log(`Pocket Class running at http://localhost:${port}`));

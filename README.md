@@ -1,4 +1,4 @@
-# Vidya · Class 1–12 Study App
+# Pocket Class India · Class 1–12 Study App
 
 An offline study app for Indian school students, following the CBSE / NCERT syllabus for Classes 1 to 12.
 

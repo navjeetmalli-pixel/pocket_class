@@ -241,7 +241,7 @@ const Sheets = (() => {
                 ${sec.html}</section>`
             )
             .join("")}
-          <footer class="ws-foot">Vidya · Class ${c} ${esc(subj.name)} · Sheet ${o.n}</footer>
+          <footer class="ws-foot">Pocket Class India · Class ${c} ${esc(subj.name)} · Sheet ${o.n}</footer>
         </article>
         <article class="ws ws-key" ${o.k ? "" : "hidden"}>
           <header class="ws-head"><div class="ws-title"><strong>Answer key · Sheet ${o.n}</strong><span>Class ${c} · ${esc(subj.name)}</span></div></header>

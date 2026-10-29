@@ -166,7 +166,7 @@ const Views = (() => {
       title: "Welcome",
       html: `
         <div class="onboard">
-          <div class="brand"><span class="brand-mark">V</span>Vidya</div>
+          <div class="brand"><span class="brand-mark">P</span>Pocket Class India</div>
           <div>
             <h1>Your study partner from Class 1 to 12</h1>
             <p class="muted" style="margin-top:10px">Notes, flashcards, quizzes and mock tests for every main subject, from Class 1 maths to Class 12 physics, accountancy and history. Follows the NCERT syllabus and works offline.</p>
@@ -1141,7 +1141,7 @@ const Views = (() => {
             <button class="btn bad" data-act="reset">Reset</button>
           </div>
           <div class="card small muted">
-            <strong style="color:var(--text)">About Vidya</strong><br>
+            <strong style="color:var(--text)">About Pocket Class India</strong><br>
             Notes, quizzes and tests are written for the CBSE / NCERT and PSEB syllabi, Classes 1 to 12. Each subject page says whether it follows the current NCERT book, an older one, or is arranged by topic.
             Punjabi covers grammar and writing skills for CBSE and PSEB students. The content has not yet been checked by teachers,
             so use it for revision alongside your textbook, and check with your teacher if anything looks different from your book.
@@ -1154,7 +1154,7 @@ const Views = (() => {
           if (!file) return;
           file.text().then((text) => {
             if (!confirm("Replace the progress on this device with this backup?")) return;
-            if (!Store.importData(text)) return toast("That file isn't a Vidya backup");
+            if (!Store.importData(text)) return toast("That file isn't a Pocket Class backup");
             App.applyTheme();
             toast("Progress restored");
             if (location.hash === "#/") App.render();
@@ -1182,7 +1182,7 @@ const Views = (() => {
             location.hash = "#/";
             return;
           } else if (b.dataset.act === "backup") {
-            saveTextFile(`vidya-progress-${dayKey()}.json`, Store.exportData()).catch(() => {});
+            saveTextFile(`pocket-class-progress-${dayKey()}.json`, Store.exportData()).catch(() => {});
             return;
           } else if (b.dataset.act === "offline-all") {
             saveAllOffline(el.querySelector("#offline-status"), b);
