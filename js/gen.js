@@ -269,7 +269,8 @@ const Gen = (() => {
     11: { "motion-in-a-straight-line": ["accel", "sutHalf"], "laws-of-motion": ["force", "momentum"], "work-energy-and-power": ["work", "kinetic", "potential", "power"], "mechanical-properties-of-fluids": ["pressure"], waves: ["wave"] },
     12: { "current-electricity": ["ohm", "resistors", "elecPower"], "ray-optics-and-optical-instruments": ["lensPower", "magnification"] },
   };
-  const MAP = { maths: M, science: S, physics: P };
+  // PSEB Class 9 keeps the earlier NCERT Maths and Science books, whose chapters these generators were written for.
+  const MAP = { maths: M, science: S, physics: P, mathspb: { 9: M[9] }, sciencepb: { 9: S[9] } };
 
   function forChapter(cls, subject, chapterId) {
     const m = MAP[subject] && MAP[subject][cls];

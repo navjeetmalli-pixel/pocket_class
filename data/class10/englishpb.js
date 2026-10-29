@@ -1,8 +1,9 @@
 // Class 10 English (PSEB): Main Course Book, Poems, Supplementary Reader, Grammar, Vocabulary, Writing.
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the PSEB books.
-// Lessons not covered here (not known well enough): Main Course Book L2, L3, L4, L5, L7; Poem 4; Supplementary Reader L1, L2, L6.
+// All other Main Course Book lessons and poems and Supplementary Reader lessons 1–5 are covered and were checked against the books.
+// Not covered: Supplementary Reader Lesson 6 'Return to Air' (Philippa Pearce) is listed in the syllabus but is not in the PSEB Literature Book PDF (32 pages), so it is left out.
 StudyData.add(10, "englishpb", {
-  syllabus: {board: "PSEB", match: "textbook", books: ["English Main Course Book (PSEB)", "English Literature Book – Supplementary Reader (PSEB)"], note: "Follows the PSEB 2026–27 syllabus: grammar, vocabulary and writing, plus guides to 10 of the 19 lessons and poems (in our own words). The other lessons are not included yet.", reviewed: false},
+  syllabus: {board: "PSEB", match: "textbook", books: ["English Main Course Book (PSEB)", "English Literature Book – Supplementary Reader (PSEB)"], note: "Follows the PSEB 2026–27 syllabus; lessons summarised in our own words from the PSEB textbook (2023–24 edition).", reviewed: false},
   chapters: [
     // ───────────────────────────── MAIN COURSE BOOK ─────────────────────────────
     {
@@ -10,6 +11,7 @@ StudyData.add(10, "englishpb", {
       title: "The Happy Prince",
       section: "Main Course Book",
       summary: "A short story by Oscar Wilde about a gilded statue and a small swallow who together give away the statue's jewels and gold to the poor of the city, and are rewarded in the end.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Lesson 1, pp. 1–5",
       notes: [
         {
           heading: "Characters",
@@ -34,7 +36,7 @@ StudyData.add(10, "englishpb", {
           points: [
             "The Mayor and Councillors see the dull, shabby statue and have it pulled down and melted. The broken lead heart will not melt and is thrown on the rubbish heap beside the dead Swallow.",
             "God asks an angel to bring the two most precious things in the city; the angel brings the lead heart and the dead bird.",
-            "God says the bird will sing in his garden of paradise and the Prince will praise him there: love and sacrifice are rewarded."
+            "God says the bird will sing for ever in his garden of Paradise and the Prince will praise him in the City of Gold: love and sacrifice are rewarded."
           ]
         },
         {
@@ -72,127 +74,473 @@ StudyData.add(10, "englishpb", {
       ]
     },
     {
-      id: "the-home-coming",
-      title: "The Home-Coming",
+      id: "where-is-science-taking-us",
+      title: "Where is Science Taking Us?",
       section: "Main Course Book",
-      summary: "A short story by Rabindranath Tagore about Phatik, a wild village boy who is sent to his uncle's house in Calcutta, where he is lonely and unwanted and longs to return home.",
+      summary: "A radio talk by Dr S. W. Pennycuick asking what the real goal of science should be. He says science has given us power over matter but has done nothing for kindness, justice and understanding between people.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Lesson 2, pp. 11–16",
       notes: [
         {
-          heading: "Phatik and his village life",
+          heading: "The big question",
           points: [
-            "Phatik Chakravarti is the leader of the boys in his village; he is boisterous, free and hard to control.",
-            "His mother prefers his younger brother Makhan, and she has little patience for Phatik's mischief.",
-            "A playful incident with a log by the river leads to a fight with Makhan, and his mother scolds him unfairly."
+            "Early man asked, \"What is the meaning of life?\" Today a newer question has joined it: **where is science taking us?**",
+            "The speaker first looks at ethical and spiritual values. Science does \"less than nothing\" here: it stresses material teaching so much that many people wonder whether man is just a machine.",
+            "The talk was delivered around the 1950s."
           ]
         },
         {
-          heading: "Life in Calcutta",
+          heading: "The machine age",
           points: [
-            "His uncle Bishamber takes him to Calcutta to live with his own family, partly to relieve his mother.",
-            "His aunt dislikes him from the start and treats him as a nuisance.",
-            "The city is strange to him: he misses the open fields and rivers, the school is dull and the teachers harsh, and nobody loves him.",
-            "Phatik grows quiet and sullen, longing for his mother and village."
+            "Machines are everywhere: they let us fly, go under the sea, and also kill our fellow men in huge numbers.",
+            "Petrol machines give ten times more power than all the people in the world; in the busiest countries each person has about **six hundred human slaves** in his machines.",
+            "Science could have given food, clothing and shelter to every person, yet the world has been seen full of food and people hungry, because science produces goods but cannot control the consequences.",
+            "Machines give more leisure but do not teach us how to use it, and they make our habits of mind mechanical."
           ]
         },
         {
-          heading: "Illness and the end",
+          heading: "Problems science creates",
           points: [
-            "Phatik runs away in the rain, falls ill with a high fever and is brought back to his uncle's house.",
-            "In his delirium he calls for his mother and says the holidays have come, showing his deep longing for home.",
-            "His mother arrives, but the story leaves a feeling of sadness and the child's hurt."
+            "Modern drugs lengthen life, so the older age group becomes overcrowded. The speaker gives the example of the United States, where people over sixty were rising from nine million towards forty-five million.",
+            "Science creates problems faster than they can be solved, so man is caught in a vicious circle, always trying to catch up.",
+            "War is the worst example: science has pushed it forward while ethics and morals are left floundering behind."
+          ]
+        },
+        {
+          heading: "The real goal",
+          points: [
+            "The visible aims of science are material: to understand and conquer man's surroundings and to understand the working of the human body.",
+            "The ultimate goal must be understanding everything that makes life worthwhile.",
+            "What the world needs most is not another world-shattering discovery but a **small advance in charity, understanding, forbearance, tolerance, justice and mercy**.",
+            "The speaker hopes science may one day improve the functioning and reasoning power of the human brain, and perhaps end war. He is hopeful: those who fear the future are cowardly in spirit, and he wishes he had another hundred years."
+          ]
+        }
+      ],
+      formulas: [
+        "Speaker/author: Dr S. W. Pennycuick; the lesson is from a broadcast talk from Adelaide, Australia.",
+        "Science has helped with material things but is helpless in non-material matters such as charity, tolerance and telling good from evil.",
+        "Machine power: about six hundred human slaves per person in the busiest countries."
+      ],
+      terms: [
+        {term: "Ethical", meaning: "Connected with beliefs about what is right and wrong."},
+        {term: "Forbearance", meaning: "Patience and self-control when provoked."},
+        {term: "Vicissitude", meaning: "A change of circumstances, often unwelcome."},
+        {term: "Floundering", meaning: "Struggling helplessly without making progress."},
+        {term: "Intriguing", meaning: "Arousing curiosity because it is unusual or mysterious."}
+      ],
+      qa: [
+        {q: "Why does the speaker say science is doing \"less than nothing\" for spiritual values?", a: "Science stresses material things so strongly that people begin to doubt higher values. Many wonder whether man is only a machine, so science actually weakens ethical and spiritual belief."},
+        {q: "What is the advance the world is really waiting for?", a: "Not a new discovery in physics, chemistry or medicine, but a small advance in charity, understanding, forbearance, tolerance, justice and mercy. These non-material qualities are what science cannot supply."},
+        {q: "Why does the speaker want to live another hundred years?", a: "He believes life is becoming more interesting and exciting, and he is hopeful about the future. He wants to see how humanity uses its knowledge."}
+      ],
+      quiz: [
+        {q: "The lesson 'Where is Science Taking Us?' was originally:", options: ["A written novel", "A broadcast talk", "A newspaper report", "A school debate"], answer: 1, explain: "The author, Dr S. W. Pennycuick, delivered it as a radio talk from Adelaide."},
+        {q: "According to the speaker, petrol machines give each person in the busiest countries the work of about:", options: ["Sixty human slaves", "Six hundred human slaves", "Six thousand human slaves", "Sixteen human slaves"], answer: 1, explain: "He says each individual has six hundred human slaves in his machines."},
+        {q: "Which problem does the speaker link to modern drugs?", options: ["Shortage of water", "Overcrowding of the older age group", "Fall in food production", "Rise in unemployment among youth"], answer: 1, explain: "Drugs add to the average span of life, so the upper age group grows too large."},
+        {q: "What does the speaker say the world most needs today?", options: ["A new discovery in nuclear physics", "A breakthrough in medicine", "A small advance in charity, understanding and tolerance", "More powerful machines"], answer: 2, explain: "He says the awaited advance is a slight one in non-material qualities such as charity and justice."},
+        {q: "According to the speaker, those who fear for the future are:", options: ["Wise", "Cowardly in spirit", "Scientists", "Fortunate"], answer: 1, explain: "He calls them craven (cowardly) in spirit because life is becoming ever more exciting."}
+      ]
+    },
+    {
+      id: "secret-of-happiness",
+      title: "Secret of Happiness",
+      section: "Main Course Book",
+      summary: "An extract from Norman Vincent Peale's The New Art of Living in four short parts: finding one's real self, using the unused power within us, getting free of fear, and having faith in God.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Lesson 3, pp. 19–25",
+      notes: [
+        {
+          heading: "I. Self-realisation",
+          points: [
+            "The greatest day in a person's life is when he first **realises himself**.",
+            "A college student who was weak in studies but good at sports heard a psychology professor explain how the sun's rays, focused by a burning glass, can burn paper. Scattered effort achieves little.",
+            "He suddenly saw that he had been scattering his powers. He cried out, discovered his real self, and became highly successful afterwards."
+          ]
+        },
+        {
+          heading: "II. You are greater than you think",
+          points: [
+            "The psychologist William James said that people use only a small part of the powers they have.",
+            "An average person is said to use only about one-fifth of his brain power; every personality holds a great **reservoir of unused power**.",
+            "The secret of life is to open the sluice gates and let this power flow. It can make weak people strong, divided people united and hurt minds whole."
+          ]
+        },
+        {
+          heading: "III. The escape from fear",
+          points: [
+            "G. K. Chesterton said that if he could preach only one sermon it would be against fear, because fear is one of man's commonest enemies (money, ill health, the future, past mistakes).",
+            "The first step is to know your fears thoroughly; brought into the light, they shrivel like ghosts. Only you can finally conquer your fears.",
+            "Peale tells of a night alone in a cabin in the North Woods, when noises on the porch made him imagine gangsters. He flung open the door and saw only a small chipmunk, which taught him to look fear in the face."
+          ]
+        },
+        {
+          heading: "IV. Faith in Him",
+          points: [
+            "The Japanese preacher and social worker Kagawa had remarkable peace and strength even among mobs, soldiers, disease and the threat to his eyesight.",
+            "His secret was to immerse himself over a long time in God's grace. The lesson: feel you are not alone, and fear gives way to confidence and peace of mind."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Norman Vincent Peale; extract from The New Art of Living.",
+        "People mentioned: William James (psychologist), G. K. Chesterton (writer), Kagawa (Japanese preacher).",
+        "Key idea: focus your powers, use your hidden strength, face your fears, trust in God."
+      ],
+      terms: [
+        {term: "Self-realisation", meaning: "Becoming aware of one's real abilities and character."},
+        {term: "Reservoir", meaning: "A large store, here of unused mental power."},
+        {term: "Adversary", meaning: "An enemy or opponent."},
+        {term: "Poise", meaning: "A calm, balanced state of mind."},
+        {term: "Mortified", meaning: "Deeply embarrassed or ashamed."}
+      ],
+      qa: [
+        {q: "How does the burning-glass example explain success and failure?", a: "Sun rays falling loosely on paper do little, but a burning glass brings them to one point and burns a hole. In the same way, a person who gathers his scattered powers and focuses them succeeds, while one who wastes them fails."},
+        {q: "What did Peale learn from the incident in the cabin?", a: "The noises that frightened him turned out to be a tiny chipmunk. He learnt that fears look much worse in imagination than in fact, and that facing them squarely reduces them."},
+        {q: "What was Kagawa's secret of inner peace?", a: "He steeped himself for a long time in the grace of God. This gave him a calm that stayed with him through mobs, threats, illness and danger to his eyesight."}
+      ],
+      quiz: [
+        {q: "Which instrument does the professor use to explain focused effort?", options: ["A telescope", "A burning glass", "A microscope", "A prism"], answer: 1, explain: "A burning glass focuses the sun's rays and burns a hole in paper."},
+        {q: "According to the lesson, an average person uses about what part of his brain power?", options: ["One-fifth", "One-half", "Three-fourths", "One-tenth"], answer: 0, explain: "The scientist quoted says twenty per cent."},
+        {q: "Which writer said his one sermon would be against fear?", options: ["William James", "Gilbert Chesterton", "Kagawa", "Norman Peale"], answer: 1, explain: "Chesterton declared that, with one sermon to give, he would preach against fear."},
+        {q: "What was making the noise on the porch of the North Woods cabin?", options: ["A gangster", "A chipmunk", "A bear", "The wind"], answer: 1, explain: "It was only a small chipmunk that scurried off."},
+        {q: "Kagawa found peace by:", options: ["Wealth and travel", "Faith in the grace of God", "Avoiding people", "Reading books"], answer: 1, explain: "He immersed himself in God's grace and lost his fears."}
+      ]
+    },
+    {
+      id: "a-gift-for-christmas",
+      title: "A Gift for Christmas",
+      section: "Main Course Book",
+      summary: "A story in the manner of O. Henry's The Gift of the Magi. A poor young wife sells her beautiful hair to buy a watch-chain for her husband, only to find that he has sold his watch to buy her combs.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Lesson 4, pp. 28–30",
+      notes: [
+        {
+          heading: "Characters and setting",
+          points: [
+            "**Della:** a loving young wife, with only 1.87 dollars on Christmas Eve, who wants to buy Jim a really fine present.",
+            "**Jim (James Dillingham Young):** her husband, aged twenty-two, who earns twenty dollars a week and is poorly dressed for winter.",
+            "**Madame Sofronie:** the owner of a shop that buys hair.",
+            "They live in a cheap furnished flat; their two proud possessions are Jim's gold watch (from his father and grandfather) and Della's long brown hair."
+          ]
+        },
+        {
+          heading: "What Della does",
+          points: [
+            "After a good cry, Della hurries out, sells her hair to Madame Sofronie for twenty dollars and searches the shops for two hours.",
+            "She buys a simple but fine **platinum watch-chain** for twenty-one dollars, worthy of Jim's watch.",
+            "At home she curls her short hair, which makes her look like a schoolboy, and nervously waits, praying Jim will still think her pretty."
+          ]
+        },
+        {
+          heading: "The twist",
+          points: [
+            "Jim stares at her with an expression she cannot read: neither anger nor surprise. She explains that she sold her hair for his present.",
+            "He gives her a package. It holds the set of side and back combs she had long admired in a shop window.",
+            "Her hair is gone, so the combs are useless for now. When she shows the watch-chain, Jim says he sold his watch to buy the combs.",
+            "They agree to put the gifts away for a while."
           ]
         },
         {
           heading: "Themes",
           points: [
-            "**A child's need for love:** a child can grow quiet and ill when he is unloved.",
-            "**Rural freedom versus city confinement:** the village gives Phatik freedom, the city feels like a cage.",
-            "**Thoughtlessness of adults:** the grown-ups fail to understand a child's feelings."
+            "**Love and sacrifice:** each gives up the thing most precious to buy a present for the other.",
+            "**Irony:** the gifts become useless, yet the love behind them is the true gift.",
+            "O. Henry's well-known **twist ending** and sympathy for ordinary poor people."
+          ]
+        }
+      ],
+      formulas: [
+        "Money: Della had 1.87 dollars; Jim earned 20 dollars a week; she sold her hair for 20 dollars; the chain cost 21 dollars.",
+        "Della's gift: platinum watch-chain. Jim's gift: a set of combs. Jim sold his watch; Della sold her hair."
+      ],
+      terms: [
+        {term: "Sacrifice", meaning: "Giving up something valuable for the sake of another person."},
+        {term: "Irony", meaning: "A result that is the opposite of what was expected."},
+        {term: "Cascade", meaning: "Something flowing down like a small waterfall, as Della's hair did."},
+        {term: "Falter", meaning: "To hesitate or lose courage for a moment."},
+        {term: "Platinum", meaning: "A silvery-white precious metal."}
+      ],
+      qa: [
+        {q: "Why was Della crying on the day before Christmas?", a: "She had saved only 1.87 dollars after months of effort, which was far too little to buy Jim a worthy present. Her husband's low wage and rising expenses had left her with nothing more."},
+        {q: "How does the story show the idea of sacrifice?", a: "Della gave up her lovely hair to buy a chain for Jim's watch, and Jim gave up his treasured watch to buy her combs. Each sacrificed a prized possession for the other's happiness."},
+        {q: "What is ironical about the ending?", a: "The chain is meant for a watch that has been sold and the combs are meant for hair that has been cut off. The presents cannot be used, but the love they show is far more valuable."}
+      ],
+      quiz: [
+        {q: "How much money did Della have at the start of the story?", options: ["87 dollars", "1.87 dollars", "20 dollars", "21 dollars"], answer: 1, explain: "Della had one dollar and eighty-seven cents."},
+        {q: "What did Della sell to buy Jim's present?", options: ["Her ring", "Her hair", "Her shawl", "Her brooch"], answer: 1, explain: "She sold her long brown hair to Madame Sofronie."},
+        {q: "What did Della buy for Jim?", options: ["A new overcoat", "A pair of gloves", "A platinum watch-chain", "A set of combs"], answer: 2, explain: "She paid twenty-one dollars for a platinum watch-chain."},
+        {q: "What was Jim's present to Della?", options: ["A watch-chain", "A set of combs", "A hat", "A gold ring"], answer: 1, explain: "He bought the side and back combs she had admired."},
+        {q: "How did Jim pay for Della's present?", options: ["By selling his watch", "By borrowing money", "By using his savings", "By selling his coat"], answer: 0, explain: "He sold his watch to buy the combs."}
+      ]
+    },
+    {
+      id: "some-glimpses-of-ancient-indian-thought-and-practices",
+      title: "Some Glimpses of Ancient Indian Thought and Practices",
+      section: "Main Course Book",
+      summary: "A set of four short pieces by Dr D. V. Jindal showing India's ancient values: sacrifice and charity, unity of all life, equality regardless of looks or caste, and respect for women.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Lesson 5, pp. 38–40",
+      notes: [
+        {
+          heading: "I. Sacrifice and renunciation",
+          points: [
+            "When the demons were winning a war, the gods went to Lord Vishnu. He advised them to make a mighty weapon (the thunderbolt) from the bones of a great sage.",
+            "The sage **Dadhichi** gladly gave up his life so that his bones could be used. This is a rare example of renunciation.",
+            "The author also recalls the supreme sacrifice of Guru Gobind Singh's young sons, who accepted being bricked alive for their faith and justice.",
+            "The spirit of the yajna is \"Idam na mama\" (this does not belong to me). Greed and corruption have no place in such a tradition."
+          ]
+        },
+        {
+          heading: "II. Unity of all life",
+          points: [
+            "Elders consider it a sacred duty to feed birds, animals and even insects, showing belief in the unity of life.",
+            "\"Vasudhaiva Kutumbakam\" means the whole world is one family. The tradition of **langar** in temples and gurdwaras and the Guru's teaching **wand chhako** (share before you eat) express it.",
+            "Sharing applies to all resources, not food alone."
+          ]
+        },
+        {
+          heading: "III. No discrimination by looks or caste",
+          points: [
+            "King Janaka called a meeting of scholars. When the deformed sage **Ashtavakra** entered, some scholars laughed at him.",
+            "He boldly told the king he was ashamed to be in an assembly of skin-dealers, since only they judge a man by his skin or shape. The scholars begged his pardon.",
+            "Lord Rama eating berries tasted by a Bheel woman shows there was no discrimination by caste.",
+            "Swami Vivekananda told an American lady who laughed at his plain dress that in his country a person's worth and character make him great, not the tailor."
+          ]
+        },
+        {
+          heading: "IV. Respect for women",
+          points: [
+            "No auspicious function was thought complete without a woman; if she could not be present, her statue was made. At the Setubandh puja a statue of Sita was made.",
+            "Woman was honoured as devi, kanjak, mother and ardhangini, an equal partner in life's chariot.",
+            "Shivaji bowed before a woman brought to him as a gift and respectfully treated her as a mother.",
+            "The great wars of the Ramayana and Mahabharata were fought to defend women's honour. This puts to shame those who commit female foeticide."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Dr D. V. Jindal, who also prepared the Main Course Book.",
+        "Key figures: Dadhichi, Guru Gobind Singh's sons, King Janaka, Ashtavakra, Rama, Vivekananda, Shivaji.",
+        "Key phrases: Idam na mama; Vasudhaiva Kutumbakam; wand chhako."
+      ],
+      terms: [
+        {term: "Renunciation", meaning: "Giving up something, even life or wealth, for a higher purpose."},
+        {term: "Invincible", meaning: "Too strong to be defeated."},
+        {term: "Sanctity", meaning: "The quality of being holy or sacred."},
+        {term: "Intrinsic", meaning: "Belonging to the real nature of something."},
+        {term: "Derisive", meaning: "Mocking or scornful."}
+      ],
+      qa: [
+        {q: "What was the sacrifice of the sage Dadhichi?", a: "When the gods needed an invincible weapon to defeat the demons, Dadhichi willingly gave up his life so that a weapon could be made from his bones. His act showed supreme renunciation."},
+        {q: "How did Ashtavakra respond to those who laughed at him?", a: "He told King Janaka that he felt ashamed to be in an assembly of skin-dealers, because only they judge a person by skin or shape. The scholars were put to shame and begged his pardon."},
+        {q: "What does the practice of langar stand for?", a: "Langar stands for sharing food with everyone without distinction, reflecting the belief that the whole world is one family and the Guru's teaching to share before eating."}
+      ],
+      quiz: [
+        {q: "Who advised the gods to make a weapon from a sage's bones?", options: ["Lord Brahma", "Lord Vishnu", "King Janaka", "Lord Shiva"], answer: 1, explain: "Lord Vishnu told the gods to get a mighty sword made from a great sage's bones."},
+        {q: "Which sage gave his life so that the weapon could be made?", options: ["Ashtavakra", "Dadhichi", "Vashishtha", "Vishwamitra"], answer: 1, explain: "Dadhichi laid down his life for the weapon."},
+        {q: "Why did scholars laugh when Ashtavakra entered King Janaka's hall?", options: ["He spoke a foreign language", "His body was deformed", "He was very young", "He came late"], answer: 1, explain: "They felt a misshapen man could not discuss high philosophy."},
+        {q: "According to Vivekananda, in India a person is made great by:", options: ["His tailor", "His intrinsic worth and character", "His wealth", "His position"], answer: 1, explain: "He contrasted the tailor in America with character in India."},
+        {q: "'Vasudhaiva Kutumbakam' expresses the idea that:", options: ["Land belongs to the king", "The whole universe is one family", "Charity is a duty only for the rich", "Wars are sacred"], answer: 1, explain: "It means the entire world is one family."}
+      ]
+    },
+    {
+      id: "the-home-coming",
+      title: "The Home-Coming",
+      section: "Main Course Book",
+      summary: "A short story by Rabindranath Tagore about Phatik, a mischievous fourteen-year-old who is sent from his village to his uncle's house in Calcutta. He is unloved and homesick there, and falls into a fever with his mother's name on his lips.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Lesson 6, pp. 45–48",
+      notes: [
+        {
+          heading: "Phatik in the village",
+          points: [
+            "**Phatik Chakravarti** is the ring-leader of the village boys. His plan to roll a heavy log on the river bank is spoiled when his younger brother **Makhan** calmly sits on it.",
+            "Phatik orders the boys to roll the log with Makhan on it. Makhan falls, attacks Phatik and runs to their mother.",
+            "The mother, a widow, takes Makhan's side. She calls Phatik lazy, disobedient and wild, and thinks Makhan is as good as gold."
+          ]
+        },
+        {
+          heading: "The uncle's offer",
+          points: [
+            "The mother's brother, **Bishamber**, comes back from Mumbai and offers to take Phatik to Calcutta to educate him with his own children.",
+            "Phatik is delighted and gives away his fishing-rod, kite and marbles to Makhan.",
+            "His mother is relieved but a little hurt at how eager he is to leave."
+          ]
+        },
+        {
+          heading: "Life in Calcutta",
+          points: [
+            "His aunt, who already has three boys, finds him an unwelcome burden. The author remarks that a boy of fourteen is neither useful nor ornamental, yet needs love most.",
+            "Phatik, away from his home, feels like a stray dog that has lost its master. He is the most backward boy in school and is caned by the teacher.",
+            "When he asks to go home, his uncle says, wait for the holidays in October. After he loses his lesson book, his aunt abuses him as a clumsy country lout."
+          ]
+        },
+        {
+          heading: "Fever and ending",
+          points: [
+            "Phatik, with a headache and shivering, leaves the house. After a night of heavy rain the police bring him back, soaked and feverish.",
+            "In delirium he asks if the holidays have come, calls out in fear of his mother's beating, and shouts sailors' calls about the depth of water.",
+            "Bishamber sends for the mother. She arrives crying for him, and his last words, which suggest that he is dying, are that the holidays have come."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**A child's need for love:** a boy of fourteen needs affection and understanding.",
+            "**Home is a boy's paradise;** a strange house feels like torture.",
+            "**Thoughtlessness of adults:** neither mother nor aunt understands Phatik's feelings."
           ]
         }
       ],
       formulas: [
         "Author: Rabindranath Tagore (1861–1941), Nobel Prize in Literature 1913.",
-        "Main characters: Phatik, his mother, brother Makhan, uncle Bishamber, aunt."
+        "Characters: Phatik (14), Makhan (younger brother), their widowed mother, uncle Bishamber, his wife (the aunt).",
+        "Phatik's last words: Mother, the holidays have come."
       ],
       terms: [
-        {term: "Boisterous", meaning: "Noisy, lively and full of energy."},
-        {term: "Delirium", meaning: "A state of confused, feverish speech and thought during serious illness."},
+        {term: "Ring-leader", meaning: "The leader of a group, especially in mischief."},
+        {term: "Delirium", meaning: "Confused, feverish speech and thought during serious illness."},
         {term: "Homesickness", meaning: "Sadness caused by missing one's home and family."},
-        {term: "Sullen", meaning: "Gloomy, silent and bad-tempered."},
-        {term: "Indifference", meaning: "Lack of interest or concern for others' feelings."}
+        {term: "Impertinent", meaning: "Rude and disrespectful."},
+        {term: "Indiscretion", meaning: "An unwise act or decision."}
       ],
       qa: [
-        {q: "Why was Phatik unhappy in Calcutta?", a: "He missed his village and mother, his aunt disliked him, he was a stranger in the crowded city and his school was dull. He felt unloved and confined."},
-        {q: "What does Phatik's delirium tell us about him?", a: "Even in fever he thinks of his mother and home. It shows that what he lacked in Calcutta was love and belonging, and that his longing for home was very deep."}
+        {q: "Why was Phatik unhappy in Calcutta?", a: "His aunt disliked him, his cousins mocked him, and his teacher caned him. He missed the freedom of the village and his mother, and felt like a stray dog that had lost its master."},
+        {q: "Why does the writer say that a boy of fourteen is a nuisance, yet needs love?", a: "At that age a boy is neither a child to be petted nor an adult to be respected, and he is always scolded. But in his heart he most craves recognition and love."},
+        {q: "What does Phatik's delirium tell us about him?", a: "Even in fever, he thinks only of his mother and home. It shows how deeply he longed for love and belonging in his uncle's house."}
       ],
       quiz: [
-        {q: "Who is the author of The Home-Coming?", options: ["Rabindranath Tagore", "Oscar Wilde", "Arthur Conan Doyle", "Henry Newbolt"], answer: 0, explain: "It is a short story by Rabindranath Tagore."},
-        {q: "Who is the main character of the story?", options: ["Phatik", "Makhan", "Bishamber", "Gillian"], answer: 0, explain: "Phatik is the boy at the centre of the story."},
-        {q: "Where is Phatik sent to live with his uncle?", options: ["Calcutta", "Lahore", "Delhi", "Bombay"], answer: 0, explain: "His uncle took him from the village to Calcutta."},
-        {q: "How did Phatik's aunt treat him?", options: ["With dislike", "With great affection", "With respectful care", "As a guest of honour"], answer: 0, explain: "She did not like him and treated him as a burden."},
-        {q: "Which feeling dominates Phatik in Calcutta?", options: ["Homesickness", "Pride", "Excitement", "Ambition"], answer: 0, explain: "He longs for the freedom of the village and his mother."}
+        {q: "Who is the author of 'The Home-Coming'?", options: ["Rabindranath Tagore", "Oscar Wilde", "Arthur Conan Doyle", "R. K. Narayan"], answer: 0, explain: "It is a short story by Rabindranath Tagore."},
+        {q: "Who spoiled Phatik's plan to roll the log?", options: ["Bishamber", "Makhan", "A servant", "The owner of the log"], answer: 1, explain: "Makhan sat down on the log and refused to move."},
+        {q: "Where had Bishamber been before he returned to Calcutta?", options: ["Mumbai", "Lahore", "Delhi", "Dhaka"], answer: 0, explain: "He had gone away after his sister's marriage and started business in Mumbai."},
+        {q: "Why did Phatik run away from his uncle's house?", options: ["He lost his lesson book and was abused by his aunt", "He won a prize", "He was made to travel", "He was invited to a fair"], answer: 0, explain: "Losing the book led to the aunt's insults and a feeling that he was a burden."},
+        {q: "What were Phatik's last words?", options: ["Uncle, I am fine", "Mother, the holidays have come", "Take me to Calcutta", "Where is Makhan?"], answer: 1, explain: "In delirium he told his mother the holidays had come."}
+      ]
+    },
+    {
+      id: "the-making-of-the-earth",
+      title: "The Making of the Earth",
+      section: "Main Course Book",
+      summary: "An extract from Jawaharlal Nehru's Letters from a Father to His Daughter. He explains the solar system, how to tell planets from stars, and how the earth and moon broke from the sun and cooled to form oceans.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Lesson 7, pp. 58–59",
+      notes: [
+        {
+          heading: "The solar system",
+          points: [
+            "The earth goes round the sun and the moon round the earth. Other bodies that go round the sun are called **planets**; the moon is a **satellite** of the earth.",
+            "The sun, its planets and their satellites together form the **solar system**, a \"happy family\" with the sun as father.",
+            "The earth seems huge to us but is like a speck of dust hanging in the air."
+          ]
+        },
+        {
+          heading: "Planets and stars",
+          points: [
+            "Planets are small, like the earth, and look big only because they are near. The moon looks big for the same reason.",
+            "The sure test: **stars twinkle, planets do not**. Planets and the moon only shine by reflecting the sun's light.",
+            "Real stars are like our sun, hot and burning, shining by themselves. The sun itself is a star."
+          ]
+        },
+        {
+          heading: "Birth of the earth and moon",
+          points: [
+            "Astronomers say that long ago the earth and the other planets were part of the burning sun. Bits shot out and kept whirling round it, held by a force like a rope.",
+            "The earth, much smaller than the sun, cooled in far less time. While hot, nothing could live on it.",
+            "A bit of the earth in turn shot out to become the moon. Many think it came from the hollow now called the Pacific Ocean.",
+            "The moon, being smaller, cooled faster and is called the \"cold moon\"."
+          ]
+        },
+        {
+          heading: "Oceans and life",
+          points: [
+            "As the earth's surface cooled, the water vapour in the air condensed and fell as tremendous rain.",
+            "The water filled the great hollows to make the oceans and seas.",
+            "Only when the earth and oceans cooled further could living things exist on land or in the sea."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Jawaharlal Nehru (1889–1964); written in 1928 to his daughter Indira at Mussoorie.",
+        "Letters from a Father to His Daughter: a set of 30 letters on the evolution of the world and man.",
+        "Test: stars twinkle, planets do not."
+      ],
+      terms: [
+        {term: "Planet", meaning: "A heavenly body that moves round a star such as the sun."},
+        {term: "Satellite", meaning: "A natural or man-made body moving round a larger one; the moon is the earth's."},
+        {term: "Solar system", meaning: "The sun and everything that moves round it."},
+        {term: "Astronomer", meaning: "A scientist who studies stars and other heavenly bodies."},
+        {term: "Condense", meaning: "To change from vapour into liquid."}
+      ],
+      qa: [
+        {q: "How can we distinguish a planet from a star?", a: "Stars twinkle because they shine by their own light, while planets do not twinkle because they only reflect the sun's light. Planets are also small bodies that look big only because they are nearer."},
+        {q: "How were the oceans formed, according to Nehru?", a: "When the earth cooled, the water vapour in the air condensed into water and fell as heavy rain. This water filled the great hollows on the earth's surface and formed the oceans and seas."}
+      ],
+      quiz: [
+        {q: "The lesson 'The Making of the Earth' is taken from:", options: ["Discovery of India", "Glimpses of World History", "Letters from a Father to His Daughter", "An Autobiography"], answer: 2, explain: "It is from Nehru's letters to his daughter Indira."},
+        {q: "A satellite of the earth is:", options: ["The sun", "The moon", "Mars", "A star"], answer: 1, explain: "The moon hangs on to the earth and goes round it."},
+        {q: "Which of these twinkle?", options: ["Stars", "Planets", "The moon", "All heavenly bodies"], answer: 0, explain: "Stars twinkle, planets do not."},
+        {q: "According to the lesson, the earth originally:", options: ["Came from the moon", "Was a part of the sun", "Was a star", "Came from space dust"], answer: 1, explain: "Astronomers say the earth shot out from the sun."},
+        {q: "Why was the moon cooler than the earth?", options: ["It is farther from the sun", "It is smaller", "It has water", "It has ice caps"], answer: 1, explain: "Because it was much smaller, it cooled more quickly."}
       ]
     },
     {
       id: "the-rule-of-the-road",
       title: "The Rule of the Road",
       section: "Main Course Book",
-      summary: "A light-hearted essay by A. G. Gardiner that uses the rule of traffic on the road to explain the difference between liberty and licence and the need for give-and-take in society.",
+      summary: "A light-hearted essay by A. G. Gardiner which uses road traffic to show that liberty must be limited by the liberty of others. He argues that good social conduct rests on consideration for other people in small everyday matters.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Lesson 8, pp. 62–64",
       notes: [
         {
-          heading: "Main argument",
+          heading: "The old lady in Petrograd",
           points: [
-            "Liberty of the individual must be limited by the liberty of others; freedom does not mean doing whatever one likes.",
-            "Gardiner illustrates the idea with a man who insists on walking in the middle of the road because he is free to do as he likes.",
-            "The writer's answer is that a person's freedom is limited by the freedom and safety of other people using the road."
+            "Gardiner starts with a story told by Arthur Ransome: a stout old lady walked down the middle of a street in Petrograd, causing confusion and danger. When told to use the pavement, she replied, \"We have liberty now.\"",
+            "She did not see that if she could walk in the middle of the road, a car driver could equally drive on the pavement; the result would be chaos.",
+            "Individual liberty would become **social anarchy**."
           ]
         },
         {
-          heading: "Rules of the road",
+          heading: "Liberty and its limits",
           points: [
-            "On the road there are rules, such as keeping to the left in Britain, so that traffic can move safely.",
-            "But rules alone are not enough; the real rule of the road is **consideration for others**.",
-            "Drivers and walkers must be ready to give way a little, as smooth movement depends on mutual courtesy."
+            "To preserve everybody's liberty, everybody's liberty must be curtailed. The policeman at Piccadilly Circus who stops your car is a symbol not of tyranny but of liberty.",
+            "Liberty is a **social contract**, an accommodation of interests.",
+            "In purely private matters (dress, hair, hours) we may do as we like. But once we step out, our freedom is limited by other people's freedom."
           ]
         },
         {
-          heading: "Larger lesson",
+          heading: "Examples of consideration",
           points: [
-            "The road is a small picture of society: people who live together must also accept limits on their own behaviour.",
-            "The essay also notes that good manners cannot be fully enforced by law; they come from a large-hearted attitude.",
-            "Liberty becomes licence when it disregards others."
+            "Playing the guitar at midnight in the street disturbs neighbours' right to sleep; practising in the attic with the window shut is the considerate way.",
+            "On a train, a man talked loudly and pompously, ruining the writer's reading. He was well-intentioned but lacked the **social sense**.",
+            "Some clashes have no easy answer: Gardiner's friend X hates street pianos, while a lady neighbour loves them.",
+            "Society may insist on a minimum of education for a child, because a parent has no liberty to make his child a burden to the community."
           ]
         },
         {
-          heading: "Style",
+          heading: "Conclusion",
           points: [
-            "The essay is humorous and conversational, using a simple everyday situation to make a serious point.",
-            "Gardiner wrote essays under the pen-name **Alpha of the Plough**."
+            "We must be neither complete anarchists nor complete socialists but a judicious mixture of both.",
+            "It is in small matters of conduct, in observing the rule of the road, that we show whether we are civilised or uncivilised.",
+            "Great moments of heroism are rare; the little habits of everyday behaviour make up the sum of life.",
+            "The essay is humorous and conversational, using simple anecdotes to make a serious point."
           ]
         }
       ],
       formulas: [
-        "Author: A. G. Gardiner (1865–1946), British journalist and essayist.",
-        "Key idea: liberty ≠ licence; the freedom of one person ends where the safety and freedom of another begin."
+        "Author: A. G. Gardiner (1865–1946), British journalist and essayist, who wrote as Alpha of the Plough.",
+        "Key idea: liberty ≠ licence; the freedom of one person ends where another's freedom begins.",
+        "Anecdotes: old lady in Petrograd, policeman at Piccadilly, guitar practice, loud man in the train, street piano."
       ],
       terms: [
         {term: "Liberty", meaning: "Freedom to act within limits that respect the rights of others."},
-        {term: "Licence", meaning: "Misuse of freedom, acting without regard for others."},
-        {term: "Courtesy", meaning: "Polite and considerate behaviour."},
-        {term: "Give and take", meaning: "A readiness to adjust and compromise for mutual benefit."},
-        {term: "Essay", meaning: "A short prose piece on a single subject, giving the writer's views."}
+        {term: "Anarchy", meaning: "A state of disorder with no rules or authority."},
+        {term: "Curtail", meaning: "To reduce or restrict."},
+        {term: "Social contract", meaning: "An unwritten agreement among people to accept limits for their common good."},
+        {term: "Courtesy", meaning: "Polite and considerate behaviour."}
       ],
       qa: [
-        {q: "What is the difference between liberty and licence according to the essay?", a: "Liberty is freedom exercised with respect for others' rights and safety. Licence is freedom used without regard for others. The essay says our freedom must be limited by the freedom of the community."},
-        {q: "Why does the writer say that the rule of the road is more than a legal rule?", a: "Because traffic moves safely only when people show consideration and goodwill. Law can set rules, but the spirit of give-and-take and courtesy is what makes society work."}
+        {q: "What does the story of the old lady in Petrograd show?", a: "She thought liberty meant walking wherever she liked, even in the middle of the road. But if everyone did the same, the result would be chaos. It shows that liberty must be limited by others' liberty."},
+        {q: "Why does Gardiner call the policeman at Piccadilly Circus a symbol of liberty?", a: "By stopping some traffic he lets everyone cross in turn. Without such curbs, the road would be a whirlpool in which no one could move, so limiting private liberty makes liberty real for all."},
+        {q: "What does Gardiner consider the true test of being civilised?", a: "It is how we behave in small, everyday matters, such as observing the rule of the road and showing consideration to others. Great acts of heroism are rare, but daily conduct makes up life."}
       ],
       quiz: [
-        {q: "The Rule of the Road was written by:", options: ["A. G. Gardiner", "Leo Tolstoy", "O. Henry", "Philippa Pearce"], answer: 0, explain: "A. G. Gardiner wrote it under the pen-name Alpha of the Plough."},
-        {q: "The essay mainly discusses the difference between:", options: ["Liberty and licence", "Rich and poor", "Town and village", "Speed and slowness"], answer: 0, explain: "The road is used to show that freedom is limited by the rights of others."},
-        {q: "What is the real rule of the road, according to the writer?", options: ["Consideration for others", "Speed over all", "Walking on the right", "Obeying the police alone"], answer: 0, explain: "The essay stresses give-and-take and mutual courtesy."},
-        {q: "The essay is written in a tone that is:", options: ["Light and humorous", "Angry and bitter", "Tragic", "Technical"], answer: 0, explain: "Gardiner uses a witty, conversational tone."},
-        {q: "Gardiner's pen-name was:", options: ["Alpha of the Plough", "Boz", "Saki", "Mark Twain"], answer: 0, explain: "He wrote his essays as Alpha of the Plough."}
+        {q: "'The Rule of the Road' is written by:", options: ["Leo Tolstoy", "A. G. Gardiner", "Norman Peale", "Jawaharlal Nehru"], answer: 1, explain: "It is an essay by A. G. Gardiner."},
+        {q: "Where did the old lady walk down the middle of the street?", options: ["London", "Petrograd", "Paris", "New York"], answer: 1, explain: "Arthur Ransome's story was about Petrograd."},
+        {q: "What does the policeman at Piccadilly Circus symbolise, according to the writer?", options: ["Tyranny", "Liberty", "Anarchy", "Speed"], answer: 1, explain: "He is a symbol not of tyranny but of liberty."},
+        {q: "What was wrong with the man in the railway carriage?", options: ["He lacked the social sense", "He was ill", "He was drunk", "He was silent"], answer: 0, explain: "He talked loudly without thinking of others, though he was well-meaning."},
+        {q: "Gardiner says we must be:", options: ["Complete anarchists", "Complete socialists", "A judicious mixture of both", "Neither of the two"], answer: 2, explain: "He prefers a balanced mixture of individual and social liberty."}
       ]
     },
     // ───────────────────────────── POEMS ─────────────────────────────
@@ -311,55 +659,125 @@ StudyData.add(10, "englishpb", {
       id: "a-ballad-of-sir-pertab-singh",
       title: "A Ballad of Sir Pertab Singh",
       section: "Poems",
-      summary: "A brief guide to Henry Newbolt's ballad honouring Sir Pertab Singh, an Indian prince and soldier. Only the general nature of the poem is covered here; read the poem itself for its story and lines.",
+      summary: "A ballad by Sir Henry Newbolt. When an English soldier-friend dies at the Maharaja's palace in Jodhpur, Pertab Singh himself helps to carry the body, even though it costs him his caste. He declares that the true caste of a soldier is a bond that goes beyond birth.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Poem (iii), pp. 34–36",
       notes: [
         {
-          heading: "About the poem",
+          heading: "The story",
           points: [
-            "It is a **ballad**, a narrative poem of simple language and strong rhythm that tells of a person or event.",
-            "The poet is Sir Henry Newbolt (1862–1938), an English poet known for patriotic and heroic verse.",
-            "The poem honours Sir Pertab Singh as a brave soldier and loyal prince."
+            "A young English soldier comes as a guest to the \"Rose-red House\" of **Pertab Singh** in Jodhpur. The two become close friends, riding together and sharing tales; their blood \"sings\" that they love a soldier best.",
+            "The Englishman dies at the end of their days together, and his body is placed in a narrow coffin.",
+            "Three men of his own race and religion are present, but a fourth bearer cannot be found in Jodhpur."
           ]
         },
         {
-          heading: "Features of a ballad",
+          heading: "Pertab Singh's decision",
           points: [
-            "A ballad tells a story, often about courage or adventure.",
-            "It uses simple words, regular rhythm and rhyme, and often a refrain or repeated pattern.",
-            "It was traditionally meant to be sung or recited aloud.",
-            "Typical themes are valour, honour, duty and loyalty."
+            "The Englishman's friends ask the Maharaja to send a sweeper, since a sweeper has no caste to lose.",
+            "Pertab Singh refuses. He says he himself will carry his friend, because no other hand shall bear him away.",
+            "Warned that he is about to lose something that cannot be regained, he accepts the loss. The coffin goes down the palace steps on four shoulders."
           ]
         },
         {
-          heading: "How to study it",
+          heading: "The priests' charge",
           points: [
-            "Note the setting, the person honoured, and the action described in each stanza.",
-            "Be ready to explain the poet's attitude to Sir Pertab Singh and the values the poem praises.",
-            "Check the rhyme scheme and any repeated lines in your textbook."
+            "The next morning the Brahmins come to him in sorrow: by carrying the dead foreigner he has lost his caste.",
+            "Pertab Singh answers angrily. There is a caste above his and the Brahmin's: the caste of all noble hearts, which is the right soldier's faith, \"wide as the world, free as the air\"."
+          ]
+        },
+        {
+          heading: "Theme and form",
+          points: [
+            "The poem attacks the narrowness of the caste system and the belief that birth decides a man's worth. A person's caste is his noble heart and actions.",
+            "It also shows soldierly brotherhood that crosses race, religion and nation.",
+            "It is a **ballad**: a narrative in short rhymed stanzas with simple language and strong rhythm."
           ]
         }
       ],
       formulas: [
-        "Poet: Sir Henry Newbolt (1862–1938).",
-        "Form: ballad (narrative poem)."
+        "Poet: Sir Henry Newbolt (1862–1938), English poet and barrister; known for patriotic poems.",
+        "Setting: Jodhpur, the Rose-red House of Pertab Singh.",
+        "Theme: true caste lies in noble hearts and the soldier's faith, not in birth."
       ],
       terms: [
-        {term: "Ballad", meaning: "A narrative poem, usually in short stanzas, telling a story of heroism, love or adventure."},
-        {term: "Valour", meaning: "Great courage in the face of danger."},
-        {term: "Refrain", meaning: "A line or phrase repeated in a poem."},
-        {term: "Narrative poem", meaning: "A poem that tells a story."},
-        {term: "Patriotic", meaning: "Having love and devotion for one's country."}
+        {term: "Ballad", meaning: "A narrative poem in short stanzas telling a story of heroism, love or adventure."},
+        {term: "Caste", meaning: "A hereditary social class in Indian society."},
+        {term: "Bier", meaning: "A stand on which a dead body or coffin is carried."},
+        {term: "Creed", meaning: "A set of religious beliefs."},
+        {term: "Valour", meaning: "Great courage in the face of danger."}
       ],
       qa: [
-        {q: "What is a ballad?", a: "A ballad is a narrative poem that tells a story, usually of heroic deeds, in simple words and a regular rhythm. Ballads were originally recited or sung."},
-        {q: "Name the poet of A Ballad of Sir Pertab Singh and the qualities such a ballad praises.", a: "It is by Henry Newbolt. A ballad of this kind praises qualities such as courage, honour, duty and loyalty."}
+        {q: "Why did Pertab Singh carry the coffin himself?", a: "The dead Englishman was his friend and only three men of his race were present. Rather than send a sweeper, Pertab Singh insisted on bearing his friend, saying no other hand would do it."},
+        {q: "What does Pertab Singh mean by saying there is a caste above the Brahmin's and his own?", a: "He means the caste of all noble hearts, the true soldier's faith, which is wide as the world. It is based on character and brotherhood, not on birth, and so it unites people of every land."}
       ],
       quiz: [
-        {q: "The poem A Ballad of Sir Pertab Singh is by:", options: ["Henry Newbolt", "Henry Wotton", "James Shirley", "Rabindranath Tagore"], answer: 0, explain: "The syllabus lists it as a poem by Henry Newbolt."},
-        {q: "A ballad is a:", options: ["Narrative poem", "Long essay", "Short play", "Prose story"], answer: 0, explain: "A ballad tells a story in verse."},
-        {q: "Which quality does a heroic ballad typically praise?", options: ["Courage", "Laziness", "Greed", "Secrecy"], answer: 0, explain: "Heroic ballads celebrate bravery and honour."},
-        {q: "A line repeated at intervals in a poem is called:", options: ["A refrain", "A paradox", "A prologue", "A foreword"], answer: 0, explain: "Such repetition is a refrain."},
-        {q: "Ballads were originally meant to be:", options: ["Sung or recited aloud", "Printed only", "Used as laws", "Read silently"], answer: 0, explain: "Ballads have an oral tradition."}
+        {q: "The poem 'A Ballad of Sir Pertab Singh' is by:", options: ["Henry Newbolt", "Henry Wotton", "James Shirley", "Rabindranath Tagore"], answer: 0, explain: "It is a poem by Sir Henry Newbolt."},
+        {q: "Where is the ballad set?", options: ["Jaipur", "Jodhpur", "Delhi", "Lahore"], answer: 1, explain: "The \"Rose-red House\" is Pertab Singh's palace in Jodhpur."},
+        {q: "Why could the Englishman's friends not find a fourth bearer?", options: ["No one in Jodhpur would carry him", "They had no coffin", "It was a holiday", "Pertab Singh forbade it"], answer: 0, explain: "Only three of his own race were present and no fourth could be found."},
+        {q: "Whom did the Englishman's friends ask Pertab Singh to send?", options: ["A sweeper", "A Brahmin", "A soldier", "A servant"], answer: 0, explain: "They said a sweeper had no caste to lose."},
+        {q: "According to Pertab Singh, the highest caste is:", options: ["The Brahmin caste", "The Rajput caste", "The caste of all noble hearts", "The caste of kings"], answer: 2, explain: "He calls the right soldier's faith the caste of noble hearts."}
+      ]
+    },
+    {
+      id: "razia-the-tigress",
+      title: "Razia, the Tigress",
+      section: "Poems",
+      summary: "A poem by Keki N. Daruwalla about a tigress whose mate Sheru has gone, leaving her alone with two cubs, afraid of hyenas and, even more, of the return of poachers.",
+      source: "English Main Course Book, Class X (PSEB, 2023–24), Poem (iv), pp. 56–57",
+      notes: [
+        {
+          heading: "What the poem says",
+          points: [
+            "The tigress **Razia** lives alone with two cubs that have not yet been named. Their father **Sheru** hardly played with them and is now gone.",
+            "Sheru was an expert hunter who understood the winds. He approached deer from down-wind, crawling low and taking a circular route so they could not smell him, then leaped out and crushed a stag.",
+            "Now that he is gone, people no longer fear his pug-marks on the forest floor."
+          ]
+        },
+        {
+          heading: "Razia's fears",
+          points: [
+            "Grief and fear compete in Razia's heart. Will hyenas attack the cubs if she leaves them to hunt?",
+            "Her greater dread is that the **poachers with guns** will come again. She lives in constant fear."
+          ]
+        },
+        {
+          heading: "Theme and message",
+          points: [
+            "Wild animals, especially tigers, are in danger because humans have taken their land and hunt them.",
+            "The poem makes us feel for the animal's loss and calls for the protection of wildlife and natural resources."
+          ]
+        },
+        {
+          heading: "Style",
+          points: [
+            "The poem is in simple conversational language with vivid pictures of hunting, such as the belly-crawl and the claw like a club.",
+            "It gives the tigress human feelings (grief, fear, a mother's worry), a form of **personification**.",
+            "The ending is quiet and worrying, with the poacher as the real threat."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Keki N. Daruwalla (1937–2024), born in Lahore; Sahitya Akademi and Commonwealth Poetry Award winner.",
+        "Characters: Razia (tigress), Sheru (her mate), two cubs; threats: hyenas and poachers.",
+        "Theme: wildlife in danger from poaching and loss of habitat."
+      ],
+      terms: [
+        {term: "Poacher", meaning: "A person who hunts or catches animals illegally."},
+        {term: "Spoor", meaning: "The track or scent left by an animal."},
+        {term: "Down-wind", meaning: "In the direction the wind is blowing, away from the hunter."},
+        {term: "Traversed", meaning: "Travelled across."},
+        {term: "Personification", meaning: "Giving human feelings to an animal or object."}
+      ],
+      qa: [
+        {q: "What was Sheru's special skill?", a: "Sheru knew the winds well. He approached deer from down-wind, crawling low and taking a circular route so his scent did not reach them, and then sprang on them in a flash."},
+        {q: "What are Razia's fears?", a: "She fears that hyenas will attack her cubs when she goes hunting, and, more than that, that poachers with guns will return to kill her and her family."}
+      ],
+      quiz: [
+        {q: "Who is the poet of 'Razia, the Tigress'?", options: ["Keki N. Daruwalla", "Henry Newbolt", "Rabindranath Tagore", "James Shirley"], answer: 0, explain: "The poem is by the Indian poet Keki N. Daruwalla."},
+        {q: "Who is Sheru?", options: ["Razia's cub", "Razia's mate", "A poacher", "A stag"], answer: 1, explain: "Sheru was the father of the cubs and has now gone."},
+        {q: "What is Razia's greatest dread?", options: ["Hunger", "The return of poachers", "Floods", "Forest fires"], answer: 1, explain: "The poem says a greater dread is the poachers with guns."},
+        {q: "How many cubs does Razia have?", options: ["One", "Two", "Three", "Four"], answer: 1, explain: "She has two cubs who are not yet named."},
+        {q: "What does the poem mainly warn about?", options: ["Danger to wildlife from humans", "The beauty of forests", "Hunting skills", "Winds and weather"], answer: 0, explain: "It points to poaching and the loss of habitat."}
       ]
     },
     {
@@ -419,177 +837,354 @@ StudyData.add(10, "englishpb", {
     },
     // ───────────────────────────── SUPPLEMENTARY READER ─────────────────────────────
     {
+      id: "bed-number-29",
+      title: "Bed Number-29",
+      section: "Supplementary Reader",
+      summary: "A story by Tariq Rahman told by a painter who loses his sight in an accident. His cheerful wardmate Naeem, known as Number Twenty-Nine, makes him paint again, and the painter learns at the end what Naeem secretly did for him.",
+      source: "English Literature Book, Class X (PSEB, 2023–24), Lesson 1, pp. 1–3",
+      notes: [
+        {
+          heading: "Characters",
+          points: [
+            "**The narrator:** a painter whose hobby is painting; he has just finished a picture called \"Life\" when a car accident blinds him.",
+            "**Naeem (Bed No. 29):** a soft-spoken, cheerful wardmate who limps. He comforts the narrator by describing scenes outside the window.",
+            "The doctors and the nurse, who appear at the operations and at the end."
+          ]
+        },
+        {
+          heading: "Events",
+          points: [
+            "Lying in the dark hospital ward, the narrator is sunk in depression. Naeem's vivid descriptions give him hope.",
+            "Naeem urges him to paint again. The narrator at first angrily thinks he is being mocked, but after Naeem pleads, agrees.",
+            "Naeem arranges the materials and describes a scene each morning; the narrator paints it from memory, believing he is a genius. He spends his last rupee on a second operation, which fails.",
+            "Naeem offers him money, but he refuses to take it. Then Naeem tells him that an art-loving friend wants to buy his paintings and brings him crisp notes.",
+            "With that money the narrator has a third operation, and this time he can see."
+          ]
+        },
+        {
+          heading: "The ending",
+          points: [
+            "He asks for Naeem but is told he is ill. The nurse then gives him Naeem's letter and shows him his paintings in the cupboard: they are only meaningless lines without colour.",
+            "He learns that **Naeem was blind** and had bought the paintings himself with all his money, so he could not afford his own operation and left the hospital.",
+            "Under Naeem's pillow lie four paintings of the four seasons that he had made before he went blind. He had been describing these to the narrator."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Selfless friendship:** Naeem gives up his own eyesight so that his friend may see.",
+            "**Hope and the power of encouragement** to bring someone out of despair.",
+            "**Kindness that hides itself:** Naeem never lets the narrator know he is blind or poor."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Tariq Rahman.",
+        "Characters: the painter-narrator and Naeem (Bed No. 29).",
+        "Key twist: Naeem was blind and paid for the paintings with the money he needed for his own operation."
+      ],
+      terms: [
+        {term: "Depression", meaning: "A deep state of sadness and hopelessness."},
+        {term: "Divert", meaning: "To turn someone's attention away from something."},
+        {term: "Hysterical", meaning: "Shouting or crying in an uncontrolled way."},
+        {term: "Haphazard", meaning: "Irregular; without order or plan."},
+        {term: "Wardmate", meaning: "A patient in the same hospital ward."}
+      ],
+      qa: [
+        {q: "How did Naeem help the narrator recover his spirits?", a: "Naeem described the scenes outside the window in rich detail, which gave the narrator hope. He then persuaded him to paint again and described scenes for him to draw, making him forget his blindness."},
+        {q: "How did the narrator get the money for his third operation?", a: "Naeem said an art-loving friend wanted to buy his paintings and gave him crisp notes. Later it became clear that Naeem himself had bought all the paintings."},
+        {q: "What does the twist at the end reveal about Naeem?", a: "Naeem was blind too and had used all his money to buy the narrator's paintings. He therefore could not afford his own operation and left the hospital. This shows his great generosity."}
+      ],
+      quiz: [
+        {q: "Who wrote 'Bed Number-29'?", options: ["R. K. Narayan", "Tariq Rahman", "O. Henry", "Leo Tolstoy"], answer: 1, explain: "The story is by Tariq Rahman."},
+        {q: "What was the narrator's hobby?", options: ["Painting", "Music", "Writing", "Gardening"], answer: 0, explain: "He loved painting and had just completed a picture called 'Life'."},
+        {q: "Naeem was known as Number Twenty-Nine because:", options: ["He was 29 years old", "That was his bed number", "He lived at No. 29", "He had 29 paintings"], answer: 1, explain: "It was the number of his hospital bed."},
+        {q: "What did the narrator find in the cupboard after his third operation?", options: ["Beautiful coloured paintings", "Meaningless lines without colour", "Naeem's medicines", "Money"], answer: 1, explain: "He found his paintings as masses of haphazard lines, because he had been blind while painting."},
+        {q: "Why did Naeem leave the hospital?", options: ["He was cured", "He had no money left for his operation", "He quarrelled with the narrator", "He was transferred"], answer: 1, explain: "He had spent all his money buying the paintings."}
+      ]
+    },
+    {
+      id: "half-a-rupee-worth",
+      title: "Half a Rupee Worth",
+      section: "Supplementary Reader",
+      summary: "R. K. Narayan's story of Subbiah, a greedy rice merchant who hoards grain in wartime and cheats a poor man out of his half-rupee. He is found dead in his secret godown, buried under his own rice bags.",
+      source: "English Literature Book, Class X (PSEB, 2023–24), Lesson 2, pp. 5–8",
+      notes: [
+        {
+          heading: "Subbiah the merchant",
+          points: [
+            "Subbiah sells rice at the market gate. His dark, stuffy shop holds every variety, and he loves every inch of it.",
+            "As a boy he served his strict father as an unpaid apprentice. His father allowed him no outside interests, so he knew nothing except rice.",
+            "He grows rich, lends money at very high interest, takes the houses of those who fail to pay, and lives in comfort with his wife and five children."
+          ]
+        },
+        {
+          heading: "War and controls",
+          points: [
+            "The war stopped rice imports and made his stock very valuable. His profits piled up.",
+            "Price and Food Control worried him. He turned his shop into a **Fair Price Grain Depot** but gave the government little of his rice.",
+            "He hid his rice, bribed inspectors with small notes, gave short measures, delayed opening and closing his shop, and kept a secret godown (disguised as a store of waste paper and rags) filled with rice bags."
+          ]
+        },
+        {
+          heading: "The poor man's half-rupee",
+          points: [
+            "One evening, as Subbiah closed his shop, a desperate man begged for rice. His ration card was exhausted and six people at home, including two children and his old mother, had nothing to eat.",
+            "The man had only a half-rupee. Subbiah scorned it and offered half a seer. He took the coin and told the man to wait while he went to a supplier.",
+            "Subbiah went to his secret godown. The man waited for three hours, then searched the streets and finally went to Subbiah's house."
+          ]
+        },
+        {
+          heading: "The ending",
+          points: [
+            "Subbiah's wife, the only person who knew where the godown was, led the search. They broke in through the ventilator.",
+            "In a corner lay an electric torch and a half-rupee coin, and a hand stuck out from a pile of fallen rice bags: Subbiah had been crushed by his own hoard."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Greed and exploitation** of the poor in times of scarcity.",
+            "**Poetic justice:** the man who hoarded rice dies under it.",
+            "R. K. Narayan's style: simple, gently ironic and full of everyday detail."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: R. K. Narayan (1906–2001), Indian novelist and short-story writer.",
+        "Subbiah's secret godown looked like a store of waste paper and rags.",
+        "The poor man had a half-rupee (eight annas) and needed rice for six people."
+      ],
+      terms: [
+        {term: "Hoarding", meaning: "Secretly storing large amounts of goods to sell at higher prices later."},
+        {term: "Apprentice", meaning: "A person learning a trade by working under an expert."},
+        {term: "Godown", meaning: "A warehouse for storing goods."},
+        {term: "Exorbitant", meaning: "Much too high, as in interest rates."},
+        {term: "Poetic justice", meaning: "An outcome in which wrong-doing is punished in a fitting way."}
+      ],
+      qa: [
+        {q: "How did Subbiah get around the government's controls?", a: "He ran a Fair Price Grain Depot on paper but hid most of his rice, bribed inspectors, gave short measures and delayed sales. He kept rice in a secret godown disguised as a store for waste paper and rags."},
+        {q: "Why did the poor man need rice, and what did Subbiah do with his money?", a: "His ration card was exhausted and six people at home, including two children and his old mother, were starving. Subbiah took his half-rupee, promised half a seer of rice and then disappeared into his secret godown."},
+        {q: "How is the ending of the story an example of poetic justice?", a: "Subbiah, who cheated hungry people by hoarding rice, is found dead under a pile of rice bags in his own godown. His greed leads directly to his death."}
+      ],
+      quiz: [
+        {q: "Who wrote 'Half a Rupee Worth'?", options: ["R. K. Narayan", "Tariq Rahman", "Rabindranath Tagore", "A. G. Gardiner"], answer: 0, explain: "It is a short story by R. K. Narayan."},
+        {q: "What did Subbiah sell?", options: ["Wheat", "Rice", "Sugar", "Cloth"], answer: 1, explain: "He was a rice merchant."},
+        {q: "How did Subbiah's profits change during the war?", options: ["They fell sharply", "They rose greatly", "They stayed the same", "He lost his shop"], answer: 1, explain: "Imports stopped, so his stock became very valuable."},
+        {q: "What did the poor man offer Subbiah for rice?", options: ["A rupee", "A half-rupee coin", "A gold ring", "A ration card only"], answer: 1, explain: "The man had only a half-rupee."},
+        {q: "Where was Subbiah found the next morning?", options: ["At the temple", "In his shop", "Buried under rice bags in his godown", "At the police station"], answer: 2, explain: "His wife led the search, and his hand was seen under fallen bags."}
+      ]
+    },
+    {
       id: "one-thousand-dollars",
       title: "One Thousand Dollars",
       section: "Supplementary Reader",
-      summary: "A short story by O. Henry about a young man who inherits one thousand dollars from his uncle and must account for how he spent it; it has the author's trademark twist ending.",
+      summary: "O. Henry's story of Bobby Gillian, a carefree young man who inherits one thousand dollars on condition that he accounts for how he spends it. He gives the money away to Miss Hayden and then pretends he wasted it, so that she gets the fortune meant for him.",
+      source: "English Literature Book, Class X (PSEB, 2023–24), Lesson 3, pp. 10–12",
       notes: [
         {
-          heading: "Characters and setting",
+          heading: "Characters",
           points: [
-            "**Bobby Gillian:** a young, carefree man in New York who inherits 1000 dollars from his uncle.",
-            "**The lawyers (Tolman and Sharp):** they hand over the money and ask for an account of how he spends it.",
-            "**Miss Hayden:** the young woman Gillian cares for, who plays an important part in the ending."
+            "**Robert (Bobby) Gillian:** a young, carefree man who calls himself the black sheep of the family.",
+            "**Lawyer Tolman** (of Tolman and Sharp): hands over the money and demands an account of how it is spent.",
+            "**Old Bryson:** Gillian's calm club friend, aged forty, who suggests how to spend the money.",
+            "**Miss Lotta Lauriere:** an actress; **Miss Miriam Hayden:** his late uncle's ward, small, slender and dressed in black."
           ]
         },
         {
-          heading: "Plot outline",
+          heading: "The search for a use",
           points: [
-            "Gillian receives 1000 dollars and is told he must report exactly how he used it.",
-            "He has little respect for the sum, as he is used to spending freely, and treats it lightly.",
-            "He later gives the lawyers a short, odd account of what happened to the money.",
-            "A twist at the end reveals the real purpose of the uncle's will."
+            "Gillian laughs that one thousand dollars is a small sum. Old Bryson says it could do much good, but then advises him to buy a diamond pendant for Miss Lauriere.",
+            "Miss Lauriere, who is not interested in him, only mentions a costlier necklace someone else wore.",
+            "The cab-driver says he would open a saloon. A blind pencil-seller shows Gillian a bank book with a balance of 1,785 dollars.",
+            "None of these seems a sensible use of the money."
           ]
         },
         {
-          heading: "Themes and technique",
+          heading: "What Gillian does",
           points: [
-            "**Irony:** what looks like a foolish use of money turns out to have deeper meaning.",
-            "**Money versus character:** the story tests how a person behaves when given money and a chance.",
-            "O. Henry is famous for **surprise endings**, humour and quick, witty language."
+            "He asks Mr Tolman whether Miss Hayden got anything from the will besides a seal ring and ten dollars. The answer: nothing.",
+            "He goes to her and says a postscript to the will left her a thousand dollars. She takes it and turns white; she is sorry.",
+            "He writes the account: paid by the black sheep on account of eternal happiness to the best and dearest woman on earth."
+          ]
+        },
+        {
+          heading: "The twist",
+          points: [
+            "The uncle left a second envelope, to be opened after the account: if Gillian had spent the money wisely, a much larger sum kept in reserve was to be given to him; otherwise it would go to Miss Hayden.",
+            "Gillian tears up his written account and says he lost the money on the races. By seeming to have wasted it, he makes sure the fortune goes to Miss Hayden."
+          ]
+        },
+        {
+          heading: "Themes",
+          points: [
+            "**Selflessness and love:** Gillian gives up wealth for the woman he loves.",
+            "**Irony and a twist ending**, typical of O. Henry: the careless \"black sheep\" proves the most generous.",
+            "True use of money lies in making someone happy."
           ]
         }
       ],
       formulas: [
         "Author: O. Henry (William Sydney Porter, 1862–1910), American short-story writer.",
-        "Named characters: Robert (Bobby) Gillian, the lawyers Tolman and Sharp, Miss Hayden."
+        "Named characters: Robert Gillian, lawyers Tolman and Sharp, Old Bryson, Lotta Lauriere, Miriam Hayden.",
+        "Gillian lies that he lost the money on the races."
       ],
       terms: [
-        {term: "Inheritance", meaning: "Money or property received from a person after their death."},
-        {term: "Irony", meaning: "When the result is the opposite of what is expected."},
-        {term: "Twist ending", meaning: "An unexpected turn at the end of a story."},
-        {term: "Pen-name", meaning: "A name used by a writer instead of their real name."},
-        {term: "Account", meaning: "A report of how money has been spent."}
+        {term: "Inheritance", meaning: "Money or property received from someone after their death."},
+        {term: "Bequest", meaning: "Something left to a person in a will."},
+        {term: "Ward", meaning: "A young person looked after by a guardian."},
+        {term: "Black sheep", meaning: "A member of a family who is regarded as a disgrace or failure."},
+        {term: "Twist ending", meaning: "An unexpected turn at the end of a story."}
       ],
       qa: [
-        {q: "What was Gillian asked to do with the 1000 dollars?", a: "He was required to give the lawyers a written account of how he spent it. The condition was part of his late uncle's will."},
-        {q: "Why is O. Henry's story called a twist-ending story?", a: "Because the final part changes how the reader understands everything before it. The uncle's real intention and the result are not what Gillian or the reader expects."}
+        {q: "What condition was attached to Gillian's inheritance?", a: "He had to give the lawyers a written account of how he spent the one thousand dollars. A second envelope from his uncle would be opened only after the account was given."},
+        {q: "How did Gillian actually spend the money?", a: "He told Miss Hayden that a postscript to the will had left her a thousand dollars and handed her the money. He then wrote an account saying he had paid it for eternal happiness to the dearest woman on earth."},
+        {q: "Why did Gillian tear up his account and say he lost the money on races?", a: "He knew that if the uncle's test showed the money was wisely spent, the reserve fortune would be Gillian's, but if it seemed wasted, it would go to Miss Hayden. He wanted her to have it, so he pretended to have wasted it."}
       ],
       quiz: [
-        {q: "Who wrote One Thousand Dollars?", options: ["O. Henry", "Oscar Wilde", "Leo Tolstoy", "Arthur Conan Doyle"], answer: 0, explain: "It is a short story by O. Henry."},
-        {q: "O. Henry is the pen-name of:", options: ["William Sydney Porter", "Samuel Clemens", "Henry Wotton", "George Orwell"], answer: 0, explain: "William Sydney Porter wrote as O. Henry."},
-        {q: "How much money did Gillian inherit?", options: ["One thousand dollars", "One hundred dollars", "Ten thousand dollars", "One million dollars"], answer: 0, explain: "As the title says, 1000 dollars."},
-        {q: "A story with an unexpected ending is said to have a:", options: ["Twist", "Prologue", "Refrain", "Rhyme"], answer: 0, explain: "O. Henry is known for twist endings."},
-        {q: "Gillian's lawyers asked him to:", options: ["Report how he spent the money", "Invest it in a bank", "Return it", "Marry within a year"], answer: 0, explain: "The condition was an account of the spending."}
+        {q: "Who wrote 'One Thousand Dollars'?", options: ["Leo Tolstoy", "O. Henry", "Arthur Conan Doyle", "Oscar Wilde"], answer: 1, explain: "It is a short story by O. Henry (William Sydney Porter)."},
+        {q: "Whom did Gillian first consult about spending the money?", options: ["Old Bryson", "Mr Sharp", "Miss Hayden", "The cab-driver"], answer: 0, explain: "He told his story to his friend Old Bryson at the club."},
+        {q: "How much was in the blind man's bank book?", options: ["1,000 dollars", "1,785 dollars", "5,000 dollars", "10 dollars"], answer: 1, explain: "The blind pencil-seller's deposit book showed 1,785 dollars."},
+        {q: "To whom did Gillian give the thousand dollars?", options: ["Miss Lotta Lauriere", "Miss Miriam Hayden", "The blind man", "Mr Tolman"], answer: 1, explain: "He gave it to his uncle's ward, Miss Hayden, on a false story about a postscript."},
+        {q: "What false account did Gillian finally give to Tolman?", options: ["He had lost the money on the races", "He had invested it", "He had given it to charity", "He had bought a ranch"], answer: 0, explain: "He tore up the written account and claimed to have lost it on the races."}
       ]
     },
     {
       id: "the-dying-detective",
       title: "The Dying Detective",
       section: "Supplementary Reader",
-      summary: "A Sherlock Holmes story by Arthur Conan Doyle, narrated by Dr Watson, in which Holmes pretends to be dying of a rare disease in order to trap a murderer.",
+      summary: "A Sherlock Holmes story by Arthur Conan Doyle, narrated by Dr Watson. Holmes pretends to be dying of a rare disease so that the murderer Culverton Smith will reveal his crime, while the police wait outside.",
+      source: "English Literature Book, Class X (PSEB, 2023–24), Lesson 4, pp. 15–19 (simplified version)",
       notes: [
         {
-          heading: "Setup",
+          heading: "The setting",
           points: [
-            "Narrator: **Dr Watson**, Holmes's friend and companion.",
-            "Mrs Hudson, the landlady, tells Watson that Holmes seems to be dying; he has stayed in bed for days without proper food or water.",
-            "Holmes tells Watson he has caught a rare disease from the Far East and forbids Watson to come near him or to bring any doctor.",
-            "He says only **Culverton Smith**, a planter who knows tropical diseases, understands it, and asks Watson to bring him."
+            "The landlady, **Mrs Hudson**, goes to Dr Watson in distress because Holmes seems to be dying.",
+            "Holmes has fasted and made himself look gaunt. He forbids Watson to touch him or his things, and Watson later tells Smith that Holmes caught the illness from Chinese sailors.",
+            "He asks Watson to fetch **Culverton Smith**, a planter from Sumatra who knows Eastern diseases, and to tell him that Holmes is dying."
+          ]
+        },
+        {
+          heading: "Fetching Smith",
+          points: [
+            "Smith first refuses to see visitors, but when he hears Holmes's name he is startled and agrees to come.",
+            "Holmes tells Watson to leave before Smith arrives and wait in the next room without speaking.",
+            "Holmes behaves rudely to Watson earlier so that Watson will not suspect the plan."
           ]
         },
         {
           heading: "The trap",
           points: [
-            "Holmes hides Watson in the room behind the bed before Smith arrives.",
-            "Holmes plays the part of a very sick man so well that Smith feels safe and speaks freely.",
-            "Smith boasts that he had murdered Victor Savage with a small box rigged to deliver a deadly infection, and that he now means Holmes to die too.",
-            "Watson, hidden, and the police inspector waiting nearby hear everything; Smith is arrested."
+            "Holmes pleads weakly with Smith to cure him. Smith says the symptoms are the same as those of his nephew **Victor**, who died on the fourth day.",
+            "When Holmes asks if a box came by post, Smith admits it was no joke: it held a sharp spring that carried the infection. Holmes had opened it on a Wednesday.",
+            "Smith says Holmes knew too much about Victor's death and will die. He plans to keep the box as the last proof.",
+            "Holmes asks him to turn up the gas, which is the signal for **Inspector Morton**. Smith is arrested for murder and for the attempted murder of Holmes."
           ]
         },
         {
-          heading: "What it shows",
+          heading: "Explanation and themes",
           points: [
-            "Holmes's cleverness, his use of disguise and acting, and his willingness to risk himself to catch a criminal.",
-            "A well-planned trap can make a criminal confess in his own words.",
-            "Watson is the faithful friend; his anxiety and trust make the story human."
+            "Holmes explains that three days of fasting and make-up did the trick, and that his odd talk about coins was only to seem delirious.",
+            "**Cleverness and acting:** Holmes risks himself to catch a criminal.",
+            "**Friendship:** Watson's loyalty and concern, even though Holmes hid the truth from him."
           ]
         }
       ],
       formulas: [
         "Author: Sir Arthur Conan Doyle (1859–1930), creator of Sherlock Holmes.",
-        "Narrator: Dr John Watson. Villain: Culverton Smith. Victim named in the confession: Victor Savage."
+        "Narrator: Dr Watson. Murderer: Culverton Smith. His victim: his nephew Victor.",
+        "Signal for the police: Smith turns up the gas. Arresting officer: Inspector Morton."
       ],
       terms: [
-        {term: "Detective", meaning: "A person who investigates crimes and finds out who committed them."},
-        {term: "Feign", meaning: "To pretend to have a feeling or condition."},
-        {term: "Confession", meaning: "A statement admitting that one has done something wrong."},
-        {term: "Trap", meaning: "A plan to catch someone by surprise."},
-        {term: "Narrator", meaning: "The person who tells the story."}
+        {term: "Detective", meaning: "A person who investigates crimes and finds the culprit."},
+        {term: "Delirious", meaning: "In a confused state of mind because of fever."},
+        {term: "Symptom", meaning: "A sign in the body that shows a disease is present."},
+        {term: "Gaunt", meaning: "Very thin, usually from illness or hunger."},
+        {term: "Confession", meaning: "A statement admitting one's guilt."}
       ],
       qa: [
-        {q: "Why did Holmes pretend to be dying?", a: "He wanted to lure Culverton Smith into confessing to the murder. A dying man would seem harmless, so Smith would speak freely with only Holmes in the room."},
-        {q: "What role did Watson play in the trap?", a: "Holmes hid him behind the bed so that he could overhear Smith's confession and act as a witness, though Watson first believed his friend was truly ill."}
+        {q: "Why did Holmes pretend to be ill?", a: "He wanted to trap Culverton Smith into confessing the murder of his nephew Victor. A dying man would seem harmless, so Smith would speak freely with only Holmes in the room."},
+        {q: "How did Smith try to kill Holmes?", a: "He posted Holmes an ivory box fitted with a sharp spring carrying a deadly infection. Holmes pricked himself and drew blood, which he used to make Smith reveal the crime."},
+        {q: "Why did Holmes ask Smith to turn up the gas?", a: "It was a prearranged signal to Inspector Morton, who was waiting outside, to enter and arrest Smith."}
       ],
       quiz: [
-        {q: "The Dying Detective was written by:", options: ["Arthur Conan Doyle", "O. Henry", "Philippa Pearce", "Leo Tolstoy"], answer: 0, explain: "It is a Sherlock Holmes story by Arthur Conan Doyle."},
-        {q: "Who narrates the story?", options: ["Dr Watson", "Sherlock Holmes", "Mrs Hudson", "Culverton Smith"], answer: 0, explain: "Watson narrates Holmes's cases."},
-        {q: "Who is the murderer in the story?", options: ["Culverton Smith", "Dr Watson", "Mrs Hudson", "Victor Savage"], answer: 0, explain: "Smith confesses when he thinks Holmes is dying."},
-        {q: "Why was Watson hidden in the room?", options: ["To hear Smith's confession", "To protect Holmes from a doctor", "To fetch medicine", "To guard the door"], answer: 0, explain: "He acted as a witness."},
-        {q: "Holmes's illness in the story was:", options: ["Pretended", "A real tropical fever", "Caused by poison", "A mental condition"], answer: 0, explain: "It was acting, part of the trap."}
+        {q: "Who is the narrator of 'The Dying Detective'?", options: ["Holmes", "Dr Watson", "Inspector Morton", "Culverton Smith"], answer: 1, explain: "Dr Watson narrates."},
+        {q: "Who is the murderer in the story?", options: ["Culverton Smith", "Mrs Hudson", "Inspector Morton", "Dr Watson"], answer: 0, explain: "Culverton Smith killed his nephew Victor."},
+        {q: "From where did Watson tell Smith that Holmes got the illness?", options: ["Chinese sailors", "A hospital", "His landlady", "A country village"], answer: 0, explain: "Watson says Holmes caught it from Chinese sailors."},
+        {q: "What was the signal for the police to enter?", options: ["A whistle", "Turning up the gas", "Breaking a window", "A shout"], answer: 1, explain: "Holmes asked Smith to turn up the gas, which was the agreed signal."},
+        {q: "How did the infection reach Holmes?", options: ["Through a spring in a posted box", "Through food", "Through a bite", "Through water"], answer: 0, explain: "A box with a sharp infected spring was sent by post."}
       ]
     },
     {
       id: "how-much-land-does-a-man-need",
       title: "How Much Land Does a Man Need?",
       section: "Supplementary Reader",
-      summary: "A short story by Leo Tolstoy about Pahom, a peasant whose greed for land finally costs him his life, showing that a man needs only a few feet of earth in the end.",
+      summary: "Leo Tolstoy's story of Pakhom, a peasant whose desire for more and more land leads him to run himself to death. In the end, six feet of earth for his grave is all he needs.",
+      source: "English Literature Book, Class X (PSEB, 2023–24), Lesson 5, pp. 21–26",
       notes: [
         {
-          heading: "Pahom's rise",
+          heading: "The beginning",
           points: [
-            "Pahom, a peasant, says that if he had plenty of land he would not fear even the devil; the devil overhears.",
-            "He buys land, becomes prosperous but quarrels with neighbours, then moves to a larger place and again buys more.",
-            "Each time he gains land he wants more; contentment never comes."
+            "Two sisters argue over town and village life. Pakhom, the peasant husband, overhears and thinks the only trouble is too little land: with plenty, he would not fear even the **Devil**.",
+            "The Devil, sitting behind the stove, hears this and decides to get Pakhom into his power through land."
           ]
         },
         {
-          heading: "The Bashkir offer",
+          heading: "Pakhom's ambition",
           points: [
-            "He hears of the Bashkirs, who sell land very cheaply: for a fixed price (1000 roubles) he could take as much as he could walk around in a day.",
-            "The condition: he must return to his starting point before sunset, or lose both the money and the land.",
-            "On the night before, he dreams of the Bashkir chief laughing and then of himself lying dead."
+            "A lady of the neighbourhood sells her estate. Pakhom raises money by selling a colt and half his bees and borrowing from his brother-in-law, and buys forty acres. He repays his debts within a year.",
+            "A passing peasant praises the rich land beyond the Volga. Pakhom sells everything and moves there; he is ten times better off.",
+            "Even then he feels he has not enough, and he is about to buy 1,300 acres when a dealer tells him about the Bashkirs, who sell land for next to nothing."
           ]
         },
         {
-          heading: "The ending",
+          heading: "Among the Bashkirs",
           points: [
-            "Pahom walks and runs far, always eager to include one more good piece of land.",
-            "At sunset he rushes back, exhausted, reaches the starting point just in time, and falls dead.",
-            "His servant digs a grave, about six feet long, the only land he needed."
+            "Pakhom travels over three hundred miles and gives presents to the Bashkirs, who welcome him with tea, kumiss and mutton.",
+            "Their price is always **one thousand roubles a day**: he may walk round as much land as he can in a day, but he must be back at the starting point by sunset or lose his money.",
+            "The chief puts his fox-fur cap on the ground as the mark."
+          ]
+        },
+        {
+          heading: "The walk and the end",
+          points: [
+            "Pakhom sets off at sunrise. Tempted by good land he keeps going further before turning, so that by noon he is already tired.",
+            "Seeing the sun sinking, he runs desperately, throwing away his coat, boots and flask. He reaches the hillock just as the sun sets, but falls dead with blood from his mouth.",
+            "The Bashkir chief laughs and his servant digs a grave. **Six feet** from head to heel is all he needed."
           ]
         },
         {
           heading: "Themes",
           points: [
-            "**Greed:** the more we have, the more we want; it can destroy us.",
-            "**Contentment:** peace is found in being satisfied with what one has.",
-            "**Irony of the grave:** all his effort ends in a small plot of earth."
+            "**Greed:** the more we have, the more we want, and greed can destroy us.",
+            "**Contentment:** peace comes from being satisfied with what one has.",
+            "**Irony:** a man's endless struggle ends in a tiny plot of earth."
           ]
         }
       ],
       formulas: [
-        "Author: Leo Tolstoy (1828–1910), Russian novelist.",
-        "Bashkirs' price: 1000 roubles for a day's walk; land at the end: about six feet for a grave."
+        "Author: Leo Tolstoy (1828–1910), Russian writer of War and Peace and Anna Karenina.",
+        "Hero: Pakhom. Land bought first: forty acres. Price among the Bashkirs: 1,000 roubles a day.",
+        "End: Pakhom needed only about six feet of earth for his grave."
       ],
       terms: [
         {term: "Peasant", meaning: "A poor farmer or farm worker."},
         {term: "Greed", meaning: "An intense and selfish desire for more wealth or possessions."},
         {term: "Contentment", meaning: "Satisfaction with what one has."},
-        {term: "Moral", meaning: "The lesson taught by a story."},
-        {term: "Irony", meaning: "An outcome opposite to what was expected."}
+        {term: "Steppe", meaning: "A vast, flat, grassy plain."},
+        {term: "Moral", meaning: "The lesson taught by a story."}
       ],
       qa: [
-        {q: "What was the condition of the Bashkirs' offer?", a: "For 1000 roubles Pahom could mark as much land as he could walk around from sunrise to sunset, but he had to return to his starting point before sunset or he would lose everything."},
-        {q: "What moral does the story teach?", a: "Greed has no end and can destroy a person; a man needs only a small piece of land in the end, so contentment is better than endless desire."}
+        {q: "What was the condition of the Bashkirs' offer?", a: "For 1,000 roubles a day, Pakhom could mark as much land as he could walk round between sunrise and sunset. But he had to return to his starting point before sunset, or he would lose both his money and the land."},
+        {q: "Why did Pakhom die?", a: "In his greed he walked too far before turning back. He then ran desperately to reach the starting point by sunset and collapsed from exhaustion at the end."},
+        {q: "What moral does the story teach?", a: "Greed has no limit and can destroy a person. A man needs only a small piece of earth in the end, so contentment is better than endless desire."}
       ],
       quiz: [
-        {q: "How Much Land Does a Man Need? is by:", options: ["Leo Tolstoy", "Oscar Wilde", "A. G. Gardiner", "Philippa Pearce"], answer: 0, explain: "It is Tolstoy's short story."},
-        {q: "The main character of the story is:", options: ["Pahom", "Gillian", "Phatik", "Smith"], answer: 0, explain: "Pahom is the peasant whose greed leads to his death."},
-        {q: "The land was offered by:", options: ["The Bashkirs", "The Czar", "The devil himself", "A landlady"], answer: 0, explain: "The Bashkirs sold land for a fixed price per day."},
-        {q: "How did Pahom die?", options: ["He collapsed from exhaustion after returning at sunset", "He was robbed", "He was lost in the steppe", "He fell ill at home"], answer: 0, explain: "He ran back in time but died of exhaustion."},
-        {q: "How much land did Pahom finally need?", options: ["About six feet for a grave", "Several hundred acres", "A day's walk", "Ten acres"], answer: 0, explain: "His servant dug him a grave."},
-        {q: "The central theme of the story is:", options: ["Greed and contentment", "Friendship", "Patriotism", "Science and progress"], answer: 0, explain: "The story warns against endless desire."}
+        {q: "'How Much Land Does a Man Need?' was written by:", options: ["Oscar Wilde", "Leo Tolstoy", "Tariq Rahman", "R. K. Narayan"], answer: 1, explain: "It is a short story by the Russian writer Leo Tolstoy."},
+        {q: "The main character of the story is:", options: ["Pakhom", "Gillian", "Phatik", "Naeem"], answer: 0, explain: "Pakhom is the peasant whose greed leads to his death."},
+        {q: "Who is said to have heard Pakhom's boast and decided to ruin him?", options: ["The Devil", "The Bashkir chief", "His wife", "The lady landowner"], answer: 0, explain: "The Devil, sitting behind the stove, overheard Pakhom."},
+        {q: "What price did the Bashkirs charge for land?", options: ["Ten roubles an acre", "One thousand roubles a day", "A hundred sheep", "Five roubles a mile"], answer: 1, explain: "They sold as much land as one could walk round in a day for 1,000 roubles."},
+        {q: "How much land did Pakhom finally need?", options: ["About six feet for a grave", "Thirteen thousand acres", "Forty acres", "A day's walk"], answer: 0, explain: "His servant dug him a grave about six feet long."}
       ]
     },
     // ───────────────────────────── GRAMMAR ─────────────────────────────

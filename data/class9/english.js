@@ -1,8 +1,8 @@
-// Class 9 English: Grammar, Writing Skills and Literature (Beehive).
+// Class 9 English: Grammar, Writing Skills and Literature (Kaveri).
 // Format: see CONTENT_GUIDE.md. Summaries are original; no text is reproduced from the textbook.
 StudyData.add(9, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "textbook", books: ["Beehive"], note: "Grammar and writing, plus a selection of Beehive lessons (not every chapter).", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Kaveri"], note: "Grammar and writing, plus every lesson of Kaveri (summarised in our own words).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
@@ -1205,895 +1205,2317 @@ StudyData.add(9, "english", {
       ]
     },
 
-    // ─────────────────────────── LITERATURE ───────────────────────────
+    // ───────────────────────────── KAVERI ─────────────────────────────
     {
-      id: "the-fun-they-had",
-      title: "The Fun They Had",
-      section: "Literature – Beehive",
-      summary: "Isaac Asimov's science-fiction story set in 2157, in which Margie and Tommy find a real printed book about the old schools and wonder how much fun children had when they learnt together.",
-      notes: [
+      "id": "how-i-taught-my-grandmother-to-read",
+      "title": "How I Taught My Grandmother to Read",
+      "section": "Kaveri",
+      "summary": "Sudha Murty recalls a childhood summer in north Karnataka when her unlettered grandmother, who loved a serialised novel, decided at sixty-two to learn to read, with her granddaughter as her very first teacher.",
+      "notes": [
         {
-          heading: "Summary",
-          points: [
-            "The story is set in **2157**. Margie writes in her diary that Tommy has found a **real book** printed on paper.",
-            "Children of their time read **telebooks** on a screen and study alone at home with a **mechanical teacher**.",
-            "The old book is about **school** as it was centuries ago, with a human teacher and a special building where children studied together.",
-            "Margie's mechanical teacher had been giving her test after test in geography, and she was doing worse. The **County Inspector** found the geography sector set too fast and slowed it to an average ten-year-old level.",
-            "As she sits down to her arithmetic lesson, Margie thinks of the old schools where children laughed, learnt and went home together, and of **the fun they had**."
+          "heading": "Story in outline",
+          "points": [
+            "The narrator, about twelve, lives with her grandparents in a north Karnataka village where newspapers and magazines reach a day late by bus.",
+            "Her grandmother Krishtakka, whom she calls **Avva**, never went to school. Each week the narrator reads aloud the latest episode of **Kashi Yatre**, a serialised Kannada novel by Triveni.",
+            "The novel is about an old woman who longs to visit Kashi but gives her savings to an orphan girl's wedding; Avva identifies with her.",
+            "After a week away at a wedding, the narrator finds Avva in tears: the new episode arrived and she could not read it, and she was too embarrassed to ask anyone else.",
+            "Avva resolves to learn the Kannada alphabet and sets Saraswati Puja day of Dassara as her deadline. She works hard, and on that day she reads the title and publisher of the novel the narrator has secretly bought her. She even touches the girl's feet as to a teacher."
           ]
         },
         {
-          heading: "Characters",
-          points: [
-            "**Margie** (11): curious and imaginative; she dislikes her mechanical school and longs for the company of other children.",
-            "**Tommy** (13): confident and a little superior; he finds the book and explains the old school to Margie.",
-            "**The County Inspector**: a little man with a red face and a box of tools, who repairs and adjusts mechanical teachers.",
-            "**Margie's mother**: strict about regular study hours; she calls Margie to her lessons."
+          "heading": "People and qualities",
+          "points": [
+            "**Avva (Krishtakka):** loving, proud, determined and independent; she feels helpless depending on others to read for her.",
+            "**The narrator (Sudha Murty):** affectionate but still childish at first, as she laughs at the idea; later she becomes a teacher of Computer Science.",
+            "Reading the story aloud also shows Avva's sharp memory, as she can repeat the text by heart."
           ]
         },
         {
-          heading: "Themes and message",
-          points: [
-            "**Technology vs human touch:** machines can teach facts but cannot give companionship, warmth or understanding.",
-            "**Loneliness of learning alone:** Margie studies in a room next to her bedroom, with no classmates.",
-            "**School as a social place:** learning together and helping one another is a joy in itself.",
-            "Message: education is more than information; human teachers and friends make learning meaningful."
-          ]
-        },
-        {
-          heading: "Literary features",
-          points: [
-            "**Science fiction:** it imagines home-based screen learning long before it became common.",
-            "**Irony:** what we take for granted (books, schools, teachers) seems strange and wonderful to the children of the future.",
-            "The story opens with a **diary entry** dated 17 May 2157."
+          "heading": "Themes and style",
+          "points": [
+            "**It is never too late to learn:** age is no barrier when the purpose is good.",
+            "**Independence through literacy:** money cannot replace the ability to read for oneself.",
+            "**Respect crosses age:** Avva honours the girl as a teacher, reversing the usual custom of touching elders' feet.",
+            "Told in the first person as a warm memoir, with simple language and gentle humour."
           ]
         }
       ],
-      formulas: [
-        "Author: Isaac Asimov",
-        "Genre: science fiction",
-        "Setting: the year 2157",
-        "Characters: Margie (11), Tommy (13), the County Inspector, Margie's mother"
+      "formulas": [
+        "Author: Sudha Murty (Padma Shri and Padma Bhushan awardee)",
+        "Novel Avva loves: Kashi Yatre by Triveni, serialised in the weekly Karmaveera",
+        "Avva's age when she learns: sixty-two",
+        "Her deadline: Saraswati Puja day during Dassara"
       ],
-      terms: [
-        { term: "Telebook", meaning: "A book read on a screen in the story's future world; the children have read many of these." },
-        { term: "Mechanical teacher", meaning: "A large machine with a screen and a slot for homework that teaches each child at home." },
-        { term: "County Inspector", meaning: "The official who repairs and adjusts the mechanical teachers." },
-        { term: "Punch code", meaning: "The code in which Margie writes her homework and tests; she learnt it at the age of six." },
-        { term: "2157", meaning: "The year in which the story is set." }
-      ],
-      qa: [
+      "terms": [
         {
-          q: "Why did Margie hate school?",
-          a: "Margie had to study alone with a **mechanical teacher** in a room next to her bedroom. It kept giving her geography tests in which she did badly, and she had to put her homework into a slot in punch code. With no friends to learn and play with, school felt dull and lonely."
+          "term": "Avva",
+          "meaning": "The Kannada word for mother, used by the narrator for her grandmother."
         },
         {
-          q: "What did Margie find strange about the old kind of school?",
-          a: "She found it strange that a **human teacher** taught a whole group of children of the same age together in a special building. She was surprised that a man could be clever enough to teach, and also found it odd that the words in a printed book stood still instead of moving on a screen."
+          "term": "Serial",
+          "meaning": "A story published in instalments, one episode in each issue of a magazine."
         },
         {
-          q: "What is the main message of the story?",
-          a: "The story suggests that machines can never fully replace **human teachers and the shared joy of learning together**. Technology may make education efficient, but friendship, discussion and the warmth of a real classroom make it meaningful."
+          "term": "Kashi Yatre",
+          "meaning": "The novel whose heroine longs to visit Kashi; the story that makes Avva want to read."
+        },
+        {
+          "term": "Protagonist",
+          "meaning": "The main character of a story or novel."
+        },
+        {
+          "term": "Determination",
+          "meaning": "Firm resolve to achieve something despite difficulty."
         }
       ],
-      quiz: [
+      "qa": [
         {
-          q: "In which year is ‘The Fun They Had’ set?",
-          options: ["2057", "2157", "2155", "2517"],
-          answer: 1,
-          explain: "Margie's diary entry is dated 17 May **2157**."
+          "q": "Why did Avva decide to learn to read?",
+          "a": "She was unable to read the new episode of **Kashi Yatre** when it arrived and felt dependent and helpless. She did not want to keep asking others, so she decided to become independent by learning the Kannada alphabet."
         },
         {
-          q: "What did Tommy find?",
-          options: ["A mechanical teacher", "A telebook", "A real printed book", "A diary"],
-          answer: 2,
-          explain: "Tommy found a **real book** printed on paper, something the children had only heard of."
+          "q": "How did the narrator react when Avva told her plan, and how did Avva respond?",
+          "a": "The narrator laughed and teased her about her grey hair, spectacles and age. Avva only smiled and said that for a good cause, determination can overcome any obstacle and that there is no age limit for learning."
         },
         {
-          q: "Why was the County Inspector called to Margie's house?",
-          options: ["Margie had lost her homework", "Her teacher's geography sector was set too fast", "The screen had blanked out completely", "Tommy had broken the teacher"],
-          answer: 1,
-          explain: "Margie was doing badly because the **geography sector was geared too quick**. (It was Tommy's teacher whose history sector blanked out.)"
+          "q": "Why did Avva touch the narrator's feet at the end?",
+          "a": "She was honouring her as a **teacher**, not as a granddaughter. Avva felt that a teacher deserves respect regardless of age or gender, and she was grateful for being able to read independently."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which novel did the narrator read aloud to her grandmother?",
+          "options": [
+            "Kashi Yatre",
+            "Gitanjali",
+            "Karmaveera",
+            "Triveni"
+          ],
+          "answer": 0,
+          "explain": "Kashi Yatre by Triveni was being serialised in the magazine Karmaveera; Karmaveera was the magazine, and Triveni the novelist."
         },
         {
-          q: "Where was Margie's schoolroom?",
-          options: ["Right next to her bedroom", "In a building at the end of the street", "At Tommy's house", "In the County Inspector's office"],
-          answer: 0,
-          explain: "The mechanical teacher was kept in a room **right next to her bedroom**."
+          "q": "How old was Avva when she began to learn the alphabet?",
+          "options": [
+            "Fifty-two",
+            "Sixty-two",
+            "Seventy-five",
+            "Sixty-six"
+          ],
+          "answer": 1,
+          "explain": "The narrator points out that her grandmother was sixty-two."
         },
         {
-          q: "What was Margie thinking about at the end of the story?",
-          options: ["Her grandfather's stories", "The geography test", "The County Inspector's tools", "How children in the old days learnt and played together"],
-          answer: 3,
-          explain: "She imagined the old schools where children studied and played together, and **the fun they had**."
+          "q": "Why was Avva crying when the narrator returned from the wedding?",
+          "options": [
+            "The narrator had stayed away for a week without informing her",
+            "She had lost her copy of the magazine",
+            "She could not read the new episode of the serial",
+            "Her friends had refused to discuss the story"
+          ],
+          "answer": 2,
+          "explain": "She had opened the new issue and could not understand the words, and she felt helpless."
         },
         {
-          q: "Which theme is central to the story?",
-          options: ["The value of human company in learning", "The dangers of space travel", "The importance of money", "Life in a village"],
-          answer: 0,
-          explain: "The story contrasts lonely machine learning with the **joy of learning together**."
+          "q": "What deadline did Avva set for herself?",
+          "options": [
+            "The narrator's birthday",
+            "The end of the summer holidays",
+            "The next issue of the magazine",
+            "Saraswati Puja day during Dassara"
+          ],
+          "answer": 3,
+          "explain": "She wanted to read a novel on her own by Saraswati Puja day."
+        },
+        {
+          "q": "What did the narrator give her grandmother as a gift?",
+          "options": [
+            "The novel Kashi Yatre",
+            "A frock",
+            "A new pair of spectacles",
+            "A slate and chalk"
+          ],
+          "answer": 0,
+          "explain": "The narrator secretly bought Kashi Yatre, which had by then been published as a novel; the frock material was Avva's gift to her."
+        },
+        {
+          "q": "Which value does the lesson stress most?",
+          "options": [
+            "Obeying elders without question",
+            "Learning has no age limit",
+            "Saving money for the future",
+            "Respect for rich relatives"
+          ],
+          "answer": 1,
+          "explain": "Avva shows that determination can overcome age."
         }
       ]
     },
 
     {
-      id: "the-road-not-taken",
-      title: "The Road Not Taken",
-      section: "Literature – Beehive",
-      summary: "Robert Frost's poem about a traveller who must choose between two paths in a wood, a metaphor for the choices that shape our lives.",
-      notes: [
+      "id": "bharat-our-land",
+      "title": "Bharat Our Land",
+      "section": "Kaveri",
+      "summary": "A tribute to India by the Tamil poet Subramania Bharati, praising the Himalayas, the Ganga, the Upanishads, the warriors and sages of the land, and its ancient spiritual wisdom.",
+      "notes": [
         {
-          heading: "Summary",
-          points: [
-            "A traveller stands where **two roads divide** in a yellow (autumn) wood, sorry that he cannot travel both.",
-            "He looks down one road as far as he can, to where it bends into the undergrowth.",
-            "He takes the other, which seems grassier and less worn, though he admits both had been worn about the same and were covered with fresh, untrodden leaves that morning.",
-            "He keeps the first road for another day, but doubts he will ever come back, since one road leads on to another.",
-            "He imagines telling this **with a sigh** many years later: that he took the road **less travelled**, and that it has made all the difference."
+          "heading": "What the poem says",
+          "points": [
+            "The speaker proudly names India's treasures: the mighty **Himavant**, the generous **Ganga**, the sacred **Upanishads** and the sunny golden land itself.",
+            "After each claim the poet asks who else can match it, showing there is nothing equal elsewhere.",
+            "The land has produced brave warriors and many sages who have made it sacred, and the finest music.",
+            "It is the home of Brahma-knowledge and the place where the Buddha preached his dhamma.",
+            "The refrain says Bharat is peerless and very ancient, so let us praise her."
           ]
         },
         {
-          heading: "Themes and message",
-          points: [
-            "**Choices and decisions:** life keeps forcing us to choose, and we cannot try every path.",
-            "**Consequences:** one choice leads to others, so we rarely get to go back.",
-            "**Individuality:** the speaker presents his choice as the less common one.",
-            "Message: choose thoughtfully, accept that every choice has consequences, and do not live in regret."
+          "heading": "Poetic features",
+          "points": [
+            "**Repetition and refrain:** praising the land again and again gives the poem a chant-like pride.",
+            "**Rhetorical questions** such as asking which river can match the Ganga stress India's uniqueness.",
+            "**Personification:** the land is addressed as a woman, 'she'.",
+            "Originally written in Tamil and read here in translation; the tone is patriotic, proud and celebratory."
           ]
         },
         {
-          heading: "Poetic devices",
-          points: [
-            "**Metaphor/symbolism:** the two roads stand for choices in life; the ‘yellow wood’ suggests autumn.",
-            "**Rhyme scheme:** **ABAAB** in each of the four five-line stanzas.",
-            "**Imagery:** the yellow wood, the road bending into the undergrowth, the untrodden leaves.",
-            "**Enjambment:** sentences run on from one line to the next, like a person thinking aloud.",
-            "**Repetition:** ‘ages and ages’, and the word ‘way’ repeated in the third stanza."
-          ]
-        },
-        {
-          heading: "About the poet",
-          points: [
-            "**Robert Frost** (1874–1963) was an American poet known for poems set in the New England countryside.",
-            "He often uses simple scenes from nature to express deep ideas about human life.",
-            "The ‘sigh’ at the end is ambiguous: it may show regret for the road not taken, or simply a thoughtful look back."
+          "heading": "Message",
+          "points": [
+            "India's greatness rests on both nature and knowledge: mountains, rivers and scriptures.",
+            "We should feel pride in our heritage and let that pride guide us to value knowledge and self-belief."
           ]
         }
       ],
-      formulas: [
-        "Poet: Robert Frost",
-        "Form: four stanzas of five lines each",
-        "Rhyme scheme: ABAAB",
-        "Central symbol: two roads = choices in life"
+      "formulas": [
+        "Poet: Subramania Bharati (Tamil poet and freedom fighter)",
+        "Natural features praised: the Himavant and the Ganga",
+        "Scriptures mentioned: the Upanishads",
+        "Tone: proud, patriotic, celebratory"
       ],
-      terms: [
-        { term: "Diverged", meaning: "Separated and went in different directions." },
-        { term: "Undergrowth", meaning: "Small trees and bushes growing beneath taller trees." },
-        { term: "Wanted wear", meaning: "Had not been used much; the grassy road seemed to need walkers." },
-        { term: "Hence", meaning: "From now (in time). ‘Ages and ages hence’ means many years later." },
-        { term: "Yellow wood", meaning: "A forest in autumn, when the leaves turn yellow." }
-      ],
-      qa: [
+      "terms": [
         {
-          q: "Why did the traveller choose the second road?",
-          a: "The second road looked **grassy and less worn**, as if fewer people had used it, so it seemed to have a slightly better claim. However, he admits that both roads had really been worn about equally."
+          "term": "Himavant",
+          "meaning": "The Himalayas, called the mighty mountain of the land."
         },
         {
-          q: "What do the two roads symbolise?",
-          a: "The two roads symbolise the **choices** we face in life. Just as the traveller can take only one road, we can follow only one choice at a time, and each choice leads to further choices, so it is hard to come back."
+          "term": "Upanishads",
+          "meaning": "Ancient Indian philosophical texts, called sacred and unmatched in the poem."
         },
         {
-          q: "Why does the poet say he will tell the story ‘with a sigh’?",
-          a: "Years later, he will look back on this decision. The sigh may express **regret** for the road he did not take, or a quiet reflection on how his choice shaped his life; the poet leaves it open."
+          "term": "Peerless",
+          "meaning": "Having no equal; unmatched."
+        },
+        {
+          "term": "Hoary",
+          "meaning": "Very old; ancient."
+        },
+        {
+          "term": "Sanctified",
+          "meaning": "Made holy or blessed."
         }
       ],
-      quiz: [
+      "qa": [
         {
-          q: "What does the ‘yellow wood’ suggest?",
-          options: ["Spring", "Autumn", "Summer", "A desert"],
-          answer: 1,
-          explain: "Leaves turn yellow in **autumn**."
+          "q": "What does the poet praise about India's nature?",
+          "a": "He praises the mighty **Himavant** (the Himalayas) and the generous **Ganga**, asking who else on earth can match their greatness and grace."
         },
         {
-          q: "Why did the speaker feel sorry at the start of the poem?",
-          options: ["He had lost his way", "The roads were blocked", "He was tired of walking", "He could not travel both roads"],
-          answer: 3,
-          explain: "He regretted that, being one traveller, he **could not travel both roads**."
+          "q": "What spiritual and cultural heritage does the poem celebrate?",
+          "a": "It celebrates the sacred **Upanishads**, the sages who sanctified the land, the divinest music, Brahma-knowledge and the dhamma preached by the Buddha."
         },
         {
-          q: "What is the rhyme scheme of each stanza?",
-          options: ["ABAB", "AABB", "ABAAB", "ABCB"],
-          answer: 2,
-          explain: "Each five-line stanza follows **ABAAB**."
-        },
-        {
-          q: "The two roads in the poem are a metaphor for:",
-          options: ["choices in life", "rich and poor people", "day and night", "two countries"],
-          answer: 0,
-          explain: "The roads stand for the **choices** we must make in life."
-        },
-        {
-          q: "Why did the speaker doubt that he would come back to the first road?",
-          options: ["He disliked it", "The road was going to be closed", "One way leads on to another, so people rarely return", "He was moving to another country"],
-          answer: 2,
-          explain: "He knew that one choice **leads on to another**, so he would probably never return."
-        },
-        {
-          q: "Who wrote ‘The Road Not Taken’?",
-          options: ["William Wordsworth", "Robert Frost", "James Kirkup", "W.B. Yeats"],
-          answer: 1,
-          explain: "The poem is by the American poet **Robert Frost**."
-        }
-      ]
-    },
-
-    {
-      id: "the-sound-of-music",
-      title: "The Sound of Music",
-      section: "Literature – Beehive",
-      summary: "A two-part chapter: Part I tells how Evelyn Glennie became a world-famous percussionist despite being profoundly deaf; Part II traces the history of the shehnai and the life of Ustad Bismillah Khan.",
-      notes: [
-        {
-          heading: "Part I: Evelyn Glennie",
-          points: [
-            "Written by Deborah Cowley. Evelyn's hearing began to fail in childhood; by the age of **eleven** she was found to be **profoundly deaf** because of gradual nerve damage.",
-            "She was advised to wear hearing aids and go to a special school, but she continued normal schooling and kept up her interest in music.",
-            "Percussionist **Ron Forbes** saw her potential. He tuned two drums to different notes and taught her to **sense sound through her body**: the higher drum above the waist, the lower one below.",
-            "She joined the **Royal Academy of Music** in London, scored among the highest marks in its history and became a famous solo percussionist.",
-            "She often performs **barefoot** to feel the vibrations through the floor, gives free concerts in hospitals and prisons, and inspires people with disabilities."
-          ]
-        },
-        {
-          heading: "Part II: How the shehnai was born",
-          points: [
-            "Emperor **Aurangzeb** banned the **pungi** in the royal residence because of its shrill, unpleasant sound.",
-            "A **barber** (nai) from a family of musicians improved it: he chose a longer, broader pipe with a natural hollow stem and made seven holes in it.",
-            "Because it was played in the **Shah's** chambers and made by a **nai**, it came to be called the **shehnai**.",
-            "It became part of the **naubat**, the traditional ensemble of nine instruments at royal courts, and is played in temples and at weddings."
-          ]
-        },
-        {
-          heading: "Part II: Ustad Bismillah Khan",
-          points: [
-            "Born in **1916** in **Dumraon, Bihar**, into a family of shehnai players, he learnt from his maternal uncle **Ali Bux**, who played the shehnai at the Vishnu temple in Benaras.",
-            "He practised on the banks of the **Ganga**, whose flowing waters inspired him to create new ragas.",
-            "His big break came when **All India Radio** opened in Lucknow in 1938.",
-            "On **15 August 1947** he became the first Indian to greet the nation with his shehnai, from the **Red Fort**.",
-            "He was the first Indian invited to perform at the **Lincoln Centre Hall** in the USA, and received the Padma Shri, Padma Bhushan, Padma Vibhushan and, in 2001, the **Bharat Ratna**."
-          ]
-        },
-        {
-          heading: "Love for his roots",
-          points: [
-            "A student offered to set up a shehnai school for him in the USA. He refused, asking whether they could also bring the **Ganga** there.",
-            "He was deeply attached to **Benaras and Dumraon** and to India's shared musical culture.",
-            "He disliked the artificiality and glamour of the film world, though he played for a few films."
-          ]
-        },
-        {
-          heading: "Characters, themes and message",
-          points: [
-            "**Evelyn Glennie:** determined, hard-working and positive; she refused to let deafness limit her.",
-            "**Bismillah Khan:** humble, devoted to his art and deeply rooted in his culture.",
-            "**Themes:** determination over disability, dedication to art, love for one's homeland.",
-            "Message: passion and hard work can overcome any obstacle; true artists stay rooted in their culture."
-          ]
+          "q": "What is the poet's attitude to his country?",
+          "a": "He feels deep pride and love. The refrain calling India peerless and urging us to praise her shows admiration for her natural beauty, wisdom and ancient history."
         }
       ],
-      formulas: [
-        "Part I: Evelyn Glennie Listens to Sound without Hearing It, by Deborah Cowley",
-        "Part II: The Shehnai of Bismillah Khan",
-        "Bismillah Khan: born 1916, Dumraon (Bihar); Bharat Ratna 2001",
-        "15 August 1947: shehnai from the Red Fort"
-      ],
-      terms: [
-        { term: "Percussionist", meaning: "A musician who plays percussion instruments such as drums, xylophone and cymbals." },
-        { term: "Profoundly deaf", meaning: "Completely or almost completely unable to hear." },
-        { term: "Pungi", meaning: "A reeded wind instrument with a shrill sound, banned by Aurangzeb in the royal residence." },
-        { term: "Shehnai", meaning: "The improved pungi made by a barber; the name comes from ‘Shah’ and ‘nai’ (barber)." },
-        { term: "Naubat", meaning: "The traditional ensemble of nine instruments found at royal courts." },
-        { term: "Ali Bux", meaning: "Bismillah Khan's maternal uncle and teacher, who played the shehnai at the Vishnu temple of Benaras." }
-      ],
-      qa: [
+      "quiz": [
         {
-          q: "How did Evelyn Glennie learn to ‘hear’ music?",
-          a: "With the help of percussionist **Ron Forbes**, she learnt to sense sound through different parts of her body. He tuned two drums to different notes, and she felt the higher note above her waist and the lower one below it. She also plays barefoot to feel vibrations through the floor."
+          "q": "Who wrote 'Bharat Our Land'?",
+          "options": [
+            "Rabindranath Tagore",
+            "Subramania Bharati",
+            "Robert Frost",
+            "Temsula Ao"
+          ],
+          "answer": 1,
+          "explain": "The poem is a translation of a work by the Tamil poet Subramania Bharati."
         },
         {
-          q: "How did the shehnai get its name?",
-          a: "Aurangzeb had banned the shrill **pungi**. A **barber** (nai) improved it into a longer, broader pipe with seven holes. Because it was first played in the **Shah's** chambers and made by a **nai**, it was called the shehnai."
+          "q": "Which mountain is called mighty in the poem?",
+          "options": [
+            "Vindhya",
+            "Aravalli",
+            "Himavant",
+            "Sahyadri"
+          ],
+          "answer": 2,
+          "explain": "Himavant refers to the Himalayas."
         },
         {
-          q: "Why did Bismillah Khan refuse to settle in the USA?",
-          a: "A student offered to set up a shehnai school for him in the USA. He refused because he was deeply attached to **Benaras, the Ganga and Dumraon**, and asked whether they could transport the Ganga too. This shows his love for India and his roots."
-        }
-      ],
-      quiz: [
-        {
-          q: "Who helped Evelyn Glennie learn to sense sounds through her body?",
-          options: ["Ron Forbes", "Ali Bux", "Her headmistress", "A hearing specialist"],
-          answer: 0,
-          explain: "Percussionist **Ron Forbes** tuned two drums to different notes and taught her to feel the sounds."
+          "q": "Which river does the poet call generous?",
+          "options": [
+            "The Kaveri",
+            "The Brahmaputra",
+            "The Godavari",
+            "The Ganga"
+          ],
+          "answer": 3,
+          "explain": "The poem asks which river can match the grace of the Ganga."
         },
         {
-          q: "Why did Aurangzeb ban the pungi in the royal residence?",
-          options: ["It was too expensive", "It had a shrill, unpleasant sound", "It was used only by barbers", "It was too difficult to play"],
-          answer: 1,
-          explain: "The pungi's sound was **shrill and unpleasant**."
+          "q": "Who preached his dhamma in this land, according to the poem?",
+          "options": [
+            "The Buddha",
+            "Mahavira",
+            "Guru Nanak",
+            "Adi Shankara"
+          ],
+          "answer": 0,
+          "explain": "The poem says the Buddha preached his dhamma here."
         },
         {
-          q: "Where did Bismillah Khan play on 15 August 1947?",
-          options: ["Lincoln Centre Hall", "The Vishnu temple of Benaras", "The Red Fort", "All India Radio, Lucknow"],
-          answer: 2,
-          explain: "He greeted the nation with his shehnai from the **Red Fort** on India's first Independence Day."
+          "q": "What is the main tone of the poem?",
+          "options": [
+            "Sad and regretful",
+            "Proud and celebratory",
+            "Humorous and light",
+            "Angry and critical"
+          ],
+          "answer": 1,
+          "explain": "The poet admires and praises his land."
         },
         {
-          q: "Why does Evelyn Glennie often perform barefoot?",
-          options: ["It is a Scottish tradition", "Her shoes hurt during long concerts", "Her teacher forbade shoes on stage", "To feel the vibrations through the floor"],
-          answer: 3,
-          explain: "Being deaf, she senses music as **vibrations**, which she feels through her bare feet."
-        },
-        {
-          q: "Which honour did Bismillah Khan receive in 2001?",
-          options: ["Bharat Ratna", "Padma Shri", "Padma Bhushan", "Padma Vibhushan"],
-          answer: 0,
-          explain: "He was awarded the **Bharat Ratna**, India's highest civilian honour, in 2001."
-        },
-        {
-          q: "What message do both parts of the chapter share?",
-          options: ["Music should be played only in royal courts", "Talent cannot be developed", "Passion and hard work can overcome obstacles", "Only famous families produce great musicians"],
-          answer: 2,
-          explain: "Both Evelyn and Bismillah Khan rose through **dedication and hard work**."
+          "q": "What does the word 'peerless' mean?",
+          "options": [
+            "Very old",
+            "Hidden from view",
+            "Without an equal",
+            "Broken"
+          ],
+          "answer": 2,
+          "explain": "Peerless means incomparable or unmatched."
         }
       ]
     },
 
     {
-      id: "wind",
-      title: "Wind",
-      section: "Literature – Beehive",
-      summary: "A poem by Subramania Bharati, translated from Tamil by A.K. Ramanujan, in which the destructive wind becomes a symbol of life's hardships that only the strong can face.",
-      notes: [
+      "id": "the-pot-maker",
+      "title": "The Pot Maker",
+      "section": "Kaveri",
+      "summary": "In this abridged story from Nagaland, a girl named Sentila dreams of becoming a potter while her mother Arenla is determined that she should weave, until a kind older woman and an unspoken moment of grace pass the craft on.",
+      "notes": [
         {
-          heading: "Summary",
-          points: [
-            "The poet asks the wind to come **softly** and not break the window shutters, scatter papers or throw down books from the shelf.",
-            "But the wind has already done all this: it has torn pages and brought rain again. It mocks the weak.",
-            "The wind god **winnows** out and crushes everything that is weak: crumbling houses, doors, rafters, wood, bodies, lives and hearts.",
-            "So we must build **strong homes**, fix doors firmly, make our bodies fit and our hearts **steadfast**.",
-            "Then the wind will be our friend: it blows out **weak fires** but makes **strong fires** roar and flourish. We praise him every day."
+          "heading": "Story in outline",
+          "points": [
+            "From childhood Sentila wants to be a **pot maker** like her mother and grandmother, but Arenla wants her to be a weaver because pottery brings little money and heavy labour.",
+            "Sentila secretly watches expert potters. The village council summons her father Mesoba, reminding him that such skills belong to the community and must be passed on.",
+            "Arenla takes her to the riverbank for clay and teaches her the preparation, but a year of lessons gives Sentila no skill at shaping pots.",
+            "In the girls' dormitory the widow **Onula** sees how tense Sentila is, shows her how to make a pot and advises her to watch her mother's way of shaping the mouth.",
+            "One day Arenla leaves Sentila to continue, feeling unwell. Sentila makes pot after pot, just one short of her mother's number, and finds her mother dead.",
+            "Onula later sees two neat rows of pots, can tell no difference between them, and understands that a new pot maker was born."
           ]
         },
         {
-          heading: "Themes and message",
-          points: [
-            "**Wind as a symbol** of difficulties and challenges in life.",
-            "**Strength of body and mind:** hardships destroy the weak, while the strong grow stronger.",
-            "**Friendship with challenges:** when we are strong, the same force becomes a friend.",
-            "Message: do not complain about hardships; build inner and outer strength to face them."
+          "heading": "Characters",
+          "points": [
+            "**Sentila:** passionate, patient and a quick learner; she hides her ambition out of respect for her mother.",
+            "**Arenla:** hard-working but weary; she wants a better life for her daughter, yet her skill is what finally passes on.",
+            "**Mesoba:** gentle father who defends his wife before the council.",
+            "**Onula:** understanding, wise elder who gives the girl confidence."
           ]
         },
         {
-          heading: "Poetic devices",
-          points: [
-            "**Personification:** the wind is treated as a person and as the ‘wind god’ who winnows and crushes.",
-            "**Apostrophe:** the poet speaks directly to the wind.",
-            "**Repetition:** ‘crumbling’ is repeated to stress weakness.",
-            "**Symbolism/metaphor:** weak fires and strong fires stand for weak and strong people.",
-            "**Free verse:** the poem has no regular rhyme scheme."
-          ]
-        },
-        {
-          heading: "About the poet",
-          points: [
-            "**Subramania Bharati** (1882–1921) was a Tamil poet and freedom fighter.",
-            "The poem was translated from Tamil into English by **A.K. Ramanujan**."
+          "heading": "Themes",
+          "points": [
+            "**Passing on tradition:** a craft belongs to the community, and experts must pass it on.",
+            "**Calling versus convenience:** Sentila follows her passion rather than easy money.",
+            "**Mentors beyond family:** guidance can come from unexpected people.",
+            "The ending is quiet and symbolic; the two rows of pots show the mother's skill continuing in her daughter."
           ]
         }
       ],
-      formulas: [
-        "Poet: Subramania Bharati (Tamil)",
-        "Translator: A.K. Ramanujan",
-        "Central symbol: wind = hardships and challenges of life",
-        "Form: free verse"
+      "formulas": [
+        "Author: Temsula Ao (Padma Shri and Sahitya Akademi Award recipient); the lesson is an abridged version",
+        "Setting: a Naga village",
+        "Main characters: Sentila, Arenla, Mesoba, Onula",
+        "Craft: pottery with grey and red clay from a riverbank"
       ],
-      terms: [
-        { term: "Winnow", meaning: "To separate grain from chaff by blowing air; in the poem, the wind separates out and destroys the weak." },
-        { term: "Crumbling", meaning: "Breaking into small pieces; weak and falling apart." },
-        { term: "Steadfast", meaning: "Firm, determined and unshaken." },
-        { term: "Rafters", meaning: "Sloping wooden beams that support a roof." },
-        { term: "Flourish", meaning: "To grow strongly and well." }
-      ],
-      qa: [
+      "terms": [
         {
-          q: "What does the wind do to weak things?",
-          a: "The wind **winnows** out weak things (crumbling houses, doors, rafters, wood, bodies, lives and hearts) and crushes them all. It also blows out **weak fires**."
+          "term": "Dao",
+          "meaning": "A tool used for digging clay."
         },
         {
-          q: "How can we make the wind our friend?",
-          a: "We should build **strong homes** with firmly joined doors, make our bodies fit through practice and make our hearts **steadfast**. Then the wind cannot harm us; instead it makes strong fires roar, and its friendship is good."
+          "term": "Kiln",
+          "meaning": "An oven in which pots are fired so they harden."
         },
         {
-          q: "What does the wind symbolise in the poem?",
-          a: "The wind symbolises the **hardships and challenges** of life. Weak people are broken by them, while people who are strong in body and mind face them bravely and grow even stronger."
+          "term": "Onula",
+          "meaning": "The girls' dormitory supervisor, whom the girls call Aunty."
+        },
+        {
+          "term": "Pittance",
+          "meaning": "A very small amount of money earned."
+        },
+        {
+          "term": "Malleable",
+          "meaning": "Soft enough to be shaped without cracking."
         }
       ],
-      quiz: [
+      "qa": [
         {
-          q: "Who translated ‘Wind’ into English?",
-          options: ["Subramania Bharati", "A.K. Ramanujan", "Rabindranath Tagore", "Robert Frost"],
-          answer: 1,
-          explain: "Bharati wrote it in Tamil; **A.K. Ramanujan** translated it into English."
+          "q": "Why did Arenla not want Sentila to become a pot maker?",
+          "a": "Pottery had brought her little money for great effort. The clay was far away, carrying it was painful and pounding it was tiring, and a batch of pots took months. She felt weaving would pay better and could be done indoors."
         },
         {
-          q: "What does the wind do to weak fires?",
-          options: ["Makes them roar", "Turns them into rain", "Leaves them alone", "Blows them out"],
-          answer: 3,
-          explain: "The wind **blows out** weak fires but makes strong fires roar and flourish."
+          "q": "How did Onula help Sentila?",
+          "a": "Onula noticed Sentila was tense and showed her how to shape a pot. She encouraged her and told her to watch how her mother formed the mouth of the pot, which gave Sentila confidence."
         },
         {
-          q: "The wind in the poem symbolises:",
-          options: ["challenges and hardships in life", "a gentle friend", "the monsoon season only", "wealth and luxury"],
-          answer: 0,
-          explain: "The wind stands for life's **difficulties**, which destroy only the weak."
-        },
-        {
-          q: "Which device is used when the poet speaks directly to the wind?",
-          options: ["Simile", "Alliteration", "Apostrophe", "Onomatopoeia"],
-          answer: 2,
-          explain: "Addressing something absent or non-human directly is called **apostrophe**."
-        },
-        {
-          q: "What does the poet advise us to do?",
-          options: ["Hide from the wind", "Build strong homes, bodies and hearts", "Pray for the wind to stop", "Shut all windows forever"],
-          answer: 1,
-          explain: "He urges us to **become strong** so that the wind becomes our friend."
-        }
-      ]
-    },
-
-    {
-      id: "the-little-girl",
-      title: "The Little Girl",
-      section: "Literature – Beehive",
-      summary: "Katherine Mansfield's story of Kezia, a little girl who fears her strict father until a frightening night shows her his loving heart.",
-      notes: [
-        {
-          heading: "Summary",
-          points: [
-            "**Kezia** is afraid of her father, who seems big, stern and impatient. She is relieved when he leaves for work each morning.",
-            "In front of him she becomes nervous and **stutters**, which irritates him further.",
-            "Her grandmother suggests she make a **pin-cushion** for her father's birthday. Kezia stuffs it with papers from her mother's room, which turn out to be her father's **important speech** for the Port Authority.",
-            "Her father punishes her by hitting her palms with a **ruler**. Hurt and confused, she notices how the neighbour **Mr Macdonald** plays happily with his children.",
-            "One night, when her mother is ill in hospital and her grandmother is with her, Kezia is left with **Alice, the cook**. She has a **nightmare**, and her father comforts her and lets her sleep beside him.",
-            "Resting against him, she realises he works hard and is too tired to play. She sees that he has a **big heart**, and her fear turns into love."
-          ]
-        },
-        {
-          heading: "Characters",
-          points: [
-            "**Kezia:** a sensitive, timid little girl who fears her father but longs for his affection.",
-            "**Father:** strict and impatient on the surface, but caring and gentle when Kezia truly needs him.",
-            "**Grandmother:** loving and protective; she comforts Kezia and encourages her to be closer to her father.",
-            "**Mr Macdonald:** the neighbour who plays joyfully with his five children, showing Kezia a different kind of father."
-          ]
-        },
-        {
-          heading: "Themes and message",
-          points: [
-            "**Parent–child relationship:** a gap in understanding between a busy father and a sensitive child.",
-            "**Fear vs love:** Kezia's fear comes from misunderstanding; closeness reveals love.",
-            "**Changing perceptions:** she learns to see her father as a tired, hard-working man who loves her.",
-            "Message: parents should express love and be patient with children; children should try to understand their parents' pressures."
-          ]
-        },
-        {
-          heading: "Turning point",
-          points: [
-            "The night of the nightmare is the turning point: the father who frightened her becomes her comforter.",
-            "Kezia notices that he is tired after a day's work and has no one to play with him, and she feels sympathy for him."
-          ]
+          "q": "What does the ending of the story suggest?",
+          "a": "The two equal rows of pots show that Sentila had finally learned her mother's skill. Onula sees that a new pot maker was born, so the craft would survive through the next generation."
         }
       ],
-      formulas: [
-        "Author: Katherine Mansfield",
-        "Main character: Kezia",
-        "Key objects: the pin-cushion and the father's speech for the Port Authority",
-        "Turning point: the nightmare and the father's comfort"
-      ],
-      terms: [
-        { term: "Kezia", meaning: "The little girl in the story who is afraid of her strict father." },
-        { term: "Pin-cushion", meaning: "A small padded cushion for holding pins; Kezia made one as a birthday gift for her father." },
-        { term: "Port Authority", meaning: "The body for which Kezia's father had written the important speech that Kezia tore up." },
-        { term: "Nightmare", meaning: "A frightening dream; Kezia dreamt of a butcher with a knife and a rope." },
-        { term: "Mr Macdonald", meaning: "Kezia's neighbour, a playful, loving father of five children." }
-      ],
-      qa: [
+      "quiz": [
         {
-          q: "Why was Kezia afraid of her father?",
-          a: "Her father seemed **big, strict and impatient**. He often found fault with her and made her nervous, so she stuttered in front of him. She was relieved whenever he left for work."
+          "q": "What did Sentila want to become?",
+          "options": [
+            "A weaver",
+            "A teacher",
+            "A pot maker",
+            "A farmer"
+          ],
+          "answer": 2,
+          "explain": "She dreamt of being a potter like her mother and grandmother."
         },
         {
-          q: "Why did Kezia's father punish her?",
-          a: "To make a pin-cushion for his birthday, Kezia stuffed it with papers from her mother's table. These were her father's **important speech for the Port Authority**. Angry at losing them, he punished her by hitting her palms with a ruler."
+          "q": "Who warned Mesoba about his wife's refusal to teach pottery?",
+          "options": [
+            "The neighbours",
+            "The schoolteacher",
+            "Onula",
+            "The village council"
+          ],
+          "answer": 3,
+          "explain": "Mesoba was summoned by the village council."
         },
         {
-          q: "How did Kezia's view of her father change?",
-          a: "On the night of her nightmare, her father **comforted her** and let her sleep beside him. She realised he was tired from working hard for the family and that he had a **big heart**. Her fear turned into love and sympathy."
-        }
-      ],
-      quiz: [
-        {
-          q: "Who wrote ‘The Little Girl’?",
-          options: ["Katherine Mansfield", "Isaac Asimov", "Deborah Cowley", "Ruskin Bond"],
-          answer: 0,
-          explain: "‘The Little Girl’ is by **Katherine Mansfield**."
+          "q": "Where was the clay found?",
+          "options": [
+            "On a riverbank",
+            "In the fields",
+            "Beside the kiln",
+            "In the work shed"
+          ],
+          "answer": 0,
+          "explain": "The clay was found on a riverbank, many kilometres from the village."
         },
         {
-          q: "What did Kezia make as a birthday gift for her father?",
-          options: ["A greeting card", "A pin-cushion", "A paper boat", "A painting"],
-          answer: 1,
-          explain: "On her grandmother's suggestion, she made a **pin-cushion**."
+          "q": "Who was Onula?",
+          "options": [
+            "Sentila's aunt",
+            "The supervisor of the girls' dormitory",
+            "The village potter",
+            "Sentila's grandmother"
+          ],
+          "answer": 1,
+          "explain": "She was a kind middle-aged widow supervising the dormitory."
         },
         {
-          q: "What were the papers Kezia used to stuff the gift?",
-          options: ["Old newspapers", "Her school notes", "Her father's important speech", "Her grandmother's letters"],
-          answer: 2,
-          explain: "She unknowingly used her father's **great speech for the Port Authority**."
+          "q": "What did Sentila do when her mother left her in the work shed?",
+          "options": [
+            "Went to the riverbank",
+            "Asked Onula for help",
+            "Made pot after pot",
+            "Began weaving"
+          ],
+          "answer": 2,
+          "explain": "She produced many pots, just one fewer than her mother."
         },
         {
-          q: "With whom was Kezia left when her mother was taken to hospital?",
-          options: ["Mr Macdonald", "Her aunt", "A neighbour's daughter", "Alice, the cook"],
-          answer: 3,
-          explain: "Her grandmother went to the hospital, so Kezia was left with **Alice, the cook**."
-        },
-        {
-          q: "What made Kezia feel that some fathers are very different from hers?",
-          options: ["Seeing Mr Macdonald play happily with his children", "Reading a storybook", "Her grandmother's advice", "A visit to the hospital"],
-          answer: 0,
-          explain: "Watching **Mr Macdonald** play with his children showed her a warm, playful kind of father."
-        },
-        {
-          q: "What does Kezia realise at the end?",
-          options: ["Her father does not love her", "Her father has a big heart and works hard", "Her grandmother is strict", "She should leave home"],
-          answer: 1,
-          explain: "She sees that her father is tired from work and has a **big heart**."
+          "q": "What does the story mainly teach?",
+          "options": [
+            "Weaving is better than pottery",
+            "Girls should avoid hard work",
+            "Old skills are no longer useful",
+            "Craft traditions must be passed on"
+          ],
+          "answer": 3,
+          "explain": "The council and the ending both stress the continuation of tradition."
         }
       ]
     },
 
     {
-      id: "the-snake-and-the-mirror",
-      title: "The Snake and the Mirror",
-      section: "Literature – Beehive",
-      summary: "Vaikom Muhammad Basheer's humorous story in which a vain young homeopath, admiring himself in a mirror, suddenly finds a snake coiled around his arm.",
-      notes: [
+      "id": "gifts-of-grace-honouring-our-vocations",
+      "title": "Gifts of Grace: Honouring Our Vocations",
+      "section": "Kaveri",
+      "summary": "An anonymous poem in which the speaker hears all of Bharat celebrating its vocations: craftspeople, musicians, carpenters, electricians, boatmen, shoemakers and cooks, each proud of their own work.",
+      "notes": [
         {
-          heading: "Summary",
-          points: [
-            "The narrator is a poor young **homeopath** living in a small rented room. One night, after dinner, he sits before his mirror.",
-            "Admiring his face, he decides he is handsome, plans to **shave every day and grow a thin moustache**, and day-dreams of marrying a **rich, fat lady doctor**.",
-            "Suddenly a **snake** drops onto his shoulder and coils itself around his arm. Terrified, he sits as still as a statue, hardly breathing, and prays to God.",
-            "The snake turns its head and looks into the **mirror**. The narrator jokes that it may be admiring its own reflection.",
-            "When the snake moves towards the mirror, he seizes the chance and **escapes** from the room."
+          "heading": "What the poem says",
+          "points": [
+            "The speaker hears Bharat celebrating the varied **vocations** of its people.",
+            "Craftspeople weave colours and artisans with lutes celebrate emotions and dreams.",
+            "Carpenters make anything from wood with precision; electricians work with cables and wires to brighten our lives.",
+            "Boatmen gather their nets, sail and sing, and come back with tales of the sea; shoemakers vouch for work that serves our feet.",
+            "Cooks and others celebrate what belongs to them alone. The voice of their vocation is the voice of their identity."
           ]
         },
         {
-          heading: "The narrator's character",
-          points: [
-            "**Vain:** he admires his looks and plans ways to appear even more handsome.",
-            "**Poor but ambitious:** he dreams of marrying a rich woman to improve his life.",
-            "**Frightened yet sensible:** he stays perfectly still while the snake is on him and escapes at the right moment.",
-            "**Humorous:** he tells his own terrifying experience with self-mocking wit."
+          "heading": "Poetic features",
+          "points": [
+            "**Free verse:** lines vary in length and do not follow a strict rhyme scheme.",
+            "**Repetition** of 'I hear Bharat celebrating' frames the poem like a refrain.",
+            "Sound images such as humming, singing and echoing make the vocations feel alive; the tone is joyful, reverent and celebratory."
           ]
         },
         {
-          heading: "Themes and message",
-          points: [
-            "**Vanity:** the incident deflates the narrator's pride in his looks; even the snake seems more interested in its own reflection.",
-            "**Fear and presence of mind:** facing death, he realises how helpless he is, and calmness saves him.",
-            "**Humour in danger:** Basheer turns a frightening event into a funny story.",
-            "Message: pride and day-dreams mean little in the face of real danger; staying calm can save us."
-          ]
-        },
-        {
-          heading: "Narrative style",
-          points: [
-            "Told in the **first person**, as the homeopath narrates his experience to listeners.",
-            "Mixes **suspense** with gentle **humour and irony**.",
-            "**Vaikom Muhammad Basheer** (1908–1994) was a celebrated Malayalam writer; the story is translated from Malayalam."
+          "heading": "Message",
+          "points": [
+            "Every honest vocation deserves respect, whether or not it is glamorous.",
+            "Work gives people identity; traditional crafts and skills should be preserved."
           ]
         }
       ],
-      formulas: [
-        "Author: Vaikom Muhammad Basheer (Malayalam)",
-        "Narrator: a poor young homeopath",
-        "Setting: his small rented room, at night",
-        "Main themes: vanity, fear, humour"
+      "formulas": [
+        "Poet: Anonymous",
+        "Form: free verse without a fixed rhyme scheme",
+        "Vocations named: craftspersons, artisans, carpenters, electricians, boatmen, shoemakers, cooks, designers, masons",
+        "Central idea: the voice of a vocation is the voice of one's identity"
       ],
-      terms: [
-        { term: "Homeopath", meaning: "A doctor who practises homeopathy, a system of medicine; the narrator's profession." },
-        { term: "Vanity", meaning: "Too much pride in one's own appearance or achievements." },
-        { term: "Presence of mind", meaning: "The ability to think and act calmly in an emergency." },
-        { term: "Petrified", meaning: "So frightened that one cannot move." },
-        { term: "Reflection", meaning: "The image seen in a mirror; the snake seemed to look at its own." }
-      ],
-      qa: [
+      "terms": [
         {
-          q: "What did the narrator decide while admiring himself in the mirror?",
-          a: "He decided that he was quite handsome and that he would **shave every day** and **grow a thin moustache** to look even better. He also day-dreamed of marrying a rich, fat lady doctor."
+          "term": "Vocation",
+          "meaning": "A trade or occupation for which a person has a skill or calling."
         },
         {
-          q: "How did the narrator react when the snake coiled around his arm?",
-          a: "He was terrified but stayed **absolutely still**, hardly breathing, because any movement might make the snake bite. He prayed to God. When the snake turned towards the mirror, he used that chance to escape."
+          "term": "Artisan",
+          "meaning": "A skilled worker who makes things by hand."
         },
         {
-          q: "How is humour created in the story?",
-          a: "Basheer laughs at the narrator's **vanity**: a man admiring his face is suddenly frozen with fear by a snake. The idea that the snake, too, was admiring itself in the mirror, and the narrator's dreams of a rich wife, make a frightening event amusing."
+          "term": "Free verse",
+          "meaning": "Poetry with no fixed rhyme scheme or regular metre."
+        },
+        {
+          "term": "Refrain",
+          "meaning": "A line repeated in a poem."
+        },
+        {
+          "term": "Identity",
+          "meaning": "What makes a person who they are."
         }
       ],
-      quiz: [
+      "qa": [
         {
-          q: "What was the narrator's profession?",
-          options: ["Engineer", "Teacher", "Homeopath", "Lawyer"],
-          answer: 2,
-          explain: "The narrator was a poor young **homeopath**."
+          "q": "What does the poem celebrate?",
+          "a": "It celebrates the many skilled vocations of India, from craftspeople and carpenters to boatmen and cooks, and honours the pride and individuality each worker brings."
         },
         {
-          q: "What was the narrator doing when the snake appeared?",
-          options: ["Sleeping on his bed", "Looking at himself in the mirror", "Reading a medical book", "Eating dinner"],
-          answer: 1,
-          explain: "He was sitting before the **mirror**, admiring his face."
+          "q": "What does the line about the voice of a vocation mean?",
+          "a": "It means that the work people do expresses who they are. A person's vocation shapes their identity and deserves respect."
         },
         {
-          q: "What did the narrator decide to do to look more handsome?",
-          options: ["Buy new clothes", "Cut his hair short", "Wear spectacles", "Shave daily and grow a thin moustache"],
-          answer: 3,
-          explain: "He planned to **shave every day and grow a thin moustache**."
-        },
-        {
-          q: "Whom did the narrator dream of marrying?",
-          options: ["A rich, fat lady doctor", "A famous actress", "A schoolteacher", "His neighbour's daughter"],
-          answer: 0,
-          explain: "He day-dreamed of marrying a **rich, fat lady doctor**."
-        },
-        {
-          q: "What did the snake do that gave the narrator a chance to escape?",
-          options: ["It went to sleep", "It bit the mirror", "It turned and moved towards the mirror", "It fell to the floor and died"],
-          answer: 2,
-          explain: "As the snake turned to the **mirror**, the narrator slipped away."
-        },
-        {
-          q: "Which quality of the narrator does the story mainly make fun of?",
-          options: ["His generosity", "His vanity", "His honesty", "His laziness"],
-          answer: 1,
-          explain: "The story gently mocks the narrator's **vanity** about his looks."
-        }
-      ]
-    },
-
-    {
-      id: "my-childhood",
-      title: "My Childhood",
-      section: "Literature – Beehive",
-      summary: "An extract from Dr A.P.J. Abdul Kalam's autobiography ‘Wings of Fire’ about his childhood in Rameswaram, his family, friends and teachers, and early lessons in communal harmony.",
-      notes: [
-        {
-          heading: "Family and early life",
-          points: [
-            "Kalam was born in **Rameswaram** (then in Madras State, now Tamil Nadu) into a middle-class Tamil family.",
-            "His father **Jainulabdeen** had little formal education or wealth but great wisdom and generosity; his mother **Ashiamma** was his ideal helpmate.",
-            "They lived in an ancestral house of limestone and brick. His childhood was simple but secure, both materially and emotionally.",
-            "He inherited **honesty and self-discipline** from his father and **faith in goodness and deep kindness** from his mother."
-          ]
-        },
-        {
-          heading: "First earnings",
-          points: [
-            "When the **Second World War** broke out in 1939, Kalam was eight. A sudden demand for **tamarind seeds** let him earn one anna a day by selling them to a shop on Mosque Street.",
-            "His cousin **Samsuddin** distributed newspapers. When trains stopped halting at Rameswaram, the bundles were thrown from the moving train; Kalam caught them and earned his **first wages**."
-          ]
-        },
-        {
-          heading: "Friends and teachers",
-          points: [
-            "His close friends **Ramanadha Sastry, Aravindan and Sivaprakasan** came from orthodox Hindu Brahmin families, yet the boys never felt any difference.",
-            "In Class 5, a **new teacher** sent Kalam, who wore a cap that marked him as a Muslim, to the back bench because he sat beside Ramanadha Sastry, the son of the temple's high priest.",
-            "**Pakshi Lakshmana Sastry**, the high priest, scolded the teacher for spreading communal intolerance and told him to apologise or leave. The teacher apologised and changed.",
-            "Science teacher **Sivasubramania Iyer** invited Kalam home for a meal. When his conservative wife refused to serve him in her kitchen, Iyer served him himself. The next week she served Kalam with her own hands."
-          ]
-        },
-        {
-          heading: "Leaving home",
-          points: [
-            "After the war, Kalam asked his father's permission to study at **Ramanathapuram**, the district headquarters.",
-            "His father agreed, saying children must go away to grow, and quoted **Khalil Gibran** to his hesitant mother."
-          ]
-        },
-        {
-          heading: "Themes and message",
-          points: [
-            "**Secularism and communal harmony:** friendships and families across religions.",
-            "**Breaking social barriers:** Lakshmana Sastry and Sivasubramania Iyer stood up against discrimination.",
-            "**Role of parents and teachers** in shaping values.",
-            "Message: a good society is built when people respect one another and refuse to discriminate on the basis of religion or caste."
-          ]
+          "q": "How does the poet make the poem lively?",
+          "a": "The poem repeats the idea of 'hearing' Bharat, uses sounds such as singing and humming, and gives specific examples of workers, so we picture and hear each vocation."
         }
       ],
-      formulas: [
-        "Author: Dr A.P.J. Abdul Kalam",
-        "Source: his autobiography ‘Wings of Fire’",
-        "Setting: Rameswaram, Tamil Nadu",
-        "Friends: Ramanadha Sastry, Aravindan, Sivaprakasan"
-      ],
-      terms: [
-        { term: "Wings of Fire", meaning: "Dr Kalam's autobiography, from which ‘My Childhood’ is taken." },
-        { term: "Jainulabdeen", meaning: "Kalam's father, a generous and wise man with little formal education." },
-        { term: "Samsuddin", meaning: "Kalam's cousin, who distributed newspapers and gave him his first job." },
-        { term: "Pakshi Lakshmana Sastry", meaning: "High priest of the Rameswaram temple and father of Kalam's friend Ramanadha Sastry; he scolded the new teacher." },
-        { term: "Sivasubramania Iyer", meaning: "Kalam's science teacher, who worked to break social barriers and invited Kalam home for a meal." },
-        { term: "Secularism", meaning: "Equal respect for all religions." }
-      ],
-      qa: [
+      "quiz": [
         {
-          q: "How did Kalam earn his first wages?",
-          a: "During the Second World War, the train stopped halting at Rameswaram, so newspaper bundles were thrown out of the moving train. Kalam's cousin **Samsuddin**, who distributed newspapers, employed Kalam to **catch the bundles**, which earned him his first wages."
+          "q": "What does the speaker repeatedly say he or she hears?",
+          "options": [
+            "Birds singing in the forest",
+            "Machines in a factory",
+            "Children playing in the street",
+            "Bharat celebrating its vocations"
+          ],
+          "answer": 3,
+          "explain": "The poem opens and closes with the idea of Bharat celebrating."
         },
         {
-          q: "How did Lakshmana Sastry react to the new teacher's behaviour?",
-          a: "He called the teacher and told him he must not **spread the poison of social inequality and communal intolerance** in the minds of innocent children. He asked him either to apologise or to leave the school and the island. The teacher regretted his behaviour and reformed."
+          "q": "Which workers handle cables and wires?",
+          "options": [
+            "Electricians",
+            "Carpenters",
+            "Masons",
+            "Boatmen"
+          ],
+          "answer": 0,
+          "explain": "The poem says electricians work with cables and wires to brighten lives."
         },
         {
-          q: "What does the episode with Sivasubramania Iyer's wife show?",
-          a: "It shows that Iyer was determined to **break social barriers**. When his wife refused to serve a Muslim boy in her kitchen, he calmly served Kalam himself. His patience changed her: the next week she served Kalam with her own hands."
-        }
-      ],
-      quiz: [
-        {
-          q: "Where was A.P.J. Abdul Kalam born?",
-          options: ["Madurai", "Rameswaram", "Ramanathapuram", "Chennai"],
-          answer: 1,
-          explain: "Kalam was born in **Rameswaram**, then in Madras State."
+          "q": "Which workers gather nets and sail?",
+          "options": [
+            "Cooks",
+            "Boatmen",
+            "Shoemakers",
+            "Designers"
+          ],
+          "answer": 1,
+          "explain": "Boatmen return with tales of life at sea."
         },
         {
-          q: "What did Kalam collect and sell to a shop on Mosque Street?",
-          options: ["Newspapers", "Coconuts", "Tamarind seeds", "Fish"],
-          answer: 2,
-          explain: "During the war there was a sudden demand for **tamarind seeds**, which earned him one anna a day."
+          "q": "The poem is written in",
+          "options": [
+            "A strict couplet pattern",
+            "Sonnet form",
+            "Free verse",
+            "Ballad form"
+          ],
+          "answer": 2,
+          "explain": "Lines vary in length and have no fixed rhyme scheme."
         },
         {
-          q: "Why did the new teacher send Kalam to the back bench?",
-          options: ["He was talking in class", "He had not done his homework", "He was too tall", "He was a Muslim boy sitting next to the priest's son"],
-          answer: 3,
-          explain: "The teacher could not accept a **Muslim boy** sitting beside the Hindu priest's son."
+          "q": "What is the overall mood of the poem?",
+          "options": [
+            "Fearful",
+            "Gloomy",
+            "Angry",
+            "Joyful and respectful"
+          ],
+          "answer": 3,
+          "explain": "The speaker admires and celebrates each worker."
         },
         {
-          q: "Who served Kalam food when Sivasubramania Iyer's wife refused?",
-          options: ["Sivasubramania Iyer himself", "Kalam's mother", "Lakshmana Sastry", "Samsuddin"],
-          answer: 0,
-          explain: "**Iyer himself** served Kalam and sat beside him to eat."
-        },
-        {
-          q: "Which qualities did Kalam inherit from his father?",
-          options: ["Faith in goodness and kindness", "Honesty and self-discipline", "Love of music and art", "Interest in trade"],
-          answer: 1,
-          explain: "From his father he inherited **honesty and self-discipline**; from his mother, faith in goodness and deep kindness."
-        },
-        {
-          q: "Whom did Kalam's father quote to persuade his mother to let Kalam go to Ramanathapuram?",
-          options: ["Mahatma Gandhi", "Rabindranath Tagore", "Khalil Gibran", "Swami Vivekananda"],
-          answer: 2,
-          explain: "He quoted **Khalil Gibran** on how children must be allowed to grow on their own."
+          "q": "What is the central message?",
+          "options": [
+            "Every honest vocation deserves honour",
+            "Only traditional crafts are valuable",
+            "Machines should replace craftspeople",
+            "Work is only a means to earn"
+          ],
+          "answer": 0,
+          "explain": "The poem honours all skilled work as part of identity."
         }
       ]
     },
 
     {
-      id: "no-men-are-foreign",
-      title: "No Men Are Foreign",
-      section: "Literature – Beehive",
-      summary: "James Kirkup's poem reminding us that all human beings are alike, so hating and fighting other nations harms humanity and the earth itself.",
-      notes: [
+      "id": "winds-of-change",
+      "title": "Winds of Change",
+      "section": "Kaveri",
+      "summary": "An expository article on the traditional Indian hand fan, the pankha: its origin, its regional varieties made from many materials, its decline in everyday use, and the need to keep the craft alive.",
+      "notes": [
         {
-          heading: "Summary",
-          points: [
-            "The poet asks us to remember that **no people are strange and no country is foreign**.",
-            "Beneath every **uniform** is a body that breathes just like ours, and others walk on the same earth in which we shall all be buried.",
-            "They too know sun, air and water, are fed by **peaceful harvests** and starve in the long winter of **war**. Their hands work like ours, their eyes wake and sleep like ours, and they can be won over by love.",
-            "Whenever we are told to **hate** our brothers, we actually rob, betray and condemn **ourselves**.",
-            "When we take up **arms** against one another, we pollute the earth and the innocent air that belongs to all of us."
+          "heading": "Content of the article",
+          "points": [
+            "The word **pankha** comes from 'pankh', a feather; the small plumed fan was called a pankhi. Buddhist wall paintings at Ajanta (2nd century CE) show it.",
+            "In ancient times pankhas were used in temples and royal courts and ranged from tiny fans to large ones needing full arm strength. They also travelled along trade routes.",
+            "Materials differ by region: bamboo, cane, palm leaf, silk, brass, leather and silver, often with beads or stones.",
+            "Today they are mostly decorative or craft items; with technology the tradition risks fading, though it now gives artisans a livelihood."
           ]
         },
         {
-          heading: "Themes and message",
-          points: [
-            "**Universal brotherhood:** all humans share the same body, needs, feelings and earth.",
-            "**Anti-war:** war brings hunger and destroys nature; hatred hurts the hater too.",
-            "**Artificial divisions:** uniforms and borders separate people who are basically the same.",
-            "Message: reject hatred between nations; love and understanding can unite humanity."
+          "heading": "Regional varieties",
+          "points": [
+            "**Rajasthan:** appliqué fans with fabric pieces and needlework, zardozi fans with gold thread, brass temple fans and painted cardboard fans offered to gods.",
+            "**Gujarat:** cotton fans with mirror work, bead fans with silver handles, and hand-stitched leather fans from Kutch.",
+            "**West Bengal:** delicate fans of sola pith, and palm-leaf Tal Patar Pankha.",
+            "**Uttar Pradesh, Odisha and Bihar:** Phadh fans with zari and silk, large palm-leaf fans, and sturdy coloured bamboo fans; tribal fans use grass, cane and geometric patterns."
           ]
         },
         {
-          heading: "Poetic devices",
-          points: [
-            "**Repetition:** the word ‘Remember’ is repeated to stress the message.",
-            "**Metaphor:** ‘war's long winter’ compares war to a harsh winter that brings starvation.",
-            "**Symbolism:** ‘uniforms’ stand for soldiers and the differences between nations.",
-            "**Imagery:** ‘hells of fire and dust’ pictures the destruction caused by war.",
-            "**Free verse:** the poem has no regular rhyme scheme."
-          ]
-        },
-        {
-          heading: "About the poet",
-          points: [
-            "**James Kirkup** (1918–2009) was a British poet who lived and taught in several countries, including Japan.",
-            "The poem's title itself states its main idea: no human being is truly foreign to another."
+          "heading": "Preserving the craft",
+          "points": [
+            "Celebrate pankhas and appreciate their culture, stories and artistry.",
+            "Pankha-making workshops and handicraft exhibitions spread awareness and give artisans a market and sustainable livelihood.",
+            "The article is informative in tone and uses examples by region to show cultural diversity."
           ]
         }
       ],
-      formulas: [
-        "Poet: James Kirkup",
-        "Central idea: universal brotherhood; all humans are alike",
-        "Key metaphor: war's long winter",
-        "Repeated word: Remember"
+      "formulas": [
+        "Genre: expository (informative) article",
+        "Earliest evidence mentioned: Ajanta paintings of the 2nd century CE",
+        "Sola pith is used in West Bengal; Kutch is known for leather fans",
+        "Way to preserve the craft: workshops, exhibitions and appreciation"
       ],
-      terms: [
-        { term: "Foreign", meaning: "Belonging to another country; the poet says no one is truly foreign." },
-        { term: "Dispossess", meaning: "To take away someone's property or rights; by hating others, we rob ourselves." },
-        { term: "Defile", meaning: "To make dirty or impure; war defiles the earth." },
-        { term: "Outrage", meaning: "To violate or cause great harm; war's fire and dust harm the pure air." },
-        { term: "Uniforms", meaning: "A symbol of soldiers and of the differences that divide nations." }
-      ],
-      qa: [
+      "terms": [
         {
-          q: "What does the poet say lies beneath all uniforms?",
-          a: "He says that beneath the uniforms of soldiers of every country there is a **human body that breathes just like ours**. Uniforms create outward differences, but inside, all human beings are the same."
+          "term": "Pankha",
+          "meaning": "The Indian hand fan; the word comes from 'pankh', meaning feather."
         },
         {
-          q: "How does war affect the earth and the air, according to the poet?",
-          a: "When we take up arms against each other, we **defile the earth**, which belongs to all of us. The fire and dust of war **pollute the pure air** that is everywhere our own. So war harms nature as well as people."
+          "term": "Appliqué",
+          "meaning": "Decoration made by sewing pieces of fabric onto a larger piece."
         },
         {
-          q: "Why does the poet say that hating others means betraying ourselves?",
-          a: "Since all humans are alike and share one earth, hating another person is like **hating ourselves**. When we are told to hate our brothers, we end up dispossessing, betraying and condemning our own humanity."
+          "term": "Zardozi",
+          "meaning": "Rich embroidery using gold or silver thread."
+        },
+        {
+          "term": "Sola",
+          "meaning": "A spongy water plant used to make delicate fans in Bengal."
+        },
+        {
+          "term": "Indigenous",
+          "meaning": "Belonging naturally to a place."
         }
       ],
-      quiz: [
+      "qa": [
         {
-          q: "Who wrote ‘No Men Are Foreign’?",
-          options: ["Robert Frost", "James Kirkup", "Subramania Bharati", "W.B. Yeats"],
-          answer: 1,
-          explain: "The poem is by the British poet **James Kirkup**."
+          "q": "How do pankhas from different regions of India differ?",
+          "a": "Each region uses its own materials and designs: appliqué and zardozi in Rajasthan, mirror work and leather in Gujarat, sola in Bengal, palm leaf in Odisha and bamboo in Bihar. They reflect the culture of the place that makes them."
         },
         {
-          q: "What do ‘uniforms’ symbolise in the poem?",
-          options: ["School discipline", "Fashion", "Soldiers and the differences between nations", "Workers in factories"],
-          answer: 2,
-          explain: "Uniforms stand for **soldiers** and the outward differences that divide countries."
+          "q": "Why is the pankha craft in danger?",
+          "a": "Technology and new products have reduced everyday use, so pankhas are now mostly decorative. The tradition risks slowly losing its place among Indians."
         },
         {
-          q: "‘War's long winter’ is an example of:",
-          options: ["metaphor", "simile", "onomatopoeia", "rhyme"],
-          answer: 0,
-          explain: "War is compared to a harsh winter **without** ‘like’ or ‘as’, so it is a **metaphor**."
+          "q": "How can the craft be preserved?",
+          "a": "By celebrating pankhas and appreciating their artistry, and by holding pankha-making workshops and exhibitions that spread awareness and give artisans a sustainable livelihood."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does the word 'pankha' come from?",
+          "options": [
+            "Pankh, meaning feather",
+            "Pankhi, a type of bird",
+            "Panka, a type of palm",
+            "Pakhwaj, a drum"
+          ],
+          "answer": 0,
+          "explain": "The article says it originates from 'pankh'."
         },
         {
-          q: "According to the poet, when we hate our brothers, we:",
-          options: ["become stronger", "betray and condemn ourselves", "protect our country", "win the war"],
-          answer: 1,
-          explain: "Hating others means we **dispossess, betray and condemn ourselves**."
+          "q": "Where do wall paintings showing the pankhi exist?",
+          "options": [
+            "Konark",
+            "Ajanta",
+            "Khajuraho",
+            "Hampi"
+          ],
+          "answer": 1,
+          "explain": "Buddhist wall paintings at Ajanta show it."
         },
         {
-          q: "What is the central message of the poem?",
-          options: ["Every country should have a strong army", "Foreign lands are dangerous", "Nature is more important than people", "All humans are alike, so we should not hate or fight one another"],
-          answer: 3,
-          explain: "The poem promotes **universal brotherhood** and rejects hatred and war."
+          "q": "Which state is known for sola pith fans?",
+          "options": [
+            "Gujarat",
+            "Rajasthan",
+            "West Bengal",
+            "Odisha"
+          ],
+          "answer": 2,
+          "explain": "Bengal's artisans make delicate fans from sola."
         },
         {
-          q: "Which word does the poet repeat to stress his message?",
-          options: ["Hate", "Fire", "Remember", "Winter"],
-          answer: 2,
-          explain: "The repeated **‘Remember’** urges readers to keep the idea of shared humanity in mind."
+          "q": "Hand-stitched leather fans are associated with",
+          "options": [
+            "Jaipur",
+            "Cuttack",
+            "Patna",
+            "Kutch"
+          ],
+          "answer": 3,
+          "explain": "Kutch is recognised for its leather hand fans."
+        },
+        {
+          "q": "Which fans are made with gold thread in Rajasthan?",
+          "options": [
+            "Zardozi fans",
+            "Bead fans",
+            "Tal Patar fans",
+            "Sola fans"
+          ],
+          "answer": 0,
+          "explain": "Zardozi uses glittering gold threadwork."
+        },
+        {
+          "q": "What kind of writing is 'Winds of Change'?",
+          "options": [
+            "A short story",
+            "An expository article",
+            "A play",
+            "A biography"
+          ],
+          "answer": 1,
+          "explain": "It gives information about the heritage of pankhas."
+        }
+      ]
+    },
+
+    {
+      "id": "canvas-of-soil",
+      "title": "Canvas of Soil",
+      "section": "Kaveri",
+      "summary": "A short rhymed poem that pictures gardening as painting: soil is the palette, seeds are brushstrokes, blossoms are colours, and the whole garden is a canvas where art and life meet.",
+      "notes": [
+        {
+          "heading": "What the poem says",
+          "points": [
+            "The earth is a **palette** rich and deep where the dreams of gardeners seep in.",
+            "Seeds planted truly are brushstrokes that wait for the colours of spring.",
+            "Blossoms bloom like a painted sight, dancing in morning light, in shades of green, red and blue: nature's ever-new artwork.",
+            "Each plot is a wide canvas where art and life coincide, and in the hands of those who till, gardens become paintings."
+          ]
+        },
+        {
+          "heading": "Poetic devices",
+          "points": [
+            "**Metaphor:** soil as palette, seeds as brushstrokes, garden as canvas and painting.",
+            "**Imagery:** colours and light create pictures in the mind.",
+            "**Alliteration:** for example 'Blossoms bloom'.",
+            "**Rhyme scheme AABB** with a cheerful, appreciative tone and joyful mood."
+          ]
+        },
+        {
+          "heading": "Message",
+          "points": [
+            "Gardening is an art and nature is the greatest artist.",
+            "Art is part of our daily lives, customs, crafts and gardens; the gardener is a painter."
+          ]
+        }
+      ],
+      "formulas": [
+        "Poet: Maya Anthony",
+        "Rhyme scheme: AABB (rhyming couplets)",
+        "Main metaphor: the garden as a canvas",
+        "Tone: appreciative; mood: joyful"
+      ],
+      "terms": [
+        {
+          "term": "Palette",
+          "meaning": "A board on which a painter mixes colours; here the earth."
+        },
+        {
+          "term": "Metaphor",
+          "meaning": "A comparison made without using 'like' or 'as'."
+        },
+        {
+          "term": "Imagery",
+          "meaning": "Words that create pictures or sensations in the reader's mind."
+        },
+        {
+          "term": "Alliteration",
+          "meaning": "Repetition of the same consonant sound at the start of nearby words."
+        },
+        {
+          "term": "Allegory",
+          "meaning": "A work whose deeper meaning stands for larger ideas, such as life's journey and growth."
+        }
+      ],
+      "qa": [
+        {
+          "q": "How does the poet compare gardening to painting?",
+          "a": "Soil is the painter's palette, seeds are brushstrokes, blossoms give the colours and each plot is a canvas. The gardener becomes an artist creating a living painting."
+        },
+        {
+          "q": "Which poetic devices are used in the poem?",
+          "a": "The poem uses metaphors for the garden, imagery of colour and light, alliteration such as 'Blossoms bloom', and a regular AABB rhyme."
+        },
+        {
+          "q": "What is the central idea?",
+          "a": "Gardening is a creative art, and art and life meet in everyday things. It invites us to see beauty in nature and in the work of gardeners."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In the poem, what are seeds compared to?",
+          "options": [
+            "Paintings",
+            "Brushstrokes",
+            "Canvases",
+            "Gardens"
+          ],
+          "answer": 1,
+          "explain": "Seeds are planted as brushstrokes waiting for spring."
+        },
+        {
+          "q": "What is the rhyme scheme of the poem?",
+          "options": [
+            "ABAB",
+            "ABCB",
+            "AABB",
+            "There is none"
+          ],
+          "answer": 2,
+          "explain": "The poem is written in rhyming couplets."
+        },
+        {
+          "q": "What is each garden plot compared to?",
+          "options": [
+            "A palette",
+            "A frame",
+            "A museum",
+            "A canvas"
+          ],
+          "answer": 3,
+          "explain": "The poem calls each plot a canvas wide."
+        },
+        {
+          "q": "Which device is 'Blossoms bloom'?",
+          "options": [
+            "Alliteration",
+            "Onomatopoeia",
+            "Simile",
+            "Irony"
+          ],
+          "answer": 0,
+          "explain": "The repeated 'b' sound is alliteration."
+        },
+        {
+          "q": "What is the tone of the poem?",
+          "options": [
+            "Mournful",
+            "Appreciative",
+            "Angry",
+            "Doubtful"
+          ],
+          "answer": 1,
+          "explain": "The poet admires the beauty of gardens."
+        },
+        {
+          "q": "Who is the 'artist' in the poem?",
+          "options": [
+            "The king",
+            "The farmer's son",
+            "The gardener",
+            "The weather"
+          ],
+          "answer": 2,
+          "explain": "Gardens become paintings in the hands of those who till."
+        }
+      ]
+    },
+
+    {
+      "id": "vitamin-m",
+      "title": "Vitamin-M",
+      "section": "Kaveri",
+      "summary": "Ravi is asked to keep his forgetful grandfather at home, but when Grandpa slips out for a newspaper Ravi trails him around town, only to learn at the end that Grandpa may have known exactly what was going on.",
+      "notes": [
+        {
+          "heading": "Story in outline",
+          "points": [
+            "Ravi's mother wishes for a 'Vitamin-M' for old people's memory. Grandpa, a retired lawyer of seventy-five, has recently moved in; he forgets things, dislikes the crowded city and resents being treated like a child.",
+            "On the first day of Ravi's holidays Grandpa goes out for the Tamil newspaper; Ravi follows secretly, though he promised his mother.",
+            "Ravi hides behind a bush in the park, a banyan tree and a car, gets scolded by a mother and some vendors, and sees Grandpa enjoy sweet tea, bananas and ice cream normally banned at home.",
+            "Ravi is thrown out of a ladies' salon, boards a bus after a man wearing Grandpa's yellow cap, and discovers the man is a stranger who was given the cap in the barber shop.",
+            "Back home Ravi finds Grandpa snoring. Later Grandpa gives gifts on his own birthday, which Ravi's mother has forgotten, and hints that she needs Vitamin-M. His gift to Ravi is a book of detective stories."
+          ]
+        },
+        {
+          "heading": "Characters and tone",
+          "points": [
+            "**Ravi:** loving, loyal and anxious; he keeps his promise in his own awkward way.",
+            "**Grandpa:** independent, witty, generous and sharp-minded, especially at chess; he plays a gentle trick on the family.",
+            "**Ravi's mother (Vidya):** caring but over-protective, speaking too loudly to her father.",
+            "The story is humorous and affectionate, with lively detail and a surprise ending."
+          ]
+        },
+        {
+          "heading": "Themes",
+          "points": [
+            "**Dignity of the elderly:** they should not be treated like children.",
+            "**Care versus control:** protecting someone should not take away their freedom.",
+            "**Bond between generations:** the grandson learns respect and affection for Grandpa."
+          ]
+        }
+      ],
+      "formulas": [
+        "Author: Asha Nehemiah",
+        "Main characters: Ravi, Grandpa, Ravi's mother Vidya",
+        "Grandpa's age: seventy-five; he was a lawyer",
+        "Ending: Grandpa gives gifts on his own birthday and a detective book to Ravi"
+      ],
+      "terms": [
+        {
+          "term": "Vitamin-M",
+          "meaning": "A joking name for a medicine that could improve memory."
+        },
+        {
+          "term": "Frail",
+          "meaning": "Weak and delicate."
+        },
+        {
+          "term": "Poky",
+          "meaning": "Small and cramped, as Grandpa calls the flat."
+        },
+        {
+          "term": "Trailing",
+          "meaning": "Following someone secretly."
+        },
+        {
+          "term": "Frantic",
+          "meaning": "Very worried and agitated."
+        }
+      ],
+      "qa": [
+        {
+          "q": "Why did Grandpa dislike living in the city?",
+          "a": "He found the city noisy and crowded, and the flat poky. He missed his quiet brick house with a mango tree in town, where he could hear a leaf fall."
+        },
+        {
+          "q": "Why did Ravi follow Grandpa and what happened?",
+          "a": "He had promised his mother not to let Grandpa go out alone. He followed secretly, ended up in awkward situations in the park, the market and a salon, and lost Grandpa after being tricked by a stranger wearing the same cap."
+        },
+        {
+          "q": "What does the ending suggest about Grandpa?",
+          "a": "He gave Ravi a book on detectives and hinted that Ravi's mother needs Vitamin-M, so he probably knew Ravi was trailing him. He is sharp, playful and still sensible, not as forgetful as his daughter thinks."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What job did Grandpa once do?",
+          "options": [
+            "Doctor",
+            "Teacher",
+            "Lawyer",
+            "Postman"
+          ],
+          "answer": 2,
+          "explain": "His firmness came naturally from his work as a lawyer."
+        },
+        {
+          "q": "Why did Grandpa say he was going out?",
+          "options": [
+            "To visit the barber",
+            "To meet an old friend",
+            "To see a doctor",
+            "To buy the Tamil newspaper"
+          ],
+          "answer": 3,
+          "explain": "He wanted to see if the Tamil newspaper had arrived at the corner shop."
+        },
+        {
+          "q": "What did Ravi hide behind in the children's park?",
+          "options": [
+            "A bush trimmed like an elephant",
+            "A banyan tree",
+            "A bench",
+            "A silver car"
+          ],
+          "answer": 0,
+          "explain": "He crouched behind a bush shaped like an elephant."
+        },
+        {
+          "q": "Who actually wore the yellow cap on the bus?",
+          "options": [
+            "Grandpa",
+            "A stranger",
+            "Ravi's father",
+            "A vendor"
+          ],
+          "answer": 1,
+          "explain": "A stranger had been given Grandpa's cap in the barber shop."
+        },
+        {
+          "q": "Why did Ravi's mother turn red at the end?",
+          "options": [
+            "She had lost her purse",
+            "Ravi had disobeyed her",
+            "She had forgotten Grandpa's birthday",
+            "Grandpa scolded her about medicine"
+          ],
+          "answer": 2,
+          "explain": "Grandpa gave gifts on his birthday, and his hint made her blush."
+        },
+        {
+          "q": "What is the main theme of the story?",
+          "options": [
+            "Detectives are always successful",
+            "City life is better than village life",
+            "Children should not make promises",
+            "The elderly should be treated with dignity"
+          ],
+          "answer": 3,
+          "explain": "Ravi's mother over-protects, but Grandpa wants respect and independence."
+        }
+      ]
+    },
+
+    {
+      "id": "i-cannot-remember-my-mother",
+      "title": "I Cannot Remember My Mother",
+      "section": "Kaveri",
+      "summary": "A child speaker cannot remember his mother, yet a half-heard tune, the smell of shiuli flowers and the blue sky bring her presence back through his senses.",
+      "notes": [
+        {
+          "heading": "What the poem says",
+          "points": [
+            "**Stanza 1:** during play a tune seems to hover over his toys, the song his mother hummed while rocking his cradle.",
+            "**Stanza 2:** in early autumn, the scent of shiuli flowers reminds him of the morning service in the temple and becomes the scent of his mother.",
+            "**Stanza 3:** from his bedroom window he looks into the distant blue sky and feels the stillness of her gaze spread across it.",
+            "Each stanza begins with 'I cannot remember my mother', yet something recalls her."
+          ]
+        },
+        {
+          "heading": "Features",
+          "points": [
+            "**Senses:** hearing (the tune), smell (shiuli flowers) and sight (the sky) carry the memories.",
+            "**Free verse** with repetition of the opening line; calm, tender and nostalgic tone.",
+            "**Imagery** and metaphor: the sky holds her gaze. The title sets a mood of loss, but the poem shows presence in absence."
+          ]
+        },
+        {
+          "heading": "Message",
+          "points": [
+            "Memory is carried by senses and feelings, not only by pictures of the past.",
+            "A parent's love remains in small everyday experiences even when they are no longer there."
+          ]
+        }
+      ],
+      "formulas": [
+        "Poet: Rabindranath Tagore (Nobel Prize for Gitanjali)",
+        "Memories evoked by: a tune, the smell of shiuli flowers and the sky",
+        "Form: free verse with a repeated opening line",
+        "Tone: tender, nostalgic"
+      ],
+      "terms": [
+        {
+          "term": "Shiuli",
+          "meaning": "A fragrant autumn flower, also called night jasmine or harsingar."
+        },
+        {
+          "term": "Hover",
+          "meaning": "To hang in the air near something."
+        },
+        {
+          "term": "Olfactory",
+          "meaning": "Relating to the sense of smell."
+        },
+        {
+          "term": "Nostalgic",
+          "meaning": "Feeling affectionate longing for the past."
+        },
+        {
+          "term": "Imagery",
+          "meaning": "Language that appeals to the senses."
+        }
+      ],
+      "qa": [
+        {
+          "q": "How does the child remember his mother in each stanza?",
+          "a": "In the first he recalls a tune she hummed; in the second the scent of shiuli flowers mixed with the temple; in the third the stillness of her gaze in the blue sky. Each memory comes through a sense."
+        },
+        {
+          "q": "Why does the poet keep repeating 'I cannot remember my mother'?",
+          "a": "The repetition shows his sadness and also contrasts with what he does feel. Even without a clear memory, sound, smell and sight bring her close."
+        },
+        {
+          "q": "What is the mood of the poem?",
+          "a": "The mood is gentle, wistful and tender. The child feels love and longing, but also a quiet comfort in her presence."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who wrote 'I Cannot Remember My Mother'?",
+          "options": [
+            "Subramania Bharati",
+            "Robert Langley",
+            "David Roth",
+            "Rabindranath Tagore"
+          ],
+          "answer": 3,
+          "explain": "Tagore's poem is read in translation."
+        },
+        {
+          "q": "Which flower is mentioned?",
+          "options": [
+            "Shiuli",
+            "Rose",
+            "Lotus",
+            "Marigold"
+          ],
+          "answer": 0,
+          "explain": "The smell of shiuli flowers reminds the poet of his mother."
+        },
+        {
+          "q": "What does the child hear while he plays?",
+          "options": [
+            "A temple bell",
+            "A tune his mother used to hum",
+            "Birds in the garden",
+            "His father's voice"
+          ],
+          "answer": 1,
+          "explain": "A song she hummed while rocking his cradle seems to hover over his toys."
+        },
+        {
+          "q": "Which sense is linked to the shiuli flowers?",
+          "options": [
+            "Hearing",
+            "Touch",
+            "Smell",
+            "Taste"
+          ],
+          "answer": 2,
+          "explain": "The scent brings back the temple service and his mother."
+        },
+        {
+          "q": "Where does the poet feel his mother's gaze?",
+          "options": [
+            "In the garden",
+            "In a mirror",
+            "In the temple",
+            "In the blue sky"
+          ],
+          "answer": 3,
+          "explain": "The stillness of her gaze seems spread across the sky."
+        },
+        {
+          "q": "The poem is mainly about",
+          "options": [
+            "Memory and the presence of absent love",
+            "A festival",
+            "A journey",
+            "Childhood games"
+          ],
+          "answer": 0,
+          "explain": "The child recalls his mother through sensory experiences."
+        }
+      ]
+    },
+
+    {
+      "id": "the-world-of-limitless-possibilities",
+      "title": "The World of Limitless Possibilities",
+      "section": "Kaveri",
+      "summary": "In this interview, Paralympian Dr. Deepa Malik describes how she turned a spinal tumour and paralysis into a sporting career, and urges society to see ability beyond disability.",
+      "notes": [
+        {
+          "heading": "What the interview tells us",
+          "points": [
+            "At 29 Dr. Malik was diagnosed with a **spine tumour**; after surgery she was told she would be paralysed from the waist down and confined to a wheelchair.",
+            "She had two choices: waste life in regret or turn it into a world of limitless possibilities. She chose the latter and moved to **para-athletics**.",
+            "Her breakthrough was a **silver medal in shot-put** at the 2016 Rio Paralympics. She is the first Indian woman to win a Paralympic medal and an Asian Games athletics medal.",
+            "She believes physical limits do not define potential: 'ability beyond disability'."
+          ]
+        },
+        {
+          "heading": "Ideas in her answers",
+          "points": [
+            "**Challenge:** the main obstacle was society's low expectations, overcome with mental resilience and family support.",
+            "**Sports and stereotypes:** seeing para-athletes' strength and spirit breaks preconceived notions.",
+            "**Advocacy:** she works for emotional health, women's participation in outdoor sports, equipment for para-sportspersons and awareness sessions in schools and colleges.",
+            "**Advice:** every setback is a chance to show strength; build a support system, believe in yourself and let your journey inspire others."
+          ]
+        },
+        {
+          "heading": "Form and themes",
+          "points": [
+            "The text is an **interview**, with questions from an interviewer and direct answers in the first person.",
+            "Themes: resilience, dignity, inclusion, and turning adversity into opportunity."
+          ]
+        }
+      ],
+      "formulas": [
+        "Genre: interview",
+        "Interviewee: Dr. Deepa Malik, Paralympic shot-put medallist",
+        "Medal: silver at the 2016 Rio Paralympics",
+        "Diagnosed with a spine tumour at 29"
+      ],
+      "terms": [
+        {
+          "term": "Paralympics",
+          "meaning": "An international sports event for athletes with physical disabilities."
+        },
+        {
+          "term": "Trailblazer",
+          "meaning": "A person who is first to do something and leads the way."
+        },
+        {
+          "term": "Resilience",
+          "meaning": "The ability to recover from difficulties."
+        },
+        {
+          "term": "Advocacy",
+          "meaning": "Public support for a cause."
+        },
+        {
+          "term": "Inclusivity",
+          "meaning": "Including everyone and treating them equally."
+        }
+      ],
+      "qa": [
+        {
+          "q": "How did Dr. Malik respond to her illness?",
+          "a": "After the tumour left her paralysed from the waist down, she refused to waste her life in regret. She took up para-athletics and went on to win a silver medal in shot-put at the 2016 Rio Paralympics."
+        },
+        {
+          "q": "What was the biggest challenge she mentions?",
+          "a": "Society's perceptions: people underestimated her abilities. She overcame this with mental resilience, family support and by treating challenges as chances to prove herself."
+        },
+        {
+          "q": "What is her advice to those facing setbacks?",
+          "a": "Treat every setback as an opportunity to show strength, surround yourself with support, believe in yourself and let your journey inspire others. Disability is not a limitation but a strength waiting to be released."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "At what age was Dr. Malik diagnosed with a spine tumour?",
+          "options": [
+            "29",
+            "19",
+            "39",
+            "49"
+          ],
+          "answer": 0,
+          "explain": "She says she was 29."
+        },
+        {
+          "q": "In which event did she win silver at the Rio Paralympics?",
+          "options": [
+            "Javelin",
+            "Shot-put",
+            "Discus",
+            "Swimming"
+          ],
+          "answer": 1,
+          "explain": "Her breakthrough was a silver medal in shot-put in 2016."
+        },
+        {
+          "q": "Which phrase sums up her belief?",
+          "options": [
+            "Disability is destiny",
+            "Winning is everything",
+            "Ability beyond disability",
+            "Luck decides success"
+          ],
+          "answer": 2,
+          "explain": "She calls herself a supporter of this idea."
+        },
+        {
+          "q": "What was the greatest challenge she faced?",
+          "options": [
+            "Lack of money",
+            "Poor health",
+            "Weak coaches",
+            "Societal perceptions"
+          ],
+          "answer": 3,
+          "explain": "People underestimated her abilities."
+        },
+        {
+          "q": "What kind of text is this lesson?",
+          "options": [
+            "An interview",
+            "A diary entry",
+            "A letter",
+            "A short story"
+          ],
+          "answer": 0,
+          "explain": "It is a question-and-answer interview."
+        },
+        {
+          "q": "What does she do for young people?",
+          "options": [
+            "Teaches in a school",
+            "Organises awareness sessions on disability sports",
+            "Designs wheelchairs",
+            "Runs a hospital"
+          ],
+          "answer": 1,
+          "explain": "She holds sessions at schools and colleges."
+        }
+      ]
+    },
+
+    {
+      "id": "nine-gold-medals",
+      "title": "Nine Gold Medals",
+      "section": "Kaveri",
+      "summary": "A narrative poem about a Special Olympics sprint in which a runner falls and the other eight stop, return and finish together hand in hand, so that all nine win gold.",
+      "notes": [
+        {
+          "heading": "What happens in the poem",
+          "points": [
+            "Athletes have come from all over the country to run for gold, silver and bronze after months of training; spectators fill the old field.",
+            "Nine determined athletes line up for the hundred-yard dash. At the gun the smallest runner stumbles and falls, crying out in frustration and anguish.",
+            "The eight others pull up, turn back and help him to his feet.",
+            "All nine join hands and walk the rest of the race, under a Special Olympics banner. They cross the finish line holding hands and the crowd gives a standing ovation. Nine medals are won."
+          ]
+        },
+        {
+          "heading": "Poetic features",
+          "points": [
+            "**Narrative poem** in eight four-line stanzas told in the first person as if the speaker witnessed it.",
+            "**Rhyme** and steady rhythm give a storytelling feel; images of dashed dreams change to images of beaming faces.",
+            "Tone moves from excitement to tension to warmth and admiration."
+          ]
+        },
+        {
+          "heading": "Message",
+          "points": [
+            "**Empathy over competition:** true victory lies in lifting others as we rise.",
+            "**Inclusivity and solidarity:** kindness gives a race a greater meaning than winning.",
+            "Shared joy is worth more than an individual medal."
+          ]
+        }
+      ],
+      "formulas": [
+        "Poet: David Roth",
+        "Event: hundred-yard dash at a Special Olympics",
+        "Number of runners: nine; all received gold",
+        "Structure: eight stanzas of four lines"
+      ],
+      "terms": [
+        {
+          "term": "Special Olympics",
+          "meaning": "A sports movement for athletes with intellectual disabilities."
+        },
+        {
+          "term": "Anguish",
+          "meaning": "Severe pain or distress."
+        },
+        {
+          "term": "Asphalt",
+          "meaning": "A hard black material used to make roads and tracks."
+        },
+        {
+          "term": "Standing ovation",
+          "meaning": "Applause given by an audience that rises to its feet."
+        },
+        {
+          "term": "Solidarity",
+          "meaning": "Unity and support among a group."
+        }
+      ],
+      "qa": [
+        {
+          "q": "What happened at the start of the race?",
+          "a": "The signal was given and all the runners dashed ahead, but the smallest runner stumbled and fell on the asphalt, crying out in frustration."
+        },
+        {
+          "q": "How did the other runners respond?",
+          "a": "The eight other runners turned back one by one, helped him up, and then all nine joined hands and finished the race together."
+        },
+        {
+          "q": "What does the poem teach us?",
+          "a": "It teaches that real victory lies in empathy and helping others rather than competing at all costs. Nine gold medals stand for shared success and humanity."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who wrote 'Nine Gold Medals'?",
+          "options": [
+            "Charles Swain",
+            "David Roth",
+            "Robert Langley",
+            "Maya Anthony"
+          ],
+          "answer": 1,
+          "explain": "The poem is by David Roth."
+        },
+        {
+          "q": "How many runners were in the race?",
+          "options": [
+            "Eight",
+            "Ten",
+            "Nine",
+            "Seven"
+          ],
+          "answer": 2,
+          "explain": "Nine runners stood at the starting line."
+        },
+        {
+          "q": "What was the distance of the race?",
+          "options": [
+            "A mile",
+            "Four hundred metres",
+            "A marathon",
+            "A hundred yards"
+          ],
+          "answer": 3,
+          "explain": "It was the hundred-yard dash."
+        },
+        {
+          "q": "Which runner fell?",
+          "options": [
+            "The smallest one",
+            "The fastest one",
+            "The oldest one",
+            "The last one"
+          ],
+          "answer": 0,
+          "explain": "The smallest among them stumbled."
+        },
+        {
+          "q": "How did the crowd react at the end?",
+          "options": [
+            "With silence",
+            "With a standing ovation",
+            "With laughter",
+            "By leaving"
+          ],
+          "answer": 1,
+          "explain": "The audience rose to applaud the nine."
+        },
+        {
+          "q": "What is the poem's central message?",
+          "options": [
+            "Speed wins races",
+            "Training is useless",
+            "Empathy matters more than competition",
+            "Only gold counts"
+          ],
+          "answer": 2,
+          "explain": "The runners chose kindness over winning."
+        }
+      ]
+    },
+
+    {
+      "id": "twin-melodies",
+      "title": "Twin Melodies",
+      "section": "Kaveri",
+      "summary": "A play in three acts about Shruti, a young violinist who secretly joins a fusion band and fears her classical-musician father's disapproval, until he discovers that tradition and innovation can blend.",
+      "notes": [
+        {
+          "heading": "Plot in three acts",
+          "points": [
+            "**Act I:** In Iqbal's room, the fusion group (Iqbal on flute, Avinash on tabla, Peter on keyboard, Shruti on violin) finishes a rehearsal. Shruti is anxious because she has not told her father about the concert; her friends urge her to speak to him.",
+            "**Act II:** At dinner Shruti tells her father Nabin about an Indo-Western fusion concert. He refuses firmly, mocks fusion music and walks away; her mother Leela scolds her for hiding it.",
+            "**Act III:** At Iqbal's house Nabin and Leela quietly enter and enjoy the group's performance. Nabin praises the group and offers them the music room. He admits Leela reminded him that he too had defied his family of vocalists to play the violin."
+          ]
+        },
+        {
+          "heading": "Characters",
+          "points": [
+            "**Shruti:** talented, respectful and torn between her art and her father's views.",
+            "**Nabin (Guru Nabin Sharma):** a strict classical violinist and principal of a music school, who finally changes his mind.",
+            "**Leela:** wise, humorous mother who helps both sides.",
+            "**Iqbal, Avinash and Peter:** supportive friends who encourage Shruti."
+          ]
+        },
+        {
+          "heading": "Themes",
+          "points": [
+            "**Tradition and innovation** can exist together; classical roots blend with contemporary forms.",
+            "**Generation gap and communication:** talking honestly solves conflicts.",
+            "**Open-mindedness:** the father is reminded of his own past rebellion.",
+            "A play has acts, dialogue, stage directions and a final curtain."
+          ]
+        }
+      ],
+      "formulas": [
+        "Author: Mitra Phukan (Katha Award for Translation)",
+        "Three acts",
+        "Main characters: Shruti, Nabin, Leela, Iqbal, Avinash, Peter",
+        "Conflict: classical music versus Indo-Western fusion"
+      ],
+      "terms": [
+        {
+          "term": "Fusion music",
+          "meaning": "Music that blends two or more styles, such as Indian classical and Western."
+        },
+        {
+          "term": "Raga",
+          "meaning": "A set of notes that forms the basis of a piece in Indian classical music."
+        },
+        {
+          "term": "Act",
+          "meaning": "A main division of a play."
+        },
+        {
+          "term": "Stage direction",
+          "meaning": "A note in a script telling actors how to speak or move."
+        },
+        {
+          "term": "Generation gap",
+          "meaning": "Difference in views between older and younger people."
+        }
+      ],
+      "qa": [
+        {
+          "q": "Why was Shruti afraid to tell her father about the concert?",
+          "a": "He was a strict classical violinist who believed fusion music disrespected the violin and tradition. She did not want him to feel she disregarded his opinions."
+        },
+        {
+          "q": "How did Nabin react in Act II?",
+          "a": "He firmly refused, saying the group performance would drown her individual style, mocked fusion as noise, and left the table."
+        },
+        {
+          "q": "Why did Nabin change his mind?",
+          "a": "He heard the group perform in a way that respected the raga, and Leela reminded him that his own father had opposed his choice of the violin. He realised his fears about losing Shruti to Western music were baseless."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What instrument does Shruti play?",
+          "options": [
+            "Flute",
+            "Tabla",
+            "Violin",
+            "Keyboard"
+          ],
+          "answer": 2,
+          "explain": "Shruti plays the violin; Iqbal plays the flute."
+        },
+        {
+          "q": "Who plays the tabla in the fusion group?",
+          "options": [
+            "Peter",
+            "Iqbal",
+            "Nabin",
+            "Avinash"
+          ],
+          "answer": 3,
+          "explain": "Avinash plays the tabla."
+        },
+        {
+          "q": "How many acts does the play have?",
+          "options": [
+            "Three",
+            "Two",
+            "Four",
+            "One"
+          ],
+          "answer": 0,
+          "explain": "The play is divided into Acts I, II and III."
+        },
+        {
+          "q": "What is Shruti's father's profession?",
+          "options": [
+            "Doctor",
+            "Violinist and principal of a music school",
+            "Tabla maker",
+            "Newspaper editor"
+          ],
+          "answer": 1,
+          "explain": "Nabin is a violinist and principal of Sangeetika Music School."
+        },
+        {
+          "q": "What does Nabin offer the children at the end?",
+          "options": [
+            "A new violin",
+            "A concert ticket",
+            "The music room",
+            "A trophy"
+          ],
+          "answer": 2,
+          "explain": "He says they will have more equipment there."
+        },
+        {
+          "q": "What is the play's main theme?",
+          "options": [
+            "Parents are always wrong",
+            "Western music is better",
+            "Practice is unnecessary",
+            "Tradition and innovation can blend"
+          ],
+          "answer": 3,
+          "explain": "Nabin learns to accept fusion and trusts his daughter."
+        }
+      ]
+    },
+
+    {
+      "id": "a-friend-found-in-music",
+      "title": "A Friend Found in Music",
+      "section": "Kaveri",
+      "summary": "A short rhymed poem in which music is shown as an ocean, a rhythm, a therapy and above all a dependable friend who lifts the speaker's spirits.",
+      "notes": [
+        {
+          "heading": "What the poem says",
+          "points": [
+            "Music is compared to an **ocean** that pulls the speaker to the shore and a **rhythm** that moves her to the core.",
+            "It is the **therapy** she needs when she feels blue and lifts her spirits so she can pull through.",
+            "When she is happiest, music was there too.",
+            "When no one seems to care, music is the needed friend."
+          ]
+        },
+        {
+          "heading": "Poetic features",
+          "points": [
+            "**Metaphors:** music is an ocean, rhythm, therapy and friend; each can be turned into a simile (music is as soothing as an ocean).",
+            "**Repetition** of the word 'music' stresses its importance.",
+            "**Rhyme:** shore/core, blue/through, there/care (the second and fourth lines of each four-line unit rhyme); the mood is thoughtful and warm.",
+            "The speaker is the poet herself, shown by the use of 'I' and 'me'."
+          ]
+        },
+        {
+          "heading": "Message",
+          "points": [
+            "Music offers comfort, joy and emotional support, like a loyal friend.",
+            "It works as personal and cultural language that nurtures identity and emotion."
+          ]
+        }
+      ],
+      "formulas": [
+        "Poet: Bryanna T. Perkins",
+        "Main device: metaphor (music as an ocean, rhythm, therapy, friend)",
+        "Idiom: 'feel blue' means to feel sad",
+        "Message: music is a dependable friend"
+      ],
+      "terms": [
+        {
+          "term": "Therapy",
+          "meaning": "Treatment that helps someone feel better."
+        },
+        {
+          "term": "Feel blue",
+          "meaning": "An idiom meaning to feel sad."
+        },
+        {
+          "term": "Metaphor",
+          "meaning": "A comparison without 'like' or 'as'."
+        },
+        {
+          "term": "Rhythm",
+          "meaning": "A regular pattern of beats or sounds."
+        },
+        {
+          "term": "Dependable",
+          "meaning": "Reliable; someone you can count on."
+        }
+      ],
+      "qa": [
+        {
+          "q": "What does the poet compare music to?",
+          "a": "She compares it to an ocean, a rhythm, therapy and a needed friend, each showing a different way music supports her."
+        },
+        {
+          "q": "What does music do for the poet when she is sad?",
+          "a": "It acts as therapy, lifts her spirits and helps her pull through hard times."
+        },
+        {
+          "q": "What message does the poem convey?",
+          "a": "Music is a faithful friend that comforts us when we are alone and shares our happiness, so its value goes beyond entertainment."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who wrote 'A Friend Found in Music'?",
+          "options": [
+            "Maya Anthony",
+            "David Roth",
+            "Charles Swain",
+            "Bryanna T. Perkins"
+          ],
+          "answer": 3,
+          "explain": "Perkins is the poet."
+        },
+        {
+          "q": "What does the phrase 'feel blue' mean?",
+          "options": [
+            "To feel sad",
+            "To feel cold",
+            "To feel calm",
+            "To feel sleepy"
+          ],
+          "answer": 0,
+          "explain": "It is an idiom for sadness."
+        },
+        {
+          "q": "Which of these is a metaphor from the poem?",
+          "options": [
+            "Music is as sweet as honey",
+            "Music is the ocean",
+            "Music sings like a bird",
+            "Music flows like a river"
+          ],
+          "answer": 1,
+          "explain": "The poem states music is the ocean without using 'like' or 'as'."
+        },
+        {
+          "q": "What does music pull the speaker towards?",
+          "options": [
+            "The sky",
+            "A garden",
+            "The shore",
+            "Her home"
+          ],
+          "answer": 2,
+          "explain": "The ocean pulls her to the shore."
+        },
+        {
+          "q": "Which word best describes music in the last lines?",
+          "options": [
+            "Strict teacher",
+            "Silent stranger",
+            "Heavy burden",
+            "Needed friend"
+          ],
+          "answer": 3,
+          "explain": "Music is the friend when no one seems to care."
+        },
+        {
+          "q": "The poem's mood is best described as",
+          "options": [
+            "Warm and thoughtful",
+            "Playful",
+            "Fearful",
+            "Amused"
+          ],
+          "answer": 0,
+          "explain": "It expresses gratitude for music's comfort."
+        }
+      ]
+    },
+
+    {
+      "id": "carrier-of-words",
+      "title": "Carrier of Words",
+      "section": "Kaveri",
+      "summary": "A feature on Khetaram, a Gramin Dak Sewak who walks across the Thar desert near the Rajasthan border to deliver letters, showing the trust, hardship and dignity of India's rural postmen.",
+      "notes": [
+        {
+          "heading": "What the article describes",
+          "points": [
+            "Before the internet, mail travelled through the postal system; in remote India **Gramin Dak Sewaks (GDS)** are the only link between far-off villages and their families.",
+            "Khetaram, sole postman of Somarad Branch Post Office, has carried mail for about fifteen years over sand dunes, beyond the last railhead and phone line, to hamlets near the Indo-Pakistan border.",
+            "His bag may weigh up to 28 kilos. In summer he may walk 20 km for one delivery and sometimes waits until after sundown; water is too precious to wash with.",
+            "Since 2001 delivery agents were accepted as GDS; they form more than half of the postal workforce."
+          ]
+        },
+        {
+          "heading": "The GDS and the community",
+          "points": [
+            "GDS must have another source of livelihood, work five hours a day and may serve until 65.",
+            "Khetaram's job saves his family from famine, as one bajra crop in a good year cannot feed five.",
+            "Families depend on **money orders**; a proposal to give the work to patwaris was rejected, showing trust in the post office.",
+            "Villagers welcome him, ask him to read and write letters, and offer jaggery on happy news. He dreads letters with a torn right corner, which signal death; he reads them outside and tears them up."
+          ]
+        },
+        {
+          "heading": "Themes and tone",
+          "points": [
+            "**Dedication to duty** despite harsh conditions; the postman serves as a human link.",
+            "**Trust and community:** he is a part of the social fabric.",
+            "The tone is admiring, ending with a salute to people like Khetaram. He is ready even if he later carries a cell phone as a Gramin Sanchar Sewak."
+          ]
+        }
+      ],
+      "formulas": [
+        "Genre: feature article about a rural postman",
+        "Place: Somarad Branch Post Office, near Barmer, Thar desert, Rajasthan",
+        "Maximum bag weight: 28 kilos",
+        "GDS: Gramin Dak Sewak"
+      ],
+      "terms": [
+        {
+          "term": "Gramin Dak Sewak",
+          "meaning": "A rural postal worker who delivers mail in remote areas."
+        },
+        {
+          "term": "Dhaani",
+          "meaning": "A small hamlet in the Rajasthan desert."
+        },
+        {
+          "term": "Money order",
+          "meaning": "A way of sending small sums of money through the post office."
+        },
+        {
+          "term": "Dak",
+          "meaning": "Post or mail."
+        },
+        {
+          "term": "Missive",
+          "meaning": "A letter."
+        }
+      ],
+      "qa": [
+        {
+          "q": "What difficulties does Khetaram face in his work?",
+          "a": "He walks long distances over soft sand and dunes with a heavy bag in extreme heat and sandstorms. Water is scarce, and he covers about 20 km for a single delivery in summer."
+        },
+        {
+          "q": "Why is Khetaram trusted by the villagers?",
+          "a": "He is reliable, helps people by reading letters and writing replies, and carries their money orders and news. Villagers rely on the post office and rejected a proposal to replace the GDS."
+        },
+        {
+          "q": "Why does he tear letters that bring news of death?",
+          "a": "He believes bad news must not be carried into the house. He reads the letter aloud twice outside and then destroys it, as the village custom says."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is Khetaram's job?",
+          "options": [
+            "Gramin Dak Sewak",
+            "Policeman",
+            "Teacher",
+            "Soldier"
+          ],
+          "answer": 0,
+          "explain": "He is a rural postal worker."
+        },
+        {
+          "q": "What is the maximum weight of his bag?",
+          "options": [
+            "18 kilos",
+            "28 kilos",
+            "38 kilos",
+            "58 kilos"
+          ],
+          "answer": 1,
+          "explain": "Regulations say it cannot exceed 28 kilos."
+        },
+        {
+          "q": "Which desert does Khetaram work in?",
+          "options": [
+            "The Cold Desert of Ladakh",
+            "The Rann of Kutch",
+            "The Thar",
+            "The Gobi"
+          ],
+          "answer": 2,
+          "explain": "He works in the Thar desert of Rajasthan."
+        },
+        {
+          "q": "What does a torn right corner on an envelope mean?",
+          "options": [
+            "A happy wedding",
+            "A money order",
+            "A lost parcel",
+            "News of a death"
+          ],
+          "answer": 3,
+          "explain": "Such an envelope bears bad news."
+        },
+        {
+          "q": "What can Khetaram offer in return on happy news?",
+          "options": [
+            "A piece of jaggery",
+            "A cup of tea",
+            "A new shirt",
+            "A gold coin"
+          ],
+          "answer": 0,
+          "explain": "In the village, jaggery is all that can be offered."
+        },
+        {
+          "q": "What is the tone of the article?",
+          "options": [
+            "Mocking",
+            "Admiring",
+            "Fearful",
+            "Angry"
+          ],
+          "answer": 1,
+          "explain": "It ends with a salute to people like Khetaram."
+        }
+      ]
+    },
+
+    {
+      "id": "words",
+      "title": "Words",
+      "section": "Kaveri",
+      "summary": "A reflective poem arguing that fine words alone cannot satisfy the heart; only a few sincere words can bring real joy, while empty talk is like a flowering plant that bears no fruit.",
+      "notes": [
+        {
+          "heading": "What the poem says",
+          "points": [
+            "If words could satisfy the heart, there would be less care; but words are like **summer birds** that depart and leave empty air.",
+            "The heart, like a pilgrim on earth, finds that words are often as worthless as weeds.",
+            "A little said truly can bring deeper joy than many words that reach the head but never the heart.",
+            "A voice that cheers a lonely home often says few words, but how dear they are.",
+            "If words could satisfy the chest, the world might hold a feast, but words often satisfy least. They are like plants that all blossom to the root and give no fruit."
+          ]
+        },
+        {
+          "heading": "Poetic devices",
+          "points": [
+            "**Simile:** words are like summer birds; like plants that make a gaudy show.",
+            "**Metaphor:** the heart is a pilgrim; **personification** of words being summoned to the test.",
+            "Regular rhyme and rhythm; tone is thoughtful and gently critical."
+          ]
+        },
+        {
+          "heading": "Message",
+          "points": [
+            "Sincerity matters more than quantity or show in speech.",
+            "Words gain value only when they come from the heart."
+          ]
+        }
+      ],
+      "formulas": [
+        "Poet: Charles Swain",
+        "Simile examples: words like summer birds; plants that make a gaudy show",
+        "Central idea: sincere words are worth more than many empty ones",
+        "Tone: reflective"
+      ],
+      "terms": [
+        {
+          "term": "Pilgrim",
+          "meaning": "A person who travels to a holy place; here, the heart as a traveller on earth."
+        },
+        {
+          "term": "Gaudy",
+          "meaning": "Bright in a showy, cheap way."
+        },
+        {
+          "term": "Simile",
+          "meaning": "A comparison using 'like' or 'as'."
+        },
+        {
+          "term": "Sincere",
+          "meaning": "Honest and genuine."
+        },
+        {
+          "term": "Hosts of",
+          "meaning": "A large number of."
+        }
+      ],
+      "qa": [
+        {
+          "q": "Why does the poet compare words to summer birds?",
+          "a": "Summer birds come and go and leave only empty air. In the same way, mere words depart without leaving anything lasting in the heart."
+        },
+        {
+          "q": "What does the poet mean by plants that blossom to the root but bear no fruit?",
+          "a": "It means showy words look impressive, but if they are insincere they produce nothing valuable, just as showy plants may give no fruit."
+        },
+        {
+          "q": "What is the poem's message?",
+          "a": "Few, truthful words from the heart are more valuable than many empty words. Speech should be sincere and meaningful."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who wrote 'Words'?",
+          "options": [
+            "Robert Langley",
+            "Charles Swain",
+            "Bryanna T. Perkins",
+            "Mitra Phukan"
+          ],
+          "answer": 1,
+          "explain": "The poem is by Charles Swain."
+        },
+        {
+          "q": "Words are compared to",
+          "options": [
+            "Winter winds",
+            "Spring rain",
+            "Summer birds",
+            "Autumn leaves"
+          ],
+          "answer": 2,
+          "explain": "Words depart like summer birds."
+        },
+        {
+          "q": "What is the heart compared to?",
+          "options": [
+            "A king",
+            "A river",
+            "A mountain",
+            "A pilgrim"
+          ],
+          "answer": 3,
+          "explain": "The heart is called a pilgrim upon earth."
+        },
+        {
+          "q": "Which device is 'words, like summer birds'?",
+          "options": [
+            "Simile",
+            "Metaphor",
+            "Hyperbole",
+            "Irony"
+          ],
+          "answer": 0,
+          "explain": "It uses 'like' to compare."
+        },
+        {
+          "q": "What gives deeper joy according to the poet?",
+          "options": [
+            "Long speeches",
+            "A little said truly",
+            "Loud voices",
+            "Clever phrases"
+          ],
+          "answer": 1,
+          "explain": "A few true words can impart deeper joy."
+        },
+        {
+          "q": "The poem's tone can best be described as",
+          "options": [
+            "Cheerful",
+            "Fearful",
+            "Reflective",
+            "Humorous"
+          ],
+          "answer": 2,
+          "explain": "The poet thoughtfully compares words and sincerity."
+        }
+      ]
+    },
+
+    {
+      "id": "follow-that-dream",
+      "title": "Follow That Dream",
+      "section": "Kaveri",
+      "summary": "A mother's letter to her teenage daughter Ming, taken from the collection 'My Daughter, My Friend', encouraging her to chase her dream while being realistic about the effort, sacrifice and time it needs.",
+      "notes": [
+        {
+          "heading": "What the letter says",
+          "points": [
+            "The letter is dated 19 June 1995 and begins by telling Ming, 'By all means follow that dream.' Great people achieve because they pursue a dream until it comes true.",
+            "Reaching world-class standard in any field takes about **ten years** of focused effort. Count the cost in years of effort, money and sacrifice, and then plunge in if the dream still burns.",
+            "The road is often uphill, but loving what you do keeps you going. Behind every award winner is a **support network**.",
+            "Many dreams stay dreams because people trade them for security, or because circumstances (such as war or family responsibilities) change their lives.",
+            "Dreams may change with time; the mother's own dream of publishing the book took ten years. She wishes that at least one of Ming's dreams comes true."
+          ]
+        },
+        {
+          "heading": "Features",
+          "points": [
+            "**Epistolary form:** a personal letter with an affectionate tone, closing with 'Love, Mum'.",
+            "The mother is encouraging yet honest and does not 'put a wet blanket' on dreams.",
+            "Words and phrases like plunge, buoyed up, wistfully and wishful thinking show feelings and effort."
+          ]
+        },
+        {
+          "heading": "Message",
+          "points": [
+            "Dreams need passion, conviction, hard work and sacrifice.",
+            "Support from family and others matters; and it is acceptable for dreams to evolve."
+          ]
+        }
+      ],
+      "formulas": [
+        "Writer: Irene Chua, from 'My Daughter, My Friend'",
+        "Form: a letter from mother to daughter Ming, dated 19 June 1995",
+        "Time needed to reach world-class standard: at least ten years",
+        "Closing: 'Love, Mum'"
+      ],
+      "terms": [
+        {
+          "term": "Dream",
+          "meaning": "A strong ambition or aim that one wants to achieve."
+        },
+        {
+          "term": "Conviction",
+          "meaning": "A firm belief."
+        },
+        {
+          "term": "Plunge",
+          "meaning": "To throw oneself into an activity."
+        },
+        {
+          "term": "Wistfully",
+          "meaning": "With a sad longing."
+        },
+        {
+          "term": "Support network",
+          "meaning": "The group of people who help someone succeed."
+        }
+      ],
+      "qa": [
+        {
+          "q": "What advice does the mother give about following a dream?",
+          "a": "She tells Ming to follow her dream but to count the cost in effort, money and sacrifice. If the passion still burns, she should plunge in and expect many years of hard work."
+        },
+        {
+          "q": "Why do many dreams remain only dreams?",
+          "a": "Many people prefer security or are stopped by changing circumstances, like war or the need to earn for family, so their wishes never go beyond wishful thinking."
+        },
+        {
+          "q": "How does the mother show that dreams can change?",
+          "a": "She says life may change a person's dreams, and that publishing her book, a dream she chased for ten years, was not her original youthful dream, yet it excites her."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who is the letter written to?",
+          "options": [
+            "Irene",
+            "Sudha",
+            "Ming",
+            "Shruti"
+          ],
+          "answer": 2,
+          "explain": "A mother writes to her daughter Ming."
+        },
+        {
+          "q": "How many years of focused effort are needed for world-class skill?",
+          "options": [
+            "About two",
+            "Exactly five",
+            "Twenty",
+            "At least ten"
+          ],
+          "answer": 3,
+          "explain": "The mother says it takes at least ten years."
+        },
+        {
+          "q": "What does 'plunge' suggest?",
+          "options": [
+            "Complete involvement",
+            "Slow withdrawal",
+            "Casual interest",
+            "Fear"
+          ],
+          "answer": 0,
+          "explain": "It means to throw oneself fully into the task."
+        },
+        {
+          "q": "Why do many dreams remain dreams?",
+          "options": [
+            "Dreams are impossible",
+            "People prefer security or circumstances change",
+            "Nobody supports dreams",
+            "Dreams are not important"
+          ],
+          "answer": 1,
+          "explain": "The mother gives these reasons."
+        },
+        {
+          "q": "What do award winners always thank?",
+          "options": [
+            "Their rivals",
+            "Their critics",
+            "Their support network",
+            "Their teachers only"
+          ],
+          "answer": 2,
+          "explain": "The winner thanks the group who stood by him or her."
+        },
+        {
+          "q": "How does the letter end?",
+          "options": [
+            "'Yours faithfully'",
+            "'Best wishes'",
+            "'Goodbye'",
+            "'Love, Mum'"
+          ],
+          "answer": 3,
+          "explain": "It ends affectionately with Love, Mum."
+        }
+      ]
+    },
+
+    {
+      "id": "believe-in-yourself",
+      "title": "Believe in Yourself",
+      "section": "Kaveri",
+      "summary": "A short, encouraging poem that tells the reader to face challenges with courage: leave comfort behind, take the difficult first step and trust yourself.",
+      "notes": [
+        {
+          "heading": "What the poem says",
+          "points": [
+            "**Stanza 1:** you must step up to the challenge; no crowd watches, it is just you and the future.",
+            "**Stanza 2:** the future may pull you forward or push you back in fear; choices become difficult as it nears.",
+            "**Stanza 3:** there is ease in comfort and the status quo, but we are not made for it and do not grow in it.",
+            "**Stanza 4:** the first step is the hardest and there is no turning back; believing in yourself keeps the future on track."
+          ]
+        },
+        {
+          "heading": "Features",
+          "points": [
+            "Four stanzas of four lines with a simple rhyme on the second and fourth lines.",
+            "The speaker uses direct address 'you', like a guide who encourages the reader.",
+            "Tone is motivational and the poem moves from thoughtful to determined."
+          ]
+        },
+        {
+          "heading": "Message",
+          "points": [
+            "Growth demands leaving comfort and trusting yourself.",
+            "Courage and self-belief help you take the first step towards your future."
+          ]
+        }
+      ],
+      "formulas": [
+        "Poet: Robert Langley",
+        "Four stanzas",
+        "Speaker addresses the reader as 'you'",
+        "Tone: motivational"
+      ],
+      "terms": [
+        {
+          "term": "Status quo",
+          "meaning": "The existing state of affairs."
+        },
+        {
+          "term": "Comfort zone",
+          "meaning": "A situation in which one feels safe and at ease."
+        },
+        {
+          "term": "Direct address",
+          "meaning": "Speaking straight to the reader as 'you'."
+        },
+        {
+          "term": "Motivational",
+          "meaning": "Meant to encourage and inspire."
+        },
+        {
+          "term": "Stanza",
+          "meaning": "A group of lines forming a unit in a poem."
+        }
+      ],
+      "qa": [
+        {
+          "q": "What does the poet say about comfort?",
+          "a": "He says there is ease in comfort and in keeping things as they are, but we are not made for it because growth does not come from staying comfortable."
+        },
+        {
+          "q": "Why is the first step called the hardest?",
+          "a": "It means leaving certainty behind without turning back, which needs courage. Self-belief makes that step possible."
+        },
+        {
+          "q": "What is the central message of the poem?",
+          "a": "Face challenges bravely and believe in yourself. Progress begins when you take the first step and trust your ability."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who wrote 'Believe in Yourself'?",
+          "options": [
+            "Robert Frost",
+            "Charles Swain",
+            "David Roth",
+            "Robert Langley"
+          ],
+          "answer": 3,
+          "explain": "The poem is by Robert Langley."
+        },
+        {
+          "q": "What does the poet say is the hardest?",
+          "options": [
+            "The first step",
+            "The last step",
+            "Choosing a friend",
+            "Waiting"
+          ],
+          "answer": 0,
+          "explain": "The first step is the hardest."
+        },
+        {
+          "q": "What does 'status quo' mean?",
+          "options": [
+            "A new beginning",
+            "The existing situation",
+            "A prize",
+            "A challenge"
+          ],
+          "answer": 1,
+          "explain": "The poem says there is ease in keeping the status quo."
+        },
+        {
+          "q": "How does the speaker address the reader?",
+          "options": [
+            "As 'we'",
+            "As 'they'",
+            "As 'you'",
+            "As 'he'"
+          ],
+          "answer": 2,
+          "explain": "Direct address creates closeness."
+        },
+        {
+          "q": "What is the tone of the poem?",
+          "options": [
+            "Sorrowful",
+            "Sarcastic",
+            "Playful",
+            "Motivational"
+          ],
+          "answer": 3,
+          "explain": "It encourages the reader to act."
+        },
+        {
+          "q": "What helps the future stay on track?",
+          "options": [
+            "Belief in yourself",
+            "Luck",
+            "Crowds",
+            "Comfort"
+          ],
+          "answer": 0,
+          "explain": "The final lines say you just need to believe in yourself."
         }
       ]
     }

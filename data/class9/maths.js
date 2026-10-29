@@ -1,1548 +1,1174 @@
-// Class 9 Mathematics: current rationalised NCERT textbook.
+// Class 9 Mathematics: NCERT Ganita Manjari (Grade 9), Part I and Part II, first editions 2026.
 // Format: see CONTENT_GUIDE.md
 StudyData.add(9, "maths", {
-  // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "textbook", books: ["Mathematics"], reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Ganita Manjari, Grade 9, Part I", "Ganita Manjari, Grade 9, Part II"], reviewed: false},
   chapters: [
-    // ───────────────────────────── 1. Number Systems ─────────────────────────────
+    // ───────────── 1. Orienting Yourself: The Use of Coordinates ─────────────
     {
-      id: "number-systems",
-      title: "Number Systems",
-      section: "Number Systems",
-      summary: "Rational and irrational numbers together make up the real numbers. This chapter covers their decimal expansions, operations on real numbers, rationalising denominators and the laws of exponents.",
+      id: "orienting-yourself-the-use-of-coordinates",
+      title: "Orienting Yourself: The Use of Coordinates",
+      section: "Part I",
+      summary: "How two perpendicular number lines locate any point in a plane, the four quadrants, and how the Baudhāyana–Pythagoras theorem gives the distance between two points.",
       notes: [
         {
-          heading: "Rational and irrational numbers",
+          heading: "The Cartesian plane",
           points: [
-            "A number is **rational** if it can be written as p/q, where p and q are integers and q ≠ 0. Natural numbers, whole numbers and integers are all rational.",
-            "A number that cannot be written as p/q is **irrational**, e.g. √2, √3, √5, π and 0.10110111011110…",
-            "A rational number has many equivalent forms (1/2 = 2/4 = 10/20), so we usually write p/q in lowest terms, with p and q co-prime.",
-            "Rational and irrational numbers together form the **real numbers**. Every real number is a unique point on the number line, and every point on the number line is a unique real number.",
-            "Between any two rational numbers there are infinitely many rational numbers, e.g. their average (a + b)/2 lies between a and b."
+            "Two perpendicular number lines make the coordinate system: the horizontal **x-axis** and the vertical **y-axis**. They meet at the **origin** O (0, 0).",
+            "Distances to the right of O or upwards are positive; to the left or downwards they are negative.",
+            "The plane is called the **Cartesian plane**, coordinate plane or xy-plane. Descartes formalised the idea in 1637 after earlier work by Fermat and Indian and Arab astronomers.",
+            "For a point P (x, y): x is its distance from the **y-axis** (measured along the x-axis) and y is its distance from the **x-axis**."
+          ]
+        },
+        {
+          heading: "Axes and quadrants",
+          points: [
+            "A point on the x-axis has the form (x, 0); a point on the y-axis has the form (0, y).",
+            "The axes divide the plane into four **quadrants**: I (+, +), II (−, +), III (−, −), IV (+, −).",
+            "Example: S (3, −5) is in Quadrant IV and Q (−5, 3) is in Quadrant II.",
+            "(x, y) and (y, x) are the same point **only if x = y**. The order of the coordinates matters."
+          ]
+        },
+        {
+          heading: "Distance between two points",
+          points: [
+            "If two points have the same y-coordinate, the distance is |x₂ − x₁|. If they have the same x-coordinate, it is |y₂ − y₁|.",
+            "For a slanted segment, draw a right triangle whose legs are parallel to the axes and use the Baudhāyana–Pythagoras theorem.",
+            "Distance between (x₁, y₁) and (x₂, y₂) = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+            "The signs of the differences do not matter because they are squared. Example: A (3, 4) and D (7, 1) give √(4² + 3²) = 5."
+          ]
+        },
+        {
+          heading: "Reflections and checking shapes",
+          points: [
+            "Reflecting a point in the **y-axis** changes (x, y) to (−x, y); reflecting in the **x-axis** changes it to (x, −y).",
+            "Reflection preserves lengths: a triangle and its mirror image have equal sides.",
+            "A point (x, y) is at distance √(x² + y²) from the origin.",
+            "Distances help classify shapes: four equal sides and equal diagonals show a square."
+          ]
+        }
+      ],
+      formulas: [
+        "Distance between (x₁, y₁) and (x₂, y₂) = √[(x₂ − x₁)² + (y₂ − y₁)²]",
+        "Distance of (x, y) from the origin = √(x² + y²)",
+        "Quadrants: I (+, +), II (−, +), III (−, −), IV (+, −)",
+        "Reflection in y-axis: (x, y) → (−x, y); in x-axis: (x, y) → (x, −y)"
+      ],
+      terms: [
+        { term: "Origin", meaning: "The point (0, 0) where the x-axis and y-axis cross." },
+        { term: "Abscissa / x-coordinate", meaning: "The perpendicular distance of a point from the **y-axis**, with sign." },
+        { term: "Ordinate / y-coordinate", meaning: "The perpendicular distance of a point from the **x-axis**, with sign." },
+        { term: "Quadrant", meaning: "One of the four regions into which the axes divide the plane." },
+        { term: "Cartesian plane", meaning: "The plane with two perpendicular coordinate axes used to locate points by ordered pairs." }
+      ],
+      examples: [
+        {
+          q: "Show that A (2, 1), B (−1, 2), C (−2, −1) and D (1, −2) form a square and find its area.",
+          steps: [
+            "AB = √(3² + 1²) = √10; BC = √(1² + 3²) = √10; CD = √(3² + 1²) = √10; DA = √(1² + 3²) = √10.",
+            "Diagonals: AC = √(4² + 2²) = √20 and BD = √(2² + 4²) = √20, so they are equal.",
+            "Four equal sides and equal diagonals, so ABCD is a square.",
+            "Area = side² = (√10)² = 10."
+          ],
+          answer: "ABCD is a square of area 10 square units."
+        },
+        {
+          q: "Points A (1, −8), B (−4, 7), C (−7, −4) lie on a circle with centre O. Find the radius and say whether D (−5, 6) lies inside it.",
+          steps: [
+            "OA = √(1 + 64) = √65; OB = √(16 + 49) = √65; OC = √(49 + 16) = √65. So the radius is √65.",
+            "OD = √(25 + 36) = √61.",
+            "√61 < √65."
+          ],
+          answer: "Radius = √65 units; D lies inside the circle."
+        }
+      ],
+      qa: [
+        { q: "In which quadrants can a point lie if its x-coordinate is −5?", a: "Its x-coordinate is negative, so it lies in Quadrant II (y positive) or Quadrant III (y negative). If y = 0 it lies on the x-axis instead." },
+        { q: "Find the distance between P (−2, 3) and Q (4, −5).", a: "x-difference = 4 − (−2) = 6; y-difference = −5 − 3 = −8. PQ = √(36 + 64) = √100 = **10 units**." },
+        { q: "Why is (3, 5) different from (5, 3)?", a: "The first number is the distance from the y-axis and the second from the x-axis. (3, 5) is 3 right and 5 up; (5, 3) is 5 right and 3 up. They coincide only when x = y." }
+      ],
+      quiz: [
+        { q: "The point (−3, 5) lies in which quadrant?", options: ["Quadrant I", "Quadrant II", "Quadrant III", "Quadrant IV"], answer: 1, explain: "A negative x with a positive y places the point in Quadrant II." },
+        { q: "The distance between (−2, 3) and (4, −5) is:", options: ["10 units", "14 units", "2 units", "√28 units"], answer: 0, explain: "The differences are 6 and −8, so the distance is √(36 + 64) = 10." },
+        { q: "Which point lies on the y-axis?", options: ["(6, 0)", "(0, −6)", "(6, 6)", "(−6, −6)"], answer: 1, explain: "Points on the y-axis have x-coordinate 0." },
+        { q: "The mirror image of (3, 4) in the y-axis is:", options: ["(3, −4)", "(−3, 4)", "(−3, −4)", "(4, 3)"], answer: 1, explain: "Reflection in the y-axis changes the sign of x only." },
+        { q: "The distance of the point (−5, 3) from the x-axis is:", options: ["5", "−5", "3", "√34"], answer: 2, explain: "Distance from the x-axis is the absolute value of the y-coordinate, 3." },
+        { q: "The distance of (6, −8) from the origin is:", options: ["14", "2", "10", "√14"], answer: 2, explain: "√(6² + 8²) = √100 = 10." }
+      ]
+    },
+
+    // ───────────── 2. Introduction to Linear Polynomials ─────────────
+    {
+      id: "introduction-to-linear-polynomials",
+      title: "Introduction to Linear Polynomials",
+      section: "Part I",
+      summary: "Algebraic expressions and polynomials in one variable, linear polynomials, linear growth and decay, linear patterns, and the graph of the line y = ax + b.",
+      notes: [
+        {
+          heading: "Expressions and polynomials",
+          points: [
+            "An algebraic expression is built from variables, numbers and operations. In 2x² + 5x − 3, the parts 2x², 5x and −3 are **terms**; 2, 5 and −3 are **coefficients**.",
+            "A **univariate polynomial** is an expression in one variable, such as x² + 5x + 3.",
+            "The **degree** is the highest power of the variable: x² + 5x + 3 has degree 2 and 3y³ − 4y² + 5 has degree 3.",
+            "A polynomial of degree one is a **linear polynomial**, for example 2x + 3 or 5 − 4y."
+          ]
+        },
+        {
+          heading: "Linear growth, decay and patterns",
+          points: [
+            "**Linear growth**: a quantity increases by a fixed amount over equal intervals. **Linear decay**: it decreases by a fixed amount.",
+            "A **linear pattern** is a sequence in which the difference between consecutive terms is constant.",
+            "Such a pattern is described by a linear polynomial in the position number n, for example 3, 7, 11, 15, … is 4n − 1.",
+            "Real situations such as a taxi fare (fixed charge + rate per km) or a prepaid balance being used up are linear."
+          ]
+        },
+        {
+          heading: "Linear relationships and their graphs",
+          points: [
+            "A linear relationship between x and y is the straight line **y = ax + b**.",
+            "**a is the slope**: how much y changes for a unit increase in x. **b is the y-intercept**: where the line cuts the y-axis, at (0, b).",
+            "If b = 0, the line y = ax passes through the origin.",
+            "Positive slope shows growth; negative slope shows decay."
+          ]
+        },
+        {
+          heading: "Families of lines",
+          points: [
+            "Lines of the form y = ax + b with the **same slope a** but different b are **parallel**.",
+            "Changing a changes the steepness; changing b slides the line up or down.",
+            "To draw a line, find two (preferably three) points and join them with a ruler."
+          ]
+        }
+      ],
+      formulas: [
+        "Linear polynomial in x: ax + b (a ≠ 0)",
+        "Line: y = ax + b; slope = a, y-intercept = b",
+        "Linear pattern: nth term = (first term) + (n − 1) × (common difference)",
+        "Parallel lines: same slope, different intercepts"
+      ],
+      terms: [
+        { term: "Degree of a polynomial", meaning: "The highest power of the variable in it." },
+        { term: "Linear polynomial", meaning: "A polynomial of degree one, such as 2x + 3." },
+        { term: "Slope", meaning: "The coefficient a in y = ax + b; the change in y for a unit change in x." },
+        { term: "y-intercept", meaning: "The y-value b where the line y = ax + b meets the y-axis." },
+        { term: "Linear decay", meaning: "A quantity that decreases by a fixed amount over equal intervals; the graph has negative slope." }
+      ],
+      examples: [
+        {
+          q: "A taxi charges ₹30 plus ₹12 per km. Write the fare as a linear polynomial and find the fare for 7 km.",
+          steps: ["Fixed charge = ₹30; variable part = 12 × (distance x).", "Fare C = 12x + 30.", "For x = 7: C = 12 × 7 + 30 = 84 + 30 = 114."],
+          answer: "C = 12x + 30; fare for 7 km = ₹114."
+        },
+        {
+          q: "A line y = ax + b passes through (0, 5) and (2, 11). Find its equation.",
+          steps: ["At x = 0, y = b, so b = 5.", "At x = 2: 2a + 5 = 11, so 2a = 6 and a = 3.", "Check: 3(2) + 5 = 11."],
+          answer: "y = 3x + 5 (slope 3, y-intercept 5)."
+        }
+      ],
+      qa: [
+        { q: "What is the difference between the slope and the y-intercept of y = ax + b?", a: "The slope **a** tells how steeply y changes when x increases by 1. The y-intercept **b** is the value of y where the line meets the y-axis, i.e. the point (0, b)." },
+        { q: "Show that y = 3x + 1 and y = 3x − 4 are parallel.", a: "Both have slope 3 but different y-intercepts (1 and −4). Lines with equal slope never meet, so they are parallel." }
+      ],
+      quiz: [
+        { q: "The degree of the polynomial 3y³ − 4y² + 5 is:", options: ["2", "3", "5", "4"], answer: 1, explain: "The highest power of y is 3." },
+        { q: "Which of these is a linear polynomial?", options: ["x² + 3", "5 − 4y", "y³ − y", "3/x"], answer: 1, explain: "5 − 4y has degree 1." },
+        { q: "The line y = 2x + 3 cuts the y-axis at:", options: ["(3, 0)", "(0, 2)", "(0, 3)", "(2, 3)"], answer: 2, explain: "Put x = 0 to get y = 3, so it cuts at (0, 3)." },
+        { q: "The 20th term of the linear pattern 7, 11, 15, … is:", options: ["83", "87", "80", "79"], answer: 0, explain: "a = 7, d = 4, so t₂₀ = 7 + 19 × 4 = 83." },
+        { q: "For y = −2x + 5, the value of y at x = 3 is:", options: ["11", "−1", "1", "−11"], answer: 1, explain: "−2(3) + 5 = −1." },
+        { q: "A line with a negative slope represents:", options: ["Linear growth", "Linear decay", "A line through the origin", "A vertical line"], answer: 1, explain: "A negative slope means y decreases by a fixed amount for each unit rise in x." }
+      ]
+    },
+
+    // ───────────── 3. The World of Numbers ─────────────
+    {
+      id: "the-world-of-numbers",
+      title: "The World of Numbers",
+      section: "Part I",
+      summary: "From counting numbers and Brahmagupta’s zero and negatives to rational numbers, their density, irrational numbers, real numbers and decimal expansions.",
+      notes: [
+        {
+          heading: "Natural numbers, zero and integers",
+          points: [
+            "Natural numbers {1, 2, 3, …} arose from the human need to count; the Ishango bone is an early record.",
+            "**Brahmagupta (629 CE)** treated zero (śhūnya) as a number with its own arithmetic and introduced negative numbers, called debts (ṛiṇa), against positive fortunes (dhana).",
+            "Integers extend the number line to the left of zero. Brahmagupta’s rules include: the product of two debts is a fortune (− × − = +).",
+            "Zero is neither positive nor negative."
+          ]
+        },
+        {
+          heading: "Rational numbers and density",
+          points: [
+            "A **rational number** is p/q with integers p, q and **q ≠ 0**.",
+            "A rational number can be placed on the number line by dividing the unit length into q equal parts.",
+            "Rational numbers are **dense**: between any two rationals there is another, hence infinitely many. One is their average (a + b)/2.",
+            "Example: between 1/3 and 1/2 lies (1/3 + 1/2)/2 = 5/12."
+          ]
+        },
+        {
+          heading: "Irrational numbers and real numbers",
+          points: [
+            "Irrational numbers such as √2 and π cannot be written as p/q. They show that the rational number line still has gaps.",
+            "**Hippasus (c. 400 BCE)** gave the first proof that √2 is irrational, by contradiction.",
+            "The length √2 can be constructed as the diagonal of a unit square; √5 as the hypotenuse of a right triangle with legs 2 and 1. Repeating this builds the **square root spiral**.",
+            "Rational and irrational numbers together form the **real numbers**, which fill the whole number line.",
+            "π is irrational (Lambert, 1761); 22/7 and 355/113 are only approximations."
           ]
         },
         {
           heading: "Decimal expansions",
           points: [
-            "Rational numbers have decimal expansions that are either **terminating** (7/8 = 0.875) or **non-terminating recurring** (1/3 = 0.333…, 1/7 = 0.142857142857…).",
-            "Irrational numbers have **non-terminating non-recurring** expansions, e.g. √2 = 1.4142135…",
-            "When dividing p by q, the only possible remainders are 0, 1, …, q − 1. So either the remainder becomes 0 (terminates) or a remainder repeats and the digits recur.",
-            "To convert a recurring decimal to p/q: if x = 0.777…, then 10x = 7.777…; subtracting gives 9x = 7, so x = 7/9.",
-            "π is irrational; 22/7 is only a rational approximation of π."
-          ]
-        },
-        {
-          heading: "Operations on real numbers",
-          points: [
-            "Sum, difference, product and quotient (non-zero divisor) of two rational numbers are rational.",
-            "Rational + irrational is **irrational**; non-zero rational × irrational is **irrational** (e.g. 2 + √3 and 5√2).",
-            "Irrational + irrational or irrational × irrational can be either: √2 × √2 = 2 is rational, but √2 × √3 = √6 is irrational.",
-            "√2 can be located on the number line by drawing a unit square on the segment from 0 to 1 and swinging its diagonal (length √2) onto the line with a compass.",
-            "To show √x for any x > 0: mark AB = x and BC = 1 unit on a line, draw a semicircle on AC as diameter, and erect a perpendicular at B meeting the semicircle at D. Then **BD = √x**."
-          ]
-        },
-        {
-          heading: "Square-root identities and rationalising",
-          points: [
-            "For positive real numbers a and b: √(ab) = √a × √b and √(a/b) = √a/√b.",
-            "(√a + √b)(√a − √b) = a − b and (a + √b)(a − √b) = a² − b.",
-            "**Rationalising the denominator** means making it rational by multiplying the numerator and denominator by the conjugate, e.g. 1/(√7 − 2) = (√7 + 2)/(7 − 4) = (√7 + 2)/3.",
-            "Common mistake: √(a + b) ≠ √a + √b. For example, √(9 + 16) = 5, not 3 + 4 = 7."
-          ]
-        },
-        {
-          heading: "Laws of exponents",
-          points: [
-            "For a > 0 and rational m, n: aᵐ × aⁿ = aᵐ⁺ⁿ, aᵐ ÷ aⁿ = aᵐ⁻ⁿ, (aᵐ)ⁿ = aᵐⁿ, and aᵐ × bᵐ = (ab)ᵐ.",
-            "a⁰ = 1 and a⁻ⁿ = 1/aⁿ.",
-            "a^(1/n) is the nth root of a, and a^(m/n) = (a^(1/n))ᵐ.",
-            "Examples: 8^(2/3) = (∛8)² = 2² = 4, and 32^(−1/5) = 1/32^(1/5) = 1/2."
+            "Rational numbers have decimal expansions that either **terminate** (7/8 = 0.875) or **repeat** (1/3 = 0.333…).",
+            "Irrational numbers have decimals that **neither terminate nor repeat**.",
+            "1/7 = 0.142857 142857… repeats the block 142857 of length 6; such blocks give **cyclic numbers**.",
+            "A repeating decimal is converted to a fraction by multiplying by a power of 10 and subtracting; for 0.363636…, x = 4/11.",
+            "The square root of −1 is not real; it leads to imaginary numbers, a topic for later."
           ]
         }
       ],
       formulas: [
-        "Rational number: p/q, where p and q are integers and q ≠ 0",
-        "√(ab) = √a × √b  (a, b > 0)",
-        "√(a/b) = √a / √b  (a, b > 0)",
-        "(√a + √b)(√a − √b) = a − b",
-        "(a + √b)(a − √b) = a² − b",
-        "(√a + √b)² = a + 2√(ab) + b",
-        "aᵐ × aⁿ = aᵐ⁺ⁿ;  aᵐ ÷ aⁿ = aᵐ⁻ⁿ;  (aᵐ)ⁿ = aᵐⁿ;  aᵐ × bᵐ = (ab)ᵐ",
-        "a⁰ = 1;  a⁻ⁿ = 1/aⁿ;  a^(1/n) = nth root of a;  a^(m/n) = (a^(1/n))ᵐ"
+        "Rational number: p/q, p and q integers, q ≠ 0",
+        "A rational between a and b: (a + b)/2",
+        "Terminating or repeating decimal → rational; non-terminating non-repeating → irrational",
+        "Real numbers = rational numbers + irrational numbers"
       ],
       terms: [
-        { term: "Rational number", meaning: "A number that can be written as p/q, where p and q are integers and q ≠ 0, e.g. 3, −2/5, 0.75." },
-        { term: "Irrational number", meaning: "A number that cannot be written as p/q. Its decimal expansion is **non-terminating and non-recurring**, e.g. √2, π." },
-        { term: "Real numbers", meaning: "All rational and irrational numbers taken together. Each real number corresponds to exactly one point on the number line." },
-        { term: "Terminating decimal", meaning: "A decimal expansion that ends after a finite number of digits, e.g. 7/8 = 0.875." },
-        { term: "Non-terminating recurring decimal", meaning: "A decimal expansion in which a digit or block of digits repeats forever, e.g. 1/7 = 0.142857142857…" },
-        { term: "Rationalising the denominator", meaning: "Multiplying the numerator and denominator by a suitable expression (usually the conjugate) so that the denominator becomes rational." }
+        { term: "Rational number", meaning: "A number that can be written as p/q with integers p and q, q ≠ 0." },
+        { term: "Irrational number", meaning: "A number that cannot be written as a fraction, e.g. √2 and π." },
+        { term: "Density of rationals", meaning: "Between any two rational numbers there are infinitely many more." },
+        { term: "Real numbers", meaning: "All rational and irrational numbers together; every point on the number line." },
+        { term: "Cyclic number", meaning: "A repeating digit block, like 142857 in 1/7, with symmetrical patterns." }
       ],
       examples: [
         {
-          q: "Express 0.2353535… (where only 35 repeats) in the form p/q.",
-          steps: [
-            "Let x = 0.2353535…",
-            "One digit (2) does not repeat, so first multiply by 10: 10x = 2.353535…",
-            "The block '35' has two digits, so multiply by 1000: 1000x = 235.353535…",
-            "Subtract: 1000x − 10x = 235.3535… − 2.3535… = 233",
-            "So 990x = 233, giving x = 233/990"
-          ],
-          answer: "0.2353535… = 233/990"
+          q: "Express 0.363636… as a fraction.",
+          steps: ["Let x = 0.3636…", "100x = 36.3636…", "Subtract: 100x − x = 36, so 99x = 36.", "x = 36/99 = 4/11."],
+          answer: "4/11"
         },
         {
-          q: "Rationalise the denominator of (√5 + √2)/(√5 − √2).",
-          steps: [
-            "Multiply numerator and denominator by the conjugate of the denominator, (√5 + √2).",
-            "Numerator: (√5 + √2)² = 5 + 2√10 + 2 = 7 + 2√10",
-            "Denominator: (√5 − √2)(√5 + √2) = 5 − 2 = 3",
-            "So the expression equals (7 + 2√10)/3"
-          ],
-          answer: "(7 + 2√10)/3"
+          q: "Find three rational numbers between 1/4 and 1/2.",
+          steps: ["Write as decimals: 0.25 and 0.50.", "Choose 0.3, 0.35 and 0.4.", "In fractions: 3/10, 7/20, 2/5."],
+          answer: "3/10, 7/20 and 2/5 (many other answers are possible)."
         }
       ],
       qa: [
-        { q: "Is the square root of every positive integer irrational? Justify.", a: "No. √4 = 2 and √9 = 3 are rational. For a positive integer n, √n is irrational exactly when n is **not a perfect square**, e.g. √2, √3, √5." },
-        { q: "Find three different irrational numbers between 5/7 and 9/11.", a: "5/7 = 0.714285714285… and 9/11 = 0.818181… Any non-terminating non-recurring decimal between them works, e.g. **0.72072007200072…, 0.75075007500075… and 0.808008000800008…**" },
-        { q: "Simplify (i) 16^(3/4) (ii) 125^(−1/3).", a: "(i) 16^(3/4) = (16^(1/4))³ = 2³ = **8**. (ii) 125^(−1/3) = 1/125^(1/3) = 1/∛125 = **1/5**." }
+        { q: "How many rational numbers lie between two given rational numbers? Explain.", a: "Infinitely many. The average of two rationals is rational and lies between them. Repeating this with the new numbers never ends." },
+        { q: "How can you tell from its decimal expansion whether a number is rational?", a: "If the decimal terminates or has a repeating block, the number is rational. If it goes on forever without repeating, it is irrational." },
+        { q: "Why is √5 shown on the number line using a right triangle?", a: "A right triangle with legs 2 and 1 has hypotenuse √(4 + 1) = √5. Using a compass to mark this length on the number line locates √5." }
       ],
       quiz: [
-        {
-          q: "Which of the following is irrational?",
-          options: ["√16", "0.636363…", "22/7", "√12"],
-          answer: 3,
-          explain: "√12 = 2√3, which is irrational. √16 = 4, 0.636363… = 7/11 and 22/7 are all rational."
-        },
-        {
-          q: "The decimal expansion of an irrational number is:",
-          options: ["Non-terminating and non-recurring", "Terminating", "Non-terminating and recurring", "Terminating or recurring"],
-          answer: 0,
-          explain: "Terminating or recurring expansions belong to rational numbers. Irrational numbers are **non-terminating and non-recurring**."
-        },
-        {
-          q: "0.999… (9 repeating) written in the form p/q is:",
-          options: ["9/10", "99/100", "1", "It cannot be written in the form p/q"],
-          answer: 2,
-          explain: "Let x = 0.999… Then 10x = 9.999…, so 9x = 9 and x = **1**."
-        },
-        {
-          q: "The value of 8^(2/3) is:",
-          options: ["16/3", "4", "16", "2"],
-          answer: 1,
-          explain: "8^(2/3) = (∛8)² = 2² = **4**. Multiplying 8 by 2/3 or by 2 is a common mistake."
-        },
-        {
-          q: "Rationalising the denominator of 1/(√7 − 2) gives:",
-          options: ["(√7 − 2)/3", "(√7 + 2)/5", "√7 + 2", "(√7 + 2)/3"],
-          answer: 3,
-          explain: "Multiply by (√7 + 2)/(√7 + 2): the denominator becomes 7 − 2² = 3, so the answer is **(√7 + 2)/3**."
-        },
-        {
-          q: "√2 × √8 equals:",
-          options: ["√10", "16", "4", "2√10"],
-          answer: 2,
-          explain: "√2 × √8 = √16 = **4**. The product of two irrational numbers can be rational."
-        }
+        { q: "Brahmagupta’s rule ‘the product of two debts is a fortune’ means:", options: ["(−) × (−) = (+)", "(−) × (+) = (+)", "(+) × (+) = (−)", "(−) + (−) = (+)"], answer: 0, explain: "Debts are negative and a fortune is positive." },
+        { q: "Which of the following is irrational?", options: ["√2", "0.25", "22/7", "0.333…"], answer: 0, explain: "√2 cannot be written as p/q; the others are terminating, fractional or repeating." },
+        { q: "The decimal block that repeats in 1/7 is:", options: ["142857", "285714285", "1428", "14"], answer: 0, explain: "1/7 = 0.142857142857… with a block of six digits." },
+        { q: "A rational number between 1/3 and 1/2 is:", options: ["5/12", "1/4", "3/5", "2/3"], answer: 0, explain: "(1/3 + 1/2)/2 = 5/12, which lies between them." },
+        { q: "How many rational numbers lie between 0 and 1?", options: ["Exactly 10", "Exactly 100", "None", "Infinitely many"], answer: 3, explain: "Rationals are dense, so there are always more between any two." },
+        { q: "The first proof of irrationality, for √2, is credited to:", options: ["Hippasus", "Euclid", "Lambert", "Āryabhaṭa"], answer: 0, explain: "Hippasus (c. 400 BCE) proved by contradiction that √2 is irrational. Lambert proved π is irrational." }
       ]
     },
 
-    // ───────────────────────────── 2. Polynomials ─────────────────────────────
+    // ───────────── 4. Exploring Algebraic Identities ─────────────
     {
-      id: "polynomials",
-      title: "Polynomials",
-      section: "Algebra",
-      summary: "Polynomials in one variable, their degree and zeroes, the Factor Theorem, factorising quadratic and cubic polynomials, and the algebraic identities used throughout algebra.",
+      id: "exploring-algebraic-identities",
+      title: "Exploring Algebraic Identities",
+      section: "Part I",
+      summary: "Visualising identities with squares and algebra tiles, using them to factorise and to calculate quickly, finding new identities, and simplifying rational expressions.",
       notes: [
         {
-          heading: "Polynomials and their degree",
+          heading: "Identities and visualising them",
           points: [
-            "A **polynomial** in x is an expression like aₙxⁿ + … + a₁x + a₀ in which every power of x is a whole number. 2x³ − x + 5 is a polynomial; x + 1/x and √x + 2 are not.",
-            "The **degree** is the highest power of the variable: linear (degree 1), quadratic (degree 2), cubic (degree 3).",
-            "By number of terms: **monomial** (1 term), **binomial** (2 terms), **trinomial** (3 terms).",
-            "A non-zero constant such as 7 is a polynomial of degree 0. The **zero polynomial** 0 has no defined degree."
+            "An **identity** is an equation true for **all** values of the variables.",
+            "(x + y)² = x² + 2xy + y² and (x − y)² = x² − 2xy + y². Area of a square of side x + y splits into x², y² and two rectangles xy.",
+            "(x + y)(x − y) = x² − y².",
+            "(x + a)(x + b) = x² + (a + b)x + ab and (x + y + z)² = x² + y² + z² + 2xy + 2yz + 2zx."
           ]
         },
         {
-          heading: "Zeroes of a polynomial",
+          heading: "Cubic identities",
           points: [
-            "A real number a is a **zero** of p(x) if p(a) = 0. Find p(a) by substituting x = a.",
-            "A linear polynomial ax + b (a ≠ 0) has exactly one zero, x = −b/a.",
-            "A polynomial can have more than one zero: x² − 1 has zeroes 1 and −1. A non-zero constant has no zero, and every real number is a zero of the zero polynomial.",
-            "0 can itself be a zero: x² − 2x = x(x − 2) has zeroes 0 and 2."
+            "(x + y)³ = x³ + 3x²y + 3xy² + y³ and (x − y)³ = x³ − 3x²y + 3xy² − y³.",
+            "x³ + y³ = (x + y)(x² − xy + y²) and x³ − y³ = (x − y)(x² + xy + y²).",
+            "x³ + y³ + z³ − 3xyz = (x + y + z)(x² + y² + z² − xy − yz − zx).",
+            "So if x + y + z = 0, then x³ + y³ + z³ = 3xyz."
           ]
         },
         {
-          heading: "Factor Theorem",
+          heading: "Factorisation using identities",
           points: [
-            "If p(x) has degree n ≥ 1 and a is a real number, then **(x − a) is a factor of p(x) if p(a) = 0**, and p(a) = 0 if (x − a) is a factor.",
-            "To test whether (x + 2) is a factor, check whether p(−2) = 0. To test (2x − 1), check p(1/2) = 0.",
-            "For a cubic, try small integers that divide the constant term (±1, ±2, ±3, …) to find one factor, then divide to get the quadratic factor and split it.",
-            "Related result: when p(x) is divided by (x − a), the remainder is p(a). The Factor Theorem is the case where this remainder is 0."
+            "Always take out a **common factor** first.",
+            "For a difference of squares use x² − y² = (x + y)(x − y), e.g. 9x² − 16 = (3x + 4)(3x − 4).",
+            "To factorise x² + bx + c, find two numbers with sum b and product c: x² + 5x + 6 = (x + 2)(x + 3).",
+            "Algebra tiles help visualise factorisation: tiles of x², x and 1 arranged as a rectangle give the two factors."
           ]
         },
         {
-          heading: "Factorising by splitting the middle term",
+          heading: "Calculation and rational expressions",
           points: [
-            "For ax² + bx + c, find two numbers p and q with **p + q = b** and **pq = ac**, then split bx as px + qx and group.",
-            "Example: 6x² + 17x + 5: pq = 30, p + q = 17, so 15 and 2. Then 6x² + 15x + 2x + 5 = 3x(2x + 5) + 1(2x + 5) = (3x + 1)(2x + 5).",
-            "Always check by multiplying the factors back."
-          ]
-        },
-        {
-          heading: "Algebraic identities",
-          points: [
-            "An **identity** is true for all values of the variables. Use identities to expand, factorise and calculate quickly, e.g. 104 × 96 = (100 + 4)(100 − 4) = 10000 − 16 = 9984.",
-            "**If x + y + z = 0, then x³ + y³ + z³ = 3xyz.**",
-            "The cube identities are easiest to remember as (x + y)³ = x³ + y³ + 3xy(x + y) and (x − y)³ = x³ − y³ − 3xy(x − y).",
-            "Common mistake: (x + y)² ≠ x² + y². Do not forget the middle term 2xy."
+            "Identities give fast mental arithmetic: 103² = (100 + 3)² = 10609 and 98 × 102 = 100² − 2² = 9996.",
+            "To simplify a rational expression, factorise numerator and denominator and cancel common non-zero factors.",
+            "Example: (x² − 9)/(x + 3) = (x − 3)(x + 3)/(x + 3) = x − 3, valid for x ≠ −3.",
+            "Useful: x² + y² = (x + y)² − 2xy."
           ]
         }
       ],
       formulas: [
-        "(x + y)² = x² + 2xy + y²",
-        "(x − y)² = x² − 2xy + y²",
-        "x² − y² = (x + y)(x − y)",
+        "(x + y)² = x² + 2xy + y²;  (x − y)² = x² − 2xy + y²",
+        "(x + y)(x − y) = x² − y²",
         "(x + a)(x + b) = x² + (a + b)x + ab",
         "(x + y + z)² = x² + y² + z² + 2xy + 2yz + 2zx",
-        "(x + y)³ = x³ + y³ + 3xy(x + y)",
-        "(x − y)³ = x³ − y³ − 3xy(x − y)",
-        "x³ + y³ = (x + y)(x² − xy + y²)",
-        "x³ − y³ = (x − y)(x² + xy + y²)",
-        "x³ + y³ + z³ − 3xyz = (x + y + z)(x² + y² + z² − xy − yz − zx)",
-        "If x + y + z = 0, then x³ + y³ + z³ = 3xyz",
-        "Factor Theorem: (x − a) is a factor of p(x) ⇔ p(a) = 0"
+        "x³ + y³ = (x + y)(x² − xy + y²);  x³ − y³ = (x − y)(x² + xy + y²)",
+        "x³ + y³ + z³ − 3xyz = (x + y + z)(x² + y² + z² − xy − yz − zx)"
       ],
       terms: [
-        { term: "Polynomial", meaning: "An algebraic expression in which every power of the variable is a whole number, e.g. 4x³ − 2x + 7." },
-        { term: "Degree of a polynomial", meaning: "The highest power of the variable in the polynomial. The degree of 5x³ + 4x⁴ + 7 is 4." },
-        { term: "Zero of a polynomial", meaning: "A number a for which p(a) = 0. For example, 3 is a zero of x − 3." },
-        { term: "Factor Theorem", meaning: "(x − a) is a factor of p(x) if and only if p(a) = 0." },
-        { term: "Algebraic identity", meaning: "An equation that is true for **all** values of its variables, e.g. (x + y)² = x² + 2xy + y²." },
-        { term: "Monomial, binomial, trinomial", meaning: "Polynomials with one, two and three terms respectively, e.g. 5x, x + 1, x² + x + 1." }
+        { term: "Identity", meaning: "An equation that is true for every value of its variables." },
+        { term: "Factorisation", meaning: "Writing an expression as a product of simpler expressions." },
+        { term: "Algebra tiles", meaning: "Squares and rectangles of area x², x and 1 used to picture identities and factors." },
+        { term: "Rational expression", meaning: "A fraction whose numerator and denominator are polynomials." },
+        { term: "Common factor", meaning: "A factor shared by every term of an expression." }
       ],
       examples: [
         {
-          q: "Factorise x³ − 23x² + 142x − 120.",
-          steps: [
-            "Let p(x) = x³ − 23x² + 142x − 120. Try factors of the constant term 120.",
-            "p(1) = 1 − 23 + 142 − 120 = 0, so (x − 1) is a factor (Factor Theorem).",
-            "Divide: x³ − 23x² + 142x − 120 = (x − 1)(x² − 22x + 120).",
-            "Split the middle term of x² − 22x + 120: we need two numbers with product 120 and sum −22, i.e. −10 and −12.",
-            "x² − 22x + 120 = (x − 10)(x − 12)"
-          ],
-          answer: "x³ − 23x² + 142x − 120 = (x − 1)(x − 10)(x − 12)"
+          q: "Factorise 27x³ − 8.",
+          steps: ["27x³ − 8 = (3x)³ − 2³.", "Use a³ − b³ = (a − b)(a² + ab + b²) with a = 3x, b = 2.", "= (3x − 2)(9x² + 6x + 4)."],
+          answer: "(3x − 2)(9x² + 6x + 4)"
         },
         {
-          q: "Without actually calculating the cubes, find the value of (−12)³ + 7³ + 5³.",
-          steps: [
-            "Let x = −12, y = 7, z = 5.",
-            "x + y + z = −12 + 7 + 5 = 0.",
-            "When x + y + z = 0, x³ + y³ + z³ = 3xyz.",
-            "So the value = 3 × (−12) × 7 × 5 = −1260."
-          ],
-          answer: "(−12)³ + 7³ + 5³ = −1260"
+          q: "If x + y = 5 and xy = 6, find x² + y² and x³ + y³.",
+          steps: ["x² + y² = (x + y)² − 2xy = 25 − 12 = 13.", "x³ + y³ = (x + y)(x² − xy + y²) = 5 × (13 − 6) = 35."],
+          answer: "x² + y² = 13 and x³ + y³ = 35."
         }
       ],
       qa: [
-        { q: "Check whether (x + 1) is a factor of x³ + x² + x + 1.", a: "p(−1) = (−1)³ + (−1)² + (−1) + 1 = −1 + 1 − 1 + 1 = 0. Since p(−1) = 0, **(x + 1) is a factor** by the Factor Theorem." },
-        { q: "Find k if (x − 1) is a factor of p(x) = 2x² + kx + √2.", a: "By the Factor Theorem, p(1) = 0: 2 + k + √2 = 0, so **k = −(2 + √2)**." },
-        { q: "Evaluate 105 × 106 using a suitable identity.", a: "Use (x + a)(x + b) = x² + (a + b)x + ab with x = 100, a = 5, b = 6: 10000 + 1100 + 30 = **11130**." }
+        { q: "Evaluate 99² using an identity.", a: "99² = (100 − 1)² = 10000 − 200 + 1 = **9801**." },
+        { q: "Simplify (x² − 4)/(x² + 5x + 6).", a: "Numerator = (x − 2)(x + 2); denominator = (x + 2)(x + 3). Cancelling (x + 2) gives (x − 2)/(x + 3), provided x ≠ −2." },
+        { q: "Show that if a + b + c = 0 then a³ + b³ + c³ = 3abc.", a: "From the identity a³ + b³ + c³ − 3abc = (a + b + c)(…), the right side is 0 when a + b + c = 0, so a³ + b³ + c³ = 3abc." }
       ],
       quiz: [
-        {
-          q: "The degree of the polynomial 5x³ + 4x⁴ + 7 is:",
-          options: ["3", "7", "4", "5"],
-          answer: 2,
-          explain: "The degree is the **highest power** of x, which is 4 (from 4x⁴), not the first power written."
-        },
-        {
-          q: "Which of the following is NOT a polynomial?",
-          options: ["x + 3/x", "(1/2)x³ − x", "x² − 2x + 3", "7"],
-          answer: 0,
-          explain: "3/x = 3x⁻¹ has a negative power of x, so **x + 3/x** is not a polynomial. A constant like 7 is a polynomial of degree 0."
-        },
-        {
-          q: "The zero of the polynomial 2x + 5 is:",
-          options: ["5/2", "−2/5", "2/5", "−5/2"],
-          answer: 3,
-          explain: "2x + 5 = 0 gives x = **−5/2**."
-        },
-        {
-          q: "If (x + 2) is a factor of x³ + kx² − x − 2, the value of k is:",
-          options: ["−1", "4", "2", "−2"],
-          answer: 2,
-          explain: "p(−2) = −8 + 4k + 2 − 2 = 4k − 8 = 0, so **k = 2**. Using p(2) instead of p(−2) is a common mistake."
-        },
-        {
-          q: "If x + y + z = 0, then x³ + y³ + z³ equals:",
-          options: ["0", "3xyz", "xyz", "x² + y² + z²"],
-          answer: 1,
-          explain: "From x³ + y³ + z³ − 3xyz = (x + y + z)(…), when x + y + z = 0 we get x³ + y³ + z³ = **3xyz**."
-        },
-        {
-          q: "If x + y = 12 and xy = 27, then x³ + y³ equals:",
-          options: ["1728", "972", "1404", "756"],
-          answer: 3,
-          explain: "x³ + y³ = (x + y)³ − 3xy(x + y) = 1728 − 3 × 27 × 12 = 1728 − 972 = **756**."
-        }
+        { q: "99² equals:", options: ["9801", "9901", "9999", "9701"], answer: 0, explain: "(100 − 1)² = 10000 − 200 + 1 = 9801." },
+        { q: "If x + y = 5 and xy = 6, then x² + y² =", options: ["13", "25", "11", "31"], answer: 0, explain: "x² + y² = 25 − 2 × 6 = 13." },
+        { q: "9x² − 16 factorises as:", options: ["(3x + 4)(3x − 4)", "(9x + 16)(9x − 16)", "(3x − 4)²", "(3x + 8)(3x − 2)"], answer: 0, explain: "It is (3x)² − 4², a difference of squares." },
+        { q: "x³ + y³ equals:", options: ["(x + y)(x² − xy + y²)", "(x + y)(x² + xy + y²)", "(x − y)(x² + xy + y²)", "(x + y)³"], answer: 0, explain: "The sum of cubes has a minus sign on the middle term xy." },
+        { q: "x² + 5x + 6 factorises as:", options: ["(x + 2)(x + 3)", "(x + 1)(x + 6)", "(x − 2)(x − 3)", "(x + 5)(x + 1)"], answer: 0, explain: "2 + 3 = 5 and 2 × 3 = 6." },
+        { q: "The value of 2³ + (−5)³ + 3³ is:", options: ["−90", "90", "−100", "−120"], answer: 0, explain: "The numbers sum to 0, so the value is 3 × 2 × (−5) × 3 = −90. Direct: 8 − 125 + 27 = −90." }
       ]
     },
 
-    // ───────────────────────────── 3. Coordinate Geometry ─────────────────────────────
+    // ───────────── 5. I’m Up and Down, and Round and Round ─────────────
     {
-      id: "coordinate-geometry",
-      title: "Coordinate Geometry",
-      section: "Coordinate Geometry",
-      summary: "Locating points in a plane using two perpendicular number lines: the axes, origin, quadrants, abscissa and ordinate.",
+      id: "im-up-and-down-and-round-and-round",
+      title: "I’m Up and Down, and Round and Round",
+      section: "Part I",
+      summary: "Circles: symmetry, chords, arcs, angles at the centre and on the circle, and cyclic quadrilaterals.",
       notes: [
         {
-          heading: "The Cartesian system",
+          heading: "Circle basics and symmetry",
           points: [
-            "Two perpendicular number lines, the horizontal **x-axis** (X′X) and the vertical **y-axis** (Y′Y), meet at the **origin O**. The system is named after the French mathematician René Descartes.",
-            "The plane containing the axes is the **Cartesian plane** (coordinate plane), and the axes are the coordinate axes.",
-            "Positive directions are to the right on the x-axis (OX) and upwards on the y-axis (OY). OX′ and OY′ are the negative directions.",
-            "The axes divide the plane into four **quadrants**, numbered I, II, III, IV anticlockwise starting from the top right."
+            "A **circle** is the set of all points in a plane at a fixed distance (radius) from a fixed point (centre).",
+            "It has reflection symmetry about any diameter and rotational symmetry about the centre through any angle.",
+            "Infinitely many circles pass through two given points; their centres lie on the **perpendicular bisector** of the segment joining the points.",
+            "Through three non-collinear points there is **exactly one circle**, the circumcircle. Its centre, the circumcentre, is where the perpendicular bisectors meet."
           ]
         },
         {
-          heading: "Coordinates of a point",
+          heading: "Chords",
           points: [
-            "A point is written as (x, y). x is the **abscissa** (x-coordinate) and y is the **ordinate** (y-coordinate).",
-            "The perpendicular distance of (x, y) from the y-axis is |x|, and from the x-axis is |y|.",
-            "Order matters: (3, 5) and (5, 3) are different points. (x, y) = (y, x) only when x = y.",
-            "The origin is (0, 0). Every point on the x-axis has the form (x, 0); every point on the y-axis has the form (0, y)."
+            "Equal chords subtend equal angles at the centre, and conversely.",
+            "The line from the centre to the midpoint of a chord is **perpendicular** to the chord; a perpendicular from the centre bisects the chord.",
+            "Equal chords are equally distant from the centre, and conversely.",
+            "Of two unequal chords, the **longer is closer** to the centre."
           ]
         },
         {
-          heading: "Signs in the quadrants",
+          heading: "Angles in a circle",
           points: [
-            "Quadrant I: (+, +); Quadrant II: (−, +); Quadrant III: (−, −); Quadrant IV: (+, −).",
-            "A point on an axis does not lie in any quadrant.",
-            "Example: (−4, 3) is in Quadrant II, (2, −7) is in Quadrant IV, and (0, −5) is on the negative y-axis.",
-            "Common mistake: the distance from the **x-axis** is the **y**-coordinate (in magnitude), not the x-coordinate."
-          ]
-        }
-      ],
-      formulas: [
-        "Origin: (0, 0)",
-        "Point on the x-axis: (x, 0);  point on the y-axis: (0, y)",
-        "Quadrant I (+, +);  II (−, +);  III (−, −);  IV (+, −)",
-        "Distance of (x, y) from the x-axis = |y|;  from the y-axis = |x|"
-      ],
-      terms: [
-        { term: "Origin", meaning: "The point where the x-axis and y-axis meet; its coordinates are (0, 0)." },
-        { term: "Abscissa", meaning: "The x-coordinate of a point. For (4, −7) the abscissa is 4." },
-        { term: "Ordinate", meaning: "The y-coordinate of a point. For (4, −7) the ordinate is −7." },
-        { term: "Quadrant", meaning: "One of the four regions into which the axes divide the plane, numbered I to IV anticlockwise from the top right." },
-        { term: "Cartesian plane", meaning: "A plane with two perpendicular number lines (axes) used to locate any point by an ordered pair (x, y)." }
-      ],
-      examples: [
-        {
-          q: "State the quadrant or axis in which each point lies: (−2, 4), (3, −1), (−1, 0), (1, 2), (−3, −5).",
-          steps: [
-            "(−2, 4): x negative, y positive → Quadrant II.",
-            "(3, −1): x positive, y negative → Quadrant IV.",
-            "(−1, 0): y = 0, so the point is on the x-axis (negative side).",
-            "(1, 2): both positive → Quadrant I.",
-            "(−3, −5): both negative → Quadrant III."
-          ],
-          answer: "II, IV, on the x-axis, I, III respectively"
-        },
-        {
-          q: "ABCD is a rectangle with A(0, 0), B(5, 0) and D(0, 3). Find the coordinates of C and the area of the rectangle.",
-          steps: [
-            "A is the origin; B lies on the x-axis, so AB = 5 units.",
-            "D lies on the y-axis, so AD = 3 units.",
-            "C is opposite A: 5 units to the right and 3 units up, so C = (5, 3).",
-            "Area = length × breadth = 5 × 3 = 15 square units."
-          ],
-          answer: "C = (5, 3); area = 15 square units"
-        }
-      ],
-      qa: [
-        { q: "What is the name of the point where the coordinate axes meet, and what are its coordinates?", a: "It is the **origin**, and its coordinates are **(0, 0)**." },
-        { q: "Are the points (2, 5) and (5, 2) the same? Explain.", a: "No. (2, 5) is 2 units right and 5 units up from the origin, while (5, 2) is 5 units right and 2 units up. The **order of coordinates matters**." },
-        { q: "Find the perpendicular distance of the point (−6, 8) from the x-axis and from the y-axis.", a: "Distance from the x-axis = |y| = **8 units**; distance from the y-axis = |x| = **6 units**." }
-      ],
-      quiz: [
-        {
-          q: "The point (−3, 5) lies in:",
-          options: ["Quadrant I", "Quadrant III", "Quadrant II", "Quadrant IV"],
-          answer: 2,
-          explain: "x is negative and y is positive: (−, +) is **Quadrant II**."
-        },
-        {
-          q: "The abscissa of the point (4, −7) is:",
-          options: ["−7", "4", "7", "−4"],
-          answer: 1,
-          explain: "The abscissa is the x-coordinate, which is **4**. −7 is the ordinate."
-        },
-        {
-          q: "Every point on the y-axis has coordinates of the form:",
-          options: ["(x, 0)", "(x, x)", "(0, 0) only", "(0, y)"],
-          answer: 3,
-          explain: "On the y-axis the x-coordinate is 0, so points are **(0, y)**. (x, 0) is the form for the x-axis."
-        },
-        {
-          q: "The perpendicular distance of the point (5, −12) from the x-axis is:",
-          options: ["12 units", "5 units", "13 units", "−12 units"],
-          answer: 0,
-          explain: "Distance from the x-axis = |y| = **12 units**. A distance is never negative."
-        },
-        {
-          q: "In which quadrant are both coordinates of a point negative?",
-          options: ["Quadrant II", "Quadrant III", "Quadrant IV", "Quadrant I"],
-          answer: 1,
-          explain: "Signs (−, −) occur in **Quadrant III**."
-        },
-        {
-          q: "The point (0, −4) lies:",
-          options: ["on the negative x-axis", "in Quadrant IV", "on the negative y-axis", "in Quadrant III"],
-          answer: 2,
-          explain: "x = 0 means the point is on the y-axis, and y = −4 is below the origin: **negative y-axis**. Points on axes are in no quadrant."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 4. Linear Equations in Two Variables ─────────────────────────────
-    {
-      id: "linear-equations-in-two-variables",
-      title: "Linear Equations in Two Variables",
-      section: "Algebra",
-      summary: "Equations of the form ax + by + c = 0, writing them in standard form, and finding their solutions, of which there are infinitely many.",
-      notes: [
-        {
-          heading: "Linear equation in two variables",
-          points: [
-            "An equation of the form **ax + by + c = 0**, where a, b, c are real numbers and **a and b are not both zero**, is a linear equation in two variables x and y.",
-            "Write it in standard form by bringing all terms to one side: 2x + 3y = 7 becomes 2x + 3y − 7 = 0, so a = 2, b = 3, c = −7.",
-            "An equation in one variable can also be written this way: x = −5 is 1·x + 0·y + 5 = 0 (a = 1, b = 0, c = 5).",
-            "Forming equations from words: 'the cost of a notebook (₹x) is twice the cost of a pen (₹y)' gives x = 2y, i.e. x − 2y = 0."
-          ]
-        },
-        {
-          heading: "Solutions",
-          points: [
-            "A **solution** is a pair of values (x, y) that makes the two sides equal. For x + 2y = 5, x = 3 and y = 1 is a solution since 3 + 2 = 5.",
-            "A linear equation in two variables has **infinitely many solutions**: choose any value of x and solve for y.",
-            "Quick solutions: put x = 0 to find y, then put y = 0 to find x.",
-            "To check whether a pair is a solution, substitute both values and see whether LHS = RHS.",
-            "When the solutions are plotted, they all lie on a **straight line**, which is why the equation is called linear."
-          ]
-        },
-        {
-          heading: "Tips and common mistakes",
-          points: [
-            "Keep the order (x, y): (2, 4) and (4, 2) are different pairs.",
-            "a or b may be 0, but not both: 0·x + 0·y + 5 = 0 is not a linear equation.",
-            "Multiplying an equation by a non-zero number does not change its solutions: x + 2y = 5 and 2x + 4y = 10 have the same solutions.",
-            "In word problems, define each variable clearly with its unit, e.g. 'let the cost of one pen be ₹y'."
-          ]
-        }
-      ],
-      formulas: [
-        "General form: ax + by + c = 0 (a, b, c real; a and b not both zero)",
-        "x = k  ⇔  1·x + 0·y − k = 0;   y = k  ⇔  0·x + 1·y − k = 0",
-        "To get a solution: choose x, then y = −(ax + c)/b  (b ≠ 0)"
-      ],
-      terms: [
-        { term: "Linear equation in two variables", meaning: "An equation ax + by + c = 0 where a, b, c are real numbers and a and b are not both zero." },
-        { term: "Solution", meaning: "An ordered pair (x, y) that satisfies the equation, i.e. makes LHS = RHS." },
-        { term: "Standard form", meaning: "Writing the equation with all terms on one side as ax + by + c = 0 so that a, b and c can be read off." },
-        { term: "Coefficient", meaning: "The number multiplying a variable. In 3x − 4y + 7 = 0 the coefficients of x and y are 3 and −4; 7 is the constant term." },
-        { term: "Infinitely many solutions", meaning: "A linear equation in two variables has no limit to its number of solutions: every value of x gives a matching value of y." }
-      ],
-      examples: [
-        {
-          q: "Find four different solutions of 2x + y = 7.",
-          steps: [
-            "Rewrite as y = 7 − 2x and choose values of x.",
-            "x = 0 ⇒ y = 7 → (0, 7)",
-            "x = 1 ⇒ y = 5 → (1, 5)",
-            "x = 2 ⇒ y = 3 → (2, 3)",
-            "x = 3 ⇒ y = 1 → (3, 1)"
-          ],
-          answer: "(0, 7), (1, 5), (2, 3), (3, 1) (there are infinitely many others)"
-        },
-        {
-          q: "If x = 2, y = 1 is a solution of 2x + 3y = k, find k. Then write the equation in standard form and find y when x = −1.",
-          steps: [
-            "Substitute x = 2, y = 1: 2(2) + 3(1) = k, so k = 7.",
-            "Equation: 2x + 3y = 7, i.e. 2x + 3y − 7 = 0 (a = 2, b = 3, c = −7).",
-            "Put x = −1: 2(−1) + 3y = 7 ⇒ 3y = 9 ⇒ y = 3."
-          ],
-          answer: "k = 7; standard form 2x + 3y − 7 = 0; y = 3 when x = −1"
-        }
-      ],
-      qa: [
-        { q: "Write 'the cost of a notebook is twice the cost of a pen' as a linear equation in two variables.", a: "Let the cost of a notebook be ₹x and of a pen be ₹y. Then x = 2y, i.e. **x − 2y = 0**." },
-        { q: "Which of these are solutions of x − 2y = 4: (0, 2), (2, 0), (4, 0)?", a: "(0, 2): 0 − 4 = −4 ≠ 4, no. (2, 0): 2 − 0 = 2 ≠ 4, no. (4, 0): 4 − 0 = 4, **yes**. Only (4, 0) is a solution." },
-        { q: "How many solutions does y = 3x + 5 have: a unique one, only two, or infinitely many? Why?", a: "**Infinitely many.** For every value of x we get a value y = 3x + 5, so there is a solution for every real x." }
-      ],
-      quiz: [
-        {
-          q: "The equation x = 6 written in the form ax + by + c = 0 is:",
-          options: ["x + y − 6 = 0", "x + 0·y − 6 = 0", "0·x + y − 6 = 0", "x − 6y = 0"],
-          answer: 1,
-          explain: "There is no y-term, so its coefficient is 0: **x + 0·y − 6 = 0** (a = 1, b = 0, c = −6)."
-        },
-        {
-          q: "How many solutions does the equation 2x + 5y = 10 have?",
-          options: ["Exactly one", "Exactly two", "No solution", "Infinitely many"],
-          answer: 3,
-          explain: "Every linear equation in two variables has **infinitely many** solutions: each x gives a y."
-        },
-        {
-          q: "Which of the following is a solution of x + 2y = 8?",
-          options: ["(2, 4)", "(8, 4)", "(4, 2)", "(0, 8)"],
-          answer: 2,
-          explain: "(4, 2): 4 + 2(2) = 8 ✓. (2, 4) gives 2 + 8 = 10, so swapping the order gives the wrong answer."
-        },
-        {
-          q: "If (3, k) is a solution of 4x − y = 5, the value of k is:",
-          options: ["7", "−7", "17", "2"],
-          answer: 0,
-          explain: "4(3) − k = 5 ⇒ 12 − k = 5 ⇒ **k = 7**."
-        },
-        {
-          q: "For 3x − 2y = 6 written as ax + by + c = 0, the values of a, b, c are:",
-          options: ["3, 2, 6", "−3, 2, 6", "3, −2, 6", "3, −2, −6"],
-          answer: 3,
-          explain: "3x − 2y = 6 becomes 3x − 2y − 6 = 0, so **a = 3, b = −2, c = −6**. Watch the sign of c."
-        },
-        {
-          q: "For ax + by + c = 0 to be a linear equation in two variables, which condition must hold?",
-          options: ["c is not zero", "a and b are not both zero", "a = b", "a, b and c are all positive"],
-          answer: 1,
-          explain: "If a = b = 0 there is no variable left. The only requirement is that **a and b are not both zero**; c may be 0."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 5. Introduction to Euclid's Geometry ─────────────────────────────
-    {
-      id: "introduction-to-euclids-geometry",
-      title: "Introduction to Euclid's Geometry",
-      section: "Geometry",
-      summary: "How Euclid organised geometry into definitions, axioms and postulates, and how theorems are proved from them by logical reasoning.",
-      notes: [
-        {
-          heading: "Euclid and the Elements",
-          points: [
-            "Euclid, a teacher of mathematics at Alexandria in Egypt (around 300 BCE), collected the known work in geometry into a treatise called the **Elements**, divided into **13 books** (chapters).",
-            "He started from a few assumptions and **proved** every other result (theorem or proposition) by deductive reasoning.",
-            "Geometry means 'earth measurement' and grew from practical needs. In India, the Sulbasutras were manuals of geometrical constructions used for building altars."
-          ]
-        },
-        {
-          heading: "Euclid's definitions",
-          points: [
-            "A **point** is that which has no part.",
-            "A **line** is breadthless length. The ends of a line are points.",
-            "A **straight line** is a line which lies evenly with the points on itself.",
-            "A **surface** is that which has length and breadth only; the edges of a surface are lines. A **plane surface** lies evenly with the straight lines on itself.",
-            "Today point, line and plane are taken as **undefined terms**, because Euclid's definitions use words like 'part', 'breadth' and 'length' that are not themselves defined."
-          ]
-        },
-        {
-          heading: "Euclid's axioms (common notions)",
-          points: [
-            "Things which are equal to the same thing are equal to one another.",
-            "If equals are added to equals, the wholes are equal. If equals are subtracted from equals, the remainders are equal.",
-            "Things which coincide with one another are equal to one another.",
-            "The whole is greater than the part.",
-            "Things which are double of the same things are equal to one another; things which are halves of the same things are equal to one another."
-          ]
-        },
-        {
-          heading: "Euclid's five postulates",
-          points: [
-            "**1.** A straight line may be drawn from any one point to any other point.",
-            "**2.** A terminated line (line segment) can be produced indefinitely.",
-            "**3.** A circle can be drawn with any centre and any radius.",
-            "**4.** All right angles are equal to one another.",
-            "**5.** If a straight line falling on two straight lines makes the interior angles on the same side of it together less than two right angles, then the two lines, if produced indefinitely, meet on that side."
-          ]
-        },
-        {
-          heading: "Axioms, postulates and theorems",
-          points: [
-            "Euclid used **postulates** for assumptions specific to geometry and **axioms** for common notions used throughout mathematics. Today both words are used to mean the same thing.",
-            "A **theorem** (proposition) is a statement that is proved using definitions, axioms, postulates and earlier results.",
-            "A system of axioms is **consistent** if it is impossible to deduce from them a statement that contradicts any axiom or previously proved statement.",
-            "Axiom: given two distinct points, there is a **unique line** through them. Theorem: two distinct lines cannot have more than **one point** in common.",
-            "Postulates 1 to 4 are simple and obvious; the fifth postulate is far more complex and leads to results about **parallel lines**."
-          ]
-        }
-      ],
-      formulas: [
-        "Axiom 1: If a = b and b = c, then a = c (things equal to the same thing are equal)",
-        "Axioms 2 and 3: If a = b, then a + c = b + c and a − c = b − c",
-        "Axiom 5: The whole is greater than the part",
-        "Through two distinct points there is exactly one line",
-        "Two distinct lines have at most one point in common",
-        "Postulate 3: A circle can be drawn with any centre and any radius",
-        "Postulate 5: Interior angles on one side of a transversal adding to less than 180° ⇒ the lines meet on that side"
-      ],
-      terms: [
-        { term: "Axiom", meaning: "A basic fact taken as true without proof and used throughout mathematics, e.g. 'the whole is greater than the part'." },
-        { term: "Postulate", meaning: "In Euclid's work, an assumption specific to geometry, e.g. 'all right angles are equal to one another'." },
-        { term: "Theorem", meaning: "A statement that has been **proved** using definitions, axioms, postulates and earlier results." },
-        { term: "Point (Euclid)", meaning: "That which has no part. Today it is treated as an undefined term." },
-        { term: "Line (Euclid)", meaning: "Breadthless length; its ends are points." },
-        { term: "Consistent system of axioms", meaning: "A set of axioms from which no statement contradicting an axiom or a proved result can be deduced." }
-      ],
-      examples: [
-        {
-          q: "If a point C lies between A and B such that AC = BC, prove that AC = ½AB.",
-          steps: [
-            "Given: AC = BC.",
-            "Add AC to both sides: AC + AC = BC + AC (equals added to equals are equal, Axiom 2).",
-            "BC + AC coincides with AB, so BC + AC = AB (things which coincide are equal, Axiom 4).",
-            "So 2AC = AB, i.e. AC = ½AB."
-          ],
-          answer: "AC = ½AB, using Axioms 2 and 4"
-        },
-        {
-          q: "Prove that an equilateral triangle can be constructed on any given line segment AB.",
-          steps: [
-            "With centre A and radius AB draw a circle; with centre B and radius BA draw another circle (Postulate 3).",
-            "Let the circles meet at C. Join AC and BC (Postulate 1).",
-            "AB = AC (radii of the first circle) and AB = BC (radii of the second circle).",
-            "Things equal to the same thing are equal (Axiom 1), so AC = BC.",
-            "Hence AB = BC = AC."
-          ],
-          answer: "△ABC is equilateral (Postulates 1 and 3, Axiom 1). Euclid assumed without proof that the two circles meet."
-        }
-      ],
-      qa: [
-        { q: "Points A, B, C, D lie on a line in that order and AC = BD. Prove that AB = CD.", a: "AC = AB + BC and BD = BC + CD. Since AC = BD, AB + BC = BC + CD. Subtracting BC from both sides (equals subtracted from equals, **Axiom 3**) gives **AB = CD**." },
-        { q: "Why is Euclid's axiom 'the whole is greater than the part' considered a universal truth?", a: "It holds in every field, not just geometry: a whole cake is more than any slice, and if a segment AB contains a point C, then AB > AC. It is a **common notion** true in all of mathematics and daily life." },
-        { q: "How many lines can pass through (i) one given point (ii) two distinct points?", a: "(i) **Infinitely many** lines pass through one point. (ii) Exactly **one** line passes through two distinct points." }
-      ],
-      quiz: [
-        {
-          q: "Euclid divided his treatise 'Elements' into how many books (chapters)?",
-          options: ["10", "12", "13", "7"],
-          answer: 2,
-          explain: "The Elements was divided into **13 books**."
-        },
-        {
-          q: "'Things which are equal to the same thing are equal to one another' is one of Euclid's:",
-          options: ["postulates", "axioms (common notions)", "definitions", "theorems"],
-          answer: 1,
-          explain: "It is Euclid's first **axiom** (common notion), used throughout mathematics, not just in geometry."
-        },
-        {
-          q: "How many lines can pass through two distinct points?",
-          options: ["Infinitely many", "Exactly two", "No line", "Exactly one"],
-          answer: 3,
-          explain: "Given two distinct points, there is a **unique** (exactly one) line through them."
-        },
-        {
-          q: "'A circle can be drawn with any centre and any radius' is Euclid's:",
-          options: ["Postulate 3", "Postulate 1", "Postulate 2", "Postulate 5"],
-          answer: 0,
-          explain: "This is **Postulate 3**. Postulate 1 is about drawing a line between two points; Postulate 2 about extending a segment."
-        },
-        {
-          q: "Two distinct lines can have at most how many points in common?",
-          options: ["Two", "Infinitely many", "One", "Three"],
-          answer: 2,
-          explain: "If two distinct lines shared two points, there would be two lines through those points, which is impossible. So at most **one** point."
-        },
-        {
-          q: "Euclid's fifth postulate leads to results about:",
-          options: ["circles", "parallel lines", "the equality of right angles", "extending a line segment"],
-          answer: 1,
-          explain: "The fifth postulate deals with when two lines cut by a transversal meet, which is the basis of **parallel lines**."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 6. Lines and Angles ─────────────────────────────
-    {
-      id: "lines-and-angles",
-      title: "Lines and Angles",
-      section: "Geometry",
-      summary: "Angle pairs formed by intersecting lines and by a transversal cutting parallel lines, and how to use them to find unknown angles and prove lines parallel.",
-      notes: [
-        {
-          heading: "Basic terms",
-          points: [
-            "**Acute** angle: between 0° and 90°; **right**: 90°; **obtuse**: between 90° and 180°; **straight**: 180°; **reflex**: between 180° and 360°.",
-            "**Complementary** angles add up to 90°; **supplementary** angles add up to 180°.",
-            "**Adjacent angles** have a common vertex and a common arm, with their non-common arms on opposite sides of the common arm.",
-            "Points on the same line are **collinear**; otherwise they are non-collinear."
-          ]
-        },
-        {
-          heading: "Linear pair and vertically opposite angles",
-          points: [
-            "**Linear pair axiom**: if a ray stands on a line, the two adjacent angles formed add up to 180°. Conversely, if two adjacent angles add up to 180°, their non-common arms form a line.",
-            "**If two lines intersect, the vertically opposite angles are equal.**",
-            "Two intersecting lines form four angles: two pairs of equal vertically opposite angles, and every two neighbouring angles form a linear pair.",
-            "Angles around a point add up to 360°."
-          ]
-        },
-        {
-          heading: "Parallel lines and a transversal",
-          points: [
-            "A **transversal** is a line that intersects two or more lines at distinct points. It forms corresponding, alternate interior, alternate exterior and co-interior angle pairs.",
-            "If a transversal cuts two **parallel** lines: **corresponding angles are equal**, **alternate interior angles are equal**, and **interior angles on the same side add up to 180°**.",
-            "The converses prove lines parallel: if corresponding angles are equal, or alternate interior angles are equal, or co-interior angles add up to 180°, the lines are parallel.",
-            "**Lines which are parallel to the same line are parallel to each other.**"
-          ]
-        },
-        {
-          heading: "Problem-solving tips",
-          points: [
-            "For a 'bent' angle between two parallel lines, draw a line through the bend parallel to both, then use alternate angles twice.",
-            "Write a reason with every step, e.g. '∠1 = ∠2 (alternate interior angles, AB ∥ CD)'.",
-            "If angles in a linear pair are in the ratio 2 : 3, write them as 2x and 3x: 5x = 180°, so x = 36° and the angles are 72° and 108°.",
-            "Common mistake: corresponding or alternate angles are equal **only** when the lines are parallel."
-          ]
-        }
-      ],
-      formulas: [
-        "Complementary: x + y = 90°;  Supplementary: x + y = 180°",
-        "Linear pair: the two angles add up to 180°",
-        "Vertically opposite angles are equal",
-        "Angles around a point add up to 360°",
-        "Parallel lines cut by a transversal: corresponding angles equal; alternate interior angles equal; co-interior angles add up to 180°",
-        "If l ∥ m and m ∥ n, then l ∥ n"
-      ],
-      terms: [
-        { term: "Linear pair", meaning: "Two adjacent angles whose non-common arms form a straight line; they add up to 180°." },
-        { term: "Vertically opposite angles", meaning: "The pairs of opposite angles formed when two lines intersect; they are always equal." },
-        { term: "Transversal", meaning: "A line that intersects two or more lines at distinct points." },
-        { term: "Corresponding angles", meaning: "Angles in matching positions at the two intersections made by a transversal; equal when the lines are parallel." },
-        { term: "Alternate interior angles", meaning: "Angles between the two lines on opposite sides of the transversal; equal when the lines are parallel." },
-        { term: "Reflex angle", meaning: "An angle greater than 180° but less than 360°." }
-      ],
-      examples: [
-        {
-          q: "Lines AB and CD intersect at O. If ∠AOC : ∠BOC = 2 : 3, find all four angles at O.",
-          steps: [
-            "∠AOC and ∠BOC form a linear pair, so ∠AOC + ∠BOC = 180°.",
-            "Let ∠AOC = 2x and ∠BOC = 3x. Then 5x = 180°, so x = 36°.",
-            "∠AOC = 72° and ∠BOC = 108°.",
-            "∠BOD = ∠AOC = 72° (vertically opposite angles).",
-            "∠AOD = ∠BOC = 108° (vertically opposite angles)."
-          ],
-          answer: "∠AOC = 72°, ∠BOC = 108°, ∠BOD = 72°, ∠AOD = 108°"
-        },
-        {
-          q: "AB ∥ CD. A point E lies between the two lines, on the same side of BD as A and C, and is joined to B (on AB) and D (on CD). If ∠ABE = 50° and ∠CDE = 35°, find ∠BED.",
-          steps: [
-            "Through E draw EF parallel to AB, pointing away from A (towards the side of B and D). Then EF ∥ CD too (lines parallel to the same line).",
-            "AB ∥ EF with transversal BE: ∠BEF = ∠ABE = 50° (alternate interior angles).",
-            "CD ∥ EF with transversal DE: ∠DEF = ∠CDE = 35° (alternate interior angles).",
-            "∠BED = ∠BEF + ∠DEF = 50° + 35° = 85°."
-          ],
-          answer: "∠BED = 85°"
-        }
-      ],
-      qa: [
-        { q: "In a linear pair, one angle is 30° more than twice the other. Find both angles.", a: "Let the smaller angle be x. Then x + (2x + 30°) = 180°, so 3x = 150° and x = 50°. The angles are **50° and 130°**." },
-        { q: "Can both angles of a linear pair be acute? Explain.", a: "**No.** A linear pair adds up to 180°, but two acute angles add up to less than 180°. Either one angle is obtuse or both are right angles." },
-        { q: "Two parallel lines are cut by a transversal. Show that the bisectors of a pair of alternate interior angles are parallel.", a: "The alternate interior angles are equal, say 2x each, so their halves are x each. These halves are **alternate angles** formed by the transversal with the two bisectors. Since they are equal, the bisectors are **parallel** (converse of the alternate angles theorem)." }
-      ],
-      quiz: [
-        {
-          q: "Two angles form a linear pair. If one of them is 65°, the other is:",
-          options: ["25°", "65°", "295°", "115°"],
-          answer: 3,
-          explain: "A linear pair adds up to 180°: 180° − 65° = **115°**. (25° would be the complement.)"
-        },
-        {
-          q: "Two lines intersect and one of the angles formed is 50°. The other three angles are:",
-          options: ["50°, 50°, 130°", "130°, 50°, 130°", "130°, 130°, 130°", "40°, 140°, 40°"],
-          answer: 1,
-          explain: "The vertically opposite angle is 50° and the two neighbouring angles are 180° − 50° = 130° each: **130°, 50°, 130°**."
-        },
-        {
-          q: "A transversal cuts two parallel lines. One of the interior angles on the same side of the transversal is 72°. The other is:",
-          options: ["72°", "18°", "108°", "288°"],
-          answer: 2,
-          explain: "Co-interior angles are supplementary: 180° − 72° = **108°**."
-        },
-        {
-          q: "The supplement of an angle is three times the angle. The angle is:",
-          options: ["45°", "60°", "22.5°", "135°"],
-          answer: 0,
-          explain: "x + 3x = 180° ⇒ x = **45°**. Using 90° instead of 180° gives 22.5°, which is wrong."
-        },
-        {
-          q: "The angles of a linear pair are in the ratio 4 : 5. The larger angle is:",
-          options: ["80°", "40°", "50°", "100°"],
-          answer: 3,
-          explain: "4x + 5x = 180° ⇒ x = 20°. The angles are 80° and **100°**."
-        },
-        {
-          q: "When a transversal cuts two parallel lines, which pair of angles is always equal?",
-          options: ["Alternate interior angles", "Interior angles on the same side of the transversal", "Adjacent angles at one intersection", "The two angles of a linear pair"],
-          answer: 0,
-          explain: "**Alternate interior angles** are equal. Interior angles on the same side are supplementary, not equal."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 7. Triangles ─────────────────────────────
-    {
-      id: "triangles",
-      title: "Triangles",
-      section: "Geometry",
-      summary: "Congruence of triangles, the SAS, ASA, AAS, SSS and RHS criteria, CPCT, and the properties of isosceles triangles.",
-      notes: [
-        {
-          heading: "Congruence",
-          points: [
-            "Two figures are **congruent** if they have the same shape and size, so one fits exactly on the other.",
-            "△ABC ≅ △PQR means A ↔ P, B ↔ Q, C ↔ R. The **order of letters** shows which parts correspond.",
-            "**CPCT**: Corresponding Parts of Congruent Triangles are equal. Use it after proving congruence to get equal sides or angles.",
-            "Writing the vertices in the wrong order (e.g. △ABC ≅ △QRP when A ↔ P) is a common mistake that costs marks."
-          ]
-        },
-        {
-          heading: "Congruence criteria",
-          points: [
-            "**SAS** (axiom): two sides and the **included** angle of one triangle equal to those of the other.",
-            "**ASA**: two angles and the included side equal. **AAS**: two angles and any non-included side equal (the third angles are then equal too).",
-            "**SSS**: all three sides equal.",
-            "**RHS**: in right triangles, the hypotenuse and one side equal.",
-            "**SSA and AAA are not congruence rules.** Equal angles do not fix the size, and a non-included angle does not fix the shape."
-          ]
-        },
-        {
-          heading: "Isosceles triangles",
-          points: [
-            "**Angles opposite equal sides are equal**: in △ABC, if AB = AC then ∠C = ∠B.",
-            "**Sides opposite equal angles are equal** (converse): if ∠B = ∠C then AC = AB.",
-            "Each angle of an equilateral triangle is 60°.",
-            "In an isosceles triangle, the bisector of the angle between the equal sides is also the perpendicular bisector of the base."
-          ]
-        },
-        {
-          heading: "Writing a congruence proof",
-          points: [
-            "List three pairs of equal parts with reasons: given, common side, vertically opposite angles, alternate angles, radii, etc.",
-            "Name the criterion and write the congruence in the correct order, e.g. △AOB ≅ △COD (SAS).",
-            "Then use CPCT for the result you need.",
-            "Don't miss 'hidden' equal parts: a **common side** and **vertically opposite angles** are the most frequently forgotten."
-          ]
-        }
-      ],
-      formulas: [
-        "SAS: two sides + included angle",
-        "ASA: two angles + included side;  AAS: two angles + a non-included side",
-        "SSS: three sides",
-        "RHS: right angle + hypotenuse + one side",
-        "AB = AC ⇔ ∠C = ∠B (angles opposite equal sides are equal, and conversely)",
-        "Equilateral triangle: each angle = 60°"
-      ],
-      terms: [
-        { term: "Congruent triangles", meaning: "Triangles that are exact copies of each other: all corresponding sides and angles are equal." },
-        { term: "CPCT", meaning: "Corresponding Parts of Congruent Triangles are equal; used after proving two triangles congruent." },
-        { term: "Included angle", meaning: "The angle formed between two given sides, e.g. ∠A is included between AB and AC." },
-        { term: "Hypotenuse", meaning: "The side opposite the right angle in a right triangle; the longest side." },
-        { term: "Isosceles triangle", meaning: "A triangle with two equal sides; the angles opposite them are equal." }
-      ],
-      examples: [
-        {
-          q: "Line l is the perpendicular bisector of segment AB. If P is any point on l, show that PA = PB.",
-          steps: [
-            "Let l meet AB at C. Join PA and PB.",
-            "In △PCA and △PCB: AC = BC (C is the mid-point of AB).",
-            "∠PCA = ∠PCB = 90° (l ⊥ AB).",
-            "PC = PC (common side).",
-            "So △PCA ≅ △PCB (SAS), and PA = PB (CPCT)."
-          ],
-          answer: "PA = PB: every point on the perpendicular bisector of AB is equidistant from A and B."
-        },
-        {
-          q: "In △ABC, AB = AC, and the bisectors of ∠B and ∠C meet at O. Show that OB = OC.",
-          steps: [
-            "AB = AC, so ∠ABC = ∠ACB (angles opposite equal sides).",
-            "Halving both: ½∠ABC = ½∠ACB, so ∠OBC = ∠OCB (OB and OC are the bisectors).",
-            "In △OBC, sides opposite equal angles are equal.",
-            "So OB = OC."
-          ],
-          answer: "OB = OC, so △OBC is isosceles."
-        }
-      ],
-      qa: [
-        { q: "Is AAA a congruence rule? Justify.", a: "**No.** Two equilateral triangles with sides 2 cm and 5 cm both have all angles 60°, but they are not the same size, so they are not congruent." },
-        { q: "Show that each angle of an equilateral triangle is 60°.", a: "In △ABC with AB = BC = CA: AB = AC gives ∠C = ∠B, and AB = BC gives ∠C = ∠A. So ∠A = ∠B = ∠C. Since they add up to 180°, **each angle is 60°**." }
-      ],
-      quiz: [
-        {
-          q: "Which of the following is NOT a congruence criterion for triangles?",
-          options: ["SAS", "SSA", "ASA", "RHS"],
-          answer: 1,
-          explain: "**SSA** (two sides and a non-included angle) does not guarantee congruence. SAS, ASA, AAS, SSS and RHS do."
-        },
-        {
-          q: "If △ABC ≅ △PQR, which of the following must be true?",
-          options: ["AB = QR", "∠A = ∠Q", "BC = QR", "AC = PQ"],
-          answer: 2,
-          explain: "The correspondence is A ↔ P, B ↔ Q, C ↔ R, so side BC corresponds to **QR**."
-        },
-        {
-          q: "In △ABC, AB = AC and ∠B = 70°. Then ∠A is:",
-          options: ["70°", "55°", "110°", "40°"],
-          answer: 3,
-          explain: "∠C = ∠B = 70° (angles opposite equal sides), so ∠A = 180° − 140° = **40°**. 55° comes from wrongly treating 70° as the vertex angle."
-        },
-        {
-          q: "Two right triangles have equal hypotenuses and one other pair of equal sides. They are congruent by:",
-          options: ["RHS", "SAS", "ASA", "SSS"],
-          answer: 0,
-          explain: "Right angle–Hypotenuse–Side: **RHS**."
-        },
-        {
-          q: "Two triangles have all three corresponding angles equal. Then the triangles are:",
-          options: ["always congruent", "congruent only if they are equilateral", "congruent by AAS", "not necessarily congruent"],
-          answer: 3,
-          explain: "AAA fixes the shape but not the size, so the triangles are **not necessarily congruent**."
-        },
-        {
-          q: "In △ABC and △DEF, AB = DE, ∠A = ∠D and AC = DF. The triangles are congruent by:",
-          options: ["ASA", "SAS", "SSS", "RHS"],
-          answer: 1,
-          explain: "∠A is included between AB and AC, so this is **SAS**."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 8. Quadrilaterals ─────────────────────────────
-    {
-      id: "quadrilaterals",
-      title: "Quadrilaterals",
-      section: "Geometry",
-      summary: "Properties of a parallelogram and its special types, the conditions for a quadrilateral to be a parallelogram, and the Mid-point Theorem.",
-      notes: [
-        {
-          heading: "Quadrilaterals and their types",
-          points: [
-            "The angles of a quadrilateral add up to **360°** (a diagonal splits it into two triangles).",
-            "**Parallelogram**: both pairs of opposite sides parallel. **Rectangle**: a parallelogram with each angle 90°. **Rhombus**: a parallelogram with all sides equal. **Square**: all sides equal and each angle 90°.",
-            "**Trapezium**: a quadrilateral with one pair of opposite sides parallel.",
-            "Every rectangle, rhombus and square is a parallelogram; a square is both a rectangle and a rhombus."
-          ]
-        },
-        {
-          heading: "Properties of a parallelogram",
-          points: [
-            "A diagonal divides a parallelogram into **two congruent triangles**.",
-            "**Opposite sides are equal** and **opposite angles are equal**.",
-            "**The diagonals bisect each other.**",
-            "Adjacent angles are supplementary (co-interior angles): if ∠A = 70° then ∠B = 110°."
-          ]
-        },
-        {
-          heading: "When is a quadrilateral a parallelogram?",
-          points: [
-            "If each pair of opposite sides is equal.",
-            "If each pair of opposite angles is equal.",
-            "If the diagonals bisect each other.",
-            "If **one pair of opposite sides is both equal and parallel**."
-          ]
-        },
-        {
-          heading: "Diagonals of special parallelograms",
-          points: [
-            "Rectangle: diagonals are **equal** and bisect each other.",
-            "Rhombus: diagonals bisect each other **at right angles**.",
-            "Square: diagonals are equal and bisect each other at right angles.",
-            "Common mistake: the diagonals of a general parallelogram are neither equal nor perpendicular; they only bisect each other."
-          ]
-        },
-        {
-          heading: "Mid-point Theorem",
-          points: [
-            "The segment joining the mid-points of two sides of a triangle is **parallel to the third side** and **half of it**.",
-            "**Converse**: a line through the mid-point of one side of a triangle, parallel to another side, bisects the third side.",
-            "Joining the mid-points of the sides of any quadrilateral in order always gives a **parallelogram**.",
-            "Joining the mid-points of the three sides of a triangle gives a triangle with half the perimeter of the original."
-          ]
-        }
-      ],
-      formulas: [
-        "Angle sum of a quadrilateral = 360°",
-        "Parallelogram: opposite sides equal; opposite angles equal; diagonals bisect each other; adjacent angles add up to 180°",
-        "Rectangle: diagonals equal;  Rhombus: diagonals perpendicular;  Square: diagonals equal and perpendicular",
-        "Mid-point Theorem: D, E mid-points of AB, AC in △ABC ⇒ DE ∥ BC and DE = ½BC",
-        "Converse: line through the mid-point of one side, parallel to another side, bisects the third side"
-      ],
-      terms: [
-        { term: "Parallelogram", meaning: "A quadrilateral in which both pairs of opposite sides are parallel." },
-        { term: "Rhombus", meaning: "A parallelogram with all four sides equal; its diagonals bisect each other at right angles." },
-        { term: "Rectangle", meaning: "A parallelogram with each angle 90°; its diagonals are equal." },
-        { term: "Trapezium", meaning: "A quadrilateral with one pair of opposite sides parallel." },
-        { term: "Mid-point Theorem", meaning: "The segment joining the mid-points of two sides of a triangle is parallel to the third side and half of it." }
-      ],
-      examples: [
-        {
-          q: "In parallelogram ABCD, ∠A = (3x + 10)° and ∠B = (2x + 20)°. Find all the angles.",
-          steps: [
-            "Adjacent angles of a parallelogram are supplementary: ∠A + ∠B = 180°.",
-            "(3x + 10) + (2x + 20) = 180 ⇒ 5x + 30 = 180 ⇒ x = 30.",
-            "∠A = 3(30) + 10 = 100°; ∠B = 2(30) + 20 = 80°.",
-            "Opposite angles are equal: ∠C = ∠A = 100°, ∠D = ∠B = 80°."
-          ],
-          answer: "∠A = 100°, ∠B = 80°, ∠C = 100°, ∠D = 80°"
-        },
-        {
-          q: "In △ABC, D, E, F are the mid-points of AB, BC and CA. If AB = 8 cm, BC = 10 cm and CA = 7 cm, find the perimeter of △DEF.",
-          steps: [
-            "DE joins the mid-points of AB and BC, so DE = ½CA = 3.5 cm (Mid-point Theorem).",
-            "EF joins the mid-points of BC and CA, so EF = ½AB = 4 cm.",
-            "FD joins the mid-points of CA and AB, so FD = ½BC = 5 cm.",
-            "Perimeter = 3.5 + 4 + 5 = 12.5 cm (half of 25 cm)."
-          ],
-          answer: "Perimeter of △DEF = 12.5 cm"
-        }
-      ],
-      qa: [
-        { q: "Show that the diagonals of a rectangle are equal.", a: "In rectangle ABCD, compare △ABC and △BAD: AB = BA (common), BC = AD (opposite sides), ∠ABC = ∠BAD = 90°. So △ABC ≅ △BAD (**SAS**), and AC = BD (**CPCT**)." },
-        { q: "If the diagonals of a parallelogram are equal, show that it is a rectangle.", a: "In parallelogram ABCD with AC = BD: △ABC ≅ △DCB (SSS: AB = DC, BC common, AC = DB), so ∠ABC = ∠DCB. These are co-interior angles (AB ∥ DC), so they add up to 180°, making **each 90°**. Hence ABCD is a rectangle." },
-        { q: "Can a quadrilateral have angles 110°, 80°, 70° and 95°? Why?", a: "**No.** Their sum is 355°, but the angles of a quadrilateral must add up to 360°." }
-      ],
-      quiz: [
-        {
-          q: "The angles of a quadrilateral are in the ratio 3 : 5 : 9 : 13. The largest angle is:",
-          options: ["78°", "108°", "156°", "130°"],
-          answer: 2,
-          explain: "30 parts = 360°, so 1 part = 12°. Largest = 13 × 12° = **156°**. Using 180° as the total gives 78°."
-        },
-        {
-          q: "In parallelogram ABCD, ∠A = 65°. Then ∠B and ∠C are respectively:",
-          options: ["65° and 115°", "115° and 65°", "115° and 115°", "25° and 65°"],
-          answer: 1,
-          explain: "∠B is adjacent to ∠A, so ∠B = 180° − 65° = 115°. ∠C is opposite ∠A, so ∠C = 65°: **115° and 65°**."
-        },
-        {
-          q: "The diagonals of a rhombus:",
-          options: ["bisect each other at right angles", "are always equal", "do not bisect each other", "are each equal to a side"],
-          answer: 0,
-          explain: "A rhombus's diagonals **bisect each other at right angles**. They are equal only if the rhombus is a square."
-        },
-        {
-          q: "D and E are the mid-points of sides AB and AC of △ABC. If BC = 9 cm, then DE is:",
-          options: ["9 cm", "18 cm", "3 cm", "4.5 cm"],
-          answer: 3,
-          explain: "By the Mid-point Theorem, DE = ½BC = **4.5 cm**."
-        },
-        {
-          q: "A quadrilateral is certainly a parallelogram if:",
-          options: ["one pair of opposite sides is parallel", "its diagonals are equal", "one pair of opposite sides is both equal and parallel", "two adjacent sides are equal"],
-          answer: 2,
-          explain: "**One pair of opposite sides equal and parallel** is enough. One parallel pair alone gives a trapezium, and an isosceles trapezium also has equal diagonals."
-        },
-        {
-          q: "The figure formed by joining the mid-points of the sides of any quadrilateral, in order, is always a:",
-          options: ["parallelogram", "rectangle", "rhombus", "square"],
-          answer: 0,
-          explain: "By the Mid-point Theorem, opposite sides of the new figure are both parallel to (and half of) the same diagonal, so it is always a **parallelogram**."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 9. Circles ─────────────────────────────
-    {
-      id: "circles",
-      title: "Circles",
-      section: "Geometry",
-      summary: "Chords and the angles they subtend, the perpendicular from the centre to a chord, equal chords, angles in the same segment and cyclic quadrilaterals.",
-      notes: [
-        {
-          heading: "Basic terms",
-          points: [
-            "A **circle** is the set of all points in a plane at a fixed distance (**radius**) from a fixed point (**centre**).",
-            "A **chord** joins two points on the circle. A **diameter** is a chord through the centre; it is the longest chord and equals 2r.",
-            "An **arc** is a piece of the circle: the minor arc is the shorter piece and the major arc the longer one. A diameter divides the circle into two **semicircles**.",
-            "A **segment** is the region between a chord and an arc; a **sector** is the region between an arc and the two radii to its ends."
-          ]
-        },
-        {
-          heading: "Equal chords",
-          points: [
-            "**Equal chords subtend equal angles at the centre**, and chords subtending equal angles at the centre are equal.",
-            "Equal chords cut off congruent arcs, and congruent arcs have equal chords.",
-            "**Equal chords are equidistant from the centre**, and chords equidistant from the centre are equal.",
-            "Distance of a chord from the centre means the length of the perpendicular from the centre to the chord."
-          ]
-        },
-        {
-          heading: "Perpendicular from the centre",
-          points: [
-            "**The perpendicular from the centre to a chord bisects the chord.**",
-            "**The line from the centre to the mid-point of a chord is perpendicular to the chord.**",
-            "Use Pythagoras: r² = d² + (half-chord)², where d is the distance of the chord from the centre.",
-            "Example: r = 5 cm and d = 3 cm give half-chord = 4 cm, so the chord is 8 cm."
-          ]
-        },
-        {
-          heading: "Angles subtended by an arc",
-          points: [
-            "**The angle subtended by an arc at the centre is double the angle it subtends at any point on the remaining part of the circle.**",
-            "**Angles in the same segment of a circle are equal.**",
-            "**The angle in a semicircle is a right angle.**",
-            "If a segment joining two points subtends equal angles at two other points on the same side of it, all four points are **concyclic** (lie on one circle)."
+            "The angle subtended by an arc at the centre is **twice** the angle it subtends at any point on the remaining part of the circle.",
+            "Angles in the same segment are equal.",
+            "The angle subtended by a diameter at any point on the circle is **90°** (angle in a semicircle).",
+            "If a segment subtends equal angles at two points on the same side, the four points are **concyclic**."
           ]
         },
         {
           heading: "Cyclic quadrilaterals",
           points: [
             "A quadrilateral whose four vertices lie on a circle is **cyclic**.",
-            "**The sum of either pair of opposite angles of a cyclic quadrilateral is 180°.**",
-            "Converse: if one pair of opposite angles of a quadrilateral adds up to 180°, the quadrilateral is cyclic.",
-            "Common mistake: only **opposite** angles of a cyclic quadrilateral are supplementary, not adjacent ones."
+            "Its opposite angles add up to **180°**.",
+            "Converse: if opposite angles of a quadrilateral add up to 180°, it is cyclic.",
+            "Exterior angle of a cyclic quadrilateral equals the interior opposite angle."
           ]
         }
       ],
       formulas: [
-        "Diameter = 2 × radius",
-        "r² = d² + (half-chord)²  (perpendicular from the centre bisects the chord)",
-        "Angle at centre = 2 × angle at the circle (same arc)",
-        "Angles in the same segment are equal",
+        "Angle at centre = 2 × angle at the circumference on the same arc",
         "Angle in a semicircle = 90°",
-        "Cyclic quadrilateral ABCD: ∠A + ∠C = 180° and ∠B + ∠D = 180°",
-        "Equal chords ⇔ equal angles at the centre ⇔ equal distances from the centre"
+        "Cyclic quadrilateral: ∠A + ∠C = 180° and ∠B + ∠D = 180°",
+        "Perpendicular from centre to a chord of length 2c in a circle of radius r: distance d = √(r² − c²)"
       ],
       terms: [
-        { term: "Chord", meaning: "A line segment joining any two points on a circle. The diameter is the longest chord." },
-        { term: "Arc", meaning: "A continuous piece of a circle between two points on it." },
-        { term: "Segment", meaning: "The region of a circle between a chord and either of its arcs." },
-        { term: "Sector", meaning: "The region between an arc and the two radii joining the centre to the ends of the arc." },
-        { term: "Cyclic quadrilateral", meaning: "A quadrilateral whose four vertices all lie on one circle; its opposite angles add up to 180°." },
-        { term: "Concyclic points", meaning: "Points that all lie on the same circle." }
+        { term: "Chord", meaning: "A line segment joining two points on a circle." },
+        { term: "Circumcircle", meaning: "The unique circle passing through the three vertices of a triangle." },
+        { term: "Concyclic points", meaning: "Points that all lie on one circle." },
+        { term: "Cyclic quadrilateral", meaning: "A quadrilateral with all four vertices on a circle." },
+        { term: "Subtend", meaning: "An arc or chord subtends an angle at a point when lines from the point to its ends form that angle." }
       ],
       examples: [
         {
-          q: "A chord of length 24 cm is 5 cm from the centre of a circle. Find the radius. Also find the length of a chord that is 12 cm from the centre.",
-          steps: [
-            "The perpendicular from the centre bisects the chord, so the half-chord is 12 cm.",
-            "r² = 5² + 12² = 25 + 144 = 169, so r = 13 cm.",
-            "For the second chord: (half-chord)² = 13² − 12² = 169 − 144 = 25, so the half-chord is 5 cm.",
-            "Chord length = 2 × 5 = 10 cm."
-          ],
-          answer: "Radius = 13 cm; the chord 12 cm from the centre is 10 cm long."
+          q: "A chord of length 24 cm is in a circle of radius 13 cm. Find its distance from the centre.",
+          steps: ["The perpendicular from the centre bisects the chord: half-length = 12 cm.", "Distance d satisfies d² + 12² = 13².", "d² = 169 − 144 = 25, so d = 5."],
+          answer: "5 cm"
         },
         {
-          q: "ABCD is a cyclic quadrilateral whose diagonals meet at E. If ∠DBC = 70° and ∠BAC = 30°, find ∠BCD. If also AB = BC, find ∠ECD.",
-          steps: [
-            "∠CAD = ∠DBC = 70° (angles in the same segment, on chord CD).",
-            "∠BAD = ∠BAC + ∠CAD = 30° + 70° = 100°.",
-            "Opposite angles of a cyclic quadrilateral: ∠BCD = 180° − 100° = 80°.",
-            "If AB = BC, then ∠BCA = ∠BAC = 30° (angles opposite equal sides).",
-            "∠ECD = ∠BCD − ∠BCE = 80° − 30° = 50°."
-          ],
-          answer: "∠BCD = 80°; ∠ECD = 50°"
+          q: "In a cyclic quadrilateral ABCD, ∠A = 70° and ∠B = 95°. Find ∠C and ∠D.",
+          steps: ["Opposite angles sum to 180°.", "∠C = 180° − 70° = 110°.", "∠D = 180° − 95° = 85°."],
+          answer: "∠C = 110°, ∠D = 85°"
         }
       ],
       qa: [
-        { q: "Prove that the angle in a semicircle is a right angle.", a: "Let AB be a diameter and C a point on the circle. Arc AB (the semicircle) subtends a straight angle, 180°, at the centre. The angle at the circle is half of this, so **∠ACB = 90°**." },
-        { q: "Why is every rectangle a cyclic quadrilateral, but a rhombus that is not a square is not?", a: "In a rectangle, opposite angles are 90° + 90° = **180°**, so it is cyclic. In a non-square rhombus, opposite angles are equal but not 90°, so their sum is **not 180°**; it cannot be cyclic." },
-        { q: "AB and CD are equal chords of a circle with centre O. If ∠AOB = 70°, find ∠COD.", a: "Equal chords subtend equal angles at the centre, so **∠COD = 70°**." }
+        { q: "An arc subtends 100° at the centre. What angle does it subtend at a point on the remaining part of the circle?", a: "The angle at the circumference is half the angle at the centre, so 100° ÷ 2 = **50°**." },
+        { q: "Why is the angle in a semicircle 90°?", a: "A diameter subtends 180° at the centre. The angle at any point on the circle is half of that, i.e. 90°." }
       ],
       quiz: [
-        {
-          q: "An arc subtends 100° at the centre of a circle. The angle it subtends at any point on the remaining part of the circle is:",
-          options: ["100°", "200°", "50°", "80°"],
-          answer: 2,
-          explain: "The angle at the centre is double the angle at the circle, so the angle at the circle is 100° ÷ 2 = **50°**."
-        },
-        {
-          q: "ABCD is a cyclic quadrilateral with ∠A = 75°. Then ∠C is:",
-          options: ["105°", "75°", "15°", "285°"],
-          answer: 0,
-          explain: "Opposite angles of a cyclic quadrilateral add up to 180°: ∠C = 180° − 75° = **105°**."
-        },
-        {
-          q: "A chord of a circle of radius 10 cm is 6 cm from the centre. The length of the chord is:",
-          options: ["8 cm", "4 cm", "12 cm", "16 cm"],
-          answer: 3,
-          explain: "Half-chord = √(10² − 6²) = √64 = 8 cm, so the chord is **16 cm**. 8 cm is only half of it."
-        },
-        {
-          q: "The angle in a semicircle is:",
-          options: ["45°", "90°", "180°", "60°"],
-          answer: 1,
-          explain: "The semicircle's arc subtends 180° at the centre, so the angle at the circle is **90°**."
-        },
-        {
-          q: "A, B, C, D lie on a circle, with C and D on the same side of chord AB. If ∠ACB = 40°, then ∠ADB is:",
-          options: ["80°", "20°", "40°", "140°"],
-          answer: 2,
-          explain: "∠ACB and ∠ADB are angles in the same segment, so they are equal: **40°**."
-        },
-        {
-          q: "If a pair of opposite angles of a quadrilateral are supplementary, the quadrilateral is:",
-          options: ["always a parallelogram", "always a rhombus", "always a kite", "cyclic"],
-          answer: 3,
-          explain: "This is the converse of the cyclic quadrilateral theorem: the quadrilateral is **cyclic**."
-        }
+        { q: "The angle subtended by a diameter at a point on the circle is:", options: ["90°", "180°", "45°", "60°"], answer: 0, explain: "Half of the 180° at the centre." },
+        { q: "The line from the centre to the midpoint of a chord is:", options: ["Perpendicular to the chord", "Parallel to the chord", "Equal to the chord", "Tangent to the circle"], answer: 0, explain: "The centre lies on the perpendicular bisector of every chord." },
+        { q: "In a cyclic quadrilateral ABCD, if ∠A = 105°, then ∠C =", options: ["75°", "105°", "85°", "255°"], answer: 0, explain: "Opposite angles add to 180°." },
+        { q: "An arc subtends 80° at the centre. At a point on the remaining circle it subtends:", options: ["40°", "160°", "80°", "100°"], answer: 0, explain: "It is half the central angle." },
+        { q: "How many circles pass through three non-collinear points?", options: ["Exactly one", "Exactly two", "Infinitely many", "None"], answer: 0, explain: "The perpendicular bisectors meet at one circumcentre." },
+        { q: "Of two unequal chords of a circle, the longer chord is:", options: ["Closer to the centre", "Farther from the centre", "At the same distance", "Always a diameter"], answer: 0, explain: "Distance from the centre decreases as the chord gets longer." }
       ]
     },
 
-    // ───────────────────────────── 10. Heron's Formula ─────────────────────────────
+    // ───────────── 6. Measuring Space: Perimeter and Area ─────────────
     {
-      id: "herons-formula",
-      title: "Heron's Formula",
-      section: "Mensuration",
-      summary: "Finding the area of any triangle from the lengths of its three sides, without needing its height.",
+      id: "measuring-space-perimeter-and-area",
+      title: "Measuring Space: Perimeter and Area",
+      section: "Part I",
+      summary: "Circumference, arc length and area of circles and sectors, the story of π, Heron’s formula for triangles and Brahmagupta’s formula for cyclic quadrilaterals.",
       notes: [
         {
-          heading: "Area of a triangle: recap",
+          heading: "Circle and π",
           points: [
-            "Area = ½ × base × height, when the height is known.",
-            "Right triangle: area = ½ × product of the two sides containing the right angle.",
-            "Equilateral triangle of side a: area = (√3/4)a².",
-            "When the height is not known, as for most scalene triangles, use **Heron's formula**."
+            "π is the constant ratio of circumference to diameter, about 22/7 or 3.14. It is irrational.",
+            "Circumference C = 2πr; area A = πr².",
+            "Historical estimates: Archimedes 3 10/71 < π < 3 1/7; Chongzhi 355/113; Āryabhaṭa 3.1416.",
+            "Mādhava’s series: π = 4(1 − 1/3 + 1/5 − 1/7 + …)."
           ]
         },
         {
-          heading: "Heron's formula",
+          heading: "Arc and sector",
           points: [
-            "For a triangle with sides a, b, c: **Area = √[s(s − a)(s − b)(s − c)]**, where **s = (a + b + c)/2** is the **semi-perimeter**.",
-            "The formula is named after Heron of Alexandria.",
-            "Steps: find s → find s − a, s − b, s − c → multiply the four numbers → take the square root.",
-            "Check: s − a, s − b and s − c must all be positive, and they add up to s."
+            "For a central angle θ°, arc length l = 2πr × θ/360.",
+            "Area of the sector = πr² × θ/360.",
+            "A sector is a fraction θ/360 of the whole circle, so both formulas are the full values multiplied by that fraction.",
+            "A semicircle is the case θ = 180°."
           ]
         },
         {
-          heading: "Tips and common mistakes",
+          heading: "Heron’s formula",
           points: [
-            "Use the **semi**-perimeter s, not the full perimeter.",
-            "Factorise inside the root before multiplying: √(12 × 6 × 4 × 2) = √(2⁶ × 3²) = 2³ × 3 = 24.",
-            "If the sides are given as a ratio with the perimeter, find the actual sides first.",
-            "Area is in square units (cm², m²); keep all sides in the same unit.",
-            "Isosceles triangle with equal sides a and base b: area = (b/4)√(4a² − b²)."
+            "Area of a triangle = ½ × base × height.",
+            "If sides are a, b, c and s = (a + b + c)/2 (semi-perimeter), then area = √[s(s − a)(s − b)(s − c)].",
+            "It is used when the height is not given.",
+            "Example: sides 13, 14, 15 give s = 21 and area √(21 × 8 × 7 × 6) = 84."
+          ]
+        },
+        {
+          heading: "Cyclic quadrilaterals: Brahmagupta’s formula",
+          points: [
+            "For a cyclic quadrilateral with sides a, b, c, d and s = (a + b + c + d)/2, area = √[(s − a)(s − b)(s − c)(s − d)].",
+            "It reduces to Heron’s formula when one side is 0.",
+            "Check: a 3 × 4 rectangle is cyclic; s = 7, area = √(4 × 3 × 4 × 3) = 12."
           ]
         }
       ],
       formulas: [
-        "Semi-perimeter: s = (a + b + c)/2",
-        "Heron's formula: Area = √[s(s − a)(s − b)(s − c)]",
-        "Area = ½ × base × height",
-        "Equilateral triangle: Area = (√3/4)a²",
-        "Isosceles triangle (equal sides a, base b): Area = (b/4)√(4a² − b²)"
+        "Circumference = 2πr;  Area = πr²",
+        "Arc length = 2πr × θ/360",
+        "Sector area = πr² × θ/360",
+        "Heron: area = √[s(s − a)(s − b)(s − c)], s = (a + b + c)/2",
+        "Brahmagupta (cyclic quadrilateral): area = √[(s − a)(s − b)(s − c)(s − d)], s = (a + b + c + d)/2"
       ],
       terms: [
-        { term: "Semi-perimeter", meaning: "Half the perimeter of a triangle: s = (a + b + c)/2." },
-        { term: "Heron's formula", meaning: "Area of a triangle with sides a, b, c = √[s(s − a)(s − b)(s − c)]." },
-        { term: "Scalene triangle", meaning: "A triangle with all three sides of different lengths." },
-        { term: "Isosceles triangle", meaning: "A triangle with two equal sides." },
-        { term: "Perimeter", meaning: "The total length of the boundary: a + b + c for a triangle." }
+        { term: "π (pi)", meaning: "The ratio of a circle’s circumference to its diameter; an irrational number." },
+        { term: "Sector", meaning: "The region of a circle between two radii and the arc they cut." },
+        { term: "Semi-perimeter", meaning: "Half the perimeter of a polygon, denoted s." },
+        { term: "Arc length", meaning: "The length along the circle between two points." },
+        { term: "Heron’s formula", meaning: "A formula giving a triangle’s area from its three sides." }
       ],
       examples: [
         {
-          q: "Find the area of a triangle with sides 13 cm, 14 cm and 15 cm.",
-          steps: [
-            "s = (13 + 14 + 15)/2 = 42/2 = 21 cm.",
-            "s − a = 21 − 13 = 8, s − b = 21 − 14 = 7, s − c = 21 − 15 = 6.",
-            "Area = √(21 × 8 × 7 × 6) = √(3 × 7 × 2³ × 7 × 2 × 3) = √(2⁴ × 3² × 7²).",
-            "Area = 2² × 3 × 7 = 84 cm²."
-          ],
-          answer: "Area = 84 cm²"
+          q: "Find the arc length and area of a sector of radius 21 cm with central angle 60°. (Use π = 22/7)",
+          steps: ["Arc length = 2 × (22/7) × 21 × (60/360) = 132 × 1/6 = 22 cm.", "Area = (22/7) × 21² × (1/6) = (22/7) × 441 / 6 = 1386/6 = 231 cm²."],
+          answer: "Arc length = 22 cm; area = 231 cm²."
         },
         {
-          q: "The sides of a triangle are in the ratio 12 : 17 : 25 and its perimeter is 540 cm. Find its area.",
-          steps: [
-            "Total ratio parts = 12 + 17 + 25 = 54, so one part = 540 ÷ 54 = 10 cm.",
-            "Sides: 120 cm, 170 cm and 250 cm.",
-            "s = 540/2 = 270 cm; s − a = 150, s − b = 100, s − c = 20.",
-            "Area = √(270 × 150 × 100 × 20) = √81000000 = 9000 cm²."
-          ],
-          answer: "Area = 9000 cm²"
+          q: "Find the area of a triangle with sides 5 cm, 12 cm and 13 cm using Heron’s formula.",
+          steps: ["s = (5 + 12 + 13)/2 = 15.", "Area = √[15 × 10 × 3 × 2] = √900 = 30."],
+          answer: "30 cm²"
         }
       ],
       qa: [
-        { q: "Find the area of an equilateral triangle of side 10 cm using Heron's formula.", a: "s = 15 cm; s − a = s − b = s − c = 5. Area = √(15 × 5 × 5 × 5) = √1875 = **25√3 cm² ≈ 43.3 cm²**, which matches (√3/4) × 10²." },
-        { q: "An isosceles triangle has perimeter 30 cm and each of its equal sides is 12 cm. Find its area.", a: "Base = 30 − 24 = 6 cm. s = 15; s − a = 3, s − b = 3, s − c = 9. Area = √(15 × 3 × 3 × 9) = √1215 = √(81 × 15) = **9√15 cm²**." }
+        { q: "Find the area of a circle of radius 14 cm (π = 22/7).", a: "A = πr² = (22/7) × 14 × 14 = 22 × 28 = **616 cm²**." },
+        { q: "Why is Heron’s formula useful?", a: "It gives the area from only the three side lengths, with no need to find the height. Compute s, then take √[s(s − a)(s − b)(s − c)]." }
       ],
       quiz: [
-        {
-          q: "The semi-perimeter of a triangle with sides 5 cm, 12 cm and 13 cm is:",
-          options: ["30 cm", "17.5 cm", "15 cm", "60 cm"],
-          answer: 2,
-          explain: "s = (5 + 12 + 13)/2 = 30/2 = **15 cm**. 30 cm is the full perimeter."
-        },
-        {
-          q: "The area of a triangle with sides 5 cm, 12 cm and 13 cm is:",
-          options: ["30 cm²", "60 cm²", "65 cm²", "32.5 cm²"],
-          answer: 0,
-          explain: "s = 15; Area = √(15 × 10 × 3 × 2) = √900 = **30 cm²**. (It is a right triangle: ½ × 5 × 12 = 30.)"
-        },
-        {
-          q: "The area of an equilateral triangle of side 6 cm is:",
-          options: ["36√3 cm²", "18√3 cm²", "6√3 cm²", "9√3 cm²"],
-          answer: 3,
-          explain: "(√3/4) × 6² = (√3/4) × 36 = **9√3 cm²**."
-        },
-        {
-          q: "In Heron's formula, s stands for:",
-          options: ["the perimeter", "half the perimeter", "the longest side", "the area"],
-          answer: 1,
-          explain: "s is the **semi-perimeter**, (a + b + c)/2."
-        },
-        {
-          q: "The area of a triangle with sides 8 cm, 15 cm and 17 cm is:",
-          options: ["120 cm²", "68 cm²", "60 cm²", "40 cm²"],
-          answer: 2,
-          explain: "s = 20; Area = √(20 × 12 × 5 × 3) = √3600 = **60 cm²**. 120 cm² forgets the ½."
-        },
-        {
-          q: "An isosceles triangle has two sides of 5 cm each and a base of 6 cm. Its area is:",
-          options: ["15 cm²", "12 cm²", "24 cm²", "30 cm²"],
-          answer: 1,
-          explain: "s = 8; Area = √(8 × 3 × 3 × 2) = √144 = **12 cm²**. (Height = 4 cm, so ½ × 6 × 4 = 12.)"
-        }
+        { q: "The circumference of a circle of radius 7 cm (π = 22/7) is:", options: ["44 cm", "22 cm", "154 cm", "49 cm"], answer: 0, explain: "2 × (22/7) × 7 = 44." },
+        { q: "The area of a triangle with sides 6, 8 and 10 cm is:", options: ["24 cm²", "48 cm²", "30 cm²", "40 cm²"], answer: 0, explain: "s = 12; area = √(12 × 6 × 4 × 2) = √576 = 24." },
+        { q: "The semi-perimeter of a triangle with sides 9, 10 and 11 is:", options: ["15", "30", "10", "20"], answer: 0, explain: "(9 + 10 + 11)/2 = 15." },
+        { q: "The approximation π ≈ 355/113 is due to:", options: ["Chongzhi", "Archimedes", "Brahmagupta", "Euclid"], answer: 0, explain: "Chongzhi gave 355/113. Archimedes gave bounds 3 10/71 < π < 3 1/7." },
+        { q: "The area of a sector of angle 90° in a circle of radius r is:", options: ["πr²/4", "πr²/2", "πr²/360", "2πr/4"], answer: 0, explain: "90/360 = 1/4 of the full circle area." },
+        { q: "A rectangle 3 cm × 4 cm is cyclic. Brahmagupta’s formula gives its area as:", options: ["12 cm²", "7 cm²", "24 cm²", "6 cm²"], answer: 0, explain: "s = 7, area = √(4 × 3 × 4 × 3) = 12." }
       ]
     },
 
-    // ───────────────────────────── 11. Surface Areas and Volumes ─────────────────────────────
+    // ───────────── 7. The Mathematics of Maybe ─────────────
     {
-      id: "surface-areas-and-volumes",
-      title: "Surface Areas and Volumes",
-      section: "Mensuration",
-      summary: "Surface areas and volumes of right circular cones, spheres and hemispheres.",
+      id: "the-mathematics-of-maybe-introduction-to-probability",
+      title: "The Mathematics of Maybe: Introduction to Probability",
+      section: "Part I",
+      summary: "Measuring likelihood: experimental and theoretical probability, sample spaces, events and tree diagrams.",
       notes: [
         {
-          heading: "Right circular cone",
+          heading: "Probability scale",
           points: [
-            "A cone has base radius r, height h (vertex to centre of base, perpendicular to the base) and **slant height l**, where **l² = r² + h²**.",
-            "Curved surface area = **πrl**. Total surface area = πrl + πr² = **πr(l + r)**.",
-            "Volume = **(1/3)πr²h**, one-third of the volume πr²h of a cylinder with the same base and height.",
-            "Common mistake: using h instead of l for the surface area, or l instead of h for the volume."
+            "Probability measures how likely an event E is, written P(E), with **0 ≤ P(E) ≤ 1**.",
+            "An impossible event has probability 0; a certain event has probability 1.",
+            "Probabilities can be written as fractions, decimals or percentages.",
+            "Randomness: individual outcomes are unpredictable, but patterns appear over many trials."
+          ]
+        },
+        {
+          heading: "Experimental probability",
+          points: [
+            "Perform an experiment many times and record the results.",
+            "Experimental probability = number of times the event occurred ÷ total number of trials.",
+            "Example: 18 heads in 40 tosses gives 18/40 = 9/20.",
+            "The more trials, the closer it tends to get to the theoretical value."
+          ]
+        },
+        {
+          heading: "Theoretical probability",
+          points: [
+            "If all outcomes are **equally likely**, P(A) = number of favourable outcomes ÷ number of possible outcomes.",
+            "Example: for a fair die, P(a prime) = 3/6 = 1/2 (primes 2, 3, 5).",
+            "P(E) + P(not E) = 1.",
+            "A bag with 3 red, 5 blue and 2 green balls: P(not blue) = 5/10 = 1/2."
+          ]
+        },
+        {
+          heading: "Sample space, events and tree diagrams",
+          points: [
+            "The **sample space** S is the list of all possible outcomes; an **event** is one or more of those outcomes.",
+            "Two coins: S = {HH, HT, TH, TT}; three coins have 8 outcomes.",
+            "A **tree diagram** lists outcomes of successive stages by branches.",
+            "Example: P(at least one head) with two coins = 3/4."
+          ]
+        }
+      ],
+      formulas: [
+        "0 ≤ P(E) ≤ 1",
+        "Experimental P(E) = (times E occurred) ÷ (total trials)",
+        "Theoretical P(A) = (favourable outcomes) ÷ (all equally likely outcomes)",
+        "P(E) + P(not E) = 1"
+      ],
+      terms: [
+        { term: "Sample space", meaning: "The set of all possible outcomes of a random experiment." },
+        { term: "Event", meaning: "One outcome or a group of outcomes from the sample space." },
+        { term: "Experimental probability", meaning: "Probability found from the results of actually performing trials." },
+        { term: "Theoretical probability", meaning: "Probability found by reasoning about equally likely outcomes." },
+        { term: "Tree diagram", meaning: "A branching diagram that lists all outcomes of a multi-stage experiment." }
+      ],
+      examples: [
+        {
+          q: "Two fair coins are tossed. Find the probability of getting exactly one head.",
+          steps: ["Sample space = {HH, HT, TH, TT}: 4 equally likely outcomes.", "Exactly one head: HT, TH → 2 outcomes.", "P = 2/4 = 1/2."],
+          answer: "1/2"
+        },
+        {
+          q: "A die is thrown once. Find P(number greater than 4).",
+          steps: ["Possible outcomes: 6.", "Favourable: 5 and 6 → 2.", "P = 2/6 = 1/3."],
+          answer: "1/3"
+        }
+      ],
+      qa: [
+        { q: "What is the difference between experimental and theoretical probability?", a: "Experimental probability comes from the outcomes actually observed in trials. Theoretical probability is calculated by counting favourable outcomes among equally likely ones, without performing the experiment." },
+        { q: "Can the probability of an event be 1.5 or −0.2? Why?", a: "No. Probability lies between 0 and 1 because favourable outcomes can never be fewer than 0 or more than all possible outcomes." }
+      ],
+      quiz: [
+        { q: "The probability of any event lies between:", options: ["0 and 1", "−1 and 1", "0 and 100", "1 and 10"], answer: 0, explain: "0 ≤ P(E) ≤ 1." },
+        { q: "The probability of a sure event is:", options: ["1", "0", "1/2", "100"], answer: 0, explain: "A certain event always occurs." },
+        { q: "When two coins are tossed, P(at least one head) =", options: ["3/4", "1/2", "1/4", "2/3"], answer: 0, explain: "HH, HT, TH favour out of 4 outcomes." },
+        { q: "When a die is thrown, P(number greater than 4) =", options: ["1/3", "1/2", "1/6", "2/3"], answer: 0, explain: "5 and 6 are favourable: 2/6 = 1/3." },
+        { q: "How many outcomes are in the sample space of tossing three coins?", options: ["8", "6", "4", "3"], answer: 0, explain: "2 × 2 × 2 = 8." },
+        { q: "It rained on 12 of 30 days observed. The experimental probability of rain is:", options: ["2/5", "12/18", "1/2", "3/5"], answer: 0, explain: "12/30 = 2/5." }
+      ]
+    },
+
+    // ───────────── 8. Predicting What Comes Next ─────────────
+    {
+      id: "predicting-what-comes-next-exploring-sequences-and-progressions",
+      title: "Predicting What Comes Next: Exploring Sequences and Progressions",
+      section: "Part I",
+      summary: "Sequences with explicit and recursive rules, triangular numbers, the Virahānka–Fibonacci sequence, arithmetic and geometric progressions, and fractals.",
+      notes: [
+        {
+          heading: "Sequences and rules",
+          points: [
+            "A **sequence** is an ordered list of numbers; each number is a **term**.",
+            "An **explicit formula** gives the nth term from its position n directly.",
+            "A **recursive formula** gives a term using earlier terms.",
+            "The Virahānka–Fibonacci sequence 1, 1, 2, 3, 5, 8, 13, 21, … adds the previous two terms. Virahānka described it in the 7th century CE."
+          ]
+        },
+        {
+          heading: "Triangular numbers",
+          points: [
+            "1, 3, 6, 10, 15, … are triangular numbers; each term is the sum of natural numbers up to its position.",
+            "Sum of first n natural numbers: S = 1 + 2 + … + n. Writing it reversed and adding gives 2S = n(n + 1).",
+            "So **S = n(n + 1)/2**, which is also the nth triangular number.",
+            "Example: 1 + 2 + … + 100 = 100 × 101/2 = 5050."
+          ]
+        },
+        {
+          heading: "Arithmetic progression (AP)",
+          points: [
+            "Each term is obtained by **adding a fixed number d** (common difference) to the previous term.",
+            "General form: a, a + d, a + 2d, …; **nth term tₙ = a + (n − 1)d**.",
+            "Example: 5, 9, 13, … has a = 5, d = 4 and t₂₅ = 5 + 24 × 4 = 101.",
+            "A linear pattern is an AP."
+          ]
+        },
+        {
+          heading: "Geometric progression (GP) and fractals",
+          points: [
+            "Each term is obtained by **multiplying by a fixed number r** (common ratio).",
+            "General form: a, ar, ar², …; **nth term tₙ = arⁿ⁻¹**.",
+            "Example: 3, 6, 12, … has r = 2 and t₈ = 3 × 2⁷ = 384.",
+            "Fractals like the Sierpiński triangle and carpet produce GPs: at each stage the number of shapes or area changes by a fixed ratio."
+          ]
+        }
+      ],
+      formulas: [
+        "AP: tₙ = a + (n − 1)d",
+        "GP: tₙ = a rⁿ⁻¹",
+        "Triangular number / sum of first n natural numbers: n(n + 1)/2",
+        "Virahānka–Fibonacci: tₙ = tₙ₋₁ + tₙ₋₂"
+      ],
+      terms: [
+        { term: "Sequence", meaning: "An ordered list of numbers called terms." },
+        { term: "Recursive formula", meaning: "A rule that gives a term from one or more previous terms." },
+        { term: "Common difference", meaning: "The fixed amount d added to get the next term in an AP." },
+        { term: "Common ratio", meaning: "The fixed multiplier r used to get the next term in a GP." },
+        { term: "Fractal", meaning: "A pattern that repeats at smaller scales, such as the Sierpiński triangle." }
+      ],
+      examples: [
+        {
+          q: "Find the 17th and 80th triangular numbers.",
+          steps: ["tₙ = n(n + 1)/2.", "t₁₇ = 17 × 18/2 = 153.", "t₈₀ = 80 × 81/2 = 3240."],
+          answer: "t₁₇ = 153 and t₈₀ = 3240."
+        },
+        {
+          q: "Find the 10th term of the AP 2, 5, 8, … and the 6th term of the GP 2, 6, 18, …",
+          steps: ["AP: a = 2, d = 3, t₁₀ = 2 + 9 × 3 = 29.", "GP: a = 2, r = 3, t₆ = 2 × 3⁵ = 2 × 243 = 486."],
+          answer: "AP: 29; GP: 486."
+        }
+      ],
+      qa: [
+        { q: "How do you tell whether a sequence is an AP or a GP?", a: "If consecutive differences are equal it is an AP (2, 5, 8, …). If consecutive ratios are equal it is a GP (3, 6, 12, …)." },
+        { q: "Derive the sum of the first n natural numbers.", a: "Let S = 1 + 2 + … + n and also S = n + (n − 1) + … + 1. Adding term by term gives 2S = n(n + 1), because each of the n pairs adds to n + 1. So S = n(n + 1)/2." }
+      ],
+      quiz: [
+        { q: "The 10th term of the AP 2, 5, 8, … is:", options: ["29", "32", "26", "27"], answer: 0, explain: "2 + 9 × 3 = 29." },
+        { q: "The common ratio of the GP 2, 6, 18, … is:", options: ["3", "4", "2", "9"], answer: 0, explain: "6/2 = 3." },
+        { q: "The sum 1 + 2 + 3 + … + 20 is:", options: ["210", "200", "420", "190"], answer: 0, explain: "20 × 21/2 = 210." },
+        { q: "In the Virahānka–Fibonacci sequence 1, 1, 2, 3, 5, 8, 13, the next term is:", options: ["21", "20", "18", "26"], answer: 0, explain: "8 + 13 = 21." },
+        { q: "Which list is a GP?", options: ["3, 6, 12, 24", "3, 6, 9, 12", "3, 5, 8, 12", "1, 4, 9, 16"], answer: 0, explain: "Each term is double the previous one." },
+        { q: "The 12th triangular number is:", options: ["78", "66", "144", "72"], answer: 0, explain: "12 × 13/2 = 78." }
+      ]
+    },
+
+    // ───────────── 9. Propositions and their Converses ─────────────
+    {
+      id: "propositions-and-their-converses",
+      title: "Propositions and their Converses",
+      section: "Part II",
+      summary: "Statements of the form ‘if P then Q’, their converses, and how counterexamples show that a statement is false.",
+      notes: [
+        {
+          heading: "Propositions and converses",
+          points: [
+            "A **proposition** is a statement that is either true or false.",
+            "A statement ‘if X then Y’ (also ‘X implies Y’ or ‘Y when X’) has the **converse** ‘if Y then X’.",
+            "Example: ‘If two sides of a triangle are equal, the opposite angles are equal.’ Its converse: ‘If two angles are equal, the opposite sides are equal.’ Both are true.",
+            "A statement and its converse are **different** statements and must be checked separately."
+          ]
+        },
+        {
+          heading: "Three possibilities",
+          points: [
+            "A proposition may be true while its converse is false: ‘If it rains, the road is wet’; the road may be wet for other reasons.",
+            "Both may be true: ‘n is a perfect square’ ⇔ ‘n has an odd number of factors’.",
+            "Both may be false.",
+            "‘If a number is a multiple of 6, it is a multiple of 3’ is true; its converse is false (9 is a multiple of 3 but not of 6)."
+          ]
+        },
+        {
+          heading: "Counterexamples",
+          points: [
+            "A **counterexample** is a single case that satisfies the condition but not the conclusion; it proves a statement false.",
+            "Fermat claimed 2^(2ⁿ) + 1 is always prime; Euler disproved it by showing 2^(2⁵) + 1 is composite.",
+            "‘If two triangles have the same area, they are congruent’ is false (right triangles with legs 6, 2 and legs 4, 3 both have area 6 but are not congruent). Its converse is true.",
+            "To show a statement true you need a proof for all cases; examples alone do not prove it."
+          ]
+        },
+        {
+          heading: "Converse of the Pythagoras theorem",
+          points: [
+            "Theorem: if a triangle is right-angled, then a² + b² = c².",
+            "Converse: if a² + b² = c², then the triangle is right-angled. It is **true**.",
+            "Proof idea: build a right triangle with legs a and b; its hypotenuse is c, so the triangles are congruent by SSS.",
+            "Use: sides 5, 12, 13 form a right triangle because 25 + 144 = 169."
+          ]
+        }
+      ],
+      formulas: [
+        "Converse of ‘if P then Q’ is ‘if Q then P’",
+        "A single counterexample disproves a statement",
+        "Converse of Pythagoras: a² + b² = c² ⇒ right triangle",
+        "A perfect square has an odd number of factors, and conversely"
+      ],
+      terms: [
+        { term: "Proposition", meaning: "A statement that is definitely true or false." },
+        { term: "Converse", meaning: "The statement obtained by swapping ‘if’ and ‘then’ parts." },
+        { term: "Counterexample", meaning: "An example that meets the condition of a statement but not its conclusion." },
+        { term: "Implies", meaning: "‘X implies Y’ means that whenever X is true, Y is true." }
+      ],
+      examples: [
+        {
+          q: "Write the converse of ‘If a number is divisible by 4, it is even’ and decide whether each is true.",
+          steps: ["Original: a multiple of 4 is 4k = 2(2k), which is even, so it is true.", "Converse: ‘If a number is even, it is divisible by 4’.", "Counterexample: 6 is even but 6 ÷ 4 is not a whole number."],
+          answer: "The original is true; the converse is false (counterexample 6)."
+        },
+        {
+          q: "Is a triangle with sides 7, 24 and 25 right-angled?",
+          steps: ["Check 7² + 24² = 49 + 576 = 625.", "25² = 625.", "a² + b² = c², so by the converse of Pythagoras the triangle is right-angled."],
+          answer: "Yes, the right angle is opposite the side 25."
+        }
+      ],
+      qa: [
+        { q: "What is a counterexample? Give one for ‘every multiple of 3 is a multiple of 6’.", a: "A counterexample is a case that shows a statement is false. 9 is a multiple of 3 but not of 6, so the statement is false." },
+        { q: "Does a true proposition always have a true converse?", a: "No. ‘If a number is a multiple of 6, it is a multiple of 3’ is true but its converse is false. Some propositions and their converses are both true, such as the Pythagoras theorem and its converse." }
+      ],
+      quiz: [
+        { q: "The converse of ‘if P then Q’ is:", options: ["If Q then P", "If not P then not Q", "If P then not Q", "P and Q"], answer: 0, explain: "The converse swaps the hypothesis and the conclusion." },
+        { q: "A single example showing a statement is false is called a:", options: ["Counterexample", "Converse", "Axiom", "Corollary"], answer: 0, explain: "One counterexample is enough to disprove a proposition." },
+        { q: "Which number is a counterexample to ‘every multiple of 3 is a multiple of 6’?", options: ["9", "12", "18", "24"], answer: 0, explain: "9 is a multiple of 3 but not of 6; 12, 18 and 24 are multiples of both." },
+        { q: "Euler disproved Fermat’s claim by showing that which number is composite?", options: ["2^(2⁵) + 1", "2^(2³) + 1", "2^(2²) + 1", "2^(2¹) + 1"], answer: 0, explain: "The claim was that all 2^(2ⁿ) + 1 are prime; for n = 5 it is not." },
+        { q: "Which statement is true but has a false converse?", options: ["If two triangles are congruent, they have equal areas", "A number has an odd number of factors if it is a perfect square", "If a² + b² = c², the triangle is right-angled", "If two angles of a triangle are equal, the opposite sides are equal"], answer: 0, explain: "Triangles with equal area need not be congruent. The other three have true converses." },
+        { q: "36 is a perfect square. Its number of factors is:", options: ["9", "8", "10", "6"], answer: 0, explain: "36 has factors 1, 2, 3, 4, 6, 9, 12, 18, 36: nine, an odd number." }
+      ]
+    },
+
+    // ───────────── 10. How Quantities Combine: Understanding Data ─────────────
+    {
+      id: "how-quantities-combine-understanding-data",
+      title: "How Quantities Combine: Understanding Data",
+      section: "Part II",
+      summary: "Weighted averages in daily life, averages of averages, mixtures and rating schemes, and stacked and 100% stacked bar charts.",
+      notes: [
+        {
+          heading: "Weighted mean",
+          points: [
+            "When data values have different importance or counts, use the **weighted mean**: x̄ = (w₁x₁ + w₂x₂ + … + wₙxₙ)/(w₁ + w₂ + … + wₙ).",
+            "A weight can be a count, a percentage or a level of importance.",
+            "The ordinary mean is the case where all weights are equal.",
+            "Example: marks 80 (weight 2) and 90 (weight 3): (160 + 270)/5 = 86."
+          ]
+        },
+        {
+          heading: "Average of averages",
+          points: [
+            "You cannot simply average two group means unless the groups are of equal size.",
+            "Use the group sizes as weights. If 20 students average 60 and 30 average 70, the overall mean is (1200 + 2100)/50 = 66, not 65.",
+            "The same idea gives the new mean when a value is added to or removed from data."
+          ]
+        },
+        {
+          heading: "Mixtures and ratings",
+          points: [
+            "Concentration of a mixture is a weighted average of the parts, weighted by volume.",
+            "Example: 4 L of 10% solution + 6 L of 20% solution = (0.4 + 1.2)/10 = 16%.",
+            "Rating and marking schemes weight components differently, e.g. a final exam may count more than a quiz."
+          ]
+        },
+        {
+          heading: "Stacked bar charts",
+          points: [
+            "A **stacked bar chart** divides each bar into parts, so you can see both totals and the contribution of each part.",
+            "A **100% stacked bar chart** makes every bar the same height and compares **proportions**, like a pie chart, not absolute values.",
+            "A 100% stacked chart can be made from a stacked chart, but **not the other way round**, since totals are lost."
+          ]
+        }
+      ],
+      formulas: [
+        "Weighted mean = (w₁x₁ + w₂x₂ + … + wₙxₙ) ÷ (w₁ + w₂ + … + wₙ)",
+        "Combined mean of two groups = (n₁x̄₁ + n₂x̄₂) ÷ (n₁ + n₂)",
+        "Mixture concentration = total pure substance ÷ total volume"
+      ],
+      terms: [
+        { term: "Weighted mean", meaning: "An average in which each value counts according to its weight." },
+        { term: "Weight", meaning: "The count or importance assigned to a value in a weighted mean." },
+        { term: "Stacked bar chart", meaning: "A bar chart whose bars are divided into stacked parts." },
+        { term: "100% stacked bar chart", meaning: "A stacked chart in which every bar is scaled to 100%, showing proportions." },
+        { term: "Concentration", meaning: "The fraction of a mixture that is the pure substance." }
+      ],
+      examples: [
+        {
+          q: "10 boys average 40 marks and 20 girls average 70 marks. Find the average of all 30 students.",
+          steps: ["Total marks of boys = 10 × 40 = 400.", "Total marks of girls = 20 × 70 = 1400.", "Mean = (400 + 1400)/30 = 1800/30 = 60."],
+          answer: "60 marks (not 55, the simple average)."
+        },
+        {
+          q: "The mean of five numbers is 20. A sixth number 38 is added. Find the new mean.",
+          steps: ["Sum of five numbers = 5 × 20 = 100.", "New sum = 100 + 38 = 138.", "New mean = 138/6 = 23."],
+          answer: "23"
+        }
+      ],
+      qa: [
+        { q: "Why is the average of two class averages not always the combined average?", a: "Classes can differ in size. A larger class should count more, so use the number of students as weights. Only when sizes are equal does the simple average work." },
+        { q: "What does a 100% stacked bar chart show that a stacked bar chart may hide?", a: "It shows proportions clearly, since all bars have equal height. It hides the totals, which a stacked bar chart shows by bar height." }
+      ],
+      quiz: [
+        { q: "10 boys average 40 and 20 girls average 70. The overall average is:", options: ["60", "55", "50", "65"], answer: 0, explain: "(400 + 1400)/30 = 60." },
+        { q: "The mean of 5 numbers is 20. After adding 38, the mean of the 6 numbers is:", options: ["23", "24", "29", "19"], answer: 0, explain: "(100 + 38)/6 = 23." },
+        { q: "2 L of a 50% solution is mixed with 3 L of plain water. The concentration is:", options: ["20%", "25%", "50%", "10%"], answer: 0, explain: "1 L of pure substance in 5 L is 20%." },
+        { q: "A 100% stacked bar chart is best for comparing:", options: ["Proportions", "Exact totals", "Median values", "Rates of change"], answer: 0, explain: "Every bar has the same height, so only shares can be compared." },
+        { q: "Scores 80 and 90 have weights 2 and 3. The weighted mean is:", options: ["86", "85", "87", "84"], answer: 0, explain: "(160 + 270)/5 = 86." },
+        { q: "From which chart can the other always be obtained?", options: ["Stacked → 100% stacked", "100% stacked → stacked", "Both ways", "Neither way"], answer: 0, explain: "Converting a stacked chart to percentages is possible; recovering totals from percentages is not." }
+      ]
+    },
+
+    // ───────────── 11. The World of Algorithms ─────────────
+    {
+      id: "the-world-of-algorithms",
+      title: "The World of Algorithms",
+      section: "Part II",
+      summary: "What an algorithm is, how to design and justify one using addition and the greatest common divisor, and Euclid’s efficient remainder-based algorithm.",
+      notes: [
+        {
+          heading: "What is an algorithm?",
+          points: [
+            "An **algorithm** is a systematic procedure to solve a problem, built from basic steps we know how to do.",
+            "A step may be repeated (for each j from 1 to n) or **conditional** (add j to the list only if j divides n).",
+            "We must **justify** that an algorithm is correct and can analyse how many steps it takes for an input of a given size.",
+            "Adding digits column by column from the right is an algorithm that assumes we can add single digits directly."
+          ]
+        },
+        {
+          heading: "Efficiency",
+          points: [
+            "Counting dots to add two numbers is slow: each extra digit makes ten times as many dots.",
+            "The column method needs only one more column for each extra digit, so it is much faster.",
+            "An efficient algorithm takes far fewer steps as the input grows."
+          ]
+        },
+        {
+          heading: "Greatest common divisor (gcd)",
+          points: [
+            "gcd(m, n) is the largest number that divides both m and n.",
+            "Simple algorithm: list divisors of each number and pick the largest common one; this is slow for big numbers.",
+            "Key fact (for m ≥ n): a number d divides both m and n **if and only if** d divides both n and m − n. So gcd(m, n) = gcd(n, m − n).",
+            "Also gcd(m, 0) = m."
+          ]
+        },
+        {
+          heading: "Euclid’s algorithm",
+          points: [
+            "Subtraction version: if m < n swap; if n = 0 answer m; else replace the problem by gcd(n, m − n).",
+            "Improved version uses the remainder: gcd(m, n) = gcd(n, m mod n), where m mod n is the remainder on dividing m by n (17 mod 5 = 2).",
+            "Repeat until the remainder is 0; the last non-zero number is the gcd.",
+            "Example: gcd(48, 18): 48 mod 18 = 12; 18 mod 12 = 6; 12 mod 6 = 0, so the gcd is 6."
+          ]
+        }
+      ],
+      formulas: [
+        "gcd(m, n) = gcd(n, m − n)  for m ≥ n",
+        "gcd(m, n) = gcd(n, m mod n)",
+        "gcd(m, 0) = m"
+      ],
+      terms: [
+        { term: "Algorithm", meaning: "A step-by-step systematic procedure for solving a problem." },
+        { term: "gcd", meaning: "The greatest common divisor, the largest number dividing two given numbers." },
+        { term: "mod", meaning: "m mod n is the remainder when m is divided by n." },
+        { term: "Conditional step", meaning: "A step done only if a stated condition is true." },
+        { term: "Efficiency", meaning: "How few steps an algorithm needs as the input becomes larger." }
+      ],
+      examples: [
+        {
+          q: "Use Euclid’s remainder algorithm to find gcd(375, 825).",
+          steps: ["825 mod 375 = 825 − 750 = 75, so gcd(825, 375) = gcd(375, 75).", "375 mod 75 = 0, so gcd(375, 75) = gcd(75, 0).", "gcd(75, 0) = 75."],
+          answer: "75"
+        },
+        {
+          q: "Find gcd(51000, 81000) by Euclid’s algorithm.",
+          steps: ["81000 mod 51000 = 30000.", "51000 mod 30000 = 21000.", "30000 mod 21000 = 9000.", "21000 mod 9000 = 3000.", "9000 mod 3000 = 0, so the answer is 3000."],
+          answer: "3000"
+        }
+      ],
+      qa: [
+        { q: "Why does gcd(m, n) equal gcd(n, m − n)?", a: "Any number dividing both m and n also divides their difference m − n. Conversely, a number dividing n and m − n divides their sum m. So both pairs have exactly the same common divisors, hence the same greatest one." },
+        { q: "Why is the column method of addition more efficient than counting dots?", a: "Adding one more digit multiplies the dots by 10 but adds only one column to the column method. The number of steps grows slowly with the size of the numbers." }
+      ],
+      quiz: [
+        { q: "gcd(84, 36) is:", options: ["12", "6", "4", "18"], answer: 0, explain: "84 mod 36 = 12; 36 mod 12 = 0, so gcd = 12." },
+        { q: "17 mod 5 equals:", options: ["2", "3", "12", "5"], answer: 0, explain: "17 = 3 × 5 + 2." },
+        { q: "In Euclid’s improved algorithm, gcd(m, n) is replaced by:", options: ["gcd(n, m mod n)", "gcd(m + n, n)", "gcd(m, m − n) always", "gcd(m × n, n)"], answer: 0, explain: "It replaces repeated subtraction by a remainder." },
+        { q: "gcd(m, 0) equals:", options: ["m", "0", "1", "m²"], answer: 0, explain: "Every number divides 0, so the largest common divisor is m itself." },
+        { q: "The gcd of 375 and 825 is:", options: ["75", "125", "25", "375"], answer: 0, explain: "825 mod 375 = 75 and 375 mod 75 = 0." },
+        { q: "Adding two 5-digit numbers by the column method instead of 3-digit ones needs about how many extra columns?", options: ["2", "100", "10", "5"], answer: 0, explain: "Only two more columns, while dot counting needs 100 times as many dots." }
+      ]
+    },
+
+    // ───────────── 12. Quadrilaterals ─────────────
+    {
+      id: "quadrilaterals",
+      title: "Quadrilaterals",
+      section: "Part II",
+      summary: "Parallelograms and their converses, the midpoint theorem and its converse, medians and the centroid, and the parallelogram formed by joining midpoints of a quadrilateral.",
+      notes: [
+        {
+          heading: "Quadrilaterals and parallelograms",
+          points: [
+            "A quadrilateral (4-gon) ABCD has four points, no three collinear, joined by sides AB, BC, CD, DA that meet only at the vertices.",
+            "It is **convex** if all interior angles are less than 180°, equivalently if its diagonals intersect.",
+            "In a parallelogram: opposite sides are equal and parallel, opposite angles are equal, diagonals bisect each other and adjacent angles add to 180°.",
+            "Angle sum of a quadrilateral is 360°."
+          ]
+        },
+        {
+          heading: "Converses: when is a 4-gon a parallelogram?",
+          points: [
+            "If opposite sides are equal, it is a parallelogram.",
+            "If opposite angles are equal, it is a parallelogram.",
+            "If the diagonals bisect each other, it is a parallelogram.",
+            "If one pair of opposite sides is **equal and parallel**, it is a parallelogram."
+          ]
+        },
+        {
+          heading: "Midpoint theorem",
+          points: [
+            "The line segment joining the midpoints of two sides of a triangle is **parallel to the third side** and **half its length**.",
+            "Converse: a line through the midpoint of one side and parallel to a second side bisects the third side.",
+            "Example: if BC = 14 cm, the segment joining the midpoints of AB and AC is 7 cm."
+          ]
+        },
+        {
+          heading: "Medians, centroid and midpoint 4-gon",
+          points: [
+            "The three medians of a triangle are **concurrent** at the **centroid**, which divides each median in the ratio **2 : 1** from the vertex.",
+            "Joining the midpoints of the sides of **any** 4-gon in order gives a **parallelogram** (Varignon’s theorem).",
+            "The plane can be tiled using copies of any 4-gon."
+          ]
+        }
+      ],
+      formulas: [
+        "Midpoint theorem: DE ∥ BC and DE = ½ BC",
+        "Centroid divides each median 2 : 1 (vertex to centroid : centroid to midpoint)",
+        "Angle sum of a quadrilateral = 360°",
+        "Parallelogram: adjacent angles sum to 180°"
+      ],
+      terms: [
+        { term: "Convex quadrilateral", meaning: "One whose interior angles are all less than 180°; its diagonals intersect." },
+        { term: "Median", meaning: "A segment from a vertex of a triangle to the midpoint of the opposite side." },
+        { term: "Centroid", meaning: "The point where the three medians of a triangle meet." },
+        { term: "Midpoint theorem", meaning: "The segment joining midpoints of two sides is parallel to and half the third side." },
+        { term: "Varignon parallelogram", meaning: "The parallelogram formed by joining midpoints of the sides of a 4-gon." }
+      ],
+      examples: [
+        {
+          q: "In parallelogram ABCD, ∠A = 3x and ∠B = 2x. Find all four angles.",
+          steps: ["Adjacent angles add to 180°: 3x + 2x = 180°, so x = 36°.", "∠A = 108°, ∠B = 72°.", "Opposite angles are equal: ∠C = 108°, ∠D = 72°."],
+          answer: "108°, 72°, 108°, 72°"
+        },
+        {
+          q: "The median AD of triangle ABC is 15 cm long and G is the centroid. Find AG and GD.",
+          steps: ["G divides AD in the ratio 2 : 1.", "AG = (2/3) × 15 = 10 cm.", "GD = (1/3) × 15 = 5 cm."],
+          answer: "AG = 10 cm, GD = 5 cm"
+        }
+      ],
+      qa: [
+        { q: "State the midpoint theorem.", a: "In a triangle, the segment joining the midpoints of two sides is parallel to the third side and equal to half of it." },
+        { q: "Show that a quadrilateral whose diagonals bisect each other is a parallelogram.", a: "The diagonals AC and BD meet at O with AO = OC and BO = OD. Triangles AOB and COD are congruent (SAS, vertically opposite angles), so AB = CD and ∠OAB = ∠OCD, which makes AB ∥ CD. One pair of opposite sides is equal and parallel, so ABCD is a parallelogram." }
+      ],
+      quiz: [
+        { q: "A 4-gon whose diagonals bisect each other is a:", options: ["Parallelogram", "Trapezium", "Kite", "Rhombus only"], answer: 0, explain: "Diagonals bisecting each other is a criterion for a parallelogram." },
+        { q: "The centroid divides each median in the ratio:", options: ["2 : 1", "1 : 1", "3 : 1", "1 : 2 from the vertex"], answer: 0, explain: "The part from the vertex is twice the part to the midpoint." },
+        { q: "In triangle ABC, D and E are midpoints of AB and AC and BC = 14 cm. Then DE =", options: ["7 cm", "14 cm", "28 cm", "10 cm"], answer: 0, explain: "By the midpoint theorem DE = ½ BC." },
+        { q: "If one angle of a parallelogram is 70°, its adjacent angle is:", options: ["110°", "70°", "20°", "290°"], answer: 0, explain: "Adjacent angles add to 180°." },
+        { q: "Joining the midpoints of the sides of any quadrilateral in order gives a:", options: ["Parallelogram", "Rectangle", "Square", "Rhombus"], answer: 0, explain: "Each side is parallel to a diagonal, giving a parallelogram (Varignon)." },
+        { q: "A quadrilateral is convex if:", options: ["Its diagonals intersect", "It has a reflex angle", "It has equal sides", "Its diagonals are equal"], answer: 0, explain: "All interior angles less than 180° is equivalent to intersecting diagonals." }
+      ]
+    },
+
+    // ───────────── 13. Two Variables, One Line ─────────────
+    {
+      id: "two-variables-one-line",
+      title: "Two Variables, One Line",
+      section: "Part II",
+      summary: "Linear equations in two variables and their graphs, slope-intercept form, and solving pairs of equations by substitution, elimination and graphs, with the conditions for unique, no or infinitely many solutions.",
+      notes: [
+        {
+          heading: "Linear equation in two variables",
+          points: [
+            "An equation ax + by + c = 0 with real a, b, c, where a and b are **not both zero**, is a linear equation in two variables.",
+            "It has **infinitely many solutions**, each an ordered pair (x, y).",
+            "Its graph is a straight line: every point on it is a solution and every solution is a point on it.",
+            "Slope-intercept form: y = mx + d, with slope m and y-intercept d; the line cuts the y-axis at (0, d)."
+          ]
+        },
+        {
+          heading: "Solving a pair algebraically",
+          points: [
+            "**Substitution**: express one variable from one equation and substitute into the other.",
+            "**Elimination**: multiply to make the coefficients of one variable equal, then add or subtract.",
+            "Always check by putting the answer in both equations.",
+            "Example: x + y = 10 and x − y = 2 give x = 6, y = 4."
+          ]
+        },
+        {
+          heading: "Solving graphically",
+          points: [
+            "Draw both lines; the **intersection point** is the solution.",
+            "Intersecting lines: exactly one solution. Parallel lines: no solution. Coincident lines: infinitely many solutions.",
+            "Accuracy of a graph is limited, so algebra is used to confirm."
+          ]
+        },
+        {
+          heading: "Conditions on coefficients",
+          points: [
+            "For a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0:",
+            "a₁/a₂ ≠ b₁/b₂ gives a **unique solution** (lines intersect).",
+            "a₁/a₂ = b₁/b₂ ≠ c₁/c₂ gives **no solution** (parallel lines).",
+            "a₁/a₂ = b₁/b₂ = c₁/c₂ gives **infinitely many solutions** (coincident lines)."
+          ]
+        }
+      ],
+      formulas: [
+        "ax + by + c = 0 (a, b not both zero)",
+        "y = mx + d: slope m, y-intercept d",
+        "Unique solution: a₁/a₂ ≠ b₁/b₂",
+        "No solution: a₁/a₂ = b₁/b₂ ≠ c₁/c₂",
+        "Infinitely many solutions: a₁/a₂ = b₁/b₂ = c₁/c₂"
+      ],
+      terms: [
+        { term: "Linear equation in two variables", meaning: "An equation ax + by + c = 0 whose graph is a straight line." },
+        { term: "Solution", meaning: "An ordered pair (x, y) that satisfies the equation." },
+        { term: "Substitution method", meaning: "Solving by replacing one variable using the other equation." },
+        { term: "Elimination method", meaning: "Solving by adding or subtracting equations to remove one variable." },
+        { term: "Consistent pair", meaning: "A pair of equations with at least one solution." }
+      ],
+      examples: [
+        {
+          q: "Solve 2x + 3y = 12 and x − y = 1.",
+          steps: ["From the second equation, x = y + 1.", "Substitute: 2(y + 1) + 3y = 12, so 5y + 2 = 12 and y = 2.", "Then x = 3.", "Check: 2(3) + 3(2) = 12 and 3 − 2 = 1."],
+          answer: "x = 3, y = 2"
+        },
+        {
+          q: "Find k so that kx + 3y = 3 and 12x + ky = 6 have infinitely many solutions.",
+          steps: ["Need k/12 = 3/k = 3/6.", "3/6 = 1/2, so k = 6 from k/12 = 1/2.", "Check 3/k = 3/6 = 1/2."],
+          answer: "k = 6"
+        }
+      ],
+      qa: [
+        { q: "How many solutions does 2x + 3y = 6 have?", a: "Infinitely many. For every value of x there is a corresponding y, e.g. (0, 2), (3, 0), (−3, 4); all lie on one line." },
+        { q: "What does it mean graphically if a pair has no solution?", a: "The two lines are parallel (equal slopes, different intercepts) and never meet, so no point satisfies both equations." }
+      ],
+      quiz: [
+        { q: "A linear equation in two variables has how many solutions?", options: ["Infinitely many", "Exactly one", "Exactly two", "None"], answer: 0, explain: "Each x gives a y, and all such pairs are solutions." },
+        { q: "x + 2y = 4 and 2x + 4y = 8 have:", options: ["Infinitely many solutions", "A unique solution", "No solution", "Exactly two solutions"], answer: 0, explain: "1/2 = 2/4 = 4/8: the lines coincide." },
+        { q: "3x + 2y = 5 and 6x + 4y = 7 have:", options: ["No solution", "A unique solution", "Infinitely many solutions", "Two solutions"], answer: 0, explain: "3/6 = 2/4 = 1/2 ≠ 5/7: the lines are parallel." },
+        { q: "The solution of x − y = 1 and x + y = 5 is:", options: ["(3, 2)", "(2, 3)", "(4, 1)", "(1, 4)"], answer: 0, explain: "Adding gives 2x = 6, x = 3, y = 2." },
+        { q: "Which pair is a solution of 3x + y = 9?", options: ["(2, 3)", "(3, 2)", "(1, 5)", "(4, −2)"], answer: 0, explain: "3(2) + 3 = 9; the others give 11, 8 and 10." },
+        { q: "The graph of 2x + 3y = 6 in slope-intercept form has slope:", options: ["−2/3", "2/3", "−3/2", "2"], answer: 0, explain: "y = −(2/3)x + 2." }
+      ]
+    },
+
+    // ───────────── 14. Math of Space: Surface Area and Volume ─────────────
+    {
+      id: "math-of-space-surface-area-and-volume",
+      title: "Math of Space: Surface Area and Volume",
+      section: "Part II",
+      summary: "Surface area and volume of cuboids, cylinders, cones, pyramids, spheres and hemispheres, and their use on everyday objects.",
+      notes: [
+        {
+          heading: "Cuboid and cube",
+          points: [
+            "Cuboid (l × w × h): total surface area = 2(lw + wh + hl); volume = lwh.",
+            "Cube of side a: TSA = 6a²; volume = a³.",
+            "Surface area is measured in square units; volume in cubic units (1 L = 1000 cm³).",
+            "A net is the flat pattern that folds into the solid; the area of the net is the surface area."
+          ]
+        },
+        {
+          heading: "Right circular cylinder",
+          points: [
+            "Curved surface area = 2πrh.",
+            "Closed at both ends: TSA = 2πrh + 2πr² = 2πr(h + r).",
+            "Open at one end: 2πrh + πr² = πr(2h + r).",
+            "Volume = πr²h."
+          ]
+        },
+        {
+          heading: "Cone and pyramid",
+          points: [
+            "Cone with radius r, height h and slant height l, where **l² = r² + h²**.",
+            "Curved surface area = πrl; total surface area = πr(l + r).",
+            "Volume of a cone = ⅓πr²h, one-third of the cylinder of the same base and height.",
+            "Volume of a pyramid = ⅓ × base area × height."
           ]
         },
         {
           heading: "Sphere and hemisphere",
           points: [
-            "A **sphere** is the set of all points in space at a fixed distance r from a fixed point. Surface area = **4πr²**; volume = **(4/3)πr³**.",
-            "A **hemisphere** is half a sphere: curved surface area = **2πr²**, total surface area = **3πr²** (curved part + flat circular face), volume = **(2/3)πr³**.",
-            "A **spherical shell** with outer radius R and inner radius r has volume (4/3)π(R³ − r³).",
-            "The surface area of a sphere is 4 times the area of a circle of the same radius."
-          ]
-        },
-        {
-          heading: "Working tips",
-          points: [
-            "Take π = 22/7 unless told otherwise; it works neatly when r is a multiple of 7 (or 3.5).",
-            "Convert units first: 1 m = 100 cm, 1 m³ = 1000 litres, 1 litre = 1000 cm³.",
-            "If the radius doubles, surface area becomes 4 times and volume becomes 8 times.",
-            "Canvas for a tent or paint for a dome uses surface area; capacity of a vessel uses volume."
+            "Sphere: surface area = 4πr²; volume = (4/3)πr³.",
+            "Hemisphere: curved surface area = 2πr²; total surface area = 3πr² (adds the flat circle πr²); volume = (2/3)πr³.",
+            "Combined solids (a cone on a hemisphere): add volumes; for surface area add only exposed surfaces.",
+            "Use π = 22/7 unless told otherwise."
           ]
         }
       ],
       formulas: [
-        "Cone: l = √(r² + h²)",
-        "Cone: CSA = πrl;  TSA = πr(l + r);  Volume = (1/3)πr²h",
-        "Sphere: Surface area = 4πr²;  Volume = (4/3)πr³",
-        "Hemisphere: CSA = 2πr²;  TSA = 3πr²;  Volume = (2/3)πr³",
-        "Spherical shell: Volume = (4/3)π(R³ − r³)",
-        "1 m³ = 1000 L;  1 L = 1000 cm³"
+        "Cuboid: TSA = 2(lw + wh + hl); V = lwh",
+        "Cylinder: CSA = 2πrh; TSA = 2πr(h + r); V = πr²h",
+        "Cone: CSA = πrl; TSA = πr(l + r); V = ⅓πr²h; l² = r² + h²",
+        "Sphere: SA = 4πr²; V = (4/3)πr³",
+        "Hemisphere: CSA = 2πr²; TSA = 3πr²; V = (2/3)πr³"
       ],
       terms: [
-        { term: "Slant height", meaning: "The distance from the vertex of a cone to any point on the edge of its base: l = √(r² + h²)." },
-        { term: "Curved surface area (CSA)", meaning: "The area of only the curved part of a solid, e.g. πrl for a cone." },
-        { term: "Total surface area (TSA)", meaning: "The curved surface area plus the area of the flat face(s), e.g. πr(l + r) for a cone." },
-        { term: "Hemisphere", meaning: "Half of a sphere, cut through its centre. Volume (2/3)πr³, TSA 3πr²." },
-        { term: "Spherical shell", meaning: "The solid between two concentric spheres, like a hollow ball; volume (4/3)π(R³ − r³)." },
-        { term: "Capacity", meaning: "The volume a hollow container can hold, often given in litres." }
+        { term: "Curved surface area", meaning: "The area of the curved part of a solid, excluding flat ends." },
+        { term: "Total surface area", meaning: "The area of the whole outer surface including flat faces." },
+        { term: "Slant height", meaning: "The length l from the cone’s apex to a point on the base circle, with l² = r² + h²." },
+        { term: "Volume", meaning: "The space occupied by a solid, in cubic units." },
+        { term: "Net", meaning: "A flat pattern which can be folded to make a solid." }
       ],
       examples: [
         {
-          q: "A conical tent is 10 m high and the radius of its base is 24 m. Find its slant height and the cost of the canvas needed at ₹70 per m². (Use π = 22/7.)",
-          steps: [
-            "l = √(r² + h²) = √(24² + 10²) = √(576 + 100) = √676 = 26 m.",
-            "Canvas needed = CSA = πrl = (22/7) × 24 × 26 = 13728/7 m².",
-            "Cost = (13728/7) × 70 = 13728 × 10 = ₹1,37,280."
-          ],
-          answer: "Slant height = 26 m; cost of canvas = ₹1,37,280"
+          q: "A cone has base radius 7 cm and slant height 25 cm. Find its curved surface area and volume. (π = 22/7)",
+          steps: ["CSA = πrl = (22/7) × 7 × 25 = 550 cm².", "h = √(25² − 7²) = √(625 − 49) = √576 = 24 cm.", "V = ⅓ × (22/7) × 49 × 24 = ⅓ × 22 × 7 × 24 = 1232 cm³."],
+          answer: "CSA = 550 cm²; V = 1232 cm³."
         },
         {
-          q: "The diameter of a metallic ball is 4.2 cm. Find its mass if the density of the metal is 8.9 g per cm³. (Use π = 22/7.)",
-          steps: [
-            "Radius r = 4.2 ÷ 2 = 2.1 cm.",
-            "Volume = (4/3)πr³ = (4/3) × (22/7) × 2.1 × 2.1 × 2.1 = (4/3) × (22/7) × 9.261.",
-            "Volume = 38.808 cm³.",
-            "Mass = volume × density = 38.808 × 8.9 = 345.39 g (approx.)."
-          ],
-          answer: "Mass ≈ 345.39 g"
+          q: "Find the surface area and volume of a sphere of radius 21 cm. (π = 22/7)",
+          steps: ["SA = 4 × (22/7) × 21² = 4 × 22 × 63 = 5544 cm².", "V = (4/3) × (22/7) × 21³ = (4/3) × 22 × 1323 = 4 × 22 × 441 = 38808 cm³."],
+          answer: "SA = 5544 cm²; V = 38808 cm³."
         }
       ],
       qa: [
-        { q: "The radius of a sphere is doubled. What happens to its surface area and volume?", a: "Surface area 4π(2r)² = 16πr² = **4 times** the original. Volume (4/3)π(2r)³ = **8 times** the original." },
-        { q: "Find the volume of a right circular cone with radius 6 cm and height 7 cm. (π = 22/7)", a: "V = (1/3) × (22/7) × 6² × 7 = (1/3) × 22 × 36 = **264 cm³**." },
-        { q: "Find the total surface area of a hemisphere of radius 10 cm. (π = 3.14)", a: "TSA = 3πr² = 3 × 3.14 × 100 = **942 cm²**." }
+        { q: "Find the volume and curved surface area of a cylinder of radius 7 cm and height 10 cm. (π = 22/7)", a: "V = πr²h = (22/7) × 49 × 10 = **1540 cm³**. CSA = 2πrh = 2 × (22/7) × 7 × 10 = **440 cm²**." },
+        { q: "Why is the total surface area of a hemisphere 3πr²?", a: "The curved part is half the sphere, 2πr². The flat circular face adds πr². Total = 2πr² + πr² = 3πr²." }
       ],
       quiz: [
-        {
-          q: "The slant height of a cone with radius 5 cm and height 12 cm is:",
-          options: ["√119 cm", "17 cm", "13 cm", "7 cm"],
-          answer: 2,
-          explain: "l = √(5² + 12²) = √169 = **13 cm**. √119 comes from subtracting instead of adding the squares."
-        },
-        {
-          q: "The curved surface area of a cone with radius 7 cm and slant height 10 cm is (π = 22/7):",
-          options: ["154 cm²", "374 cm²", "440 cm²", "220 cm²"],
-          answer: 3,
-          explain: "CSA = πrl = (22/7) × 7 × 10 = **220 cm²**. 374 cm² is the total surface area (220 + 154)."
-        },
-        {
-          q: "The volume of a sphere of radius 3 cm is:",
-          options: ["36π cm³", "108π cm³", "12π cm³", "27π cm³"],
-          answer: 0,
-          explain: "(4/3)π × 3³ = (4/3)π × 27 = **36π cm³**. Forgetting to divide by 3 gives 108π."
-        },
-        {
-          q: "The total surface area of a solid hemisphere of radius r is:",
-          options: ["2πr²", "4πr²", "3πr²", "(2/3)πr³"],
-          answer: 2,
-          explain: "Curved part 2πr² + flat circular face πr² = **3πr²**."
-        },
-        {
-          q: "If the radius of a sphere is halved, its volume becomes:",
-          options: ["1/2 of the original", "1/8 of the original", "1/4 of the original", "2 times the original"],
-          answer: 1,
-          explain: "Volume ∝ r³, so (1/2)³ = **1/8 of the original**."
-        },
-        {
-          q: "A cone and a cylinder have the same base radius and the same height. The ratio of the volume of the cone to that of the cylinder is:",
-          options: ["3 : 1", "1 : 2", "2 : 3", "1 : 3"],
-          answer: 3,
-          explain: "(1/3)πr²h : πr²h = **1 : 3**."
-        }
-      ]
-    },
-
-    // ───────────────────────────── 12. Statistics ─────────────────────────────
-    {
-      id: "statistics",
-      title: "Statistics",
-      section: "Statistics & Probability",
-      summary: "Organising data into frequency tables and showing it with bar graphs, histograms (with equal and unequal class widths) and frequency polygons.",
-      notes: [
-        {
-          heading: "Frequency distributions",
-          points: [
-            "**Frequency** is the number of times an observation occurs. A table of observations with their frequencies is a **frequency distribution**.",
-            "Large data are grouped into **class intervals** such as 10–20, 20–30. In 10–20, 10 is the lower limit, 20 the upper limit, and the **class size** (width) is 20 − 10 = 10.",
-            "In classes like 10–20, 20–30, a value equal to 20 is counted in 20–30 (the upper limit is not included).",
-            "**Class mark** = (lower limit + upper limit)/2, the mid-point of the class.",
-            "Inclusive classes such as 1–10, 11–20 are made continuous by subtracting 0.5 from each lower limit and adding 0.5 to each upper limit: 0.5–10.5, 10.5–20.5."
-          ]
-        },
-        {
-          heading: "Bar graphs",
-          points: [
-            "A **bar graph** shows data with bars of **equal width** and **equal gaps** between them; the height of each bar shows the value.",
-            "Bars can be vertical or horizontal; the gaps have no meaning.",
-            "Choose a suitable scale (e.g. 1 unit = 10 students) and label both axes."
-          ]
-        },
-        {
-          heading: "Histograms",
-          points: [
-            "A **histogram** shows a grouped frequency distribution with continuous classes as rectangles **with no gaps** between them.",
-            "Class intervals go on the x-axis and frequencies on the y-axis; each rectangle's width is the class size.",
-            "If the first class does not start at 0, show a **kink (zig-zag)** on the x-axis near the origin.",
-            "**Unequal class widths**: the **areas** of the rectangles must be proportional to the frequencies. Use adjusted height = (minimum class size ÷ class size) × frequency.",
-            "Example: if the minimum class size is 5 and the class 50–60 has frequency 12, its adjusted height is (5/10) × 12 = 6."
-          ]
-        },
-        {
-          heading: "Frequency polygons",
-          points: [
-            "Join the **mid-points of the tops** of adjacent rectangles of the histogram with line segments.",
-            "To close the polygon, imagine a class with **zero frequency** before the first class and after the last class, and join to their class marks on the x-axis.",
-            "A frequency polygon can also be drawn **without a histogram** by plotting (class mark, frequency) and joining the points.",
-            "Frequency polygons are useful for comparing two sets of data on the same graph, such as the marks of two sections."
-          ]
-        }
-      ],
-      formulas: [
-        "Class size = upper limit − lower limit",
-        "Class mark = (upper limit + lower limit)/2",
-        "Adjusted height (unequal widths) = (minimum class size ÷ class size of that interval) × its frequency",
-        "Inclusive → continuous classes (gap of 1): lower limit − 0.5, upper limit + 0.5"
-      ],
-      terms: [
-        { term: "Frequency", meaning: "The number of times a particular observation (or class) occurs in the data." },
-        { term: "Class interval", meaning: "A group such as 20–30 into which observations are sorted; it has a lower and an upper limit." },
-        { term: "Class size", meaning: "The width of a class interval: upper limit − lower limit." },
-        { term: "Class mark", meaning: "The mid-point of a class: (lower limit + upper limit)/2." },
-        { term: "Histogram", meaning: "A graph of a grouped frequency distribution using adjacent rectangles whose areas are proportional to the frequencies." },
-        { term: "Frequency polygon", meaning: "A closed figure made by joining the points (class mark, frequency), including zero-frequency classes at both ends." }
-      ],
-      examples: [
-        {
-          q: "The class marks of a frequency distribution are 47, 52, 57, 62, …, 97, 102. Find the class size and the first and last class intervals.",
-          steps: [
-            "Class size = difference between consecutive class marks = 52 − 47 = 5.",
-            "Each class extends 5/2 = 2.5 on either side of its class mark.",
-            "First class: 47 − 2.5 to 47 + 2.5, i.e. 44.5–49.5.",
-            "Last class: 102 − 2.5 to 102 + 2.5, i.e. 99.5–104.5."
-          ],
-          answer: "Class size 5; first class 44.5–49.5; last class 99.5–104.5"
-        },
-        {
-          q: "For the distribution 0–10: 5, 10–20: 8, 20–40: 18, 40–50: 12, 50–80: 9, find the heights of the rectangles to draw a histogram.",
-          steps: [
-            "The class widths are unequal (10, 10, 20, 10, 30). Minimum class size = 10.",
-            "Adjusted height = (10 ÷ class size) × frequency.",
-            "0–10: 5; 10–20: 8 (width 10, no change).",
-            "20–40: (10/20) × 18 = 9; 40–50: 12.",
-            "50–80: (10/30) × 9 = 3."
-          ],
-          answer: "Heights: 5, 8, 9, 12 and 3 respectively"
-        }
-      ],
-      qa: [
-        { q: "Why is a histogram drawn without gaps, while a bar graph has gaps?", a: "A histogram represents **continuous** class intervals, so each class ends where the next begins. A bar graph shows **separate categories**, so the bars are kept apart." },
-        { q: "Marks are grouped as 1–10, 11–20, 21–30. How should these classes be prepared before drawing a histogram?", a: "Make them continuous by subtracting 0.5 from each lower limit and adding 0.5 to each upper limit: **0.5–10.5, 10.5–20.5, 20.5–30.5**." }
-      ],
-      quiz: [
-        {
-          q: "The class mark of the class 90–120 is:",
-          options: ["30", "105", "120", "100"],
-          answer: 1,
-          explain: "Class mark = (90 + 120)/2 = **105**. 30 is the class size."
-        },
-        {
-          q: "With classes 10–20, 20–30, 30–40, …, an observation equal to 20 is counted in:",
-          options: ["10–20", "both 10–20 and 20–30", "20–30", "no class; it is left out"],
-          answer: 2,
-          explain: "The upper limit is not included in a class, so 20 goes into **20–30**."
-        },
-        {
-          q: "In a histogram with unequal class widths, the rectangles are adjusted so that:",
-          options: ["their areas are proportional to the frequencies", "their widths are all equal", "their heights equal the class marks", "there are gaps between them"],
-          answer: 0,
-          explain: "Frequency is shown by **area**, so heights are adjusted using (minimum class size ÷ class size) × frequency."
-        },
-        {
-          q: "In a histogram, the minimum class size is 10. The class 40–60 has frequency 16. The adjusted height of its rectangle is:",
-          options: ["16", "32", "4", "8"],
-          answer: 3,
-          explain: "(10/20) × 16 = **8**. Multiplying by 20/10 instead gives 32."
-        },
-        {
-          q: "A frequency polygon is drawn by joining:",
-          options: ["the upper-left corners of the rectangles", "the mid-points of the tops of the rectangles", "the lower limits of the classes", "the tops of the tallest rectangles only"],
-          answer: 1,
-          explain: "Join the **mid-points of the tops** of the rectangles (i.e. the points with class marks as x-coordinates)."
-        },
-        {
-          q: "The class marks of a distribution are 15, 20, 25, 30. The class whose class mark is 15 is:",
-          options: ["10–20", "15–20", "12.5–17.5", "13–17"],
-          answer: 2,
-          explain: "Class size = 5, so the class runs 2.5 either side of 15: **12.5–17.5**."
-        }
+        { q: "The total surface area of a cuboid 5 cm × 4 cm × 3 cm is:", options: ["94 cm²", "60 cm²", "47 cm²", "120 cm²"], answer: 0, explain: "2(20 + 12 + 15) = 94." },
+        { q: "The volume of a cylinder with r = 7 cm and h = 10 cm (π = 22/7) is:", options: ["1540 cm³", "440 cm³", "770 cm³", "4620 cm³"], answer: 0, explain: "(22/7) × 49 × 10 = 1540." },
+        { q: "The volume of a cone with r = 3 cm and h = 4 cm is:", options: ["12π cm³", "36π cm³", "15π cm³", "48π cm³"], answer: 0, explain: "⅓ × π × 9 × 4 = 12π." },
+        { q: "The surface area of a sphere of radius 7 cm (π = 22/7) is:", options: ["616 cm²", "154 cm²", "308 cm²", "1437 cm²"], answer: 0, explain: "4 × (22/7) × 49 = 616." },
+        { q: "The total surface area of a solid hemisphere is:", options: ["3πr²", "2πr²", "4πr²", "πr²"], answer: 0, explain: "Curved 2πr² plus flat base πr²." },
+        { q: "A cylindrical tin of r = 7 cm and h = 10 cm is open at one end. The area of metal sheet used (π = 22/7) is:", options: ["594 cm²", "440 cm²", "748 cm²", "154 cm²"], answer: 0, explain: "2πrh + πr² = 440 + 154 = 594." }
       ]
     }
   ]
