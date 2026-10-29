@@ -82,9 +82,9 @@ globalThis.StudyData = (function () {
     3: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
     4: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
     5: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
-    6: { maths: 2, science: 2, sst: 2, english: 2, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4 },
-    7: { maths: 2, science: 2, sst: 3, english: 2, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4 },
-    8: { maths: 2, science: 2, sst: 2, english: 3, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 4 },
+    6: { maths: 2, science: 2, sst: 2, english: 3, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4 },
+    7: { maths: 2, science: 2, sst: 3, english: 3, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4 },
+    8: { maths: 2, science: 2, sst: 2, english: 3, hindi: 3, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 4 },
     9: { english: 4, hindi: 3, punjabi: 2, sstpb: 3, englishpb: 5, mathspb: 2, sciencepb: 2, hindipb: 2, maths: 2, science: 2, sst: 3 },
     10: { maths: 2, science: 2, sst: 2, english: 2, hindi: 2, punjabi: 1, sstpb: 4, phc: 2, englishpb: 4, hindipb: 2 },
     11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 4, hindi: 3, punjabi: 1, historypb: 4, polscipb: 3, englishpb: 5, hindipb: 2 },
@@ -94,10 +94,12 @@ globalThis.StudyData = (function () {
   // Labelled diagrams live in data/class{N}/diagrams/{subject}.js, one file per subject, and load with the
   // practice files. This lists the subjects that have one.
   const diagramCatalog = {
+    7: ["science"],
+    8: ["science", "maths"],
     9: ["sciencepb", "mathspb", "science", "maths", "sst"],
     10: ["science", "maths", "sst"],
-    11: ["physics", "chemistry", "biology", "maths", "economics"],
-    12: ["physics", "chemistry", "biology", "maths", "economics"],
+    11: ["physics", "chemistry", "biology", "maths", "economics", "geography"],
+    12: ["physics", "chemistry", "biology", "maths", "economics", "geography"],
   };
 
   const classes = Object.keys(catalog).map(Number);

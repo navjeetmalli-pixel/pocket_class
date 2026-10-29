@@ -1,9 +1,947 @@
-// Class 7 English: Grammar and Writing Skills.
+// Class 7 English: the lessons of Poorvi (NCERT), Grammar and Writing Skills.
 // Format: see CONTENT_GUIDE.md. All examples and model answers are original.
 StudyData.add(7, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills, arranged by topic. Textbook lessons are not included.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Poorvi"], note: "Grammar and writing, plus every lesson of Poorvi (summarised in our own words).", reviewed: false},
   chapters: [
+    // ───────────────────────────── POORVI ─────────────────────────────
+    {
+      id: "the-day-the-river-spoke",
+      title: "The Day the River Spoke",
+      section: "Poorvi",
+      summary: "A story extract in which a young village girl, Jahnavi, who longs to go to school, talks to the River. The River’s gentle advice gives her the courage to sit in the school and listen, and the teacher and her parents then let her study.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 1",
+      notes: [
+        {
+          heading: "Setting and characters",
+          points: [
+            "Jahnavi is a bright girl of nearly ten who lives in a coastal village with her parents and brothers. Her parents work on the farm.",
+            "Her elder brother Gopi (she calls him Ettan) and Meena go to school, and little Ramu goes too. Jahnavi is kept at home to mind the youngest child, Little Appu.",
+            "The River speaks in a sleepy, murmuring, affectionate voice. The author gives it a capital letter because it is treated like a person.",
+            "Other characters are Chandu, a fisherman with a catamaran, the kind teacher, and Jahnavi’s mother and father."
+          ]
+        },
+        {
+          heading: "The conversation with the River",
+          points: [
+            "Jahnavi sits by the river and cries. She is startled when a voice asks what is the matter, because she thinks she is alone.",
+            "She says she is not allowed to go to school, and that she is scared of going now because she is nearly ten. She wants to learn to read and to find out many things, such as why the moon always rises from behind the hills.",
+            "The River listens kindly, tells her where the moon goes, and says that little girls can do as much as little boys.",
+            "It advises her to slip into the school one morning and just listen, and adds that it is up to her. When she says she would be scared, the River points out that she is not afraid of lizards, snakes in the bamboo or noisy trains."
+          ]
+        },
+        {
+          heading: "What happens next",
+          points: [
+            "Jahnavi gathers her courage, goes to the school with Little Appu asleep on her shoulder, and sits at the back on the earthen floor while the teacher reads a story about Ashoka.",
+            "The teacher notices her, learns she is Gopi’s sister, and promises to talk to her father if she really wants to come.",
+            "The teacher visits the house the next evening. Her mother says she is glad, because her own mother had once refused to send her to school.",
+            "Jahnavi says she will become a teacher and bring all the little girls of the village to school. She tells the River her good news."
+          ]
+        },
+        {
+          heading: "Message and style",
+          points: [
+            "The story shows that courage and determination can overcome fear, and that girls must get the same chance to learn as boys.",
+            "Nature is described in detail at the start (a kingfisher, a lizard, bamboo, parrots) to set a peaceful scene and to make the talking River seem natural.",
+            "The dialogue makes the story lively, and the River’s repeated words, “it’s up to you”, show that one must act for oneself."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Kamala Nair (an extract adapted from The Day the River Spoke). Unit 1: Learning Together.",
+        "Jahnavi’s brothers: Ettan (Gopi), Ramu and Little Appu. Fisherman: Chandu (catamaran).",
+        "River’s advice: slip into school, sit and listen; “it’s up to you”."
+      ],
+      terms: [
+        {term: "Catamaran", meaning: "A kind of boat; the word comes from the Tamil kattu maram, ‘tied wood’."},
+        {term: "Conspiratorially", meaning: "In a secret, whispering way."},
+        {term: "Startled", meaning: "Surprised and a little frightened."},
+        {term: "Wailed", meaning: "Complained in a loud, sad voice."},
+        {term: "Thicket", meaning: "A dense group of bushes and trees."}
+      ],
+      qa: [
+        {q: "Why was Jahnavi crying at the river?", a: "She longed to go to school, but her family kept her at home to mind her little brother, and she was scared that she was now too old to be allowed to go."},
+        {q: "What advice did the River give Jahnavi?", a: "It told her to slip along to the school one morning, sit and listen to the lesson, and perhaps the teacher would let her stay. It reminded her that the decision was up to her."}
+      ],
+      quiz: [
+        {q: "What was Jahnavi’s dream?", options: ["To go to school and learn","To sail on a ship","To become a fisherman","To live in a city"], answer: 0, explain: "She wanted to read like her brothers and learn about the world."},
+        {q: "Which story was the teacher reading on the day Jahnavi went to school?", options: ["A story about a river","A story about Chandu","A story about the sea","A story about a prince called Ashoka"], answer: 3, explain: "The lesson that day was about Ashoka, who became a great king."},
+        {q: "Why does the author write ‘River’ with a capital letter?", options: ["It is a proper name of a town","It is the first word of a sentence","The River is treated like a person","It is very large"], answer: 2, explain: "The River speaks and advises like a human being, so it is given a capital letter."},
+        {q: "What did Jahnavi take with her to school?", options: ["A slate and a pencil","Her little brother Appu, asleep on her shoulder","A basket of fish","Her mother"], answer: 1, explain: "She was minding Little Appu and carried him along."},
+        {q: "The main message of the story is that", options: ["rivers can talk to everyone","courage and determination can make dreams come true","boys should stay at home","schools are always near the sea"], answer: 1, explain: "Jahnavi’s brave step opened the door to school for her."}
+      ]
+    },
+    {
+      id: "try-again",
+      title: "Try Again",
+      section: "Poorvi",
+      summary: "A narrative poem about King Bruce of Scotland, who is ready to give up after repeated failures until he watches a spider try nine times to climb to its web, and succeed on the next try. The king takes heart and tries again.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 1",
+      notes: [
+        {
+          heading: "What happens in the poem",
+          points: [
+            "King Bruce of Scotland lies down alone in a sad mood. Although he is a king, he has tried again and again to do a great deed for his people and has failed.",
+            "In despair he decides to give it all up. Just then a spider drops down on a fine silken thread, and he stops to watch it.",
+            "The spider tries to climb up to its cobweb home. Each time it slips and falls, it rests, and then climbs again. In all, it makes nine brave attempts.",
+            "The king thinks the spider will give up, but it climbs once more, slowly, inch by inch, and finally reaches its home.",
+            "The king cries “Bravo” and says that all honour is due to those who try. He too tries once more and this time does not fail."
+          ]
+        },
+        {
+          heading: "Theme and message",
+          points: [
+            "The central idea is perseverance: failure is not the end and one should keep trying.",
+            "Small creatures can teach great lessons. The spider’s courage inspires a king.",
+            "The poem encourages us to face challenges as stepping stones to success."
+          ]
+        },
+        {
+          heading: "Form and devices",
+          points: [
+            "It is a narrative poem, because it tells a story with a beginning, middle and end.",
+            "The rhyme scheme is ABAB, with the first and third lines rhyming and the second and fourth lines rhyming (down–crown, think–sink).",
+            "Repetition (‘tried and tried’, ‘steadily, steadily’, ‘up, up’) stresses effort and the passing of time.",
+            "Alliteration (repeated starting sounds) appears in ‘slippery sprawl’. ‘Bravo’ is an interjection.",
+            "Words like ’twas and ’tis are short forms used to keep the rhythm of the lines."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Eliza Cook. King: Bruce of Scotland. Number of the spider’s attempts: nine, then the successful tenth climb.",
+        "Lesson: if at first you don’t succeed, try, try again.",
+        "Rhyme scheme ABAB. Poetic devices: repetition, alliteration, interjection (‘Bravo’), narrative style."
+      ],
+      terms: [
+        {term: "Despair", meaning: "A feeling of having lost all hope."},
+        {term: "Endeavour", meaning: "A serious effort to do something."},
+        {term: "Strive", meaning: "To try very hard."},
+        {term: "Perseverance", meaning: "Continuing to try in spite of difficulty."},
+        {term: "Interjection", meaning: "A word that expresses sudden feeling, such as ‘Bravo!’."}
+      ],
+      qa: [
+        {q: "Why was King Bruce sad at the start of the poem?", a: "He had tried many times to do a great deed that would make his people happy and had failed, so he felt like giving up."},
+        {q: "What did the king learn from the spider?", a: "He learned that one should keep trying in spite of failure, because the spider reached its goal after nine falls. Inspired, he tried again and succeeded."}
+      ],
+      quiz: [
+        {q: "How many times did the spider fall before it succeeded?", options: ["Nine","Three","Five","Seven"], answer: 0, explain: "The poem says nine brave attempts were counted before the successful climb."},
+        {q: "What was the spider trying to reach?", options: ["A flower","The king’s crown","A window","Its cobweb home near the ceiling"], answer: 3, explain: "It was climbing to its cobweb home high above."},
+        {q: "The central idea of the poem is", options: ["revenge","kingship","perseverance","loneliness"], answer: 2, explain: "The spider’s repeated tries teach one to keep going."},
+        {q: "‘Bravo’ is an example of", options: ["a conjunction","an adjective","an interjection","a preposition"], answer: 2, explain: "It is a word that shows sudden feeling, so it is an interjection."},
+        {q: "The poem is written in", options: ["the style of a letter","the narrative style, telling a story","the style of a play","the style of a news report"], answer: 1, explain: "It narrates the story of the king and the spider."}
+      ]
+    },
+    {
+      id: "three-days-to-see",
+      title: "Three Days to See",
+      section: "Poorvi",
+      summary: "An essay by Helen Keller, who was deaf and blind, imagining how she would use three days of sight. She would see her friends on the first day, the dawn and the museums on the second, and the busy city on the third, and she urges everyone to value their senses.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 1",
+      notes: [
+        {
+          heading: "How she experiences the world",
+          points: [
+            "The author, who cannot see, finds much to interest her through touch: the delicate shape of a leaf, the smooth bark of a silver birch, the rough bark of a pine, the buds of spring and the quiver of a singing bird.",
+            "Sometimes her heart cries out to see these things, and she wonders how much more beauty sight would reveal.",
+            "She can only ‘see’ a friend’s face through her fingertips and detect laughter, sorrow and other obvious feelings."
+          ]
+        },
+        {
+          heading: "Her plan for three days of sight",
+          points: [
+            "Day 1: she would look at the people whose kindness and friendship have made her life worth living, especially friends and loved ones.",
+            "Day 2: she would rise at dawn to see night change into day, and then visit museums to see the history of the earth and of human progress (animals, dinosaur skeletons and the story of people).",
+            "Day 3: she would go to the busy city, stand at a corner and watch people, trying to understand their daily lives. Smiles would make her happy, determination would make her proud, and suffering would make her compassionate.",
+            "She knows that even in three days she could not see all she wants, and she would realise how much was left unseen when darkness returned."
+          ]
+        },
+        {
+          heading: "Her message to readers",
+          points: [
+            "She advises people who can see to use their eyes as if they might lose their sight tomorrow.",
+            "The same applies to hearing, touch, smell and taste: enjoy the music of voices, the song of birds, the scent of flowers and the taste of food as if you might lose them tomorrow.",
+            "She believes that sight is the most delightful of the senses, but that one should make the most of every sense.",
+            "The lesson is gratitude for our senses and kindness towards people with special abilities."
+          ]
+        },
+        {
+          heading: "Language points",
+          points: [
+            "The author repeats ‘should’ to show an imagined wish rather than a fact.",
+            "Sensory words appear throughout: smooth, rough, shaggy (touch), perfume (smell), relish (taste), panorama (sight).",
+            "Modal verbs (can, could, may, might, must, ought to, should, would) express ability, possibility, necessity, advice and polite requests."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Helen Keller (from The Atlantic Monthly, January 1933). The eye is called the ‘window of the soul’.",
+        "Day 1: loved ones. Day 2: dawn and museums. Day 3: the city and its people.",
+        "Message: use every sense as if you might lose it tomorrow."
+      ],
+      terms: [
+        {term: "Panorama", meaning: "A wide, beautiful view or scene."},
+        {term: "Pageant", meaning: "A grand display or show."},
+        {term: "Tactile sense", meaning: "The sense of touch."},
+        {term: "Facets", meaning: "Different aspects or sides of something."},
+        {term: "Morsel", meaning: "A small piece of food."},
+        {term: "Compassionate", meaning: "Feeling sympathy and wanting to help."}
+      ],
+      qa: [
+        {q: "How does the author enjoy nature without eyesight?", a: "She uses touch. She feels the shape of a leaf, the bark of trees, the buds of spring and the quiver of a bird singing in her hand."},
+        {q: "What advice does she give to people who can see?", a: "She tells them to use their eyes and other senses as if they might lose them tomorrow, and to enjoy every sight, sound, scent and taste fully."}
+      ],
+      quiz: [
+        {q: "On the first day the author would like to see", options: ["the friends whose kindness has enriched her life","a museum","a busy city street","the sunrise only"], answer: 0, explain: "She would first look at the people she loves."},
+        {q: "Where would she spend the second day?", options: ["In a crowded market","On a mountain","At a school","Watching the dawn and visiting museums"], answer: 3, explain: "She would see the sunrise and then the museums."},
+        {q: "What does she call the eye?", options: ["The mirror of the mind","The door of the heart","The light of the world","The window of the soul"], answer: 3, explain: "She says one needs eyes to see into the heart of a friend."},
+        {q: "What does ‘panorama’ mean?", options: ["A small picture","A kind of tree","A wide view of a scene","A museum hall"], answer: 2, explain: "It means a broad, beautiful scene."},
+        {q: "The main message of the essay is that we should", options: ["avoid travelling","value and make the most of our senses","dislike the city","study history only"], answer: 1, explain: "The author urges us to appreciate what we have."}
+      ]
+    },
+    {
+      id: "animals-birds-and-dr-dolittle",
+      title: "Animals, Birds, and Dr. Dolittle",
+      section: "Poorvi",
+      summary: "A fantasy story in which kindly John Dolittle learns animal languages from his parrot Polynesia, gives up being a doctor for people, and becomes famous among animals everywhere as the doctor who understands them.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 2",
+      notes: [
+        {
+          heading: "How Dolittle begins",
+          points: [
+            "Doctor Dolittle is talking to the Cat’s-food-Man, who has come with a stomach-ache. The man says the Doctor knows more about animals than the local vets and should become an animal doctor.",
+            "Polynesia the parrot agrees and tells him that animals can talk. Parrots can speak two languages, people’s language and bird language.",
+            "She teaches him a bird phrase and its meaning, and the excited Doctor writes down the Birds’ A.B.C."
+          ]
+        },
+        {
+          heading: "Learning animal language",
+          points: [
+            "Polynesia explains that animals do not always speak with their mouths. They also talk with their ears, feet, tails and noses.",
+            "Jip the dog twitches his nose to ask a question, which Polynesia translates as asking whether the rain has stopped.",
+            "With the parrot’s help, Dolittle learns the language of animals so well that he gives up being a people’s doctor altogether."
+          ]
+        },
+        {
+          heading: "Treating animals",
+          points: [
+            "A plough horse tells him that the vet has given him pills for six weeks, but what he really needs is spectacles, because he is going blind in one eye. Dolittle gives him green glasses.",
+            "Soon farm animals around Puddleby wear glasses and a blind horse becomes a thing unknown.",
+            "Animals bring friends and family to the doctor’s house. He makes separate doors for horses, cows and sheep, and a tiny tunnel for mice.",
+            "Birds that fly abroad in winter carry the news, and he becomes famous among animals all over the world and is happy."
+          ]
+        },
+        {
+          heading: "Themes and style",
+          points: [
+            "The story is a fable-like fantasy that entertains while teaching kindness and care for animals.",
+            "Listening carefully to those who cannot speak our language is the key to helping them.",
+            "The humour comes from talking animals, from the parrot’s proud remarks and from details such as green spectacles for a horse."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Hugh Lofting. Place: Puddleby. Doctor: John Dolittle, M.D. Parrot: Polynesia. Dog: Jip.",
+        "Cat’s-food-Man’s wife: Theodosia, a scholar who read Dolittle’s book to him.",
+        "The horse’s problem: needs spectacles, not pills; Dolittle gave him green ones."
+      ],
+      terms: [
+        {term: "Scholar", meaning: "A learned person."},
+        {term: "Cellar", meaning: "A room below ground level, often used for storage."},
+        {term: "Countryside", meaning: "The rural area outside towns."},
+        {term: "Fable", meaning: "A short story with animals that teaches a lesson."},
+        {term: "Empathy", meaning: "Understanding and sharing another’s feelings."}
+      ],
+      qa: [
+        {q: "How did Dr. Dolittle learn animal language?", a: "His parrot Polynesia taught him. She gave him bird words to write down, explained how animals talk with their ears, feet, tails and noses, and helped him until he could understand every animal."},
+        {q: "Why did the plough horse prefer Dolittle to the other vet?", a: "The vet could not understand horse language and kept giving pills. Dolittle listened, found that the horse needed spectacles for his failing eye, and cured him."}
+      ],
+      quiz: [
+        {q: "Who first told Dolittle that animals can talk?", options: ["Polynesia, the parrot","Jip, the dog","The Cat’s-food-Man","The plough horse"], answer: 0, explain: "Polynesia revealed that animals have languages."},
+        {q: "What kind of doctor did the Cat’s-food-Man suggest Dolittle become?", options: ["An animal doctor","A dentist","An eye specialist","A teacher"], answer: 0, explain: "He thought Dolittle knew animals better than the vets did."},
+        {q: "What colour were the spectacles Dolittle made for the horse?", options: ["Blue","Black","Red","Green"], answer: 3, explain: "The horse asked for green ones to keep the sun out of his eyes."},
+        {q: "Why did Dolittle have separate doors made?", options: ["To keep people out","To sell tickets","For the different kinds of animals who came to him","To keep the rain out"], answer: 2, explain: "Horses, cows, sheep and others each had their own door."},
+        {q: "The story shows that Dolittle", options: ["dislikes people","listens to animals and treats them kindly","is afraid of animals","wants to become rich"], answer: 1, explain: "He cures animals because he understands what they say."}
+      ]
+    },
+    {
+      id: "a-funny-man",
+      title: "A Funny Man",
+      section: "Poorvi",
+      summary: "A light-hearted nonsense poem in which a funny man appears on the street, wearing a shoe on his head and hats on his feet, offers the speaker a currant bun as a ‘rose’, and hops home on his head.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 2",
+      notes: [
+        {
+          heading: "What happens in the poem",
+          points: [
+            "A funny man walks down the street wearing a shoe on his head and hats on his feet. He lifts the shoe politely and smiles.",
+            "He offers ‘Your Highness’ a rose but holds a currant bun to her nose. The startled speaker staggers back against the wall and says a rose has never had such a funny-looking smell.",
+            "He sits on the ground and sings a song that, in the poet’s words, gives a funny feeling.",
+            "The speaker asks why he wears two hats on his feet. He turns the other way about and hops home on his head."
+          ]
+        },
+        {
+          heading: "Mood and ideas",
+          points: [
+            "The tone is playful and humorous, and the poem is full of nonsense and surprise, which makes children laugh.",
+            "The man is polite and cheerful, so the unusual things he does are funny, not frightening.",
+            "The poet mixes up the senses with phrases like ‘funny sounding sight’ and ‘funny feeling sound’, which add to the nonsense.",
+            "The poem suggests that humour can be found in the unusual and that we can enjoy looking at the world differently."
+          ]
+        },
+        {
+          heading: "Form and devices",
+          points: [
+            "The poem has four-line stanzas with a regular rhythm, and the second and fourth lines of each stanza rhyme (street–feet, polite–sight).",
+            "The word ‘funny’ is repeated to stress the amusing nature of the scene.",
+            "It uses dialogue between the speaker and the funny man, which makes it lively.",
+            "Inversion (changing normal word order, as in ‘Such a funny sounding sight’) is used for rhythm."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Natalie Joan. Unit 2: Wit and Humour.",
+        "Odd things the man does: shoe on head, hats on feet, currant bun for a rose, a funny song, hopping home on his head.",
+        "Device: repetition of ‘funny’; nonsense and humour."
+      ],
+      terms: [
+        {term: "Currant", meaning: "A small, dried, seedless raisin."},
+        {term: "Staggered", meaning: "Moved unsteadily."},
+        {term: "Nonsense verse", meaning: "A poem full of silly, impossible or absurd ideas written for fun."},
+        {term: "Phrasal verb", meaning: "A verb combined with an adverb or preposition, such as ‘sat down’ or ‘taking out’."},
+        {term: "Inversion", meaning: "Changing the usual order of words in a line."}
+      ],
+      qa: [
+        {q: "What strange things did the funny man do?", a: "He wore a shoe on his head and hats on his feet, offered a currant bun as a rose, sang a funny-feeling song and hopped home on his head."},
+        {q: "Why does the poet repeat the word ‘funny’?", a: "To emphasise how amusing and unusual the man and his actions were and to keep the mood playful."}
+      ],
+      quiz: [
+        {q: "Where did the funny man wear his hats?", options: ["On his head","On his feet","In his hands","On his back"], answer: 1, explain: "He wore hats on his feet and a shoe on his head."},
+        {q: "What did he hold up to the speaker’s nose as a ‘rose’?", options: ["A currant bun","A real flower","A paper flower","A shoe"], answer: 0, explain: "He took out a currant bun and called it a rose."},
+        {q: "How did he go home?", options: ["By bus","On a bicycle","Walking slowly","Hopping on his head"], answer: 3, explain: "The last line says he hopped home on his head."},
+        {q: "The tone of the poem is", options: ["sad","angry","humorous and playful","serious"], answer: 2, explain: "The nonsense details make the poem funny."},
+        {q: "What does the word ‘staggered’ mean?", options: ["Ran fast","Sat down","Moved unsteadily","Shouted"], answer: 2, explain: "The speaker staggered back in surprise."}
+      ]
+    },
+    {
+      id: "say-the-right-thing",
+      title: "Say the Right Thing",
+      section: "Poorvi",
+      summary: "A humorous one-act play in which Mrs. Shaw tells her talkative daughter Mary to say kind and pleasant things to the visitors. But Mary forgets, insults the guests’ children, friends, dog and relatives without knowing it, and even at the end says the wrong thing.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 2",
+      notes: [
+        {
+          heading: "Characters and Scene I",
+          points: [
+            "Characters: Mary Shaw (a young girl), Mrs. Shaw (her mother), Mrs. Harding (the wife of a wealthy man) and Mrs. Lee (Mr. Harding’s married sister).",
+            "Mrs. Shaw is expecting Mrs. Harding and Mrs. Lee, whom she met in a shop and invited. She wants to make new friends in Lanfield.",
+            "Mary insists on staying and says she can talk well. Mrs. Shaw tells her to be kind, say pleasant things, laugh, start a conversation if everyone goes quiet, and ask guests to stay longer when they get up to leave."
+          ]
+        },
+        {
+          heading: "Scene II: the blunders",
+          points: [
+            "Mary says she has seen Mrs. Harding’s children, but Mrs. Harding has none.",
+            "She makes fun of Mr. Best the banker who goes to London by train, but he is Mrs. Lee’s brother.",
+            "She criticises Mrs. Best’s blue dress with a red coat, and Mrs. Harding says she wears the same.",
+            "She speaks badly of a woman who stays in bed in the morning and often calls the doctor, a woman who talks too much, a dirty dog and a man who likes horses. Each time one of the guests says it applies to her or her family.",
+            "After each blunder, silence follows and Mary says ‘Oh, I’m sorry’. Mrs. Shaw tries to rescue her."
+          ]
+        },
+        {
+          heading: "Ending and message",
+          points: [
+            "When the guests get up to leave, Mary says the words she was told to say, but jumbled: “Oh, must you stay? Can’t you go?”",
+            "The humour comes from Mary’s honesty without thought, and from the contrast between what she was told and what she does.",
+            "The play shows that one must think before one speaks, listen carefully to others, and be tactful and kind in conversation.",
+            "Mrs. Harding and Mrs. Lee remain polite and calm in spite of the insults, which shows good manners."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: G. C. Thornley. Setting: Mrs. Shaw’s house in Lanfield. A play in two scenes.",
+        "Mary’s mother’s advice: be kind, laugh, keep talking, ask guests to stay on.",
+        "Mary’s last words reverse the advice: ‘Oh, must you stay? Can’t you go?’"
+      ],
+      terms: [
+        {term: "Blunder", meaning: "A careless, embarrassing mistake."},
+        {term: "Hilariously", meaning: "In a very funny way."},
+        {term: "Embarrass", meaning: "To make someone feel uncomfortable or ashamed."},
+        {term: "Stage direction", meaning: "A note in a play that tells actors how to act or move, such as (No one speaks)."},
+        {term: "Athithi Devo Bhava", meaning: "A Sanskrit saying that means ‘the guest is like God’."}
+      ],
+      qa: [
+        {q: "What advice did Mrs. Shaw give Mary before the guests came?", a: "She told her to be kind, say pleasant things, laugh and keep the conversation going, and to ask the guests to stay longer when they get ready to leave."},
+        {q: "Why is the play funny?", a: "Mary keeps saying things that offend the guests without realising it, and each time the person she criticises turns out to be related to a guest. Her last sentence is the reverse of what she was told."}
+      ],
+      quiz: [
+        {q: "Who is Mrs. Lee?", options: ["Mary’s aunt","Mr. Harding’s sister","Mrs. Shaw’s neighbour","Mrs. Best’s mother"], answer: 1, explain: "She is Mr. Harding’s married sister."},
+        {q: "Which animal does Mary criticise?", options: ["A dirty dog named Towzer","A horse called Jip","A cat","A parrot"], answer: 0, explain: "She says the dog looks dirty and it turns out to be the Hardings’ dog."},
+        {q: "What does Mary say when the guests get up to go?", options: ["“Please come again soon.”","“Good morning.”","“Don’t leave us.”","“Oh, must you stay? Can’t you go?”"], answer: 3, explain: "She mixes up her mother’s advice."},
+        {q: "Mary says that Mr. Best the banker cannot think, but he is actually", options: ["Mrs. Shaw’s friend","Mary’s uncle","Mr. Pomeroy’s friend","Mrs. Lee’s brother"], answer: 3, explain: "Mrs. Lee says he is her brother."},
+        {q: "The play teaches us to", options: ["talk as much as we can","avoid guests","think before we speak and be tactful","dress carefully"], answer: 2, explain: "Mary’s hasty remarks hurt people."}
+      ]
+    },
+    {
+      id: "my-brothers-great-invention",
+      title: "My Brother’s Great Invention",
+      section: "Poorvi",
+      summary: "A humorous story told by fourteen-year-old Anita about her younger brother Anand, who thinks he is a scientist. His burglar alarm drenches their father, and his time machine seems to swallow a real thief, Boppa, one night when their parents are away.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 3",
+      notes: [
+        {
+          heading: "Characters and the burglar alarm",
+          points: [
+            "Anita, aged fourteen, narrates the story. Her brother Anand, a year younger, loves tinkering with electrical gadgets, tools and planks of wood and keeps creating ‘inventions’ that never work out as planned.",
+            "After a series of thefts in the colony he rigs up a burglar alarm: when the door opens, a clanging alarm rings and a water bag falls on the thief.",
+            "The alarm is meant to work only when the door is opened gently, but the only person who opens the door softly is Papa, who ends up soaked and angry. Anita, who had doubts, kept herself out of the blame."
+          ]
+        },
+        {
+          heading: "The time machine",
+          points: [
+            "After the family watches the film Back to the Future, Anand decides to build a time machine. Papa locks his toolbox, and Anand takes apart household gadgets for parts.",
+            "After a fortnight, his room is full of wires, springs, levers and bulbs, with a big control panel. Papa says no to trying it, but agrees to look at it.",
+            "The parents go to a wedding in Kharagpur for a night and make Anand promise not to touch the machine."
+          ]
+        },
+        {
+          heading: "The night of the thief",
+          points: [
+            "That night, around eleven-thirty, Anita hears scratching and a rattle at the door. A rough-looking man with a green scarf walks in. He is Boppa, who sweeps the compounds and knows when houses are empty.",
+            "Boppa threatens them with a cudgel and locks them in. He asks which is their father’s room, and Anand sends him to his own room, where the time machine is.",
+            "Crashes, a scream, humming and a howl are heard. Neighbours Mr and Mrs Sharma and Dr Mohan come, free the children and search, but find no Boppa, only his green scarf by the switchboard.",
+            "Boppa is never seen again. Anand is sure the machine worked and that the thief went into the past. Papa dismantles it. Anand now plans a telephone to contact creatures in outer space."
+          ]
+        },
+        {
+          heading: "Themes and style",
+          points: [
+            "The story is humorous and celebrates curiosity, creativity, trial and error and the bond between brother and sister.",
+            "Anand shows presence of mind when he sends Boppa to the wrong room. Anita is sensible and a little sceptical.",
+            "The mystery ending is left open, so readers can decide whether the machine really worked."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Anita Rau Badami (from Battling Boats). Narrator: Anita (14). Brother: Anand (13).",
+        "Inventions: a burglar alarm with a water bag, then a time machine. Thief: Boppa, with a green scarf.",
+        "Parents’ trip: Kharagpur, near Calcutta (now Kolkata). Rescuers: the Sharmas and Dr. Mohan."
+      ],
+      terms: [
+        {term: "Tinkering", meaning: "Experimenting with machines or parts in an unplanned way."},
+        {term: "Rigged up", meaning: "Put together quickly and roughly."},
+        {term: "Sceptical", meaning: "Doubtful about something."},
+        {term: "Stealthily", meaning: "In a quiet, secret way so as not to be noticed."},
+        {term: "Brandishing", meaning: "Waving a weapon in a threatening way."},
+        {term: "Crestfallen", meaning: "Sad and disappointed."}
+      ],
+      qa: [
+        {q: "Why did Anand’s burglar alarm fail?", a: "He set it to work only when the door was opened gently, thinking a thief would open it quietly. But Papa, who always opens the door softly, set it off and got drenched."},
+        {q: "How did Anand’s time machine help in the story?", a: "The thief Boppa entered the room where the machine stood and, after crashes and a humming noise, vanished, leaving only his scarf. Anand believes the machine sent him into the past."}
+      ],
+      quiz: [
+        {q: "Who narrates the story?", options: ["Anand","Anita","Papa","Mrs. Sharma"], answer: 1, explain: "Anita tells the story about her brother."},
+        {q: "What fell on Papa when he opened the door?", options: ["A bag of water","A bucket of sand","A shoe","A bell"], answer: 0, explain: "The alarm was rigged with a water bag."},
+        {q: "Which film gave Anand the idea of a time machine?", options: ["Back to the Future","Jurassic Park","E.T.","Star Wars"], answer: 0, explain: "The family watched Back to the Future."},
+        {q: "What did Boppa leave behind?", options: ["A cudgel","A bag","A lamp","A green scarf"], answer: 3, explain: "The scarf was found near the panel of switches."},
+        {q: "Anand’s quick thinking shows when he", options: ["hides under his bed","calls the police","sends the thief to the wrong room","fights the thief"], answer: 2, explain: "He directs Boppa to his own room to gain time."}
+      ]
+    },
+    {
+      id: "paper-boats",
+      title: "Paper Boats",
+      section: "Poorvi",
+      summary: "A poem in which a child floats paper boats down a stream every day, writing his name and village on them in the hope that someone far away will find them, and dreams that fairies of sleep sail in them carrying baskets full of dreams.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 3",
+      notes: [
+        {
+          heading: "What the poem says",
+          points: [
+            "Day after day the child floats paper boats one by one down the running stream. He writes his name and the name of his village on them in big black letters, hoping that someone in a strange land will find them and know who he is.",
+            "He loads the boats with shiuli flowers from the garden, hoping the blooms of the dawn will reach the shore safely at night.",
+            "He looks at the sky, where little clouds seem like white sails, and imagines a playmate in the sky sending them to race with his boats.",
+            "At night he dreams that his boats float on under the midnight stars, carrying fairies of sleep with baskets full of dreams."
+          ]
+        },
+        {
+          heading: "Theme and meaning",
+          points: [
+            "The themes are innocence, imagination, playfulness and the wish to connect with the unknown. The paper boats symbolise a child’s dreams and hopes sent out into the world.",
+            "The shiuli flowers stand for purity, beauty and the freshness of a new day. The midnight stars stand for the vast universe in which the dreams continue.",
+            "The tone is gentle and wishful and the mood is thoughtful and dreamy."
+          ]
+        },
+        {
+          heading: "Devices",
+          points: [
+            "The poem is in free verse, without a regular rhyme scheme, and is written in the first person.",
+            "Imagery paints clear pictures: black letters on boats, white sails of clouds, midnight stars.",
+            "Repetition of ‘day by day’ and ‘on and on’ gives the idea of time passing and of long journeys.",
+            "The clouds are imagined as a ‘playmate’ sending sails to race the boats, which gives the sky a playful, human quality."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Rabindranath Tagore (a prose-poem). Flowers: shiuli. Time of dreaming: night, under the midnight stars.",
+        "Paper boats = a child’s dreams and hopes; fairies of sleep = gentle, imaginary beings; baskets of dreams = the cargo.",
+        "Tone: gentle and wishful; mood: thoughtful."
+      ],
+      terms: [
+        {term: "Stream", meaning: "A small, narrow river."},
+        {term: "Shiuli", meaning: "A fragrant white flower that blooms at dawn, also called night jasmine."},
+        {term: "Lading", meaning: "The cargo carried by a ship or boat."},
+        {term: "Imagery", meaning: "Words that create pictures in the reader’s mind."},
+        {term: "Symbol", meaning: "Something that stands for an idea."}
+      ],
+      qa: [
+        {q: "What does the child write on his paper boats and why?", a: "He writes his name and his village’s name in big black letters, hoping that someone in a strange land will find the boat and know who he is."},
+        {q: "What do the paper boats symbolise in the poem?", a: "They symbolise the child’s dreams, hopes and wish to reach out to the unknown world."}
+      ],
+      quiz: [
+        {q: "What does the child float down the stream?", options: ["Wooden toys","Paper boats","Leaves","Kites"], answer: 1, explain: "He launches paper boats day by day."},
+        {q: "Which flowers does he load on the boats?", options: ["Rose","Shiuli","Lotus","Jasmine"], answer: 1, explain: "The poem names shiuli flowers from his garden."},
+        {q: "What do the clouds look like to the child?", options: ["White bulging sails","Black mountains","Fishes","Birds"], answer: 0, explain: "He sees the little clouds as white sails."},
+        {q: "Who sails in the boats in the child’s dreams?", options: ["Sailors","His friends","Fishermen","The fairies of sleep"], answer: 3, explain: "He dreams of fairies with baskets full of dreams."},
+        {q: "The tone of the poem is", options: ["angry","fearful","gentle and wishful","boastful"], answer: 2, explain: "The child hopes and dreams in a calm way."}
+      ]
+    },
+    {
+      id: "north-south-east-west",
+      title: "North, South, East, West",
+      section: "Poorvi",
+      summary: "A set of postcards written by Shaana, a girl from Rameswaram island, to her classmates while she travels around India with her parents, from the glaciers of Kashmir to forests, wetlands, deserts, rivers and beaches, before she returns home.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 3",
+      notes: [
+        {
+          heading: "The journey",
+          points: [
+            "Shaana lives on Rameswaram island and writes postcards to her school friends on a long trip with her parents (Amma and Appa).",
+            "She goes first to Thajiwas glacier in Kashmir in the north, then to Himachal Pradesh with its mountains and birds, and next to Arunachal Pradesh in the east, where a thick forest leads to a treehouse.",
+            "She visits the Sundarbans in West Bengal, a wetland where mangrove trees grow in seawater, and sees crocodiles and a snake from a boat.",
+            "She travels west to Gujarat’s desert, then rafts on the Narmada river, rides through the plateaus and tunnels of Goa, learns to surf near Chennai and Puducherry, crosses the Pamban bridge and ends at Olaikaadu beach before reaching home."
+          ]
+        },
+        {
+          heading: "What the postcards show",
+          points: [
+            "They show the variety of India’s landscapes: glaciers, mountains, forests, wetlands, desert, rivers, plateaus and beaches.",
+            "They show different cultures, languages and clothing, such as the colourful clothes in the desert.",
+            "Her parents mention that there was once more snow and more water, which hints at environmental change.",
+            "Her feelings change: she is nervous, delighted, scared on the raft, no longer afraid of tunnels and happy to return home. In the last letter she wishes to take her friends on the next trip."
+          ]
+        },
+        {
+          heading: "Geography and language points",
+          points: [
+            "Not all ‘Pradesh’ states are next to each other: Himachal Pradesh is in the north and Arunachal Pradesh is in the east.",
+            "The postcards use dates (such as 30 April 20XX), informal greetings (Hi everyone, Dear class) and closings (Love, Your best friend).",
+            "The text uses time words and direction words such as north, south-west, east and across."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: C. G. Salamander (excerpts). Writer of the postcards: Shaana, from Rameswaram island.",
+        "Route: Kashmir – Himachal – Arunachal – Sundarbans (West Bengal) – Gujarat desert – Narmada – Goa – Chennai/Puducherry – Pamban bridge – Olaikaadu beach – home.",
+        "Sundarbans: a wetland with mangrove trees growing in seawater."
+      ],
+      terms: [
+        {term: "Glacier", meaning: "A large, slow-moving mass of ice."},
+        {term: "Wetland", meaning: "A land area covered with shallow water, such as a marsh."},
+        {term: "Mangrove", meaning: "A tree that grows in salty water along coasts."},
+        {term: "Rafting", meaning: "Travelling down a river on an air-filled rubber boat."},
+        {term: "Plateau", meaning: "A flat, raised area of land."}
+      ],
+      qa: [
+        {q: "How does Shaana describe the Sundarbans?", a: "She calls it a wetland where mangrove trees grow in seawater. She saw crocodiles and a snake from a boat, and her mother was sad about how much the place floods."},
+        {q: "What does the lesson tell us about India?", a: "That India has many kinds of landscapes, cultures and languages, from glaciers in the north to beaches in the south and deserts in the west."}
+      ],
+      quiz: [
+        {q: "Where does Shaana live?", options: ["Goa","Kashmir","Rameswaram island","Chennai"], answer: 2, explain: "She lives on Rameswaram island and returns there at the end."},
+        {q: "Which place is in the east of India?", options: ["Himachal Pradesh","Arunachal Pradesh","Gujarat","Goa"], answer: 1, explain: "Arunachal is in the east, while Himachal is in the north."},
+        {q: "What grows in the seawater of the Sundarbans?", options: ["Mangrove trees","Pine trees","Rice","Coconut trees"], answer: 0, explain: "The postcard says mangroves grow in seawater."},
+        {q: "What adventure does Shaana have on the Narmada?", options: ["Surfing","Diving","Skiing","Rafting"], answer: 3, explain: "She goes rafting on the river."},
+        {q: "Which bridge does she cross near the end?", options: ["The Howrah bridge","The Golden Gate","The Rainbow bridge","The Pamban bridge"], answer: 3, explain: "She crosses the Pamban bridge with the ocean on both sides."}
+      ]
+    },
+    {
+      id: "the-tunnel",
+      title: "The Tunnel",
+      section: "Poorvi",
+      summary: "A story set in a jungle, where a boy named Suraj befriends Sunder Singh, the watchman of a railway tunnel. One night they drive a leopard out of the tunnel just before the night mail comes, and Suraj later sees the watchman’s lamp from the train.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 4",
+      notes: [
+        {
+          heading: "Suraj and the tunnel",
+          points: [
+            "Suraj cycles from the town, leaves his cycle in a village, and walks to the railway cutting at noon to watch the steam engine come out of the tunnel. To him the engine is like a green, black and gold dragon.",
+            "After the train passes, he walks through the dark tunnel, curious to know what it is like. The walls are damp and sticky, a bat flies past and a lizard scuttles.",
+            "Coming out, he sees a flash of orange and gold and a swishing tail on the hill: a leopard."
+          ]
+        },
+        {
+          heading: "Sunder Singh the watchman",
+          points: [
+            "The watchman’s hut stands near the tunnel with marigolds in front and a vegetable patch behind. His duty is to inspect the tunnel before each train and keep it clear.",
+            "If there is danger he waves a red flag by day or a lamp by night to warn the driver. If all is well, he hangs the lamp at his hut and sleeps.",
+            "Sunder Singh jokes that the tunnel is his and that he has only lent it to the Government. He calls the leopard ‘my leopard’, which minds its own business and visits for a few days every month.",
+            "He invites Suraj to see the night mail, which comes at about nine o’clock."
+          ]
+        },
+        {
+          heading: "The night mail and the leopard",
+          points: [
+            "The next evening Suraj arrives at dusk. They drink tea and listen to the sounds of the forest. During his inspection, Sunder Singh hears a padded footfall and later a sawing sound: the leopard is in the tunnel.",
+            "If it is not driven out, it will be run over by the night mail. The watchman takes his axe and lamp, and Suraj bravely follows. They shout loudly, and the leopard snarls, then turns and runs into the dark.",
+            "They check the whole tunnel, and as the rails begin to hum, the train thunders through like the dragon of Suraj’s dreams."
+          ]
+        },
+        {
+          heading: "The ending and theme",
+          points: [
+            "A week later Suraj travels by that night mail with his father, who is going to Delhi on business. As the train nears the tunnel, Suraj sees the watchman’s lamp in the dark.",
+            "The watchman remains like a firefly for travellers, lighting the way for steam engines and leopards.",
+            "The story shows adventure, courage, friendship across ages, and the way people and wild animals can share a space. Suraj matures by facing the unknown."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Ruskin Bond (from Great Stories for Children). Boy: Suraj. Watchman: Sunder Singh.",
+        "Night mail: about nine o’clock. Signals: red flag by day, lamp by night.",
+        "The train is compared to a dragon; the watchman’s lamp to a firefly."
+      ],
+      terms: [
+        {term: "Embankment", meaning: "A raised bank of earth or stone that carries a railway or road."},
+        {term: "Cutting", meaning: "A narrow passage dug through a hill for a railway or road."},
+        {term: "Lithe", meaning: "Thin, graceful and bending easily."},
+        {term: "Defying", meaning: "Openly resisting or challenging."},
+        {term: "Night mail", meaning: "A train that runs at night carrying letters and passengers."}
+      ],
+      qa: [
+        {q: "Why did Sunder Singh and Suraj go into the tunnel at night?", a: "They heard a sawing sound and realised the leopard was in the tunnel. They had to drive it out before the night mail arrived, or it would be run over."},
+        {q: "How does Sunder Singh warn the train driver of danger?", a: "By day he waves a red flag and by night he waves his lamp. If all is well, he hangs the lamp at his hut door and goes to sleep."}
+      ],
+      quiz: [
+        {q: "Whom does Suraj meet near the tunnel?", options: ["His father","A forest officer","The watchman, Sunder Singh","A train driver"], answer: 2, explain: "He befriends the watchman of the tunnel."},
+        {q: "How does Suraj describe the steam engine?", options: ["Like a snake","Like a dragon","Like a bull","Like a horse"], answer: 1, explain: "He sees it as a beautiful dragon from his dreams."},
+        {q: "What animal does Suraj see on the hill?", options: ["A leopard","A tiger","A bear","A fox"], answer: 0, explain: "He sees a flash of orange and gold with a swishing tail."},
+        {q: "Why did the watchman and Suraj shout in the tunnel?", options: ["To scare the leopard away from the track","To call the train driver","To wake the villagers","To test an echo"], answer: 0, explain: "They wanted to drive the leopard out before the night mail."},
+        {q: "Who is with Suraj in the train at the end?", options: ["Sunder Singh","His teacher","A friend","His father"], answer: 3, explain: "He travels with his father, who is going to Delhi."}
+      ]
+    },
+    {
+      id: "travel",
+      title: "Travel",
+      section: "Poorvi",
+      summary: "A short poem in which the speaker hears and sees trains night and day although the railroad is miles away. In spite of being happy with her friends, the speaker would take any train, no matter where it goes.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 4",
+      notes: [
+        {
+          heading: "What each stanza says",
+          points: [
+            "Stanza 1: although the railroad is miles away, the speaker hears the train’s shrieking whistle every day in the midst of loud voices.",
+            "Stanza 2: at night, when it is still, the speaker imagines the red cinders glowing in the sky and hears the engine steaming.",
+            "Stanza 3: she says her heart is warm with her friends and she could not have better ones. Still, there is no train she would not take, wherever it is going."
+          ]
+        },
+        {
+          heading: "Theme and tone",
+          points: [
+            "The theme is the longing to travel and explore the unknown. The train is a symbol of adventure and new opportunities.",
+            "The speaker enjoys her friends and home, but feels a strong pull towards journeys, which shows how restless a curious mind can be.",
+            "The tone is thoughtful, excited and enthusiastic."
+          ]
+        },
+        {
+          heading: "Form and devices",
+          points: [
+            "There are three four-line stanzas. The rhyme scheme is ABAB (away–day, speaking–shrieking).",
+            "The whistle is ‘shrieking’, which gives the whistle a human quality (personification).",
+            "The line ‘there isn’t a train goes by’ is repeated in each stanza to show the speaker’s fascination.",
+            "Sound and sight imagery, such as the whistle, the red cinders and the steaming engine, make the experience vivid."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Edna St. Vincent Millay (Poems by Edna St. Vincent). Rhyme scheme: ABAB.",
+        "Symbol: the train stands for adventure and opportunity.",
+        "Repeated idea: ‘there isn’t a train goes by’ (in all three stanzas)."
+      ],
+      terms: [
+        {term: "Railroad", meaning: "A railway track along which trains run."},
+        {term: "Cinders", meaning: "Small pieces of burnt coal or ash from an engine."},
+        {term: "Shrieking", meaning: "Making a loud, high, sharp sound."},
+        {term: "Personification", meaning: "Treating a thing as if it were a person."},
+        {term: "Symbol", meaning: "Something that stands for a bigger idea."}
+      ],
+      qa: [
+        {q: "What does the train stand for in the poem?", a: "It stands for adventure, travel and the wish to explore new places and meet new people."},
+        {q: "Why does the speaker say she would take any train?", a: "Although she loves her friends, her desire to travel is so strong that she would take any train, no matter where it is going."}
+      ],
+      quiz: [
+        {q: "What does the speaker hear during the day?", options: ["Birds singing","Rain falling","The train’s shrieking whistle","A temple bell"], answer: 2, explain: "She hears the whistle even though the railroad is miles away."},
+        {q: "What does she see at night?", options: ["The moon only","The red cinders on the sky","Fireflies","A rainbow"], answer: 1, explain: "She imagines the engine’s red cinders."},
+        {q: "The rhyme scheme of the poem is", options: ["AABB","ABAB","ABBA","ABCA"], answer: 1, explain: "The first and third lines rhyme, as do the second and fourth."},
+        {q: "The poem expresses", options: ["a strong desire to travel","fear of trains","dislike of friends","sadness at home"], answer: 0, explain: "She would take any train."},
+        {q: "Which word gives the whistle a human quality?", options: ["railroad","miles","night","shrieking"], answer: 3, explain: "A whistle that shrieks is like a person screaming."}
+      ]
+    },
+    {
+      id: "conquering-the-summit",
+      title: "Conquering the Summit",
+      section: "Poorvi",
+      summary: "A true account of Arunima Sinha, a national-level volleyball player who lost a leg in a train accident in 2011 but fulfilled her vow to climb Mount Everest in 2013, becoming the first Indian female amputee to do so, and later completed the Seven Summits.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 4",
+      notes: [
+        {
+          heading: "Her early life and accident",
+          points: [
+            "Arunima Sinha comes from Ambedkar Nagar, a small district of Uttar Pradesh. Her father was an army engineer and her mother a health supervisor. Her family loved sports.",
+            "She was a national-level volleyball player and wished to join the paramilitary forces to continue her sporting life.",
+            "On the night of 11 April 2011, at age 24, she met with a train accident and lost a leg. She survived and, lying in hospital, vowed to climb Mount Everest."
+          ]
+        },
+        {
+          heading: "Training and the climb",
+          points: [
+            "She received a prosthetic leg and physiotherapy. Inspired by an article on Everest, she did a basic mountaineering course at the Nehru Institute of Mountaineering in Uttarkashi, followed by eighteen months of rigorous training.",
+            "She approached Bachendri Pal, the first Indian woman to climb Everest. Bachendri Pal told her that she had already conquered the Everest within her.",
+            "On 21 May 2013, after 52 exhausting days, she reached the summit. She planted the Indian flag and left a photograph of Swami Vivekananda, who inspired her."
+          ]
+        },
+        {
+          heading: "Later achievements",
+          points: [
+            "By July 2016 she had climbed six continental peaks including Everest, and in January 2019 she climbed Mount Vinson in Antarctica, becoming the world’s first female amputee to climb Mount Vinson. Her goal of completing the Seven Summits was achieved.",
+            "She was awarded the Padma Shri in 2015, the Tenzing Norgay National Adventure Award and an honorary doctorate from the University of Strathclyde. She wrote the autobiography Born Again on the Mountain.",
+            "The seven summits: Everest (Asia), Aconcagua (South America), Denali (North America), Kilimanjaro (Africa), Elbrus (Europe), Vinson (Antarctica) and Kosciuszko (Australia)."
+          ]
+        },
+        {
+          heading: "Message",
+          points: [
+            "Her story is about the mind as much as the body: fortitude, hard work and a positive mindset.",
+            "Her advice is never to give up, to remember your goal and to work hard. She says failure is not falling short of a goal but having no goal worth chasing.",
+            "She is ‘a beacon of hope and resilience’ for others."
+          ]
+        }
+      ],
+      formulas: [
+        "Accident: 11 April 2011. Everest summit: 21 May 2013 (after 52 days). Padma Shri: 2015. Vinson: January 2019.",
+        "Mentor: Bachendri Pal (first Indian woman on Everest). Training: Nehru Institute of Mountaineering, Uttarkashi.",
+        "Autobiography: Born Again on the Mountain: A Story of Losing Everything and Finding It Back."
+      ],
+      terms: [
+        {term: "Amputee", meaning: "A person who has had a limb cut off."},
+        {term: "Prosthetic leg", meaning: "An artificial leg."},
+        {term: "Resilience", meaning: "The ability to recover quickly from difficulty."},
+        {term: "Fortitude", meaning: "Courage shown over a long time."},
+        {term: "Adversity", meaning: "A difficult or unfortunate situation."},
+        {term: "Beacon", meaning: "A source of guidance or inspiration."}
+      ],
+      qa: [
+        {q: "What did Arunima do to fulfil her ambition of climbing Everest?", a: "She got a prosthetic leg and physiotherapy, did a basic mountaineering course at Uttarkashi, trained rigorously for eighteen months and took guidance from Bachendri Pal."},
+        {q: "Why is Arunima called a beacon of hope and resilience?", a: "Despite losing a leg, she did not give up. She climbed Everest and later the Seven Summits, and inspires others to chase their goals."}
+      ],
+      quiz: [
+        {q: "In which year did Arunima climb Mount Everest?", options: ["2011","2015","2013","2019"], answer: 2, explain: "She reached the summit on 21 May 2013."},
+        {q: "Who guided Arunima in her training?", options: ["Tenzing Norgay","Edmund Hillary","Bachendri Pal","Santosh Yadav"], answer: 2, explain: "She approached Bachendri Pal, the first Indian woman on Everest."},
+        {q: "Which award did Arunima receive in 2015?", options: ["Bharat Ratna","Padma Shri","Arjuna Award","Param Vir Chakra"], answer: 1, explain: "She was awarded the Padma Shri."},
+        {q: "Which peak completed her Seven Summits?", options: ["Mount Vinson in Antarctica","Mount Kilimanjaro","Mount Elbrus","Mount Denali"], answer: 0, explain: "She climbed Vinson in January 2019."},
+        {q: "Her autobiography is called", options: ["Wings of Fire","My Everest","Top of the World","Born Again on the Mountain"], answer: 3, explain: "The title shows she found her life again on the mountain."}
+      ]
+    },
+    {
+      id: "a-homage-to-our-brave-soldiers",
+      title: "A Homage to Our Brave Soldiers",
+      section: "Poorvi",
+      summary: "Two friends exchange letters. Soumya writes about her school visit to the National War Memorial in New Delhi, its design, the Amar Jawan Jyoti, the gallantry awards and the stories of heroes. Ananda replies with his own feelings of gratitude and a poem.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 5",
+      notes: [
+        {
+          heading: "Soumya’s letter: the National War Memorial",
+          points: [
+            "Soumya from Bengaluru visited New Delhi on a school trip. The National War Memorial was built from April 2018 to February 2019 and inaugurated by Prime Minister Narendra Modi in February 2019. It spreads over 40 acres near India Gate.",
+            "Each brick is a tablet, and there are 29,000 tablets with more than 26,000 names of soldiers who died in wars since 1947, including the conflicts of 1962, 1965, 1971 and the Kargil War of 1999.",
+            "The Amar Jawan Jyoti is an eternal flame in the obelisk, which was earlier at India Gate. The old flame was merged with the new one at the memorial."
+          ]
+        },
+        {
+          heading: "The four Chakras and gallantry awards",
+          points: [
+            "The memorial has four concentric circles around a 15-metre obelisk: Amar Chakra (immortality), Veerta Chakra (bravery), Tyag Chakra (sacrifice) and Raksha Chakra (protection).",
+            "The Veerta Chakra has six bronze murals of battle actions. The Tyag Chakra has walls of honour shaped like the ancient Chakravyuh with a tablet for each fallen hero. The Raksha Chakra has a ring of trees that stand for protecting soldiers.",
+            "The Param Vir Chakra (PVC) is India’s highest wartime gallantry award, given to 21 bravehearts. Others are the Maha Vir Chakra, Kirti Chakra, Vir Chakra and Shaurya Chakra.",
+            "Major Somnath Sharma received the first PVC (posthumously) in the Battle of Badgam in 1947. The letter gives the citation of Lance Naik Albert Ekka (PVC, 1971) and of Major Padmapani Acharya (MVC, Kargil, 1999)."
+          ]
+        },
+        {
+          heading: "Ananda’s reply",
+          points: [
+            "Ananda in Chandigarh praises Soumya’s letter. He says a war memorial is not only a monument but an expression of deep gratitude for the supreme sacrifice of soldiers who defend the country’s sovereignty and integrity.",
+            "He feels motivated to think of joining the Armed Forces, and says it is our duty to visit such places and honour soldiers.",
+            "He shares the poem Pushp ki Abhilasha by Makhanlal Chaturvedi, in which a flower wishes to be thrown on the path where brave people go to give their lives for the motherland.",
+            "He mentions Captain Anuj Nayyar (MVC, Kargil 1999) and his mother Meena Nayyar’s memoir, and a mobile app on the memorial."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "The lesson teaches gratitude and respect for soldiers and the idea that we should never forget the cost of freedom.",
+            "It uses the letter form, with a date, address, greeting and closing, to share experience and feeling.",
+            "Soumya’s feelings range from wonder and pride to sadness, and finally to motivation to live a life worthy of the sacrifices."
+          ]
+        }
+      ],
+      formulas: [
+        "National War Memorial: built April 2018 – February 2019, near India Gate, 40 acres. Four Chakras: Amar, Veerta, Tyag, Raksha.",
+        "Param Vir Chakra: India’s highest wartime gallantry award; first awarded to Major Somnath Sharma (1947).",
+        "Poem shared: Pushp ki Abhilasha by Makhanlal Chaturvedi. Writers of the letters: Soumya (Bengaluru) and Ananda (Chandigarh)."
+      ],
+      terms: [
+        {term: "Posthumously", meaning: "After death."},
+        {term: "Gallantry", meaning: "Great courage, especially in battle."},
+        {term: "Citation", meaning: "An official statement describing a person’s brave deed."},
+        {term: "Obelisk", meaning: "A tall, tapering stone pillar."},
+        {term: "Commemorate", meaning: "To remember and honour with a ceremony or a monument."},
+        {term: "Valiant", meaning: "Very brave."}
+      ],
+      qa: [
+        {q: "What are the four Chakras of the National War Memorial?", a: "They are Amar Chakra (immortality), Veerta Chakra (bravery), Tyag Chakra (sacrifice) and Raksha Chakra (protection), arranged in four concentric circles around the central obelisk."},
+        {q: "Why does Ananda say a war memorial is more than a monument?", a: "Because it expresses deep gratitude for the supreme sacrifice of soldiers who defended the nation, and it reminds citizens of the cost of freedom."}
+      ],
+      quiz: [
+        {q: "Where is the National War Memorial?", options: ["In Chandigarh","In Bengaluru","In Kolkata","Near India Gate in New Delhi"], answer: 3, explain: "Soumya visited it on a school trip to New Delhi."},
+        {q: "What is India’s highest wartime gallantry award?", options: ["Kirti Chakra","Shaurya Chakra","Param Vir Chakra","Vir Chakra"], answer: 2, explain: "The Param Vir Chakra is the highest."},
+        {q: "Who received the first Param Vir Chakra?", options: ["Lance Naik Albert Ekka","Major Somnath Sharma","Captain Anuj Nayyar","Major Padmapani Acharya"], answer: 1, explain: "He received it posthumously for the Battle of Badgam in 1947."},
+        {q: "The innermost circle of the memorial is the", options: ["Amar Chakra","Raksha Chakra","Tyag Chakra","Veerta Chakra"], answer: 0, explain: "It holds the obelisk with the eternal flame."},
+        {q: "Ananda shares which poem?", options: ["Pushp ki Abhilasha","My Dear Soldiers","Paper Boats","Harvest Hymn"], answer: 0, explain: "It is by Makhanlal Chaturvedi."}
+      ]
+    },
+    {
+      id: "my-dear-soldiers",
+      title: "My Dear Soldiers",
+      section: "Poorvi",
+      summary: "A short poem of tribute to soldiers by Dr. A. P. J. Abdul Kalam. It praises them as the great sons and daughters of the land who guard the borders in every season and terrain, and prays for their well-being.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 5",
+      notes: [
+        {
+          heading: "What the poem says",
+          points: [
+            "The poet addresses the defenders of the borders as great sons of the land (the term includes men and women in service). While others sleep, they continue their duty.",
+            "They stand guard in windy seasons, snowy days and the scorching sun, always awake.",
+            "They walk the lonely stretches of land like yogis, climb mountains, stride through valleys, defend deserts and marshes, and keep watch over the sea and the sky.",
+            "They give the prime of their youth to the nation. The wind chimes of the land seem to sound in honour of their deeds, and the poet prays for the Lord’s blessings on them."
+          ]
+        },
+        {
+          heading: "Theme and tone",
+          points: [
+            "The theme is patriotism and sacrifice. The poem shows the hardships of soldiers and the gratitude we owe them.",
+            "The tone is admiring, respectful, grateful and prayerful."
+          ]
+        },
+        {
+          heading: "Devices",
+          points: [
+            "Imagery: windy and snowy days, scorching sun, mountains, valleys, deserts and marshes bring the soldiers’ surroundings to life.",
+            "Simile: the soldiers’ patience on lonely stretches is compared to that of yogis.",
+            "Metaphor: wind chimes stand for the sounds that carry the nation’s respect.",
+            "Repetition of ‘you’ and ‘we’ sets up the contrast between soldiers and the people they guard; alliteration appears in ‘season’ and ‘snowy’."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Dr. A. P. J. Abdul Kalam (former President of India). Poem is a tribute and a prayer.",
+        "Terrains named: mountains, valleys, deserts, marshes, seas and air.",
+        "Devices: imagery, simile (like yogis), metaphor (wind chimes), repetition, alliteration."
+      ],
+      terms: [
+        {term: "Defender", meaning: "A person who protects something from attack."},
+        {term: "Sweltering", meaning: "Uncomfortably hot."},
+        {term: "Yogi", meaning: "A person who practises deep meditation and discipline."},
+        {term: "Surveillance", meaning: "Close watch kept on a place or person."},
+        {term: "Marsh", meaning: "Low, wet, soft land."}
+      ],
+      qa: [
+        {q: "How does the poet describe the soldiers’ duty?", a: "He says they guard the borders in every season and terrain, stay awake while others sleep, and give the prime of their youth to the nation."},
+        {q: "What is the tone of the poem?", a: "The tone is respectful, admiring, grateful and prayerful, since the poet praises the soldiers and asks God to bless them."}
+      ],
+      quiz: [
+        {q: "Who wrote ‘My Dear Soldiers’?", options: ["Sarojini Naidu","Rabindranath Tagore","Ruskin Bond","A. P. J. Abdul Kalam"], answer: 3, explain: "The poem is by Dr. A. P. J. Abdul Kalam."},
+        {q: "To whom is the poem addressed?", options: ["Farmers","Teachers","The defenders of the borders","Doctors"], answer: 2, explain: "It is a tribute to soldiers."},
+        {q: "The soldiers walk the lonely stretches like", options: ["birds","yogis","kings","children"], answer: 1, explain: "The poem compares them to yogis."},
+        {q: "The theme of the poem is", options: ["love of travel","patriotism and sacrifice","humour","friendship"], answer: 1, explain: "It honours soldiers’ sacrifice for the nation."},
+        {q: "The poet ends the poem by", options: ["praying for the soldiers’ well-being","asking for peace treaties","describing a war","praising the king"], answer: 0, explain: "He asks the Lord to bless the brave men."}
+      ]
+    },
+    {
+      id: "rani-abbakka",
+      title: "Rani Abbakka",
+      section: "Poorvi",
+      summary: "A graphic story about Rani Abbakka of Ullal in coastal Karnataka, who refused to pay tribute to the Portuguese, built up trade and an alliance, and fought them bravely until her small kingdom was free.",
+      source: "Poorvi (Class 7, reprint 2026–27), Unit 5",
+      notes: [
+        {
+          heading: "Background and her vow",
+          points: [
+            "Ullal is a small principality on the west coast of Karnataka. It had been captured by the Portuguese and had to pay them tribute.",
+            "On her deathbed, Abbakka’s mother Hiriya Abbakka laments the Portuguese rule. Her daughter and successor, Abbakka Devi, promises not to rest until the Portuguese are driven out of the west coast.",
+            "The next day Abbakka is crowned queen and asks the people for their whole-hearted cooperation to make Ullal stronger, secure and free."
+          ]
+        },
+        {
+          heading: "Defying the Portuguese",
+          points: [
+            "Abbakka tells her husband Veera Narasimha, king of Bangadi, that she will stop paying tribute and stop selling spices and cloth to the Portuguese. He calls it rash and fears the Portuguese might blame him too.",
+            "When she says she refuses to be cowed, he orders his soldiers to seize her, but they are so moved by her spirit that they do not move.",
+            "At a meeting of rajas, she asks them to unite, but they say they are no match for the Portuguese. This only strengthens her resolve to fight alone if needed.",
+            "A Portuguese envoy demands the overdue tribute, and Abbakka replies that Ullal is a sovereign country and takes no orders from the Portuguese. She builds merchant ships and, in alliance with the Zamorin of Kozhikode, starts profitable trade with Arabia."
+          ]
+        },
+        {
+          heading: "The war",
+          points: [
+            "The Portuguese navy stops all her merchant ships on their return. The crews fight bravely and every ship gets back except the commander’s, which seems to have been captured. An angry Abbakka sends an envoy to Mangalore, the Portuguese base. The reply is an attack with cannons.",
+            "Abbakka’s forces attack the Portuguese fort, and the commander Ribero escapes with his life, saying he will get help from Goa.",
+            "The Portuguese governor of Goa is angry that a mere woman has defeated them and gathers forces. Abbakka tells her soldiers that this shall be the decisive war. After four days of battle, the Portuguese retreat in defeat and never trouble Ullal again.",
+            "Later she helped Venkatappa Nayak of Keladi to take Mangalore fort. The Portuguese were finally driven out of Mangalore by Shivappa Nayak."
+          ]
+        },
+        {
+          heading: "Qualities and message",
+          points: [
+            "Abbakka is fearless, determined, wise in trade and politics, and a leader who inspires loyalty.",
+            "The story shows that courage and unity can face a powerful foreign force, and it honours an ‘unsung hero’ of India’s struggle against colonial powers.",
+            "The graphic form tells the story through pictures and short speech bubbles."
+          ]
+        }
+      ],
+      formulas: [
+        "Source: Azadi Ka Amrit Mahotsav, Ministry of Culture, Government of India (graphic story).",
+        "Place: Ullal, coastal Karnataka. Opponent: the Portuguese (base at Mangalore, governor at Goa). Husband: Veera Narasimha of Bangadi.",
+        "Ally: the Zamorin of Kozhikode. Trade partner: Arabia."
+      ],
+      terms: [
+        {term: "Vassal", meaning: "A state controlled by a more powerful state and made to pay it money."},
+        {term: "Sovereign", meaning: "Having complete authority; independent."},
+        {term: "Tribute", meaning: "Money paid by a weaker ruler to a stronger one."},
+        {term: "Rash", meaning: "Acting without thinking about the consequences."},
+        {term: "Avenge", meaning: "To take revenge for a wrong."},
+        {term: "Dauntless", meaning: "Fearless."}
+      ],
+      qa: [
+        {q: "Why did Rani Abbakka refuse to pay tribute to the Portuguese?", a: "She said Ullal was a sovereign country and would not take orders from the Portuguese. She was also determined to keep the promise she had made to her dying mother."},
+        {q: "How did Rani Abbakka win against the Portuguese?", a: "She built ships, allied with the Zamorin and strengthened trade. She attacked the Portuguese fort and, when they came back with more forces, her soldiers fought for four days and made them retreat."}
+      ],
+      quiz: [
+        {q: "Where was Rani Abbakka’s kingdom?", options: ["Delhi","Goa","Kerala","Ullal on the west coast of Karnataka"], answer: 3, explain: "Ullal was her small principality."},
+        {q: "Whom did she oppose?", options: ["The French","The Mughals","The Portuguese","The Dutch"], answer: 2, explain: "She refused to pay tribute to the Portuguese."},
+        {q: "Who was her ally in trade and defiance?", options: ["The king of Goa","The Nizam","The Zamorin of Kozhikode","The Maratha king"], answer: 2, explain: "She allied with the Zamorin of Kozhikode."},
+        {q: "How many days did the final battle last?", options: ["One day","Four days","Ten days","A month"], answer: 1, explain: "The battle raged for four days before the Portuguese retreated."},
+        {q: "Which word means ‘a state that pays tribute to a stronger one’?", options: ["vassal","sovereign","successor","envoy"], answer: 0, explain: "Ullal had become a vassal of the Portuguese."}
+      ]
+    },
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
       id: "adverbs",
