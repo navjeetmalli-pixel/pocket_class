@@ -1,8 +1,8 @@
-// Class 3 English: Grammar, Vocabulary, Writing Skills and Reading Skills.
+// Class 3 English: Grammar, Vocabulary, Writing Skills, Reading Skills and the lessons of Santoor.
 // Format: see CONTENT_GUIDE.md. All examples and model answers are original.
 StudyData.add(3, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills, arranged by topic. Textbook lessons are not included.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Santoor"], note: "Grammar and writing, plus every lesson of Santoor (summarised in our own words).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
@@ -1005,6 +1005,529 @@ StudyData.add(3, "english", {
           answer: 1,
           explain: "Asking who is in the picture helps you describe the people in it."
         }
+      ]
+    },
+
+    // ───────────────────────────── SANTOOR ─────────────────────────────
+    {
+      id: "colours",
+      title: "Colours",
+      section: "Santoor",
+      summary: "A short, happy poem about two children who share their crayons so that they have a full pack. The lesson also practises action words, blend sounds like gr and cr, and putting words in ABC order.",
+      notes: [
+        { heading: "Idea of the poem", points: [
+          "One child has red, yellow and blue crayons. The other child has some more, such as green, purple and black.",
+          "One needs the red crayon and the other needs the black one.",
+          "When they share, they get a full pack of crayons. The poem teaches us that sharing makes everyone happy."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "**Action words** tell us what someone does: laugh, dance, eat, cry, swim, jump, run, write.",
+          "The blends **gr** and **cr** are practised: green, grass, grapes and crayon, crab, crow.",
+          "**Alphabetical order** means ABC order. Look at the first letter of each word: apple, banana, cherry, grapes, orange."
+        ] },
+        { heading: "Speaking and doing", points: [
+          "Children rearrange jumbled letters to find colour names, such as LEBU for blue.",
+          "In a fun game, you read the colour of the ink and not the word that is written.",
+          "Children match a word with its friend-word to make a new one, such as rain + bow = rainbow."
+        ] }
+      ],
+      formulas: ["Theme: sharing", "Action words: run, jump, eat, write", "ABC order: apple, banana, cherry", "rain + bow = rainbow"],
+      terms: [
+        { term: "Crayon", meaning: "A coloured stick that we use to draw and colour." },
+        { term: "Action word", meaning: "A word that tells what someone does, such as dance or swim." },
+        { term: "Alphabetical order", meaning: "Putting words in ABC order using their first letters." },
+        { term: "Blend", meaning: "Two letters whose sounds join together, such as gr in green." }
+      ],
+      qa: [
+        { q: "Why did the children share their crayons?", a: "Each child had some colours that the other child needed. By sharing, they got a full pack." },
+        { q: "How many children are there in the poem?", a: "There are two children in the poem. One says “I”, and the other says “you”." },
+        { q: "Put these in ABC order: red, blue, green.", a: "blue, green, red." }
+      ],
+      quiz: [
+        { q: "What is the poem about?", options: ["Sharing crayons", "Eating fruit", "Flying kites", "Going to school"], answer: 0, explain: "Two children share their crayons to make a full pack." },
+        { q: "Which word is an action word?", options: ["carrot", "dance", "book", "leg"], answer: 1, explain: "**Dance** tells us what someone does." },
+        { q: "Which colour does one child need in the poem?", options: ["white", "pink", "black", "orange"], answer: 2, explain: "One child needs the black crayon, and the other needs the red one." },
+        { q: "Which word starts with the blend ‘cr’?", options: ["green", "draw", "prize", "crayon"], answer: 3, explain: "**Crayon** begins with the sounds c and r together." },
+        { q: "Which list is in ABC order?", options: ["apple, banana, cherry", "cherry, banana, apple", "banana, apple, cherry", "apple, cherry, banana"], answer: 0, explain: "A comes before B, and B comes before C." }
+      ]
+    },
+    {
+      id: "badal-and-moti",
+      title: "Badal and Moti",
+      section: "Santoor",
+      summary: "Badal finds a shivering puppy, brings it home and names it Moti. When Badal falls into a deep pit on a rainy day, Moti finds him by his smell and barks until the neighbours come. The lesson also practises ‘ed’ action words, question marks and full stops.",
+      notes: [
+        { heading: "What happens", points: [
+          "Badal lives with his mother in a village. One evening he sees a puppy shivering in the cold on his way back from school.",
+          "He brings the puppy home. His mother says it can stay if Badal promises to take care of it. They name the puppy Moti.",
+          "Moti grows up and loves Badal. They eat and play together, and Moti follows him everywhere.",
+          "One rainy day Badal slips on a muddy lane and falls into a deep pit. He cannot climb out.",
+          "His mother is worried and calls the neighbours. Moti goes with them, catches Badal’s scent and barks near the pit. The neighbours pull Badal out with a rope. Badal hugs Moti and thanks him."
+        ] },
+        { heading: "Characters and message", points: [
+          "**Badal** is a kind boy who takes care of a puppy.",
+          "**Moti** is a loving and clever dog.",
+          "A pet that is looked after with love can become a true friend and even help us in trouble."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "Words like lived, loved, played, gathered and thanked end in **ed**. They tell us about actions that have already happened.",
+          "A sentence that asks something ends with a **question mark (?)**. A sentence that tells something ends with a **full stop (.)**.",
+          "Children also match word pairs that go together, such as bat and ball, and sequence the story of a dove and an ant."
+        ] }
+      ],
+      formulas: ["Theme: friendship with a pet", "walk + ed = walked", "Question ends with ?", "Statement ends with ."],
+      terms: [
+        { term: "Puppy", meaning: "A baby dog." },
+        { term: "Scent", meaning: "The smell of something or someone." },
+        { term: "Question mark", meaning: "The sign (?) at the end of a question." },
+        { term: "Full stop", meaning: "The dot (.) at the end of a sentence that tells something." }
+      ],
+      qa: [
+        { q: "How did Moti find Badal?", a: "Moti caught Badal’s scent and followed it to the pit. Then he barked, so the neighbours came." },
+        { q: "What promise did Badal give his mother?", a: "He promised to take care of the puppy." },
+        { q: "Add ‘ed’ to the word “play”.", a: "play + ed = played." }
+      ],
+      quiz: [
+        { q: "What did Badal see on his way back from school?", options: ["A shivering puppy", "A kitten", "A bird", "A cow"], answer: 0, explain: "He saw a puppy shivering in the cold." },
+        { q: "What did Badal and his mother name the puppy?", options: ["Kalu", "Moti", "Bholu", "Sheru"], answer: 1, explain: "They named the puppy Moti." },
+        { q: "Where did Badal fall?", options: ["A river", "A well", "A deep pit", "A pond"], answer: 2, explain: "He slipped on a muddy lane and fell into a deep pit." },
+        { q: "Which sentence should end with a question mark?", options: ["The sun rises in the east", "I like mangoes", "Brinda is my friend", "What is your name"], answer: 3, explain: "“What is your name” asks something, so it ends with a **?**." },
+        { q: "Which word tells about something that has already happened?", options: ["thanked", "thank", "thanks", "thanking"], answer: 0, explain: "Words that end in **ed** tell about the past." }
+      ]
+    },
+    {
+      id: "best-friends",
+      title: "Best Friends",
+      section: "Santoor",
+      summary: "Four shape friends, Circle, Square, Triangle and Rectangle, fight over who is the best. A wise star tells them that together they can make beautiful pictures and patterns, so they stop fighting. The lesson also explains when to use ‘a’ and ‘an’.",
+      notes: [
+        { heading: "What happens", points: [
+          "Circle, Square, Triangle and Rectangle are four friends. One day each of them says, “I am the best!”",
+          "Circle is round and has no sharp edges. Square has four equal sides. Triangle has three sides. Rectangle has four sides, two long and two short.",
+          "They cannot decide, so they ask the first person they meet, a wise star.",
+          "The star says that they are friends and should not fight. Together they can create beautiful pictures and patterns.",
+          "The shapes understand their mistake, promise never to fight again and stay best friends."
+        ] },
+        { heading: "Characters and message", points: [
+          "The four shapes are proud at first, and then they learn to value each other.",
+          "The **star** is wise and calm and gives good advice.",
+          "Friends do not need to fight about who is the best. Together we can do wonderful things."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "Use **a** before a singular noun that starts with a consonant sound: a dog, a cow, a sparrow.",
+          "Use **an** before a singular noun that starts with a vowel sound (a, e, i, o, u): an eagle, an umbrella, an ice-cream man.",
+          "Children also write a few lines about their own friend, and enjoy the rhyme “What Do You Do?” about animals and what they do."
+        ] }
+      ],
+      formulas: ["Theme: friendship and teamwork", "a + consonant sound: a dog", "an + vowel sound: an egg", "Circle 0 sides, Triangle 3 sides, Square and Rectangle 4 sides"],
+      terms: [
+        { term: "Shape", meaning: "The outline of something, such as a circle or a square." },
+        { term: "Pattern", meaning: "A design made by repeating shapes or colours." },
+        { term: "Article", meaning: "The small word a, an or the that comes before a noun." },
+        { term: "Wise", meaning: "Having good sense and giving good advice." }
+      ],
+      qa: [
+        { q: "Why were the four friends fighting?", a: "Each one said that it was the best shape." },
+        { q: "Who helped them to end the fight, and what did that person say?", a: "A wise star helped them. She said that together they could create the most beautiful pictures and patterns." },
+        { q: "Fill in a or an: ___ eagle, ___ dog.", a: "an eagle, a dog." }
+      ],
+      quiz: [
+        { q: "How many sides does a triangle have?", options: ["Four", "Two", "Three", "Five"], answer: 2, explain: "A triangle has three sides." },
+        { q: "Who ended the fight?", options: ["The moon", "A wise star", "A teacher", "A bird"], answer: 1, explain: "The shapes asked a wise star, and she told them to stop fighting." },
+        { q: "Which shape has no sharp edges?", options: ["Square", "Triangle", "Rectangle", "Circle"], answer: 3, explain: "A circle is round and has no sharp edges." },
+        { q: "Fill in the blank: I saw ___ eagle.", options: ["an", "a", "the", "no word"], answer: 0, explain: "Eagle starts with a vowel sound, so we use **an**." },
+        { q: "What did the shapes learn in the end?", options: ["To fight more", "To live alone", "That together they can create wonders", "That one shape is best"], answer: 2, explain: "Together they can make beautiful pictures and patterns." }
+      ]
+    },
+    {
+      id: "out-in-the-garden",
+      title: "Out in the Garden",
+      section: "Santoor",
+      summary: "A cheerful poem about playing outdoors with a ball, a kite and friends. The children bounce, throw, catch, pull, fly, run, skip, jump, slide and swing. The lesson also shows how to join two words with ‘and’.",
+      notes: [
+        { heading: "Idea of the poem", points: [
+          "A child plays in the garden on each fine day.",
+          "With the ball, the child bounces, throws and catches. With the kite, the child tugs, pulls and flies it.",
+          "With friends, the child runs, skips, jumps, sways, slides and swings.",
+          "The poem shows how much fun outdoor play is."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "New words: bounce, throw, slide, sway.",
+          "We can join two words with **and**: run and skip, give and take, sing and dance, eat and drink.",
+          "Children talk about the games they play outside, and about being careful while playing."
+        ] },
+        { heading: "Speaking and doing", points: [
+          "Children name other games and say what they call them in their mother tongue.",
+          "In the activity, children make a paper bag puppet with a paper bag, colours and thread."
+        ] }
+      ],
+      formulas: ["Theme: outdoor play", "Ball: bounce, throw, catch", "Kite: tug, pull, fly", "Join with and: run and jump"],
+      terms: [
+        { term: "Bounce", meaning: "To hit a ball on the ground so that it jumps back up." },
+        { term: "Sway", meaning: "To move gently from side to side." },
+        { term: "Tug", meaning: "To pull something with a quick pull." },
+        { term: "Puppet", meaning: "A toy figure that you move with your hand." }
+      ],
+      qa: [
+        { q: "What do the children do with the ball?", a: "They bounce it, throw it and catch it." },
+        { q: "How do the children play with the kite?", a: "They tug the kite, pull it and fly it." },
+        { q: "Join with ‘and’: sing, dance.", a: "sing and dance." }
+      ],
+      quiz: [
+        { q: "Where is the child playing in the poem?", options: ["In the garden", "In the kitchen", "In the school hall", "In a bus"], answer: 0, explain: "The poem begins with “Out in the garden”." },
+        { q: "Which thing does the child fly?", options: ["A ball", "A kite", "A top", "A boat"], answer: 1, explain: "The child tugs, pulls and flies the kite." },
+        { q: "Which word means to move gently from side to side?", options: ["throw", "slide", "sway", "catch"], answer: 2, explain: "To **sway** is to move gently from side to side." },
+        { q: "Join the words with ‘and’: give, take.", options: ["give or take", "give but take", "give take and", "give and take"], answer: 3, explain: "We join the two words with **and**: give and take." },
+        { q: "What do the children do with their friends?", options: ["Run and skip", "Sleep", "Read", "Cook"], answer: 0, explain: "With friends, they run and skip, jump and sway, slide and swing." }
+      ]
+    },
+    {
+      id: "talking-toys",
+      title: "Talking Toys",
+      section: "Santoor",
+      summary: "In a toy shop on a holiday, the toys hope that customers will choose them. Some children and a mother buy a few toys, and the toys feel happy or sad each time. The lesson also practises describing words and plurals with -s and -es.",
+      notes: [
+        { heading: "What happens", points: [
+          "It is a holiday and the market is full of people. The toy shop opens at 9 a.m. The toys wait to see who will buy them.",
+          "Two girls just look through the window and pass by, so the toys are sad.",
+          "A girl chooses the board game ‘Snakes and Ladders’. Then a mother buys a Vande Bharat toy train for her little son, who calls her Aayi.",
+          "Two girls buy marbles and a toy aeroplane. A group of children buys a toy elephant, a spinning top and dancing dolls.",
+          "The children leave the shop cheerfully."
+        ] },
+        { heading: "Toys in the story", points: [
+          "The shop has wooden toys, soft toys, board games, bats and balls, a talking doll, a toy kitten, a toy elephant, an aeroplane and a toy phone.",
+          "The picture glossary shows Chennapatna toys, Kondapalli dancing dolls and a Vande Bharat toy train."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "**Describing words** tell us more about a naming word: happy boy, pretty doll, blue frock, red cap.",
+          "To make a **plural**, add **s** to most words: cat → cats, doll → dolls.",
+          "For words ending in x, s, sh, ch, add **es**: box → boxes, bus → buses, brush → brushes."
+        ] }
+      ],
+      formulas: ["Theme: joy of toys", "Describing word + naming word: pretty doll", "Plural: add s (cats)", "Plural: add es (boxes, buses)"],
+      terms: [
+        { term: "Describing word", meaning: "A word that tells more about a person, animal or thing, such as red or pretty." },
+        { term: "Plural", meaning: "A word that names more than one, such as toys." },
+        { term: "Eagerly", meaning: "With great interest and wanting something very much." },
+        { term: "Displayed", meaning: "Put out so that people can see." }
+      ],
+      qa: [
+        { q: "Name some toys in the toy shop.", a: "There were wooden toys, soft toys, board games, bats and balls, a doll, a toy kitten, a toy elephant, an aeroplane and a toy phone." },
+        { q: "Which toy did the little boy ask his mother to buy?", a: "He asked for the Vande Bharat toy train." },
+        { q: "Write the plural of “box” and “cup”.", a: "boxes and cups." }
+      ],
+      quiz: [
+        { q: "When did the toy shop open?", options: ["At 9 a.m.", "At noon", "At night", "At 5 p.m."], answer: 0, explain: "The toy shop opened at 9 a.m." },
+        { q: "Which game did the girl choose?", options: ["Ludo", "Snakes and Ladders", "Chess", "Carrom"], answer: 1, explain: "She chose the board game Snakes and Ladders." },
+        { q: "Which word in “pretty doll” is the describing word?", options: ["doll", "a", "pretty", "the"], answer: 2, explain: "**Pretty** tells us more about the doll." },
+        { q: "What is the plural of “bus”?", options: ["bus", "buss", "buses", "bus’s"], answer: 2, explain: "Words ending in s take **es**: buses." },
+        { q: "How did the children leave the shop?", options: ["Cheerfully", "Angrily", "Sadly", "Sleepily"], answer: 0, explain: "They bought their toys and left cheerfully." }
+      ]
+    },
+    {
+      id: "paper-boats",
+      title: "Paper Boats",
+      section: "Santoor",
+      summary: "Meena floats paper boats in a stream. A naughty boy keeps overturning them, but he says he wants to play too. Meena kindly teaches him to make boats, and they both enjoy the game. The lesson also practises he and she, and the place words in, on and under.",
+      notes: [
+        { heading: "What happens", points: [
+          "Meena goes to the stream near the bamboo bridge and puts a paper boat in the water. It sails away and she is delighted.",
+          "A naughty boy starts overturning her boats. Meena is angry and tells him to stop.",
+          "The boy says that it is fun, but then says he will not do it again. He also wants to play, but does not know how to fold the paper.",
+          "Meena shows him how to fold and re-fold coloured paper into boats.",
+          "Both of them put their boats in the stream and enjoy watching them sail."
+        ] },
+        { heading: "Characters and message", points: [
+          "**Meena** is good at making boats, gets angry when her work is spoiled, but is kind and ready to help.",
+          "The **boy** is naughty at first, but he says sorry in his own way and learns something new.",
+          "Sharing what we know turns a quarrel into friendship."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "**He** is used for a boy or a man and **she** for a girl or a woman, so that we do not repeat the name: “Rani likes kites. She likes flying them.”",
+          "**Place words** (prepositions) tell where something is: the bat is **on** the bed, the ball is **in** the box, the car is **under** the table.",
+          "Children also draw a rangoli and write about a park using clue words."
+        ] }
+      ],
+      formulas: ["Theme: sharing and kindness", "He = boy/man, She = girl/woman", "Place words: in, on, under", "Paper boat: fold and re-fold"],
+      terms: [
+        { term: "Delighted", meaning: "Very happy and pleased." },
+        { term: "Overturn", meaning: "To turn something upside down." },
+        { term: "Stream", meaning: "A small river." },
+        { term: "Place word", meaning: "A word such as in, on or under that tells where something is." }
+      ],
+      qa: [
+        { q: "Why was Meena angry?", a: "A naughty boy was overturning her paper boats in the stream." },
+        { q: "How did Meena help the boy?", a: "She showed him how to fold and re-fold paper to make a boat." },
+        { q: "Fill in he or she: Sahil has a top. ___ plays with it.", a: "He plays with it." }
+      ],
+      quiz: [
+        { q: "What was Meena playing with?", options: ["Paper boats", "Kites", "Marbles", "Dolls"], answer: 0, explain: "She was putting paper boats in the stream." },
+        { q: "Why did the boy overturn the boats?", options: ["He was angry", "He thought it was fun", "He wanted to sell them", "He was hungry"], answer: 1, explain: "He said, “Because it is fun.”" },
+        { q: "What did the boy not know?", options: ["How to swim", "How to run", "How to fold paper into a boat", "How to read"], answer: 2, explain: "He did not know how to fold paper to make boats." },
+        { q: "Choose the right word: The ball is ___ the box.", options: ["on", "under", "he", "in"], answer: 3, explain: "The ball is **in** the box, which means inside it." },
+        { q: "Which word can replace “Durga” in the next sentence?", options: ["She", "He", "It", "They"], answer: 0, explain: "Durga is a girl, so we use **she**." }
+      ]
+    },
+    {
+      id: "the-big-laddoo",
+      title: "The Big Laddoo",
+      section: "Santoor",
+      summary: "A funny poem that imagines all laddoos joined into one big laddoo, all children into one big child and all seas into one big sea. When the big child throws the big laddoo into the big sea, there is a big splish-splash. The lesson also looks at describing words, blends and the festival of Sankranti.",
+      notes: [
+        { heading: "Idea of the poem", points: [
+          "The poem asks, “What if all the laddoos were one laddoo?” That laddoo would be very big.",
+          "It also imagines one big child and one big sea.",
+          "At the end the big child throws the big laddoo into the big sea, and there is a big SPLISH-SPLASH.",
+          "The poem is full of fun, and the word BIG is repeated many times."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "Children write words that describe a laddoo, such as round, sweet, yellow or tasty.",
+          "The blends **pl**, **cl** and **bl** are practised: play, plum, cloud, clock, blue, blanket.",
+          "Male and female pairs are matched: cock – hen, lion – lioness, peacock – peahen, horse – mare (the female horse is a mare), bull – cow, drake – duck."
+        ] },
+        { heading: "Festival and food", points: [
+          "**Khichdi** is cooked with rice and lentils and is eaten as a meal and at festivals.",
+          "It is a special dish for the harvest festival, which is known as Makar Sankranti, Pongal, Lohri, Bihu and by many other names in India.",
+          "On this day people thank the Sun God for a good harvest, and flying kites is popular."
+        ] }
+      ],
+      formulas: ["Theme: imagination and fun", "Describing words for laddoo: round, sweet, tasty", "Blends: pl, cl, bl", "Harvest festival: Sankranti, Pongal, Lohri, Bihu"],
+      terms: [
+        { term: "Laddoo", meaning: "A round Indian sweet." },
+        { term: "Splish-splash", meaning: "The sound of something falling into water." },
+        { term: "Harvest", meaning: "The time when farmers cut and collect the crops." },
+        { term: "Khichdi", meaning: "A dish made with rice and lentils." }
+      ],
+      qa: [
+        { q: "What would happen if the big child threw the big laddoo into the big sea?", a: "There would be a big splish-splash." },
+        { q: "Name some round things that we can eat and some that we cannot.", a: "We can eat laddoos, oranges and tomatoes. We cannot eat a ball, a stone or the Moon." },
+        { q: "What is khichdi made of?", a: "Khichdi is cooked with rice and lentils." }
+      ],
+      quiz: [
+        { q: "What does the big child do with the big laddoo?", options: ["Throws it into the sea", "Eats it all", "Shares it", "Hides it"], answer: 0, explain: "The big child throws it into the big sea." },
+        { q: "What sound is heard at the end of the poem?", options: ["Ring-ring", "Splish-splash", "Tick-tock", "Bow-wow"], answer: 1, explain: "The poem ends with a BIG SPLISH-SPLASH." },
+        { q: "Which word begins with the blend ‘cl’?", options: ["plum", "blue", "cloud", "play"], answer: 2, explain: "**Cloud** begins with the sounds c and l together." },
+        { q: "What is the female of ‘peacock’?", options: ["hen", "cow", "duck", "peahen"], answer: 3, explain: "The female of a peacock is a **peahen**." },
+        { q: "Which dish is made of rice and lentils?", options: ["Khichdi", "Kheer", "Laddoo", "Halwa"], answer: 0, explain: "**Khichdi** is cooked with rice and lentils." }
+      ]
+    },
+    {
+      id: "thank-god",
+      title: "Thank God!",
+      section: "Santoor",
+      summary: "A farmer who grows fruit takes a basket of grapes as a gift for the king. The playful king throws grapes at him, and the farmer says “Thank God!” each time because he could have brought heavy watermelons instead. This is a Jataka tale. The lesson also practises opposites, and is and are.",
+      notes: [
+        { heading: "What happens", points: [
+          "A farmer who likes fruit grows many kinds on his land, with special care for grapes and watermelons.",
+          "When the fruit is ripe, he decides to take the best fruit as a gift for the king. His wife says the watermelons and grapes are the best.",
+          "The palace is far, and watermelons are heavy, so he takes a basket of grapes.",
+          "In the royal garden, the king is in a playful mood. He eats a grape and then throws grapes at the farmer.",
+          "Each time a grape hits his forehead, the farmer says, “Thank God!” He explains to the surprised king that watermelons would have hurt much more."
+        ] },
+        { heading: "Characters and message", points: [
+          "The **farmer** is hard-working, wise and always thankful.",
+          "The **king** is playful and surprised by the farmer’s answer.",
+          "We should be thankful and look at the good side of things, even when something small goes wrong."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "**Opposites** have the opposite meaning: heavy – light, thick – thin, long – short, soft – hard, slow – fast.",
+          "Use **is** for one thing and **are** for more than one: The table **is** wooden. The toys **are** on the shelf.",
+          "Children also listen to the funny poem “Aachoo!” about an elephant with a cold, and put the steps of a fruit salad in order."
+        ] }
+      ],
+      formulas: ["Theme: being thankful", "heavy ↔ light", "is = one, are = more than one", "A Jataka tale"],
+      terms: [
+        { term: "Jataka tale", meaning: "An old Indian story with a lesson." },
+        { term: "Royal", meaning: "Belonging to a king or queen." },
+        { term: "Opposite", meaning: "A word with the contrary meaning, such as heavy and light." },
+        { term: "Wise", meaning: "Clever and sensible." }
+      ],
+      qa: [
+        { q: "Why did the farmer decide to take grapes?", a: "The palace was far away, and watermelons were too heavy to carry." },
+        { q: "Why did the farmer say “Thank God!”?", a: "He was thankful that he had brought light grapes and not heavy watermelons, which would have hurt more." },
+        { q: "Write the opposite of “slow” and “thick”.", a: "fast and thin." }
+      ],
+      quiz: [
+        { q: "What gift did the farmer take for the king?", options: ["Grapes", "Watermelons", "Mangoes", "Sweets"], answer: 0, explain: "He put bunches of grapes in a basket." },
+        { q: "Why did he not take watermelons?", options: ["They were small", "They were too heavy", "The king did not like them", "They were not ripe"], answer: 1, explain: "The way to the palace was long, and watermelons are heavy." },
+        { q: "What did the king do playfully?", options: ["Sang a song", "Gave a coin", "Threw grapes at the farmer", "Ran away"], answer: 2, explain: "He threw grapes, and one hit the farmer’s forehead." },
+        { q: "What is the opposite of ‘light’ in this story?", options: ["soft", "small", "slow", "heavy"], answer: 3, explain: "The farmer knew that the watermelon was **heavy** and the grapes were light." },
+        { q: "Choose the right word: These mangoes ___ sweet.", options: ["are", "is", "am", "be"], answer: 0, explain: "Mangoes means more than one, so we use **are**." }
+      ]
+    },
+    {
+      id: "madhus-wish",
+      title: "Madhu’s Wish",
+      section: "Santoor",
+      summary: "By Sudha Murty. Madhu loves food. He shares his lunch with an old man, who lets him wish for anything from a tree. Madhu asks only for food, and he gets many tasty things. But he gets hiccups and there is no water, and then he learns how important water is.",
+      notes: [
+        { heading: "What happens", points: [
+          "Madhu always wants to eat different foods. Every day at noon he eats lunch under a banyan tree.",
+          "One day he shares his food with a hungry old man. The old man is pleased and tells him that the tree will grant him any wish.",
+          "Madhu asks for different foods and nothing else. The tree gives him laddoos, fruit, and savouries like samosas, kachori and vada.",
+          "He gets hiccups and wants water, but he had asked only for food. Sharbat, kheer and badam milk do not stop the hiccups.",
+          "At last he asks for only water. A jug of water appears, he drinks it, and the hiccups stop. He learns that no other drink can replace water."
+        ] },
+        { heading: "Characters and message", points: [
+          "**Madhu** is kind to share his food, but he is greedy for food and does not think before he speaks.",
+          "The **old man** has special powers and rewards kindness.",
+          "We should think carefully before we wish for something. Water is very important to our lives."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "Words that tell about a person’s nature: **kind** (shares), **greedy** (wants everything), **generous** (gives freely), **brave**, **polite**, **selfish**, **lazy**.",
+          "Join sentences with **and** to add things: Aman has a pen, a pencil and an eraser.",
+          "Join sentences with **but** to show a difference: I like cartoons but my sister likes movies."
+        ] }
+      ],
+      formulas: ["Theme: kindness and the value of water", "kind = shares, greedy = wants too much", "and = adds, but = shows a difference", "Author: Sudha Murty"],
+      terms: [
+        { term: "Savouries", meaning: "Salty snacks such as samosas and potato chips." },
+        { term: "Hiccups", meaning: "Sudden small sounds from the throat that we cannot control." },
+        { term: "Greedy", meaning: "Wanting much more than one needs." },
+        { term: "Generous", meaning: "Happy to give or share." }
+      ],
+      qa: [
+        { q: "Why did the tree ask Madhu to think over his wish?", a: "The tree wanted Madhu to think carefully and not to ask only for food." },
+        { q: "Name some foods that Madhu ate.", a: "Madhu ate laddoos, fruits like grapes and mangoes, and savouries like samosas, kachori and vada." },
+        { q: "Join with ‘but’: I like tea. My sister likes milk.", a: "I like tea but my sister likes milk." }
+      ],
+      quiz: [
+        { q: "Where did Madhu eat his lunch?", options: ["In school", "Under a banyan tree", "By a river", "In a field"], answer: 1, explain: "He sat under a banyan tree every day at noon." },
+        { q: "What did Madhu do for the old man?", options: ["Gave him money", "Sent him away", "Shared his food", "Gave him a coat"], answer: 2, explain: "Madhu felt sorry for him and shared his food." },
+        { q: "What problem did Madhu get after eating a lot?", options: ["A cold", "A headache", "A fever", "Hiccups"], answer: 3, explain: "He got hiccups and could not find water." },
+        { q: "Which word means ‘happy to give or share’?", options: ["generous", "greedy", "lazy", "selfish"], answer: 0, explain: "A **generous** person gives freely." },
+        { q: "What did Madhu finally ask the tree for?", options: ["Sweets", "Water", "Fruits", "Money"], answer: 1, explain: "He asked for water, because no drink can replace it." }
+      ]
+    },
+    {
+      id: "night",
+      title: "Night",
+      section: "Santoor",
+      summary: "A short poem in which a child wonders where the sun goes at night. It sinks behind a distant hill, the world grows dark and still, and the child sleeps until the sun peeps out again in the morning. The lesson also practises the blends sp, st and sk, and words made with ‘sun’.",
+      notes: [
+        { heading: "Idea of the poem", points: [
+          "The child wonders where the bright sun goes at night.",
+          "The sun sinks behind a distant hill, and the world becomes dark and still.",
+          "The child goes to bed and sleeps until the next day begins to peep.",
+          "When the child opens his eyes, the sun is shining again."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "New words: **wonder** (to ask yourself about something), **distant** (far away), **peep** (to appear a little).",
+          "The blends **sp**, **st** and **sk** are practised: spy, star, sky, spoon, store, skate.",
+          "We can add **sun** to make new words: sunlight, sunflower, sunrays, sunset, sunrise, sunglasses, Sunday."
+        ] },
+        { heading: "Speaking and doing", points: [
+          "Children talk about the colours of the sky at sunrise and sunset, and what they can see in the night sky.",
+          "The game “I Spy” is played by giving a clue, such as “I spy something that is blue”."
+        ] }
+      ],
+      formulas: ["Theme: day and night", "The sun sets and the sun rises", "Blends: sp, st, sk", "sun + set = sunset"],
+      terms: [
+        { term: "Wonder", meaning: "To think and ask yourself about something." },
+        { term: "Distant", meaning: "Far away." },
+        { term: "Peep", meaning: "To show or appear a little bit." },
+        { term: "Sunset", meaning: "The time in the evening when the sun goes down." }
+      ],
+      qa: [
+        { q: "Where does the sun go at the end of the day, according to the poem?", a: "It sinks behind a distant hill." },
+        { q: "What does the child see when he opens his eyes in the morning?", a: "The sun is shining down on him." },
+        { q: "Make a new word with ‘sun’ and ‘set’.", a: "sunset." }
+      ],
+      quiz: [
+        { q: "What does the poem wonder about?", options: ["Where the moon lives", "Where the sun goes at night", "Where the wind blows", "Where rain comes from"], answer: 1, explain: "The child wonders where the sun goes at night." },
+        { q: "What happens when the sun goes behind the hill?", options: ["The world grows dark and still", "It starts to rain", "The birds sing", "The sky turns blue"], answer: 0, explain: "The world grows dark and still." },
+        { q: "Which word means ‘far away’?", options: ["bright", "still", "distant", "peep"], answer: 2, explain: "**Distant** means far away." },
+        { q: "Which word begins with the blend ‘sk’?", options: ["star", "spoon", "storm", "sky"], answer: 3, explain: "**Sky** begins with the sounds s and k together." },
+        { q: "Which of these is found in the sky?", options: ["Moon", "Shoes", "Computer", "Monkeys"], answer: 0, explain: "We see the Sun, the Moon, stars and clouds in the sky." }
+      ]
+    },
+    {
+      id: "chanda-mama-counts-the-stars",
+      title: "Chanda Mama Counts the Stars",
+      section: "Santoor",
+      summary: "Chanda Mama, the Moon, tries to count all the stars but always falls asleep or forgets the number, and he cries. The Sun tells him that the number of stars is the same as the number of lovely children, and he becomes happy. The lesson also practises ‘here’ and ‘there’.",
+      notes: [
+        { heading: "What happens", points: [
+          "Chanda Mama, the Moon, begins to count the stars: 1, 2, 3 and so on up to 999. Then he yawns and falls asleep.",
+          "The Sun peeps out from behind the clouds, and it is morning. Chanda Mama wakes in the evening and has forgotten where he stopped.",
+          "He tries night after night but keeps forgetting. One night he is upset and begins to cry.",
+          "The Sun smiles and says that the number of stars in the sky is the same as the number of lovely children.",
+          "Chanda Mama is happy. Now the Moon comes out every night, looks at the stars and the children, and smiles."
+        ] },
+        { heading: "Characters and message", points: [
+          "**Chanda Mama** (the Moon) is patient, but he gets tired and sad.",
+          "The **Sun** is kind and cheerful and helps him.",
+          "Some things are too many to count. Children are as precious as stars."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "Use **here** for something that is near you: Here is my bicycle.",
+          "Use **there** for something that is far from you: The Moon is there in the sky.",
+          "Children sort things that can be counted easily, such as fingers on one hand, and things that are too many to count, such as hairs on the head."
+        ] }
+      ],
+      formulas: ["Theme: counting and wonder", "here = near, there = far", "Stars = number of children", "Chanda Mama = the Moon"],
+      terms: [
+        { term: "Chanda Mama", meaning: "A loving Indian name for the Moon." },
+        { term: "Count", meaning: "To say numbers one by one to find how many." },
+        { term: "Tears", meaning: "Drops of water from the eyes when we cry." },
+        { term: "Here / There", meaning: "Here means near us. There means far from us." }
+      ],
+      qa: [
+        { q: "Why was Chanda Mama upset?", a: "He could never finish counting the stars because he fell asleep and forgot the number." },
+        { q: "Who helped Chanda Mama, and how?", a: "The Sun helped him. He said that the number of stars is the same as the number of lovely children." },
+        { q: "Fill in here or there: My brother lives in Delhi. I live ___ with my mother.", a: "I live here with my mother." }
+      ],
+      quiz: [
+        { q: "Who is Chanda Mama?", options: ["The Sun", "The Moon", "A star", "A cloud"], answer: 1, explain: "Chanda Mama is the Moon." },
+        { q: "What did Chanda Mama try to count?", options: ["Clouds", "Children", "Stars", "Birds"], answer: 2, explain: "He tried to count the stars in the sky." },
+        { q: "Why could he not finish counting?", options: ["He was hungry", "He lost his glasses", "It rained", "He fell asleep and forgot the count"], answer: 3, explain: "He fell asleep and forgot where he had stopped." },
+        { q: "Complete: The Moon is ___ in the sky.", options: ["there", "here", "this", "my"], answer: 0, explain: "The Moon is far away, so we say **there**." },
+        { q: "Which of these is too many to count easily?", options: ["Fingers on one hand", "Hairs on your head", "Eyes on your face", "Pencils in your box"], answer: 1, explain: "The hairs on your head are too many to count easily." }
+      ]
+    },
+    {
+      id: "chandrayaan",
+      title: "Chandrayaan",
+      section: "Santoor",
+      summary: "Curious Rani sees on TV that India has landed on the Moon. With her brother Pratik, she visits Nandini Aunty, a scientist, who explains that a rocket takes a vehicle to the Moon. Chandrayaan means ‘Moon vehicle’; it was launched on 14 July 2023 and landed on 23 August 2023. The lesson also revises ‘a’ and ‘an’.",
+      notes: [
+        { heading: "What happens", points: [
+          "Rani is a curious girl who asks many questions, such as why the sky is blue.",
+          "One evening she hears her mother sing about Chanda Mama and asks how far the Moon is. Her mother says it is very far.",
+          "Next morning her brother Pratik shouts in excitement that India is on the Moon. Rani sees pictures of machines on the Moon on TV and wants to know how it happened.",
+          "They visit their friend Vivaan’s house. His mother, Nandini Aunty, is a scientist, and the house has models and photographs of rockets.",
+          "Aunty explains that a rocket is used to go to the Moon. **Chandra** means Moon and **Yaan** means vehicle. Chandrayaan was launched on 14 July 2023 and landed on the Moon on 23 August 2023.",
+          "Rani asks if she can go to the Moon too, and Aunty says, “Maybe, one day.”"
+        ] },
+        { heading: "Characters and message", points: [
+          "**Rani** is curious and loves to learn.",
+          "**Pratik** is her excited elder brother, and **Nandini Aunty** is a friendly scientist.",
+          "Asking questions helps us to learn. India’s Chandrayaan is a proud moment for our country."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "Use **a** before a singular noun that begins with a consonant sound: a girl, a village.",
+          "Use **an** before a singular noun that begins with a vowel sound: an elephant, an umbrella.",
+          "The blends **sk**, **sw**, **sp** and **st** are practised in words like skirt, swings, spoon and story. The children also read the days of the week in order."
+        ] }
+      ],
+      formulas: ["Theme: curiosity and science", "Chandra = Moon, Yaan = vehicle", "Launched 14 July 2023, landed 23 August 2023", "a + consonant sound, an + vowel sound"],
+      terms: [
+        { term: "Curious", meaning: "Eager to know and learn about things." },
+        { term: "Scientist", meaning: "A person who studies and finds out how things work." },
+        { term: "Rocket", meaning: "A vehicle that goes very high into space." },
+        { term: "Chandrayaan", meaning: "India’s Moon mission; Chandra means Moon and Yaan means vehicle." }
+      ],
+      qa: [
+        { q: "How do you know that Rani was curious?", a: "She asked many questions, such as why the sky is blue and where the Sun goes at night." },
+        { q: "What do the words Chandra and Yaan mean?", a: "Chandra means Moon and Yaan means vehicle." },
+        { q: "When did Chandrayaan land on the Moon?", a: "It landed on the Moon on 23 August 2023." }
+      ],
+      quiz: [
+        { q: "Who is Nandini Aunty?", options: ["A scientist", "A teacher", "A doctor", "A farmer"], answer: 0, explain: "Nandini Aunty is a scientist and Vivaan’s mother." },
+        { q: "What is used to reach the Moon?", options: ["A bus", "A rocket", "A train", "A boat"], answer: 1, explain: "A rocket is used to travel to the Moon." },
+        { q: "What does ‘Yaan’ mean?", options: ["Moon", "Star", "Vehicle", "Sky"], answer: 2, explain: "Chandra means Moon and **Yaan** means vehicle." },
+        { q: "Fill in the blank: Maya bought ___ umbrella.", options: ["a", "the", "no word", "an"], answer: 3, explain: "Umbrella begins with a vowel sound, so we use **an**." },
+        { q: "What was Rani’s brother’s name?", options: ["Pratik", "Vivaan", "Badal", "Chinna"], answer: 0, explain: "Her elder brother was Pratik." }
       ]
     }
   ]

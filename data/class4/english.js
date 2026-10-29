@@ -1,8 +1,8 @@
-// Class 4 English: Grammar, Vocabulary, Writing Skills and Reading Skills.
+// Class 4 English: Grammar, Vocabulary, Writing Skills, Reading Skills and the lessons of Santoor.
 // Format: see CONTENT_GUIDE.md. All examples and model answers are original.
 StudyData.add(4, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills, arranged by topic. Textbook lessons are not included.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Santoor"], note: "Grammar and writing, plus every lesson of Santoor (summarised in our own words).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
@@ -1008,6 +1008,551 @@ StudyData.add(4, "english", {
           answer: 1,
           explain: "Read carefully, find the answer and write it in a complete sentence."
         }
+      ]
+    },
+    // ───────────────────────────── SANTOOR ─────────────────────────────
+    {
+      id: "together-we-can",
+      title: "Together We Can",
+      section: "Santoor",
+      summary: "A cheerful poem about teamwork. When we stand together, help each other and share both wins and losses, our bond becomes strong and the goal comes closer. The lesson also practises collective nouns, place words and talking about the future with “will”.",
+      notes: [
+        { heading: "Idea of the poem", points: [
+          "The poem says that a team that stands together stays strong and does not fall.",
+          "Team members cheer for each other, and they share the result whether they win or lose.",
+          "When every hand is joined, the goal comes near and the whole team feels happy.",
+          "The poem is short and rhymes, so it is fun to recite aloud."
+        ] },
+        { heading: "Language work in the lesson", points: [
+          "**Collective nouns** name a group: a bunch of keys, a swarm of bees, a herd of sheep, a pack of wolves, a grove of trees, a bouquet of flowers, a choir of boys.",
+          "**Place words (prepositions)** such as behind, between, near and in front of tell where something is, like a bank near a school.",
+          "**Future with ‘will’:** we say what is going to happen next, for example “The teacher will check the work.”"
+        ] },
+        { heading: "Speaking and doing", points: [
+          "Two friends, Bokali and Darsana, talk about the different foods, festivals and languages of our country and how we still stand in unity.",
+          "Children are asked to talk about their favourite food and festival with a partner, taking turns politely.",
+          "In the activity, children fold paper, draw one side of a person and cut it out to make a row of people holding hands, a symbol of togetherness."
+        ] }
+      ],
+      formulas: ["Theme: teamwork and togetherness","Collective nouns: a swarm of bees, a herd of sheep, a pack of wolves, a bunch of keys","Place words: behind, between, near, in front of","Future: will + action word"],
+      terms: [
+        { term: "Teamwork", meaning: "Working together with others to reach a common goal." },
+        { term: "Bond", meaning: "A close link of love or friendship between people." },
+        { term: "Unity", meaning: "Standing together as one even when we are different." },
+        { term: "Collective noun", meaning: "A word that names a group of people, animals or things." }
+      ],
+      qa: [
+        { q: "What happens when you join hands with your team?", a: "The goal comes near and the team spirit makes everyone happy and strong." },
+        { q: "Why is helping each other important?", a: "When we help each other, the team stays strong and can solve any problem together." },
+        { q: "Write the collective noun for bees, sheep and keys.", a: "A swarm of bees, a herd of sheep and a bunch of keys." }
+      ],
+      quiz: [
+        { q: "What is the main message of the poem?", options: ["Teamwork makes us strong","Winning is everything","Play alone","Never help others"], answer: 0, explain: "The poem celebrates standing together and helping one another." },
+        { q: "Which is the correct collective noun for bees?", options: ["a herd","a swarm","a pack","a grove"], answer: 1, explain: "Bees live and fly in a swarm." },
+        { q: "“The bank is near the school.” Which word tells the place?", options: ["bank","is","the","near"], answer: 3, explain: "“Near” shows where the bank is." },
+        { q: "Which sentence talks about the future?", options: ["The teacher checked the work.","The teacher is checking the work.","The teacher will check the work.","The teacher checks the work."], answer: 2, explain: "“Will” shows something that is going to happen." },
+        { q: "What do the team members do whether they win or lose?", options: ["Fight","Share the result","Go home","Stop playing"], answer: 1, explain: "The poem says the team shares the result and stays close." }
+      ]
+    },
+    {
+      id: "the-tinkling-bells",
+      title: "The Tinkling Bells",
+      section: "Santoor",
+      summary: "Chinna wants to buy a pair of tinkling bells for his pet kid, Tara, but loses his money. When he gets extra change by mistake, his mother helps him choose honesty, and he finally buys the bells.",
+      notes: [
+        { heading: "What happens", points: [
+          "Chinna, a Grade 4 boy in a village, loves his five-month-old white kid, Tara.",
+          "On the way home from school he sees shiny tinkling bells at Chacha’s shop. They cost ten rupees, but his money is missing.",
+          "He goes home sad. His mother, Kamala, hugs him, comforts him and says she will give him the money, but he must be careful with money in future.",
+          "At the market the fruit seller gives Chinna ten rupees extra by mistake. Chinna wants to keep it, but his mother reminds him how sad he felt when his money was lost.",
+          "Chinna returns the money. The seller praises him, and his mother takes him to Chacha’s shop, where he buys the bells and ties them round Tara’s neck."
+        ] },
+        { heading: "Characters", points: [
+          "**Chinna** is a bright, loving boy who learns to be honest.",
+          "**Kamala (his mother)** is gentle and wise. She teaches without scolding harshly.",
+          "**The fruit seller and Chacha** are shopkeepers who trust the children."
+        ] },
+        { heading: "Values and language", points: [
+          "Honesty means not keeping what is not ours. We should treat other people’s things the way we want ours to be treated.",
+          "A baby goat under six months is called a **kid**.",
+          "**Comparing with adjectives:** add -er to compare two (Charu is taller than Chinna) and -est to compare many (Jasmine is the tallest).",
+          "Opposites (antonyms): beautiful and ugly, reward and punishment, sell and buy."
+        ] }
+      ],
+      formulas: ["Price of the bells: ten rupees","Extra money by mistake: ten rupees","Compare two: adjective + er + than","Compare many: the + adjective + est","Value: honesty"],
+      terms: [
+        { term: "Kid", meaning: "A young goat, under six months old." },
+        { term: "Honest", meaning: "Truthful, and not taking what belongs to someone else." },
+        { term: "Console", meaning: "To comfort someone who is sad." },
+        { term: "Whisper", meaning: "To speak very softly." },
+        { term: "Antonym", meaning: "A word with the opposite meaning." }
+      ],
+      qa: [
+        { q: "Why was Chinna upset?", a: "He wanted to buy tinkling bells for his pet kid, but he found that his money was missing." },
+        { q: "How did Kamala help Chinna feel better?", a: "She hugged and comforted him and promised to give him money for the bells." },
+        { q: "What did the fruit seller do by mistake?", a: "He gave Chinna ten rupees extra as change." },
+        { q: "How did Chinna manage to buy the bells in the end?", a: "He returned the extra money, and his mother took him to Chacha’s shop and paid for the bells." }
+      ],
+      quiz: [
+        { q: "Who is Tara?", options: ["Chinna’s sister","Chinna’s pet kid","Chinna’s friend","Chacha’s dog"], answer: 1, explain: "Tara is a five-month-old kid, a baby goat." },
+        { q: "How much did the tinkling bells cost?", options: ["Five rupees","Ten rupees","Twenty rupees","Forty-five rupees"], answer: 1, explain: "Chacha said ten rupees." },
+        { q: "Why did Chinna go back to the fruit seller?", options: ["To buy pineapples","To return extra money","To ask for sweets","To sell the bells"], answer: 1, explain: "He returned the ten rupees given by mistake." },
+        { q: "Which word means the opposite of “beautiful”?", options: ["Attractive","Lovely","Ugly","Bright"], answer: 2, explain: "Ugly is the opposite of beautiful." },
+        { q: "Fill in: “Jay was the fast___ person in the race.”", options: ["er","est","ing","ed"], answer: 1, explain: "We use -est when comparing more than two." }
+      ]
+    },
+    {
+      id: "be-smart-be-safe",
+      title: "Be Smart, Be Safe",
+      section: "Santoor",
+      summary: "A friendly letter from the Traffic Police of Bharat to children, giving six simple road safety rules. The lesson also teaches countable and uncountable nouns and how to write a thank-you letter.",
+      notes: [
+        { heading: "The six safety rules", points: [
+          "**Rule 1:** Always use the zebra crossing. Look right, then left, then right again, and cross only when it is safe.",
+          "**Rule 2:** Follow the traffic lights. Wait for the pedestrian signal to turn green before crossing.",
+          "**Rule 3:** Walk on the footpath, which is meant for pedestrians. Never run across the road.",
+          "**Rule 4:** Hold an adult’s hand while walking near the road, especially when crossing.",
+          "**Rule 5:** Stick reflective stickers on your clothes when walking in the evening or dark, so drivers can see you.",
+          "**Rule 6:** Be alert. Do not play or use headphones or mobile phones near traffic, because they distract you from traffic sounds."
+        ] },
+        { heading: "Grammar: countable and uncountable nouns", points: [
+          "**Countable nouns** can be counted: buses, chairs, bananas.",
+          "**Uncountable nouns** cannot be counted one by one and usually have no plural: water, rice, air, flour.",
+          "We can count them with a container or measure: a bottle of milk, a bowl of rice, two drops of oil."
+        ] },
+        { heading: "Writing", points: [
+          "Children write a thank-you letter to the Traffic Police, promising to follow the rules.",
+          "A letter has a greeting, the message, and a closing with the writer’s name and grade."
+        ] }
+      ],
+      formulas: ["Cross at: the zebra crossing","Look: right, left, right again","Walk on: the footpath","Wait for: the green pedestrian signal","Evening: wear or stick reflective stickers","Countable: buses, cars; uncountable: water, rice"],
+      terms: [
+        { term: "Pedestrian", meaning: "A person who travels on foot." },
+        { term: "Footpath", meaning: "The path beside a road for people who walk." },
+        { term: "Reflective", meaning: "Shining back light so that it can be seen clearly." },
+        { term: "Distract", meaning: "To take someone’s attention away from what they should be doing." }
+      ],
+      qa: [
+        { q: "What should you do before crossing a road?", a: "Go to the zebra crossing, look right, then left, then right again, and cross only when no vehicle is coming." },
+        { q: "Why should you hold an adult’s hand while crossing?", a: "An adult can see the traffic better and keep you safe, because roads can be busy and dangerous." },
+        { q: "Why should you avoid headphones near the road?", a: "They stop you from hearing traffic sounds such as horns, so you may not notice danger." }
+      ],
+      quiz: [
+        { q: "Who wrote the letter in this lesson?", options: ["The teacher","The Traffic Police","The doctor","A shopkeeper"], answer: 1, explain: "The letter is from the Traffic Police of Bharat." },
+        { q: "What is the black and white strip on the road called?", options: ["Footpath","Zebra crossing","Signal","Divider"], answer: 1, explain: "It is the zebra crossing, where pedestrians cross." },
+        { q: "Why do we stick reflective stickers on clothes in the evening?", options: ["For fashion","So drivers can see us","To keep warm","To run faster"], answer: 1, explain: "They shine in light, helping drivers notice us." },
+        { q: "Which noun is uncountable?", options: ["bus","chair","flour","banana"], answer: 2, explain: "Flour cannot be counted one by one." },
+        { q: "Which is a safe habit?", options: ["Running across the road","Playing on the road","Using headphones near traffic","Walking on the footpath"], answer: 3, explain: "Footpaths are made for people who walk." }
+      ]
+    },
+    {
+      id: "one-thing-at-a-time",
+      title: "One Thing at a Time",
+      section: "Santoor",
+      summary: "A poem with simple advice: work when it is time to work and play when it is time to play. Giving full attention to one thing makes us do it well and not waste our moments.",
+      notes: [
+        { heading: "Idea of the poem", points: [
+          "The poet says we should work properly while we work and play fully while we play.",
+          "Whatever we do, we should do it with all our strength, because things done by halves are never done right.",
+          "Doing one thing at a time, and doing it well, is a very good rule.",
+          "We should not waste our short moments."
+        ] },
+        { heading: "Language work", points: [
+          "**Rhyming words** from the poem include play and way, might and right, well and tell, and away.",
+          "In **mixed-up sentences**, the pattern is “who is/are doing what”: Two girls are going to school. A woman is typing on a computer.",
+          "**Silent ‘l’:** in words such as calm, palm, chalk, talk and calf, the letter l is written but not heard.",
+          "**a.m. and p.m.:** a.m. is used for time before noon and p.m. for time after noon."
+        ] },
+        { heading: "Writing and doing", points: [
+          "Children write their daily routine and tick whether each activity is work or play, then turn it into a paragraph.",
+          "They solve riddles. The answers are teeth for the thirty white horses and a candle for the tall lady in a white frock.",
+          "Focus can be improved with simple exercises such as deep breathing and the tree pose."
+        ] }
+      ],
+      formulas: ["Message: work while you work, play while you play","Rhymes: play-way, might-right, well-tell","Silent l: calm, palm, chalk, talk","Time: a.m. before noon, p.m. after noon","Riddle answers: teeth, candle"],
+      terms: [
+        { term: "Might", meaning: "Strength or power." },
+        { term: "Useful", meaning: "Helpful or beneficial." },
+        { term: "Moments", meaning: "Very short periods of time." },
+        { term: "Routine", meaning: "The things we do regularly, in the same order." },
+        { term: "Focus", meaning: "Giving all your attention to one thing." }
+      ],
+      qa: [
+        { q: "Why is it important to focus on one thing at a time?", a: "When we focus, we finish faster, make fewer mistakes and learn better." },
+        { q: "Write two pairs of rhyming words from the poem.", a: "Play and way; might and right." },
+        { q: "How do you feel after finishing a task well?", a: "I feel proud and happy, and I want to do more." }
+      ],
+      quiz: [
+        { q: "What does the poem say we should do while we work?", options: ["Play","Work","Sleep","Sing"], answer: 1, explain: "It says to work while you work." },
+        { q: "Which word means “strength or power”?", options: ["might","moments","useful","halves"], answer: 0, explain: "Might means strength." },
+        { q: "In which word is the letter l silent?", options: ["leaf","lamp","chalk","lion"], answer: 2, explain: "In chalk, we do not say the l." },
+        { q: "Which time is in the afternoon?", options: ["7 a.m.","10 a.m.","11 a.m.","3 p.m."], answer: 3, explain: "p.m. is used for times after noon." },
+        { q: "Which pair rhymes?", options: ["play – way","work – play","well – done","might – day"], answer: 0, explain: "Play and way end with the same sound." }
+      ]
+    },
+    {
+      id: "the-old-stag",
+      title: "The Old Stag",
+      section: "Santoor",
+      summary: "A story adapted from the Panchatantra. A kind old stag lives on a hillock of tender grass. When he falls ill, his visiting friends eat all the grass, and he becomes weaker until they realise their greed and set it right.",
+      notes: [
+        { heading: "What happens", points: [
+          "An old stag is known for his kindness. He greets all the animals and birds every day, and everyone loves him.",
+          "He prefers to stay on a small hillock covered with soft, tender green grass.",
+          "One day the stag falls ill and is too weak to go down to meet his friends, so they come to see him.",
+          "The visitors taste the juicy grass and eat it. Soon very little grass is left, and the stag grows weaker.",
+          "The animals feel ashamed of their greed. They find food elsewhere and even bring fresh leaves for the stag.",
+          "It rains well that week, the grass grows back, and the old stag recovers."
+        ] },
+        { heading: "Lesson", points: [
+          "Nature has enough for everybody, but we must use its resources wisely.",
+          "We should not think only of ourselves. Sharing and caring keep friendships and nature healthy."
+        ] },
+        { heading: "Language work", points: [
+          "**Describing words** such as lush forest, tender grass and healthy food make writing more interesting.",
+          "**Adverbs of manner** tell how an action is done: warmly greeted, slowly recovered, quickly ate."
+        ] }
+      ],
+      formulas: ["Source: adapted from the Panchatantra","Stag lives on: a hillock with tender grass","Problem: friends ate the grass","Lesson: use nature’s resources wisely","Adverbs of manner: warmly, slowly, quickly, carefully"],
+      terms: [
+        { term: "Stag", meaning: "A male deer." },
+        { term: "Hillock", meaning: "A small hill." },
+        { term: "Tender", meaning: "Soft, young and delicate." },
+        { term: "Lush", meaning: "Green, thick and full of growth." },
+        { term: "Recovery", meaning: "Getting well again after an illness." }
+      ],
+      qa: [
+        { q: "Why was the old stag popular?", a: "He was kind and warmly greeted all the animals and birds every day." },
+        { q: "Why did the old stag not go down the hillock to meet his friends?", a: "He had fallen ill and was too weak to walk down." },
+        { q: "Why did the green cover of the hillock vanish?", a: "Every animal that visited the stag ate the tender grass, so very little was left." },
+        { q: "What did the animals do when they realised their mistake?", a: "They found food elsewhere in the forest, left the hillock alone and brought fresh leaves for the stag." }
+      ],
+      quiz: [
+        { q: "Where did the old stag like to stay?", options: ["In a cave","On a hillock","By the river","In a tree"], answer: 1, explain: "He stayed on a hillock with tender grass." },
+        { q: "What made the stag grow weaker?", options: ["Too much rain","Less and less grass to eat","Cold weather","A long walk"], answer: 1, explain: "The visitors ate the grass and little was left for him." },
+        { q: "What is a “stag”?", options: ["A male deer","A rabbit","A bird","A tiger"], answer: 0, explain: "A stag is a male deer." },
+        { q: "Which word is an adverb of manner?", options: ["forest","warmly","grass","hillock"], answer: 1, explain: "“Warmly” tells how the stag greeted his friends." },
+        { q: "What is the lesson of the story?", options: ["Eat quickly","Use nature’s resources wisely","Never visit friends","Stay on hills"], answer: 1, explain: "Nature has enough for everyone if we use it wisely." }
+      ]
+    },
+    {
+      id: "braille",
+      title: "Braille",
+      section: "Santoor",
+      summary: "The true story of Louis Braille, a French boy who lost his sight as a child and later simplified a system of raised dots so that blind people could read with their fingers.",
+      notes: [
+        { heading: "Life of Louis Braille", points: [
+          "Louis was a little boy in France whose father was a blacksmith. At the age of three he was playing with his father’s tools when a sharp tool hurt his eye.",
+          "He became blind in that eye, then the other eye was affected too, and he became totally blind.",
+          "In 1819, when he was ten, he joined the Royal Institute for Young Blind Persons in Paris.",
+          "An army man, Charles Barbier, had invented ‘Night Writing’, raised dots and dashes soldiers could feel in the dark. It was too difficult and did not succeed.",
+          "Louis, now a teenager, simplified it and gave the world the Braille alphabet."
+        ] },
+        { heading: "About Braille", points: [
+          "Braille is a way of reading by touch. There is a Braille symbol for each of the 26 letters of the English alphabet.",
+          "Braille needs more space because the dots cannot be written too close together, so a Braille book is thicker than an ordinary book.",
+          "People who can see can learn Braille too."
+        ] },
+        { heading: "Grammar: past continuous", points: [
+          "For one person or thing we say **was + action word + ing**: The student was writing.",
+          "For many we say **were + action word + ing**: The students were writing.",
+          "Words like ‘yesterday’ and ‘long ago’ show the past."
+        ] }
+      ],
+      formulas: ["Country: France","Accident at age: three","Joined the institute: 1819, at ten years","Braille: raised dots read by touch","Past continuous: was/were + verb + ing"],
+      terms: [
+        { term: "Blacksmith", meaning: "A person who makes things from hot iron." },
+        { term: "Blind", meaning: "Not able to see." },
+        { term: "Invented", meaning: "Made or thought of something for the first time." },
+        { term: "Braille", meaning: "A system of raised dots that blind people read by touch." }
+      ],
+      qa: [
+        { q: "Describe the Braille alphabet.", a: "It is made of raised dots that stand for the letters. Blind people read it by touching the dots." },
+        { q: "Why was ‘Night Writing’ not a success?", a: "It used raised dots and dashes and was too difficult to read." },
+        { q: "What did Louis Braille do to make reading easier for the blind?", a: "He simplified Night Writing and made the Braille alphabet." }
+      ],
+      quiz: [
+        { q: "In which country did Louis Braille live?", options: ["India","France","England","China"], answer: 1, explain: "Louis was born in France." },
+        { q: "What was Louis’s father?", options: ["A teacher","A soldier","A blacksmith","A farmer"], answer: 2, explain: "His father was a blacksmith." },
+        { q: "How is Braille read?", options: ["By hearing","By touch","By smelling","By drawing"], answer: 1, explain: "Fingers feel the raised dots." },
+        { q: "Why is a Braille book thicker than a printed book?", options: ["It has more pictures","Letters need more space","The paper is wet","It has colour"], answer: 1, explain: "Braille dots cannot be written too close together." },
+        { q: "Choose the correct sentence.", options: ["The dogs was barking.","The dogs were barking.","The dogs is barking.","The dogs am barking."], answer: 1, explain: "For more than one we use “were”." }
+      ]
+    },
+    {
+      id: "fit-body-fit-mind-fit-nation",
+      title: "Fit Body, Fit Mind, Fit Nation",
+      section: "Santoor",
+      summary: "A rhyming poem that introduces children who love sports and music. Each child has a describing word that begins with the same letter as their name. The poem says that playing is a joy for every child.",
+      notes: [
+        { heading: "Children in the poem", points: [
+          "**Anant** is active and plays hockey even on a rocky ground.",
+          "**Geeta** is graceful and learns from her mistakes every day while skating.",
+          "**Lhamo** proudly plays the guitar while his friend plays the sitar.",
+          "**Shabana** is swift and celebrates after winning a cycle race.",
+          "**Meena** is musical and sings in rhythm.",
+          "The poem ends by saying that cheerful children everywhere enjoy playing."
+        ] },
+        { heading: "Why this matters", points: [
+          "Games, music and dance keep both our body and mind healthy.",
+          "A happy, active child grows with confidence.",
+          "Balancing studies and play helps us relax."
+        ] },
+        { heading: "Language work", points: [
+          "An **adjective** is a word that tells more about a noun: blue sky, healthy vegetables.",
+          "**Double letters** appear in words like puppy, carrot, rabbit and village.",
+          "**Rhyming words** in the poem: hockey–rocky, skates–mistakes, guitar–sitar, race–pace."
+        ] }
+      ],
+      formulas: ["Anant: hockey","Geeta: skating","Lhamo: guitar","Shabana: cycle race","Meena: singing","Adjective: tells more about a noun"],
+      terms: [
+        { term: "Pace", meaning: "The speed at which someone moves." },
+        { term: "Swift", meaning: "Very fast." },
+        { term: "Rhythm", meaning: "A regular beat in music or movement." },
+        { term: "Cheerful", meaning: "Happy and full of joy." },
+        { term: "Adjective", meaning: "A word that describes a noun." }
+      ],
+      qa: [
+        { q: "Which game does Anant play?", a: "Anant plays hockey." },
+        { q: "Which musical instruments are mentioned in the poem?", a: "The guitar and the sitar." },
+        { q: "Who learns every day from the mistakes made while skating?", a: "Geeta." }
+      ],
+      quiz: [
+        { q: "Which game does Anant play?", options: ["Cricket","Hockey","Football","Kabaddi"], answer: 1, explain: "Anant plays hockey on a rocky ground." },
+        { q: "Who sings in rhythm?", options: ["Meena","Geeta","Shabana","Anant"], answer: 0, explain: "Musical Meena sings in rhythm." },
+        { q: "Which word rhymes with “skates”?", options: ["hockey","mistakes","guitar","pace"], answer: 1, explain: "Skates and mistakes end with the same sound." },
+        { q: "Which word is an adjective in “blue sky”?", options: ["blue","sky","is","the"], answer: 0, explain: "Blue describes the sky." },
+        { q: "Swift means…", options: ["slow","loud","very fast","sleepy"], answer: 2, explain: "A swift girl runs or rides very fast." }
+      ]
+    },
+    {
+      id: "the-lagori-champions",
+      title: "The Lagori Champions",
+      section: "Santoor",
+      summary: "A two-part play about a village Lagori match between the Sundarpur Tigers and the Green Warriors. A visiting cousin, Prakash, learns the game and helps his new team win.",
+      notes: [
+        { heading: "Part I: Learning the game", points: [
+          "Ravi and his cousin Prakash go to a park, where Ravi’s friends are talking about tomorrow’s Lagori match.",
+          "Prakash has not heard of Lagori, but he knows a similar game called Satoliya in Rajasthan. It is the same game with a different name.",
+          "Seven flat stones are stacked in the centre of a marked field. One team knocks them down with a ball, and the other team tries to rebuild the stack while avoiding being hit by the ball.",
+          "Deepa is the captain of the Sundarpur Tigers, who play against the Green Warriors from a nearby village. Prakash is chosen for the team because he is a good runner."
+        ] },
+        { heading: "Part II: The match", points: [
+          "The referee blows the whistle, and Deepa takes the first shot. The stones scatter.",
+          "The Tigers rebuild the stack, dodging the ball. Nidhi, Ravi and Deepa place stones.",
+          "Prakash puts the seventh stone on top just before the final whistle, and the Sundarpur Tigers win.",
+          "Players from both teams shake hands, and the referee lifts the hands of both captains while the villagers cheer."
+        ] },
+        { heading: "Message", points: [
+          "Traditional games bring people together and teach teamwork and fair play.",
+          "Deepa says the game was even more fun than video games."
+        ] }
+      ],
+      formulas: ["Lagori stones: seven flat stones","Other name of Lagori: Satoliya in Rajasthan","Team of Deepa: Sundarpur Tigers","Opponents: Green Warriors","Winner: Sundarpur Tigers","Seventh stone placed by: Prakash"],
+      terms: [
+        { term: "Opponent", meaning: "The person or team you play against." },
+        { term: "Referee", meaning: "The person who makes sure the rules of a game are followed." },
+        { term: "Stacked", meaning: "Placed one on top of another." },
+        { term: "Dodge", meaning: "To move quickly to avoid something." },
+        { term: "Cousin", meaning: "A child of your aunt or uncle." }
+      ],
+      qa: [
+        { q: "What is Lagori and how is it played?", a: "Lagori is a game of seven flat stones stacked on top of each other. One team knocks them down with a ball and the other team tries to rebuild the stack without being hit." },
+        { q: "What is the name of Deepa’s team and who do they play against?", a: "Her team is the Sundarpur Tigers. They play against the Green Warriors." },
+        { q: "Why was Prakash chosen for the team?", a: "He is a good runner and runs quickly." },
+        { q: "What did the villagers do after the match?", a: "They clapped and cheered both teams and celebrated together." }
+      ],
+      quiz: [
+        { q: "How many stones are used in Lagori?", options: ["Five","Six","Seven","Nine"], answer: 2, explain: "Lagori is a game of seven stones." },
+        { q: "What is Lagori called in Rajasthan?", options: ["Hekko","Satoliya","Gilli danda","Kho-kho"], answer: 1, explain: "Prakash calls the game Satoliya." },
+        { q: "Who placed the seventh stone?", options: ["Deepa","Imran","Prakash","Ravi"], answer: 2, explain: "Prakash set the seventh stone on top." },
+        { q: "Who won the match?", options: ["Green Warriors","Sundarpur Tigers","It was a draw","No one"], answer: 1, explain: "The referee announced the Tigers had won." },
+        { q: "Which of these is a question?", options: ["My name is Sonam.","Where do you stay?","The flower is pretty.","Nidhi came running."], answer: 1, explain: "It asks something, so it ends with a question mark." }
+      ]
+    },
+    {
+      id: "hekko",
+      title: "Hekko",
+      section: "Santoor",
+      summary: "A reading passage about Hekko, a traditional team game from Nagaland. Its name means ‘challenging the tiger’, and it is played between the Aami (men) and Aakho (tigers) teams.",
+      notes: [
+        { heading: "Origin and meaning", points: [
+          "‘Hek’ means to challenge and ‘ko’ means tiger, so Hekko means challenging the tiger.",
+          "A folk story from Nagaland says humans and animals once lived together and argued over who was superior. The humans challenged Aakho, the tiger, and the contest became known as Hekko.",
+          "The game is played in the Mokokchung district of Nagaland and is used to find the strongest people in the village."
+        ] },
+        { heading: "How it is played", points: [
+          "Each team has 11 players. A toss decides which team is Aami and which is Aakho.",
+          "The Aami team stays inside a circle as a human chain. The Aakho team stays outside.",
+          "Two Aakho players enter and try to push Aami players out. An Aami player who is pushed out cannot come back.",
+          "The Aami players try to catch Aakho players by surrounding them. A caught player is set free only when he says “Joko”, meaning surrender.",
+          "A team gets points whenever it gets an opponent out."
+        ] },
+        { heading: "End of the game", points: [
+          "The game ends when all Aakho players are caught, when all Aami players are pushed out, or when time runs out.",
+          "The team with the most points wins.",
+          "The fastest Aami player is called Khozuba and the strongest Aakho player is called Khotiba."
+        ] },
+        { heading: "Language work", points: [
+          "**Words that sound alike:** their/there, two/too, threw/through, caught/cot, right/write.",
+          "**Simple past:** add -ed to many verbs (visited, jumped), but some are irregular (came, drank, saw)."
+        ] }
+      ],
+      formulas: ["Hekko means: challenging the tiger","State: Nagaland (Mokokchung district)","Teams: Aami and Aakho","Players: 11 in each team","Surrender word: Joko","Titles: Khozuba (fastest Aami), Khotiba (strongest Aakho)"],
+      terms: [
+        { term: "Declared", meaning: "Said something firmly and publicly." },
+        { term: "Superiority", meaning: "Being better or greater than others." },
+        { term: "Disagreement", meaning: "When people do not agree." },
+        { term: "Surrender", meaning: "To give up." },
+        { term: "Irregular verb", meaning: "A verb whose past form does not end in -ed." }
+      ],
+      qa: [
+        { q: "What does the word ‘Hekko’ mean?", a: "It means challenging the tiger." },
+        { q: "What are the two teams called?", a: "The two teams are Aami (the man) and Aakho (the tiger)." },
+        { q: "How many players are there in each team?", a: "There are 11 players in each team." },
+        { q: "Why must a caught Aakho player say ‘Joko’?", a: "‘Joko’ means surrender, so the caught player says it to show he gives up and is then released." }
+      ],
+      quiz: [
+        { q: "Hekko comes from which state?", options: ["Punjab","Nagaland","Kerala","Goa"], answer: 1, explain: "Hekko is a game of Nagaland." },
+        { q: "How many players are in each team?", options: ["7","9","11","15"], answer: 2, explain: "Each team has 11 players." },
+        { q: "What does ‘Joko’ mean?", options: ["Win","Surrender","Run","Start"], answer: 1, explain: "A caught player says Joko to surrender." },
+        { q: "Which pair of words is correctly used? “___ is a park nearby.”", options: ["Their","There","Thair","Ther"], answer: 1, explain: "“There” shows a place." },
+        { q: "Which is an irregular verb in the past?", options: ["jumped","visited","came","pointed"], answer: 2, explain: "“Came” does not end in -ed." }
+      ]
+    },
+    {
+      id: "the-swing",
+      title: "The Swing",
+      section: "Santoor",
+      summary: "A poem by Robert Louis Stevenson in which a child describes the joy of flying up on a swing and seeing the countryside below. The lesson also looks at words that can be both nouns and verbs.",
+      notes: [
+        { heading: "Idea of the poem", points: [
+          "The child says that going up on a swing, high in the blue air, is the most pleasant thing a child can do.",
+          "From up high the child can see over the wall: rivers, trees, cattle and the countryside.",
+          "Going down, the child looks at the green garden and the brown roof, and then flies up again.",
+          "The poem is full of movement. The words go up and down just like the swing."
+        ] },
+        { heading: "Language work", points: [
+          "Some words are both **verbs and nouns**: swing, dance, play, answer, fly, waves.",
+          "A **preposition** shows place, such as on, beside, between, above, in front of, behind and under.",
+          "Sentences can be made longer by adding more details: Jeevan waited. Jeevan waited for the bus. Jeevan waited for the bus all morning."
+        ] },
+        { heading: "Speaking and writing", points: [
+          "For the sound W, round your lips as if making an ‘O’ shape. For V, put your upper teeth on your lower lip.",
+          "Rhymes in the poem: swing and thing, blue and do.",
+          "Children write about what they like to do in free time and draw a magical swing."
+        ] }
+      ],
+      formulas: ["Poet: Robert Louis Stevenson","Feeling: joy","Seen from the swing: rivers, trees, cattle, countryside","Words that are both noun and verb: swing, play, fly","Rhymes: swing–thing"],
+      terms: [
+        { term: "Pleasantest", meaning: "Most enjoyable." },
+        { term: "Cattle", meaning: "Cows, bulls and buffaloes kept on a farm." },
+        { term: "Countryside", meaning: "Land outside towns with fields, farms and villages." },
+        { term: "Preposition", meaning: "A word that shows place, time or direction." }
+      ],
+      qa: [
+        { q: "What does the poet see when the swing goes over the wall?", a: "The poet sees rivers, trees and cattle over the countryside." },
+        { q: "Does the poet enjoy swings? Which line shows it?", a: "Yes. The poet calls it the pleasantest thing a child can do." },
+        { q: "Why do you think the poet says the air is blue?", a: "When we look up in the open air we see the blue sky." }
+      ],
+      quiz: [
+        { q: "Who wrote “The Swing”?", options: ["R. L. Stevenson","Ruskin Bond","Tagore","Sudha Murty"], answer: 0, explain: "The poem is by Robert Louis Stevenson." },
+        { q: "What does the child see from the swing?", options: ["Only walls","Rivers, trees and cattle","Aeroplanes","The sea"], answer: 1, explain: "The child sees rivers, trees and cattle." },
+        { q: "Which word rhymes with “swing”?", options: ["thing","wall","blue","roof"], answer: 0, explain: "Swing and thing sound alike." },
+        { q: "In “I swing on a swing”, the first ‘swing’ is a…", options: ["noun","adjective","verb","preposition"], answer: 2, explain: "The first one is an action." },
+        { q: "“A butterfly is flying ___ the flower.” Which word fits?", options: ["above","between","under","behind"], answer: 0, explain: "A flying butterfly can be above the flower." }
+      ]
+    },
+    {
+      id: "a-journey-to-the-magical-mountains",
+      title: "A Journey to the Magical Mountains",
+      section: "Santoor",
+      summary: "Minam, a girl from a small Himalayan village, goes on a walk with her grandfather, who was once a Sherpa. They see rivers, yaks, snow and the tallest mountain, and Minam promises to protect the mountains.",
+      notes: [
+        { heading: "What happens", points: [
+          "Minam loves hearing mountain stories from her grandfather, a former Sherpa, and the two often walk together.",
+          "One morning he takes her on a special journey. She packs rotis with achaar, two water bottles and apples.",
+          "They have lunch beside a clear river, where Minam dips her feet in the water.",
+          "They see yaks, which give milk and wool and carry loads, then reach snow and make a snowman.",
+          "At the top of a hill, grandfather shows her Mount Everest, the tallest mountain in the world.",
+          "On the way back they hear a santoor being played and see mountain goats leaping from rock to rock."
+        ] },
+        { heading: "Message", points: [
+          "Mountains teach us strength, beauty and the wonders of nature.",
+          "We should respect and protect nature. Minam promises to look after the mountains."
+        ] },
+        { heading: "Language work", points: [
+          "Body-part words are used for objects: legs of a table, hands of a clock, foot of a mountain, neck of a bottle.",
+          "**Conjunctions** join words or sentences: and (adds), or (choice), but (contrast), because (reason).",
+          "Mountain words: summit, valley, slope, plateau, plain, mountain range."
+        ] }
+      ],
+      formulas: ["Girl: Minam","Grandfather was once a: Sherpa","Packed: rotis with achaar, water, apples","Animals seen: yaks, mountain goats","Tallest mountain: Mount Everest","Conjunctions: and, or, but, because"],
+      terms: [
+        { term: "Sherpa", meaning: "A mountain guide and helper from the Himalayan region." },
+        { term: "Himalayas", meaning: "The tallest mountain range in the world." },
+        { term: "Yak", meaning: "A large strong animal of the mountains used for milk, wool and carrying loads." },
+        { term: "Summit", meaning: "The top of a mountain." },
+        { term: "Conjunction", meaning: "A word that joins words or sentences." }
+      ],
+      qa: [
+        { q: "Who was Minam and what did she enjoy doing with her grandfather?", a: "Minam was a young girl in a Himalayan village. She enjoyed listening to mountain stories and going on long walks with her grandfather." },
+        { q: "What did Minam pack for the journey?", a: "She packed rotis with achaar, two water bottles and apples." },
+        { q: "Where did they have lunch and what did they do there?", a: "They ate beside a clear river. They watched fish, and Minam dipped her feet in the water." },
+        { q: "What did Minam promise at the end?", a: "She promised to take care of the mountains and share their magic with others." }
+      ],
+      quiz: [
+        { q: "What was Minam’s grandfather once?", options: ["A farmer","A Sherpa","A teacher","A doctor"], answer: 1, explain: "He had worked as a Sherpa." },
+        { q: "Which fruit did Minam pack?", options: ["Bananas","Mangoes","Apples","Grapes"], answer: 2, explain: "Apples were her favourite fruit." },
+        { q: "What is the tallest mountain in the world?", options: ["Mount Everest","K2","Nanda Devi","Mount Abu"], answer: 0, explain: "Grandfather pointed to Mount Everest." },
+        { q: "Which conjunction fits? “I stayed inside ___ it was raining.”", options: ["or","and","because","but"], answer: 2, explain: "“Because” gives the reason." },
+        { q: "Which animals help mountain people with milk, wool and loads?", options: ["Horses","Yaks","Camels","Elephants"], answer: 1, explain: "Yaks give milk and wool and carry loads." }
+      ]
+    },
+    {
+      id: "maheshwar",
+      title: "Maheshwar",
+      section: "Santoor",
+      summary: "Two children, Aarav and Ananya, learn from their aunt about the grand Maheshwar Fort in Madhya Pradesh, built by the great Queen Ahilya Bai Holkar on the banks of the Narmada, and about the famous Maheshwari sarees.",
+      notes: [
+        { heading: "The fort and the queen", points: [
+          "Maheshwar is in Madhya Pradesh, about 95 kilometres from Indore, on the banks of the Narmada River.",
+          "Queen Ahilya Bai of the Holkar family built the fort on a hill. It is also called Ahilya Fort.",
+          "She ruled with kindness and wisdom, and built temples, schools and wells for her people.",
+          "The fort is famous for its overhanging balconies, grand staircases and special red stones brought from Gujarat and Rajasthan.",
+          "A 13-feet tall statue of the queen stands in front of the palace like a guardian."
+        ] },
+        { heading: "Maheshwari sarees", points: [
+          "The people of Maheshwar weave famous Maheshwari sarees.",
+          "They were first made of pure silk, and later cotton yarn was added. Today they are a blend of cotton and silk.",
+          "They are known for their reversible borders and for colours such as peacock blue, yellow and green."
+        ] },
+        { heading: "Language work", points: [
+          "**Synonyms** are words with similar meaning, such as happy, joyful and cheerful.",
+          "**Silent g:** in words such as sign, high, light and night the letter g is not pronounced the usual way.",
+          "**Articles:** a and an are used for any one thing; the is used for something specific."
+        ] }
+      ],
+      formulas: ["Place: Maheshwar, Madhya Pradesh","River: Narmada","Distance from Indore: 95 km","Queen: Ahilya Bai of the Holkar family","Statue height: 13 feet","Stone brought from: Gujarat and Rajasthan","Famous craft: Maheshwari sarees"],
+      terms: [
+        { term: "Fort", meaning: "A strong building built to protect a place." },
+        { term: "Majestic", meaning: "Grand and royal." },
+        { term: "Balcony", meaning: "A platform sticking out from a wall of a building." },
+        { term: "Unique", meaning: "The only one of its kind." },
+        { term: "Synonym", meaning: "A word with a similar meaning to another word." }
+      ],
+      qa: [
+        { q: "Who was Ahilya Bai?", a: "She was a queen of the Holkar family who ruled Maheshwar with kindness and wisdom and built the fort." },
+        { q: "Where is Maheshwar Fort and what makes it special?", a: "It is in Madhya Pradesh on the banks of the Narmada, on a hill from where the town and river can be seen." },
+        { q: "What was the fort made of?", a: "It was made of special red stones brought from Gujarat and Rajasthan." },
+        { q: "What does the statue of Queen Ahilya Bai stand for?", a: "It stands like a guardian watching over her land and reminds people of her care for them." }
+      ],
+      quiz: [
+        { q: "On which river is Maheshwar Fort?", options: ["Ganga","Yamuna","Narmada","Godavari"], answer: 2, explain: "The fort is on the banks of the Narmada." },
+        { q: "Who built the fort?", options: ["Queen Ahilya Bai","Akbar","Shivaji","Queen Victoria"], answer: 0, explain: "Ahilya Bai of the Holkar family built it." },
+        { q: "Which famous cloth is made in Maheshwar?", options: ["Bandhani","Maheshwari sarees","Kanjeevaram","Pashmina"], answer: 1, explain: "Maheshwari sarees are woven there." },
+        { q: "Which is the odd one out: sad, unhappy, tearful, thrilled?", options: ["sad","unhappy","tearful","thrilled"], answer: 3, explain: "Thrilled means very happy; the rest mean unhappy." },
+        { q: "Which article fits? “I saw ___ elephant.”", options: ["a","an","the","no article"], answer: 1, explain: "Elephant starts with a vowel sound, so we use “an”." }
       ]
     }
   ]

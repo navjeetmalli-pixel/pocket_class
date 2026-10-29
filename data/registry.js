@@ -79,9 +79,9 @@ globalThis.StudyData = (function () {
   const practiceCatalog = {
     1: { english: 1, maths: 1, hindi: 1, punjabi: 1 },
     2: { maths: 1, english: 1, hindi: 1, punjabi: 1 },
-    3: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
-    4: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
-    5: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
+    3: { maths: 2, evs: 1, english: 2, hindi: 1, punjabi: 1 },
+    4: { maths: 2, evs: 1, english: 2, hindi: 1, punjabi: 1 },
+    5: { maths: 2, evs: 1, english: 2, hindi: 1, punjabi: 1 },
     6: { maths: 2, science: 2, sst: 2, english: 3, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4 },
     7: { maths: 2, science: 2, sst: 3, english: 3, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4 },
     8: { maths: 2, science: 2, sst: 2, english: 3, hindi: 3, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 4 },
@@ -94,8 +94,11 @@ globalThis.StudyData = (function () {
   // Labelled diagrams live in data/class{N}/diagrams/{subject}.js, one file per subject, and load with the
   // practice files. This lists the subjects that have one.
   const diagramCatalog = {
-    6: ["science", "maths"],
-    7: ["science", "maths"],
+    3: ["evs"],
+    4: ["evs"],
+    5: ["evs"],
+    6: ["science", "maths", "sciencepb", "mathspb"],
+    7: ["science", "maths", "sciencepb", "mathspb"],
     8: ["science", "maths", "sciencepb", "mathspb"],
     9: ["sciencepb", "mathspb", "science", "maths", "sst"],
     10: ["science", "maths", "sst"],

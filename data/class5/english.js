@@ -1,8 +1,8 @@
-// Class 5 English: Grammar, Vocabulary, Writing Skills and Reading Skills.
+// Class 5 English: Grammar, Vocabulary, Writing Skills, Reading Skills and the lessons of Santoor.
 // Format: see CONTENT_GUIDE.md. All examples and model answers are original.
 StudyData.add(5, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills, arranged by topic. Textbook lessons are not included.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Santoor"], note: "Grammar and writing, plus every lesson of Santoor (summarised in our own words).", reviewed: false},
   chapters: [
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
@@ -1016,6 +1016,479 @@ StudyData.add(5, "english", {
           answer: 1,
           explain: "Asking what the passage is mostly about asks for its main idea."
         }
+      ]
+    },
+    // ───────────────────────────── SANTOOR ─────────────────────────────
+    {
+      id: "papas-spectacles",
+      title: "Papa’s Spectacles",
+      section: "Santoor",
+      summary: "A funny poem about a father who hunts all over the house for his only pair of spectacles. His child finds them in the most obvious place.",
+      notes: [
+        { heading: "Outline of the poem", points: [
+          "Papa has lost his only pair of spectacles and searches everywhere in the house.",
+          "Without them he cannot read the newspaper, watch TV or cut the vegetables.",
+          "He checks his pockets, looks under his chair and searches near the window.",
+          "The child comes close and tells him the spectacles are on his own head."
+        ] },
+        { heading: "Humour in the poem", points: [
+          "The joke is that the thing Papa wants is closest to him all the time.",
+          "The poem is short and rhymes, so it is fun to recite aloud.",
+          "It shows that we can miss what is right in front of us when we are in a hurry."
+        ] },
+        { heading: "Characters and feelings", points: [
+          "**Papa** is worried and puzzled, then probably embarrassed and amused.",
+          "The **child** is calm, observant and helpful.",
+          "The poem is about everyday family life, so every reader can relate to it."
+        ] }
+      ],
+      formulas: ["Papa lost: his only pair of spectacles","Searched: pockets, under the chair, near the window","Found: on his head","Theme: humour in everyday life"],
+      terms: [
+        { term: "Spectacles", meaning: "A pair of glasses worn to help a person see clearly." },
+        { term: "Pair", meaning: "Two things that go together and are used as one, such as shoes or spectacles." },
+        { term: "Glanced", meaning: "Looked quickly at something." },
+        { term: "Searching", meaning: "Looking carefully for something that is lost." }
+      ],
+      qa: [
+        { q: "What is Papa searching for, and where does he finally find it?", a: "Papa is searching for his lost spectacles. At last the child tells him they are on his own head." },
+        { q: "Name two jobs Papa cannot do without his spectacles.", a: "He cannot read the newspaper and he cannot cut the vegetables. He also cannot watch TV." }
+      ],
+      quiz: [
+        { q: "What is Papa looking for in the poem?", options: ["His spectacles","His umbrella","His watch","His keys"], answer: 0, explain: "Papa has lost his only pair of spectacles." },
+        { q: "Where were the spectacles in the end?", options: ["In his pocket","Under the chair","Near the window","On Papa’s head"], answer: 3, explain: "The child tells Papa the spectacles are right on his head." },
+        { q: "Which job can Papa NOT do without spectacles?", options: ["Eating lunch","Walking","Reading the newspaper","Sleeping"], answer: 2, explain: "The poem says he cannot read the newspaper without them." },
+        { q: "What does the word “pair” mean in “a pair of spectacles”?", options: ["One big thing","Two things used together","Many things","A broken thing"], answer: 1, explain: "A pair means two things that go together." },
+        { q: "Which feeling does the poem mainly give the reader?", options: ["Fun and laughter","Fear","Deep sadness","Anger"], answer: 0, explain: "The poem is a humorous one about a funny mix-up." }
+      ]
+    },
+    {
+      id: "gone-with-the-scooter",
+      title: "Gone with the Scooter",
+      section: "Santoor",
+      summary: "Gopi finds a hockey ball in his garden and tries to find its owner. During a game with his friends, the ball flies into a passing scooter’s basket and is gone.",
+      notes: [
+        { heading: "What happens", points: [
+          "On a hot afternoon Gopi hears something fall with a thud in the garden and finds a hockey ball in a heap of dry leaves.",
+          "He decides to ask his friends at the playground whether anyone lost it.",
+          "Manoj says he lost a ball months ago, Ramani claims it and Deepak boasts about a new football.",
+          "Manoj grabs the ball and the friends start a game of hockey."
+        ] },
+        { heading: "The funny ending", points: [
+          "Jay hits the ball so hard that it goes past the gate.",
+          "It lands in the basket of a passing scooter and the driver does not notice.",
+          "The children run to the gate, but the scooter and the ball are gone, and they burst out laughing."
+        ] },
+        { heading: "Characters", points: [
+          "**Gopi** is honest and thoughtful because he does not want to keep a ball that is not his.",
+          "**Manoj, Ramani, Deepak and Jay** are his friends who love playing hockey.",
+          "Gopi’s mother is caring and calls him in from the heat."
+        ] },
+        { heading: "Words and grammar in the lesson", points: [
+          "**Adverbs of frequency** such as always, often and never tell how many times an action happens.",
+          "**Adverbs of time** such as yesterday, now and today tell when an action happens.",
+          "The lesson also reminds us that wearing a helmet on a scooter is important for safety."
+        ] }
+      ],
+      formulas: ["Found by: Gopi, in a heap of dry leaves","Kind of ball: a hockey ball","Ending: it falls into a passing scooter’s basket","Adverb of frequency: often, always, never","Adverb of time: yesterday, now, today"],
+      terms: [
+        { term: "Dribble", meaning: "To move a ball along with small taps while playing." },
+        { term: "Rustle", meaning: "A soft crackling sound, like dry leaves moving." },
+        { term: "Grab", meaning: "To take something suddenly." },
+        { term: "Boast", meaning: "To talk too proudly about what you have." },
+        { term: "Thud", meaning: "A dull sound of something heavy falling." }
+      ],
+      qa: [
+        { q: "What did Gopi do after finding the ball?", a: "He did not keep it. He went to the playground in the evening and asked his friends whether any of them had lost a ball." },
+        { q: "How did the ball get lost at the end of the story?", a: "Jay hit it very hard and it flew past the gate into the basket of a passing scooter. The scooter drove away with the ball." },
+        { q: "Why is it important to wear a helmet on a scooter?", a: "A helmet protects the head from injury if there is an accident. Both the rider and the person sitting behind should wear one." }
+      ],
+      quiz: [
+        { q: "What was Gopi doing in the veranda?", options: ["Playing hockey","Reading a book","Eating lunch","Sleeping"], answer: 1, explain: "He was sitting in the veranda reading a book." },
+        { q: "What did Gopi find in the garden?", options: ["A hockey ball","A football","A cricket bat","A kite"], answer: 0, explain: "He found a white hockey ball on a heap of dry leaves." },
+        { q: "Who boasted about a brand-new football?", options: ["Manoj","Ramani","Jay","Deepak"], answer: 3, explain: "Deepak said his father had bought him a new football." },
+        { q: "Where did the ball finally go?", options: ["Into the well","Onto the roof","Into a scooter’s basket","Into the river"], answer: 2, explain: "Jay’s hit sent it into the basket of a passing scooter." },
+        { q: "Which word in the lesson means “to speak too proudly”?", options: ["dribble","boast","rustle","grab"], answer: 1, explain: "To boast is to speak too proudly about something you have." }
+      ]
+    },
+    {
+      id: "the-rainbow",
+      title: "The Rainbow",
+      section: "Santoor",
+      summary: "Christina Rossetti’s short poem compares boats, ships and bridges with clouds and the rainbow, and says that nature’s bow in the sky is prettier than them all.",
+      notes: [
+        { heading: "What the poem says", points: [
+          "The first stanza says boats sail on rivers and ships sail on seas, but clouds sailing across the sky are prettier than these.",
+          "The second stanza says bridges on rivers are pretty, but the rainbow is prettier than these.",
+          "The rainbow rises above the trees and seems to make a road from earth to sky."
+        ] },
+        { heading: "Human-made and natural things", points: [
+          "Boats, ships and bridges are made by people.",
+          "Clouds and the rainbow are made by nature.",
+          "The poet feels that nature’s creations are more beautiful than human-made ones."
+        ] },
+        { heading: "Poet’s ideas", points: [
+          "The poet uses a **comparison**: clouds sail like ships and the rainbow is like a bridge.",
+          "The word **bow** here means the curved shape of the rainbow.",
+          "The word **these** points back to boats and ships in the first stanza and to bridges in the second.",
+          "The poem is by **Christina Rossetti**."
+        ] },
+        { heading: "Sound of the poem", points: [
+          "The poem has rhyming words such as seas and these.",
+          "The lines are short and regular, so the poem is easy to remember and sing."
+        ] }
+      ],
+      formulas: ["Poet: Christina Rossetti","Stanza 1: boats, ships, clouds","Stanza 2: bridges and the rainbow","Bow = the curved arch of the rainbow","Theme: the beauty of nature"],
+      terms: [
+        { term: "Bow", meaning: "A curved shape. In the poem it is the arch of the rainbow." },
+        { term: "Overtops", meaning: "Rises higher than something else." },
+        { term: "Bridge", meaning: "A structure built over a river so people can cross." },
+        { term: "Rhyme", meaning: "Words that end with the same sound, such as seas and these." }
+      ],
+      qa: [
+        { q: "Which bridge does the poet like more and why?", a: "The poet likes the rainbow more. It is higher than the trees and makes a road from earth to sky, so it is prettier than the bridges on rivers." },
+        { q: "What does the word “these” stand for in each stanza?", a: "In the first stanza it stands for boats and ships. In the second stanza it stands for the bridges on rivers." }
+      ],
+      quiz: [
+        { q: "Who wrote the poem “The Rainbow”?", options: ["Rabindranath Tagore","Sudha Murty","Christina Rossetti","Ruskin Bond"], answer: 2, explain: "The poem is by Christina Rossetti." },
+        { q: "What sails on the rivers in the poem?", options: ["Ships","Boats","Clouds","Kites"], answer: 1, explain: "Boats sail on the rivers and ships sail on the seas." },
+        { q: "What does the poet find prettier than bridges on rivers?", options: ["The rainbow","A train","A road","A house"], answer: 0, explain: "The rainbow is called prettier than the bridges." },
+        { q: "In the poem, what does “bow” mean?", options: ["A bow and arrow","A gift ribbon","To bend down","The curved rainbow"], answer: 3, explain: "Here bow means the arch of the rainbow." },
+        { q: "Which of these is made by nature?", options: ["Bridges","Boats","Clouds","Ships"], answer: 2, explain: "Clouds are natural. Boats, ships and bridges are made by people." }
+      ]
+    },
+    {
+      id: "the-wise-parrot",
+      title: "The Wise Parrot",
+      section: "Santoor",
+      summary: "A rich merchant keeps a clever parrot in a golden cage. The parrot longs to be free and uses a smart trick to escape.",
+      notes: [
+        { heading: "The story", points: [
+          "A rich merchant keeps a bright and talkative parrot in a cage of gold.",
+          "Before a trip, he asks what he can bring for the bird. The parrot asks to be freed, but the merchant refuses.",
+          "The parrot then asks him to give its friends in the jungle a message of greetings from the cage."
+        ] },
+        { heading: "The trick", points: [
+          "The merchant gives the message to a flight of parrots, and one parrot drops from the tree.",
+          "He feels sad and tells his pet at home what happened.",
+          "His pet falls from the perch as if dead. The merchant puts the bird on the windowsill.",
+          "The bird at once flies away. It had copied what the other parrot did."
+        ] },
+        { heading: "Characters", points: [
+          "The **merchant** is rich and loves his pet, but he is selfish about its freedom.",
+          "The **parrot** is clever and brave. It longs for the open sky.",
+          "The **wild parrot** in the forest gives the pet the idea of how to escape."
+        ] },
+        { heading: "Lesson", points: [
+          "Freedom is more precious than comfort or gold.",
+          "Intelligence can solve a problem that strength cannot.",
+          "We should not keep birds and animals caged against their wish."
+        ] }
+      ],
+      formulas: ["Setting: a quiet village","Cage: made of gold","Parrot’s request: to fly in the sky","Trick: pretending to be dead","Moral: freedom matters; wisdom helps"],
+      terms: [
+        { term: "Merchant", meaning: "A person who buys and sells goods." },
+        { term: "Perch", meaning: "A rod or branch on which a bird sits." },
+        { term: "Distressed", meaning: "Very upset or worried." },
+        { term: "Windowsill", meaning: "The ledge at the bottom of a window." },
+        { term: "Tender", meaning: "Soft and easy to eat or chew." }
+      ],
+      qa: [
+        { q: "What did the parrot want most?", a: "The parrot wanted to fly freely in the open sky. Food and a golden cage did not make it happy." },
+        { q: "How did the parrot escape from the cage?", a: "It pretended to be dead and fell from its perch. When the merchant put it on the windowsill, it flew away." },
+        { q: "Why can the parrot be called wise?", a: "It did not argue or fight. It used a clever plan to make the merchant free it himself." }
+      ],
+      quiz: [
+        { q: "What was the parrot’s cage made of?", options: ["Iron","Wood","Plastic","Gold"], answer: 3, explain: "The merchant kept it in a cage of gold." },
+        { q: "What did the parrot ask to be allowed to do?", options: ["Eat more fruit","Sing louder","Fly in the sky","Go to the market"], answer: 2, explain: "It longed for the joy of flying in the open sky." },
+        { q: "What message did the parrot send to its friends?", options: ["A request for food","Greetings from the cage","A story","A song"], answer: 1, explain: "It sent greetings from its cage." },
+        { q: "What happened to the wild parrot when it heard the message?", options: ["It dropped from the tree","It flew higher","It laughed","It sang"], answer: 0, explain: "One parrot fell to the ground like a stone." },
+        { q: "Where did the merchant put the parrot after it ‘died’?", options: ["In the garden","In the river","In the market","On the windowsill"], answer: 3, explain: "He placed it on the windowsill, and it flew away." }
+      ]
+    },
+    {
+      id: "the-frog",
+      title: "The Frog",
+      section: "Santoor",
+      summary: "A cheerful poem told by a frog about where it lives, how it catches food, how it hides and how it swims and hops.",
+      notes: [
+        { heading: "The frog’s home", points: [
+          "The frog sits in ponds and in the rain.",
+          "It also hops about in muddy places.",
+          "It lives on land and in water, in damp places."
+        ] },
+        { heading: "Body and food", points: [
+          "As a tadpole, the frog swims like a tiny fish.",
+          "A frog flicks its tongue quickly to catch food.",
+          "It has webbed feet for swimming and strong legs for hopping high."
+        ] },
+        { heading: "Safety", points: [
+          "The frog’s colours match plants and trees, so it hides well in grass and leaves.",
+          "It has to be careful because snakes are near."
+        ] },
+        { heading: "Mood of the poem", points: [
+          "The frog feels proud and joyful.",
+          "It croaks loudly and enjoys hopping and swimming.",
+          "The poem is full of rhyme and rhythm, so it is fun to recite."
+        ] }
+      ],
+      formulas: ["Frog lives: ponds, drains, damp land","Baby frog: tadpole","Catches food: flicks tongue","Swims with: webbed feet","Danger: snakes"],
+      terms: [
+        { term: "Tadpole", meaning: "The young one of a frog, which lives in water and looks like a tiny fish." },
+        { term: "Webbed", meaning: "Having skin joining the toes, used for swimming." },
+        { term: "Croak", meaning: "The deep sound a frog makes." },
+        { term: "Damp", meaning: "Slightly wet." },
+        { term: "Beware", meaning: "To be careful about danger." }
+      ],
+      qa: [
+        { q: "How does the frog catch its food?", a: "The frog flicks out its tongue very fast and catches the food." },
+        { q: "How does the frog hide from its enemies?", a: "Its colours match the plants and trees, so it hides well in grass and leaves." }
+      ],
+      quiz: [
+        { q: "What is a baby frog called?", options: ["Tadpole","Calf","Cub","Chick"], answer: 0, explain: "The young one of a frog is a tadpole." },
+        { q: "What helps the frog swim easily?", options: ["Long ears","A tail","Wings","Webbed feet"], answer: 3, explain: "Webbed feet help it swim and leap." },
+        { q: "How does the frog catch food?", options: ["By biting with big teeth","By digging","By flicking its tongue","By flying"], answer: 2, explain: "It flicks its tongue to catch food." },
+        { q: "Which animal does the frog need to beware of?", options: ["Cow","Snake","Hen","Goat"], answer: 1, explain: "The poem says snakes are near." },
+        { q: "What sound does a frog make?", options: ["Croak","Roar","Moo","Buzz"], answer: 0, explain: "Frogs croak." }
+      ]
+    },
+    {
+      id: "what-a-tank",
+      title: "What a Tank!",
+      section: "Santoor",
+      summary: "This lesson tells about old and new ways of storing water in India and about the colourful overhead water tanks of rural Punjab, built in shapes that tell about the family living in the house.",
+      notes: [
+        { heading: "Storing water in India", points: [
+          "Water conservation has been practised for centuries. Old water structures stored water, gave drinking water and protected cities from floods.",
+          "In Tamil Nadu, Ooranis store rainwater for drinking and farming.",
+          "In Kerala, Panam Keni wells do not dry up even in the hottest months.",
+          "In Rajasthan’s Thar region, Tankas are underground tanks that can store water for six to seven months."
+        ] },
+        { heading: "Overhead tanks", points: [
+          "Many homes have water tanks, usually kept on the roof. These are called overhead water tanks.",
+          "They store hundreds and even thousands of litres of water."
+        ] },
+        { heading: "Water tanks of Punjab", points: [
+          "Punjab is in the north-west of India. Its rural areas are known for unique tank designs.",
+          "Tanks may look like a giant flower, a football, a rooster, a statue or even an aeroplane.",
+          "The shape tells us about the family: a farmer may have a tractor, bullock cart or rooster, and a football lover may have a football."
+        ] },
+        { heading: "How the tanks are made", points: [
+          "The frame is made with steel rods and the final shape is given with concrete or cement.",
+          "The finished tank is placed on the roof and can hold hundreds of litres.",
+          "The lesson also teaches contractions such as aren’t for are not, where an apostrophe takes the place of missing letters."
+        ] }
+      ],
+      formulas: ["Ooranis: Tamil Nadu","Panam Keni: Kerala","Tankas: Rajasthan, Thar region","Punjab tanks: made of steel rods and cement","Contraction: do not = don’t"],
+      terms: [
+        { term: "Conservation", meaning: "Saving and protecting something, such as water." },
+        { term: "Overhead tank", meaning: "A water tank kept high up, usually on the roof." },
+        { term: "Heritage", meaning: "Traditions and things passed down from the past." },
+        { term: "Concrete", meaning: "A hard building material made from cement, sand and water." },
+        { term: "Contraction", meaning: "A short form of two words, with an apostrophe in place of missing letters." }
+      ],
+      qa: [
+        { q: "What do we use a water tank for?", a: "We use a water tank to store water for the house. It is usually kept on the roof." },
+        { q: "How do the shapes of Punjab’s water tanks show the owners’ identity?", a: "The shape matches the family’s work or interest. A farmer may have a tractor or rooster shaped tank, and someone who likes football may have a football shaped tank." },
+        { q: "How are the water tanks in Punjab built?", a: "The frame is made with steel rods. Concrete is then used to give the final shape and the tank is fixed on the roof." }
+      ],
+      quiz: [
+        { q: "Where are Tankas found?", options: ["Kerala","Rajasthan’s Thar region","Punjab","Assam"], answer: 1, explain: "Tankas are underground tanks in Rajasthan’s Thar region." },
+        { q: "Which Indian state is known for unusual tank shapes in the lesson?", options: ["Punjab","Goa","Bihar","Sikkim"], answer: 0, explain: "Rural Punjab is known for its unique tanks." },
+        { q: "What material is used to give the tank its final shape?", options: ["Wood","Plastic","Clay","Concrete"], answer: 3, explain: "Steel rods make the frame and concrete finishes the shape." },
+        { q: "What is the contraction of “do not”?", options: ["do’nt","dont’","don’t","d’ont"], answer: 2, explain: "The apostrophe replaces the missing letter o." },
+        { q: "Where are overhead tanks usually kept?", options: ["In the garden","On the roof","Under the bed","In the kitchen"], answer: 1, explain: "Overhead tanks are built or kept on the roof." }
+      ]
+    },
+    {
+      id: "gilli-danda",
+      title: "Gilli Danda",
+      section: "Santoor",
+      summary: "A joyful poem about children playing the traditional game of gilli danda outdoors with friends, under the open sky.",
+      notes: [
+        { heading: "The game", points: [
+          "Gilli danda is played with a long stick (danda) and a small piece of wood (gilli).",
+          "Players hit the gilli with the stick and send it flying high.",
+          "It is played outdoors with friends."
+        ] },
+        { heading: "The feeling of the poem", points: [
+          "The players feel happy, free and full of fun.",
+          "The words laughing, playing and fun show their joy.",
+          "The poem is set under blue skies and golden rays of the sun."
+        ] },
+        { heading: "Values", points: [
+          "The poem shows the joy of **outdoor play** and **friendship**.",
+          "It encourages **teamwork** because the friends never quit.",
+          "Traditional games are a part of our culture and need no costly equipment."
+        ] },
+        { heading: "Language skills in the lesson", points: [
+          "**Prefixes** are added to the start of a word to change its meaning, for example un- means not, as in unhappy, and re- means again, as in redraw.",
+          "**Abstract nouns** name feelings or ideas that cannot be touched, such as joy or fear.",
+          "**Possessive pronouns** such as mine, yours, his, hers, ours and theirs show who owns something."
+        ] }
+      ],
+      formulas: ["Game: gilli danda","Tools: a stick and a small gilli","Prefix un- = not; re- = again","Abstract nouns: joy, anger, fear, truth","Possessive pronouns: mine, yours, his, hers, ours, theirs"],
+      terms: [
+        { term: "Gilli", meaning: "The small piece of wood that is hit in the game." },
+        { term: "Danda", meaning: "The stick used to hit the gilli." },
+        { term: "Prefix", meaning: "Letters added to the beginning of a word to change its meaning." },
+        { term: "Abstract noun", meaning: "A noun for a feeling or idea we cannot touch, such as joy." },
+        { term: "Underneath", meaning: "Below or under something." }
+      ],
+      qa: [
+        { q: "Which game is mentioned in the poem and what is needed to play it?", a: "The game is gilli danda. A stick and a small gilli are needed." },
+        { q: "How do the players feel while playing?", a: "They feel happy and free. They laugh and have a lot of fun." }
+      ],
+      quiz: [
+        { q: "Which game does the poem describe?", options: ["Chess","Carrom","Gilli Danda","Kabaddi"], answer: 2, explain: "The poem is about gilli danda." },
+        { q: "What is the small piece of wood called?", options: ["Danda","Gilli","Bat","Wicket"], answer: 1, explain: "The small piece is the gilli and the stick is the danda." },
+        { q: "What does the prefix “un-” mean?", options: ["not","again","before","after"], answer: 0, explain: "Un- means not, so unhappy means not happy." },
+        { q: "Which of these is an abstract noun?", options: ["leaf","football","spoon","joy"], answer: 3, explain: "Joy is a feeling, so it cannot be touched." },
+        { q: "Where do the children play the game?", options: ["In a train","In a shop","Outdoors","Underwater"], answer: 2, explain: "The poem shows them playing in the playground, under the sky." }
+      ]
+    },
+    {
+      id: "the-decision-of-the-panchayat",
+      title: "The Decision of the Panchayat",
+      section: "Santoor",
+      summary: "A farmer buys a well from a cunning neighbour, who then says he sold only the well and not the water. The village Panchayat gives a clever and fair judgment.",
+      notes: [
+        { heading: "The problem", points: [
+          "A hard-working farmer buys a field and a well next to it from his neighbour.",
+          "The next day the neighbour refuses to let him draw water, saying he sold only the well and not the water.",
+          "The worried farmer goes to the village chief."
+        ] },
+        { heading: "The Panchayat meeting", points: [
+          "The chief fixes a day and the Panchayat meets under the banyan tree.",
+          "The neighbour repeats his claim even when the villagers try to reason with him."
+        ] },
+        { heading: "The judgment", points: [
+          "The chief agrees that only the well was sold.",
+          "She then says that if the water is his, he has no right to keep it in the farmer’s well.",
+          "He must remove the water at once or lose it to the owner of the well.",
+          "The neighbour must pay a fine and apologise."
+        ] },
+        { heading: "Lessons", points: [
+          "Cheating does not pay in the end.",
+          "Clear thinking and fairness can solve tricky problems.",
+          "The Panchayat shows the importance of listening to both sides before deciding.",
+          "The lesson also teaches the suffix -less, meaning without, as in careless and fearless."
+        ] }
+      ],
+      formulas: ["Farmer bought: a well","Neighbour claimed: water was not sold","Judgment given by: the Panchayat under the banyan tree","Suffix -less = without","Moral: honesty and wisdom"],
+      terms: [
+        { term: "Panchayat", meaning: "A village council that settles local matters." },
+        { term: "Cunning", meaning: "Clever in a tricky or dishonest way." },
+        { term: "Adamant", meaning: "Firm and refusing to change one’s mind." },
+        { term: "Summon", meaning: "To order a person to come to a place." },
+        { term: "Judgment", meaning: "A decision made after thinking about a case." }
+      ],
+      qa: [
+        { q: "Why did the farmer go to the village chief?", a: "The neighbour would not let him take water from the well he had bought. He wanted justice." },
+        { q: "What was the final judgment of the Panchayat?", a: "The neighbour had sold only the well, so his water had no right to remain in it. He had to remove the water or use it up immediately, otherwise it would belong to the well’s owner." },
+        { q: "What did the cunning neighbour learn?", a: "He learnt that cheating does not help. He had to pay a fine and apologise." }
+      ],
+      quiz: [
+        { q: "What did the farmer buy from his neighbour?", options: ["A cow","A tractor","A house","A well"], answer: 3, explain: "The farmer bought a well next to his new field." },
+        { q: "Where did the Panchayat meet?", options: ["In a school","In a temple","Under a banyan tree","In a field"], answer: 2, explain: "They met under the banyan tree in the centre of the village." },
+        { q: "What did the neighbour claim?", options: ["He sold nothing","He sold only the well, not the water","He sold the land only","He sold water only"], answer: 1, explain: "He claimed the water still belonged to him." },
+        { q: "What does “cunning” mean?", options: ["Clever in a tricky way","Kind","Slow","Tired"], answer: 0, explain: "A cunning person uses tricks to get what he wants." },
+        { q: "What does the suffix “-less” mean?", options: ["again","not","before","without"], answer: 3, explain: "Careless means without care." }
+      ]
+    },
+    {
+      id: "vocation",
+      title: "Vocation",
+      section: "Santoor",
+      summary: "Rabindranath Tagore’s poem about a child who wishes to be a hawker, a gardener or a watchman, because each person seems free to do what he likes.",
+      notes: [
+        { heading: "The three wishes", points: [
+          "At ten in the morning the child hears a hawker selling crystal bangles in the lane and wishes to be one.",
+          "At four in the afternoon the child sees a gardener digging in the sun and wishes to dig freely like him.",
+          "In the evening the child sees a watchman walking with a lantern and wishes to walk the streets all night."
+        ] },
+        { heading: "The child’s feelings", points: [
+          "The child goes to school and is sent to bed on time, so these jobs look free and exciting.",
+          "The child thinks the workers have no one to stop them.",
+          "This shows the child’s curiosity about the world of work."
+        ] },
+        { heading: "Ideas in the poem", points: [
+          "Every kind of work is important and honest work deserves respect.",
+          "The street lamp is compared to a giant with one red eye.",
+          "The poet is **Rabindranath Tagore**."
+        ] },
+        { heading: "Words in the poem", points: [
+          "A **gong** is a metal disc that makes a loud sound.",
+          "A **spade** is a tool for digging.",
+          "A **lane** is a narrow path, and a **lantern** is a portable light."
+        ] }
+      ],
+      formulas: ["Poet: Rabindranath Tagore","Three workers: hawker, gardener, watchman","Time: morning, afternoon, night","Street lamp: like a giant with one red eye","Theme: respect for all work"],
+      terms: [
+        { term: "Vocation", meaning: "A job or kind of work that a person does." },
+        { term: "Hawker", meaning: "A person who sells things by walking along the road." },
+        { term: "Spade", meaning: "A tool used for digging." },
+        { term: "Lantern", meaning: "A portable light that can be carried." },
+        { term: "Gong", meaning: "A metal disc that makes a loud sound when struck." }
+      ],
+      qa: [
+        { q: "Why does the speaker wish to be a hawker?", a: "The hawker is free to spend his day on the road with no hurry and no place he must be. The child likes that freedom." },
+        { q: "What does the child compare the street lamp to?", a: "The street lamp is compared to a giant with one red eye." },
+        { q: "What does the child like about the gardener?", a: "The gardener can dig in the garden as he likes. No one stops him, even if his clothes get dusty." }
+      ],
+      quiz: [
+        { q: "Who wrote the poem “Vocation”?", options: ["Rabindranath Tagore","Christina Rossetti","Sudha Murty","R.K. Narayan"], answer: 0, explain: "The poem is by Rabindranath Tagore." },
+        { q: "What does the hawker sell?", options: ["Fruits","Toys","Books","Crystal bangles"], answer: 3, explain: "He calls out “Bangles, crystal bangles!”" },
+        { q: "What does the gardener use to dig?", options: ["A lantern","A gong","A spade","A stick"], answer: 2, explain: "The gardener digs with a spade." },
+        { q: "What does the watchman carry?", options: ["A spade","A lantern","A bag","A bell"], answer: 1, explain: "He swings a lantern as he walks." },
+        { q: "What does the word “vocation” mean?", options: ["A kind of job","A holiday","A sport","A festival"], answer: 0, explain: "Vocation means the work a person does." }
+      ]
+    },
+    {
+      id: "glass-bangles",
+      title: "Glass Bangles",
+      section: "Santoor",
+      summary: "Ravi, a glass artisan of Firozabad, and his daughter Ananya mix old and new designs to create a Diwali collection that delights customers and helps the whole community.",
+      notes: [
+        { heading: "Firozabad and its bangles", points: [
+          "Firozabad in Uttar Pradesh is famous for glassware and glass bangles.",
+          "Ravi’s family has made bangles for a very long time.",
+          "Glass is heated in a furnace, shaped into bangles, coloured and decorated, and then cooled."
+        ] },
+        { heading: "Ravi and Ananya", points: [
+          "During Diwali the demand for bangles grows and the workshop is very busy.",
+          "Ananya has finished school and wants to help. She has an eye for design and mixes modern elements with traditional ones.",
+          "Ravi is first unsure, but he soon sees the beauty of her floral and geometric designs."
+        ] },
+        { heading: "The success", points: [
+          "Their special Diwali collection is a big hit with customers.",
+          "More work comes to local artisans and jobs grow in packing and transport.",
+          "Ravi and Ananya feel proud, and the workshop keeps growing."
+        ] },
+        { heading: "Values", points: [
+          "Crafts and skills are worth respecting.",
+          "Fathers and daughters, and old and new ideas, can work well together.",
+          "Local craft helps the whole community."
+        ] }
+      ],
+      formulas: ["Place: Firozabad, Uttar Pradesh","Craftsman: Ravi, glass artisan","Daughter: Ananya","Festival: Diwali","Process: heat, shape, colour, cool"],
+      terms: [
+        { term: "Artisan", meaning: "A skilled worker who makes things by hand." },
+        { term: "Furnace", meaning: "A very hot oven used for heating glass or metal." },
+        { term: "Clinking", meaning: "A light ringing sound made when glass things touch." },
+        { term: "Floral", meaning: "Having flowers or flower patterns." },
+        { term: "Pattern", meaning: "A repeated design." }
+      ],
+      qa: [
+        { q: "How were glass bangles made in Ravi’s workshop?", a: "Ravi and his team heated glass in a furnace and shaped it into bangles. They added colours and designs and then cooled them." },
+        { q: "Who was Ananya and how did she help?", a: "Ananya was Ravi’s daughter. She added modern floral and geometric designs to the traditional bangles." },
+        { q: "How did the new bangles help the community?", a: "Demand rose, so more artisans got work. There were also more jobs in packing and transport." }
+      ],
+      quiz: [
+        { q: "Where is Ravi’s town of Firozabad?", options: ["Punjab","Uttar Pradesh","Kerala","Gujarat"], answer: 1, explain: "Firozabad is in Uttar Pradesh." },
+        { q: "What was Ravi’s craft?", options: ["Making glass bangles","Making toys","Making clothes","Making pots"], answer: 0, explain: "Ravi was a skilled glass artisan." },
+        { q: "Which festival is mentioned in the lesson?", options: ["Holi","Eid","Baisakhi","Diwali"], answer: 3, explain: "The special collection was made for Diwali." },
+        { q: "What kind of designs did Ananya add?", options: ["Cartoon drawings","Animal faces","Floral and geometric patterns","Only plain colours"], answer: 2, explain: "She added delicate floral patterns and geometric shapes." },
+        { q: "What does “artisan” mean?", options: ["A teacher","A skilled craftsperson","A farmer","A doctor"], answer: 1, explain: "An artisan makes things by hand with skill." }
       ]
     }
   ]
