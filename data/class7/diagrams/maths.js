@@ -451,123 +451,44 @@ StudyData.addDiagrams(7, "maths", {
       title: "Multiplying decimals on a 10 × 10 grid",
       caption: "The overlap of 4 columns (0.4) and 3 rows (0.3) contains 4 × 3 = 12 small squares, each worth 0.01, so **0.4 × 0.3 = 0.12**.",
       svg: `<svg viewBox="0 0 560 296" xmlns="http://www.w3.org/2000/svg" font-size="13" fill="currentColor">
-  <rect x="60" y="44" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="44" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="44" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="44" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="44" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="44" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="44" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="44" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="44" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="44" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="64" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="64" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="64" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="64" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="64" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="64" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="64" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="64" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="64" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="64" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="84" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="84" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="84" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="84" width="20" height="20" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="84" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="84" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="84" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="84" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="84" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="84" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="104" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="104" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="104" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="104" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="104" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="104" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="104" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="104" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="104" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="104" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="124" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="124" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="124" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="124" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="124" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="124" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="124" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="124" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="124" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="124" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="144" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="144" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="144" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="144" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="144" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="144" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="144" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="144" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="144" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="144" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="164" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="164" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="164" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="164" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="164" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="164" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="164" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="164" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="164" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="164" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="184" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="184" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="184" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="184" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="184" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="184" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="184" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="184" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="184" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="184" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="204" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="204" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="204" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="204" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="204" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="204" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="204" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="204" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="204" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="204" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="224" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="80" y="224" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="100" y="224" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="120" y="224" width="20" height="20" fill="var(--dg-fill)" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="140" y="224" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="160" y="224" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="180" y="224" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="200" y="224" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="220" y="224" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="240" y="224" width="20" height="20" fill="none" fill-opacity="0.45" stroke="currentColor" stroke-width="0.8"/>
-  <rect x="60" y="44" width="200" height="200" fill="none" stroke="currentColor" stroke-width="1.8"/>
-  <line x1="60" y1="34" x2="140" y2="34" stroke="var(--dg-accent)" stroke-width="1.5"/>
-  <line x1="60" y1="29" x2="60" y2="39" stroke="var(--dg-accent)" stroke-width="1.5"/>
-  <line x1="140" y1="29" x2="140" y2="39" stroke="var(--dg-accent)" stroke-width="1.5"/>
-  <text x="100" y="24" text-anchor="middle" font-size="12">0.4 (4 tenths)</text>
-  <line x1="50" y1="44" x2="50" y2="104" stroke="var(--dg-accent)" stroke-width="1.5"/>
-  <line x1="45" y1="44" x2="55" y2="44" stroke="var(--dg-accent)" stroke-width="1.5"/>
-  <line x1="45" y1="104" x2="55" y2="104" stroke="var(--dg-accent)" stroke-width="1.5"/>
-  <text x="40" y="72" text-anchor="end" font-size="12">0.3</text>
-  <text x="40" y="87" text-anchor="end" font-size="12">(3 tenths)</text>
-  <text x="320" y="74" text-anchor="start" font-weight="600">0.4 × 0.3</text>
-  <text x="320" y="98" text-anchor="start" font-size="12">4 × 3 = 12</text>
-  <text x="320" y="122" text-anchor="start" font-size="12">2 decimal places in all</text>
-  <text x="320" y="146" text-anchor="start" font-weight="600" fill="var(--dg-accent)">= 0.12</text>
-  <text x="320" y="176" text-anchor="start" font-size="12" fill="var(--dg-muted)">12 of the 100 small squares</text>
-  <text x="320" y="194" text-anchor="start" font-size="12" fill="var(--dg-muted)">are in the overlap.</text>
-  <text x="160" y="266" text-anchor="middle" font-size="12" fill="var(--dg-muted)">The big square is 1; each small square is 0.01</text>
+  <rect x="110" y="44" width="80" height="200" fill="var(--dg-fill)" fill-opacity="0.6" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="110" y="44" width="200" height="60" fill="var(--dg-fill)" fill-opacity="0.6" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="110" y="44" width="80" height="60" fill="var(--dg-accent)" fill-opacity="0.5" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="130" y1="44" x2="130" y2="244" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="110" y1="64" x2="310" y2="64" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="150" y1="44" x2="150" y2="244" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="110" y1="84" x2="310" y2="84" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="170" y1="44" x2="170" y2="244" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="110" y1="104" x2="310" y2="104" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="190" y1="44" x2="190" y2="244" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="110" y1="124" x2="310" y2="124" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="210" y1="44" x2="210" y2="244" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="110" y1="144" x2="310" y2="144" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="230" y1="44" x2="230" y2="244" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="110" y1="164" x2="310" y2="164" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="250" y1="44" x2="250" y2="244" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="110" y1="184" x2="310" y2="184" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="270" y1="44" x2="270" y2="244" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="110" y1="204" x2="310" y2="204" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="290" y1="44" x2="290" y2="244" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="110" y1="224" x2="310" y2="224" stroke="currentColor" stroke-width="0.8"/>
+  <rect x="110" y="44" width="200" height="200" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  <line x1="110" y1="34" x2="190" y2="34" stroke="var(--dg-accent)" stroke-width="1.5"/>
+  <line x1="110" y1="29" x2="110" y2="39" stroke="var(--dg-accent)" stroke-width="1.5"/>
+  <line x1="190" y1="29" x2="190" y2="39" stroke="var(--dg-accent)" stroke-width="1.5"/>
+  <text x="150" y="24" text-anchor="middle" font-size="12">0.4 (4 tenths)</text>
+  <line x1="100" y1="44" x2="100" y2="104" stroke="var(--dg-accent)" stroke-width="1.5"/>
+  <line x1="95" y1="44" x2="105" y2="44" stroke="var(--dg-accent)" stroke-width="1.5"/>
+  <line x1="95" y1="104" x2="105" y2="104" stroke="var(--dg-accent)" stroke-width="1.5"/>
+  <text x="90" y="72" text-anchor="end" font-size="12">0.3</text>
+  <text x="90" y="87" text-anchor="end" font-size="12">(3 tenths)</text>
+  <text x="370" y="74" text-anchor="start" font-weight="600">0.4 × 0.3</text>
+  <text x="370" y="98" text-anchor="start" font-size="12">4 × 3 = 12</text>
+  <text x="370" y="122" text-anchor="start" font-size="12">2 decimal places in all</text>
+  <text x="370" y="146" text-anchor="start" font-weight="600" fill="var(--dg-accent)">= 0.12</text>
+  <text x="370" y="176" text-anchor="start" font-size="12" fill="var(--dg-muted)">12 of the 100 small squares</text>
+  <text x="370" y="194" text-anchor="start" font-size="12" fill="var(--dg-muted)">are in the overlap.</text>
+  <text x="210" y="266" text-anchor="middle" font-size="12" fill="var(--dg-muted)">The big square is 1; each small square is 0.01</text>
 </svg>`,
     },
   ],
@@ -663,8 +584,8 @@ StudyData.addDiagrams(7, "maths", {
   <line x1="310" y1="230" x2="510" y2="230" stroke="currentColor" stroke-width="1.8"/>
   <line x1="310" y1="230" x2="378.4" y2="42.1" stroke="currentColor" stroke-width="1.8"/>
   <path d="M369.7,236.3 A60,60 0 0 0 324.5,171.8" fill="none" stroke="currentColor" stroke-width="1.1"/>
-  <path d="M381,191.5 A40,40 0 0 0 356.3,192.4" fill="none" stroke="currentColor" stroke-width="1.1"/>
-  <path d="M359.3,201.4 A40,40 0 0 0 370.5,175" fill="none" stroke="currentColor" stroke-width="1.1"/>
+  <path d="M385,192.9 A40,40 0 0 0 350,195.4" fill="none" stroke="currentColor" stroke-width="1.1"/>
+  <path d="M356.2,204.3 A40,40 0 0 0 370.5,172.2" fill="none" stroke="currentColor" stroke-width="1.1"/>
   <line x1="310" y1="230" x2="465.6" y2="121" stroke="var(--dg-accent)" stroke-width="1.8"/>
   <path d="M334,230 A24,24 0 0 0 329.7,216.2" fill="none" stroke="var(--dg-accent)" stroke-width="1.5"/>
   <path d="M329.7,216.2 A24,24 0 0 0 318.2,207.4" fill="none" stroke="var(--dg-accent)" stroke-width="1.5"/>
@@ -717,70 +638,68 @@ StudyData.addDiagrams(7, "maths", {
     {
       title: "Balance model for 3x + 4 = 19",
       caption: "An equation is a balanced pair of scales. Whatever you do to one pan (subtract 4, then divide by 3) you must do to the **other pan** as well, which gives x = 5.",
-      svg: `<svg viewBox="0 0 560 372" xmlns="http://www.w3.org/2000/svg" font-size="13" fill="currentColor">
-  <line x1="85" y1="40" x2="295" y2="40" stroke="currentColor" stroke-width="2.5"/>
-  <line x1="190" y1="40" x2="190" y2="110" stroke="currentColor" stroke-width="2.5"/>
-  <line x1="162" y1="110" x2="218" y2="110" stroke="currentColor" stroke-width="2.5"/>
-  <circle cx="190" cy="40" r="4" fill="currentColor"/>
-  <line x1="85" y1="40" x2="20" y2="95" stroke="currentColor" stroke-width="1"/>
-  <line x1="85" y1="40" x2="150" y2="95" stroke="currentColor" stroke-width="1"/>
-  <line x1="150" y1="95" x2="20" y2="95" stroke="currentColor" stroke-width="2.5"/>
-  <line x1="295" y1="40" x2="360" y2="95" stroke="currentColor" stroke-width="1"/>
-  <line x1="295" y1="40" x2="230" y2="95" stroke="currentColor" stroke-width="1"/>
-  <line x1="230" y1="95" x2="360" y2="95" stroke="currentColor" stroke-width="2.5"/>
-  <rect x="24" y="71" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.8" stroke="currentColor" stroke-width="1.5" rx="2"/>
-  <text x="35" y="87" text-anchor="middle" font-size="13">x</text>
-  <rect x="49" y="71" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.8" stroke="currentColor" stroke-width="1.5" rx="2"/>
-  <text x="60" y="87" text-anchor="middle" font-size="13">x</text>
-  <rect x="74" y="71" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.8" stroke="currentColor" stroke-width="1.5" rx="2"/>
-  <text x="85" y="87" text-anchor="middle" font-size="13">x</text>
-  <circle cx="108" cy="89" r="4.5" fill="var(--dg-accent)"/>
-  <circle cx="119" cy="89" r="4.5" fill="var(--dg-accent)"/>
-  <circle cx="130" cy="89" r="4.5" fill="var(--dg-accent)"/>
-  <circle cx="141" cy="89" r="4.5" fill="var(--dg-accent)"/>
-  <rect x="265" y="69" width="60" height="26" fill="var(--dg-accent)" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5" rx="3"/>
-  <text x="295" y="87" text-anchor="middle" font-weight="600">19</text>
-  <line x1="85" y1="170" x2="295" y2="170" stroke="currentColor" stroke-width="2.5"/>
-  <line x1="190" y1="170" x2="190" y2="240" stroke="currentColor" stroke-width="2.5"/>
-  <line x1="162" y1="240" x2="218" y2="240" stroke="currentColor" stroke-width="2.5"/>
-  <circle cx="190" cy="170" r="4" fill="currentColor"/>
-  <line x1="85" y1="170" x2="20" y2="225" stroke="currentColor" stroke-width="1"/>
-  <line x1="85" y1="170" x2="150" y2="225" stroke="currentColor" stroke-width="1"/>
-  <line x1="150" y1="225" x2="20" y2="225" stroke="currentColor" stroke-width="2.5"/>
-  <line x1="295" y1="170" x2="360" y2="225" stroke="currentColor" stroke-width="1"/>
-  <line x1="295" y1="170" x2="230" y2="225" stroke="currentColor" stroke-width="1"/>
-  <line x1="230" y1="225" x2="360" y2="225" stroke="currentColor" stroke-width="2.5"/>
-  <rect x="24" y="201" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.8" stroke="currentColor" stroke-width="1.5" rx="2"/>
-  <text x="35" y="217" text-anchor="middle" font-size="13">x</text>
-  <rect x="49" y="201" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.8" stroke="currentColor" stroke-width="1.5" rx="2"/>
-  <text x="60" y="217" text-anchor="middle" font-size="13">x</text>
-  <rect x="74" y="201" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.8" stroke="currentColor" stroke-width="1.5" rx="2"/>
-  <text x="85" y="217" text-anchor="middle" font-size="13">x</text>
-  <rect x="265" y="199" width="60" height="26" fill="var(--dg-accent)" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5" rx="3"/>
-  <text x="295" y="217" text-anchor="middle" font-weight="600">15</text>
-  <line x1="85" y1="300" x2="295" y2="300" stroke="currentColor" stroke-width="2.5"/>
-  <line x1="190" y1="300" x2="190" y2="370" stroke="currentColor" stroke-width="2.5"/>
-  <line x1="162" y1="370" x2="218" y2="370" stroke="currentColor" stroke-width="2.5"/>
-  <circle cx="190" cy="300" r="4" fill="currentColor"/>
-  <line x1="85" y1="300" x2="20" y2="355" stroke="currentColor" stroke-width="1"/>
-  <line x1="85" y1="300" x2="150" y2="355" stroke="currentColor" stroke-width="1"/>
-  <line x1="150" y1="355" x2="20" y2="355" stroke="currentColor" stroke-width="2.5"/>
-  <line x1="295" y1="300" x2="360" y2="355" stroke="currentColor" stroke-width="1"/>
-  <line x1="295" y1="300" x2="230" y2="355" stroke="currentColor" stroke-width="1"/>
-  <line x1="230" y1="355" x2="360" y2="355" stroke="currentColor" stroke-width="2.5"/>
-  <rect x="24" y="331" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.8" stroke="currentColor" stroke-width="1.5" rx="2"/>
-  <text x="35" y="347" text-anchor="middle" font-size="13">x</text>
-  <rect x="265" y="329" width="60" height="26" fill="var(--dg-accent)" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5" rx="3"/>
-  <text x="295" y="347" text-anchor="middle" font-weight="600">5</text>
-  <text x="400" y="26" text-anchor="start" font-weight="600">3x + 4 = 19</text>
-  <text x="400" y="48" text-anchor="start" font-size="12" fill="var(--dg-muted)">x boxes and 4 single</text>
-  <text x="400" y="64" text-anchor="start" font-size="12" fill="var(--dg-muted)">units balance 19 units</text>
-  <text x="400" y="156" text-anchor="start" font-weight="600">3x = 15</text>
-  <text x="400" y="178" text-anchor="start" font-size="12" fill="var(--dg-muted)">Take 4 units off both</text>
-  <text x="400" y="194" text-anchor="start" font-size="12" fill="var(--dg-muted)">pans: still balanced</text>
-  <text x="400" y="286" text-anchor="start" font-weight="600" fill="var(--dg-accent)">x = 5</text>
-  <text x="400" y="308" text-anchor="start" font-size="12" fill="var(--dg-muted)">Share each pan into 3</text>
-  <text x="400" y="324" text-anchor="start" font-size="12" fill="var(--dg-muted)">equal parts: one x = 5</text>
+      svg: `<svg viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg" font-size="13" fill="currentColor">
+  <line x1="85" y1="34" x2="160" y2="134" stroke="currentColor" stroke-width="1"/>
+  <line x1="85" y1="34" x2="10" y2="134" stroke="currentColor" stroke-width="1"/>
+  <line x1="10" y1="134" x2="160" y2="134" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="295" y1="34" x2="370" y2="134" stroke="currentColor" stroke-width="1"/>
+  <line x1="295" y1="34" x2="220" y2="134" stroke="currentColor" stroke-width="1"/>
+  <line x1="220" y1="134" x2="370" y2="134" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="85" y1="34" x2="295" y2="34" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="190" y1="34" x2="190" y2="148" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="160" y1="148" x2="220" y2="148" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="190" cy="34" r="4" fill="currentColor"/>
+  <rect x="30" y="110" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.9" stroke="currentColor" stroke-width="1.5" rx="2"/>
+  <text x="41" y="126" text-anchor="middle" font-size="13">x</text>
+  <rect x="55" y="110" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.9" stroke="currentColor" stroke-width="1.5" rx="2"/>
+  <text x="66" y="126" text-anchor="middle" font-size="13">x</text>
+  <rect x="80" y="110" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.9" stroke="currentColor" stroke-width="1.5" rx="2"/>
+  <text x="91" y="126" text-anchor="middle" font-size="13">x</text>
+  <rect x="106" y="110" width="30" height="22" fill="var(--dg-accent)" fill-opacity="0.3" stroke="currentColor" stroke-width="1.5" rx="2"/>
+  <text x="121" y="126" text-anchor="middle" font-size="13">4</text>
+  <rect x="265" y="108" width="60" height="26" fill="var(--dg-accent)" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5" rx="3"/>
+  <text x="295" y="126" text-anchor="middle" font-weight="600">19</text>
+  <line x1="85" y1="184" x2="160" y2="284" stroke="currentColor" stroke-width="1"/>
+  <line x1="85" y1="184" x2="10" y2="284" stroke="currentColor" stroke-width="1"/>
+  <line x1="10" y1="284" x2="160" y2="284" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="295" y1="184" x2="370" y2="284" stroke="currentColor" stroke-width="1"/>
+  <line x1="295" y1="184" x2="220" y2="284" stroke="currentColor" stroke-width="1"/>
+  <line x1="220" y1="284" x2="370" y2="284" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="85" y1="184" x2="295" y2="184" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="190" y1="184" x2="190" y2="298" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="160" y1="298" x2="220" y2="298" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="190" cy="184" r="4" fill="currentColor"/>
+  <rect x="30" y="260" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.9" stroke="currentColor" stroke-width="1.5" rx="2"/>
+  <text x="41" y="276" text-anchor="middle" font-size="13">x</text>
+  <rect x="55" y="260" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.9" stroke="currentColor" stroke-width="1.5" rx="2"/>
+  <text x="66" y="276" text-anchor="middle" font-size="13">x</text>
+  <rect x="80" y="260" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.9" stroke="currentColor" stroke-width="1.5" rx="2"/>
+  <text x="91" y="276" text-anchor="middle" font-size="13">x</text>
+  <rect x="265" y="258" width="60" height="26" fill="var(--dg-accent)" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5" rx="3"/>
+  <text x="295" y="276" text-anchor="middle" font-weight="600">15</text>
+  <line x1="85" y1="334" x2="160" y2="434" stroke="currentColor" stroke-width="1"/>
+  <line x1="85" y1="334" x2="10" y2="434" stroke="currentColor" stroke-width="1"/>
+  <line x1="10" y1="434" x2="160" y2="434" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="295" y1="334" x2="370" y2="434" stroke="currentColor" stroke-width="1"/>
+  <line x1="295" y1="334" x2="220" y2="434" stroke="currentColor" stroke-width="1"/>
+  <line x1="220" y1="434" x2="370" y2="434" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="85" y1="334" x2="295" y2="334" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="190" y1="334" x2="190" y2="448" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="160" y1="448" x2="220" y2="448" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="190" cy="334" r="4" fill="currentColor"/>
+  <rect x="30" y="410" width="22" height="22" fill="var(--dg-fill)" fill-opacity="0.9" stroke="currentColor" stroke-width="1.5" rx="2"/>
+  <text x="41" y="426" text-anchor="middle" font-size="13">x</text>
+  <rect x="265" y="408" width="60" height="26" fill="var(--dg-accent)" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5" rx="3"/>
+  <text x="295" y="426" text-anchor="middle" font-weight="600">5</text>
+  <text x="410" y="30" text-anchor="start" font-weight="600">3x + 4 = 19</text>
+  <text x="410" y="52" text-anchor="start" font-size="12" fill="var(--dg-muted)">x boxes and a 4-unit box</text>
+  <text x="410" y="68" text-anchor="start" font-size="12" fill="var(--dg-muted)">balance 19 units</text>
+  <text x="410" y="180" text-anchor="start" font-weight="600">3x = 15</text>
+  <text x="410" y="202" text-anchor="start" font-size="12" fill="var(--dg-muted)">Take 4 units off both</text>
+  <text x="410" y="218" text-anchor="start" font-size="12" fill="var(--dg-muted)">pans: still balanced</text>
+  <text x="410" y="330" text-anchor="start" font-weight="600" fill="var(--dg-accent)">x = 5</text>
+  <text x="410" y="352" text-anchor="start" font-size="12" fill="var(--dg-muted)">Share each pan into 3</text>
+  <text x="410" y="368" text-anchor="start" font-size="12" fill="var(--dg-muted)">equal parts: one x = 5</text>
 </svg>`,
     },
   ],
