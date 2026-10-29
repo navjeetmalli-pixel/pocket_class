@@ -57,4 +57,4 @@ delete the `icons/icon-*.webp` files it also creates (the website doesn't use th
 
 - The content was written with AI help and still needs a teacher's review (see each subject's "reviewed" field).
 - Another app named "Vidya AI Tutor" exists; check the name is available in both stores before you build a listing.
-- You need a privacy policy page (a simple GitHub Pages page saying no data is collected is enough).
+- Privacy policy URL for both stores: https://navjeetmalli-pixel.github.io/vidya/privacy.html (in this repo as `privacy.html`).

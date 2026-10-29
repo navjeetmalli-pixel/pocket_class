@@ -27,6 +27,8 @@ globalThis.StudyData = (function () {
     { id: "hindipb",     name: "Hindi",             short: "Hindi",       native: "हिंदी",              icon: "✍️", color: "#d6409f", stream: "Languages" },
     { id: "mathspb",     name: "Mathematics",       short: "Maths",       native: "ਗਣਿਤ",              icon: "➗", color: "#5b5bd6" },
     { id: "sciencepb",   name: "Science",           short: "Science",     native: "ਵਿਗਿਆਨ",            icon: "🔬", color: "#12a594" },
+    { id: "historypb",   name: "History",           short: "History",     native: "ਇਤਿਹਾਸ",            icon: "🏛️", color: "#a0612a", stream: "Arts" },
+    { id: "polscipb",    name: "Political Science", short: "Pol. Sci.",   native: "ਰਾਜਨੀਤੀ ਸ਼ਾਸਤਰ",      icon: "⚖️", color: "#c92a2a", stream: "Arts" },
     { id: "phc",         name: "Punjab History and Culture", short: "Punjab Hist.", native: "ਪੰਜਾਬ ਦਾ ਇਤਿਹਾਸ ਅਤੇ ਸੱਭਿਆਚਾਰ", icon: "🏰", color: "#a0612a" },
   ];
 
@@ -63,9 +65,9 @@ globalThis.StudyData = (function () {
       // Class 9: NCERT Maths and Science, PSEB SST and English.
       9: ["maths", "science", "sstpb", "englishpb", "hindi", "punjabi"],
       10: ["maths", "science", "sstpb", "englishpb", "hindipb", "punjabi", "phc"],
-      // Classes 11–12: these subjects follow the same NCERT units. PSEB English, Hindi, History and Political Science differ and aren't written yet.
-      11: ["physics", "chemistry", "maths", "biology", "accountancy", "business", "economics", "punjabi"],
-      12: ["physics", "chemistry", "maths", "biology", "accountancy", "business", "economics", "punjabi"],
+      // Classes 11–12: sciences, maths and commerce follow NCERT units; English, Hindi, History and Political Science are PSEB's own.
+      11: ["physics", "chemistry", "maths", "biology", "accountancy", "business", "economics", "historypb", "polscipb", "englishpb", "hindipb", "punjabi"],
+      12: ["physics", "chemistry", "maths", "biology", "accountancy", "business", "economics", "historypb", "polscipb", "englishpb", "hindipb", "punjabi"],
     },
   };
   let board = "cbse";
