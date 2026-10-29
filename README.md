@@ -14,17 +14,20 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 | 11–12 | Physics, Chemistry, Maths, Biology · Accountancy, Business Studies, Economics · History, Geography, Political Science · English, Hindi, Punjabi |
 
 **For every chapter**
-- **Notes**: revision notes, a formula / key-facts box, and key terms
+- **Notes**: revision notes, a formula / key-facts box, key terms, and labelled diagrams (about 800 across Classes 3–12: ray diagrams, circuits, graphs, cells, cycles, timelines, all drawn to scale)
 - **Flashcards**: flip cards for key terms, with "know it / still learning" tracking
 - **Practice**: solved examples and board-style questions with model answers
 - **Quiz**: MCQs with instant feedback and explanations
 
-**Boards**: CBSE / NCERT for Classes 1–12. PSEB (Punjab Board), from its 2026–27 syllabus: Classes 1–5 use the topic-based content (PSEB sets learning outcomes, not lesson lists); Classes 6–8 have the earlier NCERT Maths and Science books that PSEB still uses, plus PSEB Social Science and English; Class 9–10 have NCERT Maths and Science plus PSEB Social Science and English (Class 10 also Hindi and Punjab History and Culture); Classes 11–12 have the sciences, maths and commerce (same NCERT units) plus PSEB's own English, Hindi, History (Class 12: history of the Punjab) and Political Science. English lessons are included only where the story is well known; each English file lists the lessons it leaves out.
+**Books**: CBSE follows the current NCERT books, including the new 2026–27 Class 9 books (Ganita Manjari, Exploration, Understanding Society, Kaveri, Ganga) and the new Classes 1–8 books. English and Hindi include every lesson of the current NCERT readers, summarised in our own words.
+
+**Boards**: CBSE / NCERT for Classes 1–12. PSEB (Punjab Board), from its 2026–27 syllabus: Classes 1–5 use the topic-based content (PSEB sets learning outcomes, not lesson lists); Classes 6–9 have the earlier NCERT Maths and Science books that PSEB still uses, plus PSEB Social Science and English; Class 10 has NCERT Maths and Science plus PSEB Social Science, English, Hindi and Punjab History and Culture; Classes 11–12 have the sciences, maths and commerce (same NCERT units) plus PSEB's own English, Hindi, History (Class 12: history of the Punjab) and Political Science. PSEB English lessons were checked against the PSEB textbooks (2023–24 edition).
 
 **Practice**
 - **Practice sheets**: choose chapters and question types (MCQ, short and long answer, maths problems), then print with an answer key. Sheets are numbered: the same number always gives the same sheet, the next number a new one.
 - **Fresh maths and physics questions**: 116 question types (from Class 1 addition to Class 12 integrals and Class 8–12 physics numericals) that change the numbers every time, with worked steps.
-- **Practice banks** (every chapter, Classes 1–12): about 17,900 MCQs at up to three levels (assertion–reason and case-based from Class 6) and 11,200 written questions (1–5 marks) with model answers: about 12,400 and 7,700 for CBSE, plus 5,500 and 3,500 for the PSEB-only subjects. Classes 1–5 get shorter, age-appropriate sets. Each quiz round draws a fresh set.
+- **Practice banks** (every chapter, Classes 1–12, both boards): about 23,000 MCQs at up to three levels (assertion–reason and case-based from Class 6) and 14,000 written questions (1–5 marks) with model answers. Classes 1–5 get shorter, age-appropriate sets. Each quiz round draws a fresh set.
+- **Sample papers** (Classes 9–12): full papers in the board pattern (70 or 80 marks, 3 hours, sections A–F with internal choices) and a marking scheme; every paper number is a new paper.
 
 **Study tools**
 - **Mock test**: timed test across a whole subject, chosen chapters, or all subjects, with a per-chapter score breakdown

@@ -1,8 +1,8 @@
-// Class 2 English: naming words, plurals, action and describing words, pronouns, prepositions and simple sentences.
+// Class 2 English: grammar and writing skills, plus the lessons of Mridang.
 // Format: see CONTENT_GUIDE.md. All examples are original.
 StudyData.add(2, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills, arranged by topic. Textbook lessons are not included.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Mridang"], note: "Grammar and writing, plus every lesson of Mridang (summarised in our own words).", reviewed: false},
   chapters: [
     // ───────────────────────────── WORDS ─────────────────────────────
     {
@@ -805,6 +805,812 @@ StudyData.add(2, "english", {
           options: ["Forget it at once", "Tell the story in your own words", "Tear the page", "Read only the last line"],
           answer: 1,
           explain: "Telling the story in your own words helps us remember it."
+        }
+      ]
+    },
+    // ───────────────────────────── MRIDANG ─────────────────────────────
+    {
+      id: "my-bicycle",
+      title: "My Bicycle",
+      section: "Mridang",
+      summary: "A happy poem about a child's red bicycle. The child rings the bell, wears a helmet and rides everywhere. The lesson also teaches the parts of a bicycle and when to say a and an.",
+      notes: [
+        {
+          heading: "The poem",
+          points: [
+            "The child has a **red** bicycle. The seat is blue, and the tyres and pedals are black.",
+            "The bell goes trin, trin, trin, and friends move aside.",
+            "The bicycle is sometimes fast and sometimes slow. It needs air in the tyres to keep going.",
+            "The child wears a little **helmet** to stay safe."
+          ]
+        },
+        {
+          heading: "Parts of a bicycle",
+          points: [
+            "Seat, pedal, wheel, bell, handle, carrier and brake.",
+            "A tricycle has three wheels. A wheelchair helps people who cannot walk easily."
+          ]
+        },
+        {
+          heading: "A and an",
+          points: [
+            "We say **an** before words that begin with the vowel sounds a, e, i, o, u: an ant, an axe, an apple, an egg.",
+            "We say **a** before other words: a cat, a mat, a pan."
+          ]
+        }
+      ],
+      formulas: [
+        "Red bicycle, blue seat, black tyres",
+        "Safety: wear a helmet",
+        "an + vowel sound: an apple",
+        "a + other sounds: a cat"
+      ],
+      terms: [
+        { term: "Pedal", meaning: "The part we push with our feet to move a bicycle." },
+        { term: "Helmet", meaning: "A hard cap that keeps our head safe." },
+        { term: "Brake", meaning: "The part that makes a bicycle stop." }
+      ],
+      qa: [
+        { q: "What colour is the child's bicycle?", a: "The bicycle is red." },
+        { q: "Why does the child wear a helmet?", a: "A helmet keeps the head safe while riding." },
+        { q: "Write a or an: ___ ant.", a: "an ant." }
+      ],
+      quiz: [
+        {
+          q: "What colour is the bicycle in the poem?",
+          options: ["red", "blue", "green", "yellow"],
+          answer: 0,
+          explain: "The poem begins with a red bicycle."
+        },
+        {
+          q: "What sound does the bell make?",
+          options: ["tick, tock", "trin, trin, trin", "moo, moo", "ding, dong"],
+          answer: 1,
+          explain: "The bell goes trin, trin, trin."
+        },
+        { q: "Which part do we ring to tell friends to move aside?", options: ["seat", "brake", "bell", "wheel"], answer: 2, explain: "We ring the bell." },
+        {
+          q: "What does the child put on before riding?",
+          options: ["a hat for the sun", "a scarf", "a raincoat", "a helmet"],
+          answer: 3,
+          explain: "A helmet keeps the head safe."
+        },
+        {
+          q: "Which is correct?",
+          options: ["an apple", "a apple", "an cat", "a egg"],
+          answer: 0,
+          explain: "Apple begins with a vowel sound, so we say an apple."
+        }
+      ]
+    },
+    {
+      id: "picture-reading-out-out",
+      title: "Picture Reading (Out! Out!)",
+      section: "Mridang",
+      summary: "Look at a picture and talk about children having fun. Then read the story of Jeet and Babli, who play bat and ball. When their ball is lost, Babli makes a new one from rags, paper, wool and string.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "Jeet and Babli play on a holiday. They skip a rope, play hide and seek and then bat and ball.",
+            "Babli hits the ball into Mohit's garden. His house is locked, so they cannot find the ball, and the game stops.",
+            "Babli knows how to make a ball. She rolls rags, paper and wool and ties them with a string.",
+            "In the new game the ball opens up in the air. Babli catches a piece of rag and shouts, OUT! OUT!"
+          ]
+        },
+        {
+          heading: "Language work",
+          points: [
+            "Opposites: up and down, in and out, open and close, hot and cold, big and small.",
+            "We can join two sentences with **and**: Suresh went to school. Gopal went to school. becomes Suresh and Gopal went to school.",
+            "The word **an** comes before e-words such as an egg, an engine and an elephant."
+          ]
+        },
+        { heading: "Lesson to learn", points: ["We can make a toy from things around us.", "Old things can be used again, and playing together is fun."] }
+      ],
+      formulas: [
+        "Children: Jeet and Babli",
+        "Ball made of rags, paper, wool and string",
+        "up - down, in - out",
+        "Join with and"
+      ],
+      terms: [
+        { term: "Opposite", meaning: "A word that means the other way, such as up and down." },
+        { term: "Rag", meaning: "A small old piece of cloth." },
+        { term: "Skip", meaning: "To jump over a rope as it swings." }
+      ],
+      qa: [
+        { q: "What did Babli use to make a ball?", a: "She used rags, paper and wool, and tied them with a string." },
+        { q: "Why did the first game stop?", a: "The ball went into Mohit's garden and his house was locked, so they could not find it." },
+        { q: "Write the opposite of up.", a: "down." }
+      ],
+      quiz: [
+        {
+          q: "Who are the two children in the story?",
+          options: ["Mohit and Babli", "Jeet and Mohit", "Babli and Rani", "Jeet and Babli"],
+          answer: 3,
+          explain: "Jeet and Babli play together."
+        },
+        {
+          q: "Which game did they play last?",
+          options: ["bat and ball", "kabaddi", "gilli-danda", "ludo"],
+          answer: 0,
+          explain: "They decided to play bat and ball."
+        },
+        {
+          q: "Where did the ball go?",
+          options: ["into the river", "into Mohit's garden", "on the roof", "into the school"],
+          answer: 1,
+          explain: "It went into Mohit's garden."
+        },
+        { q: "Who shouted OUT! OUT!?", options: ["Jeet", "Mohit", "Babli", "the teacher"], answer: 2, explain: "Babli caught a piece of rag and shouted." },
+        { q: "What is the opposite of 'open'?", options: ["up", "hot", "small", "close"], answer: 3, explain: "Open and close are opposites." }
+      ]
+    },
+    {
+      id: "it-is-fun",
+      title: "It is Fun",
+      section: "Mridang",
+      summary: "A joyful poem about acting like animals: leaping like a lamb, climbing like a cat, hopping like a frog, swimming like a fish, trotting like a horse and flying like a bird.",
+      notes: [
+        {
+          heading: "The poem",
+          points: [
+            "It is fun to be this and fun to be that.",
+            "The child leaps like a lamb, climbs like a cat, hops like a frog, swims like a fish, trots like a horse and flies like a bird.",
+            "The child can act just like them all."
+          ]
+        },
+        {
+          heading: "Action words",
+          points: [
+            "Climb, leap, swim, trot and fly are **action words** (verbs).",
+            "Animals move in different ways: the horse trots, the lamb leaps, the snake crawls, the squirrel runs and the monkey swings."
+          ]
+        },
+        {
+          heading: "Letter I",
+          points: [
+            "I is both a letter and a word. We use I for ourselves.",
+            "Short i words: inch, inkpot, igloo, pin, list, fish, bin, ring, ship."
+          ]
+        }
+      ],
+      formulas: ["leap - lamb, climb - cat, hop - frog", "swim - fish, trot - horse, fly - bird", "I = myself"],
+      terms: [
+        { term: "Action word", meaning: "A word that tells what someone does." },
+        { term: "Leap", meaning: "To jump high or far." },
+        { term: "Trot", meaning: "To run at an easy pace, like a horse." }
+      ],
+      qa: [
+        { q: "How does the child hop?", a: "The child hops like a frog." },
+        { q: "Which animal trots?", a: "A horse trots." },
+        { q: "Write a sentence with the word swim.", a: "Fish swim in water." }
+      ],
+      quiz: [
+        { q: "Who leaps in the poem?", options: ["a cat", "a fish", "a lamb", "a bird"], answer: 2, explain: "The child leaps like a lamb." },
+        { q: "Who climbs in the poem?", options: ["a frog", "a horse", "a lamb", "a cat"], answer: 3, explain: "The child climbs like a cat." },
+        { q: "Which animal swims?", options: ["a fish", "a horse", "a bird", "a frog on the ground"], answer: 0, explain: "A fish swims." },
+        { q: "Which word is an action word?", options: ["lamb", "fly", "blue", "tree"], answer: 1, explain: "Fly tells what a bird does." },
+        { q: "What does I stand for?", options: ["my friend", "my teacher", "myself", "my dog"], answer: 2, explain: "I is the word we use for ourselves." }
+      ]
+    },
+    {
+      id: "seeing-without-seeing",
+      title: "Seeing without Seeing",
+      section: "Mridang",
+      summary: "Onshangla meets a new boy at school who cannot see. Her mother, Ava, plays a game with her. With her eyes covered, Onshangla finds things by touch, smell, hearing and taste, and learns to be kind to people who cannot see.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "A new boy who cannot see joins Onshangla's class. She wonders how he will do things.",
+            "Ava ties a scarf over Onshangla's eyes and gives her things to find out.",
+            "She finds a rose by touch and smell, a bell by hearing, and a glass of orange juice by touch and taste.",
+            "When the scarf is removed, Onshangla is happy to see her mother."
+          ]
+        },
+        {
+          heading: "What we learn",
+          points: [
+            "We can find out about things with our other senses: touch, smell, hearing and taste.",
+            "A child who cannot see may face difficulties, so we should be friends and help.",
+            "We must take care of our eyes."
+          ]
+        },
+        {
+          heading: "Looking after eyes",
+          points: [
+            "Good for eyes: read in good light, sit straight, eat carrots and vegetables, splash water on closed eyes.",
+            "Bad for eyes: sitting very close to the TV, staring at the sun, using a mobile for a long time."
+          ]
+        }
+      ],
+      formulas: [
+        "Senses: see, hear, smell, taste, touch",
+        "Rose - touch and smell; bell - hearing; juice - taste",
+        "Be kind to everyone"
+      ],
+      terms: [
+        { term: "Sniff", meaning: "To smell something with short breaths." },
+        { term: "Quiet", meaning: "Making little or no noise." },
+        { term: "Difficulty", meaning: "Something that is hard to do." }
+      ],
+      qa: [
+        { q: "Why was Onshangla quiet when she came home?", a: "A new boy who cannot see had joined her class, and she was thinking about him." },
+        { q: "How did Onshangla know it was a rose?", a: "She touched it and found it soft, and then she smelled it." },
+        { q: "Name one thing that is bad for our eyes.", a: "Staring at the sun is bad for our eyes." }
+      ],
+      quiz: [
+        {
+          q: "What is Onshangla's mother called in the story?",
+          options: ["Amma", "Ava", "Didi", "Meena"],
+          answer: 1,
+          explain: "Onshangla calls her mother Ava."
+        },
+        {
+          q: "What did Ava tie over Onshangla's eyes?",
+          options: ["a cap", "a rope", "a scarf", "a ribbon on her hair"],
+          answer: 2,
+          explain: "Ava tied a scarf over her eyes."
+        },
+        { q: "What flower did Ava hold?", options: ["a lotus", "a marigold", "a jasmine", "a rose"], answer: 3, explain: "It was a rose." },
+        {
+          q: "How did Onshangla know the bell?",
+          options: ["by its sound", "by its taste", "by its smell", "by its colour"],
+          answer: 0,
+          explain: "She heard its musical sound."
+        },
+        { q: "What was in the glass?", options: ["water", "orange juice", "milk", "tea"], answer: 1, explain: "She tasted it and said it was orange juice." }
+      ]
+    },
+    {
+      id: "come-back-soon",
+      title: "Come Back Soon",
+      section: "Mridang",
+      summary: "A rhyme about travelling by bus, train, boat, plane, taxi and car, near or far, and even by rocket to the moon. The lesson sorts vehicles by where they go: land, air or water.",
+      notes: [
+        {
+          heading: "The poem",
+          points: [
+            "We can take a bus, a train, a boat or a plane. We can take a taxi or a car.",
+            "We can go near or far. We can even take a rocket to the moon, but we must come back soon."
+          ]
+        },
+        {
+          heading: "Land, air and water",
+          points: [
+            "On land: bus, car, jeep, train, truck, bicycle, cart, tractor, taxi.",
+            "In the air: aeroplane, helicopter.",
+            "On water: ship, boat, yacht, raft."
+          ]
+        },
+        {
+          heading: "Vowel sound u",
+          points: [
+            "Short u words: umbrella, truck, duck, jug, mug, cup, bus, rug, hut.",
+            "We say **an umbrella** and **a bus**."
+          ]
+        }
+      ],
+      formulas: ["Land: bus, train", "Air: aeroplane, helicopter", "Water: ship, boat", "Rocket to the moon"],
+      terms: [
+        { term: "Vehicle", meaning: "Something that carries people or goods from one place to another." },
+        { term: "Near", meaning: "Not far away." },
+        { term: "Rocket", meaning: "A vehicle that goes into space." }
+      ],
+      qa: [
+        { q: "Name three vehicles from the poem.", a: "Bus, train and boat (also plane, taxi, car and rocket)." },
+        { q: "Where does a ship travel?", a: "A ship travels on water." },
+        { q: "Where should we come back from the moon?", a: "We should come back soon, back home." }
+      ],
+      quiz: [
+        {
+          q: "Which vehicle goes to the moon in the poem?",
+          options: ["a rocket", "a bus", "a boat", "a taxi"],
+          answer: 0,
+          explain: "The poem says take a rocket to the moon."
+        },
+        { q: "Which vehicle flies in the air?", options: ["train", "plane", "boat", "taxi"], answer: 1, explain: "A plane flies." },
+        { q: "Which vehicle moves on water?", options: ["bus", "truck", "boat", "jeep"], answer: 2, explain: "A boat moves on water." },
+        { q: "Which vehicle moves on land?", options: ["ship", "helicopter", "yacht", "train"], answer: 3, explain: "A train runs on land." },
+        {
+          q: "What should we do after going to the moon?",
+          options: ["come back soon", "stay for ever", "sleep", "forget home"],
+          answer: 0,
+          explain: "The poem says be sure to come back soon."
+        }
+      ]
+    },
+    {
+      id: "between-home-and-school",
+      title: "Between Home and School",
+      section: "Mridang",
+      summary: "Ravi tells how he and his friend walk to school through paddy fields, a mango grove and the main road. They have fun on the way and still reach on time. The lesson also practises the ch sound.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "Ravi studies in Class 2. He and his friend go to school on foot.",
+            "They pass the paddy fields and the mango grove and then reach the main road. It is the shortest route.",
+            "On the way they jump over canals, climb trees, swing from branches and watch garden lizards. Still, they reach school on time."
+          ]
+        },
+        {
+          heading: "Language work",
+          points: [
+            "The **ch** sound: lunch, chips, teacher, chart, chair, chalk.",
+            "Make sentences with words such as gate, road, tree, lunch and lizard."
+          ]
+        },
+        { heading: "Doing", points: ["Draw the route from your home to your school.", "Collect pictures of vehicles and paste them on a chart."] }
+      ],
+      formulas: ["Route: paddy fields - mango grove - main road", "ch words: chair, chalk, chart", "Reach school on time"],
+      terms: [
+        { term: "Route", meaning: "The way we go from one place to another." },
+        { term: "Canal", meaning: "A long channel dug to carry water." },
+        { term: "Grove", meaning: "A small group of trees." }
+      ],
+      qa: [
+        { q: "How do Ravi and his friend go to school?", a: "They go on foot." },
+        { q: "Name two places they pass on the way.", a: "They pass the paddy fields and the mango grove." },
+        { q: "Write a sentence with the word lunch.", a: "I eat my lunch at school." }
+      ],
+      quiz: [
+        { q: "In which class does Ravi study?", options: ["Class 1", "Class 3", "Class 5", "Class 2"], answer: 3, explain: "Ravi studies in Class 2." },
+        { q: "How do the friends reach school?", options: ["on foot", "by bus", "by train", "by boat"], answer: 0, explain: "They walk to school." },
+        {
+          q: "Which place do they pass first?",
+          options: ["the main road", "paddy fields", "the school gate", "a market"],
+          answer: 1,
+          explain: "They pass the paddy fields, then the mango grove, then reach the main road."
+        },
+        {
+          q: "What do they watch on the way?",
+          options: ["aeroplanes", "elephants", "garden lizards", "whales"],
+          answer: 2,
+          explain: "They watch garden lizards."
+        },
+        { q: "Which word has the ch sound?", options: ["table", "book", "door", "chair"], answer: 3, explain: "Chair begins with ch." }
+      ]
+    },
+    {
+      id: "this-is-my-town",
+      title: "This is My Town",
+      section: "Mridang",
+      summary: "A cumulative poem moves from a town to a street, a house, a room, a bed, a basket and some flowers, and then back out again. The lesson also teaches the sh sound and how to write an address.",
+      notes: [
+        {
+          heading: "The poem",
+          points: [
+            "In my town there are streets. In my street there are houses. In my house there are rooms.",
+            "In my room there is a bed. On the bed there is a basket. In the basket there are some flowers.",
+            "Then the poem goes back: Flowers in a basket, basket on the bed, bed in the room, room in the house, house in the street, street in the town."
+          ]
+        },
+        { heading: "Words that show place", points: ["**in** and **on** tell us where things are: flowers in the basket, the basket on the bed.", "We say **there is** for one thing and **there are** for many things."] },
+        {
+          heading: "Language work",
+          points: [
+            "The **sh** sound: shirt, shell, shoe, shorts, shawl.",
+            "An address tells where we live: house number, street, area, town, state and country."
+          ]
+        }
+      ],
+      formulas: [
+        "town - street - house - room - bed - basket - flowers",
+        "in, on, there is, there are",
+        "sh words: shirt, shoe"
+      ],
+      terms: [
+        { term: "Town", meaning: "A place where many people live, bigger than a village." },
+        { term: "Address", meaning: "The details that tell where a person lives." },
+        { term: "Street", meaning: "A small road with houses on it." }
+      ],
+      qa: [
+        { q: "What is on the bed in the poem?", a: "A basket is on the bed." },
+        { q: "What is in the basket?", a: "Some flowers are in the basket." },
+        { q: "Name two things that begin with sh.", a: "Shirt and shoe." }
+      ],
+      quiz: [
+        {
+          q: "Where are the flowers?",
+          options: ["on the roof", "in the river", "in the basket", "under the tree"],
+          answer: 2,
+          explain: "Flowers are in the basket."
+        },
+        {
+          q: "Where is the basket?",
+          options: ["on the street", "in the garden", "on the wall", "on the bed"],
+          answer: 3,
+          explain: "The basket is on the bed."
+        },
+        { q: "Where is the bed?", options: ["in the room", "in the street", "in the basket", "in the town"], answer: 0, explain: "The bed is in the room." },
+        { q: "Which word has the sh sound?", options: ["chair", "shoe", "tree", "frog"], answer: 1, explain: "Shoe begins with sh." },
+        {
+          q: "What does an address tell us?",
+          options: ["what we eat", "how old we are", "where we live", "what we like"],
+          answer: 2,
+          explain: "An address says where we live."
+        }
+      ]
+    },
+    {
+      id: "a-show-of-clouds",
+      title: "A Show of Clouds",
+      section: "Mridang",
+      summary: "A child lies on their back, looks at the sky and sees clouds that look like a big white bear, a ship sailing on a white sea and an elephant waving its trunk. It is fun to see whatever you want in the clouds.",
+      notes: [
+        {
+          heading: "The poem",
+          points: [
+            "The child lies on their back and looks up at the sky.",
+            "One cloud looks like a big white bear. Another looks like a ship on a white sea. Another looks like an elephant waving its trunk.",
+            "It is fun to see whatever we want to see."
+          ]
+        },
+        {
+          heading: "Clouds",
+          points: [
+            "Clouds can be white, grey or black. At sunset they can look red or orange.",
+            "We can watch clouds and say what shapes we see. All answers are welcome."
+          ]
+        },
+        {
+          heading: "Language work",
+          points: [
+            "The **ck** sound: back, pack, rack, tick, pick, thick, duck, truck.",
+            "Speak in full sentences: When I look up, I see a bird."
+          ]
+        }
+      ],
+      formulas: ["Clouds look like: bear, ship, elephant", "Lie on my back and look up", "ck words: back, pack, duck"],
+      terms: [
+        { term: "Cloud", meaning: "A white or grey shape in the sky made of tiny drops of water." },
+        { term: "Sailing", meaning: "Moving over water in a boat or ship." },
+        { term: "Trunk", meaning: "The long nose of an elephant." }
+      ],
+      qa: [
+        { q: "What does the child see first in the clouds?", a: "A big white bear." },
+        { q: "What is the elephant doing?", a: "It is waving its trunk." },
+        { q: "What do you see in the sky at night?", a: "Moon and stars." }
+      ],
+      quiz: [
+        {
+          q: "How is the child lying?",
+          options: ["on their tummy", "on their back", "on a tree", "in water"],
+          answer: 1,
+          explain: "The child lies on their back."
+        },
+        { q: "What does the child look at?", options: ["the floor", "a book", "the sky", "a TV"], answer: 2, explain: "The child looks up at the sky." },
+        { q: "Which animal looks down at the child?", options: ["a dog", "a horse", "a lion", "a bear"], answer: 3, explain: "A big white bear looks down." },
+        { q: "What sails on a white sea?", options: ["a ship", "a bus", "a car", "a cow"], answer: 0, explain: "A ship sails on a white sea of cloud." },
+        { q: "Which word has the ck sound?", options: ["bird", "duck", "tree", "sky"], answer: 1, explain: "Duck ends with ck." }
+      ]
+    },
+    {
+      id: "my-name",
+      title: "My Name",
+      section: "Mridang",
+      summary: "A little fly forgets his name and asks an ant, a tree, a cow, the grass and a leaf. When the wind blows the leaf away, the fly remembers: his name is Fly. The lesson also practises the sounds bl and pl.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "A little fly cannot remember his name. He asks the ant, who sends him to the tree.",
+            "The tree sends him to the cow in its shade. The cow sends him to the grass. The grass sends him to the leaves fallen on it.",
+            "As the leaf is about to answer, the wind blows and the leaf begins to fly. Seeing that, the fly remembers: My name is Fly!"
+          ]
+        },
+        {
+          heading: "What we learn",
+          points: [
+            "Our name is part of who we are. Every name has a meaning.",
+            "We can ask politely: Dear tree, do you know my name?"
+          ]
+        },
+        {
+          heading: "Language work",
+          points: [
+            "The blends **bl** and **pl**: blue, black, blanket, plum, plate, plant.",
+            "Sounds of animals: crow caws, sparrow chirps, lion roars, cat meows, bee buzzes, duck quacks."
+          ]
+        }
+      ],
+      formulas: ["ant - tree - cow - grass - leaf", "Name of the fly: Fly", "bl: blue, black; pl: plum, plate"],
+      terms: [
+        { term: "Remember", meaning: "To bring something back to your mind." },
+        { term: "Shade", meaning: "A cool place under a tree where the sun does not reach." },
+        { term: "Blend", meaning: "Two letter sounds said together, such as bl." }
+      ],
+      qa: [
+        { q: "Who forgot his name?", a: "A little fly forgot his name." },
+        { q: "How did the fly find his name?", a: "The wind blew the leaf and it began to fly, and the fly remembered his name." },
+        { q: "Say the sound a cat makes.", a: "A cat says meow." }
+      ],
+      quiz: [
+        { q: "Whom did the fly ask first?", options: ["an ant", "a tree", "a cow", "a leaf"], answer: 0, explain: "The fly first asked the ant." },
+        {
+          q: "Who was sleeping in the shade of the tree?",
+          options: ["a dog", "a cow", "a goat", "an ant"],
+          answer: 1,
+          explain: "A cow was sleeping in the shade."
+        },
+        {
+          q: "What did the cow eat?",
+          options: ["leaves of the tree", "bananas", "grass", "biscuits"],
+          answer: 2,
+          explain: "The cow said to ask the grass she eats."
+        },
+        { q: "What made the leaf fly?", options: ["a bird", "the cow", "the ant", "the wind"], answer: 3, explain: "The wind blew the leaf." },
+        { q: "What is the fly's name?", options: ["Fly", "Ant", "Tree", "Wind"], answer: 0, explain: "The fly says, My name is Fly." }
+      ]
+    },
+    {
+      id: "the-crow",
+      title: "The Crow",
+      section: "Mridang",
+      summary: "A black crow wants to be beautiful, so he sticks peacock feathers all over himself. The other crows laugh and tell him he is beautiful in black. They love him for what he is.",
+      notes: [
+        {
+          heading: "The poem",
+          points: [
+            "A crow is black. He wants colourful feathers.",
+            "He finds a peacock feather and sticks it in his tail. He finds more and sticks them in his wings and on his head. He dances and says, I am now beautiful.",
+            "The other crows laugh. They say, You are beautiful in black. We love you for what you are."
+          ]
+        },
+        {
+          heading: "What we learn",
+          points: [
+            "Real beauty is in good qualities, not in colour or looks.",
+            "We should love ourselves and our friends as we are."
+          ]
+        },
+        {
+          heading: "Language work",
+          points: [
+            "Rhyming words: grow - crow, hen - pen, parrot - carrot, sparrow - arrow.",
+            "Clap syllables: pea-cock, beau-ti-ful, co-lour-ful, a-no-ther, fea-ther."
+          ]
+        }
+      ],
+      formulas: ["Crow: black", "Peacock feathers: colourful", "Real beauty: good qualities", "Rhymes: crow - grow"],
+      terms: [
+        { term: "Feather", meaning: "One of the light parts that cover a bird's body." },
+        { term: "Beautiful", meaning: "Very nice to look at." },
+        { term: "Syllable", meaning: "A part of a word said in one beat, such as pea in peacock." }
+      ],
+      qa: [
+        { q: "Why did the crow stick feathers on himself?", a: "He wanted to be beautiful and colourful." },
+        { q: "What did the other crows say?", a: "They said he was beautiful in black and they loved him as he was." },
+        { q: "Name one bird that has colourful feathers.", a: "A peacock." }
+      ],
+      quiz: [
+        { q: "What colour is the crow?", options: ["white", "blue", "red", "black"], answer: 3, explain: "The crow is black." },
+        {
+          q: "Whose feathers did the crow pick up?",
+          options: ["a peacock's", "a parrot's", "a hen's", "a sparrow's"],
+          answer: 0,
+          explain: "He picked up peacock feathers."
+        },
+        {
+          q: "Where did he stick the first feather?",
+          options: ["on his beak", "in his tail", "on his foot", "on a tree"],
+          answer: 1,
+          explain: "He stuck it in his tail."
+        },
+        {
+          q: "What did the other crows do?",
+          options: ["They clapped.", "They ran away.", "They laughed.", "They sang."],
+          answer: 2,
+          explain: "They laughed at him."
+        },
+        {
+          q: "What did they say he was?",
+          options: ["ugly in black", "tired", "sick", "beautiful in black"],
+          answer: 3,
+          explain: "They said he was beautiful in black."
+        }
+      ]
+    },
+    {
+      id: "the-smart-monkey",
+      title: "The Smart Monkey",
+      section: "Mridang",
+      summary: "Anju and Farida eat under a tree and throw their packet and bottle on the ground. A monkey above them throws his banana peel into a dustbin. The girls feel ashamed and put their rubbish in the dustbin too.",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "Anju and Farida go to the market. Anju buys a bag and Farida buys a water bottle. They also buy a packet of groundnuts and a bottle of juice.",
+            "They sit on a bench under a tree. A monkey on a branch eats a banana.",
+            "The girls throw the empty packet and bottle on the ground. The monkey climbs down and puts his banana peel in the dustbin.",
+            "The girls feel ashamed and put their rubbish in the dustbin."
+          ]
+        },
+        { heading: "What we learn", points: ["We should keep our home, school and roads clean.", "Always put rubbish in a dustbin."] },
+        {
+          heading: "Language work",
+          points: [
+            "The blends **cl** and **fl**: cloud, clap, clock, flag, flower, floor.",
+            "Syllables: mon-key, dust-bin, ba-na-na, mar-ket, pack-et."
+          ]
+        }
+      ],
+      formulas: ["Rubbish goes in the dustbin", "Groundnuts = peanuts", "cl: clock; fl: flag"],
+      terms: [
+        { term: "Dustbin", meaning: "A bin where we throw rubbish." },
+        { term: "Peel", meaning: "The outer skin of a fruit like a banana." },
+        { term: "Ashamed", meaning: "Feeling sorry because you did something wrong." }
+      ],
+      qa: [
+        { q: "What did the monkey do with the banana peel?", a: "He threw it into the dustbin." },
+        { q: "Why did the girls feel ashamed?", a: "The monkey was cleaner than them, because they had thrown rubbish on the ground." },
+        { q: "Where should we throw rubbish?", a: "In a dustbin." }
+      ],
+      quiz: [
+        {
+          q: "Who are the two girls?",
+          options: ["Anju and Riya", "Farida and Meena", "Anju and Farida", "Ravi and Anju"],
+          answer: 2,
+          explain: "The girls are Anju and Farida."
+        },
+        {
+          q: "What did Farida buy?",
+          options: ["a bag", "a book", "a toy", "a water bottle"],
+          answer: 3,
+          explain: "Anju bought a bag and Farida bought a water bottle."
+        },
+        {
+          q: "Where did the monkey sit?",
+          options: ["on a branch of the tree", "on the bench", "in a shop", "on the roof"],
+          answer: 0,
+          explain: "He sat on a branch above them."
+        },
+        { q: "What did the monkey eat?", options: ["groundnuts", "a banana", "juice", "biscuits"], answer: 1, explain: "The monkey had a banana." },
+        {
+          q: "Where did the monkey throw the peel?",
+          options: ["on the road", "on the bench", "in the dustbin", "on the girls"],
+          answer: 2,
+          explain: "He threw it into the dustbin."
+        }
+      ]
+    },
+    {
+      id: "little-drops-of-water",
+      title: "Little Drops of Water",
+      section: "Mridang",
+      summary: "A short poem about how little drops of water and little grains of sand make the mighty ocean and the pleasant land. In the same way, little words of love and little acts of kindness spread smiles and happiness.",
+      notes: [
+        {
+          heading: "The poem",
+          points: [
+            "Little drops of water make the mighty ocean. Little grains of sand make the pleasant land.",
+            "Little words of love, little acts of kindness and little deeds of warmth spread smiles and happiness."
+          ]
+        },
+        { heading: "What we learn", points: ["Small things add up to big things.", "Small kind acts can make many people happy."] },
+        {
+          heading: "Language work",
+          points: [
+            "We say drops of water, grains of sand, words of love, deeds of kindness.",
+            "Other groups: a cup of milk, a slice of bread, a tube of toothpaste, a box of pencils, a bag of clothes.",
+            "A sentence begins with a capital letter and ends with a full stop."
+          ]
+        }
+      ],
+      formulas: [
+        "drops of water, grains of sand",
+        "words of love, acts of kindness",
+        "Small things make big things",
+        "Sentence: capital letter + full stop"
+      ],
+      terms: [
+        { term: "Mighty", meaning: "Very big and strong." },
+        { term: "Pleasant", meaning: "Nice and pleasing." },
+        { term: "Kindness", meaning: "Being good and helpful to others." }
+      ],
+      qa: [
+        { q: "What do little drops of water make?", a: "They make the mighty ocean." },
+        { q: "What do little acts of kindness spread?", a: "They spread smiles and happiness." },
+        { q: "Write 'a ___ of milk'.", a: "a cup of milk." }
+      ],
+      quiz: [
+        {
+          q: "What makes the mighty ocean?",
+          options: ["little stones", "little drops of water", "little leaves", "little clouds"],
+          answer: 1,
+          explain: "Drops of water make the ocean."
+        },
+        {
+          q: "What makes the pleasant land?",
+          options: ["little drops of milk", "little feathers", "little grains of sand", "little coins"],
+          answer: 2,
+          explain: "Grains of sand make the land."
+        },
+        {
+          q: "What do words of love spread?",
+          options: ["anger", "noise", "rain", "smiles and happiness"],
+          answer: 3,
+          explain: "They spread smiles and happiness."
+        },
+        {
+          q: "Which phrase is right?",
+          options: ["grains of sand", "drops of sand", "grains of water", "words of rice"],
+          answer: 0,
+          explain: "We say grains of sand."
+        },
+        { q: "Which is a kind act?", options: ["breaking a toy", "sharing your lunch", "shouting", "telling a lie"], answer: 1, explain: "Sharing is kind." }
+      ]
+    },
+    {
+      id: "we-are-all-indians",
+      title: "We are all Indians",
+      section: "Mridang",
+      summary: "Children from different states of India tell us their name, their language, and what they like. They speak different languages and enjoy different things, but they are all Indians. A short play about the charkha and some Indian festivals follow.",
+      notes: [
+        {
+          heading: "The children",
+          points: [
+            "Ramu is from Gujarat, speaks Gujarati and likes the Garba. Meenakshi is from Tamil Nadu, speaks Tamil and likes Pongal.",
+            "Gulabo from Rajasthan wears colourful clothes and travels by camel. Badal from Bengal likes painting and music.",
+            "Surinder is from Punjab and speaks Punjabi. Vibha from Maharashtra speaks Marathi and visited the Ellora and Ajanta caves.",
+            "Kamala from Karnataka plays the mridang. Neerja from Uttar Pradesh has seen the Taj Mahal. Nonglik is from Manipur. Bharti from Andhra Pradesh speaks Telugu. Two sisters from Odisha speak Odia. Unni from Kerala speaks Malayalam."
+          ]
+        },
+        { heading: "Main idea", points: ["India has many languages, foods, dances and festivals.", "Each of us is unique, but we are all Indians."] },
+        {
+          heading: "The charkha and festivals",
+          points: [
+            "In a short play, children learn that the charkha, or spinning wheel, was dear to Mahatma Gandhi. He used it to spin thread and as a sign of self-reliance.",
+            "Festivals read about: Phool Dei (flowers and spring), Sharad Poornima (a full moon night at the end of the monsoon), Pang Lhabsol (Sikkim, Mt Kanchenjunga) and Aadi Perukku (Tamil monsoon festival, river Cauvery)."
+          ]
+        },
+        {
+          heading: "Language work",
+          points: [
+            "Join two sentences with **but**: I like mangoes but I do not like apples.",
+            "Blends: br, fr, bread, frock, frog, bridge, brown."
+          ]
+        }
+      ],
+      formulas: [
+        "Many states, many languages, one India",
+        "Charkha = spinning wheel",
+        "Join with but",
+        "Names of languages: Hindi, Odia, Urdu, Telugu"
+      ],
+      terms: [
+        { term: "Festival", meaning: "A special day or days that people celebrate." },
+        { term: "Charkha", meaning: "A spinning wheel used to make thread." },
+        { term: "Unique", meaning: "One of a kind; different from everyone else." }
+      ],
+      qa: [
+        { q: "What do we call people who live in India?", a: "Indians." },
+        { q: "What is a charkha used for?", a: "It is used to spin thread." },
+        { q: "Join with but: I like milk. I do not like tea.", a: "I like milk but I do not like tea." }
+      ],
+      quiz: [
+        { q: "Which state is Ramu from?", options: ["Gujarat", "Kerala", "Punjab", "Manipur"], answer: 0, explain: "Ramu comes from Gujarat." },
+        { q: "Which dance does Ramu like?", options: ["Bhangra", "Garba", "Kathak", "Bihu"], answer: 1, explain: "Ramu likes the Garba." },
+        {
+          q: "Which language does Unni speak?",
+          options: ["Tamil", "Telugu", "Malayalam", "Kannada"],
+          answer: 2,
+          explain: "Unni is from Kerala and speaks Malayalam."
+        },
+        {
+          q: "Who is the Father of the Nation?",
+          options: ["Nehru", "Tagore", "Buddha", "Mahatma Gandhi"],
+          answer: 3,
+          explain: "The play calls Mahatma Gandhi the Father of the nation."
+        },
+        {
+          q: "What is the charkha also called?",
+          options: ["spinning wheel", "sewing machine", "bicycle", "toy car"],
+          answer: 0,
+          explain: "A charkha is a spinning wheel."
         }
       ]
     }
