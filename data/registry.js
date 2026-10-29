@@ -82,13 +82,13 @@ globalThis.StudyData = (function () {
     3: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
     4: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
     5: { maths: 2, evs: 1, english: 1, hindi: 1, punjabi: 1 },
-    6: { maths: 2, science: 2, sst: 2, english: 2, hindi: 1, punjabi: 1 },
-    7: { maths: 2, science: 2, sst: 3, english: 2, hindi: 1, punjabi: 1 },
-    8: { maths: 2, science: 2, sst: 2, english: 2, hindi: 2, punjabi: 1 },
-    9: { science: 2, maths: 2, sst: 3, english: 3, hindi: 2, punjabi: 2 },
+    6: { maths: 2, science: 2, sst: 2, english: 2, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 3 },
+    7: { maths: 2, science: 2, sst: 3, english: 2, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 3 },
+    8: { maths: 2, science: 2, sst: 2, english: 2, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 3 },
+    9: { science: 2, maths: 2, sst: 3, english: 3, hindi: 2, punjabi: 2, sstpb: 3, englishpb: 4 },
     10: { maths: 2, science: 2, sst: 2, english: 1, hindi: 1, punjabi: 1 },
-    11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 3, hindi: 2, punjabi: 1 },
-    12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 3, hindi: 2, punjabi: 1 },
+    11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 3, hindi: 2, punjabi: 1, historypb: 4, polscipb: 3, englishpb: 4, hindipb: 2 },
+    12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 3, hindi: 2, punjabi: 1, historypb: 4, polscipb: 4, englishpb: 4, hindipb: 3 },
   };
 
   const classes = Object.keys(catalog).map(Number);

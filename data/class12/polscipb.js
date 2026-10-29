@@ -1260,7 +1260,7 @@ StudyData.add(12, "polscipb", {
         {
           heading: "Russia and the USA",
           points: [
-            "**USSR/Russia**: close friend in the Cold War; the **Indo-Soviet Treaty of Peace, Friendship and Cooperation (1971)**; strong defence, space and energy ties; the **2001 Strategic Partnership**.",
+            "**USSR/Russia**: close friend in the Cold War; the **Indo-Soviet Treaty of Peace, Friendship and Cooperation (1971)**; strong defence, space and energy ties; the **2000 Strategic Partnership**.",
             "**USA**: relations were cool during the Cold War; improved after the 1990s, with cooperation in trade, technology and counter-terrorism.",
             "The **Indo-US civil nuclear agreement** (2008) was an important step.",
             "India maintains **balanced relations** with both, rooted in strategic autonomy."
@@ -1280,7 +1280,7 @@ StudyData.add(12, "polscipb", {
         "1966 – Tashkent Declaration",
         "1971 – Indo-Soviet Treaty; Bangladesh war",
         "1972 – Shimla Agreement",
-        "2001 – India–Russia Strategic Agreement",
+        "2000 – India–Russia Strategic Partnership (Declaration)",
         "2008 – Indo-US civil nuclear agreement"
       ],
       terms: [
@@ -1292,7 +1292,7 @@ StudyData.add(12, "polscipb", {
       qa: [
         { q: "What was the Shimla Agreement? (2 marks)", a: "The Shimla Agreement (1972) was signed by **Indira Gandhi and Zulfikar Ali Bhutto** after the 1971 war, committing both countries to settle differences by **peaceful bilateral means**." },
         { q: "Why did India–China relations worsen after the 1950s? (4 marks)", a: "1. A **boundary dispute** over borders in the west and east.\n2. The 1959 events in **Tibet**.\n3. The **1962 war**.\n4. Mistrust persisted, although later talks improved ties." },
-        { q: "Describe India's relations with Russia and the USA. (6 marks)", a: "1. **Russia** was a close Cold War friend and arms supplier.\n2. The **1971 treaty** and the **2001 partnership** deepened ties.\n3. **USA** relations were cool until the end of the Cold War.\n4. Later cooperation grew in **trade, technology and counter-terrorism**.\n5. The **2008 civil nuclear deal** was a milestone.\n6. India balances both, preserving **strategic autonomy**." }
+        { q: "Describe India's relations with Russia and the USA. (6 marks)", a: "1. **Russia** was a close Cold War friend and arms supplier.\n2. The **1971 treaty** and the **2000 partnership** deepened ties.\n3. **USA** relations were cool until the end of the Cold War.\n4. Later cooperation grew in **trade, technology and counter-terrorism**.\n5. The **2008 civil nuclear deal** was a milestone.\n6. India balances both, preserving **strategic autonomy**." }
       ],
       quiz: [
         { q: "The India–China war took place in:", options: ["1948", "1962", "1971", "1999"], answer: 1, explain: "**1962**." },
