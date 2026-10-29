@@ -282,6 +282,7 @@ const Views = (() => {
           ${tool("#/timer", "timer", "Focus timer", "Study in 25-minute blocks")}
           ${tool("#/revise", "formula", "Formula sheets", "Quick revision lists")}
           ${tool("#/sheets", "print", "Practice sheets", "Make and print your own")}
+          ${Papers.CLASSES.includes(c) ? tool("#/papers", "test", "Sample papers", "Full board-pattern papers") : ""}
         </div>
         ${qotdHTML(c)}`,
       mount(el) {
@@ -442,7 +443,7 @@ const Views = (() => {
     const back = c === cls() ? `#/subject/${subj.id}` : "#/";
 
     let body = "";
-    if (tab === "notes") body = notesTab(subj, ch, r, base);
+    if (tab === "notes") body = notesTab(c, subj, ch, r, base);
     else if (tab === "practice") body = practiceTab(c, subj, ch, bank);
     else body = `<div id="${tab}-mount"></div>`;
 
@@ -505,7 +506,7 @@ const Views = (() => {
     };
   }
 
-  function notesTab(subj, ch, r, base) {
+  function notesTab(c, subj, ch, r, base) {
     const notes = ch.notes
       .map((n) => `<article class="card note"><h3>${esc(n.heading)}</h3><ul>${n.points.map((p) => `<li>${rich(p)}</li>`).join("")}</ul></article>`)
       .join("");
@@ -513,10 +514,13 @@ const Views = (() => {
       ch.formulas && ch.formulas.length
         ? `<section class="card formula-box"><h3>${icon("formula")} ${FORMULA_LABEL[subj.id]}</h3><ul>${ch.formulas.map((f) => `<li>${rich(f)}</li>`).join("")}</ul></section>`
         : "";
+    const figs = D.diagramsFor(c, subj.id, ch.id)
+      .map((d) => `<figure class="card diagram"><h3>${esc(d.title)}</h3><div class="diagram-art">${d.svg}</div>${d.caption ? `<figcaption>${rich(d.caption)}</figcaption>` : ""}</figure>`)
+      .join("");
     const terms = `<section class="card"><h3 style="font-size:17px;font-weight:750;margin-bottom:12px">${TERMS_LABEL[subj.id] || "Key terms"}</h3>
       <dl class="terms">${ch.terms.map((t) => `<div><dt>${rich(t.term)}</dt><dd>${rich(t.meaning)}</dd></div>`).join("")}</dl></section>`;
     return `
-      <div class="stack">${notes}${formulas}${terms}</div>
+      <div class="stack">${notes}${figs}${formulas}${terms}</div>
       <div class="done-row no-print">
         <button class="btn ${r.done ? "good" : ""}" data-act="done">${icon("check")} ${r.done ? "Completed" : "Mark as complete"}</button>
         <a class="btn primary" href="${base}/quiz">Take the quiz ${icon("arrow")}</a>

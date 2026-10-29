@@ -86,14 +86,21 @@ globalThis.StudyData = (function () {
     7: { maths: 2, science: 2, sst: 3, english: 2, hindi: 1, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 3 },
     8: { maths: 2, science: 2, sst: 2, english: 2, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 3 },
     9: { science: 2, maths: 2, sst: 3, english: 3, hindi: 2, punjabi: 2, sstpb: 3, englishpb: 4 },
-    10: { maths: 2, science: 2, sst: 2, english: 1, hindi: 1, punjabi: 1 },
+    10: { maths: 2, science: 2, sst: 2, english: 1, hindi: 1, punjabi: 1, sstpb: 4, phc: 2, englishpb: 3, hindipb: 2 },
     11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 3, hindi: 2, punjabi: 1, historypb: 4, polscipb: 3, englishpb: 4, hindipb: 2 },
     12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 3, hindi: 2, punjabi: 1, historypb: 4, polscipb: 4, englishpb: 4, hindipb: 3 },
+  };
+
+  // Labelled diagrams live in data/class{N}/diagrams/{subject}.js, one file per subject, and load with the
+  // practice files. This lists the subjects that have one.
+  const diagramCatalog = {
+    10: ["science"],
   };
 
   const classes = Object.keys(catalog).map(Number);
   const content = {};
   const practice = {};
+  const diagrams = {};
   const ready = {};
   const loading = {};
 
@@ -111,6 +118,14 @@ globalThis.StudyData = (function () {
       into.written.push(...(p.written || []));
     }
   }
+
+  // data: { chapterId: [{ title, svg, caption }] }.
+  function addDiagrams(classNumber, subjectId, data) {
+    ((diagrams[classNumber] = diagrams[classNumber] || {})[subjectId] = diagrams[classNumber][subjectId] || {});
+    Object.assign(diagrams[classNumber][subjectId], data);
+  }
+  const diagramsFor = (classNumber, subjectId, chapterId) =>
+    (diagrams[classNumber] && diagrams[classNumber][subjectId] && diagrams[classNumber][subjectId][chapterId]) || [];
 
   const NO_PRACTICE = { mcq: [], written: [] };
   function practiceFor(classNumber, subjectId, chapterId) {
@@ -140,7 +155,12 @@ globalThis.StudyData = (function () {
   const practiceFiles = (classNumber, subjectId) =>
     Object.entries(practiceCatalog[classNumber] || {})
       .filter(([id]) => (subjectId ? id === subjectId : catalogFor(classNumber).includes(id)))
-      .flatMap(([id, parts]) => Array.from({ length: parts }, (_, i) => `data/class${classNumber}/practice/${id}-${i + 1}.js`));
+      .flatMap(([id, parts]) => Array.from({ length: parts }, (_, i) => `data/class${classNumber}/practice/${id}-${i + 1}.js`))
+      .concat(
+        (diagramCatalog[classNumber] || [])
+          .filter((id) => (subjectId ? id === subjectId : catalogFor(classNumber).includes(id)))
+          .map((id) => `data/class${classNumber}/diagrams/${id}.js`)
+      );
 
   // Loads script files once. Resolves to true if all loaded, false if any failed (e.g. no connection);
   // calling again retries only the failed ones.
@@ -182,7 +202,7 @@ globalThis.StudyData = (function () {
   const practiceLoaded = (classNumber, subjectId) => practiceFiles(classNumber, subjectId).every((f) => fileDone[f]);
 
   return {
-    subjects, classes, catalog, boards, boardCatalog, practiceCatalog, content, add, addPractice, practiceFor, chapters, syllabus,
+    subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addPractice, practiceFor, addDiagrams, diagramsFor, chapters, syllabus,
     subject, subjectsFor, files, practiceFiles, load, loadPractice, practiceLoaded, hasBoardContent,
     isLoaded: (c) => !!ready[`${board}:${c}`],
     get board() {

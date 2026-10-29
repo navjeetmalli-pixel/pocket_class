@@ -155,3 +155,34 @@ StudyData.addPractice(10, "maths", {
 - Maths and physics chapters also get unlimited generated questions from `js/gen.js` (same formula, new numbers).
   Write the bank for what generators can't do: concepts, proofs, word problems, case studies, "show that" questions.
 - Model answers should be what earns full marks in a board exam: key steps, units, and the final answer.
+
+## Diagrams
+
+Labelled diagrams live in `data/class{N}/diagrams/{subject}.js`, one file per subject, and appear in a chapter's
+Notes after the topic cards. Add the subject to `diagramCatalog` in `data/registry.js` so the file loads.
+
+```js
+// Class 10 Science diagrams. Format: see "Diagrams" in CONTENT_GUIDE.md.
+StudyData.addDiagrams(10, "science", {
+  "light-reflection-and-refraction": [
+    {
+      title: "Convex lens: object beyond 2F₁",
+      caption: "One or two sentences on what the diagram shows. **bold** allowed.",
+      svg: `<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" font-size="13" fill="currentColor"> … </svg>`,
+    },
+  ],
+});
+```
+
+Rules (the validator checks most of them):
+- Draw the diagrams students are expected to **draw or label in the exam**: ray diagrams, circuits, apparatus, cell
+  and organ outlines, cycles and flowcharts, geometry figures, graphs, supply–demand curves. Skip chapters that don't need one.
+- Clear schematic line drawings, like a neat textbook or board-answer diagram. No decoration, no realistic shading.
+- Colours only from the theme: `currentColor` for lines and text, `var(--dg-accent)` for rays/arrows/highlights,
+  `var(--dg-fill)` for light fills, `var(--dg-muted)` for secondary labels and dashed axes. Never hex or named colours.
+- Every part the exam asks for is labelled with `<text>` (font-size 12–14). Labels must not overlap lines or each other.
+- `viewBox` about 560 wide; no `width`/`height` on `<svg>`. Give marker and gradient ids a unique suffix
+  (e.g. `ar-l10-2`) because many diagrams share one page.
+- Accuracy first: compute coordinates (ray diagrams to scale, angles correct, graphs through the right points).
+  If you can't draw something correctly as a simple schematic, leave it out.
+- No `<script>`, event handlers, `<image>`, `<foreignObject>` or links. Keep each SVG under about 10 KB.

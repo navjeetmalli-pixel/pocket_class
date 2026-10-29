@@ -1,7 +1,7 @@
 // Offline support: caches the app shell on first visit, plus each class's data once it's opened.
 // Online, files come fresh from the network (and refresh the cache);
 // offline or on a very slow connection, the cached copy is used.
-const CACHE = "vidya-v14";
+const CACHE = "vidya-v15";
 
 const FILES = [
   "./",
@@ -15,6 +15,7 @@ const FILES = [
   "js/gen.js",
   "js/views.js",
   "js/sheets.js",
+  "js/papers.js",
   "js/app.js",
   "data/registry.js",
   "icons/icon.svg",

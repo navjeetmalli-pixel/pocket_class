@@ -631,6 +631,11 @@ mark { background: color-mix(in srgb, var(--gold) 30%, transparent); color: inhe
 .ws-foot { margin-top: 22px; padding-top: 8px; border-top: 1px solid #ccc; font-size: 12px; color: #666; text-align: center; }
 .ws-answers { padding-left: 26px; margin: 12px 0 0; display: flex; flex-direction: column; gap: 10px; }
 .ws-answers li { break-inside: avoid; }
+.paper-or { margin: 10px 0 6px; font-weight: 700; font-size: 13px; letter-spacing: .08em; color: var(--muted); }
+.paper-instr { margin-top: 12px; font-size: 13px; }
+.paper-instr ol { margin: 6px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 2px; }
+.paper-key-h { margin: 18px 0 0; font-size: 15px; }
+.subj-ico { width: 40px; height: 40px; border-radius: 12px; display: inline-grid; place-items: center; font-size: 20px; flex: none; }
 .ws-steps { color: #444; font-size: 14px; }
 @media (max-width: 560px) {
   .ws { padding: 18px 16px; font-size: 14.5px; }
@@ -654,3 +659,10 @@ mark { background: color-mix(in srgb, var(--gold) 30%, transparent); color: inhe
 }
 
 [hidden] { display: none !important; }
+
+/* Labelled diagrams. SVGs draw with currentColor and these variables, so they follow the theme and print in black. */
+.diagram h3 { font-size: 17px; font-weight: 750; margin-bottom: 10px; }
+.diagram-art { color: var(--text); --dg-accent: var(--accent); --dg-fill: color-mix(in srgb, var(--accent) 12%, transparent); --dg-muted: var(--muted); }
+.diagram-art svg { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; font-family: inherit; }
+.diagram figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); }
+@media print { .diagram { break-inside: avoid; } .diagram-art { --dg-accent: #000; --dg-fill: #eee; } }

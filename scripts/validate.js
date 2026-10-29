@@ -8,7 +8,7 @@ const path = require("path");
 const vm = require("vm");
 
 const root = path.join(__dirname, "..");
-let files = process.argv.slice(2).filter((f) => !/[\/\\]practice[\/\\]/.test(f));
+let files = process.argv.slice(2).filter((f) => !/[\/\\](practice|diagrams)[\/\\]/.test(f));
 if (process.argv.length <= 2) {
   files = fs
     .readdirSync(path.join(root, "data"))
@@ -245,6 +245,63 @@ for (const file of practiceFiles) {
   errors.forEach((e) => console.log(`  ERROR ${e}`));
   warns.forEach((w) => console.log(`  warn  ${w}`));
   summary.push(`practice class ${cls} ${subj} part ${part}: ${mcqN} MCQs, ${wN} written`);
+}
+
+// ---------- diagrams ----------
+// data/class{N}/diagrams/{subject}.js: StudyData.addDiagrams(N, "subject", { chapterId: [{ title, svg, caption }] }).
+const diagramFiles = fs
+  .readdirSync(path.join(root, "data"))
+  .filter((d) => /^class\d+$/.test(d) && fs.existsSync(path.join(root, "data", d, "diagrams")))
+  .flatMap((d) => fs.readdirSync(path.join(root, "data", d, "diagrams")).filter((f) => f.endsWith(".js")).map((f) => path.join("data", d, "diagrams", f)))
+  .filter((f) => process.argv.length <= 2 || process.argv.slice(2).includes(f));
+// Colours must come from the theme (currentColor / var(--dg-…)) so diagrams work in dark mode and print.
+const HARD_COLOUR = /(fill|stroke|color)\s*[:=]\s*["']?\s*(#[0-9a-f]{3,8}\b|rgb|hsl|(?!none|currentColor|var|transparent|url)[a-z]{3,}\b)/i;
+for (const file of diagramFiles) {
+  const errors = [];
+  const warns = [];
+  const err = (where, msg) => errors.push(`${where}: ${msg}`);
+  const warn = (where, msg) => warns.push(`${where}: ${msg}`);
+  const m = /class(\d+)[\/\\]diagrams[\/\\](\w+)\.js$/.exec(file);
+  const ctx = { globalThis: {} };
+  ctx.globalThis = ctx;
+  vm.createContext(ctx);
+  try {
+    if (!m) throw new Error("file must be named {subject}.js");
+    vm.runInContext(fs.readFileSync(path.join(root, "data", "registry.js"), "utf8"), ctx);
+    vm.runInContext(fs.readFileSync(path.join(root, "data", `class${m[1]}`, `${m[2]}.js`), "utf8"), ctx);
+    vm.runInContext(fs.readFileSync(path.resolve(root, file), "utf8"), ctx, { filename: file });
+  } catch (e) {
+    console.log(`\n✗ ${file}\n  Could not load: ${e.message}`);
+    errorCount++;
+    continue;
+  }
+  const [cls, subj] = [Number(m[1]), m[2]];
+  if (!(ctx.StudyData.diagramCatalog[cls] || []).includes(subj)) warn("file", `diagramCatalog in data/registry.js doesn't list class ${cls} ${subj}, so this file won't load yet`);
+  const chIds = new Set(ctx.StudyData.chapters(cls, subj).map((c) => c.id));
+  let n = 0;
+  const raw = fs.readFileSync(path.resolve(root, file), "utf8");
+  const keyRe = /^\s{2}"?([a-z0-9-]+)"?:\s*\[/gm;
+  let km;
+  while ((km = keyRe.exec(raw))) if (!chIds.has(km[1])) err(km[1], "not a chapter id in this subject");
+  for (const chId of chIds)
+    ctx.StudyData.diagramsFor(cls, subj, chId).forEach((d, j) => {
+      const at = `${chId} [${j}]`;
+      n++;
+      if (!isStr(d.title)) err(at, "title is required");
+      if (!isStr(d.svg) || !/^\s*<svg[\s>]/.test(d.svg) || !/<\/svg>\s*$/.test(d.svg)) return err(at, "svg must be a single <svg>…</svg> element");
+      if (!/viewBox="[\d. -]+"/.test(d.svg)) err(at, "svg needs a viewBox");
+      if (/\s(width|height)="\d/.test(d.svg.slice(0, d.svg.indexOf(">")))) err(at, "the <svg> tag must not set width or height (the page sizes it)");
+      if (/<script|<foreignObject|\son[a-z]+=|javascript:|<image|href="http/i.test(d.svg)) err(at, "no scripts, event handlers, images or external links");
+      if (HARD_COLOUR.test(d.svg)) err(at, "use currentColor or var(--dg-accent / --dg-fill / --dg-muted) instead of fixed colours");
+      if ((d.svg.match(/<text/g) || []).length < 2) warn(at, "a diagram should have labels");
+      if (d.svg.length > 12000) warn(at, `svg is large (${d.svg.length} chars)`);
+    });
+  errorCount += errors.length;
+  warnCount += warns.length;
+  console.log(`\n${errors.length ? "✗" : "✓"} ${file}`);
+  errors.forEach((e) => console.log(`  ERROR ${e}`));
+  warns.forEach((w) => console.log(`  warn  ${w}`));
+  summary.push(`diagrams class ${cls} ${subj}: ${n}`);
 }
 
 console.log("\n" + summary.join("\n"));

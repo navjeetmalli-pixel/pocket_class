@@ -30,6 +30,8 @@ const App = {
     [/^sheet\/(\w+)$/, Views.sheet],
     [/^sheets(?:\/(\w+))?$/, Sheets.maker],
     [/^worksheet\/(\d+)\/(\w+)(?:\?(.*))?$/, Sheets.worksheet],
+    [/^papers$/, Papers.list],
+    [/^paper\/(\d+)\/(\w+)(?:\?(.*))?$/, Papers.paper],
     [/^cards\/(\w+)$/, Views.subjectCards],
     [/^timer$/, Views.timer],
     [/^progress$/, Views.progress],
@@ -73,7 +75,7 @@ const App = {
   function practiceNeeded(p) {
     let m = p.match(/^chapter\/(\d+)\/(\w+)\//);
     if (m) return [Number(m[1]), m[2]];
-    m = p.match(/^worksheet\/(\d+)\/(\w+)/);
+    m = p.match(/^(?:worksheet|paper)\/(\d+)\/(\w+)/);
     if (m) return [Number(m[1]), m[2]];
     if (/^(test|sheets|revise\/mistakes)/.test(p)) return [Store.state.profile.cls, undefined];
     return null;
