@@ -1,9 +1,907 @@
-// Class 8 English: Grammar and Writing Skills.
+// Class 8 English: all 15 lessons of the NCERT book Poorvi, plus Grammar and Writing Skills.
 // Format: see CONTENT_GUIDE.md. All example sentences, names and model answers are original.
 StudyData.add(8, "english", {
   // What this content follows. match: "textbook" | "older-book" | "topic". Set reviewed to a date once a teacher has checked it.
-  syllabus: {board: "CBSE", match: "topic", books: [], note: "Grammar and writing skills, arranged by topic. Textbook lessons are not included.", reviewed: false},
+  syllabus: {board: "CBSE", match: "textbook", books: ["Poorvi"], note: "Grammar and writing, plus every lesson of Poorvi (summarised in our own words).", reviewed: false},
   chapters: [
+    // ───────────────────────────── POORVI (NCERT Class 8 English) ─────────────────────────────
+    {
+      id: "the-wit-that-won-hearts",
+      title: "The Wit that Won Hearts",
+      section: "Poorvi",
+      summary: "A story from the court of Krishnadeva Raya of Vijayanagara. The king quarrels with Queen Thirumalambal over a yawn, and the court poet Tenali Rama cleverly makes the king see his own mistake and win her back.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 1",
+      notes: [
+        {
+          heading: "Setting and characters",
+          points: [
+            "The story begins with the Vijayanagara Empire under King Krishnadeva Raya (ruled 1509–29 CE), a wise ruler and a gifted poet, whose reign is called the Golden Era of the empire.",
+            "His court had eight celebrated poets known as the Ashtadiggajas. One of them, Tenali Ramakrishna (Tenali Rama), was famous for quick wit and humour.",
+            "The other main characters are Queen Thirumalambal, the king’s ministers and the courtiers."
+          ]
+        },
+        {
+          heading: "The quarrel",
+          points: [
+            "The king wrote a poem full of vague images of the sun, moon and stars. The ministers avoided listening to it with various excuses.",
+            "One tiring evening he read it to the queen, who yawned several times. The king took this as an insult to his poem and stormed off.",
+            "He stopped speaking to her and stopped visiting her, and the palace became quiet and gloomy.",
+            "The upset queen asked Tenali Rama for help. He promised to try, but said he would need time to plan."
+          ]
+        },
+        {
+          heading: "Rama’s plan",
+          points: [
+            "Next day the court was discussing how to improve paddy cultivation. Rama arrived with a plate of paddy seeds and claimed they would give a harvest three times bigger.",
+            "Courtiers mocked him and the king called the claim absurd. Rama replied that the real problem was the person who sows, and joked that a sower who yawns would scatter seeds unevenly.",
+            "The whole court laughed, the king yawned himself, and Rama pointed out that everyone yawns because it is natural."
+          ]
+        },
+        {
+          heading: "Ending and lesson",
+          points: [
+            "The king remembered how he had scolded the queen, saw that yawning is not rudeness, and realised that pride had blinded him.",
+            "That evening he apologised, the queen forgave him and asked to hear the poem, and the royal couple rewarded Rama.",
+            "The story shows that humour and tact can solve a quarrel better than anger, and that we should not read insult into natural acts."
+          ]
+        }
+      ],
+      formulas: [
+        "King: Krishnadeva Raya (1509–29 CE), Vijayanagara Empire. Poets at court: the Ashtadiggajas.",
+        "Queen: Thirumalambal. Problem-solver: Tenali Rama (Tenali Ramakrishna).",
+        "Cause of quarrel: the queen yawned while the king recited his poem."
+      ],
+      terms: [
+        {term: "Ashtadiggajas", meaning: "The eight celebrated poets of Krishnadeva Raya’s court."},
+        {term: "Wit", meaning: "The ability to say clever, quick and amusing things."},
+        {term: "Sarcasm", meaning: "Mocking remarks meant to hurt or make fun."},
+        {term: "Strategy", meaning: "A careful plan to achieve something."},
+        {term: "Forlorn", meaning: "Lonely and sad."}
+      ],
+      qa: [
+        {q: "Why was the king angry with the queen?", a: "She yawned several times while he recited his poem, and he took this as disrespect to his poetry."},
+        {q: "How did Tenali Rama make the king understand his mistake?", a: "He pretended to bring magic paddy seeds and joked that a sower who yawns would sow badly. When the king yawned too, he realised that yawning is natural and that he had been unfair."}
+      ],
+      quiz: [
+        {q: "Who was the queen in the story?", options: ["Thirumalambal","Padmavati","Chennamma","Rani Ahilya"], answer: 0, explain: "The queen’s name was Thirumalambal."},
+        {q: "Why did the king stop speaking to the queen?", options: ["She refused to listen to him at all","She yawned while he recited his poem","She laughed at his poem","She asked for expensive gifts"], answer: 1, explain: "He felt her repeated yawns insulted his poem."},
+        {q: "What did Tenali Rama bring to the court?", options: ["A new poem","A letter from the queen","A plate of paddy seeds","A map of the kingdom"], answer: 2, explain: "He brought paddy seeds as part of his plan."},
+        {q: "What did Rama say was the real problem with the seeds?", options: ["The poor soil","The lack of rain","The price of manure","The person who sows them"], answer: 3, explain: "He said the sower, who might yawn, was the problem; this was his way to bring up yawning."},
+        {q: "The main lesson of the story is that", options: ["wit and tact can heal a quarrel","kings never make mistakes","poets should not read aloud","farmers need new seeds"], answer: 0, explain: "Rama’s humour made the king see his error without any argument."}
+      ]
+    },
+    {
+      id: "a-concrete-example",
+      title: "A Concrete Example",
+      section: "Poorvi",
+      summary: "A humorous poem by Reginald Arkell about a neighbour, Mrs. Jones, whose garden is full of stones. The speaker discovers that the ‘lovely flower’ she is proud of is somewhere he has been standing all along.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 1",
+      notes: [
+        {
+          heading: "What happens in the poem",
+          points: [
+            "The speaker describes his next-door neighbour, Mrs. Jones, whose garden is full of stones: a crooked path, a lily pond, a rockery and a sundial with an odd design that she thinks is nice.",
+            "She puts tiny, delicate plants between the stones. They are so small that the speaker jokes she must plant them with a pin.",
+            "She invites him to see her stones. They talk about a flower for a quarter of an hour, but he cannot see it.",
+            "When he asks where it is, she says he is standing on it."
+          ]
+        },
+        {
+          heading: "Humour and irony",
+          points: [
+            "The poem is light-hearted and amusing in tone, and gently mocks the garden that is mostly stones.",
+            "There is situational irony: Mrs. Jones is delighted with her garden, while the speaker finds the plants almost invisible.",
+            "The line about planting with a pin is exaggeration, which adds to the fun."
+          ]
+        },
+        {
+          heading: "Form and devices",
+          points: [
+            "The poem is told by the neighbour as speaker, in short stanzas of rhyming couplets (AABBCC).",
+            "The first line of the stanzas repeats the phrase about the next-door neighbour, which works like a refrain.",
+            "The title is a pun: ‘concrete’ means a hard building material or something solid, and also a clear, real example of Mrs. Jones’s odd gardening.",
+            "The poem uses vivid images such as the crazy path and the sundial to help us picture the garden."
+          ]
+        },
+        {
+          heading: "Theme",
+          points: [
+            "People see the same thing very differently: what is beauty to one person may seem like nothing to another.",
+            "The poet also shows that someone’s hobbies reveal their character."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Reginald Arkell. Character: Mrs. Jones, the speaker’s next-door neighbour.",
+        "Rhyme scheme: AABBCC (couplets). Devices: irony, pun, refrain, exaggeration, imagery.",
+        "Pun in the title: ‘concrete’ = hard material and a clear example."
+      ],
+      terms: [
+        {term: "Rockery", meaning: "A part of a garden with rocks and small plants growing between them."},
+        {term: "Sundial", meaning: "An instrument that shows the time by the shadow of the sun."},
+        {term: "Refrain", meaning: "A line or phrase repeated in each stanza of a poem."},
+        {term: "Irony", meaning: "A situation where the result is the opposite of what is expected."},
+        {term: "Pun", meaning: "A play on words that have more than one meaning."}
+      ],
+      qa: [
+        {q: "Why does the speaker say the plants must be planted with a pin?", a: "The plants are so delicate and tiny that they are almost invisible, so he jokes that only a pin could put them between the stones."},
+        {q: "Explain the pun in the title.", a: "‘Concrete’ means the hard building material, which fits a garden of stones, and it also means a clear, real example. The poem gives a clear example of Mrs. Jones’s love for stones."}
+      ],
+      quiz: [
+        {q: "Who wrote ‘A Concrete Example’?", options: ["Walter de la Mare","Reginald Arkell","Mary Dow Brine","Sarojini Naidu"], answer: 1, explain: "The poem is by Reginald Arkell."},
+        {q: "Mrs. Jones’s garden is mostly full of", options: ["roses","vegetables","stones","tall trees"], answer: 2, explain: "The garden is described as full of stones."},
+        {q: "Where is the lovely flower, according to Mrs. Jones?", options: ["Behind the pond","On the sundial","In a pot indoors","The speaker is standing on it"], answer: 3, explain: "She says he is standing on it."},
+        {q: "The tone of the poem is mainly", options: ["humorous","mournful","angry","fearful"], answer: 0, explain: "The poet makes gentle fun of the garden."},
+        {q: "A repeated line in each stanza is called a", options: ["metaphor","refrain","simile","stanza"], answer: 1, explain: "The line about the next-door neighbour is repeated as a refrain."}
+      ]
+    },
+    {
+      id: "wisdom-paves-the-way",
+      title: "Wisdom Paves the Way",
+      section: "Poorvi",
+      summary: "A play in two scenes. Four young men walking to Ujjain describe a lost camel without ever having seen it. The angry merchant accuses them of theft, but the king is impressed by their sharp observation and makes them his advisers.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 1",
+      notes: [
+        {
+          heading: "Scene I: the road to Ujjain",
+          points: [
+            "Four young men, Ram Datt, Shiv Datt, Har Datt and Dev Datt, walk towards Ujjain hoping the king will give them work.",
+            "On the way they notice the fresh tracks of a camel and study them carefully, each noticing something different.",
+            "A merchant who has lost his camel asks them for help. They describe the camel exactly: lame in one leg, blind in the right eye, with a short tail and a stomach ache.",
+            "They say they have not seen it, so the angry merchant thinks they are thieves and drags them to the king."
+          ]
+        },
+        {
+          heading: "Scene II: the king’s court",
+          points: [
+            "The king asks the merchant to state his charge, then asks each young man to explain.",
+            "Ram Datt saw only three clear footprints with one faint, so the camel was lame. Shiv Datt saw leaves eaten only on the left side of the road, so it was blind in the right eye.",
+            "Har Datt saw drops of blood on the track from mosquito bites, so the tail was too short to drive the insects away.",
+            "Dev Datt saw deep forefoot prints and faint hind prints, so the camel was in pain and drawing up its hind legs because of a stomach ache."
+          ]
+        },
+        {
+          heading: "Outcome and message",
+          points: [
+            "The king declares the charge baseless and tells the merchant to be careful about whom he accuses.",
+            "He offers the four men posts as his advisers, and they accept gratefully.",
+            "Wisdom is more than knowledge: it is using careful observation and reasoning to draw the right conclusion.",
+            "Jumping to conclusions, like the merchant, can lead to unfair blame."
+          ]
+        }
+      ],
+      formulas: [
+        "Place: road to Ujjain, then the king’s court. Characters: Ram Datt, Shiv Datt, Har Datt, Dev Datt, the merchant, the king and two sentries.",
+        "Clues: three clear prints (lame); left-side leaves eaten (blind in right eye); blood drops (short tail); deep forefeet prints (belly pain)."
+      ],
+      terms: [
+        {term: "Deduce", meaning: "To work out something by reasoning from clues."},
+        {term: "Accusation", meaning: "A claim that someone has done something wrong."},
+        {term: "Sentry", meaning: "A guard who keeps watch."},
+        {term: "Counsel", meaning: "Advice."},
+        {term: "Indignant", meaning: "Angry because of unfair treatment."}
+      ],
+      qa: [
+        {q: "How did the four young men know so much about the camel without seeing it?", a: "They carefully observed its tracks and the signs on the road, and reasoned from them about its leg, eye, tail and stomach."},
+        {q: "Why did the king make the young men his advisers?", a: "He was impressed by their sharp observation and sound reasoning, which showed wisdom beyond ordinary sight."}
+      ],
+      quiz: [
+        {q: "Where were the four young men going?", options: ["Varanasi","Vijayanagara","Ujjain","Delhi"], answer: 2, explain: "They hoped to find work with the king of Ujjain."},
+        {q: "What made Shiv Datt say that the camel was blind in its right eye?", options: ["Its footprints were crooked","It walked in circles","The merchant told him so","Leaves were eaten only on the left side of the road"], answer: 3, explain: "Only the left side foliage was nibbled."},
+        {q: "Why did the merchant take the men to the king?", options: ["He thought they had stolen his camel","He wanted them to be his guides","He needed a doctor","He wished to sell his camel to them"], answer: 0, explain: "Their exact description made him suspect theft."},
+        {q: "How did the king react to the explanations?", options: ["He ordered them to leave","He praised them and made them advisers","He punished the merchant harshly","He asked them to search for the camel"], answer: 1, explain: "The king admired their reasoning and appointed them."},
+        {q: "What does the play suggest wisdom is?", options: ["Owning many books","Winning arguments","Using observation and reasoning well","Being the oldest in a group"], answer: 2, explain: "The young men’s careful thinking is what the title calls wisdom."}
+      ]
+    },
+    {
+      id: "a-tale-of-valour-major-somnath-sharma",
+      title: "A Tale of Valour: Major Somnath Sharma and the Battle of Badgam",
+      section: "Poorvi",
+      summary: "A true account of Major Somnath Sharma, India’s first Param Vir Chakra winner, who held back about 500 raiders with 90 men at Badgam in November 1947 and helped save Srinagar airfield, giving his life at the age of 24.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 2",
+      notes: [
+        {
+          heading: "Background to the battle",
+          points: [
+            "In October 1947 raiders backed by Pakistan entered Kashmir in an attempt to take over the valley. Kashmir then joined India (26 October 1947), and Indian troops were flown to Srinagar.",
+            "D Company of the 4th Battalion, Kumaon Regiment, commanded by Major Somnath Sharma, was airlifted in on 31 October. His left hand was in plaster, but he insisted on going with his men.",
+            "On 3 November the company went out on patrol near the village of Badgam, less than 5 km from the Srinagar airfield."
+          ]
+        },
+        {
+          heading: "The battle",
+          points: [
+            "About 500 raiders attacked the 90 men of D Company. The first attack was a distraction and the main one came from another side.",
+            "Major Sharma asked for air strikes and laid out ground panels to guide the planes. Even so, his men were outnumbered by almost seven to one.",
+            "He moved among his men, filling magazines and urging them on. Told to pull back, he replied that he would fight to the last man and last round.",
+            "He was killed when a mortar shell hit his position, but his men held on for over six more hours until reinforcements arrived."
+          ]
+        },
+        {
+          heading: "His life and honours",
+          points: [
+            "He was born on 31 January 1923 in Dadh, Kangra (Himachal Pradesh), into a family with a military tradition; his father was Major General Amar Nath Sharma.",
+            "He studied at Sherwood College, Nainital, trained at the Royal Military College, Sandhurst, and was commissioned in 1942. He served in the Second World War in Burma (the Arakan campaign).",
+            "He was awarded the Param Vir Chakra after his death; he was the first person to receive it. His name is on the Honour Wall of the National War Memorial."
+          ]
+        },
+        {
+          heading: "Values",
+          points: [
+            "Courage, duty, leadership and patriotism shine through in his refusal to leave his men or retreat.",
+            "The delay caused by his company allowed more soldiers to arrive and Srinagar was saved for India."
+          ]
+        }
+      ],
+      formulas: [
+        "Born: 31 January 1923, Dadh, Kangra. Killed: 3 November 1947, Badgam, aged 24.",
+        "D Company, 4 Kumaon: about 90 men against about 500 raiders. Honour: first Param Vir Chakra.",
+        "Aid: air strikes requested; ground panels laid; reinforcements arrived after six more hours."
+      ],
+      terms: [
+        {term: "Valour", meaning: "Great courage, especially in battle."},
+        {term: "Param Vir Chakra", meaning: "India’s highest military gallantry award."},
+        {term: "Posthumously", meaning: "After death."},
+        {term: "Reinforcements", meaning: "Extra troops sent to strengthen a force."},
+        {term: "Tenacity", meaning: "Determination that does not give up."}
+      ],
+      qa: [
+        {q: "Why was the Battle of Badgam important?", a: "D Company held back a much larger force for hours. This gave time for reinforcements to reach Srinagar and so protected the airfield and the town."},
+        {q: "Which qualities did Major Somnath Sharma show?", a: "He showed courage, leadership, commitment to his men and love of his country: he joined the battle with a plastered hand, refused to withdraw, and kept encouraging his soldiers until his death."}
+      ],
+      quiz: [
+        {q: "Major Somnath Sharma was the first recipient of the", options: ["Ashoka Chakra","Padma Shri","Bharat Ratna","Param Vir Chakra"], answer: 3, explain: "He was the first person to receive India’s highest gallantry award."},
+        {q: "Which regiment did he serve with at Badgam?", options: ["Kumaon Regiment","Sikh Regiment","Rajput Regiment","Madras Regiment"], answer: 0, explain: "D Company of 4 Kumaon was under his command."},
+        {q: "What was unusual about his condition when he went to Srinagar?", options: ["He had no weapon","His left hand was in plaster","He was newly recruited","He had fever"], answer: 1, explain: "He insisted on joining despite the plaster."},
+        {q: "How many raiders did D Company face roughly?", options: ["50","5,000","500","150"], answer: 2, explain: "About 90 soldiers faced about 500 raiders."},
+        {q: "His reply, ‘fight to the last man and the last round’, shows his", options: ["wish to leave quickly","fear of the enemy","doubt about his men","refusal to give up"], answer: 3, explain: "He would not retreat even when told to."}
+      ]
+    },
+    {
+      id: "somebodys-mother",
+      title: "Somebody’s Mother",
+      section: "Poorvi",
+      summary: "A narrative poem by Mary Dow Brine. An old woman stands alone at a snowy crossing while schoolboys rush past, until one cheerful boy helps her cross and later asks his friends to be kind to others’ mothers.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 2",
+      notes: [
+        {
+          heading: "The story in the poem",
+          points: [
+            "On a cold winter day an old, shabby and bent woman waits a long time at a crossing in a wet, snowy street. Many people pass without noticing her anxious look.",
+            "A crowd of schoolboys, happy that school is over, run past in the snow. None of them offers help, and she is too timid to move for fear of carriages and horses.",
+            "At last the most cheerful boy stops, politely offers to help, and guides her across, glad of his own strong legs.",
+            "He tells his friends that she is somebody’s mother and hopes someone will help his own mother if she is ever old and alone.",
+            "That night the old woman prays for the kind boy."
+          ]
+        },
+        {
+          heading: "Theme and tone",
+          points: [
+            "The poem teaches kindness, respect for elders and empathy: we should treat others as we would want our own family treated.",
+            "The tone is gentle and sympathetic, and it ends on a hopeful, warm note.",
+            "The contrast between the busy, careless crowd and one caring boy highlights how small acts of kindness matter."
+          ]
+        },
+        {
+          heading: "Form and devices",
+          points: [
+            "The poem is written in rhyming couplets (AABB).",
+            "The boys are compared to a flock of sheep, a simile that shows how they move heedlessly in a crowd.",
+            "The repeated phrase ‘somebody’s mother’ stresses that every old person is dear to someone.",
+            "Imagery of the wet, snowy street makes us feel the cold and the woman’s helplessness."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Mary Dow Brine. Rhyme scheme: AABB (couplets).",
+        "Simile: boys ‘like a flock of sheep’. Refrain: ‘somebody’s mother’.",
+        "Theme: kindness and empathy towards the old."
+      ],
+      terms: [
+        {term: "Empathy", meaning: "Understanding and sharing another person’s feelings."},
+        {term: "Throng", meaning: "A large crowd."},
+        {term: "Timid", meaning: "Shy and afraid to act."},
+        {term: "Couplet", meaning: "Two consecutive lines of verse that rhyme."},
+        {term: "Simile", meaning: "A comparison using ‘like’ or ‘as’."}
+      ],
+      qa: [
+        {q: "Why did the old woman not cross the street by herself?", a: "The road was wet and slippery with snow, she was weak and slow, and she was afraid of being knocked down by carriages and horses."},
+        {q: "What did the boy say to his friends, and why?", a: "He told them she was somebody’s mother and hoped someone would help his own mother if she were old and alone. He wanted them to understand that every old person deserves care."}
+      ],
+      quiz: [
+        {q: "Who wrote ‘Somebody’s Mother’?", options: ["Mary Dow Brine","Sarojini Naidu","Ruskin Bond","Walter de la Mare"], answer: 0, explain: "The poem is by Mary Dow Brine."},
+        {q: "Where did the old woman wait?", options: ["In a railway station","At a street crossing","At the school gate","In a shop"], answer: 1, explain: "She stood at the crossing for a long time."},
+        {q: "How are the schoolboys described?", options: ["Like a flock of birds","Like a river","Like a flock of sheep","Like an army"], answer: 2, explain: "The poet compares them to a flock of sheep."},
+        {q: "Which boy helped her?", options: ["The tallest boy","The oldest boy","The quietest boy","The merriest one of the group"], answer: 3, explain: "The gayest laddie stopped and offered help."},
+        {q: "The poem’s message is", options: ["be kind and respectful to the old","avoid walking in snow","run to school quickly","ask elders for money"], answer: 0, explain: "It teaches empathy and kindness."}
+      ]
+    },
+    {
+      id: "verghese-kurien-i-too-had-a-dream",
+      title: "Verghese Kurien — I Too Had A Dream",
+      section: "Poorvi",
+      summary: "A letter written in 2005 by Dr. Verghese Kurien to his grandson Siddharth. He explains why he chose a life of service to dairy farmers in Anand, the values that guided him, and what he hopes the young will do.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 2",
+      notes: [
+        {
+          heading: "Why a letter?",
+          points: [
+            "Dr. Kurien opens by saying that in today’s fast world we prefer the telephone, which gives only a quick, passing joy.",
+            "A letter is different: it can be kept and re-read for years, giving lasting pleasure. He hopes Siddharth will read it decades later to understand the reasons for his life’s work.",
+            "He also wants it shared with later generations as a glimpse of the days just before the twenty-first century."
+          ]
+        },
+        {
+          heading: "His choice",
+          points: [
+            "He began working life soon after Independence, when the noblest task was to help build an India free from hunger and poverty, where people live with equal respect and love.",
+            "Fifty years earlier he had agreed to work with a small cooperative of dairy farmers in Anand, Gujarat. It was not the career he had imagined.",
+            "He could have become a top executive in metallurgy, an army general, or a successful NRI, but felt he could contribute more by staying in Anand.",
+            "His wife supported the choice and gave him strength, even though Anand then lacked simple comforts."
+          ]
+        },
+        {
+          heading: "Values he followed",
+          points: [
+            "He credits his success to values learned from his family and his mentor Tribhuvandas Patel, and says that recognition belongs to the many people who worked with him.",
+            "Integrity, meaning being honest to yourself, is the most important of them.",
+            "Life is a privilege. One should take responsibility, use one’s talents fully and add to the common good.",
+            "Failure is not failing to succeed, but not giving one’s best and not contributing to the common good."
+          ]
+        },
+        {
+          heading: "Closing advice",
+          points: [
+            "Comparing ourselves with those who seem happier is pointless, because we usually see only the perfect image they show.",
+            "He recalls the Padma Vibhushan (1999) ceremony when young Siddharth asked to keep the medal. The family told him he must earn his own reward through his work.",
+            "He ends by dedicating the letter to all the young, hoping they will work tirelessly for the good of the country and humanity."
+          ]
+        }
+      ],
+      formulas: [
+        "Writer: Dr. Verghese Kurien, to his grandson Siddharth (Anand, 2005). Award mentioned: Padma Vibhushan, 1999.",
+        "Mentor: Tribhuvandas Patel. Place: Anand, Gujarat. Key value: integrity.",
+        "Form: a personal letter with reflections on life."
+      ],
+      terms: [
+        {term: "Integrity", meaning: "Being honest and having strong moral principles."},
+        {term: "Fleeting", meaning: "Lasting only a very short time."},
+        {term: "Common good", meaning: "What benefits everyone in a community."},
+        {term: "Humility", meaning: "The quality of being modest."},
+        {term: "Cooperative", meaning: "A group that works together and shares the benefits."}
+      ],
+      qa: [
+        {q: "Why does Dr. Kurien prefer writing a letter to telephoning?", a: "A telephone call gives only a quick, passing pleasure, while a letter can be treasured and re-read for years and can explain his life to future generations."},
+        {q: "What does he mean by saying failure is not about not succeeding?", a: "He says failure is not putting in one’s best effort and not contributing, even in a small way, to the common good."}
+      ],
+      quiz: [
+        {q: "To whom did Dr. Kurien write the letter?", options: ["His son","His grandson Siddharth","The Prime Minister","His student"], answer: 1, explain: "The letter is addressed to Siddharth."},
+        {q: "In which place did he choose to work?", options: ["Mumbai","Delhi","Anand, Gujarat","Chennai"], answer: 2, explain: "He worked with a dairy cooperative at Anand."},
+        {q: "Which value does he call the most important?", options: ["Wealth","Fame","Speed","Integrity"], answer: 3, explain: "He stresses being honest to oneself."},
+        {q: "Who was his mentor and supporter in Anand?", options: ["Tribhuvandas Patel","Homi Bhabha","Vikram Sarabhai","M. S. Swaminathan"], answer: 0, explain: "He names Tribhuvandas Patel."},
+        {q: "What did the family tell Siddharth about the medal?", options: ["He could keep it for ever","He must earn his own reward","It belonged to the school","It was not important"], answer: 1, explain: "They told him to earn his own reward through his work."}
+      ]
+    },
+    {
+      id: "the-case-of-the-fifth-word",
+      title: "The Case of the Fifth Word",
+      section: "Poorvi",
+      summary: "A detective story about Encyclopedia Brown, an eighth grader who helps his police-chief father. A dying man leaves a note with four odd words, and Encyclopedia works out that they hide the location of stolen jewellery.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 3",
+      notes: [
+        {
+          heading: "The characters and the case",
+          points: [
+            "Leroy Brown, nicknamed Encyclopedia, is a very well-read boy in Idaville whose father is the Chief of Police. He quietly solves the cases his father cannot, usually at the dinner table.",
+            "At dinner the chief tells them that Tim Nolan has died. Five years ago two masked men robbed the Diamond Mart of jewellery worth a million dollars, and Nolan and his friend Daniel Davenport were suspected.",
+            "No jewellery was found when the police searched Nolan’s house. Before dying of a stroke, Nolan left his will, leaving his property, including a palm-tree nursery, to Davenport."
+          ]
+        },
+        {
+          heading: "The clue",
+          points: [
+            "A sheet from Nolan’s desk calendar was clipped to the will. It held Davenport’s address and four words: Nom, Utes, Sweden, Hurts.",
+            "Encyclopedia asked if the nursery had a young fir tree. It did, on the south side of the house.",
+            "The words made no sense to his mother or father, but he explained that they were a code."
+          ]
+        },
+        {
+          heading: "Solution",
+          points: [
+            "Each word is a weekday with the letters d-a-y removed: Nom is Monday, Utes is Tuesday, Sweden is Wednesday and Hurts is Thursday.",
+            "The missing fifth word is Fir for Friday, so the jewellery was hidden under the fir tree.",
+            "It was found inside a large jug of earth in which the young fir tree grew.",
+            "The story shows how logical thinking and attention to small details can solve a puzzle."
+          ]
+        }
+      ],
+      formulas: [
+        "Detective: Leroy ‘Encyclopedia’ Brown, an eighth grader in Idaville. Father: Chief Brown.",
+        "Code: Nom, Utes, Sweden, Hurts = Mon(day), Tues(day), Wednes(day), Thurs(day); fifth word Fir = Fri(day).",
+        "Author: Donald J. Sobol (adapted). Loot: jewellery hidden in a jug of earth under a fir tree."
+      ],
+      terms: [
+        {term: "Hold-up", meaning: "A robbery done by threat or violence."},
+        {term: "Will", meaning: "A legal paper saying who gets a person’s property after death."},
+        {term: "Hunch", meaning: "A strong feeling about something without proof."},
+        {term: "Code", meaning: "A secret way of writing a message."},
+        {term: "Loot", meaning: "Stolen goods."}
+      ],
+      qa: [
+        {q: "Why was the boy nicknamed Encyclopedia?", a: "He read more books than anyone in Idaville and never forgot a fact, so his head was like a set of books full of facts."},
+        {q: "How did Encyclopedia decode the four words?", a: "He realised they were weekdays without the letters d-a-y: Monday, Tuesday, Wednesday and Thursday. The missing fifth word was Fir, for Friday, pointing to the fir tree."}
+      ],
+      quiz: [
+        {q: "What is Leroy’s nickname?", options: ["Dictionary","Professor","Encyclopedia","Sherlock"], answer: 2, explain: "Everyone except his parents and teachers calls him Encyclopedia."},
+        {q: "Who was Chief Brown?", options: ["A jeweller","A neighbour","A teacher","The Chief of Police and Leroy’s father"], answer: 3, explain: "He is Leroy’s father and the police chief."},
+        {q: "Nolan owned a", options: ["palm-tree nursery","jewellery shop","farm","restaurant"], answer: 0, explain: "The nursery was left to Davenport."},
+        {q: "What does ‘Nom’ stand for in the code?", options: ["Nominative","Monday","November","Noon"], answer: 1, explain: "Dropping d-a-y from Monday gives Mon, which is written Nom in the code."},
+        {q: "Where was the jewellery found?", options: ["Under the kitchen table","In the shop safe","In a jug of earth under a fir tree","In Davenport’s car"], answer: 2, explain: "It was inside the jug in which the young fir grew."}
+      ]
+    },
+    {
+      id: "the-magic-brush-of-dreams",
+      title: "The Magic Brush of Dreams",
+      section: "Poorvi",
+      summary: "A narrative poem adapted from a folk tale. A village girl, Gopi, is given a magic brush and told to paint only for the poor. She uses it to help villagers and finally outwits a greedy zamindar.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 3",
+      notes: [
+        {
+          heading: "The story",
+          points: [
+            "Gopi is sent to fetch beans, rice and mangoes but sits under a banyan tree drawing pictures in the sand with a twig, and the wind keeps blowing them away.",
+            "A man gives her a magic brush in secret and tells her to paint only for the poor, not the rich.",
+            "She paints a bowl of khichdi that becomes real, and then useful things for the villagers: a muffler, a plough, a shawl and a fan.",
+            "News of the brush reaches the zamindar, who orders her to paint a fortress and treasures. She refuses, and he has her thrown into a cell and seizes the brush."
+          ]
+        },
+        {
+          heading: "Escape and ending",
+          points: [
+            "In prison Gopi paints a road and a horse and rides out to the villagers while the zamindar’s men chase her.",
+            "She paints a wide river that stops the chasers, and threatens to paint a beast that would chase them.",
+            "The terrified zamindar and his men run away, and the villagers celebrate with a feast, music and songs of victory."
+          ]
+        },
+        {
+          heading: "Theme and tone",
+          points: [
+            "Talent and power should be used to help others, not for greed.",
+            "Imagination and creativity are shown as powerful, and courage and kindness defeat oppression.",
+            "The tone moves from playful and innocent, to tense when the zamindar appears, to triumphant and celebratory."
+          ]
+        }
+      ],
+      formulas: [
+        "Main character: Gopi. Villain: the zamindar. Source: a folk tale (adapted).",
+        "Rule of the brush: paint only for the poor.",
+        "Items painted: khichdi, muffler, plough, shawl, fan, road, horse, river."
+      ],
+      terms: [
+        {term: "Zamindar", meaning: "A landlord who held land and collected rent from farmers."},
+        {term: "Fortress", meaning: "A strong building made for defence."},
+        {term: "Folk tale", meaning: "A traditional story passed on by word of mouth."},
+        {term: "Comply", meaning: "To obey an order."},
+        {term: "Triumphant", meaning: "Showing joy at a victory."}
+      ],
+      qa: [
+        {q: "Why did Gopi refuse the zamindar’s order?", a: "She had promised to use the brush only to help the needy, and she would not paint wealth and a fortress for a rich man."},
+        {q: "How did Gopi escape and defeat the zamindar?", a: "She painted a road and a horse to escape from the cell, then a wide river to stop his men, and threatened to paint a beast, so he fled."}
+      ],
+      quiz: [
+        {q: "What was Gopi doing under the banyan tree?", options: ["Sleeping","Eating mangoes","Reading a book","Drawing in the sand with a twig"], answer: 3, explain: "She drew pictures in the sand."},
+        {q: "For whom was Gopi to paint, as told by the man?", options: ["The poor","The rich","Kings","Her friends only"], answer: 0, explain: "She must paint only for the poor."},
+        {q: "What was the first thing she painted that became real?", options: ["A horse","A bowl of khichdi","A river","A fortress"], answer: 1, explain: "A bowl of khichdi was her first painting."},
+        {q: "What did the zamindar want her to paint?", options: ["A garden","A school","A fortress and treasures","A temple"], answer: 2, explain: "He wanted a grand fortress and riches."},
+        {q: "What stopped the zamindar’s men from following Gopi?", options: ["A closed gate","A thick forest","A wall of fire","A wide river she painted"], answer: 3, explain: "The painted river blocked them."}
+      ]
+    },
+    {
+      id: "spectacular-wonders",
+      title: "Spectacular Wonders",
+      section: "Poorvi",
+      summary: "A descriptive piece about seven puzzling natural wonders of India: the Valley of Flowers, the Living Root Bridges, Lonar Crater Lake, Magnetic Hill, the glowing waters of Kerala, the Sundarbans and Chandipur Beach.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 3",
+      notes: [
+        {
+          heading: "Wonders of land and plants",
+          points: [
+            "The Valley of Flowers (Chamoli, Uttarakhand) is a national park with around 600 species of flowers set against the Himalaya; it is a UNESCO World Heritage Site that blooms in the warmer months.",
+            "The Living Root Bridges of Meghalaya are made by local people who guide and intertwine tree roots over streams. They can last hundreds of years, reflecting local knowledge.",
+            "The Sundarbans in West Bengal, in the delta of the Ganga, Brahmaputra and Meghna, is a mangrove forest. Its roots slow the tide and reduce erosion, and it is home to the Bengal tiger. The name comes from the sundari tree."
+          ]
+        },
+        {
+          heading: "Wonders of earth and water",
+          points: [
+            "Lonar Crater Lake (Buldhana, Maharashtra) was formed when a huge meteorite struck the earth long ago. It holds a salty lake inside a circular crater in basaltic rock.",
+            "Kumbalangi near Kochi, Kerala has glowing waters at night because of bioluminescence, caused by tiny plankton.",
+            "At Chandipur Beach in Balasore, Odisha the sea seems to disappear: at ebb tide the water retreats several kilometres and returns at high tide."
+          ]
+        },
+        {
+          heading: "An optical illusion",
+          points: [
+            "At Magnetic Hill near Leh in Ladakh, vehicles parked at a marked spot seem to roll uphill.",
+            "The effect is an optical illusion caused by the way the surrounding slopes and the horizon line are arranged."
+          ]
+        },
+        {
+          heading: "Purpose and style",
+          points: [
+            "The writer wants to make readers curious and proud of India’s natural heritage, and to value nature’s power.",
+            "Rhetorical questions and lively description engage the reader.",
+            "The ending says these wonders blend scientific explanation with the magic of folklore."
+          ]
+        }
+      ],
+      formulas: [
+        "Valley of Flowers: Chamoli, Uttarakhand. Living Root Bridges: Meghalaya. Lonar Crater Lake: Buldhana, Maharashtra.",
+        "Magnetic Hill: Leh, Ladakh. Glowing waters: Kumbalangi, Kerala. Sundarbans: West Bengal. Chandipur Beach: Balasore, Odisha.",
+        "Glow of the water = bioluminescence. Magnetic Hill = optical illusion."
+      ],
+      terms: [
+        {term: "Bioluminescence", meaning: "Light produced by living organisms through a chemical reaction."},
+        {term: "Mangrove", meaning: "A tree that grows in salty water along coasts."},
+        {term: "Optical illusion", meaning: "Something that tricks the eyes into seeing it wrongly."},
+        {term: "Ebb tide", meaning: "The period when the sea water flows away from the shore."},
+        {term: "Indigenous", meaning: "Native to a place."}
+      ],
+      qa: [
+        {q: "How are the living root bridges useful to the people of Meghalaya?", a: "They let people cross streams during heavy monsoon rains when bamboo or wooden bridges fail. They last for centuries and are grown from natural roots."},
+        {q: "Why does the sea seem to disappear at Chandipur Beach?", a: "At ebb tide the water moves back by several kilometres, exposing the sea bed, and returns at high tide."}
+      ],
+      quiz: [
+        {q: "Where is the Valley of Flowers?", options: ["Chamoli, Uttarakhand","Leh, Ladakh","Balasore, Odisha","Buldhana, Maharashtra"], answer: 0, explain: "It is in Uttarakhand’s Chamoli district."},
+        {q: "What causes the glowing waters at Kumbalangi?", options: ["Lights fitted underwater","Bioluminescence of plankton","Volcanic heat","Chemical waste"], answer: 1, explain: "Tiny organisms produce light."},
+        {q: "The Magnetic Hill effect is caused by", options: ["a real magnet","wind from behind","an optical illusion","slippery oil"], answer: 2, explain: "Slopes and the horizon line trick the eye."},
+        {q: "Lonar Lake was formed by", options: ["a river","an earthquake","a glacier","a meteorite impact"], answer: 3, explain: "A huge meteorite crashed to form the crater."},
+        {q: "The Sundarbans is named after the", options: ["sundari tree","sunlight","sun god","sundial"], answer: 0, explain: "The sundari tree is common there."}
+      ]
+    },
+    {
+      id: "the-cherry-tree",
+      title: "The Cherry Tree",
+      section: "Poorvi",
+      summary: "A story by Ruskin Bond about Rakesh, a boy living with his grandfather in Mussoorie. He plants a cherry seed, cares for it through goat, scythe and snow, and finally enjoys its blossoms, fruit and shade.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 4",
+      notes: [
+        {
+          heading: "Planting the seed",
+          points: [
+            "Six-year-old Rakesh lives with his grandfather near Mussoorie because there is no school in his parents’ village. He buys cherries from the bazaar and keeps the last seed.",
+            "Grandfather says nothing is lucky unless used, and tells him to plant the seed in a shady corner. Rakesh plants it and forgets it while playing cricket.",
+            "Next spring he finds a small cherry plant, about four inches high, and waters it and puts pebbles around it."
+          ]
+        },
+        {
+          heading: "Growing up together",
+          points: [
+            "In the monsoon the tree grows fast until a goat eats its leaves. Grandfather says cherry trees are tough, and it regrows.",
+            "Later a woman cutting grass cuts the tree in two, but by the next summer it sends out new shoots.",
+            "Rakesh grows too. He visits his village during the rains, and waters the tree to let it know he is there. Insects such as a praying mantis visit it.",
+            "In winter it bends under snow. On his ninth birthday, when the tree is four years old, it bears its first pale pink blossom."
+          ]
+        },
+        {
+          heading: "Fruit and meaning",
+          points: [
+            "Soon the tree is taller than Rakesh and then taller than Grandfather. Bees come to the flowers, and birds like bulbuls and minivets eat the cherries, which are sour at first.",
+            "Grandfather rests in its shade, and Rakesh lies beneath it as the evening sounds of insects rise.",
+            "Rakesh asks why the tree is special, and Grandfather says it is because they planted it. Rakesh wonders whether this is how it feels to be God.",
+            "Themes: patience, perseverance, care for nature and the joy of nurturing a living thing."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Ruskin Bond. Characters: Rakesh and his grandfather. Place: near Mussoorie in the Himalayan foothills.",
+        "Tree timeline: seed planted at age six; sapling the next spring; first blossom at nine (tree four years old).",
+        "Threats survived: goat, grass-cutter’s scythe, snow."
+      ],
+      terms: [
+        {term: "Stunted", meaning: "Stopped from growing to the usual size."},
+        {term: "Scythe", meaning: "A tool with a long curved blade used to cut grass."},
+        {term: "Nectar", meaning: "The sweet liquid in flowers that bees collect."},
+        {term: "Perseverance", meaning: "Continuing to try in spite of difficulty."},
+        {term: "Foliage", meaning: "The leaves of a plant."}
+      ],
+      qa: [
+        {q: "Why did Rakesh’s grandfather tell him to plant the seed?", a: "He said that a seed is lucky only if it is used, so Rakesh should plant it instead of keeping it."},
+        {q: "Why is the cherry tree special to Rakesh and his grandfather?", a: "They planted and looked after it themselves, watched it survive many dangers, and enjoyed its blossoms and shade."}
+      ],
+      quiz: [
+        {q: "Who wrote ‘The Cherry Tree’?", options: ["Arthur C. Clarke","Ruskin Bond","Kamakshi Balasubramanian","Donald J. Sobol"], answer: 1, explain: "It is a story by Ruskin Bond."},
+        {q: "Why did Rakesh live with his grandfather?", options: ["His parents travelled","He disliked farming","There was no school in his village","He was ill"], answer: 2, explain: "His parents wanted him to go to school."},
+        {q: "What animal ate the leaves of the young tree?", options: ["A cow","A deer","A monkey","A goat"], answer: 3, explain: "A goat ate its leaves."},
+        {q: "What did the tree produce on Rakesh’s ninth birthday?", options: ["A pale pink blossom","Red cherries","A bird’s nest","Thorns"], answer: 0, explain: "The first blossom appeared then."},
+        {q: "Why was the tree special, according to Grandfather?", options: ["It was very old","They planted it themselves","It gave sweet cherries","It was the tallest"], answer: 1, explain: "He said the tree was special because they planted it."}
+      ]
+    },
+    {
+      id: "harvest-hymn",
+      title: "Harvest Hymn",
+      section: "Poorvi",
+      summary: "A poem by Sarojini Naidu in which farmers, men and women, thank the Sun, Rain, Earth and the Creator in turn for a rich harvest, offering garlands, songs and their own labour.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 4",
+      notes: [
+        {
+          heading: "What each stanza says",
+          points: [
+            "Stanza 1 (men’s voices): thanks to Surya, lord of the lotus and the morning, whose bounty helped the sowing and the growth of the corn.",
+            "Stanza 2 (men’s voices): thanks to Varuna, lord of the rainbow and the sea, who sends rain and dew and nourishes the furrows and grain.",
+            "Stanza 3 (women’s voices): thanks to Prithvi, Mother Earth, whose rich soil feeds everyone and gives birth to the harvest.",
+            "Stanza 4 (all voices): praise to the Lord of the Universe, the eternal Om, who is the seed, the scythe, the hands, the heart and the home. The people offer their lives and labour and ask for care and guidance."
+          ]
+        },
+        {
+          heading: "Theme and tone",
+          points: [
+            "The poem shows the harmony between humans and nature, with the harvest as a sacred and joyous occasion.",
+            "It celebrates farmers’ hard work and their faith in natural and divine forces.",
+            "The tone is respectful, grateful and festive."
+          ]
+        },
+        {
+          heading: "Form and devices",
+          points: [
+            "A hymn is a song of praise; this one is written like a chant, with a repeated pattern in every stanza (we bring thee..., we hail thee..., we praise thee...).",
+            "The poem uses archaic words such as thou, thee, thy and thine, which give it a solemn tone.",
+            "The musical instruments mentioned (cymbal, flute, pipe, drum) add a festival mood.",
+            "Capital letters in ‘Hands’, ‘Heart’ and ‘Home’ suggest that the Creator is present in these."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Sarojini Naidu (from The Golden Threshold). Four stanzas: Surya, Varuna, Prithvi, the Creator.",
+        "Speakers: men (stanzas 1–2), women (stanza 3), all voices (stanza 4).",
+        "Archaic words: thou = you, thee = you (object), thy = your, thine = yours, art = are."
+      ],
+      terms: [
+        {term: "Hymn", meaning: "A song of praise, usually to God."},
+        {term: "Bounty", meaning: "Generous gifts; plenty."},
+        {term: "Furrow", meaning: "A long line cut in soil for sowing seeds."},
+        {term: "Archaic", meaning: "Old-fashioned and no longer in common use."},
+        {term: "Succour", meaning: "Help given to someone in need."}
+      ],
+      qa: [
+        {q: "To whom do the speakers offer thanks in the poem?", a: "To the Sun god Surya, the rain god Varuna, Mother Earth (Prithvi) and the Creator of the universe, for the harvest."},
+        {q: "What do the farmers offer in return?", a: "They offer garlands, songs, the gold of their fields and fruit, and in the last stanza their lives and labour."}
+      ],
+      quiz: [
+        {q: "Who wrote ‘Harvest Hymn’?", options: ["Mary Dow Brine","Walter de la Mare","Sarojini Naidu","Reginald Arkell"], answer: 2, explain: "The poet is Sarojini Naidu."},
+        {q: "Who is praised in the third stanza?", options: ["The Sun","The Rain god","The Moon","Mother Earth"], answer: 3, explain: "Prithvi, the Earth, is praised there."},
+        {q: "The word ‘thine’ means", options: ["yours","mine","ours","theirs"], answer: 0, explain: "Thine is an archaic form of yours."},
+        {q: "The tone of the poem is", options: ["sad and gloomy","grateful and joyful","angry","fearful"], answer: 1, explain: "It thanks nature and celebrates the harvest."},
+        {q: "Which of these is mentioned among the instruments?", options: ["Violin","Guitar","Cymbal","Piano"], answer: 2, explain: "Cymbal, flute, pipe and drum are named."}
+      ]
+    },
+    {
+      id: "waiting-for-the-rain",
+      title: "Waiting for the Rain",
+      section: "Poorvi",
+      summary: "Velu, a hard-working farmer, waits anxiously as the rains fail. An old woman under a tree tells him the land also needs rest, and Velu returns home to find clouds gathering.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 4",
+      notes: [
+        {
+          heading: "The drought",
+          points: [
+            "Velu has farmed his own land for nearly six years, growing jowar one season and dhal the next, without a break.",
+            "This year the rains fail. The fields lie dry and cracked, and the farmers live on hope.",
+            "Someone suggests asking astrologers, but Velu does not believe that would bring rain. He goes to the weather office in the city, where the officials are also puzzled."
+          ]
+        },
+        {
+          heading: "The old woman’s advice",
+          points: [
+            "On the way home, a tired and dejected Velu rests under a tree where an old woman smiles at him. He complains that he has worked honestly yet is being punished.",
+            "She says that perhaps he has worked too hard, and that the land too needs a rest after centuries of ploughing and sowing.",
+            "She explains that nature, like a mother, gives her children the rest they need. When rain comes, the land will spring back fresh and ready."
+          ]
+        },
+        {
+          heading: "Ending and message",
+          points: [
+            "Velu thinks about her words as he walks home. A cool breeze blows, a drop of rain falls and clouds gather. Velu runs home laughing.",
+            "The story shows the unpredictability of nature and the natural cycle of rest and renewal.",
+            "It also reminds us that patience and understanding nature are as important as hard work."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Kamakshi Balasubramanian. Main character: Velu, a farmer. Crops: jowar and dhal.",
+        "Problem: no rain after summer. Helper: an old woman under a tree.",
+        "Message: land needs rest too; nature has her own cycle."
+      ],
+      terms: [
+        {term: "Drought", meaning: "A long period without rain."},
+        {term: "Dejected", meaning: "Sad and disappointed."},
+        {term: "Barren", meaning: "Not able to grow crops."},
+        {term: "Consultation", meaning: "A discussion to get advice."},
+        {term: "Ceaseless", meaning: "Without stopping."}
+      ],
+      qa: [
+        {q: "Why did Velu go to the weather office?", a: "He did not trust astrologers and wanted a practical answer about when the rain would come, but the officials could not tell him either."},
+        {q: "What did the old woman want Velu to understand?", a: "That the land needs rest after years of continuous farming, and that when there is no rain the land is resting and will be ready again when the rains return."}
+      ],
+      quiz: [
+        {q: "What was Velu’s occupation?", options: ["Weaver","Teacher","Shopkeeper","Farmer"], answer: 3, explain: "He was a farmer."},
+        {q: "Whom did Velu meet under the tree?", options: ["An old woman","A weather officer","An astrologer","A child"], answer: 0, explain: "An old woman was resting there."},
+        {q: "Which crops did Velu grow?", options: ["Wheat and sugarcane","Jowar and dhal","Cotton and tea","Rice and jute"], answer: 1, explain: "He harvested jowar one season and dhal the next."},
+        {q: "The old woman said the land should", options: ["be sold","be ploughed twice","rest for a while","be left to birds"], answer: 2, explain: "She said the earth needs rest."},
+        {q: "How did the story end?", options: ["Velu left the village","Velu hired astrologers","The woman disappeared","Clouds gathered and rain began"], answer: 3, explain: "Velu felt a cool breeze and the first raindrop."}
+      ]
+    },
+    {
+      id: "feathered-friend",
+      title: "Feathered Friend",
+      section: "Poorvi",
+      summary: "A science-fiction story by Arthur C. Clarke. A construction worker secretly keeps a canary named Claribel on a space station, and her sudden collapse reveals that the air supply is failing.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 5",
+      notes: [
+        {
+          heading: "Sven and Claribel",
+          points: [
+            "The narrator, a crew member on a space station, says no rule forbids pets in space. Sven Olsen, a slim construction worker, joins girders together in free fall, wearing a bulky space suit.",
+            "Sven has secretly brought a yellow canary, Claribel, on the last ferry from Earth, partly from scientific curiosity about how a bird flies without weight.",
+            "She adapts well to zero gravity, doing loops with minimal effort, and becomes the crew’s pet. They hide her from visiting VIPs."
+          ]
+        },
+        {
+          heading: "The emergency",
+          points: [
+            "One ‘morning’ the narrator wakes with a headache, and Sven reports that Claribel is limp. The doctor and cook, Jock Duncan, cannot find a heartbeat.",
+            "She revives with oxygen but collapses again as soon as the mask is removed.",
+            "The narrator remembers that miners once carried canaries to detect poisonous gas, and realises the air must be faulty."
+          ]
+        },
+        {
+          heading: "Discovery and message",
+          points: [
+            "The engineer, Jim, first rejects the idea because alarms should have worked, but the second alarm circuit was not yet connected.",
+            "He checks and finds that a part of the air purifier had frozen during an eclipse by Earth’s shadow, and the single alarm failed.",
+            "Claribel saved the crew, who would have been in danger otherwise. The story ends with the idea that a canary doubles safety at almost no cost.",
+            "Themes: companionship beyond humans, curiosity, and the limits of technology."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Arthur C. Clarke. Setting: a space station. Pet: Claribel, a yellow canary.",
+        "Characters: Sven Olsen (owner), the narrator, Jock Duncan (cook-doctor-dietitian), Jim (duty engineer).",
+        "Cause of problem: part of the air purifier froze during an eclipse; the only alarm in the circuit failed."
+      ],
+      terms: [
+        {term: "Free fall", meaning: "Moving under gravity alone, giving a feeling of weightlessness."},
+        {term: "Canary", meaning: "A small yellow songbird often kept as a pet."},
+        {term: "Girder", meaning: "A strong steel beam used in building."},
+        {term: "Dietitian", meaning: "A person who advises on healthy food."},
+        {term: "Duplicate", meaning: "An exact copy kept as a backup."}
+      ],
+      qa: [
+        {q: "How did Claribel save the crew?", a: "Her collapse showed that the air was bad, because canaries are very sensitive to poor air. The crew then checked and found the frozen purifier and a failed alarm."},
+        {q: "What was Sven’s reason for bringing Claribel?", a: "He said he was curious to see how a bird would behave in space where it has no weight but can still use its wings."}
+      ],
+      quiz: [
+        {q: "What kind of bird was Claribel?", options: ["A canary","A parrot","A sparrow","A dove"], answer: 0, explain: "She was a small yellow canary."},
+        {q: "Who owned Claribel?", options: ["Jim","Sven Olsen","Jock Duncan","The narrator"], answer: 1, explain: "Sven smuggled her aboard."},
+        {q: "Why did Claribel collapse?", options: ["She was hungry","She was too cold","The air supply was faulty","She hit a wall"], answer: 2, explain: "Poor air affected her first."},
+        {q: "What did the narrator remember about canaries?", options: ["Sailors carried them","Doctors kept them","Soldiers trained them","Miners used them to detect gas"], answer: 3, explain: "Miners took canaries into mines as a warning."},
+        {q: "What was wrong with the station’s alarm system?", options: ["The second alarm circuit was not connected","The alarm was too loud","No alarm existed at all","It was switched off by Sven"], answer: 0, explain: "Only one alarm worked, and it failed."}
+      ]
+    },
+    {
+      id: "magnifying-glass",
+      title: "Magnifying Glass",
+      section: "Poorvi",
+      summary: "A short poem by Walter de la Mare in which a speaker looks through a magnifying glass at tiny things such as shells in chalk, moss, a drop of water and a spider, and imagines using lenses to reach the moon.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 5",
+      notes: [
+        {
+          heading: "What the glass shows",
+          points: [
+            "The speaker says that the round glass can make magic ‘talk’: a small piece of chalk shows countless shells, and an inch of moss looks like a forest of trees and flowers.",
+            "A drop of water appears full of life, like a hive of bees.",
+            "He watches a spider spin its silk from its spinnerets and notes its tiger-like claws, while silly flies stumble into its net.",
+            "Everything becomes more wonderful when seen through the glass."
+          ]
+        },
+        {
+          heading: "Imagination",
+          points: [
+            "In the last part he says that with lenses like this, looking at the moon, it would seem close enough to walk there in an afternoon.",
+            "The poem moves from the tiny to the huge, from everyday things to a heavenly body.",
+            "Exclamations show his wonder and excitement."
+          ]
+        },
+        {
+          heading: "Devices and theme",
+          points: [
+            "Personification: the glass makes ‘magic talk’. Metaphors and similes compare moss to a forest and water to a hive of bees.",
+            "Rich visual imagery helps us picture the magnified world.",
+            "The theme is that close observation reveals the hidden beauty and complexity of ordinary things, and that science and curiosity open up wonder."
+          ]
+        }
+      ],
+      formulas: [
+        "Poet: Walter de la Mare. Subject: what is seen through a magnifying glass.",
+        "Things seen: shells in chalk, moss like a forest, water like a hive of bees, a spider and its web, the moon.",
+        "Tone: wonder and curiosity."
+      ],
+      terms: [
+        {term: "Magnify", meaning: "To make something look larger."},
+        {term: "Myriad", meaning: "A very large number."},
+        {term: "Spinnerets", meaning: "The parts of a spider that produce silk thread."},
+        {term: "Lens", meaning: "A curved piece of glass that bends light."},
+        {term: "Imagery", meaning: "Words that create pictures in the mind."}
+      ],
+      qa: [
+        {q: "What does the speaker see in a drop of water?", a: "He sees a world as busy as a hive of bees; the glass reveals the tiny life in it."},
+        {q: "What does the last stanza say?", a: "It says that with lenses like this one, looking at the moon, it would seem so close that one could walk there in an afternoon."}
+      ],
+      quiz: [
+        {q: "Who wrote ‘Magnifying Glass’?", options: ["Sarojini Naidu","Walter de la Mare","Reginald Arkell","Mary Dow Brine"], answer: 1, explain: "The poet is Walter de la Mare."},
+        {q: "A scrap of chalk shows", options: ["a forest","a spider","a myriad shells","a river"], answer: 2, explain: "The glass reveals countless shells in it."},
+        {q: "The inch of moss appears like", options: ["a desert","a lake","a mountain","a forest with flowers and trees"], answer: 3, explain: "A tiny moss patch becomes a forest."},
+        {q: "Which creature is watched spinning a web?", options: ["A spider","A bee","A beetle","An ant"], answer: 0, explain: "The deft spider spins silk from its spinnerets."},
+        {q: "The tone of the poem is", options: ["sorrow","wonder and curiosity","anger","boredom"], answer: 1, explain: "The speaker is amazed by what he sees."}
+      ]
+    },
+    {
+      id: "bibha-chowdhuri-the-beam-of-light",
+      title: "Bibha Chowdhuri: The Beam of Light that Lit the Path for Women in Indian Science",
+      section: "Poorvi",
+      summary: "An article on Bibha Chowdhuri, India’s first woman physicist, who worked on cosmic rays, and how her pioneering path led to women scientists like those in ISRO today.",
+      source: "Poorvi (Class 8, reprint 2026–27), Unit 5",
+      notes: [
+        {
+          heading: "Her life and work",
+          points: [
+            "Bibha Chowdhuri was born in Kolkata in 1913, at a time when few women could study science. She is regarded as India’s first woman physicist and worked in particle physics.",
+            "In 1945 she went to the University of Manchester, where she studied cosmic rays under the Nobel laureate Patrick M. S. Blackett.",
+            "Her research dealt with cosmic rays and subatomic particles, including work linked to mesons. The article notes her nomination for the Nobel Prize in 1950, which did not succeed.",
+            "She returned to India in 1949 as the first woman faculty member at the Tata Institute of Fundamental Research, chosen by Homi J. Bhabha. She also worked at the Physical Research Laboratory and the Saha Institute of Nuclear Physics."
+          ]
+        },
+        {
+          heading: "Recognition",
+          points: [
+            "She received little recognition in her lifetime and died in 1991 largely forgotten.",
+            "In 2019 the International Astronomical Union named a star in the constellation Leo, HD 86081, ‘Bibha’ in her honour, meaning ‘beam of light’.",
+            "In 2020 the Government of India announced a chair professorship in her name."
+          ]
+        },
+        {
+          heading: "Women in Indian science today",
+          points: [
+            "Women now lead in ISRO missions such as the Mars Orbiter Mission and Chandrayaan. The article names Dr. Ritu Karidhal Srivastava, called the ‘Rocket Woman of India’.",
+            "More than 50 women contributed to Chandrayaan-3.",
+            "The article says Bibha’s struggle shows how far women have come and how far there is still to go."
+          ]
+        }
+      ],
+      formulas: [
+        "Born 1913, Kolkata; died 1991. Field: cosmic rays and particle physics.",
+        "Studied at Manchester under P. M. S. Blackett (1945). First woman faculty member at TIFR (1949).",
+        "Star HD 86081 in Leo named ‘Bibha’ by the IAU (2019); a chair professorship announced in 2020."
+      ],
+      terms: [
+        {term: "Cosmic rays", meaning: "High-energy particles that reach the Earth from space."},
+        {term: "Pioneer", meaning: "A person who is among the first to do something."},
+        {term: "Trailblazer", meaning: "Someone who creates a new path for others."},
+        {term: "Persistence", meaning: "Continuing to try despite difficulty."},
+        {term: "Legacy", meaning: "What a person leaves behind for later generations."}
+      ],
+      qa: [
+        {q: "Why is Bibha Chowdhuri called a ‘beam of light’?", a: "Her name means ‘beam of light’, and she opened the way for women in Indian science by succeeding in a field dominated by men."},
+        {q: "How has she been honoured?", a: "A star in the constellation Leo was named ‘Bibha’ in 2019, and a chair professorship was announced in her name in 2020."}
+      ],
+      quiz: [
+        {q: "Bibha Chowdhuri is regarded as India’s first woman", options: ["pilot","doctor","physicist","engineer"], answer: 2, explain: "The lesson calls her India’s first woman physicist."},
+        {q: "She studied cosmic rays at the University of", options: ["Oxford","Harvard","Paris","Manchester"], answer: 3, explain: "She worked under Patrick Blackett at Manchester."},
+        {q: "At which institute was she the first woman faculty member?", options: ["TIFR","IISc","ISRO","AIIMS"], answer: 0, explain: "She was chosen by Homi Bhabha for TIFR."},
+        {q: "What does the name ‘Bibha’ mean?", options: ["Star","Beam of light","Moon","Courage"], answer: 1, explain: "The star was named Bibha, meaning beam of light."},
+        {q: "Which space mission is mentioned for women scientists?", options: ["Apollo 11","Voyager","Chandrayaan-3","Hubble"], answer: 2, explain: "More than 50 women contributed to Chandrayaan-3."}
+      ]
+    },
     // ───────────────────────────── GRAMMAR ─────────────────────────────
     {
       id: "active-and-passive-voice",

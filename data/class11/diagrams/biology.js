@@ -270,4 +270,388 @@ StudyData.addDiagrams(11, "biology", {
 </svg>`,
     },
   ],
+  "photosynthesis-in-higher-plants": [
+    {
+      title: "Z-scheme of the light reaction",
+      caption: "Light excites **P680** (PS II) and **P700** (PS I); the electrons travel downhill between them through Pheo, QA, PQ, **Cyt b₆f** and PC. Photolysis of water replaces the electrons of PS II and releases **O₂**; PS I electrons end up on **NADP⁺ → NADPH**. The H⁺ gradient made on the way drives ATP synthesis.",
+      svg: `<svg viewBox="0 0 560 318" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-11a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-11aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<line x1="22" y1="294" x2="22" y2="24" stroke="currentColor" stroke-width="1.3" marker-end="url(#ar-b11-11a)"/>
+<text x="8" y="16" >More negative E₀′ (stronger reductant)</text><text x="30" y="310" fill="var(--dg-muted)">More positive</text>
+<line x1="95" y1="236" x2="95" y2="66" stroke="var(--dg-accent)" stroke-width="2.2" marker-end="url(#ar-b11-11aa)"/>
+<line x1="340" y1="196" x2="340" y2="51" stroke="var(--dg-accent)" stroke-width="2.2" marker-end="url(#ar-b11-11aa)"/>
+<text x="80" y="150" text-anchor="end" fill="var(--dg-accent)" font-size="14">hν</text><text x="325" y="130" text-anchor="end" fill="var(--dg-accent)" font-size="14">hν</text>
+<polyline points="95,60 150,88 190,108 235,136 270,164 305,188 340,200" fill="none" stroke="currentColor" stroke-width="1.5"/>
+<polyline points="340,45 380,57 415,72 445,92 475,116" fill="none" stroke="currentColor" stroke-width="1.5"/>
+<line x1="475" y1="116" x2="508" y2="138" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar-b11-11a)"/>
+<circle cx="95" cy="60" r="3.5" fill="currentColor"/><circle cx="150" cy="88" r="3.5" fill="currentColor"/><circle cx="190" cy="108" r="3.5" fill="currentColor"/><circle cx="235" cy="136" r="3.5" fill="currentColor"/><circle cx="270" cy="164" r="3.5" fill="currentColor"/><circle cx="305" cy="188" r="3.5" fill="currentColor"/><circle cx="340" cy="200" r="3.5" fill="currentColor"/><circle cx="340" cy="45" r="3.5" fill="currentColor"/><circle cx="380" cy="57" r="3.5" fill="currentColor"/><circle cx="415" cy="72" r="3.5" fill="currentColor"/><circle cx="445" cy="92" r="3.5" fill="currentColor"/><circle cx="475" cy="116" r="3.5" fill="currentColor"/><circle cx="95" cy="240" r="4" fill="currentColor"/>
+<text x="95" y="50" text-anchor="middle" font-weight="bold">P680*</text><text x="105" y="246" font-weight="bold">P680 (PS II)</text>
+<text x="340" y="38" text-anchor="middle" font-weight="bold">P700*</text><text x="350" y="216" font-weight="bold">P700 (PS I)</text>
+<text x="150" y="78" text-anchor="middle">Pheo</text><text x="182" y="124" text-anchor="end">QA</text><text x="227" y="152" text-anchor="end">PQ</text><text x="262" y="180" text-anchor="end">Cyt b₆f</text><text x="297" y="204" text-anchor="end">PC</text>
+<text x="380" y="47" text-anchor="middle">A₀</text><text x="418" y="64" text-anchor="start">A₁</text><text x="450" y="86" text-anchor="start">Fe-S</text><text x="484" y="112" text-anchor="start">Fd</text>
+<text x="555" y="158" text-anchor="end" font-weight="bold">NADP⁺ → NADPH</text><text x="555" y="174" text-anchor="end" font-size="11" fill="var(--dg-muted)">(NADP⁺ reductase)</text>
+<line x1="95" y1="268" x2="95" y2="250" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar-b11-11a)"/>
+<text x="95" y="284" text-anchor="middle">H₂O → ½O₂ + 2H⁺ + 2e⁻</text>
+<text x="330" y="262" text-anchor="start" fill="var(--dg-muted)">Downhill electron flow pumps H⁺;</text><text x="330" y="278" text-anchor="start" fill="var(--dg-muted)">the H⁺ gradient drives ATP synthesis.</text>
+</svg>`,
+    },
+    {
+      title: "Calvin cycle (C₃ pathway)",
+      caption: "In the **stroma**, RuBisCO fixes CO₂ onto the 5-carbon **RuBP** to give 3-carbon **3-PGA**; ATP and NADPH reduce it to **G3P**; most G3P is used to regenerate RuBP. Three turns (3 CO₂) give one net G3P; making one glucose needs 6 turns, i.e. 18 ATP and 12 NADPH.",
+      svg: `<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-11b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-11ba" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<g stroke="currentColor" stroke-width="1.6" fill="none">
+<path d="M245 60 H420 V128" marker-end="url(#ar-b11-11b)"/>
+<path d="M420 172 V250 H255" marker-end="url(#ar-b11-11b)"/>
+<path d="M125 250 H70 V60 H135" marker-end="url(#ar-b11-11b)"/>
+</g>
+<line x1="190" y1="14" x2="190" y2="39" stroke="var(--dg-accent)" stroke-width="2" marker-end="url(#ar-b11-11ba)"/>
+<line x1="190" y1="272" x2="190" y2="304" stroke="var(--dg-accent)" stroke-width="2" marker-end="url(#ar-b11-11ba)"/>
+<rect x="135" y="40" width="110" height="40" rx="6" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><text x="190" y="57" text-anchor="middle" font-weight="bold">RuBP</text><text x="190" y="72" text-anchor="middle" font-size="11">5C  (×3)</text><rect x="365" y="128" width="110" height="44" rx="6" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><text x="420" y="147" text-anchor="middle" font-weight="bold">3-PGA</text><text x="420" y="162" text-anchor="middle" font-size="11">3C  (×6)</text><rect x="130" y="230" width="120" height="40" rx="6" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><text x="190" y="247" text-anchor="middle" font-weight="bold">G3P (PGAL)</text><text x="190" y="262" text-anchor="middle" font-size="11">3C  (×6)</text>
+<text x="200" y="24" font-weight="bold">3 CO₂</text><text x="200" y="300" dx="0">1 G3P leaves the cycle</text>
+<text x="332" y="46" text-anchor="middle" font-weight="bold">1. Carboxylation</text><text x="332" y="80" text-anchor="middle" fill="var(--dg-muted)">enzyme RuBisCO</text>
+<text x="440" y="206" text-anchor="start" font-weight="bold">2. Reduction</text><text x="440" y="222" text-anchor="start">6 ATP + 6 NADPH</text><text x="440" y="238" text-anchor="start" fill="var(--dg-muted)">used up</text>
+<text x="82" y="200" text-anchor="start" font-weight="bold">3. Regeneration of RuBP</text><text x="82" y="216" text-anchor="start">uses 3 ATP</text>
+<text x="245" y="140" text-anchor="middle" font-size="14" font-weight="bold">Calvin cycle</text><text x="245" y="158" text-anchor="middle" fill="var(--dg-muted)">(in the stroma)</text>
+</svg>`,
+    },
+  ],
+  "respiration-in-plants": [
+
+
+    {
+      title: "Glycolysis: outline of the pathway",
+      caption: "Glycolysis (EMP pathway) occurs in the **cytoplasm**. Glucose is phosphorylated using **2 ATP**, the 6-carbon sugar splits into two 3-carbon molecules, and each is converted to **pyruvate**. Net gain per glucose: **2 ATP and 2 NADH**.",
+      svg: `<svg viewBox="0 0 560 378" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-12a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-12aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs><rect x="65" y="14" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="29" text-anchor="middle" font-size="11.5">Glucose (6C)</text><line x1="170" y1="36" x2="170" y2="51" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar-b11-12a)"/><rect x="65" y="51" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="66" text-anchor="middle" font-size="11.5">Glucose-6-phosphate</text><line x1="170" y1="73" x2="170" y2="88" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar-b11-12a)"/><rect x="65" y="88" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="103" text-anchor="middle" font-size="11.5">Fructose-6-phosphate</text><line x1="170" y1="110" x2="170" y2="125" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar-b11-12a)"/><rect x="65" y="125" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="140" text-anchor="middle" font-size="11.5">Fructose-1,6-bisphosphate</text><line x1="170" y1="147" x2="170" y2="162" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar-b11-12a)"/><rect x="65" y="162" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="177" text-anchor="middle" font-size="11.5">Dihydroxyacetone-P ⇌ 3-PGAL (3C)</text><line x1="170" y1="184" x2="170" y2="199" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar-b11-12a)"/><rect x="65" y="199" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="214" text-anchor="middle" font-size="11.5">1,3-Bisphosphoglyceric acid ×2</text><line x1="170" y1="221" x2="170" y2="236" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar-b11-12a)"/><rect x="65" y="236" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="251" text-anchor="middle" font-size="11.5">3-Phosphoglyceric acid ×2</text><line x1="170" y1="258" x2="170" y2="273" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar-b11-12a)"/><rect x="65" y="273" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="288" text-anchor="middle" font-size="11.5">2-Phosphoglyceric acid ×2</text><line x1="170" y1="295" x2="170" y2="310" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar-b11-12a)"/><rect x="65" y="310" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="325" text-anchor="middle" font-size="11.5">Phosphoenolpyruvate (PEP) ×2</text><line x1="170" y1="332" x2="170" y2="347" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar-b11-12a)"/><rect x="65" y="347" width="210" height="22" rx="5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><text x="170" y="362" text-anchor="middle" font-size="11.5">Pyruvate (3C) ×2</text>
+<text x="291" y="36.5" fill="var(--dg-accent)" font-weight="bold">ATP → ADP</text><text x="291" y="110.5" fill="var(--dg-accent)" font-weight="bold">ATP → ADP</text>
+<text x="291" y="147.5" fill="var(--dg-muted)">splits: 6C → 2 × 3C</text>
+<text x="291" y="184.5" fill="var(--dg-accent)" font-weight="bold">NAD⁺ → NADH (×2)</text>
+<text x="291" y="221.5" fill="var(--dg-accent)" font-weight="bold">ADP → ATP (×2)</text>
+<text x="291" y="295.5" fill="var(--dg-muted)">− H₂O</text>
+<text x="291" y="332.5" fill="var(--dg-accent)" font-weight="bold">ADP → ATP (×2)</text>
+<text x="10" y="363" font-size="0"> </text>
+<rect x="395" y="226" width="160" height="100" rx="6" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="405" y="244" font-weight="bold">Net gain per glucose</text><text x="405" y="264" >2 ATP (4 made − 2 used)</text><text x="405" y="282" >2 NADH</text><text x="405" y="300" >2 pyruvate</text><text x="405" y="318" fill="var(--dg-muted)">In the cytoplasm</text>
+</svg>`,
+    },
+    {
+      title: "Krebs cycle (TCA cycle): outline",
+      caption: "In the **mitochondrial matrix**, acetyl CoA (2C) joins oxaloacetic acid (4C) to form citric acid (6C). Two carbons are lost as CO₂ and the cycle regenerates OAA. Each turn yields **3 NADH, 1 FADH₂ and 1 GTP/ATP**; the two turns per glucose double this.",
+      svg: `<svg viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-12b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-12ba" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<path d="M296.4 83.1 A118 108 0 0 1 351.0 103.7" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar-b11-12b)"/><path d="M374.2 125.0 A118 108 0 0 1 396.9 175.0" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar-b11-12b)"/><path d="M396.9 205.0 A118 108 0 0 1 374.2 255.0" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar-b11-12b)"/><path d="M351.0 276.3 A118 108 0 0 1 296.4 296.9" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar-b11-12b)"/><path d="M263.6 296.9 A118 108 0 0 1 209.0 276.3" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar-b11-12b)"/><path d="M185.8 255.0 A118 108 0 0 1 163.1 205.0" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar-b11-12b)"/><path d="M163.1 175.0 A118 108 0 0 1 185.8 125.0" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar-b11-12b)"/><path d="M209.0 103.7 A118 108 0 0 1 263.6 83.1" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar-b11-12b)"/><circle cx="280.0" cy="82.0" r="4.5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><circle cx="363.4" cy="113.6" r="4.5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><circle cx="398.0" cy="190.0" r="4.5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><circle cx="363.4" cy="266.4" r="4.5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><circle cx="280.0" cy="298.0" r="4.5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><circle cx="196.6" cy="266.4" r="4.5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><circle cx="162.0" cy="190.0" r="4.5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><circle cx="196.6" cy="113.6" r="4.5" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><text x="270.0" y="76.0" text-anchor="end" font-weight="bold">Oxaloacetic acid (4C)</text><text x="373.4" y="109.6" text-anchor="start" font-weight="bold">Citric acid (6C)</text><text x="408.0" y="194.0" text-anchor="start" font-weight="bold">Isocitric acid (6C)</text><text x="373.4" y="278.4" text-anchor="start" font-weight="bold">α-Ketoglutaric acid (5C)</text><text x="280.0" y="320.0" text-anchor="middle" font-weight="bold">Succinyl-CoA (4C)</text><text x="186.6" y="280.4" text-anchor="end" font-weight="bold">Succinic acid (4C)</text><text x="152.0" y="194.0" text-anchor="end" font-weight="bold">Fumaric acid (4C)</text><text x="186.6" y="109.6" text-anchor="end" font-weight="bold">Malic acid (4C)</text>
+<text x="280" y="214" text-anchor="middle" font-size="14" font-weight="bold">Krebs cycle</text><text x="280" y="230" text-anchor="middle" font-size="11" fill="var(--dg-muted)">(mitochondrial matrix)</text>
+<text x="350" y="14" text-anchor="middle" font-weight="bold">Acetyl CoA (2C) joins OAA</text>
+<line x1="320" y1="22" x2="330" y2="82" stroke="var(--dg-accent)" stroke-width="2" marker-end="url(#ar-b11-12ba)"/>
+<text x="398" y="236" text-anchor="start" fill="var(--dg-accent)">CO₂ + NADH</text><text x="318" y="268" text-anchor="end" fill="var(--dg-accent)">CO₂ + NADH</text><text x="212" y="306" text-anchor="end" fill="var(--dg-accent)">GTP</text><text x="162" y="236" text-anchor="end" fill="var(--dg-accent)">FADH₂</text><text x="232" y="120" text-anchor="start" fill="var(--dg-accent)">NADH</text>
+<rect x="4" y="4" width="176" height="62" rx="6" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="12" y="22" font-size="11" font-weight="bold">Per turn (per acetyl CoA):</text><text x="12" y="38" font-size="11">3 NADH, 1 FADH₂, 1 GTP,</text><text x="12" y="54" font-size="11">2 CO₂</text>
+</svg>`,
+    },
+  ],
+  "plant-growth-and-development": [
+
+    {
+      title: "Sigmoid growth curve",
+      caption: "Growth of a cell, organ or organism with time follows an **S-shaped (sigmoid) curve** with three phases: a slow **lag phase**, a rapid **log (exponential) phase** in which growth is fastest, and a **stationary phase** where growth slows as nutrients become limiting.",
+      svg: `<svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-13a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-13aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<line x1="70" y1="280" x2="70" y2="28" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar-b11-13a)"/>
+<line x1="70" y1="270" x2="545" y2="270" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar-b11-13a)"/>
+<line x1="169" y1="40" x2="169" y2="270" stroke="currentColor" stroke-dasharray="4 4" opacity="0.5"/><line x1="412" y1="40" x2="412" y2="270" stroke="currentColor" stroke-dasharray="4 4" opacity="0.5"/>
+<polyline points="70.0,270.0 79.0,269.8 88.0,269.5 97.0,269.2 106.0,268.7 115.0,268.2 124.0,267.6 133.0,266.8 142.0,265.8 151.0,264.5 160.0,263.0 169.0,261.2 178.0,258.9 187.0,256.1 196.0,252.8 205.0,248.8 214.0,244.0 223.0,238.3 232.0,231.7 241.0,224.1 250.0,215.5 259.0,205.9 268.0,195.3 277.0,184.0 286.0,172.2 295.0,160.0 304.0,147.8 313.0,136.0 322.0,124.7 331.0,114.1 340.0,104.5 349.0,95.9 358.0,88.3 367.0,81.7 376.0,76.0 385.0,71.2 394.0,67.2 403.0,63.9 412.0,61.1 421.0,58.8 430.0,57.0 439.0,55.5 448.0,54.2 457.0,53.2 466.0,52.4 475.0,51.8 484.0,51.3 493.0,50.8 502.0,50.5 511.0,50.2 520.0,50.0" fill="none" stroke="var(--dg-accent)" stroke-width="2.5"/>
+<text x="300" y="306" text-anchor="middle" font-weight="bold">Time</text>
+<text transform="translate(24,150) rotate(-90)" text-anchor="middle" font-weight="bold">Size / dry weight (growth)</text>
+<text x="119.5" y="60" text-anchor="middle" font-weight="bold">Lag phase</text><text x="119.5" y="76" text-anchor="middle" fill="var(--dg-muted)">slow growth</text>
+<text x="290.5" y="60" text-anchor="middle" font-weight="bold">Log (exponential) phase</text><text x="290.5" y="76" text-anchor="middle" fill="var(--dg-muted)">fastest growth,</text><text x="290.5" y="92" text-anchor="middle" fill="var(--dg-muted)">rate is maximum</text>
+<text x="466" y="130" text-anchor="middle" font-weight="bold">Stationary</text><text x="466" y="146" text-anchor="middle" fill="var(--dg-muted)">phase (growth</text><text x="466" y="162" text-anchor="middle" fill="var(--dg-muted)">limited by</text><text x="466" y="178" text-anchor="middle" fill="var(--dg-muted)">nutrients)</text>
+<text x="75" y="294" text-anchor="end">0</text>
+</svg>`,
+    },
+  ],
+  "breathing-and-exchange-of-gases": [
+
+    {
+      title: "Gas exchange at the alveolus",
+      caption: "O₂ and CO₂ diffuse across the **respiratory membrane** (alveolar epithelium, basement substance, capillary endothelium) down their **partial-pressure gradients**: O₂ from alveolar air (pO₂ 104) into deoxygenated blood (pO₂ 40), and CO₂ from blood (pCO₂ 45) into the alveolus (pCO₂ 40).",
+      svg: `<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-14a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-14aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<ellipse cx="215" cy="100" rx="160" ry="78" fill="none" stroke="currentColor" stroke-width="2.2"/>
+<rect x="60" y="180" width="310" height="16" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1"/>
+<rect x="40" y="196" width="340" height="52" rx="26" fill="var(--dg-fill)" fill-opacity="0.4" stroke="currentColor" stroke-width="2"/>
+<g fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.3"><ellipse cx="120" cy="222" rx="14" ry="9"/><ellipse cx="220" cy="224" rx="14" ry="9"/><ellipse cx="310" cy="222" rx="14" ry="9"/></g>
+<line x1="55" y1="222" x2="92" y2="222" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar-b11-14a)"/><line x1="330" y1="222" x2="362" y2="222" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar-b11-14a)"/>
+<line x1="150" y1="140" x2="150" y2="212" stroke="var(--dg-accent)" stroke-width="2.2" marker-end="url(#ar-b11-14aa)"/>
+<line x1="270" y1="212" x2="270" y2="140" stroke="var(--dg-accent)" stroke-width="2.2" marker-end="url(#ar-b11-14aa)"/>
+<text x="140" y="152" text-anchor="end" font-weight="bold" fill="var(--dg-accent)">O₂</text><text x="282" y="152" font-weight="bold" fill="var(--dg-accent)">CO₂</text>
+<text x="215" y="70" text-anchor="middle" font-weight="bold">Alveolus (alveolar air)</text><text x="215" y="88" text-anchor="middle">pO₂ = 104 mm Hg</text><text x="215" y="104" text-anchor="middle">pCO₂ = 40 mm Hg</text>
+
+<text x="40" y="272" font-weight="bold">Deoxygenated blood</text><text x="40" y="288" >pO₂ = 40, pCO₂ = 45 mm Hg</text>
+<text x="380" y="272" text-anchor="end" font-weight="bold">Oxygenated blood</text><text x="380" y="288" text-anchor="end">pO₂ = 95, pCO₂ = 40 mm Hg</text>
+<text x="400" y="140" font-weight="bold">Alveolar epithelium</text><text x="400" y="155" fill="var(--dg-muted)">(thin squamous)</text><line x1="396" y1="146" x2="341" y2="150" stroke="currentColor" stroke-width="1"/>
+<text x="400" y="184" font-weight="bold">Basement substance</text><line x1="396" y1="188" x2="368" y2="188" stroke="currentColor" stroke-width="1"/>
+<text x="400" y="224" font-weight="bold">Endothelium of</text><text x="400" y="239" font-weight="bold">blood capillary</text><line x1="396" y1="222" x2="383" y2="222" stroke="currentColor" stroke-width="1"/>
+<text x="210" y="19" text-anchor="middle" fill="var(--dg-muted)">Respiratory membrane = the three thin layers (about 0.5 µm)</text>
+</svg>`,
+    },
+
+    {
+      title: "Oxygen–haemoglobin dissociation curve",
+      caption: "The **sigmoid curve** shows % saturation of haemoglobin against pO₂. At the lungs (pO₂ ≈ 95) Hb is almost fully saturated; at the tissues (pO₂ ≈ 40) it releases about a quarter of its O₂. A **rise in pCO₂, H⁺ or temperature** (or a fall in pH) shifts the curve to the right, so more O₂ is released.",
+      svg: `<svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-14b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-14ba" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<line x1="70" y1="280" x2="70" y2="20" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar-b11-14b)"/>
+<line x1="70" y1="270" x2="530" y2="270" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar-b11-14b)"/>
+<g stroke="currentColor" stroke-dasharray="4 4" opacity="0.55"><line x1="70" y1="104.88038122998196" x2="250" y2="104.88038122998196"/><line x1="250" y1="104.88038122998196" x2="250" y2="270"/><line x1="70" y1="56.854913978183646" x2="497.5" y2="56.854913978183646"/><line x1="497.5" y1="56.854913978183646" x2="497.5" y2="270"/></g>
+<polyline points="70.0,270.0 79.0,269.9 88.0,269.4 97.0,268.1 106.0,266.0 115.0,262.8 124.0,258.4 133.0,252.9 142.0,246.3 151.0,238.7 160.0,230.2 169.0,221.1 178.0,211.6 187.0,201.9 196.0,192.2 205.0,182.6 214.0,173.2 223.0,164.3 232.0,155.8 241.0,147.8 250.0,140.4 259.0,133.5 268.0,127.1 277.0,121.2 286.0,115.7 295.0,110.8 304.0,106.2 313.0,102.1 322.0,98.3 331.0,94.8 340.0,91.6 349.0,88.7 358.0,86.1 367.0,83.6 376.0,81.4 385.0,79.3 394.0,77.5 403.0,75.7 412.0,74.1 421.0,72.7 430.0,71.3 439.0,70.1 448.0,68.9 457.0,67.8 466.0,66.9 475.0,65.9 484.0,65.1 493.0,64.3 502.0,63.5 511.0,62.9 520.0,62.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="6 4"/>
+<polyline points="70.0,270.0 79.0,269.8 88.0,268.7 97.0,266.1 106.0,261.7 115.0,255.4 124.0,247.0 133.0,237.0 142.0,225.5 151.0,213.2 160.0,200.4 169.0,187.6 178.0,175.2 187.0,163.4 196.0,152.4 205.0,142.3 214.0,133.1 223.0,124.8 232.0,117.4 241.0,110.8 250.0,104.9 259.0,99.6 268.0,95.0 277.0,90.8 286.0,87.1 295.0,83.9 304.0,80.9 313.0,78.3 322.0,76.0 331.0,73.9 340.0,72.0 349.0,70.3 358.0,68.8 367.0,67.4 376.0,66.2 385.0,65.0 394.0,64.0 403.0,63.1 412.0,62.2 421.0,61.4 430.0,60.7 439.0,60.0 448.0,59.4 457.0,58.9 466.0,58.4 475.0,57.9 484.0,57.5 493.0,57.0 502.0,56.7 511.0,56.3 520.0,56.0" fill="none" stroke="var(--dg-accent)" stroke-width="2.6"/>
+<circle cx="250" cy="104.88038122998196" r="4.5" fill="currentColor"/><circle cx="497.5" cy="56.854913978183646" r="4.5" fill="currentColor"/>
+<text x="62" y="274" text-anchor="end">0</text><text x="62" y="219" text-anchor="end">25</text><text x="62" y="164" text-anchor="end">50</text><text x="62" y="109" text-anchor="end">75</text><text x="62" y="53.99999999999997" text-anchor="end">100</text>
+<text x="70" y="286" text-anchor="middle">0</text><text x="160" y="286" text-anchor="middle">20</text><text x="250" y="286" text-anchor="middle">40</text><text x="340" y="286" text-anchor="middle">60</text><text x="430" y="286" text-anchor="middle">80</text><text x="520" y="286" text-anchor="middle">100</text>
+<text transform="translate(22,150) rotate(-90)" text-anchor="middle" font-weight="bold">% saturation of haemoglobin with O₂</text>
+<text x="300" y="312" text-anchor="middle" font-weight="bold">pO₂ (mm Hg)</text>
+<text x="260" y="246" >Tissues: pO₂ 40, ~75% (O₂ released)</text>
+<text x="491.5" y="160" text-anchor="end">Lungs: pO₂ 95, ~97%</text>
+<text x="97" y="76.39999999999998" font-weight="bold" fill="var(--dg-accent)">Sigmoid curve</text>
+<text x="300" y="186" >Dashed: shifted right</text><text x="300" y="202" >↑ pCO₂, ↑ H⁺, ↑ temperature</text><text x="300" y="218" >(less O₂ held — more released)</text>
+</svg>`,
+    },
+  ],
+  "body-fluids-and-circulation": [
+
+
+
+
+    {
+      title: "ECG: P wave, QRS complex and T wave",
+      caption: "An electrocardiogram records the electrical activity of the heart. The **P wave** is depolarisation of the atria (atrial systole), the **QRS complex** is depolarisation of the ventricles (start of ventricular systole) and the **T wave** is repolarisation of the ventricles (return to diastole). The cardiac cycle lasts about **0.8 s**.",
+      svg: `<svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-15b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-15ba" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<path d="M30 150 H50 Q70 114 90 150 H115 L122 162 L134 50 L146 184 L154 150 H190 Q225 98 260 150 H300" fill="none" stroke="var(--dg-accent)" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="20" y1="210" x2="550" y2="210" stroke="currentColor" stroke-width="1.3" marker-end="url(#ar-b11-15b)"/>
+<text x="535" y="230" text-anchor="end" font-weight="bold">Time</text>
+<text x="60" y="102" text-anchor="middle" font-size="15" font-weight="bold">P</text>
+<text x="122" y="176" text-anchor="middle" font-size="13" font-weight="bold">Q</text><text x="134" y="46" text-anchor="middle" font-size="15" font-weight="bold">R</text><text x="150" y="196" text-anchor="middle" font-size="13" font-weight="bold">S</text>
+<text x="225" y="88" text-anchor="middle" font-size="15" font-weight="bold">T</text>
+<g stroke="currentColor" stroke-dasharray="3 3" opacity="0.5"><line x1="60" y1="108" x2="60" y2="210"/><line x1="134" y1="50" x2="134" y2="210"/><line x1="225" y1="98" x2="225" y2="210"/></g>
+<text x="30" y="240" ><tspan font-weight="bold">P wave</tspan>: depolarisation of the atria → atrial systole</text>
+<text x="30" y="258" ><tspan font-weight="bold">QRS complex</tspan>: depolarisation of the ventricles → ventricular systole begins</text>
+<text x="30" y="276" ><tspan font-weight="bold">T wave</tspan>: repolarisation of the ventricles → ventricular diastole</text>
+<text x="30" y="20" font-weight="bold">Normal ECG (one cardiac cycle ≈ 0.8 s)</text>
+<text x="330" y="60" font-weight="bold">Cardiac cycle (0.8 s):</text><text x="330" y="78" >atrial systole 0.1 s</text><text x="330" y="96" >ventricular systole 0.3 s</text><text x="330" y="114" >joint diastole 0.4 s</text>
+</svg>`,
+    },
+    {
+      title: "Human heart: internal structure (V.S.)",
+      caption: "Four chambers: two thin-walled **atria** receive blood, two thick-walled **ventricles** pump it out; the **left ventricle** is thickest. The **tricuspid** (right) and **bicuspid/mitral** (left) valves guard the atrio-ventricular openings and **semilunar valves** guard the aorta and pulmonary artery. The heart is drawn as seen from the front, so the right side is on the left of the page.",
+      svg: `<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><g transform="translate(10,0)">
+<rect x="190" y="40" width="28" height="72" rx="0" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><rect x="250" y="52" width="28" height="142" rx="0" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><rect x="290" y="52" width="28" height="142" rx="0" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><rect x="410" y="125" width="50" height="20" rx="0" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><rect x="410" y="155" width="50" height="20" rx="0" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/><rect x="110" y="150" width="62" height="24" rx="0" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.5"/>
+<rect x="170" y="110" width="72" height="82" rx="14" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2"/><rect x="330" y="110" width="80" height="82" rx="14" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2"/>
+<rect x="170" y="192" width="115" height="140" rx="18" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2"/><rect x="285" y="192" width="125" height="140" rx="18" fill="var(--dg-fill)" stroke="currentColor" stroke-width="3.4"/>
+<line x1="285" y1="192" x2="285" y2="332" stroke="currentColor" stroke-width="5"/>
+<g stroke="currentColor" stroke-width="2.4" fill="none"><path d="M178 192 L205 214 M236 192 L216 214"/><path d="M338 192 L365 216 M402 192 L382 216"/></g>
+<g stroke="currentColor" stroke-width="3.4"><line x1="253" y1="194" x2="275" y2="194"/><line x1="293" y1="194" x2="315" y2="194"/></g>
+<text x="206" y="152" text-anchor="middle" font-size="15" font-weight="bold">RA</text><text x="370" y="152" text-anchor="middle" font-size="15" font-weight="bold">LA</text>
+<text x="227" y="270" text-anchor="middle" font-size="15" font-weight="bold">RV</text><text x="348" y="270" text-anchor="middle" font-size="15" font-weight="bold">LV</text>
+<text x="206" y="286" text-anchor="middle" font-size="11" fill="var(--dg-muted)">(thin wall)</text><text x="348" y="286" text-anchor="middle" font-size="11" fill="var(--dg-muted)">(thick wall)</text>
+<text x="184" y="64" text-anchor="end">Superior vena cava</text>
+<text x="162" y="142" text-anchor="end">Inferior vena cava</text>
+<text x="266" y="20" text-anchor="end">Pulmonary artery</text><line x1="264" y1="26" x2="264" y2="50" stroke="currentColor" stroke-width="1"/>
+<text x="302" y="20" text-anchor="start">Aorta</text><line x1="304" y1="26" x2="304" y2="50" stroke="currentColor" stroke-width="1"/>
+<text x="466" y="138" text-anchor="start">Pulmonary</text><text x="466" y="153" text-anchor="start">veins</text><text x="466" y="168" text-anchor="start" fill="var(--dg-muted)">(from lungs)</text>
+<text x="300" y="100" ></text>
+<text x="150" y="232" text-anchor="end">Tricuspid</text><text x="150" y="247" text-anchor="end">valve</text><line x1="154" y1="230" x2="190" y2="206" stroke="currentColor" stroke-width="1"/>
+<text x="418" y="232" text-anchor="start">Bicuspid</text><text x="418" y="247" text-anchor="start">(mitral) valve</text><line x1="414" y1="230" x2="383" y2="208" stroke="currentColor" stroke-width="1"/>
+<text x="284" y="352" text-anchor="middle">Interventricular septum</text><line x1="284" y1="338" x2="284" y2="320" stroke="currentColor" stroke-width="1"/>
+<text x="284" y="374" text-anchor="middle" font-size="11" fill="var(--dg-muted)">Semilunar valves: pulmonary and aortic (marked at the base of the two arteries)</text>
+</g></svg>`,
+    },
+  ],
+  "excretory-products-and-their-elimination": [
+
+    {
+      title: "Structure of a nephron",
+      caption: "A nephron has the **renal corpuscle** (glomerulus + Bowman’s capsule) and the **renal tubule**: PCT, loop of Henle (descending and ascending limbs) and DCT, which opens into the **collecting duct**. Corpuscle, PCT and DCT lie in the cortex; the loop dips into the medulla.",
+      svg: `<svg viewBox="0 0 560 350" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-16a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-16aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<line x1="4" y1="205" x2="300" y2="205" stroke="currentColor" stroke-dasharray="5 4" opacity="0.55"/>
+<text x="6" y="198" fill="var(--dg-muted)">Cortex</text><text x="6" y="222" fill="var(--dg-muted)">Medulla</text>
+<path d="M285 62 V318" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M285 62 V318" fill="none" stroke="var(--dg-fill)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><line x1="285" y1="318" x2="285" y2="338" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar-b11-16a)"/>
+<circle cx="100" cy="70" r="31" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2.4"/>
+<circle cx="100" cy="70" r="17" fill="none" stroke="var(--dg-accent)" stroke-width="2.2" stroke-dasharray="3 2"/>
+<path d="M28 46 L84 60" stroke="var(--dg-accent)" stroke-width="2.4" fill="none" marker-end="url(#ar-b11-16aa)"/>
+<path d="M82 86 L28 98" stroke="var(--dg-accent)" stroke-width="2.4" fill="none" marker-end="url(#ar-b11-16aa)"/>
+<path d="M100 101 q-9 6 0 11 q9 6 0 11 q-9 6 0 11 q9 6 0 11 V150" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M100 101 q-9 6 0 11 q9 6 0 11 q-9 6 0 11 q9 6 0 11 V150" fill="none" stroke="var(--dg-fill)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100 150 V282 Q125 318 150 282 V172" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M100 150 V282 Q125 318 150 282 V172" fill="none" stroke="var(--dg-fill)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 172 V140 q8 -9 16 0 q8 9 16 0 q8 -9 16 0 q8 9 16 0 H280" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 172 V140 q8 -9 16 0 q8 9 16 0 q8 -9 16 0 q8 9 16 0 H280" fill="none" stroke="var(--dg-fill)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="4" y="38" font-size="11">Afferent arteriole</text><text x="4" y="116" font-size="11">Efferent arteriole</text>
+<text x="138" y="40" >Bowman’s capsule</text><line x1="136" y1="44" x2="120" y2="52" stroke="currentColor" stroke-width="1"/>
+<text x="138" y="84" >Glomerulus</text><line x1="136" y1="80" x2="114" y2="72" stroke="currentColor" stroke-width="1"/>
+<text x="88" y="128" text-anchor="end">PCT</text>
+<text x="92" y="250" text-anchor="end">Descending</text><text x="92" y="265" text-anchor="end">limb</text>
+<text x="160" y="250" text-anchor="start">Ascending</text><text x="160" y="265" text-anchor="start">limb</text>
+<text x="125" y="338" text-anchor="middle" font-weight="bold">Loop of Henle</text>
+<text x="215" y="125" text-anchor="middle">DCT</text>
+<text x="277" y="300" text-anchor="end">Collecting duct</text><text x="293" y="344" text-anchor="start" font-size="11" fill="var(--dg-muted)">to renal pelvis</text>
+<g font-size="11">
+<text x="318" y="40" font-weight="bold">Renal corpuscle: ultrafiltration</text><text x="318" y="55" >of blood (glomerular filtrate)</text>
+<text x="318" y="92" font-weight="bold">PCT: reabsorbs nearly all glucose and</text><text x="318" y="107" >amino acids, 70–80% of water, Na⁺;</text><text x="318" y="122" >secretes H⁺, K⁺, NH₃</text>
+<text x="318" y="160" font-weight="bold">Descending limb: permeable to water,</text><text x="318" y="175" >almost impermeable to electrolytes</text>
+<text x="318" y="213" font-weight="bold">Ascending limb: impermeable to water;</text><text x="318" y="228" >electrolytes transported out</text>
+<text x="318" y="266" font-weight="bold">DCT: conditional reabsorption of Na⁺</text><text x="318" y="281" >and water; pH and ion balance</text>
+<text x="318" y="319" font-weight="bold">Collecting duct: reabsorbs water</text><text x="318" y="334" >(ADH) → concentrated urine</text>
+</g></svg>`,
+    },
+  ],
+  "locomotion-and-movement": [
+
+    {
+      title: "Sliding filament model: sarcomere",
+      caption: "A **sarcomere** lies between two **Z lines**. Thick (myosin) filaments make the **A band**; the **I band** has only thin (actin) filaments; the **H zone** is the centre of the A band without overlap; the **M line** holds the thick filaments. In contraction the actin slides over the myosin: the **I band and H zone shrink**, A band stays the same.",
+      svg: `<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-17a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-17aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<text x="10" y="14" font-weight="bold">Relaxed</text>
+<line x1="60" y1="40" x2="60" y2="120" stroke="currentColor" stroke-width="3"/><line x1="500" y1="40" x2="500" y2="120" stroke="currentColor" stroke-width="3"/><line x1="60" y1="58" x2="210" y2="58" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="500" y1="58" x2="350" y2="58" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="60" y1="80" x2="210" y2="80" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="500" y1="80" x2="350" y2="80" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="60" y1="102" x2="210" y2="102" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="500" y1="102" x2="350" y2="102" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="150" y1="69" x2="410" y2="69" stroke="currentColor" stroke-width="6" stroke-linecap="butt"/><line x1="150" y1="91" x2="410" y2="91" stroke="currentColor" stroke-width="6" stroke-linecap="butt"/><line x1="280" y1="48" x2="280" y2="112" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="60" y="34" text-anchor="middle">Z line</text><text x="500" y="34" text-anchor="middle">Z line</text><text x="280" y="34" text-anchor="middle">M line</text>
+<path d="M60 133 V138 H150 V133" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="105" y="153" text-anchor="middle">I band</text><path d="M150 133 V138 H410 V133" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="280" y="153" text-anchor="middle">A band (thick filaments)</text><path d="M410 133 V138 H500 V133" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="455" y="153" text-anchor="middle">I band</text>
+<path d="M210 169 V174 H350 V169" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="280" y="189" text-anchor="middle">H zone</text>
+<text x="10" y="196" font-weight="bold">Contracted</text>
+<line x1="140" y1="226" x2="140" y2="306" stroke="currentColor" stroke-width="3"/><line x1="420" y1="226" x2="420" y2="306" stroke="currentColor" stroke-width="3"/><line x1="140" y1="244" x2="290" y2="244" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="420" y1="244" x2="270" y2="244" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="140" y1="266" x2="290" y2="266" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="420" y1="266" x2="270" y2="266" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="140" y1="288" x2="290" y2="288" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="420" y1="288" x2="270" y2="288" stroke="var(--dg-accent)" stroke-width="2.2"/><line x1="150" y1="255" x2="410" y2="255" stroke="currentColor" stroke-width="6" stroke-linecap="butt"/><line x1="150" y1="277" x2="410" y2="277" stroke="currentColor" stroke-width="6" stroke-linecap="butt"/><line x1="280" y1="234" x2="280" y2="298" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="140" y="220" text-anchor="middle">Z line</text><text x="420" y="220" text-anchor="middle">Z line</text><text x="280" y="220" text-anchor="middle">M line</text>
+<path d="M140 317 V322 H420 V317" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="280" y="337" text-anchor="middle">Sarcomere shorter: I band and H zone almost gone, A band unchanged</text>
+<text x="10" y="352" fill="var(--dg-accent)" font-weight="bold">Thin filament (actin)</text><text x="300" y="352" font-weight="bold">Thick filament (myosin)</text>
+</svg>`,
+    },
+  ],
+  "neural-control-and-coordination": [
+
+
+    {
+      title: "Structure of a neuron",
+      caption: "A neuron has a **cell body (cyton)** with a nucleus and Nissl granules, short branched **dendrites** that receive impulses, and a long **axon** that carries them away. Many axons are covered by a **myelin sheath** with gaps called **nodes of Ranvier**; the axon ends in **synaptic knobs** (axon terminals).",
+      svg: `<svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-18a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-18aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<g stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round">
+<path d="M82 125 L50 100 L28 98 M50 100 L36 82 M82 135 L40 140 L20 130 M40 140 L24 156 M95 160 L70 190 L46 196 M70 190 L66 212 M108 112 L100 84 L80 70 M100 84 L112 64"/></g>
+<ellipse cx="120" cy="140" rx="42" ry="38" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2.2"/>
+<circle cx="122" cy="140" r="14" fill="none" stroke="currentColor" stroke-width="1.6"/>
+<g fill="currentColor"><circle cx="100" cy="125" r="1.6"/><circle cx="108" cy="160" r="1.6"/><circle cx="140" cy="165" r="1.6"/><circle cx="145" cy="120" r="1.6"/><circle cx="96" cy="148" r="1.6"/><circle cx="135" cy="118" r="1.6"/></g>
+<path d="M160 138 L178 140 L160 144 Z" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/>
+<line x1="178" y1="141" x2="450" y2="141" stroke="currentColor" stroke-width="3"/>
+<rect x="200" y="128" width="62" height="26" rx="12" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.8"/><rect x="270" y="128" width="70" height="26" rx="12" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.8"/><rect x="348" y="128" width="70" height="26" rx="12" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.8"/>
+<g stroke="currentColor" stroke-width="2" fill="none"><path d="M450 141 L478 118 L500 110 M478 118 L494 96 M450 141 L500 141 M450 141 L478 164 L500 174 M478 164 L494 186"/></g>
+<g fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.6"><circle cx="505" cy="109" r="6"/><circle cx="498" cy="94" r="5" /><circle cx="506" cy="141" r="6"/><circle cx="505" cy="175" r="6"/><circle cx="498" cy="188" r="5"/></g>
+<text x="40" y="40" text-anchor="middle">Dendrites</text><line x1="44" y1="46" x2="54" y2="66" stroke="currentColor" stroke-width="1"/>
+<text x="120" y="226" text-anchor="middle">Cell body (soma)</text><text x="120" y="241" text-anchor="middle" font-size="11" fill="var(--dg-muted)">with Nissl granules</text><line x1="120" y1="200" x2="120" y2="178" stroke="currentColor" stroke-width="1"/>
+<text x="214" y="68" text-anchor="middle">Nucleus</text><line x1="196" y1="74" x2="134" y2="132" stroke="currentColor" stroke-width="1"/>
+<text x="180" y="176" text-anchor="start" font-size="11">Axon hillock</text>
+<text x="231" y="106" text-anchor="middle">Myelin sheath</text><text x="231" y="120" text-anchor="middle" font-size="11" fill="var(--dg-muted)">(Schwann cell)</text>
+<text x="266" y="212" text-anchor="middle">Node of Ranvier</text><line x1="266" y1="198" x2="266" y2="146" stroke="currentColor" stroke-width="1"/>
+<text x="320" y="186" text-anchor="middle">Axon</text><line x1="320" y1="176" x2="320" y2="160" stroke="currentColor" stroke-width="1"/>
+<text x="484" y="230" text-anchor="middle">Axon terminals</text><text x="484" y="245" text-anchor="middle" font-size="11" fill="var(--dg-muted)">(synaptic knobs)</text><line x1="500" y1="198" x2="500" y2="186" stroke="currentColor" stroke-width="1"/>
+<text x="300" y="285" text-anchor="middle" fill="var(--dg-accent)">Impulse travels dendrite → cell body → axon → axon terminal</text>
+</svg>`,
+    },
+    {
+      title: "Chemical synapse",
+      caption: "An arriving impulse makes **synaptic vesicles** release a **neurotransmitter** into the **synaptic cleft**. It binds to **receptors** on the postsynaptic membrane, opening ion channels and generating a new impulse in the next neuron. Transmission at a chemical synapse is **one-way**.",
+      svg: `<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-18b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-18ba" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<path d="M10 120 H60 C70 70 100 55 150 55 H230 V215 H150 C100 215 70 200 60 160 H10 Z" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2"/>
+<path d="M270 60 H500 V210 H270 Z" fill="var(--dg-fill)" fill-opacity="0.55" stroke="currentColor" stroke-width="2"/>
+<line x1="230" y1="55" x2="230" y2="215" stroke="currentColor" stroke-width="3.5"/><line x1="270" y1="60" x2="270" y2="210" stroke="currentColor" stroke-width="3.5"/>
+<circle cx="170" cy="90" r="9" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><circle cx="168" cy="89" r="1.5" fill="currentColor"/><circle cx="173" cy="92" r="1.5" fill="currentColor"/><circle cx="196" cy="112" r="9" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><circle cx="194" cy="111" r="1.5" fill="currentColor"/><circle cx="199" cy="114" r="1.5" fill="currentColor"/><circle cx="170" cy="140" r="9" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><circle cx="168" cy="139" r="1.5" fill="currentColor"/><circle cx="173" cy="142" r="1.5" fill="currentColor"/><circle cx="200" cy="168" r="9" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><circle cx="198" cy="167" r="1.5" fill="currentColor"/><circle cx="203" cy="170" r="1.5" fill="currentColor"/><circle cx="152" cy="184" r="9" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.4"/><circle cx="150" cy="183" r="1.5" fill="currentColor"/><circle cx="155" cy="186" r="1.5" fill="currentColor"/>
+<ellipse cx="110" cy="150" rx="20" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M96 150 q6 -8 10 0 t10 0 t10 0" fill="none" stroke="currentColor" stroke-width="1"/>
+<g fill="currentColor"><circle cx="246" cy="98" r="2.5"/><circle cx="252" cy="116" r="2.5"/><circle cx="244" cy="136" r="2.5"/><circle cx="254" cy="156" r="2.5"/><circle cx="247" cy="176" r="2.5"/></g>
+<g fill="var(--dg-accent)" stroke="currentColor" stroke-width="1.2"><path d="M270 85 h12 l-6 -8 z" fill="var(--dg-fill)"/><path d="M270 115 h12 l-6 -8 z" fill="var(--dg-fill)"/><path d="M270 145 h12 l-6 -8 z" fill="var(--dg-fill)"/><path d="M270 175 h12 l-6 -8 z" fill="var(--dg-fill)"/></g>
+<line x1="14" y1="140" x2="54" y2="140" stroke="var(--dg-accent)" stroke-width="2.2" marker-end="url(#ar-b11-18ba)"/><text x="10" y="110" font-size="11" fill="var(--dg-accent)">Impulse</text>
+<text x="150" y="36" text-anchor="middle" font-weight="bold">Axon terminal</text><text x="150" y="50" text-anchor="middle" font-size="11" fill="var(--dg-muted)">(presynaptic neuron)</text>
+<text x="385" y="40" text-anchor="middle" font-weight="bold">Postsynaptic neuron</text>
+<text x="250" y="240" text-anchor="middle">Synaptic cleft</text><line x1="250" y1="226" x2="250" y2="196" stroke="currentColor" stroke-width="1"/>
+
+<text x="130" y="266" text-anchor="end">Synaptic vesicles with</text><text x="130" y="280" text-anchor="end">neurotransmitter</text><line x1="134" y1="262" x2="160" y2="196" stroke="currentColor" stroke-width="1"/>
+<text x="335" y="262" text-anchor="start">Neurotransmitter</text><text x="335" y="276" text-anchor="start" font-size="11" fill="var(--dg-muted)">diffuses across the cleft</text><line x1="330" y1="258" x2="254" y2="160" stroke="currentColor" stroke-width="1"/>
+
+<text x="400" y="125" text-anchor="start">Receptors on</text><text x="400" y="140" text-anchor="start">postsynaptic membrane</text><line x1="396" y1="131" x2="285" y2="117" stroke="currentColor" stroke-width="1"/>
+<text x="100" y="238" text-anchor="middle">Mitochondrion</text><line x1="104" y1="226" x2="110" y2="162" stroke="currentColor" stroke-width="1"/>
+</svg>`,
+    },
+
+
+    {
+      title: "Reflex arc",
+      caption: "A **reflex action** is a quick, involuntary response to a stimulus, controlled by the spinal cord. Path: **receptor → sensory (afferent) neuron → dorsal root → spinal cord (interneuron in grey matter) → ventral root → motor (efferent) neuron → effector**.",
+      svg: `<svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor"><defs><marker id="ar-b11-18c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ar-b11-18ca" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--dg-accent)"/></marker></defs>
+<circle cx="190" cy="170" r="100" fill="none" stroke="currentColor" stroke-width="2.4"/>
+<g fill="var(--dg-fill)" stroke="currentColor" stroke-width="4"><ellipse cx="190" cy="168" rx="26" ry="34"/><ellipse cx="166" cy="130" rx="11" ry="34" transform="rotate(14 166 130)"/><ellipse cx="214" cy="130" rx="11" ry="34" transform="rotate(-14 214 130)"/><ellipse cx="150" cy="204" rx="34" ry="19" transform="rotate(-14 150 204)"/><ellipse cx="230" cy="204" rx="34" ry="19" transform="rotate(14 230 204)"/></g><g fill="var(--dg-fill)" stroke="none"><ellipse cx="190" cy="168" rx="26" ry="34"/><ellipse cx="166" cy="130" rx="11" ry="34" transform="rotate(14 166 130)"/><ellipse cx="214" cy="130" rx="11" ry="34" transform="rotate(-14 214 130)"/><ellipse cx="150" cy="204" rx="34" ry="19" transform="rotate(-14 150 204)"/><ellipse cx="230" cy="204" rx="34" ry="19" transform="rotate(14 230 204)"/></g>
+<circle cx="190" cy="168" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/>
+<g fill="none" stroke="currentColor" stroke-width="2.4">
+<path d="M420 34 Q360 40 310 58"/><path d="M290 66 Q262 82 226 106"/><path d="M226 106 Q206 150 228 192"/><path d="M228 192 Q262 212 292 238 Q350 275 400 288"/></g>
+<circle cx="300" cy="62" r="10" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2"/>
+<g fill="none" stroke="var(--dg-accent)" stroke-width="2.4" stroke-dasharray="5 4">
+<path d="M416 31 Q364 36 322 54" marker-end="url(#ar-b11-18ca)"/><path d="M286 69 Q260 82 232 102" marker-end="url(#ar-b11-18ca)"/><path d="M224 114 Q212 150 226 184" marker-end="url(#ar-b11-18ca)"/><path d="M290 238 Q350 273 398 286" marker-end="url(#ar-b11-18ca)"/></g>
+<rect x="420" y="10" width="130" height="46" rx="6" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.6"/>
+<rect x="400" y="266" width="150" height="50" rx="22" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.6"/>
+<text x="485" y="28" text-anchor="middle" font-weight="bold">Receptor</text><text x="485" y="45" text-anchor="middle" font-size="11">(skin) + stimulus</text>
+<text x="475" y="288" text-anchor="middle" font-weight="bold">Effector</text><text x="475" y="304" text-anchor="middle" font-size="11">(muscle) → response</text>
+<text x="322" y="92" text-anchor="start">Dorsal root ganglion</text><line x1="318" y1="88" x2="306" y2="72" stroke="currentColor" stroke-width="1"/>
+<text x="306" y="230" text-anchor="start">Ventral root</text>
+<text x="122" y="108" text-anchor="end">Dorsal horn</text><line x1="126" y1="104" x2="150" y2="112" stroke="currentColor" stroke-width="1"/>
+<text x="122" y="230" text-anchor="end">Ventral horn</text><line x1="126" y1="226" x2="138" y2="214" stroke="currentColor" stroke-width="1"/>
+<text x="6" y="52" text-anchor="start" fill="var(--dg-muted)">White matter</text><line x1="80" y1="56" x2="114" y2="102" stroke="currentColor" stroke-width="1"/>
+<text x="304" y="152" text-anchor="start" font-size="11">Interneuron</text><line x1="300" y1="150" x2="232" y2="150" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="292" text-anchor="middle" font-weight="bold">Spinal cord</text><text x="190" y="308" text-anchor="middle" font-size="11" fill="var(--dg-muted)">(cross-section)</text>
+</svg>`,
+    },
+
+    {
+      title: "Human brain: sagittal section",
+      caption: "The **forebrain** has the cerebrum (joined by the **corpus callosum**), thalamus and hypothalamus; the **midbrain** lies between forebrain and hindbrain; the **hindbrain** has the pons, cerebellum and medulla oblongata. Midbrain, pons and medulla together form the **brain stem**. Front of the head is to the left.",
+      svg: `<svg viewBox="0 0 560 350" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor">
+<path d="M130 175 C112 95 185 35 300 35 C410 35 480 95 468 170 C464 192 440 198 410 198 L330 200 L322 212 L262 212 C230 200 175 205 152 198 C138 194 132 186 130 175 Z" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2.4"/>
+<g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.6"><path d="M200 60 C190 90 215 100 205 130"/><path d="M300 42 C290 70 320 80 310 100"/><path d="M400 62 C395 90 420 100 410 130"/><path d="M160 130 C180 140 190 120 205 130"/></g>
+<path d="M170 118 Q300 62 420 122" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+<ellipse cx="300" cy="150" rx="34" ry="20" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.8"/>
+<ellipse cx="272" cy="188" rx="22" ry="11" fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.8"/>
+<path d="M274 212 L270 236 Q254 252 270 270 L280 304 L306 304 L316 270 Q332 252 318 236 L322 212 Z" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2"/>
+<line x1="270" y1="236" x2="322" y2="236" stroke="currentColor" stroke-width="1.2"/><line x1="272" y1="270" x2="316" y2="270" stroke="currentColor" stroke-width="1.2"/>
+<path d="M280 304 L282 340 M306 304 L304 340" stroke="currentColor" stroke-width="2" fill="none"/>
+<path d="M326 208 C340 200 380 200 420 206 C456 214 456 262 420 272 C380 282 340 270 326 252 Z" fill="var(--dg-fill)" stroke="currentColor" stroke-width="2"/>
+<g fill="none" stroke="currentColor" stroke-width="1" opacity="0.7"><path d="M340 222 C380 214 420 220 442 232"/><path d="M338 238 C380 230 424 238 446 248"/><path d="M342 254 C380 248 416 254 436 262"/></g>
+<text x="112" y="100" text-anchor="end" font-weight="bold">Cerebrum</text><line x1="116" y1="98" x2="156" y2="96" stroke="currentColor" stroke-width="1"/>
+<text x="112" y="132" text-anchor="end">Corpus callosum</text><line x1="116" y1="130" x2="176" y2="116" stroke="currentColor" stroke-width="1"/>
+<text x="112" y="168" text-anchor="end">Thalamus</text><line x1="116" y1="166" x2="268" y2="152" stroke="currentColor" stroke-width="1"/>
+<text x="112" y="200" text-anchor="end">Hypothalamus</text><line x1="116" y1="198" x2="250" y2="190" stroke="currentColor" stroke-width="1"/>
+<text x="112" y="226" text-anchor="end">Midbrain</text><line x1="116" y1="224" x2="272" y2="222" stroke="currentColor" stroke-width="1"/>
+<text x="112" y="256" text-anchor="end">Pons</text><line x1="116" y1="254" x2="262" y2="252" stroke="currentColor" stroke-width="1"/>
+<text x="112" y="290" text-anchor="end">Medulla oblongata</text><line x1="116" y1="288" x2="284" y2="286" stroke="currentColor" stroke-width="1"/>
+<text x="470" y="262" text-anchor="start" font-weight="bold">Cerebellum</text><line x1="466" y1="258" x2="440" y2="252" stroke="currentColor" stroke-width="1"/>
+<text x="330" y="330" text-anchor="start">Spinal cord</text><line x1="326" y1="326" x2="306" y2="326" stroke="currentColor" stroke-width="1"/>
+<path d="M240 214 h-60" stroke="none"/>
+<text x="462" y="20" text-anchor="end" font-size="11" fill="var(--dg-muted)">Forebrain: cerebrum, thalamus,</text><text x="462" y="34" text-anchor="end" font-size="11" fill="var(--dg-muted)">hypothalamus</text>
+<text x="520" y="300" text-anchor="end" font-size="11" fill="var(--dg-muted)">Brain stem =</text><text x="520" y="314" text-anchor="end" font-size="11" fill="var(--dg-muted)">midbrain + pons +</text><text x="520" y="328" text-anchor="end" font-size="11" fill="var(--dg-muted)">medulla</text>
+</svg>`,
+    },
+  ],
+  "chemical-coordination-and-integration": [
+
+    {
+      title: "Location of the endocrine glands",
+      caption: "Main endocrine glands of the human body: **hypothalamus**, **pituitary**, **pineal**, **thyroid** and **parathyroids**, **thymus**, **adrenals**, **pancreas** (islets of Langerhans) and the **gonads** (ovaries in the female, testes in the male). Position only — a schematic, not to scale.",
+      svg: `<svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" font-size="12" fill="currentColor">
+<g fill="var(--dg-fill)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+<circle cx="280" cy="56" r="32"/>
+<path d="M268 86 H292 V98 C330 100 352 106 356 124 L362 218 H198 L204 124 C208 106 230 100 268 98 Z"/>
+<path d="M214 218 L222 390 H266 L278 252 L290 252 L302 390 H346 L346 218 Z"/>
+</g>
+<g fill="var(--dg-accent)" stroke="currentColor" stroke-width="1">
+<circle cx="283" cy="50" r="4.5"/><circle cx="294" cy="40" r="3.5"/>
+<ellipse cx="280" cy="105" rx="14" ry="6"/>
+<ellipse cx="280" cy="128" rx="9" ry="12"/>
+<ellipse cx="256" cy="176" rx="8" ry="4"/><ellipse cx="304" cy="176" rx="8" ry="4"/>
+<ellipse cx="280" cy="190" rx="22" ry="5"/>
+<circle cx="256" cy="226" r="5"/><circle cx="304" cy="226" r="5"/>
+</g>
+<text x="190" y="22" text-anchor="end">Hypothalamus</text><line x1="194" y1="20" x2="268" y2="46" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="52" text-anchor="end">Pituitary</text><line x1="194" y1="50" x2="278" y2="52" stroke="currentColor" stroke-width="1"/>
+<text x="372" y="34" text-anchor="start">Pineal</text><line x1="368" y1="32" x2="296" y2="40" stroke="currentColor" stroke-width="1"/>
+<text x="372" y="104" text-anchor="start">Thyroid (and parathyroids</text><text x="372" y="119" text-anchor="start">on its back surface)</text><line x1="368" y1="102" x2="294" y2="105" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="132" text-anchor="end">Thymus</text><line x1="194" y1="130" x2="271" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="172" text-anchor="end">Adrenal (on top</text><text x="190" y="187" text-anchor="end">of each kidney)</text><line x1="194" y1="174" x2="247" y2="176" stroke="currentColor" stroke-width="1"/>
+<text x="372" y="176" text-anchor="start">Pancreas</text><text x="372" y="191" text-anchor="start" font-size="11" fill="var(--dg-muted)">(islets of Langerhans)</text><line x1="368" y1="174" x2="304" y2="188" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="236" text-anchor="end">Ovary (female)</text><line x1="194" y1="233" x2="251" y2="227" stroke="currentColor" stroke-width="1"/>
+<text x="372" y="236" text-anchor="start">Testis (male: in scrotum,</text><text x="372" y="251" text-anchor="start">outside the abdomen)</text><line x1="368" y1="234" x2="309" y2="227" stroke="currentColor" stroke-width="1"/>
+<text x="280" y="412" text-anchor="middle" font-size="11" fill="var(--dg-muted)">Schematic: positions only, not to scale</text>
+</svg>`,
+    },
+  ],
 });
