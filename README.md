@@ -2,7 +2,7 @@
 
 An offline study app for Indian school students, following the CBSE / NCERT syllabus for Classes 1 to 12.
 
-**Open the app: https://navjeetmalli-pixel.github.io/vidya/**: on a phone, open it in Chrome or Safari and choose *Add to Home screen*.
+**Open the app: https://navjeetmalli-pixel.github.io/pocket_class/**: on a phone, open it in Chrome or Safari and choose *Add to Home screen*.
 
 **Subjects**
 

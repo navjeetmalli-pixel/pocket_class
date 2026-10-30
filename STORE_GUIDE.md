@@ -57,4 +57,4 @@ delete the `icons/icon-*.webp` files it also creates (the website doesn't use th
 
 - The content was written with AI help and still needs a teacher's review (see each subject's "reviewed" field).
 - Store name: "Pocket Class India" (under the icon it shows as "Pocket Class"). Search both stores for it before creating the listing. Suggested store titles: "Pocket Class: CBSE & PSEB 1–12" (Play) and "Pocket Class – Offline Study" (App Store).
-- Privacy policy URL for both stores: https://navjeetmalli-pixel.github.io/vidya/privacy.html (in this repo as `privacy.html`).
+- Privacy policy URL for both stores: https://navjeetmalli-pixel.github.io/pocket_class/privacy.html (in this repo as `privacy.html`).
