@@ -56,12 +56,16 @@ globalThis.StudyData = (function () {
   const boards = { cbse: "CBSE", pseb: "PSEB" };
   const boardCatalog = {
     pseb: {
-      // Classes 1–5: PSEB sets learning outcomes rather than lesson lists; the topic-based content covers them.
-      1: catalog[1], 2: catalog[2], 3: catalog[3], 4: catalog[4], 5: catalog[5],
+      // Classes 1–5: the topic-based Maths and EVS cover PSEB's learning outcomes; English and Hindi are PSEB's own.
+      1: ["maths", "englishpb", "hindipb", "punjabi"],
+      2: ["maths", "englishpb", "hindipb", "punjabi"],
+      3: ["maths", "evs", "englishpb", "hindipb", "punjabi"],
+      4: ["maths", "evs", "englishpb", "hindipb", "punjabi"],
+      5: ["maths", "evs", "englishpb", "hindipb", "punjabi"],
       // Classes 6–8: PSEB uses the earlier NCERT Maths and Science books and its own SST and English.
-      6: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindi", "punjabi"],
-      7: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindi", "punjabi"],
-      8: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindi", "punjabi"],
+      6: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindipb", "punjabi"],
+      7: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindipb", "punjabi"],
+      8: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindipb", "punjabi"],
       // Class 9: PSEB still uses the earlier NCERT Maths and Science books (CBSE moved to new ones in 2026–27).
       9: ["mathspb", "sciencepb", "sstpb", "englishpb", "hindipb", "punjabi"],
       10: ["maths", "science", "sstpb", "englishpb", "hindipb", "punjabi", "phc"],
@@ -77,18 +81,18 @@ globalThis.StudyData = (function () {
   // Extra practice (more MCQs, 1–5 mark written questions) lives in data/class{N}/practice/{subject}-{part}.js
   // and is loaded only when a student practises. This lists how many parts each subject has.
   const practiceCatalog = {
-    1: { english: 2, maths: 1, hindi: 2, punjabi: 1 },
-    2: { maths: 1, english: 2, hindi: 2, punjabi: 1 },
-    3: { maths: 2, evs: 1, english: 2, hindi: 2, punjabi: 1 },
-    4: { maths: 2, evs: 1, english: 2, hindi: 2, punjabi: 1 },
-    5: { maths: 2, evs: 1, english: 2, hindi: 2, punjabi: 1 },
-    6: { maths: 2, science: 2, sst: 2, english: 3, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4 },
-    7: { maths: 2, science: 2, sst: 3, english: 3, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4 },
-    8: { maths: 2, science: 2, sst: 2, english: 3, hindi: 3, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 4 },
-    9: { english: 4, hindi: 3, punjabi: 2, sstpb: 3, englishpb: 5, mathspb: 2, sciencepb: 2, hindipb: 2, maths: 2, science: 2, sst: 3 },
-    10: { maths: 2, science: 2, sst: 2, english: 2, hindi: 2, punjabi: 1, sstpb: 4, phc: 2, englishpb: 4, hindipb: 2 },
-    11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 4, hindi: 3, punjabi: 1, historypb: 4, polscipb: 3, englishpb: 5, hindipb: 2 },
-    12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 4, hindi: 3, punjabi: 1, historypb: 4, polscipb: 4, englishpb: 5, hindipb: 3 },
+    1: { english: 2, maths: 1, hindi: 2, punjabi: 1, englishpb: 2, hindipb: 1 },
+    2: { maths: 1, english: 2, hindi: 2, punjabi: 1, englishpb: 2, hindipb: 1 },
+    3: { maths: 2, evs: 1, english: 2, hindi: 2, punjabi: 1, englishpb: 2, hindipb: 1 },
+    4: { maths: 2, evs: 1, english: 2, hindi: 2, punjabi: 1, englishpb: 2, hindipb: 1 },
+    5: { maths: 2, evs: 1, english: 2, hindi: 2, punjabi: 1, englishpb: 2, hindipb: 1 },
+    6: { maths: 2, science: 2, sst: 2, english: 3, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4, hindipb: 2 },
+    7: { maths: 2, science: 2, sst: 3, english: 3, hindi: 2, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 3, englishpb: 4, hindipb: 2 },
+    8: { maths: 2, science: 2, sst: 2, english: 3, hindi: 3, punjabi: 1, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 4, hindipb: 3 },
+    9: { english: 4, hindi: 3, punjabi: 3, sstpb: 3, englishpb: 5, mathspb: 2, sciencepb: 2, hindipb: 2, maths: 2, science: 2, sst: 3 },
+    10: { maths: 2, science: 2, sst: 2, english: 2, hindi: 2, punjabi: 2, sstpb: 4, phc: 2, englishpb: 4, hindipb: 3 },
+    11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 4, hindi: 3, punjabi: 2, historypb: 4, polscipb: 3, englishpb: 5, hindipb: 2 },
+    12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 4, hindi: 3, punjabi: 2, historypb: 4, polscipb: 4, englishpb: 5, hindipb: 3 },
   };
 
   // Labelled diagrams live in data/class{N}/diagrams/{subject}.js, one file per subject, and load with the
