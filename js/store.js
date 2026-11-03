@@ -13,6 +13,7 @@ const Store = (() => {
     mistakes: {}, // question key -> timestamp
     cards: {}, // flashcard key -> "known" | "learning"
     history: [], // { title, subject, cls, score, total, at, kind }
+    guided: {}, // chapter key -> { at, score, total, sureWrong } for the last guided lesson
     days: {}, // "2026-10-28" -> { min, acts }
     focusMin: 0,
     focusLen: 25,
@@ -158,6 +159,17 @@ const Store = (() => {
       today().acts++;
       save();
     },
+
+    // Saves a finished guided lesson. The chapter's best quiz score is left alone (3 questions is not a quiz).
+    recordGuided(chapterKey, { title, subject, cls, score, total, sureWrong }) {
+      state.guided[chapterKey] = { at: Date.now(), score, total, sureWrong };
+      state.history.unshift({ title, subject, cls, score, total, kind: "guided", at: Date.now() });
+      state.history = state.history.slice(0, 200);
+      state.chapters[chapterKey] = Object.assign({}, chapter(chapterKey), { opened: true });
+      today().acts++;
+      save();
+    },
+    guided: (chapterKey) => state.guided[chapterKey] || null,
 
     addFocus(min) {
       state.focusMin += min;

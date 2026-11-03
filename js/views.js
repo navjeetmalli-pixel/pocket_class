@@ -435,7 +435,8 @@ const Views = (() => {
     const base = `#/chapter/${c}/${subj.id}/${ch.id}`;
     const bank = D.practiceFor(c, subj.id, ch.id);
     const hasPractice = (ch.examples && ch.examples.length) || (ch.qa && ch.qa.length) || bank.written.length || Gen.forChapter(c, subj.id, ch.id).length;
-    const tabs = [["notes", "Notes", "notes"], ["cards", "Flashcards", "cards"], hasPractice && ["practice", "Practice", "practice"], ["quiz", "Quiz", "quiz"]].filter(Boolean);
+    const guided = Guided.available(c, subj.id, ch.id);
+    const tabs = [["notes", "Notes", "notes"], guided && ["guided", "Lesson", "play"], ["cards", "Flashcards", "cards"], hasPractice && ["practice", "Practice", "practice"], ["quiz", "Quiz", "quiz"]].filter(Boolean);
     if (!tabs.some((t) => t[0] === tab)) tab = "notes";
 
     const r = Store.chapter(k);
@@ -498,6 +499,7 @@ const Views = (() => {
           Quiz.mount(el.querySelector("#quiz-mount"), opts());
         }
         if (tab === "practice") mountGenerated(el, c, subj, ch);
+        if (tab === "guided") Guided.mount(el.querySelector("#guided-mount"), { c, subj, chs, idx, ch });
         if (tab === "cards")
           Cards.mount(el.querySelector("#cards-mount"), {
             cards: ch.terms.map((t) => ({ key: cardKey(c, subj.id, ch, t), front: t.term, back: t.meaning })),
@@ -520,6 +522,7 @@ const Views = (() => {
     const terms = `<section class="card"><h3 style="font-size:17px;font-weight:750;margin-bottom:12px">${TERMS_LABEL[subj.id] || "Key terms"}</h3>
       <dl class="terms">${ch.terms.map((t) => `<div><dt>${rich(t.term)}</dt><dd>${rich(t.meaning)}</dd></div>`).join("")}</dl></section>`;
     return `
+      ${Guided.card(c, subj, ch, base)}
       <div class="stack">${notes}${figs}${formulas}${terms}</div>
       <div class="done-row no-print">
         <button class="btn ${r.done ? "good" : ""}" data-act="done">${icon("check")} ${r.done ? "Completed" : "Mark as complete"}</button>
@@ -1019,7 +1022,7 @@ const Views = (() => {
             ? `<div class="card">${hist
                 .map(
                   (h) => `<div class="history-row">
-                    <div class="grow"><div style="font-weight:620">${esc(h.title)}</div><div class="tiny muted">${relDate(h.at)} · ${h.kind === "test" ? "Mock test" : h.kind === "practice" ? "Mistakes practice" : "Chapter quiz"}</div></div>
+                    <div class="grow"><div style="font-weight:620">${esc(h.title)}</div><div class="tiny muted">${relDate(h.at)} · ${h.kind === "test" ? "Mock test" : h.kind === "practice" ? "Mistakes practice" : h.kind === "guided" ? "Guided lesson" : "Chapter quiz"}</div></div>
                     <span class="pill ${pct(h.score, h.total) >= 60 ? "good" : "bad"}">${h.score}/${h.total}</span></div>`
                 )
                 .join("")}</div>`

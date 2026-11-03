@@ -666,3 +666,30 @@ mark { background: color-mix(in srgb, var(--gold) 30%, transparent); color: inhe
 .diagram-art svg { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; font-family: inherit; }
 .diagram figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); }
 @media print { .diagram { break-inside: avoid; } .diagram-art { --dg-accent: #000; --dg-fill: #eee; } }
+
+/* ---------- Guided lesson ---------- */
+.guided .g-lead { margin: 14px 0 4px; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.guided .g-eyebrow { font-size: 12.5px; font-weight: 700; color: var(--accent); letter-spacing: .04em; text-transform: uppercase; margin-top: 14px; }
+.guided .g-note { margin-top: 10px; }
+.guided .g-note h3 { font-size: 19px; font-weight: 750; margin-bottom: 10px; line-height: 1.3; }
+.guided .g-note ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15.5px; line-height: 1.55; }
+.guided .g-note li::marker { color: var(--c, var(--accent)); }
+.guided .example { margin-top: 12px; }
+.guided .example .q { font-size: 17px; margin-bottom: 10px; }
+.guided .g-steps { font-size: 15.5px; line-height: 1.5; }
+.guided .g-steps .hidden-step { color: var(--muted); font-style: italic; border-bottom: 1px dashed var(--border); padding-bottom: 4px; }
+.guided .quiz-nav { margin-top: 16px; }
+.guided .mt-s { margin-top: 8px; }
+.guided .mt-s a { color: var(--accent); font-weight: 650; }
+.feedback.neutral { background: var(--surface-2); }
+.g-choices { list-style: none; margin: 0 0 4px; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 15.5px; }
+.g-choices li { display: flex; align-items: center; gap: 10px; }
+.g-choices .letter { flex: none; width: 26px; height: 26px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 750; background: var(--surface-2); color: var(--muted); }
+.g-confidence { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 16px; padding: 12px 14px; border-radius: 14px; background: var(--accent-soft); font-weight: 650; }
+.g-confidence span { flex: 1; min-width: 120px; }
+.g-notes { margin: 16px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; }
+.g-notes li::marker { color: var(--accent); }
+.guided-card { margin-bottom: 14px; border-color: color-mix(in srgb, var(--c, var(--accent)) 35%, var(--border)); background: color-mix(in srgb, var(--c, var(--accent)) 7%, var(--surface)); }
+.guided-card .ti { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: var(--c, var(--accent)); color: #fff; flex: none; }
+.guided-card .ti svg.i { width: 20px; height: 20px; }
+.guided-card > svg.i { width: 18px; height: 18px; color: var(--muted); flex: none; }
