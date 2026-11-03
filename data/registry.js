@@ -81,7 +81,7 @@ globalThis.StudyData = (function () {
   // Extra practice (more MCQs, 1–5 mark written questions) lives in data/class{N}/practice/{subject}-{part}.js
   // and is loaded only when a student practises. This lists how many parts each subject has.
   const practiceCatalog = {
-    1: { english: 2, maths: 1, hindi: 2, punjabi: 1, englishpb: 2, hindipb: 1 },
+    1: { english: 2, maths: 1, hindi: 2, punjabi: 2, englishpb: 2, hindipb: 1 },
     2: { maths: 1, english: 2, hindi: 2, punjabi: 2, englishpb: 2, hindipb: 1 },
     3: { maths: 2, evs: 1, english: 2, hindi: 2, punjabi: 2, englishpb: 2, hindipb: 1 },
     4: { maths: 2, evs: 1, english: 2, hindi: 2, punjabi: 2, englishpb: 2, hindipb: 2 },
@@ -91,7 +91,7 @@ globalThis.StudyData = (function () {
     8: { maths: 2, science: 2, sst: 2, english: 3, hindi: 3, punjabi: 2, mathspb: 2, sciencepb: 2, sstpb: 4, englishpb: 4, hindipb: 3 },
     9: { english: 4, hindi: 3, punjabi: 3, sstpb: 3, englishpb: 5, mathspb: 2, sciencepb: 2, hindipb: 2, maths: 2, science: 2, sst: 3 },
     10: { maths: 2, science: 2, sst: 2, english: 2, hindi: 2, punjabi: 2, sstpb: 4, phc: 2, englishpb: 4, hindipb: 3 },
-    11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 4, hindi: 3, punjabi: 2, historypb: 4, polscipb: 3, englishpb: 5, hindipb: 2 },
+    11: { physics: 2, chemistry: 2, maths: 2, biology: 3, accountancy: 2, business: 2, economics: 2, history: 1, geography: 3, polsci: 3, english: 4, hindi: 3, punjabi: 3, historypb: 4, polscipb: 3, englishpb: 5, hindipb: 2 },
     12: { chemistry: 2, physics: 2, maths: 2, biology: 2, accountancy: 2, business: 2, economics: 2, history: 2, geography: 3, polsci: 2, english: 4, hindi: 3, punjabi: 2, historypb: 4, polscipb: 4, englishpb: 5, hindipb: 3 },
   };
 
