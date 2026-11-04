@@ -31,16 +31,17 @@ test("guided lesson: a Class 10 Maths chapter goes through every step to Done", 
   await expect(page).toHaveURL(new RegExp(`/${CH.id}/guided$`));
 
   const stepLabel = page.locator(".guided .quiz-clock");
+  // Real Numbers is the first chapter, so there is no earlier work to check: the lesson opens with the question.
   await expect(stepLabel).toHaveText("Think first");
   await expect(page.locator(".guided .quiz-head span").first()).toHaveText(/^Step 1 of \d+$/);
 
   const seen = new Set();
-  for (let i = 0; i < 80; i++) {
+  for (let i = 0; i < 120; i++) {
     const label = await stepLabel.textContent().catch(() => "");
     if (label) seen.add(label);
     const did = await advance(page);
     if (did === "done") break;
-    expect(i, "the lesson should finish within 80 clicks").toBeLessThan(79);
+    expect(i, "the lesson should finish within 120 clicks").toBeLessThan(119);
   }
   await expect(page.locator(".guided .result-msg")).toHaveText("Lesson complete");
   await expect(page.locator(".guided .quiz-clock")).toHaveText("Done");
@@ -51,7 +52,8 @@ test("guided lesson: a Class 10 Maths chapter goes through every step to Done", 
   // Recorded: guided result, history entry, chapter opened.
   const s = current(await readStore(page));
   const key = `10/maths/${CH.id}`;
-  expect(s.guided[key]).toMatchObject({ total: 3 });
+  expect(s.guided[key]).toMatchObject({ total: expect.any(Number) }); // 3-4 mixed retrieve questions
+  expect(s.guided[key].total).toBeGreaterThanOrEqual(3);
   expect(s.history[0]).toMatchObject({ kind: "guided", subject: "maths", cls: 10 });
 
   // The Notes tab now says the lesson was done.

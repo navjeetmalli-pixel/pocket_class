@@ -193,4 +193,38 @@ const home = async (page) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste");
 };
 
-module.exports = { test, expect, KEY, CLASSES, BOARDS, registry, loadStudyData, expectedSubjects, expectedSubjectIds, chaptersOf, seed, readStore, current, correctPick, answer, playInstantQuiz, quickQuiz, home, watch };
+// The study tools on Home sit in the collapsed "More tools" section: opens it (once) so a .tool card can be clicked.
+const openTools = async (page) => {
+  const box = page.locator("#more-tools");
+  await box.waitFor();
+  if (!(await box.evaluate((d) => d.open))) await box.locator("summary").click();
+  await expect(box).toHaveAttribute("open", "");
+};
+
+// Goes through first-time setup quickly (the Student path). Options: name, cls, board, view ("class" | "subject"),
+// subjects (ids to pick in Subject-wise), goal (15 | 20 | 30 | null = decide later). Ends on Home.
+const next = (page) => page.getByRole("button", { name: /^Continue/ }).click();
+async function onboard(page, { name = "Asha", cls = 10, board = "cbse", view = "class", subjects = [], goal = 20 } = {}) {
+  await page.goto("/");
+  await page.getByRole("button", { name: /Start Learning/ }).click();
+  await page.getByRole("button", { name: /I'm a Student/ }).click();
+  await next(page);
+  await page.locator(`.ob [data-board="${board}"]`).click();
+  await next(page);
+  await page.getByRole("button", { name: `Class ${cls}`, exact: true }).click();
+  await next(page);
+  if (view === "subject") await page.locator('.ob [data-view="subject"]').click();
+  await next(page);
+  for (const s of subjects) await page.locator(`.ob [data-sub="${s}"]`).click(); // subject ids, e.g. "maths"
+  await next(page);
+  await page.locator("#ob-name").fill(name);
+  await next(page);
+  if (goal) {
+    await page.locator(`.ob [data-goal="${goal}"]`).click();
+    await next(page);
+  } else await page.getByRole("button", { name: "I'll decide later" }).click();
+  await page.getByRole("button", { name: "Skip tour" }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste");
+}
+
+module.exports = { onboard, openTools, test, expect, KEY, CLASSES, BOARDS, registry, loadStudyData, expectedSubjects, expectedSubjectIds, chaptersOf, seed, readStore, current, correctPick, answer, playInstantQuiz, quickQuiz, home, watch };

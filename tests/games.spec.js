@@ -1,5 +1,5 @@
 // Play: the Play tab, the three games (match pairs, label the diagram, quick-fire), best stars, Games home, levels.
-const { test, expect, seed, readStore, current, chaptersOf, answer } = require("./helpers");
+const { test, expect, seed, readStore, current, chaptersOf, answer, openTools } = require("./helpers");
 
 const MATHS = chaptersOf(10, "maths")[0];
 const LIGHT = "light-reflection-and-refraction"; // Class 10 Science: has diagrams
@@ -200,6 +200,7 @@ test("pause stops the clock and hides the board; Escape pauses too", async ({ pa
 test("Games home: subjects, a chapter list with game icons, and a random game", async ({ page }) => {
   await seed(page, { cls: 10 });
   await page.goto("/#/");
+  await openTools(page);
   await page.locator(".tool", { hasText: "Games" }).click();
   await expect(page).toHaveURL(/#\/games$/);
   await page.locator('.subject-card[href="#/games/science"]').click();

@@ -52,6 +52,14 @@
       };
   }
 
+  // Before a board or class change: if picked subjects would be dropped, say so and ask. Progress is never deleted.
+  function confirmDrop(patch) {
+    const lost = Store.droppedBy(patch);
+    if (!lost.length) return true;
+    const names = lost.map((id) => (D.subject(id) || { name: id }).name).join(", ");
+    return confirm(t("{names} isn't offered for this board and class, so it will be taken off your subjects. Your progress is kept. Change anyway?", { names }));
+  }
+
   function settings() {
     const st = Store.state;
     const seg = (name, items, val) =>
@@ -61,6 +69,7 @@
       html: `
         ${topbar(t("Settings"), "#/")}
         <div class="stack">
+          <a class="card row" href="#/profile" id="profile-link">${Avatars.badge(st.profile, st.profile.name, "av", 40)}<span class="grow"><strong>${t("Profile")}</strong><span class="small muted" style="display:block">${t("Picture, subjects, learning view, lesson language and daily goal")}</span></span>${icon("next")}</a>
           <div class="card stack">
             <div class="field"><label for="name">${t("Your name")}</label><input id="name" class="input" value="${esc(st.profile.name)}" maxlength="30" placeholder="${t("Your name")}"></div>
             <div class="field"><label>${t("Class")}</label>${classGrid(st.profile.cls)}</div>
@@ -69,6 +78,7 @@
             <div class="field"><label>${t("Appearance")}</label>${seg("theme", [["system", "Auto"], ["light", "Light"], ["dark", "Dark"]], st.theme)}</div>
           </div>
           ${studentsCard()}
+          <div class="card"><label class="switch"><span><strong>${t("Show streak")}</strong><br><span class="small muted">${t("Shows the days in a row you studied on Home and Progress. Missing a day never takes anything away.")}</span></span><input type="checkbox" id="show-streak" ${Store.showStreak() ? "checked" : ""}></label></div>
           ${reminderCard()}
           <a class="card row" href="#/parent"><span class="grow"><strong>${t("For parents")}</strong><span class="small muted" style="display:block">${t("A one-page summary of the week to show or print.")}</span></span>${icon("next")}</a>
           ${Native.is ? "" : `<div class="card">
@@ -103,6 +113,10 @@
       mount(el) {
         mountStudents(el);
         mountReminder(el);
+        el.querySelector("#show-streak").onchange = (e) => {
+          Store.setPref("streak", e.target.checked);
+          toast(e.target.checked ? t("Streak is shown") : t("Streak is hidden"));
+        };
         el.querySelector("#restore").onchange = (e) => {
           const file = e.target.files[0];
           if (!file) return;
@@ -122,19 +136,21 @@
         };
         el.onclick = (e) => {
           const b = e.target.closest("[data-lang],[data-cls],[data-board],[data-theme],[data-act]");
-          if (!b) return;
+          if (!b || !el.contains(b)) return; // (<html data-theme> also matches: clicks elsewhere must not redraw the page)
           if (b.dataset.lang) {
             if (b.dataset.lang === currentLang()) return;
             Store.setLang(b.dataset.lang);
             applyLang();
           } else if (b.dataset.board) {
             if (b.dataset.board === (st.profile.board || "cbse")) return;
+            if (!confirmDrop({ board: b.dataset.board })) return;
             Store.setBoard(b.dataset.board);
             toast(t("Switched to {name}", { name: D.boards[b.dataset.board] }));
             location.hash = "#/";
             return;
           } else if (b.dataset.cls) {
             if (Number(b.dataset.cls) === st.profile.cls) return;
+            if (!confirmDrop({ cls: Number(b.dataset.cls) })) return;
             Store.setClass(Number(b.dataset.cls));
             toast(t("Switched to Class {n}", { n: b.dataset.cls }));
             // Start the new class from Home so nothing from the old class is left on screen.

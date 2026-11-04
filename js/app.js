@@ -51,6 +51,7 @@ const App = {
     [/^parent$/, Views.parent],
     [/^search$/, Views.search],
     [/^settings$/, Views.settings],
+    [/^profile$/, Views.profile],
   ];
 
   // Enough of an element's identity to find it again after the page is redrawn.
@@ -67,7 +68,7 @@ const App = {
   }
 
   function renderNav(p) {
-    const show = !!Store.state.profile;
+    const show = !!Store.state.profile && !Store.inSetup();
     const sec = p.split("/")[0];
     const tabbar = document.getElementById("tabbar");
     const sidebar = document.getElementById("sidebar");
@@ -103,8 +104,8 @@ const App = {
     if ((m = p.match(/^(?:worksheet|paper)\/(\d+)\/(\w+)/))) return { cls: Number(m[1]), ids: [m[2]], practice: true };
     if ((m = p.match(/^(?:subject|cards|sheet)\/(\w+)$/))) return { cls: own, ids: [m[1]] };
     if (p === "search") return { cls: own, ids: "all" };
-    // The parent page names the skills (learning objectives) the student has worked on, so it needs those subjects' chapters.
-    if (p === "parent") {
+    // The parent and progress pages name the skills (learning objectives) the student has worked on, so it needs those subjects' chapters.
+    if (p === "parent" || p === "progress") {
       const mine = StudyData.subjectsFor(own).map((s) => s.id);
       const ids = Learn.subjectsWithEvidence(own).filter((id) => mine.includes(id));
       return ids.length ? { cls: own, ids } : null;
@@ -167,11 +168,16 @@ const App = {
     });
   }
 
+  // Age band of a class (design spec 8): sets body[data-band] for the styles that adapt to the learner's age.
+  App.band = (c) => (!c ? "" : c <= 2 ? "1-2" : c <= 5 ? "3-5" : c <= 8 ? "6-8" : c <= 10 ? "9-10" : "11-12");
+
   App.render = function (opts = {}) {
     const main = document.getElementById("app");
     const p = path();
 
-    if (Store.state.profile) {
+    const setup = Store.inSetup(); // first-time setup shows instead of the app (js/views/onboarding.js)
+    document.body.dataset.band = App.band(Store.state.profile && Store.state.profile.cls);
+    if (Store.state.profile && !setup) {
       StudyData.setBoard(Store.state.profile.board);
 
       // First the class index (subject list, chapter titles): the student's class and any class a chapter link points to.
@@ -231,7 +237,7 @@ const App = {
         );
     }
 
-    if (Store.state.profile) {
+    if (Store.state.profile && !setup) {
       const ex = extraNeeds(p);
       const lost = t("This couldn't be loaded. Check your internet connection and try again.");
       const miss = ex ? ex.paths.filter((s) => !StudyData.pathLoaded(s)) : [];
@@ -246,7 +252,7 @@ const App = {
     }
 
     let view;
-    if (!Store.state.profile) view = Views.onboarding();
+    if (setup) view = Views.onboarding();
     else {
       for (const [re, fn] of routes) {
         const m = p.match(re);
@@ -286,7 +292,8 @@ const App = {
       (same || tab || main).focus({ preventScroll: true });
     } else if (sig || (App.lastPath !== null && !samePage && document.activeElement === document.body)) main.focus({ preventScroll: true });
     App.lastPath = p;
-    if (p === "" && Store.state.profile) preloadQotd();
+    if (Store.state.profile && !setup) Plan.noteRoute(p);
+    if (p === "" && Store.state.profile && !setup) preloadQotd();
   };
 
   App.applyTheme = function () {
@@ -369,6 +376,7 @@ const App = {
   applyLang();
   App.render();
   Reminder.start();
+  Plan.watchLesson();
 
   if (!Native.is && "serviceWorker" in navigator && location.protocol.startsWith("http")) {
     // A new version installs in the background and waits. The page keeps running on the old files, so nothing is

@@ -103,7 +103,7 @@
         api.miss({ prompt: it.q, yours: it.options[orig], right: it.options[it.answer], explain: it.explain });
         api.hold(true);
         fb.innerHTML = `<div class="feedback bad"><div class="h">${t("Not quite")}</div>
-          <div>${t("Correct answer:")} <strong>${rich(it.options[it.answer])}</strong></div><div>${rich(it.explain)}</div></div>
+          <div>${t("Correct answer:")} <strong>${rich(it.options[it.answer])}</strong></div><div>${rich(it.explain)}</div>${Learn.feedbackHTML(it, orig)}</div>
           <div class="quiz-nav"><button class="btn primary" data-act="next">${left ? t("Next question") : t("See my score")} ${icon("arrow")}</button></div>`;
         api.say(`${t("Not quite")}. ${t("Correct answer:")} ${plain(it.options[it.answer])}. ${t("{n} lives left", { n: left })}`);
         const nb = fb.querySelector("[data-act=next]");

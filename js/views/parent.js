@@ -22,6 +22,44 @@
       ${html ? `<div class="card obj-groups">${html}</div><p class="tiny muted" style="margin-top:8px">${t("Worked out from quiz answers, lessons and games. A skill counts as done when it is answered correctly without hints, and comes back for review after a few days.")}</p>` : `<div class="card small muted">${t("Skills will appear here once there have been some quizzes, lessons or games.")}</div>`}`;
   }
 
+  // Understanding and exam practice, in plain sentences for a parent (no labels on the child). Two separate things:
+  // what the child understands (skills), and how mock-test practice is going (spec 14.3).
+  function readinessSection(c) {
+    const rows = D.subjectsFor(c)
+      .filter((s) => D.chapters(c, s.id).length)
+      .map((s) => ({ s, cc: Readiness.concept(c, s.id), ex: Readiness.exam(c, s.id) }))
+      .filter((r) => r.cc.started || r.ex.attempted);
+    if (!rows.length) return "";
+    const nextText = (r) => {
+      const n = Readiness.examNext(c, r.s.id, r.ex);
+      if (!n) return "";
+      const f = n.chapter ? findChapter(c, r.s.id, n.chapter) : null;
+      return {
+        "first-test": () => t("A next step: a short mock test in {subject}.", { subject: esc(r.s.short) }),
+        "more-answers": () => t("A next step: a few more mock test questions, so the picture is clearer."),
+        lowest: () => (f ? t("A next step: go over {chapter} again, which has been the hardest in tests.", { chapter: esc(f.ch.title) }) : ""),
+        untested: () => t("A next step: a test that includes the {n} {n:chapter|chapters} not tested yet.", { n: n.n }),
+        timed: () => t("A next step: a timed test, to get used to working with the clock."),
+        paper: () => t("A next step: a full sample paper in the exam pattern."),
+        again: () => t("A next step: keep taking mock tests now and then."),
+      }[n.k]();
+    };
+    const html = rows
+      .map(({ s, cc, ex }) => {
+        const understood = t("{n} {n:skill|skills} started: {a} being understood, {b} being practised, {c} to remember after a break, {d} ready to use in new problems.", { n: cc.started, a: cc.understanding, b: cc.practising, c: cc.remembering, d: cc.ready });
+        const tested = ex.all[1]
+          ? t("In mock tests: {a} of {b} chapters tried, {n} {n:answer|answers} given", { a: ex.tested, b: ex.total, n: ex.all[1] }) + (ex.all[1] >= Readiness.config.minAnswers ? t(", about {p}% right.", { p: Readiness.pctOf(ex.all[0], ex.all[1]) }) : ".")
+          : t("No mock tests taken yet ({a} of {b} chapters tried in quizzes).", { a: ex.attempted, b: ex.total });
+        return `<div style="--c:${s.color}"><strong>${s.icon} ${esc(s.name)}</strong>
+          <p>${cc.started ? understood : t("No skills started yet.")}</p>
+          <p>${tested}</p>${nextText({ s, ex }) ? `<p class="muted">${nextText({ s, ex })}</p>` : ""}</div>`;
+      })
+      .join("");
+    return `<h2 class="block-title">${t("Understanding and exam practice")}</h2>
+      <div class="card rd-parent stack">${html}
+        <p class="tiny muted">${t("These are two different things. Understanding comes from quizzes, lessons and games. Exam practice comes only from mock tests, and written answers are not marked by the app. Speed is never counted.")}</p></div>`;
+  }
+
   // One printable page for the current student, built only from what the app already keeps.
   function parent() {
     const st = Store.state;
@@ -65,7 +103,7 @@
         ${topbar(t("For parents"), "#/progress", `<button class="icon-btn" onclick="printPage()" aria-label="${t("Print")}">${icon("print")}</button>`)}
         <p class="small muted" style="margin:-6px 2px 16px"><strong style="color:var(--text)">${esc(name)}</strong> · ${t("Class {n}", { n: c })} · ${st.profile.board === "pseb" ? "PSEB" : "CBSE"} · ${dateShort(new Date())}</p>
         <div class="stats-4">
-          <div class="card stat"><div class="v">🔥 ${Store.streak()}</div><div class="l">${t("day streak")}</div></div>
+          ${Store.showStreak() ? `<div class="card stat"><div class="v">${Store.streak() ? "🔥 " + Store.streak() : "–"}</div><div class="l">${t("day streak")}</div></div>` : `<div class="card stat"><div class="v">${Object.values(st.days).filter((d) => d.acts > 0 || d.min > 0).length}</div><div class="l">${t("days studied")}</div></div>`}
           <div class="card stat"><div class="v">${minutesLabel(week)}</div><div class="l">${t("studied this week")}</div></div>
           <div class="card stat"><div class="v">${avg === null ? "–" : avg + "%"}</div><div class="l">${t("quiz average")}</div></div>
           <div class="card stat"><div class="v">${mistakes}</div><div class="l">${t("open mistakes")}</div></div>
@@ -79,6 +117,7 @@
         <h2 class="block-title">${t("Chapters completed")}</h2>
         <div class="card subj-progress">${subjects || `<span class="muted">${t("Nothing here yet.")}</span>`}</div>
         ${skillsSection(c)}
+        ${readinessSection(c)}
         <h2 class="block-title">${t("Mock test scores")}</h2>
         ${
           tests.length

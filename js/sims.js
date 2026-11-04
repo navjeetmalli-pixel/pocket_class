@@ -603,5 +603,12 @@ const Sims = (() => {
     }
   });
 
-  return { cards, ids: Object.keys(DEFS), chapters: CHAPTERS, _defs: DEFS };
+  // The prediction question of a chapter's first experiment, translated: { id, title, q, options, answer, why }, or null.
+  function predictionFor(c, ch) {
+    const id = (CHAPTERS[`${c}/${ch.id}`] || [])[0];
+    const P = id && DEFS[id].pred;
+    return P ? { id, title: t(DEFS[id].title), q: t(P.q), options: P.opts.map((o) => t(o)), answer: P.ans, why: t(P.why) } : null;
+  }
+
+  return { cards, predictionFor, ids: Object.keys(DEFS), chapters: CHAPTERS, _defs: DEFS };
 })();

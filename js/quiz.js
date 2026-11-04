@@ -96,6 +96,7 @@ const Quiz = (() => {
             <div class="h">${ok ? t("Correct! 🎉") : t("Not quite")}</div>
             ${ok ? "" : `<div>${t("Correct answer:")} <strong>${rich(it.options[it.answer])}</strong></div>`}
             <div>${rich(it.explain)}</div>
+            ${ok ? "" : Learn.feedbackHTML(it, it.picked)}
           </div>
           <div class="quiz-nav"><button class="btn primary" data-act="next">${s.i < n - 1 ? t("Next question") : t("See my score")} ${icon("arrow")}</button></div>`;
       }

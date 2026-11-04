@@ -19,7 +19,7 @@ const Store = (() => {
   const newId = () => "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
   // The learning record (spec 11): a versioned, local-only event log plus a rolled-up summary per objective (js/mastery.js).
-  //   events: [{ t, type: "answer"|"hint"|"lesson-step"|"game"|"teach", cls, subject, chapter, obj, ok, hints, attempt,
+  //   events: [{ t, type: "answer"|"hint"|"lesson-step"|"game"|"teach"|"decision"|"diagnostic", cls, subject, chapter, obj, ok, hints, attempt,
   //              source: "quiz"|"practice"|"guided"|"game"|"path"|"test"|"revise", err? }]   the newest `Mastery.config.eventCap`
   //   roll:   { "10/maths/real-numbers#hcf": o }   every event is folded into its objective's summary as it is logged,
   //                                                 so trimming the log never loses evidence
@@ -34,9 +34,42 @@ const Store = (() => {
     return Object.assign(l, { v: Number(l.v) || LEARN_V, events: Array.isArray(l.events) ? l.events.filter((e) => e && typeof e === "object") : [], roll });
   }
 
+  // The learner profile (docs/UI_IMPLEMENTATION.md). Saved profiles from older versions have only { name, cls, board };
+  // cleanProfile gives every new field its default and repairs damaged ones, so old saves and backups load unchanged
+  // (a profile with no `setup` is a learner who set up long ago: setup done). PROFILE_V is written as `pv` in the save.
+  //   role      "student" | "parent-managed" (a child profile a parent made)
+  //   avatar    one of AVATARS (drawn in js/avatars.js), or null: the first letter of the name is shown
+  //   view      "class" (all subjects of the class) | "subject" (the chosen subjects)
+  //   subjects  subject ids picked, or null = every subject of board + class
+  //   learnLang lesson language preference "en" | "hi" | "pa" (the interface language is a device setting)
+  //   goal      daily goal in minutes (15 | 20 | 30) or null = decide later
+  //   setup     { step, done }: where first-time setup stopped, so it resumes after the app is closed
+  const PROFILE_V = 1;
+  const AVATARS = Array.from({ length: 12 }, (_, i) => "a" + String(i + 1).padStart(2, "0"));
+  const GOALS = [15, 20, 30];
+  function cleanProfile(p) {
+    if (!p || typeof p !== "object" || Array.isArray(p)) return null;
+    const setup = p.setup && typeof p.setup === "object" && !p.setup.done ? { step: String(p.setup.step || "welcome"), done: false } : { step: "done", done: true };
+    return Object.assign(p, {
+      role: p.role === "parent-managed" ? "parent-managed" : "student",
+      avatar: AVATARS.includes(p.avatar) ? p.avatar : null,
+      view: p.view === "subject" ? "subject" : "class",
+      subjects: Array.isArray(p.subjects) ? [...new Set(p.subjects.filter((x) => typeof x === "string"))] : null,
+      learnLang: ["en", "hi", "pa"].includes(p.learnLang) ? p.learnLang : "en",
+      goal: GOALS.includes(Number(p.goal)) ? Number(p.goal) : null,
+      setup,
+    });
+  }
+
+  // Subject ids offered for a board and class (the same lists StudyData.subjectsFor uses for the current board).
+  function subjectIds(board, cls) {
+    const bc = StudyData.boardCatalog[board];
+    return ((bc && bc[cls]) || StudyData.catalog[cls] || []).filter((id) => StudyData.subject(id));
+  }
+
   const studentDefaults = () => ({
     id: newId(),
-    profile: null, // { name, cls, board: "cbse" | "pseb" }
+    profile: null, // { name, cls, board: "cbse" | "pseb", role, avatar, view, subjects, learnLang, goal, setup }: see cleanProfile
     chapters: {}, // key -> { done, best, attempts, opened }
     acc: {}, // chapter key -> [right, asked]: every quiz or test answer given in the chapter
     bookmarks: [],
@@ -50,6 +83,11 @@ const Store = (() => {
     pm: {}, // question key -> true: mistakes made in Practice by topic in another class's chapter (shown in My mistakes too)
     games: {}, // chapter (or level) key -> { match: { best, stars, plays, at }, ... }: best score and stars of each Play game
     learn: learnDefaults(), // the learning record: see learnDefaults
+    loop: {}, // chapter key -> { at, snap }: a chapter lesson that was left unfinished, so it can be resumed (js/guided.js)
+    exam: {}, // chapter key -> { f: { mcq: [right, asked], ar: [...] }, timed: [r, n], n: tests, at }: answers in mock tests (js/readiness.js)
+    plan: null, // Today's plan on Home: { day, cls, items: [...], done: { id: time } } (js/plan.js)
+    lastAct: null, // the last page worth resuming: { href, at } (set by the router, shown as Continue learning)
+    prefs: {}, // small switches: { streak: false } hides the streak (Settings)
     days: {}, // "2026-10-28" -> { min, acts }
     focusMin: 0,
     focusLen: 25,
@@ -64,6 +102,7 @@ const Store = (() => {
   // Makes the device settings readable and writable through a student's state (but not saved with it).
   function bind(s) {
     s.learn = cleanLearn(s.learn);
+    s.profile = cleanProfile(s.profile);
     for (const k of DEVICE) Object.defineProperty(s, k, { get: () => device[k], set: (v) => (device[k] = v), enumerable: false, configurable: true });
     return s;
   }
@@ -102,7 +141,7 @@ const Store = (() => {
 
   function save() {
     try {
-      localStorage.setItem(KEY, JSON.stringify({ v: 2, theme: device.theme, lang: device.lang, reminder: device.reminder, current: state.id, students }));
+      localStorage.setItem(KEY, JSON.stringify({ v: 2, pv: PROFILE_V, theme: device.theme, lang: device.lang, reminder: device.reminder, current: state.id, students }));
     } catch (e) {
       /* storage full or blocked: keep working in memory */
     }
@@ -169,18 +208,60 @@ const Store = (() => {
     chapter,
     streak,
 
-    setProfile(name, cls, board) {
-      state.profile = { name: name.trim(), cls, board: board || (state.profile && state.profile.board) || "cbse" };
+    AVATARS,
+    // Changes the profile: setProfile({ name, avatar, view, subjects, learnLang, goal, cls, board, role, setup }).
+    // (The older setProfile(name, cls, board) still works.) Changing the board or class re-checks `subjects`: any that the
+    // new board + class doesn't offer are dropped, and the dropped ids are returned. Progress is never touched.
+    setProfile(patch, cls, board) {
+      if (typeof patch === "string") patch = { name: patch, cls, board };
+      const cur = state.profile || { name: "", cls: null, board: "cbse" };
+      const next = { ...cur, ...patch };
+      if (typeof next.name === "string") next.name = next.name.trim();
+      if (!StudyData.boards[next.board]) next.board = cur.board || "cbse";
+      if (next.cls != null) next.cls = Number(next.cls);
+      const dropped = this.droppedBy(patch);
+      if (next.subjects) {
+        const ok = subjectIds(next.board, next.cls);
+        next.subjects = next.subjects.filter((id) => ok.includes(id));
+        if (!next.subjects.length) next.subjects = null; // nothing left: back to every subject
+      }
+      if (patch.setup) next.setup = patch.setup.done ? { step: "done", done: true } : { step: String(patch.setup.step), done: false };
+      state.profile = cleanProfile(next);
       save();
+      return dropped;
     },
     setBoard(board) {
-      state.profile.board = board;
-      save();
+      return this.setProfile({ board });
     },
     setClass(cls) {
-      state.profile.cls = cls;
-      save();
+      return this.setProfile({ cls });
     },
+    // The learner is still in first-time setup (js/views/onboarding.js): the app shows setup, not Home.
+    inSetup: () => !state.profile || !state.profile.setup.done,
+    // Subjects of a board and class: [{ id, name, ... }] (default: this learner's board and class).
+    availableSubjects(cls, board) {
+      const p = state.profile || {};
+      return subjectIds(board || p.board || "cbse", cls == null ? p.cls : cls).map(StudyData.subject);
+    },
+    // The picked subjects that a change of board / class would drop: [subject ids] (empty when nothing is lost).
+    droppedBy(patch) {
+      const p = state.profile;
+      if (!p || !p.subjects || !patch || (patch.cls == null && patch.board == null)) return [];
+      const ok = subjectIds(patch.board || p.board, patch.cls == null ? p.cls : Number(patch.cls));
+      return p.subjects.filter((id) => !ok.includes(id));
+    },
+    // Subject ids this learner has picked (all available ones when nothing is picked) and the ones Home lists:
+    // the picks in Subject-wise view, every subject in Class-wise view.
+    selectedSubjects() {
+      const all = this.availableSubjects().map((s) => s.id);
+      const pick = state.profile && state.profile.subjects;
+      return pick ? all.filter((id) => pick.includes(id)) : all;
+    },
+    shownSubjects() {
+      return state.profile && state.profile.view === "subject" ? this.selectedSubjects() : this.availableSubjects().map((s) => s.id);
+    },
+    // Daily goal in minutes (null = not chosen); Today's plan uses it as its time.
+    goal: () => (state.profile && state.profile.goal) || null,
     setTheme(theme) {
       state.theme = theme;
       save();
@@ -191,6 +272,25 @@ const Store = (() => {
     },
     setReminder(on, time) {
       device.reminder = { on: !!on, time: /^\d\d:\d\d$/.test(time) ? time : device.reminder.time };
+      save();
+    },
+    // Small per-student switches (Settings). Streak is shown unless the student turned it off.
+    pref: (k, dflt) => (state.prefs && k in state.prefs ? state.prefs[k] : dflt),
+    setPref(k, v) {
+      state.prefs = Object.assign({}, state.prefs, { [k]: v });
+      save();
+    },
+    showStreak: () => !state.prefs || state.prefs.streak !== false,
+    // The last resumable page (a chapter tab, a game, a Practice-by-topic level): "#/chapter/10/maths/real-numbers/guided".
+    // `extra` may add what the page knows about the place reached, e.g. a lesson's { stage: { i, n, label } }.
+    setLastAct(href, extra) {
+      const cur = state.lastAct;
+      if (!extra && cur && cur.href === href && cur.cls === state.profile.cls && Date.now() - cur.at < 30000) return;
+      state.lastAct = { ...(cur && cur.href === href ? cur : {}), ...extra, href, cls: state.profile.cls, at: Date.now() };
+      save();
+    },
+    setPlan(plan) {
+      state.plan = plan;
       save();
     },
     setFocusLen(min) {
@@ -283,12 +383,14 @@ const Store = (() => {
 
     // Saves a finished quiz or test. `chapterKey` is set for single-chapter quizzes.
     // `answers` lists [{ key, ok }] for the questions that belong to a chapter, to keep chapter accuracy.
-    recordQuiz({ title, subject, cls, score, total, kind, chapterKey, chapterKeys, answers }) {
+    recordQuiz({ title, subject, cls, score, total, kind, chapterKey, chapterKeys, answers, timed }) {
       for (const a of answers || []) {
         const ck = String(a.key).split("/").slice(0, 3).join("/");
         const x = state.acc[ck] || [0, 0];
         state.acc[ck] = [x[0] + (a.ok ? 1 : 0), x[1] + 1];
       }
+      // Mock-test answers also feed Exam readiness (format, timed or not), kept apart from concept learning.
+      if (kind === "test" && answers && answers.length) Readiness.noteTest(state.exam, answers, !!timed);
       const percent = pct(score, total);
       state.history.unshift({ title, subject, cls, score, total, kind, at: Date.now() });
       state.history = state.history.slice(0, 200);
@@ -314,6 +416,19 @@ const Store = (() => {
       save();
     },
     guided: (chapterKey) => state.guided[chapterKey] || null,
+    // The unfinished lesson of a chapter ({ at, snap }), saved as the student goes so they can leave and come back.
+    loopGet: (chapterKey) => (state.loop && state.loop[chapterKey]) || null,
+    loopSave(chapterKey, snap) {
+      state.loop = state.loop || {};
+      state.loop[chapterKey] = { at: Date.now(), snap };
+      save();
+    },
+    loopClear(chapterKey) {
+      if (state.loop && state.loop[chapterKey]) {
+        delete state.loop[chapterKey];
+        save();
+      }
+    },
 
     // Teach-back: the student's own-words explanation of a chapter and the key points they ticked. Never graded.
     teach: (chapterKey) => state.teach[chapterKey] || { text: "", ticks: [] },
@@ -417,15 +532,25 @@ const Store = (() => {
     },
 
     // ----- students sharing this device -----
-    students: () => students.map((s) => ({ id: s.id, name: s.profile ? s.profile.name : "", cls: s.profile ? s.profile.cls : null, board: s.profile ? s.profile.board : "cbse" })),
+    students: () => students.map((s) => ({ id: s.id, name: s.profile ? s.profile.name : "", cls: s.profile ? s.profile.cls : null, board: s.profile ? s.profile.board : "cbse", avatar: s.profile ? s.profile.avatar : null, role: s.profile ? s.profile.role : "student", setup: s.profile ? s.profile.setup : null })),
     get currentId() {
       return state.id;
     },
-    addStudent(name, cls, board) {
+    // `extra` may add profile fields (role, setup, ...). The new student becomes the current one.
+    addStudent(name, cls, board, extra) {
       const s = bind(studentDefaults());
-      s.profile = { name: name.trim(), cls, board: board || "cbse" };
+      s.profile = cleanProfile({ ...extra, name: name.trim(), cls, board: board || "cbse" });
       students.push(s);
       state = s;
+      save();
+    },
+    // Setup helpers: students still in first-time setup (they have no progress yet) and removing the extra ones.
+    setupStudents: () => students.filter((s) => s.profile && !s.profile.setup.done).map((s) => s.id),
+    dropSetupStudents(exceptId) {
+      const keep = students.filter((s) => s.id === exceptId || !s.profile || s.profile.setup.done);
+      if (keep.length === students.length || !keep.length) return;
+      students = keep;
+      if (!students.includes(state)) state = students[0];
       save();
     },
     renameStudent(id, name) {

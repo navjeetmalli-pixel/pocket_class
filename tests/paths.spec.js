@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { test, expect, seed, readStore, current, answer } = require("./helpers");
+const { test, expect, seed, readStore, current, answer, openTools } = require("./helpers");
 
 // A small fixed path, so the test does not depend on the real data/paths/maths.js while it is being written.
 const FIXTURE = fs.readFileSync(path.join(__dirname, "fixtures", "paths-maths.js"), "utf8");
@@ -25,6 +25,7 @@ async function playLevel(page) {
 test("practice by topic: find my level, master a level, the next one unlocks, progress survives a reload", async ({ page }) => {
   await seed(page, { name: "Asha", cls: 6 });
   await page.goto("/#/");
+  await openTools(page);
   await page.locator(".tool", { hasText: "Practice by topic" }).click();
   await expect(page.locator(".subject-card")).toHaveCount(4);
   await page.locator(".subject-card", { hasText: "Mathematics" }).click();

@@ -18,7 +18,7 @@
     const list = Store.students();
     if (list.length < 2) return "";
     const cur = list.findIndex((x) => x.id === Store.currentId);
-    return `<label class="stud-switch"><span class="av">${esc([...studentName(list[cur], cur)][0].toUpperCase())}</span>
+    return `<label class="stud-switch">${Avatars.badge(list[cur], studentName(list[cur], cur))}
       <select aria-label="${t("Student")}">${list.map((x, i) => `<option value="${x.id}" ${x.id === Store.currentId ? "selected" : ""}>${esc(studentName(x, i))}</option>`).join("")}</select></label>`;
   }
 
@@ -33,7 +33,7 @@
       .map((x, i) => {
         const cur = x.id === Store.currentId;
         return `<div class="stud-row" data-id="${x.id}">
-          <span class="av">${esc([...studentName(x, i)][0].toUpperCase())}</span>
+          ${Avatars.badge(x, studentName(x, i))}
           <div class="grow"><input class="input" data-rename value="${esc(x.name)}" placeholder="${esc(studentName(x, i))}" maxlength="30" aria-label="${t("Student name")}">
             <div class="tiny muted" style="margin-top:2px">${t("Class {n}", { n: x.cls })} · ${x.board === "pseb" ? "PSEB" : "CBSE"}</div></div>
           ${cur ? `<span class="pill accent">${t("Current")}</span>` : `<button class="btn" data-switch>${t("Switch")}</button>`}

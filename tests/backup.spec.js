@@ -20,7 +20,7 @@ test("backup: Save backup downloads a file; after a reset, Restore backup brings
   const backup = JSON.parse(fs.readFileSync(file, "utf8"));
   expect(backup).toMatchObject({ app: "vidya", version: 2 });
   expect(backup.students).toHaveLength(1);
-  expect(backup.students[0].profile).toEqual({ name: "Asha", cls: 10, board: "cbse" });
+  expect(backup.students[0].profile).toMatchObject({ name: "Asha", cls: 10, board: "cbse", view: "class", subjects: null, setup: { done: true } }); // the profile fields are in the backup
   expect(backup.students[0].history).toHaveLength(1);
 
   // Reset: the profile stays, the progress goes.
@@ -74,7 +74,8 @@ test("backup: a backup made before there were several students restores", { tag:
   expect(store.v).toBe(2);
   expect(store.students).toHaveLength(1);
   const s = current(store);
-  expect(s.profile).toEqual(old.state.profile);
+  expect(s.profile).toMatchObject(old.state.profile);
+  expect(s.profile).toMatchObject({ role: "student", avatar: null, view: "class", subjects: null, learnLang: "en", goal: null, setup: { done: true } }); // an old backup: setup counts as done
   expect(s.chapters).toEqual(old.state.chapters);
   expect(s.history).toEqual(old.state.history);
   expect(store.theme).toBe("dark");

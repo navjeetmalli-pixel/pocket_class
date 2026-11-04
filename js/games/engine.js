@@ -244,12 +244,21 @@ const Games = (() => {
       miss(info) {
         const same = g.misses.find((m) => m.prompt === info.prompt && m.yours === info.yours);
         if (same) same.n++;
-        else g.misses.push({ ...info, n: 1 });
+        else {
+          // A question just answered wrongly (api.answered): add its matching mistake or tailored line (Learn.feedback) as plain text.
+          const note = g.lastNote && Date.now() - g.lastNote.at < 1500 ? g.lastNote.text : "";
+          g.lastNote = null;
+          g.misses.push({ ...info, explain: [info.explain, note].filter(Boolean).join(" "), n: 1 });
+        }
       },
       // `picked` (the option index chosen) is optional; it lets a made-up question tell which kind of wrong option was picked.
       answered(item, ok, picked) {
         const r = item.ref || {};
         g.events.push(Learn.answerEvent(item, ok, { picked, source: "game" })); // learning record (js/learn.js), written when the game ends
+        if (!ok && picked != null) {
+          const f = Learn.feedback(item, picked)[0];
+          g.lastNote = f ? { at: Date.now(), text: f.kind === "tailored" ? t(f.text) : `${f.kind === "fix" ? t("This looks like a known mistake:") : t("A common mistake here is")} ${f.text} ${f.fix}` } : null;
+        }
         if (!r.key) return; // made-up questions have nothing to keep
         if (ok) Store.clearMistake(r.key);
         else Store.addMistake(r.key, r.path);

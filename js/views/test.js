@@ -144,7 +144,7 @@
       title,
       items,
       seconds: testCfg.timed ? items.length * 60 : null,
-      record: { subject: subj ? subj.id : "all", cls: c, kind: "test" },
+      record: { subject: subj ? subj.id : "all", cls: c, kind: "test", timed: testCfg.timed },
       showFrom: true,
       backHref: "#/test",
       backLabel: "New test",

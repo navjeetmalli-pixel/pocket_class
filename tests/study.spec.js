@@ -1,4 +1,4 @@
-const { test, expect, seed, readStore, current, chaptersOf, answer, playInstantQuiz, quickQuiz } = require("./helpers");
+const { test, expect, seed, readStore, current, chaptersOf, answer, playInstantQuiz, quickQuiz, openTools } = require("./helpers");
 
 const MATHS = chaptersOf(10, "maths")[0]; // first Class 10 Maths chapter
 const quizUrl = `/#/chapter/10/maths/${MATHS.id}/quiz`;
@@ -54,6 +54,7 @@ test("chapter tabs: notes, flashcards, practice and quiz; a wrong answer goes to
 
   // My mistakes lists exactly that question; answering it correctly removes it.
   await page.goto("/#/");
+  await openTools(page);
   await expect(page.locator(".tool", { hasText: "My mistakes" })).toContainText("1 question to fix");
   await page.locator(".tool", { hasText: "My mistakes" }).click();
   await expect(page.locator(".quiz-q")).toContainText(wrongText);
@@ -67,6 +68,7 @@ test("chapter tabs: notes, flashcards, practice and quiz; a wrong answer goes to
   await page.reload();
   await expect(page.getByText("No mistakes to fix.")).toBeVisible();
   await page.goto("/#/");
+  await openTools(page);
   await expect(page.locator(".tool", { hasText: "My mistakes" })).toContainText("Nothing to fix yet");
 });
 
@@ -85,7 +87,7 @@ test("progress: quiz result, streak and history survive a reload; storage has th
     expect(store.students).toHaveLength(1);
     expect(store.current).toBe(store.students[0].id);
     const s = current(store);
-    expect(s.profile).toEqual({ name: "Asha", cls: 10, board: "cbse" });
+    expect(s.profile).toMatchObject({ name: "Asha", cls: 10, board: "cbse" });
     expect(s.history).toHaveLength(1);
     expect(s.history[0]).toMatchObject({ subject: "maths", cls: 10, kind: "chapter", total: 13 });
     expect(`${s.history[0].score}/${s.history[0].total}`).toBe(score);

@@ -27,7 +27,7 @@ test("students: add a second student, progress is separate, switch back, delete"
   // The new student starts from a clean Home.
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Bunty");
   await expect(page.locator(".home-head .sub")).toContainText("Class 7 · PSEB");
-  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("🔥 0");
+  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("–"); // no study yet: a dash, never a zero
   await expect(page.locator(".stat", { hasText: "quiz average" }).locator(".v")).toHaveText("–");
   await page.goto("/#/progress");
   await expect(page.locator(".stat", { hasText: "quizzes & tests" }).locator(".v")).toHaveText("0");
@@ -35,7 +35,7 @@ test("students: add a second student, progress is separate, switch back, delete"
 
   let store = await readStore(page);
   expect(store.students).toHaveLength(2);
-  expect(current(store).profile).toEqual({ name: "Bunty", cls: 7, board: "pseb" });
+  expect(current(store).profile).toMatchObject({ name: "Bunty", cls: 7, board: "pseb" });
   expect(store.students[0].history).toHaveLength(1);
 
   // Switch back to Asha from Home.

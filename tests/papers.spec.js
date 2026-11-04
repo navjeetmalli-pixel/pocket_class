@@ -1,9 +1,10 @@
-const { test, expect, seed, chaptersOf } = require("./helpers");
+const { test, expect, seed, chaptersOf, openTools } = require("./helpers");
 
 // 9. Sample paper and practice sheet ---------------------------------------------------------------------------------
 test("sample paper: Class 10 paper has sections and a marking-scheme toggle", { tag: "@desktop" }, async ({ page }) => {
   await seed(page, { name: "Asha", cls: 10 });
   await page.goto("/#/");
+  await openTools(page);
   await page.locator(".tool", { hasText: "Sample papers" }).click();
   await expect(page.getByRole("heading", { level: 1, name: "Sample papers" })).toBeVisible();
   const first = page.locator('a.card.row[href^="#/paper/10/"]').first();
@@ -53,6 +54,7 @@ test("sample paper: classes below 9 are told papers are for 9-12", async ({ page
 test("practice sheet maker: makes a worksheet with an answer key", async ({ page }) => {
   await seed(page, { name: "Asha", cls: 10 });
   await page.goto("/#/");
+  await openTools(page);
   await page.locator(".tool", { hasText: "Practice sheets" }).click();
   await expect(page.getByRole("heading", { level: 1, name: "Practice sheets" })).toBeVisible();
   await expect(page.locator(".check-list input[data-ch]")).toHaveCount(chaptersOf(10, "maths").length);

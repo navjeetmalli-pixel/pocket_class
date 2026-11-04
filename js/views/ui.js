@@ -160,8 +160,8 @@ const Views = (() => {
   }
 
   // English | ਪੰਜਾਬੀ | हिंदी. Language names are always shown in their own script.
-  function langSwitch() {
-    return `<div class="seg" role="group" aria-label="${t("Language")}">${LANGS.map(([v, l]) => `<button data-lang="${v}" lang="${v}" class="${currentLang() === v ? "on" : ""}">${l}</button>`).join("")}</div>`;
+  function langSwitch(label = "Language") {
+    return `<div class="seg" role="group" aria-label="${t(label)}">${LANGS.map(([v, l]) => `<button data-lang="${v}" lang="${v}" class="${currentLang() === v ? "on" : ""}">${l}</button>`).join("")}</div>`;
   }
 
   // Written questions grouped by marks, like a board paper.
