@@ -1,4 +1,4 @@
-const { test, expect, expectedSubjects, expectedSubjectIds, readStore, current, seed, onboard } = require("./helpers");
+const { test, expect, expectedSubjects, expectedSubjectIds, readStore, current, seed, onboard, openMenu } = require("./helpers");
 
 const subjectNames = (page) => page.locator(".subject-card .subject-name").allTextContents();
 const h1 = (page) => page.getByRole("heading", { level: 1 });
@@ -231,7 +231,9 @@ test("onboarding: a parent adds two children, then picks who is learning", async
   expect(byName.Arjun).toMatchObject({ cls: 8, board: "cbse", role: "parent-managed", setup: { done: true } });
   expect(current(store).profile.name).toBe("Simran");
   // The other child is one tap away.
-  await expect(page.locator(".stud-switch select option")).toHaveText(["Arjun", "Simran"]);
+  await openMenu(page);
+  await expect(page.locator("#menu-sheet [data-stud]")).toHaveCount(2);
+  await expect(page.locator("#menu-sheet [data-stud]").first()).toContainText("Arjun");
 });
 
 // 3. Resume ---------------------------------------------------------------------------------------------------
@@ -337,14 +339,14 @@ test("language: Settings → App language (Punjabi, Hindi, English)", { tag: "@d
   // Home greets in the chosen language.
   await page.goto("/#/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("नमस्ते, Asha");
-  await expect(page.getByRole("heading", { level: 2, name: "विषय" })).toBeVisible();
-  await expect(page.locator("#more-tools summary")).toContainText("और साधन"); // study tools are folded into "More tools"
+  await expect(page.getByRole("heading", { level: 2, name: "मेरे विषय" })).toBeVisible();
+  await expect(page.locator("nav a:visible", { hasText: "सीखें" }).first()).toBeVisible(); // the tab names follow the language
 
   await page.goto("/#/settings");
   await page.getByRole("button", { name: "English" }).click();
   await expect(h1).toHaveText("Settings");
   await page.goto("/#/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Asha");
-  await expect(page.getByRole("heading", { level: 2, name: "Subjects" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: "My subjects" })).toBeVisible();
   expect((await readStore(page)).lang).toBe("en");
 });

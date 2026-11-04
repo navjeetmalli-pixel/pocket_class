@@ -1,4 +1,4 @@
-const { test, expect, seed, readStore, current, chaptersOf, answer, playInstantQuiz, quickQuiz, openTools } = require("./helpers");
+const { test, expect, seed, readStore, current, chaptersOf, answer, playInstantQuiz, quickQuiz } = require("./helpers");
 
 const MATHS = chaptersOf(10, "maths")[0]; // first Class 10 Maths chapter
 const quizUrl = `/#/chapter/10/maths/${MATHS.id}/quiz`;
@@ -53,10 +53,9 @@ test("chapter tabs: notes, flashcards, practice and quiz; a wrong answer goes to
   expect(Object.keys(store.mistakes)[0].startsWith(chapterKey + "/")).toBe(true);
 
   // My mistakes lists exactly that question; answering it correctly removes it.
-  await page.goto("/#/");
-  await openTools(page);
-  await expect(page.locator(".tool", { hasText: "My mistakes" })).toContainText("1 question to fix");
-  await page.locator(".tool", { hasText: "My mistakes" }).click();
+  await page.goto("/#/progress");
+  await expect(page.locator("#work-next a", { hasText: "My mistakes" })).toContainText("1 question to fix");
+  await page.locator("#work-next a", { hasText: "My mistakes" }).click();
   await expect(page.locator(".quiz-q")).toContainText(wrongText);
   await expect(page.getByText(/^Question 1 of 1$/)).toBeVisible();
   await answer(page, "right");
@@ -67,9 +66,8 @@ test("chapter tabs: notes, flashcards, practice and quiz; a wrong answer goes to
 
   await page.reload();
   await expect(page.getByText("No mistakes to fix.")).toBeVisible();
-  await page.goto("/#/");
-  await openTools(page);
-  await expect(page.locator(".tool", { hasText: "My mistakes" })).toContainText("Nothing to fix yet");
+  await page.goto("/#/progress");
+  await expect(page.locator("#work-next a", { hasText: "My mistakes" })).toContainText("Nothing to fix yet");
 });
 
 // 4. Progress storage ---------------------------------------------------------------------------------------------
@@ -102,11 +100,8 @@ test("progress: quiz result, streak and history survive a reload; storage has th
 
   await page.reload();
   await check();
-  await page.goto("/#/");
-  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("🔥 1");
-  await expect(page.locator(".stat", { hasText: "quiz average" }).locator(".v")).toHaveText(/^\d+%$/);
-
   await page.goto("/#/progress");
+  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("🔥 1");
   await expect(page.locator(".stat", { hasText: "quizzes & tests" }).locator(".v")).toHaveText("1");
   const row = page.locator(".history-row");
   await expect(row).toHaveCount(1);

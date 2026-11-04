@@ -1,8 +1,9 @@
-// Home screen (spec 9.2): one main action (continue), Today's plan, Explore / Play, a compact My progress, Subjects, and
-// the secondary study tools folded into "More tools". Classes 1 to 3 get a simpler version of the same screen.
+// Today (#/, spec 7.1): Continue learning, Today's plan, Due for revision, Daily challenge, My subjects, Recently opened.
+// The study tools live in Learn, the mistakes and revision in Progress, the timer in the profile menu. Classes 1 to 3 get a
+// simpler version of the same screen.
 
 (() => {
-  const { D, cls, boardNote, subjectStats, quizItems, findChapter, studentSwitcher, mountStudentSwitcher } = Views._;
+  const { D, cls, boardNote, quizItems, findChapter } = Views._;
 
   // ---------- home ----------
 
@@ -114,94 +115,57 @@
       ${icon("next")}</a>`;
   }
 
-  let toolsOpen = false;
+  // Chapters with a revision due (spaced revision, js/store.js), for the "Due for revision" card.
+  function dueCard(c) {
+    const list = Store.due(c)
+      .map((e) => {
+        const k = Store.parseKey(e.key);
+        const f = findChapter(c, k.subject, k.chapterId);
+        return f ? { ...e, subj: f.subj, ch: f.ch } : null;
+      })
+      .filter(Boolean);
+    if (!list.length) return "";
+    const rows = list
+      .slice(0, 3)
+      .map(
+        (e) => `<li><a class="plan-item" href="#/revise/due/${e.subj.id}/${e.ch.id}">
+          <span class="plan-body"><span class="plan-title">${esc(e.ch.title)}</span><span class="plan-why">${esc(e.subj.short)}${e.objs ? ` · ${t("{n} {n:skill|skills} to review", { n: e.objs })}` : ""}${e.mistakes ? ` · ${t("{n} {n:mistake|mistakes}", { n: e.mistakes })}` : ""}</span></span>${icon("next")}</a></li>`
+      )
+      .join("");
+    return `<section class="card due-card mt" id="due-today" aria-labelledby="due-h">
+      <div class="row" style="margin-bottom:8px"><h2 class="grow plan-h" id="due-h">${t("Due for revision")}</h2><span class="pill accent">${list.length}</span></div>
+      <ul class="plan-list">${rows}</ul>
+      <a class="small plan-more" href="#/revise/due">${t("Revise all due chapters")} ${icon("next")}</a>
+    </section>`;
+  }
 
   function home() {
     const st = Store.state;
     const c = cls();
+    const band = App.band(c);
     const young = Plan.young(c);
     const hr = new Date().getHours();
     const greet = hr < 12 ? t("Good morning") : hr < 17 ? t("Good afternoon") : t("Good evening");
-
-    let done = 0;
-    let total = 0;
-    D.subjectsFor(c).forEach((s) => {
-      const x = subjectStats(c, s.id);
-      done += x.done;
-      total += x.total;
-    });
-    const recent = st.history.filter((h) => h.cls === c).slice(0, 20);
-    const avg = recent.length ? Math.round(recent.reduce((a, h) => a + pct(h.score, h.total), 0) / recent.length) : null;
-    const skills = Readiness.concept(c);
 
     const plan = Plan.today(c);
     const main = mainAction(c, plan);
     const explore = exploreCard(Plan.explore(c, plan.items));
 
-    const card = (s) => {
-        const x = subjectStats(c, s.id);
-        return `<a class="card subject-card" href="#/subject/${s.id}" style="--c:${s.color}">
-          <span class="subject-icon">${s.icon}</span>
-          <span class="subject-name">${esc(s.name)}</span>
-          <span class="subject-hi">${esc(s.native)}</span>
-          <span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span>
-          <span class="subject-meta">${x.total ? t("{done} / {total} chapters", { done: x.done, total: x.total }) : t("Coming soon")}</span>
-        </a>`;
-    };
     // Subject-wise view lists only the learner's picked subjects; Class-wise lists them all.
     const shown = Store.shownSubjects();
     const list = D.subjectsFor(c).filter((s) => shown.includes(s.id));
-    const subjects =
-      c >= 11
-        ? [...new Set(list.map((s) => s.stream))]
-            .map((st) => `<h3 class="stream-label">${esc(t(st))}</h3><div class="subject-grid">${list.filter((s) => s.stream === st).map(card).join("")}</div>`)
-            .join("")
-        : `<div class="subject-grid">${list.map(card).join("")}</div>`;
+    const subjects = Views._.subjectGrid(c, list);
+    const recent = Views._.recentList(c, band === "1-2" || band === "3-5" ? 2 : 3);
 
-    const mistakes = Store.mistakesFor(c).length;
-    const tool = (href, ic, t, sub) =>
-      `<a class="card tool" href="${href}"><span class="ti">${icon(ic)}</span><span class="tt">${t}</span><span class="ts">${sub}</span></a>`;
-    const tools = young
-      ? [
-          tool("#/games", "game", t("Games"), t("Play games for every chapter")),
-          tool("#/revise/mistakes", "target", t("My mistakes"), mistakes ? t("{n} {n:question|questions} to fix", { n: mistakes }) : t("Nothing to fix yet")),
-          tool("#/paths", "target", t("Practice by topic"), t("Level 0 up to advanced")),
-          tool("#/sheets", "print", t("Practice sheets"), t("Make and print your own")),
-          tool("#/test", "test", t("Mock test"), t("Timed test across chapters")),
-          tool("#/revise", "formula", t("Formula sheets"), t("Quick revision lists")),
-        ]
-      : [
-          tool("#/test", "test", t("Mock test"), t("Timed test across chapters")),
-          tool("#/revise/mistakes", "target", t("My mistakes"), mistakes ? t("{n} {n:question|questions} to fix", { n: mistakes }) : t("Nothing to fix yet")),
-          tool("#/timer", "timer", t("Focus timer"), t("Study in 25-minute blocks")),
-          tool("#/revise", "formula", t("Formula sheets"), t("Quick revision lists")),
-          tool("#/games", "game", t("Games"), t("Play games for every chapter")),
-          tool("#/paths", "target", t("Practice by topic"), t("Level 0 up to advanced")),
-          tool("#/sheets", "print", t("Practice sheets"), t("Make and print your own")),
-          Papers.CLASSES.includes(c) ? tool("#/papers", "test", t("Sample papers"), t("Full board-pattern papers")) : "",
-        ];
-
-    const streakStat = Store.showStreak()
-      ? `<div class="card stat"><div class="v">${Store.streak() ? "🔥 " + Store.streak() : "–"}</div><div class="l">${t("day streak")}</div></div>`
-      : `<div class="card stat"><div class="v">${skills.started}</div><div class="l">${t("skills started")}</div></div>`;
-    const stats = `<div class="stats">
-          ${streakStat}
-          <div class="card stat"><div class="v">${done}<span class="muted small">/${total}</span></div><div class="l">${t("chapters done")}</div></div>
-          ${young ? "" : `<div class="card stat"><div class="v">${avg === null ? "–" : avg + "%"}</div><div class="l">${t("quiz average")}</div></div>`}
-        </div>`;
+    // A learner with nothing yet to resume and nothing in the plan is shown how to start, never an empty page.
+    const start = `<a class="card continue main-action mt" id="main-action" href="#/learn">
+        <div class="grow"><div class="k">${t("Start learning")}</div><div class="t">${t("Choose a subject")}</div><div class="s">${t("Pick a subject and open your first chapter.")}</div></div>
+        <span class="go">${icon("arrow")}</span></a>`;
 
     return {
+      title: t("Today"),
       html: `
-        <div class="home-head">
-          <div class="grow">
-            ${studentSwitcher()}
-            <h1>${t("Namaste")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""} 🙏</h1>
-            <div class="sub">${greet} · ${t("Class {n}", { n: c })} · ${st.profile.board === "pseb" ? "PSEB" : "CBSE"}</div>
-          </div>
-          <a class="icon-btn profile-btn" href="#/profile" aria-label="${t("Profile")}">${Avatars.badge(st.profile, st.profile.name, "profile-pic", 36)}</a>
-          <a class="icon-btn" href="#/search" aria-label="${t("Search")}">${icon("search")}</a>
-          <a class="icon-btn" href="#/settings" aria-label="${t("Settings")}">${icon("settings")}</a>
-        </div>
+        ${Views._.shellHead(`${t("Namaste")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""} 🙏`, `${greet} · ${t("Class {n}", { n: c })} · ${st.profile.board === "pseb" ? "PSEB" : "CBSE"}`, "today")}
         <div class="${young ? "home-young" : "home-main"}">
         ${boardNote(c)}
         ${
@@ -209,26 +173,17 @@
             ? `<a class="card continue main-action mt" id="main-action" href="${main.href}">
                 <div class="grow"><div class="k">${main.k}</div><div class="t">${esc(main.title)}</div><div class="s">${main.sub}</div></div>
                 <span class="go">${icon("arrow")}</span></a>`
-            : ""
+            : start
         }
         ${planCard(plan, young)}
+        ${dueCard(c)}
         ${explore}
-        <h2 class="block-title">${t("My progress")}</h2>
-        ${stats}
-        <a class="small progress-link" href="#/progress">${skills.started ? t("{n} {n:skill|skills} started · {m} ready to apply", { n: skills.started, m: skills.ready }) + " · " : ""}${t("See all my progress")} ${icon("next")}</a>
-        <h2 class="block-title">${t("Subjects")}</h2>
+        ${qotdHTML(c)}
+        <h2 class="block-title">${t("My subjects")}</h2>
         ${subjects}
-        <details class="more-tools" id="more-tools" ${toolsOpen ? "open" : ""}>
-          <summary class="card"><span class="grow"><strong>${t("More tools")}</strong><span class="small muted" style="display:block">${t("Mock tests, mistakes, sheets, timer and more")}</span></span><span class="chev">${icon("next")}</span></summary>
-          <div class="tools">${tools.join("")}</div>
-          ${young ? qotdHTML(c) : ""}
-        </details>
-        ${young ? "" : qotdHTML(c)}
+        ${recent ? `<h2 class="block-title">${t("Recently opened")}</h2>${recent}` : ""}
         </div>`,
       mount(el) {
-        mountStudentSwitcher(el);
-        const det = el.querySelector("#more-tools");
-        det.ontoggle = () => (toolsOpen = det.open);
         const q = el.querySelector("#qotd");
         if (q)
           q.onclick = (e) => {
@@ -285,7 +240,7 @@
   }
 
   function qotdHTML(c) {
-    return qotdItem(c) ? `<h2 class="block-title">${t("Question of the day")}</h2>${qotdCard(c)}` : "";
+    return qotdItem(c) ? `<h2 class="block-title challenge-title">${t("Daily challenge")}</h2>${qotdCard(c)}` : "";
   }
 
   function qotdCard(c) {
@@ -308,6 +263,7 @@
         ? ""
         : `<div class="feedback ${picked === it.answer ? "good" : "bad"}"><div class="h">${picked === it.answer ? t("Correct! 🎉 Come back tomorrow for a new one.") : t("Not quite. It's been added to My mistakes.")}</div>${rich(it.explain)}</div>`;
     return `<div class="card qotd" id="qotd">
+      <div class="small muted" style="font-weight:700">${t("Question of the day")}</div>
       <div class="quiz-from">${esc(it.ref.from)}</div>
       <div class="quiz-q" style="margin:8px 0 0">${rich(it.q)}</div>
       <div class="options">${opts}</div>${fb}

@@ -72,7 +72,7 @@ const Papers = (() => {
   function list() {
     const c = Store.state.profile.cls;
     const subs = D.subjectsFor(c).filter((s) => available(c, s.id));
-    const { pageHead, emptyState } = Views.ui;
+    const { topbar, emptyState } = Views.ui;
     const body = !CLASSES.includes(c)
       ? emptyState("📄", t("Sample papers are for Classes 9 to 12. For your class, try a mock test or a practice sheet."))
       : !subs.length
@@ -88,7 +88,7 @@ const Papers = (() => {
             .join("")}</div>`;
     return {
       title: t("Sample papers"),
-      html: `${pageHead(t("Sample papers"), t("Class {n} · Full papers in the board-exam pattern", { n: c }))}
+      html: `${topbar(t("Sample papers"), "#/learn")}<p class="small muted" style="margin:-6px 2px 14px">${t("Class {n} · Full papers in the board-exam pattern", { n: c })}</p>
         <p class="small muted" style="margin:-6px 2px 16px">${t("Each paper has the board's sections, marks and internal choices, with a marking scheme. Every paper number is different. Language papers (reading passages and set texts) aren't included.")}</p>
         ${body}`,
     };

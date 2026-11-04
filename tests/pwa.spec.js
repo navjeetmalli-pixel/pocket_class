@@ -34,7 +34,7 @@ test("offline: visited pages work without a connection; an unvisited subject off
   // Visit home and one subject while online.
   await page.goto("/#/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Asha");
-  await expect(page.getByRole("heading", { level: 2, name: "Question of the day" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: "Daily challenge" })).toBeVisible();
   await reloadUnderWorker(page);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Asha");
 

@@ -9,7 +9,7 @@
     return {
       title: t("Search"),
       html: `
-        ${topbar(t("Search"), "#/")}
+        ${topbar(t("Search"), "#/learn")}
         <div class="search-box">${icon("search")}<input class="input" id="q" type="search" placeholder="${t("Search chapters, topics, terms…")}" autocomplete="off" aria-label="${t("Search")}"></div>
         <div id="results" class="list mt"></div>`,
       mount(el) {

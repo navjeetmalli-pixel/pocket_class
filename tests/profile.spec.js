@@ -1,4 +1,4 @@
-const { test, expect, seed, readStore, current, expectedSubjects, expectedSubjectIds } = require("./helpers");
+const { test, expect, seed, readStore, current, expectedSubjects, expectedSubjectIds, openMenu } = require("./helpers");
 
 const h1 = (page) => page.getByRole("heading", { level: 1 });
 const cards = (page) => page.locator(".subject-card .subject-name");
@@ -57,7 +57,8 @@ test("profile: Home lists only the picked subjects in Subject-wise view, all in 
 test("profile: edit name, picture, lesson language and goal from the Profile page (reached from Home)", async ({ page }) => {
   await seed(page, { name: "Asha", cls: 8 });
   await page.goto("/#/");
-  await page.getByRole("link", { name: "Profile" }).click();
+  await openMenu(page);
+  await page.locator("#menu-sheet").getByRole("link", { name: "Profile" }).click();
   await expect(h1(page)).toHaveText("Profile");
   await page.locator("#pf-name").fill("Asha K");
   await page.locator("#pf-name").blur();

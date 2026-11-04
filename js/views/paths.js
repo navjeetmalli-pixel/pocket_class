@@ -115,10 +115,16 @@
   // ---------- pages ----------
 
   function picker() {
-    const list = D.paths();
+    let list = D.paths();
+    // Subject-wise learners see the Practice-by-topic subjects they picked (every one if none of theirs has a ladder).
+    if (Store.state.profile.view === "subject") {
+      const mine = new Set(Store.selectedSubjects());
+      const some = list.filter((s) => mine.has(s.id));
+      if (some.length) list = some;
+    }
     return {
       title: t("Practice by topic"),
-      html: `${topbar(t("Practice by topic"), "#/")}
+      html: `${topbar(t("Practice by topic"), "#/learn")}
         <p class="small muted" style="margin:-6px 2px 16px">${t("Pick a subject, then a topic. Each topic is a ladder of levels from Level 0 up to advanced. Start where you are and climb.")}</p>
         <div class="subject-grid">${list
           .map((s) => {

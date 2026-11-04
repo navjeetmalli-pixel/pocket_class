@@ -1,6 +1,6 @@
 // Play: the language games (letters and pictures, matra builder, spell the word, sentence builder, grammar sort), each played to
 // the end, plus where they are offered.
-const { test, expect, seed, readStore, current, openTools } = require("./helpers");
+const { test, expect, seed, readStore, current } = require("./helpers");
 
 const gameUrl = (c, s, ch, type) => `/#/play/${c}/${s}/${ch}/${type}`;
 const start = async (page) => {
@@ -97,9 +97,9 @@ test("language games are offered on the right chapters and levels", async ({ pag
   await page.goto("/#/play/level/english/nouns/nouns-4");
   await expect(page.locator(".game-card", { hasText: "Grammar sort" })).toBeVisible();
   // The Games home lists the language chapters with their game icons, and its subtitle is general.
-  await page.goto("/#/");
-  await openTools(page);
-  await expect(page.locator(".tool", { hasText: "Games" })).toContainText("Play games for every chapter");
+  await page.goto("/#/games");
+  await expect(page.locator(".shell-head .sub")).toContainText("Short games from your chapters");
+  await expect(page.locator(".subject-card").first()).toBeVisible();
 });
 
 test("letters and pictures: letter to picture-word and back, a wrong pick is marked, the round ends with stars", async ({ page }) => {

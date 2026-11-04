@@ -102,7 +102,7 @@
     return type ? runPage(ctx, type) : listPage(ctx, ctx.up);
   };
 
-  // ---------- Games home: subjects of the student's class ----------
+  // ---------- Play centre (#/games): continue playing, my subjects, quick challenges, chapter games ----------
 
   // Stars collected in a subject's chapters.
   function subjectStars(c, id) {
@@ -112,31 +112,85 @@
       .reduce((a, k) => a + Games.totalStars(k), 0);
   }
 
+  // About how long one round takes, in minutes (games with a countdown say so; the others are short anyway).
+  const minutes = (g) => (g && g.hud && g.hud.seconds ? Math.max(1, Math.round(g.hud.seconds / 60)) : 3);
+
+  // A game of a chapter as a tile: its subject, the chapter (what it practises), about how long, and the stars won so far.
+  function gameTile(c, subj, ch, g, key) {
+    const best = Store.gameBest(key || Games.keyFor(c, subj, ch), g.type);
+    return `<a class="card game-card game-tile" href="#/play/${c}/${subj.id}/${ch.id}/${g.type}" style="--c:${subj.color}">
+      <span class="ti">${icon(g.icon)}</span>
+      <span class="gc-body"><span class="gc-title">${t(g.title)}</span><span class="gc-sub">${esc(subj.short)} · ${esc(ch.title)}</span><span class="gc-sub">${t(g.blurb)} · ${t("about {n} min", { n: minutes(g) })}</span></span>
+      <span class="gc-best">${best ? Games.stars(best.stars) : `<span class="tiny muted">${t("New")}</span>`}</span>
+    </a>`;
+  }
+
+  // The games played most recently in the learner's class: [{ subj, ch, g, key, at }].
+  function recentGames(c, limit) {
+    const out = [];
+    for (const [key, byType] of Object.entries(Store.state.games)) {
+      const m = /^(\d+)\/(\w+)\/([\w-]+)$/.exec(key);
+      if (!m || Number(m[1]) !== c) continue;
+      const f = findChapter(c, m[2], m[3]);
+      if (!f) continue;
+      for (const [type, r] of Object.entries(byType || {})) {
+        const g = Games.get(type);
+        if (g && r && r.at) out.push({ subj: f.subj, ch: f.ch, g, key, at: r.at });
+      }
+    }
+    return out.sort((a, b) => b.at - a.at).slice(0, limit);
+  }
+
+  // Subjects of the recently played games and of the chapter last opened (their files are loaded for this page).
+  function playNeeds(c) {
+    const ids = new Set(recentGames(c, 3).map((x) => x.subj.id));
+    Views._.recentChapters(c, 1).forEach((r) => ids.add(r.subj.id));
+    return ids.size ? [...ids] : null;
+  }
+
   function gamesHome() {
     const c = cls();
-    const list = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length);
+    const band = App.band(c);
+    const young = band === "1-2" || band === "3-5";
+    const shown = new Set(Store.shownSubjects());
+    const list = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length && shown.has(s.id));
+    const cont = recentGames(c, young ? 2 : 3);
+    // Games of the chapter opened last, when its subject is loaded and the chapter really has games.
+    const rc = Views._.recentChapters(c, 1)[0];
+    const chapterGames = rc && D.hasFull(c, rc.subj.id) ? Games.availableFor(c, rc.subj, rc.ch).slice(0, young ? 2 : 4) : [];
+    const card = (s) => {
+      const n = subjectStars(c, s.id);
+      return Views._.subjectCard(c, s, `#/games/${s.id}`, n ? t("{n} stars collected", { n }) : t("No stars yet"));
+    };
     return {
-      title: t("Games"),
-      html: `${topbar(t("Games"), "#/")}
-        <p class="small muted" style="margin:-6px 2px 14px">${t("Pick a subject, then a chapter, then a game. Or let the app choose.")}</p>
-        <button class="btn primary block" data-act="random">${icon("shuffle")} ${t("Random game")}</button>
-        <h2 class="block-title">${t("Subjects")}</h2>
-        <div class="subject-grid">${list
-          .map((s) => {
-            const n = subjectStars(c, s.id);
-            return `<a class="card subject-card" href="#/games/${s.id}" style="--c:${s.color}">
-              <span class="subject-icon">${s.icon}</span>
-              <span class="subject-name">${esc(s.name)}</span>
-              <span class="subject-hi">${esc(s.native)}</span>
-              <span class="subject-meta">${n ? t("{n} stars collected", { n }) : t("No stars yet")}</span>
-            </a>`;
-          })
-          .join("")}</div>`,
+      title: t("Play"),
+      html: `${Views._.shellHead(t("Play"), t("Short games from your chapters. Your best stars are saved."), "play")}
+        <div class="play-main">
+        ${
+          cont.length
+            ? `<h2 class="block-title">${t("Continue playing")}</h2><div class="stack">${cont.map((x) => gameTile(c, x.subj, x.ch, x.g, x.key)).join("")}</div>`
+            : ""
+        }
+        <h2 class="block-title">${t("Quick challenges")}</h2>
+        <div class="quick-row">
+          <button type="button" class="card tool quick" data-act="random"><span class="ti">${icon("shuffle")}</span><span class="tt">${t("Random game")}</span><span class="ts">${t("Let the app choose")}</span></button>
+          <button type="button" class="card tool quick" data-act="quickfire"><span class="ti">${icon("bolt")}</span><span class="tt">${t("Quick-fire")}</span><span class="ts">${t("Answer fast, keep the streak")}</span></button>
+        </div>
+        ${
+          chapterGames.length
+            ? `<h2 class="block-title">${t("Games for {chapter}", { chapter: esc(rc.ch.title) })}</h2><div class="stack">${chapterGames.map((g) => gameTile(c, rc.subj, rc.ch, g)).join("")}</div>`
+            : ""
+        }
+        <h2 class="block-title">${t("My subjects")}</h2>
+        ${list.length ? Views._.subjectGrid(c, list, card) : emptyState("🎮", t("No games for this one yet."))}
+        </div>`,
       mount(el) {
-        el.querySelector("[data-act=random]").onclick = () => {
+        const go = (type) => {
           const s = list[Math.floor(Math.random() * list.length)];
-          if (s) location.hash = `#/games/random/${s.id}`;
+          if (s) location.hash = `#/games/random/${s.id}${type ? `?type=${type}` : ""}`;
         };
+        el.querySelector("[data-act=random]").onclick = () => go();
+        el.querySelector("[data-act=quickfire]").onclick = () => go("quickfire");
       },
     };
   }
@@ -170,15 +224,19 @@
   }
 
   // A random game: a random chapter of the subject that has games, and one of its games.
-  function gamesRandom([id]) {
+  function gamesRandom([id, type]) {
     const c = cls();
     const subj = D.subject(id);
     if (!subj || !D.subjectsFor(c).some((x) => x.id === id)) return notFound();
     const options = [];
-    for (const ch of D.chapters(c, id)) for (const g of Games.availableFor(c, subj, ch)) options.push(`#/play/${c}/${id}/${ch.id}/${g.type}`);
-    if (!options.length) return { redirect: "#/games" };
-    return { redirect: options[Math.floor(Math.random() * options.length)] };
+    for (const ch of D.chapters(c, id)) for (const g of Games.availableFor(c, subj, ch)) options.push({ type: g.type, href: `#/play/${c}/${id}/${ch.id}/${g.type}` });
+    // Asked for one kind of game (Quick-fire) but this subject has none: any game of the subject is better than a dead end.
+    const wanted = options.filter((o) => o.type === type);
+    const pool = (wanted.length ? wanted : options).map((o) => o.href);
+    if (!pool.length) return { redirect: "#/games" };
+    return { redirect: pool[Math.floor(Math.random() * pool.length)] };
   }
 
-  Object.assign(Views, { gamesHome, gamesSubject, gamesRandom, play, playLevel, playTab, levelChapter });
+  Object.assign(Views, { gamesHome, gamesSubject, gamesRandom, play, playLevel, playTab, levelChapter, playNeeds });
+  Object.assign(Views._, { gameTile, minutes });
 })();

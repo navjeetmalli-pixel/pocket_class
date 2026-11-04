@@ -7,19 +7,29 @@ const App = {
 };
 
 (() => {
+  // The five tabs: [route, icon, label, id]. Other pages (profile, settings, search, timer, parent) open from the profile menu.
   const NAV = [
-    ["#/", "home", "Home", ["", "subject", "chapter"]],
-    ["#/test", "test", "Test", ["test"]],
-    ["#/revise", "revise", "Revise", ["revise", "sheet", "cards"]],
-    ["#/timer", "timer", "Timer", ["timer"]],
-    ["#/progress", "progress", "Progress", ["progress"]],
+    ["#/", "home", "Today", "today"],
+    ["#/learn", "notes", "Learn", "learn"],
+    ["#/games", "game", "Play", "play"],
+    ["#/explore", "compass", "Explore", "explore"],
+    ["#/progress", "progress", "Progress", "progress"],
   ];
-  const SIDE_EXTRA = [
-    ["#/games", "game", "Games", ["games", "play"]],
-    ["#/paths", "target", "Practice by topic", ["paths", "pathsheet"]],
-    ["#/search", "search", "Search", ["search"]],
-    ["#/settings", "settings", "Settings", ["settings"]],
-  ];
+
+  // Which tab a route belongs to (the first part of the path, and sometimes the second). Old routes keep working:
+  // tests, sheets, papers, revise and Practice by topic are part of Learn; mistakes and due revision are part of Progress.
+  const TAB_OF = {
+    "": "today", timer: "today",
+    learn: "learn", subject: "learn", chapter: "learn", cards: "learn", sheet: "learn", sheets: "learn", worksheet: "learn", test: "learn",
+    papers: "learn", paper: "learn", paths: "learn", pathsheet: "learn", revise: "learn", search: "learn",
+    games: "play", play: "play",
+    explore: "explore",
+    progress: "progress", parent: "progress",
+  };
+  App.tabOf = (p) => {
+    if (/^revise\/(mistakes|due)/.test(p)) return "progress";
+    return TAB_OF[p.split("/")[0]] || null; // profile and settings belong to no tab
+  };
 
   const routes = [
     [/^$/, Views.home],
@@ -31,7 +41,7 @@ const App = {
     [/^revise\/mistakes$/, Views.mistakes],
     [/^revise\/due(?:\/(\w+)\/([\w-]+))?$/, Views.dueRound],
     [/^games$/, Views.gamesHome],
-    [/^games\/random\/(\w+)$/, Views.gamesRandom],
+    [/^games\/random\/(\w+)(?:\?type=(\w+))?$/, Views.gamesRandom],
     [/^games\/(\w+)$/, Views.gamesSubject],
     [/^play\/level\/(\w+)\/([\w-]+)\/([\w-]+)(?:\/(\w+))?$/, Views.playLevel],
     [/^play\/(\d+)\/(\w+)\/([\w-]+)(?:\/(\w+))?$/, Views.play],
@@ -50,8 +60,10 @@ const App = {
     [/^progress$/, Views.progress],
     [/^parent$/, Views.parent],
     [/^search$/, Views.search],
-    [/^settings$/, Views.settings],
+    [/^settings(?:\/(offline))?$/, Views.settings],
     [/^profile$/, Views.profile],
+    [/^learn$/, Views.learn],
+    [/^explore$/, Views.explore],
   ];
 
   // Enough of an element's identity to find it again after the page is redrawn.
@@ -61,25 +73,27 @@ const App = {
   const path = () => decodeURIComponent(location.hash.replace(/^#\/?/, "").replace(/\/$/, ""));
   const chapterBase = (p) => (p && (p.match(/^chapter\/\d+\/\w+\/[\w-]+/) || [])[0]) || null;
 
-  function navLink([href, ic, label, secs], sec) {
-    const on = secs.includes(sec);
-    const badge = ic === "timer" ? `<span class="badge" data-timer-badge ${Focus.running ? "" : "hidden"}>${clock(Focus.left)}</span>` : "";
-    return `<a href="${href}" class="${on ? "active" : ""}" ${on ? 'aria-current="page"' : ""}>${icon(ic)}<span>${t(label)}</span>${badge}</a>`;
+  const COLORS = { today: "var(--ink-today)", learn: "var(--ink-learn)", play: "var(--ink-play)", explore: "var(--ink-explore)", progress: "var(--ink-progress)" };
+
+  function navLink([href, ic, label, id], tab) {
+    const on = id === tab;
+    return `<a href="${href}" class="tab-${id} ${on ? "active" : ""}" ${on ? 'aria-current="page"' : ""} style="--tab:${COLORS[id]}"><span class="tab-ic">${icon(ic)}</span><span class="tab-l">${t(label)}</span></a>`;
   }
 
   function renderNav(p) {
     const show = !!Store.state.profile && !Store.inSetup();
-    const sec = p.split("/")[0];
+    const tab = App.tabOf(p);
     const tabbar = document.getElementById("tabbar");
     const sidebar = document.getElementById("sidebar");
     tabbar.hidden = sidebar.hidden = !show;
     if (!show) return;
-    tabbar.innerHTML = NAV.map((n) => navLink(n, sec)).join("");
+    const pr = Store.state.profile;
+    tabbar.innerHTML = NAV.map((n) => navLink(n, tab)).join("");
     sidebar.innerHTML = `
       <div class="brand"><span class="brand-mark">P</span>Pocket Class</div>
-      ${NAV.map((n) => navLink(n, sec)).join("")}
+      ${NAV.map((n) => navLink(n, tab)).join("")}
       <span class="spacer"></span>
-      ${SIDE_EXTRA.map((n) => navLink(n, sec)).join("")}`;
+      <button type="button" class="side-profile" data-menu aria-haspopup="dialog" aria-expanded="false" aria-label="${t("Profile and menu")}">${Avatars.badge(pr, pr.name, "profile-pic", 36)}<span class="grow"><strong>${esc(pr.name || t("Student"))}</strong><span class="small muted">${t("Class {n}", { n: pr.cls })}</span></span><span class="badge" data-timer-badge ${Focus.running ? "" : "hidden"}>${clock(Focus.left)}</span></button>`;
   }
 
   // Asks the service worker to keep these files for offline use.
@@ -100,7 +114,12 @@ const App = {
     let m;
     if ((m = p.match(/^chapter\/(\d+)\/(\w+)\//))) return { cls: Number(m[1]), ids: [m[2]], practice: true };
     if ((m = p.match(/^play\/(\d+)\/(\w+)\//))) return { cls: Number(m[1]), ids: [m[2]], practice: true, games: true };
-    if ((m = p.match(/^games\/(?:random\/)?(\w+)$/)) && m[1] !== "random") return { cls: own, ids: [m[1]], practice: true, games: true };
+    if ((m = p.match(/^games\/(?:random\/)?(\w+)(?:\?.*)?$/)) && m[1] !== "random") return { cls: own, ids: [m[1]], practice: true, games: true };
+    if (p === "games") {
+      const ids = Views.playNeeds(own);
+      return ids ? { cls: own, ids, practice: true, games: true } : null;
+    }
+    if (p === "explore") return Views.exploreNeeds(own);
     if ((m = p.match(/^(?:worksheet|paper)\/(\d+)\/(\w+)/))) return { cls: Number(m[1]), ids: [m[2]], practice: true };
     if ((m = p.match(/^(?:subject|cards|sheet)\/(\w+)$/))) return { cls: own, ids: [m[1]] };
     if (p === "search") return { cls: own, ids: "all" };

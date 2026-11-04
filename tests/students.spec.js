@@ -1,4 +1,4 @@
-const { test, expect, seed, readStore, current, chaptersOf, quickQuiz } = require("./helpers");
+const { test, expect, seed, readStore, current, chaptersOf, quickQuiz, openMenu } = require("./helpers");
 
 const MATHS = chaptersOf(10, "maths")[0];
 // A student's row in Settings (the name sits in an input, so match its value).
@@ -11,9 +11,11 @@ test("students: add a second student, progress is separate, switch back, delete"
   // Asha takes a quiz.
   await page.goto(`/#/chapter/10/maths/${MATHS.id}/quiz`);
   await quickQuiz(page);
-  await page.goto("/#/");
+  await page.goto("/#/progress");
   await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("🔥 1");
-  await expect(page.locator(".stud-switch")).toHaveCount(0); // a single student has no switcher
+  await openMenu(page);
+  await expect(page.locator("#menu-sheet [data-stud]")).toHaveCount(0); // a single student has no switcher
+  await page.keyboard.press("Escape");
 
   // Add Bunty (Class 7, PSEB) in Settings.
   await page.goto("/#/settings");
@@ -27,9 +29,8 @@ test("students: add a second student, progress is separate, switch back, delete"
   // The new student starts from a clean Home.
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Bunty");
   await expect(page.locator(".home-head .sub")).toContainText("Class 7 · PSEB");
-  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("–"); // no study yet: a dash, never a zero
-  await expect(page.locator(".stat", { hasText: "quiz average" }).locator(".v")).toHaveText("–");
   await page.goto("/#/progress");
+  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("–"); // no study yet: a dash, never a zero
   await expect(page.locator(".stat", { hasText: "quizzes & tests" }).locator(".v")).toHaveText("0");
   await expect(page.locator(".history-row")).toHaveCount(0);
 
@@ -40,13 +41,12 @@ test("students: add a second student, progress is separate, switch back, delete"
 
   // Switch back to Asha from Home.
   await page.goto("/#/");
-  const picker = page.getByRole("combobox", { name: "Student" });
-  await expect(picker).toBeVisible();
-  await picker.selectOption({ label: "Asha" });
+  await openMenu(page);
+  await page.locator("#menu-sheet [data-stud]", { hasText: "Asha" }).click();
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Asha");
   await expect(page.locator(".home-head .sub")).toContainText("Class 10 · CBSE");
-  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("🔥 1");
   await page.goto("/#/progress");
+  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("🔥 1");
   await expect(page.locator(".history-row")).toHaveCount(1);
   store = await readStore(page);
   expect(current(store).profile.name).toBe("Asha");
@@ -71,7 +71,8 @@ test("students: add a second student, progress is separate, switch back, delete"
   expect(store.students).toHaveLength(1);
   expect(current(store).history).toHaveLength(1);
   await page.goto("/#/");
-  await expect(page.locator(".stud-switch")).toHaveCount(0);
+  await openMenu(page);
+  await expect(page.locator("#menu-sheet [data-stud]")).toHaveCount(0);
 });
 
 test("students: a student can be renamed", async ({ page }) => {

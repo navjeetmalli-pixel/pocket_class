@@ -31,7 +31,7 @@ test("class switch: only the new class's index and the opened subject's files ar
 
   // Home of Class 10: the index, plus the one subject today's question comes from.
   await page.goto("/#/");
-  await expect(page.getByRole("heading", { level: 2, name: "Question of the day" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: "Daily challenge" })).toBeVisible();
   expect(net.indexes()).toEqual([10]);
   expect(net.classes()).toEqual([10]);
   expect(net.subjects(10).length, "home loads one subject (today's question)").toBe(1);
@@ -43,7 +43,7 @@ test("class switch: only the new class's index and the opened subject's files ar
   await page.locator('[data-cls="7"]').click();
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Asha");
   await expect(page.locator(".home-head .sub")).toContainText("Class 7 · CBSE");
-  await expect(page.getByRole("heading", { level: 2, name: "Question of the day" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: "Daily challenge" })).toBeVisible();
   expect(current(await readStore(page)).profile.cls).toBe(7);
 
   const names = expectedSubjects(7, "cbse");

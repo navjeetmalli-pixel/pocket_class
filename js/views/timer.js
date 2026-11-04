@@ -11,7 +11,7 @@
     return {
       title: t("Focus timer"),
       html: `
-        ${pageHead(t("Focus timer"), t("Study in focused blocks with short breaks"))}
+        ${Views._.topbar(t("Focus timer"), "#/")}<p class="small muted" style="margin:-6px 2px 14px">${t("Study in focused blocks with short breaks")}</p>
         <div class="card timer-wrap">
           <div class="seg" style="width:100%;max-width:420px" role="group" aria-label="${t("Timer mode")}">
             ${Object.entries(Focus.MODES).map(([m, v]) => `<button data-mode="${m}">${t(v.label)}</button>`).join("")}

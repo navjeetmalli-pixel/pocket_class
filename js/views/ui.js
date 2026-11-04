@@ -100,10 +100,11 @@ const Views = (() => {
     return chs.slice(0, i + 1).filter((c) => c.section === chs[i].section).length;
   }
 
-  function chapterRow(c, subj, ch, num, tag) {
+  // `due`: a revision for this chapter has come round (shown as a mark and a word, not only a colour).
+  function chapterRow(c, subj, ch, num, tag, due = false) {
     const k = Store.key(c, subj.id, ch.id);
     const r = Store.chapter(k);
-    const score = r.best != null ? `<span class="pill ${r.best >= 60 ? "good" : "bad"}">${r.best}%</span>` : "";
+    const score = (due ? `<span class="pill accent due-pill"><span aria-hidden="true">↻</span> ${t("Review due")}</span>` : "") + (r.best != null ? `<span class="pill ${r.best >= 60 ? "good" : "bad"}">${r.best}%</span>` : "");
     return `<a class="card chapter-row" data-sec="${esc(ch.section)}" href="#/chapter/${c}/${subj.id}/${ch.id}" style="--c:${subj.color}">
       <span class="ch-num ${r.done ? "done" : ""}">${r.done ? icon("check") : num}</span>
       <span class="ch-body">

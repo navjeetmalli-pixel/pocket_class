@@ -53,6 +53,15 @@
         ${pager}`,
       mount(el) {
         Store.opened(k);
+        // Arriving from Explore: open the experiment that was chosen.
+        if (App.openSim) {
+          const box = tab === "notes" && el.querySelector(`[data-sim="${App.openSim}"]`);
+          if (box) {
+            box.open = true;
+            setTimeout(() => box.scrollIntoView({ block: "start" }), 0);
+          }
+          App.openSim = null;
+        }
         el.onclick = (e) => {
           const b = e.target.closest("[data-act]");
           if (!b) return;

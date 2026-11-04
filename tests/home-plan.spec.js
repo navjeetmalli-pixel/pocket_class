@@ -1,4 +1,4 @@
-const { test, expect, seed, readStore, current, chaptersOf, playInstantQuiz, openTools } = require("./helpers");
+const { test, expect, seed, readStore, current, chaptersOf, playInstantQuiz } = require("./helpers");
 
 const CH = chaptersOf(10, "maths")[0];
 const DAY = 86400000;
@@ -40,11 +40,11 @@ test("home: a new student sees one main action and a plan with a next lesson", a
   // Every item says why it is there, and roughly how long it takes.
   await expect(items.first().locator(".plan-why")).toContainText("A good place to start in");
   await expect(items.first().locator(".plan-min")).toContainText("min");
-  // Everything else is still on the page, with the study tools folded away.
-  await expect(page.locator("#more-tools")).not.toHaveAttribute("open", "");
+  // Everything else on Today: the subjects and a way to try something (the study tools are in Learn, progress in Progress).
+  await expect(page.locator("#more-tools")).toHaveCount(0);
   await expect(page.locator(".subject-card").first()).toBeVisible();
   await expect(page.locator(".explore")).toBeVisible();
-  await expect(page.getByRole("heading", { name: "My progress" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "My subjects" })).toBeVisible();
   const store = current(await readStore(page));
   expect(store.plan.items.length).toBeGreaterThan(0);
 });
@@ -106,16 +106,15 @@ test("home: Class 2 sees the simpler version", async ({ page }) => {
   expect(await items.count()).toBeGreaterThanOrEqual(1);
   expect(await items.count()).toBeLessThanOrEqual(2);
   await expect(page.locator("#plan")).toHaveClass(/plan-young/);
-  await expect(page.locator(".stats .stat")).toHaveCount(2); // no quiz average for the little ones
-  await expect(page.locator("#more-tools")).not.toHaveAttribute("open", "");
+  await expect(page.locator(".stats .stat")).toHaveCount(0); // Today shows no statistics: they are in Progress
   // Bigger tiles: the subject names and plan titles are larger than on the older version.
   const size = (sel) => page.locator(sel).first().evaluate((e) => parseFloat(getComputedStyle(e).fontSize));
   expect(await size(".subject-name")).toBeGreaterThanOrEqual(19);
   expect(await size(".plan-title")).toBeGreaterThanOrEqual(18);
   const h = await page.locator(".plan-item").first().evaluate((e) => e.getBoundingClientRect().height);
   expect(h).toBeGreaterThanOrEqual(84);
-  await openTools(page);
-  await expect(page.locator(".tool", { hasText: "Games" })).toBeVisible();
+  await page.goto("/#/games");
+  await expect(page.locator(".quick").first()).toBeVisible();
 });
 
 test("progress: concept learning and exam readiness are shown separately after a quiz and a mock test", async ({ page }) => {
@@ -196,7 +195,7 @@ test("progress: small recognitions for learning behaviours, with no points or ra
 
 test("settings: Show streak switch hides the streak everywhere and never shames a missed day", async ({ page }) => {
   await seed(page, { name: "Asha", cls: 10 });
-  await page.goto("/#/");
+  await page.goto("/#/progress");
   // With no study yet the streak shows a dash, not a zero.
   await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("–");
   await page.goto("/#/settings");
@@ -205,17 +204,15 @@ test("settings: Show streak switch hides the streak everywhere and never shames 
   await sw.uncheck();
   expect(current(await readStore(page)).prefs).toEqual({ streak: false });
 
-  await page.goto("/#/");
-  await expect(page.locator(".stat", { hasText: "day streak" })).toHaveCount(0);
-  await expect(page.locator(".stat", { hasText: "skills started" })).toBeVisible();
   await page.goto("/#/progress");
   await expect(page.locator(".stat", { hasText: "day streak" })).toHaveCount(0);
+  await expect(page.locator(".stat", { hasText: "skills started" })).toBeVisible();
   await page.goto("/#/parent");
   await expect(page.locator(".stat", { hasText: "day streak" })).toHaveCount(0);
 
   await page.goto("/#/settings");
   await page.locator("#show-streak").check();
-  await page.goto("/#/");
+  await page.goto("/#/progress");
   await expect(page.locator(".stat", { hasText: "day streak" })).toBeVisible();
 });
 
@@ -223,7 +220,7 @@ test("home: in Punjabi the plan, progress and readiness read in Punjabi", async 
   await seed(page, { name: "Asha", cls: 7, lang: "pa" });
   await page.goto("/#/");
   await expect(page.locator("#plan")).toContainText("ਅੱਜ ਦੀ ਯੋਜਨਾ");
-  await expect(page.locator("#more-tools")).toContainText("ਹੋਰ ਸਾਧਨ");
+  await expect(page.locator("nav a:visible", { hasText: "ਸਿੱਖੋ" }).first()).toBeVisible();
   await page.goto("/#/progress");
   await expect(page.getByRole("heading", { name: "ਸ਼ਾਬਾਸ਼ੀਆਂ" })).toBeVisible();
   await expect(page.locator(".rd-box").first()).toBeVisible();

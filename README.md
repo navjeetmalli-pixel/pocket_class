@@ -108,13 +108,31 @@ The end screen's next step is chosen the same way (`Loop.recommend`): notes for 
 
 ## Home, Today's plan and readiness
 
-**Home** (spec 9.2) puts one main action first, then everything else in order: **Continue learning** (the exact page the student was last on: a chapter tab, a game, a Practice-by-topic level; the router saves it as `lastAct` through `Plan.noteRoute`, and a lesson's step is added when the page shows one; a new student sees "Start here" with the first plan item), **Today's plan**, **Explore / Play** (one game, or an experiment on alternate days when the chapter has one), **My progress** (compact), **Subjects**, and **More tools** (a folded section holding mock test, mistakes, timer, formula sheets, games, Practice by topic, sheets, sample papers and the question of the day). Classes 1 to 3 get the same screen with bigger tiles, fewer plan items and fewer tools.
+**Today** (`#/`, spec 7.1) answers "what should I do next?" in this order: greeting and the profile button, **Continue learning** (the exact page the student was last on: a chapter tab, a game, a Practice-by-topic level; the router saves it as `lastAct` through `Plan.noteRoute`, and a lesson's step is added when the page shows one; a new student sees "Start here" with the first plan item, or "Start learning / Choose a subject" when there is nothing to start), **Today's plan**, **Due for revision** (up to three chapters, only when something is due), one experiment or game to try, the **Daily challenge** (question of the day), **My subjects** (all of them in Class-wise view, the picked ones in Subject-wise) and **Recently opened** chapters. There are no statistics and no tools on Today. Classes 1 to 3 get the same screen with bigger tiles and fewer plan items.
 
 **Today's plan** (`js/plan.js`, rules are fixed and each item shows its reason). About 18 minutes (10 for Classes 1 to 3). In order, while the time allows: up to 2 **reviews** (1 for Classes 1 to 3) from the chapters in Due today, skills due first, then open mistakes, then the chapter schedule, about 5 minutes each; one **lesson**, the next chapter not started in the subject the student uses most (answers, quizzes and chapters opened), or the next level of the Practice-by-topic topic used last when that is more recent than the last chapter, about 8 minutes (5 for Classes 1 to 3); one short **practice**, a quiz on the chapter of the weakest started skill (lowest share right, at least 2 answers, not due for review), about 5 minutes, left out when its chapter is already in the plan. The plan is kept per day (`plan` in the student's data): items stay until finished or no longer due, each type has one place so finishing the lesson does not bring a second one, and finished items stay ticked. An item is ticked from the record after it was added (a revision round; the guided lesson, a quiz or 3 lesson steps; 5 answers or a game; a path level round) and one `plan` event is logged through `Learn.plan`. Every number is in `Plan.config`.
 
 **Readiness** (`js/readiness.js`, spec 14.3) keeps two measures apart, per subject and per chapter, on Progress (with a next step each) and in plain words on the parent page. *Concept learning* puts each started skill in one stage from the mastery states: understanding, practising, remembering (right now but not yet shown after a delay, or a review is due) and ready to apply (mastered and right after a delay, `Readiness.config.retention`). *Exam readiness* comes only from mock tests (answered without hints or feedback): chapters tried and chapters in a mock test, accuracy by format (multiple choice, assertion-reason; saved per chapter as `exam` through `Store.recordQuiz`) and accuracy with the clock on. Speed is never scored, and written answers (2, 3 and 5 marks) and printed sample papers are not marked by the app, so they are not counted.
 
 **Recognitions** (spec 8.5, on Progress, `Readiness.rewards`) are worked out from the record each time: improving after feedback (right twice in a row after a wrong answer), remembering after a break, finishing a skill written at apply or analyse level without hints, a teach-back with an explanation and two key points ticked, and reaching "Mastered for now". They have no points, ranks or levels. The streak can be turned off in Settings ("Show streak", per student, `prefs.streak`); a day with no study shows a dash, never a zero, and nothing is lost by missing a day. Tests: `tests/home-plan.spec.js`.
+
+## App layout
+
+Five tabs, in a bottom bar on phones and a sidebar on wide screens (`js/app.js`: `NAV`, `App.tabOf`), each with its colour (Learn blue, Play purple, Explore and Progress green, challenges amber; tokens `--ink-*` in `css/styles.css`, light and dark, text colours checked at 4.5:1 or more). The profile picture in every tab's header (and at the foot of the sidebar) opens the **profile menu**, a sheet with Profile, Switch student, Search, Settings, Parent area, Timer (with the running-timer badge) and Downloads (Save for offline) (`js/views/shell.js`; Escape closes it and keeps focus in the sheet while it is open).
+
+| Tab | Route | What it holds |
+|---|---|---|
+| Today | `#/` | Continue learning, Today's plan, Due for revision, Daily challenge, My subjects, Recently opened |
+| Learn | `#/learn` | board and class pill (to Profile), **Class-wise / Subject-wise** switch (`profile.view`), search, subject cards, Practice by topic, study tools (Mock test, Practice sheets, Sample papers for Classes 9 to 12, Formula sheets), recently opened |
+| Play | `#/games` | Continue playing, Quick challenges (random game, Quick-fire), games for the chapter opened last, My subjects; game tiles show subject, chapter, about how long and stars |
+| Explore | `#/explore` | Physics Lab, Chemistry Lab, Biology Explorer, Maths Studio, World Explorer: only the areas with something for the class (experiments from `js/sims.js`, the visual Maths games, diagram and timeline games), each with what can be investigated and links to Play or the experiment and to its chapter |
+| Progress | `#/progress` | statistics, skills as developing / secure / mastered, My mistakes, Due for revision, Today's plan and Parent area, readiness, recognitions, weekly minutes, recent quizzes |
+
+**Old routes keep working** and light up a sensible tab: `#/subject/…`, `#/chapter/…`, `#/test`, `#/revise`, `#/sheet`, `#/cards`, `#/sheets`, `#/worksheet`, `#/papers`, `#/paper`, `#/paths`, `#/pathsheet` and `#/search` are in **Learn**; `#/games`, `#/games/…` and `#/play/…` in **Play**; `#/progress`, `#/parent`, `#/revise/mistakes` and `#/revise/due` in **Progress**; `#/timer` in **Today**; `#/profile` and `#/settings` (and `#/settings/offline`, which scrolls to Save for offline) belong to no tab. The active tab has `aria-current="page"`.
+
+**Class-wise and Subject-wise** are two views over one content graph. Class-wise lists every subject of the learner's board and class; Subject-wise lists `profile.subjects` (all when none are picked) with a "Manage subjects" link to Profile, and its Practice by topic offers the picked subjects. Switching saves `profile.view` only; chapters, scores, revision dates and games are never touched. The subject page shows the subject, its progress, the chapter to continue, practice tools, and the chapters with a "Review due" mark.
+
+**Age bands** (`body[data-band]`) change spacing and size on Today and Learn only: Classes 1 to 5 get larger tiles, text and touch targets (and Class 1 and 2 fewer tools), Classes 11 and 12 get denser lists. Routes, ids and progress are the same in every band. Tests: `tests/shell.spec.js`.
 
 ## Games
 
@@ -201,7 +219,8 @@ js/timer.js           focus timer
 js/sims.js            interactive experiments (SVG simulations on the Notes tab)
 js/games/             Play: engine.js (shell + registry) and one file per game type
 js/views/             every screen, one file per area: ui.js (shared pieces, creates `Views`), students, revise,
-                      home, subject, chapter, test, timer, progress, parent, search, onboarding, settings
+                      shell (header, profile menu, shared cards), home (Today), learn, explore, subject, chapter, test, timer,
+                      progress, parent, search, onboarding, settings, profile
 js/app.js             router and navigation
 data/registry.js      subjects and which class has which (catalog)
 data/class1 … class12 content, one file per subject, plus a generated index.js per class

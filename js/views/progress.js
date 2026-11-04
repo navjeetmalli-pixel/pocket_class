@@ -135,6 +135,40 @@
       }`;
   }
 
+  // Spec 7.8: skills are described as developing, secure or mastered, never as weak. One quiz score is not mastery.
+  const BAND_OF = { introduced: "developing", learning: "developing", practising: "developing", refresher: "developing", nearly: "secure", "review-due": "secure", mastered: "mastered" };
+  const BANDS = [["developing", "Developing", "◔"], ["secure", "Secure", "◕"], ["mastered", "Mastered", "✓"]];
+
+  function bandSection(c) {
+    const counts = Learn.counts(c);
+    const n = { developing: 0, secure: 0, mastered: 0 };
+    for (const [state, k] of Object.entries(counts)) if (BAND_OF[state]) n[BAND_OF[state]] += k;
+    const total = n.developing + n.secure + n.mastered;
+    return `<h2 class="block-title">${t("Your skills")}</h2>
+      <div class="card" id="skill-bands">
+        ${
+          total
+            ? `<div class="band-row" role="list">${BANDS.map(([k, label, mark]) => `<div class="band band-${k}" role="listitem"><span class="n">${n[k]}</span><span class="l"><span aria-hidden="true">${mark}</span> ${t(label)}</span></div>`).join("")}</div>
+               <p class="tiny muted" style="margin:10px 0 0">${t("Developing: still learning it. Secure: you can do it with little help. Mastered: you did it on your own, more than once, and remembered it after a break.")}</p>`
+            : `<p class="small muted" style="margin:0">${t("No skills started yet. Finish a lesson or a quiz and your skills show up here as developing, secure and mastered.")}</p>`
+        }
+      </div>`;
+  }
+
+  // Where to go to fix and revise: the mistakes, the chapters due, and the parent summary.
+  function workOnSection(c) {
+    const mistakes = Store.mistakesFor(c).length;
+    const due = Store.due(c).length;
+    const row = (href, title, sub, ic) => `<a class="card row" href="${href}"><span class="ti">${icon(ic)}</span><span class="grow"><strong>${title}</strong><span class="small muted" style="display:block">${sub}</span></span>${icon("next")}</a>`;
+    return `<h2 class="block-title">${t("What to work on next")}</h2>
+      <div class="stack" id="work-next">
+        ${row("#/revise/mistakes", t("My mistakes"), mistakes ? t("{n} {n:question|questions} to fix", { n: mistakes }) : t("Nothing to fix yet"), "target")}
+        ${row("#/revise/due", t("Due for revision"), due ? t("{n} {n:chapter|chapters} due", { n: due }) : t("Nothing due yet"), "revise")}
+        ${row("#/", t("Today's plan"), t("A short plan you can finish."), "check")}
+        ${row("#/parent", t("Parent area"), t("A one-page summary of the week to show or print."), "users")}
+      </div>`;
+  }
+
   function progress() {
     const st = Store.state;
     const c = cls();
@@ -166,13 +200,15 @@
     return {
       title: t("Progress"),
       html: `
-        ${pageHead(t("Your progress"), t("Class {n} · {days} study {days:day|days} so far", { n: c, days: activeDays }))}
+        ${Views._.shellHead(t("Your progress"), t("Class {n} · {days} study {days:day|days} so far", { n: c, days: activeDays }), "progress")}
         <div class="stats-4">
           ${Store.showStreak() ? `<div class="card stat"><div class="v">${Store.streak() ? "🔥 " + Store.streak() : "–"}</div><div class="l">${t("day streak")}</div></div>` : `<div class="card stat"><div class="v">${Readiness.concept(c).started}</div><div class="l">${t("skills started")}</div></div>`}
           <div class="card stat"><div class="v">${minutesLabel(week)}</div><div class="l">${t("studied this week")}</div></div>
           <div class="card stat"><div class="v">${minutesLabel(st.focusMin)}</div><div class="l">${t("focus timer")}</div></div>
           <div class="card stat"><div class="v">${quizzes.length}</div><div class="l">${t("quizzes &amp; tests")}</div></div>
         </div>
+        ${bandSection(c)}
+        ${workOnSection(c)}
         ${readinessSection(c)}
         ${rewardsSection(c)}
         <h2 class="block-title">${t("This week")}</h2>
@@ -188,7 +224,6 @@
         </div>
         <h2 class="block-title">${t("Subjects")}</h2>
         <div class="card subj-progress">${subj}</div>
-        <a class="card row mt" href="#/parent"><span class="grow"><strong>${t("For parents")}</strong><span class="small muted" style="display:block">${t("A one-page summary of the week to show or print.")}</span></span>${icon("next")}</a>
         <h2 class="block-title">${t("Recent quizzes")}</h2>
         ${
           hist.length

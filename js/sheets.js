@@ -98,7 +98,7 @@ const Sheets = (() => {
     const { topbar, emptyState } = Views.ui;
     return {
       title: t("Practice sheets"),
-      html: `${topbar(t("Practice sheets"), "#/revise")}
+      html: `${topbar(t("Practice sheets"), "#/learn")}
         <p class="small muted" style="margin:-6px 2px 16px">${t("Choose chapters and question types. Every sheet has an answer key, and there's always a new sheet with different questions.")}</p>
         ${subs.length ? `<div id="maker"></div>` : emptyState("📚", t("No chapters are available yet."))}`,
       mount(el) {

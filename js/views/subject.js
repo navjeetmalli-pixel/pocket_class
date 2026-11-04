@@ -40,6 +40,19 @@
     const sections = [...new Set(chs.map((ch) => ch.section))];
     const grouped = isGrouped(chs);
 
+    // Chapters whose revision has come round, and the chapter to carry on with (the one last opened here, else the first not done).
+    const dueSet = new Set(Store.due(c).map((e) => Store.parseKey(e.key)).filter((k) => k.subject === id).map((k) => k.chapterId));
+    const act = Store.state.lastAct;
+    const lastHere = act && act.cls === c && (/^#\/chapter\/\d+\/(\w+)\/([\w-]+)/.exec(act.href) || []);
+    const resume = lastHere && lastHere[1] === id && chs.find((ch) => ch.id === lastHere[2] && !Store.chapter(Store.key(c, id, ch.id)).done);
+    const nextCh = resume || chs.find((ch) => !Store.chapter(Store.key(c, id, ch.id)).done);
+    const started = chs.some((ch) => Store.chapter(Store.key(c, id, ch.id)).opened);
+    const cont = nextCh
+      ? `<a class="card continue main-action mt" id="subject-continue" href="#/chapter/${c}/${id}/${nextCh.id}">
+          <div class="grow"><div class="k">${resume || started ? t("Continue") : t("Start here")}</div><div class="t">${esc(nextCh.title)}</div><div class="s">${esc(subj.short)}</div></div>
+          <span class="go">${icon("arrow")}</span></a>`
+      : "";
+
     let list;
     if (!chs.length) list = `<div class="mt">${emptyState("📚", t("Chapters for Class {n} {subject} are coming soon.", { n: c, subject: esc(subj.name) }))}</div>`;
     else if (grouped)
@@ -48,11 +61,11 @@
           const items = chs.filter((ch) => ch.section === sec);
           return `<div data-sec="${esc(sec)}">
             <h2 class="section-label">${esc(sec)} <span class="count">${items.length}</span></h2>
-            <div class="list">${items.map((ch, i) => chapterRow(c, subj, ch, i + 1)).join("")}</div>
+            <div class="list">${items.map((ch, i) => chapterRow(c, subj, ch, i + 1, "", dueSet.has(ch.id))).join("")}</div>
           </div>`;
         })
         .join("");
-    else list = `<div class="list mt">${chs.map((ch, i) => chapterRow(c, subj, ch, i + 1, sections.length > 1 ? ch.section : "")).join("")}</div>`;
+    else list = `<div class="list mt">${chs.map((ch, i) => chapterRow(c, subj, ch, i + 1, sections.length > 1 ? ch.section : "", dueSet.has(ch.id))).join("")}</div>`;
 
     const filters =
       sections.length > 1
@@ -65,23 +78,27 @@
     return {
       title: subj.name,
       html: `
-        ${topbar(subj.name, "#/")}
+        ${topbar(subj.name, "#/learn")}
         <div class="hero" style="--c:${subj.color}">
           <div class="eyebrow">${t("Class {n}", { n: c })} · ${esc(subj.native)}</div>
           <h1>${subj.icon} ${esc(subj.name)}</h1>
-          <p>${t("{done} of {total} chapters complete", { done: x.done, total: x.total })}${x.avg != null ? ` · ${t("average quiz score {n}%", { n: x.avg })}` : ""}</p>
+          <p>${t("{done} of {total} chapters complete", { done: x.done, total: x.total })}</p>
           <span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span>
-          ${
-            chs.length
-              ? `<div class="hero-actions">
-                  <a class="btn" href="#/test/${id}">${icon("test")} ${t("Subject test")}</a>
-                  <a class="btn" href="#/cards/${id}">${icon("cards")} ${t("Flashcards")}</a>
-                  <a class="btn" href="#/sheet/${id}">${icon("formula")} ${sheetLabel(id)}</a>
-                  <a class="btn" href="#/sheets/${id}">${icon("print")} ${t("Practice sheets")}</a>
-                </div>`
-              : ""
-          }
         </div>
+        ${cont}
+        ${
+          chs.length
+            ? `<h2 class="block-title">${t("Practise this subject")}</h2>
+              <div class="hero-actions subj-actions">
+                <a class="btn" href="#/test/${id}">${icon("test")} ${t("Subject test")}</a>
+                <a class="btn" href="#/cards/${id}">${icon("cards")} ${t("Flashcards")}</a>
+                <a class="btn" href="#/sheet/${id}">${icon("formula")} ${sheetLabel(id)}</a>
+                <a class="btn" href="#/sheets/${id}">${icon("print")} ${t("Practice sheets")}</a>
+                <a class="btn" href="#/games/${id}">${icon("game")} ${t("Games")}</a>
+              </div>`
+            : ""
+        }
+        <h2 class="block-title">${t("Chapters")}</h2>
         ${syllabusLine(c, id)}
         ${filters}
         ${list}`,

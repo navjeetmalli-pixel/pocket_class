@@ -52,7 +52,7 @@
     }
     return {
       title: t("Mock test"),
-      html: `${pageHead(t("Mock test"), t("Class {n} · Practise like the real exam", { n: c }))}<div id="setup"></div>`,
+      html: `${topbar(t("Mock test"), "#/learn")}<p class="small muted" style="margin:-6px 2px 14px">${t("Class {n} · Practise like the real exam", { n: c })}</p><div id="setup"></div>`,
       mount(el) {
         const box = el.querySelector("#setup");
         const draw = () => (box.innerHTML = setupHTML(c));

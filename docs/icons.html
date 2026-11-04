@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pocket Class icons</title>
+<style>
+body{margin:0;font:14px system-ui;display:grid;grid-template-columns:1fr}
+.th{padding:16px;background:#fff;color:#1a1a2e}.th.dark{background:#14141f;color:#e8e8f2}
+h2{margin:0 0 8px;font-size:16px}
+.row{display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:6px;margin:3px;border:1px solid #8883;border-radius:10px}
+.n{font-size:11px}.c{display:flex;align-items:flex-end;gap:6px}
+.c{color:#5b5bd6}.dark .c{color:#9a9af5}
+</style></head><body>
+<div id="l" class="th"><h2>Light</h2></div><div id="d" class="th dark"><h2>Dark</h2></div>
+<script src="../js/subject-icons.js"></script>
+<script>
+const ids=SubjectIcons.ids();
+for(const t of ["l","d"]){const h=document.getElementById(t);
+ for(const id of ids)h.insertAdjacentHTML("beforeend",`<div class="row"><span class="n">${id}</span><span class="c">${[24,48,96].map(s=>SubjectIcons.svg(id,{size:s,label:id})).join(" ")}</span></div>`);}
+</script></body></html>

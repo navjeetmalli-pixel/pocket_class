@@ -60,7 +60,7 @@
     return confirm(t("{names} isn't offered for this board and class, so it will be taken off your subjects. Your progress is kept. Change anyway?", { names }));
   }
 
-  function settings() {
+  function settings([where] = []) {
     const st = Store.state;
     const seg = (name, items, val) =>
       `<div class="seg" role="group">${items.map(([v, l]) => `<button data-${name}="${v}" class="${String(val) === String(v) ? "on" : ""}">${t(l)}</button>`).join("")}</div>`;
@@ -97,7 +97,7 @@
               <input type="file" id="restore" accept=".json,application/json" hidden>
             </div>
           </div>
-          ${Native.is ? "" : `<div class="card row">
+          ${Native.is ? "" : `<div class="card row" id="offline-card" tabindex="-1">
             <div class="grow"><strong>${t("Save every class for offline")}</strong><div class="small muted" id="offline-status">${t("Your own class is saved automatically. Use this if brothers or sisters share this phone (about 17 MB).")}</div></div>
             <button class="btn" data-act="offline-all">${t("Save all")}</button>
           </div>`}
@@ -113,6 +113,10 @@
       mount(el) {
         mountStudents(el);
         mountReminder(el);
+        if (where === "offline") {
+          const card = el.querySelector("#offline-card");
+          if (card) setTimeout(() => card.scrollIntoView({ block: "center" }), 0);
+        }
         el.querySelector("#show-streak").onchange = (e) => {
           Store.setPref("streak", e.target.checked);
           toast(e.target.checked ? t("Streak is shown") : t("Streak is hidden"));

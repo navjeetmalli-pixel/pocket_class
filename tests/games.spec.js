@@ -1,5 +1,5 @@
 // Play: the Play tab, the three games (match pairs, label the diagram, quick-fire), best stars, Games home, levels.
-const { test, expect, seed, readStore, current, chaptersOf, answer, openTools } = require("./helpers");
+const { test, expect, seed, readStore, current, chaptersOf, answer, tab } = require("./helpers");
 
 const MATHS = chaptersOf(10, "maths")[0];
 const LIGHT = "light-reflection-and-refraction"; // Class 10 Science: has diagrams
@@ -200,8 +200,7 @@ test("pause stops the clock and hides the board; Escape pauses too", async ({ pa
 test("Games home: subjects, a chapter list with game icons, and a random game", async ({ page }) => {
   await seed(page, { cls: 10 });
   await page.goto("/#/");
-  await openTools(page);
-  await page.locator(".tool", { hasText: "Games" }).click();
+  await tab(page, "Play");
   await expect(page).toHaveURL(/#\/games$/);
   await page.locator('.subject-card[href="#/games/science"]').click();
   await expect(page.locator(".chapter-row").first()).toBeVisible();
@@ -228,7 +227,7 @@ test("a Practice-by-topic level has a Play button that opens games built from it
   await page.goto("/#/paths/maths");
   await page.locator("a.card").first().click(); // first topic
   await page.locator("a.chapter-row, a.card").filter({ hasText: /Level/ }).first().click();
-  const play = page.getByRole("link", { name: "Play" });
+  const play = page.locator("#level-intro").getByRole("link", { name: "Play" });
   await expect(play).toBeVisible();
   await play.click();
   await expect(page).toHaveURL(/#\/play\/level\//);

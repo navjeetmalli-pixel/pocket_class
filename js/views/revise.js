@@ -124,7 +124,7 @@
     return {
       title: t("Revise"),
       html: `
-        ${pageHead(t("Revise"), t("Fix mistakes, skim formula sheets and drill flashcards"))}
+        ${topbar(t("Revise"), "#/learn")}<p class="small muted" style="margin:-6px 2px 14px">${t("Fix mistakes, skim formula sheets and drill flashcards")}</p>
         <div class="card row" style="gap:16px">
           <div class="ch-num" style="width:52px;height:52px;font-size:22px;background:var(--bad-soft);color:var(--bad)">${mistakes}</div>
           <div class="grow"><strong>${t("My mistakes")}</strong><div class="small muted">${mistakes ? t("Questions you got wrong. Get them right to clear them.") : t("Questions you get wrong in quizzes show up here.")}</div></div>
@@ -167,7 +167,7 @@
       .filter(Boolean);
     return {
       title: t("My mistakes"),
-      html: `${topbar(t("My mistakes"), "#/revise")}${
+      html: `${topbar(t("My mistakes"), "#/progress")}${
         items.length ? `<p class="small muted" style="margin:-6px 2px 14px">${t("Answer correctly to remove a question from this list.")}</p><div id="quiz-mount"></div>` : emptyState("✨", t("No mistakes to fix. Take a chapter quiz or mock test and any wrong answers will appear here."))
       }`,
       mount(el) {

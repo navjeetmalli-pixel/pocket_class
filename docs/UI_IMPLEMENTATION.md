@@ -57,8 +57,8 @@ When class or board changes, re-check `subjects` against `StudyData.subjectsFor`
   - [x] Profile editing with confirm before dropping subjects (progress never deleted)
   - [x] Named colour tokens (light and dark) and age band attribute
   - Not done in Phase 1: lesson language does not change lessons yet; the Learn tab and the rest of the restyle are Phases 2 to 4; the app-wide emoji icons are unchanged.
-- [ ] Phase 2 App shell
-- [ ] Phase 3 Class-wise / Subject-wise in Learn
+- [x] **Phase 2 — App shell** (done): five tabs (bottom bar and sidebar) Today, Learn, Play, Explore, Progress with `aria-current`, the profile menu (Profile, Switch student, Search, Settings, Parent area, Timer, Downloads), Today trimmed to spec 7.1, Play centre groups, Explore areas, Progress with developing / secure / mastered, colour tokens and age-band density on Today and Learn, all old routes kept (`App.tabOf`), `js/views/shell.js`, `learn.js`, `explore.js`, `tests/shell.spec.js`. Not done: Explore items open the chapter's Notes (the experiment opens in place); there are no stand-alone labs yet (Phase 5); the Parent area still has no gate; the emoji subject icons are being replaced separately.
+- [x] **Phase 3 — Class-wise / Subject-wise in Learn** (done): the segmented switch on `#/learn` (saved as `profile.view`, progress untouched), Subject-wise lists only the picked subjects with "Manage subjects", subject page tidy-up (identity, progress, continue chapter, "Review due" marks, practice tools).
 - [ ] Phase 4 Chapter hub
 - [ ] Phase 5 Games and labs
 - [ ] Phase 6 Progress and personalisation

@@ -193,12 +193,20 @@ const home = async (page) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste");
 };
 
-// The study tools on Home sit in the collapsed "More tools" section: opens it (once) so a .tool card can be clicked.
+// The study tools (mock test, practice sheets, sample papers, formula sheets, practice by topic) are on the Learn tab:
+// goes there so a .tool card can be clicked.
 const openTools = async (page) => {
-  const box = page.locator("#more-tools");
-  await box.waitFor();
-  if (!(await box.evaluate((d) => d.open))) await box.locator("summary").click();
-  await expect(box).toHaveAttribute("open", "");
+  await page.goto("/#/learn");
+  await expect(page.locator(".tool").first()).toBeVisible();
+};
+
+// Presses a tab of the bottom bar (phone) or the sidebar (desktop): "Today", "Learn", "Play", "Explore" or "Progress".
+const tab = (page, name) => page.locator("#tabbar a:visible, #sidebar a:visible").filter({ hasText: new RegExp(`^${name}$`) }).click();
+
+// Opens the profile menu (the picture in the header).
+const openMenu = async (page) => {
+  await page.getByRole("button", { name: "Profile and menu" }).first().click();
+  await expect(page.locator("#menu-sheet")).toBeVisible();
 };
 
 // Goes through first-time setup quickly (the Student path). Options: name, cls, board, view ("class" | "subject"),
@@ -227,4 +235,4 @@ async function onboard(page, { name = "Asha", cls = 10, board = "cbse", view = "
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste");
 }
 
-module.exports = { onboard, openTools, test, expect, KEY, CLASSES, BOARDS, registry, loadStudyData, expectedSubjects, expectedSubjectIds, chaptersOf, seed, readStore, current, correctPick, answer, playInstantQuiz, quickQuiz, home, watch };
+module.exports = { onboard, openTools, tab, openMenu, test, expect, KEY, CLASSES, BOARDS, registry, loadStudyData, expectedSubjects, expectedSubjectIds, chaptersOf, seed, readStore, current, correctPick, answer, playInstantQuiz, quickQuiz, home, watch };
