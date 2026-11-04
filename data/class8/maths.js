@@ -206,6 +206,11 @@ StudyData.add(8, "maths", {
           q: "Write 1999 in Roman numerals.",
           steps: ["1000 = M", "900 = CM", "90 = XC", "9 = IX"],
           answer: "MCMXCIX"
+        },
+        {
+          q: "A building has the year MMXXIV carved on it. Which year is it? Why is adding two such numbers harder than adding 2024 + 2024?",
+          steps: ["M + M = 1000 + 1000 = 2000; X + X = 20; IV = 5 − 1 = 4.", "2000 + 20 + 4 = 2024.", "Roman numerals have no place value, so the symbols cannot be lined up in ones, tens and hundreds columns and carried; each sum has to be regrouped by hand."],
+          answer: "2024; Roman numerals are not a place-value system"
         }
       ],
       qa: [

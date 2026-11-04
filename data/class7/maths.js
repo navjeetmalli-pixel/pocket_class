@@ -376,6 +376,11 @@ StudyData.add(7, "maths", {
           q: "Is 7,38,216 divisible by 3? By 4? By 9?",
           steps: ["Digit sum = 7 + 3 + 8 + 2 + 1 + 6 = 27, which is divisible by 3 and by 9", "Last two digits 16 are divisible by 4"],
           answer: "Yes, it is divisible by 3, 4 and 9"
+        },
+        {
+          q: "Is 61,809 divisible by 11? Is it divisible by 6?",
+          steps: ["Digits in odd places from the right: 9, 8, 6, sum = 23. Digits in even places: 0, 1, sum = 1.", "Difference = 23 − 1 = 22, a multiple of 11, so 61,809 is divisible by 11 (61,809 = 11 × 5,619).", "For 6 it must be divisible by 2 and 3. The last digit 9 is odd, so it is not even."],
+          answer: "Divisible by 11; not divisible by 6"
         }
       ],
       qa: [
@@ -568,6 +573,11 @@ StudyData.add(7, "maths", {
           q: "In △ABC and △PQR, AB = PQ = 5 cm, BC = QR = 7 cm and ∠B = ∠Q = 50°. Are the triangles congruent? Which rule applies?",
           steps: ["Two sides (AB, BC) equal two sides (PQ, QR)", "The angle between them, ∠B and ∠Q, is equal"],
           answer: "Yes, △ABC ≅ △PQR by SAS"
+        },
+        {
+          q: "In △ABC and △DEF, ∠A = ∠D = 40°, ∠B = ∠E = 60° and AB = DE = 6 cm. Are the triangles congruent? Find ∠F.",
+          steps: ["Two angles (∠A, ∠B) equal two angles (∠D, ∠E), and the side between them, AB = DE.", "So △ABC ≅ △DEF by ASA.", "∠C = 180° − 40° − 60° = 80°, and ∠F corresponds to ∠C, so ∠F = 80° (CPCT)."],
+          answer: "Yes, by ASA; ∠F = 80°"
         }
       ],
       qa: [
@@ -895,6 +905,11 @@ StudyData.add(7, "maths", {
           q: "How many regular hexagons meet at a point in a tiling, if each angle is 120°?",
           steps: ["Angles at a point must add up to 360°", "Number of hexagons = 360° ÷ 120° = 3"],
           answer: "3 hexagons"
+        },
+        {
+          q: "Each angle of a regular octagon is 135°. Can regular octagons alone tile the plane? What shape fills the gaps?",
+          steps: ["Angles at a point must add up to 360°. 360° ÷ 135° is not a whole number (2 octagons give 270°, 3 give 405°).", "So regular octagons cannot tile the plane alone.", "Two octagons at a point leave 360° − 270° = 90°, which is exactly the angle of a square."],
+          answer: "No; squares fill the gaps (octagons and squares together tile the plane)"
         }
       ],
       qa: [
