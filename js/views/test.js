@@ -110,7 +110,7 @@
       </div>`;
     }
 
-    const past = Store.state.history.filter((h) => h.kind === "test" && h.cls === c).slice(0, 5);
+    const past = Store.state.history.filter((h) => h.kind === "test" && h.cls === c && !D.locked(h.subject)).slice(0, 5);
 
     return `<div class="stack">
       <div class="card"><strong>${t("Subject")}</strong><div class="chips" style="margin-top:10px">${chips}</div></div>

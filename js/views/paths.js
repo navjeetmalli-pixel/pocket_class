@@ -136,7 +136,7 @@
             return `<a class="card subject-card" href="${href(s.id)}" style="--c:${s.color}">
               <span class="subject-icon">${SubjectIcons.html(s)}</span>
               <span class="subject-name">${esc(s.name)}</span>
-              ${intl ? "" : `<span class="subject-hi">${esc(s.native)}</span>`}
+              ${intl || Release.applies() ? "" : `<span class="subject-hi">${esc(s.native)}</span>`}
               <span class="subject-meta">${n ? t("{n} {n:level|levels} mastered", { n }) : t("Level 0 up to advanced")}</span>
             </a>`;
           })
@@ -151,7 +151,7 @@
     return {
       title: path.title,
       html: `${topbar(path.title, "#/paths")}
-        ${pageHead(path.title, International.on() ? "" : path.titleLocal || subj.native)}
+        ${pageHead(path.title, International.on() || Release.applies() ? "" : path.titleLocal || subj.native)}
         <p class="small muted" style="margin:-6px 2px 16px">${t("Choose a topic. You can find your level with a short check, or start from Level 0.")}</p>
         <div class="list">${path.topics
           .map((tp) => {

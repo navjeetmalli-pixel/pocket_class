@@ -17,6 +17,8 @@ Do these in order. Stop at the first failure and fix it before going on.
 
 ## 3. Build the store apps (only for a store release)
 
+- [ ] **Check the Release locks before a store build.** Open `js/release.js`: `lockedSubjects` and `lockedLangs` say what the store apps hide (Hindi and Punjabi, until a native speaker has reviewed them), and `applies` says where (default: store apps only). Decide on purpose: still locked, or emptied to unlock. Then make `STORE_LISTING.md` say the same thing (no Hindi / Punjabi claims while locked), and run `npx playwright test -c tests release-lock`.
+
 - [ ] `npm run sync`: rebuilds the class indexes, copies the web app into `www/` and into the Android and iOS projects. `www/` must not contain `tests/`, `scripts/` or `node_modules/`.
 - [ ] Bump the version numbers:
   - Android, `android/app/build.gradle`: `versionCode` (a whole number, +1 every upload) and `versionName` (e.g. `"1.1"`).

@@ -179,7 +179,7 @@
     });
     const week = days.reduce((a, d) => a + d.min, 0);
     const max = Math.max(30, ...days.map((d) => d.min));
-    const quizzes = st.history.filter((h) => h.cls === c);
+    const quizzes = st.history.filter((h) => h.cls === c && !D.locked(h.subject));
     const activeDays = Object.values(st.days).filter((d) => d.acts > 0 || d.min > 0).length;
 
     const intl = International.on();

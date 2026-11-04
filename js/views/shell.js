@@ -120,7 +120,7 @@
     return `<a class="card subject-card" href="${href || `#/subject/${s.id}`}" style="--c:${s.color}">
       <span class="subject-icon">${SubjectIcons.html(s)}</span>
       <span class="subject-name">${esc(s.name)}</span>
-      <span class="subject-hi">${esc(s.native)}</span>
+      ${Release.applies() ? "" : `<span class="subject-hi">${esc(s.native)}</span>`}
       ${meta === undefined ? `<span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span>` : ""}
       <span class="subject-meta">${meta !== undefined ? meta : x.total ? t("{done} / {total} chapters", { done: x.done, total: x.total }) : t("Coming soon")}</span>
     </a>`;

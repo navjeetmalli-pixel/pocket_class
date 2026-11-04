@@ -1,7 +1,7 @@
 // Offline support: caches the app shell on first visit, plus each class's index and each subject's data once it's opened.
 // Online, files come fresh from the network (and refresh the cache);
 // offline or on a very slow connection, the cached copy is used.
-const CACHE = "pocket-class-v52";
+const CACHE = "pocket-class-v53";
 
 const FILES = [
   "./",
@@ -9,6 +9,7 @@ const FILES = [
   "manifest.webmanifest",
   "css/styles.css",
   "js/util.js",
+  "js/release.js",
   "js/subject-icons.js",
   "js/i18n.js",
   "js/international.js",

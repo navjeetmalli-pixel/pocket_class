@@ -71,7 +71,7 @@
     const week = days.reduce((a, d) => a + d.min, 0);
     const max = Math.max(30, ...days.map((d) => d.min));
 
-    const all = st.history.filter((h) => h.cls === c);
+    const all = st.history.filter((h) => h.cls === c && !D.locked(h.subject));
     const avg = all.length ? Math.round(all.reduce((a, h) => a + pct(h.score, h.total), 0) / all.length) : null;
     const tests = all.filter((h) => h.kind === "test").slice(0, 5);
 

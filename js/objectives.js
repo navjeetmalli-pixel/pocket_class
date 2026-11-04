@@ -71,7 +71,7 @@ const Objectives = (() => {
   }
   const parseKey = (key) => {
     const m = /^(\d+)\/([^/]+)\/([^/#]+)#(.+)$/.exec(String(key));
-    return m ? { cls: Number(m[1]), subject: m[2], chapter: m[3], obj: m[4] } : null;
+    return m && !StudyData.locked(m[2]) ? { cls: Number(m[1]), subject: m[2], chapter: m[3], obj: m[4] } : null; // (null for a subject the release lock hides)
   };
 
   // ---------- mapping a question to an objective ----------

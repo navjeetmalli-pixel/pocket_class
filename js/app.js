@@ -205,6 +205,12 @@ const App = {
     if (Store.state.profile && !setup) {
       StudyData.setBoard(Store.state.profile.board);
 
+      // Release lock (js/release.js): a link to Hindi or Punjabi content goes to Learn with a friendly note. Saved progress stays.
+      if (p.split(/[/?]/).some((seg) => Release.subjectLocked(seg))) {
+        toast(t("Coming soon"));
+        return location.replace("#/learn");
+      }
+
       // First the class index (subject list, chapter titles): the student's class and any class a chapter link points to.
       const need = International.on() ? [] : [Store.state.profile.cls];
       const m = p.match(/^(?:chapter|lab\/\w+)\/(\d+)\//);

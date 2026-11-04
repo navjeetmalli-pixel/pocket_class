@@ -42,7 +42,7 @@ const LangGames = (() => {
   // What the game is being made for: { lang, level (is it a Practice-by-topic level), topic, cls }, or null if not a language subject.
   function info(c, subj, ch) {
     const lang = LANG[subj && subj.id];
-    if (!lang) return null;
+    if (!lang || (typeof Release !== "undefined" && Release.langLocked(lang))) return null; // Hindi and Punjabi games are hidden by the release lock
     if (ch && ch.levelKey) {
       const [sid, topicId, levelId] = ch.levelKey.split("/");
       const path = StudyData.path(sid);

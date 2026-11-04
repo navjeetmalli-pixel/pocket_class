@@ -82,7 +82,9 @@ globalThis.StudyData = (function () {
   const INTL = "intl";
   const INTL_SUBJECTS = ["maths", "english", "science"];
   let board = "cbse";
-  const catalogFor = (classNumber) => (boardCatalog[board] && boardCatalog[board][classNumber]) || catalog[classNumber] || [];
+  // Release lock (js/release.js): subjects hidden for a store build. The registry also loads without it (tests, scripts).
+  const locked = (id) => typeof Release !== "undefined" && Release.subjectLocked(id);
+  const catalogFor = (classNumber) => ((boardCatalog[board] && boardCatalog[board][classNumber]) || catalog[classNumber] || []).filter((id) => !locked(id));
   const hasBoardContent = (classNumber) => board === "cbse" || board === INTL || !!(boardCatalog[board] && boardCatalog[board][classNumber]);
 
   // Extra practice (more MCQs, 1–5 mark written questions) lives in data/class{N}/practice/{subject}-{part}.js
@@ -142,11 +144,11 @@ globalThis.StudyData = (function () {
       }
     add(0, PATH_PREFIX + subject, { chapters: own });
   }
-  const paths = () => PATH_SUBJECTS.map((id) => subjects.find((s) => s.id === id));
+  const paths = () => PATH_SUBJECTS.filter((id) => !locked(id)).map((id) => subjects.find((s) => s.id === id));
   const path = (subject) => pathData[subject] || null;
   const pathFile = (subject) => `data/paths/${subject}.js`;
   const pathLoaded = (subject) => !!pathData[subject];
-  const loadPath = (subject) => (PATH_SUBJECTS.includes(subject) ? loadFiles([pathFile(subject)]) : Promise.resolve(false));
+  const loadPath = (subject) => (PATH_SUBJECTS.includes(subject) && !locked(subject) ? loadFiles([pathFile(subject)]) : Promise.resolve(false));
   // The board a reference is for: refs without a board are for everyone.
   const refActive = (ref) => !ref.board || ref.board === (board === INTL ? "cbse" : board);
   // Files a set of { cls, subject } pairs needs: the subject's data file and its practice banks. These ignore the board's
@@ -231,6 +233,7 @@ globalThis.StudyData = (function () {
   // Full chapters once the subject's file has loaded; until then only the index's (id, title, section, summary,
   // nTerms), which is enough for lists and progress but has no notes or questions: check hasFull before using those.
   function chapters(classNumber, subjectId) {
+    if (locked(subjectId)) return [];
     const c = content[classNumber] && content[classNumber][subjectId];
     if (c) return c.chapters;
     const ix = index[classNumber] && index[classNumber][subjectId];
@@ -246,6 +249,7 @@ globalThis.StudyData = (function () {
   }
 
   function subject(id) {
+    if (locked(id)) return undefined; // hidden by the release lock: callers already handle an unknown subject
     const hit = subjects.find((s) => s.id === id);
     if (hit || !String(id).startsWith(PATH_PREFIX)) return hit;
     // Pseudo subject of a path's own chapters: looks like the real subject, named for the path.
@@ -254,8 +258,8 @@ globalThis.StudyData = (function () {
   }
 
   function subjectsFor(classNumber) {
-    if (board === INTL) return INTL_SUBJECTS.map(subject);
-    return catalogFor(classNumber).map(subject);
+    if (board === INTL) return INTL_SUBJECTS.map(subject).filter(Boolean);
+    return catalogFor(classNumber).map(subject).filter(Boolean);
   }
 
   const indexFile = (classNumber) => `data/class${classNumber}/index.js`;
@@ -325,7 +329,7 @@ globalThis.StudyData = (function () {
   return {
     subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addIndex, addPractice, practiceFor, addDiagrams, diagramsFor, objectivesCatalog, addObjectives, objectivesFor, objectivesFile, hasObjectiveFile, loadObjectives, objectivesLoaded, addTimelines, timelinesFor, timelinesFile, chapters, syllabus,
     INTL, INTL_SUBJECTS, PATH_SUBJECTS, PATH_PREFIX, addPath, paths, path, pathFile, pathLoaded, loadPath, refActive, refFiles, filesLoaded, loadFiles,
-    subject, subjectsFor, files, indexFile, practiceFiles, load, loadSubjects, subjectsLoaded, hasFull, loadPractice, practiceLoaded, loadTimelines, timelinesLoaded, hasBoardContent,
+    subject, subjectsFor, locked, files, indexFile, practiceFiles, load, loadSubjects, subjectsLoaded, hasFull, loadPractice, practiceLoaded, loadTimelines, timelinesLoaded, hasBoardContent,
     isLoaded: (c) => !!ready[`${board}:${c}`],
     get board() {
       return board;

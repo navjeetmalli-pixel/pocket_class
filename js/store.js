@@ -268,14 +268,15 @@ const Store = (() => {
       const p = state.profile;
       if (!p || !p.subjects || !patch || (patch.cls == null && patch.board == null)) return [];
       const ok = subjectIds(patch.board || p.board, patch.cls == null ? p.cls : Number(patch.cls));
-      return p.subjects.filter((id) => !ok.includes(id));
+      return p.subjects.filter((id) => !ok.includes(id) && !StudyData.locked(id));
     },
     // Subject ids this learner has picked (all available ones when nothing is picked) and the ones Home lists:
     // the picks in Subject-wise view, every subject in Class-wise view.
     selectedSubjects() {
       const all = this.availableSubjects().map((s) => s.id);
       const pick = state.profile && state.profile.subjects;
-      return pick ? all.filter((id) => pick.includes(id)) : all;
+      const sel = pick ? all.filter((id) => pick.includes(id)) : all;
+      return pick && !sel.length && pick.some((id) => StudyData.locked(id)) ? all : sel; // only locked subjects were picked: use everything offered
     },
     shownSubjects() {
       return state.profile && (state.profile.view === "subject" || state.profile.board === "intl") ? this.selectedSubjects() : this.availableSubjects().map((s) => s.id);
@@ -351,6 +352,7 @@ const Store = (() => {
     // Class 0 is the pseudo class of a path's own chapters (see data/registry.js).
     mistakesFor(cls) {
       return Object.keys(state.mistakes).filter((k) => {
+        if (StudyData.locked(parseKey(k).subject)) return false; // hidden by the release lock; the saved mistake is kept
         const c = parseKey(k).cls;
         return c === cls || c === 0 || state.pm[k];
       });
@@ -501,12 +503,13 @@ const Store = (() => {
     due(cls, any) {
       const by = {};
       for (const [k, r] of Object.entries(state.revise)) {
+        if (StudyData.locked(parseKey(k).subject)) continue; // release lock
         if (!any && parseKey(k).cls !== cls) continue;
         by[k] = { key: k, last: r.last, n: r.n, mistakes: 0 };
       }
       for (const [qk, at] of Object.entries(state.mistakes)) {
         const p = parseKey(qk);
-        if (!any && p.cls !== cls) continue;
+        if (StudyData.locked(p.subject) || (!any && p.cls !== cls)) continue;
         const k = key(p.cls, p.subject, p.chapterId);
         const e = (by[k] = by[k] || { key: k, last: 0, n: 0, mistakes: 0 });
         e.mistakes++;
@@ -518,7 +521,7 @@ const Store = (() => {
       for (const [rk, o] of Object.entries(state.learn.roll)) {
         if (!Mastery.isDue(o, now)) continue;
         const m = /^(\d+)\/([^/]+)\/([^/#]+)#/.exec(rk);
-        if (!m || (!any && Number(m[1]) !== cls)) continue;
+        if (!m || StudyData.locked(m[2]) || (!any && Number(m[1]) !== cls)) continue;
         const k = key(Number(m[1]), m[2], m[3]);
         const e = (by[k] = by[k] || { key: k, last: o.last || 0, n: 1, mistakes: 0 });
         e.objs = (e.objs || 0) + 1;

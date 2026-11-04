@@ -5,6 +5,8 @@
 
   // ---------- settings ----------
 
+  // The About text mentions Punjabi grammar; while the release lock hides Punjabi, that sentence is left out (English only).
+  const noPunjabiNote = (text) => (Release.applies() ? text.replace(" Punjabi covers grammar and writing skills for CBSE and PSEB students.", "") : text);
 
   // Phone apps only: a web page can't show a notification while it is closed.
   function reminderCard() {
@@ -76,7 +78,7 @@
               ? `<div class="field"><label>${t("School year")}</label><a class="btn" href="#/profile">${International.label(st.profile)} · ${t(International.country(st.profile.country).name)}</a><span class="small muted">${t("Change your country, year and currency in your profile.")}</span></div>`
               : `<div class="field"><label>${t("Class")}</label>${classGrid(st.profile.cls)}</div>
             <div class="field"><label>${t("Board")}</label>${boardPicker(st.profile.board || "cbse")}</div>`}
-            <div class="field"><label>${t("App language")}</label>${langSwitch()}</div>
+            ${langSwitch() ? `<div class="field"><label>${t("App language")}</label>${langSwitch()}</div>` : ""}
             <div class="field"><label>${t("Appearance")}</label>${seg("theme", [["system", "Auto"], ["light", "Light"], ["dark", "Dark"]], st.theme)}</div>
           </div>
           ${studentsCard()}
@@ -109,7 +111,7 @@
           </div>
           <div class="card small muted">
             <strong style="color:var(--text)">${t("About Pocket Class India")}</strong><br>
-            ${st.profile.board === "intl" ? t("Maths, English and Science practice by topic, from beginner to advanced level. It is not tied to any national curriculum. The questions and notes are in English, were written for Indian school books, and have not yet been checked by teachers. Your progress is stored only on this device.") : t("Notes, quizzes and tests are written for the CBSE / NCERT and PSEB syllabi, Classes 1 to 12. Each subject page says whether it follows the current NCERT book, an older one, or is arranged by topic. Punjabi covers grammar and writing skills for CBSE and PSEB students. The content has not yet been checked by teachers, so use it for revision alongside your textbook, and check with your teacher if anything looks different from your book. Your progress is stored only on this device.")}
+            ${st.profile.board === "intl" ? t("Maths, English and Science practice by topic, from beginner to advanced level. It is not tied to any national curriculum. The questions and notes are in English, were written for Indian school books, and have not yet been checked by teachers. Your progress is stored only on this device.") : noPunjabiNote(t("Notes, quizzes and tests are written for the CBSE / NCERT and PSEB syllabi, Classes 1 to 12. Each subject page says whether it follows the current NCERT book, an older one, or is arranged by topic. Punjabi covers grammar and writing skills for CBSE and PSEB students. The content has not yet been checked by teachers, so use it for revision alongside your textbook, and check with your teacher if anything looks different from your book. Your progress is stored only on this device."))}
           </div>
         </div>`,
       mount(el) {
@@ -187,7 +189,7 @@
 
   // Fetches every class's files through the service worker, which keeps a copy of each one.
   async function saveAllOffline(status, btn) {
-    const urls = [...D.classes.flatMap((c) => [...D.files(c), ...D.practiceFiles(c)]), ...D.PATH_SUBJECTS.map(D.pathFile), D.timelinesFile];
+    const urls = [...D.classes.flatMap((c) => [...D.files(c), ...D.practiceFiles(c)]), ...D.PATH_SUBJECTS.filter((id) => !D.locked(id)).map(D.pathFile), D.timelinesFile];
     btn.disabled = true;
     let done = 0, failed = 0;
     for (let i = 0; i < urls.length; i += 6) {

@@ -162,8 +162,10 @@ const Views = (() => {
   }
 
   // English | ਪੰਜਾਬੀ | हिंदी. Language names are always shown in their own script.
+  // Empty when the release lock leaves only English (then there is nothing to switch).
   function langSwitch(label = "Language") {
-    return `<div class="seg" role="group" aria-label="${t(label)}">${LANGS.map(([v, l]) => `<button data-lang="${v}" lang="${v}" class="${currentLang() === v ? "on" : ""}">${l}</button>`).join("")}</div>`;
+    if (availableLangs().length < 2) return "";
+    return `<div class="seg" role="group" aria-label="${t(label)}">${availableLangs().map(([v, l]) => `<button data-lang="${v}" lang="${v}" class="${currentLang() === v ? "on" : ""}">${l}</button>`).join("")}</div>`;
   }
 
   // Written questions grouped by marks, like a board paper.

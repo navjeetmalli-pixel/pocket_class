@@ -18,8 +18,12 @@ const LOCALES = { en: "en-IN", pa: "pa-IN", hi: "hi-IN" };
 
 function currentLang() {
   const l = typeof Store !== "undefined" && Store.state.lang;
-  return l === "pa" || l === "hi" ? l : "en";
+  // A language the release lock hides shows as English; the saved choice is not changed (so unlocking later restores it).
+  return (l === "pa" || l === "hi") && !Release.langLocked(l) ? l : "en";
 }
+
+// Languages the app offers: all of LANGS, minus the ones the release lock hides.
+const availableLangs = () => LANGS.filter(([code]) => !Release.langLocked(code));
 
 // Locale for dates (weekday names and so on).
 const langTag = () => LOCALES[currentLang()];

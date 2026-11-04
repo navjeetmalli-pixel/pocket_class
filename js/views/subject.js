@@ -81,7 +81,7 @@
       html: `
         ${topbar(subj.name, "#/learn")}
         <div class="hero" style="--c:${subj.color}">
-          <div class="eyebrow">${t("Class {n}", { n: c })} · ${esc(subj.native)}</div>
+          <div class="eyebrow">${t("Class {n}", { n: c })}${Release.applies() ? "" : ` · ${esc(subj.native)}`}</div>
           <h1>${SubjectIcons.html(subj)} ${esc(subj.name)}</h1>
           <p>${t("{done} of {total} chapters complete", { done: x.done, total: x.total })}</p>
           <span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span>

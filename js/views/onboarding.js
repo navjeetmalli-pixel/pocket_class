@@ -305,7 +305,7 @@
         title: t("Choose your subjects"),
         body: `${head(easy("Choose your subjects", "What do you want to learn?"), lead)}
           <div class="ob-choices two" role="group" aria-label="${t("Subjects")}">
-            ${list.map((s) => choice(`data-sub="${s.id}"`, SubjectIcons.html(s), esc(s.name), intl() ? "" : esc(s.native || ""), ob.sel.has(s.id))).join("")}
+            ${list.map((s) => choice(`data-sub="${s.id}"`, SubjectIcons.html(s), esc(s.name), intl() ? "" : esc(Release.nativeName(s)), ob.sel.has(s.id))).join("")}
           </div>`,
         actions: `${primary(t("Continue"), ob.sel.size > 0)}${byClass || intl() ? "" : `<button type="button" class="btn link" data-act="later">${t("Decide later")}</button>`}`,
         click(b) {
@@ -327,15 +327,15 @@
 
     me() {
       const p = P();
-      const lessonLangs = [["en", "English"], ["hi", "Hindi"], ["pa", "Punjabi"]];
+      const lessonLangs = [["en", "English"], ["hi", "Hindi"], ["pa", "Punjabi"]].filter(([v]) => !Release.langLocked(v));
       return {
         title: t("About you"),
         body: `${head(easy("About you", "What is your name?"))}
           <div class="field"><label for="ob-name">${t("Your name (optional)")}</label><input id="ob-name" class="input" value="${esc(p.name)}" maxlength="30" autocomplete="given-name"></div>
           <div class="field"><span class="lab" id="av-l">${t("Choose a picture")}</span>
             <div class="ob-avatars" role="group" aria-labelledby="av-l">${Store.AVATARS.map((id, i) => `<button type="button" data-avatar="${id}" aria-label="${t("Picture {n}", { n: i + 1 })}" aria-pressed="${p.avatar === id}">${Avatars.svg(id, 64)}</button>`).join("")}</div></div>
-          <div class="field"><span class="lab">${t("App language")}</span>${langSwitch("App language")}<span class="hint" style="margin:0">${t("Buttons and menus.")}</span></div>
-          ${intl() ? "" : `<div class="field"><span class="lab">${t("Lesson language")}</span>
+          ${langSwitch("App language") ? `<div class="field"><span class="lab">${t("App language")}</span>${langSwitch("App language")}<span class="hint" style="margin:0">${t("Buttons and menus.")}</span></div>` : ""}
+          ${intl() || lessonLangs.length < 2 ? "" : `<div class="field"><span class="lab">${t("Lesson language")}</span>
             <div class="seg" role="group" aria-label="${t("Lesson language")}">${lessonLangs.map(([v, l]) => `<button type="button" data-ll="${v}" class="${p.learnLang === v ? "on" : ""}" aria-pressed="${p.learnLang === v}">${t(l)}</button>`).join("")}</div>
             <span class="hint" style="margin:0">${t("The language you like explanations in. Not every lesson has every language yet.")}</span></div>`}`,
         actions: primary(t("Continue")),

@@ -26,7 +26,7 @@ const Speech = (() => {
   // The button's HTML, or "" when this content doesn't get one. `text` is what it will read.
   function btn(cls, subject, text) {
     const say = speakable(text);
-    if (!say || !eligible(cls, subject)) return "";
+    if (!say || !eligible(cls, subject) || Release.langLocked(langOf(say)) || Release.subjectLocked(subject)) return ""; // no Hindi / Punjabi voice while locked
     return `<button type="button" class="say no-print" data-say="${esc(say)}" ${voiceFor(langOf(say)) ? "" : "hidden"} aria-label="${t("Read aloud")}" title="${t("Read aloud")}">${icon("speaker")}</button>`;
   }
 
