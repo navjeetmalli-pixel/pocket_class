@@ -135,7 +135,7 @@
             ? `<p class="small muted" style="margin:-4px 2px 12px">${t("Lowest quiz accuracy, from chapters with at least 5 questions answered.")}</p>
               <div class="list">${weak
                 .map(
-                  (x) => `<a class="card chapter-row" href="#/chapter/${c}/${x.f.subj.id}/${x.f.ch.id}/quiz" style="--c:${x.f.subj.color}">
+                  (x) => `<a class="card chapter-row" href="#/chapter/${c}/${x.f.subj.id}/${x.f.ch.id}/master" style="--c:${x.f.subj.color}">
                     <span class="ch-num">${SubjectIcons.html(x.f.subj)}</span>
                     <span class="ch-body"><span class="ch-title">${esc(x.f.ch.title)}</span><span class="ch-sum">${esc(x.f.subj.short)} · ${t("{n}% right of {a} answers", { n: x.p, a: x.asked })}</span></span>${icon("next")}</a>`
                 )

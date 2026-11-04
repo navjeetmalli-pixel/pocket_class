@@ -54,6 +54,14 @@
     const out = [];
     const subs = D.subjectsFor(c).filter((s) => D.hasFull(c, s.id));
 
+    // Virtual labs (js/labs/): attached to chapters by id, each opens in its own page with the chapter as its context.
+    if (typeof Labs !== "undefined")
+      for (const lab of Labs.all()) {
+        const rows = [];
+        for (const s of subs) for (const ch of D.chapters(c, s.id)) if (lab.chapters.some((x) => x.cls === c && x.subject === s.id && x.chapter === ch.id)) rows.push({ subj: s, ch });
+        if (rows.length) out.push({ area: lab.area, key: `lab-${lab.id}`, ic: lab.icon, title: lab.title, what: lab.objective, color: rows[0].subj.color, kind: "lab", type: lab.id, rows });
+      }
+
     // Experiments: attached to chapters by id (js/sims.js).
     for (const id of Sims.ids) {
       const rows = [];
@@ -85,7 +93,9 @@
 
   function card(c, it) {
     const row = (r) => {
-      const open = it.kind === "sim"
+      const open = it.kind === "lab"
+        ? `<a class="btn primary" href="#/lab/${it.type}/${c}/${r.subj.id}/${r.ch.id}">${icon(it.ic)} ${t("Open lab")}</a>`
+        : it.kind === "sim"
         ? `<a class="btn" data-open-sim="${it.type}" href="#/chapter/${c}/${r.subj.id}/${r.ch.id}/notes">${icon("bolt")} ${t("Open experiment")}</a>`
         : `<a class="btn" href="#/play/${c}/${r.subj.id}/${r.ch.id}/${it.type}">${icon("play")} ${t("Play")}</a>`;
       const concept = `<a class="btn" href="#/chapter/${c}/${r.subj.id}/${r.ch.id}">${icon("notes")} ${t("Chapter")}</a>`;

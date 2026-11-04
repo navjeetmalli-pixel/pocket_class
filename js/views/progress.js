@@ -41,7 +41,7 @@
       : {
           "first-test": () => `<a href="#/test/${s.id}">${t("Take a mock test")}</a> ${t("in this subject.")}`,
           "more-answers": () => t("Answer {n} more mock test questions to see your accuracy.", { n: next.n }),
-          lowest: () => (ch ? `${t("Revisit")} <a href="#/chapter/${c}/${s.id}/${ch.ch.id}/quiz">${esc(ch.ch.title)}</a>: ${t("it was the lowest in your tests.")}` : ""),
+          lowest: () => (ch ? `${t("Revisit")} <a href="#/chapter/${c}/${s.id}/${ch.ch.id}/master">${esc(ch.ch.title)}</a>: ${t("it was the lowest in your tests.")}` : ""),
           untested: () => `${t("{n} {n:chapter|chapters} not in a mock test yet.", { n: next.n })} <a href="#/test/${s.id}">${t("Try a test with all chapters.")}</a>`,
           timed: () => `<a href="#/test/${s.id}">${t("Try a timed test")}</a> ${t("to practise with the clock on.")}`,
           paper: () => `<a href="#/papers">${t("Try a full sample paper")}</a> ${t("in the exam pattern.")}`,

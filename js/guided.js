@@ -300,7 +300,7 @@ const Guided = (() => {
       })
       .catch(() => {
         if (my !== token || !el.isConnected) return;
-        el.innerHTML = `<div class="card guided"><p class="g-lead">${t("The lesson could not be built for this chapter.")}</p><a class="btn" href="#/chapter/${c}/${subj.id}/${ch.id}/notes">${t("Back to notes")}</a></div>`;
+        el.innerHTML = `<div class="card guided"><p class="g-lead">${t("The lesson could not be built for this chapter.")}</p><a class="btn" href="#/chapter/${c}/${subj.id}/${ch.id}/understand">${t("Back to notes")}</a></div>`;
       });
   }
 
@@ -456,7 +456,7 @@ const Guided = (() => {
       ${reasonBox("refresh")}
       <article class="note g-note"><div class="eyebrow g-eyebrow">${t("Earlier work: {title}", { title: esc(r.title) })}</div>
         ${r.notes.map((n) => `<h3>${esc(n.heading)}</h3><ul>${n.points.map((p) => `<li>${rich(p)}</li>`).join("")}</ul>`).join("")}</article>
-      <p class="small muted" style="margin-top:12px"><a href="#/chapter/${r.cls}/${r.subject}/${r.chapter}/guided">${t("Open the whole lesson for that chapter")}</a> · <a href="#/chapter/${r.cls}/${r.subject}/${r.chapter}/notes">${t("Read its notes")}</a></p>
+      <p class="small muted" style="margin-top:12px"><a href="#/chapter/${r.cls}/${r.subject}/${r.chapter}/understand/lesson">${t("Open the whole lesson for that chapter")}</a> · <a href="#/chapter/${r.cls}/${r.subject}/${r.chapter}/understand">${t("Read its notes")}</a></p>
       ${nav("Continue to this chapter")}`;
   }
 
@@ -683,7 +683,7 @@ const Guided = (() => {
     const box = el.querySelector("[data-game-box]");
     if (!box || !s.gameType) return;
     const def = Games.get(s.gameType);
-    const ctx = { key: Games.keyFor(s.c, s.subj, s.ch), cls: s.c, subj: s.subj, ch: s.ch, title: s.ch.title, back: `${s.base}/guided`, backLabel: "Back to the lesson" };
+    const ctx = { key: Games.keyFor(s.c, s.subj, s.ch), cls: s.c, subj: s.subj, ch: s.ch, title: s.ch.title, back: `${s.base}/understand/lesson`, backLabel: "Back to the lesson" };
     const go2 = () => {
       if (!def.load || def.ready()) return Games.run(box, ctx, s.gameType);
       box.innerHTML = `<p class="small muted">${t("Loading…")}</p>`;
@@ -718,7 +718,7 @@ const Guided = (() => {
           ${ok ? "" : `<div>${t("Correct answer:")} <strong>${rich(it.options[it.answer])}</strong></div>`}
           ${ok && it.sure ? "" : `<div>${rich(it.explain)}</div>`}
           ${ok ? "" : extra(it, it.picked)}
-          ${!ok && it.sure ? `<div class="mt-s"><a href="${s.base}/notes">${t("Read the notes again")} ${icon("arrow")}</a></div>` : ""}
+          ${!ok && it.sure ? `<div class="mt-s"><a href="${s.base}/understand">${t("Read the notes again")} ${icon("arrow")}</a></div>` : ""}
         </div>
         ${offerHTML()}
         ${s.p < n - 1 ? nav("Next question", "p-next", false) : nav(undefined, "next", false)}`;
@@ -826,7 +826,7 @@ const Guided = (() => {
       ${teachHTML(s.key, s.ch, false)}
       <div class="result-actions" style="margin-top:16px">
         ${score < ps.length && mistakes && rec.id !== "mistakes" ? `<a class="btn" href="#/revise/mistakes">${icon("target")} ${t("Practise my mistakes")}</a>` : ""}
-        ${rec.id !== "quiz" ? `<a class="btn" href="${s.base}/quiz">${icon("quiz")} ${t("Take the chapter quiz")}</a>` : ""}
+        ${rec.id !== "quiz" ? `<a class="btn" href="${s.base}/master">${icon("quiz")} ${t("Take the chapter quiz")}</a>` : ""}
         ${s.next && rec.id !== "next" ? `<a class="btn" href="#/chapter/${s.c}/${s.subj.id}/${s.next.id}">${t("Next chapter")} ${icon("arrow")}</a>` : ""}
         <button class="btn" data-act="again">${icon("reset")} ${t("Do it again")}</button>
       </div>`;
@@ -959,7 +959,7 @@ const Guided = (() => {
     if (e.target.closest(".lp-game-box")) {
       // A link inside the game that points back at the lesson ("Quit game", "Back to the lesson"): leave the game, stay here.
       const a = e.target.closest("a[href]");
-      if (a && a.getAttribute("href") === `${s.base}/guided`) {
+      if (a && a.getAttribute("href") === `${s.base}/understand/lesson`) {
         e.preventDefault();
         Games.stop();
         render();
@@ -1122,10 +1122,10 @@ const Guided = (() => {
       : g
       ? t("Done {when} · {score}/{total} in practice. Do it again for a different set of questions.", { when: relDate(g.at).toLowerCase(), score: g.score, total: g.total })
       : t("Learn this chapter step by step: a quick check, a question first, the ideas one skill at a time, practice and an independent check. About 10 minutes.");
-    return `<a class="card row guided-card no-print" href="${base}/guided" style="gap:12px">
+    return `<a class="card row guided-card no-print" href="${base}/understand/lesson" style="gap:12px">
       <span class="ti">${icon("play")}</span>
       <span class="grow"><strong>${t("Guided lesson")}${g || open ? "" : ` · ${t("New")}`}</strong><span class="small muted" style="display:block">${sub}</span></span>
-      ${icon("arrow")}</a>`;
+      <span class="btn primary guided-go">${open ? t("Resume lesson") : g ? t("Do it again") : t("Start lesson")} ${icon("arrow")}</span></a>`;
   }
 
   // Teach-back box for the Notes tab.

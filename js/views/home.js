@@ -9,7 +9,7 @@
 
   // ---------- pieces of the home screen ----------
 
-  const TAB = { notes: "Notes", guided: "Lesson", cards: "Flashcards", practice: "Practice", quiz: "Quiz", play: "Games" };
+  const TAB = { understand: "Understand", visualise: "Visualise", explore: "Explore", play: "Games", practise: "Practise", master: "Master" };
   const KIND = { review: "Review", lesson: "Lesson", path: "Lesson", practice: "Practice" };
   const subjName = (id) => (D.subject(id) ? D.subject(id).short : id);
 
@@ -88,9 +88,9 @@
           const g = m && typeof Games !== "undefined" && Games.get && Games.get(m[1]);
           sub = `${f.subj.short} · ${g && g.title ? t(g.title) : t("Games")}`;
         } else {
-          const stage = pl.tab === "guided" && pl.stage ? ` · ${t("Step {i} of {n}", { i: pl.stage.i, n: pl.stage.n })}${pl.stage.label ? ` · ${esc(pl.stage.label)}` : ""}` : "";
-          const unfinished = pl.tab === "guided" && typeof Store.loopGet === "function" && Store.loopGet(key);
-          sub = `${f.subj.short} · ${t(TAB[pl.tab] || "Notes")}${unfinished ? ` · ${t("lesson not finished")}` : stage}`;
+          const stage = pl.sub === "lesson" && pl.stage ? ` · ${t("Step {i} of {n}", { i: pl.stage.i, n: pl.stage.n })}${pl.stage.label ? ` · ${esc(pl.stage.label)}` : ""}` : "";
+          const unfinished = pl.sub === "lesson" && typeof Store.loopGet === "function" && Store.loopGet(key);
+          sub = `${f.subj.short} · ${t(pl.sub === "lesson" ? "Lesson" : TAB[pl.tab] || "Understand")}${unfinished ? ` · ${t("lesson not finished")}` : stage}`;
         }
       } else {
         const topic = D.pathLoaded(pl.subject) && D.path(pl.subject).topics.find((x) => x.id === pl.topic);

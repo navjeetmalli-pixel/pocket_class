@@ -180,7 +180,7 @@ test("explore: shows the labs that have something for the class, and each experi
   await expect(card).toBeVisible();
   await expect(card).toContainText("image forms");
   await card.getByRole("link", { name: /Open experiment/ }).first().click();
-  await expect(page).toHaveURL(/#\/chapter\/10\/science\/light-reflection-and-refraction\/notes$/);
+  await expect(page).toHaveURL(/#\/chapter\/10\/science\/light-reflection-and-refraction\/explore$/);
   const sim = page.locator('[data-sim="lens"]');
   await expect(sim).toHaveAttribute("open", "");
   await expect(sim.locator(".sim-body svg").first()).toBeVisible();

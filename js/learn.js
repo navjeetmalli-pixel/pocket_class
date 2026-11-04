@@ -6,12 +6,13 @@
 //   guided lesson: topics read, hints shown, fade / turn / practice answers      js/guided.js
 //   games: every MCQ answer (api.answered) and one "game" event at the end       js/games/engine.js
 //   teach-back ticks                                                             js/guided.js
+//   virtual labs: the first run (lesson-step), each explanation and label-check answer (answer)   js/labs/labs.js, cell.js
 //   Today's plan items finished (type "plan", no objective: it changes no state) js/plan.js
 // An event is { type, cls, subject, chapter, obj, ok, hints, attempt, source, err? } plus the time. `obj` is the
 // objective the question belongs to (Objectives.forQuestion). Events whose chapter is not loaded are not recorded.
 
 const Learn = (() => {
-  const SOURCES = ["quiz", "practice", "guided", "game", "path", "test", "revise", "plan"];
+  const SOURCES = ["quiz", "practice", "guided", "game", "path", "test", "revise", "plan", "lab"];
   // Quiz record kinds (Store.recordQuiz) -> event source.
   const SOURCE_OF_KIND = { chapter: "quiz", test: "test", practice: "practice", revision: "revise", path: "path", guided: "guided" };
 

@@ -28,7 +28,7 @@ test("guided lesson: a Class 10 Maths chapter goes through every step to Done", 
   await seed(page, { name: "Asha", cls: 10 });
   await page.goto(`/#/chapter/10/maths/${CH.id}/notes`);
   await page.locator(".guided-card").click();
-  await expect(page).toHaveURL(new RegExp(`/${CH.id}/guided$`));
+  await expect(page).toHaveURL(new RegExp(`/${CH.id}/understand/lesson$`));
 
   const stepLabel = page.locator(".guided .quiz-clock");
   // Real Numbers is the first chapter, so there is no earlier work to check: the lesson opens with the question.

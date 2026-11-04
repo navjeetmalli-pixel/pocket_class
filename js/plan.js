@@ -113,7 +113,7 @@ const Plan = (() => {
     for (const s of subjects) {
       const ch = D.chapters(c, s.id).find((x) => !started(Store.key(c, s.id, x.id)));
       if (!ch) continue;
-      const href = Guided.available(c, s.id, ch.id) ? `#/chapter/${c}/${s.id}/${ch.id}/guided` : `#/chapter/${c}/${s.id}/${ch.id}`;
+      const href = Guided.available(c, s.id, ch.id) ? `#/chapter/${c}/${s.id}/${ch.id}/understand/lesson` : `#/chapter/${c}/${s.id}/${ch.id}/understand`;
       return { id: `lesson:${Store.key(c, s.id, ch.id)}`, kind: "lesson", cls: c, subject: s.id, chapter: ch.id, why: { w: top === null ? "first" : s.id === top ? "next-top" : "next" }, href };
     }
     return null;
@@ -137,7 +137,7 @@ const Plan = (() => {
   function practiceItem(c) {
     const w = weakest(c);
     if (!w) return null;
-    return { id: `practice:${Store.key(c, w.p.subject, w.p.chapter)}`, kind: "practice", cls: c, subject: w.p.subject, chapter: w.p.chapter, obj: w.p.obj, why: { w: "weak" }, href: `#/chapter/${c}/${w.p.subject}/${w.p.chapter}/quiz` };
+    return { id: `practice:${Store.key(c, w.p.subject, w.p.chapter)}`, kind: "practice", cls: c, subject: w.p.subject, chapter: w.p.chapter, obj: w.p.obj, why: { w: "weak" }, href: `#/chapter/${c}/${w.p.subject}/${w.p.chapter}/master` };
   }
 
   // ---------- finishing ----------
@@ -245,18 +245,20 @@ const Plan = (() => {
     }
     const sim = typeof Sims !== "undefined" && Sims.chapters[`${c}/${chapter}`] && new Date().getDate() % 2 === 0;
     return sim
-      ? { kind: "experiment", cls: c, subject, chapter, href: `#/chapter/${c}/${subject}/${chapter}/notes` }
+      ? { kind: "experiment", cls: c, subject, chapter, href: `#/chapter/${c}/${subject}/${chapter}/explore` }
       : { kind: "game", cls: c, subject, chapter, href: `#/play/${c}/${subject}/${chapter}` };
   }
 
   // ---------- Continue learning ----------
 
   const PLACES = [
-    [/^#\/chapter\/(\d+)\/(\w+)\/([\w-]+)(?:\/(\w+))?$/, "chapter"],
+    [/^#\/chapter\/(\d+)\/(\w+)\/([\w-]+)(?:\/(\w+))?(?:\/(\w+))?$/, "chapter"],
     [/^#\/play\/level\/(\w+)\/([\w-]+)\/([\w-]+)(?:\/(\w+))?$/, "level-game"],
     [/^#\/play\/(\d+)\/(\w+)\/([\w-]+)(?:\/(\w+))?$/, "game"],
     [/^#\/paths\/(\w+)\/([\w-]+)\/([\w-]+)$/, "path"],
   ];
+
+  const LEGACY_TAB = { notes: ["understand"], guided: ["understand", "lesson"], lesson: ["understand", "lesson"], cards: ["understand", "terms"], flashcards: ["understand", "terms"], practice: ["practise"], quiz: ["master"] };
 
   // Describes a saved place: { kind, tab?, cls?, subject, chapter?, topic?, level?, href }, or null when it can't be placed.
   function place(act, c) {
@@ -266,7 +268,13 @@ const Plan = (() => {
       if (!m) continue;
       if (kind === "chapter" || kind === "game") {
         if (Number(m[1]) !== c || !chapterOf(c, m[2], m[3])) return null;
-        return { kind, cls: c, subject: m[2], chapter: m[3], tab: kind === "chapter" ? m[4] || "notes" : m[4] || null, href: act.href, stage: act.stage || null };
+        if (kind === "chapter") {
+          // Places saved before the chapter hub name the old tabs; they now open the matching section.
+          const [tab, sub] = LEGACY_TAB[m[4]] || [m[4] || "understand", m[5] || null];
+          const href = LEGACY_TAB[m[4]] ? `#/chapter/${c}/${m[2]}/${m[3]}/${tab}${sub ? "/" + sub : ""}` : act.href;
+          return { kind, cls: c, subject: m[2], chapter: m[3], tab, sub, href, stage: act.stage || null };
+        }
+        return { kind, cls: c, subject: m[2], chapter: m[3], tab: m[4] || null, href: act.href, stage: act.stage || null };
       }
       if (!D.subject(m[1])) return null;
       return { kind, subject: m[1], topic: m[2], level: m[3], href: act.href };
@@ -283,7 +291,7 @@ const Plan = (() => {
   // its saved place). Runs after a click or key inside the lesson.
   function watchLesson() {
     const read = () => {
-      const m = /^#\/chapter\/(\d+)\/\w+\/[\w-]+\/guided$/.exec(location.hash);
+      const m = /^#\/chapter\/(\d+)\/\w+\/[\w-]+\/understand\/lesson$/.exec(location.hash);
       const head = m && document.querySelector("#guided-mount .quiz-head");
       if (!head || !head.children[1]) return;
       const nums = (head.children[0].textContent.match(/\d+/g) || []).map(Number);

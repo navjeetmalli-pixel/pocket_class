@@ -95,7 +95,7 @@ test("home: Continue learning goes back to the exact place, and a Class 2 studen
   await expect(main).toContainText("Continue learning");
   await expect(main).toContainText(CH.title);
   await expect(main).toContainText("Lesson");
-  await expect(main).toHaveAttribute("href", `#/chapter/10/maths/${CH.id}/guided`);
+  await expect(main).toHaveAttribute("href", `#/chapter/10/maths/${CH.id}/understand/lesson`);
 });
 
 test("home: Class 2 sees the simpler version", async ({ page }) => {

@@ -107,7 +107,7 @@ test("learning loop: a weak entry check brings a refresher, with its reason", as
   await expect(page.locator(".guided .quiz-clock")).toHaveText("Quick refresher");
   await expect(page.locator(".guided .lp-reason")).toContainText("We'll start with a quick refresher because");
   await expect(page.locator(".guided .note")).toBeVisible();
-  await expect(page.locator('.guided a[href$="/guided"]').first()).toBeVisible();
+  await expect(page.locator('.guided a[href$="/understand/lesson"]').first()).toBeVisible();
   const s = current(await readStore(page));
   expect(s.learn.events.some((e) => e.type === "decision" && e.rule === "weak-diagnostic" && e.choice === "applied")).toBe(true);
   // Continuing goes on to the chapter itself.

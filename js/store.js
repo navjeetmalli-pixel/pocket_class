@@ -20,7 +20,7 @@ const Store = (() => {
 
   // The learning record (spec 11): a versioned, local-only event log plus a rolled-up summary per objective (js/mastery.js).
   //   events: [{ t, type: "answer"|"hint"|"lesson-step"|"game"|"teach"|"decision"|"diagnostic", cls, subject, chapter, obj, ok, hints, attempt,
-  //              source: "quiz"|"practice"|"guided"|"game"|"path"|"test"|"revise", err? }]   the newest `Mastery.config.eventCap`
+  //              source: "quiz"|"practice"|"guided"|"game"|"path"|"test"|"revise"|"plan"|"lab", err? }]   the newest `Mastery.config.eventCap`
   //   roll:   { "10/maths/real-numbers#hcf": o }   every event is folded into its objective's summary as it is logged,
   //                                                 so trimming the log never loses evidence
   const LEARN_V = 1;
@@ -32,6 +32,18 @@ const Store = (() => {
     const roll = l.roll && typeof l.roll === "object" && !Array.isArray(l.roll) ? l.roll : {};
     for (const k of Object.keys(roll)) if (!roll[k] || typeof roll[k] !== "object") delete roll[k];
     return Object.assign(l, { v: Number(l.v) || LEARN_V, events: Array.isArray(l.events) ? l.events.filter((e) => e && typeof e === "object") : [], roll });
+  }
+
+  // Virtual labs (js/labs/): the experiment records a student saved. One record per finished experiment:
+  //   { id, lab, inv, cls, subject, chapter, at, question, prediction: { text, ok }, variables: { changed, held: [] },
+  //     observations: [{ column key: shown value }], conclusion: { text, ok }, fair, extra? }
+  // Older saves and backups have none (-> empty); damaged records are dropped. Each lab keeps its newest LAB_KEEP.
+  const LAB_KEEP = 30;
+  const labsDefaults = () => ({ v: 1, records: [] });
+  function cleanLabs(l) {
+    if (!l || typeof l !== "object" || Array.isArray(l)) return labsDefaults();
+    const ok = (r) => r && typeof r === "object" && typeof r.id === "string" && typeof r.lab === "string" && Number.isFinite(r.at);
+    return Object.assign(l, { v: Number(l.v) || 1, records: Array.isArray(l.records) ? l.records.filter(ok) : [] });
   }
 
   // The learner profile (docs/UI_IMPLEMENTATION.md). Saved profiles from older versions have only { name, cls, board };
@@ -83,6 +95,7 @@ const Store = (() => {
     pm: {}, // question key -> true: mistakes made in Practice by topic in another class's chapter (shown in My mistakes too)
     games: {}, // chapter (or level) key -> { match: { best, stars, plays, at }, ... }: best score and stars of each Play game
     learn: learnDefaults(), // the learning record: see learnDefaults
+    labs: labsDefaults(), // saved virtual-lab experiment records: see labsDefaults
     loop: {}, // chapter key -> { at, snap }: a chapter lesson that was left unfinished, so it can be resumed (js/guided.js)
     exam: {}, // chapter key -> { f: { mcq: [right, asked], ar: [...] }, timed: [r, n], n: tests, at }: answers in mock tests (js/readiness.js)
     plan: null, // Today's plan on Home: { day, cls, items: [...], done: { id: time } } (js/plan.js)
@@ -102,6 +115,7 @@ const Store = (() => {
   // Makes the device settings readable and writable through a student's state (but not saved with it).
   function bind(s) {
     s.learn = cleanLearn(s.learn);
+    s.labs = cleanLabs(s.labs);
     s.profile = cleanProfile(s.profile);
     for (const k of DEVICE) Object.defineProperty(s, k, { get: () => device[k], set: (v) => (device[k] = v), enumerable: false, configurable: true });
     return s;
@@ -454,6 +468,25 @@ const Store = (() => {
       }
       if (l.v <= LEARN_V && l.events.length > cap) l.events.splice(0, l.events.length - cap);
       save();
+    },
+
+    // ----- virtual labs -----
+    // Saves an experiment record (a record with the same id is replaced); keeps the newest LAB_KEEP of each lab.
+    saveLab(rec) {
+      const l = state.labs;
+      const i = l.records.findIndex((r) => r.id === rec.id);
+      if (i >= 0) l.records[i] = rec;
+      else l.records.push(rec);
+      const mine = l.records.filter((r) => r.lab === rec.lab);
+      if (mine.length > LAB_KEEP) {
+        const drop = new Set(mine.sort((a, b) => a.at - b.at).slice(0, mine.length - LAB_KEEP).map((r) => r.id));
+        l.records = l.records.filter((r) => !drop.has(r.id));
+      }
+      save();
+    },
+    // Saved experiments, newest first (all labs, or one).
+    labRecords(lab) {
+      return state.labs.records.filter((r) => !lab || r.lab === lab).sort((a, b) => b.at - a.at);
     },
 
     // Chapters of this class that are due for revision today, most overdue first:

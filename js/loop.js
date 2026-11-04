@@ -332,14 +332,14 @@ const Loop = (() => {
     const weak = rows.filter((r) => r.master === false);
     if (weak.length) {
       const o = weak[0].objective;
-      return { id: "review-weak", text: t("Read the notes again for: {skill}", { skill: o.text }), why: t("Your independent check on this one was not right yet, and reading before trying again helps most."), href: `${s.base}/notes`, label: t("Open the notes") };
+      return { id: "review-weak", text: t("Read the notes again for: {skill}", { skill: o.text }), why: t("Your independent check on this one was not right yet, and reading before trying again helps most."), href: `${s.base}/understand`, label: t("Open the notes") };
     }
     const open = rows.find((r) => r.after !== "mastered");
     const mistakes = Store.mistakesFor(s.c).length;
     if (mistakes && s.retrieveWrong) return { id: "mistakes", text: t("Practise your mistakes"), why: t("Questions you missed are saved there, and trying them again soon makes them stick."), href: "#/revise/mistakes", label: t("Practise my mistakes") };
-    if (open) return { id: "quiz", text: t("Take the chapter quiz"), why: t("A skill needs a few right answers on different days before it counts as mastered, so more practice is the best next step."), href: `${s.base}/quiz`, label: t("Take the chapter quiz") };
+    if (open) return { id: "quiz", text: t("Take the chapter quiz"), why: t("A skill needs a few right answers on different days before it counts as mastered, so more practice is the best next step."), href: `${s.base}/master`, label: t("Take the chapter quiz") };
     if (s.next) return { id: "next", text: t("Move on to the next chapter"), why: t("Every skill here is mastered for now. We will bring them back for review on their dates."), href: `#/chapter/${s.c}/${s.subj.id}/${s.next.id}`, label: t("Next chapter") };
-    return { id: "quiz", text: t("Take the chapter quiz"), why: t("It is a good way to check the whole chapter."), href: `${s.base}/quiz`, label: t("Take the chapter quiz") };
+    return { id: "quiz", text: t("Take the chapter quiz"), why: t("It is a good way to check the whole chapter."), href: `${s.base}/master`, label: t("Take the chapter quiz") };
   }
 
   return { config, STAGES, STAGE_LABEL, STAGE_OF, kindOf, stageLabel, parseRef, prereqRefs, usableRefs, poolOf, byObjective, drawSets, diagItems, refresher, withOrder, shuffle, RULES, decide, log, recommend, isTransfer, chapterOf };

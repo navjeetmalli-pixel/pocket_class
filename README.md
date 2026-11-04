@@ -106,6 +106,36 @@ The end screen's next step is chosen the same way (`Loop.recommend`): notes for 
 
 **Saving and resuming.** The unfinished lesson of each chapter is saved per student as `loop: { "10/maths/real-numbers": { at, snap } }` (the whole route, the questions drawn and the answers given, so the same questions come back); it is cleared when the lesson finishes or the student taps "Start again", and ignored after 30 days. Tests: `tests/learning-loop.spec.js`.
 
+## Chapter hub
+
+A chapter page (`#/chapter/{class}/{subject}/{chapter}/{section}`, `js/views/chapter.js`) has six sections as its navigation: segmented, scrollable tabs on a phone, a side list on a desktop, links with `aria-current` (the section is in the URL, so they are not ARIA tabs). A section with nothing in it for that chapter is not shown.
+
+| Section | What is in it | Shown when |
+|---|---|---|
+| Understand | the lesson entry (Start / Resume lesson), What you can do, notes grouped by skill, key terms with flashcards, worked examples, teach-back | always |
+| Visualise | the chapter's diagrams with titles, read-aloud where available | the chapter has diagrams |
+| Explore | experiments (`js/sims.js`) and, when `Labs.forChapter(c, subject, chapter)` exists, the labs it returns | an experiment or lab exists |
+| Play | the chapter's games with best stars | the chapter has games |
+| Practise | practice sheet, fresh numbered questions with steps, question bank by level, important and written questions | the chapter has any |
+| Master | chapter quiz, your skills, one-skill check, chapter mock test (15 timed questions, counts as exam readiness), formula or key-facts sheet | always (parts that have nothing are left out) |
+
+Old tab URLs redirect: `notes` to `understand`, `guided` or `lesson` to `understand/lesson`, `cards` or `flashcards` to `understand/terms`, `practice` to `practise`, `quiz` to `master`. A section the chapter does not have redirects to `understand`. Continue learning saves and resumes the exact section; places saved before the hub are translated.
+
+The lesson (`understand/lesson`) runs on its own: no hero and no section navigation, only the title, step progress, the task, hints, back and next, and **Exit lesson**, which returns to Understand. The lesson saves its place on every step, so the Understand card then says "Resume lesson". Classes 1-5 get big section tiles with icons and show fewer items before "Show more"; Classes 11-12 are denser. Colours (blue Understand, Visualise and Practise, green Explore, purple Play, amber Master) always come with a text label. Tests: `tests/chapter-hub.spec.js`.
+
+## Virtual labs
+
+Four original, offline labs in `js/labs/` (`labs.js` is the registry and the shared scaffold, one file per lab, `i18n.js` has the Punjabi and Hindi). They open from **Explore** (`#/lab/<id>/<class>/<subject>/<chapter>`) and from a chapter's Explore section (`Labs.forChapter(cls, subject, chapter)` returns `[{ id, title, blurb, area, objective, icon, href }]`, already translated). Each follows **predict, change one variable, observe, explain**: the learner picks a prediction first (the run buttons stay off until then), records runs in a table with units and a small graph (a "fair test" note says whether only one variable changed), then picks the explanation their runs support.
+
+| Lab | Area | Classes | What it models | Chapters |
+|---|---|---|---|---|
+| Circuit builder | Physics | 6, 7, 8, 10, 12 | battery (1.5 to 12 V), bulb, 10 / 20 / 50 Ω resistors, switch, ammeter, voltmeter, gap on a board of series and parallel places; tap-tap, drag or keyboard; open / closed / short circuit; I = V / R, series and parallel resistance, P = I²R, bulb brightness | 6 PSEB Electricity and Circuits; 7 Electricity: circuits and components (and PSEB Electric current and its effects); 8 Electricity, magnetic and heating effects; 10 Electricity; 12 Current Electricity |
+| Force and motion lab | Physics | 8, 9, 11 | a cart pulled with 0 to 20 N, mass 0.5 to 10 kg, four surfaces; a = (F − f) / m, f = μ m g with static friction balancing a small pull; velocity–time and distance–time graphs over 5 s; the Newton's second law runs (double the force, double the mass) | 8 Exploring Forces, PSEB Force and pressure, Friction; 9 How forces affect motion, Describing motion, PSEB Force and laws of motion, Motion; 11 Laws of motion, Motion in a straight line |
+| Particle world | Chemistry | 6, 8, 9 | 60 particles of water in a box, heat slider −40 to 140 °C; solid / liquid / gas arrangement and motion, melting at 0 °C and boiling at 100 °C, energy ∝ kelvin, a movable lid (gas halves in volume when the pressure doubles, a liquid changes by about 0.005 %) | 6 A journey through states of water; 8 Particulate nature of matter; 9 PSEB Matter in our surroundings |
+| Cell builder | Biology | 8, 9, 11 | place parts into a plant cell and an animal cell; wrong parts are sent back with the reason, right ones show their function; then a label check (Classes 8: seven parts, 9 and up: eleven) | 8 Invisible living world; 9 Cell, PSEB Fundamental unit of life; 11 Cell: the unit of life |
+
+Every lab states its idealisations under the experiment (for example: ideal battery and meters, 10 Ω bulb; g = 9.8 m/s², no air resistance; water at 1 atm; schematic cells) and says it does not replace real practical work. **Records:** a finished experiment is saved in the student's data as `labs.records` (question, prediction, variables changed and held, the table of runs, conclusion, fair-test flag, and for the cell builder the label-check score); it is part of the backup, per student, newest 30 per lab. **Evidence:** the first run logs a `lesson-step` and each explanation (and each label-check answer) an `answer` event with source `lab` against the chapter objective that best matches (`Objectives.forQuestion`). **Accuracy:** `node scripts/check-labs.js` (run by `validate.js`) tests every possible circuit board (Ohm's law, Kirchhoff's current law, power from the battery equals power in the parts), the force lab over every force, mass and surface (and the area under the v–t graph equals the distance), the water states and numbers, the cell sets and drawings, that every mapped chapter exists, and that every `t("…")` string has Punjabi and Hindi. Tests are in `tests/labs.spec.js`. Limitations: one fixed board layout, no free wiring; bulbs are not self-heating; the particle model is schematic (60 particles); cells are typical school-level diagrams; no stand-alone worksheet or teacher view yet.
+
 ## Home, Today's plan and readiness
 
 **Today** (`#/`, spec 7.1) answers "what should I do next?" in this order: greeting and the profile button, **Continue learning** (the exact page the student was last on: a chapter tab, a game, a Practice-by-topic level; the router saves it as `lastAct` through `Plan.noteRoute`, and a lesson's step is added when the page shows one; a new student sees "Start here" with the first plan item, or "Start learning / Choose a subject" when there is nothing to start), **Today's plan**, **Due for revision** (up to three chapters, only when something is due), one experiment or game to try, the **Daily challenge** (question of the day), **My subjects** (all of them in Class-wise view, the picked ones in Subject-wise) and **Recently opened** chapters. There are no statistics and no tools on Today. Classes 1 to 3 get the same screen with bigger tiles and fewer plan items.
@@ -217,6 +247,7 @@ js/reminder.js        daily reminder (phone apps)
 js/quiz.js            quiz / test runner and flashcards
 js/timer.js           focus timer
 js/sims.js            interactive experiments (SVG simulations on the Notes tab)
+js/labs/              virtual labs: labs.js (registry, four-step scaffold, page), circuit.js, force.js, particles.js, cell.js, i18n.js
 js/games/             Play: engine.js (shell + registry) and one file per game type
 js/views/             every screen, one file per area: ui.js (shared pieces, creates `Views`), students, revise,
                       shell (header, profile menu, shared cards), home (Today), learn, explore, subject, chapter, test, timer,

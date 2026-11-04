@@ -326,7 +326,7 @@
           ${
             chapters.length
               ? `<h2 class="block-title">${t("Read the full chapter")}</h2><div class="list">${chapters
-                  .map((s) => `<a class="card chapter-row" href="#/chapter/${s.cls}/${s.subj.id}/${s.ch.id}/notes" style="--c:${s.subj.color}"><span class="ch-num" aria-hidden="true">${SubjectIcons.html(s.subj)}</span><span class="ch-body"><span class="ch-tag">${t("Class {n}", { n: s.cls })} · ${esc(s.subj.short)}</span><span class="ch-title">${esc(s.ch.title)}</span></span>${icon("next")}</a>`)
+                  .map((s) => `<a class="card chapter-row" href="#/chapter/${s.cls}/${s.subj.id}/${s.ch.id}/understand" style="--c:${s.subj.color}"><span class="ch-num" aria-hidden="true">${SubjectIcons.html(s.subj)}</span><span class="ch-body"><span class="ch-tag">${t("Class {n}", { n: s.cls })} · ${esc(s.subj.short)}</span><span class="ch-title">${esc(s.ch.title)}</span></span>${icon("next")}</a>`)
                   .join("")}</div>`
               : ""
           }

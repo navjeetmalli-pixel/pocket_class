@@ -924,5 +924,7 @@ if (process.argv.length <= 2) {
   genProblems = require("./check-gen.js").problems;
   console.log("\nMaths games:");
   genProblems += require("./check-games.js").problems;
+  console.log("\nVirtual labs:");
+  genProblems += require("./check-labs.js").problems;
 }
 process.exit(errorCount || genProblems ? 1 : 0);

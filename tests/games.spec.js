@@ -14,7 +14,7 @@ const start = async (page) => {
 
 test("chapter Play tab lists the games, and the start screen explains how to play", async ({ page }) => {
   await seed(page, { cls: 10 });
-  await page.goto(`/#/chapter/10/science/${LIGHT}/notes`);
+  await page.goto(`/#/chapter/10/science/${LIGHT}/understand`);
   const tabs = page.getByRole("navigation", { name: "Chapter sections" });
   await tabs.getByRole("link", { name: "Play" }).click();
   for (const name of ["Match pairs", "Label the diagram", "Quick-fire"]) await expect(page.locator(".game-card", { hasText: name })).toBeVisible();

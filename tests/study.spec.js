@@ -5,7 +5,7 @@ const quizUrl = `/#/chapter/10/maths/${MATHS.id}/quiz`;
 const chapterKey = `10/maths/${MATHS.id}`;
 
 // 3. Subject -> chapter tabs, quiz, My mistakes ----------------------------------------------------------------
-test("chapter tabs: notes, flashcards, practice and quiz; a wrong answer goes to My mistakes and can be fixed", { tag: "@desktop" }, async ({ page }) => {
+test("chapter sections: understand (notes, flashcards), practise and master (quiz); a wrong answer goes to My mistakes and can be fixed", { tag: "@desktop" }, async ({ page }) => {
   await seed(page, { name: "Asha", cls: 10 });
   await page.goto("/#/");
   await page.locator(".subject-card", { hasText: "Mathematics" }).click();
@@ -14,15 +14,14 @@ test("chapter tabs: notes, flashcards, practice and quiz; a wrong answer goes to
 
   await expect(page.locator(".hero h1")).toHaveText(MATHS.title);
   const tabs = page.getByRole("navigation", { name: "Chapter sections" });
-  for (const name of ["Notes", "Flashcards", "Practice", "Quiz"]) await expect(tabs.getByRole("link", { name })).toBeVisible();
+  for (const name of ["Understand", "Practise", "Master"]) await expect(tabs.getByRole("link", { name })).toBeVisible();
 
-  // Notes
-  await expect(tabs.getByRole("link", { name: "Notes" })).toHaveAttribute("aria-current", "page");
+  // Understand: notes, key terms and flashcards
+  await expect(tabs.getByRole("link", { name: "Understand" })).toHaveAttribute("aria-current", "page");
   await expect(page.locator("article.note").first()).toBeVisible();
   await expect(page.getByRole("heading", { name: "Key terms" })).toBeVisible();
 
-  // Flashcards
-  await tabs.getByRole("link", { name: "Flashcards" }).click();
+  // Flashcards (under the key terms)
   const card = page.locator(".flashcard");
   await expect(card).toBeVisible();
   await expect(page.getByText(/^Card 1 of \d+$/)).toBeVisible();
@@ -34,14 +33,14 @@ test("chapter tabs: notes, flashcards, practice and quiz; a wrong answer goes to
   expect(Object.values(current(await readStore(page)).cards)).toEqual(["known"]);
 
   // Practice (solved examples and fresh generated questions)
-  await tabs.getByRole("link", { name: "Practice" }).click();
+  await tabs.getByRole("link", { name: "Practise" }).click();
   await expect(page.getByRole("heading", { name: "Fresh questions" })).toBeVisible();
   await expect(page.locator("#gen-mount article")).toHaveCount(5);
   await page.getByRole("button", { name: "New questions" }).click();
   await expect(page.locator("#gen-mount article")).toHaveCount(5);
 
   // Quiz: the first question with a saved answer is answered wrongly, everything else rightly.
-  await tabs.getByRole("link", { name: "Quiz" }).click();
+  await tabs.getByRole("link", { name: "Master" }).click();
   await expect(page.getByText(/^Question 1 of \d+$/)).toBeVisible();
   const wrongText = await playInstantQuiz(page, { wrongOnce: true });
   expect(wrongText, "the test needs to recognise a question in the study data").not.toBeNull();

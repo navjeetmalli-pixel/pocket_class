@@ -2501,3 +2501,55 @@ Object.assign(I18N.hi, {
 });
 Object.assign(I18N.pa, { "Nothing due yet": "ਹਾਲੇ ਕੁਝ ਦੁਹਰਾਉਣ ਲਈ ਨਹੀਂ" });
 Object.assign(I18N.hi, { "Nothing due yet": "अभी कुछ दोहराने के लिए नहीं" });
+
+// Chapter hub (UI Phase 4)
+Object.assign(I18N.pa, {
+  "Understand": "ਸਮਝੋ",
+  "Visualise": "ਤਸਵੀਰਾਂ ਵੇਖੋ",
+  "A few questions on just one skill from this chapter.": "ਇਸ ਅਧਿਆਇ ਦੇ ਸਿਰਫ਼ ਇੱਕ ਹੁਨਰ ਬਾਰੇ ਕੁਝ ਸਵਾਲ।",
+  "Change something, watch what happens, then explain it.": "ਕੁਝ ਬਦਲੋ, ਵੇਖੋ ਕੀ ਹੁੰਦਾ ਹੈ, ਫਿਰ ਸਮਝਾਓ।",
+  "Chapter mock test": "ਅਧਿਆਇ ਦਾ ਮੌਕ ਟੈਸਟ",
+  "Chapter mock test: timed, no hints, answers at the end.": "ਅਧਿਆਇ ਦਾ ਮੌਕ ਟੈਸਟ: ਸਮੇਂ ਨਾਲ, ਬਿਨਾਂ ਸੰਕੇਤ, ਜਵਾਬ ਅੰਤ ਵਿੱਚ।",
+  "Check one skill": "ਇੱਕ ਹੁਨਰ ਪਰਖੋ",
+  "Check skill": "ਹੁਨਰ ਪਰਖੋ",
+  "Exit lesson": "ਪਾਠ ਤੋਂ ਬਾਹਰ",
+  "Mock test for this chapter": "ਇਸ ਅਧਿਆਇ ਦਾ ਮੌਕ ਟੈਸਟ",
+  "More notes": "ਹੋਰ ਨੋਟਸ",
+  "Open the whole {label}": "ਪੂਰੀ {label} ਖੋਲ੍ਹੋ",
+  "Pictures and diagrams for this chapter. Look first, then read the caption.": "ਇਸ ਅਧਿਆਇ ਦੀਆਂ ਤਸਵੀਰਾਂ ਅਤੇ ਚਿੱਤਰ। ਪਹਿਲਾਂ ਵੇਖੋ, ਫਿਰ ਹੇਠਾਂ ਲਿਖਿਆ ਪੜ੍ਹੋ।",
+  "Question bank": "ਸਵਾਲਾਂ ਦਾ ਭੰਡਾਰ",
+  "Resume lesson": "ਪਾਠ ਜਾਰੀ ਰੱਖੋ",
+  "Show {n} more": "{n} ਹੋਰ ਵੇਖੋ",
+  "Skill check: {skill}": "ਹੁਨਰ ਦੀ ਪਰਖ: {skill}",
+  "Start lesson": "ਪਾਠ ਸ਼ੁਰੂ ਕਰੋ",
+  "Worked examples": "ਹੱਲ ਕੀਤੀਆਂ ਉਦਾਹਰਣਾਂ",
+  "Your place is saved. Exit any time and pick up again from Understand.": "ਤੁਹਾਡੀ ਥਾਂ ਸੰਭਾਲੀ ਗਈ ਹੈ। ਕਦੇ ਵੀ ਬਾਹਰ ਆ ਸਕਦੇ ਹੋ ਅਤੇ ਸਮਝੋ ਤੋਂ ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰ ਸਕਦੇ ਹੋ।",
+  "by level": "ਪੱਧਰ ਅਨੁਸਾਰ",
+  "new numbers every time, with worked steps": "ਹਰ ਵਾਰ ਨਵੇਂ ਅੰਕ, ਹੱਲ ਦੇ ਪੜਾਵਾਂ ਸਮੇਤ",
+  "{n} questions, timed, like the real exam. Answers at the end.": "{n} ਸਵਾਲ, ਸਮੇਂ ਨਾਲ, ਅਸਲ ਪ੍ਰੀਖਿਆ ਵਾਂਗ। ਜਵਾਬ ਅੰਤ ਵਿੱਚ।"
+});
+Object.assign(I18N.hi, {
+  "Understand": "समझें",
+  "Visualise": "चित्र देखें",
+  "A few questions on just one skill from this chapter.": "इस अध्याय के सिर्फ़ एक कौशल पर कुछ प्रश्न।",
+  "Change something, watch what happens, then explain it.": "कुछ बदलें, देखें क्या होता है, फिर समझाएँ।",
+  "Chapter mock test": "अध्याय का मॉक टेस्ट",
+  "Chapter mock test: timed, no hints, answers at the end.": "अध्याय का मॉक टेस्ट: समय के साथ, बिना संकेत, उत्तर अंत में।",
+  "Check one skill": "एक कौशल जाँचें",
+  "Check skill": "कौशल जाँचें",
+  "Exit lesson": "पाठ से बाहर",
+  "Mock test for this chapter": "इस अध्याय का मॉक टेस्ट",
+  "More notes": "और नोट्स",
+  "Open the whole {label}": "पूरी {label} खोलें",
+  "Pictures and diagrams for this chapter. Look first, then read the caption.": "इस अध्याय के चित्र और आरेख। पहले देखें, फिर नीचे लिखा पढ़ें।",
+  "Question bank": "प्रश्नों का भंडार",
+  "Resume lesson": "पाठ जारी रखें",
+  "Show {n} more": "{n} और देखें",
+  "Skill check: {skill}": "कौशल की जाँच: {skill}",
+  "Start lesson": "पाठ शुरू करें",
+  "Worked examples": "हल किए गए उदाहरण",
+  "Your place is saved. Exit any time and pick up again from Understand.": "आपकी जगह सहेज ली गई है। कभी भी बाहर आएँ और समझें से फिर शुरू करें।",
+  "by level": "स्तर के अनुसार",
+  "new numbers every time, with worked steps": "हर बार नई संख्याएँ, हल के चरणों सहित",
+  "{n} questions, timed, like the real exam. Answers at the end.": "{n} प्रश्न, समय के साथ, असली परीक्षा की तरह। उत्तर अंत में।"
+});

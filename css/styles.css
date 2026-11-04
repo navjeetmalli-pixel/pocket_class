@@ -1581,3 +1581,161 @@ body[data-band="11-12"] .learn-body .tool .ts { display: none; }
 .chip.on .sico { color: inherit; }
 .tab-ic svg.i { width: 22px; height: 22px; }
 @media print { .sico { display: none !important; } }
+
+/* ---------- Chapter hub (UI Phase 4): six sections as navigation, the lesson on its own ---------- */
+.hub-ic { display: inline-flex; vertical-align: middle; }
+.hero .eyebrow { display: flex; align-items: center; gap: 8px; }
+.hub-nav { gap: 6px; }
+.hub-nav a { flex-direction: column; gap: 3px; padding: 8px 10px; font-size: 12.5px; line-height: 1.2; border-radius: 12px; }
+.hub-nav a svg.i { display: block; width: 20px; height: 20px; color: var(--sec); }
+.hub-nav a.active { color: var(--text); box-shadow: var(--shadow), inset 0 -3px 0 var(--sec); }
+.hub-nav a.active span { font-weight: 800; }
+.hub-body { min-width: 0; }
+@media (max-width: 440px) { .hub-nav a { padding: 8px 9px; } .hub-nav a svg.i { display: block; } }
+@media (min-width: 900px) {
+  .hub { display: grid; grid-template-columns: 184px minmax(0, 1fr); gap: 26px; align-items: start; margin-top: 20px; }
+  .hub-nav { position: sticky; top: 16px; flex-direction: column; margin: 0; padding: 0; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; overflow: visible; gap: 6px; }
+  .hub-nav a { flex: none; flex-direction: row; justify-content: flex-start; gap: 10px; padding: 11px 14px; font-size: 15px; min-width: 0; }
+  .hub-nav a:hover { background: var(--surface-2); }
+  .hub-nav a.active { background: var(--surface); box-shadow: var(--shadow), inset 4px 0 0 var(--sec); }
+}
+.sec-h { display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 750; margin-bottom: 12px; }
+.sec-lead { margin: 0 2px 14px; }
+.more > summary { display: inline-flex; list-style: none; cursor: pointer; margin-top: 12px; }
+.more > summary::-webkit-details-marker { display: none; }
+.obj-group { margin-top: 18px; }
+.obj-group:first-child { margin-top: 0; }
+.obj-group-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 16px; font-weight: 750; line-height: 1.3; margin: 0 2px 10px; }
+.skill-check { width: 100%; font: inherit; color: inherit; cursor: pointer; text-align: left; }
+.skill-check:hover { background: var(--surface-2); }
+.master-skills { list-style: none; margin: 0; }
+.bank-opts { margin: 0 0 10px; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.guided-card { flex-wrap: wrap; }
+.guided-card .guided-go { flex: none; margin-left: auto; }
+.guided-card .grow { flex: 1 1 180px; min-width: 0; }
+@media (max-width: 560px) { .guided-card .guided-go { flex: 1 0 100%; justify-content: center; } }
+.lesson-bar { display: flex; align-items: center; gap: 12px; }
+.lesson-title { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.25; }
+.lesson-bar .eyebrow { font-size: 12.5px; font-weight: 700; color: color-mix(in srgb, var(--c) 72%, var(--text)); }
+.lesson-save { margin: 6px 2px 4px; }
+
+/* Ages 5-10: big section tiles and fewer items at a time. */
+body[data-band="1-2"] .hub-nav, body[data-band="3-5"] .hub-nav { position: static; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 14px 0 22px; padding: 0; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; overflow: visible; }
+body[data-band="1-2"] .hub-nav a, body[data-band="3-5"] .hub-nav a { flex-direction: column; justify-content: center; min-height: 96px; padding: 14px 8px; font-size: 18px; font-weight: 750; color: var(--text); border-radius: 20px; border: 3px solid color-mix(in srgb, var(--sec) 32%, var(--border)); background: color-mix(in srgb, var(--sec) 9%, var(--surface)); box-shadow: none; }
+body[data-band="1-2"] .hub-nav a svg.i, body[data-band="3-5"] .hub-nav a svg.i { width: 36px; height: 36px; }
+body[data-band="1-2"] .hub-nav a.active, body[data-band="3-5"] .hub-nav a.active { border-color: var(--sec); background: color-mix(in srgb, var(--sec) 22%, var(--surface)); box-shadow: none; }
+body[data-band="1-2"] .hub-nav a.active span, body[data-band="3-5"] .hub-nav a.active span { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+@media (min-width: 520px) { body[data-band="1-2"] .hub-nav, body[data-band="3-5"] .hub-nav { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) {
+  body[data-band="1-2"] .hub-nav, body[data-band="3-5"] .hub-nav { position: sticky; top: 16px; grid-template-columns: 1fr; margin: 0; gap: 10px; }
+  body[data-band="1-2"] .hub-nav a, body[data-band="3-5"] .hub-nav a { flex-direction: row; justify-content: flex-start; gap: 12px; min-height: 72px; padding: 12px 16px; }
+}
+body[data-band="1-2"] .hub-body .note li, body[data-band="3-5"] .hub-body .note li, body[data-band="1-2"] .hub-body .terms dd, body[data-band="3-5"] .hub-body .terms dd { font-size: 17.5px; line-height: 1.6; }
+body[data-band="1-2"] .hub-body .btn, body[data-band="3-5"] .hub-body .btn { min-height: 52px; }
+body[data-band="1-2"] .lesson-title, body[data-band="3-5"] .lesson-title { font-size: 24px; }
+
+/* Ages 16-18: denser. */
+body[data-band="11-12"] .hub-body .stack { gap: 10px; }
+body[data-band="11-12"] .hub-body .card.note { padding: 12px 14px; }
+body[data-band="11-12"] .hub-body .note ul { font-size: 14.5px; gap: 5px; }
+body[data-band="11-12"] .hub-body .block-title { margin-top: 18px; }
+@media (prefers-reduced-motion: reduce) { .hub-nav a, .skill-check { transition: none; } }
+@media print { .hub-nav, .lesson-bar .btn { display: none !important; } .hub { display: block; } }
+
+/* ---------- Virtual labs (js/labs/) ---------- */
+.vl-intro { margin: 0 0 14px; border-left: 4px solid var(--c, var(--accent)); }
+.vl-intro p { margin: 0 0 8px; line-height: 1.5; }
+.vl .sim-step h3 { margin: 0 0 8px; font-size: 16px; font-weight: 750; display: flex; align-items: center; gap: 8px; }
+.vl .sim-step h3 .n { display: inline-flex; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 13px; align-items: center; justify-content: center; flex: none; }
+.vl-sub { margin: 14px 0 6px; font-size: 14px; font-weight: 700; color: var(--muted); }
+.vl-q { font-weight: 650; line-height: 1.5; margin: 8px 0 !important; }
+.vl-invs { display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+.vl-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); -webkit-overflow-scrolling: touch; }
+.vl-table { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.vl-table th, .vl-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+.vl-table thead th { background: var(--surface-2); font-weight: 700; color: var(--muted); }
+.vl-table tbody tr:last-child th, .vl-table tbody tr:last-child td { border-bottom: 0; }
+.vl-table .vl-var { background: var(--accent-soft); }
+.vl-table .vl-now { background: var(--accent-soft); font-weight: 700; }
+.vl-compare { min-width: 480px; }
+.vl-fair { margin: 8px 0 0; color: var(--muted); }
+.vl-graph { margin: 12px 0 0; }
+.vl-graph svg, .vl-graphs svg, .vl-board svg { width: 100%; height: auto; display: block; background: var(--surface-2); border-radius: 12px; border: 1px solid var(--border); }
+.vl-graphs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 12px; }
+.vl-graphs figure { margin: 0; }
+.vl-bar { fill: var(--accent); }
+.vl-dot { fill: var(--accent); }
+.vl-assume { margin-top: 18px; padding: 10px 12px; background: var(--surface-2); border-radius: 12px; }
+.vl-assume p { margin: 4px 0 0; line-height: 1.5; }
+.vl-past { margin-top: 18px; }
+.vl-past summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 8px; font-weight: 650; }
+.vl-pastlist { margin: 8px 0 0; padding-left: 18px; line-height: 1.5; }
+.vl .sim svg text, .vl svg text { fill: var(--text); font-family: var(--font); font-size: 20px; }
+.vl svg text.s-m { fill: var(--muted); font-size: 18px; }
+.vl svg text.small { font-size: 15px; }
+.vl svg text.s-t { font-size: 20px; }
+.vl-ctrl { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.vl-ctrl label { font-weight: 650; color: var(--muted); font-size: 14px; }
+.vl-ctrl select { font: inherit; color: var(--text); background: var(--surface-2); border: 1.5px solid var(--border); border-radius: 10px; padding: 8px 10px; min-height: 44px; }
+.vl-boardwrap { position: relative; }
+.vl-board { width: 100%; }
+.vl-slots { position: absolute; inset: 0; pointer-events: none; }
+.vl-slot { position: absolute; min-width: 44px; min-height: 44px; background: transparent; border: 2px dashed transparent; border-radius: 10px; padding: 0; cursor: pointer; pointer-events: auto; }
+.vl-slot:hover { border-color: var(--faint); }
+.vl-slot.vl-target { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.vl-slot.vl-over { border-color: var(--good); background: color-mix(in srgb, var(--good) 14%, transparent); }
+.vl-slot:focus-visible, .vl-part:focus-visible, .vl-celltarget:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.vl-parts { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.vl-part { min-height: 44px; padding: 6px 12px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--surface); color: var(--text); font: inherit; font-size: 14px; font-weight: 650; cursor: grab; touch-action: none; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2; }
+.vl-part[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.vl-part .vl-marks { font-size: 11px; font-weight: 600; color: var(--good); }
+.vl-part .vl-marks:empty { display: none; }
+.vl-remove { border-style: dashed; }
+.vl-warn { margin: 8px 0 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.vl-warn.is-bad { color: var(--bad); font-weight: 650; }
+.vl svg .s-wire.vl-on { stroke: var(--accent); stroke-dasharray: 10 8; animation: vl-flow 1.2s linear infinite; }
+.vl svg .s-wire.vl-unused { stroke: var(--faint); stroke-dasharray: 3 8; opacity: .5; }
+@keyframes vl-flow { to { stroke-dashoffset: -18; } }
+.vl-glass { fill: var(--surface); stroke: var(--text); stroke-width: 2.5; }
+.vl-glow { fill: var(--gold); stroke: none; }
+.vl-cart { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 3; }
+.vl-arrow { stroke-width: 5; fill: none; stroke-linecap: round; }
+.vl-arrow.fillme { fill: currentColor; stroke: none; }
+.vl-pull { stroke: var(--good); color: var(--good); }
+.vl-fric { stroke: var(--bad); color: var(--bad); }
+.vl-note { margin: 8px 0 0; line-height: 1.5; }
+.vl-quick { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.vl-quick .btn { min-height: 44px; padding: 0 12px; font-size: 14px; }
+.vl-box { fill: var(--surface-2); stroke: var(--text); stroke-width: 3; }
+.vl-lid { fill: var(--text); }
+.vl-merc { fill: var(--bad); }
+.vl-p { stroke: var(--text); stroke-width: 1; }
+.vl-p.vl-solid { fill: var(--accent); }
+.vl-p.vl-liquid { fill: var(--blue); }
+.vl-p.vl-gas { fill: var(--gold); }
+.vl-cellgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 12px; margin-top: 8px; }
+.vl-cellbox h4 { margin: 0 0 6px; font-size: 15px; }
+.vl-celltarget { display: block; width: 100%; padding: 0; background: var(--surface-2); border: 2px solid var(--border); border-radius: 14px; cursor: pointer; }
+.vl-celltarget.vl-target { border-color: var(--accent); }
+.vl-celltarget.vl-over { border-color: var(--good); }
+.vl-celltarget.vl-complete { border-color: var(--good); }
+.vl-celltarget svg, .vl-lcsvg svg { width: 100%; height: auto; display: block; }
+.vl-empty { fill: none; stroke: var(--faint); stroke-width: 2; stroke-dasharray: 6 6; }
+.vl-cyto { fill: color-mix(in srgb, var(--good) 14%, var(--surface)); stroke: none; }
+.vl-wall { fill: none; stroke: var(--good); stroke-width: 8; }
+.vl-mem { fill: none; stroke: var(--accent); stroke-width: 3; }
+.vl-vac { fill: color-mix(in srgb, var(--blue) 30%, var(--surface)); stroke: var(--blue); stroke-width: 2; }
+.vl-nuc { fill: color-mix(in srgb, var(--purple) 30%, var(--surface)); stroke: var(--purple); stroke-width: 3; }
+.vl-nucleolus { fill: var(--purple); }
+.vl-chl { fill: var(--green); stroke: var(--text); stroke-width: 1.5; }
+.vl-mit { fill: color-mix(in srgb, var(--coral) 45%, var(--surface)); stroke: var(--coral); stroke-width: 2.5; }
+.vl-rib { fill: var(--text); }
+.vl-er { fill: none; stroke: var(--amber); stroke-width: 4; stroke-linecap: round; }
+.vl-gol { fill: none; stroke: var(--gold); stroke-width: 4; stroke-linecap: round; }
+.vl-cen { fill: var(--text); }
+.vl svg text.vl-lab { font-size: 10.5px; font-weight: 650; fill: var(--text); paint-order: stroke; stroke: var(--surface); stroke-width: 2.5px; }
+.vl-nolab .vl-lab { display: none; }
+.vl-org.hl > * { stroke: var(--bad) !important; stroke-width: 5 !important; }
+.vl-lccard { margin-top: 12px; }
+.vl-cfb { margin-top: 10px; }
+@media (prefers-reduced-motion: reduce) { .vl svg .s-wire.vl-on { animation: none; } }

@@ -23,7 +23,7 @@ const App = {
     learn: "learn", subject: "learn", chapter: "learn", cards: "learn", sheet: "learn", sheets: "learn", worksheet: "learn", test: "learn",
     papers: "learn", paper: "learn", paths: "learn", pathsheet: "learn", revise: "learn", search: "learn",
     games: "play", play: "play",
-    explore: "explore",
+    explore: "explore", lab: "explore",
     progress: "progress", parent: "progress",
   };
   App.tabOf = (p) => {
@@ -34,7 +34,7 @@ const App = {
   const routes = [
     [/^$/, Views.home],
     [/^subject\/(\w+)$/, Views.subject],
-    [/^chapter\/(\d+)\/(\w+)\/([\w-]+)(?:\/(\w+))?$/, Views.chapter],
+    [/^chapter\/(\d+)\/(\w+)\/([\w-]+)(?:\/(\w+))?(?:\/(\w+))?$/, Views.chapter],
     [/^test\/run$/, Views.testRun],
     [/^test(?:\/(\w+))?$/, Views.testSetup],
     [/^revise$/, Views.revise],
@@ -64,6 +64,7 @@ const App = {
     [/^profile$/, Views.profile],
     [/^learn$/, Views.learn],
     [/^explore$/, Views.explore],
+    [/^lab\/(\w+)(?:\/(\d+)\/(\w+)\/([\w-]+))?$/, Views.lab],
   ];
 
   // Enough of an element's identity to find it again after the page is redrawn.
@@ -120,6 +121,7 @@ const App = {
       return ids ? { cls: own, ids, practice: true, games: true } : null;
     }
     if (p === "explore") return Views.exploreNeeds(own);
+    if ((m = p.match(/^lab\/\w+\/(\d+)\/(\w+)\//))) return { cls: Number(m[1]), ids: [m[2]] };
     if ((m = p.match(/^(?:worksheet|paper)\/(\d+)\/(\w+)/))) return { cls: Number(m[1]), ids: [m[2]], practice: true };
     if ((m = p.match(/^(?:subject|cards|sheet)\/(\w+)$/))) return { cls: own, ids: [m[1]] };
     if (p === "search") return { cls: own, ids: "all" };
@@ -201,7 +203,7 @@ const App = {
 
       // First the class index (subject list, chapter titles): the student's class and any class a chapter link points to.
       const need = [Store.state.profile.cls];
-      const m = p.match(/^chapter\/(\d+)\//);
+      const m = p.match(/^(?:chapter|lab\/\w+)\/(\d+)\//);
       if (m) need.push(Number(m[1]));
       const missing = need.filter((c) => StudyData.classes.includes(c) && !StudyData.isLoaded(c));
       if (missing.length)
