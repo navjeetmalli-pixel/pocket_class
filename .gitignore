@@ -4,3 +4,6 @@ node_modules/
 www/
 test-results/
 playwright-report/
+android/keystore.properties
+*.jks
+*.keystore

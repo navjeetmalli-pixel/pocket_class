@@ -147,3 +147,74 @@ test("update: a new service worker shows 'A new version is ready' and Reload act
     proxy.server.close();
   }
 });
+
+// 12b. The update bar is one slim line on phones and never covers a control ----------------------------------------
+test("update bar: one line at 320 and 375 px, and it covers no back button or main button", async ({ page, baseURL }) => {
+  const proxy = await startProxy(baseURL);
+  try {
+    const overlaps = () =>
+      page.evaluate(() => {
+        const bar = document.getElementById("update-bar").getBoundingClientRect();
+        const hit = [];
+        for (const el of document.querySelectorAll(".ob-back, .topbar a, .topbar button, .btn.primary, .tabbar a")) {
+          if (el.closest("#update-bar")) continue;
+          const r = el.getBoundingClientRect();
+          if (!r.width || !r.height || getComputedStyle(el).visibility === "hidden") continue;
+          if (r.top < bar.bottom - 0.5 && r.bottom > bar.top + 0.5 && r.left < bar.right && r.right > bar.left) hit.push(el.className || el.tagName);
+        }
+        return { height: bar.height, right: bar.right, hit };
+      });
+    for (const width of [320, 375]) {
+      await page.setViewportSize({ width, height: 700 });
+      await page.goto(`${proxy.url}/`); // onboarding: back button top-left, Continue at the bottom
+      await page.evaluate(() => localStorage.clear());
+      await reloadUnderWorker(page);
+      await page.getByRole("button", { name: /Start Learning/ }).click();
+      await page.getByRole("button", { name: /I'm a Student/ }).click();
+      proxy.state.variant = `${CACHE_NAME}-bar${width}`;
+      await page.evaluate(() => navigator.serviceWorker.getRegistration().then((r) => r.update()));
+      await expect(page.locator("#update-bar")).toBeVisible();
+      let m = await overlaps();
+      expect(m.height, `bar height at ${width}`).toBeLessThan(60);
+      expect(m.right).toBeLessThanOrEqual(width);
+      expect(m.hit, `onboarding at ${width}`).toEqual([]);
+      await expect(page.locator("#update-bar").getByRole("button", { name: "Close" })).toBeVisible();
+      expect((await page.locator("#update-bar .update-close").boundingBox()).height).toBeGreaterThanOrEqual(44);
+      expect(await page.locator("#update-bar").getAttribute("title")).toBe("A new version is ready");
+      await page.locator("#update-bar .update-close").click();
+      await expect(page.locator("#update-bar")).toHaveCount(0);
+      expect(await page.evaluate(() => document.body.classList.contains("has-update-bar"))).toBe(false);
+    }
+    // Today, a chapter page and a lab, for a set-up student.
+    await page.evaluate(() => localStorage.clear());
+    await seed(page, { name: "Asha", cls: 10 });
+    await page.goto("about:blank");
+    for (const [width, hash] of [[320, "/"], [375, "/subject/science"], [320, "/subject/science"]]) {
+      await page.setViewportSize({ width, height: 700 });
+      await page.goto("about:blank");
+      await page.goto(`${proxy.url}/#${hash}`);
+      await controlled(page);
+      proxy.state.variant = `${CACHE_NAME}-bar-${width}-${hash.length}`;
+      await page.evaluate(() => navigator.serviceWorker.getRegistration().then((r) => r.update()));
+      await expect(page.locator("#update-bar")).toBeVisible();
+      if (hash !== "/") {
+        await page.locator(".chapter-row").first().click();
+        await expect(page.locator("article.note").first()).toBeVisible();
+      }
+      const m = await overlaps();
+      expect(m.height).toBeLessThan(60);
+      expect(m.hit, `${hash} at ${width}`).toEqual([]);
+      await page.locator("#update-bar .update-close").click();
+    }
+    await page.setViewportSize({ width: 375, height: 700 });
+    await page.goto("about:blank");
+    await page.goto(`${proxy.url}/#/labs`);
+    await controlled(page);
+    proxy.state.variant = `${CACHE_NAME}-bar-labs`;
+    await page.evaluate(() => navigator.serviceWorker.getRegistration().then((r) => r.update()));
+    await expect(page.locator("#update-bar")).toBeVisible();
+    expect((await overlaps()).hit).toEqual([]);
+  } finally {
+    proxy.server.close();
+  }
+});

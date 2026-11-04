@@ -121,7 +121,7 @@ const Views = (() => {
   function quizItems(c, subj, ch, own = false) {
     const from = `${subj.short} · ${ch.title}`;
     const list = own ? ch.quiz : [...ch.quiz, ...D.practiceFor(c, subj.id, ch.id).mcq];
-    return list.map((q) => ({ ...q, ref: { key: `${Store.key(c, subj.id, ch.id)}/${questionId(q)}`, from, cls: c, subject: subj.id, chapter: ch.id } }));
+    return International.forLearner(list).map((q) => ({ ...q, ref: { key: `${Store.key(c, subj.id, ch.id)}/${questionId(q)}`, from, cls: c, subject: subj.id, chapter: ch.id } }));
   }
 
   // Fresh number-changing questions (maths and physics chapters only).

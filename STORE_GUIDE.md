@@ -27,9 +27,15 @@ delete the `icons/icon-*.webp` files it also creates (the website doesn't use th
 ## Google Play ($25 once)
 
 1. Create a developer account at play.google.com/console (identity check takes a few days).
-2. Open the project: `npx cap open android`. In Android Studio: Build → Generate Signed App Bundle → Android App
-   Bundle → create a new upload key (keep the `.jks` file and its passwords safe and backed up; losing them
-   means asking Google to reset the key).
+2. Create an upload key once (keep the `.jks` file and its passwords safe and backed up; losing them means asking
+   Google to reset the key):
+   `keytool -genkey -v -keystore ~/keys/pocket-class-upload.jks -alias upload -keyalg RSA -keysize 2048 -validity 10000`
+   Then copy `android/keystore.properties.example` to `android/keystore.properties` and fill it in (both files with
+   real secrets are git-ignored). Build the signed bundle with
+   `npm run sync && cd android && ./gradlew bundleRelease` (Android Studio's Java:
+   `export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"`). The file to upload is
+   `android/app/build/outputs/bundle/release/app-release.aab`. Without `keystore.properties` the same command
+   builds an unsigned bundle, which Play Console won't accept.
 3. In Play Console: create the app, fill in the store listing (name, short and full description, at least 2 phone
    screenshots, 512×512 icon from `assets/icon-only.png`, 1024×500 feature graphic), content rating questionnaire,
    target audience (children: the app is for students, so the Families policy applies), and the Data safety form

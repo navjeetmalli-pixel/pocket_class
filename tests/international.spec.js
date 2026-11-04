@@ -298,3 +298,42 @@ test("International layout works at phone and desktop widths, in light and dark"
     }
   }
 });
+
+// Saved India-only money questions are not shown to international learners; Indian students still see them.
+const RUPEE = /₹|\brupees?\b|\bRs\b|\bpaise\b/i;
+
+test("an Australian Year 1 student's money level shows no rupees across 30 drawn questions; an Indian CBSE student still sees them", async ({ page }) => {
+  await seedIntl(page, { cls: 1, year: "y1", extra: {} });
+  await page.goto("/#/paths/maths/measurement/measurement-1");
+  const seen = [];
+  for (let round = 0; round < 3; round++) {
+    if (round === 0) await page.locator("[data-act=practice]").click();
+    else await page.getByRole("button", { name: "Try again" }).click();
+    for (let i = 0; i < 10; i++) {
+      const q = page.locator(".quiz-q");
+      if (!(await q.count())) break;
+      seen.push((await q.innerText()) + " " + (await page.locator(".options").innerText()));
+      await page.locator(".options .option").first().click();
+      await page.locator('[data-act="next"]').click().catch(() => {});
+    }
+  }
+  expect(seen.length).toBeGreaterThanOrEqual(15);
+  for (const s of seen) expect(s).not.toMatch(RUPEE);
+  // The saved bank of the chapter the level opens has rupee questions; the learner's draw leaves them out.
+  const au = await page.evaluate(() => {
+    const subj = StudyData.subject("maths");
+    const ch = StudyData.chapters(1, "maths").find((c) => c.id === "money-coins-and-notes");
+    const drawn = Views.ui.quizItems(1, subj, ch);
+    return { raw: JSON.stringify(ch.quiz).match(/₹|rupee|Rs/gi) !== null, left: drawn.filter((q) => /₹|rupee|\bRs\b|paise/i.test(JSON.stringify(q))).length };
+  });
+  expect(au.left).toBe(0);
+  // Same chapter for an Indian CBSE student.
+  await page.evaluate(() => Store.setProfile({ board: "cbse", cls: 1 }));
+  const inCbse = await page.evaluate(() => {
+    const subj = StudyData.subject("maths");
+    const ch = StudyData.chapters(1, "maths").find((c) => c.id === "money-coins-and-notes");
+    return Views.ui.quizItems(1, subj, ch).filter((q) => /₹|rupee|\bRs\b|paise/i.test(JSON.stringify(q))).length;
+  });
+  expect(au.raw).toBe(true);
+  expect(inCbse).toBeGreaterThan(0);
+});

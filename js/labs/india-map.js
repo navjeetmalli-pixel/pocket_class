@@ -32,8 +32,8 @@ HLC 78.7 32.6
 HUT 78.75 31.35
 UNC 81.03 30.22
 UUN 80.15 28.9
-HHU 77.6 30.45
-HUU 77.55 30.25
+HHU 77.55 30.42
+HUU 77.68 30.28
 PHH 76.82 30.84
 CHB 76.8 30.64
 PHR 74.65 29.65
@@ -177,7 +177,7 @@ jk-hp: JHL 76.45 33.0 76.1 32.75 PJH
 jk-lad: JLX 73.7 35.1 74.3 34.85 74.8 34.6 75.4 34.45 75.7 34.3 76.0 34.1 76.3 33.65 76.7 33.3 JHL
 lad-hp: HLC 78.4 32.6 77.9 32.7 77.4 32.9 JHL
 pb-hp: PJH 75.95 32.3 76.1 31.95 76.45 31.4 76.6 31.1 76.7 30.95 PHH
-hp-uk: HUT 78.45 31.05 78.15 30.85 77.9 30.75 77.65 30.7 HHU
+hp-uk: HUT 78.45 31.05 78.15 30.85 77.9 30.65 77.78 30.45 HUU
 hp-har: HHU 77.35 30.55 77.1 30.7 76.95 30.8 PHH
 pb-ch-w: PHH 76.7 30.76 CHB
 har-ch-e: PHH 76.9 30.75 CHB
@@ -187,8 +187,8 @@ raj-har: PHR 74.6 29.3 74.85 29.0 75.25 28.75 75.45 28.3 75.85 28.05 76.3 27.9 7
 har-up-s: HRU 77.5 28.0 77.4 28.25 DS
 delhi-up: DS 77.32 28.65 DN
 delhi-har: DN 77.0 28.85 76.85 28.68 76.84 28.55 77.1 28.5 77.25 28.42 DS
-har-up-n: DN 77.2 29.2 77.2 29.6 77.35 29.95 HUU
-har-uk: HUU 77.58 30.35 HHU
+har-up-n: DN 77.2 29.2 77.2 29.6 77.35 29.95 77.45 30.2 HHU
+hp-up: HHU 77.6 30.36 HUU
 uk-up: HUU 77.9 30.1 78.15 29.95 78.4 29.8 78.65 29.5 78.9 29.15 79.2 28.8 79.6 28.8 80.0 28.85 UUN
 raj-up: RMU 77.85 26.8 77.6 27.1 77.45 27.4 HRU
 raj-mp: RMU 77.7 26.2 77.5 25.8 77.15 25.3 76.9 24.9 76.6 24.5 76.35 24.2 75.9 24.15 75.55 24.2 75.3 24.7 75.0 24.85 74.75 24.4 74.6 23.95 GRM
@@ -257,8 +257,8 @@ lk6|Arabian: 72.87 8.28 73.0 8.41 73.13 8.28 73.0 8.15 72.87 8.28
     ["chhattisgarh", "CG", "Chhattisgarh", "state", "Raipur", [81.63, 21.25], "Central India", [82.0, 21.6], "cg-ap cg-od cg-jh cg-up mp-cg cg-mh cg-tg"],
     ["goa", "GA", "Goa", "state", "Panaji", [73.83, 15.5], "West India", [74.05, 15.4], "mh-goa coast-goa goa-ka"],
     ["gujarat", "GJ", "Gujarat", "state", "Gandhinagar", [72.65, 23.22], "West India", [72.2, 23.2], "coast-guj-1 guj-diu coast-guj-2 guj-daman coast-guj-3 gm-1 dnh-guj gm-2 guj-mp guj-raj guj-pak"],
-    ["haryana", "HR", "Haryana", "state", "Chandigarh", [76.78, 30.73], "North India", [76.2, 29.2], "har-ch-e pb-har raj-har har-up-s delhi-har har-up-n har-uk hp-har"],
-    ["himachalpradesh", "HP", "Himachal Pradesh", "state", "Shimla", [77.17, 31.1], "North India", [77.2, 31.8], "jk-hp lad-hp hp-china hp-uk hp-har pb-hp"],
+    ["haryana", "HR", "Haryana", "state", "Chandigarh", [76.78, 30.73], "North India", [76.2, 29.2], "har-ch-e pb-har raj-har har-up-s delhi-har har-up-n hp-har"],
+    ["himachalpradesh", "HP", "Himachal Pradesh", "state", "Shimla", [77.17, 31.1], "North India", [77.2, 31.8], "jk-hp lad-hp hp-china hp-uk hp-up hp-har pb-hp"],
     ["jharkhand", "JH", "Jharkhand", "state", "Ranchi", [85.33, 23.34], "East India", [85.4, 23.6], "cg-jh jh-up br-jh jh-wb jh-od"],
     ["karnataka", "KA", "Karnataka", "state", "Bengaluru", [77.59, 12.97], "South India", [76.0, 14.5], "goa-ka coast-ka ka-kl ka-tn ap-ka tg-ka mh-ka"],
     ["kerala", "KL", "Kerala", "state", "Thiruvananthapuram", [76.94, 8.52], "South India", [76.7, 10.2], "coast-kl-1 mahe-kl coast-kl-2 kl-tn ka-kl"],
@@ -275,8 +275,8 @@ lk6|Arabian: 72.87 8.28 73.0 8.41 73.13 8.28 73.0 8.15 72.87 8.28
     ["tamilnadu", "TN", "Tamil Nadu", "state", "Chennai", [80.27, 13.08], "South India", [78.4, 10.9], "kl-tn ka-tn ap-tn coast-tn-3 py-tn coast-tn-2 tn-karaikal coast-tn-1"],
     ["telangana", "TS", "Telangana", "state", "Hyderabad", [78.49, 17.39], "South India", [79.0, 17.9], "tg-ap cg-tg tg-mh tg-ka"],
     ["tripura", "TR", "Tripura", "state", "Agartala", [91.28, 23.83], "North-East India", [91.75, 23.75], "assam-tri miz-tri tri-ban"],
-    ["uttarpradesh", "UP", "Uttar Pradesh", "state", "Lucknow", [80.95, 26.85], "Central India", [80.8, 27.0], "up-nepal uk-up har-up-n delhi-up har-up-s raj-up mp-up cg-up jh-up up-br"],
-    ["uttarakhand", "UK", "Uttarakhand", "state", "Dehradun", [78.03, 30.32], "Central India", [79.1, 29.9], "uk-nepal uk-china hp-uk har-uk uk-up"],
+    ["uttarpradesh", "UP", "Uttar Pradesh", "state", "Lucknow", [80.95, 26.85], "Central India", [80.8, 27.0], "up-nepal uk-up hp-up har-up-n delhi-up har-up-s raj-up mp-up cg-up jh-up up-br"],
+    ["uttarakhand", "UK", "Uttarakhand", "state", "Dehradun", [78.03, 30.32], "Central India", [79.1, 29.9], "uk-nepal uk-china hp-uk uk-up"],
     ["westbengal", "WB", "West Bengal", "state", "Kolkata", [88.36, 22.57], "East India", [87.6, 23.2], "coast-wb wb-ban wb-assam wb-bhutan wb-sikkim wb-nepal br-wb jh-wb od-wb"],
     ["andaman", "AN", "Andaman and Nicobar Islands", "ut", "Sri Vijaya Puram", [92.74, 11.62], "Islands", [91.3, 12.0], "an1 | an2 | an3 | an4 | an5"],
     ["chandigarh", "CH", "Chandigarh", "ut", "Chandigarh", [76.78, 30.73], "North India", [76.2, 31.35], "pb-ch-w har-ch-e"],

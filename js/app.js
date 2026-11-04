@@ -418,14 +418,19 @@ const App = {
       const bar = document.createElement("div");
       bar.id = "update-bar";
       bar.setAttribute("role", "status");
-      bar.innerHTML = `<span>${t("A new version is ready")}</span><button class="btn primary" data-act="reload">${t("Reload")}</button><button class="update-close" data-act="later" aria-label="${t("Close")}">×</button>`;
+      bar.title = t("A new version is ready");
+      bar.innerHTML = `<span class="ub-long">${t("A new version is ready")}</span><span class="ub-short" aria-hidden="true">${t("Update ready")}</span><button class="btn primary" data-act="reload">${t("Reload")}</button><button class="update-close" data-act="later" aria-label="${t("Close")}">×</button>`;
       bar.querySelector("[data-act=reload]").onclick = () => {
         wanted = true;
         worker.postMessage({ type: "skipWaiting" });
       };
       // Later: the new version still takes over next time the app is opened.
-      bar.querySelector("[data-act=later]").onclick = () => bar.remove();
+      bar.querySelector("[data-act=later]").onclick = () => {
+        bar.remove();
+        document.body.classList.remove("has-update-bar");
+      };
       document.body.appendChild(bar);
+      document.body.classList.add("has-update-bar"); // on phones the page is pushed down below the bar
     };
     navigator.serviceWorker.addEventListener("controllerchange", () => {
       if (wanted) location.reload();

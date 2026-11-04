@@ -62,7 +62,7 @@ const Games = (() => {
     for (const p of parts(c, subj, ch))
       for (const x of p.ch.terms || []) {
         const k = plain(x.term).trim().toLowerCase();
-        if (!k || !plain(x.meaning).trim() || seen.has(k)) continue;
+        if (!k || !plain(x.meaning).trim() || seen.has(k) || International.forLearner([x]).length === 0) continue;
         seen.add(k);
         out.push(x);
       }

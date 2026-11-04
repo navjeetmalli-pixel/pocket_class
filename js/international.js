@@ -133,5 +133,12 @@ const International = (() => {
   };
   globalThis.Money = Money;
 
-  return { SUBJECTS, COUNTRIES, CURRENCIES, on, country, option, optName, defaultYear, label, topName, srcLabel, currency, ownIndex, startIndex, targetIndex, focus, levelHref, picked, rotated, pairsOf, needs, level };
+  // Saved questions and key terms written for India (the rupee, paise, "the currency of India") are not shown to international
+  // learners: every question pipeline draws through Views.ui.quizItems (and the games' terms), which apply this filter. Made-up
+  // questions use Money.fmt, so they already show the learner's own currency.
+  const INDIA_MONEY = /₹|\brupees?\b|\bRs\b|\bpaisa\b|\bpaise\b|currency of India|Indian currency|Indian money/i;
+  const indiaMoney = (x) => INDIA_MONEY.test(typeof x === "string" ? x : JSON.stringify(x));
+  const forLearner = (list) => (on() ? list.filter((x) => !indiaMoney(x)) : list);
+
+  return { forLearner, indiaMoney, SUBJECTS, COUNTRIES, CURRENCIES, on, country, option, optName, defaultYear, label, topName, srcLabel, currency, ownIndex, startIndex, targetIndex, focus, levelHref, picked, rotated, pairsOf, needs, level };
 })();

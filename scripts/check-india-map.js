@@ -34,13 +34,13 @@ module.exports = function checkIndiaMap({ ctx, vm, fs, path, root, bad, Labs }) 
   const NB = {
     andhrapradesh: "odisha chhattisgarh telangana karnataka tamilnadu puducherry", arunachalpradesh: "assam nagaland", assam: "arunachalpradesh nagaland manipur mizoram tripura meghalaya westbengal",
     bihar: "uttarpradesh jharkhand westbengal", chhattisgarh: "odisha jharkhand uttarpradesh madhyapradesh maharashtra telangana andhrapradesh", goa: "maharashtra karnataka",
-    gujarat: "rajasthan madhyapradesh maharashtra dnhdd", haryana: "punjab himachalpradesh uttarakhand uttarpradesh delhi rajasthan chandigarh", himachalpradesh: "jammukashmir ladakh punjab haryana uttarakhand",
+    gujarat: "rajasthan madhyapradesh maharashtra dnhdd", haryana: "punjab himachalpradesh uttarpradesh delhi rajasthan chandigarh", himachalpradesh: "jammukashmir ladakh punjab haryana uttarakhand uttarpradesh",
     jharkhand: "bihar westbengal odisha chhattisgarh uttarpradesh", karnataka: "maharashtra goa kerala tamilnadu andhrapradesh telangana", kerala: "karnataka tamilnadu puducherry",
     madhyapradesh: "rajasthan uttarpradesh chhattisgarh maharashtra gujarat", maharashtra: "gujarat dnhdd madhyapradesh chhattisgarh telangana karnataka goa", manipur: "nagaland assam mizoram",
     meghalaya: "assam", mizoram: "assam tripura manipur", nagaland: "arunachalpradesh assam manipur", odisha: "westbengal jharkhand chhattisgarh andhrapradesh",
     punjab: "jammukashmir himachalpradesh haryana rajasthan chandigarh", rajasthan: "punjab haryana uttarpradesh madhyapradesh gujarat", sikkim: "westbengal",
     tamilnadu: "kerala karnataka andhrapradesh puducherry", telangana: "maharashtra chhattisgarh karnataka andhrapradesh", tripura: "assam mizoram",
-    uttarpradesh: "uttarakhand haryana delhi rajasthan madhyapradesh chhattisgarh jharkhand bihar", uttarakhand: "himachalpradesh uttarpradesh haryana", westbengal: "sikkim bihar jharkhand odisha assam",
+    uttarpradesh: "uttarakhand himachalpradesh haryana delhi rajasthan madhyapradesh chhattisgarh jharkhand bihar", uttarakhand: "himachalpradesh uttarpradesh", westbengal: "sikkim bihar jharkhand odisha assam",
     andaman: "", chandigarh: "punjab haryana", dnhdd: "gujarat maharashtra", delhi: "haryana uttarpradesh", jammukashmir: "ladakh himachalpradesh punjab", ladakh: "jammukashmir himachalpradesh",
     lakshadweep: "", puducherry: "tamilnadu andhrapradesh kerala",
   };
