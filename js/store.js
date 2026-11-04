@@ -32,6 +32,7 @@ const Store = (() => {
     revise: {}, // chapter key -> { last, n }: when the chapter was last studied and how many times
     paths: {}, // "maths" -> { "fractions": { start, checked, levels: { "fractions-0": { best, n, at, mastered } } } }: Practice by topic
     pm: {}, // question key -> true: mistakes made in Practice by topic in another class's chapter (shown in My mistakes too)
+    games: {}, // chapter (or level) key -> { match: { best, stars, plays, at }, ... }: best score and stars of each Play game
     days: {}, // "2026-10-28" -> { min, acts }
     focusMin: 0,
     focusLen: 25,
@@ -238,6 +239,24 @@ const Store = (() => {
     pathMastered(subject) {
       return Object.values(state.paths[subject] || {}).reduce((a, t) => a + Object.values(t.levels || {}).filter((l) => l.mastered).length, 0);
     },
+
+    // ----- Play (js/games/engine.js) -----
+    // A finished game: keeps the best score and stars for this chapter (or level) and game type, and counts as study today.
+    // `answers` ([{ key, ok }], as in recordQuiz) feeds the chapter accuracy. Returns { best, stars, plays, isBest, prev }.
+    recordGame(k, type, { score, stars, answers }) {
+      for (const a of answers || []) {
+        const ck = String(a.key).split("/").slice(0, 3).join("/");
+        const x = state.acc[ck] || [0, 0];
+        state.acc[ck] = [x[0] + (a.ok ? 1 : 0), x[1] + 1];
+      }
+      const g = (state.games[k] = state.games[k] || {});
+      const prev = g[type] || { best: 0, stars: 0, plays: 0 };
+      g[type] = { best: Math.max(prev.best, score), stars: Math.max(prev.stars, stars), plays: prev.plays + 1, at: Date.now() };
+      today().acts++;
+      save();
+      return { ...g[type], isBest: score > prev.best, prev };
+    },
+    gameBest: (k, type) => ((state.games[k] || {})[type]) || null,
 
     setCard(ck, status) {
       state.cards[ck] = status;

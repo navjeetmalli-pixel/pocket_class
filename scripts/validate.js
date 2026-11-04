@@ -311,6 +311,258 @@ for (const file of diagramFiles) {
   summary.push(`diagrams class ${cls} ${subj}: ${n}`);
 }
 
+// ---------- timelines (the timeline game) ----------
+// data/games/timelines.js: StudyData.addTimelines([{ cls, subject, chapter, events: [{ year, label, when? }] }]).
+// Every chapter id must exist, with at least 5 events, numeric distinct years and labels of at most 60 characters.
+{
+  const file = path.join("data", "games", "timelines.js");
+  if (fs.existsSync(path.join(root, file)) && (process.argv.length <= 2 || process.argv.slice(2).includes(file))) {
+    const errors = [];
+    const err = (where, msg) => errors.push(`${where}: ${msg}`);
+    const ctx = { globalThis: {} };
+    ctx.globalThis = ctx;
+    vm.createContext(ctx);
+    let list = null;
+    try {
+      vm.runInContext(fs.readFileSync(path.join(root, "data", "registry.js"), "utf8"), ctx);
+      ctx.StudyData.addTimelines = (x) => (list = x);
+      vm.runInContext(fs.readFileSync(path.join(root, file), "utf8"), ctx, { filename: file });
+    } catch (e) {
+      errors.push(`Could not load: ${e.message}`);
+    }
+    let n = 0;
+    if (!Array.isArray(list)) errors.push("expected StudyData.addTimelines([...])");
+    else {
+      const seen = new Set();
+      const loaded = new Set();
+      list.forEach((x, i) => {
+        const at = `entry ${i + 1} (${x && x.cls}/${x && x.subject}/${x && x.chapter})`;
+        if (!x || !Number.isInteger(x.cls) || !isStr(x.subject) || !isStr(x.chapter)) return err(at, "needs cls, subject and chapter");
+        const k = `${x.cls}/${x.subject}/${x.chapter}`;
+        if (seen.has(k)) err(at, "duplicate chapter");
+        seen.add(k);
+        const f = path.join(root, "data", `class${x.cls}`, `${x.subject}.js`);
+        if (!fs.existsSync(f)) return err(at, "no such class/subject file");
+        if (!loaded.has(f)) {
+          vm.runInContext(fs.readFileSync(f, "utf8"), ctx, { filename: f });
+          loaded.add(f);
+        }
+        const ch = (((ctx.StudyData.content[x.cls] || {})[x.subject] || {}).chapters || []).find((c) => c.id === x.chapter);
+        if (!ch) err(at, "not a chapter id in this subject");
+        if (!Array.isArray(x.events) || x.events.length < 5) return err(at, "needs at least 5 events");
+        const years = new Set();
+        const labels = new Set();
+        x.events.forEach((e, j) => {
+          n++;
+          const eat = `${at} events[${j}]`;
+          if (!e || typeof e.year !== "number" || !Number.isFinite(e.year) || !Number.isInteger(e.year)) return err(eat, "year must be a whole number (BCE is negative)");
+          if (years.has(e.year)) err(eat, `year ${e.year} is used twice`);
+          years.add(e.year);
+          if (!isStr(e.label) || e.label.length > 60) err(eat, "label is required and at most 60 characters");
+          else if (labels.has(e.label)) err(eat, "duplicate label");
+          else labels.add(e.label);
+          if (e.when !== undefined && !isStr(e.when)) err(eat, "when must be a string");
+        });
+      });
+    }
+    errorCount += errors.length;
+    console.log(`\n${errors.length ? "✗" : "✓"} ${file}`);
+    errors.forEach((e) => console.log(`  ERROR ${e}`));
+    summary.push(`timelines: ${list ? list.length : 0} chapters, ${n} events`);
+  }
+}
+
+// ---------- language games (letters, matras, words, sentences, grammar) ----------
+// data/games/{letters,matras,words,sentences,grammar}.js fill LangGames (js/games/langkit.js). Checks: structure, NFC text, the
+// script matches the language (Unicode ranges), letters start their word, matra parts join to the word, sentences and grammar
+// words are unique with one class each, and every class a game is offered for has enough words (same word lists the game reads).
+{
+  const names = ["letters", "matras", "words", "sentences", "grammar"];
+  const gameFiles = names.map((n) => path.join("data", "games", `${n}.js`));
+  if (gameFiles.every((f) => fs.existsSync(path.join(root, f))) && (process.argv.length <= 2 || process.argv.slice(2).some((a) => gameFiles.includes(a)))) {
+    const errors = [];
+    const err = (where, msg) => errors.push(`${where}: ${msg}`);
+    const ctx = vm.createContext({});
+    ctx.globalThis = ctx;
+    let LG = null;
+    try {
+      vm.runInContext(fs.readFileSync(path.join(root, "data", "registry.js"), "utf8"), ctx);
+      vm.runInContext(fs.readFileSync(path.join(root, "js", "games", "langkit.js"), "utf8") + "\nthis.LangGames = LangGames;", ctx, { filename: "langkit.js" });
+      LG = ctx.LangGames;
+      gameFiles.forEach((f) => vm.runInContext(fs.readFileSync(path.join(root, f), "utf8"), ctx, { filename: f }));
+    } catch (e) {
+      errors.push(`Could not load: ${e.message}`);
+    }
+    const counts = [];
+    if (LG) {
+      const SCRIPT = {
+        pa: /^[਀-੿‌‍ ,.?!।'0-9-]+$/,
+        hi: /^[ऀ-ॿ‌‍ ,.?!।'0-9-]+$/,
+        en: /^[A-Za-z0-9 ,.?!'-]+$/,
+      };
+      const LANGS = ["pa", "hi", "en"];
+      const text = (where, s, lang, what) => {
+        if (!isStr(s)) return err(where, `${what} must be a non-empty string`), false;
+        if (s !== s.trim() || /\s{2}/.test(s)) err(where, `${what} "${s}" has extra spaces`);
+        if (s.normalize("NFC") !== s) err(where, `${what} "${s}" is not in NFC form (re-save it normalised)`);
+        if (!SCRIPT[lang].test(s)) err(where, `${what} "${s}" has characters outside the ${lang} script`);
+        return true;
+      };
+      const dup = (where, list, what) => {
+        const seen = new Set();
+        list.forEach((x) => (seen.has(x) ? err(where, `duplicate ${what} "${x}"`) : seen.add(x)));
+      };
+      const need = (where, game, lang, from, to, getter, min) => {
+        for (let c = from; c <= to; c++) {
+          const n = getter(c);
+          if (n < min) err(where, `${game} (${lang}) has only ${n} for class ${c}, needs ${min}`);
+        }
+      };
+
+      // letters
+      {
+        const data = LG.get("letters");
+        const carrier = { "ੳ": "ੳਉਊਓ", "ਅ": "ਅਆਐਔ", "ੲ": "ੲਇਈਏ" };
+        LANGS.forEach((lang) => {
+          const list = data[lang];
+          const where = `letters.${lang}`;
+          if (!Array.isArray(list) || list.length < 20) return err(where, "needs a list of at least 20 entries");
+          const letters = list.map((x) => x.letter);
+          dup(where, letters, "letter");
+          dup(where, list.map((x) => x.word), "word");
+          dup(where, list.map((x) => x.emoji), "emoji");
+          list.forEach((x) => {
+            const at = `${where} ${x.letter}`;
+            if (!text(at, x.letter, lang, "letter") || !text(at, x.word, lang, "word")) return;
+            if (!isStr(x.emoji)) err(at, "emoji is required");
+            const startsWith = (e) => (carrier[e.letter] ? carrier[e.letter].includes(x.word[0]) : x.word.startsWith(e.letter));
+            const first = lang === "en" ? x.word[0].toUpperCase() === x.letter : startsWith(x);
+            if (!first) err(at, `"${x.word}" does not start with ${x.letter}`);
+            if (lang === "en" && !/^[A-Z]$/.test(x.letter)) err(at, "English letters are single capitals");
+            // the word must start with no other letter of the set, except a conjunct and its own first letter
+            list.forEach((o) => {
+              if (o === x || !text(at, o.letter, lang, "letter")) return;
+              if (startsWith(o) && x.conj !== o.letter && o.conj !== x.letter) err(at, `"${x.word}" also starts with ${o.letter} (ambiguous)`);
+            });
+            if (x.conj !== undefined && !letters.includes(x.conj)) err(at, `conj ${x.conj} is not a letter in the set`);
+            if (x.conj !== undefined && !x.letter.startsWith(x.conj)) err(at, `conj ${x.conj} must be the first letter of ${x.letter}`);
+          });
+          counts.push(`letters ${lang}: ${list.length}`);
+        });
+      }
+      // matras
+      {
+        const data = LG.get("matras");
+        ["pa", "hi"].forEach((lang) => {
+          const list = data[lang];
+          const where = `matras.${lang}`;
+          if (!Array.isArray(list)) return err(where, "missing");
+          dup(where, list.map((x) => x.word), "word");
+          dup(where, list.map((x) => x.emoji), "emoji");
+          list.forEach((x) => {
+            const at = `${where} ${x.word}`;
+            if (!text(at, x.word, lang, "word")) return;
+            if (!Array.isArray(x.parts) || x.parts.length < 2) return err(at, "parts must be a list of at least 2 pieces");
+            if (x.parts.join("") !== x.word) err(at, `parts joined (${x.parts.join("")}) are not the word`);
+            x.parts.forEach((p) => {
+              if ([...p].length !== 1) err(at, `part "${p}" must be one character`);
+              if (!/^\p{L}$|^\p{M}$/u.test(p)) err(at, `part "${p}" is neither a letter nor a mark`);
+            });
+            if (/^\p{M}$/u.test(x.parts[0])) err(at, "the first part cannot be a mark");
+            if (!x.parts.some((p) => /^\p{M}$/u.test(p) && !/[਼़्੍]/.test(p))) err(at, "needs at least one matra");
+            if (!isStr(x.emoji) || !isStr(x.en)) err(at, "emoji and en are required");
+            if (![1, 2, 3].includes(x.cls)) err(at, "cls must be 1, 2 or 3");
+          });
+          need(where, "matras", lang, 1, 3, (c) => LG.pool.matras(lang, c).length, 6);
+          counts.push(`matras ${lang}: ${list.length}`);
+        });
+      }
+      // words
+      {
+        const list = LG.get("words").en;
+        const where = "words.en";
+        if (!Array.isArray(list)) err(where, "missing");
+        else {
+          dup(where, list.map((x) => x.word), "word");
+          dup(where, list.map((x) => x.emoji), "emoji");
+          list.forEach((x) => {
+            const at = `${where} ${x.word}`;
+            if (!/^[a-z]{3,10}$/.test(x.word || "")) err(at, "word must be 3-10 lower case letters");
+            if (!isStr(x.emoji)) err(at, "emoji is required");
+            if (![1, 2, 3, 4, 5].includes(x.cls)) err(at, "cls must be 1 to 5");
+          });
+          need(where, "words", "en", 1, 5, (c) => LG.pool.words(c).length, 6);
+          counts.push(`words en: ${list.length}`);
+        }
+      }
+      // sentences
+      {
+        const data = LG.get("sentences");
+        const stop = { pa: /[।?]$/, hi: /[।?]$/, en: /[.?]$/ };
+        const norm = (w) => w.toLowerCase().replace(/^[^\p{L}\p{N}\p{M}]+|[^\p{L}\p{N}\p{M}]+$/gu, "");
+        const bag = (s) => s.split(" ").map(norm).sort().join(" ");
+        LANGS.forEach((lang) => {
+          const list = data[lang];
+          const where = `sentences.${lang}`;
+          if (!Array.isArray(list) || list.length < 30) return err(where, `needs at least 30 sentences (has ${list ? list.length : 0})`);
+          dup(where, list.map((x) => x.s), "sentence");
+          list.forEach((x, i) => {
+            const at = `${where} #${i + 1}`;
+            if (!text(at, x.s, lang, "sentence")) return;
+            if (!stop[lang].test(x.s)) err(at, "must end with a full stop / danda / question mark");
+            if (![2, 3, 4, 5, 6, 8].includes(x.cls)) err(at, "cls must be 2, 3, 4, 5, 6 or 8");
+            const n = x.s.split(" ").length;
+            if (n < 4 || n > 12) err(at, `has ${n} words (4 to 12)`);
+            (x.alt || []).forEach((a) => {
+              if (!text(at, a, lang, "alt")) return;
+              if (a === x.s) err(at, "alt is the same as the sentence");
+              if (bag(a) !== bag(x.s)) err(at, `alt "${a}" must use exactly the same words`);
+            });
+          });
+          need(where, "sentences", lang, 2, 8, (c) => LG.pool.sentences(lang, c).length, 6);
+          counts.push(`sentences ${lang}: ${list.length}`);
+        });
+      }
+      // grammar
+      {
+        const data = LG.get("grammar");
+        const KINDS = { pos: ["noun", "verb", "adjective"], gender: ["masculine", "feminine"], number: ["singular", "plural"] };
+        LANGS.forEach((lang) => {
+          const g = data[lang];
+          const where = `grammar.${lang}`;
+          if (!g) return err(where, "missing");
+          let words = 0;
+          Object.entries(g).forEach(([kind, groups]) => {
+            const at = `${where}.${kind}`;
+            if (!KINDS[kind]) return err(at, "kind must be pos, gender or number");
+            if (lang === "en" && kind === "gender") err(at, "English has no gender sorting");
+            Object.keys(groups).forEach((k) => !KINDS[kind].includes(k) && err(at, `group ${k} is not one of ${KINDS[kind].join("/")}`));
+            const all = [];
+            Object.entries(groups).forEach(([k, list]) => {
+              dup(`${at}.${k}`, list.map((x) => x[0]), "word");
+              list.forEach(([w, c]) => {
+                words++;
+                text(`${at}.${k}`, w, lang, "word");
+                if (!Number.isInteger(c) || c < 2 || c > 10) err(`${at}.${k} ${w}`, "class must be a whole number from 2 to 10");
+                if (lang === "en" && !/^[a-z]+$/.test(w)) err(`${at}.${k} ${w}`, "English words are lower case letters");
+                all.push(w);
+              });
+            });
+            const twice = all.filter((w, i) => all.indexOf(w) !== i);
+            twice.forEach((w) => err(at, `"${w}" is in two groups, so it is not one unambiguous class`));
+          });
+          need(where, "grammar", lang, 2, 10, (c) => LG.pool.grammar(lang, c).length, 1);
+          counts.push(`grammar ${lang}: ${words} words`);
+        });
+      }
+    }
+    errorCount += errors.length;
+    console.log(`\n${errors.length ? "✗" : "✓"} language games (data/games/letters, matras, words, sentences, grammar)`);
+    errors.forEach((e) => console.log(`  ERROR ${e}`));
+    summary.push(`language games: ${counts.join("; ")}`);
+  }
+}
+
 // ---------- paths (Practice by topic) ----------
 // data/paths/{subject}.js: StudyData.addPath("maths", { title, topics: [{ id, title, icon, summary, levels: [...] }] }).
 // See CONTENT_GUIDE.md. Every `from` reference must name a real chapter, every `gens` name a real generator, `own` chapters
@@ -474,5 +726,7 @@ let genProblems = 0;
 if (process.argv.length <= 2) {
   console.log("\nQuestion generators:");
   genProblems = require("./check-gen.js").problems;
+  console.log("\nMaths games:");
+  genProblems += require("./check-games.js").problems;
 }
 process.exit(errorCount || genProblems ? 1 : 0);

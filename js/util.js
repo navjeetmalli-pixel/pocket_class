@@ -167,6 +167,13 @@ const ICONS = {
   speaker: '<path d="M4 9.5v5h4l5 4v-13l-5 4z"/><path d="M16.5 9a4 4 0 0 1 0 6"/><path d="M19 6.5a8 8 0 0 1 0 11"/>',
   bell: '<path d="M6 17V11a6 6 0 0 1 12 0v6l1.5 2h-15z"/><path d="M10 21h4"/>',
   lock: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+  game: '<rect x="3" y="7" width="18" height="11" rx="5"/><path d="M8 10.5v4"/><path d="M6 12.5h4"/><path d="M15.5 11.5h.01"/><path d="M17.5 13.5h.01"/>',
+  match: '<rect x="3" y="4" width="7" height="6" rx="1.5"/><rect x="14" y="14" width="7" height="6" rx="1.5"/><path d="M10 7h2.5a2 2 0 0 1 2 2v1"/><path d="M14 17h-2.5a2 2 0 0 1-2-2v-1"/>',
+  label: '<path d="M3 12V4h8l9 9-8 8z"/><path d="M7.5 8.5h.01"/>',
+  bolt: '<path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/>',
+  sort: '<rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/><path d="M15 6h6"/><path d="M15 9h4"/><path d="M3 15h6"/><path d="M3 18h4"/>',
+  order: '<path d="M10 6h11"/><path d="M10 12h11"/><path d="M10 18h11"/><path d="M4 5.5 5.5 4v4"/><path d="M3.5 14h3l-3 3.5h3"/>',
+  timeline: '<path d="M12 3v18"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M14 6h6"/><path d="M4 12h6"/><path d="M10 12h.01"/>',
   star: '<path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/>',
 };
 

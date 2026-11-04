@@ -1,0 +1,42 @@
+// Words for the word builder (js/games/words.js): English, spelled with letter tiles. word: lower case letters only; emoji: the
+// hint (it must show that word, nothing else); cls: the class it suits (length grows with the class: 3, 4-5, 5, 6-7, 7-10 letters).
+LangGames.add("words", {
+  en: [
+    { word: "cat", emoji: "🐱", cls: 1 }, { word: "dog", emoji: "🐶", cls: 1 }, { word: "sun", emoji: "☀️", cls: 1 },
+    { word: "hen", emoji: "🐔", cls: 1 }, { word: "pig", emoji: "🐷", cls: 1 }, { word: "bus", emoji: "🚌", cls: 1 },
+    { word: "bed", emoji: "🛏️", cls: 1 }, { word: "egg", emoji: "🥚", cls: 1 }, { word: "ant", emoji: "🐜", cls: 1 },
+    { word: "cow", emoji: "🐄", cls: 1 }, { word: "fox", emoji: "🦊", cls: 1 }, { word: "owl", emoji: "🦉", cls: 1 },
+    { word: "key", emoji: "🔑", cls: 1 }, { word: "bee", emoji: "🐝", cls: 1 }, { word: "car", emoji: "🚗", cls: 1 },
+    { word: "map", emoji: "🗺️", cls: 1 }, { word: "pen", emoji: "🖊️", cls: 1 },
+    { word: "fish", emoji: "🐟", cls: 2 }, { word: "moon", emoji: "🌙", cls: 2 }, { word: "star", emoji: "⭐", cls: 2 },
+    { word: "ball", emoji: "⚽", cls: 2 }, { word: "duck", emoji: "🦆", cls: 2 }, { word: "frog", emoji: "🐸", cls: 2 },
+    { word: "milk", emoji: "🥛", cls: 2 }, { word: "book", emoji: "📖", cls: 2 }, { word: "tree", emoji: "🌳", cls: 2 },
+    { word: "bird", emoji: "🐦", cls: 2 }, { word: "cake", emoji: "🎂", cls: 2 }, { word: "kite", emoji: "🪁", cls: 2 },
+    { word: "lion", emoji: "🦁", cls: 2 }, { word: "rain", emoji: "🌧️", cls: 2 }, { word: "ship", emoji: "🚢", cls: 2 },
+    { word: "drum", emoji: "🥁", cls: 2 }, { word: "bell", emoji: "🔔", cls: 2 }, { word: "hand", emoji: "✋", cls: 2 },
+    { word: "foot", emoji: "🦶", cls: 2 }, { word: "nose", emoji: "👃", cls: 2 },
+    { word: "apple", emoji: "🍎", cls: 3 }, { word: "mango", emoji: "🥭", cls: 3 }, { word: "snake", emoji: "🐍", cls: 3 },
+    { word: "horse", emoji: "🐴", cls: 3 }, { word: "zebra", emoji: "🦓", cls: 3 }, { word: "chair", emoji: "🪑", cls: 3 },
+    { word: "clock", emoji: "🕐", cls: 3 }, { word: "plane", emoji: "✈️", cls: 3 }, { word: "train", emoji: "🚂", cls: 3 },
+    { word: "house", emoji: "🏠", cls: 3 }, { word: "tiger", emoji: "🐯", cls: 3 }, { word: "sheep", emoji: "🐑", cls: 3 },
+    { word: "whale", emoji: "🐳", cls: 3 }, { word: "bread", emoji: "🍞", cls: 3 }, { word: "pizza", emoji: "🍕", cls: 3 },
+    { word: "lemon", emoji: "🍋", cls: 3 }, { word: "tooth", emoji: "🦷", cls: 3 }, { word: "spoon", emoji: "🥄", cls: 3 },
+    { word: "mouse", emoji: "🐭", cls: 3 }, { word: "camel", emoji: "🐫", cls: 3 },
+    { word: "orange", emoji: "🍊", cls: 4 }, { word: "banana", emoji: "🍌", cls: 4 }, { word: "monkey", emoji: "🐒", cls: 4 },
+    { word: "rabbit", emoji: "🐰", cls: 4 }, { word: "rocket", emoji: "🚀", cls: 4 }, { word: "bridge", emoji: "🌉", cls: 4 },
+    { word: "flower", emoji: "🌸", cls: 4 }, { word: "window", emoji: "🪟", cls: 4 }, { word: "pencil", emoji: "✏️", cls: 4 },
+    { word: "candle", emoji: "🕯️", cls: 4 }, { word: "castle", emoji: "🏰", cls: 4 }, { word: "dragon", emoji: "🐉", cls: 4 },
+    { word: "turtle", emoji: "🐢", cls: 4 }, { word: "spider", emoji: "🕷️", cls: 4 }, { word: "guitar", emoji: "🎸", cls: 4 },
+    { word: "ladder", emoji: "🪜", cls: 4 }, { word: "magnet", emoji: "🧲", cls: 4 }, { word: "volcano", emoji: "🌋", cls: 4 },
+    { word: "penguin", emoji: "🐧", cls: 4 }, { word: "parrot", emoji: "🦜", cls: 4 }, { word: "cherry", emoji: "🍒", cls: 4 },
+    { word: "carrot", emoji: "🥕", cls: 4 }, { word: "planet", emoji: "🪐", cls: 4 }, { word: "camera", emoji: "📷", cls: 4 },
+    { word: "anchor", emoji: "⚓", cls: 4 },
+    { word: "elephant", emoji: "🐘", cls: 5 }, { word: "umbrella", emoji: "☂️", cls: 5 }, { word: "mountain", emoji: "⛰️", cls: 5 },
+    { word: "rainbow", emoji: "🌈", cls: 5 }, { word: "dolphin", emoji: "🐬", cls: 5 }, { word: "giraffe", emoji: "🦒", cls: 5 },
+    { word: "scissors", emoji: "✂️", cls: 5 }, { word: "telephone", emoji: "☎️", cls: 5 }, { word: "butterfly", emoji: "🦋", cls: 5 },
+    { word: "strawberry", emoji: "🍓", cls: 5 }, { word: "sandwich", emoji: "🥪", cls: 5 }, { word: "kangaroo", emoji: "🦘", cls: 5 },
+    { word: "crocodile", emoji: "🐊", cls: 5 }, { word: "hamburger", emoji: "🍔", cls: 5 }, { word: "notebook", emoji: "📓", cls: 5 },
+    { word: "bicycle", emoji: "🚲", cls: 5 }, { word: "sunflower", emoji: "🌻", cls: 5 }, { word: "squirrel", emoji: "🐿️", cls: 5 },
+    { word: "pineapple", emoji: "🍍", cls: 5 }, { word: "snowman", emoji: "⛄", cls: 5 }, { word: "keyboard", emoji: "⌨️", cls: 5 }
+  ]
+});

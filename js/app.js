@@ -15,6 +15,7 @@ const App = {
     ["#/progress", "progress", "Progress", ["progress"]],
   ];
   const SIDE_EXTRA = [
+    ["#/games", "game", "Games", ["games", "play"]],
     ["#/paths", "target", "Practice by topic", ["paths", "pathsheet"]],
     ["#/search", "search", "Search", ["search"]],
     ["#/settings", "settings", "Settings", ["settings"]],
@@ -29,6 +30,11 @@ const App = {
     [/^revise$/, Views.revise],
     [/^revise\/mistakes$/, Views.mistakes],
     [/^revise\/due(?:\/(\w+)\/([\w-]+))?$/, Views.dueRound],
+    [/^games$/, Views.gamesHome],
+    [/^games\/random\/(\w+)$/, Views.gamesRandom],
+    [/^games\/(\w+)$/, Views.gamesSubject],
+    [/^play\/level\/(\w+)\/([\w-]+)\/([\w-]+)(?:\/(\w+))?$/, Views.playLevel],
+    [/^play\/(\d+)\/(\w+)\/([\w-]+)(?:\/(\w+))?$/, Views.play],
     [/^paths$/, Views.pathsPicker],
     [/^paths\/(\w+)$/, Views.pathsSubject],
     [/^paths\/(\w+)\/([\w-]+)$/, Views.pathsTopic],
@@ -92,6 +98,8 @@ const App = {
     const subjectsOf = (keys) => [...new Set(keys.map((k) => Store.parseKey(k).subject))];
     let m;
     if ((m = p.match(/^chapter\/(\d+)\/(\w+)\//))) return { cls: Number(m[1]), ids: [m[2]], practice: true };
+    if ((m = p.match(/^play\/(\d+)\/(\w+)\//))) return { cls: Number(m[1]), ids: [m[2]], practice: true, games: true };
+    if ((m = p.match(/^games\/(?:random\/)?(\w+)$/)) && m[1] !== "random") return { cls: own, ids: [m[1]], practice: true, games: true };
     if ((m = p.match(/^(?:worksheet|paper)\/(\d+)\/(\w+)/))) return { cls: Number(m[1]), ids: [m[2]], practice: true };
     if ((m = p.match(/^(?:subject|cards|sheet)\/(\w+)$/))) return { cls: own, ids: [m[1]] };
     if (p === "search") return { cls: own, ids: "all" };
@@ -197,6 +205,15 @@ const App = {
             () => StudyData.loadPractice(nd.cls, only)
           );
       }
+      // Games that use dated events (the timeline) need their small file, once.
+      if (nd && nd.games && !StudyData.timelinesLoaded())
+        return loadThen(
+          main, p, opts, "🎮",
+          t("Loading…"),
+          t("This couldn't be loaded. Check your internet connection and try again."),
+          () => StudyData.loadTimelines(),
+          () => keepOffline([StudyData.timelinesFile])
+        );
     }
 
     if (Store.state.profile) {

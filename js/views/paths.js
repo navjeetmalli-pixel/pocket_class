@@ -44,7 +44,7 @@
 
   // What the router must load before drawing path pages (see needs in js/app.js): the path files, then the chapter files.
   function pathNeeds(p) {
-    const m = p.match(/^paths\/(\w+)(?:\/([\w-]+))?(?:\/([\w-]+))?$/) || p.match(/^pathsheet\/(\w+)\/([\w-]+)\/([\w-]+)/);
+    const m = p.match(/^paths\/(\w+)(?:\/([\w-]+))?(?:\/([\w-]+))?$/) || p.match(/^pathsheet\/(\w+)\/([\w-]+)\/([\w-]+)/) || p.match(/^play\/level\/(\w+)\/([\w-]+)\/([\w-]+)/);
     if (!m || !D.PATH_SUBJECTS.includes(m[1])) return null;
     const out = { paths: [m[1]], pairs: [] };
     const path = D.path(m[1]);
@@ -319,6 +319,7 @@
           }
           <div class="stack mt no-print">
             <button class="btn primary block" data-act="practice">${icon("practice")} ${t("Practice {n} questions", { n: SET })}</button>
+            ${Games.availableFor(cls(), subj, Views.levelChapter(m)).length ? `<a class="btn block" href="#/play/level/${id}/${topicId}/${levelId}">${icon("game")} ${t("Play")}</a>` : ""}
             <a class="btn block" href="#/pathsheet/${id}/${topicId}/${levelId}">${icon("print")} ${t("Printable worksheet")}</a>
           </div>
         </div>

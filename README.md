@@ -51,6 +51,37 @@ Progress is saved only on the device (browser storage). No account, no internet 
 
 `#/paths` is a subject, topic, level ladder for Maths, Science, English and Punjabi, from Level 0 (before Class 1) up to advanced, built from chapters that already exist in other classes (`data/paths/{subject}.js`, loaded when the subject is opened). Each level has short notes, a worked example, links to the full chapters, "Practice 10 questions" (80% masters the level and unlocks the next; any level can still be opened with "Skip ahead"), and a printable numbered worksheet. "Find my level" asks about 2 questions per level and stops after two misses in a row. Progress is saved per student (`paths` in the student's data, so backups and student switching include it). Wrong answers go to My mistakes. Code: `js/views/paths.js`; format: CONTENT_GUIDE.md.
 
+## Games
+
+Play is a small offline game system (`js/games/engine.js`, one file per game type, screens in `js/views/games.js`). Every chapter page has a **Play** tab listing the games it can make; a Practice-by-topic level has a **Play** button (games built from the level's chapters); Home has a **Games** card (`#/games`: subject, chapter, game, or "Random game"). Routes: `#/play/{cls}/{subject}/{chapter}[/{type}]` and `#/play/level/{subject}/{topic}/{level}[/{type}]`. Games are filled automatically from existing chapter content, so no extra content is needed.
+
+- **Match pairs**: six key terms against their meanings (`terms`; chapters with 4 or more terms), timed, wrong matches cost points.
+- **Label the diagram**: hides 3–6 `<text>` labels of a chapter diagram (not numbers, single characters, repeated or "(note)" text) and shows numbered blanks; drag a label onto a blank, or tap a label then a blank.
+- **Quick-fire**: 60 seconds of MCQs (chapter quiz, practice bank, generated questions), 3 lives, streak bonus, harder questions (`level`) as the streak grows. Wrong answers go to My mistakes.
+- **Sort into groups**: 2–3 boxes and 6–10 items; drag or tap each item into its group. Groups are the chapter's notes headings; items are phrases set in bold at the start of a note point that occur under exactly one heading (for a level: the key terms of each of its chapters). Offered only when at least 2 groups have 2+ such items and there are 6+ in all; language subjects are skipped.
+- **Put in order**: shuffled steps of a solved example or generated question (Maths, Science, Physics, Chemistry, Accountancy, Economics); drag the handle, tap a step then its place, or use the arrows; Check marks right and wrong places. Used only when 3–6 steps clearly build on each other (and are not labelled (i), (ii)…).
+- **Timeline**: 5–7 events from `data/games/timelines.js` (`StudyData.addTimelines`, loaded when a Play page opens; a longer list gives a random 6) dragged or tapped onto a timeline; Check locks the right ones and shows their years. Checked by `scripts/validate.js`.
+
+The shell gives every game a how-to, Start, score, timer, lives, streak, pause (button or Esc; also when the page is hidden), 1–3 stars, a results page with "What you got wrong", Play again, and saves the best score and stars per student per chapter or level (`games` in the student's data, so backups and student switching include it). Games respect reduced motion and are usable by keyboard and screen reader.
+
+**Maths games** (`js/games/mathkit.js` plus `numberline`, `fractions`, `balance`, `angles`, `graphs`, `race`): visual games chosen by chapter id and class (`MathKit.scope` also reads Practice-by-topic level ids), seeded so each replay differs, with Punjabi/Hindi lines in `js/games/mathtext.js`. `node scripts/check-games.js` (also run by `validate.js`) audits the maths of every round over 300 seeds for every chapter and level; `tests/maths-games.spec.js` plays each one.
+
+**Adding a game type**: create `js/games/{name}.js`, add it to `index.html` (after engine.js) and `sw.js` `FILES`, and register it:
+
+```js
+Games.register("sort", {
+  title: "Sort it", blurb: "One line for the list", how: "Two short sentences on how to play.", icon: "match", // icon: a name in ICONS (js/util.js)
+  hud: { timer: "up" },                       // or { timer: "down", seconds: 60, lives: 3, streak: true }
+  available: (c, subj, ch) => Games.terms(c, subj, ch).length >= 4,
+  build: (c, subj, ch, seed) => ({ /* pick this round's content with Games.rng(seed) */ }),
+  mount(el, data, api) { /* draw into el; api.score(n), api.miss({...}), api.finish({ stars, lines }) … */ },
+});
+```
+
+Read content only through `Games.terms / mcqs / gens / genItems / diagrams` (they also work for levels). Put every visible string through `t()` and add Punjabi and Hindi lines to `js/i18n.js`. The full `api` is documented at the top of `js/games/engine.js`; `Games.draggable` gives drag-and-drop with a tap fallback. Tests: `tests/games.spec.js`.
+
+**Language games** (`js/games/langkit.js` plus `letters.js`, `matras.js`, `words.js`, `sentences.js`, `grammar.js`): letters and pictures (Level 0 to Class 2; Gurmukhi, Devanagari, English), matra builder (Punjabi and Hindi, Classes 1–3), spell the word (English, Classes 1–5), sentence builder (all three languages, Classes 2–8) and grammar sort (noun / verb / adjective, gender, number; Classes 2–10). They are offered on the language chapters of those classes (`english`, `englishpb`, `hindi`, `hindipb`, `punjabi`) and on the matching Practice-by-topic levels (rules in `RANGES` and `LEVEL_TOPICS` in `langkit.js`). Their words are hand-written in `data/games/{letters,matras,words,sentences,grammar}.js` and load on first play; `node scripts/validate.js` checks them (NFC text, script of each language, a letter starts its word, matra `parts` join to the word, one class per grammar word, enough words for every class). Matra tiles are drawn on a dotted circle (◌ਾ) so a vowel sign stays whole on its own. Tests: `tests/games-language.spec.js`.
+
 ## Run it
 
 Easiest: open `index.html` in a browser. Everything works, except installing it as an app and offline caching, which need a web server.
@@ -100,6 +131,7 @@ js/reminder.js        daily reminder (phone apps)
 js/quiz.js            quiz / test runner and flashcards
 js/timer.js           focus timer
 js/sims.js            interactive experiments (SVG simulations on the Notes tab)
+js/games/             Play: engine.js (shell + registry) and one file per game type
 js/views/             every screen, one file per area: ui.js (shared pieces, creates `Views`), students, revise,
                       home, subject, chapter, test, timer, progress, parent, search, onboarding, settings
 js/app.js             router and navigation

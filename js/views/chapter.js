@@ -15,7 +15,8 @@
     const bank = D.practiceFor(c, subj.id, ch.id);
     const hasPractice = (ch.examples && ch.examples.length) || (ch.qa && ch.qa.length) || bank.written.length || Gen.forChapter(c, subj.id, ch.id).length;
     const guided = Guided.available(c, subj.id, ch.id);
-    const tabs = [["notes", "Notes", "notes"], guided && ["guided", "Lesson", "play"], ["cards", "Flashcards", "cards"], hasPractice && ["practice", "Practice", "practice"], ["quiz", "Quiz", "quiz"]].filter(Boolean);
+    const hasGames = Games.availableFor(c, subj, ch).length > 0;
+    const tabs = [["notes", "Notes", "notes"], guided && ["guided", "Lesson", "play"], ["cards", "Flashcards", "cards"], hasPractice && ["practice", "Practice", "practice"], ["quiz", "Quiz", "quiz"], hasGames && ["play", "Play", "game"]].filter(Boolean);
     if (!tabs.some((t) => t[0] === tab)) tab = "notes";
 
     const r = Store.chapter(k);
@@ -25,6 +26,7 @@
     let body = "";
     if (tab === "notes") body = notesTab(c, subj, ch, r, base);
     else if (tab === "practice") body = practiceTab(c, subj, ch, bank);
+    else if (tab === "play") body = Views.playTab(c, subj, ch);
     else body = `<div id="${tab}-mount"></div>`;
 
     const prev = chs[idx - 1];

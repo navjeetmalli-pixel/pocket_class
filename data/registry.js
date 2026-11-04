@@ -194,6 +194,15 @@ globalThis.StudyData = (function () {
   const diagramsFor = (classNumber, subjectId, chapterId) =>
     (diagrams[classNumber] && diagrams[classNumber][subjectId] && diagrams[classNumber][subjectId][chapterId]) || [];
 
+  // Dated events for the timeline game live in data/games/timelines.js: [{ cls, subject, chapter, events: [{ year, label, when? }] }].
+  // The file loads when a Play page needs it (loadTimelines).
+  const timelines = {};
+  const timelinesFile = "data/games/timelines.js";
+  function addTimelines(list) {
+    for (const x of list) timelines[`${x.cls}/${x.subject}/${x.chapter}`] = x.events;
+  }
+  const timelinesFor = (classNumber, subjectId, chapterId) => timelines[`${classNumber}/${subjectId}/${chapterId}`] || [];
+
   const NO_PRACTICE = { mcq: [], written: [] };
   function practiceFor(classNumber, subjectId, chapterId) {
     return (practice[classNumber] && practice[classNumber][subjectId] && practice[classNumber][subjectId][chapterId]) || NO_PRACTICE;
@@ -286,11 +295,13 @@ globalThis.StudyData = (function () {
   const subjectsLoaded = (classNumber, ids) => subjectFiles(classNumber, ids).every((f) => fileDone[f]);
   const loadPractice = (classNumber, subjectId) => loadFiles(practiceFiles(classNumber, subjectId));
   const practiceLoaded = (classNumber, subjectId) => practiceFiles(classNumber, subjectId).every((f) => fileDone[f]);
+  const loadTimelines = () => loadFiles([timelinesFile]);
+  const timelinesLoaded = () => !!fileDone[timelinesFile];
 
   return {
-    subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addIndex, addPractice, practiceFor, addDiagrams, diagramsFor, chapters, syllabus,
+    subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addIndex, addPractice, practiceFor, addDiagrams, diagramsFor, addTimelines, timelinesFor, timelinesFile, chapters, syllabus,
     PATH_SUBJECTS, PATH_PREFIX, addPath, paths, path, pathFile, pathLoaded, loadPath, refActive, refFiles, filesLoaded, loadFiles,
-    subject, subjectsFor, files, indexFile, practiceFiles, load, loadSubjects, subjectsLoaded, hasFull, loadPractice, practiceLoaded, hasBoardContent,
+    subject, subjectsFor, files, indexFile, practiceFiles, load, loadSubjects, subjectsLoaded, hasFull, loadPractice, practiceLoaded, loadTimelines, timelinesLoaded, hasBoardContent,
     isLoaded: (c) => !!ready[`${board}:${c}`],
     get board() {
       return board;
