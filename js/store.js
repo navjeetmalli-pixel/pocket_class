@@ -14,6 +14,7 @@ const Store = (() => {
     cards: {}, // flashcard key -> "known" | "learning"
     history: [], // { title, subject, cls, score, total, at, kind }
     guided: {}, // chapter key -> { at, score, total, sureWrong } for the last guided lesson
+    revise: {}, // chapter key -> { last, n }: when the chapter was last studied and how many times
     days: {}, // "2026-10-28" -> { min, acts }
     focusMin: 0,
     focusLen: 25,
@@ -57,6 +58,15 @@ const Store = (() => {
 
   function chapter(k) {
     return state.chapters[k] || {};
+  }
+
+  // Spaced revision: a chapter comes back 1, 3, 7, 14 and then every 30 days after it was last
+  // studied (chapter quiz, guided lesson or revision round). Mistakes from mock tests count as study.
+  const GAPS = [1, 3, 7, 14, 30];
+  const DAY = 86400000;
+  function studied(k) {
+    const r = state.revise[k] || { n: 0 };
+    state.revise[k] = { last: Date.now(), n: r.n + 1 };
   }
 
   function patchChapter(k, patch) {
@@ -146,7 +156,7 @@ const Store = (() => {
     },
 
     // Saves a finished quiz or test. `chapterKey` is set for single-chapter quizzes.
-    recordQuiz({ title, subject, cls, score, total, kind, chapterKey }) {
+    recordQuiz({ title, subject, cls, score, total, kind, chapterKey, chapterKeys }) {
       const percent = pct(score, total);
       state.history.unshift({ title, subject, cls, score, total, kind, at: Date.now() });
       state.history = state.history.slice(0, 200);
@@ -156,6 +166,7 @@ const Store = (() => {
         if (percent >= 60) patch.done = true;
         state.chapters[chapterKey] = Object.assign({}, c, patch);
       }
+      [chapterKey, ...(chapterKeys || [])].filter(Boolean).forEach(studied);
       today().acts++;
       save();
     },
@@ -166,10 +177,34 @@ const Store = (() => {
       state.history.unshift({ title, subject, cls, score, total, kind: "guided", at: Date.now() });
       state.history = state.history.slice(0, 200);
       state.chapters[chapterKey] = Object.assign({}, chapter(chapterKey), { opened: true });
+      studied(chapterKey);
       today().acts++;
       save();
     },
     guided: (chapterKey) => state.guided[chapterKey] || null,
+
+    // Chapters of this class that are due for revision today, most overdue first:
+    // [{ key, days (since last studied), n (times studied), mistakes (open mistakes) }].
+    due(cls) {
+      const by = {};
+      for (const [k, r] of Object.entries(state.revise)) {
+        if (parseKey(k).cls !== cls) continue;
+        by[k] = { key: k, last: r.last, n: r.n, mistakes: 0 };
+      }
+      for (const [qk, at] of Object.entries(state.mistakes)) {
+        const p = parseKey(qk);
+        if (p.cls !== cls) continue;
+        const k = key(p.cls, p.subject, p.chapterId);
+        const e = (by[k] = by[k] || { key: k, last: 0, n: 0, mistakes: 0 });
+        e.mistakes++;
+        e.last = Math.max(e.last, at);
+      }
+      const now = Date.now();
+      return Object.values(by)
+        .map((e) => ({ ...e, days: Math.floor((now - e.last) / DAY), gap: GAPS[Math.min(Math.max(e.n - 1, 0), GAPS.length - 1)] }))
+        .filter((e) => e.days >= e.gap)
+        .sort((a, b) => b.days - b.gap - (a.days - a.gap));
+    },
 
     addFocus(min) {
       state.focusMin += min;

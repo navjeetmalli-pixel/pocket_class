@@ -208,6 +208,87 @@ const Views = (() => {
 
   // ---------- home ----------
 
+  // ---------- spaced revision ----------
+  const agoLabel = (days) => (days === 0 ? "today" : days === 1 ? "yesterday" : days < 30 ? `${days} days ago` : "a month or more ago");
+
+  // Due chapters of the student's class that still exist in the content.
+  function dueList(c) {
+    return Store.due(c)
+      .map((e) => {
+        const k = Store.parseKey(e.key);
+        const f = findChapter(c, k.subject, k.chapterId);
+        return f ? { ...e, subj: f.subj, ch: f.ch } : null;
+      })
+      .filter(Boolean);
+  }
+
+  function dueRows(c, list) {
+    return `<div class="list">${list
+      .map(
+        (e) => `<a class="card chapter-row" href="#/revise/due/${e.subj.id}/${e.ch.id}" style="--c:${e.subj.color}">
+          <span class="ch-num">${e.subj.icon}</span>
+          <span class="ch-body"><span class="ch-title">${esc(e.ch.title)}</span>
+            <span class="ch-sum">${esc(e.subj.short)} · ${agoLabel(e.days)}${e.mistakes ? ` · ${e.mistakes} mistake${e.mistakes > 1 ? "s" : ""}` : ""}</span></span>
+          ${icon("next")}</a>`
+      )
+      .join("")}</div>`;
+  }
+
+  // Home-screen card: up to three due chapters and a button to revise them all in one round.
+  function dueCard(c) {
+    const list = dueList(c);
+    if (!list.length) return "";
+    return `<section class="card due mt">
+      <div class="row" style="margin-bottom:12px"><strong class="grow">Due today</strong><span class="pill accent">${list.length} chapter${list.length > 1 ? "s" : ""}</span></div>
+      <p class="small muted" style="margin:-6px 0 12px">Chapters come back after 1, 3, 7, 14 and 30 days so what you learned stays learned.</p>
+      ${dueRows(c, list.slice(0, 3))}
+      ${list.length > 1 ? `<a class="btn primary block mt" href="#/revise/due">Revise all ${list.length} ${icon("arrow")}</a>` : ""}
+    </section>`;
+  }
+
+  // One revision round: the chapter's open mistakes plus fresh questions. With no chapter given,
+  // every due chapter in one mixed round, so the student also practises choosing the method.
+  function dueRound([subjectId, chapterId]) {
+    const c = cls();
+    const single = subjectId && findChapter(c, subjectId, chapterId);
+    const list = single ? [{ subj: single.subj, ch: single.ch }] : dueList(c);
+    if (subjectId && !single) return notFound();
+    const per = single ? 8 : Math.max(3, Math.min(6, Math.floor(20 / Math.max(list.length, 1))));
+    const items = [];
+    const keys = [];
+    for (const { subj, ch } of list) {
+      const k = Store.key(c, subj.id, ch.id);
+      keys.push(k);
+      const all = quizItems(c, subj, ch);
+      const wrong = all.filter((it) => Store.state.mistakes[it.ref.key]);
+      const fresh = shuffle(all.filter((it) => !Store.state.mistakes[it.ref.key]));
+      const gen = genItems(c, subj, ch, 2);
+      items.push(...shuffle([...wrong.slice(0, per), ...fresh, ...gen].slice(0, per)));
+    }
+    const title = single ? `Revision · ${single.ch.title}` : "Revision · due chapters";
+    return {
+      title: "Revision",
+      html: `${topbar(title, "#/revise")}${
+        items.length
+          ? `<p class="small muted" style="margin:-6px 2px 14px">${single ? "Your mistakes from this chapter first, then fresh questions." : "Questions from every chapter that is due, mixed together."}</p><div id="quiz-mount"></div>`
+          : emptyState("✅", "Nothing is due right now. Chapters come back here a day after you study them, then after 3, 7, 14 and 30 days.")
+      }`,
+      mount(el) {
+        if (!items.length) return;
+        Quiz.mount(el.querySelector("#quiz-mount"), {
+          title,
+          items: shuffle(items),
+          instant: true,
+          showFrom: !single,
+          record: single ? { subject: single.subj.id, cls: c, kind: "revision", chapterKey: keys[0] } : { subject: "all", cls: c, kind: "revision", chapterKeys: keys },
+          backHref: "#/",
+          backLabel: "Home",
+          retry: () => null,
+        });
+      },
+    };
+  }
+
   function home() {
     const st = Store.state;
     const c = cls();
@@ -272,6 +353,7 @@ const Views = (() => {
           <div class="card stat"><div class="v">${avg === null ? "–" : avg + "%"}</div><div class="l">quiz average</div></div>
         </div>
         ${boardNote(c)}
+        ${dueCard(c)}
         ${cont}
         <h2 class="block-title">Subjects</h2>
         ${subjects}
@@ -799,6 +881,13 @@ const Views = (() => {
           <div class="grow"><strong>My mistakes</strong><div class="small muted">${mistakes ? "Questions you got wrong. Get them right to clear them." : "Questions you get wrong in quizzes show up here."}</div></div>
           <a class="btn primary" href="#/revise/mistakes" ${mistakes ? "" : "disabled"}>Practise</a>
         </div>
+        <h2 class="block-title">Due today</h2>
+        ${(() => {
+          const list = dueList(c);
+          return list.length
+            ? `${dueRows(c, list)}${list.length > 1 ? `<a class="btn primary block mt" href="#/revise/due">Revise all ${list.length} ${icon("arrow")}</a>` : ""}`
+            : `<div class="card small muted">Chapters come back here a day after you study them, then after 3, 7, 14 and 30 days.</div>`;
+        })()}
         <h2 class="block-title">Bookmarked chapters</h2>
         ${bookmarks}
         <a class="card row" href="#/sheets" style="gap:16px;margin-top:12px">
@@ -1022,7 +1111,7 @@ const Views = (() => {
             ? `<div class="card">${hist
                 .map(
                   (h) => `<div class="history-row">
-                    <div class="grow"><div style="font-weight:620">${esc(h.title)}</div><div class="tiny muted">${relDate(h.at)} · ${h.kind === "test" ? "Mock test" : h.kind === "practice" ? "Mistakes practice" : h.kind === "guided" ? "Guided lesson" : "Chapter quiz"}</div></div>
+                    <div class="grow"><div style="font-weight:620">${esc(h.title)}</div><div class="tiny muted">${relDate(h.at)} · ${h.kind === "test" ? "Mock test" : h.kind === "practice" ? "Mistakes practice" : h.kind === "guided" ? "Guided lesson" : h.kind === "revision" ? "Revision" : "Chapter quiz"}</div></div>
                     <span class="pill ${pct(h.score, h.total) >= 60 ? "good" : "bad"}">${h.score}/${h.total}</span></div>`
                 )
                 .join("")}</div>`
@@ -1228,5 +1317,5 @@ const Views = (() => {
   // Shared with sheets.js.
   const ui = { topbar, pageHead, emptyState, notFound, quizItems, genItems, findChapter, writtenHTML };
 
-  return { ui, onboarding, home, subject, chapter, testSetup, testRun, revise, mistakes, sheet, subjectCards, timer, progress, search, settings, notFound };
+  return { ui, onboarding, home, subject, chapter, testSetup, testRun, revise, mistakes, dueRound, sheet, subjectCards, timer, progress, search, settings, notFound };
 })();

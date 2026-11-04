@@ -27,6 +27,7 @@ const App = {
     [/^test(?:\/(\w+))?$/, Views.testSetup],
     [/^revise$/, Views.revise],
     [/^revise\/mistakes$/, Views.mistakes],
+    [/^revise\/due(?:\/(\w+)\/([\w-]+))?$/, Views.dueRound],
     [/^sheet\/(\w+)$/, Views.sheet],
     [/^sheets(?:\/(\w+))?$/, Sheets.maker],
     [/^worksheet\/(\d+)\/(\w+)(?:\?(.*))?$/, Sheets.worksheet],
@@ -77,7 +78,7 @@ const App = {
     if (m) return [Number(m[1]), m[2]];
     m = p.match(/^(?:worksheet|paper)\/(\d+)\/(\w+)/);
     if (m) return [Number(m[1]), m[2]];
-    if (/^(test|sheets|revise\/mistakes)/.test(p)) return [Store.state.profile.cls, undefined];
+    if (/^(test|sheets|revise\/(mistakes|due))/.test(p)) return [Store.state.profile.cls, undefined];
     return null;
   }
 

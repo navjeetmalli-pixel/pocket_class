@@ -693,3 +693,7 @@ mark { background: color-mix(in srgb, var(--gold) 30%, transparent); color: inhe
 .guided-card .ti { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: var(--c, var(--accent)); color: #fff; flex: none; }
 .guided-card .ti svg.i { width: 20px; height: 20px; }
 .guided-card > svg.i { width: 18px; height: 18px; color: var(--muted); flex: none; }
+
+/* ---------- Due today (spaced revision) ---------- */
+.due { border-color: color-mix(in srgb, var(--accent) 35%, var(--border)); background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
+.due .chapter-row { background: var(--surface); }

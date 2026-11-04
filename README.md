@@ -33,6 +33,7 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 **Study tools**
 - **Mock test**: timed test across a whole subject, chosen chapters, or all subjects, with a per-chapter score breakdown
 - **My mistakes**: every wrong answer is saved so you can practise it until you get it right
+- **Due today**: spaced revision. A chapter comes back 1, 3, 7, 14 and 30 days after you study it (quiz, guided lesson or revision round), with its open mistakes first and then fresh questions; "Revise all" mixes every due chapter into one round
 - **Formula sheets**: all formulas / key dates of a subject on one printable page
 - **Focus timer**: Pomodoro timer (15/25/45/60 min) that keeps running while you study
 - **Progress**: daily streak, minutes studied this week, chapter completion, quiz history
