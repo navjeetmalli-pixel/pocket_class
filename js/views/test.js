@@ -94,7 +94,7 @@
     const pool = testPool(c).reduce((a, g) => a + g.length, 0);
     const count = Math.min(testCfg.count, pool);
     const chips = [`<button class="chip ${testCfg.subject === "all" ? "on" : ""}" data-subj="all">${t("All subjects")}</button>`]
-      .concat(withContent.map((s) => `<button class="chip ${testCfg.subject === s.id ? "on" : ""}" data-subj="${s.id}">${s.icon} ${esc(s.short)}</button>`))
+      .concat(withContent.map((s) => `<button class="chip ${testCfg.subject === s.id ? "on" : ""}" data-subj="${s.id}">${SubjectIcons.html(s)} ${esc(s.short)}</button>`))
       .join("");
 
     let chapterPick = "";

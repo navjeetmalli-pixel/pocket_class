@@ -77,7 +77,7 @@ const App = {
 
   function navLink([href, ic, label, id], tab) {
     const on = id === tab;
-    return `<a href="${href}" class="tab-${id} ${on ? "active" : ""}" ${on ? 'aria-current="page"' : ""} style="--tab:${COLORS[id]}"><span class="tab-ic">${icon(ic)}</span><span class="tab-l">${t(label)}</span></a>`;
+    return `<a href="${href}" class="tab-${id} ${on ? "active" : ""}" ${on ? 'aria-current="page"' : ""} style="--tab:${COLORS[id]}"><span class="tab-ic">${globalThis.SubjectIcons ? SubjectIcons.svg(id === "play" ? "game" : id, { size: 22, className: "i" }) : icon(ic)}</span><span class="tab-l">${t(label)}</span></a>`;
   }
 
   function renderNav(p) {

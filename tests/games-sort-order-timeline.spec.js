@@ -193,13 +193,8 @@ test("timeline: events are placed by tap and drag, wrong ones go back, right one
     const ev = data.events.findIndex((e) => e.rank === s);
     if (first) {
       first = false;
-      const from = await chip(ev).boundingBox();
-      const to = await slot(s).boundingBox();
-      await page.mouse.move(from.x + from.width / 2, from.y + from.height / 2);
-      await page.mouse.down();
-      await page.mouse.move(from.x + from.width / 2 + 20, from.y + from.height / 2 - 20, { steps: 3 });
-      await page.mouse.move(to.x + to.width / 2, to.y + to.height / 2, { steps: 6 });
-      await page.mouse.up();
+      // dragTo scrolls each end into view before pressing / releasing (a phone viewport may not show both at once).
+      await chip(ev).dragTo(slot(s));
     } else {
       await chip(ev).click();
       await slot(s).click();

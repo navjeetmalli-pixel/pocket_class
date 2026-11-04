@@ -90,7 +90,7 @@
         const ex = Readiness.exam(c, s.id);
         const brief = [cc.started ? t("{n} {n:skill|skills} started", { n: cc.started }) : "", ex.all[1] ? t("{n} mock test {n:answer|answers}", { n: ex.all[1] }) : ""].filter(Boolean).join(" · ");
         return `<details class="card rd-subj" style="--c:${s.color}" ${i === 0 || cc.started || ex.attempted ? "open" : ""}>
-          <summary><span>${s.icon}</span><span class="grow">${esc(s.name)}${brief ? `<span class="small muted" style="display:block;font-weight:500">${brief}</span>` : ""}</span><span class="chev">${icon("next")}</span></summary>
+          <summary><span>${SubjectIcons.html(s)}</span><span class="grow">${esc(s.name)}${brief ? `<span class="small muted" style="display:block;font-weight:500">${brief}</span>` : ""}</span><span class="chev">${icon("next")}</span></summary>
           <div class="rd-body">${conceptBox(c, s)}${examBox(c, s)}${chapterRows(c, s)}</div>
         </details>`;
       })
@@ -189,7 +189,7 @@
         const sk = Learn.counts(c, s.id);
         const chips = Mastery.STATES.filter((st) => sk[st]).map((st) => `<span class="obj-chip s-${st}"><span aria-hidden="true">${Mastery.MARK[st]}</span> ${t(Mastery.LABEL[st])} · ${sk[st]}</span>`);
         return `<div style="--c:${s.color}">
-          <div class="top"><span><strong>${s.icon} ${esc(s.name)}</strong></span><span class="muted">${t("{done}/{total} chapters", { done: x.done, total: x.total })}${x.avg != null ? ` · ${t("{n}% avg", { n: x.avg })}` : ""}</span></div>
+          <div class="top"><span><strong>${SubjectIcons.html(s)} ${esc(s.name)}</strong></span><span class="muted">${t("{done}/{total} chapters", { done: x.done, total: x.total })}${x.avg != null ? ` · ${t("{n}% avg", { n: x.avg })}` : ""}</span></div>
           <span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span>
           ${chips.length ? `<div class="obj-counts" role="group" aria-label="${t("Skills by state")}">${chips.join("")}</div>` : ""}
         </div>`;

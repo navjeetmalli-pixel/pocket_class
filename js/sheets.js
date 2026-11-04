@@ -161,7 +161,7 @@ const Sheets = (() => {
 
     return `<div class="stack">
       <div class="card"><strong>${t("Subject")}</strong><div class="chips" style="margin-top:10px">${subs
-        .map((s) => `<button class="chip ${s.id === subj.id ? "on" : ""}" data-subj="${s.id}">${s.icon} ${esc(s.short)}</button>`)
+        .map((s) => `<button class="chip ${s.id === subj.id ? "on" : ""}" data-subj="${s.id}">${SubjectIcons.html(s)} ${esc(s.short)}</button>`)
         .join("")}</div></div>
       <div class="card">
         <div class="row"><strong class="grow">${t("Chapters")}</strong><span class="small muted">${t("{a} of {b} selected", { a: sel.length, b: all.length })}</span></div>

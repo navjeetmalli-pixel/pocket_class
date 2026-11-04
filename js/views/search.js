@@ -71,7 +71,7 @@
       .slice(0, 30)
       .map(
         ({ s, ch, snip }) => `<a class="card chapter-row" href="#/chapter/${c}/${s.id}/${ch.id}" style="--c:${s.color}">
-          <span class="ch-num">${s.icon}</span>
+          <span class="ch-num">${SubjectIcons.html(s)}</span>
           <span class="ch-body"><span class="ch-tag">${esc(s.short)} · ${esc(ch.section)}</span><span class="ch-title">${esc(ch.title)}</span>
           ${snip ? `<span class="small muted" style="margin-top:2px">${snip}</span>` : ""}</span></a>`
       )

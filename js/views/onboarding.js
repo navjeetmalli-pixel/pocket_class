@@ -256,7 +256,7 @@
         title: t("Choose your subjects"),
         body: `${head(easy("Choose your subjects", "What do you want to learn?"), lead)}
           <div class="ob-choices two" role="group" aria-label="${t("Subjects")}">
-            ${list.map((s) => choice(`data-sub="${s.id}"`, s.icon, esc(s.name), esc(s.native || ""), ob.sel.has(s.id))).join("")}
+            ${list.map((s) => choice(`data-sub="${s.id}"`, SubjectIcons.html(s), esc(s.name), esc(s.native || ""), ob.sel.has(s.id))).join("")}
           </div>`,
         actions: `${primary(t("Continue"), ob.sel.size > 0)}${byClass ? "" : `<button type="button" class="btn link" data-act="later">${t("Decide later")}</button>`}`,
         click(b) {

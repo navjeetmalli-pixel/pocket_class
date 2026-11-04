@@ -81,7 +81,7 @@ const Papers = (() => {
             .map((s) => {
               const p = pattern(c, s.id);
               return `<a class="card row" href="#/paper/${c}/${s.id}?n=1">
-                <span class="subj-ico" style="background:${s.color}22">${s.icon}</span>
+                <span class="subj-ico" style="background:${s.color}22">${SubjectIcons.html(s)}</span>
                 <span class="grow"><strong>${esc(s.name)}</strong><br><span class="small muted">${t("{marks} marks · 3 hours · sections {list}", { marks: p.total, list: "ABCDEF".slice(0, p.sections.length).split("").join(", ") })}</span></span>
                 ${icon("next")}</a>`;
             })

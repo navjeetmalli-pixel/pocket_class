@@ -34,7 +34,7 @@
             <div class="field"><label>${t("Learning view")}</label>${seg("view", [["class", "Class-wise"], ["subject", "Subject-wise"]], p.view)}
               <span class="small muted">${p.view === "class" ? t("Follow your class programme with all available subjects") : t("Focus on the subjects you want")}</span></div>
             <div class="field"><span class="lab" id="pf-sub" style="font-size:14px;font-weight:650;color:var(--muted)">${t("Subjects")}</span>
-              <div class="prof-chips" role="group" aria-labelledby="pf-sub">${avail.map((s) => chip("data-sub", s.id, esc(s.name), picked.has(s.id), s.icon)).join("")}</div>
+              <div class="prof-chips" role="group" aria-labelledby="pf-sub">${avail.map((s) => chip("data-sub", s.id, esc(s.name), picked.has(s.id), SubjectIcons.html(s))).join("")}</div>
               <span class="small muted">${subjectLead}</span></div>
           </div>
           <div class="card stack">

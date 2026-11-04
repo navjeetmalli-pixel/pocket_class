@@ -21,7 +21,7 @@
     return `<div class="list">${list
       .map(
         (e) => `<a class="card chapter-row" href="#/revise/due/${e.subj.id}/${e.ch.id}" style="--c:${e.subj.color}">
-          <span class="ch-num">${e.subj.icon}</span>
+          <span class="ch-num">${SubjectIcons.html(e.subj)}</span>
           <span class="ch-body"><span class="ch-title">${esc(e.ch.title)}</span>
             <span class="ch-sum">${esc(e.subj.short)} · ${agoLabel(e.days)}${e.mistakes ? ` · ${t("{n} {n:mistake|mistakes}", { n: e.mistakes })}` : ""}${e.objs ? ` · ${t("{n} {n:skill|skills} to review", { n: e.objs })}` : ""}</span></span>
           ${icon("next")}</a>`
@@ -91,7 +91,7 @@
       ? `<div class="list">${marks
           .map((k) => {
             const f = findChapter(c, k.subject, k.chapterId);
-            return f ? chapterRow(c, f.subj, f.ch, f.subj.icon, f.subj.name) : "";
+            return f ? chapterRow(c, f.subj, f.ch, SubjectIcons.html(f.subj), f.subj.name) : "";
           })
           .join("")}</div>`
       : `<div class="card small muted">${t("Tap the {icon} on any chapter to save it here for quick revision.", { icon: icon("bookmark").replace('class="i"', 'class="i" style="width:16px;height:16px;vertical-align:-3px"') })}</div>`;
@@ -100,7 +100,7 @@
       `<div class="list">${withContent
         .map(
           (s) => `<a class="card chapter-row" href="${hrefBase}${s.id}" style="--c:${s.color}">
-            <span class="ch-num">${s.icon}</span>
+            <span class="ch-num">${SubjectIcons.html(s)}</span>
             <span class="ch-body"><span class="ch-title">${esc(s.name)}</span><span class="ch-sum">${esc(label(s))}</span></span>
             ${icon("next")}</a>`
         )

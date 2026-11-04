@@ -1563,3 +1563,15 @@ body[data-band="11-12"] .learn-body .tool { padding: 12px; gap: 4px; }
 body[data-band="11-12"] .learn-body .tool .ts { display: none; }
 
 @media (max-width: 380px) { .quick-row { grid-template-columns: 1fr; } .band-row { gap: 6px; } }
+
+/* ---------- Subject line icons (js/subject-icons.js) ---------- */
+/* Accent mixed with the text colour: darker than the accent in light mode, lighter in dark mode, so it holds 3:1 on its pale box. */
+.sico { display: inline-flex; align-items: center; justify-content: center; vertical-align: -0.2em; line-height: 1; color: color-mix(in srgb, var(--c, var(--accent)) 62%, var(--text)); }
+.sico svg { display: block; }
+.subject-icon .sico svg, .ci .sico svg { width: 26px; height: 26px; }
+.subj-ico .sico svg { width: 24px; height: 24px; }
+.ch-num .sico svg { width: 20px; height: 20px; }
+.chip .sico svg, .prof-chips .sico svg { width: 18px; height: 18px; }
+.chip.on .sico { color: inherit; }
+.tab-ic svg.i { width: 22px; height: 22px; }
+@media print { .sico { display: none !important; } }

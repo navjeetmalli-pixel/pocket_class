@@ -23,7 +23,7 @@ globalThis.SubjectIcons = (function () {
     physics: `<ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>` + dot(12, 12, 1.6),
     chemistry: `<path d="M8 3h8"/><path d="M9 3v6l-4.2 9.2A2 2 0 0 0 6.5 21h11a2 2 0 0 0 1.7-2.8L15 9V3"/>` + `<circle cx="10.5" cy="16.5" r="1"/><circle cx="14" cy="14" r=".9"/><circle cx="14.5" cy="18" r=".8"/>`,
     biology: `<path d="M20 4C10 4 4.5 8.5 4.5 14.5c0 1.8.5 3.4 1.5 4.5 6.5 0 14-3.5 14-15z"/><path d="M4 21c2-5 6-9 11-11"/>`,
-    evs: `<circle cx="8" cy="10" r="5"/><path d="M8 15v6"/><path d="M3 21h18"/><circle cx="18" cy="6" r="2.5"/>`,
+    evs: `<path d="M6.5 15.5a3.4 3.4 0 0 1-1.9-6.2 4.3 4.3 0 0 1 7.6-2.8 3.8 3.8 0 0 1 2.4 9z"/><path d="M10 15.5V21"/><path d="M5.5 21h9"/><circle cx="20" cy="4.5" r="1.2"/>`,
     sst: `<circle cx="12" cy="8.5" r="6.5"/><ellipse cx="12" cy="8.5" rx="2.6" ry="6.5"/><path d="M5.5 8.5h13"/><path d="M3 16.5h6c1.5 0 2.3.5 3 1.5.7-1 1.5-1.5 3-1.5h6V22h-6c-1.5 0-2.3.5-3 1.2-.7-.7-1.5-1.2-3-1.2H3z" transform="translate(0 -1)"/>`,
     english: book(T(12.6, 14.6, 9, "Aa")),
     hindi: book(T(12.4, 15.2, 11, "अ")),
@@ -62,5 +62,12 @@ globalThis.SubjectIcons = (function () {
     const cls = o.className ? ` class="${esc(o.className)}"` : "";
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"${cls} ${a11y}>${body}</svg>`;
   }
-  return { svg, has, ids: () => Object.keys(ICONS).concat(Object.keys(ALIAS)) };
+  // Icon markup for a subject object ({id, icon, color}): a tinted inline SVG, or the registry emoji when there is no drawing.
+  // The tint mixes the subject accent with the text colour so it keeps 3:1 against its pale box in light and dark.
+  function html(subj, opts) {
+    if (!subj) return "";
+    if (!has(subj.id)) return esc(subj.icon || "");
+    return `<span class="sico" style="--c:${esc(subj.color || "currentColor")}">${svg(subj.id, opts)}</span>`;
+  }
+  return { svg, html, has, ids: () => Object.keys(ICONS).concat(Object.keys(ALIAS)) };
 })();

@@ -50,7 +50,7 @@
         const tested = ex.all[1]
           ? t("In mock tests: {a} of {b} chapters tried, {n} {n:answer|answers} given", { a: ex.tested, b: ex.total, n: ex.all[1] }) + (ex.all[1] >= Readiness.config.minAnswers ? t(", about {p}% right.", { p: Readiness.pctOf(ex.all[0], ex.all[1]) }) : ".")
           : t("No mock tests taken yet ({a} of {b} chapters tried in quizzes).", { a: ex.attempted, b: ex.total });
-        return `<div style="--c:${s.color}"><strong>${s.icon} ${esc(s.name)}</strong>
+        return `<div style="--c:${s.color}"><strong>${SubjectIcons.html(s)} ${esc(s.name)}</strong>
           <p>${cc.started ? understood : t("No skills started yet.")}</p>
           <p>${tested}</p>${nextText({ s, ex }) ? `<p class="muted">${nextText({ s, ex })}</p>` : ""}</div>`;
       })
@@ -89,7 +89,7 @@
       .filter((r) => r.x.total)
       .map(
         ({ s, x }) => `<div style="--c:${s.color}">
-          <div class="top"><span><strong>${s.icon} ${esc(s.name)}</strong></span><span class="muted">${t("{done}/{total} chapters", { done: x.done, total: x.total })}</span></div>
+          <div class="top"><span><strong>${SubjectIcons.html(s)} ${esc(s.name)}</strong></span><span class="muted">${t("{done}/{total} chapters", { done: x.done, total: x.total })}</span></div>
           <span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span></div>`
       )
       .join("");
@@ -136,7 +136,7 @@
               <div class="list">${weak
                 .map(
                   (x) => `<a class="card chapter-row" href="#/chapter/${c}/${x.f.subj.id}/${x.f.ch.id}/quiz" style="--c:${x.f.subj.color}">
-                    <span class="ch-num">${x.f.subj.icon}</span>
+                    <span class="ch-num">${SubjectIcons.html(x.f.subj)}</span>
                     <span class="ch-body"><span class="ch-title">${esc(x.f.ch.title)}</span><span class="ch-sum">${esc(x.f.subj.short)} · ${t("{n}% right of {a} answers", { n: x.p, a: x.asked })}</span></span>${icon("next")}</a>`
                 )
                 .join("")}</div>`
