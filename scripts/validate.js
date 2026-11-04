@@ -317,4 +317,11 @@ if (process.argv.length <= 2) {
 
 console.log("\n" + summary.join("\n"));
 console.log(`\n${errorCount} error(s), ${warnCount} warning(s)`);
-process.exit(errorCount ? 1 : 0);
+
+// With no file arguments, also check the question generators (scripts/check-gen.js).
+let genProblems = 0;
+if (process.argv.length <= 2) {
+  console.log("\nQuestion generators:");
+  genProblems = require("./check-gen.js").problems;
+}
+process.exit(errorCount || genProblems ? 1 : 0);

@@ -89,6 +89,44 @@ const Gen = (() => {
     return out;
   }
 
+  // ---------- chemistry helpers ----------
+  const rd2 = (x) => Math.round(x * 100) / 100;
+  // A number to `sf` significant figures without exponent notation (Indian grouping from 1000 up).
+  function fm(x, sf = 3) {
+    const v = parseFloat(Number(x).toPrecision(sf));
+    let s = Math.abs(v).toString();
+    if (/e/.test(s)) s = Math.abs(v) < 1 ? Math.abs(v).toFixed(12).replace(/0+$/, "") : Math.abs(v).toLocaleString("en-IN", { useGrouping: false });
+    else if (Math.abs(v) >= 1000) s = Math.abs(v).toLocaleString("en-IN", { maximumFractionDigits: 6 });
+    return (v < 0 ? "−" : "") + s;
+  }
+  // Scientific notation: 3.01 × 10²³ (sf significant figures).
+  function sci(x, sf = 3) {
+    if (!x) return "0";
+    let e = Math.floor(Math.log10(Math.abs(x)));
+    let m = x / 10 ** e;
+    if (parseFloat(m.toFixed(sf - 1)) >= 10) (m /= 10), e++;
+    return `${m.toFixed(sf - 1)} × 10${toSup(e)}`;
+  }
+  // Wrong answers for chemistry: the usual slips first, then simple scalings, finite values only.
+  const nr = (ans, cands, R, fmt = n) => {
+    const ok = (c) => typeof c === "string" || Number.isFinite(c);
+    const extra = typeof ans !== "number" ? [] : Number.isInteger(ans) ? [ans + 1, ans - 1, ans * 2, ans + 2, ans * 10] : [ans * 2, ans / 2, ans * 10, ans / 10, ans + 1];
+    return near(ans, [...cands.filter(ok), ...extra], R, fmt);
+  };
+  // Boiling-point elevation (kind "b") and freezing-point depression (kind "f") for a solute in water.
+  function colligative(R, kind) {
+    const b = kind === "b", K = b ? 0.52 : 1.86, sym = b ? "ΔTb" : "ΔTf", kn = b ? "Kb" : "Kf";
+    const sol = R.pick([["urea", 60], ["glucose", 180], ["sucrose", 342]]);
+    const mol = R.pick([0.05, 0.1, 0.2, 0.25, 0.5, 1]), mass = mol * sol[1];
+    const W = R.pick([250, 500, 1000]), m = mol / (W / 1000), dT = K * m;
+    const head = `${n(mass)} g of ${sol[0]} (molar mass ${sol[1]} g/mol) is dissolved in ${W} g of water. (${kn} of water = ${K} K kg/mol)`;
+    const s1 = `Molality m = ${n(mass)} ÷ ${sol[1]} ÷ ${fm(W / 1000)} = ${fm(m)} mol/kg`;
+    const s2 = `${sym} = ${kn} × m = ${K} × ${fm(m)} = ${fm(dT)} K`;
+    if (R.next() < 0.5) return { q: `${head} Find the ${b ? "elevation in boiling point" : "depression in freezing point"}. (3 significant figures)`, a: `${fm(dT)} K`, wrong: nr(dT, [K / m, dT * 1000, m / K], R, (x) => `${fm(x)} K`), steps: [s1, s2] };
+    const pt = b ? 100 + dT : -dT;
+    return { q: `${head} Find the ${b ? "boiling point" : "freezing point"} of the solution in °C. (${b ? "boiling point of water = 100 °C" : "freezing point of water = 0 °C"}; 2 decimal places)`, a: `${n(pt)} °C`, wrong: nr(pt, [b ? 100 - dT : dT, b ? dT : -dT * 10, b ? 100 + K / m : -(K / m)], R, (x) => `${n(x)} °C`), steps: [s1, s2, `${b ? "Boiling" : "Freezing"} point = ${b ? `100 + ${fm(dT)}` : `0 − ${fm(dT)}`} = ${n(pt)} °C`] };
+  }
+
   // ---------- generators ----------
   // Each: (R) => { q, a, wrong, steps }
   const G = {
@@ -141,7 +179,7 @@ const Gen = (() => {
     expo: (R) => { const b = R.pick([2, 3, 5, 10]), m = R.int(2, 6), k = R.int(1, 4), op = R.pick(["×", "÷"]); const e = op === "×" ? m + k : m - k; return { q: `Write as a single power: ${b}${toSup(m)} ${op} ${b}${toSup(k)}`, a: `${b}${toSup(e)}`, wrong: [`${b}${toSup(op === "×" ? m * k : m + k)}`, `${b * b}${toSup(e)}`, `${b}${toSup(op === "×" ? m - k : m * k)}`].filter((s) => s !== `${b}${toSup(e)}`), steps: [op === "×" ? `aᵐ × aⁿ = aᵐ⁺ⁿ: ${m} + ${k} = ${e}` : `aᵐ ÷ aⁿ = aᵐ⁻ⁿ: ${m} − ${k} = ${e}`] }; },
     ratioShare: (R) => { const p = R.int(1, 5), q = R.int(1, 6), k = R.int(20, 150); const total = (p + q) * k; return { q: `Divide ₹${n(total)} between A and B in the ratio ${p} : ${q}. What is A's share?`, a: rs(p * k), wrong: near(p * k, [q * k, total / 2, p * k + k], R, rs), steps: [`Total parts = ${p} + ${q} = ${p + q}`, `One part = ₹${n(total)} ÷ ${p + q} = ₹${k}`, `A's share = ${p} × ₹${k} = ₹${n(p * k)}`] }; },
     directProp: (R) => { const k = R.int(3, 12), u = R.int(5, 60), m = R.int(2, 25); return { q: `A car uses ${k} litres of petrol for ${k * u} km. How far can it go on ${m} litres?`, a: `${n(m * u)} km`, wrong: [`${n(m * u + u)} km`, `${n(k * u + m)} km`, `${n(m * k)} km`], steps: [`Distance per litre = ${k * u} ÷ ${k} = ${u} km`, `${m} × ${u} = ${n(m * u)} km`] }; },
-    inverseProp: (R) => { const w1 = R.int(4, 15), d1 = R.int(6, 24); const total = w1 * d1; const opts = []; for (let w = 2; w <= 40; w++) if (total % w === 0 && w !== w1) opts.push(w); const w2 = R.pick(opts); return { q: `${w1} workers finish a job in ${d1} days. How many days will ${w2} workers take?`, a: `${total / w2} days`, wrong: [`${Math.round((d1 * w2) / w1) || d1 + 2} days`, `${total / w2 + 2} days`, `${d1} days`].filter((s) => s !== `${total / w2} days`), steps: [`Inverse proportion: workers × days stays the same = ${w1} × ${d1} = ${total}`, `Days = ${total} ÷ ${w2} = ${total / w2}`] }; },
+    inverseProp: (R) => { const w1 = R.int(4, 15); let d1 = R.int(6, 24); if (d1 === w1) d1++; const total = w1 * d1; const opts = []; for (let w = 2; w <= 40; w++) if (total % w === 0 && w !== w1) opts.push(w); const w2 = R.pick(opts); return { q: `${w1} workers finish a job in ${d1} days. How many days will ${w2} workers take?`, a: `${total / w2} days`, wrong: [`${Math.round((d1 * w2) / w1) || d1 + 2} days`, `${total / w2 + 2} days`, `${d1} days`].filter((s) => s !== `${total / w2} days`), steps: [`Inverse proportion: workers × days stays the same = ${w1} × ${d1} = ${total}`, `Days = ${total} ÷ ${w2} = ${total / w2}`] }; },
     percentChange: (R) => { const base = R.int(4, 50) * 50, p = R.pick([5, 10, 12, 15, 20, 25]), up = R.next() < 0.5; const v = up ? base * (1 + p / 100) : base * (1 - p / 100); return { q: `A price of ₹${n(base)} ${up ? "increases" : "decreases"} by ${p}%. What is the new price?`, a: rs(v), wrong: near(v, [up ? base * (1 - p / 100) : base * (1 + p / 100), base + p, (base * p) / 100], R, rs), steps: [`${p}% of ₹${n(base)} = ₹${n((base * p) / 100)}`, `New price = ₹${n(base)} ${up ? "+" : "−"} ₹${n((base * p) / 100)} = ₹${n(v)}`] }; },
     profitLoss: (R) => { const cp = R.int(4, 80) * 25, p = R.pick([5, 10, 12, 15, 20, 25]), profit = R.next() < 0.5; const sp = profit ? cp * (1 + p / 100) : cp * (1 - p / 100); return { q: `An article is bought for ₹${n(cp)} and sold for ₹${n(sp)}. Find the ${profit ? "profit" : "loss"} percent.`, a: `${p}%`, wrong: [`${p + 5}%`, `${Math.round(((Math.abs(sp - cp)) / sp) * 1000) / 10}%`, `${p * 2}%`].filter((s) => s !== `${p}%`), steps: [`${profit ? "Profit" : "Loss"} = ₹${n(Math.abs(sp - cp))}`, `${profit ? "Profit" : "Loss"} % = ${n(Math.abs(sp - cp))} ÷ ${n(cp)} × 100 = ${p}%`] }; },
     discount: (R) => { const mp = R.int(4, 60) * 50, p = R.pick([5, 10, 15, 20, 25, 30]); const sp = mp * (1 - p / 100); return { q: `The marked price of a shirt is ₹${n(mp)}. A discount of ${p}% is given. Find the selling price.`, a: rs(sp), wrong: near(sp, [mp * (p / 100), mp - p, mp * (1 + p / 100)], R, rs), steps: [`Discount = ${p}% of ₹${n(mp)} = ₹${n((mp * p) / 100)}`, `Selling price = ₹${n(mp)} − ₹${n((mp * p) / 100)} = ₹${n(sp)}`] }; },
@@ -214,6 +252,236 @@ const Gen = (() => {
     molarMass: (R) => { const k = R.pick([["H₂O", 18], ["CO₂", 44], ["NaCl", 58.5], ["CaCO₃", 100], ["NH₃", 17], ["H₂SO₄", 98], ["CH₄", 16], ["O₂", 32]]); return { q: `Find the molecular mass of ${k[0]}. (H = 1, C = 12, N = 14, O = 16, Na = 23, S = 32, Cl = 35.5, Ca = 40)`, a: `${n(k[1])} u`, wrong: [`${n(k[1] + 2)} u`, `${n(k[1] - 1)} u`, `${n(k[1] * 2)} u`], steps: [`Add the atomic masses of all atoms in ${k[0]} = ${n(k[1])} u`] }; },
     moles: (R) => { const k = R.pick([["water", 18], ["carbon dioxide", 44], ["oxygen gas", 32], ["methane", 16]]); const mol = R.pick([0.5, 1, 2, 3, 4, 5]); return { q: `How many moles are there in ${n(k[1] * mol)} g of ${k[0]} (molar mass ${k[1]} g/mol)?`, a: n(mol), wrong: near(mol, [mol * 2, k[1] * mol, mol + 1], R), steps: [`Moles = mass ÷ molar mass = ${n(k[1] * mol)} ÷ ${k[1]} = ${n(mol)}`] }; },
     concentration: (R) => { const solute = R.int(2, 40), solvent = R.int(5, 40) * 10; const c = (solute / (solute + solvent)) * 100; return { q: `${solute} g of salt is dissolved in ${solvent} g of water. Find the concentration (mass by mass percent).`, a: `${n(Math.round(c * 100) / 100)}%`, wrong: [`${n(Math.round((solute / solvent) * 10000) / 100)}%`, `${n(Math.round((solvent / (solute + solvent)) * 10000) / 100)}%`, `${n(solute)}%`].filter((s, i, arr) => s !== `${n(Math.round(c * 100) / 100)}%` && arr.indexOf(s) === i), steps: [`Mass of solution = ${solute} + ${solvent} = ${solute + solvent} g`, `Concentration = ${solute} ÷ ${solute + solvent} × 100 = ${n(Math.round(c * 100) / 100)}%`] }; },
+    // ---------- Chemistry (numbers stated in the question; NCERT values) ----------
+    kelvin: (R) => { const toK = R.next() < 0.5; if (toK) { const c = R.pick([-173, -73, -23, 0, 25, 27, 37, 77, 100, 127]); const k = c + 273; return { q: `Convert ${n(c)} °C to kelvin. (K = °C + 273)`, a: `${n(k)} K`, wrong: nr(k, [c - 273, 273 - c, c + 373], R, (x) => `${n(x)} K`), steps: [`K = °C + 273`, `K = ${n(c)} + 273 = ${n(k)} K`] }; } const k = R.pick([100, 200, 273, 300, 310, 373, 400]); const c = k - 273; return { q: `Convert ${k} K to degrees Celsius. (°C = K − 273)`, a: `${n(c)} °C`, wrong: nr(c, [k + 273, k - 373, 273 - k], R, (x) => `${n(x)} °C`), steps: [`°C = K − 273`, `°C = ${k} − 273 = ${n(c)} °C`] }; },
+    formulaMass: (R) => {
+      const AM = { H: 1, C: 12, N: 14, O: 16, Na: 23, Mg: 24, Al: 27, S: 32, Cl: 35.5, K: 39, Ca: 40, Fe: 56, Cu: 63.5, Zn: 65 };
+      const list = [["Ca(OH)₂", [["Ca", 1], ["O", 2], ["H", 2]]], ["Na₂CO₃", [["Na", 2], ["C", 1], ["O", 3]]], ["HNO₃", [["H", 1], ["N", 1], ["O", 3]]], ["CaCl₂", [["Ca", 1], ["Cl", 2]]], ["Al₂O₃", [["Al", 2], ["O", 3]]], ["MgSO₄", [["Mg", 1], ["S", 1], ["O", 4]]], ["KOH", [["K", 1], ["O", 1], ["H", 1]]], ["ZnO", [["Zn", 1], ["O", 1]]], ["Fe₂O₃", [["Fe", 2], ["O", 3]]], ["CuSO₄", [["Cu", 1], ["S", 1], ["O", 4]]], ["NH₄Cl", [["N", 1], ["H", 4], ["Cl", 1]]], ["C₂H₆", [["C", 2], ["H", 6]]], ["C₂H₅OH", [["C", 2], ["H", 6], ["O", 1]]], ["CH₃COOH", [["C", 2], ["H", 4], ["O", 2]]], ["C₆H₁₂O₆", [["C", 6], ["H", 12], ["O", 6]]], ["CH₃Cl", [["C", 1], ["H", 3], ["Cl", 1]]]];
+      const [f, parts] = R.pick(list);
+      const tot = (ps) => ps.reduce((s, [e, c]) => s + AM[e] * c, 0);
+      const ans = tot(parts);
+      const term = ([e, c]) => (c > 1 ? `${c} × ${AM[e]}` : `${AM[e]}`);
+      const given = parts.map(([e]) => `${e} = ${AM[e]}`).join(", ");
+      const i = parts.findIndex(([, c]) => c > 1);
+      const bumped = parts.map(([e, c], j) => (j === (i < 0 ? 0 : i) ? [e, c + 1] : [e, c]));
+      return { q: `Find the formula mass (molecular mass) of ${f}. (${given})`, a: `${n(ans)} u`, wrong: nr(ans, [parts.reduce((s, [e]) => s + AM[e], 0), tot(bumped), ans + AM[parts[parts.length - 1][0]]], R, (x) => `${n(x)} u`), steps: [`Atoms in one unit of ${f}: ${parts.map(([e, c]) => `${e} × ${c}`).join(", ")}`, `Mass = ${parts.map(term).join(" + ")} = ${n(ans)} u`] };
+    },
+    molMass: (R) => {
+      const k = R.pick([["water", "H₂O", 18], ["carbon dioxide", "CO₂", 44], ["sodium hydroxide", "NaOH", 40], ["calcium carbonate", "CaCO₃", 100], ["ammonia", "NH₃", 17], ["sulphuric acid", "H₂SO₄", 98], ["methane", "CH₄", 16], ["glucose", "C₆H₁₂O₆", 180]]);
+      const mol = R.pick([0.25, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5]);
+      const mass = k[2] * mol;
+      if (R.next() < 0.5) return { q: `How many moles are there in ${n(mass)} g of ${k[0]}, ${k[1]}? (molar mass = ${k[2]} g/mol)`, a: `${fm(mol)} mol`, wrong: nr(mol, [mass * k[2], k[2] / mass, mass - k[2]], R, (x) => `${fm(x)} mol`), steps: [`Moles = mass ÷ molar mass`, `n = ${n(mass)} ÷ ${k[2]} = ${fm(mol)} mol`] };
+      return { q: `What is the mass of ${fm(mol)} mol of ${k[0]}, ${k[1]}? (molar mass = ${k[2]} g/mol)`, a: `${n(mass)} g`, wrong: nr(mass, [k[2] / mol, mol + k[2], mass * 10], R, (x) => `${fm(x)} g`), steps: [`Mass = moles × molar mass`, `m = ${fm(mol)} × ${k[2]} = ${n(mass)} g`] };
+    },
+    particles: (R) => {
+      const A = 6.022, mol = R.pick([0.1, 0.2, 0.5, 2, 3, 4, 5, 10]);
+      if (R.next() < 0.5) { const N = mol * A * 1e23; return { q: `How many molecules are there in ${fm(mol)} mol of a gas? (Avogadro constant = 6.022 × 10²³ per mol; give 4 significant figures)`, a: sci(N, 4), wrong: nr(N, [N * 10, N / 10, A * 1e23 / mol], R, (x) => sci(x, 4)), steps: [`Number of molecules = n × 6.022 × 10²³`, `N = ${fm(mol)} × 6.022 × 10²³ = ${sci(N, 4)}`] }; }
+      const N = mol * A * 1e23;
+      return { q: `A sample contains ${sci(N, 5)} molecules. How many moles is this? (Avogadro constant = 6.022 × 10²³ per mol)`, a: `${fm(mol)} mol`, wrong: nr(mol, [mol * A, mol * 10, mol / 10], R, (x) => `${fm(x)} mol`), steps: [`n = N ÷ (6.022 × 10²³)`, `n = ${sci(N, 5)} ÷ (6.022 × 10²³) = ${fm(mol)} mol`] };
+    },
+    massPercent: (R) => {
+      const list = [["H₂O", "O", 18, 16, "2 × 1 + 16", "H = 1, O = 16"], ["H₂O", "H", 18, 2, "2 × 1 + 16", "H = 1, O = 16"], ["CO₂", "C", 44, 12, "12 + 2 × 16", "C = 12, O = 16"], ["CaCO₃", "Ca", 100, 40, "40 + 12 + 3 × 16", "Ca = 40, C = 12, O = 16"], ["CaCO₃", "O", 100, 48, "40 + 12 + 3 × 16", "Ca = 40, C = 12, O = 16"], ["NaOH", "Na", 40, 23, "23 + 16 + 1", "Na = 23, O = 16, H = 1"], ["NH₃", "N", 17, 14, "14 + 3 × 1", "N = 14, H = 1"], ["H₂SO₄", "S", 98, 32, "2 × 1 + 32 + 4 × 16", "H = 1, S = 32, O = 16"], ["CH₄", "C", 16, 12, "12 + 4 × 1", "C = 12, H = 1"], ["MgO", "Mg", 40, 24, "24 + 16", "Mg = 24, O = 16"], ["Fe₂O₃", "Fe", 160, 112, "2 × 56 + 3 × 16", "Fe = 56, O = 16"], ["Na₂CO₃", "Na", 106, 46, "2 × 23 + 12 + 3 × 16", "Na = 23, C = 12, O = 16"]];
+      const [f, el, M, w, expr, given] = R.pick(list);
+      const p = (w / M) * 100;
+      const pc = (x) => `${fm(x, 4)}%`;
+      return { q: `Find the mass percentage of ${el} in ${f}. (${given}; give 2 decimal places if needed)`, a: pc(rd2(p)), wrong: nr(rd2(p), [rd2(((M - w) / M) * 100), rd2((w / M) * 10), rd2((w / (M + w)) * 100)], R, pc), steps: [`Molar mass of ${f} = ${expr} = ${M} g/mol`, `Mass of ${el} in one mole = ${w} g`, `Mass % of ${el} = ${w} ÷ ${M} × 100 = ${pc(rd2(p))}`] };
+    },
+    empirical: (R) => {
+      const list = [["Mg", 24, 60, "O", 16, 40, "MgO"], ["Fe", 56, 70, "O", 16, 30, "Fe₂O₃"], ["S", 32, 50, "O", 16, 50, "SO₂"], ["S", 32, 40, "O", 16, 60, "SO₃"], ["C", 12, 75, "H", 1, 25, "CH₄"], ["C", 12, 80, "H", 1, 20, "CH₃"]];
+      const [e1, a1, p1, e2, a2, p2, ans] = R.pick(list);
+      const n1 = p1 / a1, n2 = p2 / a2, sm = Math.min(n1, n2);
+      let r1 = n1 / sm, r2 = n2 / sm, k = 1;
+      while (k < 5 && !(Number.isInteger(Math.round(r1 * k * 1e6) / 1e6) && Number.isInteger(Math.round(r2 * k * 1e6) / 1e6))) k++;
+      const s1 = Math.round(r1 * k), s2 = Math.round(r2 * k);
+      const fo = (a, b) => `${e1}${a > 1 ? toSub(a) : ""}${e2}${b > 1 ? toSub(b) : ""}`;
+      const sw = `${e1}${s2 > 1 ? toSub(s2) : ""}${e2}${s1 > 1 ? toSub(s1) : ""}`;
+      const byMass = (() => { const g = gcd(p1, p2); return fo(p1 / g, p2 / g); })();
+      return { q: `A compound contains ${p1}% ${e1} and ${p2}% ${e2} by mass. Find its empirical formula. (${e1} = ${a1}, ${e2} = ${a2})`, a: ans, wrong: nr(ans, [sw, byMass, fo(s1 * 2, s2 * 2), fo(s2 + 1, s1), fo(s1, s2 + 1)], R, String), steps: [`Moles of ${e1} = ${p1} ÷ ${a1} = ${fm(n1, 4)} mol`, `Moles of ${e2} = ${p2} ÷ ${a2} = ${fm(n2, 4)} mol`, `Divide by the smaller: ${e1} : ${e2} = ${fm(r1, 3)} : ${fm(r2, 3)}${k > 1 ? `; multiply by ${k} to get ${s1} : ${s2}` : ""}`, `Empirical formula = ${ans}`] };
+    },
+    molarity: (R) => {
+      const sol = R.pick([["NaOH", 40], ["KOH", 56], ["HCl", 36.5], ["NaCl", 58.5], ["H₂SO₄", 98], ["Na₂CO₃", 106], ["glucose", 180]]);
+      let mol, V, mass;
+      for (let t = 0; t < 40; t++) { mol = R.pick([0.05, 0.1, 0.2, 0.25, 0.5, 1, 2]); mass = mol * sol[1]; if (Math.abs(mass * 100 - Math.round(mass * 100)) < 1e-6) break; }
+      V = R.pick([100, 200, 250, 500, 1000]);
+      const M = mol / (V / 1000);
+      return { q: `${n(mass)} g of ${sol[0]} (molar mass ${sol[1]} g/mol) is dissolved in water to make ${V} mL of solution. Find its molarity.`, a: `${fm(M)} mol/L`, wrong: nr(M, [M / 1000, mass / (V / 1000), mol * (V / 1000)], R, (x) => `${fm(x)} mol/L`), steps: [`Moles of solute = ${n(mass)} ÷ ${sol[1]} = ${fm(mol)} mol`, `Volume = ${V} mL = ${V} ÷ 1000 = ${fm(V / 1000)} L`, `Molarity = moles ÷ volume in litres = ${fm(mol)} ÷ ${fm(V / 1000)} = ${fm(M)} mol/L`] };
+    },
+    molality: (R) => {
+      const sol = R.pick([["NaOH", 40], ["KOH", 56], ["urea", 60], ["NaCl", 58.5], ["glucose", 180], ["sucrose", 342]]);
+      let mol, mass;
+      for (let t = 0; t < 40; t++) { mol = R.pick([0.05, 0.1, 0.2, 0.25, 0.5, 1, 2]); mass = mol * sol[1]; if (Math.abs(mass * 100 - Math.round(mass * 100)) < 1e-6) break; }
+      const W = R.pick([100, 200, 250, 500, 1000]);
+      const m = mol / (W / 1000);
+      return { q: `${n(mass)} g of ${sol[0]} (molar mass ${sol[1]} g/mol) is dissolved in ${W} g of water. Find the molality of the solution.`, a: `${fm(m)} mol/kg`, wrong: nr(m, [m / 1000, mass / (W / 1000), mol * (W / 1000)], R, (x) => `${fm(x)} mol/kg`), steps: [`Moles of solute = ${n(mass)} ÷ ${sol[1]} = ${fm(mol)} mol`, `Mass of solvent = ${W} g = ${W} ÷ 1000 = ${fm(W / 1000)} kg`, `Molality = moles ÷ mass of solvent in kg = ${fm(mol)} ÷ ${fm(W / 1000)} = ${fm(m)} mol/kg`] };
+    },
+    dilution: (R) => {
+      let M1, M2, V2, V1;
+      for (let t = 0; t < 60; t++) { M1 = R.pick([2, 4, 5, 6, 10, 12]); M2 = R.pick([0.1, 0.2, 0.25, 0.5, 1]); V2 = R.pick([100, 200, 250, 500, 1000]); V1 = (M2 * V2) / M1; if (V1 >= 1 && Math.abs(V1 * 100 - Math.round(V1 * 100)) < 1e-6 && M2 < M1) break; }
+      return { q: `What volume of ${fm(M1)} M stock solution is needed to prepare ${V2} mL of ${fm(M2)} M solution?`, a: `${fm(V1)} mL`, wrong: nr(V1, [(M1 * V2) / M2, V2 - V1, M2 * V2 * M1], R, (x) => `${fm(x)} mL`), steps: [`M₁V₁ = M₂V₂`, `V₁ = M₂V₂ ÷ M₁ = ${fm(M2)} × ${V2} ÷ ${fm(M1)} = ${fm(V1)} mL`] };
+    },
+    limiting: (R) => {
+      const rx = [["2H₂ + O₂ → 2H₂O", ["H₂", 2, 2], ["O₂", 1, 32], ["H₂O", 2, 18], "H = 1, O = 16"], ["N₂ + 3H₂ → 2NH₃", ["N₂", 1, 28], ["H₂", 3, 2], ["NH₃", 2, 17], "H = 1, N = 14"], ["C + O₂ → CO₂", ["C", 1, 12], ["O₂", 1, 32], ["CO₂", 1, 44], "C = 12, O = 16"], ["2Mg + O₂ → 2MgO", ["Mg", 2, 24], ["O₂", 1, 32], ["MgO", 2, 40], "Mg = 24, O = 16"]];
+      const [eq, A, B, P, given] = R.pick(rx);
+      const k = R.int(1, 4), extra = R.int(1, 3);
+      const aLim = R.next() < 0.5;
+      const kA = aLim ? k : k + extra, kB = aLim ? k + extra : k; // units of reaction each reactant could supply
+      const mA = kA * A[1] * A[2], mB = kB * B[1] * B[2];
+      const lim = aLim ? A : B, nl = Math.min(kA, kB), prodMol = nl * P[1], ans = prodMol * P[2];
+      const nA = mA / A[2], nB = mB / B[2];
+      const other = Math.max(kA, kB) * P[1] * P[2];
+      return { q: `${n(mA)} g of ${A[0]} reacts with ${n(mB)} g of ${B[0]} according to ${eq}. Find the mass of ${P[0]} formed. (${given})`, a: `${n(ans)} g`, wrong: nr(ans, [other, mA + mB, aLim ? mA : mB], R, (x) => `${n(x)} g`), steps: [`n(${A[0]}) = ${n(mA)} ÷ ${A[2]} = ${n(nA)} mol; n(${B[0]}) = ${n(mB)} ÷ ${B[2]} = ${n(nB)} mol`, `Divide by the coefficients: ${A[0]} ${n(nA)} ÷ ${A[1]} = ${n(kA)}, ${B[0]} ${n(nB)} ÷ ${B[1]} = ${n(kB)}; ${lim[0]} is the limiting reagent`, `n(${P[0]}) = ${n(nl)} × ${P[1]} = ${n(prodMol)} mol`, `Mass of ${P[0]} = ${n(prodMol)} × ${P[2]} = ${n(ans)} g`] };
+    },
+    photon: (R) => {
+      const h = 6.626e-34, c = 3.0e8;
+      if (R.next() < 0.5) { const k = R.int(2, 9), nu = k * 1e14; const E = h * nu; return { q: `Find the energy of a photon of frequency ${k} × 10¹⁴ Hz. (h = 6.626 × 10⁻³⁴ J s; give 3 significant figures)`, a: `${sci(E)} J`, wrong: nr(E, [E * 10, E / 10, nu / h], R, (x) => `${sci(x)} J`), steps: [`E = hν`, `E = 6.626 × 10⁻³⁴ × ${k} × 10¹⁴ = ${sci(E)} J`] }; }
+      const lam = R.pick([200, 250, 300, 400, 500, 600, 700]); const E = (h * c) / (lam * 1e-9);
+      return { q: `Find the energy of a photon of wavelength ${lam} nm. (h = 6.626 × 10⁻³⁴ J s, c = 3.0 × 10⁸ m/s; give 3 significant figures)`, a: `${sci(E)} J`, wrong: nr(E, [(h * c) / lam, E * 10, E / 10], R, (x) => `${sci(x)} J`), steps: [`λ = ${lam} nm = ${lam} × 10⁻⁹ m`, `E = hc ÷ λ = (6.626 × 10⁻³⁴ × 3.0 × 10⁸) ÷ (${lam} × 10⁻⁹) = ${sci(E)} J`] };
+    },
+    deBroglie: (R) => {
+      const h = 6.626e-34;
+      const o = R.pick([["an electron (mass 9.1 × 10⁻³¹ kg)", 9.1e-31, [1, 2, 4, 5], 1e6, "× 10⁶ m/s"], ["a ball of mass 0.1 kg", 0.1, [10, 20, 25, 40], 1, " m/s"]]);
+      const vk = R.pick(o[2]), v = vk * o[3];
+      const lam = h / (o[1] * v);
+      return { q: `Find the de Broglie wavelength of ${o[0]} moving at ${vk}${o[4].startsWith("×") ? " " : ""}${o[4]}. (h = 6.626 × 10⁻³⁴ J s; give 3 significant figures)`, a: `${sci(lam)} m`, wrong: nr(lam, [lam * 10, lam / 10, h / (o[1] * v * v)], R, (x) => `${sci(x)} m`), steps: [`λ = h ÷ (mv)`, `λ = 6.626 × 10⁻³⁴ ÷ (${sci(o[1], 2)} × ${sci(v, 2)}) = ${sci(lam)} m`] };
+    },
+    bohr: (R) => {
+      if (R.next() < 0.5) { const k = R.int(1, 6); const E = -13.6 / (k * k); return { q: `Find the energy of the electron in the n = ${k} level of a hydrogen atom. (Eₙ = −13.6 ÷ n² eV; 2 decimal places)`, a: `${n(E)} eV`, wrong: nr(E, [-13.6 / k, -13.6 * k * k, -E], R, (x) => `${n(x)} eV`), steps: [`Eₙ = −13.6 ÷ n² eV`, `E = −13.6 ÷ ${k}² = −13.6 ÷ ${k * k} = ${n(E)} eV`] }; }
+      const a = R.int(1, 3), b = a + R.int(1, 3); const dE = 13.6 * (1 / (a * a) - 1 / (b * b));
+      return { q: `How much energy does a hydrogen atom absorb when its electron jumps from n = ${a} to n = ${b}? (Eₙ = −13.6 ÷ n² eV; 2 decimal places)`, a: `${n(dE)} eV`, wrong: nr(dE, [-dE, 13.6 * (1 / a - 1 / b), 13.6 * (b * b - a * a)], R, (x) => `${n(x)} eV`), steps: [`E${toSub(a)} = −13.6 ÷ ${a * a} = ${n(-13.6 / (a * a))} eV, E${toSub(b)} = −13.6 ÷ ${b * b} = ${n(-13.6 / (b * b))} eV`, `ΔE = E${toSub(b)} − E${toSub(a)} = ${n(rd2(-13.6 / (b * b)))} − (${n(rd2(-13.6 / (a * a)))}) = ${n(dE)} eV`] };
+    },
+    atomicParticles: (R) => {
+      const els = [["hydrogen", "H", 1, 1], ["carbon", "C", 6, 12], ["nitrogen", "N", 7, 14], ["oxygen", "O", 8, 16], ["sodium", "Na", 11, 23], ["magnesium", "Mg", 12, 24], ["aluminium", "Al", 13, 27], ["chlorine", "Cl", 17, 35], ["calcium", "Ca", 20, 40], ["iron", "Fe", 26, 56]];
+      const [nm, sy, Z, A] = R.pick(els);
+      if (R.next() < 0.6) return { q: `An atom of ${nm} (${sy}) has atomic number ${Z} and mass number ${A}. How many neutrons does it have?`, a: n(A - Z), wrong: nr(A - Z, [A + Z, Z, A], R), steps: [`Neutrons = mass number − atomic number`, `Neutrons = ${A} − ${Z} = ${A - Z}`] };
+      const ion = R.pick([["Na", "Na⁺", 11, 1], ["Mg", "Mg²⁺", 12, 2], ["Al", "Al³⁺", 13, 3], ["Cl", "Cl⁻", 17, -1], ["O", "O²⁻", 8, -2], ["Ca", "Ca²⁺", 20, 2]]);
+      return { q: `How many electrons are there in the ${ion[1]} ion? (atomic number of ${ion[0]} = ${ion[2]})`, a: n(ion[2] - ion[3]), wrong: nr(ion[2] - ion[3], [ion[2] + ion[3], ion[2], ion[2] - ion[3] * 2], R), steps: [`A neutral ${ion[0]} atom has ${ion[2]} electrons`, `${ion[1]} has ${ion[3] > 0 ? "lost" : "gained"} ${Math.abs(ion[3])}, so electrons = ${ion[2]} ${ion[3] > 0 ? "−" : "+"} ${Math.abs(ion[3])} = ${ion[2] - ion[3]}`] };
+    },
+    idealGas: (R) => {
+      const mol = R.pick([0.5, 1, 2, 3]), tc = R.pick([0, 27, 47, 77, 127]), V = R.pick([2, 4, 5, 10, 20]);
+      const T = tc + 273, Rg = 0.0821, p = (mol * Rg * T) / V;
+      return { q: `Find the pressure of ${fm(mol)} mol of an ideal gas in a ${V} L vessel at ${tc} °C. (R = 0.0821 L atm K⁻¹ mol⁻¹; convert to kelvin using K = °C + 273; 3 significant figures)`, a: `${fm(p)} atm`, wrong: nr(p, [(mol * Rg * tc) / V || p * 2, p * V * V, (mol * T) / (Rg * V)], R, (x) => `${fm(x)} atm`), steps: [`T = ${tc} + 273 = ${T} K`, `pV = nRT, so p = nRT ÷ V`, `p = ${fm(mol)} × 0.0821 × ${T} ÷ ${V} = ${fm(p)} atm`] };
+    },
+    boyle: (R) => {
+      const P1 = R.pick([1, 2, 3, 4]), V1 = R.pick([2, 3, 4, 5, 6, 8, 10, 12]), P2 = R.pick([0.5, 1, 2, 3, 4, 6].filter((x) => x !== P1));
+      const V2 = (P1 * V1) / P2;
+      return { q: `A gas occupies ${V1} L at ${P1} atm. What is its volume at ${P2} atm if the temperature stays constant?`, a: `${fm(V2)} L`, wrong: nr(V2, [(P2 * V1) / P1, V1 * P1 * P2, V1 + P1 - P2 > 0 ? V1 + P1 - P2 : V1 + 1], R, (x) => `${fm(x)} L`), steps: [`Boyle's law: P₁V₁ = P₂V₂`, `V₂ = P₁V₁ ÷ P₂ = ${P1} × ${V1} ÷ ${P2} = ${fm(V2)} L`] };
+    },
+    charles: (R) => {
+      const V1 = R.pick([2, 3, 4, 5, 6, 10]), t1 = R.pick([27, 47, 77, 127]), t2 = R.pick([127, 177, 227, -73, -23, 327]);
+      const T1 = t1 + 273, T2 = t2 + 273, V2 = (V1 * T2) / T1;
+      return { q: `A gas has volume ${V1} L at ${t1} °C. What is its volume at ${n(t2)} °C at constant pressure? (K = °C + 273; 3 significant figures)`, a: `${fm(V2)} L`, wrong: nr(V2, [(V1 * t2) / t1, (V1 * T1) / T2, V1 + (t2 - t1) / 100], R, (x) => `${fm(x)} L`), steps: [`T₁ = ${t1} + 273 = ${T1} K, T₂ = ${n(t2)} + 273 = ${T2} K`, `Charles' law: V₁ ÷ T₁ = V₂ ÷ T₂`, `V₂ = V₁T₂ ÷ T₁ = ${V1} × ${T2} ÷ ${T1} = ${fm(V2)} L`] };
+    },
+    gibbs: (R) => {
+      const dH = R.pick([-286, -92, -46, -180, -50, 40, 60, 100, 178]), dS = R.pick([-200, -100, -50, 50, 100, 150, 160, 200]), T = R.pick([298, 300, 400, 500, 1000]);
+      const TS = (T * dS) / 1000, dG = dH - TS;
+      const sp = dG < 0 ? "negative, so the reaction is spontaneous" : dG > 0 ? "positive, so the reaction is not spontaneous" : "zero, so the system is at equilibrium";
+      return { q: `For a reaction ΔH = ${n(dH)} kJ/mol and ΔS = ${n(dS)} J K⁻¹ mol⁻¹. Find ΔG at ${T} K in kJ/mol.`, a: `${n(dG)} kJ/mol`, wrong: nr(dG, [dH - T * dS, dH + TS, -dG], R, (x) => `${n(x)} kJ/mol`), steps: [`TΔS = ${T} × ${dS < 0 ? `(${n(dS)})` : n(dS)} ÷ 1000 = ${n(TS)} kJ/mol`, `ΔG = ΔH − TΔS = ${n(dH)} − (${n(TS)}) = ${n(dG)} kJ/mol`, `ΔG is ${sp}`] };
+    },
+    gibbsT: (R) => {
+      const T = R.pick([300, 400, 500, 600, 800, 1000]), dS = R.pick([50, 100, 150, 200, 250]); const dH = (T * dS) / 1000;
+      return { q: `A reaction has ΔH = +${fm(dH)} kJ/mol and ΔS = +${dS} J K⁻¹ mol⁻¹. Above what temperature does it become spontaneous?`, a: `${T} K`, wrong: nr(T, [dH / dS, (T * 1000) / 1000 + 273, T - 273], R, (x) => `${fm(x)} K`), steps: [`At equilibrium ΔG = 0, so T = ΔH ÷ ΔS`, `ΔH = ${fm(dH)} × 1000 = ${fm(dH * 1000)} J/mol`, `T = ${fm(dH * 1000)} ÷ ${dS} = ${T} K`] };
+    },
+    firstLaw: (R) => {
+      const q = R.int(2, 30) * 10, w = R.int(1, 12) * 5; const heatIn = R.next() < 0.5, workOn = R.next() < 0.5;
+      const qs = heatIn ? q : -q, ws = workOn ? w : -w; const dU = qs + ws;
+      return { q: `A system ${heatIn ? "absorbs" : "releases"} ${q} J of heat and ${workOn ? "work of " + w + " J is done on it" : "it does " + w + " J of work on the surroundings"}. Find ΔU. (ΔU = q + w)`, a: `${n(dU)} J`, wrong: nr(dU, [qs - ws, -dU, Math.abs(qs) + Math.abs(ws)], R, (x) => `${n(x)} J`), steps: [`q = ${qs > 0 ? "+" : "−"}${q} J (${heatIn ? "heat absorbed" : "heat released"}), w = ${ws > 0 ? "+" : "−"}${w} J (${workOn ? "work done on the system" : "work done by the system"})`, `ΔU = q + w = (${n(qs)}) + (${n(ws)}) = ${n(dU)} J`] };
+    },
+    kc: (R) => {
+      const rx = [["N₂ + 3H₂ ⇌ 2NH₃", [["N₂", 1], ["H₂", 3]], [["NH₃", 2]]], ["H₂ + I₂ ⇌ 2HI", [["H₂", 1], ["I₂", 1]], [["HI", 2]]], ["2SO₂ + O₂ ⇌ 2SO₃", [["SO₂", 2], ["O₂", 1]], [["SO₃", 2]]], ["PCl₅ ⇌ PCl₃ + Cl₂", [["PCl₅", 1]], [["PCl₃", 1], ["Cl₂", 1]]], ["N₂O₄ ⇌ 2NO₂", [["N₂O₄", 1]], [["NO₂", 2]]]];
+      const [eq, re, pr] = R.pick(rx);
+      const conc = {};
+      const prod = (arr, f) => arr.reduce((x, [s, c]) => x * f(conc[s], c), 1);
+      let num, den, K;
+      for (let t = 0; t < 20; t++) { [...re, ...pr].forEach(([s]) => (conc[s] = R.pick([0.1, 0.2, 0.5, 1, 2, 4]))); num = prod(pr, (x, c) => x ** c); den = prod(re, (x, c) => x ** c); K = num / den; if (Math.abs(K - 1) > 1e-9) break; }
+      const term = (arr) => arr.map(([s, c]) => `[${s}]${c > 1 ? toSup(c) : ""}`).join("");
+      const val = (arr) => { const t = arr.map(([s, c]) => `(${fm(conc[s])})${c > 1 ? toSup(c) : ""}`).join(" × "); return arr.length > 1 ? `[${t}]` : t; };
+      const noExp = prod(pr, (x) => x) / prod(re, (x) => x), mulC = prod(pr, (x, c) => x * c) / prod(re, (x, c) => x * c);
+      return { q: `For ${eq} at equilibrium: ${[...re, ...pr].map(([s]) => `[${s}] = ${fm(conc[s])} mol/L`).join(", ")}. Find Kc. (3 significant figures)`, a: fm(K), wrong: nr(K, [1 / K, noExp, mulC], R, fm), steps: [`Kc = ${term(pr)} ÷ ${term(re).length ? term(re) : "1"} (products over reactants, powers = coefficients)`, `Kc = ${val(pr)} ÷ ${val(re)}`, `Kc = ${fm(num)} ÷ ${fm(den)} = ${fm(K)}`] };
+    },
+    pHcalc: (R) => {
+      const mode = R.pick(["acidPow", "acidDec", "baseNaOH", "pOH", "mant"]);
+      if (mode === "acidPow") { const e = R.int(1, 6); return { q: `Find the pH of a solution with [H⁺] = 10${toSup(-e)} mol/L.`, a: n(e), wrong: nr(e, [14 - e, -e, e + 1], R), steps: [`pH = −log[H⁺]`, `pH = −log(10${toSup(-e)}) = ${e}`] }; }
+      if (mode === "acidDec") { const e = R.int(1, 4), c = 10 ** -e; const cs = "0." + "0".repeat(e - 1) + "1"; return { q: `Find the pH of ${cs} M HCl (a strong acid, fully ionised).`, a: n(e), wrong: nr(e, [14 - e, e + 1, e - 1 || 7], R), steps: [`[H⁺] = ${cs} M = 10${toSup(-e)} M`, `pH = −log[H⁺] = −log(10${toSup(-e)}) = ${e}`] }; }
+      if (mode === "baseNaOH") { const e = R.int(1, 5), pOH = e, pH = 14 - e; return { q: `Find the pH of a 10${toSup(-e)} M NaOH solution at 25 °C. (pH + pOH = 14)`, a: n(pH), wrong: nr(pH, [e, 14 + e, -e], R), steps: [`[OH⁻] = 10${toSup(-e)} M, so pOH = −log[OH⁻] = ${pOH}`, `pH = 14 − pOH = 14 − ${pOH} = ${pH}`] }; }
+      if (mode === "pOH") { const pOH = R.int(2, 12), pH = 14 - pOH; return { q: `The pOH of a solution is ${pOH} at 25 °C. What is its pH?`, a: n(pH), wrong: nr(pH, [pOH, 14 + pOH, pOH - 14], R), steps: [`pH + pOH = 14`, `pH = 14 − ${pOH} = ${pH}`] }; }
+      const a = R.pick([2, 5]), e = R.int(2, 4), lg = { 2: 0.3, 5: 0.7 }[a]; const pH = Math.round((e - lg) * 100) / 100;
+      return { q: `Find the pH of a solution with [H⁺] = ${a} × 10${toSup(-e)} mol/L. (log ${a} = ${lg})`, a: n(pH), wrong: nr(pH, [e + lg, e, rd2(e - lg + 1)], R), steps: [`pH = −log(${a} × 10${toSup(-e)}) = −(log ${a} + log 10${toSup(-e)})`, `pH = −(${lg} − ${e}) = ${e} − ${lg} = ${n(pH)}`] };
+    },
+    oxNum: (R) => {
+      const list = [["Mn", "KMnO₄", "(+1) + x + 4 × (−2) = 0", 7, "x = 8 − 1"], ["Cr", "K₂Cr₂O₇", "2 × (+1) + 2x + 7 × (−2) = 0", 6, "2x = 14 − 2, x = 12 ÷ 2"], ["S", "H₂SO₄", "2 × (+1) + x + 4 × (−2) = 0", 6, "x = 8 − 2"], ["N", "HNO₃", "(+1) + x + 3 × (−2) = 0", 5, "x = 6 − 1"], ["Cl", "HClO₄", "(+1) + x + 4 × (−2) = 0", 7, "x = 8 − 1"], ["Mn", "MnO₂", "x + 2 × (−2) = 0", 4, "x = 0 + 4"], ["C", "CO₂", "x + 2 × (−2) = 0", 4, "x = 0 + 4"], ["P", "H₃PO₄", "3 × (+1) + x + 4 × (−2) = 0", 5, "x = 8 − 3"], ["Fe", "Fe₂O₃", "2x + 3 × (−2) = 0", 3, "2x = 6, x = 6 ÷ 2"]];
+      const [el, f, eqn, v, calc] = R.pick(list);
+      const sg = (x) => (x > 0 ? `+${x}` : `−${Math.abs(x)}`);
+      return { q: `Find the oxidation number of ${el} in ${f}. (oxidation number of O = −2, of H and K = +1)`, a: sg(v), wrong: nr(sg(v), [sg(v - 1), sg(v + 1), sg(-v), sg(v + 2)], R, String), steps: [`Sum of oxidation numbers = 0: ${eqn}`, `${calc} = ${v}`] };
+    },
+    massProduct: (R) => {
+      const rx = [["Mg", "O₂", "MgO", 3, 2], ["H₂", "O₂", "H₂O", 1, 8], ["C", "O₂", "CO₂", 3, 8], ["Fe", "S", "FeS", 7, 4]];
+      const dc = [["CaCO₃", "CaO", "CO₂", 25, 14], ["H₂O", "H₂", "O₂", 9, 1]];
+      if (R.next() < 0.7) { const [a, b, p, ra, rb] = R.pick(rx); const k = R.int(1, 6); const ma = ra * k, mb = rb * k;
+        if (R.next() < 0.5) return { q: `${ma} g of ${a} combines completely with ${mb} g of ${b} to form ${p}. What mass of ${p} is formed? (law of conservation of mass)`, a: `${ma + mb} g`, wrong: nr(ma + mb, [Math.abs(ma - mb), ma * mb, Math.max(ma, mb)], R, (x) => `${n(x)} g`), steps: [`Mass of reactants = ${ma} + ${mb} = ${ma + mb} g`, `Mass of product = mass of reactants = ${ma + mb} g`] };
+        return { q: `${ma + mb} g of ${p} is formed when ${ma} g of ${a} reacts completely with ${b}. What mass of ${b} was used? (law of conservation of mass)`, a: `${mb} g`, wrong: nr(mb, [ma + mb + ma, ma, ma + mb], R, (x) => `${n(x)} g`), steps: [`Mass of product = mass of ${a} + mass of ${b}`, `Mass of ${b} = ${ma + mb} − ${ma} = ${mb} g`] }; }
+      const [x, y, z, rx_, ry] = R.pick(dc); const rz = rx_ - ry; const k = R.int(1, 8); const mx = rx_ * k, my = ry * k, mz = rz * k;
+      return { q: `${mx} g of ${x} is decomposed completely. It gives ${my} g of ${y}. What mass of ${z} is formed? (law of conservation of mass)`, a: `${mz} g`, wrong: nr(mz, [mx + my, my, mx], R, (v) => `${n(v)} g`), steps: [`Mass of ${x} decomposed = mass of ${y} + mass of ${z}`, `Mass of ${z} = ${mx} − ${my} = ${mz} g`] };
+    },
+
+    // Class 12 chemistry: solutions, electrochemistry, kinetics
+    moleFraction: (R) => {
+      const sv = R.pick([["water", 18], ["ethanol", 46], ["methanol", 32], ["acetone", 58]]);
+      const su = R.pick([["ethanol", 46], ["methanol", 32], ["urea", 60], ["glucose", 180], ["acetone", 58]].filter((x) => x[0] !== sv[0]));
+      const k1 = R.pick([1, 2, 3, 4]), k2 = R.pick([0.5, 1, 2]);
+      const m1 = sv[1] * k1, m2 = su[1] * k2, n1 = k1, n2 = k2, x = n2 / (n1 + n2);
+      return { q: `A solution has ${m2} g of ${su[0]} (molar mass ${su[1]} g/mol) in ${m1} g of ${sv[0]} (molar mass ${sv[1]} g/mol). Find the mole fraction of ${su[0]}. (3 significant figures)`, a: fm(x), wrong: nr(x, [n2 / n1, n1 / (n1 + n2), m2 / (m1 + m2)], R, fm), steps: [`n(${su[0]}) = ${m2} ÷ ${su[1]} = ${fm(n2)} mol`, `n(${sv[0]}) = ${m1} ÷ ${sv[1]} = ${fm(n1)} mol`, `Mole fraction of ${su[0]} = ${fm(n2)} ÷ (${fm(n2)} + ${fm(n1)}) = ${fm(x)}`] };
+    },
+    raoult: (R) => {
+      const p0 = R.pick([100, 200, 600, 760]), x = R.pick([0.05, 0.1, 0.2, 0.25, 0.4]);
+      if (R.next() < 0.5) { const p = p0 * (1 - x); return { q: `Pure solvent has vapour pressure ${p0} mmHg. A non-volatile solute of mole fraction ${x} is dissolved in it. Find the vapour pressure of the solution.`, a: `${fm(p)} mmHg`, wrong: nr(p, [p0 * x, p0 * (1 + x), p0 / (1 - x)], R, (v) => `${fm(v)} mmHg`), steps: [`p = p° × (mole fraction of solvent) = p° × (1 − x)`, `p = ${p0} × (1 − ${x}) = ${fm(p)} mmHg`] }; }
+      const p = p0 * (1 - x);
+      return { q: `The vapour pressure of a pure solvent is ${p0} mmHg and that of a solution is ${fm(p)} mmHg. Find the relative lowering of vapour pressure.`, a: fm(x), wrong: nr(x, [(p0 - p) / p, p / p0, (p0 - p) / (p0 + p)], R, fm), steps: [`Relative lowering = (p° − p) ÷ p°`, `= (${p0} − ${fm(p)}) ÷ ${p0} = ${fm(x)}`] };
+    },
+    bpElev: (R) => colligative(R, "b"),
+    fpDep: (R) => colligative(R, "f"),
+    osmotic: (R) => {
+      const C = R.pick([0.01, 0.02, 0.05, 0.1, 0.2]), tc = R.pick([0, 25, 27, 37, 47]), T = tc + 273, Rg = 0.0821, pi = C * Rg * T;
+      return { q: `Find the osmotic pressure of a ${fm(C)} mol/L solution at ${tc} °C. (π = CRT, R = 0.0821 L atm K⁻¹ mol⁻¹, K = °C + 273; 3 significant figures)`, a: `${fm(pi)} atm`, wrong: nr(pi, [C * Rg * tc || pi * 2, (C * T) / Rg, pi * 10], R, (x) => `${fm(x)} atm`), steps: [`T = ${tc} + 273 = ${T} K`, `π = CRT = ${fm(C)} × 0.0821 × ${T} = ${fm(pi)} atm`] };
+    },
+    cellEmf: (R) => {
+      const el = [["Zn²⁺/Zn", -0.76], ["Fe²⁺/Fe", -0.44], ["Ni²⁺/Ni", -0.25], ["Pb²⁺/Pb", -0.13], ["H⁺/H₂", 0], ["Cu²⁺/Cu", 0.34], ["Ag⁺/Ag", 0.8], ["Mg²⁺/Mg", -2.37], ["Al³⁺/Al", -1.66]];
+      const i = R.int(0, el.length - 1); let j = R.int(0, el.length - 1); if (j === i) j = (j + 1) % el.length;
+      const [c, a] = el[i][1] > el[j][1] ? [el[i], el[j]] : [el[j], el[i]]; const E = Math.round((c[1] - a[1]) * 100) / 100;
+      const v = (x) => `${x < 0 ? "−" : ""}${Math.abs(x).toFixed(2)}`;
+      return { q: `E° of ${c[0]} = ${v(c[1])} V and E° of ${a[0]} = ${v(a[1])} V. The ${c[0]} electrode is the cathode and the ${a[0]} electrode is the anode. Find E°cell.`, a: `${v(E)} V`, wrong: nr(E, [-E, Math.round((c[1] + a[1]) * 100) / 100, Math.round((Math.abs(c[1]) + Math.abs(a[1])) * 100 + 100) / 100], R, (x) => `${v(x)} V`), steps: [`E°cell = E°(cathode) − E°(anode)`, `E°cell = ${v(c[1])} − (${v(a[1])}) = ${v(E)} V`] };
+    },
+    deltaGcell: (R) => {
+      const o = R.pick([[1.1, 2], [0.78, 2], [1.56, 2], [0.46, 2], [2.71, 2], [2.0, 6], [1.05, 2], [0.8, 1], [0.34, 2]]);
+      const [E, ne] = o, F = 96500, dG = (-ne * F * E) / 1000;
+      return { q: `A cell reaction transfers ${ne} mole${ne > 1 ? "s" : ""} of electrons and the cell has E° = ${E.toFixed(2)} V. Find ΔG° in kJ/mol. (F = 96500 C/mol)`, a: `${n(dG)} kJ/mol`, wrong: nr(dG, [-dG, dG * 1000, -(F * E) / 1000], R, (x) => `${n(x)} kJ/mol`), steps: [`ΔG° = −nFE°`, `ΔG° = −${ne} × 96500 × ${E.toFixed(2)} = ${n(-ne * F * E)} J/mol`, `ΔG° = ${n(-ne * F * E)} ÷ 1000 = ${n(dG)} kJ/mol`] };
+    },
+    faraday: (R) => {
+      const ml = R.pick([["copper", "Cu²⁺", 63.5, 2], ["silver", "Ag⁺", 108, 1], ["zinc", "Zn²⁺", 65, 2], ["aluminium", "Al³⁺", 27, 3], ["nickel", "Ni²⁺", 58.7, 2]]);
+      const I = R.pick([1, 2, 3, 5, 10]), tm = R.pick([10, 20, 30, 50, 60]), t = tm * 60, Q = I * t, F = 96500;
+      const m = (Q * ml[2]) / (ml[3] * F);
+      return { q: `A current of ${I} A is passed for ${tm} minutes through a solution of ${ml[1]} ions. Find the mass of ${ml[0]} deposited. (molar mass ${ml[2]} g/mol, F = 96500 C/mol; 3 significant figures)`, a: `${fm(m)} g`, wrong: nr(m, [(I * tm * ml[2]) / (ml[3] * F), (Q * ml[2]) / F, m * ml[3] * ml[3]], R, (x) => `${fm(x)} g`), steps: [`t = ${tm} min = ${tm} × 60 = ${t} s`, `Q = I × t = ${I} × ${t} = ${Q} C`, `m = Q × M ÷ (n × F) = ${Q} × ${ml[2]} ÷ (${ml[3]} × 96500) = ${fm(m)} g`] };
+    },
+    halfLife1: (R) => {
+      const t = R.pick([5, 10, 15, 20, 30, 50, 60, 100]), k = 0.693 / t, kS = fm(k, 4);
+      if (R.next() < 0.5) return { q: `A first-order reaction has rate constant k = ${kS} min⁻¹. Find its half-life. (t½ = 0.693 ÷ k)`, a: `${t} min`, wrong: nr(t, [fm(0.693 * k, 3) + " min", fm(1 / k, 3) + " min", t * 2 + " min"], R, (x) => `${fm(x)} min`), steps: [`t½ = 0.693 ÷ k`, `t½ = 0.693 ÷ ${kS} = ${t} min`] };
+      return { q: `The half-life of a first-order reaction is ${t} minutes. Find its rate constant k. (k = 0.693 ÷ t½; 4 significant figures)`, a: `${kS} min⁻¹`, wrong: nr(k, [t * 0.693, k * 10, 1 / t], R, (x) => `${fm(x, 4)} min⁻¹`), steps: [`k = 0.693 ÷ t½`, `k = 0.693 ÷ ${t} = ${kS} min⁻¹`] };
+    },
+    halfLivesLeft: (R) => {
+      const A0 = R.pick([16, 40, 64, 80, 100, 160, 200]), th = R.pick([10, 20, 30, 60]), nh = R.int(2, 5);
+      const t = th * nh;
+      const left = A0 / 2 ** nh;
+      return { q: `A radioactive sample of ${A0} g has a half-life of ${th} minutes. How much remains after ${t} minutes?`, a: `${fm(left)} g`, wrong: nr(left, [A0 / (2 * nh), A0 - left, A0 / nh], R, (x) => `${fm(x)} g`), steps: [`Number of half-lives = ${t} ÷ ${th} = ${nh}`, `Amount left = ${A0} ÷ 2${toSup(nh)} = ${A0} ÷ ${2 ** nh} = ${fm(left)} g`] };
+    },
+    orderData: (R) => {
+      const p = R.int(0, 3), c1 = R.pick([0.1, 0.2, 0.5]), r1 = R.int(1, 6), c2 = c1 * 2, r2 = r1 * 2 ** p;
+      const names = ["zero order", "first order", "second order", "third order"];
+      return { q: `For a reaction, doubling the concentration of A from ${c1} M to ${c2} M changes the rate from ${r1} × 10⁻³ to ${r2} × 10⁻³ mol L⁻¹ s⁻¹ (other concentrations constant). What is the order with respect to A?`, a: names[p], wrong: names.filter((_, i) => i !== p), steps: [`Rate ratio = ${r2} ÷ ${r1} = ${fm(r2 / r1)}`, `Concentration ratio = ${c2} ÷ ${c1} = 2`, `2ᵖ = ${fm(r2 / r1)}, so p = ${p} (${names[p]})`] };
+    },
+    zeroHalf: (R) => {
+      const k = R.pick([0.01, 0.02, 0.04, 0.05, 0.1, 0.2]), t = R.pick([5, 10, 20, 25, 30, 50, 100]); const A0 = Math.round(2 * k * t * 1000) / 1000;
+      return { q: `A zero-order reaction has initial concentration [A]₀ = ${fm(A0)} mol/L and rate constant k = ${fm(k)} mol L⁻¹ s⁻¹. Find its half-life. (t½ = [A]₀ ÷ 2k)`, a: `${t} s`, wrong: nr(t, [fm(A0 / k) + " s", fm(0.693 / k) + " s", fm(2 * A0 / k) + " s"], R, (x) => `${fm(x)} s`), steps: [`t½ = [A]₀ ÷ 2k`, `t½ = ${fm(A0)} ÷ (2 × ${fm(k)}) = ${t} s`] };
+    },
+
   };
 
   // Squares and cubes need a little post-processing.
@@ -263,18 +531,68 @@ const Gen = (() => {
     7: { "measurement-of-time-and-motion": ["speed"] },
     8: { "exploring-forces": ["force", "weight"], "pressure-winds-storms-cyclones": ["pressure"], "electricity-magnetic-and-heating-effects": ["ohm"], "solutes-solvents-and-solutions": ["concentration"], "particulate-nature-of-matter": ["density"] },
     9: { "is-matter-around-us-pure": ["concentration"], "atoms-and-molecules": ["molarMass", "moles"], motion: ["speed", "accel", "sutHalf"], "force-and-laws-of-motion": ["force", "momentum"], gravitation: ["weight", "density"], "work-and-energy": ["work", "kinetic", "potential", "power"], sound: ["wave"] },
-    10: { "light-reflection-and-refraction": ["lensPower", "magnification"], electricity: ["ohm", "resistors", "elecPower", "energyCost"] },
+    10: { "chemical-reactions-and-equations": ["massProduct"], "carbon-and-its-compounds": ["formulaMass"], "light-reflection-and-refraction": ["lensPower", "magnification"], electricity: ["ohm", "resistors", "elecPower", "energyCost"] },
+  };
+  // Class 9 science in the new CBSE book (different chapter ids from the earlier book that S[9] was written for).
+  const S9cbse = { "describing-motion-around-us": ["speed", "accel", "sutHalf"], "exploring-mixtures-and-their-separation": ["concentration"], "how-forces-affect-motion": ["force", "momentum", "weight"], "work-energy-and-simple-machines": ["work", "kinetic", "potential", "power"], "journey-inside-the-atom": ["atomicParticles"], "atomic-foundations-of-matter": ["formulaMass", "molMass", "particles", "massPercent", "massProduct"], "sound-waves-characteristics-and-applications": ["wave"] };
+  // Earlier-book Class 9 (PSEB): the existing physics ones plus the chemistry chapters.
+  Object.assign(S[9], { "matter-in-our-surroundings": ["kelvin"], "atoms-and-molecules": ["molarMass", "moles", "formulaMass", "molMass", "particles", "massPercent", "massProduct"], "structure-of-the-atom": ["atomicParticles"] });
+  const C = {
+    11: {
+      "some-basic-concepts-of-chemistry": ["molMass", "particles", "massPercent", "empirical", "molarity", "molality", "dilution", "limiting"],
+      "structure-of-atom": ["atomicParticles", "photon", "deBroglie", "bohr"],
+      thermodynamics: ["firstLaw", "gibbs", "gibbsT", "idealGas"],
+      equilibrium: ["kc", "pHcalc"],
+      "redox-reactions": ["oxNum"],
+    },
+    12: {
+      solutions: ["molarity", "molality", "moleFraction", "raoult", "bpElev", "fpDep", "osmotic"],
+      electrochemistry: ["cellEmf", "deltaGcell", "faraday"],
+      "chemical-kinetics": ["halfLife1", "halfLivesLeft", "orderData", "zeroHalf"],
+    },
   };
   const P = {
-    11: { "motion-in-a-straight-line": ["accel", "sutHalf"], "laws-of-motion": ["force", "momentum"], "work-energy-and-power": ["work", "kinetic", "potential", "power"], "mechanical-properties-of-fluids": ["pressure"], waves: ["wave"] },
-    12: { "current-electricity": ["ohm", "resistors", "elecPower"], "ray-optics-and-optical-instruments": ["lensPower", "magnification"] },
+    11: { "motion-in-a-straight-line": ["accel", "sutHalf"], "laws-of-motion": ["force", "momentum"], "work-energy-and-power": ["work", "kinetic", "potential", "power"], "mechanical-properties-of-fluids": ["pressure"], "thermal-properties-of-matter": ["charles"], "kinetic-theory": ["idealGas", "boyle", "charles"], waves: ["wave"] },
+    12: { "current-electricity": ["ohm", "resistors", "elecPower"], "ray-optics-and-optical-instruments": ["lensPower", "magnification"], "dual-nature-of-radiation-and-matter": ["photon", "deBroglie"], atoms: ["bohr"] },
   };
   // PSEB Class 9 keeps the earlier NCERT Maths and Science books, whose chapters these generators were written for.
-  const MAP = { maths: M, science: S, physics: P, mathspb: { 9: M[9] }, sciencepb: { 9: S[9] } };
+  // Class 9 Maths in the new CBSE book (the older-book ids in M[9] belong to PSEB).
+  const M9cbse = { "introduction-to-linear-polynomials": ["evalExpr", "linEq"], quadrilaterals: ["quadAngle", "polyAngles"], "math-of-space-surface-area-and-volume": ["solidsCSH"], "the-mathematics-of-maybe-introduction-to-probability": ["probDice"], "how-quantities-combine-understanding-data": ["mean", "median", "mode"], "measuring-space-perimeter-and-area": ["rectPA", "areaShapes"], "predicting-what-comes-next-exploring-sequences-and-progressions": ["apNth", "apSum"] };
+  const MPB = {
+    6: { "knowing-our-numbers": ["placeVal", "add3", "sub3"], "whole-numbers": ["mul", "div", "divRem"], "playing-with-numbers": ["hcf", "lcmQ", "primeFact"], integers: ["integers"], fractions: ["fracAdd", "fracSub", "fracOf"], decimals: ["decAdd"], "data-handling": ["mean", "mode"], mensuration: ["rectPA", "squarePA"], algebra: ["evalExpr", "linEq"], "ratio-and-proportion": ["ratioShare", "unitary"], "understanding-elementary-shapes": ["complement"] },
+    7: { integers: ["integers", "intDiv"], "fractions-and-decimals": ["fracMul", "fracDiv", "decMul", "decDiv"], "data-handling": ["mean", "median", "mode"], "simple-equations": ["linEq"], "lines-and-angles": ["complement"], "triangle-and-its-properties": ["triAngle", "extAngle", "pythag"], "comparing-quantities": ["percentOf", "profitLoss", "discount", "simpleInt", "ratioShare"], "rational-numbers": ["fracAdd", "fracMul"], "perimeter-and-area": ["rectPA", "squarePA", "areaShapes", "circle"], "algebraic-expressions": ["evalExpr"], "exponents-and-powers": ["expo"] },
+    8: { "rational-numbers": ["fracAdd", "fracMul"], "linear-equations-in-one-variable": ["linEq", "linEqBoth"], "understanding-quadrilaterals": ["quadAngle", "polyAngles"], "data-handling": ["mean", "median", "mode"], "squares-and-square-roots": ["squares", "pythag"], "cubes-and-cube-roots": ["cubes"], "comparing-quantities": ["percentChange", "profitLoss", "discount", "simpleInt", "compoundInt"], "algebraic-expressions-and-identities": ["evalExpr"], mensuration: ["areaShapes", "cuboidVol", "circle"], "exponents-and-powers": ["expo"], "direct-and-inverse-proportions": ["directProp", "inverseProp"] },
+    9: M[9],
+  };
+  const SPB = {
+    6: { "motion-and-measurement-of-distances": ["unitConv"] },
+    7: { "motion-and-time": ["speed"] },
+    8: { "force-and-pressure": ["force", "pressure"], sound: ["wave"], "chemical-effects-of-electric-current": ["ohm"] },
+    9: S[9],
+  };
+  // PSEB uses the earlier NCERT Maths and Science books (Classes 6–9), so those chapters get their own maps.
+  const MAP = { maths: { ...M, 9: M9cbse }, science: { ...S, 9: S9cbse }, physics: P, chemistry: C, mathspb: MPB, sciencepb: SPB };
 
   function forChapter(cls, subject, chapterId) {
     const m = MAP[subject] && MAP[subject][cls];
     return (m && m[chapterId]) || [];
+  }
+
+  // When a generator's own distractors collapse into duplicates, add answers with one number nudged ("12 cm" gives "13 cm").
+  function topUp(a, wrong, R) {
+    a = String(a);
+    const re = /−?\d[\d,]*(?:\.\d+)?/g;
+    const toks = [...a.matchAll(re)];
+    for (const delta of [1, -1, 2, -2, 10]) {
+      for (const t of toks) {
+        if (wrong.length >= 3) return;
+        const v = (t[0][0] === "−" ? -1 : 1) * Number(t[0].replace(/[−,]/g, ""));
+        if (!Number.isFinite(v)) continue;
+        const nv = Number.isInteger(v) ? v + delta : v + delta / 2;
+        const s = a.slice(0, t.index) + n(nv) + a.slice(t.index + t[0].length);
+        if (s !== a && !wrong.includes(s)) wrong.push(s);
+      }
+    }
   }
 
   // Builds one question. Returns null if a generator misbehaves (never shows a broken question).
@@ -288,6 +606,7 @@ const Gen = (() => {
       return null;
     }
     const wrong = (raw.wrong || []).filter((w, i, arr) => w !== raw.a && arr.indexOf(w) === i).slice(0, 3);
+    if (raw.a && wrong.length < 3) topUp(raw.a, wrong, R);
     if (!raw.a || wrong.length < 3) return null;
     return {
       q: raw.q,

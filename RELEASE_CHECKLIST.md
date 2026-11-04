@@ -4,7 +4,7 @@ Do these in order. Stop at the first failure and fix it before going on.
 
 ## 1. Check the content and the web app
 
-- [ ] `node scripts/validate.js`: content files are valid and the class indexes are up to date.
+- [ ] `node scripts/validate.js`: content files are valid and the class indexes are up to date. It also runs `scripts/check-gen.js` (every question generator over 500 seeds: 3 distinct wrong answers, no NaN, steps present; every chapter named in `Gen.MAP` exists).
 - [ ] `node scripts/build-index.js --check`: no `data/class*/index.js` is stale. If it reports any, run `node scripts/build-index.js` and look at the diff.
 - [ ] `npm test`: the whole Playwright suite passes (phone and desktop). Run it a second time if anything failed once; a test that passes only sometimes is a bug to chase, not to ignore. First time on a machine: `npx playwright install chromium`.
 
