@@ -17,7 +17,17 @@
       "older-book": t("Follows the older NCERT {n:book|books} {books}.", { n: sy.books.length, books }),
       topic: t("Topic-based revision."),
     }[sy.match];
-    const review = sy.reviewed ? t("Checked by a teacher ({date}).", { date: esc(String(sy.reviewed).slice(0, 10)) }) : t("Not yet checked by a teacher, so compare with your textbook.");
+    const date = esc(String(sy.reviewed || "").slice(0, 10));
+    // Content review state (CONTENT_GUIDE.md): `status` when the file has one, else reviewed: false is a draft and a date is a published check.
+    const review = {
+      draft: t("Draft — not yet checked by a teacher, so compare with your textbook."),
+      "subject-review": t("Draft — a subject teacher is checking it, so compare with your textbook."),
+      "curriculum-review": t("Draft — being checked against the syllabus, so compare with your textbook."),
+      "language-review": t("Draft — being checked for language, so compare with your textbook."),
+      approved: t("Checked by a teacher ({date}).", { date }),
+      published: t("Checked by a teacher ({date}).", { date }),
+      "needs-revision": t("Needs changes after a check — compare with your textbook."),
+    }[sy.status || (sy.reviewed ? "published" : "draft")] || t("Draft — not yet checked by a teacher, so compare with your textbook.");
     return `<p class="syllabus-line ${sy.match}">${what} ${sy.note ? esc(sy.note) + " " : ""}${review}</p>`;
   }
 

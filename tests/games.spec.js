@@ -206,7 +206,7 @@ test("Games home: subjects, a chapter list with game icons, and a random game", 
   await expect(page.locator(".chapter-row").first()).toBeVisible();
   await page.goto("/#/games");
   await page.getByRole("button", { name: "Random game" }).click();
-  await expect(page).toHaveURL(/#\/play\/10\/\w+\/[\w-]+\/(match|label|quickfire)$/);
+  await expect(page).toHaveURL(/#\/play\/10\/\w+\/[\w-]+\/\w+$/);
   await expect(page.locator(".game-intro")).toBeVisible();
 });
 

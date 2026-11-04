@@ -35,7 +35,9 @@ StudyData.add(10, "maths", {
     match: "textbook",                    // "textbook" (current NCERT book), "older-book", or "topic" (arranged by topic)
     books: ["Mathematics"],               // NCERT book title(s); [] for "topic"
     note: "Optional extra line, e.g. 'A selection of lessons, not every chapter.'",
-    reviewed: false                       // after a teacher checks it: "2026-11-15, Mrs Kaur (TGT Maths)"
+    reviewed: false,                      // after a teacher checks it: "2026-11-15, Mrs Kaur (TGT Maths)"
+    status: "draft"                       // OPTIONAL review state, see "Review and sources". Leave it out and
+                                          // reviewed: false means "draft", a review date means "published"
   },
   chapters: [
     {
@@ -119,6 +121,22 @@ just don't reword things for no reason. Two questions in one chapter can't have 
 All content is a revision aid and must be checked against the textbook before it's relied on. When a teacher
 reviews a file, set `syllabus.reviewed` to the date and their name, and add `source` to each chapter they checked.
 The validator checks structure, duplicates and formatting. It **cannot** tell whether a fact or answer is correct.
+
+### Review states
+
+`syllabus.status` says where a subject file is in review (optional; the subject page shows it to the student):
+
+| status | meaning | `reviewed` |
+|---|---|---|
+| `draft` | written, not checked by a teacher | `false` |
+| `subject-review` | a subject teacher is checking facts and answers | `false` |
+| `curriculum-review` | being checked against the syllabus / book | `false` |
+| `language-review` | being checked for language (Punjabi, Hindi, English) | `false` |
+| `approved` | all checks passed, waiting to be released | the date, reviewer |
+| `published` | released as checked content | the date, reviewer |
+| `needs-revision` | a check found problems | any |
+
+Without `status`, `reviewed: false` is `draft` and a date is `published`, so existing files need no change. The validator rejects an unknown status, and `approved` / `published` without a review date. Only approved content should be presented as complete syllabus content; draft files say "Draft — not yet checked by a teacher" on the subject page.
 
 ## Rules
 
@@ -240,3 +258,36 @@ Games (see "Games" in README.md) are built from existing chapters; there is noth
 - **Sort into groups** uses the notes: each `heading` is a group, and an item is a phrase set in bold at the very start of a point (`**Lustre**: shiny surface…`, optionally with a matching `terms` entry as the explanation) that does not appear under any other heading in the chapter. So give each point a bold lead word that belongs to its heading only, and avoid repeating that word in other sections. Needs 2 groups with 2+ items and 6+ in all. Not offered for language subjects.
 - **Put in order** uses `examples[].steps` (and generator steps). A solution is used when it has 3–6 steps and each step works from the result of the one before it (a number or symbol it found, or "so", "hence", "="). Steps labelled "(i)", "(ii)" are skipped, so write sub-parts as separate examples.
 - **Timeline** uses `data/games/timelines.js`: `StudyData.addTimelines([{ cls, subject, chapter, events: [{ year, label, when? }] }])`; at least 5 events with distinct whole-number years (BCE is negative), labels up to 60 characters, only facts from the chapter's own notes. `node scripts/validate.js` checks it.
+
+## Learning objectives (data/class{N}/objectives.js)
+
+Every chapter has learning objectives. By default they are DERIVED automatically: one objective per `notes` topic
+(heading), statement "Understand: <heading>". Hand-written objectives override that for a chapter. They live in one
+file per class, loaded with that class's subject files, and the class must be listed in `objectivesCatalog` in
+`data/registry.js` (the validator reports a file that is not listed).
+
+```js
+StudyData.addObjectives(10, {
+  maths: {                                   // subject id
+    "quadratic-equations": [                 // chapter id (must exist)
+      {
+        id: "standard-form",                 // kebab-case, unique within the chapter; stable forever (progress keys use it)
+        text: "Recognise a quadratic equation and write it in the form ax² + bx + c = 0 (a ≠ 0).",  // "can …" statement, student-friendly
+        topics: ["Quadratic Equations"],     // notes headings this objective covers (exact heading text); used to map notes, quiz and practice questions
+        level: "understand",                 // remember | understand | apply | analyse
+        prereq: ["10/maths/polynomials#zeroes"],  // optional: "cls/subject/chapter#objectiveId" (objective id may be omitted = whole chapter)
+        mistakes: [                          // optional: common mistakes / misconceptions, short, each with the fix
+          { id: "a-zero", text: "Calling it quadratic when a = 0.", fix: "If a = 0 the x² term disappears, so it is linear." }
+        ]
+      }
+    ]
+  }
+});
+```
+
+Rules
+- 3–6 objectives per chapter; together their `topics` should cover every notes heading of the chapter (the validator warns about any left out).
+- Language of `text` and `mistakes` = the chapter's language (Punjabi chapters in Gurmukhi, Hindi in Devanagari); the validator checks the script.
+- Questions are mapped to an objective by the engine (by `topics` heading match and word similarity); a question may also carry `obj: "<id>"` to name its objective explicitly.
+- Never change an objective's `id` once students may have used it: their progress is saved against `class/subject/chapter#id`. Derived objectives take their id from the heading, so renaming a notes heading starts that derived objective afresh; hand-write the objectives of chapters where that would matter.
+- Check the mapping with `node scripts/check-objectives.js 10 maths quadratic-equations --show 20`, which prints each objective with the questions that landed on it.

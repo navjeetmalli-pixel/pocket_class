@@ -32,13 +32,13 @@ Pocket Class India is a complete study companion for Indian school students in C
 
 FOR EVERY CHAPTER
 • Revision notes with a key-facts and formula box
-• About 800 labelled diagrams: ray diagrams, circuits, graphs, cells, cycles, maps and timelines
+• Over 790 labelled diagrams: ray diagrams, circuits, graphs, cells, cycles, maps and timelines
 • Flashcards for key terms
 • Solved examples and board-style questions with model answers
 • Quizzes with instant feedback and an explanation for every answer
 
 PRACTICE THAT NEVER RUNS OUT
-• Over 40,000 multiple-choice questions and 14,000 written questions with model answers
+• Over 43,000 multiple-choice questions and 23,000 written questions with model answers
 • Fresh maths and physics questions with new numbers every time, with worked steps
 • Printable practice sheets with an answer key
 • Full sample papers for Classes 9–12 in the board pattern (sections A–F, internal choices, marking scheme)

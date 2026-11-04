@@ -44,7 +44,7 @@ for (let c = 1; c <= 12; c++) {
   if (onlyCls && Number(onlyCls) !== c) continue;
   const dir = path.join(root, "data", `class${c}`);
   if (!fs.existsSync(dir)) continue;
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".js") && f !== "index.js").map((f) => path.join(dir, f));
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".js") && f !== "index.js" && f !== "objectives.js").map((f) => path.join(dir, f));
   const pdir = path.join(dir, "practice");
   if (fs.existsSync(pdir)) files.push(...fs.readdirSync(pdir).filter((f) => f.endsWith(".js")).map((f) => path.join(pdir, f)));
   for (const file of files) {

@@ -73,7 +73,7 @@
         cur.picked = orig;
         const { it } = cur;
         const ok = orig === it.answer;
-        api.answered(it, ok);
+        api.answered(it, ok, orig);
         el.querySelectorAll(".option").forEach((b) => {
           const p = Number(b.dataset.pick);
           b.classList.add("locked");

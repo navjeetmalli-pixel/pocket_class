@@ -119,13 +119,13 @@ const Views = (() => {
   function quizItems(c, subj, ch, own = false) {
     const from = `${subj.short} · ${ch.title}`;
     const list = own ? ch.quiz : [...ch.quiz, ...D.practiceFor(c, subj.id, ch.id).mcq];
-    return list.map((q) => ({ ...q, ref: { key: `${Store.key(c, subj.id, ch.id)}/${questionId(q)}`, from, cls: c, subject: subj.id } }));
+    return list.map((q) => ({ ...q, ref: { key: `${Store.key(c, subj.id, ch.id)}/${questionId(q)}`, from, cls: c, subject: subj.id, chapter: ch.id } }));
   }
 
   // Fresh number-changing questions (maths and physics chapters only).
   function genItems(c, subj, ch, count, seed = Date.now()) {
     const from = `${subj.short} · ${ch.title}`;
-    return Gen.questions(c, subj.id, ch.id, count, seed).map((q) => ({ ...q, ref: { key: null, from, cls: c, subject: subj.id } }));
+    return Gen.questions(c, subj.id, ch.id, count, seed).map((q) => ({ ...q, ref: { key: null, from, cls: c, subject: subj.id, chapter: ch.id } }));
   }
 
   // One chapter quiz round: 10 saved questions plus a few generated ones, different every time.

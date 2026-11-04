@@ -8,7 +8,7 @@ const path = require("path");
 const vm = require("vm");
 
 const root = path.join(__dirname, "..");
-let files = process.argv.slice(2).filter((f) => !/[\/\\](practice|diagrams|paths)[\/\\]/.test(f) && path.basename(f) !== "index.js");
+let files = process.argv.slice(2).filter((f) => !/[\/\\](practice|diagrams|paths)[\/\\]/.test(f) && path.basename(f) !== "index.js" && path.basename(f) !== "objectives.js");
 if (process.argv.length <= 2) {
   files = fs
     .readdirSync(path.join(root, "data"))
@@ -16,12 +16,13 @@ if (process.argv.length <= 2) {
     .flatMap((d) =>
       fs
         .readdirSync(path.join(root, "data", d))
-        .filter((f) => f.endsWith(".js") && f !== "index.js")
+        .filter((f) => f.endsWith(".js") && f !== "index.js" && f !== "objectives.js")
         .map((f) => path.join("data", d, f))
     );
 }
 
 const BANNED_OPTION = /all of (the )?(above|these)|none of (the )?(above|these)|both (a|b)\b|both \(a\)|\(a\) and \(|neither (of )?(the above|these|a nor b|option)|उपर्युक्त सभी|उपरोक्त सभी|इनमें से कोई नहीं|ये सभी|सभी सही|ਉਪਰੋਕਤ ਸਾਰੇ|ਉਪਰੋਕਤ ਸਭ|ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਈ ਨਹੀਂ|ਇਨ੍ਹਾਂ ਵਿੱਚੋਂ ਕੋਈ ਨਹੀਂ|ਸਾਰੇ ਹੀ/i;
+const STATUSES = ["draft", "subject-review", "curriculum-review", "language-review", "approved", "published", "needs-revision"];
 const isStr = (v) => typeof v === "string" && v.trim().length > 0;
 
 let errorCount = 0;
@@ -160,6 +161,12 @@ for (const file of files) {
       if (!Array.isArray(sy.books) || !sy.books.every(isStr)) err("syllabus", "books must be an array of book titles");
       else if (sy.match !== "topic" && sy.books.length === 0) err("syllabus", "name the book(s) this content follows");
       if (sy.reviewed !== false && !/^\d{4}-\d{2}-\d{2}/.test(String(sy.reviewed))) err("syllabus", "reviewed must be false or the review date (YYYY-MM-DD, reviewer)");
+      // Content review state (CONTENT_GUIDE.md): optional; without it, reviewed: false is "draft" and a review date is "published".
+      if (sy.status !== undefined) {
+        if (!STATUSES.includes(sy.status)) err("syllabus", `status must be one of ${STATUSES.join(", ")}`);
+        else if (["approved", "published"].includes(sy.status) && sy.reviewed === false) err("syllabus", `status "${sy.status}" needs reviewed to be the review date`);
+        else if (["draft", "subject-review", "curriculum-review", "language-review"].includes(sy.status) && sy.reviewed !== false) warn("syllabus", `status "${sy.status}" but reviewed has a date; set reviewed: false or move the status on`);
+      }
     }
 
     const quizCount = checkChapters(data.chapters, subj, err, warn);
@@ -705,6 +712,195 @@ for (const file of pathFiles) {
   errors.forEach((e) => console.log(`  ERROR ${e}`));
   warns.forEach((w) => console.log(`  warn  ${w}`));
   summary.push(`paths ${subject}: ${nTopics} topics, ${nLevels} levels`);
+}
+
+// ---------- learning objectives ----------
+// data/class{N}/objectives.js: StudyData.addObjectives(N, { subject: { chapterId: [{ id, text, topics, level, prereq?, mistakes? }] } }).
+// See CONTENT_GUIDE.md. Chapters, topics (notes headings) and prerequisites must exist; 3-6 objectives per chapter; the
+// text is in the chapter's language. The class must be listed in objectivesCatalog in data/registry.js or the file never loads.
+{
+  const LEVELS = ["remember", "understand", "apply", "analyse"];
+  const objFiles = fs
+    .readdirSync(path.join(root, "data"))
+    .filter((d) => /^class\d+$/.test(d) && fs.existsSync(path.join(root, "data", d, "objectives.js")))
+    .map((d) => path.join("data", d, "objectives.js"))
+    .filter((f) => process.argv.length <= 2 || process.argv.slice(2).some((a) => path.resolve(root, a) === path.resolve(root, f)));
+  const scriptOf = (text) => {
+    const letters = String(text).match(/\p{L}/gu) || [];
+    if (!letters.length) return "en";
+    const share = (re) => (String(text).match(re) || []).length / letters.length;
+    return share(/\p{Script=Gurmukhi}/gu) > 0.5 ? "pa" : share(/\p{Script=Devanagari}/gu) > 0.5 ? "hi" : "en";
+  };
+  const kebabHeading = (h) => {
+    const k = String(h).replace(/\*\*/g, "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    return k.length >= 3 ? k.slice(0, 48).replace(/-+$/, "") : null; // null: a hashed id (non-Latin heading)
+  };
+  // Subject files, loaded on demand: { chapters: Map(id -> chapter), } for "cls/subject", or null when there is none.
+  const subjCache = new Map();
+  const subjectData = (cls, subject) => {
+    const k = `${cls}/${subject}`;
+    if (subjCache.has(k)) return subjCache.get(k);
+    let out = null;
+    const f = path.join(root, "data", `class${cls}`, `${subject}.js`);
+    if (fs.existsSync(f)) {
+      const ctx = { globalThis: {} };
+      ctx.globalThis = ctx;
+      vm.createContext(ctx);
+      vm.runInContext(fs.readFileSync(path.join(root, "data", "registry.js"), "utf8"), ctx);
+      vm.runInContext(fs.readFileSync(f, "utf8"), ctx, { filename: f });
+      const d = ctx.StudyData.content[cls] && ctx.StudyData.content[cls][subject];
+      if (d) out = { chapters: new Map(d.chapters.map((c) => [c.id, c])) };
+    }
+    subjCache.set(k, out);
+    return out;
+  };
+  // Every objectives file's data, by class (for prerequisites that point into another class).
+  const loaded = new Map();
+  const loadObjFile = (file) => {
+    const ctx = { globalThis: {} };
+    ctx.globalThis = ctx;
+    vm.createContext(ctx);
+    vm.runInContext(fs.readFileSync(path.join(root, "data", "registry.js"), "utf8"), ctx);
+    const calls = [];
+    const real = ctx.StudyData.addObjectives;
+    ctx.StudyData.addObjectives = (c, d) => (calls.push({ cls: c, data: d }), real(c, d));
+    vm.runInContext(fs.readFileSync(path.join(root, file), "utf8"), ctx, { filename: file });
+    return { ctx, calls };
+  };
+  const handWritten = (cls, subject, chapter) => {
+    if (!loaded.has(cls)) {
+      const f = path.join("data", `class${cls}`, "objectives.js");
+      loaded.set(cls, fs.existsSync(path.join(root, f)) ? loadObjFile(f) : null);
+    }
+    const l = loaded.get(cls);
+    return l ? l.ctx.StudyData.objectivesFor(cls, subject, chapter) : null;
+  };
+  for (const file of objFiles) {
+    const errors = [];
+    const warns = [];
+    const err = (where, msg) => errors.push(`${where}: ${msg}`);
+    const warn = (where, msg) => warns.push(`${where}: ${msg}`);
+    const dirCls = Number((/class(\d+)/.exec(file) || [])[1]);
+    let nSubjects = 0;
+    let nChapters = 0;
+    let nObjectives = 0;
+    let L;
+    try {
+      L = loadObjFile(file);
+      loaded.set(dirCls, L);
+    } catch (e) {
+      console.log(`\n✗ ${file}\n  Could not load: ${e.message}`);
+      errorCount++;
+      continue;
+    }
+    const D = L.ctx.StudyData;
+    if (L.calls.length !== 1) err("file", `expected exactly one StudyData.addObjectives(...) call, found ${L.calls.length}`);
+    for (const call of L.calls) {
+      if (call.cls !== dirCls) err("file", `addObjectives(${call.cls}, ...) but the file is in class${dirCls}`);
+      if (!call.data || typeof call.data !== "object") err("file", "second argument must be { subject: { chapterId: [objectives] } }");
+    }
+    if (!D.objectivesCatalog.includes(dirCls)) err("file", `class ${dirCls} is not in objectivesCatalog in data/registry.js, so this file never loads`);
+    const data = (L.calls[0] && L.calls[0].data) || {};
+
+    for (const [subject, chs] of Object.entries(data)) {
+      nSubjects++;
+      const sat = `${subject}`;
+      if (!D.subject(subject)) {
+        err(sat, "unknown subject id");
+        continue;
+      }
+      if (![D.catalog, ...Object.values(D.boardCatalog)].some((cat) => (cat[dirCls] || []).includes(subject))) err(sat, `not a Class ${dirCls} subject in data/registry.js`);
+      const sd = subjectData(dirCls, subject);
+      if (!sd) {
+        err(sat, `data/class${dirCls}/${subject}.js not found`);
+        continue;
+      }
+      for (const [chId, list] of Object.entries(chs || {})) {
+        nChapters++;
+        const at = `${subject}/${chId}`;
+        const ch = sd.chapters.get(chId);
+        if (!ch) {
+          err(at, "no such chapter");
+          continue;
+        }
+        if (!Array.isArray(list)) {
+          err(at, "must be an array of objectives");
+          continue;
+        }
+        if (list.length < 3 || list.length > 6) err(at, `needs 3-6 objectives, has ${list.length}`);
+        nObjectives += list.length;
+        const headings = ch.notes.map((n) => n.heading.trim());
+        const chScript = scriptOf([ch.title, ...headings].join(" "));
+        const ids = new Set();
+        const covered = new Set();
+        list.forEach((o, i) => {
+          const oat = `${at} [${i}${o && o.id ? " " + o.id : ""}]`;
+          if (!o || typeof o !== "object") return err(oat, "must be an object");
+          if (!isStr(o.id) || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(o.id)) err(oat, "id must be kebab-case");
+          else if (ids.has(o.id)) err(oat, "duplicate id in this chapter");
+          ids.add(o.id);
+          if (!isStr(o.text)) err(oat, "text is required");
+          else {
+            if (o.text.trim().length < 15) warn(oat, "text is very short; write a full 'can ...' statement");
+            if (scriptOf(o.text) !== chScript) err(oat, `text is written in ${scriptOf(o.text)} but the chapter is in ${chScript}`);
+          }
+          if (!Array.isArray(o.topics) || !o.topics.length || !o.topics.every(isStr)) err(oat, "topics must list at least one notes heading");
+          else
+            o.topics.forEach((tp) => {
+              if (!headings.includes(tp.trim())) err(oat, `topic "${tp}" is not a notes heading of this chapter`);
+              else covered.add(tp.trim());
+            });
+          if (!LEVELS.includes(o.level)) err(oat, `level must be one of ${LEVELS.join(", ")}`);
+          if (o.prereq !== undefined) {
+            if (!Array.isArray(o.prereq) || !o.prereq.every(isStr)) err(oat, "prereq must be an array of strings like \"10/maths/polynomials#zeroes\"");
+            else
+              o.prereq.forEach((pr) => {
+                const m = /^(\d+)\/([a-z0-9]+)\/([a-z0-9-]+)(?:#([a-z0-9-]+))?$/.exec(pr);
+                if (!m) return err(oat, `prereq "${pr}" is not cls/subject/chapter[#objective]`);
+                const [, pc, ps, pch, po] = m;
+                const psd = subjectData(Number(pc), ps);
+                const pchap = psd && psd.chapters.get(pch);
+                if (!pchap) return err(oat, `prereq "${pr}": no such chapter`);
+                if (!po) return;
+                const hw = handWritten(Number(pc), ps, pch);
+                const known = hw ? hw.map((x) => x.id) : pchap.notes.map((n) => kebabHeading(n.heading)).filter(Boolean);
+                if (!known.includes(po)) err(oat, `prereq "${pr}": that chapter has no objective "${po}"`);
+              });
+          }
+          if (o.mistakes !== undefined) {
+            if (!Array.isArray(o.mistakes)) err(oat, "mistakes must be an array");
+            else {
+              const mids = new Set();
+              o.mistakes.forEach((m, j) => {
+                const mat = `${oat} mistakes[${j}]`;
+                if (!m || !isStr(m.id) || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(m.id)) err(mat, "id must be kebab-case");
+                else if (mids.has(m.id)) err(mat, "duplicate id");
+                else mids.add(m.id);
+                if (!m || !isStr(m.text) || !isStr(m.fix)) err(mat, "text and fix are required");
+                else if (scriptOf(m.text + " " + m.fix) !== chScript) warn(mat, `not written in the chapter's language (${chScript})`);
+              });
+            }
+          }
+        });
+        const missing = headings.filter((h) => !covered.has(h));
+        if (missing.length) warn(at, `notes headings not covered by any objective: ${missing.map((h) => `"${h}"`).join(", ")}`);
+      }
+    }
+    errorCount += errors.length;
+    warnCount += warns.length;
+    console.log(`\n${errors.length ? "✗" : "✓"} ${file}`);
+    errors.forEach((e) => console.log(`  ERROR ${e}`));
+    warns.forEach((w) => console.log(`  warn  ${w}`));
+    summary.push(`objectives class ${dirCls}: ${nSubjects} subjects, ${nChapters} chapters, ${nObjectives} objectives`);
+  }
+  // A class in the catalog with no file would be a 404 at load time.
+  const cat = fs.readFileSync(path.join(root, "data", "registry.js"), "utf8").match(/objectivesCatalog = \[([^\]]*)\]/);
+  if (cat && process.argv.length <= 2)
+    for (const c of cat[1].split(",").map((x) => Number(x.trim())).filter(Boolean))
+      if (!fs.existsSync(path.join(root, "data", `class${c}`, "objectives.js"))) {
+        console.log(`\n✗ objectivesCatalog\n  ERROR class ${c} is listed in data/registry.js but data/class${c}/objectives.js does not exist`);
+        errorCount++;
+      }
 }
 
 // ---------- class indexes ----------

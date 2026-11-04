@@ -62,7 +62,7 @@ const Guided = (() => {
     //   "Find the mistake": a Gen solution with one wrong result swapped in
     const gens = Gen.questions(c, subj.id, ch.id, 6, Date.now());
     const ex = ch.examples || [];
-    const fromGen = (g) => ({ q: g.q, steps: g.steps, answer: g.options[0], options: g.options, order: shuffle([0, 1, 2, 3]), picked: null, shown: 0, revealed: false });
+    const fromGen = (g) => ({ q: g.q, steps: g.steps, answer: g.options[0], options: g.options, kinds: g.kinds, order: shuffle([0, 1, 2, 3]), picked: null, shown: 0, revealed: false });
     const fromEx = (e) => ({ q: e.q, steps: e.steps, answer: e.answer, options: null, picked: null, shown: 0, revealed: false });
     const fadeGen = gens.find((g) => g.steps.length >= 2);
     let pool = ex.slice(1);
@@ -118,6 +118,7 @@ const Guided = (() => {
       steps: ["think", "idea", "resolve", "worked", fade && "fade", "turn", slip && "slip", "practice", "hook", "done"].filter(Boolean),
       step: 0,
       recorded: false,
+      met: new Set(),
     };
   }
 
@@ -190,8 +191,21 @@ const Guided = (() => {
 
   const stepKey = () => s.steps[s.step];
 
+  // ---------- learning record (js/learn.js) ----------
+  // A topic of the notes counts as met the first time the idea step shows it.
+  function met() {
+    if (stepKey() !== "idea" || s.met.has(s.topic)) return;
+    s.met.add(s.topic);
+    Learn.noteTopic("lesson-step", s.c, s.subj.id, s.ch.id, s.topics[s.topic].heading);
+  }
+  // An answer given in the lesson. `item` has q, options, answer 0-based, explain; `hints` is how many hints it took.
+  function log(item, ok, picked, hints = 0, key = null) {
+    Learn.record([Learn.answerEvent({ ...item, ref: { key, cls: s.c, subject: s.subj.id, chapter: s.ch.id } }, ok, { picked, hints, source: "guided" })]);
+  }
+
   function go(step) {
     s.step = Math.max(0, Math.min(s.steps.length - 1, step));
+    met();
     render();
     const top = el.getBoundingClientRect().top;
     if (top < 0) window.scrollTo({ top: window.scrollY + top - 80 });
@@ -472,6 +486,13 @@ const Guided = (() => {
     const all = [...wrap.querySelectorAll("[data-teach-tick]")];
     const ticks = all.filter((b) => b.checked).map((b) => Number(b.dataset.teachTick));
     Store.setTeach(box.dataset.tkey, { ticks });
+    // Ticking a key point that is a notes topic is evidence the student met that idea (never graded).
+    if (box.checked) {
+      const k = Store.parseKey(box.dataset.tkey);
+      const ch = (D.chapters(k.cls, k.subject) || []).find((x) => x.id === k.chapterId);
+      const n = ch && ch.notes ? ch.notes[Number(box.dataset.teachTick)] : null;
+      if (n) Learn.noteTopic("teach", k.cls, k.subject, k.chapterId, n.heading);
+    }
     wrap.querySelector("[data-teach-count]").textContent = t("{a} of {b} key points ticked", { a: ticks.length, b: all.length });
   });
 
@@ -515,12 +536,18 @@ const Guided = (() => {
       render();
     } else if (act === "topic-next") {
       s.topic = Math.min(s.topics.length - 1, s.topic + 1);
+      met();
       render();
     } else if (act === "topic-prev") {
       s.topic = Math.max(0, s.topic - 1);
+      met();
       render();
     } else if (act === "hint") {
-      if (s.turn && s.turn.shown < s.turn.steps.length - 1) s.turn.shown++;
+      if (s.turn && s.turn.shown < s.turn.steps.length - 1) {
+        s.turn.shown++;
+        const o = Objectives.forQuestion(s.c, s.subj.id, s.ch, { q: s.turn.q, explain: s.turn.steps.join(" "), options: s.turn.options, answer: 0 });
+        if (o) Learn.note("hint", s.c, s.subj.id, s.ch.id, o.id, { hints: s.turn.shown });
+      }
       render();
     } else if (act === "fade-show") {
       if (s.fade) s.fade.revealed = true;
@@ -552,14 +579,17 @@ const Guided = (() => {
       if (!f || !f.options || f.revealed) return;
       f.picked = orig;
       f.revealed = true;
+      log({ q: f.q, options: f.options, answer: 0, explain: f.steps.join(" "), kinds: f.kinds }, orig === 0, orig);
     } else if (k === "turn") {
       const t = s.turn;
       if (!t || !t.options || t.picked !== null) return;
       t.picked = orig;
+      log({ q: t.q, options: t.options, answer: 0, explain: t.steps.join(" "), kinds: t.kinds }, orig === 0, orig, t.shown);
     } else if (k === "practice") {
       const it = s.practice[s.p];
       if (!it || it.picked !== null) return;
       it.picked = orig;
+      log(it, orig === it.answer, orig, 0, `${s.key}/${questionId(it)}`);
     } else return;
     render();
   }

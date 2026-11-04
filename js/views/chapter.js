@@ -89,6 +89,33 @@
     };
   }
 
+  // How a repeated kind of error is put to the student: gently, as something to watch, never as a label.
+  const ERROR_NOTE = {
+    slip: "Small slips keep creeping in here. Check each step before you answer.",
+    sign: "Watch the plus and minus signs here.",
+    scale: "Check place value and powers of ten here.",
+    method: "Re-read how the method works here, then try again.",
+  };
+
+  // "What you can do": the chapter's objectives, each with where the student is (js/mastery.js). Colour is never the only signal.
+  function objectivesPanel(c, subj, ch) {
+    const rows = Learn.chapterStates(c, subj.id, ch);
+    if (!rows.length) return "";
+    const done = rows.filter((r) => r.state === "mastered").length;
+    const mistakes = rows.flatMap((r) => r.objective.mistakes);
+    return `<section class="card obj-panel no-print" aria-labelledby="obj-h">
+      <h2 id="obj-h">${t("What you can do")}</h2>
+      <p class="small muted">${t("{a} of {b} skills mastered for now. Quizzes, the lesson and games all count.", { a: done, b: rows.length })}</p>
+      <ul class="obj-list">${rows
+        .map((r) => {
+          const e = r.assess.error;
+          return `<li><span class="obj-text">${esc(r.objective.text)}</span>${Learn.stateChip(r.state)}${e.confidence === "repeated" && ERROR_NOTE[e.kind] ? `<p class="obj-note">${t(ERROR_NOTE[e.kind])}</p>` : ""}</li>`;
+        })
+        .join("")}</ul>
+      ${mistakes.length ? `<details class="obj-mistakes"><summary>${t("Mistakes to watch for")}</summary><ul>${mistakes.map((m) => `<li>${esc(m.text)} <em>${esc(m.fix)}</em></li>`).join("")}</ul></details>` : ""}
+    </section>`;
+  }
+
   function notesTab(c, subj, ch, r, base) {
     const notes = ch.notes
       .map((n) => `<article class="card note"><h3>${esc(n.heading)}</h3><ul>${n.points.map((p) => `<li>${rich(p)}${Speech.btn(c, subj.id, p)}</li>`).join("")}</ul></article>`)
@@ -103,6 +130,7 @@
     const terms = `<section class="card"><h3 style="font-size:17px;font-weight:750;margin-bottom:12px">${t(TERMS_LABEL[subj.id] || "Key terms")}</h3>
       <dl class="terms">${ch.terms.map((x) => `<div><dt>${rich(x.term)}${Speech.btn(c, subj.id, `${x.term}. ${x.meaning}`)}</dt><dd>${rich(x.meaning)}</dd></div>`).join("")}</dl></section>`;
     return `
+      ${objectivesPanel(c, subj, ch)}
       ${Guided.card(c, subj, ch, base)}
       <div class="stack">${notes}${figs}${formulas}${terms}</div>
       ${typeof Sims !== "undefined" ? Sims.cards(c, subj, ch) : ""}

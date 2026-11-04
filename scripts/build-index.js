@@ -15,7 +15,7 @@ const root = path.join(__dirname, "..");
 const dataDir = path.join(root, "data");
 
 const classDirs = () => fs.readdirSync(dataDir).filter((d) => /^class\d+$/.test(d)).sort((a, b) => Number(a.slice(5)) - Number(b.slice(5)));
-const subjectFiles = (dir) => fs.readdirSync(path.join(dataDir, dir)).filter((f) => f.endsWith(".js") && f !== "index.js").sort();
+const subjectFiles = (dir) => fs.readdirSync(path.join(dataDir, dir)).filter((f) => f.endsWith(".js") && f !== "index.js" && f !== "objectives.js").sort();
 
 // The text index.js should contain for one class directory.
 function indexFor(dir) {

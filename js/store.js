@@ -18,6 +18,22 @@ const Store = (() => {
 
   const newId = () => "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
+  // The learning record (spec 11): a versioned, local-only event log plus a rolled-up summary per objective (js/mastery.js).
+  //   events: [{ t, type: "answer"|"hint"|"lesson-step"|"game"|"teach", cls, subject, chapter, obj, ok, hints, attempt,
+  //              source: "quiz"|"practice"|"guided"|"game"|"path"|"test"|"revise", err? }]   the newest `Mastery.config.eventCap`
+  //   roll:   { "10/maths/real-numbers#hcf": o }   every event is folded into its objective's summary as it is logged,
+  //                                                 so trimming the log never loses evidence
+  const LEARN_V = 1;
+  const learnDefaults = () => ({ v: LEARN_V, events: [], roll: {} });
+  // Any shape found in saved data or in a backup becomes a usable record: none (older versions) -> empty, damaged parts -> dropped.
+  // A record from a newer version is kept as it is (never thrown away), just not trimmed.
+  function cleanLearn(l) {
+    if (!l || typeof l !== "object" || Array.isArray(l)) return learnDefaults();
+    const roll = l.roll && typeof l.roll === "object" && !Array.isArray(l.roll) ? l.roll : {};
+    for (const k of Object.keys(roll)) if (!roll[k] || typeof roll[k] !== "object") delete roll[k];
+    return Object.assign(l, { v: Number(l.v) || LEARN_V, events: Array.isArray(l.events) ? l.events.filter((e) => e && typeof e === "object") : [], roll });
+  }
+
   const studentDefaults = () => ({
     id: newId(),
     profile: null, // { name, cls, board: "cbse" | "pseb" }
@@ -33,6 +49,7 @@ const Store = (() => {
     paths: {}, // "maths" -> { "fractions": { start, checked, levels: { "fractions-0": { best, n, at, mastered } } } }: Practice by topic
     pm: {}, // question key -> true: mistakes made in Practice by topic in another class's chapter (shown in My mistakes too)
     games: {}, // chapter (or level) key -> { match: { best, stars, plays, at }, ... }: best score and stars of each Play game
+    learn: learnDefaults(), // the learning record: see learnDefaults
     days: {}, // "2026-10-28" -> { min, acts }
     focusMin: 0,
     focusLen: 25,
@@ -46,6 +63,7 @@ const Store = (() => {
 
   // Makes the device settings readable and writable through a student's state (but not saved with it).
   function bind(s) {
+    s.learn = cleanLearn(s.learn);
     for (const k of DEVICE) Object.defineProperty(s, k, { get: () => device[k], set: (v) => (device[k] = v), enumerable: false, configurable: true });
     return s;
   }
@@ -220,11 +238,11 @@ const Store = (() => {
 
     // ----- Practice by topic -----
     pathTopic: (subject, topic) => Object.assign({ start: 0, checked: null, levels: {} }, ((state.paths[subject] || {})[topic]) || {}),
-    // Saves a finished level round. A level is mastered once a round scores 80% or more, and stays mastered.
+    // Saves a finished level round. A level is mastered once a round scores Mastery.config.pathPass (80%) or more, and stays mastered.
     recordLevel(subject, topic, levelId, percent) {
       const t = ((state.paths[subject] = state.paths[subject] || {})[topic] = state.paths[subject][topic] || { start: 0, checked: null, levels: {} });
       const r = t.levels[levelId] || { best: 0, n: 0, mastered: false };
-      t.levels[levelId] = { best: Math.max(r.best, percent), n: r.n + 1, at: Date.now(), mastered: r.mastered || percent >= 80 };
+      t.levels[levelId] = { best: Math.max(r.best, percent), n: r.n + 1, at: Date.now(), mastered: r.mastered || percent >= Mastery.config.pathPass * 100 };
       save();
       return t.levels[levelId];
     },
@@ -305,6 +323,24 @@ const Store = (() => {
       save();
     },
 
+    // ----- learning record -----
+    // Logs events (see learnDefaults) and folds the ones that name an objective into its summary. One save.
+    logLearn(events) {
+      const l = state.learn;
+      const cap = Mastery.config.eventCap;
+      for (const e of events) {
+        const ev = { t: Date.now(), ...e };
+        Object.keys(ev).forEach((k) => ev[k] === undefined && delete ev[k]);
+        l.events.push(ev);
+        if (ev.obj && ev.chapter) {
+          const k = `${ev.cls}/${ev.subject}/${ev.chapter}#${ev.obj}`;
+          l.roll[k] = Mastery.fold(l.roll[k], ev);
+        }
+      }
+      if (l.v <= LEARN_V && l.events.length > cap) l.events.splice(0, l.events.length - cap);
+      save();
+    },
+
     // Chapters of this class that are due for revision today, most overdue first:
     // [{ key, days (since last studied), n (times studied), mistakes (open mistakes) }].
     due(cls) {
@@ -322,8 +358,18 @@ const Store = (() => {
         e.last = Math.max(e.last, at);
       }
       const now = Date.now();
+      // Objectives whose review has come round (js/mastery.js) bring their chapter into Due today, even if the chapter
+      // as a whole is not due yet: `objs` counts them.
+      for (const [rk, o] of Object.entries(state.learn.roll)) {
+        if (!Mastery.isDue(o, now)) continue;
+        const m = /^(\d+)\/([^/]+)\/([^/#]+)#/.exec(rk);
+        if (!m || Number(m[1]) !== cls) continue;
+        const k = key(cls, m[2], m[3]);
+        const e = (by[k] = by[k] || { key: k, last: o.last || 0, n: 1, mistakes: 0 });
+        e.objs = (e.objs || 0) + 1;
+      }
       return Object.values(by)
-        .map((e) => ({ ...e, days: Math.floor((now - e.last) / DAY), gap: GAPS[Math.min(Math.max(e.n - 1, 0), GAPS.length - 1)] }))
+        .map((e) => ({ ...e, days: Math.floor((now - e.last) / DAY), gap: e.objs ? 0 : GAPS[Math.min(Math.max(e.n - 1, 0), GAPS.length - 1)] }))
         .filter((e) => e.days >= e.gap)
         .sort((a, b) => b.days - b.gap - (a.days - a.gap));
     },

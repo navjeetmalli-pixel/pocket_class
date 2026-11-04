@@ -1,12 +1,13 @@
 const { test, expect, seed, current, readStore, expectedSubjects, expectedSubjectIds } = require("./helpers");
 
-// What a request URL is: { cls, file, kind: "index" | "subject" | "practice" | "diagram" }.
+// What a request URL is: { cls, file, kind: "index" | "subject" | "practice" | "diagram" | "objectives" }.
 function classify(url) {
   const m = new URL(url).pathname.match(/^\/data\/class(\d+)\/(?:(practice|diagrams)\/)?([\w-]+)\.js$/);
   if (!m) return null;
   const [, cls, folder, name] = m;
   if (folder === "practice") return { cls: Number(cls), kind: "practice", subject: name.replace(/-\d+$/, "") };
   if (folder === "diagrams") return { cls: Number(cls), kind: "diagram", subject: name };
+  if (name === "objectives") return { cls: Number(cls), kind: "objectives" }; // the class's learning objectives: one small file, not a subject
   return name === "index" ? { cls: Number(cls), kind: "index" } : { cls: Number(cls), kind: "subject", subject: name };
 }
 

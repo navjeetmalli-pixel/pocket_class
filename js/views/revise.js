@@ -23,7 +23,7 @@
         (e) => `<a class="card chapter-row" href="#/revise/due/${e.subj.id}/${e.ch.id}" style="--c:${e.subj.color}">
           <span class="ch-num">${e.subj.icon}</span>
           <span class="ch-body"><span class="ch-title">${esc(e.ch.title)}</span>
-            <span class="ch-sum">${esc(e.subj.short)} · ${agoLabel(e.days)}${e.mistakes ? ` · ${t("{n} {n:mistake|mistakes}", { n: e.mistakes })}` : ""}</span></span>
+            <span class="ch-sum">${esc(e.subj.short)} · ${agoLabel(e.days)}${e.mistakes ? ` · ${t("{n} {n:mistake|mistakes}", { n: e.mistakes })}` : ""}${e.objs ? ` · ${t("{n} {n:skill|skills} to review", { n: e.objs })}` : ""}</span></span>
           ${icon("next")}</a>`
       )
       .join("")}</div>`;
@@ -46,7 +46,10 @@
       const wrong = all.filter((it) => Store.state.mistakes[it.ref.key]);
       const fresh = shuffle(all.filter((it) => !Store.state.mistakes[it.ref.key]));
       const gen = genItems(c, subj, ch, 2);
-      items.push(...shuffle([...wrong.slice(0, per), ...fresh, ...gen].slice(0, per)));
+      // Objectives whose review has come round (js/mastery.js): their questions come right after the open mistakes.
+      const dueObjs = Learn.dueObjectives(c, subj.id, ch.id);
+      const dueQs = dueObjs.size ? shuffle(all.filter((it) => !wrong.includes(it) && dueObjs.has((Objectives.forQuestion(c, subj.id, ch, it) || {}).id))) : [];
+      items.push(...shuffle([...wrong.slice(0, per), ...dueQs, ...fresh.filter((it) => !dueQs.includes(it)), ...gen].slice(0, per)));
       // Mixed review: a few questions from earlier chapters of the same subject (not ones already in this round).
       const chs = D.chapters(c, subj.id);
       const earlier = shuffle(chs.slice(0, chs.findIndex((x) => x.id === ch.id)).filter((x) => !list.some((e) => e.ch.id === x.id && e.subj.id === subj.id))).slice(0, 2);

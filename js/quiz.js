@@ -179,6 +179,7 @@ const Quiz = (() => {
         </div>
       </div>
       ${s.opts.resultExtra ? s.opts.resultExtra(score, n) : ""}
+      ${Learn.improvedHTML(s.learned)}
       ${breakdown}
       <h2 class="block-title">${t("Review answers")}</h2>
       <div class="stack">${review}</div>`;
@@ -219,6 +220,10 @@ const Quiz = (() => {
     s.done = true;
     s.ended = Date.now();
     let score = 0;
+    // Learning evidence (js/learn.js): every answered question counts towards its objective. Built first, because
+    // "attempt" looks at My mistakes as they were before this round.
+    const source = Learn.SOURCE_OF_KIND[(s.opts.record || {}).kind] || "quiz";
+    const evidence = s.items.filter((x) => x.picked !== null).map((x) => Learn.answerEvent(x, x.picked === x.answer, { picked: x.picked, source }));
     s.items.forEach((x) => {
       if (x.picked === x.answer) score++;
       // Generated questions have no key: they're new every time, so there's nothing to revisit.
@@ -227,6 +232,7 @@ const Quiz = (() => {
       else Store.addMistake(x.ref.key, x.ref.path);
     });
     const answers = s.items.filter((x) => x.ref.key && x.picked !== null).map((x) => ({ key: x.ref.key, ok: x.picked === x.answer }));
+    s.learned = Learn.record(evidence);
     if (s.opts.record) Store.recordQuiz({ ...s.opts.record, title: s.opts.title, score, total: s.items.length, answers });
     // Practice by topic: the level is marked mastered here, and the result screen says what comes next.
     if (s.opts.onDone) s.opts.onDone(score, s.items.length);

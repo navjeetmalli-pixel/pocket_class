@@ -103,6 +103,12 @@ const App = {
     if ((m = p.match(/^(?:worksheet|paper)\/(\d+)\/(\w+)/))) return { cls: Number(m[1]), ids: [m[2]], practice: true };
     if ((m = p.match(/^(?:subject|cards|sheet)\/(\w+)$/))) return { cls: own, ids: [m[1]] };
     if (p === "search") return { cls: own, ids: "all" };
+    // The parent page names the skills (learning objectives) the student has worked on, so it needs those subjects' chapters.
+    if (p === "parent") {
+      const mine = StudyData.subjectsFor(own).map((s) => s.id);
+      const ids = Learn.subjectsWithEvidence(own).filter((id) => mine.includes(id));
+      return ids.length ? { cls: own, ids } : null;
+    }
     if ((m = p.match(/^sheets(?:\/(\w+))?$/))) {
       const id = Sheets.makerSubject(m[1]);
       return id ? { cls: own, ids: [id], practice: true } : null;
@@ -194,6 +200,15 @@ const App = {
             Store.migrate(nd.cls);
             keepOffline(offlineUrls(nd.cls, nd.ids));
           }
+        );
+      // Hand-written learning objectives of the class (one small file; classes without one use derived objectives).
+      if (nd && !StudyData.objectivesLoaded(nd.cls))
+        return loadThen(
+          main, p, opts, "🎯",
+          t("Loading…"),
+          t("This couldn't be loaded. Check your internet connection and try again."),
+          () => StudyData.loadObjectives(nd.cls),
+          () => keepOffline([StudyData.objectivesFile(nd.cls)])
         );
       if (nd && nd.practice) {
         const only = nd.ids === "all" ? undefined : nd.ids;

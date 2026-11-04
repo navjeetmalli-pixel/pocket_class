@@ -5,6 +5,23 @@
 
   // ---------- for parents ----------
 
+  // What the student can do, is practising and should review, in plain words (no labels on the child). From the learning record.
+  function skillsSection(c) {
+    const g = Learn.groups(c);
+    const block = (title, items) => {
+      const shown = items.filter((x) => x.objective);
+      if (!shown.length) return "";
+      const f = (x) => findChapter(c, x.subject, x.chapter);
+      return `<h3>${title}</h3><ul>${shown
+        .slice(0, 6)
+        .map((x) => `<li>${esc(x.objective.text)} <span class="from">${f(x) ? esc(f(x).subj.short) + " · " + esc(f(x).ch.title) : ""}</span></li>`)
+        .join("")}</ul>${shown.length > 6 ? `<p class="small muted">${t("and {n} more", { n: shown.length - 6 })}</p>` : ""}`;
+    };
+    const html = block(t("Can do now"), g.can) + block(t("Practising"), g.practising) + block(t("To review"), g.review);
+    return `<h2 class="block-title">${t("Skills")}</h2>
+      ${html ? `<div class="card obj-groups">${html}</div><p class="tiny muted" style="margin-top:8px">${t("Worked out from quiz answers, lessons and games. A skill counts as done when it is answered correctly without hints, and comes back for review after a few days.")}</p>` : `<div class="card small muted">${t("Skills will appear here once there have been some quizzes, lessons or games.")}</div>`}`;
+  }
+
   // One printable page for the current student, built only from what the app already keeps.
   function parent() {
     const st = Store.state;
@@ -61,6 +78,7 @@
         </div>
         <h2 class="block-title">${t("Chapters completed")}</h2>
         <div class="card subj-progress">${subjects || `<span class="muted">${t("Nothing here yet.")}</span>`}</div>
+        ${skillsSection(c)}
         <h2 class="block-title">${t("Mock test scores")}</h2>
         ${
           tests.length

@@ -153,6 +153,7 @@ globalThis.StudyData = (function () {
       if (!cls || seen.has(cls + "/" + subject)) continue;
       seen.add(cls + "/" + subject);
       out.push(`data/class${cls}/${subject}.js`, ...practiceFiles(cls, [subject]));
+      if (hasObjectiveFile(cls) && !out.includes(objectivesFile(cls))) out.push(objectivesFile(cls));
     }
     return out;
   };
@@ -194,6 +195,20 @@ globalThis.StudyData = (function () {
   const diagramsFor = (classNumber, subjectId, chapterId) =>
     (diagrams[classNumber] && diagrams[classNumber][subjectId] && diagrams[classNumber][subjectId][chapterId]) || [];
 
+  // Learning objectives (data/class{N}/objectives.js, one small file per class, see CONTENT_GUIDE.md):
+  // { subjectId: { chapterId: [{ id, text, topics, level, prereq?, mistakes? }] } }. A chapter without hand-written
+  // objectives gets derived ones (js/objectives.js). objectivesCatalog lists the classes that have a file; it loads
+  // together with the class's subject files, and only for those classes (no request is made for the others).
+  const objectivesCatalog = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const objectives = {};
+  function addObjectives(classNumber, data) {
+    const into = (objectives[classNumber] = objectives[classNumber] || {});
+    for (const [subjectId, chs] of Object.entries(data || {})) into[subjectId] = Object.assign(into[subjectId] || {}, chs);
+  }
+  const objectivesFor = (classNumber, subjectId, chapterId) => (((objectives[classNumber] || {})[subjectId] || {})[chapterId]) || null;
+  const objectivesFile = (classNumber) => `data/class${classNumber}/objectives.js`;
+  const hasObjectiveFile = (classNumber) => objectivesCatalog.includes(Number(classNumber));
+
   // Dated events for the timeline game live in data/games/timelines.js: [{ cls, subject, chapter, events: [{ year, label, when? }] }].
   // The file loads when a Play page needs it (loadTimelines).
   const timelines = {};
@@ -218,7 +233,8 @@ globalThis.StudyData = (function () {
   }
   const hasFull = (classNumber, subjectId) => !!(content[classNumber] && content[classNumber][subjectId]);
 
-  // What a subject's content follows: { board, match: "textbook" | "older-book" | "topic", books, note?, reviewed }.
+  // What a subject's content follows: { board, match: "textbook" | "older-book" | "topic", books, note?, reviewed, status? }.
+  // `status` is the content review state (CONTENT_GUIDE.md); without it, reviewed: false means "draft" and a review date "published".
   function syllabus(classNumber, subjectId) {
     const c = (content[classNumber] && content[classNumber][subjectId]) || (index[classNumber] && index[classNumber][subjectId]);
     return c ? c.syllabus : null;
@@ -295,11 +311,13 @@ globalThis.StudyData = (function () {
   const subjectsLoaded = (classNumber, ids) => subjectFiles(classNumber, ids).every((f) => fileDone[f]);
   const loadPractice = (classNumber, subjectId) => loadFiles(practiceFiles(classNumber, subjectId));
   const practiceLoaded = (classNumber, subjectId) => practiceFiles(classNumber, subjectId).every((f) => fileDone[f]);
+  const loadObjectives = (classNumber) => (hasObjectiveFile(classNumber) ? loadFiles([objectivesFile(classNumber)]) : Promise.resolve(true));
+  const objectivesLoaded = (classNumber) => !hasObjectiveFile(classNumber) || !!fileDone[objectivesFile(classNumber)];
   const loadTimelines = () => loadFiles([timelinesFile]);
   const timelinesLoaded = () => !!fileDone[timelinesFile];
 
   return {
-    subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addIndex, addPractice, practiceFor, addDiagrams, diagramsFor, addTimelines, timelinesFor, timelinesFile, chapters, syllabus,
+    subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addIndex, addPractice, practiceFor, addDiagrams, diagramsFor, objectivesCatalog, addObjectives, objectivesFor, objectivesFile, hasObjectiveFile, loadObjectives, objectivesLoaded, addTimelines, timelinesFor, timelinesFile, chapters, syllabus,
     PATH_SUBJECTS, PATH_PREFIX, addPath, paths, path, pathFile, pathLoaded, loadPath, refActive, refFiles, filesLoaded, loadFiles,
     subject, subjectsFor, files, indexFile, practiceFiles, load, loadSubjects, subjectsLoaded, hasFull, loadPractice, practiceLoaded, loadTimelines, timelinesLoaded, hasBoardContent,
     isLoaded: (c) => !!ready[`${board}:${c}`],

@@ -8,6 +8,8 @@ Do these in order. Stop at the first failure and fix it before going on.
 - [ ] `node scripts/build-index.js --check`: no `data/class*/index.js` is stale. If it reports any, run `node scripts/build-index.js` and look at the diff.
 - [ ] `npm test`: the whole Playwright suite passes (phone and desktop). Run it a second time if anything failed once; a test that passes only sometimes is a bug to chase, not to ignore. First time on a machine: `npx playwright install chromium`.
 
+- [ ] `node scripts/count-content.js`: run before updating store text. It counts chapters, MCQs, written questions, solved examples, flashcards, diagrams, generators, games, topics and timeline events from the data files. Make the numbers in `README.md` and `STORE_LISTING.md` match, rounded down ("over 43,000").
+
 ## 2. Make installed copies update
 
 - [ ] Bump `CACHE` in `sw.js` (`pocket-class-vNN` to `pocket-class-vNN+1`) whenever any app file, script, style or data file changed. Without it, installed web apps keep the old files. (The update test reads the name from `sw.js`, so nothing else to edit.)

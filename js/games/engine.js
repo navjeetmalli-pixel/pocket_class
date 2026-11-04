@@ -24,7 +24,8 @@
 //   api.hold(bool)       stop the clock while the student reads (e.g. an explanation)
 //   api.onTimeUp(fn)     called once when a countdown reaches zero
 //   api.miss({ prompt, yours, right, explain })   add an item to "What you got wrong" (same prompt+yours counted once)
-//   api.answered(item, ok)  MCQ bookkeeping: wrong answers go to My mistakes, right ones clear them (like the quiz)
+//   api.answered(item, ok[, picked])  MCQ bookkeeping: wrong answers go to My mistakes, right ones clear them (like the quiz);
+//                        also the learning record (the objective the question belongs to), picked = chosen option index
 //   api.finish({ stars: 1-3, lines: [text] })      end the game and show the results
 //   api.elapsed()        seconds played so far (not counting pauses); api.live(): is this game still on screen?
 
@@ -77,7 +78,12 @@ const Games = (() => {
   const gens = (c, subj, ch) => (ch.sources ? ch.gens || [] : Gen.forChapter(c, subj.id, ch.id));
   function genItems(c, subj, ch, count, seed) {
     const from = `${subj.short} · ${ch.title}`;
-    return Gen.fromNames(gens(c, subj, ch), count, seed).map((q) => ({ ...q, ref: { key: null, from, cls: c, subject: subj.id } }));
+    // A level's made-up questions belong to the chapter (of its sources) whose generators made them.
+    const home = (q) => (ch.sources ? ch.sources.find((x) => !x.own && Gen.forChapter(x.cls, x.subj.id, x.ch.id).includes(q.gen)) || ch.sources.find((x) => !x.own) : null);
+    return Gen.fromNames(gens(c, subj, ch), count, seed).map((q) => {
+      const h = home(q);
+      return { ...q, ref: { key: null, from, cls: h ? h.cls : c, subject: h ? h.subj.id : subj.id, chapter: h ? h.ch.id : ch.id } };
+    });
   }
 
   // Diagrams { title, svg, caption }.
@@ -161,7 +167,7 @@ const Games = (() => {
     g.seed = newSeed();
     g.data = def.build(ctx.cls, ctx.subj, ctx.ch, g.seed);
     const hud = { ...(def.hud || {}), ...(g.data.hud || {}) };
-    Object.assign(g, { hud, pts: 0, lives: hud.lives || 0, streakNow: 0, misses: [], answers: [], ms: 0, last: Date.now(), paused: false, held: false, done: false, timeUpFn: null, saidLeft: {} });
+    Object.assign(g, { hud, pts: 0, lives: hud.lives || 0, streakNow: 0, misses: [], answers: [], events: [], ms: 0, last: Date.now(), paused: false, held: false, done: false, timeUpFn: null, saidLeft: {} });
 
     g.el.innerHTML = `
       <div class="game-hud" role="group" aria-label="${t("Game status")}">
@@ -240,8 +246,10 @@ const Games = (() => {
         if (same) same.n++;
         else g.misses.push({ ...info, n: 1 });
       },
-      answered(item, ok) {
+      // `picked` (the option index chosen) is optional; it lets a made-up question tell which kind of wrong option was picked.
+      answered(item, ok, picked) {
         const r = item.ref || {};
+        g.events.push(Learn.answerEvent(item, ok, { picked, source: "game" })); // learning record (js/learn.js), written when the game ends
         if (!r.key) return; // made-up questions have nothing to keep
         if (ok) Store.clearMistake(r.key);
         else Store.addMistake(r.key, r.path);
@@ -312,6 +320,9 @@ const Games = (() => {
     document.removeEventListener("visibilitychange", g.onVis);
     const n = Math.max(1, Math.min(3, Math.round(result.stars || 1)));
     const rec = Store.recordGame(g.ctx.key, g.def.type, { score: g.pts, stars: n, answers: g.answers });
+    // Learning record: the answers, plus one "game" event for the round (it names no objective, so it changes no state).
+    const src = g.ctx.ch.sources ? g.ctx.ch.sources.find((x) => !x.own) : null;
+    g.learned = Learn.record([...g.events, { type: "game", cls: src ? src.cls : g.ctx.cls, subject: src ? src.subj.id : g.ctx.subj.id, chapter: src ? src.ch.id : g.ctx.ch.id, ok: n >= 2, source: "game" }]);
     const wrongNow = g.answers.filter((a) => !a.ok).length;
     const { def, ctx } = g;
     const lines = [
@@ -344,6 +355,7 @@ const Games = (() => {
           <a class="btn" href="${ctx.back}">${t(ctx.backLabel || "Back")}</a>
         </div>
       </div>
+      ${Learn.improvedHTML(g.learned)}
       <h2 class="block-title">${t("What you got wrong")}</h2>
       ${missed ? `<div class="stack">${missed}</div>` : `<div class="card small">${t("Nothing! Every answer was right. 🎉")}</div>`}
       <div class="sr-only" role="status" aria-live="polite" data-g="live"></div>`;

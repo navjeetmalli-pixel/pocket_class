@@ -12,7 +12,7 @@
   const { D, cls, topbar, pageHead, emptyState, notFound, quizItems } = Views._;
 
   const SET = 10; // questions in one round
-  const PASS = 80; // percent that masters a level
+  const passPct = () => Math.round(Mastery.config.pathPass * 100); // percent that masters a level (js/mastery.js)
   const CHECK_ID = "find-my-level";
 
   const levelName = (n) => t("Level {n}", { n });
@@ -72,6 +72,13 @@
 
   // ---------- questions ----------
 
+  // Where a made-up question belongs for the learning record: the chapter (of the level's sources) whose generators made it.
+  function genRef(m, q, from) {
+    const src = m.sources.find((x) => !x.own && Gen.forChapter(x.cls, x.subj.id, x.ch.id).includes(q.gen)) || m.sources.find((x) => !x.own) || m.sources[0];
+    if (!src) return { key: null, from, cls: cls(), subject: m.subjectId, path: true };
+    return { key: null, from, cls: src.cls, subject: src.subj.id, chapter: src.ch.id, path: true };
+  }
+
   const easy = (it) => it.level || 2;
 
   // 10 questions: saved ones from every source (spread across them) plus a few made-up ones where generators fit,
@@ -90,7 +97,7 @@
           again = true;
         }
     }
-    const gen = Gen.fromNames(m.gens, nGen, (Date.now() + Math.floor(Math.random() * 1e6)) >>> 0).map((q) => ({ ...q, ref: { key: null, from, cls: cls(), subject: m.subjectId, path: true } }));
+    const gen = Gen.fromNames(m.gens, nGen, (Date.now() + Math.floor(Math.random() * 1e6)) >>> 0).map((q) => ({ ...q, ref: genRef(m, q, from) }));
     // Keep a stable sort by difficulty after a shuffle, so the order inside a difficulty changes every time.
     return shuffle([...picked, ...gen]).sort((a, b) => easy(a) - easy(b));
   }
@@ -101,7 +108,7 @@
     const mild = all.filter((it) => easy(it) <= 2);
     const pool = mild.length >= 3 ? mild : all;
     const items = pool.slice(0, 3);
-    if (items.length < 3) items.push(...Gen.fromNames(m.gens, 3 - items.length, Date.now() >>> 0).map((q) => ({ ...q, ref: { key: null, from: m.level.title, cls: cls(), subject: m.subjectId, path: true } })));
+    if (items.length < 3) items.push(...Gen.fromNames(m.gens, 3 - items.length, Date.now() >>> 0).map((q) => ({ ...q, ref: genRef(m, q, m.level.title) })));
     return items;
   }
 
@@ -198,7 +205,7 @@
         ${T.checked ? `<p class="small muted" style="margin:12px 2px 0">${t("Your starting check placed you at {level}.", { level: levelName(topic.levels[Math.min(T.start, topic.levels.length - 1)].level) })}</p>` : ""}
         <h2 class="block-title">${t("The ladder")}</h2>
         <ol class="list" style="list-style:none;padding:0" aria-label="${t("Levels")}">${rows}</ol>
-        <p class="tiny muted" style="margin-top:12px">${t("Score {n}% or more in a level to master it and unlock the next. You can still open any level.", { n: PASS })}</p>`,
+        <p class="tiny muted" style="margin-top:12px">${t("Score {n}% or more in a level to master it and unlock the next. You can still open any level.", { n: passPct() })}</p>`,
       mount(el) {
         el.onclick = (e) => {
           if (!e.target.closest("[data-act=zero]")) return;
@@ -267,11 +274,11 @@
       record: { subject: D.PATH_PREFIX + id, cls: cls(), kind: "path" },
       onDone(score, total) {
         const res = Store.recordLevel(id, topicId, levelId, pct(score, total));
-        announce(pct(score, total) >= PASS ? (next ? t("Level mastered. {level} is unlocked.", { level: levelName(next.level) }) : t("Level mastered. You have finished this topic.")) : t("Not mastered yet. You need {n}%.", { n: PASS }));
+        announce(pct(score, total) >= passPct() ? (next ? t("Level mastered. {level} is unlocked.", { level: levelName(next.level) }) : t("Level mastered. You have finished this topic.")) : t("Not mastered yet. You need {n}%.", { n: passPct() }));
         return res;
       },
       resultExtra(score, total) {
-        const ok = pct(score, total) >= PASS;
+        const ok = pct(score, total) >= passPct();
         return `<div class="card path-result ${ok ? "good" : ""}" style="margin-top:14px">
           <strong>${ok ? t("Level mastered! 🎉") : t("Not mastered yet")}</strong>
           <p class="small muted" style="margin-top:6px">${
@@ -279,7 +286,7 @@
               ? next
                 ? t("{level} is unlocked.", { level: levelName(next.level) })
                 : t("You have finished the top level of this topic.")
-              : t("You need {n}% to master a level. Read the notes again, then try a new set.", { n: PASS })
+              : t("You need {n}% to master a level. Read the notes again, then try a new set.", { n: passPct() })
           }</p>
           <div class="row wrap" style="margin-top:10px">
             ${ok && next ? `<a class="btn primary" href="${href(id, topicId, next.id)}">${t("Go to {level}", { level: levelName(next.level) })} ${icon("arrow")}</a>` : ""}
@@ -469,6 +476,7 @@
       if (ok) s.right++;
       const k = s.item.ref && s.item.ref.key;
       if (k) (ok ? Store.clearMistake(k) : Store.addMistake(k, true));
+      Learn.record([Learn.answerEvent(s.item, ok, { picked: orig, source: "path" })]);
       draw();
       const f = box.querySelector(".feedback");
       if (f) announce(f.textContent);

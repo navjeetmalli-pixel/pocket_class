@@ -21,9 +21,13 @@
     const subj = D.subjectsFor(c)
       .map((s) => {
         const x = subjectStats(c, s.id);
+        // Skills (learning objectives) that have been started in this subject, counted by state (js/learn.js).
+        const sk = Learn.counts(c, s.id);
+        const chips = Mastery.STATES.filter((st) => sk[st]).map((st) => `<span class="obj-chip s-${st}"><span aria-hidden="true">${Mastery.MARK[st]}</span> ${t(Mastery.LABEL[st])} · ${sk[st]}</span>`);
         return `<div style="--c:${s.color}">
           <div class="top"><span><strong>${s.icon} ${esc(s.name)}</strong></span><span class="muted">${t("{done}/{total} chapters", { done: x.done, total: x.total })}${x.avg != null ? ` · ${t("{n}% avg", { n: x.avg })}` : ""}</span></div>
           <span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span>
+          ${chips.length ? `<div class="obj-counts" role="group" aria-label="${t("Skills by state")}">${chips.join("")}</div>` : ""}
         </div>`;
       })
       .join("");
