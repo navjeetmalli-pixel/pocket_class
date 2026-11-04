@@ -1,7 +1,7 @@
 // Offline support: caches the app shell on first visit, plus each class's index and each subject's data once it's opened.
 // Online, files come fresh from the network (and refresh the cache);
 // offline or on a very slow connection, the cached copy is used.
-const CACHE = "vidya-v29";
+const CACHE = "pocket-class-v32";
 
 const FILES = [
   "./",
@@ -30,6 +30,7 @@ const FILES = [
   "js/views/parent.js",
   "js/views/search.js",
   "js/views/onboarding.js",
+  "js/views/paths.js",
   "js/views/settings.js",
   "js/sheets.js",
   "js/papers.js",
@@ -59,7 +60,7 @@ self.addEventListener("message", (e) => {
 
 self.addEventListener("activate", (e) => {
   // Other apps on the same domain share Cache Storage, so only remove this app's own old caches.
-  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith("vidya-") && k !== CACHE).map((k) => caches.delete(k)))));
+  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => (k.startsWith("vidya-") || k.startsWith("pocket-class-")) && k !== CACHE).map((k) => caches.delete(k)))));
   self.clients.claim();
 });
 

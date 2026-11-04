@@ -618,9 +618,8 @@ const Gen = (() => {
     };
   }
 
-  // `count` fresh questions for a chapter, cycling through its generators.
-  function questions(cls, subject, chapterId, count, seed) {
-    const names = forChapter(cls, subject, chapterId);
+  // `count` fresh questions from some generators (by name), cycling through them.
+  function fromNames(names, count, seed) {
     if (!names.length) return [];
     const out = [];
     const seen = new Set();
@@ -634,5 +633,8 @@ const Gen = (() => {
     return out;
   }
 
-  return { rng, forChapter, make, questions, names: Object.keys(G), MAP };
+  // `count` fresh questions for a chapter, cycling through its generators.
+  const questions = (cls, subject, chapterId, count, seed) => fromNames(forChapter(cls, subject, chapterId), count, seed);
+
+  return { rng, forChapter, make, questions, fromNames, names: Object.keys(G), MAP };
 })();

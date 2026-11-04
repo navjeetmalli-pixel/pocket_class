@@ -178,6 +178,7 @@ const Quiz = (() => {
           ${s.opts.backHref ? `<a class="btn" href="${s.opts.backHref}">${esc(t(s.opts.backLabel || "Back"))}</a>` : ""}
         </div>
       </div>
+      ${s.opts.resultExtra ? s.opts.resultExtra(score, n) : ""}
       ${breakdown}
       <h2 class="block-title">${t("Review answers")}</h2>
       <div class="stack">${review}</div>`;
@@ -223,10 +224,12 @@ const Quiz = (() => {
       // Generated questions have no key: they're new every time, so there's nothing to revisit.
       if (!x.ref.key) return;
       if (x.picked === x.answer) Store.clearMistake(x.ref.key);
-      else Store.addMistake(x.ref.key);
+      else Store.addMistake(x.ref.key, x.ref.path);
     });
     const answers = s.items.filter((x) => x.ref.key && x.picked !== null).map((x) => ({ key: x.ref.key, ok: x.picked === x.answer }));
     if (s.opts.record) Store.recordQuiz({ ...s.opts.record, title: s.opts.title, score, total: s.items.length, answers });
+    // Practice by topic: the level is marked mastered here, and the result screen says what comes next.
+    if (s.opts.onDone) s.opts.onDone(score, s.items.length);
     render();
     window.scrollTo({ top: 0 });
   }

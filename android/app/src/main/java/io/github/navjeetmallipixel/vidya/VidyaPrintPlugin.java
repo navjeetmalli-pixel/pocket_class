@@ -19,7 +19,7 @@ public class VidyaPrintPlugin extends Plugin {
 
     @PluginMethod
     public void print(PluginCall call) {
-        String title = call.getString("title", "Vidya");
+        String title = call.getString("title", "Pocket Class");
         getActivity().runOnUiThread(() -> {
             WebView webView = getBridge().getWebView();
             PrintManager printManager = (PrintManager) getActivity().getSystemService(Context.PRINT_SERVICE);

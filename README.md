@@ -47,6 +47,10 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 
 Progress is saved only on the device (browser storage). No account, no internet needed after the first visit. Settings → *Save backup* downloads it as a file, which *Restore backup* loads on another phone.
 
+## Practice by topic
+
+`#/paths` is a subject, topic, level ladder for Maths, Science, English and Punjabi, from Level 0 (before Class 1) up to advanced, built from chapters that already exist in other classes (`data/paths/{subject}.js`, loaded when the subject is opened). Each level has short notes, a worked example, links to the full chapters, "Practice 10 questions" (80% masters the level and unlocks the next; any level can still be opened with "Skip ahead"), and a printable numbered worksheet. "Find my level" asks about 2 questions per level and stops after two misses in a row. Progress is saved per student (`paths` in the student's data, so backups and student switching include it). Wrong answers go to My mistakes. Code: `js/views/paths.js`; format: CONTENT_GUIDE.md.
+
 ## Run it
 
 Easiest: open `index.html` in a browser. Everything works, except installing it as an app and offline caching, which need a web server.

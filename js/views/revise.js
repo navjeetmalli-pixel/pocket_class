@@ -136,6 +136,10 @@
         })()}
         <h2 class="block-title">${t("Bookmarked chapters")}</h2>
         ${bookmarks}
+        <a class="card row" href="#/paths" style="gap:16px;margin-top:12px">
+          <div class="ch-num" style="width:52px;height:52px">${icon("target")}</div>
+          <div class="grow"><strong>${t("Practice by topic")}</strong><div class="small muted">${t("Climb a ladder of levels in a topic, from Level 0 to advanced.")}</div></div>
+          ${icon("next")}</a>
         <a class="card row" href="#/sheets" style="gap:16px;margin-top:12px">
           <div class="ch-num" style="width:52px;height:52px">${icon("print")}</div>
           <div class="grow"><strong>${t("Practice sheets")}</strong><div class="small muted">${t("Pick chapters and question types, then print with an answer key.")}</div></div>
@@ -152,8 +156,10 @@
     const items = Store.mistakesFor(c)
       .map((qk) => {
         const k = Store.parseKey(qk);
-        const f = findChapter(c, k.subject, k.chapterId);
-        return f ? quizItems(c, f.subj, f.ch).find((it) => it.ref.key === qk) : null;
+        // Mistakes from Practice by topic can be in another class's chapter, or in a path's own chapter (class 0).
+        const f = findChapter(k.cls, k.subject, k.chapterId);
+        const it = f ? quizItems(k.cls, f.subj, f.ch).find((x) => x.ref.key === qk) : null;
+        return it && k.cls !== c ? { ...it, ref: { ...it.ref, path: true } } : it;
       })
       .filter(Boolean);
     return {

@@ -30,6 +30,8 @@ const Store = (() => {
     guided: {}, // chapter key -> { at, score, total, sureWrong } for the last guided lesson
     teach: {}, // chapter key -> { text, ticks: [indexes of key points ticked], at }: the student's own-words summary
     revise: {}, // chapter key -> { last, n }: when the chapter was last studied and how many times
+    paths: {}, // "maths" -> { "fractions": { start, checked, levels: { "fractions-0": { best, n, at, mastered } } } }: Practice by topic
+    pm: {}, // question key -> true: mistakes made in Practice by topic in another class's chapter (shown in My mistakes too)
     days: {}, // "2026-10-28" -> { min, acts }
     focusMin: 0,
     focusLen: 25,
@@ -196,16 +198,45 @@ const Store = (() => {
     },
     isBookmarked: (k) => state.bookmarks.includes(k),
 
-    addMistake(qk) {
+    // `outside`: the question is from a chapter outside the student's class (Practice by topic), so My mistakes lists it too.
+    addMistake(qk, outside) {
       state.mistakes[qk] = Date.now();
+      if (outside) state.pm[qk] = true;
       save();
     },
     clearMistake(qk) {
       delete state.mistakes[qk];
+      delete state.pm[qk];
       save();
     },
+    // Class 0 is the pseudo class of a path's own chapters (see data/registry.js).
     mistakesFor(cls) {
-      return Object.keys(state.mistakes).filter((k) => parseKey(k).cls === cls);
+      return Object.keys(state.mistakes).filter((k) => {
+        const c = parseKey(k).cls;
+        return c === cls || c === 0 || state.pm[k];
+      });
+    },
+
+    // ----- Practice by topic -----
+    pathTopic: (subject, topic) => Object.assign({ start: 0, checked: null, levels: {} }, ((state.paths[subject] || {})[topic]) || {}),
+    // Saves a finished level round. A level is mastered once a round scores 80% or more, and stays mastered.
+    recordLevel(subject, topic, levelId, percent) {
+      const t = ((state.paths[subject] = state.paths[subject] || {})[topic] = state.paths[subject][topic] || { start: 0, checked: null, levels: {} });
+      const r = t.levels[levelId] || { best: 0, n: 0, mastered: false };
+      t.levels[levelId] = { best: Math.max(r.best, percent), n: r.n + 1, at: Date.now(), mastered: r.mastered || percent >= 80 };
+      save();
+      return t.levels[levelId];
+    },
+    // Where the student starts in a topic: an index into its levels (from "Find my level" or "Start from Level 0").
+    setPathStart(subject, topic, start, checked) {
+      const t = ((state.paths[subject] = state.paths[subject] || {})[topic] = state.paths[subject][topic] || { start: 0, checked: null, levels: {} });
+      t.start = start;
+      t.checked = checked ? Date.now() : t.checked;
+      today().acts++;
+      save();
+    },
+    pathMastered(subject) {
+      return Object.values(state.paths[subject] || {}).reduce((a, t) => a + Object.values(t.levels || {}).filter((l) => l.mastered).length, 0);
     },
 
     setCard(ck, status) {

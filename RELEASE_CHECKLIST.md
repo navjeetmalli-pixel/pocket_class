@@ -10,7 +10,7 @@ Do these in order. Stop at the first failure and fix it before going on.
 
 ## 2. Make installed copies update
 
-- [ ] Bump `CACHE` in `sw.js` (`vidya-vNN` to `vidya-vNN+1`) whenever any app file, script, style or data file changed. Without it, installed web apps keep the old files. (The update test reads the name from `sw.js`, so nothing else to edit.)
+- [ ] Bump `CACHE` in `sw.js` (`pocket-class-vNN` to `pocket-class-vNN+1`) whenever any app file, script, style or data file changed. Without it, installed web apps keep the old files. (The update test reads the name from `sw.js`, so nothing else to edit.)
 - [ ] Add any new app file (a new `js/*.js`) to the `FILES` list in `sw.js` and to `index.html`.
 
 ## 3. Build the store apps (only for a store release)

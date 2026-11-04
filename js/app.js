@@ -15,6 +15,7 @@ const App = {
     ["#/progress", "progress", "Progress", ["progress"]],
   ];
   const SIDE_EXTRA = [
+    ["#/paths", "target", "Practice by topic", ["paths", "pathsheet"]],
     ["#/search", "search", "Search", ["search"]],
     ["#/settings", "settings", "Settings", ["settings"]],
   ];
@@ -28,6 +29,11 @@ const App = {
     [/^revise$/, Views.revise],
     [/^revise\/mistakes$/, Views.mistakes],
     [/^revise\/due(?:\/(\w+)\/([\w-]+))?$/, Views.dueRound],
+    [/^paths$/, Views.pathsPicker],
+    [/^paths\/(\w+)$/, Views.pathsSubject],
+    [/^paths\/(\w+)\/([\w-]+)$/, Views.pathsTopic],
+    [/^paths\/(\w+)\/([\w-]+)\/([\w-]+)$/, Views.pathsLevel],
+    [/^pathsheet\/(\w+)\/([\w-]+)\/([\w-]+)(?:\?(.*))?$/, Sheets.levelSheet],
     [/^sheet\/(\w+)$/, Views.sheet],
     [/^sheets(?:\/(\w+))?$/, Sheets.maker],
     [/^worksheet\/(\d+)\/(\w+)(?:\?(.*))?$/, Sheets.worksheet],
@@ -97,9 +103,22 @@ const App = {
       const ids = Views.testSetupNeeds(m[1]);
       return { cls: own, ids, practice: true };
     }
-    if (p === "revise/mistakes") return { cls: own, ids: subjectsOf(Store.mistakesFor(own)), practice: true };
+    if (p === "revise/mistakes") return { cls: own, ids: subjectsOf(Store.mistakesFor(own).filter((k) => Store.parseKey(k).cls === own)), practice: true };
     if ((m = p.match(/^revise\/due(?:\/(\w+)\/[\w-]+)?$/))) return { cls: own, ids: m[1] ? [m[1]] : subjectsOf(Store.due(own).map((e) => e.key)), practice: true };
     return null;
+  }
+
+  // Practice by topic (and My mistakes, which can hold questions from other classes' chapters) need files beyond one class:
+  // { paths: [subjects whose data/paths file is needed], pairs: [{ cls, subject }] whose chapter files and practice banks are }.
+  // The pairs of a level are known only once its path file has loaded, so this is asked again after each step.
+  function extraNeeds(p) {
+    if (p === "revise/mistakes") {
+      const own = Store.state.profile.cls;
+      const keys = Store.mistakesFor(own).map(Store.parseKey);
+      const paths = [...new Set(keys.filter((k) => k.cls === 0).map((k) => k.subject.slice(StudyData.PATH_PREFIX.length)))];
+      return { paths: paths.filter((x) => StudyData.PATH_SUBJECTS.includes(x)), pairs: keys.filter((k) => k.cls > 0 && k.cls !== own && StudyData.classes.includes(k.cls) && StudyData.subject(k.subject)) };
+    }
+    return Views.pathNeeds(p);
   }
 
   const empty = (emoji, html, retry) =>
@@ -178,6 +197,20 @@ const App = {
             () => StudyData.loadPractice(nd.cls, only)
           );
       }
+    }
+
+    if (Store.state.profile) {
+      const ex = extraNeeds(p);
+      const lost = t("This couldn't be loaded. Check your internet connection and try again.");
+      const miss = ex ? ex.paths.filter((s) => !StudyData.pathLoaded(s)) : [];
+      if (miss.length)
+        return loadThen(main, p, opts, "📚", t("Loading…"), lost, () => Promise.all(miss.map(StudyData.loadPath)).then((r) => r.every(Boolean)), () => keepOffline(miss.map(StudyData.pathFile)));
+      const files = ex ? StudyData.refFiles(ex.pairs) : [];
+      if (!StudyData.filesLoaded(files))
+        return loadThen(main, p, opts, "📚", t("Loading…"), lost, () => StudyData.loadFiles(files), () => {
+          [...new Set(ex.pairs.map((x) => x.cls))].forEach((c) => Store.migrate(c));
+          keepOffline(files);
+        });
     }
 
     let view;

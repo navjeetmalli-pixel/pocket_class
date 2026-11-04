@@ -19,7 +19,7 @@ public class VidyaPrintPlugin: CAPPlugin, CAPBridgedPlugin {
             }
             let info = UIPrintInfo(dictionary: nil)
             info.outputType = .general
-            info.jobName = call.getString("title") ?? "Vidya"
+            info.jobName = call.getString("title") ?? "Pocket Class"
             let controller = UIPrintInteractionController.shared
             controller.printInfo = info
             controller.printFormatter = webView.viewPrintFormatter()

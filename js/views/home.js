@@ -92,6 +92,7 @@
           ${tool("#/revise/mistakes", "target", t("My mistakes"), mistakes ? t("{n} {n:question|questions} to fix", { n: mistakes }) : t("Nothing to fix yet"))}
           ${tool("#/timer", "timer", t("Focus timer"), t("Study in 25-minute blocks"))}
           ${tool("#/revise", "formula", t("Formula sheets"), t("Quick revision lists"))}
+          ${tool("#/paths", "target", t("Practice by topic"), t("Level 0 up to advanced"))}
           ${tool("#/sheets", "print", t("Practice sheets"), t("Make and print your own"))}
           ${Papers.CLASSES.includes(c) ? tool("#/papers", "test", t("Sample papers"), t("Full board-pattern papers")) : ""}
         </div>

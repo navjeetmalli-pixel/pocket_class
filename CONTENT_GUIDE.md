@@ -199,3 +199,34 @@ Rules (the validator checks most of them):
 - Accuracy first: compute coordinates (ray diagrams to scale, angles correct, graphs through the right points).
   If you can't draw something correctly as a simple schematic, leave it out.
 - No `<script>`, event handlers, `<image>`, `<foreignObject>` or links. Keep each SVG under about 10 KB.
+
+## Practice by topic (data/paths)
+
+One file per subject: `data/paths/{subject}.js` where subject is `maths`, `science`, `english` or `punjabi`. Check with `node scripts/validate.js data/paths/maths.js`.
+
+```js
+StudyData.addPath("maths", {
+  title: "Maths",
+  titleLocal: "ਗਣਿਤ / गणित",            // optional
+  topics: [{
+    id: "fractions", title: "Fractions, decimals and percentages", icon: "½", summary: "One line.",
+    levels: [{
+      id: "fractions-0",                // kebab-case, unique in the file; "find-my-level" is reserved
+      level: 0,                         // 0 = before Class 1, then 1-12; never decreasing inside a topic
+      title: "Halves and quarters",
+      goal: "One sentence: what the student can do after this level.",
+      from: [                           // existing chapters this level uses
+        { cls: 3, subject: "maths", chapter: "fractions" },
+        { cls: 6, subject: "mathspb", chapter: "fractions", board: "pseb" }   // board "cbse" or "pseb": only that board's students
+      ],
+      gens: ["fracOf"],                 // optional extra generators from js/gen.js
+      own: null                         // or a chapter object (normal chapter format) where no existing chapter fits
+    }]
+  }]
+});
+```
+
+- Each level needs at least 10 multiple-choice questions for each board: own quiz + referenced chapters' quiz + their practice banks. A generator that fits counts as plenty. Refs without `board` are used for both boards.
+- References may name any class's chapter, whatever the student's board; the loader fetches `data/class{N}/{subject}.js` and its practice banks directly.
+- `own` is stored as a normal chapter under class `0`, subject `path-{subject}`, chapter id = the level id. Keys therefore look like `0/path-maths/fractions-0/q1x2y3z`. `id` is set to the level id, and `title`, `section`, `summary` default to the level's title, the topic's title and the level's goal if left out. It must still pass the normal chapter checks (notes, 3+ terms, 5+ quiz, no HTML or LaTeX).
+- Practice shows the level's own chapter notes, or the first referenced chapter's first two note topics.

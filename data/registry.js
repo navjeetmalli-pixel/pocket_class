@@ -112,6 +112,52 @@ globalThis.StudyData = (function () {
     12: ["physics", "chemistry", "biology", "maths", "economics", "geography"],
   };
 
+  // Practice by topic ("paths"): one file per subject, data/paths/{subject}.js, loaded when the student opens that
+  // subject. A path is a ladder of levels (Level 0 up to Class 12 standard) in each topic; a level reuses existing
+  // chapters (`from`) and may carry a chapter of its own (`own`) where no existing chapter fits.
+  // Own chapters are ordinary chapters stored under a pseudo class and subject: class 0, subject "path-{subject}",
+  // chapter id = the level's id. So their keys look like "0/path-maths/fractions-0" and "0/path-maths/fractions-0/q1x2y3z",
+  // and notes, quizzes, My mistakes and the worksheet maker treat them like any other chapter.
+  const PATH_SUBJECTS = ["maths", "science", "english", "punjabi"];
+  const PATH_PREFIX = "path-";
+  const pathData = {};
+
+  function addPath(subject, data) {
+    pathData[subject] = data;
+    const own = [];
+    for (const topic of data.topics || [])
+      for (const lv of topic.levels || []) {
+        if (!lv.own) continue;
+        // Defaults so an own chapter can leave out what the level already says.
+        lv.own.id = lv.id;
+        lv.own.title = lv.own.title || lv.title;
+        lv.own.section = lv.own.section || topic.title;
+        lv.own.summary = lv.own.summary || lv.goal;
+        own.push(lv.own);
+      }
+    add(0, PATH_PREFIX + subject, { chapters: own });
+  }
+  const paths = () => PATH_SUBJECTS.map((id) => subjects.find((s) => s.id === id));
+  const path = (subject) => pathData[subject] || null;
+  const pathFile = (subject) => `data/paths/${subject}.js`;
+  const pathLoaded = (subject) => !!pathData[subject];
+  const loadPath = (subject) => (PATH_SUBJECTS.includes(subject) ? loadFiles([pathFile(subject)]) : Promise.resolve(false));
+  // The board a reference is for: refs without a board are for everyone.
+  const refActive = (ref) => !ref.board || ref.board === board;
+  // Files a set of { cls, subject } pairs needs: the subject's data file and its practice banks. These ignore the board's
+  // catalog (a level can name any class's chapter), so they are listed here and not through files().
+  const refFiles = (pairs) => {
+    const seen = new Set();
+    const out = [];
+    for (const { cls, subject } of pairs) {
+      if (!cls || seen.has(cls + "/" + subject)) continue;
+      seen.add(cls + "/" + subject);
+      out.push(`data/class${cls}/${subject}.js`, ...practiceFiles(cls, [subject]));
+    }
+    return out;
+  };
+  const filesLoaded = (srcs) => srcs.every((f) => fileDone[f]);
+
   const classes = Object.keys(catalog).map(Number);
   const content = {}; // full subject files, once loaded
   const index = {}; // per class: { subjectId: { syllabus, chapters: [{ id, title, section, summary, nTerms }] } }
@@ -170,7 +216,11 @@ globalThis.StudyData = (function () {
   }
 
   function subject(id) {
-    return subjects.find((s) => s.id === id);
+    const hit = subjects.find((s) => s.id === id);
+    if (hit || !String(id).startsWith(PATH_PREFIX)) return hit;
+    // Pseudo subject of a path's own chapters: looks like the real subject, named for the path.
+    const base = subjects.find((s) => s.id === id.slice(PATH_PREFIX.length));
+    return base && PATH_SUBJECTS.includes(base.id) ? { ...base, id, name: `${base.name} · Practice by topic` } : undefined;
   }
 
   function subjectsFor(classNumber) {
@@ -239,6 +289,7 @@ globalThis.StudyData = (function () {
 
   return {
     subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addIndex, addPractice, practiceFor, addDiagrams, diagramsFor, chapters, syllabus,
+    PATH_SUBJECTS, PATH_PREFIX, addPath, paths, path, pathFile, pathLoaded, loadPath, refActive, refFiles, filesLoaded, loadFiles,
     subject, subjectsFor, files, indexFile, practiceFiles, load, loadSubjects, subjectsLoaded, hasFull, loadPractice, practiceLoaded, hasBoardContent,
     isLoaded: (c) => !!ready[`${board}:${c}`],
     get board() {

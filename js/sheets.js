@@ -192,16 +192,62 @@ const Sheets = (() => {
     if (!chs.length) return Views.ui.notFound();
     if (!o.ch) o.ch = chs.map((x) => x.id);
 
-    // Same settings + same sheet number = same sheet.
-    const R = Gen.rng(hash(`${c}/${subjectId}/${query({ ...o, n: 0 })}`) ^ Math.imul(o.n, 2654435761));
-    const src = sources(c, subj, chs, o.d);
+    const classLine = t("Class {n} · {subject}", { n: c, subject: esc(subj.name) });
+    return sheetPage({
+      o,
+      src: sources(c, subj, chs, o.d).map((x) => ({ ...x, c, sid: subjectId })),
+      // Same settings + same sheet number = same sheet.
+      seedKey: `${c}/${subjectId}/${query({ ...o, n: 0 })}`,
+      subjectId,
+      base: `#/worksheet/${c}/${subjectId}?`,
+      back: `#/sheets/${subjectId}`,
+      title: t("{subject} practice sheet {n}", { subject: subj.short, n: o.n }),
+      barTitle: t("{subject} · Sheet {n}", { subject: subj.short, n: o.n }),
+      classLine,
+      chNames: chs.length === all.length ? t("All chapters") : chs.map((x) => x.title).join(", "),
+      footer: t("Pocket Class India · Class {c} {subject} · Sheet {n}", { c, subject: esc(subj.name), n: o.n }),
+      query,
+    });
+  }
+
+  // A worksheet for one level of Practice by topic (#/pathsheet/{subject}/{topic}/{level}): questions from the level's own
+  // chapter and the chapters it uses, in any class. Sheet numbers work as above.
+  function levelSheet([subjectId, topicId, levelId, q]) {
+    const model = Views.levelModel(subjectId, topicId, levelId);
+    if (!model) return Views.ui.notFound();
+    const dflt = new URLSearchParams("m=10&s=3&l=1&g=4");
+    for (const [k, v] of new URLSearchParams(q || "")) dflt.set(k, v);
+    const o = parse(dflt.toString());
+    const lq = (x) => `m=${x.m}&s=${x.s}&l=${x.l}&g=${x.g}&k=${x.k}&n=${x.n}`;
+    const src = model.sources.flatMap((s) => sources(s.cls, s.subj, [s.ch], 0).map((x) => ({ ...x, c: s.cls, sid: s.subj.id, gen: 0 })));
+    if (model.gens.length) src.push({ ch: { id: "gens", title: model.level.title }, mcq: [], short: [], long: [], gen: 1, genQs: (n, seed) => Gen.fromNames(model.gens, n, seed) });
+    const label = `${model.subjectName} · ${model.topic.title} · ${t("Level {n}", { n: model.level.level })}`;
+    return sheetPage({
+      o,
+      src,
+      seedKey: `path/${subjectId}/${levelId}/${lq({ ...o, n: 0 })}`,
+      subjectId,
+      base: `#/pathsheet/${subjectId}/${topicId}/${levelId}?`,
+      back: `#/paths/${subjectId}/${topicId}/${levelId}`,
+      title: t("{subject} practice sheet {n}", { subject: model.level.title, n: o.n }),
+      barTitle: t("{subject} · Sheet {n}", { subject: model.level.title, n: o.n }),
+      classLine: esc(label),
+      chNames: model.level.title,
+      footer: t("Pocket Class India · {subject} · Sheet {n}", { subject: esc(label), n: o.n }),
+      query: lq,
+    });
+  }
+
+  // The page for any sheet. `src` lists what to draw on: { ch, mcq, short, long, gen (count), c, sid, genQs? } per source.
+  function sheetPage({ o, src, seedKey, subjectId, base, back, title, barTitle, classLine, chNames, footer, query }) {
+    const R = Gen.rng(hash(seedKey) ^ Math.imul(o.n, 2654435761));
     const pick = (k, count) => spread(src.map((x) => seededShuffle(x[k], R)), count);
     const mcq = pick("mcq", o.m).map((it) => ({ ...it, order: it.keepOrder ? [0, 1, 2, 3] : seededShuffle([0, 1, 2, 3], R) }));
     const short = pick("short", o.s);
     const long = pick("long", o.l);
     const genCh = src.filter((x) => x.gen);
     const gen = genCh.length
-      ? spread(genCh.map((x) => Gen.questions(c, subjectId, x.ch.id, o.g, Math.floor(R.next() * 2 ** 31))), o.g)
+      ? spread(genCh.map((x) => { const seed = Math.floor(R.next() * 2 ** 31); return x.genQs ? x.genQs(o.g, seed) : Gen.questions(x.c, x.sid, x.ch.id, o.g, seed); }), o.g)
       : [];
 
     const sections = [];
@@ -221,14 +267,12 @@ const Sheets = (() => {
     [...short, ...long].forEach((x) => key.push(`<li value="${++k}">${rich(x.a)}</li>`));
     gen.forEach((x) => key.push(`<li value="${++k}"><strong>${rich(x.options[0])}</strong><br><span class="ws-steps">${x.steps.map(rich).join("<br>")}</span></li>`));
 
-    const chNames = chs.length === all.length ? t("All chapters") : chs.map((x) => x.title).join(", ");
-    const base = `#/worksheet/${c}/${subjectId}?`;
     const empty = !sections.length;
 
     return {
-      title: t("{subject} practice sheet {n}", { subject: subj.short, n: o.n }),
+      title,
       html: `
-        ${Views.ui.topbar(t("{subject} · Sheet {n}", { subject: subj.short, n: o.n }), `#/sheets/${subjectId}`)}
+        ${Views.ui.topbar(barTitle, back)}
         <div class="ws-toolbar no-print">
           <a class="btn" href="${base}${query({ ...o, n: o.n - 1 })}" ${o.n > 1 ? "" : 'aria-disabled="true" tabindex="-1" style="opacity:.45;pointer-events:none"'}>${icon("back")} ${t("Sheet {n}", { n: Math.max(1, o.n - 1) })}</a>
           <a class="btn" href="${base}${query({ ...o, n: o.n + 1 })}">${t("New sheet")} ${icon("next")}</a>
@@ -240,7 +284,7 @@ const Sheets = (() => {
             ? Views.ui.emptyState("📝", t("No questions match these settings. Go back and pick more chapters or question types."))
             : `<article class="ws">
           <header class="ws-head">
-            <div class="ws-title"><strong>${t("Practice Sheet {n}", { n: o.n })}</strong><span>${t("Class {n} · {subject}", { n: c, subject: esc(subj.name) })}</span></div>
+            <div class="ws-title"><strong>${t("Practice Sheet {n}", { n: o.n })}</strong><span>${classLine}</span></div>
             <div class="ws-chapters">${esc(chNames)}</div>
             <div class="ws-fields"><span>${t("Name:")} <i></i></span><span>${t("Roll no.:")} <i></i></span><span>${t("Date:")} <i></i></span></div>
             <div class="ws-meta"><span>${t("Maximum marks: {n}", { n: total })}</span><span>${t("Suggested time: {n} min", { n: minutes })}</span><span>${t("Marks scored: ______ / {n}", { n: total })}</span></div>
@@ -252,10 +296,10 @@ const Sheets = (() => {
                 ${sec.html}</section>`
             )
             .join("")}
-          <footer class="ws-foot">${t("Pocket Class India · Class {c} {subject} · Sheet {n}", { c, subject: esc(subj.name), n: o.n })}</footer>
+          <footer class="ws-foot">${footer}</footer>
         </article>
         <article class="ws ws-key" ${o.k ? "" : "hidden"}>
-          <header class="ws-head"><div class="ws-title"><strong>${t("Answer key · Sheet {n}", { n: o.n })}</strong><span>${t("Class {n} · {subject}", { n: c, subject: esc(subj.name) })}</span></div></header>
+          <header class="ws-head"><div class="ws-title"><strong>${t("Answer key · Sheet {n}", { n: o.n })}</strong><span>${classLine}</span></div></header>
           <ol class="ws-answers">${key.join("")}</ol>
         </article>`
         }`,
@@ -293,5 +337,5 @@ const Sheets = (() => {
     return `<ol class="ws-list">${items.map((x) => `<li value="${next()}"><div class="ws-q">${rich(x.q)}</div><div class="ws-work"></div></li>`).join("")}</ol>`;
   }
 
-  return { maker, makerSubject, worksheet };
+  return { maker, makerSubject, worksheet, levelSheet };
 })();

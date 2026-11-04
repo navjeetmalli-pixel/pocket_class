@@ -59,7 +59,7 @@
             ? `<div class="card">${hist
                 .map(
                   (h) => `<div class="history-row">
-                    <div class="grow"><div style="font-weight:620">${esc(t(h.title))}</div><div class="tiny muted">${relDate(h.at)} · ${h.kind === "test" ? t("Mock test") : h.kind === "practice" ? t("Mistakes practice") : h.kind === "guided" ? t("Guided lesson") : h.kind === "revision" ? t("Revision") : t("Chapter quiz")}</div></div>
+                    <div class="grow"><div style="font-weight:620">${esc(t(h.title))}</div><div class="tiny muted">${relDate(h.at)} · ${h.kind === "test" ? t("Mock test") : h.kind === "practice" ? t("Mistakes practice") : h.kind === "guided" ? t("Guided lesson") : h.kind === "revision" ? t("Revision") : h.kind === "path" ? t("Practice by topic") : t("Chapter quiz")}</div></div>
                     <span class="pill ${pct(h.score, h.total) >= 60 ? "good" : "bad"}">${h.score}/${h.total}</span></div>`
                 )
                 .join("")}</div>`

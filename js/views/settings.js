@@ -165,7 +165,7 @@
 
   // Fetches every class's files through the service worker, which keeps a copy of each one.
   async function saveAllOffline(status, btn) {
-    const urls = D.classes.flatMap((c) => [...D.files(c), ...D.practiceFiles(c)]);
+    const urls = [...D.classes.flatMap((c) => [...D.files(c), ...D.practiceFiles(c)]), ...D.PATH_SUBJECTS.map(D.pathFile)];
     btn.disabled = true;
     let done = 0, failed = 0;
     for (let i = 0; i < urls.length; i += 6) {
