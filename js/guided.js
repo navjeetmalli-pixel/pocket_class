@@ -8,12 +8,13 @@
 //   7 Next up          a question that leads into the next chapter
 //   8 Done             what went well, what to revise
 // Only Practice is scored: wrong answers go to My mistakes, like the quiz.
-// The lesson is on for the chapters in PILOT; add a key there to turn it on for another chapter.
+// The lesson is on for every Maths and Physics chapter from Class 6 (the classes with solved examples,
+// number-changing generators and levelled practice banks). Other subjects can be added in available().
 
 const Guided = (() => {
   const D = StudyData;
-  const PILOT = new Set(["10/maths/quadratic-equations", "11/physics/laws-of-motion"]);
-  const available = (c, subjectId, chapterId) => PILOT.has(`${c}/${subjectId}/${chapterId}`);
+  const SUBJECTS = ["maths", "physics"];
+  const available = (c, subjectId) => c >= 6 && SUBJECTS.includes(subjectId);
 
   const STEPS = ["Think first", "The idea", "Your first guess", "Worked example", "Your turn", "Practice", "Next up", "Done"];
   const PRACTICE_N = 3;
@@ -379,5 +380,5 @@ const Guided = (() => {
       ${icon("arrow")}</a>`;
   }
 
-  return { available, mount, card, PILOT };
+  return { available, mount, card };
 })();

@@ -18,7 +18,7 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 - **Flashcards**: flip cards for key terms, with "know it / still learning" tracking
 - **Practice**: solved examples and board-style questions with model answers
 - **Quiz**: MCQs with instant feedback and explanations
-- **Guided lesson** (pilot: Class 10 Quadratic Equations, Class 11 Laws of Motion): the chapter as one path. A no-pressure question first, the notes one idea at a time, a worked example, a similar question with the steps as hints, three practice questions with a "how sure are you?" check, and a question that leads into the next chapter
+- **Guided lesson** (Maths and Physics, Classes 6–12): the chapter as one path. A no-pressure question first, the notes one idea at a time, a worked example, a similar question with the steps as hints, three practice questions with a "how sure are you?" check, and a question that leads into the next chapter
 
 **Books**: CBSE follows the current NCERT books, including the new 2026–27 Class 9 books (Ganita Manjari, Exploration, Understanding Society, Kaveri, Ganga) and the new Classes 1–8 books. English and Hindi include every lesson of the current NCERT readers, summarised in our own words.
 
