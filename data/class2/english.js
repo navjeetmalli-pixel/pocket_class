@@ -453,7 +453,7 @@ StudyData.add(2, "english", {
           q: "Which word can replace Aman in “Aman is tall”?",
           options: ["They", "She", "He", "It"],
           answer: 2,
-          explain: "Aman is a boy, so he replaces him."
+          explain: "Aman is a boy, so we use he in place of Aman."
         },
         {
           q: "Which word can replace the mango?",

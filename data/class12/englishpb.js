@@ -67,7 +67,7 @@ StudyData.add(12, "englishpb", {
         {q: "Choose the correct word: ___ hour has passed since he left.", options: ["A", "An", "The a", "Some an"], answer: 1, explain: "'Hour' begins with a vowel sound (silent h), so 'an' is used."},
         {q: "She has ___ friends, so she feels lonely.", options: ["a few", "few", "a little", "much"], answer: 1, explain: "'Few' gives the negative sense (almost none) that fits 'feels lonely'."},
         {q: "I have saved ___ money, so I can buy the book.", options: ["a little", "few", "a few", "little"], answer: 0, explain: "Money is uncountable and the sense is positive, so 'a little'."},
-        {q: "___ of the two roads leads to the village.", options: ["Every", "Each one", "Either", "All"], answer: 2, explain: "'Either' means one of two."},
+        {q: "___ of the two roads leads to the village.", options: ["Every", "Both", "Either", "All"], answer: 2, explain: "'Either' means one of two."},
         {q: "Which sentence is correct?", options: ["Every students got a prize.", "Every student got a prize.", "Each students got a prize.", "All student got a prize."], answer: 1, explain: "'Every' takes a singular noun."},
         {q: "'He is ___ honest man' takes:", options: ["a", "the one", "an", "no article"], answer: 2, explain: "'Honest' starts with a vowel sound, so 'an' is used."}
       ]

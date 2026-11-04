@@ -1327,11 +1327,11 @@ StudyData.addPractice(3, "englishpb", {
         "options": [
           "To buy fruit",
           "To buy shoes",
-          "Sheena asked for a paint brush and colours",
+          "To buy useful things, as mother said no more toys",
           "To eat ice-cream"
         ],
         "answer": 2,
-        "explain": "After the toy shop, Sheena asked for a paint brush and colours.",
+        "explain": "At the toy shop mother said not to buy more toys, so they went to the stationery shop for useful things.",
         "level": 2
       },
       {
@@ -1391,7 +1391,7 @@ StudyData.addPractice(3, "englishpb", {
           "Ask for something useful politely"
         ],
         "answer": 3,
-        "explain": "Sheena politely asked for a paint brush and colours instead.",
+        "explain": "Like Sheena, she should accept mother's answer and choose something useful instead, such as the sharpener and coloured sheets Sheena bought.",
         "level": 3
       },
       {
@@ -1425,7 +1425,7 @@ StudyData.addPractice(3, "englishpb", {
       },
       {
         "q": "Why did Sheena not get the toy ship?",
-        "a": "Her mother said she should not buy more toys, so Sheena asked for a paint brush and colours.",
+        "a": "Her mother said she should not buy more toys, so Sheena bought a sharpener and coloured sheets at the stationery shop instead.",
         "marks": 2
       },
       {

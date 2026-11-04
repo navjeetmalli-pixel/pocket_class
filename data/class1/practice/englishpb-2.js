@@ -825,7 +825,7 @@ StudyData.addPractice(1, "englishpb", {
           "Rice, grapes, tomato"
         ],
         "answer": 2,
-        "explain": "All three in the first group are fruits.",
+        "explain": "Apple, mango and grapes are all fruits.",
         "level": 2
       },
       {
@@ -879,7 +879,7 @@ StudyData.addPractice(1, "englishpb", {
   "rb1-in-on-under": {
     "mcq": [
       {
-        "q": "A bird is ____ the tree, sitting on a branch.",
+        "q": "A bird is ____ the wire, sitting on top of it.",
         "options": [
           "under",
           "on",

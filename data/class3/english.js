@@ -1264,7 +1264,7 @@ StudyData.add(3, "english", {
         { q: "What was Meena playing with?", options: ["Paper boats", "Kites", "Marbles", "Dolls"], answer: 0, explain: "She was putting paper boats in the stream." },
         { q: "Why did the boy overturn the boats?", options: ["He was angry", "He thought it was fun", "He wanted to sell them", "He was hungry"], answer: 1, explain: "He said, “Because it is fun.”" },
         { q: "What did the boy not know?", options: ["How to swim", "How to run", "How to fold paper into a boat", "How to read"], answer: 2, explain: "He did not know how to fold paper to make boats." },
-        { q: "Choose the right word: The ball is ___ the box.", options: ["on", "under", "he", "in"], answer: 3, explain: "The ball is **in** the box, which means inside it." },
+        { q: "Choose the right word: The ball is ___ the box. (It is inside the box.)", options: ["on", "under", "he", "in"], answer: 3, explain: "The ball is **in** the box, which means inside it." },
         { q: "Which word can replace “Durga” in the next sentence?", options: ["She", "He", "It", "They"], answer: 0, explain: "Durga is a girl, so we use **she**." }
       ]
     },

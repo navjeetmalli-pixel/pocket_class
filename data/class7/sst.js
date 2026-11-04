@@ -54,7 +54,7 @@ StudyData.add(7, "sst", {
         { q: "The Northern Plains are fertile mainly because of:", options: ["Black lava soil", "Alluvium deposited by rivers", "Sand blown from the desert", "Coral deposits"], answer: 1, explain: "Rivers like the Ganga and Indus deposit fertile **alluvium**." },
         { q: "Which island group is made of coral?", options: ["Andaman and Nicobar", "Lakshadweep", "Sri Lanka", "Sundarbans"], answer: 1, explain: "**Lakshadweep** is made of coral islands in the Arabian Sea." },
         { q: "The Western Ghats and Eastern Ghats lie on the edges of which region?", options: ["Northern Plains", "Thar Desert", "Peninsular Plateau", "Himalayas"], answer: 2, explain: "They border the **Peninsular Plateau**." },
-        { q: "The highest peak located entirely within India is:", options: ["Mount Everest", "K2", "Anamudi", "Kanchenjunga"], answer: 3, explain: "**Kanchenjunga** is India's highest peak. Everest is in Nepal and K2 is in the Karakoram on the border region." }
+        { q: "Which of these is the highest peak of India?", options: ["Mount Everest", "K2", "Anamudi", "Kanchenjunga"], answer: 3, explain: "**Kanchenjunga** (on the Sikkim–Nepal border) is India's highest peak. Everest is in Nepal and Tibet, K2 is in the Karakoram outside Indian control, and Anamudi is only the highest peak of peninsular India." }
       ]
     },
     {

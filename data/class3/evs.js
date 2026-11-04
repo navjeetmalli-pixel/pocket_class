@@ -80,7 +80,7 @@ StudyData.add(3, "evs", {
           q: "Your mother's mother is your:",
           options: ["Paternal aunt","Cousin","Nephew","Maternal grandmother"],
           answer: 3,
-          explain: "Your mother's mother is your maternal grandmother (nani or dadi depends on the side)."
+          explain: "Your mother's mother is your maternal grandmother (nani). Your father's mother is your paternal grandmother (dadi)."
         },
         {
           q: "What do we call the children of our uncles and aunts?",
@@ -167,7 +167,7 @@ StudyData.add(3, "evs", {
         {
           q: "What is the name of the process by which plants make food?",
           options: ["Digestion","Pollination","Germination","Photosynthesis"],
-          answer: 0,
+          answer: 3,
           explain: "Photosynthesis is the process in which plants make food using sunlight, air and water."
         },
         {
@@ -362,7 +362,7 @@ StudyData.add(3, "evs", {
         },
         {
           q: "Which of these is a seed that we eat?",
-          options: ["Spinach","Sugarcane","Coriander","Rice"],
+          options: ["Spinach","Sugarcane","Cabbage","Rice"],
           answer: 3,
           explain: "Rice grains are seeds of the rice plant."
         }

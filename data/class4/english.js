@@ -177,7 +177,7 @@ StudyData.add(4, "english", {
         },
         {
           q: "What is a group of sheep called?",
-          options: ["bunch", "shoal", "flock", "herd"],
+          options: ["bunch", "shoal", "flock", "pack"],
           answer: 2,
           explain: "A group of sheep or birds is called a **flock**."
         },
@@ -1460,7 +1460,7 @@ StudyData.add(4, "english", {
         { q: "What does the child see from the swing?", options: ["Only walls","Rivers, trees and cattle","Aeroplanes","The sea"], answer: 1, explain: "The child sees rivers, trees and cattle." },
         { q: "Which word rhymes with “swing”?", options: ["thing","wall","blue","roof"], answer: 0, explain: "Swing and thing sound alike." },
         { q: "In “I swing on a swing”, the first ‘swing’ is a…", options: ["noun","adjective","verb","preposition"], answer: 2, explain: "The first one is an action." },
-        { q: "“A butterfly is flying ___ the flower.” Which word fits?", options: ["above","between","under","behind"], answer: 0, explain: "A flying butterfly can be above the flower." }
+        { q: "“A butterfly is flying high ___ the flower, much higher than its petals.” Which word fits?", options: ["above","between","under","behind"], answer: 0, explain: "The butterfly is higher than the flower, so the word is “above”." }
       ]
     },
     {

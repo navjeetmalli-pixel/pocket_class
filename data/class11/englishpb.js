@@ -136,7 +136,7 @@ StudyData.add(11, "englishpb", {
         {q: "___ hour has passed since he left.", options: ["A", "An", "The a", "Some an"], answer: 1, explain: "'Hour' begins with a vowel sound, so 'an'."},
         {q: "She has ___ friends, so she feels lonely.", options: ["a few", "few", "a little", "much"], answer: 1, explain: "'Few' gives the negative sense that fits 'lonely'."},
         {q: "I have saved ___ money, so I can buy the book.", options: ["a little", "few", "a few", "little"], answer: 0, explain: "Money is uncountable and the sense is positive."},
-        {q: "___ of the two roads leads to the village.", options: ["Every", "Each one", "Either", "All"], answer: 2, explain: "'Either' means one of two."},
+        {q: "___ of the two roads leads to the village.", options: ["Every", "Both", "Either", "All"], answer: 2, explain: "'Either' means one of two."},
         {q: "Which sentence is correct?", options: ["Every students got a prize.", "Every student got a prize.", "Each students got a prize.", "All student got a prize."], answer: 1, explain: "'Every' takes a singular noun."},
         {q: "Which noun needs 'a' and not 'an'?", options: ["hour", "honest man", "university", "heir"], answer: 2, explain: "'University' begins with a 'yoo' consonant sound."}
       ]
@@ -195,7 +195,7 @@ StudyData.add(11, "englishpb", {
         {q: "In 'She won the first prize in a fair contest', 'fair' is a:", options: ["noun", "verb", "adjective", "adverb"], answer: 2, explain: "It describes the noun 'contest'."},
         {q: "The noun form of 'advise' is:", options: ["advices", "advice", "advisor", "advising only"], answer: 1, explain: "Advice is the noun; advise is the verb."},
         {q: "In 'I need your advice', which word is a noun?", options: ["I", "need", "your", "advice"], answer: 3, explain: "'Advice' names a thing and is the object."},
-        {q: "'The doctor will ___ me a tonic.' Choose the verb form.", options: ["present", "permit", "prescribe", "hand"], answer: 2, explain: "'Prescribe' is a verb; the others do not fit the sense as naturally here."},
+        {q: "'The doctor will ___ me a tonic.' Choose the verb form.", options: ["present", "permit", "prescribe", "prevent"], answer: 2, explain: "'Prescribe' is the verb a doctor uses for ordering a medicine; the others do not fit the sense."},
         {q: "In 'We visited the village fair', 'fair' is a:", options: ["noun", "verb", "adjective", "preposition"], answer: 0, explain: "It names an event and is modified by 'village'."}
       ]
     },
@@ -318,7 +318,7 @@ StudyData.add(11, "englishpb", {
       ],
       quiz: [
         {q: "She ___ here since 2020.", options: ["lives", "is living", "has lived", "lived"], answer: 2, explain: "'Since' with a continuing state needs the present perfect."},
-        {q: "When the teacher came, the students ___ the room.", options: ["left", "had left", "were leave", "have left"], answer: 1, explain: "Leaving happened before she came, so past perfect."},
+        {q: "When the teacher came, the students ___ the room.", options: ["leaves", "had left", "were leave", "have left"], answer: 1, explain: "Leaving happened before she came, so past perfect."},
         {q: "I will wait until he ___.", options: ["will come", "comes", "come", "would come"], answer: 1, explain: "Time clauses use the present for the future."},
         {q: "Which is the present perfect continuous?", options: ["He works", "He is working", "He has been working", "He had worked"], answer: 2, explain: "has been + V-ing."},
         {q: "By next month, we ___ this project.", options: ["will complete", "will have completed", "complete", "are completing"], answer: 1, explain: "Completion by a future time takes the future perfect."},
@@ -1569,7 +1569,7 @@ StudyData.add(11, "englishpb", {
           points: [
             "Beauty is a source of happiness and consolation; it makes life bearable.",
             "Keats (1795–1821) is a Romantic poet who believed in the power of beauty and imagination.",
-            "Rich imagery, sensuous language and the form of blank verse."
+            "Rich imagery, sensuous language and the form of rhymed couplets in iambic pentameter."
           ]
         }
       ],
@@ -1592,7 +1592,7 @@ StudyData.add(11, "englishpb", {
         {q: "A Thing of Beauty is by:", options: ["John Keats", "Wordsworth", "Frost", "Milton"], answer: 0, explain: "It opens Keats's Endymion."},
         {q: "According to the poem, a thing of beauty is:", options: ["A joy for ever", "Short-lived", "Costly", "Dangerous"], answer: 0, explain: "Its loveliness never passes away."},
         {q: "Keats was a:", options: ["Romantic poet", "Modern novelist", "Dramatist of tragedies only", "Satirist"], answer: 0, explain: "He belongs to the Romantic school."},
-        {q: "The poem is in:", options: ["Blank verse", "Free verse", "Sonnet form", "Haiku"], answer: 0, explain: "It is unrhymed iambic pentameter."},
+        {q: "The poem is in:", options: ["Rhymed couplets", "Free verse", "Sonnet form", "Haiku"], answer: 0, explain: "The lines are in rhymed couplets (iambic pentameter) from Endymion."},
         {q: "Which is named as a source of beauty?", options: ["The sun and the moon", "Factories", "Weapons", "Money"], answer: 0, explain: "Natural beauty is the poet's focus."}
       ]
     },

@@ -308,7 +308,7 @@ StudyData.add(2, "maths", {
           q: "What is 52 − 9?",
           options: ["47", "61", "43", "41"],
           answer: 2,
-          explain: "Borrow 1 ten: 12 − 9 = 3. Then 4 − 1 = 4 tens. The answer is 43."
+          explain: "Borrow 1 ten: 12 − 9 = 3. Then 5 − 1 = 4 tens. The answer is 43."
         },
         {
           q: "When we borrow 1 ten, how many ones do we get?",

@@ -177,7 +177,7 @@ StudyData.add(4, "englishpb", {
         },
         {
           q: "What is a group of sheep called?",
-          options: ["bunch", "shoal", "flock", "herd"],
+          options: ["bunch", "shoal", "flock", "pack"],
           answer: 2,
           explain: "A group of sheep or birds is called a **flock**."
         },

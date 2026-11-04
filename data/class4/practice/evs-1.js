@@ -52,7 +52,7 @@ StudyData.addPractice(4, "evs", {
     mcq: [
       { q: "A mongoose lives in a:", options: ["Burrow", "Hive", "Nest", "Boat"], answer: 0, explain: "Mongooses and rabbits live in burrows dug in the ground.", level: 1 },
       { q: "Birds build which kind of home to hold their eggs and chicks?", options: ["Hive", "Den", "Nest", "Burrow"], answer: 2, explain: "Birds make nests for their eggs and chicks.", level: 1 },
-      { q: "A fox may live in a:", options: ["Hive", "Nest", "Burrow", "Den"], answer: 3, explain: "Foxes use dens as shelters.", level: 1 },
+      { q: "A fox may live in a:", options: ["Hive", "Nest", "Pond", "Den"], answer: 3, explain: "Foxes use dens as shelters.", level: 1 },
       { q: "Polar bears live in the cold:", options: ["Desert", "Arctic", "Rainforest", "River"], answer: 1, explain: "Polar bears live in the very cold Arctic.", level: 1 },
       { q: "The natural place where an animal or plant lives is its:", options: ["Habitat", "Migration", "Chore", "Legend"], answer: 0, explain: "A habitat is the natural home of an animal or plant.", level: 1 },
       { q: "Which animals use holes in trees as homes?", options: ["Camels and fish", "Squirrels and owls", "Rabbits and mongooses", "Polar bears and lions"], answer: 1, explain: "Squirrels and owls use holes in trees.", level: 2 },

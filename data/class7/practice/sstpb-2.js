@@ -5,7 +5,7 @@ StudyData.addPractice(7, "sstpb", {
       { q:"The tripartite struggle was fought for control of the city of",options:["Kannauj","Thanjavur","Surat","Lahore"],answer:0,explain:"The Pratiharas, Palas and Rashtrakutas fought over rich Kannauj on the Ganga.",level:1 },
       { q:"The Palas ruled over",options:["Gujarat and Malwa","Bengal and Bihar","Tamil Nadu","Kerala"],answer:1,explain:"The Palas ruled the north-east and east, in Bengal and Bihar.",level:1 },
       { q:"Mahmud of Ghazni raided the temple at Somnath in",options:["1191","1526","1025","1206"],answer:2,explain:"The raid on Somnath took place in 1025.",level:1 },
-      { q:"Who won the First Battle of Tarain (1191)?",options:["Prithviraj Chauhan","Muhammad of Ghor","Mahmud of Ghazni","Babur"],answer:1,explain:"Prithviraj Chauhan won in 1191. Muhammad of Ghor won the next year.",level:1 },
+      { q:"Who won the First Battle of Tarain (1191)?",options:["Prithviraj Chauhan","Muhammad of Ghor","Mahmud of Ghazni","Babur"],answer:0,explain:"Prithviraj Chauhan won in 1191. Muhammad of Ghor won the next year.",level:1 },
       { q:"The Rashtrakutas ruled in the",options:["Deccan","Punjab plains","Assam","Kashmir valley"],answer:0,explain:"The Rashtrakutas were a Deccan power.",level:1 },
       { q:"A samanta was a",options:["traveller from abroad","noble or chief who held land and served the king with troops","coin of the time","type of temple tower"],answer:1,explain:"Samantas held land in return for service to the king.",level:2 },
       { q:"The Chauhans ruled from",options:["Ajmer and Delhi","Madurai and Puri","Surat and Calicut","Kabul and Ghazni"],answer:0,explain:"The Chauhan clan ruled Ajmer and Delhi, and Prithviraj Chauhan belonged to it.",level:2 },
@@ -88,7 +88,7 @@ StudyData.addPractice(7, "sstpb", {
     mcq: [
       { q:"The Mughal Empire was founded by",options:["Babur","Akbar","Shah Jahan","Aurangzeb"],answer:0,explain:"Babur won the First Battle of Panipat in 1526.",level:1 },
       { q:"Akbar became emperor in",options:["1526","1556","1707","1739"],answer:1,explain:"Akbar came to the throne in 1556 and ruled until 1605.",level:1 },
-      { q:"The Taj Mahal was built by",options:["Jahangir","Shah Jahan","Akbar","Humayun"],answer:2,explain:"Shah Jahan built it at Agra.",level:1 },
+      { q:"The Taj Mahal was built by",options:["Jahangir","Shah Jahan","Akbar","Humayun"],answer:1,explain:"Shah Jahan built it at Agra.",level:1 },
       { q:"The mansabdari system was organised by",options:["Akbar","Aurangzeb","Babur","Jahangir"],answer:0,explain:"Every officer held a rank (mansab) under Akbar.",level:1 },
       { q:"Nadir Shah invaded Delhi in",options:["1739","1398","1191","1025"],answer:0,explain:"Nadir Shah's invasion was in 1739.",level:1 },
       { q:"Sher Shah Suri is remembered for",options:["building the Red Fort","founding the Sultanate","founding Fatehpur Sikri","introducing the silver rupee and building roads"],answer:3,explain:"Sher Shah introduced the silver rupee and a road network.",level:2 },
