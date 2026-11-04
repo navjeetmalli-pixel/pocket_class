@@ -8,7 +8,7 @@ const path = require("path");
 const vm = require("vm");
 
 const root = path.join(__dirname, "..");
-let files = process.argv.slice(2).filter((f) => !/[\/\\](practice|diagrams)[\/\\]/.test(f));
+let files = process.argv.slice(2).filter((f) => !/[\/\\](practice|diagrams)[\/\\]/.test(f) && path.basename(f) !== "index.js");
 if (process.argv.length <= 2) {
   files = fs
     .readdirSync(path.join(root, "data"))
@@ -16,7 +16,7 @@ if (process.argv.length <= 2) {
     .flatMap((d) =>
       fs
         .readdirSync(path.join(root, "data", d))
-        .filter((f) => f.endsWith(".js"))
+        .filter((f) => f.endsWith(".js") && f !== "index.js")
         .map((f) => path.join("data", d, f))
     );
 }
@@ -302,6 +302,17 @@ for (const file of diagramFiles) {
   errors.forEach((e) => console.log(`  ERROR ${e}`));
   warns.forEach((w) => console.log(`  warn  ${w}`));
   summary.push(`diagrams class ${cls} ${subj}: ${n}`);
+}
+
+// ---------- class indexes ----------
+// data/class{N}/index.js is generated (scripts/build-index.js) and must match the subject files exactly.
+if (process.argv.length <= 2) {
+  const stale = require("./build-index.js").check().filter((r) => !r.ok);
+  console.log(`\n${stale.length ? "✗" : "✓"} class indexes`);
+  stale.forEach((r) => {
+    console.log(`  ERROR ${r.file}: out of date, run: node scripts/build-index.js`);
+    errorCount++;
+  });
 }
 
 console.log("\n" + summary.join("\n"));

@@ -76,6 +76,14 @@ const Sheets = (() => {
 
   // ---------- maker ----------
 
+  // The subject the maker page will show, so the router can load it first.
+  function makerSubject(pre) {
+    const c = cls();
+    const subs = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length);
+    const ok = (id) => subs.some((s) => s.id === id);
+    return ok(pre) ? pre : ok(cfg.subject) ? cfg.subject : subs[0] ? subs[0].id : null;
+  }
+
   function maker([pre]) {
     const c = cls();
     const subs = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length);
@@ -104,6 +112,9 @@ const Sheets = (() => {
           if (b.dataset.subj) {
             cfg.subject = b.dataset.subj;
             cfg.chapters = null;
+            // The new subject may still need to load: go through the router, which shows "Loading…" meanwhile.
+            if (!D.subjectsLoaded(c, [cfg.subject]) || !D.practiceLoaded(c, cfg.subject))
+              return location.hash === "#/sheets" ? App.render({ keepScroll: true }) : (location.hash = "#/sheets");
           } else if (b.dataset.set) {
             const [k, v] = b.dataset.set.split(":");
             cfg[k] = Number(v);
@@ -282,5 +293,5 @@ const Sheets = (() => {
     return `<ol class="ws-list">${items.map((x) => `<li value="${next()}"><div class="ws-q">${rich(x.q)}</div><div class="ws-work"></div></li>`).join("")}</ol>`;
   }
 
-  return { maker, worksheet };
+  return { maker, makerSubject, worksheet };
 })();

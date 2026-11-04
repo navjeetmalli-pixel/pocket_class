@@ -2,8 +2,21 @@
 
 All study material lives in plain JavaScript files under `data/class1/` … `data/class12/`,
 one file per subject, named after the subject id (`maths.js`, `physics.js`, `evs.js` …).
-`data/registry.js` lists which subjects each class has (`catalog`). The app loads only the
-student's own class, with `<script>` tags, so it works offline and even from `file://`.
+`data/registry.js` lists which subjects each class has (`catalog`). The app loads a class's small
+`index.js` first, then each subject's file only when a page needs it, with `<script>` tags, so it
+works offline and even from `file://`.
+
+**`data/class{N}/index.js` is generated. Never edit it.** It holds, per subject, the syllabus and each
+chapter's id, title, section, summary and number of flashcard terms (no notes or questions), which is all
+the home screen and subject lists need. After you add or change a subject file (or a chapter's id, title,
+section, summary or terms), run:
+
+```
+node scripts/build-index.js          # rewrite every class's index.js (npm run sync runs it too)
+node scripts/build-index.js --check  # list stale ones without writing
+```
+
+`node scripts/validate.js` (with no arguments) fails with an error if any index no longer matches its subject files.
 
 Check any file you write with:
 

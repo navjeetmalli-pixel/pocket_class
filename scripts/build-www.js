@@ -6,6 +6,10 @@ const path = require("path");
 
 const root = path.join(__dirname, "..");
 const out = path.join(root, "www");
+// The class index files are generated from the subject files, so rebuild them first.
+require("./build-index.js").build();
+
+// Only these go into the store apps. Everything else (tests/, scripts/, playwright-report/, store/ …) stays out.
 const include = ["index.html", "manifest.webmanifest", "css", "js", "data", "icons"];
 
 fs.rmSync(out, { recursive: true, force: true });

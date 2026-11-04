@@ -38,7 +38,7 @@ const Quiz = (() => {
     el.innerHTML = s.done ? resultHTML() : questionHTML();
     // Re-rendering replaces the buttons, so put keyboard focus back somewhere sensible.
     if (hadFocus) {
-      const f = el.querySelector('[data-act="next"], [data-act="submit"], .option.selected, .option, [data-act="retry"]');
+      const f = ['[data-act="next"]', '[data-act="submit"]', ".option.selected", ".option:not(.locked)", '[data-act="retry"]'].map((q) => el.querySelector(q)).find(Boolean);
       if (f) f.focus({ preventScroll: true });
     }
   }
@@ -69,7 +69,10 @@ const Quiz = (() => {
           if (orig === it.answer) cls += " correct";
           else if (orig === it.picked) cls += " wrong";
         } else if (orig === it.picked) cls += " selected";
-        return `<button class="${cls}" data-pick="${orig}"><span class="letter">${"ABCD"[k]}</span><span>${rich(it.options[orig])}</span></button>`;
+        // Colour alone must not carry the result: say it in words for screen readers too.
+        const state = !locked ? "" : orig === it.answer ? `<span class="sr-only">${t("Correct answer:")} </span>` : orig === it.picked ? `<span class="sr-only">${t("Your answer:")} </span>` : "";
+        const pressed = !instant ? ` aria-pressed="${orig === it.picked}"` : "";
+        return `<button class="${cls}" data-pick="${orig}"${pressed}>${state}<span class="letter" aria-hidden="true">${"ABCD"[k]}</span><span>${rich(it.options[orig])}</span></button>`;
       })
       .join("");
 
@@ -79,7 +82,7 @@ const Quiz = (() => {
       right = `<span class="quiz-clock ${left < 60 ? "low" : ""}">${icon("timer")}<span data-clock>${clock(left)}</span></span>`;
     } else if (instant) {
       const correct = s.items.filter((x) => x.picked !== null && x.picked === x.answer).length;
-      right = `<span class="quiz-clock">✓ ${correct}</span>`;
+      right = `<span class="quiz-clock"><span aria-hidden="true">✓ ${correct}</span><span class="sr-only">${t("{n} correct so far", { n: correct })}</span></span>`;
     } else {
       right = `<span class="quiz-clock">${t("{a}/{n} answered", { a: answered, n })}</span>`;
     }
@@ -89,7 +92,7 @@ const Quiz = (() => {
       if (locked) {
         const ok = it.picked === it.answer;
         footer = `
-          <div class="feedback ${ok ? "good" : "bad"}" role="status">
+          <div class="feedback ${ok ? "good" : "bad"}">
             <div class="h">${ok ? t("Correct! 🎉") : t("Not quite")}</div>
             ${ok ? "" : `<div>${t("Correct answer:")} <strong>${rich(it.options[it.answer])}</strong></div>`}
             <div>${rich(it.explain)}</div>
@@ -103,7 +106,7 @@ const Quiz = (() => {
           ${s.i < n - 1 ? `<button class="btn primary" data-act="next">${t("Next")} ${icon("next")}</button>` : `<button class="btn primary" data-act="submit">${t("Submit test")}</button>`}
         </div>
         <div class="palette" aria-label="${t("Jump to question")}">
-          ${s.items.map((x, j) => `<button data-go="${j}" class="${x.picked !== null ? "answered" : ""} ${j === s.i ? "current" : ""}" aria-label="${t("Question {n}", { n: j + 1 })}">${j + 1}</button>`).join("")}
+          ${s.items.map((x, j) => `<button data-go="${j}" class="${x.picked !== null ? "answered" : ""} ${j === s.i ? "current" : ""}" aria-label="${x.picked !== null ? t("Question {n}, answered", { n: j + 1 }) : t("Question {n}", { n: j + 1 })}" ${j === s.i ? 'aria-current="true"' : ""}>${j + 1}</button>`).join("")}
         </div>
         ${s.i < n - 1 ? `<button class="btn block mt" data-act="submit">${t("Submit test ({a}/{n} answered)", { a: answered, n })}</button>` : ""}`;
     }
@@ -111,10 +114,10 @@ const Quiz = (() => {
     return `
       <div class="card">
         <div class="quiz-head"><span>${t("Question {i} of {n}", { i: s.i + 1, n })}</span>${right}</div>
-        <span class="bar"><i style="width:${pct(s.i + (locked ? 1 : 0), n)}%"></i></span>
+        <span class="bar" aria-hidden="true"><i style="width:${pct(s.i + (locked ? 1 : 0), n)}%"></i></span>
         ${it.ref && it.ref.from && s.opts.showFrom ? `<div class="quiz-from" style="margin-top:16px">${esc(it.ref.from)}</div>` : ""}
-        <div class="quiz-q">${rich(it.q)}${speakQuestion(it)}</div>
-        <div class="options">${options}</div>
+        <div class="quiz-q" id="quiz-q">${rich(it.q)}${speakQuestion(it)}</div>
+        <div class="options" role="group" aria-labelledby="quiz-q">${options}</div>
         ${footer}
       </div>
       <p class="tiny muted center kbd-tip" style="margin-top:10px">${instant ? t("Tip: press 1–4 to answer, Enter for next.") : t("Tip: press 1–4 to answer.")}</p>`;
@@ -126,7 +129,8 @@ const Quiz = (() => {
     const p = pct(score, n);
     const msg = p >= 90 ? t("Outstanding! 🌟") : p >= 75 ? t("Great work! 🎉") : p >= 50 ? t("Good effort 👍") : t("Keep practising 💪");
     const ring = p >= 75 ? "var(--good)" : p >= 50 ? "var(--gold)" : "var(--bad)";
-    const wrong = n - score;
+    // Only saved questions go to My mistakes; generated ones have no key and are never kept.
+    const wrong = s.items.filter((x) => x.ref.key && x.picked !== x.answer).length;
 
     // Per-chapter breakdown for mixed tests.
     const groups = {};
@@ -184,6 +188,11 @@ const Quiz = (() => {
     if (s.opts.instant && it.picked !== null) return;
     it.picked = orig;
     render();
+    // The result is spoken here (once), not by re-inserting a live region with the page.
+    if (s.opts.instant) {
+      const f = el.querySelector(".feedback");
+      if (f) announce(f.textContent);
+    }
   }
 
   function go(i) {
@@ -225,6 +234,11 @@ const Quiz = (() => {
   function tick() {
     if (!live() || s.done) return stop();
     const left = (s.endAt - Date.now()) / 1000;
+    // Say the time left only at a few moments, not every second.
+    for (const mark of [300, 60, 10]) if (left <= mark && !(s.said || (s.said = {}))[mark] && s.endAt - s.started > mark * 1000 * 1.5) {
+      s.said[mark] = true;
+      announce(mark >= 60 ? t("{n} {n:minute|minutes} left", { n: mark / 60 }) : t("{n} seconds left", { n: mark }));
+    }
     const c = el.querySelector("[data-clock]");
     if (c) {
       c.textContent = clock(left);
@@ -328,7 +342,7 @@ const Cards = (() => {
         ${speakCard(c)}
         <button class="chip" data-act="shuffle">${icon("shuffle").replace('class="i"', 'class="i" style="width:16px;height:16px"')} ${t("Shuffle")}</button>
       </div>
-      <button type="button" class="flashcard ${s.flipped ? "flipped" : ""}" data-act="flip" aria-pressed="${s.flipped}" aria-label="${s.flipped ? t("Meaning shown. Press to see the term") : t("Press to see the meaning")}">
+      <button type="button" class="flashcard ${s.flipped ? "flipped" : ""}" data-act="flip" aria-pressed="${s.flipped}" aria-label="${esc(cardLabel(c))}">
         <span class="flashcard-inner">
           <span class="face front" ${s.flipped ? 'aria-hidden="true"' : ""}>
             ${c.from ? `<span class="from">${esc(c.from)}</span>` : ""}
@@ -348,6 +362,9 @@ const Cards = (() => {
       <p class="tiny muted center kbd-tip" style="margin-top:10px">${t("Tip: Space flips, ← still learning, → I know this.")}</p>`;
   }
 
+  // The button's name carries the card's words, so a screen reader hears the term (and the meaning once flipped).
+  const cardLabel = (c) => `${plain(c.front)}. ${s.flipped ? plain(c.back) + ". " + t("Meaning shown. Press to see the term") : t("Press to see the meaning")}`;
+
   // Reads the face that is showing: the term, or the term and its meaning once flipped.
   const cardText = (c) => (s.flipped ? `${c.front}. ${c.back}` : c.front);
   function speakCard(c) {
@@ -363,7 +380,7 @@ const Cards = (() => {
     if (!f) return;
     f.classList.toggle("flipped", s.flipped);
     f.setAttribute("aria-pressed", s.flipped);
-    f.setAttribute("aria-label", s.flipped ? t("Meaning shown. Press to see the term") : t("Press to see the meaning"));
+    f.setAttribute("aria-label", cardLabel(s.deck[s.i]));
     const hide = (face, hidden) => (hidden ? face.setAttribute("aria-hidden", "true") : face.removeAttribute("aria-hidden"));
     hide(f.querySelector(".front"), s.flipped);
     hide(f.querySelector(".back"), !s.flipped);

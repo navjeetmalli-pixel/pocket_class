@@ -109,6 +109,14 @@ function toast(msg) {
   toastTimer = setTimeout(() => el.classList.remove("show"), 2600);
 }
 
+// Says something to screen readers without showing it (quiz results, time left). Same text twice still re-reads.
+function announce(msg) {
+  const el = document.getElementById("live");
+  if (!el) return;
+  el.textContent = "";
+  setTimeout(() => (el.textContent = String(msg || "").replace(/\s+/g, " ").trim()), 60);
+}
+
 // Short two-tone beep for timer alerts.
 function beep() {
   try {

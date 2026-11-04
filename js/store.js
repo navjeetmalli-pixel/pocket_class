@@ -28,6 +28,7 @@ const Store = (() => {
     cards: {}, // flashcard key -> "known" | "learning"
     history: [], // { title, subject, cls, score, total, at, kind }
     guided: {}, // chapter key -> { at, score, total, sureWrong } for the last guided lesson
+    teach: {}, // chapter key -> { text, ticks: [indexes of key points ticked], at }: the student's own-words summary
     revise: {}, // chapter key -> { last, n }: when the chapter was last studied and how many times
     days: {}, // "2026-10-28" -> { min, acts }
     focusMin: 0,
@@ -246,6 +247,14 @@ const Store = (() => {
     },
     guided: (chapterKey) => state.guided[chapterKey] || null,
 
+    // Teach-back: the student's own-words explanation of a chapter and the key points they ticked. Never graded.
+    teach: (chapterKey) => state.teach[chapterKey] || { text: "", ticks: [] },
+    setTeach(chapterKey, patch) {
+      const cur = state.teach[chapterKey] || { text: "", ticks: [] };
+      state.teach[chapterKey] = Object.assign({}, cur, patch, { at: Date.now() });
+      save();
+    },
+
     // Chapters of this class that are due for revision today, most overdue first:
     // [{ key, days (since last studied), n (times studied), mistakes (open mistakes) }].
     due(cls) {
@@ -287,13 +296,15 @@ const Store = (() => {
     },
 
     // Older versions keyed questions by position ("…/3") and cards by "…/t3".
-    // Once a class's content is loaded, move those keys to the text-based ids.
+    // Once a subject's content is loaded (run per class; it skips subjects not loaded yet), move those keys to the text-based ids.
     migrate(cls) {
       let changed = false;
       const move = (map, re, list, idOf) => {
         for (const k of Object.keys(map)) {
           const p = parseKey(k);
-          const m = p.cls === cls && re.exec(p.item);
+          // Subjects load one at a time; a subject that hasn't loaded yet is migrated when it does.
+          if (p.cls !== cls || !StudyData.hasFull(cls, p.subject)) continue;
+          const m = re.exec(p.item);
           if (!m) continue;
           const ch = StudyData.chapters(cls, p.subject).find((x) => x.id === p.chapterId);
           const it = ch && ch[list][Number(m[1])];

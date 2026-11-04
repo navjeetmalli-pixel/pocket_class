@@ -1,7 +1,7 @@
-// Offline support: caches the app shell on first visit, plus each class's data once it's opened.
+// Offline support: caches the app shell on first visit, plus each class's index and each subject's data once it's opened.
 // Online, files come fresh from the network (and refresh the cache);
 // offline or on a very slow connection, the cached copy is used.
-const CACHE = "vidya-v24";
+const CACHE = "vidya-v28";
 
 const FILES = [
   "./",
@@ -17,7 +17,20 @@ const FILES = [
   "js/guided.js",
   "js/timer.js",
   "js/gen.js",
-  "js/views.js",
+  "js/sims.js",
+  "js/views/ui.js",
+  "js/views/students.js",
+  "js/views/revise.js",
+  "js/views/home.js",
+  "js/views/subject.js",
+  "js/views/chapter.js",
+  "js/views/test.js",
+  "js/views/timer.js",
+  "js/views/progress.js",
+  "js/views/parent.js",
+  "js/views/search.js",
+  "js/views/onboarding.js",
+  "js/views/settings.js",
   "js/sheets.js",
   "js/papers.js",
   "js/app.js",
@@ -27,16 +40,18 @@ const FILES = [
   "icons/icon-512.png",
   "icons/icon-maskable-512.png",
 ];
-// Class data files are cached when a class is first opened (see the "cache" message below).
+// Class indexes and subject files are cached when first opened (see the "cache" message below).
 
 self.addEventListener("install", (e) => {
   // Cache files one by one so a single missing file doesn't block the rest.
   e.waitUntil(caches.open(CACHE).then((c) => Promise.all(FILES.map((f) => c.add(f).catch(() => {})))));
-  self.skipWaiting();
+  // No skipWaiting here: a new version waits until the page asks for it (see "skipWaiting" below), so an open page
+  // never ends up with old scripts and new data files. The very first install has nothing to wait for.
 });
 
-// The app sends the files of the student's class so they work offline from the first visit.
+// The app sends the files of each subject it opens so they work offline from the first visit.
 self.addEventListener("message", (e) => {
+  if (e.data && e.data.type === "skipWaiting") self.skipWaiting();
   if (e.data && e.data.type === "cache" && Array.isArray(e.data.urls)) {
     e.waitUntil(caches.open(CACHE).then((c) => Promise.all(e.data.urls.map((u) => c.add(u).catch(() => {})))));
   }
