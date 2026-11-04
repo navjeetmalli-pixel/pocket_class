@@ -5,10 +5,24 @@
 const Store = (() => {
   const KEY = "vidya:v1";
 
-  const defaults = () => ({
-    profile: null, // { name, cls, board: "cbse" | "pseb" }
+  // Several students can share one device. Each has their own profile and progress; the theme, the app
+  // language and the reminder belong to the device. `state` is always the current student's data, and
+  // state.theme / state.lang / state.reminder read and write the device settings (see bind).
+  const DEVICE = ["theme", "lang", "reminder"];
+
+  const deviceDefaults = () => ({
     theme: "system",
+    lang: "en", // interface language: "en" | "pa" | "hi"
+    reminder: { on: false, time: "18:00" }, // daily practice reminder (phone apps only)
+  });
+
+  const newId = () => "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+
+  const studentDefaults = () => ({
+    id: newId(),
+    profile: null, // { name, cls, board: "cbse" | "pseb" }
     chapters: {}, // key -> { done, best, attempts, opened }
+    acc: {}, // chapter key -> [right, asked]: every quiz or test answer given in the chapter
     bookmarks: [],
     mistakes: {}, // question key -> timestamp
     cards: {}, // flashcard key -> "known" | "learning"
@@ -22,16 +36,51 @@ const Store = (() => {
     qotd: null, // { day, picked }
   });
 
+  let device = deviceDefaults();
+  let students = [];
   let state;
+
+  // Makes the device settings readable and writable through a student's state (but not saved with it).
+  function bind(s) {
+    for (const k of DEVICE) Object.defineProperty(s, k, { get: () => device[k], set: (v) => (device[k] = v), enumerable: false, configurable: true });
+    return s;
+  }
+
+  const validDevice = (d) => ({
+    theme: ["light", "dark"].includes(d.theme) ? d.theme : "system",
+    lang: d.lang === "pa" || d.lang === "hi" ? d.lang : "en",
+    reminder: d.reminder && typeof d.reminder === "object" ? Object.assign(deviceDefaults().reminder, d.reminder) : deviceDefaults().reminder,
+  });
+
   try {
-    state = Object.assign(defaults(), JSON.parse(localStorage.getItem(KEY)) || {});
+    const raw = localStorage.getItem(KEY);
+    const saved = JSON.parse(raw) || {};
+    device = validDevice(saved);
+    if (Array.isArray(saved.students) && saved.students.length) {
+      students = saved.students.map((s) => bind(Object.assign(studentDefaults(), s)));
+      state = students.find((s) => s.id === saved.current) || students[0];
+    } else {
+      // Saved by a version with a single student: that becomes the first student, nothing is dropped.
+      const old = Object.assign(studentDefaults(), saved);
+      DEVICE.forEach((k) => delete old[k]);
+      students = [bind(old)];
+      state = students[0];
+      if (raw && saved.profile) {
+        try {
+          localStorage.setItem(KEY + ":before-students", raw); // safety copy of the old single-student data
+        } catch (e) {
+          /* storage full */
+        }
+      }
+    }
   } catch (e) {
-    state = defaults();
+    students = [bind(studentDefaults())];
+    state = students[0];
   }
 
   function save() {
     try {
-      localStorage.setItem(KEY, JSON.stringify(state));
+      localStorage.setItem(KEY, JSON.stringify({ v: 2, theme: device.theme, lang: device.lang, reminder: device.reminder, current: state.id, students }));
     } catch (e) {
       /* storage full or blocked: keep working in memory */
     }
@@ -114,6 +163,14 @@ const Store = (() => {
       state.theme = theme;
       save();
     },
+    setLang(lang) {
+      state.lang = lang === "pa" || lang === "hi" ? lang : "en";
+      save();
+    },
+    setReminder(on, time) {
+      device.reminder = { on: !!on, time: /^\d\d:\d\d$/.test(time) ? time : device.reminder.time };
+      save();
+    },
     setFocusLen(min) {
       state.focusLen = min;
       save();
@@ -156,7 +213,13 @@ const Store = (() => {
     },
 
     // Saves a finished quiz or test. `chapterKey` is set for single-chapter quizzes.
-    recordQuiz({ title, subject, cls, score, total, kind, chapterKey, chapterKeys }) {
+    // `answers` lists [{ key, ok }] for the questions that belong to a chapter, to keep chapter accuracy.
+    recordQuiz({ title, subject, cls, score, total, kind, chapterKey, chapterKeys, answers }) {
+      for (const a of answers || []) {
+        const ck = String(a.key).split("/").slice(0, 3).join("/");
+        const x = state.acc[ck] || [0, 0];
+        state.acc[ck] = [x[0] + (a.ok ? 1 : 0), x[1] + 1];
+      }
       const percent = pct(score, total);
       state.history.unshift({ title, subject, cls, score, total, kind, at: Date.now() });
       state.history = state.history.slice(0, 200);
@@ -239,14 +302,48 @@ const Store = (() => {
           changed = true;
         }
       };
-      move(state.mistakes, /^(\d+)$/, "quiz", questionId);
-      move(state.cards, /^t(\d+)$/, "terms", (t) => itemId("t", t.term));
+      for (const st of students) {
+        move(st.mistakes, /^(\d+)$/, "quiz", questionId);
+        move(st.cards, /^t(\d+)$/, "terms", (t) => itemId("t", t.term));
+      }
       if (changed) save();
     },
 
-    // Backup file: the whole saved state as JSON.
+    // ----- students sharing this device -----
+    students: () => students.map((s) => ({ id: s.id, name: s.profile ? s.profile.name : "", cls: s.profile ? s.profile.cls : null, board: s.profile ? s.profile.board : "cbse" })),
+    get currentId() {
+      return state.id;
+    },
+    addStudent(name, cls, board) {
+      const s = bind(studentDefaults());
+      s.profile = { name: name.trim(), cls, board: board || "cbse" };
+      students.push(s);
+      state = s;
+      save();
+    },
+    renameStudent(id, name) {
+      const s = students.find((x) => x.id === id);
+      if (s && s.profile) s.profile.name = name.trim();
+      save();
+    },
+    switchStudent(id) {
+      const s = students.find((x) => x.id === id);
+      if (s) state = s;
+      save();
+    },
+    // The last student can't be deleted. Returns false then.
+    deleteStudent(id) {
+      if (students.length < 2) return false;
+      students = students.filter((x) => x.id !== id);
+      if (!students.includes(state)) state = students[0];
+      save();
+      return true;
+    },
+
+    // Backup file: every student's saved data as JSON, plus the device's theme and language.
+    // (Backups made before there were several students hold one student under "state"; they still restore.)
     exportData() {
-      return JSON.stringify({ app: "vidya", version: 1, saved: Date.now(), state }, null, 1);
+      return JSON.stringify({ app: "vidya", version: 2, saved: Date.now(), theme: device.theme, lang: device.lang, current: state.id, students }, null, 1);
     },
     // Returns false if the file isn't a Pocket Class backup.
     importData(text) {
@@ -256,17 +353,33 @@ const Store = (() => {
       } catch (e) {
         return false;
       }
-      const s = data && data.app === "vidya" && data.state;
-      if (!s || !s.profile || !StudyData.classes.includes(Number(s.profile.cls))) return false;
-      state = Object.assign(defaults(), s);
+      if (!data || data.app !== "vidya") return false;
+      const okProfile = (p) => p && StudyData.classes.includes(Number(p.cls));
+      if (Array.isArray(data.students)) {
+        const list = data.students.filter((s) => s && okProfile(s.profile));
+        if (!list.length) return false;
+        students = list.map((s) => bind(Object.assign(studentDefaults(), s)));
+        state = students.find((s) => s.id === data.current) || students[0];
+        device = Object.assign(device, validDevice(data), { reminder: device.reminder });
+      } else {
+        const s = data.state;
+        if (!s || !okProfile(s.profile)) return false;
+        // An old single-student backup replaces the current student's progress. The language of this
+        // device is kept (older backups have none).
+        const lang = device.lang;
+        const fresh = bind(Object.assign(studentDefaults(), s, { id: state.id }));
+        device = Object.assign(device, validDevice(s), { lang, reminder: device.reminder });
+        students[students.indexOf(state)] = state = fresh;
+      }
       StudyData.classes.filter(StudyData.isLoaded).forEach(this.migrate);
       save();
       return true;
     },
 
+    // Clears the current student's progress; the profile stays.
     reset() {
-      const { profile, theme } = state;
-      state = Object.assign(defaults(), { profile, theme });
+      const fresh = bind(Object.assign(studentDefaults(), { id: state.id, profile: state.profile }));
+      students[students.indexOf(state)] = state = fresh;
       save();
     },
   };

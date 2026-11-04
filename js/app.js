@@ -36,6 +36,7 @@ const App = {
     [/^cards\/(\w+)$/, Views.subjectCards],
     [/^timer$/, Views.timer],
     [/^progress$/, Views.progress],
+    [/^parent$/, Views.parent],
     [/^search$/, Views.search],
     [/^settings$/, Views.settings],
   ];
@@ -46,7 +47,7 @@ const App = {
   function navLink([href, ic, label, secs], sec) {
     const on = secs.includes(sec);
     const badge = ic === "timer" ? `<span class="badge" data-timer-badge ${Focus.running ? "" : "hidden"}>${clock(Focus.left)}</span>` : "";
-    return `<a href="${href}" class="${on ? "active" : ""}" ${on ? 'aria-current="page"' : ""}>${icon(ic)}<span>${label}</span>${badge}</a>`;
+    return `<a href="${href}" class="${on ? "active" : ""}" ${on ? 'aria-current="page"' : ""}>${icon(ic)}<span>${t(label)}</span>${badge}</a>`;
   }
 
   function renderNav(p) {
@@ -94,7 +95,7 @@ const App = {
       if (m) need.push(Number(m[1]));
       const missing = need.filter((c) => StudyData.classes.includes(c) && !StudyData.isLoaded(c));
       if (missing.length) {
-        main.innerHTML = `<div class="empty" style="padding-top:28vh"><div class="big">📚</div>Loading Class ${missing[0]}…</div>`;
+        main.innerHTML = `<div class="empty" style="padding-top:28vh"><div class="big">📚</div>${t("Loading Class {n}…", { n: missing[0] })}</div>`;
         renderNav(p);
         Promise.all(missing.map((c) => StudyData.load(c))).then((ok) => {
           if (ok.every(Boolean)) {
@@ -103,8 +104,8 @@ const App = {
             return App.render(opts);
           }
           main.innerHTML = `<div class="empty" style="padding-top:24vh"><div class="big">📡</div>
-            <p>Class ${missing[0]} couldn't be loaded. Check your internet connection and try again.</p>
-            <button class="btn primary" data-act="retry">${icon("reset")} Try again</button></div>`;
+            <p>${t("Class {n} couldn't be loaded. Check your internet connection and try again.", { n: missing[0] })}</p>
+            <button class="btn primary" data-act="retry">${icon("reset")} ${t("Try again")}</button></div>`;
           main.onclick = (e) => e.target.closest("[data-act=retry]") && App.render(opts);
         });
         return;
@@ -113,13 +114,13 @@ const App = {
       // Extra practice questions load only on pages that use them.
       const pr = practiceNeeded(p);
       if (pr && !StudyData.practiceLoaded(pr[0], pr[1])) {
-        main.innerHTML = `<div class="empty" style="padding-top:28vh"><div class="big">📝</div>Loading practice questions…</div>`;
+        main.innerHTML = `<div class="empty" style="padding-top:28vh"><div class="big">📝</div>${t("Loading practice questions…")}</div>`;
         renderNav(p);
         StudyData.loadPractice(pr[0], pr[1]).then((ok) => {
           if (ok) return App.render(opts);
           main.innerHTML = `<div class="empty" style="padding-top:24vh"><div class="big">📡</div>
-            <p>Practice questions couldn't be loaded. Check your internet connection and try again.</p>
-            <button class="btn primary" data-act="retry">${icon("reset")} Try again</button></div>`;
+            <p>${t("Practice questions couldn't be loaded. Check your internet connection and try again.")}</p>
+            <button class="btn primary" data-act="retry">${icon("reset")} ${t("Try again")}</button></div>`;
           main.onclick = (e) => e.target.closest("[data-act=retry]") && App.render(opts);
         });
         return;
@@ -144,7 +145,7 @@ const App = {
     main.onclick = null;
     if (view.mount) view.mount(main);
     renderNav(p);
-    document.title = view.title ? `${view.title} · Pocket Class` : "Pocket Class India · Class 1–12 Study App";
+    document.title = view.title ? `${view.title} · Pocket Class` : t("Pocket Class India · Class 1–12 Study App");
 
     // Switching tabs inside a chapter keeps your place; any other page starts at the top.
     if (!opts.keepScroll) {
@@ -165,7 +166,7 @@ const App = {
   };
 
   window.addEventListener("hashchange", () => {
-    if (App.lastPath === "test/run" && path() !== "test/run" && Quiz.inProgress() && !confirm("Leave this test? Your answers will be lost.")) {
+    if (App.lastPath === "test/run" && path() !== "test/run" && Quiz.inProgress() && !confirm(t("Leave this test? Your answers will be lost."))) {
       history.replaceState(null, "", "#/test/run");
       return;
     }
@@ -188,7 +189,9 @@ const App = {
   }, 60000);
 
   App.applyTheme();
+  applyLang();
   App.render();
+  Reminder.start();
 
   if (!Native.is && "serviceWorker" in navigator && location.protocol.startsWith("http")) {
     navigator.serviceWorker.register("sw.js").catch(() => {});

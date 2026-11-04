@@ -89,10 +89,10 @@ const Sheets = (() => {
     }
     const { topbar, emptyState } = Views.ui;
     return {
-      title: "Practice sheets",
-      html: `${topbar("Practice sheets", "#/revise")}
-        <p class="small muted" style="margin:-6px 2px 16px">Choose chapters and question types. Every sheet has an answer key, and there's always a new sheet with different questions.</p>
-        ${subs.length ? `<div id="maker"></div>` : emptyState("📚", "No chapters are available yet.")}`,
+      title: t("Practice sheets"),
+      html: `${topbar(t("Practice sheets"), "#/revise")}
+        <p class="small muted" style="margin:-6px 2px 16px">${t("Choose chapters and question types. Every sheet has an answer key, and there's always a new sheet with different questions.")}</p>
+        ${subs.length ? `<div id="maker"></div>` : emptyState("📚", t("No chapters are available yet."))}`,
       mount(el) {
         const box = el.querySelector("#maker");
         if (!box) return;
@@ -138,7 +138,7 @@ const Sheets = (() => {
     };
     const row = (k, label, hint) => {
       if (k === "g" && !have.g) return "";
-      const avail = have[k] === Infinity ? "unlimited, new numbers every sheet" : `${have[k]} available`;
+      const avail = have[k] === Infinity ? t("unlimited, new numbers every sheet") : t("{n} available", { n: have[k] });
       return `<div class="card">
         <div class="row"><strong class="grow">${label}</strong><span class="small muted">${avail}</span></div>
         <div class="small muted">${hint}</div>
@@ -149,23 +149,23 @@ const Sheets = (() => {
     const total = Math.min(cfg.m, have.m) + Math.min(cfg.s, have.s) + Math.min(cfg.l, have.l) + (have.g ? cfg.g : 0);
 
     return `<div class="stack">
-      <div class="card"><strong>Subject</strong><div class="chips" style="margin-top:10px">${subs
+      <div class="card"><strong>${t("Subject")}</strong><div class="chips" style="margin-top:10px">${subs
         .map((s) => `<button class="chip ${s.id === subj.id ? "on" : ""}" data-subj="${s.id}">${s.icon} ${esc(s.short)}</button>`)
         .join("")}</div></div>
       <div class="card">
-        <div class="row"><strong class="grow">Chapters</strong><span class="small muted">${sel.length} of ${all.length} selected</span></div>
-        <div class="row" style="margin-top:8px"><button class="chip" data-act="all">Select all</button><button class="chip" data-act="none">Clear</button></div>
+        <div class="row"><strong class="grow">${t("Chapters")}</strong><span class="small muted">${t("{a} of {b} selected", { a: sel.length, b: all.length })}</span></div>
+        <div class="row" style="margin-top:8px"><button class="chip" data-act="all">${t("Select all")}</button><button class="chip" data-act="none">${t("Clear")}</button></div>
         <div class="check-list">${all
           .map((ch) => `<label><input type="checkbox" data-ch="${ch.id}" ${sel.includes(ch.id) ? "checked" : ""}><span>${esc(ch.title)}</span></label>`)
           .join("")}</div>
       </div>
-      ${row("m", "Multiple choice", "1 mark each")}
-      ${row("s", "Short answer", "1–3 marks each, with space to write")}
-      ${row("l", "Long answer", "4–5 marks each")}
-      ${row("g", subj.id === "maths" ? "Maths problems" : "Numericals", "Same formulas, different numbers on every sheet, with worked answers")}
-      <div class="card"><strong>Difficulty of MCQs</strong><div class="chips" style="margin-top:10px">${LEVELS.map(([v, l]) => `<button class="chip ${cfg.d === v ? "on" : ""}" data-set="d:${v}">${l}</button>`).join("")}</div></div>
-      <div class="card"><label class="switch"><span><strong>Answer key</strong><br><span class="small muted">Printed on a separate page at the end</span></span><input type="checkbox" id="key" ${cfg.k ? "checked" : ""}></label></div>
-      <button class="btn primary block" data-act="make" ${sel.length && total ? "" : "disabled"}>${icon("print")} Make sheet · ${total} question${total === 1 ? "" : "s"}</button>
+      ${row("m", t("Multiple choice"), t("1 mark each"))}
+      ${row("s", t("Short answer"), t("1–3 marks each, with space to write"))}
+      ${row("l", t("Long answer"), t("4–5 marks each"))}
+      ${row("g", subj.id === "maths" ? t("Maths problems") : t("Numericals"), t("Same formulas, different numbers on every sheet, with worked answers"))}
+      <div class="card"><strong>${t("Difficulty of MCQs")}</strong><div class="chips" style="margin-top:10px">${LEVELS.map(([v, l]) => `<button class="chip ${cfg.d === v ? "on" : ""}" data-set="d:${v}">${t(l)}</button>`).join("")}</div></div>
+      <div class="card"><label class="switch"><span><strong>${t("Answer key")}</strong><br><span class="small muted">${t("Printed on a separate page at the end")}</span></span><input type="checkbox" id="key" ${cfg.k ? "checked" : ""}></label></div>
+      <button class="btn primary block" data-act="make" ${sel.length && total ? "" : "disabled"}>${icon("print")} ${t("Make sheet · {n} {n:question|questions}", { n: total })}</button>
     </div>`;
   }
 
@@ -196,10 +196,10 @@ const Sheets = (() => {
     const sections = [];
     let num = 0;
     const marksOf = (x) => x.marks || 3;
-    if (mcq.length) sections.push({ title: "Multiple choice", note: "1 mark each", marks: mcq.length, html: mcqHTML(mcq, () => ++num) });
-    if (short.length) sections.push({ title: "Short answer questions", note: "", marks: short.reduce((a, x) => a + marksOf(x), 0), html: writtenHTML(short, () => ++num) });
-    if (long.length) sections.push({ title: "Long answer questions", note: "", marks: long.reduce((a, x) => a + marksOf(x), 0), html: writtenHTML(long, () => ++num) });
-    if (gen.length) sections.push({ title: subjectId === "maths" ? "Problems" : "Numericals", note: "2 marks each · show your working", marks: gen.length * 2, html: genHTML(gen, () => ++num) });
+    if (mcq.length) sections.push({ title: t("Multiple choice"), note: t("1 mark each"), marks: mcq.length, html: mcqHTML(mcq, () => ++num) });
+    if (short.length) sections.push({ title: t("Short answer questions"), note: "", marks: short.reduce((a, x) => a + marksOf(x), 0), html: writtenHTML(short, () => ++num) });
+    if (long.length) sections.push({ title: t("Long answer questions"), note: "", marks: long.reduce((a, x) => a + marksOf(x), 0), html: writtenHTML(long, () => ++num) });
+    if (gen.length) sections.push({ title: subjectId === "maths" ? t("Problems") : t("Numericals"), note: t("2 marks each · show your working"), marks: gen.length * 2, html: genHTML(gen, () => ++num) });
     const total = sections.reduce((a, x) => a + x.marks, 0);
     const minutes = Math.max(10, Math.round((total * 1.5) / 5) * 5);
 
@@ -210,41 +210,41 @@ const Sheets = (() => {
     [...short, ...long].forEach((x) => key.push(`<li value="${++k}">${rich(x.a)}</li>`));
     gen.forEach((x) => key.push(`<li value="${++k}"><strong>${rich(x.options[0])}</strong><br><span class="ws-steps">${x.steps.map(rich).join("<br>")}</span></li>`));
 
-    const chNames = chs.length === all.length ? "All chapters" : chs.map((x) => x.title).join(", ");
+    const chNames = chs.length === all.length ? t("All chapters") : chs.map((x) => x.title).join(", ");
     const base = `#/worksheet/${c}/${subjectId}?`;
     const empty = !sections.length;
 
     return {
-      title: `${subj.short} practice sheet ${o.n}`,
+      title: t("{subject} practice sheet {n}", { subject: subj.short, n: o.n }),
       html: `
-        ${Views.ui.topbar(`${subj.short} · Sheet ${o.n}`, `#/sheets/${subjectId}`)}
+        ${Views.ui.topbar(t("{subject} · Sheet {n}", { subject: subj.short, n: o.n }), `#/sheets/${subjectId}`)}
         <div class="ws-toolbar no-print">
-          <a class="btn" href="${base}${query({ ...o, n: o.n - 1 })}" ${o.n > 1 ? "" : 'aria-disabled="true" tabindex="-1" style="opacity:.45;pointer-events:none"'}>${icon("back")} Sheet ${Math.max(1, o.n - 1)}</a>
-          <a class="btn" href="${base}${query({ ...o, n: o.n + 1 })}">New sheet ${icon("next")}</a>
-          <button class="btn primary" onclick="printPage()" ${empty ? "disabled" : ""}>${icon("print")} Print</button>
-          <label class="ws-keytoggle"><input type="checkbox" id="ws-key" ${o.k ? "checked" : ""}> Answer key</label>
+          <a class="btn" href="${base}${query({ ...o, n: o.n - 1 })}" ${o.n > 1 ? "" : 'aria-disabled="true" tabindex="-1" style="opacity:.45;pointer-events:none"'}>${icon("back")} ${t("Sheet {n}", { n: Math.max(1, o.n - 1) })}</a>
+          <a class="btn" href="${base}${query({ ...o, n: o.n + 1 })}">${t("New sheet")} ${icon("next")}</a>
+          <button class="btn primary" onclick="printPage()" ${empty ? "disabled" : ""}>${icon("print")} ${t("Print")}</button>
+          <label class="ws-keytoggle"><input type="checkbox" id="ws-key" ${o.k ? "checked" : ""}> ${t("Answer key")}</label>
         </div>
         ${
           empty
-            ? Views.ui.emptyState("📝", "No questions match these settings. Go back and pick more chapters or question types.")
+            ? Views.ui.emptyState("📝", t("No questions match these settings. Go back and pick more chapters or question types."))
             : `<article class="ws">
           <header class="ws-head">
-            <div class="ws-title"><strong>Practice Sheet ${o.n}</strong><span>Class ${c} · ${esc(subj.name)}</span></div>
+            <div class="ws-title"><strong>${t("Practice Sheet {n}", { n: o.n })}</strong><span>${t("Class {n} · {subject}", { n: c, subject: esc(subj.name) })}</span></div>
             <div class="ws-chapters">${esc(chNames)}</div>
-            <div class="ws-fields"><span>Name: <i></i></span><span>Roll no.: <i></i></span><span>Date: <i></i></span></div>
-            <div class="ws-meta"><span>Maximum marks: ${total}</span><span>Suggested time: ${minutes} min</span><span>Marks scored: ______ / ${total}</span></div>
+            <div class="ws-fields"><span>${t("Name:")} <i></i></span><span>${t("Roll no.:")} <i></i></span><span>${t("Date:")} <i></i></span></div>
+            <div class="ws-meta"><span>${t("Maximum marks: {n}", { n: total })}</span><span>${t("Suggested time: {n} min", { n: minutes })}</span><span>${t("Marks scored: ______ / {n}", { n: total })}</span></div>
           </header>
           ${sections
             .map(
               (sec, i) => `<section class="ws-sec">
-                <h2>Section ${"ABCD"[i]} · ${sec.title}<span>${sec.note ? sec.note + " · " : ""}${sec.marks} mark${sec.marks === 1 ? "" : "s"}</span></h2>
+                <h2>${t("Section {l} · {title}", { l: "ABCD"[i], title: sec.title })}<span>${sec.note ? sec.note + " · " : ""}${t("{n} {n:mark|marks}", { n: sec.marks })}</span></h2>
                 ${sec.html}</section>`
             )
             .join("")}
-          <footer class="ws-foot">Pocket Class India · Class ${c} ${esc(subj.name)} · Sheet ${o.n}</footer>
+          <footer class="ws-foot">${t("Pocket Class India · Class {c} {subject} · Sheet {n}", { c, subject: esc(subj.name), n: o.n })}</footer>
         </article>
         <article class="ws ws-key" ${o.k ? "" : "hidden"}>
-          <header class="ws-head"><div class="ws-title"><strong>Answer key · Sheet ${o.n}</strong><span>Class ${c} · ${esc(subj.name)}</span></div></header>
+          <header class="ws-head"><div class="ws-title"><strong>${t("Answer key · Sheet {n}", { n: o.n })}</strong><span>${t("Class {n} · {subject}", { n: c, subject: esc(subj.name) })}</span></div></header>
           <ol class="ws-answers">${key.join("")}</ol>
         </article>`
         }`,

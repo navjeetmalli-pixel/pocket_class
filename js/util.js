@@ -36,18 +36,18 @@ function clock(sec) {
 }
 
 function minutesLabel(min) {
-  if (min < 60) return `${min} min`;
+  if (min < 60) return t("{n} min", { n: min });
   const h = Math.floor(min / 60);
   const m = min % 60;
-  return m ? `${h}h ${m}m` : `${h}h`;
+  return m ? t("{h}h {m}m", { h, m }) : t("{h}h", { h });
 }
 
 function relDate(ts) {
   const d = new Date(ts);
   const today = dayKey();
-  if (dayKey(d) === today) return "Today";
-  if (dayKey(d) === dayKey(daysAgo(1))) return "Yesterday";
-  return d.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+  if (dayKey(d) === today) return t("Today");
+  if (dayKey(d) === dayKey(daysAgo(1))) return t("Yesterday");
+  return dateShort(d);
 }
 
 // Stable small hash, used to pick the question of the day.
@@ -80,7 +80,7 @@ const Native = {
 // window.print() does nothing in an app web view, so the app uses a small native print plugin.
 function printPage() {
   const p = Native.is && Native.plugin("VidyaPrint");
-  if (p) p.print({ title: document.title }).catch(() => toast("Printing isn't available on this device"));
+  if (p) p.print({ title: document.title }).catch(() => toast(t("Printing isn't available on this device")));
   else window.print();
 }
 
@@ -156,6 +156,8 @@ const ICONS = {
   target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
   download: '<path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/>',
   upload: '<path d="M12 15V4"/><path d="m7 9 5-5 5 5"/><path d="M5 20h14"/>',
+  speaker: '<path d="M4 9.5v5h4l5 4v-13l-5 4z"/><path d="M16.5 9a4 4 0 0 1 0 6"/><path d="M19 6.5a8 8 0 0 1 0 11"/>',
+  bell: '<path d="M6 17V11a6 6 0 0 1 12 0v6l1.5 2h-15z"/><path d="M10 21h4"/>',
   star: '<path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/>',
 };
 

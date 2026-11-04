@@ -642,8 +642,33 @@ mark { background: color-mix(in srgb, var(--gold) 30%, transparent); color: inhe
   .ws-opts { grid-template-columns: 1fr; }
 }
 
+/* Read aloud (Classes 1–5) */
+.say {
+  display: inline-grid; place-items: center; vertical-align: middle;
+  width: 32px; height: 32px; margin-left: 6px; padding: 0; flex: none;
+  border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--accent); cursor: pointer;
+}
+.say[hidden] { display: none; }
+.say .i { width: 18px; height: 18px; }
+.say.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+/* Students sharing a device */
+.av {
+  width: 34px; height: 34px; flex: none; display: grid; place-items: center;
+  border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 800;
+}
+.stud-switch { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; padding: 3px 6px 3px 3px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); }
+.stud-switch .av { width: 28px; height: 28px; font-size: 14px; }
+.stud-switch select { border: 0; background: transparent; font-weight: 650; font-size: 14.5px; max-width: 46vw; }
+.stud-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.stud-row .grow { min-width: 140px; }
+.stud-row .input { min-height: 42px; }
+.stud-add { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid var(--border); }
+.stud-add .input { flex: 1 1 140px; width: auto; }
+.stud-add select.input { flex: 0 1 auto; }
+
 @media print {
-  .tabbar, .sidebar, .topbar .icon-btn, .no-print, #toast { display: none !important; }
+  .tabbar, .sidebar, .topbar .icon-btn, .no-print, .say, #toast { display: none !important; }
   .main:has(.ws) .topbar { display: none !important; }
   body { background: #fff; color: #000; }
   .main { margin: 0; padding: 0; max-width: none; }

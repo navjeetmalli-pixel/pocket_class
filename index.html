@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Pocket Class India · Class 1–12 Study App</title>
-  <meta name="description" content="Notes, flashcards, quizzes and mock tests for CBSE / NCERT Classes 1 to 12, in every main subject. Works offline.">
+  <meta name="description" content="Notes, flashcards, quizzes and mock tests for CBSE / NCERT and PSEB Classes 1 to 12, in every main subject. Works offline.">
   <meta name="theme-color" content="#5b5bd6">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Pocket Class">
@@ -15,8 +15,9 @@
   <script>
     // Apply the saved theme before first paint to avoid a flash.
     try {
-      var t = (JSON.parse(localStorage.getItem("vidya:v1")) || {}).theme;
-      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      var saved = JSON.parse(localStorage.getItem("vidya:v1")) || {};
+      if (saved.theme === "light" || saved.theme === "dark") document.documentElement.setAttribute("data-theme", saved.theme);
+      if (saved.lang === "pa" || saved.lang === "hi") document.documentElement.lang = saved.lang;
     } catch (e) {}
   </script>
 </head>
@@ -31,7 +32,10 @@
 
   <!-- App -->
   <script src="js/util.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/store.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/reminder.js"></script>
   <script src="js/quiz.js"></script>
   <script src="js/guided.js"></script>
   <script src="js/timer.js"></script>

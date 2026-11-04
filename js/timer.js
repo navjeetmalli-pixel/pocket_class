@@ -59,10 +59,10 @@ const Focus = (() => {
       rounds++;
       Store.addFocus(MODES.focus.min());
       mode = rounds % 4 === 0 ? "long" : "short";
-      toast(`Focus session done! Time for a ${mode === "long" ? "long" : "short"} break.`);
+      toast(mode === "long" ? t("Focus session done! Time for a long break.") : t("Focus session done! Time for a short break."));
     } else {
       mode = "focus";
-      toast("Break over. Back to studying!");
+      toast(t("Break over. Back to studying!"));
     }
     left = MODES[mode].min() * 60;
     emit();

@@ -18,7 +18,7 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 - **Flashcards**: flip cards for key terms, with "know it / still learning" tracking
 - **Practice**: solved examples and board-style questions with model answers
 - **Quiz**: MCQs with instant feedback and explanations
-- **Guided lesson** (Maths and Physics, Classes 6–12): the chapter as one path. A no-pressure question first, the notes one idea at a time, a worked example, a similar question with the steps as hints, three practice questions with a "how sure are you?" check, and a question that leads into the next chapter
+- **Guided lesson** (Maths, Science, Physics and Chemistry, Classes 6–12): the chapter as one path. A no-pressure question first, the notes one idea at a time, a worked example, a similar question with the steps as hints, three practice questions with a "how sure are you?" check, and a question that leads into the next chapter
 
 **Books**: CBSE follows the current NCERT books, including the new 2026–27 Class 9 books (Ganita Manjari, Exploration, Understanding Society, Kaveri, Ganga) and the new Classes 1–8 books. English and Hindi include every lesson of the current NCERT readers, summarised in our own words.
 
@@ -37,6 +37,10 @@ An offline study app for Indian school students, following the CBSE / NCERT syll
 - **Formula sheets**: all formulas / key dates of a subject on one printable page
 - **Focus timer**: Pomodoro timer (15/25/45/60 min) that keeps running while you study
 - **Progress**: daily streak, minutes studied this week, chapter completion, quiz history
+- **Several students on one device**: Settings → *Students* adds, renames, switches and deletes students; each has their own profile, progress, mistakes, bookmarks, streak and revision schedule, and a switcher appears on Home. Backups hold every student
+- **Read aloud** (Classes 1–3 in every subject, English / Hindi / Punjabi in Classes 4–5): a speaker button beside note points, key terms, flashcards and quiz questions, using the device's own English, Hindi or Punjabi voice (hidden when the device has none)
+- **For parents** (`#/parent`, from Settings and Progress): a printable one-page summary with study minutes for 7 days, streak, chapters done, quiz and test scores, the weakest chapters, open mistakes and chapters due for revision
+- **Daily reminder** (phone apps only): Settings → *Daily reminder* schedules one local notification a day at a chosen time (`@capacitor/local-notifications`), off by default
 - **Question of the day**, search across all notes, bookmarks, light/dark theme
 
 Progress is saved only on the device (browser storage). No account, no internet needed after the first visit. Settings → *Save backup* downloads it as a file, which *Restore backup* loads on another phone.
@@ -65,7 +69,9 @@ Settings → *Save every class for offline* keeps all classes on the device, not
 index.html            page shell, loads everything
 css/styles.css        all styles (light + dark)
 js/util.js            helpers and icons
-js/store.js           saved progress (localStorage)
+js/store.js           saved progress for each student (localStorage)
+js/speech.js          read-aloud buttons (browser speech synthesis)
+js/reminder.js        daily reminder (phone apps)
 js/quiz.js            quiz / test runner and flashcards
 js/timer.js           focus timer
 js/views.js           every screen

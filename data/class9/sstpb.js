@@ -78,7 +78,7 @@ StudyData.add(9, "sstpb", {
           points: [
             "India has six divisions: the **Northern Mountains** (Himalayas), the **Northern Plains**, the **Peninsular Plateau**, the **Indian Desert**, the **Coastal Plains** and the **Islands**.",
             "The Himalayas are young fold mountains, running about 2,400 km, with three parallel ranges: **Himadri** (Greater), **Himachal** (Lesser) and **Shiwaliks**.",
-            "Mount Everest lies in Nepal; Kanchenjunga (8,598 m) is the highest peak wholly in India.",
+            "Mount Everest lies in Nepal; Kanchenjunga (8,598 m) is the highest peak in India (it lies on the India–Nepal border).",
             "The Northern Plains are formed by alluvium deposited by the Indus, Ganga and Brahmaputra and are very fertile and densely populated."
           ]
         },
@@ -105,7 +105,7 @@ StudyData.add(9, "sstpb", {
       ],
       formulas: [
         "Himalayan ranges north to south: Himadri, Himachal, Shiwaliks",
-        "Kanchenjunga: highest peak wholly within India (8,598 m)",
+        "Kanchenjunga: highest peak in India (8,598 m)",
         "Punjab regions: Majha, Doaba, Malwa"
       ],
       terms: [
@@ -122,7 +122,7 @@ StudyData.add(9, "sstpb", {
         { q: "The southernmost and youngest Himalayan range is the:", options: ["Himadri", "Himachal", "Shiwaliks", "Karakoram"], answer: 2, explain: "The Shiwaliks are the outermost, lowest range." },
         { q: "The Peninsular Plateau is mainly made of:", options: ["Young fold rocks", "Ancient crystalline rocks", "Alluvium", "Coral"], answer: 1, explain: "It is among the oldest landmasses on Earth." },
         { q: "Which islands are coral in origin?", options: ["Andaman", "Nicobar", "Lakshadweep", "Sagar"], answer: 2, explain: "Lakshadweep is made of coral atolls." },
-        { q: "The highest peak wholly in India is:", options: ["Mount Everest", "Kanchenjunga", "Nanda Devi", "Anamudi"], answer: 1, explain: "Kanchenjunga is 8,598 m; Everest lies in Nepal." },
+        { q: "The highest peak in India is:", options: ["Mount Everest", "Kanchenjunga", "Nanda Devi", "Anamudi"], answer: 1, explain: "Kanchenjunga is 8,598 m; Everest lies in Nepal." },
         { q: "The low, flood-prone river bank land in Punjab is called:", options: ["Kandi", "Bet", "Bangar", "Doab"], answer: 1, explain: "Bet lands are the riverine lowlands." },
         { q: "The Thar Desert lies to the west of the:", options: ["Western Ghats", "Eastern Ghats", "Aravalli Range", "Vindhya Range"], answer: 2, explain: "The Aravallis separate the desert from the plains to the east." }
       ]

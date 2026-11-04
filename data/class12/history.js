@@ -355,7 +355,7 @@ StudyData.add(12, "history", {
           points: [
             "**Ibn Battuta**, born in **Tangier**, Morocco, wrote the **Rihla** (travelogue in Arabic) about his journeys.",
             "He reached **Sind in 1333**; **Muhammad bin Tughlaq** appointed him **qazi of Delhi**.",
-            "He described towns such as **Delhi and Daulatabad**, markets, the postal system of **ashva dak** (horse) and **dawa** (foot), and the use of betel leaf and coconut as novelties to him.",
+            "He described towns such as **Delhi and Daulatabad**, markets, the postal system of **uluq** (horse) and **dawa** (foot), and the use of betel leaf and coconut as novelties to him.",
             "Later he was sent as an envoy to China, and he dictated his Rihla in the 1350s."
           ]
         },
@@ -380,7 +380,7 @@ StudyData.add(12, "history", {
         "Al-Biruni: Kitab-ul-Hind (Arabic), 11th century; from Khwarizm",
         "Ibn Battuta: Rihla; reached Sind in 1333; qazi of Delhi under Muhammad bin Tughlaq",
         "François Bernier: Travels in the Mogul Empire; Dara Shukoh's physician; here from 1656",
-        "Ashva dak = horse post; dawa = foot post (Ibn Battuta)"
+        "Uluq = horse post; dawa = foot post (Ibn Battuta)"
       ],
       terms: [
         { term: "Rihla", meaning: "The travel account written by Ibn Battuta." },
@@ -391,7 +391,7 @@ StudyData.add(12, "history", {
       ],
       qa: [
         { q: "What was Al-Biruni's Kitab-ul-Hind?", a: "An **Arabic book** by Al-Biruni on Indian **religion, philosophy, science, customs and festivals**, based on his study of **Sanskrit** texts and his stay in India." },
-        { q: "What did Ibn Battuta write about the Indian postal system?", a: "He described two systems, **ashva dak** (horse post) and **dawa** (foot post), which allowed news and goods to move quickly across the Sultanate." },
+        { q: "What did Ibn Battuta write about the Indian postal system?", a: "He described two systems, **uluq** (horse post) and **dawa** (foot post), which allowed news and goods to move quickly across the Sultanate." },
         { q: "Why must historians read travellers' accounts with caution?", a: "Travellers wrote for their **own audience**, compared India with their homelands and sometimes **misunderstood** what they saw; their views and sources were limited." }
       ],
       quiz: [

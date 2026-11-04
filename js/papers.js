@@ -74,22 +74,22 @@ const Papers = (() => {
     const subs = D.subjectsFor(c).filter((s) => available(c, s.id));
     const { pageHead, emptyState } = Views.ui;
     const body = !CLASSES.includes(c)
-      ? emptyState("📄", "Sample papers are for Classes 9 to 12. For your class, try a mock test or a practice sheet.")
+      ? emptyState("📄", t("Sample papers are for Classes 9 to 12. For your class, try a mock test or a practice sheet."))
       : !subs.length
-        ? emptyState("📄", "No subjects with sample papers yet.")
+        ? emptyState("📄", t("No subjects with sample papers yet."))
         : `<div class="stack">${subs
             .map((s) => {
               const p = pattern(c, s.id);
               return `<a class="card row" href="#/paper/${c}/${s.id}?n=1">
                 <span class="subj-ico" style="background:${s.color}22">${s.icon}</span>
-                <span class="grow"><strong>${esc(s.name)}</strong><br><span class="small muted">${p.total} marks · 3 hours · sections ${"ABCDEF".slice(0, p.sections.length).split("").join(", ")}</span></span>
+                <span class="grow"><strong>${esc(s.name)}</strong><br><span class="small muted">${t("{marks} marks · 3 hours · sections {list}", { marks: p.total, list: "ABCDEF".slice(0, p.sections.length).split("").join(", ") })}</span></span>
                 ${icon("next")}</a>`;
             })
             .join("")}</div>`;
     return {
-      title: "Sample papers",
-      html: `${pageHead("Sample papers", `Class ${c} · Full papers in the board-exam pattern`)}
-        <p class="small muted" style="margin:-6px 2px 16px">Each paper has the board's sections, marks and internal choices, with a marking scheme. Every paper number is different. Language papers (reading passages and set texts) aren't included.</p>
+      title: t("Sample papers"),
+      html: `${pageHead(t("Sample papers"), t("Class {n} · Full papers in the board-exam pattern", { n: c }))}
+        <p class="small muted" style="margin:-6px 2px 16px">${t("Each paper has the board's sections, marks and internal choices, with a marking scheme. Every paper number is different. Language papers (reading passages and set texts) aren't included.")}</p>
         ${body}`,
     };
   }
@@ -129,11 +129,11 @@ const Papers = (() => {
     const body = sections
       .map(
         (sec, i) => `<section class="ws-sec">
-          <h2>Section ${letter(i)} · ${sec.title}<span>${sec.qs.length} × ${sec.marks} = ${sec.qs.length * sec.marks} marks</span></h2>
+          <h2>${t("Section {l} · {title}", { l: letter(i), title: t(sec.title) })}<span>${t("{a} × {b} = {c} marks", { a: sec.qs.length, b: sec.marks, c: sec.qs.length * sec.marks })}</span></h2>
           <ol class="ws-list">${sec.qs
             .map(
               (x) => `<li value="${x.no}">${qHTML(x.main, sec.marks)}${
-                x.alt ? `<div class="paper-or">OR</div>${qHTML(x.alt, sec.marks)}` : ""
+                x.alt ? `<div class="paper-or">${t("OR")}</div>${qHTML(x.alt, sec.marks)}` : ""
               }</li>`
             )
             .join("")}</ol></section>`
@@ -143,8 +143,8 @@ const Papers = (() => {
     const ans = (it) => (it.options ? `<strong>(${"abcd"[it._order.indexOf(it.answer)]})</strong> ${rich(it.options[it.answer])}` : rich(it.a));
     const key = sections
       .map(
-        (sec, i) => `<h3 class="paper-key-h">Section ${letter(i)}</h3><ol class="ws-answers">${sec.qs
-          .map((x) => `<li value="${x.no}">${ans(x.main)} <span class="muted">(${sec.marks})</span>${x.alt ? `<div class="paper-or">OR</div>${ans(x.alt)}` : ""}</li>`)
+        (sec, i) => `<h3 class="paper-key-h">${t("Section {l}", { l: letter(i) })}</h3><ol class="ws-answers">${sec.qs
+          .map((x) => `<li value="${x.no}">${ans(x.main)} <span class="muted">(${sec.marks})</span>${x.alt ? `<div class="paper-or">${t("OR")}</div>${ans(x.alt)}` : ""}</li>`)
           .join("")}</ol>`
       )
       .join("");
@@ -152,34 +152,34 @@ const Papers = (() => {
     const base = `#/paper/${c}/${subjectId}?`;
     const ors = sections.reduce((a, s) => a + s.qs.filter((x) => x.alt).length, 0);
     const instructions = [
-      `This paper has ${sections.length} sections, ${letter(0)} to ${letter(sections.length - 1)}, and ${num} questions. All questions are compulsory.`,
-      ...sections.map((s, i) => `Section ${letter(i)} has ${s.qs.length} ${s.title.toLowerCase()} question${s.qs.length > 1 ? "s" : ""} of ${s.marks} mark${s.marks > 1 ? "s" : ""} each.`),
-      ors ? `There is an internal choice in ${ors} question${ors > 1 ? "s" : ""}; attempt only one of the alternatives.` : "",
-      pat.note || "",
+      t("This paper has {s} sections, {a} to {b}, and {n} questions. All questions are compulsory.", { s: sections.length, a: letter(0), b: letter(sections.length - 1), n: num }),
+      ...sections.map((s, i) => t("Section {l} has {n} {kind} {n:question|questions} of {m} {m:mark|marks} each.", { l: letter(i), n: s.qs.length, kind: t(s.title).toLowerCase(), m: s.marks })),
+      ors ? t("There is an internal choice in {n} {n:question|questions}; attempt only one of the alternatives.", { n: ors }) : "",
+      pat.note ? t(pat.note) : "",
     ].filter(Boolean);
 
     return {
-      title: `${subj.short} sample paper ${n}`,
+      title: t("{subject} sample paper {n}", { subject: subj.short, n }),
       html: `
-        ${Views.ui.topbar(`${subj.short} · Paper ${n}`, "#/papers")}
+        ${Views.ui.topbar(t("{subject} · Paper {n}", { subject: subj.short, n }), "#/papers")}
         <div class="ws-toolbar no-print">
-          <a class="btn" href="${base}n=${n - 1}" ${n > 1 ? "" : 'aria-disabled="true" tabindex="-1" style="opacity:.45;pointer-events:none"'}>${icon("back")} Paper ${Math.max(1, n - 1)}</a>
-          <a class="btn" href="${base}n=${n + 1}">New paper ${icon("next")}</a>
-          <button class="btn primary" onclick="printPage()">${icon("print")} Print</button>
-          <label class="ws-keytoggle"><input type="checkbox" id="paper-key" ${showKey ? "checked" : ""}> Marking scheme</label>
+          <a class="btn" href="${base}n=${n - 1}" ${n > 1 ? "" : 'aria-disabled="true" tabindex="-1" style="opacity:.45;pointer-events:none"'}>${icon("back")} ${t("Paper {n}", { n: Math.max(1, n - 1) })}</a>
+          <a class="btn" href="${base}n=${n + 1}">${t("New paper")} ${icon("next")}</a>
+          <button class="btn primary" onclick="printPage()">${icon("print")} ${t("Print")}</button>
+          <label class="ws-keytoggle"><input type="checkbox" id="paper-key" ${showKey ? "checked" : ""}> ${t("Marking scheme")}</label>
         </div>
         <article class="ws">
           <header class="ws-head">
-            <div class="ws-title"><strong>Sample Paper ${n}</strong><span>Class ${c} · ${esc(subj.name)}</span></div>
-            <div class="ws-meta"><span>Time allowed: 3 hours</span><span>Maximum marks: ${total}</span></div>
-            <div class="ws-fields"><span>Name: <i></i></span><span>Roll no.: <i></i></span></div>
-            <div class="paper-instr"><strong>General instructions</strong><ol>${instructions.map((t) => `<li>${esc(t)}</li>`).join("")}</ol></div>
+            <div class="ws-title"><strong>${t("Sample Paper {n}", { n })}</strong><span>${t("Class {n} · {subject}", { n: c, subject: esc(subj.name) })}</span></div>
+            <div class="ws-meta"><span>${t("Time allowed: 3 hours")}</span><span>${t("Maximum marks: {n}", { n: total })}</span></div>
+            <div class="ws-fields"><span>${t("Name:")} <i></i></span><span>${t("Roll no.:")} <i></i></span></div>
+            <div class="paper-instr"><strong>${t("General instructions")}</strong><ol>${instructions.map((t) => `<li>${esc(t)}</li>`).join("")}</ol></div>
           </header>
           ${body}
-          <footer class="ws-foot">Pocket Class India · Class ${c} ${esc(subj.name)} · Sample Paper ${n} · board-style practice paper, not an official board paper</footer>
+          <footer class="ws-foot">${t("Pocket Class India · Class {c} {subject} · Sample Paper {n} · board-style practice paper, not an official board paper", { c, subject: esc(subj.name), n })}</footer>
         </article>
         <article class="ws ws-key" ${showKey ? "" : "hidden"}>
-          <header class="ws-head"><div class="ws-title"><strong>Marking scheme · Paper ${n}</strong><span>Class ${c} · ${esc(subj.name)}</span></div></header>
+          <header class="ws-head"><div class="ws-title"><strong>${t("Marking scheme · Paper {n}", { n })}</strong><span>${t("Class {n} · {subject}", { n: c, subject: esc(subj.name) })}</span></div></header>
           ${key}
         </article>`,
       mount(el) {

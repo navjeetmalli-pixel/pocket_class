@@ -2042,7 +2042,7 @@ StudyData.add(10, "sst", {
         },
         {
           q: "Which country has Buddhism as its official religion, unlike secular India?",
-          options: ["Nepal", "Bhutan", "Sri Lanka", "Myanmar"],
+          options: ["Nepal", "Bangladesh", "Sri Lanka", "Maldives"],
           answer: 2,
           explain: "NCERT contrasts India with **Sri Lanka** (Buddhism), Pakistan (Islam) and England (Christianity)."
         },
