@@ -94,7 +94,7 @@ const App = {
       <div class="brand"><span class="brand-mark">P</span>Pocket Class</div>
       ${NAV.map((n) => navLink(n, tab)).join("")}
       <span class="spacer"></span>
-      <button type="button" class="side-profile" data-menu aria-haspopup="dialog" aria-expanded="false" aria-label="${t("Profile and menu")}">${Avatars.badge(pr, pr.name, "profile-pic", 36)}<span class="grow"><strong>${esc(pr.name || t("Student"))}</strong><span class="small muted">${t("Class {n}", { n: pr.cls })}</span></span><span class="badge" data-timer-badge ${Focus.running ? "" : "hidden"}>${clock(Focus.left)}</span></button>`;
+      <button type="button" class="side-profile" data-menu aria-haspopup="dialog" aria-expanded="false" aria-label="${t("Profile and menu")}">${Avatars.badge(pr, pr.name, "profile-pic", 36)}<span class="grow"><strong>${esc(pr.name || t("Student"))}</strong><span class="small muted">${International.label(pr)}</span></span><span class="badge" data-timer-badge ${Focus.running ? "" : "hidden"}>${clock(Focus.left)}</span></button>`;
   }
 
   // Asks the service worker to keep these files for offline use.
@@ -111,6 +111,8 @@ const App = {
   // The questions and notes of a subject load only when a page like these opens.
   function needs(p) {
     const own = Store.state.profile.cls;
+    // International learners have no chapters of their own class: only the chapters a path level opens need files.
+    if (International.on() && !/^(?:chapter|worksheet|paper|play)\/\d|^lab\/\w+\/\d/.test(p)) return null;
     const subjectsOf = (keys) => [...new Set(keys.map((k) => Store.parseKey(k).subject))];
     let m;
     if ((m = p.match(/^chapter\/(\d+)\/(\w+)\//))) return { cls: Number(m[1]), ids: [m[2]], practice: true };
@@ -148,9 +150,11 @@ const App = {
   // { paths: [subjects whose data/paths file is needed], pairs: [{ cls, subject }] whose chapter files and practice banks are }.
   // The pairs of a level are known only once its path file has loaded, so this is asked again after each step.
   function extraNeeds(p) {
+    const ix = International.needs(p);
+    if (ix) return ix;
     if (p === "revise/mistakes") {
-      const own = Store.state.profile.cls;
-      const keys = Store.mistakesFor(own).map(Store.parseKey);
+      const own = International.on() ? -1 : Store.state.profile.cls; // International learners have no class of their own to load
+      const keys = Store.mistakesFor(Store.state.profile.cls).map(Store.parseKey);
       const paths = [...new Set(keys.filter((k) => k.cls === 0).map((k) => k.subject.slice(StudyData.PATH_PREFIX.length)))];
       return { paths: paths.filter((x) => StudyData.PATH_SUBJECTS.includes(x)), pairs: keys.filter((k) => k.cls > 0 && k.cls !== own && StudyData.classes.includes(k.cls) && StudyData.subject(k.subject)) };
     }
@@ -190,7 +194,7 @@ const App = {
   }
 
   // Age band of a class (design spec 8): sets body[data-band] for the styles that adapt to the learner's age.
-  App.band = (c) => (!c ? "" : c <= 2 ? "1-2" : c <= 5 ? "3-5" : c <= 8 ? "6-8" : c <= 10 ? "9-10" : "11-12");
+  App.band = (c) => (c == null ? "" : c <= 2 ? "1-2" : c <= 5 ? "3-5" : c <= 8 ? "6-8" : c <= 10 ? "9-10" : "11-12");
 
   App.render = function (opts = {}) {
     const main = document.getElementById("app");
@@ -202,7 +206,7 @@ const App = {
       StudyData.setBoard(Store.state.profile.board);
 
       // First the class index (subject list, chapter titles): the student's class and any class a chapter link points to.
-      const need = [Store.state.profile.cls];
+      const need = International.on() ? [] : [Store.state.profile.cls];
       const m = p.match(/^(?:chapter|lab\/\w+)\/(\d+)\//);
       if (m) need.push(Number(m[1]));
       const missing = need.filter((c) => StudyData.classes.includes(c) && !StudyData.isLoaded(c));

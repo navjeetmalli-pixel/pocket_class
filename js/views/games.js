@@ -149,6 +149,7 @@
   }
 
   function gamesHome() {
+    if (International.on()) return Views.intlGames();
     const c = cls();
     const band = App.band(c);
     const young = band === "1-2" || band === "3-5";
@@ -196,6 +197,7 @@
   }
 
   function gamesSubject([id]) {
+    if (International.on()) return { redirect: "#/games" };
     const c = cls();
     const subj = D.subject(id);
     if (!subj || !D.subjectsFor(c).some((x) => x.id === id)) return notFound();
@@ -225,6 +227,7 @@
 
   // A random game: a random chapter of the subject that has games, and one of its games.
   function gamesRandom([id, type]) {
+    if (International.on()) return { redirect: "#/games" };
     const c = cls();
     const subj = D.subject(id);
     if (!subj || !D.subjectsFor(c).some((x) => x.id === id)) return notFound();

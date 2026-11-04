@@ -60,6 +60,9 @@ Pocket Class collects no data. Progress stays on your phone; you can back it up 
 
 Pocket Class India is an independent study app. It is not made by or connected with CBSE, NCERT or PSEB.
 
+INTERNATIONAL LISTINGS (outside India)
+For a listing aimed at students in Australia, Canada, the United Kingdom, the United States or New Zealand, use this paragraph instead of the CBSE and PSEB lines above, and keep the claim exactly this narrow: "Maths, English and Science practice by topic, from beginner to Year 12 level. Learn by topic with levels you climb, games and virtual labs, no account and no ads, works offline. It is not tied to any national curriculum (not Australian Curriculum, Common Core, the National Curriculum for England or any other), so use it alongside your school's own work." Questions and notes are in English and were written for Indian school books, so a few examples mention India or rupees (a known limit); money questions made by the app use A$, C$, £, $ or NZ$.
+
 ## Review notes (App Store Connect → App Review Information)
 
 Pocket Class India is a fully offline study app: every class, note, diagram and question bank is packed inside the app, so it works with no internet connection from the first launch. It uses native printing (practice sheets and sample papers) and the share sheet (progress backup). No account or sign-in is needed. To try it: pick any class and board on the first screen, open a subject, then a chapter.

@@ -32,19 +32,19 @@
         ? `<div class="sheet-group" role="group" aria-label="${t("Switch student")}"><div class="sheet-label">${t("Switch student")}</div>${list
             .map(
               (x, i) =>
-                `<button type="button" class="sheet-item" data-stud="${x.id}" ${x.id === Store.currentId ? 'aria-current="true"' : ""}>${Avatars.badge(x, studentName(x, i), "av", 28)}<span class="grow">${esc(studentName(x, i))} <span class="small muted">${t("Class {n}", { n: x.cls })}</span></span>${x.id === Store.currentId ? `<span class="pill accent">${t("Current")}</span>` : ""}</button>`
+                `<button type="button" class="sheet-item" data-stud="${x.id}" ${x.id === Store.currentId ? 'aria-current="true"' : ""}>${Avatars.badge(x, studentName(x, i), "av", 28)}<span class="grow">${esc(studentName(x, i))} <span class="small muted">${International.label(x)}</span></span>${x.id === Store.currentId ? `<span class="pill accent">${t("Current")}</span>` : ""}</button>`
             )
             .join("")}</div>`
         : item("#/settings", "users", t("Switch student"), `<span class="small muted">${t("Add a student")}</span>`);
     return `<div class="sheet-back" data-sheet-close></div>
       <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-h" id="menu-sheet">
         <div class="sheet-head">${Avatars.badge(p, p.name, "profile-pic", 44)}
-          <div class="grow"><strong id="sheet-h">${esc(p.name || t("Student"))}</strong><div class="small muted">${t("Class {n}", { n: p.cls })} · ${p.board === "pseb" ? "PSEB" : "CBSE"}</div></div>
+          <div class="grow"><strong id="sheet-h">${esc(p.name || t("Student"))}</strong><div class="small muted">${International.label(p)} · ${p.board === "intl" ? t(International.country(p.country).name) : p.board === "pseb" ? "PSEB" : "CBSE"}</div></div>
           <button type="button" class="icon-btn" data-sheet-close aria-label="${t("Close")}">${icon("x")}</button></div>
         <div class="sheet-list">
           ${item("#/profile", "settings", t("Profile"))}
           ${students}
-          ${item("#/search", "search", t("Search"))}
+          ${p.board === "intl" ? "" : item("#/search", "search", t("Search"))}
           ${item("#/settings", "settings", t("Settings"))}
           ${item("#/parent", "lock", t("Parent area"))}
           ${item("#/timer", "timer", t("Timer"), timerBadge)}

@@ -55,6 +55,8 @@ const Store = (() => {
   //   subjects  subject ids picked, or null = every subject of board + class
   //   learnLang lesson language preference "en" | "hi" | "pa" (the interface language is a device setting)
   //   goal      daily goal in minutes (15 | 20 | 30) or null = decide later
+  //   country, year, currency   International learners only (board "intl", js/international.js): country id, school-year option id,
+  //             money symbol (null = the country's); for them `cls` is a level 0–12
   //   setup     { step, done }: where first-time setup stopped, so it resumes after the app is closed
   const PROFILE_V = 1;
   const AVATARS = Array.from({ length: 12 }, (_, i) => "a" + String(i + 1).padStart(2, "0"));
@@ -68,6 +70,9 @@ const Store = (() => {
       view: p.view === "subject" ? "subject" : "class",
       subjects: Array.isArray(p.subjects) ? [...new Set(p.subjects.filter((x) => typeof x === "string"))] : null,
       learnLang: ["en", "hi", "pa"].includes(p.learnLang) ? p.learnLang : "en",
+      country: typeof p.country === "string" ? p.country : null,
+      year: typeof p.year === "string" ? p.year : null,
+      currency: typeof p.currency === "string" && p.currency.length <= 4 ? p.currency : null,
       goal: GOALS.includes(Number(p.goal)) ? Number(p.goal) : null,
       setup,
     });
@@ -75,6 +80,7 @@ const Store = (() => {
 
   // Subject ids offered for a board and class (the same lists StudyData.subjectsFor uses for the current board).
   function subjectIds(board, cls) {
+    if (board === "intl") return StudyData.INTL_SUBJECTS.slice();
     const bc = StudyData.boardCatalog[board];
     return ((bc && bc[cls]) || StudyData.catalog[cls] || []).filter((id) => StudyData.subject(id));
   }
@@ -231,7 +237,7 @@ const Store = (() => {
       const cur = state.profile || { name: "", cls: null, board: "cbse" };
       const next = { ...cur, ...patch };
       if (typeof next.name === "string") next.name = next.name.trim();
-      if (!StudyData.boards[next.board]) next.board = cur.board || "cbse";
+      if (!StudyData.boards[next.board] && next.board !== "intl") next.board = cur.board || "cbse";
       if (next.cls != null) next.cls = Number(next.cls);
       const dropped = this.droppedBy(patch);
       if (next.subjects) {
@@ -272,7 +278,7 @@ const Store = (() => {
       return pick ? all.filter((id) => pick.includes(id)) : all;
     },
     shownSubjects() {
-      return state.profile && state.profile.view === "subject" ? this.selectedSubjects() : this.availableSubjects().map((s) => s.id);
+      return state.profile && (state.profile.view === "subject" || state.profile.board === "intl") ? this.selectedSubjects() : this.availableSubjects().map((s) => s.id);
     },
     // Daily goal in minutes (null = not chosen); Today's plan uses it as its time.
     goal: () => (state.profile && state.profile.goal) || null,
@@ -491,15 +497,16 @@ const Store = (() => {
 
     // Chapters of this class that are due for revision today, most overdue first:
     // [{ key, days (since last studied), n (times studied), mistakes (open mistakes) }].
-    due(cls) {
+    // With `any`, chapters of every class count (International learners work in chapters of many classes).
+    due(cls, any) {
       const by = {};
       for (const [k, r] of Object.entries(state.revise)) {
-        if (parseKey(k).cls !== cls) continue;
+        if (!any && parseKey(k).cls !== cls) continue;
         by[k] = { key: k, last: r.last, n: r.n, mistakes: 0 };
       }
       for (const [qk, at] of Object.entries(state.mistakes)) {
         const p = parseKey(qk);
-        if (p.cls !== cls) continue;
+        if (!any && p.cls !== cls) continue;
         const k = key(p.cls, p.subject, p.chapterId);
         const e = (by[k] = by[k] || { key: k, last: 0, n: 0, mistakes: 0 });
         e.mistakes++;
@@ -511,8 +518,8 @@ const Store = (() => {
       for (const [rk, o] of Object.entries(state.learn.roll)) {
         if (!Mastery.isDue(o, now)) continue;
         const m = /^(\d+)\/([^/]+)\/([^/#]+)#/.exec(rk);
-        if (!m || Number(m[1]) !== cls) continue;
-        const k = key(cls, m[2], m[3]);
+        if (!m || (!any && Number(m[1]) !== cls)) continue;
+        const k = key(Number(m[1]), m[2], m[3]);
         const e = (by[k] = by[k] || { key: k, last: o.last || 0, n: 1, mistakes: 0 });
         e.objs = (e.objs || 0) + 1;
       }
@@ -565,7 +572,7 @@ const Store = (() => {
     },
 
     // ----- students sharing this device -----
-    students: () => students.map((s) => ({ id: s.id, name: s.profile ? s.profile.name : "", cls: s.profile ? s.profile.cls : null, board: s.profile ? s.profile.board : "cbse", avatar: s.profile ? s.profile.avatar : null, role: s.profile ? s.profile.role : "student", setup: s.profile ? s.profile.setup : null })),
+    students: () => students.map((s) => ({ id: s.id, name: s.profile ? s.profile.name : "", cls: s.profile ? s.profile.cls : null, board: s.profile ? s.profile.board : "cbse", country: s.profile ? s.profile.country : null, year: s.profile ? s.profile.year : null, avatar: s.profile ? s.profile.avatar : null, role: s.profile ? s.profile.role : "student", setup: s.profile ? s.profile.setup : null })),
     get currentId() {
       return state.id;
     },
@@ -619,7 +626,7 @@ const Store = (() => {
         return false;
       }
       if (!data || data.app !== "vidya") return false;
-      const okProfile = (p) => p && StudyData.classes.includes(Number(p.cls));
+      const okProfile = (p) => p && (StudyData.classes.includes(Number(p.cls)) || (p.board === "intl" && Number(p.cls) === 0));
       if (Array.isArray(data.students)) {
         const list = data.students.filter((s) => s && okProfile(s.profile));
         if (!list.length) return false;

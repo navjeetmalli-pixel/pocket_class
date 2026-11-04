@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracing strokes review</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 16px; background: #fff; color: #222; }
+  h2 { margin: 24px 0 8px; }
+  p { max-width: 70ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .cell { border: 1px solid #ccc; border-radius: 10px; padding: 6px; text-align: center; }
+  .cell svg { width: 100%; height: auto; display: block; }
+  .glyph { font-size: 84px; fill: #d9d9d9; }
+  .stroke { fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  .start { stroke: none; }
+  .num { font: 700 9px system-ui; fill: #fff; }
+</style>
+</head>
+<body>
+<h1>Tracing strokes: review sheet</h1>
+<p>For a teacher's check of <code>data/games/strokes.js</code>. Grey is the real letter; the coloured lines are the strokes a child
+traces, numbered in order, each starting at its dot. Check the shape, the order and the direction of every letter.</p>
+<div id="out"></div>
+<script>
+  const LangGames = { data: {}, add(name, d) { this.data[name] = d; } };
+</script>
+<script src="../data/games/strokes.js"></script>
+<script>
+  const colours = ["#d62728", "#1f77b4", "#2ca02c", "#9467bd", "#ff7f0e", "#8c564b"];
+  const names = { pa: "Gurmukhi", hi: "Devanagari", en: "English" };
+  const out = document.getElementById("out");
+  for (const [lang, set] of Object.entries(LangGames.data.strokes)) {
+    const h = document.createElement("h2");
+    h.textContent = `${names[lang] || lang} (${Object.keys(set).length})`;
+    out.appendChild(h);
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    for (const [letter, strokes] of Object.entries(set)) {
+      const starts = strokes.map((d) => d.match(/M\s*([\d.]+)[ ,]+([\d.]+)/));
+      grid.insertAdjacentHTML(
+        "beforeend",
+        `<div class="cell"><svg viewBox="0 0 100 100"><text class="glyph" x="50" y="80" text-anchor="middle">${letter}</text>${strokes
+          .map((d, i) => `<path class="stroke" d="${d}" stroke="${colours[i % colours.length]}"/>`)
+          .join("")}${starts
+          .map((m, i) => (m ? `<circle class="start" cx="${m[1]}" cy="${m[2]}" r="5" fill="${colours[i % colours.length]}"/><text class="num" x="${m[1]}" y="${+m[2] + 3}" text-anchor="middle">${i + 1}</text>` : ""))
+          .join("")}</svg>${letter}</div>`
+      );
+    }
+    out.appendChild(grid);
+  }
+</script>
+</body>
+</html>

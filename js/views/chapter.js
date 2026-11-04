@@ -88,7 +88,7 @@
 
     const r = Store.chapter(k);
     const marked = Store.isBookmarked(k);
-    const back = c === cls() ? `#/subject/${subj.id}` : "#/";
+    const back = International.on() ? "#/learn" : c === cls() ? `#/subject/${subj.id}` : "#/";
     const isYoung = young(c);
 
     // The lesson player: focused, with its own exit. Progress is saved by the lesson on every step.
@@ -133,7 +133,7 @@
       html: `
         ${topbar(subj.name, back, `<button class="icon-btn ${marked ? "on" : ""}" data-act="bookmark" aria-label="${t("Bookmark this chapter")}" aria-pressed="${marked}">${icon("bookmark")}</button>`)}
         <div class="hero" style="--c:${subj.color}">
-          <div class="eyebrow"><span class="hub-ic">${SubjectIcons.html(subj, { size: 20 })}</span> ${t("Class {c} · {section} · Chapter {n}", { c, section: esc(ch.section), n: chapterNumber(chs, idx) })}</div>
+          <div class="eyebrow"><span class="hub-ic">${SubjectIcons.html(subj, { size: 20 })}</span> ${International.on() ? t("Level {c} · {section}", { c, section: esc(ch.section) }) : t("Class {c} · {section} · Chapter {n}", { c, section: esc(ch.section), n: chapterNumber(chs, idx) })}</div>
           <h1>${esc(ch.title)}</h1>
           <p>${rich(ch.summary)}</p>
           ${r.done || r.best != null ? `<div class="row wrap" style="margin-top:12px">${r.done ? `<span class="pill good">${t("✓ Complete")}</span>` : ""}${r.best != null ? `<span class="pill accent">${t("Best quiz score {n}%", { n: r.best })}</span>` : ""}</div>` : ""}

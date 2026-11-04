@@ -61,7 +61,9 @@
   function levelState(subjectId, topic, i) {
     const T = Store.pathTopic(subjectId, topic.id);
     if ((T.levels[topic.levels[i].id] || {}).mastered) return "mastered";
-    return i === 0 || i <= T.start || (T.levels[topic.levels[i - 1].id] || {}).mastered ? "open" : "locked";
+    // International learners: every level up to their own year is open, as well as the placement from "Find my level".
+    const own = International.on() && !T.checked ? International.ownIndex(topic) : 0;
+    return i === 0 || i <= T.start || i <= own || (T.levels[topic.levels[i - 1].id] || {}).mastered ? "open" : "locked";
   }
   const masteredIn = (subjectId, topic) => topic.levels.filter((l, i) => levelState(subjectId, topic, i) === "mastered").length;
   // The level to work on next: the first one that is open and not mastered.
@@ -116,6 +118,8 @@
 
   function picker() {
     let list = D.paths();
+    const intl = International.on();
+    if (intl) list = list.filter((s) => D.INTL_SUBJECTS.includes(s.id)); // no Punjabi ladder for International learners
     // Subject-wise learners see the Practice-by-topic subjects they picked (every one if none of theirs has a ladder).
     if (Store.state.profile.view === "subject") {
       const mine = new Set(Store.selectedSubjects());
@@ -132,7 +136,7 @@
             return `<a class="card subject-card" href="${href(s.id)}" style="--c:${s.color}">
               <span class="subject-icon">${SubjectIcons.html(s)}</span>
               <span class="subject-name">${esc(s.name)}</span>
-              <span class="subject-hi">${esc(s.native)}</span>
+              ${intl ? "" : `<span class="subject-hi">${esc(s.native)}</span>`}
               <span class="subject-meta">${n ? t("{n} {n:level|levels} mastered", { n }) : t("Level 0 up to advanced")}</span>
             </a>`;
           })
@@ -147,7 +151,7 @@
     return {
       title: path.title,
       html: `${topbar(path.title, "#/paths")}
-        ${pageHead(path.title, path.titleLocal || subj.native)}
+        ${pageHead(path.title, International.on() ? "" : path.titleLocal || subj.native)}
         <p class="small muted" style="margin:-6px 2px 16px">${t("Choose a topic. You can find your level with a short check, or start from Level 0.")}</p>
         <div class="list">${path.topics
           .map((tp) => {
@@ -326,7 +330,7 @@
           ${
             chapters.length
               ? `<h2 class="block-title">${t("Read the full chapter")}</h2><div class="list">${chapters
-                  .map((s) => `<a class="card chapter-row" href="#/chapter/${s.cls}/${s.subj.id}/${s.ch.id}/understand" style="--c:${s.subj.color}"><span class="ch-num" aria-hidden="true">${SubjectIcons.html(s.subj)}</span><span class="ch-body"><span class="ch-tag">${t("Class {n}", { n: s.cls })} · ${esc(s.subj.short)}</span><span class="ch-title">${esc(s.ch.title)}</span></span>${icon("next")}</a>`)
+                  .map((s) => `<a class="card chapter-row" href="#/chapter/${s.cls}/${s.subj.id}/${s.ch.id}/understand" style="--c:${s.subj.color}"><span class="ch-num" aria-hidden="true">${SubjectIcons.html(s.subj)}</span><span class="ch-body"><span class="ch-tag">${International.srcLabel(s.cls)} · ${esc(s.subj.short)}</span><span class="ch-title">${esc(s.ch.title)}</span></span>${icon("next")}</a>`)
                   .join("")}</div>`
               : ""
           }

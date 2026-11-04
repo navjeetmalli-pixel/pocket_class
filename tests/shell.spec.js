@@ -174,8 +174,8 @@ test("explore: shows the labs that have something for the class, and each experi
   await page.goto("/#/explore");
   await expect(page.locator("#area-physics")).toBeVisible();
   await expect(page.locator("#area-maths")).toBeVisible();
-  // Areas with nothing for this class are left out, never shown as dead cards.
-  await expect(page.locator("#area-chemistry")).toHaveCount(0);
+  // The Chemistry Lab has the equation balancer for Class 10 (js/labs/equation.js); areas with nothing for a class are left out (see the Class 3 test).
+  await expect(page.locator("#area-chemistry")).toContainText("Equation balancer");
   const card = page.locator('[data-explore="sim-lens"]');
   await expect(card).toBeVisible();
   await expect(card).toContainText("image forms");

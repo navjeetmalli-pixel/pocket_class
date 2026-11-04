@@ -35,7 +35,7 @@
         return `<div class="stud-row" data-id="${x.id}">
           ${Avatars.badge(x, studentName(x, i))}
           <div class="grow"><input class="input" data-rename value="${esc(x.name)}" placeholder="${esc(studentName(x, i))}" maxlength="30" aria-label="${t("Student name")}">
-            <div class="tiny muted" style="margin-top:2px">${t("Class {n}", { n: x.cls })} · ${x.board === "pseb" ? "PSEB" : "CBSE"}</div></div>
+            <div class="tiny muted" style="margin-top:2px">${International.label(x)} · ${x.board === "intl" ? t(International.country(x.country).name) : x.board === "pseb" ? "PSEB" : "CBSE"}</div></div>
           ${cur ? `<span class="pill accent">${t("Current")}</span>` : `<button class="btn" data-switch>${t("Switch")}</button>`}
           ${list.length > 1 ? `<button class="btn bad" data-del>${t("Delete")}</button>` : ""}
         </div>`;

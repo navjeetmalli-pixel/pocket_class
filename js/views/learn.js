@@ -12,6 +12,7 @@
   }
 
   function learn() {
+    if (International.on()) return Views.intlLearn();
     const st = Store.state;
     const p = st.profile;
     const c = cls();

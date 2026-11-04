@@ -15,7 +15,7 @@
 
   // Title of a plan item: the chapter (or the Practice-by-topic level).
   function itemTitle(it) {
-    if (it.kind === "path") {
+    if (it.kind === "path" || it.dueKeys) {
       const [topicId, levelId] = it.chapter.split("/");
       const topic = D.pathLoaded(it.subject) && D.path(it.subject).topics.find((x) => x.id === topicId);
       const lv = topic && topic.levels.find((x) => x.id === levelId);
@@ -37,6 +37,7 @@
       case "next-top": return t("Next new chapter in {subject}, the subject you use most", { subject: sj });
       case "next": return t("Next new chapter in {subject}", { subject: sj });
       case "path": return t("Next level in {topic}", { topic: esc(w.topic) });
+      case "level": return t("{level} in {topic}, near your year", { level: t("Level {n}", { n: w.level }), topic: esc(w.topic) });
       case "weak": {
         const o = it.obj && Objectives.byKey(`${it.cls}/${it.subject}/${it.chapter}#${it.obj}`);
         return o ? t("Needs more practice: {skill}", { skill: esc(o.text) }) : t("A skill in this chapter needs more practice");
@@ -117,6 +118,7 @@
 
   // Chapters with a revision due (spaced revision, js/store.js), for the "Due for revision" card.
   function dueCard(c) {
+    if (International.on()) return ""; // their reviews are levels in Today's plan
     const list = Store.due(c)
       .map((e) => {
         const k = Store.parseKey(e.key);
@@ -154,18 +156,19 @@
     // Subject-wise view lists only the learner's picked subjects; Class-wise lists them all.
     const shown = Store.shownSubjects();
     const list = D.subjectsFor(c).filter((s) => shown.includes(s.id));
-    const subjects = Views._.subjectGrid(c, list);
-    const recent = Views._.recentList(c, band === "1-2" || band === "3-5" ? 2 : 3);
+    const intl = International.on();
+    const subjects = intl ? Views.intlSubjectCards(list) : Views._.subjectGrid(c, list);
+    const recent = intl ? "" : Views._.recentList(c, band === "1-2" || band === "3-5" ? 2 : 3);
 
     // A learner with nothing yet to resume and nothing in the plan is shown how to start, never an empty page.
     const start = `<a class="card continue main-action mt" id="main-action" href="#/learn">
-        <div class="grow"><div class="k">${t("Start learning")}</div><div class="t">${t("Choose a subject")}</div><div class="s">${t("Pick a subject and open your first chapter.")}</div></div>
+        <div class="grow"><div class="k">${t("Start learning")}</div><div class="t">${t("Choose a subject")}</div><div class="s">${International.on() ? t("Pick a subject and start with a topic.") : t("Pick a subject and open your first chapter.")}</div></div>
         <span class="go">${icon("arrow")}</span></a>`;
 
     return {
       title: t("Today"),
       html: `
-        ${Views._.shellHead(`${t("Namaste")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""} 🙏`, `${greet} · ${t("Class {n}", { n: c })} · ${st.profile.board === "pseb" ? "PSEB" : "CBSE"}`, "today")}
+        ${Views._.shellHead(intl ? `${t("Hello")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""} 👋` : `${t("Namaste")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""} 🙏`, `${greet} · ${International.label(st.profile)} · ${intl ? t(International.country(st.profile.country).name) : st.profile.board === "pseb" ? "PSEB" : "CBSE"}`, "today")}
         <div class="${young ? "home-young" : "home-main"}">
         ${boardNote(c)}
         ${
@@ -227,6 +230,7 @@
 
   // Today's question comes from one subject, picked by the date, so only that subject's file needs to load.
   function qotdSubject(c) {
+    if (International.on()) return null; // the daily question comes from a chapter of the learner's class: International learners have none
     const list = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length);
     return list.length ? list[hash(dayKey() + "/s/" + c) % list.length] : null;
   }

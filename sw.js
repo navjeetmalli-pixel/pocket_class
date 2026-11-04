@@ -1,7 +1,7 @@
 // Offline support: caches the app shell on first visit, plus each class's index and each subject's data once it's opened.
 // Online, files come fresh from the network (and refresh the cache);
 // offline or on a very slow connection, the cached copy is used.
-const CACHE = "pocket-class-v45";
+const CACHE = "pocket-class-v52";
 
 const FILES = [
   "./",
@@ -11,6 +11,7 @@ const FILES = [
   "js/util.js",
   "js/subject-icons.js",
   "js/i18n.js",
+  "js/international.js",
   "js/store.js",
   "js/avatars.js",
   "js/mastery.js",
@@ -36,6 +37,7 @@ const FILES = [
   "js/games/langkit.js",
   "js/games/letters.js",
   "js/games/matras.js",
+  "js/games/trace.js",
   "js/games/words.js",
   "js/games/sentences.js",
   "js/games/grammar.js",
@@ -66,6 +68,7 @@ const FILES = [
   "js/views/profile.js",
   "js/views/learn.js",
   "js/views/explore.js",
+  "js/views/international.js",
   "js/sheets.js",
   "js/papers.js",
   "js/labs/labs.js",
@@ -73,11 +76,23 @@ const FILES = [
   "js/labs/force.js",
   "js/labs/particles.js",
   "js/labs/cell.js",
+  "js/labs/atom.js",
+  "js/labs/equation.js",
+  "js/labs/foodweb.js",
+  "js/labs/body.js",
+  "js/labs/placevalue.js",
+  "js/labs/fractionwall.js",
+  "js/labs/algebratiles.js",
+  "js/labs/geoboard.js",
+  "js/labs/grapher.js",
+  "js/labs/india-map.js",
+  "js/labs/india-lab.js",
   "js/labs/i18n.js",
   "js/app.js",
   "data/registry.js",
   "data/games/letters.js",
   "data/games/matras.js",
+  "data/games/strokes.js",
   "data/games/words.js",
   "data/games/sentences.js",
   "data/games/grammar.js",

@@ -838,7 +838,7 @@ const Guided = (() => {
   // Takes the worked steps of a generated question and changes the last number of one step that ends "= number"
   // (optional unit): a sign error, a slip of one, or a misplaced zero. Only numbers are changed, so the original
   // step is always known and the wrong one is always provably different. Returns null if no step qualifies.
-  const STEP_END = /^(.*=\s*[₹$]?)(−|-)?(\d[\d,]*(?:\.\d+)?)(\s?[^\d=]{0,14})$/s;
+  const STEP_END = /^(.*=\s*(?:NZ\$|A\$|C\$|[₹$£€])?)(−|-)?(\d[\d,]*(?:\.\d+)?)(\s?[^\d=]{0,14})$/s;
   function slipSteps(steps) {
     if (steps.length < 2) return null;
     const options = [];

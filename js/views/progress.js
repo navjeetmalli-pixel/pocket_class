@@ -163,7 +163,7 @@
     return `<h2 class="block-title">${t("What to work on next")}</h2>
       <div class="stack" id="work-next">
         ${row("#/revise/mistakes", t("My mistakes"), mistakes ? t("{n} {n:question|questions} to fix", { n: mistakes }) : t("Nothing to fix yet"), "target")}
-        ${row("#/revise/due", t("Due for revision"), due ? t("{n} {n:chapter|chapters} due", { n: due }) : t("Nothing due yet"), "revise")}
+        ${International.on() ? "" : row("#/revise/due", t("Due for revision"), due ? t("{n} {n:chapter|chapters} due", { n: due }) : t("Nothing due yet"), "revise")}
         ${row("#/", t("Today's plan"), t("A short plan you can finish."), "check")}
         ${row("#/parent", t("Parent area"), t("A one-page summary of the week to show or print."), "users")}
       </div>`;
@@ -182,7 +182,8 @@
     const quizzes = st.history.filter((h) => h.cls === c);
     const activeDays = Object.values(st.days).filter((d) => d.acts > 0 || d.min > 0).length;
 
-    const subj = D.subjectsFor(c)
+    const intl = International.on();
+    const subj = (intl ? [] : D.subjectsFor(c))
       .map((s) => {
         const x = subjectStats(c, s.id);
         // Skills (learning objectives) that have been started in this subject, counted by state (js/learn.js).
@@ -200,17 +201,17 @@
     return {
       title: t("Progress"),
       html: `
-        ${Views._.shellHead(t("Your progress"), t("Class {n} · {days} study {days:day|days} so far", { n: c, days: activeDays }), "progress")}
+        ${Views._.shellHead(t("Your progress"), t("{class} · {days} study {days:day|days} so far", { class: International.label(st.profile), days: activeDays }), "progress")}
         <div class="stats-4">
           ${Store.showStreak() ? `<div class="card stat"><div class="v">${Store.streak() ? "🔥 " + Store.streak() : "–"}</div><div class="l">${t("day streak")}</div></div>` : `<div class="card stat"><div class="v">${Readiness.concept(c).started}</div><div class="l">${t("skills started")}</div></div>`}
           <div class="card stat"><div class="v">${minutesLabel(week)}</div><div class="l">${t("studied this week")}</div></div>
           <div class="card stat"><div class="v">${minutesLabel(st.focusMin)}</div><div class="l">${t("focus timer")}</div></div>
           <div class="card stat"><div class="v">${quizzes.length}</div><div class="l">${t("quizzes &amp; tests")}</div></div>
         </div>
-        ${bandSection(c)}
+        ${intl ? "" : bandSection(c)}
         ${workOnSection(c)}
-        ${readinessSection(c)}
-        ${rewardsSection(c)}
+        ${intl ? "" : readinessSection(c)}
+        ${intl ? "" : rewardsSection(c)}
         <h2 class="block-title">${t("This week")}</h2>
         <div class="card">
           <div class="week" role="img" aria-label="${t("Minutes studied each day this week")}">${days
@@ -223,7 +224,7 @@
           <p class="tiny muted" style="margin-top:10px">${t("Minutes you were actively using the app.")}</p>
         </div>
         <h2 class="block-title">${t("Subjects")}</h2>
-        <div class="card subj-progress">${subj}</div>
+        <div class="card subj-progress">${intl ? Views.intlProgressSubjects() : subj}</div>
         <h2 class="block-title">${t("Recent quizzes")}</h2>
         ${
           hist.length

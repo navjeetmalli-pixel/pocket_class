@@ -32,6 +32,7 @@
   }
 
   function subject([id]) {
+    if (International.on()) return { redirect: D.PATH_SUBJECTS.includes(id) ? `#/paths/${id}` : "#/learn" };
     const subj = D.subject(id);
     if (!subj) return notFound();
     const c = cls();

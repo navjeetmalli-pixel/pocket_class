@@ -111,6 +111,7 @@
   }
 
   function explore() {
+    if (International.on()) return Views.intlExplore();
     const c = cls();
     const all = items(c);
     const sections = AREAS.map((a) => ({ a, list: all.filter((x) => x.area === a.id) })).filter((x) => x.list.length);

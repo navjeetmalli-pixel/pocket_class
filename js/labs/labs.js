@@ -49,6 +49,7 @@ const Labs = (() => {
   //   cfg.columns        [{ key, label, unit?, d?, var? }]  columns of the table of runs; `var` marks a variable the learner controls
   //   cfg.investigations [{ id, title, question, predict: { q, opts, ans }, vary: key, go, explain: { q, opts, ans, why },
   //                         held: [labels], graph: { x: key | "run", y: key }, sentence? }]
+  //   inv.columns        optional: this investigation's own table columns instead of cfg.columns
   //   cfg.mountStage(slot, flow)   draws the lab's own picture and controls once into `slot`
   //   cfg.onInvestigation(inv, flow)  sets the lab up for an investigation (a preset)
   //   cfg.assumptions    text shown under the lab
@@ -59,7 +60,8 @@ const Labs = (() => {
     const n = ++uid;
     const S = { i: 0, pick: null, runs: [], rid: null, ePick: null, tries: 0, started: false, noted: false };
     const inv = () => cfg.investigations[S.i];
-    const col = (k) => cfg.columns.find((c) => c.key === k);
+    const cols = () => inv().columns || cfg.columns; // an investigation may bring its own table columns (inv.columns)
+    const col = (k) => cols().find((c) => c.key === k);
     const label = (c) => t(c.label) + (c.unit ? ` (${c.unit})` : "");
     const cell = (c, v) => (c.fmt ? c.fmt(v) : v == null ? "—" : typeof v === "number" ? (c.d != null ? fix(v, c.d) : num(v, 2)) : String(v));
     const $ = (s) => root.querySelector(s);
@@ -138,8 +140,8 @@ const Labs = (() => {
       $("[data-tablewrap]").hidden = !has;
       $("[data-clear]").hidden = !has;
       $("[data-table]").innerHTML = has
-        ? `<caption class="sr-only">${t("Your runs")}</caption><thead><tr><th scope="col">#</th>${cfg.columns.map((c) => `<th scope="col" class="${c.var ? "vl-var" : ""}">${esc(label(c))}</th>`).join("")}</tr></thead><tbody>${S.runs
-            .map((r, i) => `<tr><th scope="row">${i + 1}</th>${cfg.columns.map((c) => `<td class="${c.var ? "vl-var" : ""}">${esc(cell(c, r[c.key]))}</td>`).join("")}</tr>`)
+        ? `<caption class="sr-only">${t("Your runs")}</caption><thead><tr><th scope="col">#</th>${cols().map((c) => `<th scope="col" class="${c.var ? "vl-var" : ""}">${esc(label(c))}</th>`).join("")}</tr></thead><tbody>${S.runs
+            .map((r, i) => `<tr><th scope="row">${i + 1}</th>${cols().map((c) => `<td class="${c.var ? "vl-var" : ""}">${esc(cell(c, r[c.key]))}</td>`).join("")}</tr>`)
             .join("")}</tbody>`
         : "";
       // Fair test: compare the last run with the one before it.
@@ -147,11 +149,11 @@ const Labs = (() => {
       if (S.runs.length > 1) {
         const a = S.runs[S.runs.length - 2];
         const b = S.runs[S.runs.length - 1];
-        const ch = cfg.columns.filter((c) => c.var && String(a[c.key]) !== String(b[c.key]));
+        const ch = cols().filter((c) => c.var && String(a[c.key]) !== String(b[c.key]));
         fair = !ch.length ? t("These two runs have the same settings.") : ch.length === 1 ? t("Fair test: you changed only {x}.", { x: t(ch[0].label) }) : t("You changed more than one thing ({x}). It is hard to tell which one caused the difference.", { x: ch.map((c) => t(c.label)).join(", ") });
       }
       $("[data-fair]").textContent = fair;
-      $("[data-graph]").innerHTML = S.runs.length ? graph(S.runs, v.graph, cfg.columns) : "";
+      $("[data-graph]").innerHTML = S.runs.length ? graph(S.runs, v.graph, cols()) : "";
       const ev = $("[data-evidence]");
       ev.textContent = enough() ? t("You have runs that differ in {x}. You can explain what you found.", { x: t(col(v.vary).label) }) : t("To explain, record at least two runs that differ in {x}.", { x: t(col(v.vary).label) });
       $("[data-check]").disabled = !(enough() && S.ePick != null);
@@ -287,9 +289,9 @@ const Labs = (() => {
         question: t(v.question),
         prediction: { text: t(v.predict.opts[S.pick]), ok: okP },
         variables: { changed: t(col(v.vary).label), held: heldCols },
-        observations: S.runs.map((r) => Object.fromEntries(cfg.columns.map((c) => [c.key, cell(c, r[c.key])]))),
+        observations: S.runs.map((r) => Object.fromEntries(cols().map((c) => [c.key, cell(c, r[c.key])]))),
         conclusion: { text: t(v.explain.opts[S.ePick]), ok: okE },
-        fair: S.runs.length > 1 && S.runs.every((r, i) => i === 0 || cfg.columns.filter((c) => c.var && String(r[c.key]) !== String(S.runs[i - 1][c.key])).length <= 1),
+        fair: S.runs.length > 1 && S.runs.every((r, i) => i === 0 || cols().filter((c) => c.var && String(r[c.key]) !== String(S.runs[i - 1][c.key])).length <= 1),
       };
       if (cfg.extra) rec.extra = cfg.extra();
       Store.saveLab(rec);
@@ -387,7 +389,7 @@ const Labs = (() => {
     const back = "#/explore";
     const api = { id, cls: ctx && ctx.cls, subject: ctx && ctx.subject, chapter: ctx && ctx.chapter, ctx, log: logger(ctx), logItem: (item, ok, hints) => logItem(ctx, item, ok, hints) };
     const link = found
-      ? `<p class="small vl-for">${t("For")}: <a href="#/chapter/${c}/${subj}/${ch}">${t("Class {n}", { n: c })} · ${esc(found.subj.short || found.subj.name)} · ${esc(found.ch.title)}</a></p>`
+      ? `<p class="small vl-for">${t("For")}: <a href="#/chapter/${c}/${subj}/${ch}">${International.srcLabel(c)} · ${esc(found.subj.short || found.subj.name)} · ${esc(found.ch.title)}</a></p>`
       : "";
     return {
       title: t(def.title),

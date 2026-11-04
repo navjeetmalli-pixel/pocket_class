@@ -72,8 +72,10 @@
           <a class="card row" href="#/profile" id="profile-link">${Avatars.badge(st.profile, st.profile.name, "av", 40)}<span class="grow"><strong>${t("Profile")}</strong><span class="small muted" style="display:block">${t("Picture, subjects, learning view, lesson language and daily goal")}</span></span>${icon("next")}</a>
           <div class="card stack">
             <div class="field"><label for="name">${t("Your name")}</label><input id="name" class="input" value="${esc(st.profile.name)}" maxlength="30" placeholder="${t("Your name")}"></div>
-            <div class="field"><label>${t("Class")}</label>${classGrid(st.profile.cls)}</div>
-            <div class="field"><label>${t("Board")}</label>${boardPicker(st.profile.board || "cbse")}</div>
+            ${st.profile.board === "intl"
+              ? `<div class="field"><label>${t("School year")}</label><a class="btn" href="#/profile">${International.label(st.profile)} · ${t(International.country(st.profile.country).name)}</a><span class="small muted">${t("Change your country, year and currency in your profile.")}</span></div>`
+              : `<div class="field"><label>${t("Class")}</label>${classGrid(st.profile.cls)}</div>
+            <div class="field"><label>${t("Board")}</label>${boardPicker(st.profile.board || "cbse")}</div>`}
             <div class="field"><label>${t("App language")}</label>${langSwitch()}</div>
             <div class="field"><label>${t("Appearance")}</label>${seg("theme", [["system", "Auto"], ["light", "Light"], ["dark", "Dark"]], st.theme)}</div>
           </div>
@@ -107,7 +109,7 @@
           </div>
           <div class="card small muted">
             <strong style="color:var(--text)">${t("About Pocket Class India")}</strong><br>
-            ${t("Notes, quizzes and tests are written for the CBSE / NCERT and PSEB syllabi, Classes 1 to 12. Each subject page says whether it follows the current NCERT book, an older one, or is arranged by topic. Punjabi covers grammar and writing skills for CBSE and PSEB students. The content has not yet been checked by teachers, so use it for revision alongside your textbook, and check with your teacher if anything looks different from your book. Your progress is stored only on this device.")}
+            ${st.profile.board === "intl" ? t("Maths, English and Science practice by topic, from beginner to advanced level. It is not tied to any national curriculum. The questions and notes are in English, were written for Indian school books, and have not yet been checked by teachers. Your progress is stored only on this device.") : t("Notes, quizzes and tests are written for the CBSE / NCERT and PSEB syllabi, Classes 1 to 12. Each subject page says whether it follows the current NCERT book, an older one, or is arranged by topic. Punjabi covers grammar and writing skills for CBSE and PSEB students. The content has not yet been checked by teachers, so use it for revision alongside your textbook, and check with your teacher if anything looks different from your book. Your progress is stored only on this device.")}
           </div>
         </div>`,
       mount(el) {

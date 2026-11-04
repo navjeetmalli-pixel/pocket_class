@@ -8,6 +8,11 @@
 //               their last chapter. About 8 minutes (5 for Classes 1 to 3).
 //   3 Practice  a short quiz on the chapter of the skill they are weakest in (started, not mastered, lowest share right,
 //               at least 2 answers). About 5 minutes. Nothing is offered until there is something to practise.
+//   International learners (board "intl", js/international.js) have no chapters of their own class. Their reviews are Practice-by-topic
+//   levels with something due (a mistake or a skill whose review has come round, in any chapter the level draws on), and their lessons
+//   are up to 2 path levels, one per subject, taking the subjects in turn (the least recently practised first): in each subject the
+//   topic used last, at its next level that is not mastered at or after the learner's own level (or the placement from "Find my
+//   level"). They get no Practice item.
 //   Items are added in that order while they fit the time. The plan is kept for the day: an item stays until it is
 //   finished or no longer applies, finished items stay ticked, and each type has one place, so finishing the day's
 //   lesson does not bring a new one. An item is ticked when the evidence is in the record after it was added (a revision
@@ -29,6 +34,7 @@ const Plan = (() => {
   };
 
   const young = (c) => c <= config.youngTo;
+  const intl = () => typeof International !== "undefined" && International.on();
   // The learner's daily goal (15, 20 or 30 minutes, set in setup or Profile) is the time; without one the fixed times above apply.
   const budget = (c) => Store.goal() || (young(c) ? config.youngMinutes : config.minutes);
   const costOf = (c, kind) => (kind === "lesson" && young(c) ? config.youngLesson : config.cost[kind]);
@@ -104,6 +110,39 @@ const Plan = (() => {
     return { id: `path:${best.subject}/${topic.id}/${lv.id}`, kind: "path", cls: c, subject: best.subject, chapter: `${topic.id}/${lv.id}`, why: { w: "path", topic: topic.title }, href: `#/paths/${best.subject}/${topic.id}/${lv.id}` };
   }
 
+  // International: levels with a review due. Every chapter a level draws on (its own and the ones it names) can bring it in.
+  function intlReviewItems(c, max) {
+    const lookup = {};
+    for (const subject of International.picked()) {
+      if (!D.pathLoaded(subject)) continue;
+      for (const topic of D.path(subject).topics)
+        for (const lv of topic.levels) {
+          const keys = [...(lv.own ? [Store.key(0, D.PATH_PREFIX + subject, lv.id)] : []), ...(lv.from || []).filter(D.refActive).map((r) => Store.key(r.cls, r.subject, r.chapter))];
+          const hit = { subject, topic, lv, keys };
+          keys.forEach((k) => (lookup[k] = lookup[k] || hit));
+        }
+    }
+    const seen = new Set();
+    const out = [];
+    for (const e of Store.due(c, true)) {
+      const hit = lookup[e.key];
+      if (!hit || seen.has(hit.lv.id)) continue;
+      seen.add(hit.lv.id);
+      const why = e.objs ? { w: "skills", n: e.objs } : e.mistakes ? { w: "mistakes", n: e.mistakes } : { w: "days", n: e.days };
+      out.push({ id: `review:${hit.subject}/${hit.topic.id}/${hit.lv.id}`, kind: "review", cls: c, subject: hit.subject, chapter: `${hit.topic.id}/${hit.lv.id}`, dueKeys: hit.keys, why, href: `#/paths/${hit.subject}/${hit.topic.id}/${hit.lv.id}` });
+      if (out.length >= max + 3) break;
+    }
+    return out;
+  }
+
+  // International: the level to work on in each subject, the subjects taken in turn.
+  function intlLessons(c) {
+    return International.rotated()
+      .map((subject) => International.focus(subject))
+      .filter((f) => f && !f.done)
+      .map((f) => ({ id: `path:${f.subject}/${f.topic.id}/${f.lv.id}`, kind: "path", cls: c, subject: f.subject, chapter: `${f.topic.id}/${f.lv.id}`, why: { w: "level", topic: f.topic.title, level: f.lv.level }, href: International.levelHref(f) }));
+  }
+
   function lessonItem(c) {
     const viaPath = pathItem(c);
     if (viaPath) return viaPath;
@@ -135,6 +174,7 @@ const Plan = (() => {
   }
 
   function practiceItem(c) {
+    if (intl()) return null;
     const w = weakest(c);
     if (!w) return null;
     return { id: `practice:${Store.key(c, w.p.subject, w.p.chapter)}`, kind: "practice", cls: c, subject: w.p.subject, chapter: w.p.chapter, obj: w.p.obj, why: { w: "weak" }, href: `#/chapter/${c}/${w.p.subject}/${w.p.chapter}/master` };
@@ -148,7 +188,12 @@ const Plan = (() => {
   function isDone(it) {
     const st = Store.state;
     const since = it.at;
-    const k = it.kind === "path" ? null : keyOf(it);
+    const k = it.kind === "path" || it.dueKeys ? null : keyOf(it);
+    if (it.dueKeys) {
+      const [topicId, levelId] = it.chapter.split("/");
+      const lv = ((st.paths[it.subject] || {})[topicId] || { levels: {} }).levels[levelId];
+      return !!lv && (lv.at || 0) >= since;
+    }
     if (it.kind === "review") return ((st.revise[k] || {}).last || 0) >= since;
     if (it.kind === "lesson") return ((st.guided[k] || {}).at || 0) >= since || ((st.revise[k] || {}).last || 0) >= since || eventsSince(it, since).length >= config.lessonSteps;
     if (it.kind === "practice") return ((st.revise[k] || {}).last || 0) >= since || eventsSince(it, since, (e) => e.type === "answer").length >= config.practiceAnswers || eventsSince(it, since, (e) => e.type === "game").length > 0;
@@ -162,6 +207,7 @@ const Plan = (() => {
 
   // Still worth doing: a review while the chapter is due, a path level until mastered. Lessons and practice stay all day.
   function stillApplies(it) {
+    if (it.dueKeys) return Store.due(it.cls, true).some((e) => it.dueKeys.includes(e.key));
     if (it.kind === "review") return Store.due(it.cls).some((e) => e.key === keyOf(it));
     if (it.kind === "path") {
       const [topicId, levelId] = it.chapter.split("/");
@@ -184,7 +230,7 @@ const Plan = (() => {
     for (const it of plan.items) {
       if (plan.done[it.id] || !isDone(it)) continue;
       plan.done[it.id] = now;
-      if (typeof Learn !== "undefined") Learn.plan(c, it.kind === "path" ? D.PATH_PREFIX + it.subject : it.subject, it.kind === "path" ? it.chapter.split("/")[1] : it.chapter);
+      if (typeof Learn !== "undefined") Learn.plan(c, it.kind === "path" || it.dueKeys ? D.PATH_PREFIX + it.subject : it.subject, it.kind === "path" || it.dueKeys ? it.chapter.split("/")[1] : it.chapter);
     }
     // Keep finished items and the ones that still apply.
     plan.items = plan.items.filter((it) => plan.done[it.id] || stillApplies(it));
@@ -199,8 +245,11 @@ const Plan = (() => {
       minutes += costOf(c, it.kind);
     };
     const maxReviews = young(c) ? config.youngReviews : config.maxReviews;
-    for (const it of reviewItems(c, maxReviews)) if (have("review").length < maxReviews && room("review")) add(it);
-    if (!have("lesson").length && room("lesson")) add(lessonItem(c));
+    for (const it of intl() ? intlReviewItems(c, maxReviews) : reviewItems(c, maxReviews)) if (have("review").length < maxReviews && room("review")) add(it);
+    if (intl()) {
+      const want = Math.min(2, International.picked().length);
+      for (const it of intlLessons(c)) if (have("lesson").length < want && room("lesson")) add(it);
+    } else if (!have("lesson").length && room("lesson")) add(lessonItem(c));
     if (!have("practice").length && room("practice")) {
       const p = practiceItem(c);
       if (p && !plan.items.some((x) => x.subject === p.subject && x.chapter === p.chapter)) add(p);
@@ -209,7 +258,7 @@ const Plan = (() => {
 
     if (JSON.stringify(plan) !== before || st.plan !== saved) Store.setPlan(plan);
     const items = plan.items.map((it) => ({ ...it, done: !!plan.done[it.id], min: costOf(c, it.kind) }));
-    const owed = Store.due(c).filter((e) => chapterOf(c, Store.parseKey(e.key).subject, Store.parseKey(e.key).chapterId)).length;
+    const owed = intl() ? 0 : Store.due(c).filter((e) => chapterOf(c, Store.parseKey(e.key).subject, Store.parseKey(e.key).chapterId)).length;
     return {
       items,
       doneCount: items.filter((i) => i.done).length,
@@ -224,6 +273,7 @@ const Plan = (() => {
   // One relevant game or experiment: for a chapter in the plan, else the last chapter, else the first of the subject used most.
   // Experiments are offered on alternate days when the chapter has one. Returns { kind: "game" | "experiment", cls, subject, chapter, href }.
   function explore(c, planItems = []) {
+    if (intl()) return null; // International learners find games and labs in Play and Explore, linked to their levels
     const st = Store.state;
     const from = planItems.find((i) => i.kind === "lesson") || planItems.find((i) => i.kind === "practice");
     let subject = from ? from.subject : null;

@@ -84,7 +84,7 @@
       .sort((a, b) => a.p - b.p || b.asked - a.asked)
       .slice(0, 5);
 
-    const subjects = D.subjectsFor(c)
+    const subjects = (International.on() ? [] : D.subjectsFor(c))
       .map((s) => ({ s, x: subjectStats(c, s.id) }))
       .filter((r) => r.x.total)
       .map(
@@ -101,7 +101,7 @@
       title: t("For parents"),
       html: `
         ${topbar(t("For parents"), "#/progress", `<button class="icon-btn" onclick="printPage()" aria-label="${t("Print")}">${icon("print")}</button>`)}
-        <p class="small muted" style="margin:-6px 2px 16px"><strong style="color:var(--text)">${esc(name)}</strong> · ${t("Class {n}", { n: c })} · ${st.profile.board === "pseb" ? "PSEB" : "CBSE"} · ${dateShort(new Date())}</p>
+        <p class="small muted" style="margin:-6px 2px 16px"><strong style="color:var(--text)">${esc(name)}</strong> · ${International.label(st.profile)} · ${st.profile.board === "intl" ? t(International.country(st.profile.country).name) : st.profile.board === "pseb" ? "PSEB" : "CBSE"} · ${dateShort(new Date())}</p>
         <div class="stats-4">
           ${Store.showStreak() ? `<div class="card stat"><div class="v">${Store.streak() ? "🔥 " + Store.streak() : "–"}</div><div class="l">${t("day streak")}</div></div>` : `<div class="card stat"><div class="v">${Object.values(st.days).filter((d) => d.acts > 0 || d.min > 0).length}</div><div class="l">${t("days studied")}</div></div>`}
           <div class="card stat"><div class="v">${minutesLabel(week)}</div><div class="l">${t("studied this week")}</div></div>
@@ -114,8 +114,8 @@
           .join("")}
           <div class="row" style="border-top:1px solid var(--border);padding-top:10px"><strong class="grow">${t("Total")}</strong><strong>${minutesLabel(week)}</strong></div>
         </div>
-        <h2 class="block-title">${t("Chapters completed")}</h2>
-        <div class="card subj-progress">${subjects || `<span class="muted">${t("Nothing here yet.")}</span>`}</div>
+        <h2 class="block-title">${International.on() ? t("Subjects") : t("Chapters completed")}</h2>
+        <div class="card subj-progress">${International.on() ? Views.intlProgressSubjects() : subjects || `<span class="muted">${t("Nothing here yet.")}</span>`}</div>
         ${skillsSection(c)}
         ${readinessSection(c)}
         <h2 class="block-title">${t("Mock test scores")}</h2>

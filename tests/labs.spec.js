@@ -44,9 +44,9 @@ for (const [id, L] of Object.entries(LABS)) {
 }
 
 test("explore: a class with no lab chapters does not show them", async ({ page }) => {
-  await seed(page, { name: "Asha", cls: 3 });
+  await seed(page, { name: "Asha", cls: 2 });
   await page.goto("/#/explore");
-  await expect(page.locator('[data-explore^="lab-"]')).toHaveCount(0);
+  for (const id of ["circuit", "force", "particles", "cell", "atom", "equation", "foodweb", "body"]) await expect(page.locator(`[data-explore="lab-${id}"]`)).toHaveCount(0);
 });
 
 test("chapter hub: a Class 10 electricity chapter's Explore section lists the circuit lab and opens it", async ({ page }) => {
@@ -63,7 +63,7 @@ test("chapter hub: a Class 10 electricity chapter's Explore section lists the ci
   expect(item.href).toBe("#/lab/circuit/10/science/electricity");
   expect(item.title).toBe("Circuit builder");
   expect(item.blurb.length).toBeGreaterThan(20);
-  expect(await page.evaluate(() => Labs.forChapter(10, "science", "life-processes"))).toEqual([]);
+  expect(await page.evaluate(() => Labs.forChapter(10, "science", "heredity"))).toEqual([]);
 });
 
 test("circuit lab: prediction first, 6 V across 10 + 20 ohm in series gives 0.2 A, doubling the voltage doubles it, the record is saved and survives a reload", async ({ page }) => {

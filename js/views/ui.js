@@ -42,8 +42,9 @@ const Views = (() => {
   const sheetLabel = (id) => t(SHEET_LABEL[id] || (["english", "hindi", "punjabi", "englishpb", "hindipb"].includes(id) ? "Quick reference" : "Key facts"));
   const TERMS_LABEL = { hindi: "मुख्य शब्द", hindipb: "मुख्य शब्द", punjabi: "ਮੁੱਖ ਸ਼ਬਦ" };
 
-  function boardPicker(current) {
-    return `<div class="seg" role="group" aria-label="${t("Board")}">${Object.entries({ cbse: "CBSE / NCERT", pseb: "PSEB (Punjab Board)" })
+  // `intl`: also offer "International" (the Profile page does; Settings only switches between the two Indian boards).
+  function boardPicker(current, intl = false) {
+    return `<div class="seg" role="group" aria-label="${t("Board")}">${Object.entries({ cbse: "CBSE / NCERT", pseb: "PSEB (Punjab Board)", ...(intl ? { intl: "International" } : {}) })
       .map(([v, l]) => `<button data-board="${v}" class="${current === v ? "on" : ""}">${t(l)}</button>`)
       .join("")}</div>`;
   }

@@ -76,9 +76,14 @@ globalThis.StudyData = (function () {
       12: ["physics", "chemistry", "maths", "biology", "accountancy", "business", "economics", "historypb", "polscipb", "englishpb", "hindipb", "punjabi"],
     },
   };
+  // "International — learn by topic" (board "intl"): Maths, English and Science as Practice-by-topic ladders, not tied to any national
+  // curriculum. A learner's `cls` is then a level from 0 to 12 (the Practice-by-topic level), shown as their country's year name
+  // (js/international.js). Chapters of the Indian books are still the content under each level, so chapter files load as for CBSE.
+  const INTL = "intl";
+  const INTL_SUBJECTS = ["maths", "english", "science"];
   let board = "cbse";
   const catalogFor = (classNumber) => (boardCatalog[board] && boardCatalog[board][classNumber]) || catalog[classNumber] || [];
-  const hasBoardContent = (classNumber) => board === "cbse" || !!(boardCatalog[board] && boardCatalog[board][classNumber]);
+  const hasBoardContent = (classNumber) => board === "cbse" || board === INTL || !!(boardCatalog[board] && boardCatalog[board][classNumber]);
 
   // Extra practice (more MCQs, 1–5 mark written questions) lives in data/class{N}/practice/{subject}-{part}.js
   // and is loaded only when a student practises. This lists how many parts each subject has.
@@ -143,7 +148,7 @@ globalThis.StudyData = (function () {
   const pathLoaded = (subject) => !!pathData[subject];
   const loadPath = (subject) => (PATH_SUBJECTS.includes(subject) ? loadFiles([pathFile(subject)]) : Promise.resolve(false));
   // The board a reference is for: refs without a board are for everyone.
-  const refActive = (ref) => !ref.board || ref.board === board;
+  const refActive = (ref) => !ref.board || ref.board === (board === INTL ? "cbse" : board);
   // Files a set of { cls, subject } pairs needs: the subject's data file and its practice banks. These ignore the board's
   // catalog (a level can name any class's chapter), so they are listed here and not through files().
   const refFiles = (pairs) => {
@@ -249,6 +254,7 @@ globalThis.StudyData = (function () {
   }
 
   function subjectsFor(classNumber) {
+    if (board === INTL) return INTL_SUBJECTS.map(subject);
     return catalogFor(classNumber).map(subject);
   }
 
@@ -318,12 +324,12 @@ globalThis.StudyData = (function () {
 
   return {
     subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addIndex, addPractice, practiceFor, addDiagrams, diagramsFor, objectivesCatalog, addObjectives, objectivesFor, objectivesFile, hasObjectiveFile, loadObjectives, objectivesLoaded, addTimelines, timelinesFor, timelinesFile, chapters, syllabus,
-    PATH_SUBJECTS, PATH_PREFIX, addPath, paths, path, pathFile, pathLoaded, loadPath, refActive, refFiles, filesLoaded, loadFiles,
+    INTL, INTL_SUBJECTS, PATH_SUBJECTS, PATH_PREFIX, addPath, paths, path, pathFile, pathLoaded, loadPath, refActive, refFiles, filesLoaded, loadFiles,
     subject, subjectsFor, files, indexFile, practiceFiles, load, loadSubjects, subjectsLoaded, hasFull, loadPractice, practiceLoaded, loadTimelines, timelinesLoaded, hasBoardContent,
     isLoaded: (c) => !!ready[`${board}:${c}`],
     get board() {
       return board;
     },
-    setBoard: (b) => (board = boards[b] ? b : "cbse"),
+    setBoard: (b) => (board = boards[b] || b === INTL ? b : "cbse"),
   };
 })();

@@ -2,6 +2,8 @@
 // profile (profile.setup.step), so setup resumes where it stopped after the app is closed.
 //
 //   Student:  welcome > who > board > class > view > subjects > me > goal > tour > Home
+//   Intl:     welcome > who > board (International) > country > year > subjects > me > goal > tour > Home
+//             (International — learn by topic: Maths, English and Science from level 0 up, see js/international.js)
 //   Parent:   welcome > who > kids > pick > view > subjects > me > goal > tour > Home
 //             (kids: one or more child profiles with name, class and board; pick: who is learning now)
 //
@@ -12,17 +14,19 @@
   const { D, langSwitch } = Views._;
 
   const STUDENT = ["welcome", "who", "board", "class", "view", "subjects", "me", "goal", "tour"];
+  const INTL = ["welcome", "who", "board", "country", "year", "subjects", "me", "goal", "tour"];
   const PARENT = ["welcome", "who", "kids", "pick", "view", "subjects", "me", "goal", "tour"];
 
   // What the learner has picked on the screen in front of them but not yet saved (kept here so a redraw, e.g. after
   // choosing a language, doesn't lose it). Reset on every step change, except what later steps and Back need.
-  const ob = { step: "welcome", who: null, board: null, cls: null, view: null, sel: null, goal: undefined, kid: null, tour: 0, focus: false, focusSel: null };
+  const ob = { step: "welcome", who: null, board: null, country: null, year: null, cls: null, view: null, sel: null, goal: undefined, kid: null, tour: 0, focus: false, focusSel: null };
 
   const P = () => Store.state.profile;
-  const flow = () => (P() && P().role === "parent-managed" ? PARENT : STUDENT);
+  const intl = () => !!P() && P().board === "intl";
+  const flow = () => (P() && P().role === "parent-managed" ? PARENT : intl() ? INTL : STUDENT);
   const kids = () => Store.students().filter((s) => s.role === "parent-managed" && s.cls != null);
   // Classes 1 and 2 get bigger buttons (CSS) and simpler words.
-  const tiny = () => !!(P() && P().cls && P().cls <= 2);
+  const tiny = () => !!(P() && P().cls != null && P().cls <= 2);
   const easy = (normal, simple) => (tiny() ? t(simple) : t(normal));
 
   function currentStep() {
@@ -185,14 +189,15 @@
     },
 
     board() {
-      if (ob.board == null && P().cls != null) ob.board = P().board;
-      const pick = (v, title, sub) => choice(`data-board="${v}"`, `<span style="font-weight:800;font-size:15px">${v === "pseb" ? "PS" : "CB"}</span>`, title, sub, ob.board === v);
+      if (ob.board == null && (P().cls != null || P().board === "intl")) ob.board = P().board;
+      const pick = (v, title, sub) => choice(`data-board="${v}"`, `<span style="font-weight:800;font-size:15px">${v === "pseb" ? "PS" : v === "intl" ? "🌍" : "CB"}</span>`, title, sub, ob.board === v);
       return {
         title: t("Choose your board"),
         body: `${head(easy("Choose your board", "Which books do you use?"), t("This decides which syllabus and books your lessons follow."))}
-          <div class="ob-choices two" role="group" aria-label="${t("Board")}">
+          <div class="ob-choices" role="group" aria-label="${t("Board")}">
             ${pick("cbse", "CBSE / NCERT", t("NCERT books and the CBSE syllabus"))}
             ${pick("pseb", "PSEB (Punjab Board)", t("Punjab School Education Board books"))}
+            ${pick("intl", t("International — learn by topic"), t("Maths, English and Science from beginner to Year 12 level, by topic. Not tied to a national curriculum."))}
           </div>`,
         actions: primary(t("Continue"), !!ob.board),
         click(b) {
@@ -200,9 +205,53 @@
         },
         next() {
           Store.setProfile({ board: ob.board });
-          go("class");
+          go(ob.board === "intl" ? "country" : "class");
         },
         ready: () => !!ob.board,
+      };
+    },
+
+    // International only: the country decides the names of the school years and the money symbol (js/international.js).
+    country() {
+      if (ob.country == null) ob.country = P().country;
+      return {
+        title: t("Where do you study?"),
+        body: `${head(t("Where do you study?"), t("This only decides what your school year is called and which money symbol is used in questions."))}
+          <div class="ob-choices two" role="group" aria-label="${t("Country")}">
+            ${International.COUNTRIES.map((c) => choice(`data-country="${c.id}"`, `<span style="font-weight:800;font-size:13px">${c.cur}</span>`, t(c.name), "", ob.country === c.id)).join("")}
+          </div>`,
+        actions: primary(t("Continue"), !!ob.country),
+        click(b) {
+          if (b.dataset.country) ob.country = b.dataset.country;
+        },
+        next() {
+          if (ob.country !== P().country) Store.setProfile({ country: ob.country, currency: International.country(ob.country).cur, year: null });
+          ob.year = undefined;
+          go("year");
+        },
+        ready: () => !!ob.country,
+      };
+    },
+
+    // International only: the school year, in the country's own names, mapped to a level from 0 to 12.
+    year() {
+      const c = International.country(P().country);
+      if (ob.year === undefined) ob.year = P().year && P().cls != null ? P().year : null;
+      return {
+        title: t("Which year are you in?"),
+        body: `${head(t("Which year are you in?"), t("Pick the nearest one. You can change it any time in your profile."))}
+          <div class="ob-grid ob-years" role="group" aria-label="${t("School year")}">${c.years.map((y) => `<button type="button" data-year="${y.id}" aria-pressed="${ob.year === y.id}">${International.optName(y)}</button>`).join("")}</div>`,
+        actions: primary(t("Continue"), !!ob.year),
+        click(b) {
+          if (b.dataset.year) ob.year = b.dataset.year;
+        },
+        next() {
+          const y = c.years.find((x) => x.id === ob.year);
+          Store.setProfile({ year: y.id, cls: y.level, view: "class" });
+          ob.sel = null;
+          go("subjects");
+        },
+        ready: () => !!ob.year,
       };
     },
 
@@ -251,14 +300,14 @@
       const all = list.map((s) => s.id);
       const byClass = P().view !== "subject";
       if (!ob.sel) ob.sel = new Set(P().subjects ? P().subjects.filter((id) => all.includes(id)) : byClass ? all : []);
-      const lead = byClass ? t("All subjects for your class are selected. Untick any you don't want in Today's plan.") : t("Pick the subjects you want to focus on. You need at least one, or decide later.");
+      const lead = intl() ? t("Maths, English and Science are all selected. Untick any you don't want in Today's plan.") : byClass ? t("All subjects for your class are selected. Untick any you don't want in Today's plan.") : t("Pick the subjects you want to focus on. You need at least one, or decide later.");
       return {
         title: t("Choose your subjects"),
         body: `${head(easy("Choose your subjects", "What do you want to learn?"), lead)}
           <div class="ob-choices two" role="group" aria-label="${t("Subjects")}">
-            ${list.map((s) => choice(`data-sub="${s.id}"`, SubjectIcons.html(s), esc(s.name), esc(s.native || ""), ob.sel.has(s.id))).join("")}
+            ${list.map((s) => choice(`data-sub="${s.id}"`, SubjectIcons.html(s), esc(s.name), intl() ? "" : esc(s.native || ""), ob.sel.has(s.id))).join("")}
           </div>`,
-        actions: `${primary(t("Continue"), ob.sel.size > 0)}${byClass ? "" : `<button type="button" class="btn link" data-act="later">${t("Decide later")}</button>`}`,
+        actions: `${primary(t("Continue"), ob.sel.size > 0)}${byClass || intl() ? "" : `<button type="button" class="btn link" data-act="later">${t("Decide later")}</button>`}`,
         click(b) {
           if (b.dataset.sub) ob.sel.has(b.dataset.sub) ? ob.sel.delete(b.dataset.sub) : ob.sel.add(b.dataset.sub);
           if (b.dataset.act === "later") {
@@ -286,9 +335,9 @@
           <div class="field"><span class="lab" id="av-l">${t("Choose a picture")}</span>
             <div class="ob-avatars" role="group" aria-labelledby="av-l">${Store.AVATARS.map((id, i) => `<button type="button" data-avatar="${id}" aria-label="${t("Picture {n}", { n: i + 1 })}" aria-pressed="${p.avatar === id}">${Avatars.svg(id, 64)}</button>`).join("")}</div></div>
           <div class="field"><span class="lab">${t("App language")}</span>${langSwitch("App language")}<span class="hint" style="margin:0">${t("Buttons and menus.")}</span></div>
-          <div class="field"><span class="lab">${t("Lesson language")}</span>
+          ${intl() ? "" : `<div class="field"><span class="lab">${t("Lesson language")}</span>
             <div class="seg" role="group" aria-label="${t("Lesson language")}">${lessonLangs.map(([v, l]) => `<button type="button" data-ll="${v}" class="${p.learnLang === v ? "on" : ""}" aria-pressed="${p.learnLang === v}">${t(l)}</button>`).join("")}</div>
-            <span class="hint" style="margin:0">${t("The language you like explanations in. Not every lesson has every language yet.")}</span></div>`,
+            <span class="hint" style="margin:0">${t("The language you like explanations in. Not every lesson has every language yet.")}</span></div>`}`,
         actions: primary(t("Continue")),
         mount(el) {
           el.querySelector("#ob-name").oninput = (e) => Store.setProfile({ name: e.target.value });

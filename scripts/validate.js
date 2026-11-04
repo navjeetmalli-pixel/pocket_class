@@ -457,6 +457,43 @@ for (const file of diagramFiles) {
           counts.push(`letters ${lang}: ${list.length}`);
         });
       }
+      // stroke paths for the tracing game (data/games/strokes.js): every letter of the letter sets has strokes
+      {
+        const file = path.join("data", "games", "strokes.js");
+        if (!fs.existsSync(path.join(root, file))) err("strokes", "data/games/strokes.js is missing");
+        else {
+          vm.runInContext(fs.readFileSync(path.join(root, file), "utf8"), ctx, { filename: file });
+          const strokes = LG.get("strokes");
+          const letters = LG.get("letters");
+          LANGS.forEach((lang) => {
+            const set = strokes[lang];
+            const where = `strokes.${lang}`;
+            if (!set || typeof set !== "object") return err(where, "missing");
+            // every letter of the letter-picture set, plus the rest of the alphabet
+            const need = (letters[lang] || []).map((x) => x.letter);
+            if (lang === "en") need.push(...need.map((x) => x.toLowerCase()));
+            if (lang === "pa") need.push(..."ੳਅੲਸਹਕਖਗਘਙਚਛਜਝਞਟਠਡਢਣਤਥਦਧਨਪਫਬਭਮਯਰਲਵੜ");
+            if (lang === "hi") need.push(..."अआइईउऊऋएऐओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह", "क्ष", "त्र", "ज्ञ");
+            for (const l of new Set(need)) if (!set[l]) err(where, `no strokes for ${l}`);
+            if (lang === "pa" && Object.keys(set).length !== 35) err(where, `expected 35 letters, found ${Object.keys(set).length}`);
+            if (lang === "en" && Object.keys(set).length !== 52) err(where, `expected 52 letters, found ${Object.keys(set).length}`);
+            for (const [l, list] of Object.entries(set)) {
+              const at = `${where} ${l}`;
+              if (!Array.isArray(list) || list.length < 1) {
+                err(at, "needs at least one stroke");
+                continue;
+              }
+              if (l !== l.normalize("NFC")) err(at, "letter is not NFC");
+              list.forEach((d, i) => {
+                const pts = typeof d === "string" ? LG.flatten(d) : null;
+                if (!pts || pts.length < 2) return err(`${at} stroke ${i + 1}`, "does not parse");
+                for (const p of pts) if (p.some((v) => !Number.isFinite(v) || v < 0 || v > 100)) return err(`${at} stroke ${i + 1}`, `point ${p.map((v) => Math.round(v * 10) / 10)} is outside 0-100 or not a number`);
+              });
+            }
+            counts.push(`strokes ${lang}: ${Object.keys(set).length}`);
+          });
+        }
+      }
       // matras
       {
         const data = LG.get("matras");

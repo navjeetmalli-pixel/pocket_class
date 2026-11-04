@@ -8,7 +8,7 @@
 
 const LangGames = (() => {
   const store = {};
-  const FILES = ["data/games/letters.js", "data/games/matras.js", "data/games/words.js", "data/games/sentences.js", "data/games/grammar.js"];
+  const FILES = ["data/games/letters.js", "data/games/matras.js", "data/games/words.js", "data/games/sentences.js", "data/games/grammar.js", "data/games/strokes.js"];
   const add = (name, value) => (store[name] = value);
   const get = (name) => store[name] || {};
   const ready = () => StudyData.filesLoaded(FILES);
@@ -25,6 +25,7 @@ const LangGames = (() => {
     words: { en: [1, 5] },
     sentences: { en: [2, 8], hi: [2, 8], pa: [2, 8] },
     grammar: { en: [2, 10], hi: [2, 10], pa: [2, 10] },
+    trace: { pa: [1, 3], hi: [1, 3], en: [1, 3] },
   };
   // Practice-by-topic levels that get a game: the path topics, and the level numbers (Level 0 is the youngest).
   const LEVEL_TOPICS = {
@@ -32,6 +33,7 @@ const LangGames = (() => {
     matras: { pa: { topics: ["matras"], min: 1, max: 3 } },
     words: { en: { topics: ["phonics", "vocabulary"], max: 5 } },
     sentences: { en: { topics: ["sentences"], max: 8 }, pa: { topics: ["sentences"], max: 8 } },
+    trace: { pa: { topics: ["letters"], max: 2 }, en: { topics: ["phonics"], max: 1 } },
     grammar: { en: { topics: ["nouns", "verbs", "describing"], min: 2, max: 10 }, pa: { topics: ["naanv", "gender-number", "verbs"], min: 2, max: 10 } },
   };
 
@@ -111,6 +113,46 @@ const LangGames = (() => {
 
   // The read-aloud button for a text (empty when the device has no voice or no speech).
   const speaker = (text) => (typeof Speech !== "undefined" ? Speech.btn(1, "english", text) : "");
+
+  // ---------- stroke paths (data/games/strokes.js, the tracing game) ----------
+  // A stroke is a path string in a 100 x 100 box: "M x y" then any of "L x y", "Q cx cy x y", "C c1x c1y c2x c2y x y" (absolute,
+  // numbers separated by spaces). flatten() turns one into a list of [x, y] points (curves in 16 steps), or null if it is malformed.
+  function flatten(d) {
+    const tok = String(d).match(/[MLQC]|-?\d*\.?\d+/g);
+    const need = { M: 2, L: 2, Q: 4, C: 6 };
+    if (!tok || String(d).replace(/[MLQC\s\d.,-]/g, "") !== "" || tok[0] !== "M") return null;
+    const pts = [];
+    let i = 0;
+    let cmd = "";
+    let cur = null;
+    while (i < tok.length) {
+      if (/[MLQC]/.test(tok[i])) cmd = tok[i++];
+      else if (!cmd) return null;
+      const n = need[cmd];
+      const v = tok.slice(i, i + n).map(Number);
+      if (v.length < n || v.some((x) => !Number.isFinite(x))) return null;
+      i += n;
+      if (cmd === "M" || cmd === "L") {
+        cur = [v[0], v[1]];
+        pts.push(cur);
+      } else {
+        if (!cur) return null;
+        const p0 = cur;
+        const end = [v[n - 2], v[n - 1]];
+        for (let k = 1; k <= 16; k++) {
+          const u = k / 16;
+          const w = 1 - u;
+          pts.push(
+            cmd === "Q"
+              ? [w * w * p0[0] + 2 * w * u * v[0] + u * u * v[2], w * w * p0[1] + 2 * w * u * v[1] + u * u * v[3]]
+              : [w * w * w * p0[0] + 3 * w * w * u * v[0] + 3 * w * u * u * v[2] + u * u * u * v[4], w * w * w * p0[1] + 3 * w * w * u * v[1] + 3 * w * u * u * v[3] + u * u * u * v[5]]
+          );
+        }
+        cur = end;
+      }
+    }
+    return pts;
+  }
 
   // ---------- the tile board ----------
   // cfg: { help, preview (show the built text under the question), puzzles, ending(fails) -> { stars, lines } }
@@ -455,5 +497,5 @@ const LangGames = (() => {
   if (typeof I18N !== "undefined")
     for (const [table, lines] of [[I18N.pa, PA], [I18N.hi, HI]]) for (const [k, v] of Object.entries(lines)) if (!table[k]) table[k] = v;
 
-  return { add, get, files: FILES, ready, load, info, applies, classFor, pool, RANGES, LEVEL_TOPICS, SUBJECT, tileText, canonMarks, isMark, speaker, builder, clamp };
+  return { add, get, files: FILES, ready, load, info, applies, classFor, pool, RANGES, LEVEL_TOPICS, SUBJECT, tileText, canonMarks, isMark, speaker, builder, clamp, flatten };
 })();
