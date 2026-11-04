@@ -672,8 +672,9 @@ mark { background: color-mix(in srgb, var(--gold) 30%, transparent); color: inhe
 @media (min-width: 900px) { #toast { bottom: 28px; left: calc(50% + 116px); } }
 
 /* "A new version is ready" bar (website only) */
+/* On phones the bar sits at the top, so it never covers the tab bar or a screen's main button. */
 #update-bar {
-  position: fixed; left: 50%; bottom: calc(var(--nav-h) + 18px + env(safe-area-inset-bottom));
+  position: fixed; left: 50%; top: calc(12px + env(safe-area-inset-top));
   transform: translateX(-50%);
   z-index: 51;
   display: flex; align-items: center; gap: 12px;
@@ -683,8 +684,13 @@ mark { background: color-mix(in srgb, var(--gold) 30%, transparent); color: inhe
   font-weight: 650; font-size: 14.5px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
 }
+#update-bar { width: max-content; }
 #update-bar .btn { min-height: 36px; padding: 6px 14px; }
-@media (min-width: 900px) { #update-bar { bottom: 28px; left: calc(50% + 116px); } }
+#update-bar .update-close {
+  min-width: 44px; min-height: 44px; margin: -4px -4px -4px 0; border: 0; border-radius: 10px;
+  background: transparent; color: inherit; font-size: 22px; line-height: 1; cursor: pointer;
+}
+@media (min-width: 900px) { #update-bar { top: auto; bottom: 28px; left: calc(50% + 116px); } }
 
 /* ---------- Print (formula sheets) ---------- */
 /* ---------- Practice sheets ---------- */

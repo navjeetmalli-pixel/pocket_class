@@ -406,11 +406,13 @@ const App = {
       const bar = document.createElement("div");
       bar.id = "update-bar";
       bar.setAttribute("role", "status");
-      bar.innerHTML = `<span>${t("A new version is ready")}</span><button class="btn primary" data-act="reload">${t("Reload")}</button>`;
-      bar.querySelector("button").onclick = () => {
+      bar.innerHTML = `<span>${t("A new version is ready")}</span><button class="btn primary" data-act="reload">${t("Reload")}</button><button class="update-close" data-act="later" aria-label="${t("Close")}">×</button>`;
+      bar.querySelector("[data-act=reload]").onclick = () => {
         wanted = true;
         worker.postMessage({ type: "skipWaiting" });
       };
+      // Later: the new version still takes over next time the app is opened.
+      bar.querySelector("[data-act=later]").onclick = () => bar.remove();
       document.body.appendChild(bar);
     };
     navigator.serviceWorker.addEventListener("controllerchange", () => {
