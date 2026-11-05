@@ -355,3 +355,17 @@ test("batch 3: a spelling or plural question shows no pictures, and misspellings
   await expect(T.locator(".option")).toHaveCount(4);
   expect(await page.evaluate(() => !!PicDict.forOptions(["box", "ball", "brick", "bag"], { q: "Which word is plural?" }))).toBe(false);
 });
+
+test("two-word answers use their last word ('a cricket ball' is a ball), but not compounds, 'and' answers or number phrases", async ({ page }) => {
+  await start(page, { cls: 1 });
+  await mount(page, [{ q: "Which one will roll down a slope?", options: ["A brick", "A book", "A cricket ball", "A matchbox"], answer: 2 }]);
+  await expect(T.locator(".options.pic-options .option.pic-opt")).toHaveCount(4);
+  const key = (t, q = "") => page.evaluate(([x, c]) => (PicDict.forText(x, { context: c, decorative: true }) || {}).key || null, [t, q]);
+  expect(await key("a water bottle")).toBe("item:bottle");
+  expect(await key("paper boat")).toBe("item:boat");
+  expect(await key("sea horse")).toBe(null); // not a horse
+  expect(await key("hot dog")).toBe(null); // not a dog
+  expect(await key("soap and water")).toBe(null); // the picture would show only half the answer
+  expect(await key("leaves from trees")).toBe(null);
+  expect(await key("no ball")).toBe(null);
+});

@@ -625,9 +625,21 @@
     return null;
   }
 
+  // Two- or three-word English answers name their thing last ("cricket ball", "water bottle", "paper boat", "honey bee"): when the
+  // whole phrase has no picture, the last word's picture is used. Not for compounds whose last word is something else (a sea
+  // horse is not a horse, a hot dog is not a dog), nor after a number or "no"/"not" (those change the meaning).
+  var HEAD_BLOCK = /^(sea (horse|lion|cow|dog|star|weed)|hot dog|jelly ?fish|cat ?fish|star ?fish|silver ?fish|dragon ?fly|fire ?fly|butter ?fly|lady ?bird|ant ?eater|bull ?frog|guinea pig|sea ?horse|sun ?flower|sun ?glasses|eye ?glasses|ear ?ring|door ?bell|water ?fall|rain ?bow|snow ?man|book ?worm|tooth ?brush|hair ?brush|pine ?apple|egg ?plant|lady ?finger|ice ?cream|fire ?works?|fish ?bowl|dog ?house|bird ?house|cow ?shed|bus ?stop|train ?station|post ?office|police ?station|bat ?man|spider ?man|cup ?board|black ?board|key ?board|foot ?ball|base ?ball)$/;
+  function headNoun(text, ctx, sibs) {
+    var w = norm(text).replace(/^(a|an|the|some)\s+/, "").replace(/[^a-z\s-]/g, " ").replace(/\s+/g, " ").trim();
+    // "soap and water", "rice or dal", "leaves from trees": the last word is only part of the answer, so no picture
+    if (!w || !/^[a-z-]+( [a-z-]+){1,2}$/.test(w) || HEAD_BLOCK.test(w) || /\b(and|or|from|without|with|but|nor)\b/.test(w)) return null;
+    var parts = w.split(" ");
+    if (NUMWORDS.test(parts[0]) || /^(no|not|one|zero|many|few|all|any|every|each|more|less|most|least)$/.test(parts[0])) return null;
+    return describe(parts[parts.length - 1], ctx, sibs);
+  }
   function forText(text, o) {
     o = o || {};
-    var d = describe(text, String(o.context || "").toLowerCase(), o.siblings), svg;
+    var ctx = String(o.context || "").toLowerCase(), d = describe(text, ctx, o.siblings) || headNoun(text, ctx, o.siblings), svg;
     if (!d || !root.Pics) return null;
     svg = draw(d, o.decorative);
     return svg ? { svg: svg, label: d.label, key: d.key, kind: d.kind } : null;
