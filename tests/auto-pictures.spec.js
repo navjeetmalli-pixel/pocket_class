@@ -28,7 +28,7 @@ test("illustrate: counts, colours, shapes, money, other scripts; null for an abs
       big: k("There are 20 mangoes."),
       noPic: k("Count 3 mangoes", { noPic: true }),
       grammar: k("Use a full stop at the end of a sentence."),
-      name: k("Meera met Rose at school."),
+      name: k("Meera met Rose on Monday."),
     };
   });
   expect(r.count).toEqual({ keys: ["item:mango"], label: "3 mangoes" });

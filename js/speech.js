@@ -13,12 +13,72 @@ const Speech = (() => {
   const langOf = (text) => (/[਀-੿]/.test(text) ? "pa" : /[ऀ-ॿ]/.test(text) ? "hi" : "en");
   const TAGS = { en: "en-IN", hi: "hi-IN", pa: "pa-IN" };
 
-  // A voice for the language: the Indian one if there is one, else any voice of that language, else none.
+  // ---------- the voice and speed the learner picked (Settings → Read-aloud voice), saved on this device ----------
+  // localStorage "vidya:voice" = { en: voiceURI, hi: voiceURI, pa: voiceURI, rate: 0.85 }. A saved voice that this device no
+  // longer has is ignored, so the default comes back.
+  const PREF = "vidya:voice";
+  const RATES = { slow: 0.7, normal: 0.85, quick: 1 };
+  function prefs() {
+    try {
+      return JSON.parse(localStorage.getItem(PREF) || "{}") || {};
+    } catch (e) {
+      return {};
+    }
+  }
+  function savePrefs(p) {
+    try {
+      localStorage.setItem(PREF, JSON.stringify(p));
+    } catch (e) {
+      /* private mode: the choice lasts until the page closes */
+    }
+  }
+  const idOf = (v) => v.voiceURI || v.name;
+  const norm = (v) => String(v.lang || "").replace("_", "-").toLowerCase();
+  // Every voice of a language on this device, the Indian ones first.
+  function voicesFor(lang) {
+    if (!supported) return [];
+    const all = synth.getVoices().filter((v) => v.lang && norm(v).split("-")[0] === lang);
+    const tag = TAGS[lang].toLowerCase();
+    return all.sort((a, b) => (norm(b) === tag) - (norm(a) === tag) || String(a.name).localeCompare(String(b.name)));
+  }
+  // A voice for the language: the one the learner picked if this device has it, else the Indian one, else any voice of that
+  // language, else none.
   function voiceFor(lang) {
     if (!supported) return null;
-    const voices = synth.getVoices().filter((v) => v.lang);
-    const norm = (v) => v.lang.replace("_", "-").toLowerCase();
-    return voices.find((v) => norm(v) === TAGS[lang].toLowerCase()) || voices.find((v) => norm(v).split("-")[0] === lang) || null;
+    const list = voicesFor(lang);
+    const want = prefs()[lang];
+    return (want && list.find((v) => idOf(v) === want)) || list[0] || null;
+  }
+  const rate = () => {
+    const r = Number(prefs().rate);
+    return r >= 0.5 && r <= 1.2 ? r : RATES.normal;
+  };
+  function setVoice(lang, id) {
+    const p = prefs();
+    if (id) p[lang] = id;
+    else delete p[lang];
+    savePrefs(p);
+  }
+  function setRate(r) {
+    const p = prefs();
+    p.rate = r;
+    savePrefs(p);
+  }
+  // A short sample in the language, in the voice and speed picked now.
+  const SAMPLE = { en: "Hello! I am Mithu. Let us learn together.", hi: "नमस्ते! मैं मिट्ठू हूँ। चलो साथ में सीखें।", pa: "ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਮੈਂ ਮਿੱਠੂ ਹਾਂ। ਆਓ ਮਿਲ ਕੇ ਸਿੱਖੀਏ।" };
+  function preview(lang) {
+    const voice = voiceFor(lang);
+    if (!voice) return;
+    stop();
+    const u = new SpeechSynthesisUtterance(SAMPLE[lang] || SAMPLE.en);
+    try {
+      u.voice = voice;
+    } catch (e) {
+      /* the language below is enough */
+    }
+    u.lang = voice.lang;
+    u.rate = rate();
+    synth.speak(u);
   }
 
   const speakable = (text) => plain(text).replace(/\s+/g, " ").trim();
@@ -30,9 +90,9 @@ const Speech = (() => {
     return `<button type="button" class="say no-print" data-say="${esc(say)}" ${voiceFor(langOf(say)) ? "" : "hidden"} aria-label="${t("Read aloud")}" title="${t("Read aloud")}">${icon("speaker")}</button>`;
   }
 
-  // The big "Listen again" button beside a multiple-choice question (Classes 1-3): the question, then "A: ..., B: ...".
-  // Classes 1-2 also hear it by themselves when the question appears (data-auto), unless sound effects are off.
-  // `auto` is false once the question has been answered, so a redraw after the answer never reads it again.
+  // The big "Listen" button beside a multiple-choice question (Classes 1-3): it reads the QUESTION only. Each answer has its own
+  // Mithu speaker (js/readaloud.js), so the answers are heard one at a time when the child asks. Nothing is read by itself:
+  // reading starts only when the child presses a button (the owner's decision, 5 Nov 2026).
   function profileClass() {
     const p = typeof Store !== "undefined" && Store.state && Store.state.profile;
     return (p && p.cls) || 0;
@@ -43,10 +103,11 @@ const Speech = (() => {
     const ref = it.ref || {};
     const subject = ref.subject || (ref.key && typeof Store !== "undefined" ? Store.parseKey(ref.key).subject : "");
     const list = order || it.options.map((_, i) => i);
-    const say = speakable([it.q, ...list.map((o, k) => `${"ABCD"[k]}: ${it.options[o]}`)].join(". ")).replace(/_{2,}/g, ", ");
+    void list;
+    const say = speakable(it.q).replace(/_{2,}/g, ", ");
     if (!say || !supported || Release.langLocked(langOf(say)) || (subject && Release.subjectLocked(subject))) return "";
     const mascot = typeof Mascot !== "undefined" ? Mascot.svg("point", { size: 44 }) : icon("speaker");
-    return `<div class="listen-row no-print"><button type="button" class="say listen-btn" data-say="${esc(say)}" ${auto && cls <= 2 ? 'data-auto="1"' : ""} ${voiceFor(langOf(say)) ? "" : "hidden"} aria-label="${t("Listen again")}">${mascot}<span>${t("Listen again")}</span></button></div>`;
+    return `<div class="listen-row no-print"><button type="button" class="say listen-btn" data-say="${esc(say)}" ${voiceFor(langOf(say)) ? "" : "hidden"} aria-label="${t("Listen")}">${mascot}<span>${t("Listen")}</span></button></div>`;
   }
 
   let playing = null;
@@ -72,7 +133,7 @@ const Speech = (() => {
       /* a web view with an odd voice object: the language below is enough */
     }
     u.lang = voice.lang;
-    u.rate = 0.85; // slower, for young listeners
+    u.rate = rate(); // the speed picked in Settings (a little slow by default, for young listeners)
     const end = () => {
       if (playing === button) playing = null;
       button.classList.remove("on");
@@ -140,5 +201,5 @@ const Speech = (() => {
     }).observe(document.documentElement, { childList: true, subtree: true });
   }
 
-  return { btn, listen, stop, supported, langOf, voiceFor, speakable };
+  return { btn, listen, stop, supported, langOf, voiceFor, voicesFor, speakable, rate, RATES, setVoice, setRate, prefs, preview, idOf };
 })();

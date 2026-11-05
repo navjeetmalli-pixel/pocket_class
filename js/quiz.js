@@ -48,11 +48,11 @@ const Quiz = (() => {
 
   // Read-aloud button for young classes: the question, then its options in the order shown.
   function speakQuestion(it) {
-    if (picsOn() && Speech.listen(it, it.order)) return ""; // Classes 1-3 get the big "Listen again" button under the question
+    if (picsOn() && Speech.listen(it, it.order)) return ""; // Classes 1-3 get the big "Listen" button under the question
     const r = it.ref || {};
     const k = r.key ? Store.parseKey(r.key) : r;
     if (!k.cls) return "";
-    return Speech.btn(k.cls, k.subject, [it.q, ...it.order.map((o, j) => `${"ABCD"[j]}. ${it.options[o]}`)].join(". "));
+    return Speech.btn(k.cls, k.subject, it.q); // the question only; answers are not read with it
   }
 
   function questionHTML() {

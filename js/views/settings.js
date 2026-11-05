@@ -9,6 +9,67 @@
   const noPunjabiNote = (text) => (Release.applies() ? text.replace(" Punjabi covers grammar and writing skills for CBSE and PSEB students.", "") : text);
 
   // Phone apps only: a web page can't show a notification while it is closed.
+  // ---------- Read-aloud voice (js/speech.js): a voice per language from this device's voices, a speed, and a sample ----------
+  const VOICE_LANGS = [["en", "English"], ["hi", "Hindi"], ["pa", "Punjabi"]];
+  const shownLangs = () => VOICE_LANGS.filter(([l]) => !Release.langLocked(l) && Speech.voicesFor(l).length);
+  function voiceRows() {
+    const langs = shownLangs();
+    if (!langs.length) return `<p class="small muted" style="margin:8px 0 0">${t("This device has no read-aloud voices yet. They can be added in the phone's settings (Accessibility → Spoken content, or Text-to-speech).")}</p>`;
+    return langs
+      .map(([l, name]) => {
+        const list = Speech.voicesFor(l);
+        const cur = Speech.voiceFor(l);
+        const opts = list.map((v) => `<option value="${esc(Speech.idOf(v))}" ${cur && Speech.idOf(cur) === Speech.idOf(v) ? "selected" : ""}>${esc(v.name)}${v.lang ? ` (${esc(v.lang)})` : ""}</option>`).join("");
+        return `<div class="field voice-row"><label for="voice-${l}">${t(name)}</label>
+          <div class="voice-pick"><select id="voice-${l}" data-voice="${l}">${opts}</select>
+          <button type="button" class="btn" data-try="${l}" aria-label="${t("Try the {lang} voice", { lang: t(name) })}">${icon("play")} ${t("Try")}</button></div></div>`;
+      })
+      .join("");
+  }
+  function voiceCard() {
+    if (!Speech.supported) return "";
+    const r = Speech.rate();
+    const speed = [["slow", "Slow"], ["normal", "Normal"], ["quick", "Quick"]].find(([k]) => Math.abs(Speech.RATES[k] - r) < 0.01);
+    return `<div class="card" id="voice-card"><strong>${icon("speaker")} ${t("Read-aloud voice")}</strong>
+      <p class="small muted" style="margin:4px 0 8px">${t("Pick the voice and speed Mithu reads with. The voices are the ones on this phone.")}</p>
+      <div id="voice-rows">${voiceRows()}</div>
+      <div class="field"><label>${t("Speed")}</label><div class="seg" role="group" aria-label="${t("Speed")}">${[["slow", "Slow"], ["normal", "Normal"], ["quick", "Quick"]]
+        .map(([k, l]) => `<button type="button" data-voice-rate="${k}" class="${(speed ? speed[0] : "normal") === k ? "on" : ""}" aria-pressed="${(speed ? speed[0] : "normal") === k}">${t(l)}</button>`)
+        .join("")}</div></div>
+    </div>`;
+  }
+  function mountVoice(el) {
+    const card = el.querySelector("#voice-card");
+    if (!card) return;
+    const tryLang = () => (shownLangs()[0] || ["en"])[0];
+    card.addEventListener("change", (e) => {
+      const sel = e.target.closest("select[data-voice]");
+      if (!sel) return;
+      Speech.setVoice(sel.dataset.voice, sel.value);
+      Speech.preview(sel.dataset.voice);
+    });
+    card.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-try]");
+      if (b) return Speech.preview(b.dataset.try);
+      const r = e.target.closest("[data-voice-rate]");
+      if (!r) return;
+      const key = r.dataset.voiceRate;
+      if (!Speech.RATES[key]) return;
+      Speech.setRate(Speech.RATES[key]);
+      card.querySelectorAll("[data-voice-rate]").forEach((x) => {
+        x.classList.toggle("on", x === r);
+        x.setAttribute("aria-pressed", x === r);
+      });
+      Speech.preview(tryLang());
+    });
+    // Voices often arrive a moment after the page: fill the lists when they do.
+    if (window.speechSynthesis && window.speechSynthesis.addEventListener)
+      window.speechSynthesis.addEventListener("voiceschanged", () => {
+        const rows = el.querySelector("#voice-rows");
+        if (rows && rows.isConnected) rows.innerHTML = voiceRows();
+      });
+  }
+
   function reminderCard() {
     if (!Reminder.available()) return "";
     const r = Store.state.reminder;
@@ -84,6 +145,7 @@
           ${studentsCard()}
           <div class="card"><label class="switch"><span><strong>${t("Show streak")}</strong><br><span class="small muted">${t("Shows the days in a row you studied on Home and Progress. Missing a day never takes anything away.")}</span></span><input type="checkbox" id="show-streak" ${Store.showStreak() ? "checked" : ""}></label></div>
           <div class="card"><label class="switch"><span><strong>${icon("speaker")} ${t("Sound effects")}</strong><br><span class="small muted">${t("Short, soft sounds when you answer and tap. Turn them off if you prefer quiet.")}</span></span><input type="checkbox" id="sound-on" ${Sound.enabled() ? "checked" : ""}></label></div>
+          ${voiceCard()}
           ${reminderCard()}
           <a class="card row" href="#/parent"><span class="grow"><strong>${t("For parents")}</strong><span class="small muted" style="display:block">${t("A one-page summary of the week to show or print.")}</span></span>${icon("next")}</a>
           ${Native.is ? "" : `<div class="card">
@@ -126,6 +188,7 @@
           Store.setPref("streak", e.target.checked);
           toast(e.target.checked ? t("Streak is shown") : t("Streak is hidden"));
         };
+        mountVoice(el);
         el.querySelector("#sound-on").onchange = (e) => {
           Sound.set(e.target.checked);
           if (e.target.checked) Sound.play("pop");

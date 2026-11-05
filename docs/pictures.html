@@ -32,6 +32,10 @@ var GROUPS = {"Animals": ["cat", "dog", "cow", "elephant", "hen", "rooster", "go
 GROUPS["Action words (a child doing it)"] = ["stand", "walk", "run", "jump", "sit", "sleep", "eat", "drink", "sing", "dance", "read", "write", "cry", "laugh", "swim", "fly"];
 GROUPS["Describing words (pairs: the one meant is in full colour)"] = ["big", "small", "tall", "short", "hot", "cold", "happy", "sad", "pillow", "stone", "heavy", "light", "full", "empty", "fast", "slow"];
 GROUPS["More everyday words"] = ["sky", "bulb", "tongue", "fruit", "wind"];
+GROUPS["Batch 3: things, food, places"] = ["matchbox", "thumb", "ox", "bullock-cart", "okra", "soil", "lamb", "jeep", "swan", "salt", "papaya", "oil", "chalk", "bun", "eagle", "globe", "school", "hospital", "library", "park", "garden", "flag", "toy", "jug", "mug", "pot", "tamarind", "pomegranate", "jaggery", "puppy", "helmet", "taxi", "bench", "wheat", "sugarcane", "cracker", "lock", "marigold", "pond", "village", "city", "market", "money", "wool", "pea", "lemon", "karela", "chilli", "leg", "bridge", "tap", "snow", "lightning"];
+GROUPS["Batch 3: people and actions"] = ["man", "woman", "child", "uncle", "grandfather", "grandmother", "king", "queen", "scientist", "women", "men", "children", "kick", "clap", "play"];
+GROUPS["Batch 3: describing words and plant parts (answers only)"] = ["thin", "fat", "angry", "loud", "rough", "new", "old", "high", "root", "stem"];
+GROUPS["Batch 3: positions (same ball, same cabinet)"] = ["pos-in", "pos-on", "pos-under", "pos-above", "pos-over", "pos-near", "pos-far", "pos-out", "pos-behind", "pos-front", "pos-between", "pos-up", "pos-down"];
 Object.keys(GROUPS).forEach(function (g) {
   out += '<h2>' + g + ' at 48 px</h2>' + panels("s48", GROUPS[g], function (n) { return one(n); });
   out += '<h2>' + g + ' at 96 px</h2>' + panels("s96", GROUPS[g], function (n) { return one(n); });
@@ -63,6 +67,7 @@ out += '<h2>Rows (mango, 200x120)</h2>' + panels("row", [1, 5, 7, 10, 13, 20].ma
 var sentences = ["Count 3 mangoes: one, two, three.", "A red balloon and a blue ball", "A window is often a square or a rectangle.", "Ravi has \u20b95 and a \u20b950 note.", "The bird can fly and the fish can swim.", "Hot tea and cold milk", "\u0924\u0940\u0928 \u0906\u092e \u0914\u0930 \u0926\u094b \u0915\u0947\u0932\u0947", "\u0a24\u0a3f\u0a70\u0a28 \u0a2e\u0a41\u0a70\u0a21\u0a47"];
 out += '<h2>PicDict.illustrate: a strip for a sentence</h2>' + panels("wide", sentences.map(function (t) { return { t: t, label: t }; }), function (x) { var r = PicDict.illustrate(x.t, { size: 80 }); return r ? r.svg : "(none)"; });
 out += '<h2>Numbers 11 to 20 (a full ten-frame and the extra dots)</h2>' + panels("s96", [11, 13, 15, 17, 20].map(function (n) { return { n: n, label: String(n) }; }), function (x) { return PicDict.forText(String(x.n), { decorative: true }).svg; });
+out += '<h2>Numbers 0, 21 to 100 (tens bundles and single sticks)</h2>' + panels("s96", [0, 21, 30, 47, 58, 63, 99, 100].map(function (n) { return { n: n, label: String(n) }; }), function (x) { return PicDict.forText(String(x.n), { decorative: true }).svg; });
 out += '<h2>Hidden-first test (apple should show below)</h2><div id="hid" style="display:none">' + Pics.svg(Pics.item("apple", { x: 100, y: 60, s: 100 }), { label: "hidden apple" }) +
   '</div><div class="panels"><div class="panel light wide">' + Pics.svg(Pics.item("apple", { x: 100, y: 60, s: 100 }), { label: "visible apple" }) + '</div></div>';
 out += '<h2>Two of the same picture on one page (ids must not clash)</h2><div class="panels"><div class="panel light s96">' + one("zebra") + one("zebra") + one("pineapple") + one("pineapple") + one("bee") + one("bee") + '</div></div>';

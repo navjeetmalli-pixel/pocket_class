@@ -60,35 +60,21 @@ for (const cls of [1, 2, 3, 6]) {
   });
 }
 
-test("Class 1 English quiz: heading, question, then options A to D in order, and the highlight moves", async ({ page }) => {
+test("Class 1 English quiz: Read to me reads the heading then the question, not the answers, and the highlight moves", async ({ page }) => {
   await start(page, { sound: "off", url: "/#/chapter/1/english/the-alphabet/master" });
   const q = (await page.locator(".quiz-q").first().textContent()).trim();
   const key = norm(q).slice(0, 10);
   await rtm(page).click();
   await expect(rtm(page)).toHaveAttribute("aria-label", "Stop reading");
-  await expect.poll(async () => (await utt(page)).some((x) => /^D: /.test(x.text)), { timeout: 15000 }).toBe(true);
+  await expect.poll(async () => (await utt(page)).some((x) => norm(x.text).includes(key)), { timeout: 15000 }).toBe(true);
+  await expect(page.locator(".reading")).toHaveCount(0, { timeout: 15000 });
   const u = await utt(page);
-  const i = {
-    h: u.findIndex((x) => x.text.includes("The Alphabet")),
-    q: u.findIndex((x) => norm(x.text).includes(key)),
-    a: u.findIndex((x) => /^A: /.test(x.text)),
-    b: u.findIndex((x) => /^B: /.test(x.text)),
-    c: u.findIndex((x) => /^C: /.test(x.text)),
-    d: u.findIndex((x) => /^D: /.test(x.text)),
-  };
-  expect(i.h).toBeGreaterThanOrEqual(0);
-  expect(i.q, JSON.stringify([q, u.map((x) => x.text)])).toBeGreaterThan(-1);
-  expect(i.h).toBeLessThan(i.q);
-  expect(i.q).toBeLessThan(i.a);
-  expect(i.a).toBeLessThan(i.b);
-  expect(i.b).toBeLessThan(i.c);
-  expect(i.c).toBeLessThan(i.d);
-  // the element highlighted while each part was spoken is that part
-  expect(norm(u[i.q].mark)).toContain(key);
-  expect(u[i.a].mark).not.toBe(u[i.q].mark);
-  expect(u[i.b].mark).not.toBe(u[i.a].mark);
-  // done: no highlight left, the button is back
-  await expect(page.locator(".reading")).toHaveCount(0);
+  const h = u.findIndex((x) => x.text.includes("The Alphabet"));
+  const qi = u.findIndex((x) => norm(x.text).includes(key));
+  expect(h).toBeGreaterThanOrEqual(0);
+  expect(h).toBeLessThan(qi);
+  expect(norm(u[qi].mark)).toContain(key); // the question was highlighted while it was read
+  expect(u.some((x) => /^[A-D]: /.test(x.text)), "answers are not read with the question").toBe(false);
   await expect(rtm(page)).toHaveAttribute("aria-label", "Read to me");
 });
 
@@ -125,59 +111,28 @@ test("it stops on navigation and when tapped again", async ({ page }) => {
   expect((await utt(page)).length).toBe(before + 1);
 });
 
-test("Class 1 hears 'how to play' by itself; Sound effects off means no auto-read, but the button works", async ({ page }) => {
-  await start(page, { url: "/#/play/1/maths/shapes-around-us/match" });
+test("nothing is read by itself: not a game's how to play, not a question, not Mithu's greeting; the buttons still work", async ({ page }) => {
+  for (const url of ["/#/play/1/maths/shapes-around-us/match", "/#/chapter/1/english/the-alphabet/master", "/#/"]) {
+    await start(page, { url });
+    await page.waitForTimeout(1200);
+    expect(await utt(page), url).toEqual([]);
+  }
+  await page.goto("/#/play/1/maths/shapes-around-us/match");
   await expect(page.locator(".game-intro .game-how")).toBeVisible();
-  const how = (await page.locator(".game-how").textContent()).trim();
-  await expect.poll(async () => (await utt(page)).map((x) => x.text)).toEqual(expect.arrayContaining([how]));
-  const u = await utt(page);
-  expect(u[0].text).toBe((await page.locator(".game-title").textContent()).trim());
-  expect(u[1].mark).toBe(how);
-});
-test("with Sound effects off nothing is read by itself", async ({ page }) => {
-  await start(page, { sound: "off", url: "/#/play/1/maths/shapes-around-us/match" });
-  await expect(page.locator(".game-intro .game-how")).toBeVisible();
-  await page.waitForTimeout(1200);
-  expect(await utt(page)).toEqual([]);
   await rtm(page).click();
   await expect.poll(async () => (await utt(page)).some((x) => x.text.includes("Match"))).toBe(true);
 });
-test("the race is timed: no auto-read of its how to play", async ({ page }) => {
-  await start(page, { url: "/#/play/1/maths/shapes-around-us/race" });
-  await page.waitForTimeout(300);
-  if (await page.locator(".game-intro").count()) {
-    await page.waitForTimeout(1200);
-    expect(await utt(page)).toEqual([]);
-  }
-});
-test("Class 3 does not auto-read", async ({ page }) => {
-  await start(page, { cls: 3, url: "/#/play/3/maths/place-value/match" });
-  await page.waitForTimeout(1500);
-  expect(await utt(page)).toEqual([]);
-  await expect(rtm(page)).toBeVisible();
-});
 
-test("a question is read once: the Listen again button does it, Read to me does not add a second reading", async ({ page }) => {
+test("Listen reads the question only, once per press", async ({ page }) => {
   await start(page, { url: "/#/chapter/1/english/the-alphabet/master" });
   const q = (await page.locator(".quiz-q").first().textContent()).trim();
+  const listen = page.locator(".listen-btn").first();
+  await expect(listen).toHaveAttribute("aria-label", "Listen");
+  await listen.click();
   await expect.poll(async () => (await utt(page)).length).toBe(1);
-  await page.waitForTimeout(1200);
   const u = await utt(page);
-  expect(u).toHaveLength(1);
-  expect(norm(u[0].text)).toContain(norm(q).slice(0, 10));
-  expect(u[0].text).toMatch(/A: .*B: /);
-});
-
-test("Mithu's greeting on Today is read once per session for Class 2", async ({ page }) => {
-  await start(page, { cls: 2, url: "/#/" });
-  await expect.poll(async () => (await utt(page)).some((x) => x.text.includes("Namaste, Kabir"))).toBe(true);
-  const n = (await utt(page)).filter((x) => x.text.includes("Namaste")).length;
-  await page.evaluate(() => (location.hash = "#/learn"));
-  await expect(page.locator("h1")).toContainText("Learn");
-  await page.evaluate(() => (location.hash = "#/"));
-  await expect(page.locator(".mascot-head")).toBeVisible();
-  await page.waitForTimeout(1200);
-  expect((await utt(page)).filter((x) => x.text.includes("Namaste")).length).toBe(n);
+  expect(norm(u[0].text)).toBe(norm(q));
+  expect(u[0].text).not.toMatch(/A: |B: /);
 });
 
 test("press and hold a subject tile reads its name and does not open it", async ({ page }) => {

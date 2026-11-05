@@ -36,6 +36,20 @@
    Hindi and Punjabi verbs are only the infinitives; खाना / सोना (food, gold) are left out on purpose because they have two meanings.
    Also: PicDict.illustrate(text, { context, max = 3, size = 56, title, noPic }) gives a small picture strip for a sentence
    (a count plus a thing = that many; colour plus thing; up to 3 things side by side; shapes; money) or null. See its comment below.
+   BATCH 3 (words that were one or two words away from a picture answer). New Hindi / Punjabi words, with the picture they show:
+     aliases added to old pictures: रेल (train), झोला (bag), पत्ती (leaf; पत्तियाँ/पत्ते are read from it), पर्वत (mountain), बकरा and ਬੱਕਰਾ (goat), ਮੁਰਗਾਂ (rooster),
+       घोड़ी (horse), कंकड़ (stone), ਬਿੱਲੀ ਮਾਸੀ (cat), ਕੁੱਤੀ (dog), माँ/पिता now show a woman/man, नानी, नाना, ਨਾਨੀ, ਨਾਨਾ (grandmother, grandfather)
+     things: माचिस ਮਾਚਿਸ (matchbox), बैल ਬਲਦ (ox), बैलगाड़ी ਗੱਡਾ ਬੈਲਗੱਡੀ (bullock cart), भिंडी ਭਿੰਡੀ (okra), मिट्टी ਮਿੱਟੀ (soil), मेमना (lamb), पिल्ला ਕਤੂਰਾ (puppy),
+       नमक ਲੂਣ ਨਮਕ (salt), पपीता ਪਪੀਤਾ, तेल ਤੇਲ (oil), चॉक (chalk), बन (bun), जग ਜੱਗ, मग ਮੱਗ, मटका घड़ा ਘੜਾ ਮਟਕਾ (clay pot), इमली ਇਮਲੀ, अनार ਅਨਾਰ, गुड़ ਗੁੜ,
+       टैक्सी ਟੈਕਸੀ, गेहूँ ਕਣਕ, गन्ना ਗੰਨਾ, पटाखा पटाखे ਪਟਾਕਾ ਪਟਾਕੇ (firecracker, only when the question is about Diwali, noise or fire), गेंदा (marigold), ऊन ਉੱਨ (wool),
+       नींबू ਨਿੰਬੂ, करेला ਕਰੇਲਾ, मिर्च ਮਿਰਚ, चाचा मामा ताऊ ਚਾਚਾ ਮਾਮਾ ਤਾਇਆ (uncle), वैज्ञानिक ਵਿਗਿਆਨੀ (scientist), धरती पृथ्वी ਧਰਤੀ ਪ੍ਰਿਥਵੀ (globe, not when the question is about soil/plants)
+     answers only (never drawn in notes or above questions): पार्क ਪਾਰਕ, बाग बगीचा ਬਾਗ ਬਗੀਚਾ, गाँव ਪਿੰਡ, शहर ਸ਼ਹਿਰ, बाज़ार ਬਾਜ਼ਾਰ, अस्पताल ਹਸਪਤਾਲ, पुस्तकालय ਲਾਇਬ੍ਰੇਰੀ, बेंच ਬੈਂਚ, पैसा पैसे ਪੈਸਾ ਪੈਸੇ,
+       झंडा तिरंगा ਝੰਡਾ ਤਿਰੰਗਾ, खिलौना ਖਿਡੌਣਾ, जड़ ਜੜ੍ਹ, तना ਤਣਾ, पुल ਪੁਲ, ताली बजाना ਤਾੜੀ ਮਾਰਨਾ, खेलना ਖੇਡਣਾ, रसोइया ਰਸੋਈਆ, पतला ਪਤਲਾ, मोटा ਮੋਟਾ (thick), खट्टा ਖੱਟਾ (a lemon),
+       कड़वा ਕੌੜਾ (karela), तीखा ਤਿੱਖਾ (chilli), मीठा ਮਿੱਠਾ (sweets), खुरदरा ਖੁਰਦਰਾ, नया ਨਵਾਂ, पुराना ਪੁਰਾਣਾ,
+       बिजली ਬਿਜਲੀ (a bulb if the question is about a switch, wire or bulb, a lightning bolt if it is about clouds or the sky, else nothing), बर्फ ਬਰਫ਼ (snow in snowfall/mountain questions, ice in cold/melting questions, else nothing)
+     positions (a ball and the same cabinet): अंदर ਅੰਦਰ (in), ऊपर ਉੱਪਰ (above), नीचे ਹੇਠਾਂ (under), पास ਨੇੜੇ (near), दूर ਦੂਰ (far), पीछे ਪਿੱਛੇ (behind), आगे ਅੱਗੇ (in front), बाहर ਬਾਹਰ (outside), बीच ਵਿਚਕਾਰ (between)
+     numbers: ० to १०० and ੦ to ੧੦੦ (digits), बीस तीस चालीस पचास साठ सत्तर अस्सी नब्बे सौ, ਵੀਹ ਤੀਹ ਚਾਲੀ ਪੰਜਾਹ ਸੱਠ ਸੱਤਰ ਅੱਸੀ ਨੱਬੇ ਸੌ, शून्य ज़ीरो ਸਿਫ਼ਰ ਜ਼ੀਰੋ (empty ten-frame); 21-99 show tens bundles and single sticks
+     Spelling, plural, tense, "begins with" and place-value questions never show picture answers (a picture would hide the mistake or give away the answer).
    Please check each Hindi and Punjabi spelling and meaning. Colours, numbers and shapes follow the table.
    --------------------------------------------------------------------------------------------------------------- */
 (function (root) {
@@ -45,12 +59,12 @@
   var TABLE = [
     /* animals */
     "cow | cow | गाय | ਗਾਂ, ਗਊ",
-    "dog | dog | कुत्ता | ਕੁੱਤਾ",
-    "cat | cat | बिल्ली | ਬਿੱਲੀ",
+    "dog | dog | कुत्ता | ਕੁੱਤਾ, ਕੁੱਤੀ",
+    "cat | cat | बिल्ली | ਬਿੱਲੀ, ਬਿੱਲੀ ਮਾਸੀ",
     "hen | hen, chicken | मुर्गी | ਮੁਰਗੀ",
-    "rooster | rooster, cock | मुर्गा | ਮੁਰਗਾ",
-    "goat | goat | बकरी | ਬੱਕਰੀ",
-    "horse | horse | घोड़ा | ਘੋੜਾ",
+    "rooster | rooster, cock | मुर्गा | ਮੁਰਗਾ, ਮੁਰਗਾਂ",
+    "goat | goat | बकरी, बकरा | ਬੱਕਰੀ, ਬੱਕਰਾ",
+    "horse | horse | घोड़ा, घोड़ी | ਘੋੜਾ",
     "sheep | sheep | भेड़ | ਭੇਡ",
     "pig | pig | सूअर | ਸੂਰ",
     "lion | lion | शेर | ਸ਼ੇਰ",
@@ -131,16 +145,16 @@
     "fan | fan | पंखा | ਪੱਖਾ",
     "lamp | lamp | दीपक |",
     "bucket | bucket | बाल्टी | ਬਾਲਟੀ",
-    "pot | pot | | ",
+    "pot | pot, clay pot, matka | मटका, घड़ा | ਘੜਾ, ਮਟਕਾ",
     "cup | cup | कप | ਕੱਪ",
-    "mug | mug | |",
+    "mug | mug | मग | ਮੱਗ",
     "spoon | spoon | चम्मच | ਚਮਚਾ",
     "plate | plate | थाली | ਥਾਲੀ",
     "glass | glass | गिलास | ਗਲਾਸ",
     "bottle | bottle | बोतल | ਬੋਤਲ",
     "broom | broom | झाड़ू | ਝਾੜੂ",
     "pillow | pillow, soft | तकिया, मुलायम | ਸਿਰਹਾਣਾ, ਨਰਮ",
-    "bag | bag, school bag | बस्ता, बैग | ਬਸਤਾ, ਬੈਗ",
+    "bag | bag, school bag | बस्ता, बैग, झोला | ਬਸਤਾ, ਬੈਗ",
     "umbrella | umbrella | छाता | ਛੱਤਰੀ",
     "book | book | किताब | ਕਿਤਾਬ",
     "pencil | pencil | पेंसिल | ਪੈਨਸਿਲ",
@@ -160,8 +174,7 @@
     "comb | comb | कंघी | ਕੰਘੀ",
     "soap | soap | साबुन | ਸਾਬਣ",
     "towel | towel | तौलिया | ਤੌਲੀਆ",
-    "bench | bench | |",
-    "mat | mat | चटाई | ਚਟਾਈ",
+        "mat | mat | चटाई | ਚਟਾਈ",
     "brick | brick | ईंट | ਇੱਟ",
     "drum | drum | ढोल | ਢੋਲ",
     "toothbrush | toothbrush | टूथब्रश |",
@@ -223,20 +236,19 @@
     "rainbow | rainbow | इंद्रधनुष |",
     "tree | tree | पेड़ | ਰੁੱਖ, ਦਰਖ਼ਤ",
     "flower | flower | फूल | ਫੁੱਲ",
-    "leaf | leaf | पत्ता | ਪੱਤਾ",
+    "leaf | leaf | पत्ता, पत्ती | ਪੱਤਾ",
     "lotus | lotus | कमल | ਕਮਲ",
     "rose | rose | गुलाब | ਗੁਲਾਬ",
     "sunflower | sunflower | सूरजमुखी | ਸੂਰਜਮੁਖੀ",
     "grass | grass | घास | ਘਾਹ",
     "river | river | नदी | ਨਦੀ",
-    "mountain | mountain | पहाड़ | ਪਹਾੜ",
+    "mountain | mountain | पहाड़, पर्वत | ਪਹਾੜ",
     "sea | sea | समुद्र | ਸਮੁੰਦਰ",
     "fire | fire | आग | ਅੱਗ",
-    "stone | stone, hard | पत्थर, सख़्त | ਪੱਥਰ, ਸਖ਼ਤ",
+    "stone | stone, hard | पत्थर, कंकड़, सख़्त | ਪੱਥਰ, ਸਖ਼ਤ",
     "sand | sand | रेत | ਰੇਤ",
     "seed | seed | बीज | ਬੀਜ",
-    "root | root | जड़ | ਜੜ੍ਹ",
-    "snow | snow | |",
+        "snow | snow | |",
     "ice | ice | |",
     /* transport */
     "car | car | कार | ਕਾਰ",
@@ -245,7 +257,7 @@
     "cycle | cycle, bicycle, bike | साइकिल | ਸਾਈਕਲ",
     "boat | boat | नाव | ਕਿਸ਼ਤੀ",
     "ship | ship | |",
-    "train | train, metro train | रेलगाड़ी, ट्रेन | ਰੇਲਗੱਡੀ",
+    "train | train, metro train | रेलगाड़ी, रेल, ट्रेन | ਰੇਲਗੱਡੀ",
     "aeroplane/airplane/plane | aeroplane, airplane, plane | हवाई जहाज़ | ਹਵਾਈ ਜਹਾਜ਼",
     "truck | truck | ट्रक | ਟਰੱਕ",
     "scooter | scooter | स्कूटर |",
@@ -291,10 +303,10 @@
     "woman | woman | औरत | ਔਰਤ",
     "baby | baby | बच्चा | ਬੱਚਾ",
     "child | child | |",
-    "mother | mother, mom, mummy | माँ | ਮਾਂ",
-    "father | father, dad, papa | पिता, पापा | ਪਿਤਾ",
-    "grandmother | grandmother | दादी | ਦਾਦੀ",
-    "grandfather | grandfather | दादा | ਦਾਦਾ",
+    "woman | mother, mom, mummy | माँ | ਮਾਂ",
+    "man | father, dad, papa | पिता, पापा | ਪਿਤਾ",
+    "grandmother | grandmother | दादी, नानी | ਦਾਦੀ, ਨਾਨੀ",
+    "grandfather | grandfather | दादा, नाना | ਦਾਦਾ, ਨਾਨਾ",
     "teacher | teacher | शिक्षक | ਅਧਿਆਪਕ",
     "doctor | doctor | डॉक्टर | ਡਾਕਟਰ",
     "farmer | farmer | किसान | ਕਿਸਾਨ",
@@ -303,6 +315,91 @@
     "driver | driver | ड्राइवर | ਡਰਾਈਵਰ",
     "king | king | राजा | ਰਾਜਾ",
     "queen | queen | रानी | ਰਾਣੀ",
+    /* batch 3: drawn for the one-word-away questions */
+    "matchbox | matchbox | माचिस | ਮਾਚਿਸ",
+    "ox | ox, bullock | बैल | ਬਲਦ",
+    "bullock-cart | bullock cart, ox cart | बैलगाड़ी | ਗੱਡਾ, ਬੈਲਗੱਡੀ",
+    "okra | okra, lady finger, ladyfinger | भिंडी | ਭਿੰਡੀ",
+    "soil | soil, mud | मिट्टी | ਮਿੱਟੀ",
+    "lamb | lamb | मेमना |",
+    "puppy | puppy, pup | पिल्ला | ਕਤੂਰਾ",
+    "salt | salt | नमक | ਲੂਣ, ਨਮਕ",
+    "papaya | papaya | पपीता | ਪਪੀਤਾ",
+    "oil | oil | तेल | ਤੇਲ",
+    "chalk | chalk | चॉक |",
+    "bun | bun | बन |",
+    "eagle | eagle | |",
+    "globe | globe | |",
+    "jug | jug | जग | ਜੱਗ",
+    "tamarind | tamarind | इमली | ਇਮਲੀ",
+    "pomegranate | pomegranate | अनार | ਅਨਾਰ",
+    "jaggery | jaggery | गुड़ | ਗੁੜ",
+    "taxi | taxi | टैक्सी | ਟੈਕਸੀ",
+    "wheat | wheat | गेहूँ, गेहूं | ਕਣਕ",
+    "sugarcane | sugarcane, sugar cane | गन्ना | ਗੰਨਾ",
+    "cracker | firecracker, firecrackers | पटाखा, पटाखे | ਪਟਾਕਾ, ਪਟਾਕੇ",
+    "marigold | marigold | गेंदा |",
+    "wool | wool | ऊन | ਉੱਨ",
+    "lemon | lemon | नींबू | ਨਿੰਬੂ",
+    "karela | karela, bitter gourd | करेला | ਕਰੇਲਾ",
+    "chilli | chilli, chili | मिर्च | ਮਿਰਚ",
+    "uncle | uncle | चाचा, मामा, ताऊ | ਚਾਚਾ, ਮਾਮਾ, ਤਾਇਆ",
+    "scientist | scientist | वैज्ञानिक | ਵਿਗਿਆਨੀ",
+    "women | women | |",
+    "men | men | |",
+    "children | children | |",
+  ];
+  /* Words that only make sense as an ANSWER picture (positions, places, describing words, ideas). They are never drawn for a question's subject
+     or in notes (PicDict.illustrate): "in", "up", "root" (square root), "play" and "old" are everywhere in ordinary sentences. */
+  var IDEAS = [
+    "pos-in | in, inside | अंदर | ਅੰਦਰ",
+    "pos-on | on | |",
+    "pos-under | under, below, beneath | नीचे | ਹੇਠਾਂ",
+    "pos-above | above | ऊपर | ਉੱਪਰ",
+    "pos-over | over | |",
+    "pos-near | near, beside, next to | पास | ਨੇੜੇ",
+    "pos-far | far | दूर | ਦੂਰ",
+    "pos-out | outside | बाहर | ਬਾਹਰ",
+    "pos-behind | behind | पीछे | ਪਿੱਛੇ",
+    "pos-front | in front of, in front | आगे | ਅੱਗੇ",
+    "pos-between | between | बीच | ਵਿਚਕਾਰ",
+    "pos-up | up | |",
+    "pos-down | down | |",
+    "park | park | पार्क | ਪਾਰਕ",
+    "garden | garden | बाग, बगीचा | ਬਾਗ, ਬਗੀਚਾ",
+    "village | village | गाँव, गांव | ਪਿੰਡ",
+    "city | city | शहर | ਸ਼ਹਿਰ",
+    "market | market | बाज़ार | ਬਾਜ਼ਾਰ",
+    "hospital | hospital | अस्पताल | ਹਸਪਤਾਲ",
+    "library | library | पुस्तकालय | ਲਾਇਬ੍ਰੇਰੀ",
+    "bench | bench | बेंच | ਬੈਂਚ",
+    "money | money | पैसा, पैसे | ਪੈਸਾ, ਪੈਸੇ",
+    "flag | flag | झंडा, तिरंगा | ਝੰਡਾ, ਤਿਰੰਗਾ",
+    "toy | toy | खिलौना | ਖਿਡੌਣਾ",
+    "root | root | जड़ | ਜੜ੍ਹ",
+    "stem | stem | तना | ਤਣਾ",
+    "bridge | bridge | पुल | ਪੁਲ",
+    "lightning | lightning | |",
+    "kick | kick, kicking | |",
+    "clap | clap, clapping | ताली बजाना | ਤਾੜੀ ਮਾਰਨਾ",
+    "play | play, playing | खेलना | ਖੇਡਣਾ",
+    "cook | cook, cooking, chef | रसोइया | ਰਸੋਈਆ",
+    "thin | thin | पतला | ਪਤਲਾ",
+    "fat | fat, thick | मोटा | ਮੋਟਾ",
+    "lemon | sour | खट्टा | ਖੱਟਾ",
+    "karela | bitter | कड़वा | ਕੌੜਾ",
+    "chilli | spicy | तीखा | ਤਿੱਖਾ",
+    "salt | salty | |",
+    "sweets | | मीठा | ਮਿੱਠਾ",
+    "angry | angry | |",
+    "loud | loud, loudly | |",
+    "rough | rough | खुरदरा | ਖੁਰਦਰਾ",
+    "new | new | नया | ਨਵਾਂ",
+    "old | old | पुराना | ਪੁਰਾਣਾ",
+    "sun | bright | |",
+    "high | high | |",
+    "big | huge | |",
+    "fast | quickly | |",
   ];
 
   /* ---------- text normalising ---------- */
@@ -384,6 +481,11 @@
     en.forEach(function (w) { add(ITEM, w, name); });
     hi.concat(pa).forEach(function (w) { add(ITEM, w, name); });
   });
+  var OPT = {}; // words that are answers only
+  IDEAS.forEach(function (line) {
+    var p = line.split("|"), name = p[0].trim();
+    split(p[1] || "").concat(split(p[2] || ""), split(p[3] || "")).forEach(function (w) { var k = norm(w); if (k && !ITEM[k]) { add(ITEM, w, name); OPT[k] = 1; } });
+  });
   ["eye", "ear", "nose", "mouth", "hand", "leg", "foot", "tooth", "tongue", "head", "hair", "finger", "thumb", "arm", "face", "lips", "tail", "wing"].forEach(function (n) { KINDS[n] = "body"; });
 
   Object.keys(COLOUR_WORDS).forEach(function (c) {
@@ -398,6 +500,20 @@
     var p = SHAPE_WORDS[s].split("|");
     split(p[0]).concat(split(p[1] || ""), split(p[2] || "")).forEach(function (w) { add(SPECIAL, w, { kind: "shape", name: s }, true); });
   });
+  // 0 and 21-100: digits (English, Hindi, Punjabi) and the number words that are regular or that we are sure of
+  (function () {
+    var ones = "zero one two three four five six seven eight nine".split(" "), tw = "||twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety".split("|"), hiT = { 20: "बीस", 30: "तीस", 40: "चालीस", 50: "पचास", 60: "साठ", 70: "सत्तर", 80: "अस्सी", 90: "नब्बे", 100: "सौ" },
+      paT = { 20: "ਵੀਹ", 30: "ਤੀਹ", 40: "ਚਾਲੀ", 50: "ਪੰਜਾਹ", 60: "ਸੱਠ", 70: "ਸੱਤਰ", 80: "ਅੱਸੀ", 90: "ਨੱਬੇ", 100: "ਸੌ" }, n, d, hd, pd;
+    for (n = 0; n <= 100; n++) {
+      d = String(n); hd = d.replace(/\d/g, function (x) { return String.fromCharCode(0x966 + Number(x)); }); pd = d.replace(/\d/g, function (x) { return String.fromCharCode(0xa66 + Number(x)); });
+      [d, hd, pd].forEach(function (w) { add(SPECIAL, w, { kind: "num", name: n }, true); });
+      if (n === 0) ["zero", "शून्य", "ज़ीरो", "ਸਿਫ਼ਰ", "ਜ਼ੀਰੋ"].forEach(function (w) { add(SPECIAL, w, { kind: "num", name: 0 }, true); });
+      if (n > 20 && n < 100) add(SPECIAL, tw[Math.floor(n / 10)] + (n % 10 ? " " + ones[n % 10] : ""), { kind: "num", name: n }, true);
+      if (n === 100) ["hundred", "one hundred"].forEach(function (w) { add(SPECIAL, w, { kind: "num", name: 100 }, true); });
+      if (hiT[n]) add(SPECIAL, hiT[n], { kind: "num", name: n }, true);
+      if (paT[n]) add(SPECIAL, paT[n], { kind: "num", name: n }, true);
+    }
+  })();
   var COINS = [1, 2, 5, 10], NOTES = [10, 20, 50, 100, 200, 500];
   count.special += COINS.length + NOTES.length;
 
@@ -419,6 +535,14 @@
       if (/bulb|lamp|switch|electric|dark|\bsun\b|shine|torch|glow|candle|night|room|\bsee\b/.test(c)) return { kind: "item", name: "bulb" };
       return null;
     },
+    earth: function (c) { return /soil|plant|dig|garden|mud|farm|seed|worm|मिट्टी|पौधे|खेत|ਮਿੱਟੀ|ਪੌਦੇ|ਖੇਤ/.test(c) ? null : { kind: "item", name: "globe" }; },
+    sweet: function (c) { return /taste|tongue|sugar|jaggery|lemon|sour|bitter|salt|honey|candy|\beat|mango|flavou?r|spicy/.test(c) ? { kind: "item", name: "sweets" } : null; },
+    cracker: function (c) { return /diwali|fire|bang|noise|loud|sound|burn|festival|celebrat|smoke|pollut|दिवाली|दीवाली|ਦੀਵਾਲੀ/.test(c) ? { kind: "item", name: "cracker" } : null; },
+    fly: function (c) { return /insect|house ?fly|buzz|mosquito|\bbug|germ|dirty|wings? and legs|six legs/.test(c) ? null : { kind: "item", name: "fly" }; },
+    "बिजली": function (c) { return /बल्ब|स्विच|तार|करंट|electric|bulb|switch/.test(c) ? { kind: "item", name: "bulb" } : /बादल|गरज|आसमान|तूफ|thunder|cloud|storm|sky/.test(c) ? { kind: "item", name: "lightning" } : null; },
+    "ਬਿਜਲੀ": function (c) { return /ਬੱਲਬ|ਸਵਿੱਚ|ਤਾਰ|ਕਰੰਟ|electric|bulb|switch/.test(c) ? { kind: "item", name: "bulb" } : /ਬੱਦਲ|ਗਰਜ|ਅਸਮਾਨ|ਤੂਫ|thunder|cloud|storm|sky/.test(c) ? { kind: "item", name: "lightning" } : null; },
+    "बर्फ": function (c) { return /बारी|हिमालय|पहाड़|पर्वत|snow/.test(c) ? { kind: "item", name: "snow" } : /ठंड|जम|पिघ|पानी|ice|cold|melt|freez/.test(c) ? { kind: "item", name: "ice" } : null; },
+    "ਬਰਫ": function (c) { return /ਬਾਰੀ|ਹਿਮਾਲਾ|ਪਹਾੜ|snow/.test(c) ? { kind: "item", name: "snow" } : /ਠੰਡ|ਜੰਮ|ਪਿਘਲ|ਪਾਣੀ|ice|cold|melt|freez/.test(c) ? { kind: "item", name: "ice" } : null; },
     mouse: function (c) { return /computer|click|screen|keyboard|monitor|cursor|laptop|\bcpu\b/.test(c) ? null : { kind: "item", name: "mouse/rat" }; },
   };
 
@@ -484,7 +608,7 @@
       if ((r = SPECIAL[f[i]])) return { kind: r.kind, name: r.name, key: r.kind + ":" + r.name, label: w };
       if ((r = ITEM[f[i]])) {
         c = resolveName(r);
-        return { kind: "item", name: c, key: "item:" + (c || r), label: w, abstract: !!(c && ABSTRACT[c]) || !!WORDABS[f[i]], plural: i > 0 && !/^[^ ]* ?(sheep|fish|deer)$/.test(w), body: KINDS[r.split("/")[0]] === "body" };
+        return { kind: OPT[f[i]] ? "idea" : "item", name: c, key: "item:" + (c || r), label: w, abstract: !!(c && ABSTRACT[c]) || !!WORDABS[f[i]], plural: i > 0 && !/^[^ ]* ?(sheep|fish|deer)$/.test(w), body: KINDS[r.split("/")[0]] === "body" };
       }
     }
     return null;
@@ -493,11 +617,11 @@
   function draw(d, decorative) {
     var P = root.Pics, label = decorative ? "" : d.label;
     if (d.kind === "colour") return colourPic(d.name, d.label, decorative);
-    if (d.kind === "num") return dotsPic(d.name, d.label, decorative);
+    if (d.kind === "num") return d.name > 20 ? P.svg(P.bundles({ n: d.name, x: 50, y: 50, s: 96 }), { w: 100, h: 100, label: label }) : dotsPic(d.name, d.label, decorative);
     if (d.kind === "shape") return P.svg(P.shape({ kind: d.name, x: 50, y: 50, s: 92 }), { w: 100, h: 100, label: label });
     if (d.kind === "coin") return P.svg(P.coin({ value: d.name, x: 50, y: 50, s: 90 }), { w: 100, h: 100, label: label });
     if (d.kind === "note") return P.svg(P.note({ value: d.name, x: 50, y: 50, s: 96 }), { w: 100, h: 100, label: label });
-    if (d.kind === "item" && d.name) return P.svg(P.item(d.name, { x: 50, y: 50, s: 92 }), { w: 100, h: 100, label: label });
+    if ((d.kind === "item" || d.kind === "idea") && d.name) return P.svg(P.item(d.name, { x: 50, y: 50, s: 92 }), { w: 100, h: 100, label: label });
     return null;
   }
 
@@ -511,11 +635,20 @@
 
   /* ---------- options ---------- */
   function forOptions(options, o) {
-    var q = (o && o.q) || "", ctx = String(q).toLowerCase(), out = [], seen = {}, i, r;
+    var q = (o && o.q) || "", ctx = String(q).toLowerCase(), out = [], seen = {}, i, r, wf, nm;
     if (!options || options.length < 2 || options.length > 4 || !root.Pics) return null;
+    // spelling, plural and tense questions are about the written word: a picture would hide the mistake ("boxs" must not look like a box)
+    if (/\b(plural|singular|spell|spelling|spelt|past tense|verb form)\b/.test(ctx)) return null;
+    wf = /\b(begins?|starts?|ends?|rhymes?|rhyming|letters?|syllables?)\b|\bthe [a-z]{1,3} sound\b/.test(ctx);
     for (i = 0; i < options.length; i++) {
       r = forText(options[i], { context: ctx, siblings: options.filter(function (_, j) { return j !== i; }), decorative: true });
       if (!r || seen[r.key]) return null;
+      // a question about the LETTERS of a word ("begins with m"): the picture must be of exactly that English word (father must not show "man")
+      if (wf && /^[a-z -]+$/i.test(String(options[i]).trim()) && (r.kind === "item" || r.kind === "idea")) {
+        nm = r.key.slice(5).replace(/-/g, " ");
+        if (norm(options[i]).replace(/(es|s)$/, "") !== nm.replace(/(es|s)$/, "")) return null;
+      }
+      if (r.kind === "num" && /\b(tens?|ones|hundreds?|place value|digits?)\b|दहाई|इकाई|सैकड़ा|ਦਹਾਈ|ਇਕਾਈ/.test(ctx)) return null; // the picture would show the answer
       seen[r.key] = 1;
       out.push(r);
     }
@@ -589,7 +722,7 @@
   // It skips bare numbers, capitalised names in the middle of a sentence (Rose, Jaipur), words with a second meaning
   // (key, face, head, watch ...) and anything marked noPic. Works on English, Hindi and Punjabi words.
   //   PicDict.illustrate(text, { context, max = 3, size = 56, title, noPic, decorative }) -> { svg, label, keys, count } | null
-  var ISKIP = { watch: 1, brush: 1, comb: 1, tap: 1, fan: 1, pot: 1, lock: 1, key: 1, face: 1, head: 1, "आम": 1, "कमल": 1, "बस": 1, "फल": 1, "ਫਲ": 1 };
+  var ISKIP = { leg: 1, thumb: 1, watch: 1, brush: 1, comb: 1, tap: 1, fan: 1, pot: 1, lock: 1, key: 1, face: 1, head: 1, "आम": 1, "कमल": 1, "बस": 1, "फल": 1, "ਫਲ": 1 };
   var CTX_SKIP = { table: /data|times|multipl|\brows?\b|column|chart|tally|graph|pictograph|represent|number/ }; // "a table of data" is not furniture
   var NOT_BEFORE = { zebra: /^crossing$/ }; // "zebra crossing" is a road sign, not an animal
   var LONER = { read: 1, write: 1, sit: 1, stand: 1 }; // too common in instructions: only when the text is a few words long

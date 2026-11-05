@@ -215,30 +215,32 @@ test("the dictionary reads plurals, articles, Hindi and Punjabi words, colours, 
   expect(await all(["cow", "cows", "cat", "dog"])).toBe(false);
 });
 
-test("Class 1 hears the question and its options by itself, once, and the Listen button reads again", async ({ page }) => {
+test("Class 1 reads nothing by itself; the Listen button reads the question only, without the options", async ({ page }) => {
   await start(page, { cls: 1 });
   await mount(page, [ANIMALS, { q: "Which animal says meow?", options: ["dog", "cat", "cow", "elephant"], answer: 1 }]);
   await expect(T.locator(".listen-btn")).toBeVisible();
+  await expect(T.locator(".listen-btn")).not.toHaveAttribute("data-auto", "1");
+  await page.waitForTimeout(900);
+  expect(await page.evaluate(() => window.__spoken.length)).toBe(0);
+  await T.locator(".listen-btn").click();
   await expect.poll(() => page.evaluate(() => window.__spoken.length)).toBe(1);
   const first = await page.evaluate(() => window.__spoken[0]);
   expect(first).toContain("Which animal gives us milk?");
-  expect(first).toContain("A: cow");
-  expect(first).toContain("B: dog");
-  expect(first).toContain("D: elephant");
-  // answering stops the reading, and the feedback redraw does not read it again
+  expect(first).not.toContain("A: cow");
+  expect(first).not.toContain("elephant");
+  // answering stops the reading, and the feedback redraw does not read anything
   const cancels = await page.evaluate(() => window.__cancels);
   await T.locator(".option").first().click();
   await expect.poll(() => page.evaluate(() => window.__cancels)).toBeGreaterThan(cancels);
   await page.waitForTimeout(700);
   expect(await page.evaluate(() => window.__spoken.length)).toBe(1);
-  // Listen again
+  // the next question is not read by itself either
   await T.locator('[data-act="next"]').click();
-  await expect.poll(() => page.evaluate(() => window.__spoken.length)).toBe(2); // the next question is read
+  await page.waitForTimeout(700);
+  expect(await page.evaluate(() => window.__spoken.length)).toBe(1);
   await T.locator(".listen-btn").click();
-  await expect.poll(() => page.evaluate(() => window.__spoken.length)).toBe(3);
-  await T.locator(".listen-btn").click();
-  await expect.poll(() => page.evaluate(() => window.__spoken.length)).toBe(4);
-  expect(await page.evaluate(() => window.__spoken[3])).toBe(await page.evaluate(() => window.__spoken[1]));
+  await expect.poll(() => page.evaluate(() => window.__spoken.length)).toBe(2);
+  expect(await page.evaluate(() => window.__spoken[1])).toContain("Which animal says meow?");
 });
 
 test("with sound effects off nothing is read by itself, but the Listen button still works", async ({ page }) => {
@@ -297,4 +299,59 @@ test("question of the day, quick-fire and practice by topic draw the same pictur
   // a printable sheet puts a small picture beside each option
   const sheet = await page.evaluate(() => (picAnswers({ q: "x", options: ["cow", "dog", "cat", "elephant"] }) || []).length);
   expect(sheet).toBe(4);
+});
+
+test("batch 3: the 'can roll easily' question (with a matchbox) shows four picture cards", async ({ page }) => {
+  await start(page, { cls: 1 });
+  await mount(page, [{ q: "Which of these can roll easily?", options: ["Box", "Ball", "Brick", "Matchbox"], answer: 1 }]);
+  const cards = T.locator(".options.pic-options .option.pic-opt");
+  await expect(cards).toHaveCount(4);
+  for (let i = 0; i < 4; i++) await expect(cards.nth(i).locator(".pic-art svg")).toHaveCount(1);
+});
+
+test("batch 3: numbers 21-99 and 100 show tens bundles, 0 an empty ten-frame, and number words are read", async ({ page }) => {
+  await start(page, { cls: 1, stub: false });
+  const key = (t) => page.evaluate((x) => (PicDict.forText(x, { decorative: true }) || {}).key || null, t);
+  expect(await key("47")).toBe("num:47");
+  expect(await key("forty-seven")).toBe("num:47");
+  expect(await key("Fifty")).toBe("num:50");
+  expect(await key("100")).toBe("num:100");
+  expect(await key("0")).toBe("num:0");
+  expect(await key("पचास")).toBe("num:50");
+  expect(await key("ਵੀਹ")).toBe("num:20");
+  expect(await key("101")).toBeNull();
+  // 47 = 4 bundles + 7 sticks
+  const counts = await page.evaluate(() => { const d = document.createElement("div"); d.innerHTML = PicDict.forText("47", { decorative: true }).svg; return { bands: (d.innerHTML.match(/fill="url\(#lef5/g) || []).length, svg: d.querySelectorAll("svg").length }; });
+  expect(counts.svg).toBe(1);
+  await mount(page, [{ q: "Which number is the biggest?", options: ["23", "47", "64", "99"], answer: 3 }]);
+  await expect(T.locator(".options.pic-options .option.pic-opt")).toHaveCount(4);
+  // place-value questions are not pictured (the bundles would show the answer)
+  expect(await page.evaluate(() => !!PicDict.forOptions(["5", "50", "0", "15"], { q: "How many tens are in 50?" }))).toBe(false);
+});
+
+test("batch 3: position words show their own scene (same ball and cabinet), in English, Hindi and Punjabi", async ({ page }) => {
+  await start(page, { cls: 1, stub: false });
+  const key = (t) => page.evaluate((x) => (PicDict.forText(x, { decorative: true }) || {}).key || null, t);
+  expect(await key("under")).toBe("item:pos-under");
+  expect(await key("in front of")).toBe("item:pos-front");
+  expect(await key("नीचे")).toBe("item:pos-under");
+  expect(await key("ਅੰਦਰ")).toBe("item:pos-in");
+  const svg = await page.evaluate(() => PicDict.forText("behind", { decorative: true }).svg);
+  expect(svg).toContain("<svg");
+  await mount(page, [{ q: "Where is the ball? It is ___ the table.", options: ["on", "under", "behind", "near"], answer: 0 }]);
+  await expect(T.locator(".options.pic-options .option.pic-opt")).toHaveCount(4);
+  // position words are for answers only: not drawn inside ordinary sentences
+  expect(await page.evaluate(() => PicDict.illustrate("A word in a sentence goes up and down.", {}))).toBeNull();
+});
+
+test("batch 3: a spelling or plural question shows no pictures, and misspellings map to nothing", async ({ page }) => {
+  await start(page, { cls: 1, stub: false });
+  const key = (t) => page.evaluate((x) => (PicDict.forText(x, { decorative: true }) || {}).key || null, t);
+  expect(await key("boxies")).toBeNull();
+  expect(await key("catt")).toBeNull();
+  expect(await key("teeths")).toBeNull();
+  await mount(page, [{ q: "What is the plural of box?", options: ["boxies", "boxes", "boxs", "boxen"], answer: 1 }]);
+  await expect(T.locator(".options.pic-options")).toHaveCount(0);
+  await expect(T.locator(".option")).toHaveCount(4);
+  expect(await page.evaluate(() => !!PicDict.forOptions(["box", "ball", "brick", "bag"], { q: "Which word is plural?" }))).toBe(false);
 });

@@ -2614,3 +2614,22 @@ body.rtm-reading .rtm.in-head {
 /* Today (Classes 1-5): the button sits at the right end of the greeting's sub line (the Mithu row has no room for it) */
 .mascot-sub { display: flex; align-items: center; gap: 10px; }
 .mascot-sub .rtm.in-head { margin-left: auto; }
+/* Picture cards: the letter (left) and the Mithu speaker (right) share a top row; the picture starts below it, so the speaker
+   never covers the picture. */
+body[data-band] .opt-wrap.pic > .option.pic-opt { padding-top: 58px; }
+.opt-wrap.pic > .opt-say { top: 6px; right: 6px; width: 44px; height: 44px; }
+.opt-wrap.pic > .opt-say .mascot-svg, .opt-wrap.pic > .opt-say svg:first-child { width: 28px; height: 28px; }
+.opt-wrap.pic > .opt-say .opt-say-ico { width: 18px; height: 18px; right: -3px; bottom: -3px; }
+body[data-band] .opt-wrap.pic > .option.pic-opt .letter { top: 14px; left: 10px; width: 28px; height: 28px; font-size: 14px; }
+.opt-say { overflow: visible; }
+.opt-wrap.pic > .opt-say .opt-say-ico { right: -1px; bottom: -1px; }
+.opt-say .opt-say-ico svg { display: block; }
+.opt-wrap.pic > .opt-say .opt-say-ico svg, .opt-wrap > .opt-say .opt-say-ico svg { width: 11px; height: 11px; }
+
+/* Settings → Read-aloud voice */
+.voice-pick { display: flex; gap: 8px; align-items: center; }
+.voice-pick select { flex: 1; min-width: 0; min-height: 44px; }
+.voice-pick .btn { flex: none; min-height: 44px; }
+.voice-pick select { appearance: none; -webkit-appearance: none; padding: 10px 40px 10px 14px; border: 2px solid var(--border); border-radius: 14px; background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2366758a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center; color: var(--text); font: inherit; font-weight: 600; box-shadow: 0 3px 0 var(--border); }
+.voice-pick select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.voice-row { margin-bottom: 10px; }

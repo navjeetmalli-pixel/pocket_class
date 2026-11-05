@@ -4,12 +4,12 @@
 //   * A round floating button (bottom right, above the tab bar). Tap: reads the screen's main content in order, one element
 //     at a time, with a soft highlight that moves to the element being read. Tap again to stop.
 //   * What is read: elements marked data-read (an order number, or empty = document order); a screen with no marks uses the
-//     READ list below (headings, instructions, the question, its options as "A: ...", the key buttons as "Next: ...").
+//     READ list below (headings, instructions, the question, the key buttons as "Next: ..."). Answers are NOT read with the
+//     question: each has its own Mithu speaker.
 //   * Each element is read in the voice of its own script (English, Hindi, Punjabi). Text with no voice, or in a language the
 //     release lock hides, is skipped and the reading goes on.
-//   * Classes 1-2 hear the key prompt of a new screen by themselves (game "how to play", a lesson step, the Mithu greeting once per
-//     session, result lines, the first lab instruction), unless Sound effects are off. Questions are read by Speech.listen, which
-//     this waits for / steps around. Timed games (race, quick-fire) never auto-read.
+//   * Nothing is read by itself when a screen or question appears: reading starts only when the child presses a button (the
+//     owner's decision, 5 Nov 2026). autoRead() below is kept but not called.
 //   * Tap to hear a single item (Classes 1-3): press and hold a tile, card, option or flashcard for half a second; it is read and
 //     the tap that follows is ignored, so the normal tap still does its usual job.
 //   * Hear one answer (Classes 1-3): every answer option gets a small Mithu speaker button on its right edge. Tapping it reads
@@ -28,7 +28,7 @@ const ReadAloud = (() => {
     ".plan-title", ".qotd .quiz-q", ".subject-name", ".ch-title", ".continue .t", ".hub-nav a", ".guided-card strong", ".gc-title", ".tool .tt",
     ".note li", "dl.terms dt", "dl.terms dd", ".flashcard", ".example .q", ".example .steps li", ".example .answer",
     ".g-lead", ".g-note li", ".g-steps li",
-    ".quiz-q", ".option", ".feedback",
+    ".quiz-q", ".feedback",
     ".game-how", ".lt-prompt", ".ord-qtext", ".mk-q", ".mk-sq", ".result-msg", ".rs-sec li", ".rs-next p",
     ".stat", ".obj-text", ".vl-obj", ".vl-q", ".sim-step h3", ".ob-choice .ct",
     ".btn.primary", "[data-act=next]",
@@ -148,7 +148,7 @@ const ReadAloud = (() => {
       /* the language below is enough */
     }
     u.lang = voice.lang;
-    u.rate = 0.85;
+    u.rate = Speech.rate(); // the speed picked in Settings
     const next = () => {
       if (run !== r || r.cur !== u) return;
       r.i++;
@@ -315,7 +315,6 @@ const ReadAloud = (() => {
       tick = setTimeout(() => {
         refresh();
         decorateAnswers();
-        autoRead();
       }, 200);
     };
     const app = root();
