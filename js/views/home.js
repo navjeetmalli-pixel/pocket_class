@@ -312,7 +312,7 @@
     return `<div class="card qotd" id="qotd">
       <div class="small muted" style="font-weight:700">${t("Question of the day")}</div>
       <div class="quiz-from">${esc(it.ref.from)}</div>
-      <div class="quiz-q" style="margin:8px 0 0">${rich(it.q)}</div>
+      ${picHTML(it)}<div class="quiz-q" style="margin:8px 0 0">${rich(it.q)}</div>
       <div class="options">${opts}</div>${fb}
     </div>`;
   }

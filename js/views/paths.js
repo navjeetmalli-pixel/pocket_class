@@ -268,18 +268,19 @@
   // One solved example if a chapter has one, else a made-up question with its steps.
   function exampleHTML(m) {
     const ex = m.sources.flatMap((s) => s.ch.examples || [])[0];
-    let q, steps, answer;
+    let q, steps, answer, pic = "";
     if (ex) ({ q, steps, answer } = ex);
     else {
       const g = Gen.fromNames(m.gens, 1, hash(m.level.id))[0];
       if (!g) return "";
       q = g.q;
+      pic = picHTML(g);
       steps = g.steps;
       answer = g.options[0];
     }
     return `<h2 class="block-title">${t("Worked example")}</h2>
       <article class="card example">
-        <p class="q">${rich(q)}</p>
+        ${pic}<p class="q">${rich(q)}</p>
         <details class="reveal"><summary>${t("Show solution")}</summary>
           <ol class="steps">${steps.map((s) => `<li>${rich(s)}</li>`).join("")}</ol>
           <div class="answer">${rich(answer)}</div>
@@ -546,7 +547,7 @@
         : "";
       return `<div class="card">
           <div class="quiz-head"><span>${t("Checking {level}", { level: levelName(lv.level) })}</span><span class="quiz-clock">${t("Question {n}", { n: s.asked + 1 })}</span></div>
-          <div class="quiz-q" id="quiz-q">${rich(it.q)}</div>
+          ${picHTML(it)}<div class="quiz-q" id="quiz-q">${rich(it.q)}</div>
           <div class="options" role="group" aria-labelledby="quiz-q">${options}</div>
           ${footer}
         </div>

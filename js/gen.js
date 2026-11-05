@@ -136,6 +136,47 @@ const Gen = (() => {
     return { q: `${head} Find the ${b ? "boiling point" : "freezing point"} of the solution in °C. (${b ? "boiling point of water = 100 °C" : "freezing point of water = 0 °C"}; 2 decimal places)`, a: `${n(pt)} °C`, wrong: nr(pt, [b ? 100 - dT : dT, b ? dT : -dT * 10, b ? 100 + K / m : -(K / m)], R, (x) => `${n(x)} °C`), steps: [s1, s2, `${b ? "Boiling" : "Freezing"} point = ${b ? `100 + ${fm(dT)}` : `0 − ${fm(dT)}`} = ${n(pt)} °C`] };
   }
 
+  // ---------- picture helpers ----------
+  // The picture kit (js/pics.js) may be missing (an old cached copy); picture generators then throw and Gen.make skips them.
+  const picKit = () => { if (typeof Pics === "undefined" || !Pics || !Pics.svg) throw new Error("no picture kit"); return Pics; };
+  const PLURAL = { mango: "mangoes", butterfly: "butterflies", strawberry: "strawberries", leaf: "leaves", fish: "fish", bus: "buses", "auto-rickshaw": "auto-rickshaws" };
+  const plural = (nm) => PLURAL[nm] || nm + "s";
+  const count = (k, nm) => `${k} ${k === 1 ? nm : plural(nm)}`;
+  const COUNTABLE = ["apple", "mango", "banana", "orange", "balloon", "ball", "star", "flower", "kite", "pencil", "book", "bird", "butterfly", "fish", "duck", "car", "cup", "laddoo", "egg", "umbrella", "cap", "shoe", "diya", "leaf"];
+  // `k` different things to draw, drawn from the kit's own names.
+  function pickItems(R, k) {
+    const have = picKit().names;
+    const pool = COUNTABLE.filter((x) => !have || have.includes(x));
+    const out = [];
+    while (out.length < k && pool.length) out.push(pool.splice(R.int(0, pool.length - 1), 1)[0]);
+    if (out.length < k) throw new Error("not enough picture items");
+    return out;
+  }
+  const GONE = { bird: ["fly away", "flies away"], butterfly: ["fly away", "flies away"], apple: ["are eaten", "is eaten"], mango: ["are eaten", "is eaten"], banana: ["are eaten", "is eaten"], orange: ["are eaten", "is eaten"], laddoo: ["are eaten", "is eaten"], egg: ["are eaten", "is eaten"], balloon: ["fly away", "flies away"] };
+  // One item size for two groups drawn side by side (each 140 wide): the smaller group's items must not look bigger.
+  const same2 = (P, a, b, h) => (P.rowSize ? Math.min(P.rowSize(a, { w: 140, h }), P.rowSize(b, { w: 140, h })) : undefined);
+  function picAddQ(R, lo, hi, max, minTotal = 2) {
+    const P = picKit(), nm = pickItems(R, 1)[0];
+    let a, b;
+    do { a = R.int(lo, hi); b = R.int(lo === 1 ? 1 : 3, hi); } while (a + b > max || a + b < minTotal);
+    const tot = a + b, lab = `${count(a, nm)} and ${count(b, nm)} more`, big = tot > 10, h = big ? 130 : 100;
+    const cands = [{ v: tot + 1, k: "slip" }, { v: tot - 1, k: "slip" }, { v: Math.abs(a - b), k: "method" }, { v: a, k: "method" }, { v: tot + 2, k: "slip" }].filter((c) => c.v >= 0 && c.v <= max + 2);
+    return { q: `${count(a, nm)} and ${count(b, nm)} more. How many ${plural(nm)} in all?`, a: n(tot), wrong: near(tot, cands, R), steps: [`Put the groups together: ${a} + ${b}.`, `${a} + ${b} = ${tot}`], picAlt: lab, pic: P.svg(`<g>${P.row(nm, a, { w: 140, h, s: same2(P, a, b, h) })}</g><path d="M150 ${h / 2 - 9}v18M141 ${h / 2}h18" stroke="currentColor" stroke-width="4" stroke-linecap="round" opacity="0.7"/><g transform="translate(160,0)">${P.row(nm, b, { w: 140, h, s: same2(P, a, b, h) })}</g>`, { w: 300, h, label: lab }) };
+  }
+  function picSubQ(R, lo, hi) {
+    const P = picKit(), nm = pickItems(R, 1)[0], N = R.int(lo, hi), k = R.int(1, Math.min(N - 1, lo > 10 ? 9 : N - 1)), left = N - k;
+    const v = GONE[nm] || ["are taken away", "is taken away"], vb = k === 1 ? v[1] : v[0], lab = `${count(N, nm)}, ${k} of them gone`, h = N > 10 ? 130 : 100;
+    const cands = [{ v: left + 1, k: "slip" }, { v: left - 1, k: "slip" }, { v: N + k, k: "method" }, { v: left + 2, k: "slip" }, { v: k, k: "method" }].filter((c) => c.v >= 0 && c.v <= 20);
+    return { q: `There ${N === 1 ? "is" : "are"} ${count(N, nm)}. ${k} ${vb}. How many ${plural(nm)} are left?`, a: n(left), wrong: near(left, cands, R), steps: [`Start with ${N}. Take away ${k}.`, `${N} − ${k} = ${left}`], picAlt: lab, pic: P.svg(`<g>${P.row(nm, left, { w: 140, h, s: same2(P, left, k, h) })}</g><g transform="translate(160,0)"><g opacity="0.35">${P.row(nm, k, { w: 140, h, s: same2(P, left, k, h) })}</g><path d="M5 ${h - 10}L135 10M135 ${h - 10}L5 10" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none"/></g>`, { w: 300, h, label: lab }) };
+  }
+  function picShapeQ(R, kinds) {
+    const P = picKit(), kind = R.pick(kinds), lab = `A ${kind}`;
+    const hint = { circle: "It is round with no corners.", square: "It has 4 equal sides.", triangle: "It has 3 sides.", rectangle: "It has 4 sides; opposite sides are equal.", oval: "It is round and long, like an egg.", star: "It has points.", cube: "All its faces are squares.", cuboid: "It is a box shape with rectangle faces.", cone: "It has a point at the top and a round base.", cylinder: "It has two round flat faces and a curved side.", sphere: "It is round like a ball." };
+    const copy = kinds.filter((x) => x !== kind), wrong = [];
+    while (wrong.length < 3 && copy.length) wrong.push(copy.splice(R.int(0, copy.length - 1), 1)[0]);
+    return { q: "What is this shape called?", a: kind, wrong, kinds: ["method", "method", "method"], steps: [hint[kind], `It is a ${kind}.`], picAlt: lab, pic: P.svg(P.shape({ x: 100, y: 78, s: 140, kind }), { w: 200, h: 160, label: lab }) };
+  }
+
   // ---------- generators ----------
   // Each: (R) => { q, a, wrong, steps }
   const G = {
@@ -491,6 +532,60 @@ const Gen = (() => {
       return { q: `A zero-order reaction has initial concentration [A]₀ = ${fm(A0)} mol/L and rate constant k = ${fm(k)} mol L⁻¹ s⁻¹. Find its half-life. (t½ = [A]₀ ÷ 2k)`, a: `${t} s`, wrong: nr(t, [fm(A0 / k) + " s", fm(0.693 / k) + " s", fm(2 * A0 / k) + " s"], R, (x) => `${fm(x)} s`), steps: [`t½ = [A]₀ ÷ 2k`, `t½ = ${fm(A0)} ÷ (2 × ${fm(k)}) = ${t} s`] };
     },
 
+    // ---------- picture questions (Classes 1-4 Maths) ----------
+    // Each returns { q, a, wrong, steps, pic, picAlt }. The question text works read aloud without the picture. Without the picture kit
+    // (an old cached file) they throw, so Gen.make returns null and the chapter's other generators are used instead.
+    picCount: (R) => { const P = picKit(), nm = pickItems(R, 1)[0], k = R.int(1, 9); return { q: `Count the ${plural(nm)}. How many ${plural(nm)} are there?`, a: n(k), wrong: near(k, [{ v: k + 1, k: "slip" }, { v: k - 1, k: "slip" }, { v: k + 2, k: "slip" }, { v: k - 2, k: "slip" }].filter((c) => c.v >= 1), R), steps: [`Touch each ${nm} once and count.`, `There are ${k} ${count(k, nm)}.`], picAlt: count(k, nm), pic: P.svg(P.row(nm, k, { w: 300, h: 100 }), { w: 300, h: 100, label: count(k, nm) }) }; },
+    picCount20: (R) => { const P = picKit(), nm = pickItems(R, 1)[0], k = R.int(10, 20); return { q: `Count the ${plural(nm)}. How many ${plural(nm)} are there?`, a: n(k), wrong: near(k, [{ v: k + 1, k: "slip" }, { v: k - 1, k: "slip" }, { v: k + 2, k: "slip" }, { v: k - 2, k: "slip" }], R), steps: [`Count the ${plural(nm)} one by one.`, `There are ${k} ${plural(nm)}.`], picAlt: count(k, nm), pic: P.svg(P.row(nm, k, { w: 300, h: 140 }), { w: 300, h: 140, label: count(k, nm) }) }; },
+    picAdd: (R) => picAddQ(R, 1, 9, 9),
+    picAdd2: (R) => picAddQ(R, 6, 9, 18, 11),
+    picSub: (R) => picSubQ(R, 3, 9),
+    picSub2: (R) => picSubQ(R, 11, 18),
+    picMore: (R) => {
+      const P = picKit(), [x, y] = pickItems(R, 2), same = R.next() < 0.2;
+      const a = R.int(1, 9); let b = same ? a : R.int(1, 9); if (!same && b === a) b = a === 9 ? 8 : a + 1;
+      const px = plural(x), py = plural(y), ans = same ? "same number" : a > b ? px : py;
+      const wrong = same ? [px, py, "Cannot tell"] : [a > b ? py : px, "same number", "Cannot tell"];
+      const lab = `${count(a, x)} and ${count(b, y)}`;
+      return { q: `Look at the ${px} and the ${py}. Are there more ${px} or more ${py}?`, a: ans, wrong, kinds: ["slip", "slip", "method"], steps: [`Count the ${px}: ${a}.`, `Count the ${py}: ${b}.`, same ? `${a} and ${b} are the same number.` : `${Math.max(a, b)} is more than ${Math.min(a, b)}, so there are more ${ans}.`], picAlt: lab, pic: P.svg(`<g>${P.row(x, a, { w: 140, h: 100, s: same2(P, a, b, 100) })}</g><g transform="translate(160,0)">${P.row(y, b, { w: 140, h: 100, s: same2(P, a, b, 100) })}</g>`, { w: 300, h: 100, label: lab }) };
+    },
+    picCoins: (R) => {
+      const P = picKit(); let vals, tot;
+      do { vals = Array.from({ length: R.int(2, 4) }, () => R.pick([1, 2, 5, 10])); tot = vals.reduce((s, v) => s + v, 0); } while (tot > 25);
+      vals.sort((p, q) => q - p);
+      const lab = `Coins: ${vals.map((v) => rs(v)).join(", ")}`, step = Math.min(72, 280 / vals.length);
+      return { q: "How much money is this? Add up the coins.", a: rs(tot), wrong: near(tot, [{ v: tot + 1, k: "slip" }, { v: tot - 1, k: "slip" }, { v: vals.length, k: "method" }, { v: tot + 2, k: "slip" }, { v: tot + 5, k: "slip" }], R, rs), steps: [`The coins are ${vals.map((v) => rs(v)).join(", ")}.`, `${vals.map((v) => rs(v)).join(" + ")} = ${rs(tot)}`], picAlt: lab, pic: P.svg(vals.map((v, i) => P.coin({ x: 150 + (i - (vals.length - 1) / 2) * step, y: 45, s: 64, value: v })).join(""), { w: 300, h: 90, label: lab }) };
+    },
+    picNotes: (R) => {
+      const P = picKit(), notes = Array.from({ length: R.int(1, 2) }, () => R.pick([10, 20, 50, 100])).sort((p, q) => q - p), coins = Array.from({ length: R.int(1, 3) }, () => R.pick([1, 2, 5, 10])).sort((p, q) => q - p);
+      const nt = notes.reduce((s, v) => s + v, 0), tot = nt + coins.reduce((s, v) => s + v, 0);
+      const lab = `${notes.map((v) => `${rs(v)} note`).join(", ")} and coins ${coins.map((v) => rs(v)).join(", ")}`;
+      return { q: "How much money is this? Add up the notes and the coins.", a: rs(tot), wrong: near(tot, [{ v: nt, k: "method" }, { v: tot + 10, k: "slip" }, { v: tot - 5, k: "slip" }, { v: tot + 5, k: "slip" }, { v: tot - 10, k: "slip" }], R, rs), steps: [`Notes: ${notes.map((v) => rs(v)).join(" + ")} = ${rs(nt)}.`, `Coins: ${coins.map((v) => rs(v)).join(" + ")} = ${rs(tot - nt)}.`, `${rs(nt)} + ${rs(tot - nt)} = ${rs(tot)}`], picAlt: lab, pic: P.svg(`${notes.map((v, i) => P.note({ x: 150 + (i - (notes.length - 1) / 2) * 140, y: 45, s: 130, value: v })).join("")}${coins.map((v, i) => P.coin({ x: 150 + (i - (coins.length - 1) / 2) * 72, y: 135, s: 62, value: v })).join("")}`, { w: 300, h: 180, label: lab }) };
+    },
+    picClock2: (R) => {
+      const P = picKit(), h = R.int(1, 12), half = R.next() < 0.5, nx = (x) => (x % 12) + 1, say = (hh, hf) => (hf ? `half past ${hh}` : `${hh} o'clock`);
+      const ans = say(h, half), lab = `A clock showing ${ans}`;
+      return { q: "What time does the clock show?", a: ans, wrong: near(ans, [{ v: say(h, !half), k: "method" }, { v: say(nx(h), half), k: "slip" }, { v: say(((h + 10) % 12) + 1, half), k: "slip" }, { v: say(nx(h), !half), k: "method" }], R, String), steps: half ? [`The minute hand points to 6, so it is half past.`, `The hour hand is between ${h} and ${nx(h)}: half past ${h}.`] : [`The minute hand points to 12, so it is o'clock.`, `The hour hand points to ${h}: ${h} o'clock.`], picAlt: lab, pic: P.svg(P.clock({ x: 100, y: 98, s: 180, h, m: half ? 30 : 0 }), { w: 200, h: 200, label: lab }) };
+    },
+    picClock: (R) => {
+      const P = picKit(), h = R.int(1, 12), m = R.pick([0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]), tm = (hh, mm) => `${hh}:${String(mm).padStart(2, "0")}`, ans = tm(h, m), lab = `A clock showing ${ans}`;
+      const swap = tm(m / 5 || 12, (h * 5) % 60), hour = ((h + (R.next() < 0.5 ? 0 : 10)) % 12) + 1;
+      return { q: "What time does the clock show?", a: ans, wrong: near(ans, [{ v: swap, k: "method" }, { v: tm(hour, m), k: "slip" }, { v: tm(h, (m + 5) % 60), k: "slip" }, { v: tm(h, (m + 55) % 60), k: "slip" }, { v: tm(((h + 10) % 12) + 1, m), k: "slip" }], R, String), steps: [`The short hand shows the hour: it is just past ${h}.`, `The long hand shows the minutes: ${m / 5} × 5 = ${m} minutes.`, `The time is ${ans}.`], picAlt: lab, pic: P.svg(P.clock({ x: 100, y: 98, s: 180, h, m }), { w: 200, h: 200, label: lab }) };
+    },
+    picFrac: (R) => {
+      const P = picKit(), d = R.pick([3, 4, 5, 6, 8]); let k = R.int(1, d - 1); if (2 * k === d) k = 1;
+      const shape = R.pick(["roti", "pizza", "bar", "square", "circle"]), word = { roti: "the roti", pizza: "the pizza", bar: "the bar", square: "the square", circle: "the circle" }[shape];
+      const f = (x, y) => `${x}/${y}`, lab = `${word.replace("the ", "A ")} split into ${d} equal parts with ${k} shaded`;
+      return { q: `${word[0].toUpperCase() + word.slice(1)} is cut into ${d} equal parts. What fraction of ${word} is shaded?`, a: f(k, d), wrong: near(f(k, d), [{ v: f(d - k, d), k: "method" }, { v: f(d, k), k: "method" }, { v: f(k, d - k), k: "method" }, { v: f(Math.min(k + 1, d - 1), d), k: "slip" }, { v: f(k, d + 1), k: "slip" }], R, String), steps: [`The ${shape} has ${d} equal parts, so the bottom number is ${d}.`, `${k} ${k === 1 ? "part is" : "parts are"} shaded, so the top number is ${k}.`, `The fraction shaded is ${f(k, d)}.`], picAlt: lab, pic: P.svg(P.fraction({ x: 100, y: 98, s: 180, shape, parts: d, shaded: k }), { w: 200, h: 200, label: lab }) };
+    },
+    picTensOnes: (R) => {
+      const P = picKit(), t = R.int(1, 9); let o = R.int(1, 9); if (o === t) o = o === 9 ? 8 : o + 1;
+      const ans = 10 * t + o, lab = `${t} ${t === 1 ? "bundle" : "bundles"} of ten and ${o} ${o === 1 ? "single" : "singles"}`;
+      return { q: `There are ${t} ${t === 1 ? "bundle" : "bundles"} of 10 sticks and ${o} ${o === 1 ? "loose stick" : "loose sticks"}. What number is this?`, a: n(ans), wrong: near(ans, [{ v: 10 * o + t, k: "method" }, { v: t + o, k: "method" }, { v: ans + 10, k: "slip" }, { v: ans - 10, k: "slip" }], R), steps: [`${t} tens = ${t * 10}.`, `${o} ${o === 1 ? "one" : "ones"} = ${o}.`, `${t * 10} + ${o} = ${ans}`], picAlt: lab, pic: P.svg(Array.from({ length: t }, (_, i) => { const r = Math.floor(i / 5), cols = Math.min(5, t - r * 5); return P.tens({ x: 150 + (i % 5 - (cols - 1) / 2) * 58, y: t > 5 ? 38 + r * 60 : 55, s: 54 }); }).join("") + Array.from({ length: o }, (_, i) => P.one({ x: 150 + (i - (o - 1) / 2) * 26, y: 152, s: 44 })).join(""), { w: 300, h: 190, label: lab }) };
+    },
+    picShape: (R) => picShapeQ(R, ["circle", "square", "triangle", "rectangle", "oval", "star"]),
+    picShape3: (R) => picShapeQ(R, ["cube", "cuboid", "cone", "cylinder", "sphere"]),
+
   };
 
   // Squares and cubes need a little post-processing.
@@ -522,10 +617,10 @@ const Gen = (() => {
 
   // ---------- which generators fit which chapter ----------
   const M = {
-    1: { "numbers-1-to-9": ["add1"], "addition-up-to-9": ["add1"], "subtraction-up-to-9": ["sub1"], "money-coins-and-notes": ["add1"] },
-    2: { "addition-with-carrying": ["add2"], "subtraction-with-borrowing": ["sub2"], "multiplication-as-repeated-addition": ["repAdd", "table"], money: ["add2"], "place-value-tens-and-ones": ["add2"] },
-    3: { addition: ["add3"], subtraction: ["sub3"], "multiplication-tables": ["table"], division: ["div"], money: ["money", "change"], length: ["unitConv"], "weight-and-capacity": ["unitConv"], time: ["timeLater", "minutes"], fractions: ["fracOf"] },
-    4: { "addition-and-subtraction": ["add3", "sub3"], multiplication: ["mul"], division: ["div", "divRem"], "factors-and-multiples": ["hcf", "lcmQ"], fractions: ["fracOf"], "introduction-to-decimals": ["decAdd"], "perimeter-and-area": ["rectPA", "squarePA"], measurement: ["unitConv"], time: ["minutes", "timeLater"], money: ["money", "change"], "numbers-up-to-9999": ["placeVal"] },
+    1: { "shapes-around-us": ["picShape"], "numbers-1-to-9": ["add1", "picCount", "picMore"], "numbers-10-to-20": ["picCount20"], "addition-up-to-9": ["add1", "picAdd"], "subtraction-up-to-9": ["sub1", "picSub"], "money-coins-and-notes": ["add1", "picCoins"] },
+    2: { "addition-with-carrying": ["add2", "picAdd2"], "subtraction-with-borrowing": ["sub2", "picSub2"], "multiplication-as-repeated-addition": ["repAdd", "table"], money: ["add2", "picCoins", "picNotes"], "place-value-tens-and-ones": ["add2", "picTensOnes"], "numbers-up-to-100": ["picTensOnes"], "shapes-and-lines": ["picShape3"], "time-clock-and-months": ["picClock2"] },
+    3: { addition: ["add3"], subtraction: ["sub3"], "multiplication-tables": ["table"], division: ["div"], money: ["money", "change", "picNotes"], length: ["unitConv"], "weight-and-capacity": ["unitConv"], time: ["timeLater", "minutes", "picClock"], fractions: ["fracOf", "picFrac"], "shapes-2d-and-3d": ["picShape", "picShape3"] },
+    4: { "addition-and-subtraction": ["add3", "sub3"], multiplication: ["mul"], division: ["div", "divRem"], "factors-and-multiples": ["hcf", "lcmQ"], fractions: ["fracOf", "picFrac"], "introduction-to-decimals": ["decAdd"], "perimeter-and-area": ["rectPA", "squarePA"], measurement: ["unitConv"], time: ["minutes", "timeLater"], money: ["money", "change"], "numbers-up-to-9999": ["placeVal"] },
     5: { "large-numbers": ["placeVal"], "operations-on-large-numbers": ["add3", "sub3", "mul", "divRem"], "factors-and-multiples": ["hcf", "lcmQ", "primeFact"], fractions: ["fracAdd", "fracOf"], decimals: ["decAdd", "decMul"], percentage: ["percentOf"], "perimeter-and-area": ["rectPA", "squarePA"], volume: ["cuboidVol"], time: ["minutes"], "money-and-unitary-method": ["unitary", "change"], "data-handling": ["mean"] },
     6: { "number-play": ["divRem"], "data-handling-and-presentation": ["mean", "mode"], "prime-time": ["hcf", "lcmQ", "primeFact"], "perimeter-and-area": ["rectPA", "squarePA"], fractions: ["fracAdd", "fracSub", "fracOf"], "the-other-side-of-zero": ["integers"], "lines-and-angles": ["complement"] },
     7: { "large-numbers-around-us": ["placeVal"], "arithmetic-expressions": ["integers"], "a-peek-beyond-the-point": ["decAdd"], "expressions-using-letter-numbers": ["evalExpr"], "parallel-and-intersecting-lines": ["complement"], "a-tale-of-three-intersecting-lines": ["triAngle", "extAngle"], "working-with-fractions": ["fracMul", "fracDiv"], "operations-with-integers": ["integers", "intDiv"], "finding-common-ground": ["hcf", "lcmQ", "primeFact"], "another-peek-beyond-the-point": ["decMul", "decDiv"], "connecting-the-dots": ["mean", "median", "mode"], "finding-the-unknown": ["linEq"] },
@@ -621,6 +716,11 @@ const Gen = (() => {
     const wrong = kept.map((p) => p.w);
     if (raw.a && wrong.length < 3) topUp(raw.a, wrong, R);
     if (!raw.a || wrong.length < 3) return null;
+    let pic = "";
+    if (raw.pic) {
+      try { pic = typeof raw.pic === "function" ? raw.pic(R) : raw.pic; } catch (e) { return null; }
+      if (typeof pic !== "string" || !/^\s*<svg/.test(pic)) return null;
+    }
     return {
       q: raw.q,
       options: [raw.a, ...wrong],
@@ -628,6 +728,7 @@ const Gen = (() => {
       explain: raw.steps.join("\n"),
       steps: raw.steps,
       gen: name,
+      ...(pic ? { pic, picAlt: raw.picAlt || "" } : {}),
       // How each option was made: null for the right one; a tag or null for the wrong ones (null = not known).
       kinds: [null, ...wrong.map((_, i) => (kept[i] && kept[i].k) || (kept[i] ? null : "slip"))],
     };

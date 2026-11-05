@@ -97,7 +97,7 @@
       if (others.length || !kinds.length)
         for (const q of Gen.fromNames(others.length ? others : gens, 24, seed)) {
           const opts = Games.shuffled(q.options.map((o, i) => ({ o, ok: i === q.answer })), R);
-          items.push({ q: q.q, options: opts.map((x) => x.o), answer: opts.findIndex((x) => x.ok), explain: q.explain, gen: q.gen });
+          items.push({ q: q.q, options: opts.map((x) => x.o), answer: opts.findIndex((x) => x.ok), explain: q.explain, gen: q.gen, pic: q.pic, picAlt: q.picAlt });
         }
       return { items: Games.shuffled(items, R), target: target(k), cls: k };
     },
@@ -151,7 +151,7 @@
         at++;
         locked = false;
         el.innerHTML = `${track()}
-          <div class="quiz-q race-q" id="rc-q" aria-live="polite">${rich(cur.q)}</div>
+          ${picHTML(cur)}<div class="quiz-q race-q" id="rc-q" aria-live="polite">${rich(cur.q)}</div>
           <div class="race-opts" role="group" aria-labelledby="rc-q">${cur.options.map((o, i) => `<button class="option" data-i="${i}" ${i === 0 ? "data-first" : ""}><span class="letter">${i + 1}</span><span>${rich(o)}</span></button>`).join("")}</div>
           <div class="small muted center" data-fb aria-live="polite" style="min-height:24px;margin-top:10px"></div>`;
         const f = el.querySelector("[data-first]");

@@ -318,7 +318,7 @@ const Sheets = (() => {
   function mcqHTML(items, next) {
     return `<ol class="ws-list">${items
       .map(
-        (it) => `<li value="${next()}"><div class="ws-q">${rich(it.q)}</div>
+        (it) => `<li value="${next()}">${picHTML(it)}<div class="ws-q">${rich(it.q)}</div>
           <ol class="ws-opts" type="a">${it.order.map((i) => `<li>${rich(it.options[i])}</li>`).join("")}</ol></li>`
       )
       .join("")}</ol>`;
@@ -334,7 +334,7 @@ const Sheets = (() => {
   }
 
   function genHTML(items, next) {
-    return `<ol class="ws-list">${items.map((x) => `<li value="${next()}"><div class="ws-q">${rich(x.q)}</div><div class="ws-work"></div></li>`).join("")}</ol>`;
+    return `<ol class="ws-list">${items.map((x) => `<li value="${next()}">${picHTML(x)}<div class="ws-q">${rich(x.q)}</div><div class="ws-work"></div></li>`).join("")}</ol>`;
   }
 
   return { maker, makerSubject, worksheet, levelSheet };

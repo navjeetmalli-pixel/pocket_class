@@ -129,7 +129,7 @@ const Loop = (() => {
     const saved = [...(ch.quiz || []), ...bank.mcq].map((q) => ({ q: q.q, options: q.options, answer: q.answer, explain: q.explain, level: q.level || 1, keepOrder: !!q.keepOrder }));
     let gens = [];
     try {
-      gens = Gen.questions(c, subj.id, ch.id, genCount, Date.now()).map((g) => ({ q: g.q, options: g.options, answer: 0, explain: g.steps.join(" "), level: 2, kinds: g.kinds, gen: true, steps: g.steps }));
+      gens = Gen.questions(c, subj.id, ch.id, genCount, Date.now()).map((g) => ({ q: g.q, options: g.options, answer: 0, explain: g.steps.join(" "), level: 2, kinds: g.kinds, gen: true, steps: g.steps, pic: g.pic, picAlt: g.picAlt }));
     } catch (e) {
       gens = [];
     }

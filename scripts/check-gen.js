@@ -12,6 +12,10 @@ const vm = require("vm");
 const root = path.join(__dirname, "..");
 const ctx = { console };
 vm.createContext(ctx);
+// The picture kit is optional here: without js/pics.js the picture generators are skipped (they return nothing by design).
+const picsFile = path.join(root, "js", "pics.js");
+const hasPics = fs.existsSync(picsFile);
+if (hasPics) vm.runInContext(fs.readFileSync(picsFile, "utf8") + "\n;globalThis.Pics = typeof Pics !== 'undefined' ? Pics : undefined", ctx);
 const Gen = vm.runInContext(fs.readFileSync(path.join(root, "js", "gen.js"), "utf8") + "\n;Gen", ctx);
 
 let problems = 0;
@@ -24,6 +28,7 @@ const bad = (msg) => {
 const BAD_TEXT = /NaN|undefined|Infinity|\bnull\b|\de[+-]\d/;
 let made = 0;
 for (const name of Gen.names) {
+  if (/^pic[A-Z]/.test(name) && !hasPics) continue;
   const fails = {};
   for (let seed = 1; seed <= 500; seed++) {
     const q = Gen.make(name, seed * 2654435761);
@@ -41,6 +46,12 @@ for (const name of Gen.names) {
     if (wrong.includes(a)) why.push("a wrong answer equals the answer");
     if (wrong.some((w) => !w || !String(w).trim())) why.push("empty wrong answer");
     if (!Array.isArray(q.steps) || !q.steps.length || q.steps.some((s) => !s || !String(s).trim())) why.push("no steps");
+    if (/^pic[A-Z]/.test(name)) {
+      if (typeof q.pic !== "string" || !/^\s*<svg[\s\S]*<\/svg>\s*$/.test(q.pic)) why.push("no svg picture");
+      else if (!/aria-label="[^"]+"/.test(q.pic)) why.push("picture has no aria-label");
+      if (!q.picAlt || !String(q.picAlt).trim()) why.push("no picAlt");
+      if (/NaN|undefined|Infinity/.test(q.pic)) why.push("bad text in picture svg");
+    }
     const all = [q.q, ...q.options, ...(q.steps || [])].join(" | ");
     if (BAD_TEXT.test(all)) why.push("bad text (NaN/undefined/Infinity/exponent): " + all.match(BAD_TEXT)[0]);
     for (const w of why) fails[w] = (fails[w] || 0) + 1;
@@ -77,6 +88,7 @@ for (const [subject, byClass] of Object.entries(Gen.MAP)) {
       entries++;
       if (!ids.has(id)) bad(`MAP ${subject} class ${cls}: chapter "${id}" does not exist`);
       for (const nm of names) if (!Gen.names.includes(nm)) bad(`MAP ${subject} class ${cls} "${id}": unknown generator "${nm}"`);
+      if (!hasPics && names.every((nm) => /^pic[A-Z]/.test(nm))) continue;
       if (!Gen.questions(+cls, subject, id, 3, 7).length) bad(`MAP ${subject} class ${cls} "${id}": produced no questions`);
     }
   }

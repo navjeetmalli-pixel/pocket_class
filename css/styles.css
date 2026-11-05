@@ -2239,3 +2239,13 @@ body[data-band="11-12"] .hub-nav a.active { box-shadow: var(--shadow), inset 0 -
 .rs-sec ul { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; line-height: 1.45; overflow-wrap: anywhere; }
 .rs-note { display: block; color: var(--muted); font-size: 13.5px; }
 .rs-next p { margin: 0 0 8px; font-size: 14.5px; }
+
+/* ---------- Picture questions ---------- */
+.q-pic { max-width: 320px; margin: 12px auto 0; padding: 10px; border-radius: var(--radius-sm); background: var(--surface-2); color: var(--text); text-align: center; }
+.q-pic svg { display: block; width: 100%; height: auto; margin: 0 auto; }
+body[data-band="1-2"] .q-pic { max-width: 400px; padding: 14px; }
+.ws .q-pic { max-width: 260px; margin: 6px 0 4px; padding: 0; background: none; text-align: left; }
+@media print {
+  .q-pic { background: none; break-inside: avoid; }
+  .q-pic svg { filter: grayscale(1) contrast(1.15); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

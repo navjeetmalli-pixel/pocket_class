@@ -123,7 +123,7 @@ const Papers = (() => {
     const optOrder = (it) => (it.keepOrder ? [0, 1, 2, 3] : shuffle([0, 1, 2, 3], R));
     const qHTML = (it, marks) =>
       it.options
-        ? ((it._order = optOrder(it)), `<div class="ws-q">${rich(it.q)}</div><ol class="ws-opts" type="a">${it._order.map((i) => `<li>${rich(it.options[i])}</li>`).join("")}</ol>`)
+        ? ((it._order = optOrder(it)), `${picHTML(it)}<div class="ws-q">${rich(it.q)}</div><ol class="ws-opts" type="a">${it._order.map((i) => `<li>${rich(it.options[i])}</li>`).join("")}</ol>`)
         : `<div class="ws-q">${rich(it.q)}<span class="ws-marks">[${marks}]</span></div>`;
 
     const body = sections

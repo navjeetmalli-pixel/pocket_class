@@ -371,7 +371,7 @@
         gen.innerHTML = `<div class="stack">${qs
           .map(
             (q, i) => `<article class="card example">
-            <p class="q"><span class="tag">${t("Q{n}", { n: i + 1 })}</span>${rich(q.q)}</p>
+            ${picHTML(q)}<p class="q"><span class="tag">${t("Q{n}", { n: i + 1 })}</span>${rich(q.q)}</p>
             <details class="reveal"><summary>${t("Show answer")}</summary>
               <ol class="steps">${q.steps.map((st) => `<li>${rich(st)}</li>`).join("")}</ol>
               <div class="answer">${rich(q.options[0])}</div>

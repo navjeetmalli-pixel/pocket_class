@@ -164,7 +164,7 @@ const Guided = (() => {
     //   "Find the mistake": a Gen solution with one wrong result swapped in
     const gens = Gen.questions(c, subj.id, ch.id, 6, Date.now());
     const ex = ch.examples || [];
-    const fromGen = (g) => ({ q: g.q, steps: g.steps, answer: g.options[0], options: g.options, kinds: g.kinds, order: shuffle([0, 1, 2, 3]), picked: null, shown: 0, revealed: false });
+    const fromGen = (g) => ({ pic: g.pic, picAlt: g.picAlt, q: g.q, steps: g.steps, answer: g.options[0], options: g.options, kinds: g.kinds, order: shuffle([0, 1, 2, 3]), picked: null, shown: 0, revealed: false });
     const fromEx = (e) => ({ q: e.q, steps: e.steps, answer: e.answer, options: null, picked: null, shown: 0, revealed: false });
     const fadeGen = gens.find((g) => g.steps.length >= 2);
     let exPool = ex.slice(1);
@@ -186,7 +186,7 @@ const Guided = (() => {
     for (const g of [...gens.filter((x) => x !== fadeGen && x !== turnGen), ...gens]) {
       const m = slipSteps(g.steps);
       if (m) {
-        slip = { q: g.q, ...m, tapped: null };
+        slip = { pic: g.pic, picAlt: g.picAlt, q: g.q, ...m, tapped: null };
         break;
       }
     }
@@ -194,7 +194,7 @@ const Guided = (() => {
     // One more worked example, for a student who says the first did not feel clear: an unused generated solution or solved example.
     const spareGen = gens.find((g) => g !== fadeGen && g !== turnGen && g.steps.length >= 2);
     const spareEx = exPool.find((e) => e !== (turnEx || null));
-    st.example2 = spareGen ? { q: spareGen.q, steps: spareGen.steps, answer: spareGen.options[0] } : spareEx ? { q: spareEx.q, steps: spareEx.steps, answer: spareEx.answer } : ex.length > 1 && !fade ? { q: ex[1].q, steps: ex[1].steps, answer: ex[1].answer } : null;
+    st.example2 = spareGen ? { pic: spareGen.pic, picAlt: spareGen.picAlt, q: spareGen.q, steps: spareGen.steps, answer: spareGen.options[0] } : spareEx ? { q: spareEx.q, steps: spareEx.steps, answer: spareEx.answer } : ex.length > 1 && !fade ? { q: ex[1].q, steps: ex[1].steps, answer: ex[1].answer } : null;
     st.fade = fade;
     st.turn = turn;
     st.slip = slip;
@@ -444,7 +444,7 @@ const Guided = (() => {
     return `
       <p class="g-lead">${t("A few quick questions on earlier work this chapter builds on. This is not graded. It only helps us decide where to start.")}</p>
       <div class="row" style="justify-content:space-between"><span class="eyebrow g-eyebrow">${t("Question {i} of {n}", { i: dg.i + 1, n })}</span><span class="pill">${esc(it.from.title)}</span></div>
-      <div class="quiz-q">${rich(it.q)}</div>
+      ${picHTML(it)}<div class="quiz-q">${rich(it.q)}</div>
       ${options(it, { locked: picked, reveal: picked })}
       ${picked ? foot : `<button class="btn block mt" data-act="skip-diag">${t("Skip the quick check")}</button>`}`;
   }
@@ -466,7 +466,7 @@ const Guided = (() => {
     const lead = s.first.fromSim ? t("Before the lesson, make a prediction. A guess is fine: it is not counted anywhere.") : t("Before the lesson, have a go at this. A guess is fine: it is not counted anywhere.");
     return `
       <p class="g-lead">${lead}</p>
-      <div class="quiz-q">${rich(it.q)}</div>
+      ${picHTML(it)}<div class="quiz-q">${rich(it.q)}</div>
       ${options(it, { locked: guessed, reveal: false })}
       ${guessed
         ? `<div class="feedback neutral"><div class="h">${s.guess === "unsure" ? t("No problem.") : t("Noted.")}</div>${t("Let's learn the idea first. We'll come back to this question.")}</div>${nav(s.steps[s.step + 1] === "interact" ? "Try it yourself" : "Learn the idea")}`
@@ -516,7 +516,7 @@ const Guided = (() => {
     const head = right ? stripEmoji(t("Your first guess was right 🎉")) : s.guess === "unsure" ? t("Here is the answer") : t("Not that one, and now you can see why");
     return `
       <p class="g-lead">${t("The question you saw at the start, with what you now know.")}</p>
-      <div class="quiz-q">${rich(it.q)}</div>
+      ${picHTML(it)}<div class="quiz-q">${rich(it.q)}</div>
       ${options(it, { locked: true, reveal: true })}
       <div class="feedback ${right ? "good" : "neutral"}"><div class="h">${head}</div>${rich(it.explain)}</div>
       ${nav()}`;
@@ -526,7 +526,7 @@ const Guided = (() => {
     return `
       ${reasonBox(key)}
       <p class="g-lead">${t("Read each step and ask yourself <strong>why</strong> it works before moving to the next.")}</p>
-      <article class="example"><p class="q">${rich(ex.q)}</p>
+      <article class="example">${picHTML(ex)}<p class="q">${rich(ex.q)}</p>
         <ol class="steps g-steps">${ex.steps.map((st) => `<li>${rich(st)}</li>`).join("")}</ol>
         <div class="answer">${rich(ex.answer)}</div></article>
       <div class="quiz-nav">${s.step > 0 ? `<button class="btn" data-act="back">${icon("back")} ${t("Back")}</button>` : ""}
@@ -559,7 +559,7 @@ const Guided = (() => {
     return `
       ${reasonBox("fade")}
       <p class="g-lead">${t("Now the last {n} {n:step is|steps are} yours. Work them out in your head or notebook, then check.", { n: n - keep })}</p>
-      <div class="quiz-q">${rich(f.q)}</div>
+      ${picHTML(f)}<div class="quiz-q">${rich(f.q)}</div>
       ${f.options ? options({ ...f, answer: 0 }, { locked: f.revealed, reveal: f.revealed }) : ""}
       <ol class="steps g-steps mt">${steps}</ol>
       ${foot}`;
@@ -587,7 +587,7 @@ const Guided = (() => {
       : "";
     return `
       <p class="g-lead">${t("A classmate solved this, but one step has a slip. Tap the step you think is wrong. This is not scored.")}</p>
-      <div class="quiz-q">${rich(sl.q)}</div>
+      ${picHTML(sl)}<div class="quiz-q">${rich(sl.q)}</div>
       <ol class="steps g-steps g-slips mt">${items}</ol>
       ${fb}`;
   }
@@ -618,7 +618,7 @@ const Guided = (() => {
     }
     return `
       <p class="g-lead">${t("Same idea, new numbers. Try it in your head or notebook first. Hints reveal the steps one at a time.")}</p>
-      <div class="quiz-q">${rich(tn.q)}</div>
+      ${picHTML(tn)}<div class="quiz-q">${rich(tn.q)}</div>
       ${tn.options ? options({ ...tn, answer: 0 }, { locked: done, reveal: done }) : ""}
       <ol class="steps g-steps mt">${steps}</ol>
       ${foot}`;
@@ -632,7 +632,7 @@ const Guided = (() => {
     return `
       ${reasonBox("again")}
       <p class="g-lead">${t("This one has no hints. Take your time, and try it in your head or notebook first.")}</p>
-      <div class="quiz-q">${rich(it.q)}</div>
+      ${picHTML(it)}<div class="quiz-q">${rich(it.q)}</div>
       ${options(it, { locked: picked, reveal: picked })}
       ${picked
         ? `<div class="feedback ${ok ? "good" : "bad"}"><div class="h">${ok ? stripEmoji(t("Correct, and no hints needed 🎉")) : t("Not quite")}</div>
@@ -727,7 +727,7 @@ const Guided = (() => {
     return `
       <p class="g-lead">${t("A few questions mixed from across the chapter. No notes this time. After each answer, say how sure you were.")}</p>
       <div class="row" style="justify-content:space-between"><span class="eyebrow g-eyebrow">${t("Question {i} of {n}", { i: s.p + 1, n })}</span><span class="pill accent">${level}</span></div>
-      <div class="quiz-q">${rich(it.q)}</div>
+      ${picHTML(it)}<div class="quiz-q">${rich(it.q)}</div>
       ${options(it, { locked: picked, reveal: revealed })}
       ${foot}`;
   }
@@ -745,12 +745,12 @@ const Guided = (() => {
     const last = m.i === n - 1;
     let body;
     if (written) {
-      body = `<div class="quiz-q">${rich(it.q)}</div>
+      body = `${picHTML(it)}<div class="quiz-q">${rich(it.q)}</div>
         <p class="small muted">${t("Answer in your notebook, then compare. This one is not scored.")}</p>
         ${mi.shown ? `<div class="feedback neutral"><div class="h">${t("A model answer")}</div>${rich(it.a)}</div>` : `<button class="btn block mt" data-act="show-written">${t("Show a model answer")}</button>`}
         ${mi.shown ? (last ? nav(undefined, "next", false) : nav("Next skill", "p-next", false)) : ""}`;
     } else {
-      body = `<div class="quiz-q">${rich(it.q)}</div>
+      body = `${picHTML(it)}<div class="quiz-q">${rich(it.q)}</div>
         ${options(it, { locked: picked, reveal: picked })}
         ${picked
           ? `<div class="feedback ${ok ? "good" : "bad"}"><div class="h">${ok ? stripEmoji(t("Correct, with no help 🎉")) : t("Not quite")}</div>
@@ -774,7 +774,7 @@ const Guided = (() => {
     return `
       <p class="g-lead">${t("The next chapter is <strong>{title}</strong>. Here is a taste of it. Think about it; the answer is there when you want it.", { title: esc(next.title) })}</p>
       ${h
-        ? `<div class="quiz-q">${rich(h.q)}</div>
+        ? `${picHTML(h)}<div class="quiz-q">${rich(h.q)}</div>
            <ol class="g-choices">${h.options.map((o, k) => `<li><span class="letter">${"ABCD"[k]}</span>${rich(o)}</li>`).join("")}</ol>
            <details class="reveal"><summary>${t("Show the answer")}</summary><div class="answer">${rich(h.options[h.answer])}</div><p class="small" style="margin-top:8px">${rich(h.explain)}</p></details>`
         : `<p>${rich(next.summary)}</p>`}

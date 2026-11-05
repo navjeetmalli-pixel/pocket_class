@@ -4,6 +4,8 @@ const esc = (s) =>
   String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 // Escapes content text, then allows **bold** and line breaks.
+// Picture for a generated question (js/pics.js): the svg already carries its aria-label.
+const picHTML = (it) => (it && typeof it.pic === "string" && it.pic ? `<div class="q-pic">${it.pic}</div>` : "");
 const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\n/g, "<br>");
 
 // Plain text with the **bold** markers removed (for search and snippets).

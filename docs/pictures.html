@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Picture kit review</title>
+<style>
+body{font:14px system-ui,sans-serif;margin:16px;background:#f4f5f8;color:#222}
+h1{font-size:20px}h2{font-size:15px;margin:22px 0 6px}
+.panels{display:flex;gap:10px;flex-wrap:wrap}
+.panel{border-radius:12px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end}
+.light{background:#fff;border:1px solid #dde}.dark{background:#1c2233;border:1px solid #333}
+.cell{display:flex;flex-direction:column;align-items:center;font-size:10px;gap:2px}.dark .cell{color:#ccd}
+.s40 svg{width:40px;height:40px}.s96 svg{width:96px;height:96px}
+.big svg{width:140px;height:140px}.note svg{width:170px;height:100px}.row svg{width:200px;height:120px;background:rgba(128,128,128,.12);border-radius:8px}
+.wide svg{width:200px;height:120px}
+</style></head><body>
+<h1>Picture kit (js/pics.js)</h1>
+<div id="root"></div>
+<script src="../js/pics.js"></script>
+<script>
+var out = "";
+function panels(cls, items, fn) { // every set is drawn on a light and a dark panel
+  var h = '<div class="panels">';
+  ["light", "dark"].forEach(function (t) {
+    h += '<div class="panel ' + t + ' ' + cls + '">' + items.map(function (it) {
+      return '<div class="cell">' + fn(it) + '<span>' + (it.label || it) + '</span></div>';
+    }).join("") + '</div>';
+  });
+  return h + '</div>';
+}
+function one(name, v) { return Pics.svg(Pics.item(name, { x: 50, y: 50, s: 100, variant: v }), { w: 100, h: 100, label: name }); }
+out += '<h2>Items at 40 px</h2>' + panels("s40", Pics.names, function (n) { return one(n); });
+out += '<h2>Items at 96 px</h2>' + panels("s96", Pics.names, function (n) { return one(n); });
+out += '<h2>Balloon variants</h2>' + panels("s96", [0, 1, 2, 3, 4], function (v) { return one("balloon", v); });
+var times = [[12, 0], [3, 0], [6, 30], [9, 15], [1, 45], [10, 10], [4, 55]];
+out += '<h2>Clocks</h2>' + panels("big", times.map(function (t) { return { h: t[0], m: t[1], label: t[0] + ":" + (t[1] < 10 ? "0" : "") + t[1] }; }),
+  function (t) { return Pics.svg(Pics.clock({ x: 50, y: 50, s: 100, h: t.h, m: t.m }), { w: 100, h: 100, label: "clock" }); });
+var frs = [];
+["roti", "pizza", "bar", "square", "circle"].forEach(function (s) {
+  [[2, 1], [3, 1], [4, 3], [5, 2]].forEach(function (f) { frs.push({ shape: s, parts: f[0], shaded: f[1], label: s + " " + f[1] + "/" + f[0] }); });
+});
+out += '<h2>Fractions</h2>' + panels("s96", frs, function (f) { return Pics.svg(Pics.fraction({ x: 50, y: 50, s: 100, shape: f.shape, parts: f.parts, shaded: f.shaded }), { w: 100, h: 100, label: f.label }); });
+out += '<h2>Coins</h2>' + panels("s96", [1, 2, 5, 10].map(function (v) { return { v: v, label: "Rs " + v }; }),
+  function (c) { return Pics.svg(Pics.coin({ x: 50, y: 50, s: 100, value: c.v }), { w: 100, h: 100, label: "coin" }); });
+out += '<h2>Notes</h2>' + panels("note", [10, 20, 50, 100, 200, 500].map(function (v) { return { v: v, label: "Rs " + v }; }),
+  function (c) { return Pics.svg(Pics.note({ x: 100, y: 60, s: 190, value: c.v }), { w: 200, h: 120, label: "note" }); });
+out += '<h2>Tens and ones</h2>' + panels("big", [{ k: "tens", label: "tens" }, { k: "one", label: "one" }, { k: "both", label: "2 tens 3 ones" }], function (c) {
+  if (c.k === "both") return Pics.svg(Pics.tens({ x: 32, y: 50, s: 64 }) + Pics.tens({ x: 98, y: 50, s: 64 }) + Pics.one({ x: 140, y: 50, s: 64 }) + Pics.one({ x: 154, y: 50, s: 64 }) + Pics.one({ x: 168, y: 50, s: 64 }), { w: 190, h: 100, label: "23" });
+  return Pics.svg(Pics[c.k]({ x: 50, y: 50, s: 100 }), { w: 100, h: 100, label: c.k });
+});
+var sh = ["circle", "square", "triangle", "rectangle", "oval", "star", "cube", "cuboid", "cone", "cylinder", "sphere"];
+out += '<h2>Shapes</h2>' + panels("s96", sh, function (k) { return Pics.svg(Pics.shape({ x: 50, y: 50, s: 100, kind: k }), { w: 100, h: 100, label: k }); });
+out += '<h2>Rows (mango, 200x120)</h2>' + panels("row", [1, 5, 7, 10, 13, 20].map(function (n) { return { n: n, label: "n=" + n }; }),
+  function (r) { return Pics.svg(Pics.row("mango", r.n, { w: 200, h: 120 }), { w: 200, h: 120, label: "mangoes" }); });
+out += '<h2>Hidden-first test (apple should show below)</h2><div id="hid" style="display:none">' + Pics.svg(Pics.item("apple", { x: 100, y: 60, s: 100 }), { label: "hidden apple" }) +
+  '</div><div class="panels"><div class="panel light wide">' + Pics.svg(Pics.item("apple", { x: 100, y: 60, s: 100 }), { label: "visible apple" }) + '</div></div>';
+document.getElementById("root").innerHTML = out;
+</script></body></html>

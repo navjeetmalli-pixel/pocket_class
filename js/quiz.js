@@ -117,7 +117,7 @@ const Quiz = (() => {
         <div class="quiz-head"><span>${t("Question {i} of {n}", { i: s.i + 1, n })}</span>${right}</div>
         <span class="bar" aria-hidden="true"><i style="width:${pct(s.i + (locked ? 1 : 0), n)}%"></i></span>
         ${it.ref && it.ref.from && s.opts.showFrom ? `<div class="quiz-from" style="margin-top:16px">${esc(it.ref.from)}</div>` : ""}
-        <div class="quiz-q" id="quiz-q">${rich(it.q)}${speakQuestion(it)}</div>
+        ${picHTML(it)}<div class="quiz-q" id="quiz-q">${rich(it.q)}${speakQuestion(it)}</div>
         <div class="options" role="group" aria-labelledby="quiz-q">${options}</div>
         ${footer}
       </div>
