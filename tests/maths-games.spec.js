@@ -97,19 +97,21 @@ test("fraction builder (Class 3): shade parts, compare bars, wrong shading is ex
       const parts = page.locator(".fb-bar:not(.given) .fb-cell, .fb-slice");
       const n = r.type === "build" ? r.n : r.type === "equiv" ? r.f.n * r.m : r.target;
       if (i === wrongAt) {
-        // one part too many first: the answer is refused and explained
+        // one part too many first: the pieces that count are outlined and numbered, one plain line says why, then one more try
         for (let k = 0; k <= n; k++) await parts.nth(k).click();
         await page.locator("[data-act=check]").click();
-        await expect(page.locator(".feedback.bad")).toContainText("Correct answer:");
-        await expect(page.locator(".feedback.bad")).toContainText("equal parts");
-        await next(page);
-        continue;
+        await expect(page.locator(".mk-teach")).toContainText(/You took \d+ pieces?\./);
+        await expect(page.locator(".mk-teach")).not.toContainText("Correct answer:");
+        await page.locator("[data-mk=retry]").click();
+        await page.locator("[data-act=clear]").click();
+        await expect(page.locator("[data-count]")).toContainText("0 of");
       }
       for (let k = 0; k < n; k++) await parts.nth(k).click();
       await expect(page.locator("[data-count]")).toContainText(`${n} of`);
       await page.locator("[data-act=check]").click();
     }
-    await good(page);
+    if (i === wrongAt) await expect(page.locator(".feedback.good")).toContainText("Got it this time!");
+    else await good(page);
     await next(page);
   }
   await expect(page.locator(".game-result")).toBeVisible();
@@ -353,4 +355,57 @@ test("maths games in Punjabi, and in dark mode, on a phone", async ({ page }) =>
   await page.locator("[data-act=check]").click();
   await expect(page.locator(".feedback")).toBeVisible();
   await expect(page.locator(".feedback")).toContainText("ਸਹੀ ਜਵਾਬ:");
+});
+
+test("fraction plates (Class 3): tap or keyboard takes a piece, taking again puts it back, pieces are big buttons, wrong-then-retry is one wrong answer", async ({ page }) => {
+  const ch = "fractions";
+  await open(page, 3, "maths", ch, "fractions");
+  const data = await roundsOf(page, "fractions", 3, "maths", ch);
+  await start(page);
+  let wrongDone = false;
+  for (const r of data.rounds) {
+    if (r.type === "compare") {
+      await expect(page.locator(".fb-cmp-card")).toHaveCount(2);
+      await page.locator(`[data-pick="${r.answer}"]`).click();
+      await good(page);
+      await next(page);
+      continue;
+    }
+    const pieces = page.getByRole("button", { name: /^Piece \d+ of \d+, (not )?taken$/ });
+    await expect(pieces).toHaveCount(r.d);
+    for (let k = 0; k < r.d; k++) {
+      const b = await pieces.nth(k).boundingBox();
+      expect(b.width, "piece width").toBeGreaterThanOrEqual(44);
+      expect(b.height, "piece height").toBeGreaterThanOrEqual(44);
+    }
+    // keyboard: Tab lands on a piece, Enter takes it, Space puts it back
+    const first = page.locator(".fb-slice").first();
+    await first.focus();
+    await page.keyboard.press("Enter");
+    await expect(first).toHaveAttribute("aria-label", `Piece 1 of ${r.d}, taken`);
+    await expect(first).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator(".fb-pc.taken")).toHaveCount(1);
+    await page.keyboard.press("Space");
+    await expect(first).toHaveAttribute("aria-label", `Piece 1 of ${r.d}, not taken`);
+    await expect(page.locator(".fb-pc.taken")).toHaveCount(0);
+    if (!wrongDone) {
+      wrongDone = true;
+      const wrong = r.n === 1 ? 2 : 1;
+      for (let k = 0; k < wrong; k++) await page.locator(".fb-slice").nth(k).click();
+      await page.locator("[data-act=check]").click();
+      await expect(page.locator(".mk-teach")).toContainText(`${r.n} of the ${r.d} equal pieces`);
+      await expect(page.locator(".fb-marks .fb-num")).toHaveCount(wrong * 2);
+      await page.locator("[data-mk=retry]").click();
+      await page.locator("[data-act=clear]").click();
+    }
+    for (let k = 0; k < r.n; k++) await page.locator(".fb-slice").nth(k).click();
+    await page.locator("[data-act=check]").click();
+    await expect(page.locator(".fb-burst")).toBeAttached();
+    await next(page);
+  }
+  await expect(page.locator(".game-result")).toBeVisible();
+  const ev = current(await readStore(page)).learn.events.filter((e) => e.type === "answer");
+  // the first try of the retried round is the one wrong answer; its second try was not recorded again
+  expect(ev.filter((e) => e.ok === false)).toHaveLength(1);
+  await expect(page.locator(".review-item")).toHaveCount(1);
 });

@@ -451,5 +451,5 @@
       ' xmlns="http://www.w3.org/2000/svg"><defs>' + defs + "</defs>" + content + "</svg>";
   }
 
-  root.Pics = { svg: svg, item: item, names: NAMES, row: row, rowSize: rowSize, clock: clock, fraction: fraction, coin: coin, note: note, tens: tens, one: one, shape: shape };
+  root.Pics = { svg: svg, item: item, names: NAMES, row: row, rowSize: rowSize, clock: clock, fraction: fraction, coin: coin, note: note, tens: tens, one: one, shape: shape, FR: FR, wedge: wedge, shade: shade, tint: tint };
 })(typeof window !== "undefined" ? window : this);

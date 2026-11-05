@@ -141,7 +141,8 @@
 
     mount(el, data, api) {
       // each checked round goes to api.answered(item(round), ok) inside MK.run (js/games/mathkit.js)
-      MK.run(el, api, { rounds: data.rounds, prompt, draw, item });
+      // k (the class) says whether a round is drawn as plates (Classes 3-4) or as bars
+      MK.run(el, api, { rounds: data.rounds.map((r) => ({ ...r, k: data.cls })), prompt, draw, item });
     },
   });
 
@@ -158,44 +159,116 @@
   const ft = (f) => MK.frText(f.n, f.d);
 
   function prompt(r) {
+    if (r.type === "build" && young(r)) return t("Take {f} of the {food}.", { f: fh(fx(r.n, r.d)), food: t(foodOf(r)) });
     if (r.type === "build") return t("Shade the fraction {f}.", { f: fh(fx(r.n, r.d)) });
     if (r.type === "equiv") return t("The top bar shows {f}. Shade the same amount on the bottom bar, which has {D} equal parts.", { f: fh(r.f), D: r.cells });
+    if (r.type === "compare" && young(r)) return t("Which is bigger: A = {a} or B = {b}?", { a: fh(r.a), b: fh(r.b) });
     if (r.type === "compare") return t("Which is bigger: bar A = {a} or bar B = {b}?", { a: fh(r.a), b: fh(r.b) });
     return t(r.type === "add" ? "Shade the answer to {a} + {b} on the bottom bar." : "Shade the answer to {a} − {b} on the bottom bar.", { a: fh(r.a), b: fh(r.b) });
   }
+
+  // ---------- 2.5D drawings (js/pics.js: same colours, gradients, soft shadow and shine as Pics.fraction) ----------
+  // Classes 3-4: a plate with a roti or pizza cut into equal pieces; tapped pieces lift and slide onto "my plate".
+  // Source plate on the left, "my plate" on the right (side by side, so the whole round fits on a phone screen with Check visible).
+  const PLATE = { cx: 118, cy: 124, R: 96, mx: 374, my: 136, k: 0.62, w: 470, h: 250 };
+  const FOODS = ["roti", "pizza"];
+  const foodOf = (r) => FOODS[(r.n + r.d + (r.f ? r.f.d : 0)) % 2];
+  const young = (r) => r.k <= 4 && (r.type === "build" || r.type === "compare");
+  const gradOf = (c) => `url(#r${c.slice(1).toLowerCase()}@)`; // placeholder Pics.svg turns into a real gradient (see the header of js/pics.js)
+  const ang = (i, d) => (360 / d) * i;
+  const mid = (i, d) => (((360 / d) * (i + 0.5) - 90) * Math.PI) / 180;
+
+  function pieceArt(food, i, d, taken) {
+    const [cS, cP] = Pics.FR[food];
+    const col = taken ? cS : Pics.tint(cS, 0.32); // a piece waiting on the big plate is a lighter golden-brown / red; once taken it is the full colour
+    const w = Pics.wedge(PLATE.cx, PLATE.cy, PLATE.R - 6, ang(i, d), ang(i + 1, d));
+    let dots = "";
+    [[0.4, 0], [0.68, 0.22], [0.68, -0.22]].forEach(([f, o]) => {
+      const a = mid(i, d) + (o * 2 * Math.PI) / d;
+      const x = PLATE.cx + (PLATE.R - 6) * f * Math.cos(a);
+      const y = PLATE.cy + (PLATE.R - 6) * f * Math.sin(a);
+      dots += food === "pizza" ? `<circle cx="${MK.p1(x)}" cy="${MK.p1(y)}" r="${d > 6 ? 5 : 7}" fill="${gradOf(cP)}" stroke="${Pics.shade(cP, 0.6)}" stroke-width="1.2"/>` : `<circle cx="${MK.p1(x)}" cy="${MK.p1(y)}" r="${d > 6 ? 3 : 4.2}" fill="#7a4414" opacity=".55"/>`;
+    });
+    const shine = Pics.wedge(PLATE.cx, PLATE.cy, PLATE.R - 22, ang(i, d) + 2, ang(i, d) + 360 / d / 2);
+    return { w, dots, col, shine, cS };
+  }
+
+  function plate(r, food, d, interactive, label) {
+    const { cx, cy, R, mx, my, k } = PLATE;
+    const [cS, cP] = Pics.FR[food];
+    let slots = "";
+    let mine = "";
+    let pcs = "";
+    let hits = "";
+    for (let i = 0; i < d; i++) {
+      const art = pieceArt(food, i, d, false);
+      const w = art.w;
+      slots += `<path class="fb-ghost" d="${w}"/>`;
+      mine += `<path class="fb-mslot" d="${w}" transform="translate(${MK.p1(mx - cx * k)} ${MK.p1(my - cy * k)}) scale(${k})"/>`;
+      pcs += `<g class="fb-pc" data-i="${i}" ${interactive ? "" : 'style="pointer-events:none"'}><g class="fb-lift">
+        <path class="fb-pshadow" d="${w}" transform="translate(2.5 5)"/>
+        <path class="fb-pbody wait" d="${w}" fill="${gradOf(Pics.tint(cS, 0.32))}" stroke="${Pics.shade(cS, 0.6)}" stroke-width="2.6" stroke-linejoin="round"/><path class="fb-pbody full" d="${w}" fill="${gradOf(cS)}" stroke="${Pics.shade(cS, 0.6)}" stroke-width="2.6" stroke-linejoin="round"/>
+        <path d="${art.shine}" fill="#fff" opacity=".18"/>${art.dots}</g></g>`;
+      if (interactive) hits += `<g class="fb-slice" role="button" tabindex="0" aria-pressed="false" data-i="${i}" ${i === 0 ? "data-focus" : ""} aria-label="${t("Piece {i} of {n}, not taken", { i: i + 1, n: d })}"><path class="fb-hit" d="${w}"/></g>`;
+    }
+    const ring = (x, y, rr, sc) => `<circle cx="${x}" cy="${y}" r="${rr}" fill="${gradOf("#ffffff")}" stroke="${Pics.shade("#dfe4ee", 0.8)}" stroke-width="2.4"/><circle cx="${x}" cy="${y}" r="${rr - 9 * sc}" fill="none" stroke="#c9d1df" stroke-width="1.6"/>`;
+    const body = `<ellipse cx="${cx + 3}" cy="${cy + R + 14}" rx="${R - 8}" ry="8" fill="#000" opacity=".1"/>
+      <circle cx="${cx + 3}" cy="${cy + 6}" r="${R + 12}" fill="#000" opacity=".1"/>${ring(cx, cy, R + 12, 1)}
+      <g>${slots}</g>
+      <ellipse cx="${mx + 2}" cy="${my + (R + 12) * k + 4}" rx="${(R - 8) * k}" ry="5" fill="#000" opacity=".1"/>${ring(mx, my, (R + 12) * k, k)}
+      <g>${mine}</g>
+      <text class="fb-lbl" x="${mx}" y="${MK.p1(my - (R + 12) * k - 12)}" text-anchor="middle">${t("My plate")}</text>
+      <g class="fb-pieces" style="--tx:${MK.p1(mx - cx * k)}px;--ty:${MK.p1(my - cy * k)}px;--k:${k}">${pcs}</g><g class="fb-marks"></g>${hits}`;
+    return `<div class="fb-stage" data-food="${food}">${Pics.svg(body, { w: PLATE.w, h: PLATE.h, label })}</div>`;
+  }
+
+  // a fraction picture (roti/pizza with n of d pieces shaded)
+  const mini = (food, n, d, px, label) => `<span class="fb-mini" style="width:${px}px">${Pics.svg(Pics.fraction({ shape: food, parts: d, shaded: n, x: 60, y: 62, s: 110 }), { w: 120, h: 124, label })}</span>`;
 
   // a bar of n parts; the first `on` shaded when it is only shown, buttons when it can be shaded
   function bar(id, n, on, label) {
     if (on !== null)
       return `<div class="fb-bar given" role="img" aria-label="${esc(label)}">${Array.from({ length: n }, (_, i) => `<span class="fb-cell ${i < on ? "on" : ""}"></span>`).join("")}</div>`;
-    return `<div class="fb-bar" role="group" data-bar="${id}" aria-label="${esc(label)}">${Array.from({ length: n }, (_, i) => `<button type="button" class="fb-cell" data-i="${i}" aria-pressed="false" ${i === 0 ? "data-focus" : ""} aria-label="${t("Part {i} of {n}", { i: i + 1, n })}"></button>`).join("")}</div>`;
+    return `<div class="fb-bar" role="group" data-bar="${id}" aria-label="${esc(label)}">${Array.from({ length: n }, (_, i) => `<button type="button" class="fb-cell" data-i="${i}" aria-pressed="false" ${i === 0 ? "data-focus" : ""} aria-label="${t("Piece {i} of {n}, not taken", { i: i + 1, n })}"></button>`).join("")}</div>`;
   }
 
-  function pie(n) {
-    const cx = 100;
-    const cy = 100;
-    const rad = 88;
-    const pt = (i) => {
-      const a = -Math.PI / 2 + (i * 2 * Math.PI) / n;
-      return [MK.p1(cx + rad * Math.cos(a)), MK.p1(cy + rad * Math.sin(a))];
-    };
-    const slices = Array.from({ length: n }, (_, i) => {
-      const [x1, y1] = pt(i);
-      const [x2, y2] = pt(i + 1);
-      return `<path class="fb-slice" data-i="${i}" role="checkbox" aria-checked="false" tabindex="0" ${i === 0 ? "data-focus" : ""} aria-label="${t("Part {i} of {n}", { i: i + 1, n })}" d="M${cx},${cy} L${x1},${y1} A${rad},${rad} 0 0 1 ${x2},${y2} Z"/>`;
+  // a few star and confetti pieces that fly out and fade in under a second (transform and opacity only); never blocks the page
+  function burst(host) {
+    if (!host || host.querySelector(".fb-burst")) return;
+    const calm = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const cols = ["#ffc933", "#e5473d", "#3b82e0", "#4caf50", "#ee6fa4", "#f59a23"];
+    const bits = Array.from({ length: 12 }, (_, i) => {
+      const a = (i / 12) * 2 * Math.PI + (i % 2) * 0.2;
+      const dist = 70 + (i % 3) * 26;
+      const star = i % 3 === 0;
+      return `<svg class="fb-bit" viewBox="-8 -8 16 16" style="--dx:${Math.round(Math.cos(a) * dist)}px;--dy:${Math.round(Math.sin(a) * dist - 16)}px;--rot:${(i * 67) % 180}deg;animation-delay:${(i % 4) * 25}ms" aria-hidden="true">${
+        star ? `<path d="M0-7 2.1-2.4 7-2 3.3 1.4 4.4 6.4 0 3.8-4.4 6.4-3.3 1.4-7-2-2.1-2.4Z" fill="${cols[i % 6]}" stroke="#a87400" stroke-width=".8" stroke-linejoin="round"/>` : `<rect x="-3.5" y="-2.2" width="7" height="4.4" rx="1.2" fill="${cols[i % 6]}"/>`
+      }</svg>`;
     }).join("");
-    return `<svg class="fb-pie" viewBox="0 0 200 200" role="group" aria-label="${t("Circle cut into {n} equal parts", { n })}">${slices}</svg>`;
+    const b = document.createElement("div");
+    b.className = "fb-burst" + (calm ? " calm" : "");
+    b.setAttribute("aria-hidden", "true");
+    b.innerHTML = bits;
+    host.appendChild(b);
+    setTimeout(() => b.remove(), calm ? 900 : 1000);
   }
 
   function draw(r, board, submit) {
     const cmp = r.type === "compare";
+    const isPlate = young(r) && !cmp;
+    const food = foodOf(r);
     let top = "";
-    if (r.type === "build") top = r.shape === "pie" ? pie(r.d) : bar("main", r.d, null, t("Bar cut into {n} equal parts", { n: r.d }));
+    if (isPlate)
+      top = `<div class="fb-goal"><span class="fb-goal-pic">${mini(food, r.n, r.d, 74, t("{f} of the {food}", { f: MK.frText(r.n, r.d), food: t(food) }))}</span><span class="fb-goal-fr">${MK.frHtml(r.n, r.d)}</span><span class="fb-goal-word">${t("of the {food}", { food: t(food) })}</span></div>
+        <p class="fb-hint">${t("Tap a piece to put it on your plate. Tap it again to put it back.")}</p>
+        ${plate(r, food, r.d, true, t("{food} cut into {n} equal pieces", { food: t(food), n: r.d }))}`;
+    else if (r.type === "build") top = bar("main", r.d, null, t("Bar cut into {n} equal parts", { n: r.d }));
     else if (r.type === "equiv") top = `<div class="fb-row"><span class="fb-tag">${ft(r.f)}</span>${bar("", r.f.d, r.f.n, t("{f} shown on a bar", { f: ft(r.f) }))}</div><div class="fb-row"><span class="fb-tag">?</span>${bar("main", r.cells, null, t("Bar cut into {n} equal parts", { n: r.cells }))}</div>`;
+    else if (cmp && young(r)) top = `<div class="fb-cmp">${[["A", r.a], ["B", r.b]].map(([nm, f]) => `<div class="fb-cmp-card"><span class="fb-cmp-tag">${nm}</span>${mini("roti", f.n, f.d, 132, t("Plate {x} shows {f}", { x: nm, f: ft(f) }))}<span class="fb-cmp-fr">${MK.frHtml(f.n, f.d)}</span></div>`).join("")}</div>`;
     else if (cmp) top = `<div class="fb-row"><span class="fb-tag">A ${ft(r.a)}</span>${bar("", r.a.d, r.a.n, t("Bar A shows {f}", { f: ft(r.a) }))}</div><div class="fb-row"><span class="fb-tag">B ${ft(r.b)}</span>${bar("", r.b.d, r.b.n, t("Bar B shows {f}", { f: ft(r.b) }))}</div>`;
     else top = `<div class="fb-row"><span class="fb-tag">${ft(r.a)}</span>${bar("", r.a.d, r.a.n, t("{f} shown on a bar", { f: ft(r.a) }))}</div><div class="fb-row"><span class="fb-tag">${ft(r.b)}</span>${bar("", r.b.d, r.b.n, t("{f} shown on a bar", { f: ft(r.b) }))}</div><div class="fb-row"><span class="fb-tag">?</span>${bar("main", r.L, null, t("Answer bar cut into {n} equal parts", { n: r.L }))}</div>`;
 
-    board.innerHTML = `<div class="card mk-card">${top}
+    board.innerHTML = `<div class="card mk-card fb-card ${isPlate ? "fb-plates" : ""}">${top}
       ${
         cmp
           ? `<div class="fb-choices" role="group" aria-label="${t("Your answer")}"><button class="btn" data-pick="a" data-focus>${t("A is bigger")}</button><button class="btn" data-pick="eq">${t("They are equal")}</button><button class="btn" data-pick="b">${t("B is bigger")}</button></div>`
@@ -206,26 +279,48 @@
     const target = r.type === "build" ? r.n : r.type === "equiv" ? r.f.n * r.m : r.target;
     const parts = [...board.querySelectorAll(".fb-bar:not(.given) .fb-cell, .fb-slice")];
     const count = board.querySelector("[data-count]");
+    const taken = [];  // the pieces on my plate, in the order they were taken (their numbers when a wrong answer is explained)
+    let tried = false; // the first wrong try has been explained; this is the second
     const shaded = () => parts.filter((x) => x.classList.contains("on")).length;
-    const upd = () => count && (count.textContent = t("Shaded: {a} of {b} parts", { a: shaded(), b: total }));
+    const upd = () => count && (count.textContent = isPlate ? t("Taken: {a} of {b} pieces", { a: shaded(), b: total }) : t("Shaded: {a} of {b} parts", { a: shaded(), b: total }));
     upd();
 
-    const toggle = (x) => {
-      const on = !x.classList.contains("on");
+    const pc = (x) => board.querySelector(`.fb-pc[data-i="${x.dataset.i}"]`);
+    const set = (x, on, hop) => {
       x.classList.toggle("on", on);
       x.setAttribute(x.hasAttribute("aria-pressed") ? "aria-pressed" : "aria-checked", on);
+      const i = +x.dataset.i;
+      if (on) taken.push(i);
+      else if (taken.includes(i)) taken.splice(taken.indexOf(i), 1);
+      if (isPlate) {
+        x.setAttribute("aria-label", t(on ? "Piece {i} of {n}, taken" : "Piece {i} of {n}, not taken", { i: i + 1, n: total }));
+        const p = pc(x);
+        if (p) {
+          p.classList.toggle("taken", on);
+          if (hop) {
+            p.classList.remove("hop");
+            void p.getBoundingClientRect(); // restart the short lift
+            p.classList.add("hop");
+          }
+        }
+      } else x.setAttribute("aria-label", t(on ? "Piece {i} of {n}, taken" : "Piece {i} of {n}, not taken", { i: i + 1, n: total }));
+    };
+    const toggle = (x) => {
+      set(x, !x.classList.contains("on"), true);
       upd();
     };
+    board.addEventListener("animationend", (e) => e.target.closest && e.target.closest(".fb-pc") && e.target.closest(".fb-pc").classList.remove("hop"));
     board.addEventListener("click", (e) => {
       const x = e.target.closest(".fb-cell[data-i], .fb-slice");
       if (x) return toggle(x);
+      const pcEl = e.target.closest(".fb-pc.taken"); // a taken piece on my plate can be tapped to send it back
+      if (pcEl) return toggle(parts.find((p) => p.dataset.i === pcEl.dataset.i));
       const pick = e.target.closest("[data-pick]");
       if (pick) return answerCompare(pick);
       if (e.target.closest("[data-act=clear]")) {
-        parts.forEach((p) => {
-          p.classList.remove("on");
-          p.setAttribute(p.hasAttribute("aria-pressed") ? "aria-pressed" : "aria-checked", "false");
-        });
+        parts.forEach((p) => set(p, false, false));
+        taken.length = 0;
+        unmark();
         upd();
       }
       if (e.target.closest("[data-act=check]")) check();
@@ -237,6 +332,31 @@
         toggle(x);
       }
     });
+
+    // wrong answer: outline the equal pieces and number the ones that were taken, 1 to n
+    function mark() {
+      board.classList.add("fb-teaching");
+      if (isPlate) {
+        const { cx, cy, R, mx, my, k } = PLATE;
+        const g = board.querySelector(".fb-marks");
+        g.innerHTML = taken
+          .map((i, n) => {
+            const a = mid(i, r.d);
+            const rho = (R - 6) * 0.6;
+            const bx = (c, m, sc) => MK.p1(m + (c === "x" ? Math.cos(a) : Math.sin(a)) * rho * sc);
+            const big = `<g class="fb-num"><circle cx="${bx("x", cx, 1)}" cy="${bx("y", cy, 1)}" r="13"/><text x="${bx("x", cx, 1)}" y="${bx("y", cy, 1)}" dy=".36em">${n + 1}</text></g>`;
+            const small = `<g class="fb-num sm"><circle cx="${bx("x", mx, k)}" cy="${bx("y", my, k)}" r="9"/><text x="${bx("x", mx, k)}" y="${bx("y", my, k)}" dy=".36em">${n + 1}</text></g>`;
+            return big + small;
+          })
+          .join("");
+      } else taken.forEach((i, n) => parts[i].setAttribute("data-num", n + 1));
+    }
+    function unmark() {
+      board.classList.remove("fb-teaching");
+      const g = board.querySelector(".fb-marks");
+      if (g) g.innerHTML = "";
+      parts.forEach((p) => p.removeAttribute("data-num"));
+    }
 
     function explain() {
       if (r.type === "build") return t("Cut into {d} equal parts and shade {n} of them: {f}.", { d: r.d, n: r.n, f: MK.frText(r.n, r.d) });
@@ -271,26 +391,50 @@
       });
     }
 
+    function teach(n) {
+      const took = n === 1 ? t("You took 1 piece.") : t("You took {n} pieces.", { n });
+      const rule = r.type === "build" ? t("{f} means {a} of the {d} equal pieces.", { f: MK.frText(r.n, r.d), a: r.n, d: r.d }) : t("The answer {f} needs {a} of the {d} equal pieces.", { f: MK.frText(target, total), a: target, d: total });
+      return `${esc(took)} ${esc(rule)}`;
+    }
+
     function check() {
       const n = shaded();
       if (n === 0) return;
       const ok = n === target;
-      submit({
+      const near = Math.abs(n - target) === 1;
+      const was = tried;
+      const x = {
         ok,
-        credit: ok ? 1 : Math.abs(n - target) === 1 ? 0.4 : 0,
-        pts: ok ? 100 : Math.abs(n - target) === 1 ? 25 : 0,
-        yours: esc(t("{a} of {b} parts shaded", { a: n, b: total })),
-        right: esc(t("{a} of {b} parts shaded", { a: target, b: total })),
+        credit: ok ? 1 : near ? 0.4 : 0,
+        pts: ok ? 100 : near ? 25 : 0,
+        yours: esc(isPlate ? t("{a} of {b} pieces taken", { a: n, b: total }) : t("{a} of {b} parts shaded", { a: n, b: total })),
+        right: esc(isPlate ? t("{a} of {b} pieces taken", { a: target, b: total }) : t("{a} of {b} parts shaded", { a: target, b: total })),
         explain: esc(explain()),
         showRight: true,
+        headline: was ? (ok ? t("Got it this time!") : t("Not quite")) : undefined,
         reveal() {
-          if (ok) return;
+          if (ok) {
+            burst(board.querySelector(".fb-card"));
+            return;
+          }
+          unmark();
           const on = parts.filter((x) => x.classList.contains("on"));
           on.forEach((x) => x.classList.add(n > target ? "extra" : "ok"));
           if (n < target) parts.filter((x) => !x.classList.contains("on")).slice(0, target - n).forEach((x) => x.classList.add("missing"));
           if (n > target) on.slice(target).forEach((x) => x.classList.add("remove"));
         },
-      });
+      };
+      if (!ok && !was)
+        x.retry = {
+          teach: teach(n),
+          say: teach(n).replace(/&[a-z]+;/g, ""),
+          mark,
+          again() {
+            tried = true;
+            unmark();
+          },
+        };
+      submit(x);
     }
   }
 })();

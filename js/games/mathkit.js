@@ -1,7 +1,7 @@
 // Shared parts of the visual Maths games (numberline.js, fractions.js, balance.js, angles.js, graphs.js, race.js):
 //   MathKit.scope(c, subj, ch)   what a chapter or Practice-by-topic level means for maths games, or null if it is not maths:
 //                                { level, cls, id, topic, n } (for a level, cls is its level number: Level 5 = Class 5)
-//   MathKit.run(el, api, opts)   a round-by-round game: question, board, check, feedback with the right answer, Next, stars
+//   MathKit.run(el, api, opts)   a round-by-round game (submit({ retry: { teach, mark?, again? } }) on a wrong first try gives one more try, scored once): question, board, check, feedback with the right answer, Next, stars
 //   number / fraction helpers and the icons of the maths games.
 // Everything that decides the maths (build, audit) is plain JavaScript with no document access, so
 // scripts/check-games.js can run it over thousands of seeds in Node.
@@ -63,6 +63,7 @@ const MathKit = (() => {
     let right = 0;
     let streak = 0;
     let busy = false;
+    let pend = null; // a round whose first try was wrong and which gets one more try: { again() }
     const res = [];
 
     const dots = () => rounds.map((_, k) => `<i class="${k < i ? (res[k] ? "ok" : "no") : k === i ? "cur" : ""}"></i>`).join("");
@@ -70,6 +71,7 @@ const MathKit = (() => {
     function show() {
       const r = rounds[i];
       busy = false;
+      pend = null;
       el.innerHTML = `<div class="mk-top"><span class="small muted">${t("Question {a} of {b}", { a: i + 1, b: total })}</span><span class="mk-dots" aria-hidden="true">${dots()}</span></div>
         <h2 class="mk-q" data-mk="q">${o.prompt(r, i)}</h2>
         <div class="mk-board" data-mk="board"></div>
@@ -85,24 +87,46 @@ const MathKit = (() => {
 
     function submit(r, board, x) {
       if (busy || !api.live()) return;
+      const late = !!pend; // the second try of a round: the first try was already scored and recorded as wrong
+      if (x.retry && !x.ok && !late) {
+        // First wrong try with one more try allowed: score and record it now (as wrong), show the teaching note, no answer yet.
+        const c0 = Math.max(0, Math.min(1, x.credit === undefined ? 0 : x.credit));
+        res[i] = false;
+        sum += c0;
+        streak = 0;
+        api.streak(0);
+        api.score(x.pts === undefined ? 0 : x.pts);
+        if (o.item) api.answered(o.item(r, x), false);
+        api.miss({ prompt: x.missPrompt || o.prompt(r, i), yours: x.yours || "", right: x.right, explain: x.explain });
+        pend = { again: x.retry.again };
+        if (x.retry.mark) x.retry.mark();
+        board.setAttribute("inert", "");
+        el.querySelector("[data-mk=fb]").innerHTML = `<div class="feedback bad mk-teach" role="status"><div class="h">${t("Not quite")}</div><div class="mk-why">${x.retry.teach}</div></div>
+          <div class="quiz-nav"><button class="btn primary" data-mk="retry">${t("Try again")}</button></div>`;
+        api.say(x.retry.say || "");
+        el.querySelector("[data-mk=retry]").focus({ preventScroll: true });
+        return;
+      }
       busy = true;
       if (x.reveal) x.reveal();
       board.setAttribute("inert", "");
       const ok = !!x.ok;
-      const credit = Math.max(0, Math.min(1, x.credit === undefined ? (ok ? 1 : 0) : x.credit));
-      const pts = x.pts === undefined ? (ok ? 100 : 0) : x.pts;
-      res[i] = ok;
+      const credit = late ? 0 : Math.max(0, Math.min(1, x.credit === undefined ? (ok ? 1 : 0) : x.credit));
+      const pts = late ? 0 : x.pts === undefined ? (ok ? 100 : 0) : x.pts;
+      if (!late) res[i] = ok;
       sum += credit;
       let bonus = 0;
-      if (ok) {
+      if (late) {
+        // already counted when the first try was wrong
+      } else if (ok) {
         right++;
         streak++;
         bonus = Math.min(streak - 1, 5) * 5;
       } else streak = 0;
-      api.streak(streak);
-      api.score(pts + (ok ? bonus : 0));
-      if (o.item) api.answered(o.item(r, x), ok); // learning record: plain English concept words for the objective matcher
-      if (!ok) api.miss({ prompt: x.missPrompt || o.prompt(r, i), yours: x.yours || "", right: x.right, explain: x.explain });
+      if (!late) api.streak(streak);
+      if (!late) api.score(pts + (ok ? bonus : 0));
+      if (!late && o.item) api.answered(o.item(r, x), ok); // learning record: plain English concept words for the objective matcher
+      if (!ok && !late) api.miss({ prompt: x.missPrompt || o.prompt(r, i), yours: x.yours || "", right: x.right, explain: x.explain });
       const head = x.headline || (ok ? t("Correct! 🎉") : t("Not quite"));
       const plus = pts + (ok ? bonus : 0) > 0 ? ` +${pts + (ok ? bonus : 0)}` : "";
       const last = i === total - 1;
@@ -117,6 +141,15 @@ const MathKit = (() => {
     }
 
     el.addEventListener("click", (e) => {
+      if (e.target.closest("[data-mk=retry]") && pend && api.live()) {
+        const board = el.querySelector("[data-mk=board]");
+        el.querySelector("[data-mk=fb]").innerHTML = "";
+        board.removeAttribute("inert");
+        if (pend.again) pend.again();
+        const f = board.querySelector("[data-focus]");
+        if (f) f.focus({ preventScroll: true });
+        return;
+      }
       if (!e.target.closest("[data-mk=next]") || !api.live()) return;
       i++;
       if (i < total) return show();
