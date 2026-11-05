@@ -161,6 +161,18 @@
     </section>`;
   }
 
+  // Classes 9 to 12: exam-prep shortcuts, using the routes Learn already has.
+  function examRow(c, band) {
+    if (International.on() || (band !== "9-10" && band !== "11-12")) return "";
+    const chip = (href, ic, label) => `<a class="chip" href="${href}">${icon(ic)}<span>${label}</span></a>`;
+    return `<nav class="chips exam-row mt" aria-label="${t("Exam preparation")}">
+      ${chip("#/test", "test", t("Mock test"))}
+      ${Papers.CLASSES.includes(c) ? chip("#/papers", "test", t("Sample papers")) : ""}
+      ${chip("#/revise", "formula", t("Formula sheets"))}
+      ${chip("#/revise/mistakes", "target", t("My mistakes"))}
+    </nav>`;
+  }
+
   function home() {
     const st = Store.state;
     const c = cls();
@@ -207,6 +219,7 @@
               : start
         }
         ${planCard(plan, young)}
+        ${examRow(c, band)}
         ${dueCard(c)}
         ${explore}
         ${qotdHTML(c)}
