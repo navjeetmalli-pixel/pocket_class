@@ -192,30 +192,35 @@ StudyData.add(3, "maths", {
       ],
       quiz: [
         {
+          obj: "adding-in-columns",
           q: "What is 245 + 132?",
           options: ["367", "377", "387", "357"],
           answer: 1,
           explain: "Ones: 5 + 2 = 7. Tens: 4 + 3 = 7. Hundreds: 2 + 1 = 3. Sum = 377."
         },
         {
+          obj: "carrying-from-the-ones",
           q: "What is 186 + 247?",
           options: ["433", "423", "533", "443"],
           answer: 0,
           explain: "Ones: 6 + 7 = 13, write 3, carry 1. Tens: 8 + 4 + 1 = 13, write 3, carry 1. Hundreds: 1 + 2 + 1 = 4. Sum = 433."
         },
         {
+          obj: "carrying-from-the-ones",
           q: "What is 399 + 1?",
           options: ["390", "299", "410", "400"],
           answer: 3,
           explain: "Adding 1 to 399 carries across all three columns and gives 400."
         },
         {
+          obj: "carrying-from-the-ones",
           q: "What is 509 + 275?",
           options: ["774", "684", "784", "874"],
           answer: 2,
           explain: "Ones: 9 + 5 = 14, write 4, carry 1. Tens: 0 + 7 + 1 = 8. Hundreds: 5 + 2 = 7. Sum = 784."
         },
         {
+          obj: "carrying-from-the-tens",
           q: "A shop sold 350 kg of rice in the morning and 275 kg in the evening. How much rice was sold in all?",
           options: ["615 kg", "625 kg", "525 kg", "635 kg"],
           answer: 1,
@@ -410,30 +415,35 @@ StudyData.add(3, "maths", {
       ],
       quiz: [
         {
+          obj: "using-tables-you-already-know",
           q: "What is 6 × 7?",
           options: ["36", "42", "49", "48"],
           answer: 1,
           explain: "6 × 7 = 42. (7 × 7 = 49 and 6 × 8 = 48 are close, but not the same.)"
         },
         {
+          obj: "9-times-table-trick",
           q: "What is 9 × 5?",
           options: ["40", "50", "35", "45"],
           answer: 3,
           explain: "9 × 5 = 45. Five groups of 9 would also be 9 + 9 + 9 + 9 + 9 = 45."
         },
         {
+          obj: "using-tables-you-already-know",
           q: "Which number is a multiple of 8?",
           options: ["28", "36", "48", "54"],
           answer: 2,
           explain: "8 × 6 = 48, so 48 is a multiple of 8. 28, 36 and 54 are not in the 8 times table."
         },
         {
+          obj: "using-tables-you-already-know",
           q: "What is 4 × 8?",
           options: ["32", "24", "28", "36"],
           answer: 0,
           explain: "4 × 8 = 32. (24 is 4 × 6, and 28 is 4 × 7.)"
         },
         {
+          obj: "multiplication-means-equal-groups",
           q: "Ravi has 3 bags with 7 apples in each bag. How many apples does he have?",
           options: ["10", "21", "24", "27"],
           answer: 1,

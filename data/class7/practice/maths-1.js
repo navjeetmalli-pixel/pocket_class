@@ -198,30 +198,30 @@ StudyData.addPractice(7, "maths", {
   },
   "working-with-fractions": {
     mcq: [
-      { q: "What is 1/2 × 1/3?", options: ["2/5", "1/6", "5/6", "1/5"], answer: 1, explain: "Multiply numerators and denominators: (1 × 1)/(2 × 3) = 1/6.", level: 1 },
-      { q: "The reciprocal of 3/8 is", options: ["3/8", "−3/8", "8/3", "24"], answer: 2, explain: "The reciprocal is the fraction turned upside down: 8/3.", level: 1 },
-      { q: "What is 1/3 of 27?", options: ["9", "81", "24", "3"], answer: 0, explain: "1/3 × 27 = 27 ÷ 3 = 9.", level: 1 },
-      { q: "What is 4 ÷ 1/2?", options: ["2", "8", "4", "1/8"], answer: 1, explain: "4 ÷ 1/2 = 4 × 2 = 8, since there are 2 halves in every whole.", level: 1 },
-      { q: "What is 2/5 × 5/2?", options: ["0", "25/4", "4/25", "1"], answer: 3, explain: "A fraction multiplied by its reciprocal is 1: (2 × 5)/(5 × 2) = 10/10 = 1.", level: 1 },
-      { q: "What is 3/4 ÷ 3/8?", options: ["9/32", "1/2", "2", "3/2"], answer: 2, explain: "3/4 × 8/3 = 24/12 = 2.", level: 2 },
-      { q: "Kavita uses 2/3 m of ribbon for each gift. She has 4 m of ribbon.\nHow many gifts can she wrap?", options: ["8/3 gifts", "6 gifts", "3 gifts", "2 gifts"], answer: 1, explain: "4 ÷ 2/3 = 4 × 3/2 = 6 gifts. (8/3 comes from multiplying instead of dividing.)", level: 2 },
-      { q: "What is 1½ × 4/9?", options: ["2/3", "6/11", "5/9", "4/3"], answer: 0, explain: "1½ = 3/2, and 3/2 × 4/9 = 12/18 = 2/3.", level: 2 },
-      { q: "Assertion (A): 3/4 of 20 is 15.\nReason (R): Multiplying a number by a fraction less than 1 gives a smaller number.", options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."], answer: 1, explain: "3/4 × 20 = 15, so A is true, and R is also a true fact. But R only says the result is smaller than 20; it does not show why it is 15.", level: 2, keepOrder: true },
-      { q: "One cake needs 3/4 cup of sugar.\nHow much sugar is needed for 2½ cakes?", options: ["13/4 cups", "10/3 cups", "5/6 cups", "15/8 cups"], answer: 3, explain: "5/2 × 3/4 = 15/8 cups (1⅞ cups). (13/4 comes from adding, and 10/3 from dividing.)", level: 2 },
-      { q: "What is half of 3/4 of 24?", options: ["18", "12", "9", "36"], answer: 2, explain: "3/4 of 24 is 18, and half of 18 is 9.", level: 3 },
-      { q: "How many pieces of 3/8 m can be cut from a 4½ m rope?", options: ["27/16", "6", "10", "12"], answer: 3, explain: "9/2 ÷ 3/8 = 9/2 × 8/3 = 12 pieces.", level: 3 },
-      { q: "By what fraction should 2/3 be multiplied to get 1/2?", options: ["1/3", "3/4", "4/3", "3/2"], answer: 1, explain: "(1/2) ÷ (2/3) = 1/2 × 3/2 = 3/4. Check: 2/3 × 3/4 = 6/12 = 1/2.", level: 3 },
-      { q: "A tank is 3/5 full of water. One third of the water in it is used.\nWhat fraction of the tank is now full?", options: ["1/5", "8/15", "2/5", "4/15"], answer: 2, explain: "Water used = 1/3 × 3/5 = 1/5 of the tank. Left = 3/5 − 1/5 = 2/5.", level: 3 }
+      { obj: "multiplying-fractions", q: "What is 1/2 × 1/3?", options: ["2/5", "1/6", "5/6", "1/5"], answer: 1, explain: "Multiply numerators and denominators: (1 × 1)/(2 × 3) = 1/6.", level: 1 },
+      { obj: "dividing-fractions", q: "The reciprocal of 3/8 is", options: ["3/8", "−3/8", "8/3", "24"], answer: 2, explain: "The reciprocal is the fraction turned upside down: 8/3.", level: 1 },
+      { obj: "multiplying-fractions", q: "What is 1/3 of 27?", options: ["9", "81", "24", "3"], answer: 0, explain: "1/3 × 27 = 27 ÷ 3 = 9.", level: 1 },
+      { obj: "dividing-fractions", q: "What is 4 ÷ 1/2?", options: ["2", "8", "4", "1/8"], answer: 1, explain: "4 ÷ 1/2 = 4 × 2 = 8, since there are 2 halves in every whole.", level: 1 },
+      { obj: "dividing-fractions", q: "What is 2/5 × 5/2?", options: ["0", "25/4", "4/25", "1"], answer: 3, explain: "A fraction multiplied by its reciprocal is 1: (2 × 5)/(5 × 2) = 10/10 = 1.", level: 1 },
+      { obj: "dividing-fractions", q: "What is 3/4 ÷ 3/8?", options: ["9/32", "1/2", "2", "3/2"], answer: 2, explain: "3/4 × 8/3 = 24/12 = 2.", level: 2 },
+      { obj: "word-problems", q: "Kavita uses 2/3 m of ribbon for each gift. She has 4 m of ribbon.\nHow many gifts can she wrap?", options: ["8/3 gifts", "6 gifts", "3 gifts", "2 gifts"], answer: 1, explain: "4 ÷ 2/3 = 4 × 3/2 = 6 gifts. (8/3 comes from multiplying instead of dividing.)", level: 2 },
+      { obj: "multiplying-fractions", q: "What is 1½ × 4/9?", options: ["2/3", "6/11", "5/9", "4/3"], answer: 0, explain: "1½ = 3/2, and 3/2 × 4/9 = 12/18 = 2/3.", level: 2 },
+      { obj: "multiplying-fractions", q: "Assertion (A): 3/4 of 20 is 15.\nReason (R): Multiplying a number by a fraction less than 1 gives a smaller number.", options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."], answer: 1, explain: "3/4 × 20 = 15, so A is true, and R is also a true fact. But R only says the result is smaller than 20; it does not show why it is 15.", level: 2, keepOrder: true },
+      { obj: "word-problems", q: "One cake needs 3/4 cup of sugar.\nHow much sugar is needed for 2½ cakes?", options: ["13/4 cups", "10/3 cups", "5/6 cups", "15/8 cups"], answer: 3, explain: "5/2 × 3/4 = 15/8 cups (1⅞ cups). (13/4 comes from adding, and 10/3 from dividing.)", level: 2 },
+      { obj: "multiplying-fractions", q: "What is half of 3/4 of 24?", options: ["18", "12", "9", "36"], answer: 2, explain: "3/4 of 24 is 18, and half of 18 is 9.", level: 3 },
+      { obj: "word-problems", q: "How many pieces of 3/8 m can be cut from a 4½ m rope?", options: ["27/16", "6", "10", "12"], answer: 3, explain: "9/2 ÷ 3/8 = 9/2 × 8/3 = 12 pieces.", level: 3 },
+      { obj: "dividing-fractions", q: "By what fraction should 2/3 be multiplied to get 1/2?", options: ["1/3", "3/4", "4/3", "3/2"], answer: 1, explain: "(1/2) ÷ (2/3) = 1/2 × 3/2 = 3/4. Check: 2/3 × 3/4 = 6/12 = 1/2.", level: 3 },
+      { obj: "word-problems", q: "A tank is 3/5 full of water. One third of the water in it is used.\nWhat fraction of the tank is now full?", options: ["1/5", "8/15", "2/5", "4/15"], answer: 2, explain: "Water used = 1/3 × 3/5 = 1/5 of the tank. Left = 3/5 − 1/5 = 2/5.", level: 3 }
     ],
     written: [
-      { q: "Find 5/6 × 3/10.", a: "(5 × 3)/(6 × 10) = 15/60 = 1/4.", marks: 1 },
-      { q: "Write the reciprocal of 1⅘.", a: "1⅘ = 9/5, so its reciprocal is 5/9.", marks: 1 },
-      { q: "Find 7/8 ÷ 7/16.", a: "7/8 × 16/7 = 112/56.\n= 2.", marks: 2 },
-      { q: "Without working out the answer, explain why 6 × 3/4 is less than 6. Then find its value.", a: "3/4 is less than 1, so multiplying 6 by it gives a number smaller than 6.\n6 × 3/4 = 18/4 = 9/2 = 4½.", marks: 2 },
-      { q: "Find 3/5 of ₹250.", a: "3/5 × 250 = 3 × 50.\n= ₹150.", marks: 2 },
-      { q: "Rohit read 2/5 of a book on Monday and 1/3 of the remaining part on Tuesday. What fraction of the book did he read in all, and what fraction is left?", a: "Remaining after Monday = 1 − 2/5 = 3/5.\nTuesday: 1/3 × 3/5 = 1/5 of the book.\nTotal read = 2/5 + 1/5 = 3/5; left = 1 − 3/5 = 2/5.", marks: 3 },
-      { q: "A tailor has 6½ m of cloth. One shirt needs 1¼ m. How many full shirts can be made, and how much cloth is left?", a: "6½ ÷ 1¼ = 13/2 ÷ 5/4 = 13/2 × 4/5 = 26/5 = 5⅕.\nSo 5 full shirts can be made.\nCloth used = 5 × 1¼ = 6¼ m, so cloth left = 6½ − 6¼ = ¼ m.", marks: 3 },
-      { q: "Case study: A farmer has a field of 3/4 hectare. He plants wheat in 2/3 of the field. He then divides the rest of the field into small plots of 1/8 hectare each.\n(i) What area is planted with wheat?\n(ii) What area is left?\n(iii) How many small plots can he make?", a: "(i) 2/3 × 3/4 = 6/12 = 1/2 hectare.\n(ii) 3/4 − 1/2 = 3/4 − 2/4 = 1/4 hectare.\n(iii) 1/4 ÷ 1/8 = 1/4 × 8 = 2 plots.", marks: 4, type: "case" }
+      { obj: "multiplying-fractions", q: "Find 5/6 × 3/10.", a: "(5 × 3)/(6 × 10) = 15/60 = 1/4.", marks: 1 },
+      { obj: "dividing-fractions", q: "Write the reciprocal of 1⅘.", a: "1⅘ = 9/5, so its reciprocal is 5/9.", marks: 1 },
+      { obj: "dividing-fractions", q: "Find 7/8 ÷ 7/16.", a: "7/8 × 16/7 = 112/56.\n= 2.", marks: 2 },
+      { obj: "multiplying-fractions", q: "Without working out the answer, explain why 6 × 3/4 is less than 6. Then find its value.", a: "3/4 is less than 1, so multiplying 6 by it gives a number smaller than 6.\n6 × 3/4 = 18/4 = 9/2 = 4½.", marks: 2 },
+      { obj: "multiplying-fractions", q: "Find 3/5 of ₹250.", a: "3/5 × 250 = 3 × 50.\n= ₹150.", marks: 2 },
+      { obj: "word-problems", q: "Rohit read 2/5 of a book on Monday and 1/3 of the remaining part on Tuesday. What fraction of the book did he read in all, and what fraction is left?", a: "Remaining after Monday = 1 − 2/5 = 3/5.\nTuesday: 1/3 × 3/5 = 1/5 of the book.\nTotal read = 2/5 + 1/5 = 3/5; left = 1 − 3/5 = 2/5.", marks: 3 },
+      { obj: "word-problems", q: "A tailor has 6½ m of cloth. One shirt needs 1¼ m. How many full shirts can be made, and how much cloth is left?", a: "6½ ÷ 1¼ = 13/2 ÷ 5/4 = 13/2 × 4/5 = 26/5 = 5⅕.\nSo 5 full shirts can be made.\nCloth used = 5 × 1¼ = 6¼ m, so cloth left = 6½ − 6¼ = ¼ m.", marks: 3 },
+      { obj: "word-problems", q: "Case study: A farmer has a field of 3/4 hectare. He plants wheat in 2/3 of the field. He then divides the rest of the field into small plots of 1/8 hectare each.\n(i) What area is planted with wheat?\n(ii) What area is left?\n(iii) How many small plots can he make?", a: "(i) 2/3 × 3/4 = 6/12 = 1/2 hectare.\n(ii) 3/4 − 1/2 = 3/4 − 2/4 = 1/4 hectare.\n(iii) 1/4 ÷ 1/8 = 1/4 × 8 = 2 plots.", marks: 4, type: "case" }
     ]
   }
 });

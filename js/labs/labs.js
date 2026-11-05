@@ -359,12 +359,16 @@ const Labs = (() => {
   }
 
   // ---------- recording events against the chapter's objectives ----------
-  // Events go to the objective that best matches the investigation's wording (Objectives.forQuestion).
+  // Events go to the objective the investigation names for this chapter, else the one that best matches its wording
+  // (Objectives.forQuestion). An investigation may name objectives per chapter, as one lab serves several chapters:
+  //   obj: { "7/science/electricity-circuits-and-their-components": "series-parallel-and-the-fuse" }
+  // (a plain string is used for any chapter that has an objective with that id).
+  const objFor = (ctx, inv) => (inv.obj && typeof inv.obj === "object" ? inv.obj[`${ctx.cls}/${ctx.subject}/${ctx.chapter}`] : inv.obj) || undefined;
   function logger(ctx) {
     return (events, inv) => {
       if (!ctx || !Learn.ready(ctx.cls)) return [];
       try {
-        const o = Objectives.forQuestion(ctx.cls, ctx.subject, ctx.chapter, { q: `${inv.question} ${inv.title || ""}`, explain: inv.explain.why, options: inv.explain.opts, answer: inv.explain.ans });
+        const o = Objectives.forQuestion(ctx.cls, ctx.subject, ctx.chapter, { q: `${inv.question} ${inv.title || ""}`, explain: inv.explain.why, options: inv.explain.opts, answer: inv.explain.ans, obj: objFor(ctx, inv) });
         if (!o) return [];
         return Learn.record(events.map((e) => ({ cls: ctx.cls, subject: ctx.subject, chapter: ctx.chapter, obj: o.id, source: "lab", ...e })));
       } catch (e) {

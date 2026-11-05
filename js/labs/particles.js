@@ -274,6 +274,7 @@
       investigations: [
         {
           id: "heat",
+          obj: { "8/science/particulate-nature-of-matter": "changes-of-state" },
           title: "Heating ice",
           question: "Ice at −10 °C is slowly heated until the water is at 50 °C. What happens to the particles?",
           predict: { opts: ["They stay in fixed places and only vibrate faster", "At 0 °C they start to slide past one another (melting) and keep moving faster as it warms, but still stay close together", "They fly far apart and fill the whole box"], ans: 1 },
@@ -290,6 +291,7 @@
         },
         {
           id: "squash",
+          obj: { "8/science/particulate-nature-of-matter": "states-of-matter" },
           title: "Squashing a liquid and a gas",
           question: "You push the lid down with the same force, first on water at 50 °C and then on steam at 120 °C. What happens?",
           predict: { opts: ["Both are squashed by the same amount", "The steam is squashed a lot; the water hardly changes", "The water is squashed more, because it is heavier"], ans: 1 },

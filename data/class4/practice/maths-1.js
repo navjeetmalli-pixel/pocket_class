@@ -27,26 +27,26 @@ StudyData.addPractice(4, "maths", {
 
   "addition-and-subtraction": {
     mcq: [
-      { q: "What is 2,300 + 400?", options: ["2,300", "2,340", "2,700", "6,300"], answer: 2, explain: "3 hundreds + 4 hundreds = 7 hundreds, and the thousands stay the same. The sum is 2,700.", level: 1 },
-      { q: "What is 5,000 − 2,000?", options: ["3,000", "7,000", "2,000", "3,500"], answer: 0, explain: "5 thousands − 2 thousands = 3 thousands = 3,000.", level: 1 },
-      { q: "What is 4,500 − 500?", options: ["5,000", "4,500", "400", "4,000"], answer: 3, explain: "4,500 is 45 hundreds. Taking away 5 hundreds leaves 40 hundreds, which is 4,000.", level: 1 },
-      { q: "What is 1,234 + 2,345?", options: ["3,479", "3,579", "3,589", "4,579"], answer: 1, explain: "Ones: 4 + 5 = 9. Tens: 3 + 4 = 7. Hundreds: 2 + 3 = 5. Thousands: 1 + 2 = 3. The sum is 3,579.", level: 1 },
-      { q: "7,500 − 2,300 = 5,200. How can you check this answer?", options: ["Add 5,200 and 2,300", "Subtract 2,300 from 5,200", "Add 7,500 and 2,300", "Subtract 5,200 from 2,300"], answer: 0, explain: "Add the difference to the smaller number: 5,200 + 2,300 = 7,500, which is the bigger number. So the answer is correct.", level: 1 },
-      { q: "What is 4,687 + 2,375?", options: ["6,962", "7,162", "7,052", "7,062"], answer: 3, explain: "Ones: 7 + 5 = 12, write 2 carry 1. Tens: 8 + 7 + 1 = 16, write 6 carry 1. Hundreds: 6 + 3 + 1 = 10, write 0 carry 1. Thousands: 4 + 2 + 1 = 7. The sum is 7,062.", level: 2 },
-      { q: "What is 6,205 − 2,478?", options: ["3,827", "3,727", "4,733", "3,737"], answer: 1, explain: "6,205 − 2,000 = 4,205. Then 4,205 − 478 = 3,727. Check: 3,727 + 2,478 = 6,205.", level: 2 },
-      { q: "A school library had 2,450 books. It bought 875 more books. How many books does it have now?", options: ["3,325", "3,225", "1,575", "2,325"], answer: 0, explain: "'More books bought' means add: 2,450 + 875 = 3,325. (1,575 is what we get by subtracting, which is wrong here.)", level: 2 },
-      { q: "Which number, added to 2,750, gives 6,000?", options: ["3,750", "8,750", "3,250", "4,250"], answer: 2, explain: "6,000 − 2,750 = 3,250. Check: 2,750 + 3,250 = 6,000.", level: 2 },
-      { q: "Which sum is equal to 5,000?", options: ["3,200 + 1,700", "2,750 + 2,250", "2,600 + 2,500", "1,950 + 3,150"], answer: 1, explain: "2,750 + 2,250 = 5,000. The others give 4,900, 5,100 and 5,100.", level: 2 },
-      { q: "The sum of two numbers is 9,000. One of the numbers is 4,675. What is the other number?", options: ["4,325", "4,425", "5,325", "13,675"], answer: 0, explain: "The other number = 9,000 − 4,675 = 4,325. Check: 4,675 + 4,325 = 9,000. (13,675 is what we get by adding, which is wrong here.)", level: 3 },
-      { q: "Amit wants to read 4,000 pages in two months. He read 1,250 pages in January and 1,380 pages in February. How many more pages must he read?", options: ["2,630", "1,470", "6,630", "1,370"], answer: 3, explain: "Pages read so far: 1,250 + 1,380 = 2,630. Pages still to read: 4,000 − 2,630 = 1,370. (2,630 is the pages already read.)", level: 3 }
+      { obj: "adding-4-digit-numbers", q: "What is 2,300 + 400?", options: ["2,300", "2,340", "2,700", "6,300"], answer: 2, explain: "3 hundreds + 4 hundreds = 7 hundreds, and the thousands stay the same. The sum is 2,700.", level: 1 },
+      { obj: "subtracting-4-digit-numbers", q: "What is 5,000 − 2,000?", options: ["3,000", "7,000", "2,000", "3,500"], answer: 0, explain: "5 thousands − 2 thousands = 3 thousands = 3,000.", level: 1 },
+      { obj: "subtracting-4-digit-numbers", q: "What is 4,500 − 500?", options: ["5,000", "4,500", "400", "4,000"], answer: 3, explain: "4,500 is 45 hundreds. Taking away 5 hundreds leaves 40 hundreds, which is 4,000.", level: 1 },
+      { obj: "adding-4-digit-numbers", q: "What is 1,234 + 2,345?", options: ["3,479", "3,579", "3,589", "4,579"], answer: 1, explain: "Ones: 4 + 5 = 9. Tens: 3 + 4 = 7. Hundreds: 2 + 3 = 5. Thousands: 1 + 2 = 3. The sum is 3,579.", level: 1 },
+      { obj: "checking-your-answer", q: "7,500 − 2,300 = 5,200. How can you check this answer?", options: ["Add 5,200 and 2,300", "Subtract 2,300 from 5,200", "Add 7,500 and 2,300", "Subtract 5,200 from 2,300"], answer: 0, explain: "Add the difference to the smaller number: 5,200 + 2,300 = 7,500, which is the bigger number. So the answer is correct.", level: 1 },
+      { obj: "adding-4-digit-numbers", q: "What is 4,687 + 2,375?", options: ["6,962", "7,162", "7,052", "7,062"], answer: 3, explain: "Ones: 7 + 5 = 12, write 2 carry 1. Tens: 8 + 7 + 1 = 16, write 6 carry 1. Hundreds: 6 + 3 + 1 = 10, write 0 carry 1. Thousands: 4 + 2 + 1 = 7. The sum is 7,062.", level: 2 },
+      { obj: "subtracting-4-digit-numbers", q: "What is 6,205 − 2,478?", options: ["3,827", "3,727", "4,733", "3,737"], answer: 1, explain: "6,205 − 2,000 = 4,205. Then 4,205 − 478 = 3,727. Check: 3,727 + 2,478 = 6,205.", level: 2 },
+      { obj: "solving-word-problems", q: "A school library had 2,450 books. It bought 875 more books. How many books does it have now?", options: ["3,325", "3,225", "1,575", "2,325"], answer: 0, explain: "'More books bought' means add: 2,450 + 875 = 3,325. (1,575 is what we get by subtracting, which is wrong here.)", level: 2 },
+      { obj: "subtracting-4-digit-numbers", q: "Which number, added to 2,750, gives 6,000?", options: ["3,750", "8,750", "3,250", "4,250"], answer: 2, explain: "6,000 − 2,750 = 3,250. Check: 2,750 + 3,250 = 6,000.", level: 2 },
+      { obj: "adding-4-digit-numbers", q: "Which sum is equal to 5,000?", options: ["3,200 + 1,700", "2,750 + 2,250", "2,600 + 2,500", "1,950 + 3,150"], answer: 1, explain: "2,750 + 2,250 = 5,000. The others give 4,900, 5,100 and 5,100.", level: 2 },
+      { obj: "checking-your-answer", q: "The sum of two numbers is 9,000. One of the numbers is 4,675. What is the other number?", options: ["4,325", "4,425", "5,325", "13,675"], answer: 0, explain: "The other number = 9,000 − 4,675 = 4,325. Check: 4,675 + 4,325 = 9,000. (13,675 is what we get by adding, which is wrong here.)", level: 3 },
+      { obj: "solving-word-problems", q: "Amit wants to read 4,000 pages in two months. He read 1,250 pages in January and 1,380 pages in February. How many more pages must he read?", options: ["2,630", "1,470", "6,630", "1,370"], answer: 3, explain: "Pages read so far: 1,250 + 1,380 = 2,630. Pages still to read: 4,000 − 2,630 = 1,370. (2,630 is the pages already read.)", level: 3 }
     ],
     written: [
-      { q: "Add: 3,400 + 600.", a: "4,000", marks: 1 },
-      { q: "Subtract: 5,600 − 300.", a: "5,300", marks: 1 },
-      { q: "What is the sum of 1,500 and 2,500?", a: "4,000", marks: 1 },
-      { q: "Add 3,846 and 2,579. Show your carrying.", a: "Ones: 6 + 9 = 15, write 5, carry 1.\nTens: 4 + 7 + 1 = 12, write 2, carry 1.\nHundreds: 8 + 5 + 1 = 14, write 4, carry 1. Thousands: 3 + 2 + 1 = 6.\n3,846 + 2,579 = 6,425.", marks: 2 },
-      { q: "Subtract 1,758 from 4,000. Check your answer.", a: "4,000 − 1,000 = 3,000; 3,000 − 700 = 2,300; 2,300 − 50 = 2,250; 2,250 − 8 = 2,242.\n4,000 − 1,758 = 2,242.\nCheck: 2,242 + 1,758 = 4,000.", marks: 2 },
-      { q: "A farmer sold 2,365 kg of wheat in the first month and 1,985 kg in the second month. He had 5,000 kg of wheat at the start. How much wheat is left?", a: "Wheat sold: 2,365 + 1,985 = 4,350 kg.\nWheat left: 5,000 − 4,350 = 650 kg.\nCheck: 650 + 4,350 = 5,000.", marks: 3 }
+      { obj: "adding-4-digit-numbers", q: "Add: 3,400 + 600.", a: "4,000", marks: 1 },
+      { obj: "subtracting-4-digit-numbers", q: "Subtract: 5,600 − 300.", a: "5,300", marks: 1 },
+      { obj: "adding-4-digit-numbers", q: "What is the sum of 1,500 and 2,500?", a: "4,000", marks: 1 },
+      { obj: "adding-4-digit-numbers", q: "Add 3,846 and 2,579. Show your carrying.", a: "Ones: 6 + 9 = 15, write 5, carry 1.\nTens: 4 + 7 + 1 = 12, write 2, carry 1.\nHundreds: 8 + 5 + 1 = 14, write 4, carry 1. Thousands: 3 + 2 + 1 = 6.\n3,846 + 2,579 = 6,425.", marks: 2 },
+      { obj: "subtracting-4-digit-numbers", q: "Subtract 1,758 from 4,000. Check your answer.", a: "4,000 − 1,000 = 3,000; 3,000 − 700 = 2,300; 2,300 − 50 = 2,250; 2,250 − 8 = 2,242.\n4,000 − 1,758 = 2,242.\nCheck: 2,242 + 1,758 = 4,000.", marks: 2 },
+      { obj: "solving-word-problems", q: "A farmer sold 2,365 kg of wheat in the first month and 1,985 kg in the second month. He had 5,000 kg of wheat at the start. How much wheat is left?", a: "Wheat sold: 2,365 + 1,985 = 4,350 kg.\nWheat left: 5,000 − 4,350 = 650 kg.\nCheck: 650 + 4,350 = 5,000.", marks: 3 }
     ]
   },
 
@@ -127,26 +127,26 @@ StudyData.addPractice(4, "maths", {
 
   "fractions": {
     mcq: [
-      { q: "In the fraction 5/9, which number is the denominator?", options: ["9", "5", "14", "4"], answer: 0, explain: "The denominator is the bottom number. It tells how many equal parts make the whole. Here it is 9.", level: 1 },
-      { q: "What is 2/7 + 3/7?", options: ["5/14", "1/7", "6/7", "5/7"], answer: 3, explain: "The denominators are the same, so add the numerators: 2 + 3 = 5. Keep the denominator 7. The answer is 5/7.", level: 1 },
-      { q: "Which fraction is equal to 1/3?", options: ["1/6", "2/3", "2/6", "3/6"], answer: 2, explain: "Multiply the top and bottom of 1/3 by 2: 2/6. (3/6 is equal to 1/2, not 1/3.)", level: 1 },
-      { q: "What is 5/8 − 2/8?", options: ["3/8", "7/8", "3/16", "8/3"], answer: 0, explain: "The denominators are the same, so subtract the numerators: 5 − 2 = 3. Keep the denominator 8. The answer is 3/8.", level: 1 },
-      { q: "How many quarters (1/4) make one whole?", options: ["2", "4", "3", "8"], answer: 1, explain: "A whole cut into 4 equal parts has 4 quarters, so 4 quarters make one whole.", level: 1 },
-      { q: "Riya has 20 mangoes. She gives 1/5 of them to a neighbour. How many mangoes does she give?", options: ["5", "4", "15", "16"], answer: 1, explain: "1/5 of 20 = 20 ÷ 5 = 4 mangoes. (16 is the number of mangoes she keeps.)", level: 2 },
-      { q: "What is 3/5 of 25?", options: ["5", "10", "15", "20"], answer: 2, explain: "1/5 of 25 = 25 ÷ 5 = 5. So 3/5 of 25 = 3 × 5 = 15.", level: 2 },
-      { q: "Which fraction is equal to 4/6?", options: ["2/3", "1/3", "3/4", "4/8"], answer: 0, explain: "Divide the top and bottom of 4/6 by 2: 4 ÷ 2 = 2 and 6 ÷ 2 = 3. So 4/6 = 2/3.", level: 2 },
-      { q: "What is 8/12 in simplest form?", options: ["4/6", "8/6", "4/3", "2/3"], answer: 3, explain: "Divide the top and bottom by 4: 8 ÷ 4 = 2 and 12 ÷ 4 = 3. So 8/12 = 2/3. (4/6 is equal to it but can be simplified further.)", level: 2 },
-      { q: "Which pair shows like fractions?", options: ["2/5 and 2/7", "3/8 and 5/8", "1/4 and 1/2", "4/9 and 4/5"], answer: 1, explain: "Like fractions have the same denominator. 3/8 and 5/8 both have denominator 8.", level: 2 },
-      { q: "Rohan ate 2/9 of a cake and Meena ate 4/9 of the same cake. What fraction of the cake is left?", options: ["6/9", "2/9", "3/9", "3/18"], answer: 2, explain: "Eaten: 2/9 + 4/9 = 6/9. The whole cake is 9/9, so what is left is 9/9 − 6/9 = 3/9. (6/9 is the part that was eaten.)", level: 3 },
-      { q: "Which is greater, 3/4 of 20 or 2/5 of 40?", options: ["3/4 of 20", "2/5 of 40", "They are equal", "We cannot say"], answer: 1, explain: "3/4 of 20 = 3 × 5 = 15. 2/5 of 40 = 2 × 8 = 16. Since 16 is more than 15, 2/5 of 40 is greater.", level: 3 }
+      { obj: "parts-of-a-whole", q: "In the fraction 5/9, which number is the denominator?", options: ["9", "5", "14", "4"], answer: 0, explain: "The denominator is the bottom number. It tells how many equal parts make the whole. Here it is 9.", level: 1 },
+      { obj: "like-fractions", q: "What is 2/7 + 3/7?", options: ["5/14", "1/7", "6/7", "5/7"], answer: 3, explain: "The denominators are the same, so add the numerators: 2 + 3 = 5. Keep the denominator 7. The answer is 5/7.", level: 1 },
+      { obj: "equivalent-fractions", q: "Which fraction is equal to 1/3?", options: ["1/6", "2/3", "2/6", "3/6"], answer: 2, explain: "Multiply the top and bottom of 1/3 by 2: 2/6. (3/6 is equal to 1/2, not 1/3.)", level: 1 },
+      { obj: "like-fractions", q: "What is 5/8 − 2/8?", options: ["3/8", "7/8", "3/16", "8/3"], answer: 0, explain: "The denominators are the same, so subtract the numerators: 5 − 2 = 3. Keep the denominator 8. The answer is 3/8.", level: 1 },
+      { obj: "parts-of-a-whole", q: "How many quarters (1/4) make one whole?", options: ["2", "4", "3", "8"], answer: 1, explain: "A whole cut into 4 equal parts has 4 quarters, so 4 quarters make one whole.", level: 1 },
+      { obj: "fraction-of-a-group", q: "Riya has 20 mangoes. She gives 1/5 of them to a neighbour. How many mangoes does she give?", options: ["5", "4", "15", "16"], answer: 1, explain: "1/5 of 20 = 20 ÷ 5 = 4 mangoes. (16 is the number of mangoes she keeps.)", level: 2 },
+      { obj: "fraction-of-a-group", q: "What is 3/5 of 25?", options: ["5", "10", "15", "20"], answer: 2, explain: "1/5 of 25 = 25 ÷ 5 = 5. So 3/5 of 25 = 3 × 5 = 15.", level: 2 },
+      { obj: "equivalent-fractions", q: "Which fraction is equal to 4/6?", options: ["2/3", "1/3", "3/4", "4/8"], answer: 0, explain: "Divide the top and bottom of 4/6 by 2: 4 ÷ 2 = 2 and 6 ÷ 2 = 3. So 4/6 = 2/3.", level: 2 },
+      { obj: "equivalent-fractions", q: "What is 8/12 in simplest form?", options: ["4/6", "8/6", "4/3", "2/3"], answer: 3, explain: "Divide the top and bottom by 4: 8 ÷ 4 = 2 and 12 ÷ 4 = 3. So 8/12 = 2/3. (4/6 is equal to it but can be simplified further.)", level: 2 },
+      { obj: "like-fractions", q: "Which pair shows like fractions?", options: ["2/5 and 2/7", "3/8 and 5/8", "1/4 and 1/2", "4/9 and 4/5"], answer: 1, explain: "Like fractions have the same denominator. 3/8 and 5/8 both have denominator 8.", level: 2 },
+      { obj: "like-fractions", q: "Rohan ate 2/9 of a cake and Meena ate 4/9 of the same cake. What fraction of the cake is left?", options: ["6/9", "2/9", "3/9", "3/18"], answer: 2, explain: "Eaten: 2/9 + 4/9 = 6/9. The whole cake is 9/9, so what is left is 9/9 − 6/9 = 3/9. (6/9 is the part that was eaten.)", level: 3 },
+      { obj: "fraction-of-a-group", q: "Which is greater, 3/4 of 20 or 2/5 of 40?", options: ["3/4 of 20", "2/5 of 40", "They are equal", "We cannot say"], answer: 1, explain: "3/4 of 20 = 3 × 5 = 15. 2/5 of 40 = 2 × 8 = 16. Since 16 is more than 15, 2/5 of 40 is greater.", level: 3 }
     ],
     written: [
-      { q: "A roti is cut into 7 equal parts and 3 parts are eaten. Write the fraction that was eaten.", a: "3/7", marks: 1 },
-      { q: "Add: 4/11 + 5/11.", a: "4/11 + 5/11 = 9/11", marks: 1 },
-      { q: "Fill in the blank: 1/2 = ____/6.", a: "3, because 1 × 3 = 3 and 2 × 3 = 6.", marks: 1 },
-      { q: "Find 3/4 of 28.", a: "1/4 of 28 = 28 ÷ 4 = 7.\n3/4 of 28 = 3 × 7 = 21.", marks: 2 },
-      { q: "Write two fractions that are equal to 2/5.", a: "Multiply the top and bottom by the same number.\n2/5 = (2 × 2)/(5 × 2) = 4/10.\n2/5 = (2 × 3)/(5 × 3) = 6/15.", marks: 2 },
-      { q: "Mother made 12 rotis. The family ate 7/12 of them in the morning and 3/12 at night. What fraction of the rotis was eaten in all? What fraction is left? How many rotis are left?", a: "Eaten in all: 7/12 + 3/12 = 10/12.\nLeft: 12/12 − 10/12 = 2/12.\n2/12 of 12 rotis = 2 rotis are left.", marks: 3 }
+      { obj: "parts-of-a-whole", q: "A roti is cut into 7 equal parts and 3 parts are eaten. Write the fraction that was eaten.", a: "3/7", marks: 1 },
+      { obj: "like-fractions", q: "Add: 4/11 + 5/11.", a: "4/11 + 5/11 = 9/11", marks: 1 },
+      { obj: "equivalent-fractions", q: "Fill in the blank: 1/2 = ____/6.", a: "3, because 1 × 3 = 3 and 2 × 3 = 6.", marks: 1 },
+      { obj: "fraction-of-a-group", q: "Find 3/4 of 28.", a: "1/4 of 28 = 28 ÷ 4 = 7.\n3/4 of 28 = 3 × 7 = 21.", marks: 2 },
+      { obj: "equivalent-fractions", q: "Write two fractions that are equal to 2/5.", a: "Multiply the top and bottom by the same number.\n2/5 = (2 × 2)/(5 × 2) = 4/10.\n2/5 = (2 × 3)/(5 × 3) = 6/15.", marks: 2 },
+      { obj: "like-fractions", q: "Mother made 12 rotis. The family ate 7/12 of them in the morning and 3/12 at night. What fraction of the rotis was eaten in all? What fraction is left? How many rotis are left?", a: "Eaten in all: 7/12 + 3/12 = 10/12.\nLeft: 12/12 − 10/12 = 2/12.\n2/12 of 12 rotis = 2 rotis are left.", marks: 3 }
     ]
   },
 

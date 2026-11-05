@@ -191,36 +191,42 @@ StudyData.add(7, "science", {
       quiz: [
         {
           q: "What happens to blue litmus paper when it is dipped in lemon juice?",
+          obj: "indicators",
           options: ["It stays blue", "It turns red", "It turns green", "It becomes colourless"],
           answer: 1,
           explain: "Lemon juice is an **acid**, and acids turn blue litmus red."
         },
         {
           q: "Which of these is a neutral substance?",
+          obj: "acids-bases-and-neutral-substances",
           options: ["Soap solution", "Lemon juice", "Sugar solution", "Vinegar"],
           answer: 2,
           explain: "Sugar solution does not change the colour of litmus, so it is **neutral**."
         },
         {
           q: "Turmeric paper turns reddish-brown when it is dipped in:",
+          obj: "indicators",
           options: ["soap solution", "vinegar", "curd", "lemon juice"],
           answer: 0,
           explain: "Turmeric changes colour only in **bases**, and soap solution is basic."
         },
         {
           q: "The acid present in an ant's sting is:",
+          obj: "neutralisation-in-daily-life",
           options: ["Citric acid", "Acetic acid", "Lactic acid", "Formic acid"],
           answer: 3,
           explain: "Ants inject **formic acid** when they sting."
         },
         {
           q: "A farmer finds that his soil is too acidic. Which substance should he add?",
+          obj: "neutralisation-in-daily-life",
           options: ["Vinegar", "Compost", "Slaked lime", "Lemon juice"],
           answer: 2,
           explain: "**Slaked lime** (calcium hydroxide) is a base and neutralises the extra acid in the soil."
         },
         {
           q: "When an acid reacts with a base, the products are:",
+          obj: "neutralisation",
           options: ["salt and hydrogen gas", "salt and water", "only a salt", "water and carbon dioxide"],
           answer: 1,
           explain: "Acid + base → **salt + water**. This is neutralisation."
@@ -324,36 +330,42 @@ StudyData.add(7, "science", {
       quiz: [
         {
           q: "The metal cap on a torch cell is its:",
+          obj: "cell-battery-and-circuit",
           options: ["negative terminal", "positive terminal", "filament", "switch"],
           answer: 1,
           explain: "The metal cap is the **positive (+)** terminal and the flat base is the negative (−) terminal."
         },
         {
           q: "In an LED, the positive lead is the:",
+          obj: "bulb-and-led",
           options: ["shorter lead", "thicker lead", "longer lead", "lead that is bent"],
           answer: 2,
           explain: "The **longer lead** of an LED is positive."
         },
         {
           q: "Which of these is an insulator?",
+          obj: "conductors-and-insulators",
           options: ["Copper wire", "Iron nail", "Graphite from a pencil", "Dry wooden ruler"],
           answer: 3,
           explain: "Wood (when dry) does not conduct electricity, so it is an **insulator**."
         },
         {
           q: "Three bulbs are connected in series. One bulb fuses. What happens to the other two?",
+          obj: "series-parallel-and-the-fuse",
           options: ["They go off because the circuit is broken", "They glow brighter", "They continue to glow as before", "They glow dimmer"],
           answer: 0,
           explain: "In a series circuit there is **only one path**. A fused bulb breaks the path, so the current stops for all."
         },
         {
           q: "A fuse protects an electric circuit because its thin wire:",
+          obj: "heating-effect-and-fuse",
           options: ["stores the extra electricity", "makes the current flow faster", "becomes a better conductor", "melts and breaks the circuit when too much current flows"],
           answer: 3,
           explain: "When the current is too high, the **fuse wire melts** and cuts off the supply before appliances are damaged."
         },
         {
           q: "Three 1.5 V cells are joined in series. The voltage of the battery is:",
+          obj: "cell-battery-and-circuit",
           options: ["1.5 V", "3 V", "4.5 V", "0.5 V"],
           answer: 2,
           explain: "In series, voltages add: 1.5 + 1.5 + 1.5 = **4.5 V**."

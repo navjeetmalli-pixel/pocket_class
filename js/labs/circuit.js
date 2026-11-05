@@ -301,6 +301,7 @@
         },
         {
           id: "series",
+          obj: { "7/science/electricity-circuits-and-their-components": "series-parallel-and-the-fuse" },
           title: "A second bulb in series",
           question: "One bulb is lit by a 6 V battery. You add a second identical bulb in series with it. What happens to the brightness of the first bulb?",
           predict: { opts: ["It gets dimmer", "It stays the same", "It gets brighter"], ans: 0 },
@@ -317,6 +318,7 @@
         },
         {
           id: "parallel",
+          obj: { "7/science/electricity-circuits-and-their-components": "series-parallel-and-the-fuse" },
           title: "A second bulb in parallel",
           question: "One bulb is lit by a 6 V battery. You add a second identical bulb in a parallel branch. What happens to the first bulb and to the current from the battery?",
           predict: { opts: ["The first bulb stays as bright; the battery current doubles", "The first bulb gets dimmer; the battery current stays the same", "The first bulb gets brighter; the battery current halves"], ans: 0 },

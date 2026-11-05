@@ -179,30 +179,35 @@ StudyData.add(4, "maths", {
       ],
       quiz: [
         {
+          obj: "adding-4-digit-numbers",
           q: "What is 3,518 + 2,407?",
           options: ["5,825", "5,925", "6,825", "5,915"],
           answer: 1,
           explain: "Ones: 8 + 7 = 15, write 5 carry 1. Tens: 1 + 0 + 1 = 2. Hundreds: 5 + 4 = 9. Thousands: 3 + 2 = 5. Answer 5,925."
         },
         {
+          obj: "subtracting-4-digit-numbers",
           q: "What is 8,000 − 3,456?",
           options: ["4,544", "5,544", "4,456", "5,456"],
           answer: 0,
           explain: "8,000 − 3,000 = 5,000, then 5,000 − 456 = 4,544. Check: 4,544 + 3,456 = 8,000."
         },
         {
+          obj: "solving-word-problems",
           q: "A shop sold 1,275 kg of rice in May and 1,480 kg in June. How much was sold in these two months together?",
           options: ["2,655 kg", "2,745 kg", "2,755 kg", "2,855 kg"],
           answer: 2,
           explain: "1,275 + 1,480 = 2,755 kg."
         },
         {
+          obj: "subtracting-4-digit-numbers",
           q: "How much more is 5,010 than 2,985?",
           options: ["2,125", "2,035", "1,985", "2,025"],
           answer: 3,
           explain: "5,010 − 2,985 = 2,025. Check: 2,985 + 2,025 = 5,010."
         },
         {
+          obj: "subtracting-4-digit-numbers",
           q: "Which number, added to 4,300, gives 9,000?",
           options: ["5,700", "4,700", "4,800", "4,600"],
           answer: 1,
@@ -597,30 +602,35 @@ StudyData.add(4, "maths", {
       ],
       quiz: [
         {
+          obj: "like-fractions",
           q: "What is 4/9 + 3/9?",
           options: ["7/18", "7/9", "1/9", "12/9"],
           answer: 1,
           explain: "The denominators are the same, so add the numerators: 4 + 3 = 7. The answer is 7/9."
         },
         {
+          obj: "equivalent-fractions",
           q: "Which fraction is equal to 1/2?",
           options: ["2/3", "3/6", "2/5", "1/4"],
           answer: 1,
           explain: "3 × 2 = 6, so 3/6 is 1/2 with the top and bottom multiplied by 3."
         },
         {
+          obj: "equivalent-fractions",
           q: "Which fraction is 6/8 in simplest form?",
           options: ["2/4", "6/4", "3/8", "3/4"],
           answer: 3,
           explain: "Divide the top and bottom by 2: 6 ÷ 2 = 3 and 8 ÷ 2 = 4. So 6/8 = 3/4."
         },
         {
+          obj: "parts-of-a-whole",
           q: "Rekha ate 2 of the 5 equal pieces of a barfi. What fraction did she eat?",
           options: ["5/2", "2/3", "2/5", "3/5"],
           answer: 2,
           explain: "She ate 2 parts out of 5 equal parts, so the fraction is 2/5."
         },
         {
+          obj: "fraction-of-a-group",
           q: "What is 3/4 of 20?",
           options: ["15", "12", "5", "16"],
           answer: 0,

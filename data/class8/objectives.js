@@ -88,6 +88,67 @@ StudyData.addObjectives(8, {
           { id: "like-poles", text: "Saying like poles of magnets, or like charges, attract.", fix: "Like poles and like charges repel; unlike poles and unlike charges attract." }
         ]
       }
+    ],
+    "particulate-nature-of-matter": [
+      {
+        id: "matter-is-made-of-particles",
+        text: "I can say that matter is made of tiny particles with spaces between them, that the particles are always moving, and that they attract one another.",
+        topics: ["Matter is made of particles"],
+        level: "remember",
+        prereq: ["6/science/materials-around-us#properties"],
+        mistakes: [
+          { id: "no-gaps", text: "Thinking matter is one continuous block with no gaps.", fix: "Matter has spaces between its particles. That is why sugar can dissolve in a full glass of water without making it overflow." },
+          { id: "solid-still", text: "Thinking the particles of a solid do not move.", fix: "Particles in a solid vibrate in place all the time. They only cannot move about freely." },
+          { id: "particles-expand", text: "Thinking the particles themselves swell when something is heated.", fix: "The particles stay the same size. They move faster, and the spaces between them grow." }
+        ]
+      },
+      {
+        id: "states-of-matter",
+        text: "I can describe solids, liquids and gases by how their particles are arranged, move and attract, and link this to shape, volume and compressing.",
+        topics: ["States of matter"],
+        level: "understand",
+        prereq: ["8/science/particulate-nature-of-matter#matter-is-made-of-particles"],
+        mistakes: [
+          { id: "liquid-volume", text: "Thinking a liquid has no fixed volume because it takes the shape of its container.", fix: "A liquid changes shape but keeps the same volume, because its particles stay close together." },
+          { id: "solid-no-space", text: "Thinking a solid cannot be compressed because it has no spaces at all.", fix: "A solid has tiny spaces between its particles, but they are so small and the attraction is so strong that squeezing hardly changes it." },
+          { id: "gas-heavy", text: "Thinking a gas fills its container because its particles are heavier.", fix: "Gas particles are far apart, attract each other weakly and move freely, so they spread to fill all the space." }
+        ]
+      },
+      {
+        id: "diffusion",
+        text: "I can explain diffusion by the movement of particles, and say why it is fastest in gases and speeds up when it is warmer.",
+        topics: ["Diffusion"],
+        level: "understand",
+        prereq: ["8/science/particulate-nature-of-matter#states-of-matter"],
+        mistakes: [
+          { id: "air-currents-only", text: "Thinking a smell spreads only because moving air carries it.", fix: "Particles move on their own and mix even in still air. That mixing is diffusion." },
+          { id: "diffusion-gas-only", text: "Thinking diffusion happens only in gases.", fix: "It happens in liquids too, as ink spreading in water, and very slowly in solids." },
+          { id: "temp-no-effect", text: "Thinking temperature does not change how fast diffusion happens.", fix: "Particles move faster when it is hotter, so diffusion is quicker. Sugar dissolves faster in hot water." }
+        ]
+      },
+      {
+        id: "changes-of-state",
+        text: "I can name the changes of state, including sublimation, and explain why the temperature stays constant while a solid melts.",
+        topics: ["Changes of state"],
+        level: "understand",
+        prereq: ["6/science/a-journey-through-states-of-water"],
+        mistakes: [
+          { id: "temp-rises-melting", text: "Thinking the temperature keeps rising while ice melts.", fix: "During melting the temperature stays at 0 °C. The heat energy is used to overcome the attraction between particles, not to make them hotter." },
+          { id: "melt-freeze-mix", text: "Mixing up melting with freezing, or condensation with boiling.", fix: "Melting is solid to liquid and freezing is liquid to solid. Boiling is liquid to gas and condensation is gas to liquid." }
+        ]
+      },
+      {
+        id: "evaporation-and-cooling",
+        text: "I can tell evaporation from boiling and explain with particles why evaporation causes cooling.",
+        topics: ["Changes of state"],
+        level: "apply",
+        prereq: ["8/science/particulate-nature-of-matter#changes-of-state"],
+        mistakes: [
+          { id: "evaporation-boiling-same", text: "Thinking evaporation and boiling are the same.", fix: "Evaporation happens at any temperature, only from the surface. Boiling happens at the boiling point, throughout the liquid." },
+          { id: "evaporation-hot-only", text: "Thinking evaporation happens only when a liquid is hot.", fix: "Wet clothes dry on a cool day too. Warmth and a breeze only make evaporation faster." },
+          { id: "cold-wet-skin", text: "Thinking wet skin feels cold because the water freezes or the air has cold particles.", fix: "The water evaporates by taking heat from your skin, so the skin cools down. A matka stays cool in the same way." }
+        ]
+      }
     ]
   },
   sst: {

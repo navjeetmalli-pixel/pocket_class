@@ -888,36 +888,42 @@ StudyData.add(6, "maths", {
       ],
       quiz: [
         {
+          obj: "equivalent-fractions-and-simplest-form",
           q: "Which fraction is equivalent to 2/3?",
           options: ["3/4", "4/6", "4/9", "3/5"],
           answer: 1,
           explain: "Multiply the top and bottom of 2/3 by 2 to get 4/6."
         },
         {
+          obj: "types-of-fractions",
           q: "7/4 written as a mixed fraction is:",
           options: ["2 1/4", "1 1/4", "3 1/4", "1 3/4"],
           answer: 3,
           explain: "7 ÷ 4 gives quotient 1 and remainder 3, so 7/4 = 1 3/4."
         },
         {
+          obj: "adding-and-subtracting-fractions",
           q: "What is 3/8 + 2/8?",
           options: ["5/8", "5/16", "1/8", "6/8"],
           answer: 0,
           explain: "For like fractions we add the numerators and keep the denominator: 3 + 2 = 5, so 5/8."
         },
         {
+          obj: "comparing-fractions",
           q: "Which is the greatest among 1/2, 3/5, 7/10 and 2/3?",
           options: ["1/2", "3/5", "7/10", "2/3"],
           answer: 2,
           explain: "With denominator 30: 1/2 = 15/30, 3/5 = 18/30, 7/10 = 21/30 and 2/3 = 20/30. The greatest is 21/30 = 7/10."
         },
         {
+          obj: "adding-and-subtracting-fractions",
           q: "What is 5/6 − 1/3?",
           options: ["4/3", "4/6", "1/3", "1/2"],
           answer: 3,
           explain: "1/3 = 2/6, so 5/6 − 2/6 = 3/6 = 1/2."
         },
         {
+          obj: "types-of-fractions",
           q: "Which of these is an improper fraction?",
           options: ["3/7", "1 2/5", "9/5", "4/9"],
           answer: 2,

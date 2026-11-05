@@ -507,12 +507,12 @@ StudyData.add(8, "science", {
         { q: "Why does sweating cool the body?", a: "Sweat evaporates by taking heat from the skin. This heat loss makes the body feel cooler." }
       ],
       quiz: [
-        { q: "In which state are particles farthest apart?", options: ["Solid", "Liquid", "Gas", "All the same"], answer: 2, explain: "Gas particles have the largest spaces between them." },
-        { q: "The spreading of the smell of incense in a room is an example of:", options: ["Melting", "Diffusion", "Sublimation", "Freezing"], answer: 1, explain: "Particles of the scent mix with air by their own movement." },
-        { q: "Camphor changes directly from solid to gas. This is called:", options: ["Condensation", "Melting", "Sublimation", "Freezing"], answer: 2, explain: "A solid to gas change without a liquid stage is sublimation." },
-        { q: "During melting of ice at 0 °C, the temperature:", options: ["Rises quickly", "Stays constant", "Falls", "Becomes 100 °C"], answer: 1, explain: "Heat energy is used to change the state, not to raise temperature." },
-        { q: "Which has a fixed volume but no fixed shape?", options: ["Solid", "Gas", "Liquid", "Rock"], answer: 2, explain: "A liquid takes the shape of its container but keeps its volume." },
-        { q: "Evaporation differs from boiling because evaporation:", options: ["Happens only at 100 °C", "Happens at the surface at any temperature", "Needs a flame", "Happens only in solids"], answer: 1, explain: "Boiling occurs throughout the liquid at the boiling point; evaporation occurs at the surface at any temperature." }
+        { q: "In which state are particles farthest apart?", options: ["Solid", "Liquid", "Gas", "All the same"], answer: 2, explain: "Gas particles have the largest spaces between them.", obj: "states-of-matter" },
+        { q: "The spreading of the smell of incense in a room is an example of:", options: ["Melting", "Diffusion", "Sublimation", "Freezing"], answer: 1, explain: "Particles of the scent mix with air by their own movement.", obj: "diffusion" },
+        { q: "Camphor changes directly from solid to gas. This is called:", options: ["Condensation", "Melting", "Sublimation", "Freezing"], answer: 2, explain: "A solid to gas change without a liquid stage is sublimation.", obj: "changes-of-state" },
+        { q: "During melting of ice at 0 °C, the temperature:", options: ["Rises quickly", "Stays constant", "Falls", "Becomes 100 °C"], answer: 1, explain: "Heat energy is used to change the state, not to raise temperature.", obj: "changes-of-state" },
+        { q: "Which has a fixed volume but no fixed shape?", options: ["Solid", "Gas", "Liquid", "Rock"], answer: 2, explain: "A liquid takes the shape of its container but keeps its volume.", obj: "states-of-matter" },
+        { q: "Evaporation differs from boiling because evaporation:", options: ["Happens only at 100 °C", "Happens at the surface at any temperature", "Needs a flame", "Happens only in solids"], answer: 1, explain: "Boiling occurs throughout the liquid at the boiling point; evaporation occurs at the surface at any temperature.", obj: "evaporation-and-cooling" }
       ]
     },
     // ───────────────────────────── 8 ─────────────────────────────

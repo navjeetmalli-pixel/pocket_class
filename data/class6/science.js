@@ -1058,36 +1058,42 @@ StudyData.add(6, "science", {
       quiz: [
         {
           q: "Which method uses wind to separate husk from grain?",
+          obj: "separating-solids-from-solids",
           options: ["Sieving", "Winnowing", "Filtration", "Threshing"],
           answer: 1,
           explain: "**Winnowing** blows away the lighter husk and leaves the heavier grains."
         },
         {
           q: "Slowly pouring out clear water from a vessel after the mud has settled is called:",
+          obj: "separating-solids-from-liquids",
           options: ["Filtration", "Sieving", "Decantation", "Evaporation"],
           answer: 2,
           explain: "Pouring off the clear liquid, leaving the sediment behind, is **decantation**."
         },
         {
           q: "Common salt is obtained from sea water by:",
+          obj: "separating-solids-from-liquids",
           options: ["Filtration", "Decantation", "Winnowing", "Evaporation"],
           answer: 3,
           explain: "The Sun's heat **evaporates** the water in shallow pans and salt is left behind."
         },
         {
           q: "Flour mixed with small stones can be separated easily by:",
+          obj: "separating-solids-from-solids",
           options: ["Sieving", "Evaporation", "Condensation", "Sedimentation"],
           answer: 0,
           explain: "Flour passes through the holes of a **sieve**, while the larger stones stay behind."
         },
         {
           q: "Which of these cannot be separated from water by filtration?",
+          obj: "combining-methods-and-dissolving",
           options: ["Sand", "Dissolved sugar", "Tea leaves", "Chalk powder"],
           answer: 1,
           explain: "**Dissolved sugar** passes through filter paper. Sand, tea leaves and chalk powder are insoluble solids."
         },
         {
           q: "Which is the correct order of steps for getting clear water from muddy water?",
+          obj: "combining-methods-and-dissolving",
           options: ["Filtration, decantation, sedimentation", "Decantation, filtration, sedimentation", "Sedimentation, decantation, filtration", "Evaporation, filtration, decantation"],
           answer: 2,
           explain: "First the mud **settles** (sedimentation), then the clear water is **poured off** (decantation) and finally **filtered**."

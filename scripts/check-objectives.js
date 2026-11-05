@@ -61,13 +61,21 @@ for (const c of wantCls ? [wantCls] : classes) {
   }
 }
 
-const sum = { chapters: 0, hand: 0, q: 0, none: 0, clear: 0, empties: 0, objs: 0, looN: 0, looOk: 0 };
+const badTags = [];
+const sum = { tagged: 0, chapters: 0, hand: 0, q: 0, none: 0, clear: 0, empties: 0, objs: 0, looN: 0, looOk: 0 };
 const rows = [];
 for (const { cls, subject, ch } of targets) {
   const objs = O.forChapter(cls, subject, ch);
   if (objs.length < 2) continue;
-  const bank = D.practiceFor(cls, subject, ch.id).mcq;
+  const pr = D.practiceFor(cls, subject, ch.id);
+  const bank = pr.mcq;
   const qs = [...ch.quiz, ...bank];
+  // Questions that name their objective (obj: "<id>"): the id must exist in this chapter, else the tag is silently ignored.
+  for (const q of [...qs, ...(pr.written || [])])
+    if (q.obj) {
+      sum.tagged++;
+      if (!objs.some((o) => o.id === q.obj)) badTags.push(`${cls}/${subject}/${ch.id}: obj "${q.obj}" is not an objective of this chapter (${String(q.q).slice(0, 60)})`);
+    }
   const counts = objs.map(() => 0);
   let none = 0;
   let clear = 0;
@@ -123,5 +131,8 @@ console.log(
     `\n  no word in common (fall back to the first objective): ${sum.none} (${pc(sum.none, sum.q)})` +
     `\n  clear winner (top score at least 1.25x the runner-up):  ${sum.clear} (${pc(sum.clear, sum.q)})` +
     `\n  objectives that no question maps to:                    ${sum.empties} of ${sum.objs} (${pc(sum.empties, sum.objs)})` +
-    `\n  leave-one-out, notes point -> its own objective:        ${sum.looOk} of ${sum.looN} (${pc(sum.looOk, sum.looN)})`
+    `\n  leave-one-out, notes point -> its own objective:        ${sum.looOk} of ${sum.looN} (${pc(sum.looOk, sum.looN)})` +
+    `\n  questions that name their objective (obj:):            ${sum.tagged}, unknown ids: ${badTags.length}`
 );
+badTags.slice(0, 40).forEach((b) => console.log("  ✗ " + b));
+if (badTags.length) process.exitCode = 1;

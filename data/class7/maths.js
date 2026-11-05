@@ -516,11 +516,11 @@ StudyData.add(7, "maths", {
         { q: "Why is 6 ÷ 1/3 equal to 18?", a: "In each whole there are 3 thirds, so 6 wholes contain 6 × 3 = 18 thirds. Dividing by 1/3 is multiplying by its reciprocal 3." }
       ],
       quiz: [
-        { q: "2/3 × 3/4 equals:", options: ["5/7", "6/7", "1/2", "2/4"], answer: 2, explain: "(2 × 3)/(3 × 4) = 6/12 = 1/2." },
-        { q: "The reciprocal of 5/7 is:", options: ["7/5", "−5/7", "5/7", "2/12"], answer: 0, explain: "Turn the fraction upside down." },
-        { q: "3/4 ÷ 3 equals:", options: ["9/4", "1/4", "4", "9/12"], answer: 1, explain: "3/4 × 1/3 = 1/4." },
-        { q: "3/5 of 40 is:", options: ["8", "120", "24", "16"], answer: 2, explain: "3/5 × 40 = 24." },
-        { q: "How many 1/4 kg packets can be made from 5 kg of sugar?", options: ["20", "5/4", "10", "15"], answer: 0, explain: "5 ÷ 1/4 = 5 × 4 = 20." }
+        { obj: "multiplying-fractions", q: "2/3 × 3/4 equals:", options: ["5/7", "6/7", "1/2", "2/4"], answer: 2, explain: "(2 × 3)/(3 × 4) = 6/12 = 1/2." },
+        { obj: "dividing-fractions", q: "The reciprocal of 5/7 is:", options: ["7/5", "−5/7", "5/7", "2/12"], answer: 0, explain: "Turn the fraction upside down." },
+        { obj: "dividing-fractions", q: "3/4 ÷ 3 equals:", options: ["9/4", "1/4", "4", "9/12"], answer: 1, explain: "3/4 × 1/3 = 1/4." },
+        { obj: "multiplying-fractions", q: "3/5 of 40 is:", options: ["8", "120", "24", "16"], answer: 2, explain: "3/5 × 40 = 24." },
+        { obj: "word-problems", q: "How many 1/4 kg packets can be made from 5 kg of sugar?", options: ["20", "5/4", "10", "15"], answer: 0, explain: "5 ÷ 1/4 = 5 × 4 = 20." }
       ]
     },
     // ───────────────────────────── Part II ─────────────────────────────

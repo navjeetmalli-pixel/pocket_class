@@ -27,26 +27,26 @@ StudyData.addPractice(3, "maths", {
 
   "addition": {
     mcq: [
-      { q: "What is 123 + 234?", options: ["347", "457", "357", "367"], answer: 2, explain: "Ones: 3 + 4 = 7. Tens: 2 + 3 = 5. Hundreds: 1 + 2 = 3. The sum is 357.", level: 1 },
-      { q: "What is 450 + 300?", options: ["650", "750", "150", "850"], answer: 1, explain: "4 hundreds + 3 hundreds = 7 hundreds, and the 50 stays the same. 750.", level: 1 },
-      { q: "What is 300 + 200?", options: ["50", "5000", "320", "500"], answer: 3, explain: "3 hundreds + 2 hundreds = 5 hundreds = 500.", level: 1 },
-      { q: "In 359 + 126, the ones column is 9 + 6 = 15. What do we write in the ones place and what do we carry?", options: ["Write 15, carry 0", "Write 1, carry 5", "Write 5, carry 5", "Write 5, carry 1"], answer: 3, explain: "15 ones = 1 ten and 5 ones. We write 5 in the ones place and carry the 1 ten.", level: 1 },
-      { q: "The answer to an addition is called the ____.", options: ["difference", "sum", "product", "borrow"], answer: 1, explain: "The answer to an addition is the sum.", level: 1 },
-      { q: "What is 268 + 175?", options: ["433", "343", "443", "453"], answer: 2, explain: "Ones: 8 + 5 = 13, write 3, carry 1. Tens: 6 + 7 + 1 = 14, write 4, carry 1. Hundreds: 2 + 1 + 1 = 4. Sum = 443.", level: 2 },
-      { q: "What is 489 + 358?", options: ["847", "837", "747", "857"], answer: 0, explain: "Ones: 9 + 8 = 17, write 7, carry 1. Tens: 8 + 5 + 1 = 14, write 4, carry 1. Hundreds: 4 + 3 + 1 = 8. Sum = 847.", level: 2 },
-      { q: "Riya read 185 pages last month and 207 pages this month. How many pages did she read in all?", options: ["382", "492", "402", "392"], answer: 3, explain: "185 + 207: ones 5 + 7 = 12, write 2, carry 1. Tens: 8 + 0 + 1 = 9. Hundreds: 1 + 2 = 3. Total = 392 pages.", level: 2 },
-      { q: "Which pair of numbers has a sum of 500?", options: ["300 and 250", "275 and 225", "240 and 270", "150 and 250"], answer: 1, explain: "275 + 225 = 500. The others give 550, 510 and 400.", level: 2 },
-      { q: "To estimate 398 + 203, round each number to the nearest hundred. What is the estimate?", options: ["500", "700", "600", "800"], answer: 2, explain: "398 is close to 400 and 203 is close to 200. 400 + 200 = 600.", level: 2 },
-      { q: "Find the missing digit: 3_4 + 158 = 502.", options: ["3", "4", "5", "6"], answer: 1, explain: "502 − 158 = 344, so the number is 344 and the missing digit is 4. Check: 344 + 158 = 502.", level: 3 },
-      { q: "Ravi has 275 marbles. Amit has 148 more marbles than Ravi. How many marbles do they have together?", options: ["423", "571", "550", "698"], answer: 3, explain: "Amit has 275 + 148 = 423 marbles. Together: 275 + 423 = 698. (423 is only Amit's marbles.)", level: 3 }
+      { obj: "adding-in-columns", q: "What is 123 + 234?", options: ["347", "457", "357", "367"], answer: 2, explain: "Ones: 3 + 4 = 7. Tens: 2 + 3 = 5. Hundreds: 1 + 2 = 3. The sum is 357.", level: 1 },
+      { obj: "adding-in-columns", q: "What is 450 + 300?", options: ["650", "750", "150", "850"], answer: 1, explain: "4 hundreds + 3 hundreds = 7 hundreds, and the 50 stays the same. 750.", level: 1 },
+      { obj: "adding-in-columns", q: "What is 300 + 200?", options: ["50", "5000", "320", "500"], answer: 3, explain: "3 hundreds + 2 hundreds = 5 hundreds = 500.", level: 1 },
+      { obj: "carrying-from-the-ones", q: "In 359 + 126, the ones column is 9 + 6 = 15. What do we write in the ones place and what do we carry?", options: ["Write 15, carry 0", "Write 1, carry 5", "Write 5, carry 5", "Write 5, carry 1"], answer: 3, explain: "15 ones = 1 ten and 5 ones. We write 5 in the ones place and carry the 1 ten.", level: 1 },
+      { obj: "adding-in-columns", q: "The answer to an addition is called the ____.", options: ["difference", "sum", "product", "borrow"], answer: 1, explain: "The answer to an addition is the sum.", level: 1 },
+      { obj: "carrying-from-the-tens", q: "What is 268 + 175?", options: ["433", "343", "443", "453"], answer: 2, explain: "Ones: 8 + 5 = 13, write 3, carry 1. Tens: 6 + 7 + 1 = 14, write 4, carry 1. Hundreds: 2 + 1 + 1 = 4. Sum = 443.", level: 2 },
+      { obj: "carrying-from-the-tens", q: "What is 489 + 358?", options: ["847", "837", "747", "857"], answer: 0, explain: "Ones: 9 + 8 = 17, write 7, carry 1. Tens: 8 + 5 + 1 = 14, write 4, carry 1. Hundreds: 4 + 3 + 1 = 8. Sum = 847.", level: 2 },
+      { obj: "carrying-from-the-ones", q: "Riya read 185 pages last month and 207 pages this month. How many pages did she read in all?", options: ["382", "492", "402", "392"], answer: 3, explain: "185 + 207: ones 5 + 7 = 12, write 2, carry 1. Tens: 8 + 0 + 1 = 9. Hundreds: 1 + 2 = 3. Total = 392 pages.", level: 2 },
+      { obj: "checking-your-answer", q: "Which pair of numbers has a sum of 500?", options: ["300 and 250", "275 and 225", "240 and 270", "150 and 250"], answer: 1, explain: "275 + 225 = 500. The others give 550, 510 and 400.", level: 2 },
+      { obj: "checking-your-answer", q: "To estimate 398 + 203, round each number to the nearest hundred. What is the estimate?", options: ["500", "700", "600", "800"], answer: 2, explain: "398 is close to 400 and 203 is close to 200. 400 + 200 = 600.", level: 2 },
+      { obj: "checking-your-answer", q: "Find the missing digit: 3_4 + 158 = 502.", options: ["3", "4", "5", "6"], answer: 1, explain: "502 − 158 = 344, so the number is 344 and the missing digit is 4. Check: 344 + 158 = 502.", level: 3 },
+      { obj: "carrying-from-the-ones", q: "Ravi has 275 marbles. Amit has 148 more marbles than Ravi. How many marbles do they have together?", options: ["423", "571", "550", "698"], answer: 3, explain: "Amit has 275 + 148 = 423 marbles. Together: 275 + 423 = 698. (423 is only Amit's marbles.)", level: 3 }
     ],
     written: [
-      { q: "Add: 340 + 250.", a: "590", marks: 1 },
-      { q: "Fill in the blank: 199 + 1 = ____.", a: "200", marks: 1 },
-      { q: "What is the sum of 120 and 130?", a: "250", marks: 1 },
-      { q: "Add 476 and 358. Show your carrying.", a: "Ones: 6 + 8 = 14, write 4, carry 1.\nTens: 7 + 5 + 1 = 13, write 3, carry 1.\nHundreds: 4 + 3 + 1 = 8.\n476 + 358 = 834.", marks: 2 },
-      { q: "A bus carries 164 people in the morning and 189 people in the evening. How many people does it carry in all?", a: "Add 164 + 189.\nOnes: 4 + 9 = 13, write 3, carry 1. Tens: 6 + 8 + 1 = 15, write 5, carry 1. Hundreds: 1 + 1 + 1 = 3.\nThe bus carries 353 people.", marks: 2 },
-      { q: "A school library has 238 story books, 154 science books and 119 picture books. How many books are there in all? Check your answer by estimating.", a: "First add 238 + 154 = 392.\nThen 392 + 119 = 511 books.\nEstimate: 240 + 150 + 120 = 510, which is close to 511, so the answer is reasonable.", marks: 3 }
+      { obj: "adding-in-columns", q: "Add: 340 + 250.", a: "590", marks: 1 },
+      { obj: "carrying-from-the-ones", q: "Fill in the blank: 199 + 1 = ____.", a: "200", marks: 1 },
+      { obj: "adding-in-columns", q: "What is the sum of 120 and 130?", a: "250", marks: 1 },
+      { obj: "carrying-from-the-ones", q: "Add 476 and 358. Show your carrying.", a: "Ones: 6 + 8 = 14, write 4, carry 1.\nTens: 7 + 5 + 1 = 13, write 3, carry 1.\nHundreds: 4 + 3 + 1 = 8.\n476 + 358 = 834.", marks: 2 },
+      { obj: "carrying-from-the-ones", q: "A bus carries 164 people in the morning and 189 people in the evening. How many people does it carry in all?", a: "Add 164 + 189.\nOnes: 4 + 9 = 13, write 3, carry 1. Tens: 6 + 8 + 1 = 15, write 5, carry 1. Hundreds: 1 + 1 + 1 = 3.\nThe bus carries 353 people.", marks: 2 },
+      { obj: "checking-your-answer", q: "A school library has 238 story books, 154 science books and 119 picture books. How many books are there in all? Check your answer by estimating.", a: "First add 238 + 154 = 392.\nThen 392 + 119 = 511 books.\nEstimate: 240 + 150 + 120 = 510, which is close to 511, so the answer is reasonable.", marks: 3 }
     ]
   },
 
@@ -77,26 +77,26 @@ StudyData.addPractice(3, "maths", {
 
   "multiplication-tables": {
     mcq: [
-      { q: "What is 5 × 6?", options: ["11", "35", "30", "25"], answer: 2, explain: "5 × 6 = 30. Counting in fives: 5, 10, 15, 20, 25, 30.", level: 1 },
-      { q: "What is 10 × 9?", options: ["90", "19", "99", "80"], answer: 0, explain: "A number times 10 ends in 0. 10 × 9 = 90.", level: 1 },
-      { q: "2 × 7 means 2 groups of 7. Which is the same as 2 × 7?", options: ["2 + 7", "7 + 7", "2 + 2 + 2", "7 × 7"], answer: 1, explain: "2 groups of 7 is 7 + 7 = 14.", level: 1 },
-      { q: "Which number is a multiple of 5?", options: ["32", "52", "58", "45"], answer: 3, explain: "Multiples of 5 end in 0 or 5. 45 = 5 × 9.", level: 1 },
-      { q: "What is 7 × 3?", options: ["21", "24", "28", "27"], answer: 0, explain: "7 × 3 = 7 + 7 + 7 = 21.", level: 1 },
-      { q: "What is 8 × 7?", options: ["54", "56", "63", "48"], answer: 1, explain: "8 × 7 = 56. (54 is 9 × 6, 63 is 9 × 7 and 48 is 8 × 6.)", level: 2 },
-      { q: "Which number is NOT in the 6 times table?", options: ["36", "42", "46", "54"], answer: 2, explain: "The 6 times table goes 6, 12, 18, 24, 30, 36, 42, 48, 54, 60. 46 is not in it.", level: 2 },
-      { q: "Riya arranges chairs in 6 rows with 9 chairs in each row. How many chairs are there?", options: ["45", "63", "15", "54"], answer: 3, explain: "6 rows of 9 chairs: 6 × 9 = 54.", level: 2 },
-      { q: "Using the 10 times trick, what is 9 × 8?", options: ["72", "64", "81", "82"], answer: 0, explain: "10 × 8 = 80. Take away one group of 8: 80 − 8 = 72.", level: 2 },
-      { q: "5 × 8 = 40. Use this to find 6 × 8.", options: ["45", "46", "48", "52"], answer: 2, explain: "6 groups of 8 is one more group of 8 than 5 groups. 40 + 8 = 48.", level: 2 },
-      { q: "A box has 8 pencils. Mina buys 7 boxes and then gives away 9 pencils. How many pencils does she have left?", options: ["65", "56", "49", "47"], answer: 3, explain: "7 boxes: 7 × 8 = 56 pencils. After giving away 9: 56 − 9 = 47.", level: 3 },
-      { q: "Which number is a multiple of both 4 and 6?", options: ["16", "18", "24", "28"], answer: 2, explain: "24 = 4 × 6 and 24 = 6 × 4. 16 and 28 are not multiples of 6, and 18 is not a multiple of 4.", level: 3 }
+      { obj: "tables-of-2-5-and-10", q: "What is 5 × 6?", options: ["11", "35", "30", "25"], answer: 2, explain: "5 × 6 = 30. Counting in fives: 5, 10, 15, 20, 25, 30.", level: 1 },
+      { obj: "tables-of-2-5-and-10", q: "What is 10 × 9?", options: ["90", "19", "99", "80"], answer: 0, explain: "A number times 10 ends in 0. 10 × 9 = 90.", level: 1 },
+      { obj: "multiplication-means-equal-groups", q: "2 × 7 means 2 groups of 7. Which is the same as 2 × 7?", options: ["2 + 7", "7 + 7", "2 + 2 + 2", "7 × 7"], answer: 1, explain: "2 groups of 7 is 7 + 7 = 14.", level: 1 },
+      { obj: "tables-of-2-5-and-10", q: "Which number is a multiple of 5?", options: ["32", "52", "58", "45"], answer: 3, explain: "Multiples of 5 end in 0 or 5. 45 = 5 × 9.", level: 1 },
+      { obj: "using-tables-you-already-know", q: "What is 7 × 3?", options: ["21", "24", "28", "27"], answer: 0, explain: "7 × 3 = 7 + 7 + 7 = 21.", level: 1 },
+      { obj: "using-tables-you-already-know", q: "What is 8 × 7?", options: ["54", "56", "63", "48"], answer: 1, explain: "8 × 7 = 56. (54 is 9 × 6, 63 is 9 × 7 and 48 is 8 × 6.)", level: 2 },
+      { obj: "using-tables-you-already-know", q: "Which number is NOT in the 6 times table?", options: ["36", "42", "46", "54"], answer: 2, explain: "The 6 times table goes 6, 12, 18, 24, 30, 36, 42, 48, 54, 60. 46 is not in it.", level: 2 },
+      { obj: "multiplication-means-equal-groups", q: "Riya arranges chairs in 6 rows with 9 chairs in each row. How many chairs are there?", options: ["45", "63", "15", "54"], answer: 3, explain: "6 rows of 9 chairs: 6 × 9 = 54.", level: 2 },
+      { obj: "9-times-table-trick", q: "Using the 10 times trick, what is 9 × 8?", options: ["72", "64", "81", "82"], answer: 0, explain: "10 × 8 = 80. Take away one group of 8: 80 − 8 = 72.", level: 2 },
+      { obj: "using-tables-you-already-know", q: "5 × 8 = 40. Use this to find 6 × 8.", options: ["45", "46", "48", "52"], answer: 2, explain: "6 groups of 8 is one more group of 8 than 5 groups. 40 + 8 = 48.", level: 2 },
+      { obj: "using-tables-you-already-know", q: "A box has 8 pencils. Mina buys 7 boxes and then gives away 9 pencils. How many pencils does she have left?", options: ["65", "56", "49", "47"], answer: 3, explain: "7 boxes: 7 × 8 = 56 pencils. After giving away 9: 56 − 9 = 47.", level: 3 },
+      { obj: "using-tables-you-already-know", q: "Which number is a multiple of both 4 and 6?", options: ["16", "18", "24", "28"], answer: 2, explain: "24 = 4 × 6 and 24 = 6 × 4. 16 and 28 are not multiples of 6, and 18 is not a multiple of 4.", level: 3 }
     ],
     written: [
-      { q: "Write 4 + 4 + 4 + 4 + 4 as a multiplication and find the answer.", a: "5 groups of 4: 5 × 4 = 20.", marks: 1 },
-      { q: "Fill in the blank: 9 × 6 = ____.", a: "54", marks: 1 },
-      { q: "Write the first five multiples of 3.", a: "3, 6, 9, 12, 15", marks: 1 },
-      { q: "Find 9 × 7 using the 10 times trick.", a: "10 × 7 = 70.\nTake away one group of 7: 70 − 7 = 63.\nSo 9 × 7 = 63.", marks: 2 },
-      { q: "Explain why 3 × 8 and 8 × 3 give the same answer.", a: "3 rows of 8 dots make 24 dots.\nIf we turn the rows into columns, we get 8 rows of 3 dots, which is also 24. So 3 × 8 = 8 × 3 = 24.", marks: 2 },
-      { q: "There are 8 benches in a classroom with 4 children sitting on each bench. Then 5 more children come in. How many children are there in all?", a: "Children on the benches: 8 × 4 = 32.\nAdd the 5 new children: 32 + 5 = 37.\nThere are 37 children in all.", marks: 3 }
+      { obj: "multiplication-means-equal-groups", q: "Write 4 + 4 + 4 + 4 + 4 as a multiplication and find the answer.", a: "5 groups of 4: 5 × 4 = 20.", marks: 1 },
+      { obj: "9-times-table-trick", q: "Fill in the blank: 9 × 6 = ____.", a: "54", marks: 1 },
+      { obj: "using-tables-you-already-know", q: "Write the first five multiples of 3.", a: "3, 6, 9, 12, 15", marks: 1 },
+      { obj: "9-times-table-trick", q: "Find 9 × 7 using the 10 times trick.", a: "10 × 7 = 70.\nTake away one group of 7: 70 − 7 = 63.\nSo 9 × 7 = 63.", marks: 2 },
+      { obj: "multiplication-means-equal-groups", q: "Explain why 3 × 8 and 8 × 3 give the same answer.", a: "3 rows of 8 dots make 24 dots.\nIf we turn the rows into columns, we get 8 rows of 3 dots, which is also 24. So 3 × 8 = 8 × 3 = 24.", marks: 2 },
+      { obj: "multiplication-means-equal-groups", q: "There are 8 benches in a classroom with 4 children sitting on each bench. Then 5 more children come in. How many children are there in all?", a: "Children on the benches: 8 × 4 = 32.\nAdd the 5 new children: 32 + 5 = 37.\nThere are 37 children in all.", marks: 3 }
     ]
   },
 
