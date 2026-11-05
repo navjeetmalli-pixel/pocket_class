@@ -342,5 +342,77 @@ const Loop = (() => {
     return { id: "quiz", text: t("Take the chapter quiz"), why: t("It is a good way to check the whole chapter."), href: `${s.base}/master`, label: t("Take the chapter quiz") };
   }
 
-  return { config, STAGES, STAGE_LABEL, STAGE_OF, kindOf, stageLabel, parseRef, prereqRefs, usableRefs, poolOf, byObjective, drawSets, diagItems, refresher, withOrder, shuffle, RULES, decide, log, recommend, isTransfer, chapterOf };
+  // ---------- Build this first ----------
+  // Prerequisites (hand-written `prereq` links of a chapter's objectives) that the learner is weak in. Weak means real
+  // evidence only: the prerequisite objective has answers recorded and its Mastery state is "learning" or "refresher".
+  // "Not started" is never weak, a whole-chapter link is weak when any of its objectives is, and International learners
+  // get nothing. Returns { items, load }: items [{ cls, subject, chapter, obj, key, title, text? }] (weakest first, at most
+  // `max`), and `load`, null or a function that fetches files still missing (a class index or objectives file) and resolves
+  // to true when something new arrived, so the caller can draw again. Nothing is fetched while there is no weak evidence.
+  const WEAK_STATES = ["learning", "refresher"];
+  function weakRolls() {
+    const now = Date.now();
+    const out = [];
+    for (const [key, o] of Object.entries(Store.state.learn.roll || {})) {
+      if (!o || !o.n) continue;
+      const a = Mastery.assess(o, now);
+      if (!WEAK_STATES.includes(a.state)) continue;
+      const p = Objectives.parseKey(key);
+      if (p) out.push({ key, p, score: a.accuracy == null ? 1 : a.accuracy });
+    }
+    return out;
+  }
+
+  function weakPrereqs(cls, subject, chapterId, max = 2) {
+    const out = { items: [], load: null };
+    if ((typeof International !== "undefined" && International.on()) || !D.classes.includes(cls)) return out;
+    const weak = weakRolls();
+    if (!weak.length) return out;
+    const wants = [];
+    if (!D.objectivesLoaded(cls)) {
+      wants.push(["obj" + cls, () => D.loadObjectives(cls)]);
+    } else {
+      const hand = D.objectivesFor(cls, subject, chapterId) || [];
+      const seen = new Set();
+      for (const o of hand)
+        for (const link of o.prereq || []) {
+          const r = parseRef(link);
+          if (!r || (r.cls === cls && r.subject === subject && r.chapter === chapterId) || seen.has(`${r.cls}/${r.subject}/${r.chapter}${r.obj ? "#" + r.obj : ""}`)) continue;
+          seen.add(`${r.cls}/${r.subject}/${r.chapter}${r.obj ? "#" + r.obj : ""}`);
+          const hits = weak.filter((w) => w.p.cls === r.cls && w.p.subject === r.subject && w.p.chapter === r.chapter && (!r.obj || w.p.obj === r.obj)).sort((a, b) => a.score - b.score);
+          if (!hits.length) continue;
+          if (!D.isLoaded(r.cls)) {
+            if (D.classes.includes(r.cls)) wants.push(["idx" + r.cls, () => D.load(r.cls)]);
+            continue;
+          }
+          const ch = (D.chapters(r.cls, r.subject) || []).find((x) => x.id === r.chapter);
+          if (!ch) continue;
+          if (!D.objectivesLoaded(r.cls)) wants.push(["obj" + r.cls, () => D.loadObjectives(r.cls)]);
+          const w = hits[0];
+          const written = D.objectivesLoaded(r.cls) ? (D.objectivesFor(r.cls, r.subject, r.chapter) || []).find((x) => x.id === w.p.obj) : null;
+          const text = written ? written.text : (D.hasFull(r.cls, r.subject) && Objectives.byKey(w.key) || {}).text || null;
+          if (!out.items.some((x) => x.cls === r.cls && x.subject === r.subject && x.chapter === r.chapter)) out.items.push({ cls: r.cls, subject: r.subject, chapter: r.chapter, obj: w.p.obj, key: w.key, title: ch.title, text, score: w.score });
+        }
+    }
+    out.items.sort((a, b) => a.score - b.score);
+    out.items = out.items.slice(0, max);
+    if (wants.length) {
+      const todo = [...new Map(wants).entries()];
+      const tag = todo.map(([id]) => id).join(",");
+      out.load = async () => {
+        if (weakPrereqs.tried.has(tag)) return false;
+        weakPrereqs.tried.add(tag);
+        try {
+          const res = await Promise.all(todo.map(([, f]) => f()));
+          return res.every(Boolean);
+        } catch (e) {
+          return false;
+        }
+      };
+    }
+    return out;
+  }
+  weakPrereqs.tried = new Set();
+
+  return { config, STAGES, STAGE_LABEL, STAGE_OF, kindOf, stageLabel, parseRef, prereqRefs, usableRefs, weakPrereqs, poolOf, byObjective, drawSets, diagItems, refresher, withOrder, shuffle, RULES, decide, log, recommend, isTransfer, chapterOf };
 })();

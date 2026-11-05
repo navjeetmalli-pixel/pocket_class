@@ -180,6 +180,7 @@ const Quiz = (() => {
         </div>
       </div>
       ${s.opts.resultExtra ? s.opts.resultExtra(score, n) : ""}
+      ${Learn.summaryHTML(s.events, s.learned, { mistakes: s.mistakes })}
       ${Learn.improvedHTML(s.learned)}
       ${breakdown}
       <h2 class="block-title">${t("Review answers")}</h2>
@@ -224,7 +225,17 @@ const Quiz = (() => {
     // Learning evidence (js/learn.js): every answered question counts towards its objective. Built first, because
     // "attempt" looks at My mistakes as they were before this round.
     const source = Learn.SOURCE_OF_KIND[(s.opts.record || {}).kind] || "quiz";
-    const evidence = s.items.filter((x) => x.picked !== null).map((x) => Learn.answerEvent(x, x.picked === x.answer, { picked: x.picked, source }));
+    const answered = s.items.filter((x) => x.picked !== null);
+    const evidence = answered.map((x) => Learn.answerEvent(x, x.picked === x.answer, { picked: x.picked, source }));
+    // A known mistake for each skill answered wrongly, for the results summary.
+    s.mistakes = {};
+    answered.forEach((x, i) => {
+      const e = evidence[i];
+      const f = e && x.picked !== x.answer ? Learn.feedback(x, x.picked).find((l) => l.kind === "fix" || l.kind === "common") : null;
+      const k = e ? `${e.cls}/${e.subject}/${e.chapter}#${e.obj}` : null;
+      if (f && !s.mistakes[k]) s.mistakes[k] = `${f.text} ${f.fix}`.trim();
+    });
+    s.events = evidence.filter(Boolean);
     s.items.forEach((x) => {
       if (x.picked === x.answer) score++;
       // Generated questions have no key: they're new every time, so there's nothing to revisit.

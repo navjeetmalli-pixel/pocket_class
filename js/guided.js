@@ -363,8 +363,8 @@ const Guided = (() => {
 
   // An answer given in the lesson. `item` has q, options, answer 0-based, explain; `hints` is how many hints it took.
   // Returns the objective id the answer was filed under (or null), and fires the "wrong answer" rule.
-  function log(item, ok, picked, hints = 0, key = null) {
-    const ev = Learn.answerEvent({ ...item, ref: { key, ...refOf(item), cls: s.c, subject: s.subj.id, chapter: s.ch.id } }, ok, { picked, hints, source: "guided" });
+  function log(item, ok, picked, hints = 0, key = null, sure = null) {
+    const ev = Learn.answerEvent({ ...item, ref: { key, ...refOf(item), cls: s.c, subject: s.subj.id, chapter: s.ch.id } }, ok, { picked, hints, source: "guided", sure });
     Learn.record([ev]);
     const obj = ev ? ev.obj : null;
     if (!ok && obj) {
@@ -810,6 +810,10 @@ const Guided = (() => {
           )
           .join("")}</ul></div>`
       : "";
+    // Plain-language summary of the practice answers (the next step is the card below).
+    const evs = ps.map((x) => Learn.answerEvent({ ...x, ref: { key: `${s.key}/${questionId(x)}`, ...refOf(x), cls: s.c, subject: s.subj.id, chapter: s.ch.id } }, x.picked === x.answer, { picked: x.picked, source: "guided", sure: x.sure })).filter(Boolean);
+    const gained = rows.filter((r) => Mastery.RANK[r.after] > Mastery.RANK[r.before]).map((r) => ({ key: r.objective.key, improved: true }));
+    const summary = Learn.summaryHTML(evs, gained, { noNext: true });
     const route = [...new Set((s.decisions || []).map((d) => d.reason))];
     const why = route.length ? `<details class="card lp-route"><summary>${t("How this lesson was chosen for you")}</summary><ul>${route.map((r) => `<li>${esc(r)}</li>`).join("")}</ul></details>` : "";
     return `
@@ -818,6 +822,7 @@ const Guided = (() => {
         <div class="result-msg" tabindex="-1">${t("Lesson complete")}</div>
       </div>
       <ul class="g-notes">${notes.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+      ${summary}
       ${skills}
       <section class="card lp-next" aria-labelledby="lp-next-h"><h2 id="lp-next-h" class="block-title" style="margin:0 0 6px">${t("Your next step")}</h2>
         <p><strong>${esc(rec.text)}</strong></p><p class="small muted">${esc(rec.why)}</p>
@@ -978,6 +983,7 @@ const Guided = (() => {
       if (!it || it.picked === null || it.sure !== null) return;
       it.sure = b.dataset.sure === "1";
       const qk = `${s.key}/${questionId(it)}`;
+      log(it, it.picked === it.answer, it.picked, 0, qk, it.sure);
       if (it.picked === it.answer) Store.clearMistake(qk);
       else Store.addMistake(qk);
       return render();
@@ -1090,8 +1096,7 @@ const Guided = (() => {
       const it = s.practice[s.p];
       if (!it || it.picked !== null) return;
       it.picked = orig;
-      if (orig !== it.answer) s.retrieveWrong++;
-      log(it, orig === it.answer, orig, 0, `${s.key}/${questionId(it)}`);
+      if (orig !== it.answer) s.retrieveWrong++; // the answer is logged once the learner says how sure they were (data-sure)
     } else if (k === "master") {
       const m = s.master.items[s.master.i];
       if (!m || m.kind === "written" || m.item.picked !== null) return;

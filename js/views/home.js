@@ -22,7 +22,8 @@
       return lv ? lv.title : topic ? topic.title : t("Practice by topic");
     }
     const f = findChapter(it.cls, it.subject, it.chapter);
-    return f ? f.ch.title : it.chapter;
+    const name = f ? f.ch.title : it.chapter;
+    return it.why && it.why.w === "prereq" ? `${t("Class {n}", { n: it.cls })} · ${name}` : name;
   }
 
   // One line saying why an item is in the plan.
@@ -38,6 +39,7 @@
       case "next": return t("Next new chapter in {subject}", { subject: sj });
       case "path": return t("Next level in {topic}", { topic: esc(w.topic) });
       case "level": return t("{level} in {topic}, near your year", { level: t("Level {n}", { n: w.level }), topic: esc(w.topic) });
+      case "prereq": return t("Needed for {chapter}", { chapter: esc(w.chapter) });
       case "weak": {
         const o = it.obj && Objectives.byKey(`${it.cls}/${it.subject}/${it.chapter}#${it.obj}`);
         return o ? t("Needs more practice: {skill}", { skill: esc(o.text) }) : t("A skill in this chapter needs more practice");

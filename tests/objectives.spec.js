@@ -385,3 +385,21 @@ test("content review states: the subject page says where a subject is in the rev
     await expect(page.locator(".syllabus-line")).toContainText(text);
   }
 });
+
+test("learning record: a right answer marked Not sure counts as helped, not independent", async ({ page }) => {
+  await seed(page, { name: "Asha", cls: 6 });
+  await page.goto("/#/chapter/6/maths/fractions/understand");
+  await expect(page.locator(".hub-nav")).toBeVisible();
+  const r = await page.evaluate(() => {
+    const item = { q: "Which is bigger, 2/3 or 3/5?", obj: "comparing-fractions", ref: { cls: 6, subject: "maths", chapter: "fractions" } };
+    const sure = Learn.answerEvent(item, true, { source: "guided", sure: true });
+    const unsure = Learn.answerEvent(item, true, { source: "guided", sure: false });
+    const wrongUnsure = Learn.answerEvent(item, false, { source: "guided", sure: false });
+    return { sure, unsure, wrongUnsure };
+  });
+  expect(r.sure).toMatchObject({ obj: "comparing-fractions", ok: true, hints: 0 });
+  expect(r.sure.unsure).toBeUndefined();
+  expect(r.unsure).toMatchObject({ obj: "comparing-fractions", ok: true, hints: 1, unsure: true });
+  expect(r.wrongUnsure).toMatchObject({ ok: false, hints: 0 });
+  expect(r.wrongUnsure.unsure).toBeUndefined();
+});

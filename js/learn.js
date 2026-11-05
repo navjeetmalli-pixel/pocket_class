@@ -33,7 +33,11 @@ const Learn = (() => {
   //   item: { q, options, answer, explain, ref: { key, cls, subject, chapter }, kinds? }
   // Game answers (source "game") that aren't saved bank questions use the strict objective match: an item that can't be
   // placed clearly is not recorded. A saved question (ref.key) is placed exactly as it is in a quiz.
-  function answerEvent(item, ok, { picked = null, hints = 0, attempt, source = "quiz" } = {}) {
+  // `sure: false` (the learner said "Not sure") on a right answer counts it as helped, not independent: a lucky guess is not
+  // evidence of mastery (Mastery.fold treats any hint the same way). The event keeps `unsure: true` for the record.
+  function answerEvent(item, ok, { picked = null, hints = 0, attempt, source = "quiz", sure = null } = {}) {
+    const guess = !!ok && sure === false;
+    if (guess) hints = Math.max(1, hints);
     const r = item.ref || {};
     const chapter = chapterOfRef(r);
     const cls = r.cls != null ? r.cls : r.key ? Store.parseKey(r.key).cls : null; // class 0 is the pseudo class of a path's own chapters
@@ -43,6 +47,7 @@ const Learn = (() => {
     if (!o) return null;
     const e = { type: "answer", cls, subject, chapter, obj: o.id, ok: !!ok, hints, attempt: attempt || (r.key && Store.state.mistakes[r.key] ? 2 : 1), source };
     if (!ok) e.err = errorOf(item, picked);
+    if (guess) e.unsure = true;
     return e;
   }
 
@@ -224,10 +229,68 @@ const Learn = (() => {
         .join("")}</ul>${up.length > 6 ? `<p class="small muted">${t("and {n} more", { n: up.length - 6 })}</p>` : ""}</div>`;
   }
 
+  // A short, kind summary card for a finished round (game, quiz or guided lesson), from its answer events and the changes
+  // record() returned. Sections, each left out when empty: Practised (skills touched, at most 3), Went well (skills answered
+  // all right or moved up), To review (skills with a wrong or right-but-unsure answer, with the known mistake in one line),
+  // Next (one link). Events with no objective are ignored; with none at all the result is "".
+  //   opts.next: { href, label, text? } to override the suggestion (text must be escaped); opts.noNext: leave the Next section out
+  //   opts.mistakes: { [objective key]: text } a mistake already matched to a wrong answer (else the objective's first one)
+  function summaryHTML(events, changes, opts = {}) {
+    const per = new Map(); // objective key -> { right, wrong, unsure }
+    for (const e of events || []) {
+      if (!e || !e.obj || e.cls == null) continue;
+      const k = Objectives.keyOf ? Objectives.keyOf(e.cls, e.subject, e.chapter, e.obj) : `${e.cls}/${e.subject}/${e.chapter}#${e.obj}`;
+      if (!per.has(k)) per.set(k, { right: 0, wrong: 0, unsure: 0 });
+      const p = per.get(k);
+      if (!e.ok) p.wrong++;
+      else if (e.unsure) p.unsure++;
+      else p.right++;
+    }
+    const known = [...per.keys()].filter((k) => Objectives.byKey(k));
+    if (!known.length) return "";
+    const text = (k) => esc(Objectives.byKey(k).text);
+    const review = known.filter((k) => per.get(k).wrong || per.get(k).unsure);
+    const up = (changes || []).filter((c) => c.improved && per.has(c.key) && Objectives.byKey(c.key)).map((c) => c.key);
+    const well = [...new Set([...known.filter((k) => !review.includes(k)), ...up.filter((k) => !review.includes(k))])];
+    const list = (keys, line) => {
+      const ul = keys.slice(0, 3).map((k) => `<li>${text(k)}${line ? line(k) : ""}</li>`).join("");
+      return `<ul>${ul}</ul>${keys.length > 3 ? `<p class="small muted">${t("and {n} more", { n: keys.length - 3 })}</p>` : ""}`;
+    };
+    const mistake = (k) => {
+      const p = per.get(k);
+      if (!p.wrong) return `<span class="rs-note">${t("Right, but not sure yet. A few more tries will make it stick.")}</span>`;
+      const o = Objectives.byKey(k);
+      const m = (opts.mistakes && opts.mistakes[k]) || (o.mistakes && o.mistakes[0] && o.mistakes[0].text);
+      return m ? `<span class="rs-note">${t("A common slip here:")} ${esc(plainText(m).replace(/\.$/, ""))}.</span>` : "";
+    };
+    const sec = (cls, ic, title, body) => `<section class="rs-sec ${cls}"><h3 class="rs-h"><span class="rs-ico" aria-hidden="true">${icon(ic)}</span> ${title}</h3>${body}</section>`;
+
+    // Next: the caller's, else a review of the first skill that needs it, else the next chapter, else Play.
+    let next = opts.next || null;
+    const first = review[0] || known[0];
+    const p0 = Objectives.parseKey(first);
+    if (!next && p0 && !opts.noNext) {
+      const base = `#/chapter/${p0.cls}/${p0.subject}/${p0.chapter}`;
+      if (review.length) next = { href: `${base}/practise`, label: t("Practise this chapter"), text: t("Come back to the skills above with a few more questions.") };
+      else {
+        const chs = (StudyData.chapters(p0.cls, p0.subject) || []);
+        const nx = chs[chs.findIndex((c) => c.id === p0.chapter) + 1];
+        next = nx
+          ? { href: `#/chapter/${p0.cls}/${p0.subject}/${nx.id}`, label: t("Next chapter"), text: t("All of these went well. Next up: {title}.", { title: esc(nx.title) }) }
+          : { href: `${base}/play`, label: t("Play a game"), text: t("All of these went well. Why not play a game?") };
+      }
+    }
+    return `<section class="card results-summary" aria-labelledby="rs-title"><h2 id="rs-title" class="block-title">${t("How it went")}</h2>
+      ${sec("rs-did", "notes", t("Practised"), list(known))}
+      ${well.length ? sec("rs-well", "check", t("Went well"), list(well)) : ""}
+      ${review.length ? sec("rs-review", "target", t("To review"), list(review, mistake)) : ""}
+      ${next ? sec("rs-next", "arrow", t("Next"), `${next.text ? `<p>${next.text}</p>` : ""}<a class="btn primary" href="${next.href}">${esc(next.label)}</a>`) : ""}</section>`;
+  }
+
   // A state as a chip: colour plus a mark plus the words, so nothing depends on colour.
   function stateChip(state) {
     return `<span class="obj-chip s-${state}"><span aria-hidden="true">${Mastery.MARK[state]}</span> ${t(Mastery.LABEL[state])}</span>`;
   }
 
-  return { SOURCES, SOURCE_OF_KIND, ready, feedback, feedbackHTML, answerEvent, errorOf, record, note, noteTopic, plan, chapterStates, counts, subjectsWithEvidence, groups, dueObjectives, improvedHTML, stateChip };
+  return { SOURCES, SOURCE_OF_KIND, ready, feedback, feedbackHTML, answerEvent, errorOf, record, note, noteTopic, plan, chapterStates, counts, subjectsWithEvidence, groups, dueObjectives, improvedHTML, summaryHTML, stateChip };
 })();

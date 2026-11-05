@@ -1845,6 +1845,8 @@ Object.assign(I18N.pa, {
   "Next new chapter in {subject}, the subject you use most": "{subject} ਦਾ ਅਗਲਾ ਨਵਾਂ ਅਧਿਆਇ, ਜੋ ਵਿਸ਼ਾ ਤੁਸੀਂ ਸਭ ਤੋਂ ਵੱਧ ਪੜ੍ਹਦੇ ਹੋ",
   "Next new chapter in {subject}": "{subject} ਦਾ ਅਗਲਾ ਨਵਾਂ ਅਧਿਆਇ",
   "Next level in {topic}": "{topic} ਦਾ ਅਗਲਾ ਪੱਧਰ",
+  "Build this first": "ਪਹਿਲਾਂ ਇਹ ਪੱਕਾ ਕਰੋ",
+  "Needed for {chapter}": "{chapter} ਲਈ ਲੋੜੀਂਦਾ",
   "Needs more practice: {skill}": "ਹੋਰ ਅਭਿਆਸ ਦੀ ਲੋੜ: {skill}",
   "A skill in this chapter needs more practice": "ਇਸ ਅਧਿਆਇ ਦੇ ਇੱਕ ਹੁਨਰ ਨੂੰ ਹੋਰ ਅਭਿਆਸ ਚਾਹੀਦਾ ਹੈ",
   "Done:": "ਹੋ ਗਿਆ:",
@@ -1946,6 +1948,8 @@ Object.assign(I18N.hi, {
   "Next new chapter in {subject}, the subject you use most": "{subject} का अगला नया अध्याय, वह विषय जो आप सबसे ज़्यादा पढ़ते हैं",
   "Next new chapter in {subject}": "{subject} का अगला नया अध्याय",
   "Next level in {topic}": "{topic} का अगला स्तर",
+  "Build this first": "पहले इसे पक्का करें",
+  "Needed for {chapter}": "{chapter} के लिए ज़रूरी",
   "Needs more practice: {skill}": "और अभ्यास की ज़रूरत: {skill}",
   "A skill in this chapter needs more practice": "इस अध्याय के एक कौशल को और अभ्यास चाहिए",
   "Done:": "हो गया:",
@@ -2708,4 +2712,28 @@ Object.assign(I18N.pa, {
 });
 Object.assign(I18N.hi, {
   "Practise a chapter": "एक अध्याय का अभ्यास करें",
+});
+
+// Results summary (Learn.summaryHTML): how a game, quiz or lesson went, in plain words.
+Object.assign(I18N.pa, {
+  "How it went": "ਇਹ ਕਿਵੇਂ ਰਿਹਾ",
+  "Practised": "ਅਭਿਆਸ ਕੀਤਾ",
+  "Went well": "ਚੰਗਾ ਰਿਹਾ",
+  "Right, but not sure yet. A few more tries will make it stick.": "ਸਹੀ, ਪਰ ਅਜੇ ਪੱਕਾ ਨਹੀਂ। ਕੁਝ ਹੋਰ ਕੋਸ਼ਿਸ਼ਾਂ ਨਾਲ ਇਹ ਪੱਕਾ ਹੋ ਜਾਵੇਗਾ।",
+  "A common slip here:": "ਇੱਥੇ ਇੱਕ ਆਮ ਗਲਤੀ:",
+  "Practise this chapter": "ਇਸ ਅਧਿਆਇ ਦਾ ਅਭਿਆਸ ਕਰੋ",
+  "Come back to the skills above with a few more questions.": "ਉੱਪਰ ਦੱਸੇ ਹੁਨਰਾਂ ਲਈ ਕੁਝ ਹੋਰ ਸਵਾਲ ਹੱਲ ਕਰੋ।",
+  "All of these went well. Next up: {title}.": "ਇਹ ਸਭ ਚੰਗੇ ਰਹੇ। ਅੱਗੇ: {title}।",
+  "All of these went well. Why not play a game?": "ਇਹ ਸਭ ਚੰਗੇ ਰਹੇ। ਕਿਉਂ ਨਾ ਇੱਕ ਖੇਡ ਖੇਡੀਏ?",
+});
+Object.assign(I18N.hi, {
+  "How it went": "यह कैसा रहा",
+  "Practised": "अभ्यास किया",
+  "Went well": "अच्छा रहा",
+  "Right, but not sure yet. A few more tries will make it stick.": "सही, पर अभी पक्का नहीं। कुछ और कोशिशों से यह पक्का हो जाएगा।",
+  "A common slip here:": "यहाँ एक आम गलती:",
+  "Practise this chapter": "इस अध्याय का अभ्यास करें",
+  "Come back to the skills above with a few more questions.": "ऊपर बताए कौशलों के लिए कुछ और सवाल हल करें।",
+  "All of these went well. Next up: {title}.": "ये सब अच्छे रहे। आगे: {title}।",
+  "All of these went well. Why not play a game?": "ये सब अच्छे रहे। क्यों न एक खेल खेलें?",
 });

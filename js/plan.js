@@ -13,6 +13,9 @@
 //   are up to 2 path levels, one per subject, taking the subjects in turn (the least recently practised first): in each subject the
 //   topic used last, at its next level that is not mastered at or after the learner's own level (or the placement from "Find my
 //   level"). They get no Practice item.
+//   0 Build first  (not a rule of its own) when the lesson's chapter has a hand-written prerequisite the learner is weak in
+//               (answers recorded, state "learning" or "refresher"; never "not started"), one short practice item for that
+//               prerequisite chapter goes before the lesson, "Needed for <chapter>". At most one, and only if it fits the time.
 //   Items are added in that order while they fit the time. The plan is kept for the day: an item stays until it is
 //   finished or no longer applies, finished items stay ticked, and each type has one place, so finishing the day's
 //   lesson does not bring a new one. An item is ticked when the evidence is in the record after it was added (a revision
@@ -39,6 +42,8 @@ const Plan = (() => {
   const budget = (c) => Store.goal() || (young(c) ? config.youngMinutes : config.minutes);
   const costOf = (c, kind) => (kind === "lesson" && young(c) ? config.youngLesson : config.cost[kind]);
   const ORDER = { review: 0, lesson: 1, path: 1, practice: 2 };
+  const isPrereq = (it) => !!(it.why && it.why.w === "prereq");
+  const orderOf = (it) => (isPrereq(it) ? 0.5 : ORDER[it.kind]);
 
   // Only subjects the learner has picked (all of the class's subjects when they haven't picked).
   const withContent = (c) => {
@@ -180,6 +185,21 @@ const Plan = (() => {
     return { id: `practice:${Store.key(c, w.p.subject, w.p.chapter)}`, kind: "practice", cls: c, subject: w.p.subject, chapter: w.p.chapter, obj: w.p.obj, why: { w: "weak" }, href: `#/chapter/${c}/${w.p.subject}/${w.p.chapter}/master` };
   }
 
+  // A short practice item for the weakest prerequisite of the lesson's chapter, or null. Fetches missing files once, then
+  // draws Today again (`later`), so the first draw never waits.
+  function prereqItem(c, lesson) {
+    if (intl() || !lesson || lesson.kind !== "lesson" || typeof Loop === "undefined") return null;
+    const r = Loop.weakPrereqs(c, lesson.subject, lesson.chapter, 1);
+    if (r.load) r.load().then((fresh) => fresh && later());
+    const w = r.items[0];
+    if (!w) return null;
+    const target = chapterOf(c, lesson.subject, lesson.chapter);
+    return { id: `prereq:${w.cls}/${w.subject}/${w.chapter}`, kind: "practice", cls: w.cls, subject: w.subject, chapter: w.chapter, why: { w: "prereq", chapter: target ? target.title : lesson.chapter }, href: `#/chapter/${w.cls}/${w.subject}/${w.chapter}/master` };
+  }
+  const later = () => {
+    if (location.hash.replace(/^#\/?/, "") === "" && Store.state.profile && typeof App !== "undefined") App.render({ keepScroll: true });
+  };
+
   // ---------- finishing ----------
 
   const eventsSince = (it, since, pred) =>
@@ -230,13 +250,13 @@ const Plan = (() => {
     for (const it of plan.items) {
       if (plan.done[it.id] || !isDone(it)) continue;
       plan.done[it.id] = now;
-      if (typeof Learn !== "undefined") Learn.plan(c, it.kind === "path" || it.dueKeys ? D.PATH_PREFIX + it.subject : it.subject, it.kind === "path" || it.dueKeys ? it.chapter.split("/")[1] : it.chapter);
+      if (typeof Learn !== "undefined") Learn.plan(it.cls || c, it.kind === "path" || it.dueKeys ? D.PATH_PREFIX + it.subject : it.subject, it.kind === "path" || it.dueKeys ? it.chapter.split("/")[1] : it.chapter);
     }
     // Keep finished items and the ones that still apply.
     plan.items = plan.items.filter((it) => plan.done[it.id] || stillApplies(it));
 
     // Fill empty places, in order, while the time allows.
-    const have = (kind) => plan.items.filter((it) => (kind === "lesson" ? it.kind === "lesson" || it.kind === "path" : it.kind === kind));
+    const have = (kind) => plan.items.filter((it) => (kind === "lesson" ? it.kind === "lesson" || it.kind === "path" : it.kind === kind && !isPrereq(it)));
     let minutes = plan.items.reduce((a, it) => a + costOf(c, it.kind), 0);
     const room = (kind) => plan.items.length === 0 || minutes + costOf(c, kind) <= budget(c);
     const add = (it) => {
@@ -249,12 +269,24 @@ const Plan = (() => {
     if (intl()) {
       const want = Math.min(2, International.picked().length);
       for (const it of intlLessons(c)) if (have("lesson").length < want && room("lesson")) add(it);
-    } else if (!have("lesson").length && room("lesson")) add(lessonItem(c));
+    } else {
+      const open = plan.items.find((it) => it.kind === "lesson" && !plan.done[it.id]);
+      if (!have("lesson").length) {
+        // The lesson and, when its chapter builds on something the learner is weak in, a practice item for that first: both or neither.
+        const next = room("lesson") ? lessonItem(c) : null;
+        const pre = prereqItem(c, next);
+        if (pre && !plan.done[pre.id] && !plan.items.some((x) => x.id === pre.id) && minutes + costOf(c, "practice") + costOf(c, "lesson") <= budget(c)) add(pre);
+        add(next);
+      } else if (open && !plan.items.some(isPrereq)) {
+        const pre = prereqItem(c, open);
+        if (pre && !plan.done[pre.id] && room("practice")) add(pre);
+      }
+    }
     if (!have("practice").length && room("practice")) {
       const p = practiceItem(c);
       if (p && !plan.items.some((x) => x.subject === p.subject && x.chapter === p.chapter)) add(p);
     }
-    plan.items.sort((a, b) => ORDER[a.kind] - ORDER[b.kind]);
+    plan.items.sort((a, b) => orderOf(a) - orderOf(b));
 
     if (JSON.stringify(plan) !== before || st.plan !== saved) Store.setPlan(plan);
     const items = plan.items.map((it) => ({ ...it, done: !!plan.done[it.id], min: costOf(c, it.kind) }));

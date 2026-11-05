@@ -114,7 +114,7 @@
 
     const visible = SECTIONS.filter(([id]) => have[id]);
     let body = "";
-    if (section === "understand") body = understandSection(c, subj, ch, r, base, guided, isYoung);
+    if (section === "understand") body = buildFirstHTML(c, subj.id, ch.id) + understandSection(c, subj, ch, r, base, guided, isYoung);
     else if (section === "visualise") body = visualiseSection(c, subj, diagrams);
     else if (section === "explore") body = exploreSection(sims, labs);
     else if (section === "play") body = Views.playTab(c, subj, ch);
@@ -185,10 +185,39 @@
             Cards.mount(el.querySelector("#cards-mount"), { cards: ch.terms.map((x) => ({ key: cardKey(c, subj.id, ch, x), front: x.term, back: x.meaning })) });
           if (sub === "terms") setTimeout(() => el.querySelector("#terms") && el.querySelector("#terms").scrollIntoView({ block: "start" }), 0);
         }
+        if (section === "understand") buildFirstLater(el, c, subj.id, ch.id);
         if (section === "practise") mountPractice(el, c, subj, ch);
         if (section === "master") mountMaster(el, c, subj, ch, base);
       },
     };
+  }
+
+  // ---------- Build this first ----------
+  // Up to 2 prerequisites (from the chapter's written objectives) the learner is weak in, from real answers only (Loop.weakPrereqs).
+  function buildFirstHTML(c, subjectId, chapterId, items) {
+    items = items || Loop.weakPrereqs(c, subjectId, chapterId, 2).items;
+    if (!items.length) return `<div id="build-first"></div>`;
+    return `<section class="card build-first no-print" id="build-first" aria-labelledby="bf-h">
+      <h2 id="bf-h" class="bf-h">${icon("target")} ${t("Build this first")}</h2>
+      <ul class="bf-list">${items
+        .map(
+          (w) => `<li><a class="bf-item" href="#/chapter/${w.cls}/${w.subject}/${w.chapter}/understand">
+            <span class="bf-text">${w.text ? `<span class="bf-skill">${esc(w.text)}</span>` : ""}<span class="bf-where">${t("Class {n}", { n: w.cls })} · ${esc(w.title)}</span></span>${icon("next")}</a></li>`
+        )
+        .join("")}</ul>
+    </section>`;
+  }
+
+  // Files of a class we have not loaded yet can hold the skill's name: fetch them once and fill the card in.
+  function buildFirstLater(el, c, subjectId, chapterId) {
+    const r = Loop.weakPrereqs(c, subjectId, chapterId, 2);
+    if (!r.load) return;
+    r.load().then((fresh) => {
+      const box = fresh && el.isConnected && el.querySelector("#build-first");
+      if (!box) return;
+      const now = Loop.weakPrereqs(c, subjectId, chapterId, 2).items;
+      box.outerHTML = buildFirstHTML(c, subjectId, chapterId, now);
+    });
   }
 
   // ---------- Understand ----------

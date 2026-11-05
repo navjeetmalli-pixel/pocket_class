@@ -392,6 +392,7 @@ const Games = (() => {
           <a class="btn" href="${ctx.back}">${t(ctx.backLabel || "Back")}</a>
         </div>
       </div>
+      ${Learn.summaryHTML(g.events, g.learned)}
       ${Learn.improvedHTML(g.learned)}
       <h2 class="block-title">${t("What you got wrong")}</h2>
       ${missed ? `<div class="stack">${missed}</div>` : `<div class="card small">${icon("check")} ${stripEmoji(t("Nothing! Every answer was right. 🎉"))}</div>`}
