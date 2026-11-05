@@ -295,11 +295,15 @@ const Labs = (() => {
       };
       if (cfg.extra) rec.extra = cfg.extra();
       Store.saveLab(rec);
+      // Sticker book (Classes 1-5): the first save of each experiment earns one.
+      const first = !S.sticker;
+      const sticker = S.sticker || (S.sticker = Stickers.earn("lab", `lab:${api.id}:${v.id}:${S.rid}`));
+      if (sticker && first) Stickers.celebrate(sticker);
       const moved = api.log([{ type: "answer", ok: okE, hints: 0, attempt: S.tries }], v);
       $("[data-fb]").innerHTML = `<div class="feedback ${okE ? "good" : "neutral"}"><div class="h">${okE ? t("That is what your runs show.") : t("Look at your table again.")}</div>
         <p>${okP ? t("Your prediction was right.") : t("Your prediction was different from what happened.")} ${esc(t(v.explain.why))}</p>
         ${okE ? "" : `<p class="small">${t("Which of your runs changed only the variable you are testing? Compare those rows, then choose again.")}</p>`}
-        <p class="small muted" style="margin:8px 0 0">${icon("check")} ${t("Saved in your experiment record.")}</p></div>${Learn.improvedHTML(moved)}`;
+        <p class="small muted" style="margin:8px 0 0">${icon("check")} ${t("Saved in your experiment record.")}</p></div>${sticker ? Stickers.winHTML(sticker) : ""}${Learn.improvedHTML(moved)}`;
       renderPast();
       say(okE ? t("Correct. Experiment saved.") : t("Not quite. Look at your table again."));
     }

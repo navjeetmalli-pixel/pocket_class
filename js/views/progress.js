@@ -262,6 +262,7 @@
       title: t("Progress"),
       html: `
         ${Views._.shellHead(t("Your progress"), t("{class} · {days} study {days:day|days} so far", { class: International.label(st.profile), days: activeDays }), "progress")}
+        ${young && Views._.stickersCard ? Views._.stickersCard() : ""}
         ${
           young
             ? `<div class="stats-4 stats-young">

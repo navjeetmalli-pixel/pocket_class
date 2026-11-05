@@ -823,6 +823,7 @@ const Guided = (() => {
         <div class="ring" style="--p:${p};--ring:${ring}"><div><span class="v">${score}/${ps.length}</span><span class="l">${t("practice")}</span></div></div>
         <div class="result-msg" tabindex="-1">${t("Lesson complete")}</div>
       </div>
+      ${s.sticker ? Stickers.winHTML(s.sticker) : ""}
       <ul class="g-notes">${notes.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
       ${summary}
       ${skills}
@@ -936,6 +937,9 @@ const Guided = (() => {
       sureWrong: ps.filter((x) => x.sure && x.picked !== x.answer).length,
     });
     Store.loopClear(s.key);
+    // Sticker book (Classes 1-5): finishing a guided lesson earns one.
+    s.sticker = Stickers.earn("lesson", s.key);
+    if (s.sticker) Stickers.celebrate(s.sticker);
   }
 
   // ---------- events ----------

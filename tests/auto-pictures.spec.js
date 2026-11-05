@@ -89,15 +89,15 @@ test("Class 3: the sort game shows pictures on the cards that can be drawn (no C
   await expect(chips.nth(4).locator(".auto-pic")).toHaveCount(0);
 });
 
-test("the chapter list shows a picture on every chapter (its own, or the subject art)", async ({ page }) => {
+test("the journey map shows a picture on every chapter stone (its own, or the subject art)", async ({ page }) => {
   await start(page, 1);
   await page.goto("/#/subject/english");
-  const rows = page.locator(".chapter-row");
+  const rows = page.locator(".jstone");
   await expect(rows.first()).toBeVisible();
   const n = await rows.count();
   expect(n).toBeGreaterThan(5);
-  await expect(page.locator(".chapter-row .ch-pic")).toHaveCount(n);
-  expect(await page.locator(".chapter-row .ch-pic:not(.ch-pic-subject)").count()).toBeGreaterThan(0);
+  await expect(page.locator(".jstone .ch-pic")).toHaveCount(n);
+  expect(await page.locator(".jstone .ch-pic:not(.ch-pic-subject)").count()).toBeGreaterThan(0);
 });
 
 test("Today's plan items show the subject art (Class 2)", async ({ page }) => {

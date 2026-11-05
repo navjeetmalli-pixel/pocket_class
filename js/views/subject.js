@@ -54,8 +54,12 @@
           <span class="go">${icon("arrow")}</span></a>`
       : "";
 
+    // Classes 1-5: a picture-book journey map (js/views/journey.js) instead of the list; every chapter is a stone.
+    const band = document.body.dataset.band;
+    const journey = chs.length && (band === "1-2" || band === "3-5") && typeof Journey !== "undefined";
     let list;
-    if (!chs.length) list = `<div class="mt">${emptyState("learn", t("Chapters for Class {n} {subject} are coming soon.", { n: c, subject: esc(subj.name) }), { href: "#/learn", label: t("Choose a subject") })}</div>`;
+    if (journey) list = Journey.html(c, subj, chs, nextCh, dueSet);
+    else if (!chs.length) list = `<div class="mt">${emptyState("learn", t("Chapters for Class {n} {subject} are coming soon.", { n: c, subject: esc(subj.name) }), { href: "#/learn", label: t("Choose a subject") })}</div>`;
     else if (grouped)
       list = sections
         .map((sec) => {
@@ -69,7 +73,7 @@
     else list = `<div class="list mt">${chs.map((ch, i) => chapterRow(c, subj, ch, i + 1, sections.length > 1 ? ch.section : "", dueSet.has(ch.id))).join("")}</div>`;
 
     const filters =
-      sections.length > 1
+      sections.length > 1 && !journey
         ? `<div class="chips scroll mt" role="group" aria-label="${t("Filter by section")}">
             <button class="chip on" data-filter="">${t("All")}</button>
             ${sections.map((s) => `<button class="chip" data-filter="${esc(s)}">${esc(s)}</button>`).join("")}
@@ -87,6 +91,7 @@
           <span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span>
         </div>
         ${cont}
+        ${journey ? `<h2 class="block-title">${t("Chapters")}</h2>${list}` : ""}
         ${
           chs.length
             ? `<h2 class="block-title">${t("Practise this subject")}</h2>
@@ -99,10 +104,10 @@
               </div>`
             : ""
         }
-        <h2 class="block-title">${t("Chapters")}</h2>
+        ${journey ? "" : `<h2 class="block-title">${t("Chapters")}</h2>`}
         ${syllabusLine(c, id)}
         ${filters}
-        ${list}`,
+        ${journey ? "" : list}`,
       mount(el) {
         el.onclick = (e) => {
           const b = e.target.closest("[data-filter]");

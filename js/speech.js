@@ -201,5 +201,14 @@ const Speech = (() => {
     }).observe(document.documentElement, { childList: true, subtree: true });
   }
 
-  return { btn, listen, stop, supported, langOf, voiceFor, voicesFor, speakable, rate, RATES, setVoice, setRate, prefs, preview, idOf };
+  // Says a short text once, on a press (a sticker's name). Nothing if the device has no voice for it.
+  function say(text) {
+    if (!supported || !text) return false;
+    const b = document.createElement("button");
+    b.dataset.say = String(text);
+    speak(b);
+    return !b.hidden;
+  }
+
+  return { say, btn, listen, stop, supported, langOf, voiceFor, voicesFor, speakable, rate, RATES, setVoice, setRate, prefs, preview, idOf };
 })();

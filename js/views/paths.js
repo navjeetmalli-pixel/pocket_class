@@ -309,9 +309,12 @@
       showFrom: true,
       record: { subject: D.PATH_PREFIX + id, cls: cls(), kind: "path" },
       onDone(score, total) {
+        const was = !!(Store.pathTopic(id, topicId).levels[levelId] || {}).mastered;
         const res = Store.recordLevel(id, topicId, levelId, pct(score, total));
+        // Sticker book: a level mastered for the first time earns one.
+        const sticker = res.mastered && !was ? Stickers.earn("level", `level:${id}/${topicId}/${levelId}`) : null;
         announce(pct(score, total) >= passPct() ? (next ? t("Level mastered. {level} is unlocked.", { level: levelName(next.level) }) : t("Level mastered. You have finished this topic.")) : t("Not mastered yet. You need {n}%.", { n: passPct() }));
-        return res;
+        return { ...res, sticker };
       },
       resultExtra(score, total) {
         const ok = pct(score, total) >= passPct();

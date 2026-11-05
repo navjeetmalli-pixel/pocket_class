@@ -46,6 +46,20 @@ const Store = (() => {
     return Object.assign(l, { v: Number(l.v) || 1, records: Array.isArray(l.records) ? l.records.filter(ok) : [] });
   }
 
+  // Sticker book (Classes 1-5, js/stickers.js): one record per sticker earned, in the order earned.
+  //   stickers: [{ id, at, why, ref? }]   id = the sticker's id in the fixed list (Stickers.SEQ); why = "lesson" | "quiz" | "game" | "lab" | "level";
+  //                                       ref = what earned it (so the same activity cannot earn twice in a day)
+  // Older saves and backups have none (-> []); damaged records are dropped and a repeated id is kept once.
+  const STICKER_KEEP = 200;
+  function cleanStickers(list) {
+    if (!Array.isArray(list)) return [];
+    const seen = new Set();
+    return list
+      .filter((r) => r && typeof r === "object" && typeof r.id === "string" && r.id && Number.isFinite(r.at) && !seen.has(r.id) && seen.add(r.id))
+      .map((r) => ({ id: r.id, at: r.at, why: typeof r.why === "string" ? r.why : "", ...(typeof r.ref === "string" ? { ref: r.ref } : {}) }))
+      .slice(0, STICKER_KEEP);
+  }
+
   // The learner profile (docs/UI_IMPLEMENTATION.md). Saved profiles from older versions have only { name, cls, board };
   // cleanProfile gives every new field its default and repairs damaged ones, so old saves and backups load unchanged
   // (a profile with no `setup` is a learner who set up long ago: setup done). PROFILE_V is written as `pv` in the save.
@@ -102,6 +116,7 @@ const Store = (() => {
     games: {}, // chapter (or level) key -> { match: { best, stars, plays, at }, ... }: best score and stars of each Play game
     learn: learnDefaults(), // the learning record: see learnDefaults
     labs: labsDefaults(), // saved virtual-lab experiment records: see labsDefaults
+    stickers: [], // the sticker book (Classes 1-5): see cleanStickers
     loop: {}, // chapter key -> { at, snap }: a chapter lesson that was left unfinished, so it can be resumed (js/guided.js)
     exam: {}, // chapter key -> { f: { mcq: [right, asked], ar: [...] }, timed: [r, n], n: tests, at }: answers in mock tests (js/readiness.js)
     plan: null, // Today's plan on Home: { day, cls, items: [...], done: { id: time } } (js/plan.js)
@@ -122,6 +137,7 @@ const Store = (() => {
   function bind(s) {
     s.learn = cleanLearn(s.learn);
     s.labs = cleanLabs(s.labs);
+    s.stickers = cleanStickers(s.stickers);
     s.profile = cleanProfile(s.profile);
     for (const k of DEVICE) Object.defineProperty(s, k, { get: () => device[k], set: (v) => (device[k] = v), enumerable: false, configurable: true });
     return s;
@@ -500,6 +516,14 @@ const Store = (() => {
       }
       if (l.v <= LEARN_V && l.events.length > cap) l.events.splice(0, l.events.length - cap);
       save();
+    },
+
+    // ----- sticker book (js/stickers.js decides when one is earned) -----
+    stickers: () => state.stickers,
+    addSticker(rec) {
+      state.stickers = cleanStickers([...state.stickers, { ...rec, at: rec.at || Date.now() }]);
+      save();
+      return state.stickers[state.stickers.length - 1];
     },
 
     // ----- virtual labs -----

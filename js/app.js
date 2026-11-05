@@ -24,7 +24,7 @@ const App = {
     papers: "learn", paper: "learn", paths: "learn", pathsheet: "learn", revise: "learn", search: "learn",
     games: "play", play: "play",
     explore: "explore", lab: "explore",
-    progress: "progress", parent: "progress", certificate: "progress",
+    progress: "progress", parent: "progress", certificate: "progress", stickers: "progress",
   };
   App.tabOf = (p) => {
     if (/^revise\/(mistakes|due)/.test(p)) return "progress";
@@ -59,6 +59,7 @@ const App = {
     [/^cards\/(\w+)$/, Views.subjectCards],
     [/^timer$/, Views.timer],
     [/^progress$/, Views.progress],
+    [/^stickers$/, Views.stickers],
     [/^parent$/, Views.parent],
     [/^search$/, Views.search],
     [/^settings(?:\/(offline))?$/, Views.settings],

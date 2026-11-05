@@ -1,7 +1,7 @@
 // Offline support: caches the app shell on first visit, plus each class's index and each subject's data once it's opened.
 // Online, files come fresh from the network (and refresh the cache);
 // offline or on a very slow connection, the cached copy is used.
-const CACHE = "pocket-class-v67";
+const CACHE = "pocket-class-v68";
 
 const FILES = [
   "./",
@@ -17,6 +17,7 @@ const FILES = [
   "js/pics.js",
   "js/picdict.js",
   "js/mascot.js",
+  "js/stickers.js",
   "js/release.js",
   "js/subject-icons.js",
   "js/i18n.js",
@@ -67,7 +68,9 @@ const FILES = [
   "js/views/shell.js",
   "js/views/revise.js",
   "js/views/home.js",
+  "js/views/journey.js",
   "js/views/subject.js",
+  "js/views/stickers.js",
   "js/views/chapter.js",
   "js/views/test.js",
   "js/views/timer.js",

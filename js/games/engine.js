@@ -357,7 +357,10 @@ const Games = (() => {
     document.removeEventListener("keydown", g.onKey);
     document.removeEventListener("visibilitychange", g.onVis);
     const n = Math.max(1, Math.min(3, Math.round(result.stars || 1)));
-    if (n >= 2) setTimeout(() => Sound.play("celebrate"), 150);
+    // Sticker book (Classes 1-5): a game with 2 or more stars earns one.
+    const sticker = n >= 2 ? Stickers.earn("game", `${g.ctx.key}/${g.def.type}`) : null;
+    if (sticker) Stickers.celebrate(sticker);
+    else if (n >= 2) setTimeout(() => Sound.play("celebrate"), 150);
     const rec = Store.recordGame(g.ctx.key, g.def.type, { score: g.pts, stars: n, answers: g.answers, ghost: result.ghost });
     // Learning record: the answers, plus one "game" event for the round (it names no objective, so it changes no state).
     const src = g.ctx.ch.sources ? g.ctx.ch.sources.find((x) => !x.own) : null;
@@ -394,6 +397,7 @@ const Games = (() => {
           <a class="btn" href="${ctx.back}">${t(ctx.backLabel || "Back")}</a>
         </div>
       </div>
+      ${sticker ? Stickers.winHTML(sticker) : ""}
       ${Learn.summaryHTML(g.events, g.learned)}
       ${Learn.improvedHTML(g.learned)}
       <h2 class="block-title">${t("What you got wrong")}</h2>
@@ -402,7 +406,7 @@ const Games = (() => {
     g.el.onclick = (e) => e.target.closest("[data-g=again]") && begin(g);
     const msg = g.el.querySelector("[data-g=msg]");
     msg.focus({ preventScroll: true });
-    announce(`${t("{n} of 3 stars", { n })}. ${t("{n} points", { n: g.pts })}. ${missed ? t("Some answers were wrong. They are listed below.") : stripEmoji(t("Nothing! Every answer was right. 🎉"))}`);
+    announce(`${sticker ? t("You earned a sticker!") + " " : ""}${t("{n} of 3 stars", { n })}. ${t("{n} points", { n: g.pts })}. ${missed ? t("Some answers were wrong. They are listed below.") : stripEmoji(t("Nothing! Every answer was right. 🎉"))}`);
     window.scrollTo({ top: 0 });
   }
 

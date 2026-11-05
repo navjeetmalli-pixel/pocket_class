@@ -81,13 +81,14 @@ Pocket Class India is a fully offline study app: every class, note, diagram and 
 
 ## Screenshots
 
-Ready in `store/screenshots/`:
-- `iphone/`: App Store 6.9" iPhone, 1320×2868 (start screen, home, diagrams, quiz, sample paper).
-- `play/`: the same five cropped to 1320×2640 for Google Play (Play allows at most a 2:1 ratio).
+Ready in `store/screenshots/` (7 each, the store build with Hindi and Punjabi locked; made on 6 Nov 2026):
+- `iphone/`: App Store 6.9" iPhone, 1320×2868.
+- `ipad/`: App Store 13" iPad, 2064×2752.
+- `play/`: Google Play, 1320×2640 (Play allows at most a 2:1 ratio).
 
-Still needed: 13" iPad screenshots (2064×2752), because the app is set to run on iPad as well as iPhone. Either take
-them in the iPad simulator, or make the app iPhone-only (Xcode → App target → General → Supported Destinations:
-remove iPad) so App Store Connect doesn't ask for them.
+The seven: 1 Today with Mithu and the Start card, 2 the journey map, 3 a question with picture answers, 4 the habitat
+sort game, 5 the picture word builder, 6 the sticker book, 7 the circuit builder lab (Class 7). Remake them after a
+visual change with `tests/store-screens.spec.js` (instructions at its top).
 
 The app has no links to outside websites, no ads, no sign-in and no tracking, which keeps it clear of the extra
 rules for children's apps.

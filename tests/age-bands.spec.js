@@ -53,16 +53,22 @@ test("age bands: Class 1 quiz options are at least 64px high", async ({ browser 
   await page.context().close();
 });
 
-test("age bands: chapter summaries show in 3-5 and are hidden in 1-2", async ({ browser }) => {
+// Classes 1-5 have the journey map (no chapter summaries); the list with summaries starts at Class 6.
+test("age bands: Classes 1-5 show the journey map, Class 6 and up the chapter list with summaries", async ({ browser }) => {
   const p4 = await pageFor(browser, 4);
   await p4.goto("/#/subject/maths");
-  await expect(p4.locator(".chapter-row .ch-sum").first()).toBeVisible();
+  await expect(p4.locator(".jmap .jstone").first()).toBeVisible();
+  await expect(p4.locator(".chapter-row")).toHaveCount(0);
   const p1 = await pageFor(browser, 1);
   await p1.goto("/#/subject/maths");
-  await expect(p1.locator(".chapter-row").first()).toBeVisible();
-  await expect(p1.locator(".chapter-row .ch-sum").first()).toBeHidden();
+  await expect(p1.locator(".jmap .jstone").first()).toBeVisible();
+  await expect(p1.locator(".chapter-row")).toHaveCount(0);
+  const p7 = await pageFor(browser, 7);
+  await p7.goto("/#/subject/maths");
+  await expect(p7.locator(".chapter-row .ch-sum").first()).toBeVisible();
   await p4.context().close();
   await p1.context().close();
+  await p7.context().close();
 });
 
 test("age bands: no band changes the tab routes", async ({ browser }) => {

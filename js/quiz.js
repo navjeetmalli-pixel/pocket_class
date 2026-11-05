@@ -182,6 +182,7 @@ const Quiz = (() => {
           ${s.opts.backHref ? `<a class="btn" href="${s.opts.backHref}">${esc(t(s.opts.backLabel || "Back"))}</a>` : ""}
         </div>
       </div>
+      ${s.sticker ? Stickers.winHTML(s.sticker) : ""}
       ${s.opts.resultExtra ? s.opts.resultExtra(score, n) : ""}
       ${Learn.summaryHTML(s.events, s.learned, { mistakes: s.mistakes })}
       ${Learn.improvedHTML(s.learned)}
@@ -251,8 +252,12 @@ const Quiz = (() => {
     s.learned = Learn.record(evidence);
     if (s.opts.record) Store.recordQuiz({ ...s.opts.record, title: s.opts.title, score, total: s.items.length, answers });
     // Practice by topic: the level is marked mastered here, and the result screen says what comes next.
-    if (s.opts.onDone) s.opts.onDone(score, s.items.length);
-    if (score >= s.items.length * 0.75) setTimeout(() => Sound.play("celebrate"), 150);
+    const done = s.opts.onDone ? s.opts.onDone(score, s.items.length) : null;
+    // Sticker book (Classes 1-5, js/stickers.js): a chapter quiz with 60% or more, or a Practice-by-topic level mastered for the first time.
+    const rk = s.opts.record || {};
+    s.sticker = rk.kind === "chapter" && pct(score, s.items.length) >= 60 ? Stickers.earn("quiz", rk.chapterKey) : done && done.sticker ? done.sticker : null;
+    if (s.sticker) Stickers.celebrate(s.sticker);
+    else if (score >= s.items.length * 0.75) setTimeout(() => Sound.play("celebrate"), 150);
     render();
     window.scrollTo({ top: 0 });
   }

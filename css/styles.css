@@ -2899,3 +2899,102 @@ body:is([data-band="1-2"], [data-band="3-5"]) .game-tile .gc-sub + .gc-sub { dis
   .gr-svg .gr-pt.drop, .gr-svg .gr-line, .gr-svg .gr-curve[pathLength] { animation: none; }
 }
 .gr-svg .gr-guide .gr-drop.faint { opacity: 0.35; stroke-width: 1.5; }
+
+/* ---------- Journey map and stickers ---------- */
+/* Journey map (Classes 1-5 subject page): one svg of scenery behind plain HTML stepping stones, placed by percentages. */
+.jmap { list-style: none; margin: 14px auto 8px; padding: 0; position: relative; max-width: 440px; width: 100%; }
+.jmap-art { display: block; position: relative; line-height: 0; border-radius: 26px; overflow: hidden; box-shadow: 0 6px 0 color-mix(in srgb, var(--text) 14%, transparent), 0 14px 22px rgb(0 0 0 / .14); }
+.jmap-art svg { display: block; width: 100%; height: auto; }
+.jmap-art::after { content: ""; position: absolute; inset: 0; background: transparent; pointer-events: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .jmap-art::after { background: rgb(8 16 36 / .52); } }
+:root[data-theme="dark"] .jmap-art::after { background: rgb(8 16 36 / .52); }
+.jli { position: absolute; width: 0; height: 0; margin-top: -39px; }
+.jstone { position: absolute; left: 0; top: 0; transform: translateX(-50%); width: 156px; display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--text); -webkit-tap-highlight-color: transparent; }
+.js-disc { position: relative; display: grid; place-items: center; width: 78px; height: 78px; border-radius: 50%; background: radial-gradient(circle at 35% 26%, var(--surface), color-mix(in srgb, var(--surface-2) 74%, var(--c))); border: 5px solid color-mix(in srgb, var(--c) 50%, var(--surface)); box-shadow: 0 6px 0 color-mix(in srgb, var(--c) 42%, rgb(40 30 10 / .55)), 0 12px 14px rgb(0 0 0 / .22); transition: transform 0.12s ease; }
+.js-disc .ch-pic { width: 50px; height: 50px; background: none; }
+.js-disc .ch-pic svg { width: 50px; height: 50px; }
+.jstone:active .js-disc { transform: translateY(4px); box-shadow: 0 2px 0 color-mix(in srgb, var(--c) 42%, rgb(40 30 10 / .55)), 0 5px 8px rgb(0 0 0 / .2); }
+.js-num { position: absolute; top: -9px; left: -9px; min-width: 28px; height: 28px; padding: 0 5px; border-radius: 14px; display: grid; place-items: center; background: var(--fill-navy); color: var(--on-fill); border: 2px solid var(--paper); font-size: 14px; font-weight: 800; line-height: 1; }
+.js-check, .js-due { position: absolute; right: -8px; bottom: -6px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; color: var(--on-success); background: var(--good); border: 2px solid var(--paper); font-size: 15px; font-weight: 800; }
+.js-due { background: var(--fill-purple); color: var(--on-fill); }
+.js-check .i { width: 15px; height: 15px; }
+.js-stars { display: flex; gap: 1px; margin-top: -9px; padding: 1px 9px 2px; border-radius: 12px; background: var(--surface); border: 2px solid var(--border); font-size: 16px; line-height: 1.15; position: relative; }
+.js-star { color: color-mix(in srgb, var(--muted) 40%, transparent); }
+.js-star.on { color: var(--gold); }
+.js-name { margin-top: 5px; max-width: 150px; padding: 5px 10px; border-radius: 12px; background: var(--surface); border: 2px solid color-mix(in srgb, var(--c) 32%, var(--border)); box-shadow: 0 3px 0 rgb(0 0 0 / .1); font-size: 13px; font-weight: 800; line-height: 1.2; text-align: center; overflow-wrap: anywhere; }
+.js-name-t { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+.jstone.s-done .js-disc { border-color: var(--good); }
+.jstone.next .js-disc { border-color: var(--gold); box-shadow: 0 6px 0 color-mix(in srgb, var(--gold) 60%, rgb(60 30 0 / .6)), 0 0 0 7px color-mix(in srgb, var(--gold) 38%, transparent), 0 0 26px 10px color-mix(in srgb, var(--gold) 55%, transparent); }
+.jstone.next .js-name { border-color: var(--gold); }
+.js-mithu { position: absolute; top: -49px; left: 50%; margin-left: -33px; width: 66px; pointer-events: none; z-index: 2; }
+.js-mithu .mascot-svg { display: block; width: 66px; height: auto; overflow: visible; }
+.jstone:focus-visible { outline: none; }
+.jstone:focus-visible .js-disc { outline: 4px solid var(--accent); outline-offset: 5px; }
+.jstone:focus-visible .js-name { outline: 3px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .jstone.next .js-disc { animation: js-glow 2s ease-in-out infinite; }
+  .js-mithu { animation: js-hop 2.4s ease-in-out infinite; }
+}
+@keyframes js-glow { 0%, 100% { box-shadow: 0 6px 0 color-mix(in srgb, var(--gold) 60%, rgb(60 30 0 / .6)), 0 0 0 5px color-mix(in srgb, var(--gold) 30%, transparent), 0 0 14px 4px color-mix(in srgb, var(--gold) 40%, transparent); } 50% { box-shadow: 0 6px 0 color-mix(in srgb, var(--gold) 60%, rgb(60 30 0 / .6)), 0 0 0 10px color-mix(in srgb, var(--gold) 45%, transparent), 0 0 32px 14px color-mix(in srgb, var(--gold) 62%, transparent); } }
+@keyframes js-hop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+/* Stickers: a picture on white die-cut paper, turned a little. */
+.stk { position: relative; display: inline-grid; place-items: center; width: var(--sz, 88px); height: var(--sz, 88px); border-radius: 50%; background: var(--paper); transform: rotate(var(--tilt, 0deg)); box-shadow: 0 0 0 3px var(--paper), 0 3px 0 3px rgb(0 0 0 / .1), 0 9px 14px rgb(0 0 0 / .22); flex: none; }
+.stk svg { display: block; }
+.stk::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: linear-gradient(135deg, rgb(255 255 255 / .7) 0%, rgb(255 255 255 / 0) 38%); pointer-events: none; }
+.stk-special { box-shadow: 0 0 0 3px var(--paper), 0 0 0 7px color-mix(in srgb, var(--gold) 80%, transparent), 0 9px 16px rgb(0 0 0 / .26); }
+.stk .mascot-svg { filter: none; }
+
+/* "You earned a sticker!" on a results screen */
+.sticker-win { display: flex; align-items: center; gap: 8px; margin-top: 14px; padding: 14px 14px 16px 8px; background: linear-gradient(160deg, color-mix(in srgb, var(--gold) 16%, var(--surface)), var(--surface)); border: 2px solid color-mix(in srgb, var(--gold) 55%, var(--border)); }
+.sw-mithu { flex: none; width: 84px; align-self: center; }
+.sw-mithu .mascot-svg { display: block; width: 84px; height: auto; overflow: visible; }
+.sw-body { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; }
+.sw-title { margin: 0; font-size: 21px; font-weight: 800; line-height: 1.15; }
+.sw-pop { position: relative; margin: 10px 0 8px; }
+.sw-pop::before, .sw-pop::after { content: "\2726"; position: absolute; color: var(--gold); font-size: 22px; line-height: 1; }
+.sw-pop::before { top: -2px; left: -18px; }
+.sw-pop::after { bottom: 4px; right: -16px; font-size: 16px; }
+.sw-name { margin: 0; font-size: 20px; font-weight: 800; }
+.sw-special { display: block; font-size: 13px; color: var(--warning-ink); }
+.sw-count { margin: 0; }
+.sw-link { margin-top: 10px; }
+@media (prefers-reduced-motion: no-preference) {
+  .sw-pop { animation: sw-pop 0.8s cubic-bezier(0.3, 1.5, 0.5, 1) both; }
+  .sw-pop::before, .sw-pop::after { animation: sw-twinkle 1.4s ease-in-out 0.5s infinite alternate; }
+  .stk-slot.wiggle .stk { animation: stk-wiggle 0.5s ease; }
+}
+@keyframes sw-pop { 0% { transform: scale(0.1) rotate(-30deg); opacity: 0; } 60% { transform: scale(1.2) rotate(8deg); opacity: 1; } 100% { transform: none; opacity: 1; } }
+@keyframes sw-twinkle { from { opacity: 0.3; transform: scale(0.7); } to { opacity: 1; transform: scale(1.15); } }
+@keyframes stk-wiggle { 25% { transform: rotate(calc(var(--tilt) + 9deg)) scale(1.08); } 60% { transform: rotate(calc(var(--tilt) - 7deg)) scale(1.04); } }
+
+/* My stickers (#/stickers) */
+.stk-head { margin: 4px 0 4px; }
+.stk-head .mascot { align-items: center; }
+.stk-head .m-bubble p { margin: 0; font-size: 18px; font-weight: 800; }
+.stk-sub { margin: 6px 2px 2px; font-size: 15px; font-weight: 700; }
+.stk-slot .stk { margin-bottom: 8px; }
+.stk-count { margin: 0 2px 10px; }
+.stk-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 10px; }
+.stk-slot { appearance: none; width: 100%; min-height: 138px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 12px 4px 8px; border-radius: 20px; border: 2px solid var(--border); background: var(--surface); color: var(--text); font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; box-shadow: inset 0 2px 0 color-mix(in srgb, var(--text) 5%, transparent); }
+.stk-slot.got { background: color-mix(in srgb, var(--gold) 9%, var(--surface)); box-shadow: 0 3px 0 color-mix(in srgb, var(--text) 12%, transparent); }
+.stk-slot.got:active { transform: translateY(2px); }
+.stk-slot:focus-visible { outline: 4px solid var(--accent); outline-offset: 2px; }
+.stk-slot.empty { cursor: default; border-style: dashed; background: color-mix(in srgb, var(--surface-2) 60%, transparent); box-shadow: none; }
+.stk-ghost { display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; border: 3px dashed color-mix(in srgb, var(--muted) 45%, transparent); color: color-mix(in srgb, var(--muted) 70%, transparent); font-size: 38px; font-weight: 800; }
+.stk-cap { font-size: 13px; font-weight: 800; line-height: 1.15; text-align: center; overflow-wrap: anywhere; }
+.stk-num { font-size: 12px; font-weight: 700; color: var(--muted); }
+.stk-date { font-size: 11.5px; color: var(--muted); }
+
+/* the big "My stickers" card on the young Progress tab */
+.stickers-card { display: flex; align-items: center; gap: 14px; margin: 4px 0 14px; padding: 16px; text-decoration: none; color: var(--text); background: linear-gradient(150deg, color-mix(in srgb, var(--gold) 20%, var(--surface)), var(--surface)); border: 2px solid color-mix(in srgb, var(--gold) 50%, var(--border)); }
+.stickers-card .k { display: block; font-size: 21px; font-weight: 800; line-height: 1.15; }
+.stickers-card .s { display: block; margin-top: 3px; font-size: 14px; color: var(--muted); font-weight: 650; }
+.stickers-card .go { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--fill-navy); color: var(--on-fill); }
+.sc-pile { flex: none; display: flex; align-items: center; padding-left: 2px; }
+.sc-pile .stk { margin-left: -20px; }
+.sc-pile .stk:first-child { margin-left: 0; }
+.sc-pile .sc-q { width: 56px; height: 56px; font-size: 28px; }
+.stickers-card:focus-visible { outline: 4px solid var(--accent); outline-offset: 2px; }
+.sc-pile .stk:nth-child(1) { z-index: 3; }
+.sc-pile .stk:nth-child(2) { z-index: 2; }

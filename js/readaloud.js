@@ -25,7 +25,7 @@ const ReadAloud = (() => {
   const READ = [
     "h1:not(.topbar-title)", "h2", "h3", ".topbar-title",
     ".m-bubble p", ".hero > p", ".shell-head .sub", ".empty-text", ".empty p",
-    ".plan-title", ".qotd .quiz-q", ".subject-name", ".ch-title", ".continue .t", ".hub-nav a", ".guided-card strong", ".gc-title", ".tool .tt",
+    ".plan-title", ".qotd .quiz-q", ".subject-name", ".ch-title", ".js-name", ".stk-sub", ".sw-title", ".sw-name", ".continue .t", ".hub-nav a", ".guided-card strong", ".gc-title", ".tool .tt",
     ".note li", "dl.terms dt", "dl.terms dd", ".flashcard", ".example .q", ".example .steps li", ".example .answer",
     ".g-lead", ".g-note li", ".g-steps li",
     ".quiz-q", ".feedback",
