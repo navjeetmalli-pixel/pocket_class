@@ -123,6 +123,7 @@
         slots.forEach((x, s) => {
           if (x.locked) return;
           const e = events[x.ev];
+          api.answered({ q: e.label, explain: yearText(e) }, e.rank === s);
           if (e.rank === s) {
             x.locked = true;
             good++;

@@ -184,6 +184,7 @@
         mark();
         const it = items[c];
         const box = boxes[g];
+        api.answered({ q: it.label, explain: groups[it.group] }, it.group === g);
         if (it.group === g) {
           it.placed = true;
           done++;

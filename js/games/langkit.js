@@ -273,7 +273,9 @@ const LangGames = (() => {
       const mine = seq();
       const accepted = [P.target, ...(P.alts || [])];
       const fb = $("[data-fb]");
-      if (accepted.some((a) => canon(P, a) === canon(P, mine))) {
+      const okNow = accepted.some((a) => canon(P, a) === canon(P, mine));
+      if (cfg.answered) cfg.answered(P, okNow); // the game reports the attempt (api.answered)
+      if (okNow) {
         solved = true;
         flags = mine.map(() => true);
         if (checks === 1) firstTry++;

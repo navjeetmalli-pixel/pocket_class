@@ -299,13 +299,42 @@
     },
 
     mount(el, data, api) {
-      MK.run(el, api, { rounds: data.rounds, prompt, draw });
+      // each checked round goes to api.answered(item(round), ok) inside MK.run (js/games/mathkit.js)
+      MK.run(el, api, { rounds: data.rounds, prompt, draw, item });
     },
   });
 
   const fmtP = (x, y) => `(${MK.num(x)}, ${MK.num(y)})`;
   const QUAD = ["I", "II", "III", "IV"];
   const quadOf = (x, y) => (x > 0 && y > 0 ? 0 : x < 0 && y > 0 ? 1 : x < 0 && y < 0 ? 2 : 3);
+
+  // plain English text for the learning record (never translated)
+  function item(r) {
+    let q;
+    switch (r.type) {
+      case "plot":
+        q = `Plot the graph of the linear equation ${eqText(r.m, r.c)} on the coordinate plane`;
+        break;
+      case "line":
+        q = "Find the equation of a straight line from its graph: slope and intercept of the line y = mx + c";
+        break;
+      case "point":
+        q = `Plot the point (${r.x}, ${r.y}) on the coordinate plane using its coordinates`;
+        break;
+      case "read":
+        q = "Read the coordinates (x, y) of a point on the coordinate plane";
+        break;
+      case "quadrant":
+        q = "Name the quadrant of a point on the coordinate plane from its coordinates";
+        break;
+      case "zeros":
+        q = "Find the zeros of a polynomial from its graph: where the curve crosses the x-axis";
+        break;
+      default:
+        q = `Match the graph of the function ${r.names[r.answer]} to its equation`;
+    }
+    return { q, explain: q };
+  }
 
   function prompt(r) {
     switch (r.type) {

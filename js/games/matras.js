@@ -54,7 +54,7 @@
         done: `<div><strong lang="${lang}" style="font-size:22px">${esc(w.word)}</strong> ${LangGames.speaker(w.word)}</div>`,
         intro: t("Build this word"),
       }));
-      LangGames.builder(el, api, { puzzles, preview: true, help: `${t("Build the word shown by the picture. Tap the letters and vowel signs in order, or drag them into the boxes. Then tap Check.")} ${t("A vowel sign is shown on a dotted circle (◌), so you can see it on its own.")}` });
+      LangGames.builder(el, api, { answered: (p, ok) => api.answered({ q: p.answer, explain: "" }, ok), puzzles, preview: true, help: `${t("Build the word shown by the picture. Tap the letters and vowel signs in order, or drag them into the boxes. Then tap Check.")} ${t("A vowel sign is shown on a dotted circle (◌), so you can see it on its own.")}` });
     },
   });
 })();

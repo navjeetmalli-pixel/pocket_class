@@ -87,7 +87,7 @@ conflicts with the product rules is rejected below.
 | Step | What | Why first |
 |---|---|---|
 | 1 | Baseline (this file) | done |
-| 2 | **Games and labs report every answer to the learning record** (gap 3). The engine already has `api.answered`; each game must call it. | Cheap. Without it, nothing games do shows up in skills, revision or Today's plan. |
+| 2 ✅ | **Games and labs report every answer to the learning record** (gap 3). Done 5 Nov 2026: all 18 games and the India map; a strict skill match for made-up game items; at most 3 answers per skill per round; `scripts/check-evidence.js` guards it. The engine already has `api.answered`; each game must call it. | Cheap. Without it, nothing games do shows up in skills, revision or Today's plan. |
 | 3 | **Objectives for pilot chapters** (gaps 1, 2, 4): about 10 of the most-used Class 3–10 Maths and Science chapters get hand-written objectives, prerequisites, common mistakes and `obj:` tags on questions. | Makes Progress honest where children spend the most time. |
 | 4 | **Visual pass on one slice** (gaps 7–9): Today → chapter → lesson → game → results → Progress. Merge the token systems, swap emoji for SVG, give empty states an action, and remove Today's repeated chapter. | One coherent journey before touching every screen. |
 | 5 | **Age bands** (gap 10) across that slice. | Needs the token merge first. |

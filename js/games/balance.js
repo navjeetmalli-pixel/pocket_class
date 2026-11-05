@@ -179,7 +179,8 @@
     },
 
     mount(el, data, api) {
-      MK.run(el, api, { rounds: data.rounds, prompt: () => t("Get x on its own. Do the same to both sides."), draw });
+      // each checked round goes to api.answered(item(round), ok) inside MK.run (js/games/mathkit.js)
+      MK.run(el, api, { rounds: data.rounds, prompt: () => t("Get x on its own. Do the same to both sides."), draw, item: (r) => ({ q: `Balance the equation ${eqText(r)}: solve the linear equation for x`, explain: `Solve a linear equation in one variable by doing the same to both sides: x = ${r.x}.`, answer: String(r.x) }) });
     },
   });
 

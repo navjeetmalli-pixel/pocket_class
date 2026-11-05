@@ -169,6 +169,7 @@
         checks++;
         flags = order.map((id, pos) => id === pos);
         const wrong = flags.filter((f) => !f).length;
+        api.answered({ q: plain(p.q), explain: p.answer ? plain(p.answer) : p.steps.map(plain).join(" ") }, !wrong);
         sel = null;
         const fb = el.querySelector("[data-fb]");
         if (wrong) {

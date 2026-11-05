@@ -51,7 +51,7 @@
         done: `<div lang="${lang}" style="font-size:18px;font-weight:650">${esc(p.s)} ${LangGames.speaker(p.s)}</div>`,
         intro: t("Put the words in order to make a sentence."),
       }));
-      LangGames.builder(el, api, { puzzles, wide: true, preview: false, help: t("Put the words in the right order to make a correct sentence. Tap the words, or drag them into the boxes. Then tap Check.") });
+      LangGames.builder(el, api, { answered: (p, ok) => api.answered({ q: p.answer, explain: "" }, ok), puzzles, wide: true, preview: false, help: t("Put the words in the right order to make a correct sentence. Tap the words, or drag them into the boxes. Then tap Check.") });
     },
   });
 })();

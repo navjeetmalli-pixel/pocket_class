@@ -179,6 +179,7 @@
         if (locked || !api.live()) return;
         locked = true;
         const ok = i === cur.answer;
+        api.answered(cur, ok, i);
         el.querySelectorAll(".option").forEach((b) => {
           const n = Number(b.dataset.i);
           b.classList.add("locked");

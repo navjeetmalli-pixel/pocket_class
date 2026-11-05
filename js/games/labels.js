@@ -150,6 +150,7 @@
         selChip = selSlot = null;
         mark();
         const slot = slots[s];
+        api.answered({ q: slots[c].label, explain: plain(d.title || "") }, c === s);
         if (c === s) {
           slot.done = true;
           slot.tx.classList.remove("lab-hidden");

@@ -144,7 +144,8 @@
     },
 
     mount(el, data, api) {
-      MK.run(el, api, { rounds: data.rounds, prompt, draw });
+      // each checked round goes to api.answered(item(round), ok) inside MK.run (js/games/mathkit.js)
+      MK.run(el, api, { rounds: data.rounds, prompt, draw, item });
     },
   });
 
@@ -169,6 +170,24 @@
       default:
         return r.ext ? 360 / r.n : ((r.n - 2) * 180) / r.n;
     }
+  }
+
+  // plain English text for the learning record (never translated)
+  function item(r) {
+    const a = answerOf(r);
+    const kind = (v) => `${typeOf(v)} angle`;
+    const q = {
+      est: `Estimate and measure an angle: an ${kind(r.a)} of about ${r.a} degrees`,
+      name: `Name the type of angle: acute, right, obtuse, straight or reflex angle (this is a ${kind(r.a)})`,
+      tri: "Find the missing angle of a triangle: the angle sum of a triangle is 180 degrees",
+      isos: "Find an angle of an isosceles triangle: the angles opposite equal sides are equal, angle sum 180 degrees",
+      ext: "Find the exterior angle of a triangle: the exterior angle equals the sum of the two interior opposite angles",
+      vert: `Find the angle when two lines intersect: vertically opposite angles are equal, adjacent angles on a straight line add to 180 degrees (${r.ask})`,
+      line: r.comp ? "Find the complementary angle: two angles that make a right angle add up to 90 degrees" : "Find the angle on a straight line: supplementary angles add up to 180 degrees",
+      quad: "Find the missing angle of a quadrilateral: the angle sum of a quadrilateral is 360 degrees",
+      poly: r.ext ? `Find the exterior angle of a regular polygon with ${r.n} sides: exterior angles add up to 360 degrees` : `Find the interior angle of a regular polygon with ${r.n} sides: angle sum of a polygon`,
+    }[r.type];
+    return { q, explain: q, answer: String(a) };
   }
 
   function prompt(r) {

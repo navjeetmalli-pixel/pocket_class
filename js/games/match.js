@@ -73,6 +73,7 @@
         const ri = side === "R" ? i : sel.i; // the meaning's pair
         sel = null;
         select(null);
+        api.answered({ q: pairs[li].term, explain: pairs[li].meaning }, li === ri);
         if (li === ri) {
           [b, other].forEach((x) => {
             x.classList.add("done");

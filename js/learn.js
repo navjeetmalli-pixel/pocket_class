@@ -4,7 +4,7 @@
 //   quiz / mock test / mistakes practice / revision / practice-by-topic rounds  js/quiz.js (one batch when the round ends)
 //   find-my-level check                                                          js/views/paths.js
 //   guided lesson: topics read, hints shown, fade / turn / practice answers      js/guided.js
-//   games: every MCQ answer (api.answered) and one "game" event at the end       js/games/engine.js
+//   games: every scored attempt (api.answered, max 3 per objective a round) and one "game" event   js/games/engine.js
 //   teach-back ticks                                                             js/guided.js
 //   virtual labs: the first run (lesson-step), each explanation and label-check answer (answer)   js/labs/labs.js, cell.js
 //   Today's plan items finished (type "plan", no objective: it changes no state) js/plan.js
@@ -31,13 +31,15 @@ const Learn = (() => {
 
   // Builds one answer event for a question item, or null when the item can't be placed in a chapter.
   //   item: { q, options, answer, explain, ref: { key, cls, subject, chapter }, kinds? }
+  // Game answers (source "game") that aren't saved bank questions use the strict objective match: an item that can't be
+  // placed clearly is not recorded. A saved question (ref.key) is placed exactly as it is in a quiz.
   function answerEvent(item, ok, { picked = null, hints = 0, attempt, source = "quiz" } = {}) {
     const r = item.ref || {};
     const chapter = chapterOfRef(r);
     const cls = r.cls != null ? r.cls : r.key ? Store.parseKey(r.key).cls : null; // class 0 is the pseudo class of a path's own chapters
     const subject = r.subject || (r.key ? Store.parseKey(r.key).subject : null);
     if (!chapter || cls == null || !subject || !ready(cls)) return null;
-    const o = Objectives.forQuestion(cls, subject, chapter, item);
+    const o = Objectives.forQuestion(cls, subject, chapter, item, { strict: source === "game" && !r.key });
     if (!o) return null;
     const e = { type: "answer", cls, subject, chapter, obj: o.id, ok: !!ok, hints, attempt: attempt || (r.key && Store.state.mistakes[r.key] ? 2 : 1), source };
     if (!ok) e.err = errorOf(item, picked);

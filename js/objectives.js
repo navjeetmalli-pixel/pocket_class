@@ -133,7 +133,9 @@ const Objectives = (() => {
   }
 
   // The objective a question belongs to: q.obj when the question names one, else the best word match, else the first.
-  function forQuestion(cls, subject, chapter, q) {
+  // strict (games): no guessing. Only a named objective, the chapter's only objective, or a word match that clearly wins
+  // (above zero and ahead of the next best) counts; otherwise null and the answer is not recorded against any objective.
+  function forQuestion(cls, subject, chapter, q, { strict = false } = {}) {
     const ch = chapterOf(cls, subject, chapter);
     const objs = forChapter(cls, subject, ch);
     if (!objs.length) return null;
@@ -147,6 +149,7 @@ const Objectives = (() => {
     sc.forEach((s, i) => {
       if (s > sc[best]) best = i;
     });
+    if (strict && !(sc[best] > 0 && sc.every((s, i) => i === best || s < sc[best]))) return null;
     return objs[best];
   }
 

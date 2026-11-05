@@ -78,6 +78,7 @@
         const btn = el.querySelector(`[data-o="${k}"]`);
         const fb = el.querySelector("[data-fb]");
         const letterQ = q.mode === "picture";
+        api.answered({ q: q.right.word, explain: show(lang, q.right) }, o === q.right, k);
         if (o === q.right) {
           answered = true;
           btn.classList.add("ok");

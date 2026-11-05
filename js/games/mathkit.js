@@ -54,7 +54,7 @@ const MathKit = (() => {
   // ---------- the round-by-round runner ----------
   // opts: { rounds: [...], prompt(round, i) -> html, draw(round, board, submit, i), stars?(avgCredit) }
   // submit({ ok, credit 0..1, pts, right (html), yours (html), explain (html), headline?, reveal?() }) ends the round: the
-  // runner scores it, locks the board, shows the correct answer with the explanation, and a Next button.
+  // runner records it (opts.item(round) -> { q, explain, answer } for api.answered) and scores it, locks the board, shows the correct answer with the explanation, and a Next button.
   function run(el, api, o) {
     const rounds = o.rounds;
     const total = rounds.length;
@@ -101,6 +101,7 @@ const MathKit = (() => {
       } else streak = 0;
       api.streak(streak);
       api.score(pts + (ok ? bonus : 0));
+      if (o.item) api.answered(o.item(r, x), ok); // learning record: plain English concept words for the objective matcher
       if (!ok) api.miss({ prompt: x.missPrompt || o.prompt(r, i), yours: x.yours || "", right: x.right, explain: x.explain });
       const head = x.headline || (ok ? t("Correct! 🎉") : t("Not quite"));
       const plus = pts + (ok ? bonus : 0) > 0 ? ` +${pts + (ok ? bonus : 0)}` : "";

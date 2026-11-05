@@ -265,6 +265,16 @@
     const nm = (id) => t(BY[id].name);
     const cp = (id) => t(BY[id].capital);
     const list = (ids) => ids.map(nm).join(", ");
+    // Learning record (labs write "answer" events against the chapter the lab was opened from; none if there is no chapter).
+    // The text is plain English, never translated, so the objective matcher can read it.
+    const raw = (type, id) => (type === "state" ? BY[id].name : featOf(type, id).name);
+    const evidence = (q, ok, hints) => {
+      try {
+        api.logItem({ q, explain: q }, ok, hints || 0);
+      } catch (e) {
+        /* the record is optional */
+      }
+    };
     const $ = (s) => el.querySelector(s);
     const mode = () => S.mode;
 
@@ -573,6 +583,7 @@
       const q = f.q[f.i];
       const want = q[0] === "cap" ? ["state", q[1]] : q;
       const right = type === want[0] && id === want[1];
+      evidence(q[0] === "cap" ? `Find the state whose capital is ${BY[q[1]].capital} on the map of India (capital city of ${BY[q[1]].name})` : q[0] === "state" ? `Find the state ${BY[q[1]].name} on the map of India` : `Find the ${q[0]} ${featOf(q[0], q[1]).name} on the map of India`, right, f.miss);
       if (right) {
         const pts = f.miss === 0 ? 2 : f.miss === 1 ? 1 : 0;
         f.pts += pts;
@@ -650,6 +661,7 @@
         return;
       }
       const chip = S.psel;
+      evidence(`Place ${BY[chip].name} on the map of India: locate the state (${BY[chip].region})`, chip === stateId, p.wrong);
       if (chip === stateId) {
         p.done[chip] = true;
         p.msg = `${t("{x} is correct.", { x: nm(chip) })} ${t("Region: {r}.", { r: t(BY[chip].region) })}`;

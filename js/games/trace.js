@@ -255,6 +255,7 @@
       let timers = [];
       let cur = null; // the letter on the board: { L, strokes: [[pts]], paths }
       let stroke1 = true; // the current stroke has had no failed try yet
+      let letterHelp = false; // this letter needed the help fallback (Show me or Tap to continue)
 
       const $ = (sel) => el.querySelector(sel);
       const later = (fn, ms) => {
@@ -332,7 +333,10 @@
       function strokeDone(withHelp) {
         const { strokes } = cur;
         strokesTotal++;
-        if (withHelp) helped++;
+        if (withHelp) {
+          helped++;
+          letterHelp = true;
+        }
         else if (stroke1) firstTry++;
         api.score(withHelp ? 2 : stroke1 ? 10 : 6);
         s++;
@@ -363,6 +367,8 @@
       function letterDone() {
         const { L, strokes } = cur;
         api.score(20);
+        api.answered({ q: `Write the letter ${L.ch} ${L.word ? "for " + L.word + " " : ""}(${lang} alphabet): trace the strokes of the letter`, explain: `Letter formation: writing the letter ${L.ch}.` }, !letterHelp);
+        letterHelp = false;
         const last = n === total - 1;
         const word = L.word ? `<div class="tr-word"><span class="lt-emoji big" aria-hidden="true">${L.emoji}</span><span class="lt-word big" lang="${lang}">${esc(L.word)}</span>${LangGames.speaker(L.word)}</div>` : "";
         const done = strokes.map((p) => `<path d="${toD(p)}"/>`).join("");
@@ -409,6 +415,7 @@
         if (busy || !cur) return;
         busy = true;
         helped++; // counts against stars, a little
+        letterHelp = true;
         const { strokes } = cur;
         const holder = $("[data-numbers]");
         msg(t("Watch how it is written. The numbers show the order."));

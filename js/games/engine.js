@@ -168,7 +168,7 @@ const Games = (() => {
     g.seed = newSeed();
     g.data = def.build(ctx.cls, ctx.subj, ctx.ch, g.seed);
     const hud = { ...(def.hud || {}), ...(g.data.hud || {}) };
-    Object.assign(g, { hud, pts: 0, lives: hud.lives || 0, streakNow: 0, misses: [], answers: [], events: [], ms: 0, last: Date.now(), paused: false, held: false, done: false, timeUpFn: null, saidLeft: {} });
+    Object.assign(g, { hud, pts: 0, lives: hud.lives || 0, streakNow: 0, misses: [], answers: [], events: [], perObj: {}, ms: 0, last: Date.now(), paused: false, held: false, done: false, timeUpFn: null, saidLeft: {} });
 
     g.el.innerHTML = `
       <div class="game-hud" role="group" aria-label="${t("Game status")}">
@@ -205,6 +205,15 @@ const Games = (() => {
     def.mount(g.area, g.data, g.api);
     g.timer = setInterval(() => tick(g), 250);
     paint(g);
+  }
+
+  const PER_OBJECTIVE = 3; // answers recorded per learning objective in one round
+
+  // Where a game's answers belong when an item has no ref of its own: the chapter, or for a Practice-by-topic level the
+  // first chapter it draws on (a level's own notes chapter has no objectives).
+  function defaultRef(ctx) {
+    const src = ctx.ch.sources ? ctx.ch.sources.find((x) => !x.own) : null;
+    return src ? { key: null, cls: src.cls, subject: src.subj.id, chapter: src.ch.id, path: true } : { key: null, cls: ctx.cls, subject: ctx.subj.id, chapter: ctx.ch.id };
   }
 
   function makeApi(g) {
@@ -254,9 +263,19 @@ const Games = (() => {
         }
       },
       // `picked` (the option index chosen) is optional; it lets a made-up question tell which kind of wrong option was picked.
+      // Every game calls this for each scored attempt (a question, a match, a placed card, a label...). `item` needs some text
+      // to place it under a learning objective ({ q, explain, options?, answer? }), or `obj` naming one; `ref` defaults to
+      // this game's chapter. Only clearly placed answers are recorded (strict match, js/objectives.js), and at most
+      // PER_OBJECTIVE of them per objective in one round, so a single fast game cannot master a skill on its own.
       answered(item, ok, picked) {
-        const r = item.ref || {};
-        g.events.push(Learn.answerEvent(item, ok, { picked, source: "game" })); // learning record (js/learn.js), written when the game ends
+        if (!item.ref) item = { ...item, ref: defaultRef(g.ctx) };
+        const r = item.ref;
+        const e = Learn.answerEvent(item, ok, { picked, source: "game" }); // learning record (js/learn.js), written when the game ends
+        if (e) {
+          const k = `${e.cls}/${e.subject}/${e.chapter}#${e.obj}`;
+          g.perObj[k] = (g.perObj[k] || 0) + 1;
+          if (g.perObj[k] <= PER_OBJECTIVE) g.events.push(e);
+        }
         if (!ok && picked != null) {
           const f = Learn.feedback(item, picked)[0];
           g.lastNote = f ? { at: Date.now(), text: f.kind === "tailored" ? t(f.text) : `${f.kind === "fix" ? t("This looks like a known mistake:") : t("A common mistake here is")} ${f.text} ${f.fix}` } : null;

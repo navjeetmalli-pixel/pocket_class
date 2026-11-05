@@ -45,7 +45,7 @@
         done: `<div><strong lang="en" style="font-size:22px">${esc(w.word)}</strong> ${LangGames.speaker(w.word)}</div>`,
         intro: t("{n} letters", { n: w.letters.length }),
       }));
-      LangGames.builder(el, api, { puzzles, preview: true, help: t("Look at the picture and put the letters in the right order to spell its word. Tap the letters, or drag them into the boxes. Then tap Check.") });
+      LangGames.builder(el, api, { answered: (p, ok) => api.answered({ q: p.answer, explain: "" }, ok), puzzles, preview: true, help: t("Look at the picture and put the letters in the right order to spell its word. Tap the letters, or drag them into the boxes. Then tap Check.") });
     },
   });
 })();

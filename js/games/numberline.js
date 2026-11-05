@@ -226,9 +226,22 @@
     },
 
     mount(el, data, api) {
-      MK.run(el, api, { rounds: data.rounds, prompt, draw });
+      // each checked round goes to api.answered(item(round), ok) inside MK.run (js/games/mathkit.js)
+      MK.run(el, api, { rounds: data.rounds, prompt, draw, item });
     },
   });
+
+  // plain English text for the learning record (never translated)
+  function item(r) {
+    const right = lab(r, r.target);
+    if (r.kind === "jump" || r.kind === "jumpneg") {
+      const a = MK.num((r.a * r.unit + r.lo) / r.den);
+      const b = MK.num((r.b * r.unit) / r.den);
+      return { q: `${r.add ? "Add" : "Subtract"} on the number line: ${a} ${r.add ? "+" : "-"} ${b}${r.kind === "jumpneg" ? " with negative integers" : ""}`, explain: `Jump ${r.add ? "right" : "left"} on the number line to land on ${right}.`, answer: right };
+    }
+    const noun = r.kind === "frac" ? `the fraction ${MK.frText(...r.show)} on the number line` : r.kind === "dec" ? `the decimal ${right} on the number line` : r.kind === "neg" ? `the integer ${right} (negative numbers) on the number line` : `the number ${right} on the number line`;
+    return { q: `Place ${noun}`, explain: `Locate ${noun}: it sits at ${right}.`, answer: right };
+  }
 
   function prompt(r) {
     if (r.kind === "jump" || r.kind === "jumpneg") {

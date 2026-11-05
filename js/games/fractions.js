@@ -140,9 +140,19 @@
     },
 
     mount(el, data, api) {
-      MK.run(el, api, { rounds: data.rounds, prompt, draw });
+      // each checked round goes to api.answered(item(round), ok) inside MK.run (js/games/mathkit.js)
+      MK.run(el, api, { rounds: data.rounds, prompt, draw, item });
     },
   });
+
+  // plain English text for the learning record (never translated)
+  function item(r) {
+    const f = (x) => `${x.n}/${x.d}`;
+    if (r.type === "build") return { q: `Shade ${r.n}/${r.d} of a ${r.shape === "pie" ? "circle" : "bar"}: show the fraction ${r.n}/${r.d}`, explain: `A fraction ${r.n}/${r.d} means ${r.n} of ${r.d} equal parts.`, answer: `${r.n}/${r.d}` };
+    if (r.type === "equiv") return { q: `Find an equivalent fraction: write ${f(r.f)} as a fraction with denominator ${r.cells}`, explain: `Equivalent fractions: ${f(r.f)} = ${r.f.n * r.m}/${r.cells}.`, answer: `${r.f.n * r.m}/${r.cells}` };
+    if (r.type === "compare") return { q: `Compare fractions ${f(r.a)} and ${f(r.b)}: which is bigger?`, explain: `Compare fractions using a common denominator of ${r.L}.`, answer: r.answer };
+    return { q: `${r.type === "add" ? "Add" : "Subtract"} fractions with different denominators: ${f(r.a)} ${r.type === "add" ? "+" : "-"} ${f(r.b)}`, explain: `${r.type === "add" ? "Adding" : "Subtracting"} fractions: use the common denominator ${r.L}.`, answer: `${r.target}/${r.L}` };
+  }
 
   const fh = (f) => `<span class="mk-val">${MK.frHtml(f.n, f.d)}</span>`;
   const ft = (f) => MK.frText(f.n, f.d);
