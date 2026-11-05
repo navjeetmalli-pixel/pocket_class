@@ -124,8 +124,8 @@
     const prev = chs[idx - 1];
     const next = chs[idx + 1];
     const pager = `<div class="pager no-print">
-      ${prev ? `<a class="card" href="#/chapter/${c}/${subj.id}/${prev.id}"><div class="k">${t("← Previous")}</div><div class="t">${esc(prev.title)}</div></a>` : "<span class='grow'></span>"}
-      ${next ? `<a class="card next" href="#/chapter/${c}/${subj.id}/${next.id}"><div class="k">${t("Next →")}</div><div class="t">${esc(next.title)}</div></a>` : "<span class='grow'></span>"}
+      ${prev ? `<a class="card" href="#/chapter/${c}/${subj.id}/${prev.id}"><div class="k">${icon("back")} ${t("← Previous").replace(/^←\s*/, "")}</div><div class="t">${esc(prev.title)}</div></a>` : "<span class='grow'></span>"}
+      ${next ? `<a class="card next" href="#/chapter/${c}/${subj.id}/${next.id}"><div class="k">${t("Next →").replace(/\s*→$/, "")} ${icon("next")}</div><div class="t">${esc(next.title)}</div></a>` : "<span class='grow'></span>"}
     </div>`;
 
     return {
@@ -136,7 +136,7 @@
           <div class="eyebrow"><span class="hub-ic">${SubjectIcons.html(subj, { size: 20 })}</span> ${International.on() ? t("Level {c} · {section}", { c, section: esc(ch.section) }) : t("Class {c} · {section} · Chapter {n}", { c, section: esc(ch.section), n: chapterNumber(chs, idx) })}</div>
           <h1>${esc(ch.title)}</h1>
           <p>${rich(ch.summary)}</p>
-          ${r.done || r.best != null ? `<div class="row wrap" style="margin-top:12px">${r.done ? `<span class="pill good">${t("✓ Complete")}</span>` : ""}${r.best != null ? `<span class="pill accent">${t("Best quiz score {n}%", { n: r.best })}</span>` : ""}</div>` : ""}
+          ${r.done || r.best != null ? `<div class="row wrap" style="margin-top:12px">${r.done ? `<span class="pill good">${icon("check")} ${t("✓ Complete").replace(/^✓\s*/, "")}</span>` : ""}${r.best != null ? `<span class="pill accent">${t("Best quiz score {n}%", { n: r.best })}</span>` : ""}</div>` : ""}
         </div>
         <div class="hub">
           <nav class="tabs hub-nav no-print" aria-label="${t("Chapter sections")}">${visible

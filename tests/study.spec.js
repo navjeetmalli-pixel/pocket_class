@@ -100,7 +100,8 @@ test("progress: quiz result, streak and history survive a reload; storage has th
   await page.reload();
   await check();
   await page.goto("/#/progress");
-  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("🔥 1");
+  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("1");
+  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v svg.i")).toBeVisible();
   await expect(page.locator(".stat", { hasText: "quizzes & tests" }).locator(".v")).toHaveText("1");
   const row = page.locator(".history-row");
   await expect(row).toHaveCount(1);

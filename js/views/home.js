@@ -105,6 +105,26 @@
     return first ? { k: t("Start here"), title: itemTitle(first), sub: `${subjName(first.subject)} · ${t(KIND[first.kind])}`, href: first.href } : null;
   }
 
+  // The game (or experiment) card must add something: a chapter that is not already the hero or in the plan.
+  // First choice is a chapter the learner has already opened (most recent first), then the chapter after the plan's lesson; else no card.
+  function gameFor(c, plan, main) {
+    if (International.on()) return null;
+    const used = new Set(plan.items.filter((i) => i.kind !== "path" && !i.dueKeys).map((i) => `${i.subject}/${i.chapter}`));
+    const mk = main && /^#\/chapter\/\d+\/([^/]+)\/([^/]+)/.exec(main.href);
+    if (mk) used.add(`${mk[1]}/${mk[2]}`);
+    const picked = Store.shownSubjects();
+    const ok = (subject, chapter) => picked.includes(subject) && !used.has(`${subject}/${chapter}`) && findChapter(c, subject, chapter);
+    let pick = null;
+    const opened = Object.entries(Store.state.chapters)
+      .map(([k, r]) => ({ p: Store.parseKey(k), at: typeof r.opened === "number" ? r.opened : r.opened ? 1 : 0 }))
+      .filter((x) => x.at && x.p.cls === c && ok(x.p.subject, x.p.chapterId))
+      .sort((a, b) => b.at - a.at)[0];
+    // Only a chapter the learner has already opened: a game practises what they have met, so a brand-new learner gets
+    // no game card until their first lesson (the Play tab is always there).
+    if (opened) pick = { subject: opened.p.subject, chapter: opened.p.chapterId };
+    return pick ? Plan.explore(c, [{ kind: "lesson", ...pick }]) : null;
+  }
+
   function exploreCard(ex) {
     if (!ex) return "";
     const f = findChapter(ex.cls, ex.subject, ex.chapter);
@@ -150,8 +170,14 @@
     const greet = hr < 12 ? t("Good morning") : hr < 17 ? t("Good afternoon") : t("Good evening");
 
     const plan = Plan.today(c);
-    const main = mainAction(c, plan);
-    const explore = exploreCard(Plan.explore(c, plan.items));
+    let main = mainAction(c, plan);
+    // "Start here" is the plan's first open item, which the plan card already shows with its time and tick: show it once, in the plan.
+    if (main && !main.resume && !International.on() && plan.items.some((i) => !i.done && i.href === main.href)) main = null;
+    // Same for "Continue learning" when the plan's next item is that same chapter: the plan item opens it too.
+    const chOf = (href) => (/^#\/(?:chapter|play)\/\d+\/([^/]+)\/([^/?]+)/.exec(href || "") || [null, "-", "-"]).slice(1, 3).join("/");
+    const nextItem = plan.items.find((i) => !i.done);
+    if (main && main.resume && nextItem && nextItem.kind !== "path" && chOf(main.href) === `${nextItem.subject}/${nextItem.chapter}`) main = null;
+    const explore = exploreCard(gameFor(c, plan, main));
 
     // Subject-wise view lists only the learner's picked subjects; Class-wise lists them all.
     const shown = Store.shownSubjects();
@@ -168,7 +194,7 @@
     return {
       title: t("Today"),
       html: `
-        ${Views._.shellHead(intl ? `${t("Hello")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""} 👋` : `${t("Namaste")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""} 🙏`, `${greet} · ${International.label(st.profile)} · ${intl ? t(International.country(st.profile.country).name) : st.profile.board === "pseb" ? "PSEB" : "CBSE"}`, "today")}
+        ${Views._.shellHead(intl ? `${t("Hello")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""}` : `${t("Namaste")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""}`, `${greet} · ${International.label(st.profile)} · ${intl ? t(International.country(st.profile.country).name) : st.profile.board === "pseb" ? "PSEB" : "CBSE"}`, "today")}
         <div class="${young ? "home-young" : "home-main"}">
         ${boardNote(c)}
         ${
@@ -176,7 +202,9 @@
             ? `<a class="card continue main-action mt" id="main-action" href="${main.href}">
                 <div class="grow"><div class="k">${main.k}</div><div class="t">${esc(main.title)}</div><div class="s">${main.sub}</div></div>
                 <span class="go">${icon("arrow")}</span></a>`
-            : start
+            : plan.items.length
+              ? ""
+              : start
         }
         ${planCard(plan, young)}
         ${dueCard(c)}
@@ -265,7 +293,7 @@
     const fb =
       picked === null
         ? ""
-        : `<div class="feedback ${picked === it.answer ? "good" : "bad"}"><div class="h">${picked === it.answer ? t("Correct! 🎉 Come back tomorrow for a new one.") : t("Not quite. It's been added to My mistakes.")}</div>${rich(it.explain)}</div>`;
+        : `<div class="feedback ${picked === it.answer ? "good" : "bad"}"><div class="h">${picked === it.answer ? stripEmoji(t("Correct! 🎉 Come back tomorrow for a new one.")) : t("Not quite. It's been added to My mistakes.")}</div>${rich(it.explain)}</div>`;
     return `<div class="card qotd" id="qotd">
       <div class="small muted" style="font-weight:700">${t("Question of the day")}</div>
       <div class="quiz-from">${esc(it.ref.from)}</div>

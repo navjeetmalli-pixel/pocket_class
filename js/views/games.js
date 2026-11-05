@@ -36,7 +36,7 @@
   // One tappable card per game this chapter (or level) can play, with the best stars so far.
   function gameCards(ctx) {
     const list = Games.availableFor(ctx.cls, ctx.subj, ctx.ch);
-    if (!list.length) return emptyState("🎮", t("No games for this one yet."));
+    if (!list.length) return emptyState("game", t("No games for this one yet."), { href: "#/learn", label: t("Learn") });
     return `<div class="stack">${list
       .map((g) => {
         const best = Store.gameBest(ctx.key, g.type);
@@ -68,7 +68,7 @@
   function runPage(ctx, type) {
     if (!Games.get(type)) return notFound();
     const ok = Games.availableFor(ctx.cls, ctx.subj, ctx.ch).some((g) => g.type === type);
-    if (!ok) return { title: t("Play"), html: `${topbar(t("Play"), ctx.up)}${emptyState("🎮", t("This game isn't available for this one."))}` };
+    if (!ok) return { title: t("Play"), html: `${topbar(t("Play"), ctx.up)}${emptyState("game", t("This game isn't available for this one."), { href: "#/play", label: t("Play") })}` };
     return {
       title: `${t(Games.get(type).title)} · ${ctx.title}`,
       html: `${topbar(ctx.title, ctx.listHref)}<div id="game-mount" style="--c:${ctx.subj.color}"></div>`,
@@ -183,7 +183,7 @@
             : ""
         }
         <h2 class="block-title">${t("My subjects")}</h2>
-        ${list.length ? Views._.subjectGrid(c, list, card) : emptyState("🎮", t("No games for this one yet."))}
+        ${list.length ? Views._.subjectGrid(c, list, card) : emptyState("game", t("No games for this one yet."), { href: "#/learn", label: t("Learn") })}
         </div>`,
       mount(el) {
         const go = (type) => {
@@ -221,7 +221,7 @@
       title: `${t("Games")} · ${subj.name}`,
       html: `${topbar(subj.name, "#/games")}
         ${pageHead(t("Games"), subj.name)}
-        ${rows ? `<div class="list">${rows}</div>` : emptyState("🎮", t("No games for this one yet."))}`,
+        ${rows ? `<div class="list">${rows}</div>` : emptyState("game", t("No games for this one yet."), { href: "#/learn", label: t("Learn") })}`,
     };
   }
 

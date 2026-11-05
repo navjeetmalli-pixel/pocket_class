@@ -108,7 +108,7 @@
     if (!list.length) return "";
     return `<h2 class="block-title">${t("Certificates")}</h2>
       <div class="stack">${list
-        .map((x) => `<a class="card row" href="#/certificate/${x.subject}/${x.topic.id}"><span aria-hidden="true" style="font-size:24px">🏅</span><span class="grow"><strong>${esc(x.path.title)} · ${esc(x.topic.title)}</strong><span class="small muted" style="display:block">${t("{n} {n:level|levels} mastered, average best score {p}%", { n: x.n, p: x.avg })}</span></span>${icon("next")}</a>`)
+        .map((x) => `<a class="card row" href="#/certificate/${x.subject}/${x.topic.id}"><span class="ti">${icon("medal")}</span><span class="grow"><strong>${esc(x.path.title)} · ${esc(x.topic.title)}</strong><span class="small muted" style="display:block">${t("{n} {n:level|levels} mastered, average best score {p}%", { n: x.n, p: x.avg })}</span></span>${icon("next")}</a>`)
         .join("")}</div>`;
   }
 
@@ -134,7 +134,7 @@
         teach: () => t("Explained a chapter in your own words: {x}", { x: chapter(r.chapterKey) }),
         mastered: () => t("Mastered for now: {x}", { x: skill(r.key) }),
       })[r.kind]();
-    const ICO = { improved: "📈", remembered: "🧠", hard: "💪", teach: "🗣️", mastered: "✓" };
+    const ICO = { improved: icon("trend"), remembered: icon("brain"), hard: icon("bolt"), teach: icon("speaker"), mastered: icon("check") };
     return `<h2 class="block-title">${t("Recognitions")}</h2>
       ${
         list.length
@@ -213,7 +213,7 @@
       html: `
         ${Views._.shellHead(t("Your progress"), t("{class} · {days} study {days:day|days} so far", { class: International.label(st.profile), days: activeDays }), "progress")}
         <div class="stats-4">
-          ${Store.showStreak() ? `<div class="card stat"><div class="v">${Store.streak() ? "🔥 " + Store.streak() : "–"}</div><div class="l">${t("day streak")}</div></div>` : `<div class="card stat"><div class="v">${Readiness.concept(c).started}</div><div class="l">${t("skills started")}</div></div>`}
+          ${Store.showStreak() ? `<div class="card stat"><div class="v">${Store.streak() ? icon("flame") + " " + Store.streak() : "–"}</div><div class="l">${t("day streak")}</div></div>` : `<div class="card stat"><div class="v">${Readiness.concept(c).started}</div><div class="l">${t("skills started")}</div></div>`}
           <div class="card stat"><div class="v">${minutesLabel(week)}</div><div class="l">${t("studied this week")}</div></div>
           <div class="card stat"><div class="v">${minutesLabel(st.focusMin)}</div><div class="l">${t("focus timer")}</div></div>
           <div class="card stat"><div class="v">${quizzes.length}</div><div class="l">${t("quizzes &amp; tests")}</div></div>
@@ -246,7 +246,7 @@
                     <span class="pill ${pct(h.score, h.total) >= 60 ? "good" : "bad"}">${h.score}/${h.total}</span></div>`
                 )
                 .join("")}</div>`
-            : emptyState("📝", t("Take your first chapter quiz to see your scores here."))
+            : emptyState("quiz", t("Take your first chapter quiz to see your scores here."), { href: "#/learn", label: t("Learn") })
         }`,
     };
   }

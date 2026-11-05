@@ -88,7 +88,7 @@
 
   function setupHTML(c) {
     const withContent = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length);
-    if (!withContent.length) return emptyState("📚", t("No chapters are available yet."));
+    if (!withContent.length) return emptyState("learn", t("No chapters are available yet."), { href: "#/learn", label: t("Learn") });
     if (testCfg.subject !== "all" && !withContent.some((s) => s.id === testCfg.subject)) testCfg.subject = "all";
 
     const pool = testPool(c).reduce((a, g) => a + g.length, 0);

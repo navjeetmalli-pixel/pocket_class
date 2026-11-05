@@ -118,7 +118,7 @@
     return {
       title: t("Play"),
       html: `${Views._.shellHead(t("Play"), t("Short games from the levels you are working on. Your best stars are saved."), "play")}
-        <div class="play-main">${blocks || emptyState("🎮", t("No games for this one yet."))}
+        <div class="play-main">${blocks || emptyState("game", t("No games for this one yet."), { href: "#/learn", label: t("Learn") })}
         <p class="small muted" style="margin:18px 2px 0">${t("Every level in Learn has its own games too. Open a level and choose Play.")}</p></div>`,
     };
   }
@@ -158,7 +158,7 @@
     return {
       title: t("Explore"),
       html: `${Views._.shellHead(t("Explore"), t("Investigate ideas by trying them. These are linked to the levels you are working on."), "explore")}
-        <div class="explore-main">${cards.length ? `<div class="stack">${cards.join("")}</div>` : emptyState("🔭", t("No labs for your current levels yet. Games and topics are in Play and Learn."))}</div>`,
+        <div class="explore-main">${cards.length ? `<div class="stack">${cards.join("")}</div>` : emptyState("lab", t("No labs for your current levels yet. Games and topics are in Play and Learn."), { href: "#/play", label: t("Play") })}</div>`,
     };
   }
 

@@ -12,7 +12,9 @@ test("students: add a second student, progress is separate, switch back, delete"
   await page.goto(`/#/chapter/10/maths/${MATHS.id}/quiz`);
   await quickQuiz(page);
   await page.goto("/#/progress");
-  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("🔥 1");
+  const streakV = page.locator(".stat", { hasText: "day streak" }).locator(".v");
+  await expect(streakV).toHaveText(/^\s*1$/);
+  await expect(streakV.locator("svg")).toHaveCount(1); // the flame icon
   await openMenu(page);
   await expect(page.locator("#menu-sheet [data-stud]")).toHaveCount(0); // a single student has no switcher
   await page.keyboard.press("Escape");
@@ -46,7 +48,8 @@ test("students: add a second student, progress is separate, switch back, delete"
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Asha");
   await expect(page.locator(".home-head .sub")).toContainText("Class 10 · CBSE");
   await page.goto("/#/progress");
-  await expect(page.locator(".stat", { hasText: "day streak" }).locator(".v")).toHaveText("🔥 1");
+  await expect(streakV).toHaveText(/^\s*1$/);
+  await expect(streakV.locator("svg")).toHaveCount(1); // the flame icon
   await expect(page.locator(".history-row")).toHaveCount(1);
   store = await readStore(page);
   expect(current(store).profile.name).toBe("Asha");

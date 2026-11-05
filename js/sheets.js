@@ -100,7 +100,7 @@ const Sheets = (() => {
       title: t("Practice sheets"),
       html: `${topbar(t("Practice sheets"), "#/learn")}
         <p class="small muted" style="margin:-6px 2px 16px">${t("Choose chapters and question types. Every sheet has an answer key, and there's always a new sheet with different questions.")}</p>
-        ${subs.length ? `<div id="maker"></div>` : emptyState("📚", t("No chapters are available yet."))}`,
+        ${subs.length ? `<div id="maker"></div>` : emptyState("learn", t("No chapters are available yet."), { href: "#/learn", label: t("Learn") })}`,
       mount(el) {
         const box = el.querySelector("#maker");
         if (!box) return;
@@ -281,7 +281,7 @@ const Sheets = (() => {
         </div>
         ${
           empty
-            ? Views.ui.emptyState("📝", t("No questions match these settings. Go back and pick more chapters or question types."))
+            ? Views.ui.emptyState("notes", t("No questions match these settings. Go back and pick more chapters or question types."))
             : `<article class="ws">
           <header class="ws-head">
             <div class="ws-title"><strong>${t("Practice Sheet {n}", { n: o.n })}</strong><span>${classLine}</span></div>

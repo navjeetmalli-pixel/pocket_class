@@ -202,17 +202,17 @@ test("explore: a visual Maths game opens from Maths Studio; a class without labs
 
 test("today: a new learner gets a start action and a plan, never an empty page or invented progress", async ({ page }) => {
   await onboard(page, { name: "Mini", cls: 5 });
-  await expect(page.locator("#main-action")).toBeVisible();
-  await expect(page.locator("#main-action .k")).toHaveText(/Start here|Start learning/);
-  await expect(page.locator("#main-action .k")).not.toHaveText(/Continue/);
+  // The plan carries the first lesson; the Start here card would repeat it, so it only shows when the plan is empty.
+  await expect(page.locator("#main-action")).toHaveCount(0);
+  await expect(page.locator("#plan .plan-item").first()).toBeVisible();
   await expect(page.locator("#plan")).toBeVisible();
   await expect(page.locator("#due-today")).toHaveCount(0); // nothing is due yet, so no card
   await expect(page.getByRole("heading", { name: "Recently opened" })).toHaveCount(0);
   await expect(page.locator(".stat")).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "My subjects" })).toBeVisible();
-  // Today keeps to its order: start/continue, plan, daily challenge (when loaded), subjects.
+  // Today keeps to its order: plan (start/continue only when it adds something), daily challenge (when loaded), subjects.
   const order = await page.locator("#app h2, #app .main-action").evaluateAll((els) => els.map((e) => (e.classList.contains("main-action") ? "main" : e.textContent.trim())));
-  expect(order.indexOf("main")).toBeLessThan(order.indexOf("Today's plan"));
+  expect(order).not.toContain("main");
   expect(order.indexOf("Today's plan")).toBeLessThan(order.indexOf("My subjects"));
 });
 

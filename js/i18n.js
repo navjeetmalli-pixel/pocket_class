@@ -2700,3 +2700,10 @@ Object.assign(I18N.hi, {
   "Maths, English and Science practice by topic, from beginner to advanced level. It is not tied to any national curriculum. The questions and notes are in English, were written for Indian school books, and have not yet been checked by teachers. Your progress is stored only on this device.": "गणित, अंग्रेज़ी और विज्ञान का अभ्यास विषय-खंड के अनुसार, शुरुआत से उन्नत स्तर तक। यह किसी देश के पाठ्यक्रम से बँधा नहीं है। प्रश्न और नोट्स अंग्रेज़ी में हैं, भारतीय स्कूली किताबों के लिए लिखे गए थे और अभी शिक्षकों ने जाँचे नहीं हैं। आपकी प्रगति सिर्फ़ इसी डिवाइस पर रहती है।",
   "Level {c} · {section}": "स्तर {c} · {section}",
 });
+
+Object.assign(I18N.pa, {
+  "Practise a chapter": "ਇੱਕ ਅਧਿਆਇ ਦਾ ਅਭਿਆਸ ਕਰੋ",
+});
+Object.assign(I18N.hi, {
+  "Practise a chapter": "एक अध्याय का अभ्यास करें",
+});

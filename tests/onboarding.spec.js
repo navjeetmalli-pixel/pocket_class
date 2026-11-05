@@ -167,7 +167,7 @@ test("onboarding: the name is optional; the picture and lesson language are save
   await cont(page).click();
   await page.getByRole("button", { name: "I'll decide later" }).click();
   await page.getByRole("button", { name: "Skip tour" }).click();
-  await expect(h1(page)).toHaveText(/^Namaste\s*🙏$/);
+  await expect(h1(page)).toHaveText(/^Namaste$/);
   expect(current(await readStore(page)).profile).toMatchObject({ name: "", learnLang: "pa", avatar: null });
 });
 

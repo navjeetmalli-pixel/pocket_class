@@ -178,6 +178,14 @@ const ICONS = {
   users: '<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6"/><path d="M18 14.3c1.9.8 3 2.7 3 5.7"/>',
   star: '<path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/>',
   eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  medal: '<circle cx="12" cy="14" r="6"/><path d="m8.5 9.5-2-6.5h4.2l1.3 3"/><path d="m15.5 9.5 2-6.5h-4.2L12 5.5"/><path d="m12 11.5.9 1.8 2 .3-1.4 1.4.3 2-1.8-.9-1.8.9.3-2-1.4-1.4 2-.3z"/>',
+  sparkle: '<path d="M12 3c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7z"/><path d="M19 17v4"/><path d="M17 19h4"/>',
+  trend: '<path d="M3 17 9 11l4 4 8-9"/><path d="M15 6h6v6"/>',
+  brain: '<path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V4a3 3 0 0 0-3 0z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/>',
 };
+
+// Removes emoji (and the space before them) from a translated string. Lets a screen show an SVG icon where the translation
+// still carries a celebration emoji, without touching the Punjabi and Hindi dictionaries.
+const stripEmoji = (s) => String(s).replace(/\s*[\u{1F000}-\u{1FFFF}\uFE0F\u200D]+/gu, "").trim();
 
 const icon = (name) => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] || ""}</svg>`;

@@ -366,7 +366,7 @@
           </div>
         </div>
         <div id="quiz-mount" style="--c:${subj.color}" hidden></div>`
-            : emptyState("📚", t("This level has no questions yet."))
+            : emptyState("learn", t("This level has no questions yet."))
         }
         <div class="pager no-print" style="margin-top:22px">
           ${prev ? `<a class="card" href="${href(id, topicId, prev.id)}"><div class="k">${t("← Previous")}</div><div class="t">${levelName(prev.level)} · ${esc(prev.title)}</div></a>` : "<span class='grow'></span>"}

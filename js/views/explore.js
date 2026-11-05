@@ -125,7 +125,7 @@
             </section>`
           )
           .join("")
-      : emptyState("🔭", t("Experiments and labs for Class {n} are coming soon. Games and lessons are in Play and Learn.", { n: c }));
+      : emptyState("lab", t("Experiments and labs for Class {n} are coming soon. Games and lessons are in Play and Learn.", { n: c }), { href: "#/play", label: t("Play") });
     return {
       title: t("Explore"),
       html: `${Views._.shellHead(t("Explore"), t("Investigate ideas by trying them. Each one links back to its chapter."), "explore")}

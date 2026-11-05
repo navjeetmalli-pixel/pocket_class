@@ -331,7 +331,7 @@ const Guided = (() => {
     });
     const cur = order.indexOf(Loop.STAGE_OF[stepKey()]);
     return `<ol class="lp-stages" aria-label="${t("Stages of this lesson")}">${order
-      .map((st, i) => `<li class="${i < cur ? "done" : i === cur ? "now" : ""}" ${i === cur ? 'aria-current="step"' : ""}>${i < cur ? '<span aria-hidden="true">✓</span> ' : ""}${esc(t(Loop.stageLabel(st, s.subj.id)))}</li>`)
+      .map((st, i) => `<li class="${i < cur ? "done" : i === cur ? "now" : ""}" ${i === cur ? 'aria-current="step"' : ""}>${i < cur ? icon("check") + " " : ""}${esc(t(Loop.stageLabel(st, s.subj.id)))}</li>`)
       .join("")}</ol>`;
   }
 
@@ -513,7 +513,7 @@ const Guided = (() => {
   function resolve() {
     const it = { ...s.first, picked: s.guess === "unsure" ? null : s.guess };
     const right = it.picked === it.answer;
-    const head = right ? t("Your first guess was right 🎉") : s.guess === "unsure" ? t("Here is the answer") : t("Not that one, and now you can see why");
+    const head = right ? stripEmoji(t("Your first guess was right 🎉")) : s.guess === "unsure" ? t("Here is the answer") : t("Not that one, and now you can see why");
     return `
       <p class="g-lead">${t("The question you saw at the start, with what you now know.")}</p>
       <div class="quiz-q">${rich(it.q)}</div>
@@ -549,7 +549,7 @@ const Guided = (() => {
       const ok = f.options ? f.picked === 0 : null;
       foot = `${f.options ? "" : `<div class="answer">${rich(f.answer)}</div>`}
         <div class="feedback ${ok === false ? "bad" : ok ? "good" : "neutral"}"><div class="h">${
-          ok ? t("Correct! 🎉") : ok === false ? t("Not quite") : t("Here are the missing steps")
+          ok ? stripEmoji(t("Correct! 🎉")) : ok === false ? t("Not quite") : t("Here are the missing steps")
         }</div>${t("The highlighted steps are the ones you completed. Compare them with your own working.")}${ok === false ? extra({ ...f, answer: 0, explain: "" }, f.picked) : ""}</div>
         ${offerHTML()}
         ${nav()}`;
@@ -580,7 +580,7 @@ const Guided = (() => {
       .join("");
     const why = { sign: "The sign has slipped.", one: "A small arithmetic slip: the result is off.", ten: "A zero or decimal point has slipped." }[sl.kind];
     const fb = done
-      ? `<div class="feedback ${right ? "good" : "bad"}"><div class="h">${right ? t("Found it 🎉") : t("Not that one. The slip is in step {n}.", { n: sl.bad + 1 })}</div>
+      ? `<div class="feedback ${right ? "good" : "bad"}"><div class="h">${right ? stripEmoji(t("Found it 🎉")) : t("Not that one. The slip is in step {n}.", { n: sl.bad + 1 })}</div>
           <div>${t(why)} ${t("Step {n} should read:", { n: sl.bad + 1 })} <strong>${rich(sl.orig)}</strong></div>
           <div class="mt-s">${t("Tip: after each step, ask if the number still makes sense.")}</div></div>
         ${nav(undefined, "next", false)}`
@@ -605,7 +605,7 @@ const Guided = (() => {
       const ok = tn.options ? tn.picked === 0 : null;
       foot = `<div class="answer">${rich(tn.answer)}</div>
         <div class="feedback ${ok === false ? "bad" : ok ? "good" : "neutral"}"><div class="h">${
-          ok ? t("Correct! 🎉") : ok === false ? t("Not quite") : t("Here is the full solution")
+          ok ? stripEmoji(t("Correct! 🎉")) : ok === false ? t("Not quite") : t("Here is the full solution")
         }</div>${tn.shown ? t("You used {n} {n:hint|hints}.", { n: tn.shown }) + " " : ok ? t("No hints needed.") + " " : ""}${t("Compare the steps with the worked example.")}${ok === false ? extra({ ...tn, answer: 0, explain: "" }, tn.picked) : ""}</div>
         ${s.reasons.again && s.steps[s.step + 1] === "again" ? reasonBox("again") : ""}
         ${offerHTML()}
@@ -635,7 +635,7 @@ const Guided = (() => {
       <div class="quiz-q">${rich(it.q)}</div>
       ${options(it, { locked: picked, reveal: picked })}
       ${picked
-        ? `<div class="feedback ${ok ? "good" : "bad"}"><div class="h">${ok ? t("Correct, and no hints needed 🎉") : t("Not quite")}</div>
+        ? `<div class="feedback ${ok ? "good" : "bad"}"><div class="h">${ok ? stripEmoji(t("Correct, and no hints needed 🎉")) : t("Not quite")}</div>
             ${ok ? "" : `<div>${t("Correct answer:")} <strong>${rich(it.options[it.answer])}</strong></div>`}<div>${rich(it.explain)}</div>${ok ? "" : extra(it, it.picked)}</div>
           ${offerHTML()}${nav()}`
         : ""}`;
@@ -712,7 +712,7 @@ const Guided = (() => {
       </div>`;
     } else if (revealed) {
       const ok = it.picked === it.answer;
-      const head = ok ? (it.sure ? t("Correct, and you knew it 🎉") : t("Correct! Here's why, so it sticks")) : it.sure ? t("Not this time. You were sure, so read this carefully") : t("Not quite, and you sensed it");
+      const head = ok ? (it.sure ? stripEmoji(t("Correct, and you knew it 🎉")) : t("Correct! Here's why, so it sticks")) : it.sure ? t("Not this time. You were sure, so read this carefully") : t("Not quite, and you sensed it");
       foot = `<div class="feedback ${ok ? "good" : "bad"}">
           <div class="h">${head}</div>
           ${ok ? "" : `<div>${t("Correct answer:")} <strong>${rich(it.options[it.answer])}</strong></div>`}
@@ -753,7 +753,7 @@ const Guided = (() => {
       body = `<div class="quiz-q">${rich(it.q)}</div>
         ${options(it, { locked: picked, reveal: picked })}
         ${picked
-          ? `<div class="feedback ${ok ? "good" : "bad"}"><div class="h">${ok ? t("Correct, with no help 🎉") : t("Not quite")}</div>
+          ? `<div class="feedback ${ok ? "good" : "bad"}"><div class="h">${ok ? stripEmoji(t("Correct, with no help 🎉")) : t("Not quite")}</div>
               ${ok ? "" : `<div>${t("Correct answer:")} <strong>${rich(it.options[it.answer])}</strong></div>`}<div>${rich(it.explain)}</div>${ok ? "" : extra(it, it.picked)}</div>
             ${offerHTML()}
             ${last ? nav(undefined, "next", false) : nav("Next skill", "p-next", false)}`

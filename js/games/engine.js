@@ -133,7 +133,7 @@ const Games = (() => {
     stopCur();
     const def = types[type];
     if (!def) {
-      el.innerHTML = `<div class="card empty"><div class="big">🧭</div>${t("We couldn't find that page.")}</div>`;
+      el.innerHTML = Views.ui.emptyState("compass", t("We couldn't find that page."), { href: "#/play", label: t("Play") });
       return;
     }
     const g = (cur = { el, ctx, def, over: false });
@@ -300,7 +300,14 @@ const Games = (() => {
     };
     set("score", String(g.pts));
     if (g.hud.lives) set("lives", "♥".repeat(g.lives) + "♡".repeat(g.hud.lives - g.lives), t("{n} lives left", { n: g.lives }));
-    if (g.hud.streak) set("streak", g.streakNow >= 3 ? `🔥 ${g.streakNow}` : String(g.streakNow));
+    if (g.hud.streak) {
+      const sn = g.el.querySelector("[data-hud=streak]");
+      const html = g.streakNow >= 3 ? `${icon("flame")} ${g.streakNow}` : String(g.streakNow);
+      if (sn && sn.dataset.h !== html) {
+        sn.dataset.h = html;
+        sn.innerHTML = html;
+      }
+    }
     if (g.hud.timer) set("time", clock(g.hud.timer === "down" ? Math.max(0, g.hud.seconds - g.ms / 1000) : g.ms / 1000));
   }
 
@@ -377,9 +384,9 @@ const Games = (() => {
     g.el.innerHTML = `
       <div class="card result-top game-result" style="--c:${ctx.subj.color}">
         ${stars(n, "big")}
-        <div class="result-msg" tabindex="-1" data-g="msg">${MSG[n]()}</div>
+        <div class="result-msg" tabindex="-1" data-g="msg"><span class="result-ico" aria-hidden="true">${icon(n === 3 ? "medal" : n === 2 ? "star" : "bolt")}</span> ${stripEmoji(MSG[n]())}</div>
         <div class="game-score"><b>${g.pts}</b> <span class="muted">${t("points")}</span></div>
-        <div class="muted small">${rec.isBest && rec.plays > 1 ? t("New best! 🏆") : t("Best score {n}", { n: rec.best })}${lines.length ? " · " + lines.map(esc).join(" · ") : ""}</div>
+        <div class="muted small">${rec.isBest && rec.plays > 1 ? `${icon("medal")} ${stripEmoji(t("New best! 🏆"))}` : t("Best score {n}", { n: rec.best })}${lines.length ? " · " + lines.map(esc).join(" · ") : ""}</div>
         <div class="result-actions">
           <button class="btn primary" data-g="again">${icon("reset")} ${t("Play again")}</button>
           <a class="btn" href="${ctx.back}">${t(ctx.backLabel || "Back")}</a>
@@ -387,12 +394,12 @@ const Games = (() => {
       </div>
       ${Learn.improvedHTML(g.learned)}
       <h2 class="block-title">${t("What you got wrong")}</h2>
-      ${missed ? `<div class="stack">${missed}</div>` : `<div class="card small">${t("Nothing! Every answer was right. 🎉")}</div>`}
+      ${missed ? `<div class="stack">${missed}</div>` : `<div class="card small">${icon("check")} ${stripEmoji(t("Nothing! Every answer was right. 🎉"))}</div>`}
       <div class="sr-only" role="status" aria-live="polite" data-g="live"></div>`;
     g.el.onclick = (e) => e.target.closest("[data-g=again]") && begin(g);
     const msg = g.el.querySelector("[data-g=msg]");
     msg.focus({ preventScroll: true });
-    announce(`${t("{n} of 3 stars", { n })}. ${t("{n} points", { n: g.pts })}. ${missed ? t("Some answers were wrong. They are listed below.") : t("Nothing! Every answer was right. 🎉")}`);
+    announce(`${t("{n} of 3 stars", { n })}. ${t("{n} points", { n: g.pts })}. ${missed ? t("Some answers were wrong. They are listed below.") : stripEmoji(t("Nothing! Every answer was right. 🎉"))}`);
     window.scrollTo({ top: 0 });
   }
 

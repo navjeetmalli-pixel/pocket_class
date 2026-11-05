@@ -145,12 +145,16 @@ const Views = (() => {
     return subj && idx >= 0 ? { subj, chs, idx, ch: chs[idx] } : null;
   }
 
-  function emptyState(emoji, text) {
-    return `<div class="card empty"><div class="big">${emoji}</div>${text}</div>`;
+  // `iconId` is an icon from ICONS (js/util.js) or SubjectIcons (js/subject-icons.js); any other string (an emoji) is shown as it is.
+  // `action` is optional: { href, label } draws a button, so the screen is never a dead end.
+  function emptyState(iconId, text, action) {
+    const sub = typeof SubjectIcons !== "undefined" && SubjectIcons.has(iconId);
+    const art = ICONS[iconId] ? icon(iconId) : sub ? SubjectIcons.svg(iconId, { size: 36 }) : esc(iconId);
+    return `<div class="card empty"><div class="big" aria-hidden="true">${art}</div><p class="empty-text">${text}</p>${action ? `<a class="btn primary empty-action" href="${esc(action.href)}">${esc(action.label)}</a>` : ""}</div>`;
   }
 
   function notFound() {
-    return { html: `${topbar(t("Not found"), "#/")}${emptyState("🧭", t("We couldn't find that page."))}` };
+    return { html: `${topbar(t("Not found"), "#/")}${emptyState("compass", t("We couldn't find that page."), { href: "#/", label: t("Today") })}` };
   }
 
   // ---------- onboarding and settings ----------

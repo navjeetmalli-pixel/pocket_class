@@ -74,9 +74,9 @@ const Papers = (() => {
     const subs = D.subjectsFor(c).filter((s) => available(c, s.id));
     const { topbar, emptyState } = Views.ui;
     const body = !CLASSES.includes(c)
-      ? emptyState("📄", t("Sample papers are for Classes 9 to 12. For your class, try a mock test or a practice sheet."))
+      ? emptyState("notes", t("Sample papers are for Classes 9 to 12. For your class, try a mock test or a practice sheet."), { href: "#/test", label: t("Mock test") })
       : !subs.length
-        ? emptyState("📄", t("No subjects with sample papers yet."))
+        ? emptyState("notes", t("No subjects with sample papers yet."), { href: "#/learn", label: t("Learn") })
         : `<div class="stack">${subs
             .map((s) => {
               const p = pattern(c, s.id);

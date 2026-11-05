@@ -55,7 +55,7 @@
       : "";
 
     let list;
-    if (!chs.length) list = `<div class="mt">${emptyState("📚", t("Chapters for Class {n} {subject} are coming soon.", { n: c, subject: esc(subj.name) }))}</div>`;
+    if (!chs.length) list = `<div class="mt">${emptyState("learn", t("Chapters for Class {n} {subject} are coming soon.", { n: c, subject: esc(subj.name) }), { href: "#/learn", label: t("Choose a subject") })}</div>`;
     else if (grouped)
       list = sections
         .map((sec) => {

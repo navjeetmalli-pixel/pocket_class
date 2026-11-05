@@ -66,7 +66,7 @@
       })
     );
     hits.sort((a, b) => b.score - a.score);
-    if (!hits.length) return emptyState("🔍", t("No results for “{q}” in Class {n}.", { q: esc(raw.trim()), n: c }));
+    if (!hits.length) return emptyState("search", t("No results for “{q}” in Class {n}.", { q: esc(raw.trim()), n: c }));
     return hits
       .slice(0, 30)
       .map(

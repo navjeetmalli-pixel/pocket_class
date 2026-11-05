@@ -29,7 +29,8 @@ async function makeDue(page) {
 test("home: a new student sees one main action and a plan with a next lesson", async ({ page }) => {
   await seed(page, { name: "Asha", cls: 7 });
   await page.goto("/#/");
-  await expect(page.locator("#main-action")).toContainText("Start here");
+  // The plan already shows the first lesson, with its time and tick, so there is no second "Start here" card for the same chapter.
+  await expect(page.locator("#main-action")).toHaveCount(0);
   const plan = page.locator("#plan");
   await expect(plan).toBeVisible();
   await expect(plan.getByRole("heading", { name: "Today's plan" })).toBeVisible();
@@ -43,7 +44,8 @@ test("home: a new student sees one main action and a plan with a next lesson", a
   // Everything else on Today: the subjects and a way to try something (the study tools are in Learn, progress in Progress).
   await expect(page.locator("#more-tools")).toHaveCount(0);
   await expect(page.locator(".subject-card").first()).toBeVisible();
-  await expect(page.locator(".explore")).toBeVisible();
+  // A brand-new learner gets no game card: games practise chapters already met, and the plan's lesson comes first.
+  await expect(page.locator(".explore")).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "My subjects" })).toBeVisible();
   const store = current(await readStore(page));
   expect(store.plan.items.length).toBeGreaterThan(0);

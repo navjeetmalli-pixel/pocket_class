@@ -61,7 +61,7 @@
       html: `${topbar(title, "#/revise")}${
         items.length
           ? `<p class="small muted" style="margin:-6px 2px 14px">${single ? t("Your mistakes from this chapter first, then fresh questions, mixed with a few from earlier chapters. Each question names its chapter.") : t("Questions from every chapter that is due, mixed together.")}</p><div id="quiz-mount"></div>`
-          : emptyState("✅", t("Nothing is due right now. Chapters come back here a day after you study them, then after 3, 7, 14 and 30 days."))
+          : emptyState("check", t("Nothing is due right now. Chapters come back here a day after you study them, then after 3, 7, 14 and 30 days."), { href: "#/", label: t("Today's plan") })
       }`,
       mount(el) {
         if (!items.length) return;
@@ -168,7 +168,7 @@
     return {
       title: t("My mistakes"),
       html: `${topbar(t("My mistakes"), "#/progress")}${
-        items.length ? `<p class="small muted" style="margin:-6px 2px 14px">${t("Answer correctly to remove a question from this list.")}</p><div id="quiz-mount"></div>` : emptyState("✨", t("No mistakes to fix. Take a chapter quiz or mock test and any wrong answers will appear here."))
+        items.length ? `<p class="small muted" style="margin:-6px 2px 14px">${t("Answer correctly to remove a question from this list.")}</p><div id="quiz-mount"></div>` : emptyState("sparkle", t("No mistakes to fix. Take a chapter quiz or mock test and any wrong answers will appear here."), { href: "#/learn", label: t("Practise a chapter") })
       }`,
       mount(el) {
         if (!items.length) return;
@@ -206,7 +206,7 @@
                     <ul>${ch.formulas.map((f) => `<li>${rich(f)}</li>`).join("")}</ul></section>`
                 )
                 .join("")}</div>`
-            : emptyState("📄", t("Nothing here yet."))
+            : emptyState("notes", t("Nothing here yet."))
         }`,
     };
   }
