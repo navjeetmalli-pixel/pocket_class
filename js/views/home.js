@@ -55,6 +55,7 @@
       .map(
         (it) => `<li><a class="plan-item ${it.done ? "done" : ""}" href="${it.href}" data-plan="${esc(it.id)}">
           <span class="plan-tick" aria-hidden="true">${it.done ? icon("check") : ""}</span>
+          ${subjectArt(it.subject)}
           <span class="plan-body">
             <span class="plan-top"><span class="plan-kind">${t(KIND[it.kind])}</span><span class="plan-min">${t("{n} min", { n: it.min })}</span></span>
             <span class="plan-title"><span class="sr-only">${it.done ? t("Done:") : t("To do:")} </span>${esc(itemTitle(it))}</span>
@@ -153,6 +154,7 @@
       .slice(0, 3)
       .map(
         (e) => `<li><a class="plan-item" href="#/revise/due/${e.subj.id}/${e.ch.id}">
+          ${subjectArt(e.subj.id)}
           <span class="plan-body"><span class="plan-title">${esc(e.ch.title)}</span><span class="plan-why">${esc(e.subj.short)}${e.objs ? ` · ${t("{n} {n:skill|skills} to review", { n: e.objs })}` : ""}${e.mistakes ? ` · ${t("{n} {n:mistake|mistakes}", { n: e.mistakes })}` : ""}</span></span>${icon("next")}</a></li>`
       )
       .join("");
@@ -306,17 +308,18 @@
     const it = qotdItem(c);
     const st = Store.state.qotd;
     const picked = st && st.day === dayKey() ? st.picked : null;
-    const opts = it.options
-      .map((o, i) => {
+    const opts = optionsHTML(it, {
+      order: it.options.map((_, i) => i),
+      btn: (i) => {
         let k = "option";
         if (picked !== null) {
           k += " locked";
           if (i === it.answer) k += " correct";
           else if (i === picked) k += " wrong";
         }
-        return `<button class="${k}" data-qotd="${i}"><span class="letter">${"ABCD"[i]}</span><span>${rich(o)}</span></button>`;
-      })
-      .join("");
+        return { cls: k, attr: `data-qotd="${i}"` };
+      },
+    });
     const fb =
       picked === null
         ? ""
@@ -325,7 +328,7 @@
       <div class="small muted" style="font-weight:700">${t("Question of the day")}</div>
       <div class="quiz-from">${esc(it.ref.from)}</div>
       ${picHTML(it)}<div class="quiz-q" style="margin:8px 0 0">${rich(it.q)}</div>
-      <div class="options">${opts}</div>${fb}
+      ${Speech.listen(it, null, { auto: picked === null })}${opts}${fb}
     </div>`;
   }
 

@@ -4,9 +4,73 @@ const esc = (s) =>
   String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 // Escapes content text, then allows **bold** and line breaks.
-// Picture for a generated question (js/pics.js): the svg already carries its aria-label.
-const picHTML = (it) => (it && typeof it.pic === "string" && it.pic ? `<div class="q-pic">${it.pic}</div>` : "");
 const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\n/g, "<br>");
+
+// ---------- Pictures for questions and answers (js/pics.js, js/picdict.js) ----------
+// Only Classes 1-5 (body[data-band] 1-2 and 3-5) get word pictures. A question can opt out with noPic: true.
+const picsOn = () => typeof PicDict !== "undefined" && !!document.body && (document.body.dataset.band === "1-2" || document.body.dataset.band === "3-5");
+
+// Picture for a question. A made-up question carries its own svg (it.pic, already labelled); otherwise the picture dictionary
+// may give one (a shape named in the question, or the one thing it talks about), never one that is among the options.
+const picHTML = (it) => {
+  if (it && typeof it.pic === "string" && it.pic) return `<div class="q-pic">${it.pic}</div>`;
+  if (!it || !picsOn()) return "";
+  const p = PicDict.forQuestion(it);
+  return p ? `<div class="q-pic q-pic-word">${p.svg}</div>` : "";
+};
+
+// Auto-pictures from text (PicDict.illustrate): a small strip of what a sentence names ("Count 3 mangoes" shows 3 mangoes). Only for
+// Classes 1-5, never when `noPic` is set, and "" when nothing in the text can be drawn. `size` is the strip's height in px.
+const autoPic = (text, o = {}) => {
+  if (!picsOn() || !text || typeof PicDict === "undefined" || !PicDict.illustrate) return "";
+  const p = PicDict.illustrate(text, o);
+  return p ? `<span class="auto-pic" data-pic="${esc(p.keys.join(" "))}">${p.svg}</span>` : "";
+};
+// The kit's picture for a single word (a thing, never an idea or a number), as an inline art span, or "": letters and spelling games show it
+// instead of the emoji.
+const wordArt = (word, size = 64) => {
+  if (!picsOn() || !word || typeof PicDict === "undefined") return "";
+  const r = PicDict.forText(word, { decorative: true });
+  return r && r.kind === "item" ? `<span class="auto-pic word-art">${r.svg.replace("<svg ", `<svg width="${size}" height="${size}" `)}</span>` : "";
+};
+// The same picture, but also its keys (for callers that need to know what was drawn).
+const autoPicOf = (text, o = {}) => (picsOn() && text && typeof PicDict !== "undefined" && PicDict.illustrate ? PicDict.illustrate(text, o) : null);
+// A picture for a chapter in a list: from its title, else the subject's own art. (Not from the notes: the first picturable
+// thing in a note is often beside the point, e.g. a bed for "Greetings", and a wrong picture is worse than none.)
+const chapterPicCache = new WeakMap();
+const chapterPic = (subj, ch, size = 48) => {
+  if (!picsOn() || typeof Pics === "undefined") return "";
+  let html = chapterPicCache.get(ch);
+  if (html == null) {
+    const p = PicDict.illustrate(ch.title, { max: 1, size, title: true });
+    html = p ? p.svg : "";
+    chapterPicCache.set(ch, html);
+  }
+  return html ? `<span class="ch-pic auto-pic" aria-hidden="true">${html}</span>` : `<span class="ch-pic ch-pic-subject" aria-hidden="true">${Pics.subjectSvg(subj.id, size)}</span>`;
+};
+// The subject's art for a small slot (Today's plan items).
+const subjectArt = (subjId, size = 40) => (picsOn() && typeof Pics !== "undefined" ? `<span class="plan-art" aria-hidden="true">${Pics.subjectSvg(subjId, size)}</span>` : "");
+
+// A picture for EVERY option (array in option order), or null: all or nothing, so no single option stands out.
+const picAnswers = (it) => (picsOn() && it && !it.noPic && Array.isArray(it.options) ? PicDict.forOptions(it.options, { q: it.q }) : null);
+
+// The options of a multiple-choice question, one shared way for the quiz, lessons, question of the day, quick-fire and
+// Practice by topic. `order` lists the original option numbers in the order shown; `btn(orig, k)` gives each button's
+// { cls, attr (its data attribute), state (screen-reader text), extra }. With pictures the options become a 2x2 grid of
+// picture cards (same buttons, same data attributes, same 1-4 keys); without, the usual text rows.
+function optionsHTML(it, { order, btn, attrs = "" }) {
+  const pa = picAnswers(it);
+  const list = order
+    .map((orig, k) => {
+      const o = btn(orig, k);
+      const letter = `<span class="letter" aria-hidden="true">${"ABCD"[k]}</span>`;
+      const word = rich(it.options[orig]);
+      const head = `<button class="${o.cls}${pa ? " pic-opt" : ""}" ${o.attr}${o.extra || ""}>${o.state || ""}${letter}`;
+      return pa ? `${head}<span class="pic-art">${pa[orig].svg}</span><span class="pic-word">${word}</span></button>` : `${head}<span>${word}</span></button>`;
+    })
+    .join("");
+  return `<div class="options${pa ? " pic-options" : ""}" ${attrs}>${list}</div>`;
+}
 
 // Plain text with the **bold** markers removed (for search and snippets).
 const plain = (s) => String(s ?? "").replace(/\*\*/g, "");

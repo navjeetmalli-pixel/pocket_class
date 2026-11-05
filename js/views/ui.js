@@ -108,6 +108,7 @@ const Views = (() => {
     const score = (due ? `<span class="pill accent due-pill"><span aria-hidden="true">↻</span> ${t("Review due")}</span>` : "") + (r.best != null ? `<span class="pill ${r.best >= 60 ? "good" : "bad"}">${r.best}%</span>` : "");
     return `<a class="card chapter-row" data-sec="${esc(ch.section)}" href="#/chapter/${c}/${subj.id}/${ch.id}" style="--c:${subj.color}">
       <span class="ch-num ${r.done ? "done" : ""}">${r.done ? icon("check") : num}</span>
+      ${typeof num === "number" ? chapterPic(subj, ch) : ""}
       <span class="ch-body">
         ${tag ? `<span class="ch-tag">${esc(tag)}</span>` : ""}
         <span class="ch-title">${esc(ch.title)}</span>

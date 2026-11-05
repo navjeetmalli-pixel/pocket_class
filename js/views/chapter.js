@@ -247,9 +247,15 @@
     </section>`;
   }
 
+  // A note point (or term, example) with the picture of what it names beside it (Classes 1-5; nothing when nothing can be drawn).
+  const pointLI = (text, inner) => {
+    const pic = autoPic(text, { size: 56 });
+    return pic ? `<li class="has-pic">${pic}${inner}</li>` : `<li>${inner}</li>`;
+  };
+
   // Notes grouped under the skill they teach. Chapters whose skills are only derived from the headings keep a plain list.
   function notesHTML(c, subj, ch, rows, isYoung) {
-    const noteCard = (n) => `<article class="card note"><h3>${esc(n.heading)}</h3><ul>${n.points.map((p) => `<li>${rich(p)}${Speech.btn(c, subj.id, p)}</li>`).join("")}</ul></article>`;
+    const noteCard = (n) => `<article class="card note"><h3>${esc(n.heading)}</h3><ul>${n.points.map((p) => pointLI(p, `${rich(p)}${Speech.btn(c, subj.id, p)}`)).join("")}</ul></article>`;
     const written = rows.filter((r) => !r.objective.derived);
     if (!written.length) return `<div class="stack">${limit(ch.notes.map(noteCard), isYoung ? 3 : 0)}</div>`;
     const used = new Set();
@@ -272,7 +278,10 @@
   }
 
   function termsHTML(c, subj, ch, isYoung) {
-    const rowHTML = (x) => `<div><dt>${rich(x.term)}${Speech.btn(c, subj.id, `${x.term}. ${x.meaning}`)}</dt><dd>${rich(x.meaning)}</dd></div>`;
+    const rowHTML = (x) => {
+      const pic = autoPic(x.term, { max: 1, size: 56, title: true });
+      return `<div${pic ? ' class="has-pic"' : ""}>${pic}<dt>${rich(x.term)}${Speech.btn(c, subj.id, `${x.term}. ${x.meaning}`)}</dt><dd>${rich(x.meaning)}</dd></div>`;
+    };
     const n = isYoung ? 5 : 0;
     const first = n && ch.terms.length > n + 1 ? ch.terms.slice(0, n) : ch.terms;
     const more = first === ch.terms ? [] : ch.terms.slice(n);
@@ -286,7 +295,7 @@
   function examplesHTML(ch, isYoung) {
     if (!ch.examples || !ch.examples.length) return "";
     const cards = ch.examples.map(
-      (ex, i) => `<article class="card example">
+      (ex, i) => `<article class="card example${autoPic(ex.q) ? " has-pic" : ""}">${autoPic(ex.q, { size: 64 })}
         <p class="q"><span class="tag">${t("Example {n}", { n: i + 1 })}</span>${rich(ex.q)}</p>
         <details class="reveal"><summary>${t("Show solution")}</summary>
           <ol class="steps">${ex.steps.map((s) => `<li>${rich(s)}</li>`).join("")}</ol>
@@ -354,7 +363,7 @@
         <div id="gen-mount"></div>`;
     if (quizItems(c, subj, ch).length > 4) h += `<h2 class="block-title">${t("Question bank")} <span class="count">${t("by level")}</span></h2><div id="bank-mount"></div>`;
     if (ch.qa && ch.qa.length) {
-      const qa = ch.qa.map((x) => `<details class="card qa"><summary><span>${rich(x.q)}</span></summary><div class="a">${rich(x.a)}</div></details>`);
+      const qa = ch.qa.map((x) => `<details class="card qa"><summary>${autoPic(x.q, { size: 48 })}<span>${rich(x.q)}</span></summary><div class="a">${rich(x.a)}</div></details>`);
       h += `<h2 class="block-title">${t("Important questions")}</h2>
         <p class="small muted" style="margin:-4px 2px 12px">${t("Try answering in your head or notebook first, then tap to check.")}</p>
         <div class="stack">${limit(qa, isYoung ? 3 : 0)}</div>`;

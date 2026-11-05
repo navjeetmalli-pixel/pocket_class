@@ -406,17 +406,19 @@ const Guided = (() => {
 
   // Options list in the quiz's style. `reveal` marks right and wrong; otherwise only the pick is shown.
   function options(it, { locked, reveal }) {
-    return `<div class="options">${it.order
-      .map((orig, k) => {
+    const list = optionsHTML(it, {
+      order: it.order,
+      btn: (orig) => {
         let cls = "option";
         if (locked) cls += " locked";
         if (reveal && orig === it.answer) cls += " correct";
         else if (reveal && orig === it.picked) cls += " wrong";
         else if (orig === it.picked) cls += " selected";
         const state = !reveal ? "" : orig === it.answer ? `<span class="sr-only">${t("Correct answer:")} </span>` : orig === it.picked ? `<span class="sr-only">${t("Your answer:")} </span>` : "";
-        return `<button class="${cls}" data-pick="${orig}">${state}<span class="letter" aria-hidden="true">${"ABCD"[k]}</span><span>${rich(it.options[orig])}</span></button>`;
-      })
-      .join("")}</div>`;
+        return { cls, attr: `data-pick="${orig}"`, state };
+      },
+    });
+    return Speech.listen(it, it.order, { auto: !locked }) + list;
   }
 
   // Why the student is seeing a step (the rule behind it), in their own language.
@@ -505,7 +507,7 @@ const Guided = (() => {
       <div class="eyebrow g-eyebrow">${t("Idea {i} of {n}", { i: i + 1, n: s.groups.length })}</div>
       ${g.obj ? `<p class="lp-obj">${esc(g.obj.text)}</p>` : ""}
       ${skip}
-      ${g.notes.map((n) => `<article class="note g-note"><h3>${esc(n.heading)}</h3><ul>${n.points.map((p) => `<li>${rich(p)}</li>`).join("")}</ul></article>`).join("")}
+      ${g.notes.map((n) => `<article class="note g-note"><h3>${esc(n.heading)}</h3><ul>${n.points.map((p) => { const pic = autoPic(p, { size: 64 }); return `<li${pic ? ' class="has-pic"' : ""}>${pic}${rich(p)}</li>`; }).join("")}</ul></article>`).join("")}
       ${formulas}
       ${nav()}`;
   }
@@ -526,7 +528,7 @@ const Guided = (() => {
     return `
       ${reasonBox(key)}
       <p class="g-lead">${t("Read each step and ask yourself <strong>why</strong> it works before moving to the next.")}</p>
-      <article class="example">${picHTML(ex)}<p class="q">${rich(ex.q)}</p>
+      <article class="example">${picHTML(ex) || autoPic(ex.q, { size: 72 })}<p class="q">${rich(ex.q)}</p>
         <ol class="steps g-steps">${ex.steps.map((st) => `<li>${rich(st)}</li>`).join("")}</ol>
         <div class="answer">${rich(ex.answer)}</div></article>
       <div class="quiz-nav">${s.step > 0 ? `<button class="btn" data-act="back">${icon("back")} ${t("Back")}</button>` : ""}

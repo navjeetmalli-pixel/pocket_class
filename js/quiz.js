@@ -48,6 +48,7 @@ const Quiz = (() => {
 
   // Read-aloud button for young classes: the question, then its options in the order shown.
   function speakQuestion(it) {
+    if (picsOn() && Speech.listen(it, it.order)) return ""; // Classes 1-3 get the big "Listen again" button under the question
     const r = it.ref || {};
     const k = r.key ? Store.parseKey(r.key) : r;
     if (!k.cls) return "";
@@ -61,8 +62,10 @@ const Quiz = (() => {
     const locked = instant && it.picked !== null;
     const answered = s.items.filter((x) => x.picked !== null).length;
 
-    const options = it.order
-      .map((orig, k) => {
+    const options = optionsHTML(it, {
+      order: it.order,
+      attrs: 'role="group" aria-labelledby="quiz-q"',
+      btn: (orig) => {
         let cls = "option";
         if (locked) {
           cls += " locked";
@@ -71,10 +74,9 @@ const Quiz = (() => {
         } else if (orig === it.picked) cls += " selected";
         // Colour alone must not carry the result: say it in words for screen readers too.
         const state = !locked ? "" : orig === it.answer ? `<span class="sr-only">${t("Correct answer:")} </span>` : orig === it.picked ? `<span class="sr-only">${t("Your answer:")} </span>` : "";
-        const pressed = !instant ? ` aria-pressed="${orig === it.picked}"` : "";
-        return `<button class="${cls}" data-pick="${orig}"${pressed}>${state}<span class="letter" aria-hidden="true">${"ABCD"[k]}</span><span>${rich(it.options[orig])}</span></button>`;
-      })
-      .join("");
+        return { cls, attr: `data-pick="${orig}"`, state, extra: !instant ? ` aria-pressed="${orig === it.picked}"` : "" };
+      },
+    });
 
     let right;
     if (s.endAt) {
@@ -118,7 +120,8 @@ const Quiz = (() => {
         <span class="bar" aria-hidden="true"><i style="width:${pct(s.i + (locked ? 1 : 0), n)}%"></i></span>
         ${it.ref && it.ref.from && s.opts.showFrom ? `<div class="quiz-from" style="margin-top:16px">${esc(it.ref.from)}</div>` : ""}
         ${picHTML(it)}<div class="quiz-q" id="quiz-q">${rich(it.q)}${speakQuestion(it)}</div>
-        <div class="options" role="group" aria-labelledby="quiz-q">${options}</div>
+        ${Speech.listen(it, it.order, { auto: it.picked === null })}
+        ${options}
         ${footer}
       </div>
       <p class="tiny muted center kbd-tip" style="margin-top:10px">${instant ? t("Tip: press 1–4 to answer, Enter for next.") : t("Tip: press 1–4 to answer.")}</p>`;
@@ -369,6 +372,7 @@ const Cards = (() => {
         <span class="flashcard-inner">
           <span class="face front" ${s.flipped ? 'aria-hidden="true"' : ""}>
             ${c.from ? `<span class="from">${esc(c.from)}</span>` : ""}
+            ${autoPic(plain(c.front), { max: 1, size: 88, title: true })}
             <span class="term">${rich(c.front)}</span>
             <span class="hint">${t("Tap to see the meaning")}</span>
           </span>

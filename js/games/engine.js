@@ -145,7 +145,7 @@ const Games = (() => {
   function intro(g) {
     const { def, ctx } = g;
     const best = Store.gameBest(ctx.key, def.type);
-    g.el.innerHTML = `<section class="card game-intro" style="--c:${ctx.subj.color}">
+    g.el.innerHTML = `<section class="card game-intro" data-game="${def.type}" style="--c:${ctx.subj.color}">
       <span class="game-ico">${icon(def.icon)}</span>
       <h2 class="game-title">${t(def.title)}</h2>
       <p class="game-how">${t(def.how)}</p>
@@ -178,7 +178,7 @@ const Games = (() => {
         ${hud.streak ? `<span class="hud"><span class="k">${t("Streak")}</span> <b data-hud="streak">0</b></span>` : ""}
         <button class="icon-btn" data-g="pause" aria-label="${t("Pause")}">${icon("pause")}</button>
       </div>
-      <div class="game-area" data-g="area" style="--c:${ctx.subj.color}"></div>
+      <div class="game-area" data-g="area" data-game="${def.type}" style="--c:${ctx.subj.color}"></div>
       <div class="card game-pause" data-g="pausebox" hidden role="dialog" aria-label="${t("Paused")}">
         <h2 class="game-title">${t("Paused")}</h2>
         <p class="small muted">${t("The clock is stopped. Nothing is saved if you quit.")}</p>
@@ -384,7 +384,7 @@ const Games = (() => {
       .join("");
 
     g.el.innerHTML = `
-      <div class="card result-top game-result" style="--c:${ctx.subj.color}">
+      <div class="card result-top game-result" data-game="${def.type}" style="--c:${ctx.subj.color}">
         ${stars(n, "big")}
         <div class="result-msg" tabindex="-1" data-g="msg"><span class="result-ico" aria-hidden="true">${icon(n === 3 ? "medal" : n === 2 ? "star" : "bolt")}</span> ${stripEmoji(MSG[n]())}</div>
         <div class="game-score"><b>${g.pts}</b> <span class="muted">${t("points")}</span></div>

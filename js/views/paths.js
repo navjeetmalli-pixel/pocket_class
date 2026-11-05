@@ -527,8 +527,10 @@
       const it = s.item;
       const locked = s.picked !== null;
       const lv = topic.levels[s.li];
-      const options = it.order
-        .map((orig, k) => {
+      const options = optionsHTML(it, {
+        order: it.order,
+        attrs: 'role="group" aria-labelledby="quiz-q"',
+        btn: (orig) => {
           let c = "option";
           if (locked) {
             c += " locked";
@@ -536,9 +538,9 @@
             else if (orig === s.picked) c += " wrong";
           }
           const state = !locked ? "" : orig === it.answer ? `<span class="sr-only">${t("Correct answer:")} </span>` : orig === s.picked ? `<span class="sr-only">${t("Your answer:")} </span>` : "";
-          return `<button class="${c}" data-pick="${orig}">${state}<span class="letter" aria-hidden="true">${"ABCD"[k]}</span><span>${rich(it.options[orig])}</span></button>`;
-        })
-        .join("");
+          return { cls: c, attr: `data-pick="${orig}"`, state };
+        },
+      });
       const ok = s.picked === it.answer;
       const footer = locked
         ? `<div class="feedback ${ok ? "good" : "bad"}"><div class="h">${ok ? t("Correct! 🎉") : t("Not quite")}</div>
@@ -548,7 +550,8 @@
       return `<div class="card">
           <div class="quiz-head"><span>${t("Checking {level}", { level: levelName(lv.level) })}</span><span class="quiz-clock">${t("Question {n}", { n: s.asked + 1 })}</span></div>
           ${picHTML(it)}<div class="quiz-q" id="quiz-q">${rich(it.q)}</div>
-          <div class="options" role="group" aria-labelledby="quiz-q">${options}</div>
+          ${Speech.listen(it, it.order, { auto: !locked })}
+          ${options}
           ${footer}
         </div>
         <p class="tiny muted center kbd-tip" style="margin-top:10px">${t("Tip: press 1–4 to answer, Enter for next.")}</p>`;

@@ -60,9 +60,8 @@
         el.innerHTML = `
           <div class="qf-level small muted" aria-hidden="true">${t("Level")} ${"●".repeat(want(streak))}${"○".repeat(3 - want(streak))}</div>
           ${picHTML(it)}<div class="quiz-q" id="qf-q">${rich(it.q)}</div>
-          <div class="options" role="group" aria-labelledby="qf-q">${order
-            .map((orig, n) => `<button class="option" data-pick="${orig}"><span class="letter">${"ABCD"[n]}</span><span>${rich(it.options[orig])}</span></button>`)
-            .join("")}</div>
+          ${Speech.listen(it, order)}
+          ${optionsHTML(it, { order, attrs: 'role="group" aria-labelledby="qf-q"', btn: (orig) => ({ cls: "option", attr: `data-pick="${orig}"` }) })}
           <div data-fb></div>`;
         const first = el.querySelector(".option");
         if (first && document.activeElement && (document.activeElement === document.body || el.contains(document.activeElement) || document.activeElement.closest("#app"))) first.focus({ preventScroll: true });

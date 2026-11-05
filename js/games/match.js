@@ -30,7 +30,7 @@
       let busy = false;
 
       const card = (side, i) =>
-        `<button class="mp-card ${side === "L" ? "term" : "meaning"}" data-side="${side}" data-i="${i}" aria-pressed="false">${rich(side === "L" ? pairs[i].term : pairs[i].meaning)}</button>`;
+        `<button class="mp-card ${side === "L" ? "term" : "meaning"}" data-side="${side}" data-i="${i}" aria-pressed="false">${side === "L" ? autoPic(pairs[i].term, { max: 1, size: 64, title: true }) : ""}${rich(side === "L" ? pairs[i].term : pairs[i].meaning)}</button>`;
       el.innerHTML = `
         <p class="small muted game-help">${t("Tap a term, then its meaning.")}</p>
         <div class="match-board">

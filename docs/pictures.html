@@ -8,13 +8,14 @@ h1{font-size:20px}h2{font-size:15px;margin:22px 0 6px}
 .panel{border-radius:12px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end}
 .light{background:#fff;border:1px solid #dde}.dark{background:#1c2233;border:1px solid #333}
 .cell{display:flex;flex-direction:column;align-items:center;font-size:10px;gap:2px}.dark .cell{color:#ccd}
-.s40 svg{width:40px;height:40px}.s96 svg{width:96px;height:96px}
+.s40 svg{width:40px;height:40px}.s48 svg{width:48px;height:48px}.s96 svg{width:96px;height:96px}
 .big svg{width:140px;height:140px}.note svg{width:170px;height:100px}.row svg{width:200px;height:120px;background:rgba(128,128,128,.12);border-radius:8px}
 .wide svg{width:200px;height:120px}
 </style></head><body>
 <h1>Picture kit (js/pics.js)</h1>
 <div id="root"></div>
 <script src="../js/pics.js"></script>
+<script src="../js/picdict.js"></script>
 <script>
 var out = "";
 function panels(cls, items, fn) { // every set is drawn on a light and a dark panel
@@ -27,8 +28,17 @@ function panels(cls, items, fn) { // every set is drawn on a light and a dark pa
   return h + '</div>';
 }
 function one(name, v) { return Pics.svg(Pics.item(name, { x: 50, y: 50, s: 100, variant: v }), { w: 100, h: 100, label: name }); }
-out += '<h2>Items at 40 px</h2>' + panels("s40", Pics.names, function (n) { return one(n); });
-out += '<h2>Items at 96 px</h2>' + panels("s96", Pics.names, function (n) { return one(n); });
+var GROUPS = {"Animals": ["cat", "dog", "cow", "elephant", "hen", "rooster", "goat", "sheep", "horse", "donkey", "camel", "pig", "rabbit", "mouse", "monkey", "tiger", "lion", "bear", "deer", "giraffe", "zebra", "frog", "snake", "ant", "bee", "spider", "crow", "sparrow", "parrot", "owl", "pigeon", "tortoise", "crocodile", "squirrel", "bat-animal", "duck", "peacock", "fish", "bird", "butterfly"], "Food": ["apple", "mango", "banana", "orange", "grapes", "strawberry", "watermelon", "laddoo", "roti", "samosa", "egg", "milk", "water", "rice", "bread", "carrot", "tomato", "potato", "onion", "plum", "guava", "pineapple", "honey", "sweets", "ice-cream", "chocolate", "dal"], "Home and school": ["table", "chair", "bed", "door", "window", "fan", "lamp", "clock", "key", "box", "bottle", "spoon", "plate", "glass", "cup", "comb", "toothbrush", "soap", "towel", "shirt", "frock", "sock", "hat", "cap", "shoe", "mat", "doll", "drum", "pen", "pencil", "crayon", "eraser", "ruler", "scissors", "phone", "television", "brick", "book", "bag", "bell", "diya", "umbrella", "kite", "ball", "balloon"], "Nature, sky and transport": ["moon", "rainbow", "rain", "mountain", "river", "grass", "seed", "rose", "sunflower", "fire", "ice", "stone", "sand", "sun", "cloud", "star", "flower", "lotus", "leaf", "tree", "cricket-bat", "rocket", "train", "ship", "boat", "aeroplane", "airplane", "tractor", "bicycle", "cycle", "truck", "car", "bus", "auto", "house"], "Body": ["eye", "ear", "nose", "mouth", "hand", "foot", "tooth", "hair"], "People": ["boy", "girl", "teacher", "farmer", "doctor", "cook", "police", "baby", "family"]};
+GROUPS["Action words (a child doing it)"] = ["stand", "walk", "run", "jump", "sit", "sleep", "eat", "drink", "sing", "dance", "read", "write", "cry", "laugh", "swim", "fly"];
+GROUPS["Describing words (pairs: the one meant is in full colour)"] = ["big", "small", "tall", "short", "hot", "cold", "happy", "sad", "pillow", "stone", "heavy", "light", "full", "empty", "fast", "slow"];
+GROUPS["More everyday words"] = ["sky", "bulb", "tongue", "fruit", "wind"];
+Object.keys(GROUPS).forEach(function (g) {
+  out += '<h2>' + g + ' at 48 px</h2>' + panels("s48", GROUPS[g], function (n) { return one(n); });
+  out += '<h2>' + g + ' at 96 px</h2>' + panels("s96", GROUPS[g], function (n) { return one(n); });
+});
+var listed = {}; Object.keys(GROUPS).forEach(function (g) { GROUPS[g].forEach(function (n) { listed[n] = 1; }); });
+var rest = Pics.names.filter(function (n) { return !listed[n]; });
+if (rest.length) out += '<h2>Not in a group above</h2>' + panels("s96", rest, function (n) { return one(n); });
 out += '<h2>Balloon variants</h2>' + panels("s96", [0, 1, 2, 3, 4], function (v) { return one("balloon", v); });
 var times = [[12, 0], [3, 0], [6, 30], [9, 15], [1, 45], [10, 10], [4, 55]];
 out += '<h2>Clocks</h2>' + panels("big", times.map(function (t) { return { h: t[0], m: t[1], label: t[0] + ":" + (t[1] < 10 ? "0" : "") + t[1] }; }),
@@ -50,7 +60,11 @@ var sh = ["circle", "square", "triangle", "rectangle", "oval", "star", "cube", "
 out += '<h2>Shapes</h2>' + panels("s96", sh, function (k) { return Pics.svg(Pics.shape({ x: 50, y: 50, s: 100, kind: k }), { w: 100, h: 100, label: k }); });
 out += '<h2>Rows (mango, 200x120)</h2>' + panels("row", [1, 5, 7, 10, 13, 20].map(function (n) { return { n: n, label: "n=" + n }; }),
   function (r) { return Pics.svg(Pics.row("mango", r.n, { w: 200, h: 120 }), { w: 200, h: 120, label: "mangoes" }); });
+var sentences = ["Count 3 mangoes: one, two, three.", "A red balloon and a blue ball", "A window is often a square or a rectangle.", "Ravi has \u20b95 and a \u20b950 note.", "The bird can fly and the fish can swim.", "Hot tea and cold milk", "\u0924\u0940\u0928 \u0906\u092e \u0914\u0930 \u0926\u094b \u0915\u0947\u0932\u0947", "\u0a24\u0a3f\u0a70\u0a28 \u0a2e\u0a41\u0a70\u0a21\u0a47"];
+out += '<h2>PicDict.illustrate: a strip for a sentence</h2>' + panels("wide", sentences.map(function (t) { return { t: t, label: t }; }), function (x) { var r = PicDict.illustrate(x.t, { size: 80 }); return r ? r.svg : "(none)"; });
+out += '<h2>Numbers 11 to 20 (a full ten-frame and the extra dots)</h2>' + panels("s96", [11, 13, 15, 17, 20].map(function (n) { return { n: n, label: String(n) }; }), function (x) { return PicDict.forText(String(x.n), { decorative: true }).svg; });
 out += '<h2>Hidden-first test (apple should show below)</h2><div id="hid" style="display:none">' + Pics.svg(Pics.item("apple", { x: 100, y: 60, s: 100 }), { label: "hidden apple" }) +
   '</div><div class="panels"><div class="panel light wide">' + Pics.svg(Pics.item("apple", { x: 100, y: 60, s: 100 }), { label: "visible apple" }) + '</div></div>';
+out += '<h2>Two of the same picture on one page (ids must not clash)</h2><div class="panels"><div class="panel light s96">' + one("zebra") + one("zebra") + one("pineapple") + one("pineapple") + one("bee") + one("bee") + '</div></div>';
 document.getElementById("root").innerHTML = out;
 </script></body></html>

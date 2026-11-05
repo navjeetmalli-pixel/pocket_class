@@ -35,7 +35,7 @@
     mount(el, data, api) {
       const puzzles = data.puzzles.map((w) => ({
         lang: "en",
-        head: `<div class="lt-pic"><span class="lt-emoji big" aria-hidden="true">${w.emoji}</span>${LangGames.speaker(w.word)}</div>
+        head: `<div class="lt-pic">${wordArt(w.word, 96) || `<span class="lt-emoji big" aria-hidden="true">${w.emoji}</span>`}${LangGames.speaker(w.word)}</div>
           <div class="small muted" style="margin-top:4px">${t("Spell the word for the picture.")} ${t("{n} letters", { n: w.letters.length })}</div>`,
         bank: w.bank,
         target: w.letters,

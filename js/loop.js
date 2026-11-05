@@ -126,7 +126,7 @@ const Loop = (() => {
   // Multiple-choice items of a chapter in one shape: { q, options, answer, explain, level, keepOrder?, kinds?, gen? }.
   function poolOf(c, subj, ch, genCount = 8) {
     const bank = D.practiceFor(c, subj.id, ch.id);
-    const saved = [...(ch.quiz || []), ...bank.mcq].map((q) => ({ q: q.q, options: q.options, answer: q.answer, explain: q.explain, level: q.level || 1, keepOrder: !!q.keepOrder }));
+    const saved = [...(ch.quiz || []), ...bank.mcq].map((q) => ({ q: q.q, options: q.options, answer: q.answer, explain: q.explain, level: q.level || 1, keepOrder: !!q.keepOrder, noPic: q.noPic, pic: q.pic }));
     let gens = [];
     try {
       gens = Gen.questions(c, subj.id, ch.id, genCount, Date.now()).map((g) => ({ q: g.q, options: g.options, answer: 0, explain: g.steps.join(" "), level: 2, kinds: g.kinds, gen: true, steps: g.steps, pic: g.pic, picAlt: g.picAlt }));
@@ -202,7 +202,7 @@ const Loop = (() => {
       const subj = D.subject(r.subject);
       if (!subj) continue;
       const bank = D.practiceFor(r.cls, r.subject, ch.id);
-      let items = [...(ch.quiz || []), ...bank.mcq].map((q) => ({ q: q.q, options: q.options, answer: q.answer, explain: q.explain, level: q.level || 1, keepOrder: !!q.keepOrder }));
+      let items = [...(ch.quiz || []), ...bank.mcq].map((q) => ({ q: q.q, options: q.options, answer: q.answer, explain: q.explain, level: q.level || 1, keepOrder: !!q.keepOrder, noPic: q.noPic, pic: q.pic }));
       if (r.obj) {
         const hit = items.filter((q) => (Objectives.forQuestion(r.cls, r.subject, ch, q) || {}).id === r.obj);
         if (hit.length >= 2) items = hit;

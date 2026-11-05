@@ -50,10 +50,21 @@ test("a game round shows the summary above what you got wrong", async ({ page })
   await expect(page.locator(".game-hud")).toBeVisible();
   await answer(page, "right");
   await expect(page.locator("#qf-q")).toBeVisible();
-  for (let i = 0; i < 3; i++) {
+  // Quick-fire mixes in made-up questions whose answer the helper can't know; it then taps the first option, which may be
+  // right (the game moves on by itself). Keep going until three answers really were wrong (each shows a Next button).
+  let wrongs = 0;
+  for (let i = 0; i < 12 && wrongs < 3; i++) {
     await answer(page, "wrong");
-    await page.locator('[data-act="next"]').click();
+    const next = page.locator('[data-act="next"]');
+    try {
+      await next.waitFor({ timeout: 1500 });
+    } catch (e) {
+      continue;
+    }
+    await next.click();
+    wrongs++;
   }
+  expect(wrongs).toBe(3);
   await expect(page.locator(".game-result")).toBeVisible();
   const box = page.locator(".results-summary");
   await expect(box).toBeVisible();

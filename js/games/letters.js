@@ -44,7 +44,7 @@
       let wrong = 0;
       let answered = false;
 
-      const wordHtml = (x) => `<span class="lt-emoji" aria-hidden="true">${x.emoji}</span><span class="lt-word" lang="${lang}">${esc(x.word)}</span>`;
+      const wordHtml = (x) => `${wordArt(x.word, 56) || `<span class="lt-emoji" aria-hidden="true">${x.emoji}</span>`}<span class="lt-word" lang="${lang}">${esc(x.word)}</span>`;
 
       function ask() {
         const q = questions[n];
@@ -54,7 +54,7 @@
         const prompt = letterQ ? t("Which picture-word starts with this letter?") : t("Which letter does this word start with?");
         const stem = letterQ
           ? `<div class="lt-big" lang="${lang}" role="img" aria-label="${t("Letter {letter}", { letter: show(lang, q.right) })}">${esc(show(lang, q.right))}</div>`
-          : `<div class="lt-pic"><span class="lt-emoji big" aria-hidden="true">${q.right.emoji}</span><span class="lt-word big" lang="${lang}">${esc(q.right.word)}</span>${LangGames.speaker(q.right.word)}</div>`;
+          : `<div class="lt-pic">${wordArt(q.right.word, 96) || `<span class="lt-emoji big" aria-hidden="true">${q.right.emoji}</span>`}<span class="lt-word big" lang="${lang}">${esc(q.right.word)}</span>${LangGames.speaker(q.right.word)}</div>`;
         const opts = q.options
           .map((o, k) =>
             letterQ

@@ -318,8 +318,11 @@ const Sheets = (() => {
   function mcqHTML(items, next) {
     return `<ol class="ws-list">${items
       .map(
-        (it) => `<li value="${next()}">${picHTML(it)}<div class="ws-q">${rich(it.q)}</div>
-          <ol class="ws-opts" type="a">${it.order.map((i) => `<li>${rich(it.options[i])}</li>`).join("")}</ol></li>`
+        (it) => {
+          const pa = picAnswers(it);
+          return `<li value="${next()}">${picHTML(it)}<div class="ws-q">${rich(it.q)}</div>
+          <ol class="ws-opts${pa ? " ws-pic-opts" : ""}" type="a">${it.order.map((i) => `<li>${pa ? `<span class="ws-pic">${pa[i].svg}</span>` : ""}${rich(it.options[i])}</li>`).join("")}</ol></li>`;
+        }
       )
       .join("")}</ol>`;
   }

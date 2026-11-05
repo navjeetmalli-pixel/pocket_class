@@ -148,7 +148,7 @@
           .map((g, i) => `<button class="sort-box" data-box="${i}" aria-pressed="false" aria-label="${esc(g)}"><span class="sort-title">${esc(g)}</span><span class="sort-in"></span></button>`)
           .join("")}</div>
         <div data-fb></div>
-        <div class="sort-bank" role="group" aria-label="${t("Items")}">${items.map((it, i) => `<button class="sort-chip" data-chip="${i}" aria-pressed="false">${esc(it.label)}</button>`).join("")}</div>
+        <div class="sort-bank" role="group" aria-label="${t("Items")}">${items.map((it, i) => `<button class="sort-chip" data-chip="${i}" aria-pressed="false">${autoPic(it.label, { max: 1, size: 48, title: true })}${esc(it.label)}</button>`).join("")}</div>
         <p class="small muted center" data-count aria-hidden="true"></p>
         <div data-end></div>`;
       const bank = el.querySelector(".sort-bank");
