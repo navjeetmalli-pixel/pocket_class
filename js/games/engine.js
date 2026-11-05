@@ -270,6 +270,7 @@ const Games = (() => {
       answered(item, ok, picked) {
         if (!item.ref) item = { ...item, ref: defaultRef(g.ctx) };
         const r = item.ref;
+        Sound.answer(ok);
         const e = Learn.answerEvent(item, ok, { picked, source: "game" }); // learning record (js/learn.js), written when the game ends
         if (e) {
           const k = `${e.cls}/${e.subject}/${e.chapter}#${e.obj}`;
@@ -356,6 +357,7 @@ const Games = (() => {
     document.removeEventListener("keydown", g.onKey);
     document.removeEventListener("visibilitychange", g.onVis);
     const n = Math.max(1, Math.min(3, Math.round(result.stars || 1)));
+    if (n >= 2) setTimeout(() => Sound.play("celebrate"), 150);
     const rec = Store.recordGame(g.ctx.key, g.def.type, { score: g.pts, stars: n, answers: g.answers, ghost: result.ghost });
     // Learning record: the answers, plus one "game" event for the round (it names no objective, so it changes no state).
     const src = g.ctx.ch.sources ? g.ctx.ch.sources.find((x) => !x.own) : null;

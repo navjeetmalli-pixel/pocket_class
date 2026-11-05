@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mithu and subject art review</title>
+<style>
+body{font:14px system-ui,sans-serif;margin:16px;background:#f4f5f8;color:#222}
+.panel{display:flex;flex-wrap:wrap;gap:12px;padding:10px;border-radius:12px;margin-bottom:12px;align-items:flex-end}
+.light{background:#fff}.dark{background:#1c2233;color:#ccd}
+.cell{display:flex;flex-direction:column;align-items:center;font-size:11px;gap:2px}
+.s64 svg{width:64px;height:auto}.s130 svg{width:130px;height:auto}.sub svg{width:72px;height:72px}
+</style></head><body>
+<h1>Mithu poses and subject art</h1><div id="root"></div>
+<script src="../js/pics.js"></script><script src="../js/mascot.js"></script>
+<script>
+var h = "", ids = ["maths","science","evs","english","hindi","punjabi","sst","book"];
+["light","dark"].forEach(function (t) {
+  h += '<div class="panel ' + t + '">' + Mascot.POSES.map(function (p) { return '<div class="cell s130">' + Mascot.svg(p, { size: 130 }) + p + '</div>'; }).join("") + '</div>';
+  h += '<div class="panel ' + t + '">' + Mascot.POSES.map(function (p) { return '<div class="cell s64">' + Mascot.svg(p, { size: 64 }) + p + '</div>'; }).join("") + '</div>';
+  h += '<div class="panel ' + t + '">' + ids.map(function (i) { return '<div class="cell sub">' + Pics.subjectSvg(i, 72) + i + '</div>'; }).join("") + '</div>';
+});
+document.getElementById("root").innerHTML = h;
+</script></body></html>

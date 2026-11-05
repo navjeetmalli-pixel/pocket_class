@@ -280,7 +280,12 @@ const Learn = (() => {
           : { href: `${base}/play`, label: t("Play a game"), text: t("All of these went well. Why not play a game?") };
       }
     }
-    return `<section class="card results-summary" aria-labelledby="rs-title"><h2 id="rs-title" class="block-title">${t("How it went")}</h2>
+    // Mithu: cheers when nothing needs a review, thinks when something does (Classes 1 to 8; the bubble holds one short line).
+    const pr = Store.state && Store.state.profile;
+    const mithu = typeof Mascot !== "undefined" && pr && pr.cls != null && pr.cls <= 8
+      ? `<div class="rs-mascot">${Mascot.html(review.length ? "think" : "cheer", { size: pr.cls <= 5 ? 76 : 56, say: review.length ? t("Let's look at these again.") : t("Well done! That went well.") })}</div>`
+      : "";
+    return `<section class="card results-summary" aria-labelledby="rs-title">${mithu}<h2 id="rs-title" class="block-title">${t("How it went")}</h2>
       ${sec("rs-did", "notes", t("Practised"), list(known))}
       ${well.length ? sec("rs-well", "check", t("Went well"), list(well)) : ""}
       ${review.length ? sec("rs-review", "target", t("To review"), list(review, mistake)) : ""}

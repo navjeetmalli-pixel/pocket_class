@@ -104,7 +104,7 @@ const Quiz = (() => {
       footer = `
         <div class="quiz-nav">
           <button class="btn" data-act="prev" ${s.i === 0 ? "disabled" : ""}>${icon("back")} ${t("Previous")}</button>
-          ${s.i < n - 1 ? `<button class="btn primary" data-act="next">${t("Next")} ${icon("next")}</button>` : `<button class="btn primary" data-act="submit">${t("Submit test")}</button>`}
+          ${s.i < n - 1 ? `<button class="btn primary" data-act="next">${t("Next")} ${icon("next")}</button>` : `<button class="btn primary" data-act="submit">${icon("check")} ${t("Submit test")}</button>`}
         </div>
         <div class="palette" aria-label="${t("Jump to question")}">
           ${s.items.map((x, j) => `<button data-go="${j}" class="${x.picked !== null ? "answered" : ""} ${j === s.i ? "current" : ""}" aria-label="${x.picked !== null ? t("Question {n}, answered", { n: j + 1 }) : t("Question {n}", { n: j + 1 })}" ${j === s.i ? 'aria-current="true"' : ""}>${j + 1}</button>`).join("")}
@@ -191,6 +191,7 @@ const Quiz = (() => {
     const it = s.items[s.i];
     if (s.opts.instant && it.picked !== null) return;
     it.picked = orig;
+    if (s.opts.instant) Sound.answer(orig === it.answer);
     render();
     // The result is spoken here (once), not by re-inserting a live region with the page.
     if (s.opts.instant) {
@@ -248,6 +249,7 @@ const Quiz = (() => {
     if (s.opts.record) Store.recordQuiz({ ...s.opts.record, title: s.opts.title, score, total: s.items.length, answers });
     // Practice by topic: the level is marked mastered here, and the result screen says what comes next.
     if (s.opts.onDone) s.opts.onDone(score, s.items.length);
+    if (score >= s.items.length * 0.75) setTimeout(() => Sound.play("celebrate"), 150);
     render();
     window.scrollTo({ top: 0 });
   }
@@ -377,8 +379,8 @@ const Cards = (() => {
         </span>
       </button>
       <div class="card-actions">
-        <button class="btn bad" data-act="learning">${t("Still learning")}</button>
-        <button class="btn good" data-act="known">${t("I know this")}</button>
+        <button class="btn bad" data-act="learning">${icon("x")} ${t("Still learning")}</button>
+        <button class="btn good" data-act="known">${icon("check")} ${t("I know this")}</button>
       </div>
       <p class="tiny muted center kbd-tip" style="margin-top:10px">${t("Tip: Space flips, ← still learning, → I know this.")}</p>`;
   }

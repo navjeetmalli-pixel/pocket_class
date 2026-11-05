@@ -150,6 +150,10 @@ const Views = (() => {
   function emptyState(iconId, text, action) {
     const sub = typeof SubjectIcons !== "undefined" && SubjectIcons.has(iconId);
     const art = ICONS[iconId] ? icon(iconId) : sub ? SubjectIcons.svg(iconId, { size: 36 }) : esc(iconId);
+    // Classes 1 to 5: Mithu sleeps (or thinks, when something was not found) in place of the line icon.
+    const pr = Store.state && Store.state.profile;
+    const mascot = typeof Mascot !== "undefined" && pr && pr.cls != null && pr.cls <= 5;
+    if (mascot) return `<div class="card empty"><div class="big has-mascot" aria-hidden="true">${Mascot.svg(iconId === "compass" ? "think" : "sleep", { size: 104 })}</div><p class="empty-text">${text}</p>${action ? `<a class="btn primary empty-action" href="${esc(action.href)}">${esc(action.label)}</a>` : ""}</div>`;
     return `<div class="card empty"><div class="big" aria-hidden="true">${art}</div><p class="empty-text">${text}</p>${action ? `<a class="btn primary empty-action" href="${esc(action.href)}">${esc(action.label)}</a>` : ""}</div>`;
   }
 

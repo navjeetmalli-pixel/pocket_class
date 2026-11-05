@@ -114,11 +114,22 @@
 
   // ---------- small cards shared by Today, Learn and Play ----------
 
+  // Bold tiles (Classes 1-5): the subject's own bright colour, darkened only as far as needed for the large bold white name to
+  // read (3:1, the large-text level); the small chapter count sits on a white pill, so it does not depend on the tile colour.
+  function tileTop(hex) {
+    const lum = (r, g, b) => [r, g, b].map((v) => (v /= 255) <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4).reduce((a, v, i) => a + v * [0.2126, 0.7152, 0.0722][i], 0);
+    const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+    for (let k = 1; k >= 0.5; k -= 0.02) if (1.05 / (lum(r * k, g * k, b * k) + 0.05) >= 3.2) return `rgb(${Math.round(r * k)} ${Math.round(g * k)} ${Math.round(b * k)})`;
+    return hex;
+  }
   // A subject as a card with its progress; `href` defaults to the subject page.
   function subjectCard(c, s, href, meta) {
     const x = subjectStats(c, s.id);
-    return `<a class="card subject-card" href="${href || `#/subject/${s.id}`}" style="--c:${s.color}">
-      <span class="subject-icon">${SubjectIcons.html(s)}</span>
+    const p = Store.state.profile;
+    const bold = !!p && p.cls != null && p.cls <= 5 && typeof Pics !== "undefined";
+    const art = typeof Pics === "undefined" ? SubjectIcons.html(s) : `<span class="subject-art">${Pics.subjectSvg(s.id, bold ? 72 : 32)}</span>`;
+    return `<a class="card subject-card${bold ? " bold" : ""}" href="${href || `#/subject/${s.id}`}" style="--c:${s.color}${bold ? `;--c1:${tileTop(s.color)}` : ""}">
+      ${bold ? `<span class="subject-pic">${art}</span>` : `<span class="subject-icon">${art}</span>`}
       <span class="subject-name">${esc(s.name)}</span>
       ${Release.applies() ? "" : `<span class="subject-hi">${esc(s.native)}</span>`}
       ${meta === undefined ? `<span class="bar"><i style="width:${pct(x.done, x.total)}%"></i></span>` : ""}

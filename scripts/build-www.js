@@ -10,7 +10,7 @@ const out = path.join(root, "www");
 require("./build-index.js").build();
 
 // Only these go into the store apps. Everything else (tests/, scripts/, playwright-report/, store/ …) stays out.
-const include = ["index.html", "manifest.webmanifest", "css", "js", "data", "icons"];
+const include = ["index.html", "manifest.webmanifest", "css", "fonts", "js", "data", "icons"];
 
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out);

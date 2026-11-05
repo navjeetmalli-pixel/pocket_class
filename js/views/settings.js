@@ -83,6 +83,7 @@
           </div>
           ${studentsCard()}
           <div class="card"><label class="switch"><span><strong>${t("Show streak")}</strong><br><span class="small muted">${t("Shows the days in a row you studied on Home and Progress. Missing a day never takes anything away.")}</span></span><input type="checkbox" id="show-streak" ${Store.showStreak() ? "checked" : ""}></label></div>
+          <div class="card"><label class="switch"><span><strong>${icon("speaker")} ${t("Sound effects")}</strong><br><span class="small muted">${t("Short, soft sounds when you answer and tap. Turn them off if you prefer quiet.")}</span></span><input type="checkbox" id="sound-on" ${Sound.enabled() ? "checked" : ""}></label></div>
           ${reminderCard()}
           <a class="card row" href="#/parent"><span class="grow"><strong>${t("For parents")}</strong><span class="small muted" style="display:block">${t("A one-page summary of the week to show or print.")}</span></span>${icon("next")}</a>
           ${Native.is ? "" : `<div class="card">
@@ -124,6 +125,11 @@
         el.querySelector("#show-streak").onchange = (e) => {
           Store.setPref("streak", e.target.checked);
           toast(e.target.checked ? t("Streak is shown") : t("Streak is hidden"));
+        };
+        el.querySelector("#sound-on").onchange = (e) => {
+          Sound.set(e.target.checked);
+          if (e.target.checked) Sound.play("pop");
+          toast(e.target.checked ? t("Sounds are on") : t("Sounds are off"));
         };
         el.querySelector("#restore").onchange = (e) => {
           const file = e.target.files[0];

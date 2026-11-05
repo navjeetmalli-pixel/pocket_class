@@ -1971,6 +1971,10 @@ Object.assign(I18N.pa, {
   "Shows the days in a row you studied on Home and Progress. Missing a day never takes anything away.": "ਹੋਮ ਅਤੇ ਤਰੱਕੀ ਉੱਤੇ ਲਗਾਤਾਰ ਪੜ੍ਹਾਈ ਦੇ ਦਿਨ ਦਿਖਾਉਂਦਾ ਹੈ। ਇੱਕ ਦਿਨ ਖੁੰਝਣ ਨਾਲ ਕੁਝ ਵੀ ਨਹੀਂ ਖੁੱਸਦਾ।",
   "Streak is shown": "ਸਟ੍ਰੀਕ ਦਿਖਾਈ ਜਾਵੇਗੀ",
   "Streak is hidden": "ਸਟ੍ਰੀਕ ਲੁਕਾਈ ਗਈ",
+  "Sound effects": "ਆਵਾਜ਼ਾਂ",
+  "Short, soft sounds when you answer and tap. Turn them off if you prefer quiet.": "ਜਵਾਬ ਦੇਣ ਅਤੇ ਟੈਪ ਕਰਨ 'ਤੇ ਛੋਟੀਆਂ, ਨਰਮ ਆਵਾਜ਼ਾਂ। ਚੁੱਪ ਪਸੰਦ ਹੋਵੇ ਤਾਂ ਬੰਦ ਕਰ ਦਿਓ।",
+  "Sounds are on": "ਆਵਾਜ਼ਾਂ ਚਾਲੂ ਹਨ",
+  "Sounds are off": "ਆਵਾਜ਼ਾਂ ਬੰਦ ਹਨ",
   "Multiple choice (1 mark)": "ਬਹੁ-ਵਿਕਲਪੀ (1 ਅੰਕ)",
   "Understanding": "ਸਮਝ",
   "Remembering": "ਯਾਦ ਰੱਖਣਾ",
@@ -2074,6 +2078,10 @@ Object.assign(I18N.hi, {
   "Shows the days in a row you studied on Home and Progress. Missing a day never takes anything away.": "होम और प्रगति पर लगातार पढ़ाई के दिन दिखाता है। एक दिन छूटने से कुछ भी नहीं जाता।",
   "Streak is shown": "स्ट्रीक दिखाई जाएगी",
   "Streak is hidden": "स्ट्रीक छिपा दी गई",
+  "Sound effects": "ध्वनियाँ",
+  "Short, soft sounds when you answer and tap. Turn them off if you prefer quiet.": "जवाब देने और टैप करने पर छोटी, हल्की ध्वनियाँ। शांति पसंद हो तो बंद कर दें।",
+  "Sounds are on": "ध्वनियाँ चालू हैं",
+  "Sounds are off": "ध्वनियाँ बंद हैं",
   "Multiple choice (1 mark)": "बहुविकल्पीय (1 अंक)",
   "Understanding": "समझ",
   "Remembering": "याद रखना",
@@ -2774,4 +2782,24 @@ Object.assign(I18N.hi, {
   "Come back to the skills above with a few more questions.": "ऊपर बताए कौशलों के लिए कुछ और सवाल हल करें।",
   "All of these went well. Next up: {title}.": "ये सब अच्छे रहे। आगे: {title}।",
   "All of these went well. Why not play a game?": "ये सब अच्छे रहे। क्यों न एक खेल खेलें?",
+});
+
+// Mithu, the guide parrot: speech-bubble lines on Today and in the results summary.
+Object.assign(I18N.pa, {
+  "Ready to learn?": "ਸਿੱਖਣ ਲਈ ਤਿਆਰ?",
+  "A fresh start today!": "ਅੱਜ ਨਵੀਂ ਸ਼ੁਰੂਆਤ!",
+  "Let's play and learn!": "ਆਓ ਖੇਡੀਏ ਤੇ ਸਿੱਖੀਏ!",
+  "A little learning tonight?": "ਅੱਜ ਸ਼ਾਮ ਥੋੜ੍ਹਾ ਸਿੱਖੀਏ?",
+  "Let's finish the day well!": "ਦਿਨ ਚੰਗੀ ਤਰ੍ਹਾਂ ਪੂਰਾ ਕਰੀਏ!",
+  "Let's look at these again.": "ਆਓ ਇਹ ਦੁਬਾਰਾ ਵੇਖੀਏ।",
+  "Well done! That went well.": "ਸ਼ਾਬਾਸ਼! ਇਹ ਚੰਗਾ ਰਿਹਾ।",
+});
+Object.assign(I18N.hi, {
+  "Ready to learn?": "सीखने के लिए तैयार?",
+  "A fresh start today!": "आज नई शुरुआत!",
+  "Let's play and learn!": "आओ खेलें और सीखें!",
+  "A little learning tonight?": "आज शाम थोड़ा सीखें?",
+  "Let's finish the day well!": "दिन अच्छे से पूरा करें!",
+  "Let's look at these again.": "आओ इन्हें फिर देखें।",
+  "Well done! That went well.": "शाबाश! यह अच्छा रहा।",
 });

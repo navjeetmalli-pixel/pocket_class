@@ -300,6 +300,55 @@
       ') translate(-50 -50)"' + SA + ">" + fn(o.variant) + "</g>";
   }
 
+  /* ---------- subject pictures (tiles on Today, Learn and Play) ---------- */
+  function blk(x, y, w, ch, c, rot, fs) {
+    var cx = x + w / 2, cy = y + w / 2;
+    return '<g transform="rotate(' + (rot || 0) + " " + cx + " " + cy + ')">' + Rc(x, y + 5, w, w, 9, shade(c, 0.78), "l") + Rc(x, y, w, w, 9, c, "l") +
+      '<text x="' + cx + '" y="' + f1(cy + (fs || 30) * 0.36) + '" text-anchor="middle" font-size="' + (fs || 30) + '" font-weight="800" fill="#fff" stroke="' + shade(c, 0.6) + '" stroke-width="1.2" paint-order="stroke" font-family="system-ui,\'Noto Sans Devanagari\',\'Noto Sans Gurmukhi\',sans-serif">' + ch + "</text>" +
+      SHN(x + w * 0.28, y + 9, 7, 2.6, -8, 0.5) + "</g>";
+  }
+  var SUBJ = {
+    maths: function () {
+      var s = SH(40) + Rc(8, 80, 84, 10, 5, BROWN) + Rc(8, 12, 84, 10, 5, BROWN) + Rc(12, 18, 8, 68, 3, "#b07a3c") + Rc(80, 18, 8, 68, 3, "#b07a3c"), i, j,
+        cols = [RED, YELLOW, BLUE, GREEN];
+      for (i = 0; i < 4; i++) {
+        s += L("M22 " + (30 + i * 16) + "H78", "#8a6a3a", 2.4);
+        for (j = 0; j < 4; j++) s += Ci(32 + j * 12 + (i % 2 ? 14 - j * 3 : 0) * (j > 1 ? 1 : 0), 30 + i * 16, 6.2, cols[i], "r", ' stroke-width="1.6"');
+      }
+      return s;
+    },
+    science: function () {
+      return SH(30) + P("M40 12H60V38L82 80C86 88 82 92 74 92H26C18 92 14 88 18 80L40 38Z", "#bfe4f2", "l") +
+        PN("M30 66C42 60 54 72 70 64L82 82C86 90 82 92 74 92H26C18 92 14 90 18 82Z", GREEN, "l") + Rc(36, 8, 28, 9, 4, "#e8f3f8") +
+        Ci(44, 76, 3, "#d6f5c8", "r", ' stroke-width="1.2"') + Ci(60, 82, 2.4, "#d6f5c8", "r", ' stroke-width="1.2"') +
+        P("M52 56C44 36 58 22 78 22C80 40 68 56 52 56Z", "#43b05c", "r") + L("M54 54Q64 40 74 28", "#2e7d32", 1.8) + SHN(36, 50, 2.6, 10, 18, 0.7);
+    },
+    evs: function () {
+      return SH(40) + item("sun", { x: 74, y: 28, s: 44 }) + item("tree", { x: 40, y: 60, s: 82 }) + Fe(50, 92, 36, 4, "#5aa75f", ' opacity=".9"');
+    },
+    english: function () {
+      return SH(42) + blk(6, 52, 40, "A", RED, -4, 30) + blk(52, 52, 40, "B", BLUE, 3, 30) + blk(28, 10, 40, "C", "#f2a51c", 6, 30);
+    },
+    hindi: function () { return SH(36) + blk(14, 14, 72, "अ", "#d6409f", -5, 52); },
+    punjabi: function () { return SH(36) + blk(14, 14, 72, "ੳ", "#8e4ec6", 5, 52); },
+    sst: function () {
+      return SH(30) + Rc(30, 84, 40, 8, 4, BROWN) + L("M50 76V86", "#8a5a2b", 5) + Ci(50, 44, 38, "#3b82e0", "r") +
+        '<clipPath id="gc@"><circle cx="50" cy="44" r="37"/></clipPath><g clip-path="url(#gc@)">' +
+        F("M24 26C34 16 46 20 44 30C42 40 32 42 34 52C30 58 22 50 20 40C18 34 20 30 24 26Z", "#43b05c") +
+        F("M56 38C68 30 84 36 82 50C80 62 70 70 64 78C56 70 60 60 54 52C52 46 52 42 56 38Z", "#43b05c") + F("M52 12C62 10 72 14 66 20C60 22 54 20 52 12Z", "#43b05c") + "</g>" +
+        L("M12 44Q50 56 88 44", "#fff", 1.6, ' opacity=".55"') + SHN(34, 24, 6, 11, 40, 0.5);
+    },
+    book: function () { return item("book", { x: 50, y: 50, s: 100 }); }
+  };
+  var SUBJ_OF = { maths: "maths", mathspb: "maths", science: "science", sciencepb: "science", physics: "science", chemistry: "science", biology: "science",
+    evs: "evs", english: "english", englishpb: "english", hindi: "hindi", hindipb: "hindi", punjabi: "punjabi", sst: "sst", sstpb: "sst", geography: "sst", history: "sst", historypb: "sst", phc: "sst" };
+  function subject(id, o) {
+    o = o || {};
+    var k = SUBJ_OF[id] || "book", s = o.s == null ? 64 : o.s, sc = Math.round(s / 100 * 10000) / 10000;
+    return '<g transform="translate(' + f1(o.x || 0) + " " + f1(o.y || 0) + ") scale(" + sc + ") translate(-50 -50)\"" + SA + ">" + SUBJ[k]() + "</g>";
+  }
+  function subjectSvg(id, size, label) { return svg(subject(id, { x: 50, y: 50, s: 100 }), { w: 100, h: 100, label: label }).replace("<svg ", '<svg width="' + size + '" height="' + size + '" '); }
+
   // The grid that fits n items in w×h with the biggest cells (5 to a row preferred).
   function grid(n, w, h) {
     var best = null, c, r, cell;
@@ -451,5 +500,5 @@
       ' xmlns="http://www.w3.org/2000/svg"><defs>' + defs + "</defs>" + content + "</svg>";
   }
 
-  root.Pics = { svg: svg, item: item, names: NAMES, row: row, rowSize: rowSize, clock: clock, fraction: fraction, coin: coin, note: note, tens: tens, one: one, shape: shape, FR: FR, wedge: wedge, shade: shade, tint: tint };
+  root.Pics = { svg: svg, item: item, names: NAMES, row: row, rowSize: rowSize, clock: clock, fraction: fraction, coin: coin, note: note, tens: tens, one: one, shape: shape, FR: FR, wedge: wedge, shade: shade, tint: tint, subject: subject, subjectSvg: subjectSvg, SUBJ_OF: SUBJ_OF };
 })(typeof window !== "undefined" ? window : this);

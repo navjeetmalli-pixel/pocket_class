@@ -205,10 +205,22 @@
         <div class="grow"><div class="k">${t("Start learning")}</div><div class="t">${t("Choose a subject")}</div><div class="s">${International.on() ? t("Pick a subject and start with a topic.") : t("Pick a subject and open your first chapter.")}</div></div>
         <span class="go">${icon("arrow")}</span></a>`;
 
+    const who = st.profile.name ? `, ${esc(st.profile.name)}` : "";
+    const subLine = `${greet} · ${International.label(st.profile)} · ${intl ? t(International.country(st.profile.country).name) : st.profile.board === "pseb" ? "PSEB" : "CBSE"}`;
+    let head;
+    if (band === "1-2" || band === "3-5") {
+      // Mithu greets the younger learner, with a line that changes with the time of day.
+      const lines = hr < 12 ? [t("Ready to learn?"), t("A fresh start today!")] : hr < 17 ? [t("Ready to learn?"), t("Let's play and learn!")] : [t("A little learning tonight?"), t("Let's finish the day well!")];
+      const line = lines[hash(dayKey() + "/m") % lines.length];
+      head = `<div class="mascot-head shell-head" data-tab="today">${Mascot.html("wave", { size: band === "1-2" ? 104 : 88, say: `<h1>${intl ? t("Hello") : t("Namaste")}${who}${who ? "!" : ""}</h1><p>${line}</p>` })}${Views._.profileButton()}</div><div class="home-head mascot-sub"><div class="sub sub-line">${subLine}</div></div>`;
+    } else {
+      head = Views._.shellHead(`${intl ? t("Hello") : t("Namaste")}${who}`, subLine, "today");
+    }
+
     return {
       title: t("Today"),
       html: `
-        ${Views._.shellHead(intl ? `${t("Hello")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""}` : `${t("Namaste")}${st.profile.name ? `, ${esc(st.profile.name)}` : ""}`, `${greet} · ${International.label(st.profile)} · ${intl ? t(International.country(st.profile.country).name) : st.profile.board === "pseb" ? "PSEB" : "CBSE"}`, "today")}
+        ${head}
         <div class="${young ? "home-young" : "home-main"}">
         ${boardNote(c)}
         ${

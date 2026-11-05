@@ -613,7 +613,7 @@ const Guided = (() => {
     } else {
       foot = `<div class="quiz-nav">
         <button class="btn" data-act="hint" ${hintsLeft ? "" : "disabled"}>${icon("notes")} ${t("Show a hint")}${hintsLeft ? ` ${t("({n} left)", { n: hintsLeft })}` : ""}</button>
-        ${tn.options ? "" : `<button class="btn primary" data-act="show-turn">${t("Show the solution")}</button>`}
+        ${tn.options ? "" : `<button class="btn primary" data-act="show-turn">${icon("eye")} ${t("Show the solution")}</button>`}
       </div>`;
     }
     return `
@@ -1065,6 +1065,7 @@ const Guided = (() => {
       const it = s.diag.items[s.diag.i];
       if (!it || it.picked !== null) return;
       it.picked = orig;
+      Sound.answer(orig === it.answer);
       // Not graded and not counted towards any skill: kept as a plain record of how the check went.
       Learn.record([{ type: "diagnostic", cls: it.from.cls, subject: it.from.subject, chapter: it.from.chapter, ok: orig === it.answer, for: s.ch.id, source: "guided" }]);
     } else if (k === "fade") {
@@ -1072,11 +1073,13 @@ const Guided = (() => {
       if (!f || !f.options || f.revealed) return;
       f.picked = orig;
       f.revealed = true;
+      Sound.answer(orig === 0);
       log({ q: f.q, options: f.options, answer: 0, explain: f.steps.join(" "), kinds: f.kinds }, orig === 0, orig);
     } else if (k === "turn") {
       const tn = s.turn;
       if (!tn || !tn.options || tn.picked !== null) return;
       tn.picked = orig;
+      Sound.answer(orig === 0);
       log({ q: tn.q, options: tn.options, answer: 0, explain: tn.steps.join(" "), kinds: tn.kinds }, orig === 0, orig, tn.shown);
       // Rule: right, but only with several hints -> a similar question with none.
       const d = Loop.decide("turn-done", s, { ok: orig === 0, hints: tn.shown })[0];
@@ -1091,11 +1094,13 @@ const Guided = (() => {
       const it = s.again;
       if (!it || it.picked !== null) return;
       it.picked = orig;
+      Sound.answer(orig === it.answer);
       log(it, orig === it.answer, orig, 0);
     } else if (k === "practice") {
       const it = s.practice[s.p];
       if (!it || it.picked !== null) return;
       it.picked = orig;
+      Sound.answer(orig === it.answer);
       if (orig !== it.answer) s.retrieveWrong++; // the answer is logged once the learner says how sure they were (data-sure)
     } else if (k === "master") {
       const m = s.master.items[s.master.i];
@@ -1103,6 +1108,7 @@ const Guided = (() => {
       const it = m.item;
       it.picked = orig;
       const ok = orig === it.answer;
+      Sound.answer(ok);
       log(it, ok, orig, 0);
       if (m.kind === "check") s.masterResult[m.obj] = ok;
       // Rule: a strong independent check brings a question that uses the idea in a new situation.
