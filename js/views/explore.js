@@ -36,7 +36,6 @@
     timeline: "Put events in order and see what came before what.",
   };
   const MATHS_GAMES = ["balance", "angles", "fractions", "numberline", "graphs"];
-  const SHOW = 3; // chapters listed on a card; the rest are in Play
 
   // Subjects of this class that an area could use (their files are loaded for this page).
   function exploreNeeds(c) {
@@ -91,28 +90,76 @@
     return out;
   }
 
-  function card(c, it) {
-    const row = (r) => {
-      const open = it.kind === "lab"
-        ? `<a class="btn primary" href="#/lab/${it.type}/${c}/${r.subj.id}/${r.ch.id}">${icon(it.ic)} ${t("Open lab")}</a>`
-        : it.kind === "sim"
-        ? `<a class="btn" data-open-sim="${it.type}" href="#/chapter/${c}/${r.subj.id}/${r.ch.id}/notes">${icon("bolt")} ${t("Open experiment")}</a>`
-        : `<a class="btn" href="#/play/${c}/${r.subj.id}/${r.ch.id}/${it.type}">${icon("play")} ${t("Play")}</a>`;
-      const concept = `<a class="btn" href="#/chapter/${c}/${r.subj.id}/${r.ch.id}">${icon("notes")} ${t("Chapter")}</a>`;
-      return `<li class="ex-row"><span class="ex-ch grow"><span class="small muted">${esc(r.subj.short)}</span> ${esc(r.ch.title)}</span>${open}${concept}</li>`;
+  // One short line per lab, experiment and game for the card (the full description is inside the lab itself).
+  const SHORT = {
+    "lab-algebratiles": "Build algebra with tiles you can move",
+    "lab-body": "Tap organs to see what they do",
+    "lab-atom": "Build atoms and join them into molecules",
+    "lab-circuit": "Build circuits with a battery and bulbs",
+    "lab-cell": "Build plant and animal cells, part by part",
+    "lab-foodweb": "Link who eats whom in a food web",
+    "lab-equation": "Balance chemical equations by counting atoms",
+    "lab-fractionwall": "Shade bricks to compare fractions",
+    "lab-grapher": "Move sliders and watch the graph change",
+    "lab-geoboard": "Stretch bands to make shapes",
+    "lab-force": "Pull a cart and see how it moves",
+    "lab-indiamap": "Find states, rivers and mountains on a map",
+    "lab-placevalue": "Build numbers with blocks of tens and ones",
+    "lab-particles": "Heat water and watch the particles",
+    "sim-lens": "See where the image forms",
+    "sim-ohm": "Change the voltage and watch the current",
+    "sim-pend": "Change the length and time the swing",
+    "sim-proj": "Change the speed and angle of a throw",
+    "sim-snell": "Watch light bend between materials",
+    "sim-quad": "Change a, b and c and watch the curve",
+    "game-balance": "Keep the scale balanced",
+    "game-angles": "Estimate angles and find the missing one",
+    "game-fractions": "Shade pieces to see fractions",
+    "game-numberline": "Place numbers on a line",
+    "game-graphs": "Plot lines and read graphs",
+    "game-label": "Put the labels back on a diagram",
+    "game-timeline": "Put events in the right order",
+  };
+  // Without a hand-written line: the first sentence of the description, cut to about eight words.
+  const shortLine = (it) => {
+    if (SHORT[it.key]) return t(SHORT[it.key]);
+    const w = String(it.what || "").split(/[.;]/)[0].split(/\s+/);
+    return t(it.what).length < 60 ? t(it.what) : w.slice(0, 8).join(" ") + (w.length > 8 ? "…" : "");
+  };
+
+  // The way into an item for one chapter (the lab, the experiment in its chapter, or the game).
+  const hrefFor = (c, it, r) =>
+    it.kind === "lab" ? `#/lab/${it.type}/${c}/${r.subj.id}/${r.ch.id}` : it.kind === "sim" ? `#/chapter/${c}/${r.subj.id}/${r.ch.id}/notes` : `#/play/${c}/${r.subj.id}/${r.ch.id}/${it.type}`;
+
+  // The chapter the learner opened most recently (else the first one the item is attached to) is the most relevant one.
+  function bestRow(c, it) {
+    const at = (r) => {
+      const rec = Store.state.chapters[Store.key(c, r.subj.id, r.ch.id)];
+      return rec && typeof rec.opened === "number" ? rec.opened : 0;
     };
-    const more = it.rows.length - SHOW;
-    return `<article class="card explore-item" style="--c:${it.color}" data-explore="${it.key}">
-      <div class="row" style="align-items:flex-start"><span class="ti">${icon(it.ic)}</span>
-        <div class="grow"><h3 class="ex-title">${t(it.title)}</h3><p class="small muted">${t(it.what)}</p></div></div>
-      <ul class="ex-rows">${it.rows.slice(0, SHOW).map(row).join("")}</ul>
-      ${more > 0 ? `<p class="tiny muted" style="margin:6px 0 0">${t("and {n} more {n:chapter|chapters}", { n: more })}</p>` : ""}
+    return it.rows.reduce((a, r) => (at(r) > at(a) ? r : a), it.rows[0]);
+  }
+
+  function card(c, it, tile) {
+    const best = bestRow(c, it);
+    const others = it.rows.filter((r) => r !== best);
+    const sim = it.kind === "sim" ? ` data-open-sim="${it.type}"` : "";
+    const also = others.length
+      ? `<details class="ex-also"><summary>${t("Also in {n} more {n:chapter|chapters}", { n: others.length })}</summary>
+          <ul>${others.slice(0, 12).map((r) => `<li><a${sim} href="${hrefFor(c, it, r)}">${esc(r.subj.short)} · ${esc(r.ch.title)}</a></li>`).join("")}</ul></details>`
+      : "";
+    return `<article class="card explore-item${tile ? " ex-tile" : ""}" style="--c:${it.color}" data-explore="${it.key}">
+      <div class="ex-top"><span class="ti">${icon(it.ic)}</span>
+        <div class="grow"><h3 class="ex-title">${t(it.title)}</h3><p class="ex-line">${shortLine(it)}</p></div></div>
+      <a class="btn primary ex-try"${sim} href="${hrefFor(c, it, best)}">${icon("play")} ${t("Try it")}<span class="sr-only"> · ${esc(best.ch.title)}</span></a>
+      ${also}
     </article>`;
   }
 
   function explore() {
     if (International.on()) return Views.intlExplore();
     const c = cls();
+    const young = ["1-2", "3-5"].includes(App.band(c));
     const all = items(c);
     const sections = AREAS.map((a) => ({ a, list: all.filter((x) => x.area === a.id) })).filter((x) => x.list.length);
     const body = sections.length
@@ -120,17 +167,15 @@
           .map(
             ({ a, list }) => `<section class="ex-area" id="area-${a.id}" aria-labelledby="area-h-${a.id}">
               <h2 class="block-title ex-h" id="area-h-${a.id}">${icon(a.icon)} ${t(a.name)}</h2>
-              <p class="small muted" style="margin:-4px 2px 10px">${t(a.sub)}</p>
-              <div class="stack">${list.map((it) => card(c, it)).join("")}</div>
+              <div class="${young ? "ex-grid" : "stack"}">${list.map((it) => card(c, it, young)).join("")}</div>
             </section>`
           )
           .join("")
       : emptyState("lab", t("Experiments and labs for Class {n} are coming soon. Games and lessons are in Play and Learn.", { n: c }), { href: "#/play", label: t("Play") });
     return {
       title: t("Explore"),
-      html: `${Views._.shellHead(t("Explore"), t("Investigate ideas by trying them. Each one links back to its chapter."), "explore")}
-        <div class="explore-main">${body}</div>
-        ${sections.length ? `<p class="small muted" style="margin:22px 2px 0">${t("More labs are coming soon.")}</p>` : ""}`,
+      html: `${Views._.shellHead(t("Explore"), t("Try things and see what happens"), "explore")}
+        <div class="explore-main">${body}</div>`,
       mount(el) {
         el.onclick = (e) => {
           const a = e.target.closest("[data-open-sim]");

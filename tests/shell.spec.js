@@ -179,15 +179,14 @@ test("explore: shows the labs that have something for the class, and each experi
   const card = page.locator('[data-explore="sim-lens"]');
   await expect(card).toBeVisible();
   await expect(card).toContainText("image forms");
-  await card.getByRole("link", { name: /Open experiment/ }).first().click();
+  await card.getByRole("link", { name: /Try it/ }).first().click();
   await expect(page).toHaveURL(/#\/chapter\/10\/science\/light-reflection-and-refraction\/explore$/);
   const sim = page.locator('[data-sim="lens"]');
   await expect(sim).toHaveAttribute("open", "");
   await expect(sim.locator(".sim-body svg").first()).toBeVisible();
-  // Every link on the page goes to a real screen: the concept (chapter) link works too.
+  // The other chapters are in the "Also in" list, not repeated as button pairs.
   await page.goto("/#/explore");
-  await card.getByRole("link", { name: /^.*Chapter$/ }).first().click();
-  await expect(page).toHaveURL(/#\/chapter\/10\/science\/light-reflection-and-refraction$/);
+  await expect(card.locator(".btn")).toHaveCount(1);
 });
 
 test("explore: a visual Maths game opens from Maths Studio; a class without labs says so honestly", async ({ page }) => {
@@ -195,7 +194,7 @@ test("explore: a visual Maths game opens from Maths Studio; a class without labs
   await page.goto("/#/explore");
   const game = page.locator('[data-explore^="game-"]').first();
   await expect(game).toBeVisible();
-  await game.getByRole("link", { name: /Play/ }).first().click();
+  await game.getByRole("link", { name: /Try it/ }).first().click();
   await expect(page).toHaveURL(/#\/play\/7\/\w+\/[\w-]+\/\w+$/);
   await expect(page.locator(".game-intro")).toBeVisible();
 });
@@ -221,7 +220,7 @@ test("play: groups for continuing, quick challenges and subjects; played games c
   await seed(page, { name: "Asha", cls: 7, student: { games: { [`7/maths/${maths}`]: { match: { best: 40, stars: 2, plays: 1, at: Date.now() } } }, chapters: { [`7/maths/${maths}`]: { opened: Date.now() } } } });
   await page.goto("/#/games");
   await expect(h1(page)).toHaveText("Play");
-  await expect(page.getByRole("heading", { name: "Continue playing" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Play again" })).toBeVisible();
   const tile = page.locator(".game-tile").first();
   await expect(tile).toContainText("Maths");
   await expect(tile).toContainText("min");

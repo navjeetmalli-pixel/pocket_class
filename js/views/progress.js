@@ -22,7 +22,7 @@
     }[next.k]();
     return `<div class="rd-box" aria-label="${t("Concept learning")}">
       <h3>${t("Concept learning")}</h3>
-      <p class="rd-sub">${t("How well you understand and remember the ideas. Quizzes, lessons and games all count.")}</p>
+      <p class="rd-sub">${t("How well you understand and remember the ideas.")}</p>
       ${
         x.started
           ? `<div class="rd-stages" role="list">${Readiness.STAGES.map((k) => `<div role="listitem" class="${k === "ready" ? "ready" : ""}"><span class="n">${x[k]}</span><span class="l">${t(Readiness.STAGE_LABEL[k])}</span></div>`).join("")}</div>`
@@ -57,46 +57,46 @@
       ${x.fmt.mcq[1] ? line(t(Readiness.FORMATS.mcq), pctText(...x.fmt.mcq)) : ""}
       ${x.fmt.ar[1] ? line(t(Readiness.FORMATS.ar), pctText(...x.fmt.ar)) : ""}
       ${x.timed[1] ? line(t("With the clock on"), pctText(...x.timed)) : ""}
-      <p class="tiny muted" style="margin:8px 0 0">${t("Written answers (2, 3 and 5 marks) are not marked by the app, so they are not counted here.")}</p>
+      <p class="tiny muted" style="margin:8px 0 0">${t("Written answers are not marked by the app.")}</p>
       ${nextHTML ? `<div class="rd-next">${nextHTML}</div>` : ""}
     </div>`;
   }
 
   // Chapters of a subject that have any evidence, with both measures side by side (never added together).
-  function chapterRows(c, s) {
+  function chapterRows(c, s, conceptOnly) {
     const st = Store.state;
     const rows = D.chapters(c, s.id)
       .map((ch) => {
         const k = Store.key(c, s.id, ch.id);
         return { ch, k, cc: Readiness.concept(c, s.id, ch.id), ex: Readiness.exam(c, s.id, ch.id), seen: (st.acc[k] || [0, 0])[1] };
       })
-      .filter((r) => r.cc.started || r.ex.tested || r.seen);
+      .filter((r) => r.cc.started || (!conceptOnly && r.ex.tested) || r.seen);
     if (!rows.length) return "";
     const line = (r) => {
       const stages = Readiness.STAGES.filter((k) => r.cc[k]).map((k) => `${t(Readiness.STAGE_LABEL[k])} ${r.cc[k]}`);
       const concept = stages.length ? stages.join(" · ") : t("No skills started yet.");
       const exam = r.ex.all[1] ? `${t("Mock tests")}: ${pctText(r.ex.all[0], r.ex.all[1])}` : `${t("Mock tests")}: ${t("not in a test yet")}`;
-      return `<div class="rd-ch"><strong>${esc(r.ch.title)}</strong><span class="muted">${t("Concept learning")}: ${concept}</span><span class="muted">${exam}</span></div>`;
+      return `<div class="rd-ch"><strong>${esc(r.ch.title)}</strong><span class="muted">${t("Concept learning")}: ${concept}</span>${conceptOnly ? "" : `<span class="muted">${exam}</span>`}</div>`;
     };
     return `<div class="rd-box rd-chapters"><h3>${t("By chapter")}</h3>${rows.slice(0, 8).map(line).join("")}${rows.length > 8 ? `<p class="small muted">${t("and {n} more", { n: rows.length - 8 })}</p>` : ""}</div>`;
   }
 
-  function readinessSection(c) {
+  function readinessSection(c, conceptOnly) {
     const subs = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length);
     if (!subs.length) return "";
     const rows = subs
       .map((s, i) => {
         const cc = Readiness.concept(c, s.id);
         const ex = Readiness.exam(c, s.id);
-        const brief = [cc.started ? t("{n} {n:skill|skills} started", { n: cc.started }) : "", ex.all[1] ? t("{n} mock test {n:answer|answers}", { n: ex.all[1] }) : ""].filter(Boolean).join(" · ");
-        return `<details class="card rd-subj" style="--c:${s.color}" ${i === 0 || cc.started || ex.attempted ? "open" : ""}>
+        const brief = [cc.started ? t("{n} {n:skill|skills} started", { n: cc.started }) : "", !conceptOnly && ex.all[1] ? t("{n} mock test {n:answer|answers}", { n: ex.all[1] }) : ""].filter(Boolean).join(" · ");
+        return `<details class="card rd-subj" style="--c:${s.color}" ${i === 0 || cc.started || (!conceptOnly && ex.attempted) ? "open" : ""}>
           <summary><span>${SubjectIcons.html(s)}</span><span class="grow">${esc(s.name)}${brief ? `<span class="small muted" style="display:block;font-weight:500">${brief}</span>` : ""}</span><span class="chev">${icon("next")}</span></summary>
-          <div class="rd-body">${conceptBox(c, s)}${examBox(c, s)}${chapterRows(c, s)}</div>
+          <div class="rd-body">${conceptBox(c, s)}${conceptOnly ? "" : examBox(c, s)}${chapterRows(c, s, conceptOnly)}</div>
         </details>`;
       })
       .join("");
-    return `<h2 class="block-title">${t("Concept learning and exam readiness")}</h2>
-      <p class="small muted" style="margin:-4px 2px 12px">${t("Two different things. A game can go well without being ready for an exam paper, and an exam answer can be learned without understanding the idea. Both are shown, so you can work on each.")}</p>
+    return `<h2 class="block-title">${conceptOnly ? t("Concept learning") : t("Concept learning and exam readiness")}</h2>
+      ${conceptOnly ? "" : `<p class="small muted" style="margin:-4px 2px 12px">${t("Understanding the ideas and doing well in exams are different. Both are shown.")}</p>`}
       <div class="stack">${rows}</div>`;
   }
 
@@ -140,8 +140,8 @@
         list.length
           ? `<div class="card"><ul class="reward-list">${list
               .map((r) => `<li><span class="rw-ico" aria-hidden="true">${ICO[r.kind]}</span><span><span class="rw-t">${text(r)}</span><span class="rw-d" style="display:block">${r.at ? relDate(r.at) : ""}</span></span></li>`)
-              .join("")}</ul><p class="tiny muted" style="margin:10px 0 0">${t("Small thank-yous for how you learn. There are no points or ranks.")}</p></div>`
-          : `<div class="card small muted">${t("Recognitions appear as you learn: improving after feedback, remembering after a break, finishing a hard skill without hints, or explaining a chapter in your own words.")}</div>`
+              .join("")}</ul><p class="tiny muted" style="margin:10px 0 0">${t("Small thank-yous. No points or ranks.")}</p></div>`
+          : `<div class="card small muted">${t("Recognitions appear as you learn.")}</div>`
       }`;
   }
 
@@ -159,23 +159,43 @@
         ${
           total
             ? `<div class="band-row" role="list">${BANDS.map(([k, label, mark]) => `<div class="band band-${k}" role="listitem"><span class="n">${n[k]}</span><span class="l"><span aria-hidden="true">${mark}</span> ${t(label)}</span></div>`).join("")}</div>
-               <p class="tiny muted" style="margin:10px 0 0">${t("Developing: still learning it. Secure: you can do it with little help. Mastered: you did it on your own, more than once, and remembered it after a break.")}</p>`
-            : `<p class="small muted" style="margin:0">${t("No skills started yet. Finish a lesson or a quiz and your skills show up here as developing, secure and mastered.")}</p>`
+               <p class="tiny muted" style="margin:10px 0 0">${t("Developing: still learning. Secure: little help needed. Mastered: done alone and remembered.")}</p>`
+            : `<p class="small muted" style="margin:0">${t("No skills started yet. Finish a lesson to begin.")}</p>`
         }
       </div>`;
   }
 
+  // Classes 1 to 5: "Skills I'm learning" as a plain list, a subject on each line with its state chips.
+  function skillsList(c) {
+    const rows = D.subjectsFor(c)
+      .map((s) => {
+        const sk = Learn.counts(c, s.id);
+        const chips = Mastery.STATES.filter((k) => sk[k]).map((k) => `<span class="obj-chip s-${k}"><span aria-hidden="true">${Mastery.MARK[k]}</span> ${t(Mastery.LABEL[k])} · ${sk[k]}</span>`);
+        return chips.length ? `<li style="--c:${s.color}"><span class="sk-subj">${SubjectIcons.html(s)}<strong>${esc(s.name)}</strong></span><span class="obj-counts">${chips.join("")}</span></li>` : "";
+      })
+      .join("");
+    return `<h2 class="block-title">${t("Skills I'm learning")}</h2>
+      <div class="card" id="skill-bands">${rows ? `<ul class="skill-list">${rows}</ul>` : `<p class="small muted" style="margin:0">${t("No skills started yet. Finish a lesson to begin.")}</p>`}</div>`;
+  }
+
   // Where to go to fix and revise: the mistakes, the chapters due, and the parent summary.
-  function workOnSection(c) {
+  function workOnSection(c, young) {
     const mistakes = Store.mistakesFor(c).length;
     const due = Store.due(c).length;
     const row = (href, title, sub, ic) => `<a class="card row" href="${href}"><span class="ti">${icon(ic)}</span><span class="grow"><strong>${title}</strong><span class="small muted" style="display:block">${sub}</span></span>${icon("next")}</a>`;
+    if (young)
+      return `<h2 class="block-title">${t("What next?")}</h2>
+      <div class="stack work-big" id="work-next">
+        ${row("#/revise/mistakes", t("My mistakes"), mistakes ? t("{n} {n:question|questions} to fix", { n: mistakes }) : t("Nothing to fix yet"), "target")}
+        ${International.on() ? "" : row("#/revise/due", t("Due for revision"), due ? t("{n} {n:chapter|chapters} due", { n: due }) : t("Nothing due yet"), "revise")}
+        <a class="parent-link" href="#/parent">${icon("users")} ${t("Parent area")}</a>
+      </div>`;
     return `<h2 class="block-title">${t("What to work on next")}</h2>
       <div class="stack" id="work-next">
         ${row("#/revise/mistakes", t("My mistakes"), mistakes ? t("{n} {n:question|questions} to fix", { n: mistakes }) : t("Nothing to fix yet"), "target")}
         ${International.on() ? "" : row("#/revise/due", t("Due for revision"), due ? t("{n} {n:chapter|chapters} due", { n: due }) : t("Nothing due yet"), "revise")}
         ${row("#/", t("Today's plan"), t("A short plan you can finish."), "check")}
-        ${row("#/parent", t("Parent area"), t("A one-page summary of the week to show or print."), "users")}
+        ${row("#/parent", t("Parent area"), t("A weekly summary to show or print."), "users")}
       </div>`;
   }
 
@@ -193,6 +213,10 @@
     const activeDays = Object.values(st.days).filter((d) => d.acts > 0 || d.min > 0).length;
 
     const intl = International.on();
+    const band = App.band(c);
+    const young = band === "1-2" || band === "3-5";
+    const concept = band === "6-8";
+    const stars = Object.keys(st.games).reduce((a, k) => a + Games.totalStars(k), 0);
     const subj = (intl ? [] : D.subjectsFor(c))
       .map((s) => {
         const x = subjectStats(c, s.id);
@@ -208,21 +232,7 @@
       .join("");
 
     const hist = quizzes.slice(0, 12);
-    return {
-      title: t("Progress"),
-      html: `
-        ${Views._.shellHead(t("Your progress"), t("{class} · {days} study {days:day|days} so far", { class: International.label(st.profile), days: activeDays }), "progress")}
-        <div class="stats-4">
-          ${Store.showStreak() ? `<div class="card stat"><div class="v">${Store.streak() ? icon("flame") + " " + Store.streak() : "–"}</div><div class="l">${t("day streak")}</div></div>` : `<div class="card stat"><div class="v">${Readiness.concept(c).started}</div><div class="l">${t("skills started")}</div></div>`}
-          <div class="card stat"><div class="v">${minutesLabel(week)}</div><div class="l">${t("studied this week")}</div></div>
-          <div class="card stat"><div class="v">${minutesLabel(st.focusMin)}</div><div class="l">${t("focus timer")}</div></div>
-          <div class="card stat"><div class="v">${quizzes.length}</div><div class="l">${t("quizzes &amp; tests")}</div></div>
-        </div>
-        ${intl ? "" : bandSection(c)}
-        ${workOnSection(c)}
-        ${intl ? "" : readinessSection(c)}
-        ${intl ? "" : rewardsSection(c)}
-        ${certificatesSection()}
+    const more = `
         <h2 class="block-title">${t("This week")}</h2>
         <div class="card">
           <div class="week" role="img" aria-label="${t("Minutes studied each day this week")}">${days
@@ -247,7 +257,31 @@
                 )
                 .join("")}</div>`
             : emptyState("quiz", t("Take your first chapter quiz to see your scores here."), { href: "#/learn", label: t("Learn") })
-        }`,
+        }`;
+    return {
+      title: t("Progress"),
+      html: `
+        ${Views._.shellHead(t("Your progress"), t("{class} · {days} study {days:day|days} so far", { class: International.label(st.profile), days: activeDays }), "progress")}
+        ${
+          young
+            ? `<div class="stats-4 stats-young">
+          <div class="card stat"><div class="v">${icon("star")} ${stars}</div><div class="l">${t("stars")}</div></div>
+          ${Store.showStreak() ? `<div class="card stat"><div class="v">${icon("flame")} ${Store.streak() || "–"}</div><div class="l">${t("day streak")}</div></div>` : `<div class="card stat"><div class="v">${icon("check")} ${Readiness.concept(c).started}</div><div class="l">${t("skills started")}</div></div>`}
+        </div>`
+            : `<div class="stats-4">
+          ${Store.showStreak() ? `<div class="card stat"><div class="v">${Store.streak() ? icon("flame") + " " + Store.streak() : "–"}</div><div class="l">${t("day streak")}</div></div>` : `<div class="card stat"><div class="v">${Readiness.concept(c).started}</div><div class="l">${t("skills started")}</div></div>`}
+          <div class="card stat"><div class="v">${minutesLabel(week)}</div><div class="l">${t("studied this week")}</div></div>
+          <div class="card stat"><div class="v">${minutesLabel(st.focusMin)}</div><div class="l">${t("focus timer")}</div></div>
+          <div class="card stat"><div class="v">${quizzes.length}</div><div class="l">${t("quizzes &amp; tests")}</div></div>
+        </div>`
+        }
+        ${young ? (intl ? "" : skillsList(c)) : intl ? "" : bandSection(c)}
+        ${workOnSection(c, young)}
+        ${intl || young ? "" : readinessSection(c, concept)}
+        ${intl || young ? "" : rewardsSection(c)}
+        ${certificatesSection()}
+        
+        ${young ? "" : more}`,
     };
   }
 

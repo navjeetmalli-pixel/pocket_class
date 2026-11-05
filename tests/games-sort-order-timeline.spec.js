@@ -183,6 +183,8 @@ test("timeline: events are placed by tap and drag, wrong ones go back, right one
   await expect(page.locator(".tl-slot.locked")).toHaveCount(right);
   await expect(page.locator(".tl-slot.locked .tl-year")).toHaveCount(right);
   await expect(page.locator("[data-fb] .feedback.bad")).toContainText("wrong place");
+  await expect(page.locator("[data-fb] .tl-why")).toContainText(/came before .*: .* vs /); // one line says which came first
+  await expect(page.locator(".tl-st.locked")).toHaveCount(right); // the road shows the locked stations
   await expect(page.locator(".tl-chip:visible")).toHaveCount(n - right); // wrong ones are back in the pile
   await expect(page.locator(".tl-slot.bad")).toHaveCount(0);
 
@@ -209,6 +211,54 @@ test("timeline: events are placed by tap and drag, wrong ones go back, right one
   await expect(page.locator(".game-result")).toBeVisible();
   await expect(page.locator(".review-item")).not.toHaveCount(0);
   expect(current(await readStore(page)).games[`10/sst/${NAT}`].timeline.plays).toBe(1);
+});
+
+test("timeline: a wrong order explains with the years (BCE before CE), then the retry fixes it", async ({ page }) => {
+  await seed(page, { cls: 6, board: "pseb" });
+  await page.goto(gameUrl(6, "sstpb", "mauryas-and-shungas", "timeline"));
+  await spy(page, "timeline");
+  await start(page);
+  const data = await page.evaluate(() => window.__game);
+  // BCE years are negative: Ashoka (268 BCE) comes before 185 BCE, and every year is in order
+  const years = data.events.map((e) => e.year);
+  expect(years).toEqual(years.slice().sort((a, b) => a - b));
+  expect(years[0]).toBeLessThan(0);
+  const n = data.events.length;
+  const chip = (i) => page.locator(`.tl-chip[data-chip="${i}"]`);
+  const slot = (s) => page.locator(`.tl-slot[data-slot="${s}"]`);
+  // right order except the first two swapped
+  const order = data.events.map((_, i) => i);
+  [order[0], order[1]] = [order[1], order[0]];
+  for (let s = 0; s < n; s++) {
+    await chip(order[s]).click();
+    await slot(s).click();
+  }
+  await page.locator("[data-act=check]").click();
+  const why = page.locator("[data-fb] .tl-why");
+  await expect(why).toContainText(data.events[0].label);
+  await expect(why).toContainText(data.events[1].label);
+  await expect(why).toContainText("BCE");
+  await expect(page.locator(".tl-slot.bad")).toHaveCount(2);
+  await expect(page.locator(".tl-slot.bad")).toHaveCount(0); // they shake, then go back to the pile
+  await expect(page.locator(".tl-chip:visible")).toHaveCount(2);
+  // the retry: put them right; the years on the road and the cards read BCE
+  await chip(0).click();
+  await slot(0).click();
+  await chip(1).click();
+  await slot(1).click();
+  await page.locator("[data-act=check]").click();
+  await expect(page.locator("[data-fb] .feedback.good")).toContainText("complete");
+  await expect(page.locator(".tl-slot.locked").first()).toContainText("BCE");
+  await expect(page.locator(".tl-yr").first()).toBeVisible();
+  await page.locator("[data-act=done]").click();
+  await expect(page.locator(".game-result")).toBeVisible();
+});
+
+test("timeline: a card gets a picture from its words, never a face, with a safe default", async ({ page }) => {
+  await seed(page, { cls: 8 });
+  await page.goto(gameUrl(8, "sst", "indias-long-road-to-independence", "timeline"));
+  await start(page);
+  await expect(page.locator(".tl-chip .tl-pic svg")).toHaveCount(await page.locator(".tl-chip").count());
 });
 
 test("the new games speak Punjabi when the app is in Punjabi", async ({ page }) => {

@@ -250,6 +250,80 @@ test("graph plot (Class 11): match a function to its graph, and a wrong match sh
   await expect(page.locator(".review-item")).toHaveCount(1);
 });
 
+test("graph plot: a wrong point shows the right one in another colour with dashed guides from the axes", async ({ page }) => {
+  const ch = "orienting-yourself-the-use-of-coordinates";
+  await open(page, 9, "maths", ch, "graphs");
+  const data = await roundsOf(page, "graphs", 9, "maths", ch);
+  await start(page);
+  for (const r of data.rounds) {
+    if (r.type === "point") {
+      // by keyboard, from the origin, to a different point (one step off in x)
+      const wx = r.x + (r.x < 5 ? 1 : -1);
+      await page.locator(".gr-svg").focus();
+      for (let k = 0; k < Math.abs(wx); k++) await page.keyboard.press(wx > 0 ? "ArrowRight" : "ArrowLeft");
+      for (let k = 0; k < Math.abs(r.y); k++) await page.keyboard.press(r.y > 0 ? "ArrowUp" : "ArrowDown");
+      await page.keyboard.press("Enter");
+      await expect(page.locator(".gr-pt").first()).toBeVisible();
+      await page.locator("[data-act=check]").click();
+      await expect(page.locator(".feedback.bad")).toContainText("steps");
+      await expect(page.locator(".gr-pt.bad")).toHaveCount(1);
+      await expect(page.locator(".gr-pt.ok")).toHaveCount(1);
+      await expect(page.locator(".gr-guide .gr-drop")).not.toHaveCount(0);
+      await expect(page.locator(".gr-guide")).toContainText(`x = ${r.x < 0 ? "−" + -r.x : r.x}`);
+      return;
+    }
+    if (r.type === "plot") continue;
+    await page.locator(`.option[data-i="${r.type === "quadrant" ? (r.x > 0 && r.y > 0 ? 0 : r.x < 0 && r.y > 0 ? 1 : r.x < 0 && r.y < 0 ? 2 : 3) : r.answer}"]`).click();
+    await next(page);
+  }
+  throw new Error("no point round in this seed");
+});
+
+test("graph plot: keyboard plots a line (arrows move the cursor, Enter places, Backspace removes) and tapping snaps to the grid", async ({ page }) => {
+  const ch = "pair-of-linear-equations-in-two-variables";
+  await open(page, 10, "maths", ch, "graphs");
+  const data = await roundsOf(page, "graphs", 10, "maths", ch);
+  await start(page);
+  for (const r of data.rounds) {
+    if (r.type !== "plot") {
+      await page.locator(`.option[data-i="${r.answer}"]`).click();
+      await next(page);
+      continue;
+    }
+    const pts = [];
+    for (let x = -5; x <= 5; x++) {
+      const y = r.m * x + r.c;
+      if (Number.isInteger(y) && Math.abs(y) <= 5) pts.push([x, y]);
+    }
+    const grid = page.locator(".gr-svg");
+    await grid.focus();
+    let cur = [0, 0];
+    const go = async ([x, y]) => {
+      for (; cur[0] < x; cur[0]++) await page.keyboard.press("ArrowRight");
+      for (; cur[0] > x; cur[0]--) await page.keyboard.press("ArrowLeft");
+      for (; cur[1] < y; cur[1]++) await page.keyboard.press("ArrowUp");
+      for (; cur[1] > y; cur[1]--) await page.keyboard.press("ArrowDown");
+      await page.keyboard.press("Enter");
+    };
+    await go(pts[0]);
+    await go([pts[0][0], pts[0][1] === 5 ? 4 : pts[0][1] + 1]); // a stray point, then remove it
+    await expect(page.locator(".gr-svg [data-layer=pts] .gr-pt")).toHaveCount(2);
+    await page.keyboard.press("Backspace");
+    await expect(page.locator(".gr-svg [data-layer=pts] .gr-pt")).toHaveCount(1);
+    await go(pts[pts.length - 1]);
+    // a tap a little off a grid point snaps to it: tapping the first point again takes it off
+    const box = await grid.boundingBox();
+    await grid.click({ position: { x: ((160 + 26 * pts[0][0] + 6) * box.width) / 320, y: ((160 - 26 * pts[0][1] - 5) * box.height) / 320 } });
+    await expect(page.locator(".gr-svg [data-layer=pts] .gr-pt")).toHaveCount(1);
+    cur = pts[0].slice(); // the tap moved the cursor to that point
+    await go(pts[0]);
+    await page.locator("[data-act=check]").click();
+    await good(page);
+    await expect(page.locator(".gr-line")).toBeAttached();
+    return;
+  }
+});
+
 test("graph plot (Class 9): tap the point and read coordinates by keyboard", async ({ page }) => {
   const ch = "orienting-yourself-the-use-of-coordinates";
   await open(page, 9, "maths", ch, "graphs");

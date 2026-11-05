@@ -30,7 +30,7 @@ test("explore: Class 6 sees the place-value, fraction and geometry tools under t
   await expect(area).toContainText("Maths Studio");
   for (const t of ["Place-value blocks", "Fraction wall and area model", "Geometry board"]) await expect(area).toContainText(t);
   await expect(area).not.toContainText("Graph explorer");
-  await page.locator('[data-explore="lab-geoboard"]').getByRole("link", { name: /Open lab/ }).first().click();
+  await page.locator('[data-explore="lab-geoboard"]').getByRole("link", { name: /Try it/ }).first().click();
   await expect(page).toHaveURL(/#\/lab\/geoboard\/6\//);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Geometry board");
   await expect(page.locator(".vl .sim-step h3")).toHaveCount(4);

@@ -175,5 +175,5 @@
       .join("")}</div>`;
   }
 
-  Object.assign(Views._, { shellHead, profileButton, subjectCard, subjectGrid, recentChapters, recentList, closeMenu });
+  Object.assign(Views._, { tileTop, shellHead, profileButton, subjectCard, subjectGrid, recentChapters, recentList, closeMenu });
 })();

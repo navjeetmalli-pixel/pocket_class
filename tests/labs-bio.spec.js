@@ -31,7 +31,7 @@ test("explore: both biology labs are listed under the Biology Explorer and open"
   await page.goto("/#/explore");
   await expect(page.locator("#area-biology")).toContainText("Food-web rescue");
   await expect(page.locator("#area-biology")).toContainText("Body systems explorer");
-  await page.locator('[data-explore="lab-foodweb"]').getByRole("link", { name: /Open lab/ }).first().click();
+  await page.locator('[data-explore="lab-foodweb"]').getByRole("link", { name: /Try it/ }).first().click();
   await expect(page).toHaveURL(/#\/lab\/foodweb\//);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Food-web rescue");
   await expect(page.locator(".vl .sim-step h3")).toHaveCount(4);

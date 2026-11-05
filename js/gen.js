@@ -615,6 +615,143 @@ const Gen = (() => {
     return String(k).split("").map((ch) => m[ch] || ch).join("");
   }
 
+  // ---------- picture vocabulary (Classes 1-5): made fresh from the picture kit, no hand-written content ----------
+  // picWhich*  "Which one is a mango?"      four PICTURE options of different things from one category (the options are the words;
+  //                                         the app draws them as picture cards through PicDict.forOptions)
+  // picName*   a picture, "What is this?"   four word options from the same category (never drawn as pictures: that would give it away)
+  // picOdd*    "Which one is different?"    three from one category and one from another (picture options)
+  // picGroup*  "Which of these is a vegetable?" EVS: one member of a small group among things that are not (picture options)
+  // Suffix: Food, Animals, Things, Transport, Nature = only those categories; Hi / Pa = Hindi / Punjabi words (picWhich and picName only).
+  // Every table line is  picture name | English word | Hindi word | Punjabi word  ("-" = none). The Hindi and Punjabi words are exactly the
+  // ones in js/picdict.js (listed there for the teacher's review); tests/picture-vocab.spec.js checks each one draws the picture named here.
+  // Kept on purpose to what is certain in an Indian school book: no tomato, cucumber, pumpkin, lemon, papaya or coconut (fruit or vegetable?),
+  // no bat or orange (two meanings), and "same category" never mixes animals with birds in picOdd.
+  const VOCAB = {};
+  const NEAR = [["car", "taxi", "jeep"], ["boat", "ship"], ["bus", "truck"], ["horse", "donkey", "zebra"], ["goat", "sheep"], ["hen", "rooster"], ["crow", "sparrow", "pigeon"], ["duck", "swan"], ["cabbage", "cauliflower"], ["carrot", "radish"], ["apple", "pomegranate"], ["pencil", "pen", "crayon", "chalk"], ["cap", "hat"], ["tiger", "lion"], ["cup", "glass"], ["parrot", "peacock"], ["bag", "notebook", "book"]];
+  const CATS = {};
+  const MASS = ["ice cream", "bread"];
+  (function () {
+    const def = (id, sg, pl, rows) => {
+      CATS[id] = { sg, pl, items: [] };
+      rows.split(";").forEach((r) => {
+        const p = r.split("|").map((x) => x.trim()), v = { name: p[0], en: p[1], hi: p[2] === "-" ? "" : p[2], pa: p[3] === "-" ? "" : p[3], cat: id };
+        VOCAB[v.name] = v;
+        CATS[id].items.push(v.name);
+      });
+    };
+    def("fruit", "a fruit", "fruits", "apple|apple|सेब|ਸੇਬ; mango|mango|आम|ਅੰਬ; banana|banana|केला|ਕੇਲਾ; strawberry|strawberry|स्ट्रॉबेरी|-; watermelon|watermelon|तरबूज|ਤਰਬੂਜ਼; pineapple|pineapple|अनानास|ਅਨਾਨਾਸ; guava|guava|अमरूद|ਅਮਰੂਦ; pear|pear|नाशपाती|ਨਾਸ਼ਪਾਤੀ; pomegranate|pomegranate|अनार|ਅਨਾਰ");
+    def("vegetable", "a vegetable", "vegetables", "carrot|carrot|गाजर|ਗਾਜਰ; potato|potato|आलू|ਆਲੂ; onion|onion|प्याज|ਪਿਆਜ਼; okra|okra|भिंडी|ਭਿੰਡੀ; radish|radish|मूली|ਮੂਲੀ; brinjal|brinjal|बैंगन|ਬੈਂਗਣ; cabbage|cabbage|पत्तागोभी|ਬੰਦ ਗੋਭੀ; cauliflower|cauliflower|फूलगोभी|ਫੁੱਲ ਗੋਭੀ; pea|pea|मटर|ਮਟਰ");
+    def("animal", "an animal", "animals", "cat|cat|बिल्ली|ਬਿੱਲੀ; dog|dog|कुत्ता|ਕੁੱਤਾ; cow|cow|गाय|ਗਾਂ; elephant|elephant|हाथी|ਹਾਥੀ; goat|goat|बकरी|ਬੱਕਰੀ; sheep|sheep|भेड़|ਭੇਡ; horse|horse|घोड़ा|ਘੋੜਾ; donkey|donkey|गधा|ਗਧਾ; zebra|zebra|ज़ेबरा|-; camel|camel|ऊँट|ਊਠ; giraffe|giraffe|जिराफ़|-; deer|deer|हिरण|ਹਿਰਨ; pig|pig|सूअर|ਸੂਰ; rabbit|rabbit|खरगोश|ਖਰਗੋਸ਼; monkey|monkey|बंदर|ਬਾਂਦਰ; tiger|tiger|बाघ|ਬਾਘ; lion|lion|शेर|ਸ਼ੇਰ; bear|bear|भालू|ਰਿੱਛ; squirrel|squirrel|गिलहरी|ਗਿਲਹਰੀ");
+    def("bird", "a bird", "birds", "parrot|parrot|तोता|ਤੋਤਾ; peacock|peacock|मोर|ਮੋਰ; duck|duck|बत्तख|ਬੱਤਖ; hen|hen|मुर्गी|ਮੁਰਗੀ; rooster|rooster|मुर्गा|ਮੁਰਗਾ; crow|crow|कौआ|ਕਾਂ; sparrow|sparrow|-|ਚਿੜੀ; pigeon|pigeon|कबूतर|ਕਬੂਤਰ; owl|owl|उल्लू|ਉੱਲੂ; eagle|eagle|-|-; swan|swan|हंस|ਹੰਸ");
+    def("vehicle", "a vehicle", "vehicles", "car|car|कार|ਕਾਰ; bus|bus|बस|ਬੱਸ; auto|auto-rickshaw|ऑटो|-; cycle|cycle|साइकिल|ਸਾਈਕਲ; boat|boat|नाव|ਕਿਸ਼ਤੀ; train|train|रेलगाड़ी|ਰੇਲਗੱਡੀ; ship|ship|-|-; aeroplane|aeroplane|हवाई जहाज़|ਹਵਾਈ ਜਹਾਜ਼; truck|truck|ट्रक|ਟਰੱਕ; tractor|tractor|ट्रैक्टर|ਟਰੈਕਟਰ; scooter|scooter|स्कूटर|-; jeep|jeep|जीप|-; helicopter|helicopter|हेलीकॉप्टर|-; taxi|taxi|टैक्सी|ਟੈਕਸੀ");
+    def("home", "a thing we use at home", "things we use at home", "table|table|मेज़|ਮੇਜ਼; chair|chair|कुर्सी|ਕੁਰਸੀ; bed|bed|बिस्तर|ਬਿਸਤਰਾ; door|door|दरवाज़ा|ਦਰਵਾਜ਼ਾ; window|window|खिड़की|ਖਿੜਕੀ; clock|clock|घड़ी|ਘੜੀ; fan|fan|पंखा|ਪੱਖਾ; cup|cup|कप|ਕੱਪ; spoon|spoon|चम्मच|ਚਮਚਾ; plate|plate|थाली|ਥਾਲੀ; glass|glass|गिलास|ਗਲਾਸ; bottle|bottle|बोतल|ਬੋਤਲ; pillow|pillow|तकिया|ਸਿਰਹਾਣਾ; bucket|bucket|बाल्टी|ਬਾਲਟੀ; broom|broom|झाड़ू|ਝਾੜੂ");
+    def("school", "a thing we use at school", "things we use at school", "pencil|pencil|पेंसिल|ਪੈਨਸਿਲ; pen|pen|पेन|ਪੈੱਨ; book|book|किताब|ਕਿਤਾਬ; bag|school bag|बस्ता|ਬਸਤਾ; ruler|ruler|-|-; eraser|eraser|-|-; crayon|crayon|-|-; notebook|notebook|कॉपी|ਕਾਪੀ; chalk|chalk|चॉक|-");
+    def("body", "a part of the body", "parts of the body", "eye|eye|आँख|ਅੱਖ; ear|ear|कान|ਕੰਨ; nose|nose|नाक|ਨੱਕ; mouth|mouth|मुँह|ਮੂੰਹ; hand|hand|हाथ|ਹੱਥ; foot|foot|पैर|ਪੈਰ; tooth|tooth|दाँत|ਦੰਦ; tongue|tongue|जीभ|ਜੀਭ");
+    def("clothes", "something we wear", "things we wear", "shoe|shoe|जूता|ਜੁੱਤੀ; cap|cap|टोपी|ਟੋਪੀ; shirt|shirt|कमीज़|ਕਮੀਜ਼; frock|frock|-|-; sock|sock|मोज़ा|ਜੁਰਾਬ; scarf|scarf|-|-; hat|hat|-|-");
+    def("flower", "a flower", "flowers", "rose|rose|गुलाब|ਗੁਲਾਬ; sunflower|sunflower|सूरजमुखी|ਸੂਰਜਮੁਖੀ; lotus|lotus|कमल|ਕਮਲ; marigold|marigold|गेंदा|-");
+    def("food", "a food", "foods", "roti|roti|रोटी|ਰੋਟੀ; samosa|samosa|समोसा|ਸਮੋਸਾ; laddoo|laddoo|लड्डू|ਲੱਡੂ; egg|egg|अंडा|ਆਂਡਾ; cake|cake|केक|ਕੇਕ; ice-cream|ice cream|आइसक्रीम|-; bread|bread|ब्रेड|-");
+    def("nature", "something in the sky or in nature", "things in the sky or in nature", "sun|sun|सूरज|ਸੂਰਜ; moon|moon|चाँद|ਚੰਨ; star|star|तारा|ਤਾਰਾ; cloud|cloud|बादल|ਬੱਦਲ; mountain|mountain|पहाड़|ਪਹਾੜ; river|river|नदी|ਨਦੀ; rainbow|rainbow|इंद्रधनुष|-");
+    def("job", "a person who works", "people who work", "teacher|teacher|शिक्षक|ਅਧਿਆਪਕ; farmer|farmer|किसान|ਕਿਸਾਨ; doctor|doctor|डॉक्टर|ਡਾਕਟਰ; cook|cook|रसोइया|ਰਸੋਈਆ; police|police officer|पुलिस|-");
+    // things that only appear as picture options in picGroup (English words)
+    [["fish", "fish"], ["butterfly", "butterfly"], ["bee", "bee"], ["crab", "crab"], ["whale", "whale"], ["octopus", "octopus"], ["kite", "kite"], ["leaf", "leaf"], ["tree", "tree"], ["ball", "ball"], ["umbrella", "umbrella"]].forEach((p) => { VOCAB[p[0]] = VOCAB[p[0]] || { name: p[0], en: p[1], hi: "", pa: "", cat: "" }; });
+  })();
+  const SETS = { "": Object.keys(CATS), Food: ["fruit", "vegetable", "food"], Animals: ["animal", "bird"], Things: ["home", "school", "clothes"], Transport: ["vehicle"], Nature: ["nature", "flower"] };
+  const art = (w) => (MASS.includes(w) ? w : (/^[aeiou]/.test(w) ? "an " : "a ") + w);
+  const shuf = (arr, R) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = R.int(0, i), t = a[i]; a[i] = a[j]; a[j] = t; } return a; };
+  // k names from `pool`, never two that look alike (NEAR) and none from `skip`
+  function pickK(pool, k, R, skip) {
+    const out = [];
+    for (const nm of shuf(pool, R)) {
+      if ((skip || []).includes(nm)) continue;
+      const g = NEAR.find((s) => s.includes(nm));
+      if (g && out.some((o) => g.includes(o))) continue;
+      out.push(nm);
+      if (out.length === k) return out;
+    }
+    throw new Error("not enough things");
+  }
+  const word = (nm, lang) => (lang === "en" ? VOCAB[nm].en : VOCAB[nm][lang]);
+  const haveKit = (nm) => { const have = picKit().names; return !have || have.includes(nm); };
+  // a random category of the set that still has `k` different-looking things, with those things
+  const pickCat = (set, R, lang, k) => {
+    for (const c of shuf(SETS[set], R)) {
+      try { return [c, pickK(catPool(c, lang), k, R)]; } catch (e) { /* too few that look different: try another category */ }
+    }
+    throw new Error("no category");
+  };
+  const catPool = (c, lang) => CATS[c].items.filter((nm) => word(nm, lang) && haveKit(nm));
+  const TXT = {
+    en: { which: (w) => `Which one is ${art(w)}?`, what: "What is this?", look: "Look at each picture and say its name.", is: (w) => `This one is ${art(w)}.`, it: (w) => `It is ${art(w)}.`, say: "Say the name of the picture.", alt: "A picture to name" },
+    hi: { which: (w) => `${w} का चित्र कौन-सा है?`, what: "यह क्या है?", look: "हर चित्र को देखो।", is: (w) => `यह ${w} है।`, it: (w) => `यह ${w} है।`, say: "चित्र का नाम बोलो।", alt: "नाम बताने के लिए चित्र" },
+    pa: { which: (w) => `${w} ਦੀ ਤਸਵੀਰ ਕਿਹੜੀ ਹੈ?`, what: "ਇਹ ਕੀ ਹੈ?", look: "ਹਰ ਤਸਵੀਰ ਨੂੰ ਦੇਖੋ।", is: (w) => `ਇਹ ${w} ਹੈ।`, it: (w) => `ਇਹ ${w} ਹੈ।`, say: "ਤਸਵੀਰ ਦਾ ਨਾਮ ਬੋਲੋ।", alt: "ਨਾਮ ਦੱਸਣ ਲਈ ਤਸਵੀਰ" },
+  };
+  const optsOf = (names, lang) => { const picOf = {}; names.forEach((nm) => { picOf[word(nm, lang)] = nm; }); return picOf; };
+  function picWhichQ(R, set, lang) {
+    const [, names] = pickCat(set, R, lang, 4), w = word(names[0], lang), T = TXT[lang];
+    return { q: T.which(w), a: w, wrong: names.slice(1).map((nm) => word(nm, lang)), steps: [T.look, T.is(w)], picOf: optsOf(names, lang) };
+  }
+  function picNameQ(R, set, lang) {
+    const P = picKit(), [, names] = pickCat(set, R, lang, 4), w = word(names[0], lang), T = TXT[lang];
+    return { q: T.what, a: w, wrong: names.slice(1).map((nm) => word(nm, lang)), steps: [T.say, T.it(w)], picAlt: T.alt, pic: P.svg(P.item(names[0], { x: 100, y: 72, s: 120 }), { w: 200, h: 140, label: T.alt }), picOf: optsOf(names, lang) };
+  }
+  // 3 from one category + 1 from another. Not allowed: animals with birds (a bird is an animal), fruit or vegetable with food (a fruit is food),
+  // school things with home things (a clock, a bag and a bottle are used in both), birds with food (an egg).
+  const NO_ODD = [["animal", "bird"], ["fruit", "food"], ["vegetable", "food"], ["school", "home"], ["bird", "food"], ["body", "job"], ["animal", "food"]];
+  function picOddQ(R) {
+    const cats = SETS[""].filter((c) => catPool(c, "en").length >= 3), a = R.pick(cats), others = cats.filter((c) => c !== a && !NO_ODD.some((p) => p.includes(a) && p.includes(c)));
+    return oddFrom(R, a, R.pick(others));
+  }
+  const cap1 = (x) => x[0].toUpperCase() + x.slice(1);
+  function oddFrom(R, a, b) {
+    const three = pickK(catPool(a, "en"), 3, R), odd = pickK(catPool(b, "en"), 1, R)[0], ws = three.map((nm) => word(nm, "en")), ow = word(odd, "en");
+    return { q: "Which one is different?", a: ow, wrong: ws, steps: [`${cap1(ws[0])}, ${ws[1]} and ${ws[2]} are all ${CATS[a].pl}.`, `${cap1(art(ow))} is ${CATS[b].sg}, so it is the odd one out.`], picOf: optsOf([odd, ...three], "en") };
+  }
+  // picGroup: [question, [right answers], [things that are not], explanation of the right answer (word) => text, topic]
+  const GROUPS = [
+    ["Which of these is a vegetable?", CATS.vegetable.items, [...CATS.fruit.items, "car", "cat", "chair", "bus", "cow", "pencil"], (w) => `${cap1(w)} is a vegetable.`, ["food", "plants"]],
+    ["Which of these is a fruit?", CATS.fruit.items, [...CATS.vegetable.items, "car", "cat", "chair", "bus", "cow", "pencil"], (w) => `${cap1(w)} is a fruit.`, ["food", "plants"]],
+    ["Which of these is a flower?", CATS.flower.items, [...CATS.fruit.items, ...CATS.vegetable.items, "leaf", "tree", "cat", "bus"], (w) => `${cap1(w)} is a flower.`, ["plants"]],
+    ["Which of these is a bird?", CATS.bird.items, [...CATS.animal.items, "butterfly", "bee", "fish", "crab"], (w) => `${cap1(w)} is a bird. It has wings and feathers.`, ["animal"]],
+    ["Which animal lives in the sea?", ["fish", "crab", "whale", "octopus"], ["cat", "dog", "cow", "elephant", "goat", "horse", "lion", "tiger", "monkey", "rabbit", "deer", "pig", "sheep", "camel", "zebra", "giraffe", "parrot", "peacock", "crow", "owl"], (w) => `${cap1(w)} lives in the sea.`, ["animal"]],
+    ["Which animal gives us milk?", ["cow", "goat"], ["lion", "tiger", "elephant", "monkey", "zebra", "giraffe", "bear", "deer", "parrot", "crow"], (w) => `A ${w} gives us milk.`, ["animal"]],
+    ["Which of these can fly?", ["aeroplane", "helicopter", "parrot", "crow", "pigeon", "owl", "eagle", "butterfly", "bee", "sparrow"], ["cow", "dog", "cat", "car", "bus", "train", "elephant", "fish", "boat", "table", "cycle", "tractor"], (w) => `${cap1(art(w))} can fly.`, ["animal"]],
+    ["Which one is a pet animal?", ["dog", "cat", "rabbit"], ["lion", "tiger", "zebra", "giraffe", "bear", "deer"], (w) => `A ${w} can be kept as a pet at home.`, ["animal"]],
+    ["Which one is a wild animal?", ["lion", "tiger", "zebra", "giraffe", "bear", "deer"], ["cow", "goat", "sheep", "dog", "cat", "pig"], (w) => `A ${w} lives in the wild, not in our homes.`, ["animal"]],
+    ["Which of these is a means of transport?", CATS.vehicle.items, [...CATS.fruit.items, ...CATS.home.items, ...CATS.school.items, ...CATS.clothes.items], (w) => `We can travel in ${art(w)}.`, ["transport"]],
+    ["Which of these can carry us on water?", ["boat", "ship"], ["car", "bus", "train", "aeroplane", "cycle", "truck", "tractor", "scooter", "helicopter"], (w) => `${cap1(art(w))} travels on water.`, ["transport"]],
+    ["Which of these do we wear?", ["shoe", "cap", "shirt", "frock", "sock", "scarf", "hat"], ["table", "chair", "bed", "cup", "plate", "spoon", "pencil", "book", "apple", "banana", "carrot", "car", "bus", "cat", "dog"], (w) => `We wear ${art(w)}.`, ["wear"]],
+    ["Which part of the body do we see with?", ["eye"], ["ear", "nose", "tongue", "hand", "foot", "tooth"], () => "We see with our eyes.", ["body"]],
+    ["Which part of the body do we hear with?", ["ear"], ["eye", "nose", "tongue", "hand", "foot", "tooth"], () => "We hear with our ears.", ["body"]],
+    ["Which part of the body do we smell with?", ["nose"], ["eye", "ear", "foot", "hand", "tooth"], () => "We smell with our nose.", ["body"]],
+    ["Which part of the body do we taste with?", ["tongue"], ["eye", "ear", "nose", "foot", "hand"], () => "We taste with our tongue.", ["body"]],
+    ["Which part of the body do we chew with?", ["tooth"], ["eye", "ear", "nose", "foot", "hand"], () => "We chew our food with our teeth.", ["body"]],
+    ["Which part of the body do we walk with?", ["foot"], ["eye", "ear", "nose", "tongue", "tooth"], () => "We walk with our feet.", ["body"]],
+    ["Who grows crops in the field?", ["farmer"], ["teacher", "doctor", "cook", "police"], () => "A farmer grows crops in the field.", ["work"]],
+    ["Who teaches us in school?", ["teacher"], ["farmer", "doctor", "cook", "police"], () => "A teacher teaches us in school.", ["work"]],
+    ["Who treats us when we are sick?", ["doctor"], ["teacher", "farmer", "cook", "police"], () => "A doctor treats us when we are sick.", ["work"]],
+    ["Who cooks our food?", ["cook"], ["teacher", "farmer", "doctor", "police"], () => "A cook cooks our food.", ["work"]],
+    ["Who keeps us safe?", ["police"], ["teacher", "farmer", "doctor", "cook"], () => "A police officer keeps us safe.", ["work"]],
+  ];
+  const GROUP_TOPICS = { "": null, Food: "food", Animals: "animal", Transport: "transport", Body: "body", Work: "work", Wear: "wear", Plants: "plants" };
+  function picGroupQ(R, topic) {
+    const tp = GROUP_TOPICS[topic], list = GROUPS.filter((g) => !tp || g[4].includes(tp));
+    const g = R.pick(list), right = pickK(g[1].filter(haveKit), 1, R)[0], wrong = pickK(g[2].filter(haveKit), 3, R, [right]), names = [right, ...wrong];
+    const w = word(right, "en");
+    return { q: g[0], a: w, wrong: wrong.map((nm) => word(nm, "en")), steps: ["Look at each picture and say its name.", g[3](w)], picOf: optsOf(names, "en") };
+  }
+  const vocabGens = {};
+  Object.keys(SETS).forEach((set) => {
+    ["en", "hi", "pa"].forEach((lang) => {
+      const sfx = set + (lang === "en" ? "" : lang === "hi" ? "Hi" : "Pa");
+      vocabGens["picWhich" + sfx] = (R) => picWhichQ(R, set, lang);
+      vocabGens["picName" + sfx] = (R) => picNameQ(R, set, lang);
+    });
+  });
+  vocabGens.picOdd = (R) => picOddQ(R);
+  // picOdd for one pair of categories is not offered by name: the random pair is enough
+  Object.keys(GROUP_TOPICS).forEach((topic) => { vocabGens["picGroup" + topic] = (R) => picGroupQ(R, topic); });
+  Object.assign(G, vocabGens);
+
   // ---------- which generators fit which chapter ----------
   const M = {
     1: { "shapes-around-us": ["picShape"], "numbers-1-to-9": ["add1", "picCount", "picMore"], "numbers-10-to-20": ["picCount20"], "addition-up-to-9": ["add1", "picAdd"], "subtraction-up-to-9": ["sub1", "picSub"], "money-coins-and-notes": ["add1", "picCoins"] },
@@ -675,7 +812,22 @@ const Gen = (() => {
     9: S[9],
   };
   // PSEB uses the earlier NCERT Maths and Science books (Classes 6–9), so those chapters get their own maps.
-  const MAP = { maths: { ...M, 9: M9cbse }, science: { ...S, 9: S9cbse }, physics: P, chemistry: C, mathspb: MPB, sciencepb: SPB };
+  // Picture vocabulary (Classes 1-5): made fresh from the picture kit. Only chapters about naming things, plants, animals, food, body and transport.
+  const PV_E = {
+    1: { "naming-words": ["picWhich", "picName"], "a-and-an": ["picWhich"], "a-farm": ["picWhichAnimals", "picNameAnimals"], "the-food-we-eat": ["picWhichFood", "picNameFood"], "picture-time": ["picName"], "fun-with-pictures": ["picName", "picWhich"], "my-family": ["picWhichThings"] },
+    2: { "naming-words-and-proper-nouns": ["picWhich", "picName", "picOdd"], "picture-reading-out-out": ["picName"], "my-bicycle": ["picWhichTransport", "picNameTransport"], "between-home-and-school": ["picWhichTransport"], "the-crow": ["picWhichAnimals"], "the-smart-monkey": ["picWhichAnimals"], "little-drops-of-water": ["picWhichNature"] },
+    3: { nouns: ["picWhich", "picName", "picOdd"], "picture-reading": ["picName", "picOdd"], "out-in-the-garden": ["picWhichNature"], "the-big-laddoo": ["picWhichFood"], "talking-toys": ["picWhichThings"] },
+  };
+  const PV_E_PB = { 1: { "naming-words": PV_E[1]["naming-words"], "a-and-an": PV_E[1]["a-and-an"] }, 2: { "naming-words-and-proper-nouns": PV_E[2]["naming-words-and-proper-nouns"] }, 3: { nouns: PV_E[3].nouns, "picture-reading": PV_E[3]["picture-reading"] } };
+  const PV_EVS = {
+    3: { "plants-around-us": ["picGroupPlants", "picOdd"], "animals-around-us": ["picGroupAnimals", "picOdd"], "food-we-eat": ["picGroupFood", "picOdd"], "our-body-and-senses": ["picGroupBody"], "travel-and-transport": ["picGroupTransport", "picOdd"], "keeping-clean-and-healthy": ["picGroupWear"], "my-family": ["picGroupWork"] },
+    4: { "roots-stems-and-leaves": ["picGroupPlants"], "animals-and-their-homes": ["picGroupAnimals"], "where-food-comes-from": ["picGroupFood"], "work-people-do": ["picGroupWork"], "our-neighbourhood-and-community": ["picGroupWork"] },
+    5: { "senses-of-animals": ["picGroupAnimals"], "food-preservation-and-spoilage": ["picGroupFood"], "forests-and-forest-people": ["picGroupAnimals"], "mountains-deserts-and-life-there": ["picGroupAnimals"], "seeds-and-germination": ["picGroupPlants"] },
+  };
+  const PV_HI = { 1: { "phal-sabziyan-rang": ["picWhichFoodHi", "picNameFoodHi"] }, 2: { sangya: ["picWhichHi", "picNameHi"], "chitra-dekhkar": ["picNameHi"] }, 3: { sangya: ["picWhichHi", "picNameHi"] } };
+  const PV_HI_PB = { 1: PV_HI[1], 2: { sangya: PV_HI[2].sangya, "chitra-dekhkar": PV_HI[2]["chitra-dekhkar"] }, 3: PV_HI[3] };
+  const PV_PA = { 1: { "rang-phal-janwar": ["picWhichFoodPa", "picWhichAnimalsPa", "picNameFoodPa"] }, 3: { naanv: ["picWhichPa", "picNamePa"] } };
+  const MAP = { english: PV_E, englishpb: PV_E_PB, evs: PV_EVS, hindi: PV_HI, hindipb: PV_HI_PB, punjabi: PV_PA, maths: { ...M, 9: M9cbse }, science: { ...S, 9: S9cbse }, physics: P, chemistry: C, mathspb: MPB, sciencepb: SPB };
 
   function forChapter(cls, subject, chapterId) {
     const m = MAP[subject] && MAP[subject][cls];
@@ -729,6 +881,8 @@ const Gen = (() => {
       steps: raw.steps,
       gen: name,
       ...(pic ? { pic, picAlt: raw.picAlt || "" } : {}),
+      // picture vocabulary questions: which picture-kit item each option is (the app draws the option cards itself from the words)
+      ...(raw.picOf ? { picOf: raw.picOf } : {}),
       // How each option was made: null for the right one; a tag or null for the wrong ones (null = not known).
       kinds: [null, ...wrong.map((_, i) => (kept[i] && kept[i].k) || (kept[i] ? null : "slip"))],
     };
@@ -741,8 +895,8 @@ const Gen = (() => {
     const seen = new Set();
     for (let i = 0; out.length < count && i < count * 4; i++) {
       const q = make(names[i % names.length], (seed + i * 7919) >>> 0);
-      if (q && !seen.has(q.q)) {
-        seen.add(q.q);
+      if (q && !seen.has(q.q + "|" + q.options[0])) {
+        seen.add(q.q + "|" + q.options[0]);
         out.push(q);
       }
     }
@@ -752,5 +906,5 @@ const Gen = (() => {
   // `count` fresh questions for a chapter, cycling through its generators.
   const questions = (cls, subject, chapterId, count, seed) => fromNames(forChapter(cls, subject, chapterId), count, seed);
 
-  return { rng, forChapter, make, questions, fromNames, names: Object.keys(G), MAP };
+  return { rng, forChapter, make, questions, fromNames, names: Object.keys(G), MAP, vocab: { cats: CATS, items: VOCAB } };
 })();

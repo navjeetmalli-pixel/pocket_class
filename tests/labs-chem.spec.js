@@ -23,7 +23,7 @@ test("explore: both chemistry labs are listed under the Chemistry Lab and open",
   await page.goto("/#/explore");
   await expect(page.locator("#area-chemistry")).toContainText("Atom and molecule builder");
   await expect(page.locator("#area-chemistry")).toContainText("Equation balancer");
-  await page.locator('[data-explore="lab-atom"]').getByRole("link", { name: /Open lab/ }).first().click();
+  await page.locator('[data-explore="lab-atom"]').getByRole("link", { name: /Try it/ }).first().click();
   await expect(page).toHaveURL(/#\/lab\/atom\//);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Atom and molecule builder");
   await expect(page.locator(".vl .sim-step h3")).toHaveCount(4);

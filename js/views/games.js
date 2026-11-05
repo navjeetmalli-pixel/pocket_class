@@ -155,21 +155,25 @@
     const young = band === "1-2" || band === "3-5";
     const shown = new Set(Store.shownSubjects());
     const list = D.subjectsFor(c).filter((s) => D.chapters(c, s.id).length && shown.has(s.id));
-    const cont = recentGames(c, young ? 2 : 3);
+    const cont = recentGames(c, 2);
     // Games of the chapter opened last, when its subject is loaded and the chapter really has games.
     const rc = Views._.recentChapters(c, 1)[0];
     const chapterGames = rc && D.hasFull(c, rc.subj.id) ? Games.availableFor(c, rc.subj, rc.ch).slice(0, young ? 2 : 4) : [];
     const card = (s) => {
       const n = subjectStars(c, s.id);
-      return Views._.subjectCard(c, s, `#/games/${s.id}`, n ? t("{n} stars collected", { n }) : t("No stars yet"));
+      // Three drawn stars: empty when nothing is won yet, else the count beside one filled star.
+      const meta = n
+        ? `<span class="star-meter on" role="img" aria-label="${t("{n} stars collected", { n })}">${icon("star")}<b>${n}</b></span>`
+        : `<span class="star-meter" role="img" aria-label="${t("No stars yet")}">${icon("star")}${icon("star")}${icon("star")}</span>`;
+      return Views._.subjectCard(c, s, `#/games/${s.id}`, meta);
     };
     return {
       title: t("Play"),
-      html: `${Views._.shellHead(t("Play"), t("Short games from your chapters. Your best stars are saved."), "play")}
+      html: `${Views._.shellHead(t("Play"), t("Pick a game to play"), "play")}
         <div class="play-main">
         ${
           cont.length
-            ? `<h2 class="block-title">${t("Continue playing")}</h2><div class="stack">${cont.map((x) => gameTile(c, x.subj, x.ch, x.g, x.key)).join("")}</div>`
+            ? `<h2 class="block-title">${t("Play again")}</h2><div class="stack again-row">${cont.map((x) => gameTile(c, x.subj, x.ch, x.g, x.key)).join("")}</div>`
             : ""
         }
         <h2 class="block-title">${t("Quick challenges")}</h2>

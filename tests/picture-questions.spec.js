@@ -42,7 +42,8 @@ test("a Class 1 quiz round shows a picture question with an aria-label", async (
 
 test("every picture generator gives an svg with a label and the question text still stands alone", async ({ page }) => {
   await page.goto("/#/");
-  const names = await page.evaluate(() => Gen.names.filter((n) => /^pic[A-Z]/.test(n)));
+  // (the picture vocabulary generators draw their pictures as option cards: tests/picture-vocab.spec.js)
+  const names = await page.evaluate(() => Gen.names.filter((n) => /^pic[A-Z]/.test(n) && !/^pic(Which|Name|Odd|Group)/.test(n)));
   expect(names.length).toBeGreaterThanOrEqual(10);
   for (const name of names) {
     for (const sd of [1, 2, 3, 4, 5, 6]) {

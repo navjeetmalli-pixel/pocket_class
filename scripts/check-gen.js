@@ -46,7 +46,14 @@ for (const name of Gen.names) {
     if (wrong.includes(a)) why.push("a wrong answer equals the answer");
     if (wrong.some((w) => !w || !String(w).trim())) why.push("empty wrong answer");
     if (!Array.isArray(q.steps) || !q.steps.length || q.steps.some((s) => !s || !String(s).trim())) why.push("no steps");
-    if (/^pic[A-Z]/.test(name)) {
+    if (q.picOf) {
+      // picture vocabulary: the options are words the app draws as picture cards; each must be a drawing in the kit
+      const names = Object.values(q.picOf), kit = ctx.Pics && ctx.Pics.names;
+      if (q.options.some((o) => !q.picOf[o])) why.push("option without a kit picture name");
+      else if (kit && names.some((nm) => !kit.includes(nm))) why.push("picture name not in the kit");
+      if (new Set(names).size !== names.length) why.push("two options show the same picture");
+    }
+    if (/^pic[A-Z]/.test(name) && !/^pic(Which|Odd|Group)/.test(name)) {
       if (typeof q.pic !== "string" || !/^\s*<svg[\s\S]*<\/svg>\s*$/.test(q.pic)) why.push("no svg picture");
       else if (!/aria-label="[^"]+"/.test(q.pic)) why.push("picture has no aria-label");
       if (!q.picAlt || !String(q.picAlt).trim()) why.push("no picAlt");

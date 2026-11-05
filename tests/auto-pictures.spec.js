@@ -104,7 +104,7 @@ test("Today's plan items show the subject art (Class 2)", async ({ page }) => {
   await start(page, 2);
   await page.goto("/#/");
   const items = page.locator(".plan-item");
-  if (await items.count()) await expect(items.first().locator(".plan-art svg")).toBeVisible();
+  if (await items.count()) await expect(items.first().locator(".start-art svg, .plan-art svg")).toBeVisible();
 });
 
 test("a Class 2 lesson idea step shows pictures beside the points", async ({ page }) => {

@@ -363,12 +363,13 @@
   const gy = (v) => MK.p1(O - CELL * v);
 
   function gridSvg(inner, { label, focus } = {}) {
-    let g = "";
+    // a board with depth: a rounded card, a soft grid, numbers kept at 14+ px on a phone (the svg is at least 320 px wide)
+    let g = `<rect class="gr-board" x="1" y="1" width="${S - 2}" height="${S - 2}" rx="16"/>`;
     for (let i = -R5; i <= R5; i++) {
       g += `<line class="gr-grid${i === 0 ? " zero" : ""}" x1="${gx(i)}" y1="${gy(-R5 - 0.5)}" x2="${gx(i)}" y2="${gy(R5 + 0.5)}"/><line class="gr-grid${i === 0 ? " zero" : ""}" x1="${gx(-R5 - 0.5)}" y1="${gy(i)}" x2="${gx(R5 + 0.5)}" y2="${gy(i)}"/>`;
-      if (i !== 0) g += `<text class="gr-num" x="${gx(i)}" y="${gy(0) + 12}" text-anchor="middle">${MK.num(i)}</text><text class="gr-num" x="${gx(0) - 5}" y="${gy(i) + 3.5}" text-anchor="end">${MK.num(i)}</text>`;
+      if (i !== 0) g += `<text class="gr-num" x="${gx(i)}" y="${gy(0) + 15}" text-anchor="middle">${MK.num(i)}</text><text class="gr-num" x="${gx(0) - 5}" y="${gy(i) + 5}" text-anchor="end">${MK.num(i)}</text>`;
     }
-    g += `<text class="gr-axis" x="${gx(R5 + 0.5) + 2}" y="${gy(0) - 5}" text-anchor="end">x</text><text class="gr-axis" x="${gx(0) + 6}" y="${gy(R5 + 0.5) + 8}">y</text>`;
+    g += `<text class="gr-axis" x="${gx(R5 + 0.5) - 3}" y="${gy(0) - 6}" text-anchor="end">x</text><text class="gr-axis" x="${gx(0) + 7}" y="${gy(R5 + 0.5) + 14}">y</text>`;
     return `<svg class="mk-svg gr-svg" viewBox="0 0 ${S} ${S}" ${focus ? `tabindex="0" data-focus role="group"` : `role="img"`} aria-label="${esc(label)}" style="touch-action:manipulation">${g}${inner}</svg>`;
   }
   // a straight line y = mx + c across the grid
@@ -386,9 +387,12 @@
     pts.sort((a, b) => a[0] - b[0]);
     const a = pts[0];
     const b = pts[pts.length - 1];
-    return `<line class="gr-line" x1="${gx(a[0])}" y1="${gy(a[1])}" x2="${gx(b[0])}" y2="${gy(b[1])}"/>`;
+    return `<line class="gr-line" pathLength="1" x1="${gx(a[0])}" y1="${gy(a[1])}" x2="${gx(b[0])}" y2="${gy(b[1])}"/>`;
   }
-  const dot = (x, y, cls, label) => `<circle class="gr-pt ${cls || ""}" cx="${gx(x)}" cy="${gy(y)}" r="6"/>${label ? `<text class="gr-pl" x="${gx(x) + 9}" y="${gy(y) - 8}">${esc(label)}</text>` : ""}`;
+  const dot = (x, y, cls, label) => `<circle class="gr-pt ${cls || ""}" cx="${gx(x)}" cy="${gy(y)}" r="7.5"/>${label ? `<text class="gr-pl" x="${gx(x) + (x > 2 ? -11 : 11)}" y="${gy(y) - 9}" text-anchor="${x > 2 ? "end" : "start"}">${esc(label)}</text>` : ""}`;
+  // dashed guides from the axes to a point, tagged "x = 3" on the x-axis and "y = 2" on the y-axis (the steps to take from the origin)
+  const guide = (x, y) =>
+    `<g class="gr-guide" aria-hidden="true">${dropLines(x, y)}<line class="gr-drop faint" x1="${gx(x)}" y1="${gy(0)}" x2="${gx(x)}" y2="${gy(-R5 - 0.2)}"/><line class="gr-drop faint" x1="${gx(0)}" y1="${gy(y)}" x2="${gx(R5 + 0.2)}" y2="${gy(y)}"/><text class="gr-tag" x="${gx(x)}" y="${gy(-R5 - 0.2) + 14}" text-anchor="middle">x = ${MK.num(x)}</text><text class="gr-tag" x="${gx(R5 + 0.5) + 12}" y="${gy(y) + 5}" text-anchor="end">y = ${MK.num(y)}</text></g>`;
   const dropLines = (x, y) => `<line class="gr-drop" x1="${gx(x)}" y1="${gy(y)}" x2="${gx(x)}" y2="${gy(0)}"/><line class="gr-drop" x1="${gx(x)}" y1="${gy(y)}" x2="${gx(0)}" y2="${gy(y)}"/>`;
 
   function draw(r, board, submit) {
@@ -408,7 +412,7 @@
         return drawChoice(r, board, submit, svg, r.options, () => ({
           right: esc(r.options[r.answer]),
           explain: esc(t("Read across to the x-axis first: x = {x}. Then read up or down to the y-axis: y = {y}. So P = {p}.", { x: MK.num(r.x), y: MK.num(r.y), p: fmtP(r.x, r.y) })),
-          reveal: (svg) => svg.insertAdjacentHTML("beforeend", dropLines(r.x, r.y)),
+          reveal: (svg) => svg.insertAdjacentHTML("beforeend", guide(r.x, r.y)),
         }));
       }
       case "quadrant": {
@@ -418,7 +422,7 @@
         return drawChoice({ ...r, answer: q }, board, submit, svg, opts, () => ({
           right: esc(opts[q]),
           explain: esc(t("x is {sx} and y is {sy}, so P is in Quadrant {q}.", { sx: r.x > 0 ? t("positive") : t("negative"), sy: r.y > 0 ? t("positive") : t("negative"), q: QUAD[q] })),
-          reveal: (svg) => svg.insertAdjacentHTML("beforeend", dropLines(r.x, r.y)),
+          reveal: (svg) => svg.insertAdjacentHTML("beforeend", guide(r.x, r.y)),
         }));
       }
       case "zeros": {
@@ -435,13 +439,13 @@
           d += `${pen ? "L" : "M"}${gx(x)},${gy(y)} `;
           pen = true;
         }
-        const svg = gridSvg(`<path class="gr-curve" d="${d}"/>`, { label: t("A curve on a grid") });
+        const svg = gridSvg(`<path class="gr-curve" pathLength="1" d="${d}"/>`, { label: t("A curve on a grid") });
         const opts = ["0", "1", "2", "3"];
         return drawChoice({ ...r, answer: r.zeros }, board, submit, svg, opts, () => ({
           right: esc(String(r.zeros)),
           explain: esc(r.zeros === 2 ? t("The curve cuts the x-axis at two places, so there are 2 zeros.") : r.zeros === 1 ? t("The curve only touches the x-axis at one place, so there is 1 zero.") : t("The curve never meets the x-axis, so there are no real zeros.")),
           reveal: (svg) => {
-            if (r.zeros) for (const x of r.zeros === 1 ? [r.h] : [r.h - Math.sqrt(-r.k / r.a), r.h + Math.sqrt(-r.k / r.a)]) svg.insertAdjacentHTML("beforeend", `<circle class="gr-pt ok" cx="${gx(x)}" cy="${gy(0)}" r="6"/>`);
+            if (r.zeros) for (const x of r.zeros === 1 ? [r.h] : [r.h - Math.sqrt(-r.k / r.a), r.h + Math.sqrt(-r.k / r.a)]) svg.insertAdjacentHTML("beforeend", `<circle class="gr-pt ok" cx="${gx(x)}" cy="${gy(0)}" r="7.5"/>`);
           },
         }));
       }
@@ -489,10 +493,16 @@
   }
 
   // ---------- plot a line / tap a point ----------
+  const calm = () => !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+  // "x = 3 means 3 steps right. y = 2 means 2 steps up."
+  const stepsText = (x, y) =>
+    t("x = {x} means {a} {a:step|steps} {dx}. y = {y} means {b} {b:step|steps} {dy}.", { x: MK.num(x), a: Math.abs(x), dx: x >= 0 ? t("right") : t("left"), y: MK.num(y), b: Math.abs(y), dy: y >= 0 ? t("up") : t("down") });
+
   function drawPlot(r, board, submit, many) {
     const pts = []; // [x, y]
     let cur = [0, 0];
-    board.innerHTML = `<div class="card mk-card">${gridSvg(`<g data-layer="pts"></g><g data-layer="reveal"></g><circle class="gr-cursor" data-cur r="10" fill="none"/>`, { label: many ? t("Grid. Arrow keys move the cursor, Enter plots a point.") : t("Grid. Arrow keys move the cursor, Enter marks the point."), focus: true })}
+    let fresh = ""; // the point that has just been placed drops in with a small bounce
+    board.innerHTML = `<div class="card mk-card gr-card">${gridSvg(`<g data-layer="pts"></g><g data-layer="reveal"></g><circle class="gr-cursor" data-cur r="12" fill="none"/>`, { label: many ? t("Grid. Arrow keys move the cursor, Enter plots a point.") : t("Grid. Arrow keys move the cursor, Enter marks the point."), focus: true })}
       <p class="mk-read" data-read aria-live="polite"></p>
       <div class="mk-btnrow"><button class="btn" data-act="undo">${t("Undo")}</button><button class="btn primary" data-act="check">${t("Check")}</button></div></div>`;
     const svg = board.querySelector("svg");
@@ -501,7 +511,8 @@
     const curEl = board.querySelector("[data-cur]");
     const same = (a, b) => a[0] === b[0] && a[1] === b[1];
     function paint() {
-      layer.innerHTML = pts.map(([x, y]) => dot(x, y, "")).join("");
+      layer.innerHTML = pts.map(([x, y]) => dot(x, y, fresh === x + "," + y && !calm() ? "drop" : "")).join("");
+      fresh = "";
       curEl.setAttribute("cx", gx(cur[0]));
       curEl.setAttribute("cy", gy(cur[1]));
       read.textContent = pts.length ? `${many ? t("Points") : t("Your point")}: ${pts.map(([x, y]) => fmtP(x, y)).join("  ")}` : t("Cursor at {p}", { p: fmtP(...cur) });
@@ -511,17 +522,22 @@
       cur = p;
       const i = pts.findIndex((q) => same(q, p));
       if (i >= 0) pts.splice(i, 1);
-      else if (many) pts.length < 6 && pts.push(p);
-      else pts[0] = p, (pts.length = 1);
+      else {
+        if (many ? pts.length < 6 : true) fresh = p[0] + "," + p[1];
+        Sound.play("pop");
+        if (many) pts.length < 6 && pts.push(p);
+        else (pts[0] = p), (pts.length = 1);
+      }
       paint();
     };
+    // a tap snaps to the nearest grid point (anywhere inside the grid)
     svg.addEventListener("click", (e) => {
       const rc = svg.getBoundingClientRect();
       const x = ((e.clientX - rc.left) * S) / rc.width;
       const y = ((e.clientY - rc.top) * S) / rc.height;
       const px = Math.round((x - O) / CELL);
       const py = Math.round((O - y) / CELL);
-      if (Math.abs(px) > R5 || Math.abs(py) > R5 || Math.hypot(x - (O + px * CELL), y - (O - py * CELL)) > CELL * 0.62) return;
+      if (Math.abs(px) > R5 || Math.abs(py) > R5) return;
       svg.focus({ preventScroll: true });
       place([px, py]);
     });
@@ -534,6 +550,10 @@
       } else if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         place(cur);
+      } else if (e.key === "Backspace" || e.key === "Delete") {
+        e.preventDefault();
+        pts.pop();
+        paint();
       }
     });
     board.addEventListener("click", (e) => {
@@ -557,8 +577,12 @@
           yours: esc(fmtP(...pts[0])),
           right: esc(fmtP(r.x, r.y)),
           showRight: true,
-          explain: esc(t("Start at the origin. Go {a} {dx} along the x-axis, then {b} {dy}: {p}.", { a: Math.abs(r.x), dx: r.x > 0 ? t("right") : t("left"), b: Math.abs(r.y), dy: r.y > 0 ? t("up") : t("down"), p: fmtP(r.x, r.y) })),
-          reveal: () => svg.querySelector("[data-layer=reveal]").insertAdjacentHTML("beforeend", dot(r.x, r.y, "ok") + dropLines(r.x, r.y)),
+          explain: esc(stepsText(r.x, r.y) + " " + t("Start at the origin. Go {a} {dx} along the x-axis, then {b} {dy}: {p}.", { a: Math.abs(r.x), dx: r.x > 0 ? t("right") : t("left"), b: Math.abs(r.y), dy: r.y > 0 ? t("up") : t("down"), p: fmtP(r.x, r.y) })),
+          reveal() {
+            // your point turns red, the right one appears in green with dashed guides from both axes
+            if (!ok) layer.innerHTML = dot(pts[0][0], pts[0][1], "bad");
+            svg.querySelector("[data-layer=reveal]").insertAdjacentHTML("beforeend", guide(r.x, r.y) + dot(r.x, r.y, "ok" + (calm() ? "" : " drop"), fmtP(r.x, r.y)));
+          },
         });
       }
       const onLine = (p) => p[1] === r.m * p[0] + r.c;
@@ -573,11 +597,13 @@
         yours: esc(pts.map(([x, y]) => fmtP(x, y)).join(" ")),
         right: esc(eqText(r.m, r.c)),
         showRight: true,
-        explain: esc(t("Make a table of values. When x = {x1}, y = {y1}. When x = {x2}, y = {y2}. Plot these points and join them with a straight line.", { x1: MK.num(ex[0][0]), y1: MK.num(ex[0][1]), x2: MK.num(ex[1][0]), y2: MK.num(ex[1][1]) })),
+        explain: esc(t("Make a table of values. When x = {x1}, y = {y1}. When x = {x2}, y = {y2}. Plot these points and join them with a straight line.", { x1: MK.num(ex[0][0]), y1: MK.num(ex[0][1]), x2: MK.num(ex[1][0]), y2: MK.num(ex[1][1]) })) + (ok ? "" : " " + esc(stepsText(ex[0][0], ex[0][1]))),
         reveal() {
           const lay = svg.querySelector("[data-layer=reveal]");
           lay.insertAdjacentHTML("beforeend", lineSeg(r.m, r.c));
           layer.innerHTML = pts.map(([x, y]) => dot(x, y, onLine([x, y]) ? "ok" : "bad")).join("");
+          // the first right point on the line, with dashed guides from the axes
+          if (!ok) lay.insertAdjacentHTML("beforeend", guide(ex[0][0], ex[0][1]) + dot(ex[0][0], ex[0][1], "ok" + (calm() ? "" : " drop")));
         },
       });
     }

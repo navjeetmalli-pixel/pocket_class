@@ -214,6 +214,8 @@ const ReadAloud = (() => {
       if (btn.parentElement !== document.body) document.body.appendChild(btn);
       btn.classList.remove("in-head");
     }
+    // On Today (young) Mithu already greets the learner right above: here the button is a plain speaker, same size and job.
+    btn.classList.toggle("plain", !!(head && head.matches(".mascot-sub")));
     document.body.dataset.rtm = show && !head ? "1" : "";
   }
   function refresh() {

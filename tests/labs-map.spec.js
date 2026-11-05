@@ -45,7 +45,7 @@ test("explore: the map is listed under World Explorer, and in the chapter hub of
   await seed(page, { name: "Asha", cls: 9, board: "pseb" });
   await page.goto("/#/explore");
   await expect(page.locator("#area-world")).toContainText("India map explorer");
-  await page.locator('[data-explore="lab-indiamap"]').getByRole("link", { name: /Open lab/ }).first().click();
+  await page.locator('[data-explore="lab-indiamap"]').getByRole("link", { name: /Try it/ }).first().click();
   await expect(page).toHaveURL(/#\/lab\/indiamap\/9\/sstpb\//);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("India map explorer");
   await page.goto("/#/chapter/9/sstpb/geo-physical-features/explore");

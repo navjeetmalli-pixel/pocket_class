@@ -77,7 +77,7 @@ test("home: due reviews come first with their reasons, and finishing one ticks i
   // The review is ticked (the lesson may be too: it is the same chapter in this fixture).
   await expect(page.locator(".plan-item.done", { has: page.locator(".plan-kind", { hasText: "Review" }) })).toHaveCount(1);
   const done = await page.locator(".plan-item.done").count();
-  await expect(page.locator("#plan")).toContainText(new RegExp(`${done} of \\d+ done|All done`));
+  await expect(page.locator("#plan")).toContainText(new RegExp(`${done} of \\d+|All done`));
   const logged = async () => current(await readStore(page)).learn.events.filter((e) => e.type === "plan");
   const ev = await logged();
   expect(ev).toHaveLength(done);
@@ -192,7 +192,7 @@ test("progress: small recognitions for learning behaviours, with no points or ra
   await expect(list).toContainText("Improved after feedback");
   await expect(list).toContainText("Remembered after a break");
   await expect(list).toContainText("Explained a chapter in your own words");
-  await expect(page.getByText("There are no points or ranks")).toBeVisible();
+  await expect(page.getByText("No points or ranks")).toBeVisible();
 });
 
 test("settings: Show streak switch hides the streak everywhere and never shames a missed day", async ({ page }) => {

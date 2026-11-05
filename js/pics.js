@@ -1362,6 +1362,160 @@
   I["pos-up"] = function () { return grnd() + bl(50, 24, BR + 2) + P("M50 44L64 62L55 62L55 86L45 86L45 62L36 62Z", "#43b05c", "l"); };
   I["pos-down"] = function () { return grnd() + bl(50, 78, BR + 2) + P("M50 58L64 40L55 40L55 16L45 16L45 40L36 40Z", "#e5473d", "l"); };
   // @@BATCH3-END
+  // @@BATCH4-START (wave 2C: words the picture dictionary already knew but had no drawing, plus the next most-needed nouns)
+  I.crab = function () {
+    var c = "#e5573d";
+    return SH(34) + L("M24 62L10 72M26 68L14 82M76 62L90 72M74 68L86 82", "#b83a26", 4, ' stroke-linecap="round"') + L("M30 50Q16 44 16 32", "#d44a30", 5) + L("M70 50Q84 44 84 32", "#d44a30", 5) +
+      P("M10 32Q6 12 20 14Q17 22 23 27Q19 35 10 32Z", c, "r") + P("M90 32Q94 12 80 14Q83 22 77 27Q81 35 90 32Z", c, "r") + E(50, 60, 30, 20, c, "r") +
+      L("M42 44L40 34M58 44L60 34", "#b83a26", 3) + Ci(40, 32, 4.5, "#ffffff", "l", ' stroke-width="1.2"') + Ci(60, 32, 4.5, "#ffffff", "l", ' stroke-width="1.2"') + Fc(40, 32, 2, EYE) + Fc(60, 32, 2, EYE) +
+      L("M42 66Q50 72 58 66", "#8f2a18", 2.5) + SHN(38, 54, 7, 4, -20, 0.45);
+  };
+  I.cake = function () {
+    return SH(38) + Rc(14, 58, 72, 30, 8, "#d9954f", "l") + Rc(14, 50, 72, 16, 8, "#ffc6dc", "l") + Rc(28, 32, 44, 22, 7, "#e8a95f", "l") + Rc(28, 25, 44, 14, 7, "#ffc6dc", "l") +
+      Rc(47, 8, 6, 17, 2, SKY, "l", ' stroke-width="1.4"') + P("M50 0Q57 8 50 12Q43 8 50 0Z", YELLOW, "r", ' stroke-width="1.2"') + Ci(30, 74, 3, RED, "r", ' stroke-width="1"') + Ci(50, 76, 3, RED, "r", ' stroke-width="1"') + Ci(70, 74, 3, RED, "r", ' stroke-width="1"');
+  };
+  I.bucket = function () {
+    return SH(30) + L("M24 36Q50 -4 76 36", "#6b7686", 4) + P("M20 34L80 34L72 86Q50 94 28 86Z", BLUE, "l") + E(50, 34, 30, 6, "#2a64b8", "l") + Rc(23, 52, 54, 6, 3, "#ffffff", "l", ' opacity=".25" stroke="none"') + SHN(33, 62, 3, 12, 8, 0.5);
+  };
+  I.broom = function () {
+    return SH(30) + '<g transform="rotate(-24 50 60)">' + Rc(46, 2, 8, 62, 3, "#a5743a", "l") + Rc(38, 60, 24, 9, 3, "#d94b4b", "l") + P("M36 69L64 69L72 96L28 96Z", "#e8c463", "l") + L("M42 72L38 94M50 72L50 94M58 72L62 94", "#b8923a", 1.6, ' opacity=".7"') + "</g>";
+  };
+  I.notebook = function () {
+    return SH(30) + Rc(20, 8, 62, 82, 6, BLUE, "l") + Rc(32, 22, 42, 26, 4, "#ffffff", "l", ' stroke-width="1.4"') + L("M38 32H68M38 40H60", "#9aa6b8", 2.5) + Rc(14, 12, 10, 74, 4, "#e5473d", "l") + L("M16 22H22M16 34H22M16 46H22M16 58H22M16 70H22", "#fff", 2.5, ' opacity=".7"');
+  };
+  I.basket = function () {
+    return SH(34) + L("M24 46Q50 0 76 46", "#8a5a2b", 5) + P("M14 44L86 44L76 88Q50 94 24 88Z", "#c98b4f", "l") + L("M18 56H82M21 68H79M25 80H75", "#8a5a2b", 2, ' opacity=".6"') + L("M34 46L38 90M50 46V92M66 46L62 90", "#8a5a2b", 2, ' opacity=".5"') + Rc(12, 40, 76, 9, 4, "#e0a566", "l") + SHN(28, 62, 3, 10, 8, 0.4);
+  };
+  I.knife = function () {
+    return SH(30) + '<g transform="rotate(30 50 50)">' + P("M44 6C62 8 62 54 56 66L44 66Z", "#d3dae3", "l") + L("M48 12V60", "#fff", 2, ' opacity=".6"') + Rc(41, 64, 18, 28, 5, "#7a4a24", "l") + Ci(50, 72, 1.8, YELLOW, "r", ' stroke-width=".6"') + Ci(50, 84, 1.8, YELLOW, "r", ' stroke-width=".6"') + "</g>";
+  };
+  I.temple = function () {
+    return SH(40) + Rc(14, 76, 72, 12, 3, "#d8cfc2", "l") + Rc(22, 52, 56, 26, 3, "#f3dcc0", "l") + P("M28 52L50 20L72 52Z", ORANGE, "l") + P("M36 36L50 12L64 36Z", "#f26a3d", "l") + L("M50 12V4", "#8a5a2b", 2.5) + P("M50 4L62 8L50 12Z", RED, "l", ' stroke-width="1"') +
+      P("M42 78V62Q50 52 58 62V78Z", "#7a4a24", "l") + Ci(50, 24, 2.5, YELLOW, "r", ' stroke-width=".8"');
+  };
+  I.hut = function () {
+    return SH(38) + Rc(20, 52, 60, 38, 4, "#d9a066", "l") + P("M8 56L50 14L92 56Q50 46 8 56Z", "#c9a24a", "l") + L("M20 50L36 30M36 52L50 28M52 52L62 30M68 52L74 40", "#8a6a2a", 1.8, ' opacity=".6"') + P("M42 90V68Q50 58 58 68V90Z", "#7a4a24", "l") + Rc(24, 62, 12, 12, 2, "#9fd4f4", "l", ' stroke-width="1.4"');
+  };
+  I.tent = function () {
+    return SH(40) + P("M6 88L50 14L94 88Z", ORANGE, "l") + P("M50 14L94 88L58 88Z", shade(ORANGE, 0.85), "l") + P("M38 88L50 52L62 88Z", "#7a3a14", "l") + L("M50 52V88", "#4a2208", 1.6) + L("M50 14V6", "#8a5a2b", 3) + P("M50 6L60 9L50 12Z", RED, "l", ' stroke-width="1"');
+  };
+  I.scooter = function () {
+    return SH(42) + Ci(22, 76, 12, "#3d3d4a", "r") + Ci(22, 76, 5, "#b8c0cc", "l") + Ci(80, 76, 12, "#3d3d4a", "r") + Ci(80, 76, 5, "#b8c0cc", "l") + L("M80 76L72 26L82 20", "#6b7686", 5) + L("M72 20H88", "#3d3d4a", 5) +
+      P("M20 76Q16 56 36 54L60 54Q70 54 72 76Z", "#2fb3a3", "l") + P("M18 46Q16 36 30 36L52 36Q58 36 56 46Z", "#8a5a2b", "l") + SHN(34, 62, 6, 3, -10, 0.45);
+  };
+  I.helicopter = function () {
+    return SH(38, 92) + L("M20 18H80", "#3d3d4a", 4) + L("M50 18V28", "#3d3d4a", 4) + L("M60 52L92 36", "#e5473d", 8) + P("M88 24L98 28L94 44L86 40Z", "#e5473d", "l") + E(44, 54, 30, 22, "#e5473d", "r") + P("M52 40Q70 40 70 56L50 56Z", "#bfe6fa", "l", ' stroke-width="1.6"') + L("M22 84H66M30 70V84M58 70V84", "#6b7686", 3.5) + SHN(32, 48, 6, 4, -20, 0.5);
+  };
+  I.scarf = function () {
+    return SH(34) + P("M18 30Q50 10 82 30L80 52Q50 36 20 52Z", "#e5473d", "l") + P("M58 44L80 52L86 88L62 90Z", "#e5473d", "l") + L("M22 40Q50 22 78 40", "#fff", 3, ' opacity=".45"') + L("M62 60L82 64M63 72L84 76", "#fff", 3, ' opacity=".45"') + L("M64 92V98M70 91V98M76 90V98M82 89V96", "#b8332a", 2.5);
+  };
+  I.crown = function () {
+    return SH(32) + crownD(50, 28, 74) + Ci(50, 24, 4, RED, "r", ' stroke-width="1.2"') + Ci(24, 44, 3, BLUE, "r", ' stroke-width="1"') + Ci(76, 44, 3, GREEN, "r", ' stroke-width="1"') + Rc(18, 66, 64, 8, 3, "#e8a817", "l");
+  };
+  I.glasses = function () {
+    return SH(36) + L("M38 50Q50 42 62 50", "#3d3d4a", 4) + Ci(28, 54, 17, "#bfe6fa", "r") + Ci(72, 54, 17, "#bfe6fa", "r") + '<circle cx="28" cy="54" r="17" fill="none" stroke="#3d3d4a" stroke-width="5"/><circle cx="72" cy="54" r="17" fill="none" stroke="#3d3d4a" stroke-width="5"/>' + L("M11 52L4 44M89 52L96 44", "#3d3d4a", 4) + SHN(22, 47, 5, 2.5, -30, 0.7) + SHN(66, 47, 5, 2.5, -30, 0.7);
+  };
+  I.watch = function () {
+    return SH(26) + Rc(36, 4, 28, 30, 6, "#3b82e0", "l") + Rc(36, 66, 28, 30, 6, "#3b82e0", "l") + Ci(50, 50, 26, "#fff6dc", "r") + '<circle cx="50" cy="50" r="26" fill="none" stroke="#3d3d4a" stroke-width="5"/>' + L("M50 50V34M50 50L61 56", "#3d3d4a", 3.5) + Fc(50, 50, 2.5, RED) + L("M50 28V30M50 70V72M28 50H30M70 50H72", "#6b7686", 2);
+  };
+  I.computer = function () {
+    return SH(40) + Rc(14, 10, 72, 50, 6, "#4a5568", "l") + Rc(20, 16, 60, 38, 3, "#bfe6fa", "l", ' stroke-width="1.4"') + P("M42 60L58 60L62 74L38 74Z", "#8d99a8", "l") + Rc(24, 74, 52, 7, 3, "#6b7686", "l") + Rc(16, 84, 68, 9, 3, "#d3dae3", "l") + L("M26 88H74", "#8d99a8", 2, ' stroke-dasharray="3 2"') + SHN(32, 24, 8, 3, -20, 0.6);
+  };
+  I.radio = function () {
+    return SH(38) + L("M70 26L84 6", "#6b7686", 3) + Rc(10, 26, 80, 60, 9, "#e5473d", "l") + Ci(34, 58, 18, "#f6d9d4", "r") + L("M24 58H44M26 50H42M26 66H42", "#c9544a", 1.8, ' opacity=".7"') + Rc(58, 40, 26, 10, 3, "#fff6dc", "l", ' stroke-width="1.4"') + L("M62 45H78", "#8a5a2b", 1.8) + Ci(64, 68, 6, "#3d3d4a", "r") + Ci(80, 68, 5, "#3d3d4a", "r");
+  };
+  I.juice = function () {
+    return SH(28) + L("M58 10L66 -2", "#e5473d", 4, ' stroke-linecap="round"') + L("M58 38L56 10", "#e5473d", 4) + P("M22 26L78 26L72 84C71 90 66 92 60 92L40 92C34 92 29 90 28 84Z", "#e8f4fb", "l", ' opacity=".95"') + P("M24 38L76 38L72 84C71 90 66 92 60 92L40 92C34 92 29 90 28 84Z", ORANGE, "l") + E(50, 26, 28, 5, "#cfe9f7", "l") + SHN(34, 56, 3, 12, 8, 0.5);
+  };
+  I.tea = function () {
+    return SH(40) + E(50, 82, 40, 8, "#e8eef5", "l") + L("M78 44C98 44 98 68 76 68", "#d94b4b", 7) + P("M16 36L78 36L72 74C71 80 66 82 60 82L34 82C28 82 23 80 22 74Z", "#e5473d", "l") + E(47, 36, 31, 6, "#b8332a", "l") + Fe(47, 37, 26, 3.8, "#b5651d") +
+      L("M38 26Q32 20 40 14M54 26Q48 20 56 14", "#aab4c0", 3, ' opacity=".7"') + SHN(28, 56, 3, 11, 8, 0.45);
+  };
+  I.road = function () {
+    return Rc(2, 4, 96, 92, 8, "#8fc16a", "l", ' stroke="none"') + P("M40 4L60 4L94 96L6 96Z", "#6b7686", "l") + L("M50 8V22M50 32V50M50 60V84", "#fff", 4, ' stroke-linecap="round"') + L("M40 4L6 96M60 4L94 96", "#e8be78", 2.5);
+  };
+  I.pan = function () {
+    return SH(40) + L("M78 46L98 36", "#3d3d4a", 7) + Rc(0, 38, 10, 7, 3, "#3d3d4a", "l") + P("M10 38L90 38C90 66 74 84 50 84C26 84 10 66 10 38Z", "#5a6272", "r") + E(50, 38, 40, 8, "#2f3440", "l") + L("M72 46L82 44", "#3d3d4a", 5) + Rc(2, 40, 10, 6, 3, "#3d3d4a", "l") + SHN(24, 58, 3, 12, 12, 0.35);
+  };
+  I.radish = function () {
+    return SH(22) + P("M50 90C40 84 30 56 34 40C38 30 62 30 66 40C70 56 60 84 50 90Z", "#f7f2f6", "r") + P("M34 40C38 30 62 30 66 40C64 46 36 46 34 40Z", "#ee6fa4", "l") + P("M50 34C40 20 28 10 20 8C24 22 34 30 50 34Z", GREEN, "l") + P("M50 34C60 20 72 10 80 8C76 22 66 30 50 34Z", GREEN, "l") + P("M50 34C46 20 48 10 50 2C52 10 54 20 50 34Z", "#3f9a45", "l");
+  };
+  I.brinjal = function () {
+    return SH(30) + P("M30 24C22 44 22 76 46 88C70 96 82 78 74 60C68 46 62 40 62 24Z", "#6d3a9c", "r") + P("M26 26C34 16 58 16 66 26C64 36 30 38 26 26Z", GREEN, "l") + L("M44 18L44 8", "#4a8a3a", 4) + SHN(38, 58, 5, 14, 20, 0.5);
+  };
+  I.cabbage = function () {
+    return SH(36) + Ci(50, 54, 36, "#7cc36a", "r") + L("M50 20C28 28 22 60 36 82M50 20C72 28 78 60 64 82M50 22V86M36 40C44 48 44 62 38 76M64 40C56 48 56 62 62 76", "#4a8f45", 2.2, ' opacity=".8"') + SHN(34, 38, 6, 12, 40, 0.5);
+  };
+  I.cauliflower = function () {
+    var s = SH(36) + P("M12 60L30 78L50 88L70 78L88 60L70 70L50 74L30 70Z", "#58a64c", "l");
+    [[34, 48, 15], [58, 46, 16], [46, 32, 15], [70, 56, 12], [24, 58, 11], [48, 58, 15]].forEach(function (p) { s += Ci(p[0], p[1], p[2], "#fbf6e6", "r", ' stroke-width="1.6"'); });
+    return s + SHN(40, 34, 5, 3, -20, 0.8);
+  };
+  I.coconut = function () {
+    return SH(30) + Ci(50, 54, 34, "#8a5a2b", "r") + L("M24 40C34 28 44 24 50 22M70 30C74 36 78 44 78 50", "#6b4220", 2.4, ' opacity=".6"') + Fc(42, 50, 4.5, "#3a2412") + Fc(58, 50, 4.5, "#3a2412") + Fc(50, 62, 4.5, "#3a2412") + SHN(34, 36, 5, 9, 35, 0.45);
+  };
+  I.pear = function () {
+    return SH(28) + P("M50 16C60 16 62 32 66 44C84 56 84 90 50 90C16 90 16 56 34 44C38 32 40 16 50 16Z", "#a8c93f", "r") + L("M50 16Q52 8 58 4", "#7a4a24", 4) + P("M54 10Q64 0 76 6Q70 18 54 10Z", GREEN, "l") + SHN(34, 62, 5, 11, 25, 0.5);
+  };
+  I.mop = function () {
+    return SH(30) + '<g transform="rotate(-18 50 70)">' + Rc(46, 0, 8, 58, 3, "#a5743a", "l") + Rc(38, 54, 24, 8, 3, "#3b82e0", "l") + P("M32 62L68 62L78 94L24 94Z", "#f1ece0", "l") + L("M36 66L32 92M44 66L42 92M52 66L52 92M60 66L62 92M66 66L72 92", "#cfc6b0", 1.6) + "</g>";
+  };
+  I.map = function () {
+    return SH(38) + P("M8 24L36 14L64 24L92 14L92 76L64 86L36 76L8 86Z", "#f7e9bd", "l") + P("M36 14L64 24L64 86L36 76Z", "#9fd49a", "l") + P("M64 24L92 14L92 76L64 86Z", "#8fc6ee", "l") + L("M24 66Q38 50 52 56T78 38", "#d94b4b", 2.5, ' stroke-dasharray="4 3"') + L("M72 30L82 40M82 30L72 40", "#d94b4b", 3.5);
+  };
+  I.ink = function () {
+    return SH(28) + Rc(38, 6, 24, 16, 4, "#3d3d4a", "l") + Rc(42, 20, 16, 10, 3, "#6b7686", "l") + P("M24 34L76 34C82 34 84 44 84 54L84 82C84 90 78 94 70 94L30 94C22 94 16 90 16 82L16 54C16 44 18 34 24 34Z", "#2a50a0", "l") + Rc(28, 52, 44, 28, 5, "#ffffff", "l", ' stroke-width="1.4"') + Fc(50, 66, 6, "#2a50a0") + SHN(26, 46, 3, 8, 8, 0.5);
+  };
+  I.whale = function () {
+    return SH(40, 92) + L("M50 20Q44 8 38 6M50 20Q56 8 62 6", "#8fd0f5", 3.5, ' stroke-linecap="round"') + P("M10 56C10 30 40 26 66 38C80 44 88 36 94 24C98 36 96 52 84 58C90 64 96 70 98 80C86 80 78 74 70 72C48 86 12 84 10 56Z", "#3b82c9", "r") + P("M16 66C30 78 56 80 70 72C50 86 24 82 16 66Z", "#d6e9f7", "l", ' stroke-width="1"') + Ci(26, 52, 4, "#ffffff", "l", ' stroke-width="1"') + Fc(27, 52, 2, EYE) + SHN(34, 42, 10, 3, -10, 0.45);
+  };
+  I.octopus = function () {
+    var s = SH(34, 94), i, x;
+    for (i = 0; i < 4; i++) { x = 24 + i * 17; s += T("M" + x + " 54Q" + (x + (i % 2 ? 8 : -8)) + " 80 " + (x + (i < 2 ? -8 : 8)) + " 90", "#9b59c9", 7); }
+    return s + E(50, 38, 30, 28, "#9b59c9", "r") + Ci(40, 40, 6, "#ffffff", "l", ' stroke-width="1.2"') + Ci(60, 40, 6, "#ffffff", "l", ' stroke-width="1.2"') + Fc(41, 41, 3, EYE) + Fc(61, 41, 3, EYE) + L("M44 54Q50 58 56 54", "#6b3a8a", 2.2) + SHN(36, 22, 8, 4, -25, 0.5);
+  };
+  I.spinach = function () {
+    var leaf = function (rot, c) { return '<g transform="rotate(' + rot + ' 50 90)">' + P("M50 88C30 78 26 40 50 12C74 40 70 78 50 88Z", c, "l") + L("M50 86V22M50 52L40 40M50 62L61 48", shade(c, 0.7), 1.6, ' opacity=".7"') + "</g>"; };
+    return SH(30) + leaf(-30, "#3f9a45") + leaf(30, "#3f9a45") + leaf(0, "#58b552") + L("M50 88V96", "#8fb84a", 4);
+  };
+  I.marbles = function () {
+    var s = SH(36), m = [[32, 64, "#e5473d"], [62, 66, "#3b82e0"], [48, 40, "#ffc933"], [78, 44, "#43b05c"], [22, 38, "#9b59c9"]];
+    m.forEach(function (p) { s += Ci(p[0], p[1], 15, p[2], "r") + Fc(p[0] - 5, p[1] - 6, 3.5, "#ffffff", ' opacity=".6"'); });
+    return s;
+  };
+  I.cotton = function () {
+    var s = SH(34) + L("M50 94V64", "#6b8e3a", 4) + P("M22 74L36 52L50 68L64 52L78 74Q50 92 22 74Z", "#8a5a2b", "l");
+    [[34, 52, 14], [58, 50, 15], [46, 34, 15], [66, 36, 12], [28, 36, 11], [48, 54, 14]].forEach(function (p) { s += Ci(p[0], p[1], p[2], "#fbf8f0", "r", ' stroke-width="1.6"'); });
+    return s;
+  };
+  I.sugar = function () {
+    return SH(36) + P("M18 44L82 44L74 88Q50 94 26 88Z", "#e8f0f8", "l") + E(50, 44, 32, 7, "#ffffff", "l") + E(50, 41, 28, 5, "#fdfdfd", "l") + L("M26 62H74M30 76H70", "#c4d2e0", 2, ' opacity=".7"') + Rc(36, 24, 12, 12, 2, "#ffffff", "l", ' stroke-width="1.4"') + Rc(52, 18, 12, 12, 2, "#ffffff", "l", ' stroke-width="1.4"') + Rc(46, 8, 12, 12, 2, "#ffffff", "l", ' stroke-width="1.4"');
+  };
+  I.smoke = function () {
+    return SH(30) + Rc(30, 78, 40, 14, 4, "#6b7686", "l") + Fe(50, 64, 12, 9, "#9aa3b0", ' opacity=".9"') + Ci(40, 48, 14, "#aab4c0", "r", ' stroke-width="1.8"') + Ci(58, 36, 16, "#b8c0cc", "r", ' stroke-width="1.8"') + Ci(44, 20, 14, "#c4ccd6", "r", ' stroke-width="1.8"') + Ci(66, 14, 10, "#d0d6de", "r", ' stroke-width="1.8"');
+  };
+  I.earthworm = function () {
+    return SH(36, 90) + T("M10 74C24 52 36 88 50 66C62 48 72 60 88 38", "#d98b8b", 12) + L("M30 66L34 74M44 70L48 78M58 62L62 70M72 52L76 60", "#b86a6a", 2, ' opacity=".6"') + Fc(86, 40, 2, EYE) + L("M16 68L12 76", "#f0b6b6", 4, ' opacity=".5"');
+  };
+  I.dustbin = function () {
+    return SH(30) + P("M24 34L76 34L70 90Q50 95 30 90Z", "#43a05c", "l") + Rc(18, 24, 64, 12, 5, "#2f7a45", "l") + Rc(42, 14, 16, 10, 4, "#2f7a45", "l") + L("M38 46V82M50 46V84M62 46V82", "#2f7a45", 2.4, ' opacity=".7"') + SHN(32, 56, 3, 12, 8, 0.45);
+  };
+  I.jasmine = function () {
+    var s = SH(30) + L("M50 94V52", "#6b8e3a", 4) + P("M52 80Q70 70 80 82Q68 92 52 80Z", GREEN, "l") + P("M48 70Q30 62 20 72Q32 82 48 70Z", GREEN, "l"), i;
+    for (i = 0; i < 5; i++) s += '<g transform="rotate(' + i * 72 + ' 50 36)">' + E(50, 20, 8, 15, "#fffdf2", "r", ' stroke-width="1.6"') + "</g>";
+    return s + Ci(50, 36, 6, "#ffd24a", "r", ' stroke-width="1.4"');
+  };
+  I.field = function () {
+    var s = Rc(2, 4, 96, 92, 8, "#c9a06a", "l", ' stroke="none"') + F("M2 4H98V38Q50 30 2 38Z", "#bfe6fa");
+    s += F("M2 38Q50 30 98 38L98 44Q50 36 2 44Z", "#7cae4a");
+    [[22, 80], [42, 82], [62, 82], [80, 80], [30, 62], [50, 64], [70, 62], [38, 50], [62, 50]].forEach(function (p) { s += L("M" + p[0] + " " + (p[1] + 10) + "V" + p[1], "#4a8f45", 3, ' stroke-linecap="round"') + P("M" + p[0] + " " + p[1] + "Q" + (p[0] - 9) + " " + (p[1] - 8) + " " + (p[0] - 8) + " " + (p[1] - 16) + "Q" + p[0] + " " + (p[1] - 10) + " " + p[0] + " " + p[1] + "Z", "#58b552", "l", ' stroke-width="1"') + P("M" + p[0] + " " + p[1] + "Q" + (p[0] + 9) + " " + (p[1] - 8) + " " + (p[0] + 8) + " " + (p[1] - 16) + "Q" + p[0] + " " + (p[1] - 10) + " " + p[0] + " " + p[1] + "Z", "#58b552", "l", ' stroke-width="1"'); });
+    return s + Ci(82, 16, 8, YELLOW, "r", ' stroke-width="1.6"');
+  };
+  I.forest = function () {
+    var tr = function (x, y, s, c) { return Rc(x - 3 * s, y, 6 * s, 22 * s, 2, "#8a5a2b", "l") + P("M" + (x - 18 * s) + " " + (y + 4 * s) + "L" + x + " " + (y - 30 * s) + "L" + (x + 18 * s) + " " + (y + 4 * s) + "Z", c, "l") + P("M" + (x - 14 * s) + " " + (y - 12 * s) + "L" + x + " " + (y - 40 * s) + "L" + (x + 14 * s) + " " + (y - 12 * s) + "Z", shade(c, 1.1), "l"); };
+    return Fe(50, 90, 46, 5, "#8fc16a", ' opacity=".6"') + tr(26, 62, 0.8, "#3f9a45") + tr(74, 62, 0.8, "#3f9a45") + tr(50, 66, 1.1, "#2f8a45");
+  };
+  // @@BATCH4-END
 
   var NAMES = Object.keys(ITEMS);
 

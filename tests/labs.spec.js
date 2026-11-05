@@ -34,7 +34,7 @@ for (const [id, L] of Object.entries(LABS)) {
     const card = page.locator(`[data-explore="lab-${id}"]`);
     await expect(card).toBeVisible();
     await expect(page.locator(`#area-${L.area}`)).toContainText(L.title);
-    await card.getByRole("link", { name: /Open lab/ }).first().click();
+    await card.getByRole("link", { name: /Try it/ }).first().click();
     await expect(page).toHaveURL(/#\/lab\//);
     await expect(page.locator(".vl")).toBeVisible();
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(L.title);

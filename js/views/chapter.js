@@ -372,6 +372,11 @@
     return h;
   }
 
+  // Picture vocabulary questions ("Which one is a mango?") are answered by tapping a picture card: tap one to see if it is right.
+  function genCards(q) {
+    return picAnswers(q) ? optionsHTML(q, { order: shuffle(q.options.map((_, k) => k)), btn: (orig) => ({ cls: "option", attr: `data-g="${orig}"` }) }) : "";
+  }
+
   function mountPractice(el, c, subj, ch) {
     const gen = el.querySelector("#gen-mount");
     if (gen) {
@@ -381,6 +386,7 @@
           .map(
             (q, i) => `<article class="card example">
             ${picHTML(q)}<p class="q"><span class="tag">${t("Q{n}", { n: i + 1 })}</span>${rich(q.q)}</p>
+            ${genCards(q)}
             <details class="reveal"><summary>${t("Show answer")}</summary>
               <ol class="steps">${q.steps.map((st) => `<li>${rich(st)}</li>`).join("")}</ol>
               <div class="answer">${rich(q.options[0])}</div>
@@ -391,6 +397,15 @@
       };
       draw();
       gen.onclick = (e) => {
+        const card = e.target.closest("[data-g]");
+        if (card) {
+          card.closest(".options").querySelectorAll("[data-g]").forEach((x) => {
+            x.classList.add("locked");
+            if (x.dataset.g === "0") x.classList.add("correct");
+            else if (x === card) x.classList.add("wrong");
+          });
+          return;
+        }
         if (e.target.closest("[data-act=regen]")) {
           e.stopPropagation();
           draw();

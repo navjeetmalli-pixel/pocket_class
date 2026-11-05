@@ -48,26 +48,44 @@
     return "";
   }
 
-  function planCard(plan, young) {
+  const mithu = (on) => (on && typeof Mascot !== "undefined" ? `<span class="start-mithu" aria-hidden="true">${Mascot.svg("point", { size: 64 })}</span>` : "");
+  const startArt = (subject) => `<span class="start-art" aria-hidden="true">${typeof Pics !== "undefined" && subject ? Pics.subjectSvg(subject, 64) : icon("play")}</span>`;
+
+  // Today's plan: ONE big Start card for the next open item, then the rest as a compact list, and tiny progress dots.
+  // `big` is false when a "Continue learning" card above already is the one main action.
+  function planCard(plan, young, small, big) {
     if (!plan.items.length) return "";
     const all = plan.doneCount === plan.items.length;
-    const rows = plan.items
-      .map(
-        (it) => `<li><a class="plan-item ${it.done ? "done" : ""}" href="${it.href}" data-plan="${esc(it.id)}">
+    const first = big ? plan.items.find((i) => !i.done) : null;
+    const why = (it) => (small && !International.on() ? "" : `<span class="plan-why">${itemWhy(it)}</span>`);
+    const color = (it) => (D.subject(it.subject) ? D.subject(it.subject).color : "#4a53b8");
+    const row = (it) => `<li><a class="plan-item ${it.done ? "done" : ""}" href="${it.href}" data-plan="${esc(it.id)}">
           <span class="plan-tick" aria-hidden="true">${it.done ? icon("check") : ""}</span>
           ${subjectArt(it.subject)}
           <span class="plan-body">
             <span class="plan-top"><span class="plan-kind">${t(KIND[it.kind])}</span><span class="plan-min">${t("{n} min", { n: it.min })}</span></span>
             <span class="plan-title"><span class="sr-only">${it.done ? t("Done:") : t("To do:")} </span>${esc(itemTitle(it))}</span>
-            <span class="plan-why">${itemWhy(it)}</span>
-          </span>${it.done ? "" : icon("next")}</a></li>`
-      )
-      .join("");
-    return `<section class="card plan ${young ? "plan-young" : ""} mt" id="plan" aria-labelledby="plan-h">
-      <div class="row" style="margin-bottom:6px"><h2 class="grow plan-h" id="plan-h">${t("Today's plan")}</h2>
-        <span class="pill ${all ? "good" : "accent"}">${all ? t("All done") : t("{n} min left", { n: plan.minutes })}</span></div>
-      <p class="small muted" style="margin:0 0 10px">${all ? t("Nice work. Anything more today is a bonus.") : t("{a} of {b} done. A short plan you can finish.", { a: plan.doneCount, b: plan.items.length })}</p>
-      <ul class="plan-list">${rows}</ul>
+            ${why(it)}
+          </span>${it.done ? "" : icon("next")}</a></li>`;
+    const startCard = first
+      ? `<a class="plan-item start-card" id="start-card" href="${first.href}" data-plan="${esc(first.id)}" style="--c:${color(first)};--c1:${Views._.tileTop(color(first))}">
+          ${mithu(small)}
+          ${startArt(first.subject)}
+          <span class="plan-body">
+            <span class="plan-top"><span class="plan-kind">${t(KIND[first.kind])}</span><span class="plan-min">${t("{n} min", { n: first.min })}</span></span>
+            <span class="plan-title"><span class="sr-only">${t("To do:")} </span>${esc(itemTitle(first))}</span>
+            ${why(first)}
+          </span>
+          <span class="start-go">${icon("play")}<span>${t("Start")}</span></span></a>`
+      : "";
+    const rest = plan.items.filter((i) => i !== first);
+    const dots = plan.items.map((i) => `<i class="${i.done ? "on" : ""}"></i>`).join("");
+    return `<section class="plan plan-new ${first ? "has-start" : "card"} ${young ? "plan-young" : ""} mt" id="plan" aria-labelledby="plan-h">
+      <div class="plan-head"><h2 class="plan-h" id="plan-h">${t("Today's plan")}</h2>
+        <span class="plan-dots" aria-hidden="true">${dots}</span>
+        ${all ? `<span class="pill good">${t("All done")}</span>` : `<span class="plan-count">${t("{a} of {b}", { a: plan.doneCount, b: plan.items.length })}</span>`}</div>
+      ${startCard}
+      ${rest.length ? `<ul class="plan-list">${rest.map(row).join("")}</ul>` : ""}
       ${plan.moreDue ? `<a class="small plan-more" href="#/revise/due">${t("{n} more due. Revise all", { n: plan.moreDue })} ${icon("next")}</a>` : ""}
     </section>`;
   }
@@ -102,7 +120,7 @@
         title = lv ? lv.title : t("Practice by topic");
         sub = `${subjName(pl.subject)} · ${topic ? topic.title : t("Practice by topic")}`;
       }
-      return { k: t("Continue learning"), title, sub, href: pl.href, resume: true };
+      return { k: t("Continue learning"), title, sub, href: pl.href, resume: true, subject: pl.subject };
     }
     const first = plan.items.find((i) => !i.done);
     return first ? { k: t("Start here"), title: itemTitle(first), sub: `${subjName(first.subject)} · ${t(KIND[first.kind])}`, href: first.href } : null;
@@ -182,6 +200,7 @@
     const c = cls();
     const band = App.band(c);
     const young = Plan.young(c);
+    const small = band === "1-2" || band === "3-5";
     const hr = new Date().getHours();
     const greet = hr < 12 ? t("Good morning") : hr < 17 ? t("Good afternoon") : t("Good evening");
 
@@ -193,6 +212,7 @@
     const chOf = (href) => (/^#\/(?:chapter|play)\/\d+\/([^/]+)\/([^/?]+)/.exec(href || "") || [null, "-", "-"]).slice(1, 3).join("/");
     const nextItem = plan.items.find((i) => !i.done);
     if (main && main.resume && nextItem && nextItem.kind !== "path" && chOf(main.href) === `${nextItem.subject}/${nextItem.chapter}`) main = null;
+    const mainColor = main && main.subject && D.subject(main.subject) ? D.subject(main.subject).color : "#4a53b8";
     const explore = exploreCard(gameFor(c, plan, main));
 
     // Subject-wise view lists only the learner's picked subjects; Class-wise lists them all.
@@ -227,14 +247,15 @@
         ${boardNote(c)}
         ${
           main
-            ? `<a class="card continue main-action mt" id="main-action" href="${main.href}">
-                <div class="grow"><div class="k">${main.k}</div><div class="t">${esc(main.title)}</div><div class="s">${main.sub}</div></div>
-                <span class="go">${icon("arrow")}</span></a>`
+            ? `<a class="start-card main-action mt" id="main-action" href="${main.href}" style="--c:${mainColor};--c1:${Views._.tileTop(mainColor)}">
+                ${mithu(small)}${startArt(main.subject)}
+                <span class="plan-body"><span class="plan-top"><span class="plan-kind">${main.k}</span></span><span class="plan-title">${esc(main.title)}</span><span class="plan-why">${main.sub}</span></span>
+                <span class="start-go">${icon("play")}<span>${t("Start")}</span></span></a>`
             : plan.items.length
               ? ""
               : start
         }
-        ${planCard(plan, young)}
+        ${planCard(plan, young, small, !main)}
         ${examRow(c, band)}
         ${dueCard(c)}
         ${explore}

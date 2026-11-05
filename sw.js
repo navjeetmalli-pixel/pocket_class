@@ -1,7 +1,7 @@
 // Offline support: caches the app shell on first visit, plus each class's index and each subject's data once it's opened.
 // Online, files come fresh from the network (and refresh the cache);
 // offline or on a very slow connection, the cached copy is used.
-const CACHE = "pocket-class-v66";
+const CACHE = "pocket-class-v67";
 
 const FILES = [
   "./",
@@ -43,6 +43,7 @@ const FILES = [
   "js/games/quickfire.js",
   "js/games/sort.js",
   "js/games/order.js",
+  "js/games/gamefx.js",
   "js/games/timeline.js",
   "js/games/langkit.js",
   "js/games/letters.js",
@@ -59,6 +60,8 @@ const FILES = [
   "js/games/angles.js",
   "js/games/graphs.js",
   "js/games/race.js",
+  "js/games/wordbuild.js",
+  "js/games/habitat.js",
   "js/views/ui.js",
   "js/views/students.js",
   "js/views/shell.js",

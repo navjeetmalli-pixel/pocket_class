@@ -98,7 +98,7 @@ test("language games are offered on the right chapters and levels", async ({ pag
   await expect(page.locator(".game-card", { hasText: "Grammar sort" })).toBeVisible();
   // The Games home lists the language chapters with their game icons, and its subtitle is general.
   await page.goto("/#/games");
-  await expect(page.locator(".shell-head .sub")).toContainText("Short games from your chapters");
+  await expect(page.locator(".shell-head .sub")).toContainText("Pick a game to play");
   await expect(page.locator(".subject-card").first()).toBeVisible();
 });
 

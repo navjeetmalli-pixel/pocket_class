@@ -50,6 +50,16 @@
      positions (a ball and the same cabinet): अंदर ਅੰਦਰ (in), ऊपर ਉੱਪਰ (above), नीचे ਹੇਠਾਂ (under), पास ਨੇੜੇ (near), दूर ਦੂਰ (far), पीछे ਪਿੱਛੇ (behind), आगे ਅੱਗੇ (in front), बाहर ਬਾਹਰ (outside), बीच ਵਿਚਕਾਰ (between)
      numbers: ० to १०० and ੦ to ੧੦੦ (digits), बीस तीस चालीस पचास साठ सत्तर अस्सी नब्बे सौ, ਵੀਹ ਤੀਹ ਚਾਲੀ ਪੰਜਾਹ ਸੱਠ ਸੱਤਰ ਅੱਸੀ ਨੱਬੇ ਸੌ, शून्य ज़ीरो ਸਿਫ਼ਰ ਜ਼ੀਰੋ (empty ten-frame); 21-99 show tens bundles and single sticks
      Spelling, plural, tense, "begins with" and place-value questions never show picture answers (a picture would hide the mistake or give away the answer).
+   BATCH 4 (wave 2C: drawn for the picture vocabulary questions in js/gen.js and for one-word-away questions). New Hindi / Punjabi words, with the picture they show:
+     तालाब ਛੱਪੜ (pond), सड़क ਸੜਕ (road), कड़ाही ਕੜਾਹੀ (pan), मूली ਮੂਲੀ (radish), बैंगन ਬੈਂਗਣ (brinjal), पत्तागोभी ਬੰਦ ਗੋਭੀ (cabbage), फूलगोभी ਫੁੱਲ ਗੋਭੀ (cauliflower),
+       नारियल ਨਾਰੀਅਲ (coconut), नाशपाती ਨਾਸ਼ਪਾਤੀ (pear), पोंछा ਪੋਚਾ (mop), नक्शा ਨਕਸ਼ਾ (map), स्याही ਸਿਆਹੀ (ink bottle), व्हेल (whale), ऑक्टोपस (octopus),
+       पालक ਪਾਲਕ (spinach), कंचे (marbles), रूई ਰੂੰ (cotton), चीनी ਖੰਡ (sugar), धुआँ ਧੂੰਆਂ (smoke), केंचुआ ਗੰਡੋਆ (earthworm), कूड़ेदान ਕੂੜੇਦਾਨ (dustbin), चमेली ਚਮੇਲੀ (jasmine),
+       खेत ਖੇਤ (a crop field), जंगल ਜੰਗਲ (forest); aliases: नौका (boat), सितारा (star), ईख (sugarcane), ਤੰਬੂ (tent)
+     Drawn for words that were already in the table: crab, cake, bucket, broom, notebook, basket, knife, temple, hut, tent, scooter, helicopter, scarf, crown, glasses, watch, computer, radio, juice, tea.
+   Picture vocabulary questions (js/gen.js picWhich / picName / picOdd / picGroup, with Hi and Pa versions of the first two) use ONLY words from this table.
+     Their question wording, for the teacher's review:  Hindi "<word> का चित्र कौन-सा है?" (which picture is the <word>), "यह क्या है?" (what is this?), "यह <word> है।" (this is a <word>);
+     Punjabi "<word> ਦੀ ਤਸਵੀਰ ਕਿਹੜੀ ਹੈ?", "ਇਹ ਕੀ ਹੈ?", "ਇਹ <word> ਹੈ।". Used for: fruit, vegetable, animal, bird, vehicle, things at home, things at school, parts of the body, clothes, flowers, food, sky and nature, jobs.
+     "What is this?" (and the Hindi / Punjabi forms) never shows picture cards for its answers: the picture above the question is the clue.
    Please check each Hindi and Punjabi spelling and meaning. Colours, numbers and shapes follow the table.
    --------------------------------------------------------------------------------------------------------------- */
 (function (root) {
@@ -185,7 +195,7 @@
     "school | school | स्कूल | ਸਕੂਲ",
     "temple | temple | मंदिर | ਮੰਦਰ",
     "hut | hut | झोपड़ी | ਝੌਂਪੜੀ",
-    "tent | tent | तंबू |",
+    "tent | tent | तंबू | ਤੰਬੂ",
     "diya | diya, lamp | दीया, दीपक | ਦੀਵਾ",
     "computer | computer | कंप्यूटर | ਕੰਪਿਊਟਰ",
     "phone | phone, mobile | फ़ोन |",
@@ -230,7 +240,7 @@
     /* nature */
     "sun | sun | सूरज | ਸੂਰਜ",
     "moon | moon | चाँद, चांद | ਚੰਨ, ਚੰਦ",
-    "star | star | तारा | ਤਾਰਾ",
+    "star | star | तारा, सितारा | ਤਾਰਾ",
     "cloud | cloud | बादल | ਬੱਦਲ",
     "rain | rain | बारिश | ਮੀਂਹ",
     "rainbow | rainbow | इंद्रधनुष |",
@@ -255,7 +265,7 @@
     "bus | bus | बस | ਬੱਸ",
     "auto | auto, auto rickshaw, rickshaw | ऑटो |",
     "cycle | cycle, bicycle, bike | साइकिल | ਸਾਈਕਲ",
-    "boat | boat | नाव | ਕਿਸ਼ਤੀ",
+    "boat | boat | नाव, नौका | ਕਿਸ਼ਤੀ",
     "ship | ship | |",
     "train | train, metro train | रेलगाड़ी, रेल, ट्रेन | ਰੇਲਗੱਡੀ",
     "aeroplane/airplane/plane | aeroplane, airplane, plane | हवाई जहाज़ | ਹਵਾਈ ਜਹਾਜ਼",
@@ -336,7 +346,7 @@
     "jaggery | jaggery | गुड़ | ਗੁੜ",
     "taxi | taxi | टैक्सी | ਟੈਕਸੀ",
     "wheat | wheat | गेहूँ, गेहूं | ਕਣਕ",
-    "sugarcane | sugarcane, sugar cane | गन्ना | ਗੰਨਾ",
+    "sugarcane | sugarcane, sugar cane | गन्ना, ईख | ਗੰਨਾ",
     "cracker | firecracker, firecrackers | पटाखा, पटाखे | ਪਟਾਕਾ, ਪਟਾਕੇ",
     "marigold | marigold | गेंदा |",
     "wool | wool | ऊन | ਉੱਨ",
@@ -348,6 +358,31 @@
     "women | women | |",
     "men | men | |",
     "children | children | |",
+    /* wave 2C: drawn for the vocabulary generators and the one-word-away questions */
+    "pond | pond | तालाब | ਛੱਪੜ",
+    "road | road | सड़क | ਸੜਕ",
+    "pan | pan, frying pan | कड़ाही | ਕੜਾਹੀ",
+    "radish | radish | मूली | ਮੂਲੀ",
+    "brinjal | brinjal, aubergine, eggplant | बैंगन | ਬੈਂਗਣ",
+    "cabbage | cabbage | पत्तागोभी | ਬੰਦ ਗੋਭੀ",
+    "cauliflower | cauliflower | फूलगोभी | ਫੁੱਲ ਗੋਭੀ",
+    "coconut | coconut | नारियल | ਨਾਰੀਅਲ",
+    "pear | pear | नाशपाती | ਨਾਸ਼ਪਾਤੀ",
+    "mop | mop | पोंछा | ਪੋਚਾ",
+    "map | map | नक्शा | ਨਕਸ਼ਾ",
+    "ink | ink | स्याही | ਸਿਆਹੀ",
+    "whale | whale | व्हेल |",
+    "octopus | octopus | ऑक्टोपस |",
+    "spinach | spinach | पालक | ਪਾਲਕ",
+    "marbles | marbles | कंचे |",
+    "cotton | cotton | रूई | ਰੂੰ",
+    "sugar | sugar | चीनी | ਖੰਡ",
+    "smoke | smoke | धुआँ, धुआं | ਧੂੰਆਂ",
+    "earthworm | earthworm | केंचुआ | ਗੰਡੋਆ",
+    "dustbin | dustbin, bin | कूड़ेदान | ਕੂੜੇਦਾਨ",
+    "jasmine | jasmine | चमेली | ਚਮੇਲੀ",
+    "field | | खेत | ਖੇਤ",
+    "forest | forest, jungle | जंगल | ਜੰਗਲ",
   ];
   /* Words that only make sense as an ANSWER picture (positions, places, describing words, ideas). They are never drawn for a question's subject
      or in notes (PicDict.illustrate): "in", "up", "root" (square root), "play" and "old" are everywhere in ordinary sentences. */
@@ -651,6 +686,8 @@
     if (!options || options.length < 2 || options.length > 4 || !root.Pics) return null;
     // spelling, plural and tense questions are about the written word: a picture would hide the mistake ("boxs" must not look like a box)
     if (/\b(plural|singular|spell|spelling|spelt|past tense|verb form)\b/.test(ctx)) return null;
+    // "What is this?" (a picture above the question, the answer is its NAME): picture cards would show the answer
+    if (/^(what is this(?! shape)|यह क्या है|ਇਹ ਕੀ ਹੈ)/.test(ctx.trim())) return null;
     wf = /\b(begins?|starts?|ends?|rhymes?|rhyming|letters?|syllables?)\b|\bthe [a-z]{1,3} sound\b/.test(ctx);
     for (i = 0; i < options.length; i++) {
       r = forText(options[i], { context: ctx, siblings: options.filter(function (_, j) { return j !== i; }), decorative: true });
@@ -670,7 +707,7 @@
   /* ---------- question pictures ---------- */
   // Words that are not the "thing" a question is about: verbs that are also nouns, settings ("at home", "in school"),
   // kinds of thing ("Which is a flower?" must not show a flower), and Hindi words with another everyday meaning (आम = mango, but also "common": आम तौर पर; कमल is also a name).
-  var QSKIP = { watch: 1, brush: 1, comb: 1, tap: 1, fan: 1, pot: 1, lock: 1, house: 1, school: 1, flower: 1, bird: 1, animal: 1, fruit: 1, vegetable: 1, "फूल": 1, "पक्षी": 1, "चिड़िया": 1, "ਫੁੱਲ": 1, "ਪੰਛੀ": 1, "घर": 1, "स्कूल": 1, "ਘਰ": 1, "ਸਕੂਲ": 1, "आम": 1, "कमल": 1, "बस": 1 };
+  var QSKIP = { juice: 1, watch: 1, brush: 1, comb: 1, tap: 1, fan: 1, pot: 1, lock: 1, house: 1, school: 1, flower: 1, bird: 1, animal: 1, fruit: 1, vegetable: 1, "फूल": 1, "पक्षी": 1, "चिड़िया": 1, "ਫੁੱਲ": 1, "ਪੰਛੀ": 1, "घर": 1, "स्कूल": 1, "ਘਰ": 1, "ਸਕੂਲ": 1, "आम": 1, "कमल": 1, "बस": 1 };
   var NUMWORDS = /\b(two|three|four|five|six|seven|eight|nine|ten|twenty|fifty|hundred|double|half|twice)\b/;
 
   // Every picturable phrase in a text, longest phrase first: [{ d (description), word }].
