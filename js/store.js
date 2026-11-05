@@ -97,7 +97,7 @@ const Store = (() => {
     guided: {}, // chapter key -> { at, score, total, sureWrong } for the last guided lesson
     teach: {}, // chapter key -> { text, ticks: [indexes of key points ticked], at }: the student's own-words summary
     revise: {}, // chapter key -> { last, n }: when the chapter was last studied and how many times
-    paths: {}, // "maths" -> { "fractions": { start, checked, levels: { "fractions-0": { best, n, at, mastered } } } }: Practice by topic
+    paths: {}, // "maths" -> { "fractions": { start, checked, checks: [{ at, start, all }], levels: { "fractions-0": { best, n, at, mastered } } } }: Practice by topic
     pm: {}, // question key -> true: mistakes made in Practice by topic in another class's chapter (shown in My mistakes too)
     games: {}, // chapter (or level) key -> { match: { best, stars, plays, at }, ... }: best score and stars of each Play game
     learn: learnDefaults(), // the learning record: see learnDefaults
@@ -360,6 +360,13 @@ const Store = (() => {
 
     // ----- Practice by topic -----
     pathTopic: (subject, topic) => Object.assign({ start: 0, checked: null, levels: {} }, ((state.paths[subject] || {})[topic]) || {}),
+    // Every "Find my level" result of a topic, oldest first: [{ at, start, all }]. The first is the "before" baseline.
+    // Older saves have only `checked` (a time) and `start`: that counts as one check.
+    pathChecks(subject, topic) {
+      const T = Store.pathTopic(subject, topic);
+      if (Array.isArray(T.checks) && T.checks.length) return T.checks;
+      return T.checked ? [{ at: T.checked, start: T.start, all: false }] : [];
+    },
     // Saves a finished level round. A level is mastered once a round scores Mastery.config.pathPass (80%) or more, and stays mastered.
     recordLevel(subject, topic, levelId, percent) {
       const t = ((state.paths[subject] = state.paths[subject] || {})[topic] = state.paths[subject][topic] || { start: 0, checked: null, levels: {} });
@@ -369,10 +376,15 @@ const Store = (() => {
       return t.levels[levelId];
     },
     // Where the student starts in a topic: an index into its levels (from "Find my level" or "Start from Level 0").
-    setPathStart(subject, topic, start, checked) {
+    setPathStart(subject, topic, start, checked, all) {
       const t = ((state.paths[subject] = state.paths[subject] || {})[topic] = state.paths[subject][topic] || { start: 0, checked: null, levels: {} });
-      t.start = start;
-      t.checked = checked ? Date.now() : t.checked;
+      if (checked) {
+        // A placement check is kept in `checks`; a repeat never lowers `start`, so levels do not lock again.
+        const before = Store.pathChecks(subject, topic);
+        t.checks = [...before, { at: Date.now(), start, all: !!all }];
+        t.start = before.length ? Math.max(t.start || 0, start) : start;
+        t.checked = Date.now();
+      } else t.start = start;
       today().acts++;
       save();
     },
@@ -383,7 +395,7 @@ const Store = (() => {
     // ----- Play (js/games/engine.js) -----
     // A finished game: keeps the best score and stars for this chapter (or level) and game type, and counts as study today.
     // `answers` ([{ key, ok }], as in recordQuiz) feeds the chapter accuracy. Returns { best, stars, plays, isBest, prev }.
-    recordGame(k, type, { score, stars, answers }) {
+    recordGame(k, type, { score, stars, answers, ghost }) {
       for (const a of answers || []) {
         const ck = String(a.key).split("/").slice(0, 3).join("/");
         const x = state.acc[ck] || [0, 0];
@@ -392,11 +404,23 @@ const Store = (() => {
       const g = (state.games[k] = state.games[k] || {});
       const prev = g[type] || { best: 0, stars: 0, plays: 0 };
       g[type] = { best: Math.max(prev.best, score), stars: Math.max(prev.stars, stars), plays: prev.plays + 1, at: Date.now() };
+      // Ghost (the Mental-maths race): seconds at each right answer of the best run. Best = most right answers; the earlier
+      // finish breaks a tie. Old saves without a ghost are fine.
+      const old = Array.isArray(prev.ghost) ? prev.ghost : null;
+      const run = Array.isArray(ghost) && ghost.length ? ghost.map(Number).filter((x) => x >= 0) : null;
+      const better = run && (!old || run.length > old.length || (run.length === old.length && run[run.length - 1] < old[old.length - 1]));
+      if (better) g[type].ghost = run;
+      else if (old) g[type].ghost = old;
       today().acts++;
       save();
       return { ...g[type], isBest: score > prev.best, prev };
     },
     gameBest: (k, type) => ((state.games[k] || {})[type]) || null,
+    // The ghost to race against: [seconds at each right answer] of the best run, or null if none yet.
+    gameGhost(k, type) {
+      const gh = ((state.games[k] || {})[type] || {}).ghost;
+      return Array.isArray(gh) && gh.length ? gh : null;
+    },
 
     setCard(ck, status) {
       state.cards[ck] = status;

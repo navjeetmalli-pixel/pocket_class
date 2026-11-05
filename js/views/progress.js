@@ -102,6 +102,16 @@
 
   // ---------- recognitions (js/readiness.js: rewards) ----------
 
+  // Certificates earned in Practice by topic (every level of a topic mastered). Hidden when there are none.
+  function certificatesSection() {
+    const list = Views.certificates ? Views.certificates() : [];
+    if (!list.length) return "";
+    return `<h2 class="block-title">${t("Certificates")}</h2>
+      <div class="stack">${list
+        .map((x) => `<a class="card row" href="#/certificate/${x.subject}/${x.topic.id}"><span aria-hidden="true" style="font-size:24px">🏅</span><span class="grow"><strong>${esc(x.path.title)} · ${esc(x.topic.title)}</strong><span class="small muted" style="display:block">${t("{n} {n:level|levels} mastered, average best score {p}%", { n: x.n, p: x.avg })}</span></span>${icon("next")}</a>`)
+        .join("")}</div>`;
+  }
+
   function rewardsSection(c) {
     const list = Readiness.rewards(c);
     const skill = (key) => {
@@ -212,6 +222,7 @@
         ${workOnSection(c)}
         ${intl ? "" : readinessSection(c)}
         ${intl ? "" : rewardsSection(c)}
+        ${certificatesSection()}
         <h2 class="block-title">${t("This week")}</h2>
         <div class="card">
           <div class="week" role="img" aria-label="${t("Minutes studied each day this week")}">${days

@@ -149,6 +149,7 @@ const Games = (() => {
       <span class="game-ico">${icon(def.icon)}</span>
       <h2 class="game-title">${t(def.title)}</h2>
       <p class="game-how">${t(def.how)}</p>
+      ${def.introNote ? `<p class="small game-note">${esc(def.introNote(ctx) || "")}</p>` : ""}
       <p class="small muted game-best">${best ? `${stars(best.stars)} <span>${t("Best score {n}", { n: best.best })}</span>` : t("Not played yet")}</p>
       <button class="btn primary block" data-g="start">${icon("play")} ${t("Start")}</button>
       <a class="btn block" href="${ctx.back}" style="margin-top:10px">${icon("back")} ${t(ctx.backLabel || "Back")}</a>
@@ -209,6 +210,7 @@ const Games = (() => {
   function makeApi(g) {
     return {
       seed: g.seed,
+      key: g.ctx.key,
       get lives() {
         return g.lives;
       },
@@ -328,7 +330,7 @@ const Games = (() => {
     document.removeEventListener("keydown", g.onKey);
     document.removeEventListener("visibilitychange", g.onVis);
     const n = Math.max(1, Math.min(3, Math.round(result.stars || 1)));
-    const rec = Store.recordGame(g.ctx.key, g.def.type, { score: g.pts, stars: n, answers: g.answers });
+    const rec = Store.recordGame(g.ctx.key, g.def.type, { score: g.pts, stars: n, answers: g.answers, ghost: result.ghost });
     // Learning record: the answers, plus one "game" event for the round (it names no objective, so it changes no state).
     const src = g.ctx.ch.sources ? g.ctx.ch.sources.find((x) => !x.own) : null;
     g.learned = Learn.record([...g.events, { type: "game", cls: src ? src.cls : g.ctx.cls, subject: src ? src.subj.id : g.ctx.subj.id, chapter: src ? src.ch.id : g.ctx.ch.id, ok: n >= 2, source: "game" }]);

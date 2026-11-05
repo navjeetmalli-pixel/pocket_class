@@ -69,6 +69,15 @@
     icon: "race",
     hud: { timer: "down", seconds: SECONDS, streak: true },
 
+    // One line on the start screen about the saved ghost (the best run so far), or null.
+    introNote(ctx) {
+      const run = Store.gameGhost(ctx.key, "race");
+      if (!run) return t("Finish a race to set a ghost to beat.");
+      const sc = MK.scope(ctx.cls, ctx.subj, ctx.ch);
+      const goal = target(kOf(sc));
+      return run.length >= goal ? t("Race your best: you reached the flag in {s} s", { s: run[run.length - 1].toFixed(0) }) : t("Race your best: you got {a} of {b} to the flag", { a: run.length, b: goal });
+    },
+
     available: (c, subj, ch) => kOf(MK.scope(c, subj, ch)) > 0 && names(c, subj, ch).length > 0,
 
     build(c, subj, ch, seed) {
@@ -124,10 +133,17 @@
       let cur = null;
       let locked = false;
       let timer = null;
+      const paces = []; // seconds (1 decimal) at each right answer: this run's pace
+      const ghost = Store.gameGhost(api.key, "race"); // the best run so far, or null
+      let ghostN = 0; // how many answers the ghost has made by now
+      let ghostGap = null; // last spoken state: -1 behind, 0 level, 1 ahead
+      const gap = () => right - ghostN;
+      const gapText = () => (gap() > 0 ? t("Ahead of your best by {n}", { n: gap() }) : gap() < 0 ? t("Behind your best by {n}", { n: -gap() }) : t("Level with your best"));
+      const ghostPct = () => Math.min(100, (ghostN / goal) * 100);
 
       const track = () => {
         const pct = Math.min(100, (right / goal) * 100);
-        return `<div class="race-track" role="progressbar" aria-valuemin="0" aria-valuemax="${goal}" aria-valuenow="${right}" aria-label="${t("{a} of {b} to the flag", { a: right, b: goal })}"><span class="race-runner" style="left:calc(${pct}% * 0.92)" aria-hidden="true">🏃</span><span class="race-flag" aria-hidden="true">🏁</span></div>`;
+        return `<div class="race-top"><div class="race-track" role="progressbar" aria-valuemin="0" aria-valuemax="${goal}" aria-valuenow="${right}" aria-label="${t("{a} of {b} to the flag", { a: right, b: goal })}"><span class="race-runner" style="left:calc(${pct}% * 0.92)" aria-hidden="true">🏃</span>${ghost ? `<span class="race-ghost" style="left:calc(${ghostPct()}% * 0.92)" aria-hidden="true">🏃</span>` : ""}<span class="race-flag" aria-hidden="true">🏁</span></div>${ghost ? `<div class="small muted center race-ghost-line" style="min-height:20px">${gapText()}</div>` : ""}</div>`;
       };
 
       function draw() {
@@ -142,11 +158,21 @@
         if (f && document.activeElement && (document.activeElement === document.body || el.contains(document.activeElement) || document.activeElement.closest("#app"))) f.focus({ preventScroll: true });
       }
 
+      // Ghost: a run beats the best when it got further; the same distance is decided by the earlier finish time.
+      const beats = (a, b) => a.length > b.length || (a.length === b.length && a.length > 0 && a[a.length - 1] < b[b.length - 1]);
+
       function end() {
         clearTimeout(timer);
+        clearInterval(ghostTick);
         const done = right >= goal;
         const stars = done && wrong <= 2 ? 3 : done || right >= Math.ceil(goal * 0.6) ? 2 : 1;
-        api.finish({ stars, lines: [done ? t("Reached the flag!") : t("{a} of {b} to the flag", { a: right, b: goal }), t("{a} right, {b} wrong", { a: right, b: wrong }), t("Best streak {n}", { n: best })] });
+        let ghostLine = t("Finish a race to set a ghost to beat.");
+        if (ghost) {
+          const sec = (x) => Math.round(x * 10) / 10;
+          const more = paces.length - ghost.length;
+          ghostLine = beats(paces, ghost) ? `${t("You beat your best run!")} (${more > 0 ? t("{n} more answers", { n: more }) : t("{n} s faster", { n: sec(ghost[ghost.length - 1] - paces[paces.length - 1]) })})` : t("Your best run is still ahead. Try again!");
+        }
+        api.finish({ ghost: paces, stars, lines: [ghostLine, done ? t("Reached the flag!") : t("{a} of {b} to the flag", { a: right, b: goal }), t("{a} right, {b} wrong", { a: right, b: wrong }), t("Best streak {n}", { n: best })] });
       }
 
       function pick(i) {
@@ -162,6 +188,7 @@
         const fb = el.querySelector("[data-fb]");
         if (ok) {
           right++;
+          paces.push(Math.round(api.elapsed() * 10) / 10);
           streak++;
           best = Math.max(best, streak);
           let pts = 10 + 2 * Math.min(streak, 10);
@@ -172,11 +199,11 @@
           if (right >= goal) {
             const left = Math.max(0, SECONDS - api.elapsed());
             api.score(Math.round(left) * 2);
-            el.querySelector(".race-track").outerHTML = track();
+            el.querySelector(".race-top").outerHTML = track();
             timer = setTimeout(end, 500);
             return;
           }
-          el.querySelector(".race-track").outerHTML = track();
+          el.querySelector(".race-top").outerHTML = track();
           timer = setTimeout(() => api.live() && draw(), 350);
           return;
         }
@@ -199,6 +226,21 @@
         const n = "1234".indexOf(e.key);
         if (n >= 0) pick(n);
       });
+      // The ghost runs on the game clock (api.elapsed), so it stands still while paused. About 4 times a second.
+      const ghostTick = ghost
+        ? setInterval(() => {
+            if (!api.live()) return clearInterval(ghostTick);
+            const now = api.elapsed();
+            ghostN = ghost.filter((x) => x <= now).length;
+            const g = el.querySelector(".race-ghost");
+            if (g) g.style.left = `calc(${ghostPct()}% * 0.92)`;
+            const line = el.querySelector(".race-ghost-line");
+            if (line) line.textContent = gapText();
+            const state = Math.sign(gap());
+            if (ghostGap !== null && state !== ghostGap) api.say(gapText()); // spoken only when the lead changes
+            ghostGap = state;
+          }, 250)
+        : null;
       api.onTimeUp(end);
       draw();
     },

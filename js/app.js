@@ -24,7 +24,7 @@ const App = {
     papers: "learn", paper: "learn", paths: "learn", pathsheet: "learn", revise: "learn", search: "learn",
     games: "play", play: "play",
     explore: "explore", lab: "explore",
-    progress: "progress", parent: "progress",
+    progress: "progress", parent: "progress", certificate: "progress",
   };
   App.tabOf = (p) => {
     if (/^revise\/(mistakes|due)/.test(p)) return "progress";
@@ -49,6 +49,7 @@ const App = {
     [/^paths\/(\w+)$/, Views.pathsSubject],
     [/^paths\/(\w+)\/([\w-]+)$/, Views.pathsTopic],
     [/^paths\/(\w+)\/([\w-]+)\/([\w-]+)$/, Views.pathsLevel],
+    [/^certificate\/(\w+)\/([\w-]+)$/, Views.certificate],
     [/^pathsheet\/(\w+)\/([\w-]+)\/([\w-]+)(?:\?(.*))?$/, Sheets.levelSheet],
     [/^sheet\/(\w+)$/, Views.sheet],
     [/^sheets(?:\/(\w+))?$/, Sheets.maker],

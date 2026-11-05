@@ -5,6 +5,8 @@
 //   #/paths/{subject}/{topic}            the ladder: locked / unlocked / mastered levels, "Find my level"
 //   #/paths/{subject}/{topic}/{level}    notes, a worked example and 10 practice questions (80% masters the level)
 //   #/paths/{subject}/{topic}/find-my-level   the starting check
+//   #/paths/{subject}/{topic}/check-progress  the same check again, after mastering levels (before -> after)
+//   #/certificate/{subject}/{topic}       a printable certificate once every level of a topic is mastered
 //   #/pathsheet/{subject}/{topic}/{level}     a printable worksheet (js/sheets.js)
 // Progress is saved per student (Store.pathTopic / recordLevel / setPathStart).
 
@@ -14,6 +16,7 @@
   const SET = 10; // questions in one round
   const passPct = () => Math.round(Mastery.config.pathPass * 100); // percent that masters a level (js/mastery.js)
   const CHECK_ID = "find-my-level";
+  const AGAIN_ID = "check-progress"; // the same check, run again to see growth
 
   const levelName = (n) => t("Level {n}", { n });
   const href = (...parts) => "#/paths/" + parts.join("/");
@@ -44,13 +47,14 @@
 
   // What the router must load before drawing path pages (see needs in js/app.js): the path files, then the chapter files.
   function pathNeeds(p) {
-    const m = p.match(/^paths\/(\w+)(?:\/([\w-]+))?(?:\/([\w-]+))?$/) || p.match(/^pathsheet\/(\w+)\/([\w-]+)\/([\w-]+)/) || p.match(/^play\/level\/(\w+)\/([\w-]+)\/([\w-]+)/);
+    const m = p.match(/^paths\/(\w+)(?:\/([\w-]+))?(?:\/([\w-]+))?$/) || p.match(/^certificate\/(\w+)\/([\w-]+)/) || p.match(/^pathsheet\/(\w+)\/([\w-]+)\/([\w-]+)/) || p.match(/^play\/level\/(\w+)\/([\w-]+)\/([\w-]+)/);
+    if (p === "progress") return { paths: Object.keys(Store.state.paths || {}).filter((x) => D.paths().some((s) => s.id === x)), pairs: [] }; // for the Certificates list
     if (!m || !D.PATH_SUBJECTS.includes(m[1])) return null;
     const out = { paths: [m[1]], pairs: [] };
     const path = D.path(m[1]);
     const topic = path && path.topics.find((x) => x.id === m[2]);
     if (!topic || !m[3]) return out;
-    out.pairs = m[3] === CHECK_ID ? topic.levels.flatMap((l) => levelPairs(l)) : levelPairs(topic.levels.find((l) => l.id === m[3]) || {});
+    out.pairs = m[3] === CHECK_ID || m[3] === AGAIN_ID ? topic.levels.flatMap((l) => levelPairs(l)) : levelPairs(topic.levels.find((l) => l.id === m[3]) || {});
     return out;
   }
 
@@ -66,6 +70,20 @@
     return i === 0 || i <= T.start || i <= own || (T.levels[topic.levels[i - 1].id] || {}).mastered ? "open" : "locked";
   }
   const masteredIn = (subjectId, topic) => topic.levels.filter((l, i) => levelState(subjectId, topic, i) === "mastered").length;
+  // Growth in a topic, as indexes into topic.levels (null when the student never ran the check).
+  //   before = where the FIRST placement check put the student (the baseline).
+  //   now    = the highest of the latest check's result and the highest level mastered since: whichever is further up.
+  function growth(subjectId, topic) {
+    const checks = Store.pathChecks(subjectId, topic.id);
+    if (!checks.length) return null;
+    const T = Store.pathTopic(subjectId, topic.id);
+    const top = (c) => Math.min(Math.max(c.start, 0), topic.levels.length - 1);
+    const mastered = topic.levels.reduce((a, l, i) => ((T.levels[l.id] || {}).mastered ? i : a), -1);
+    return { before: top(checks[0]), at: checks[0].at, now: Math.max(top(checks[checks.length - 1]), mastered), checks: checks.length, mastered };
+  }
+  const levelNo = (topic, i) => levelName(topic.levels[i].level);
+  const when = (at) => dateShort(new Date(at));
+
   // The level to work on next: the first one that is open and not mastered.
   const nextIndex = (subjectId, topic) => {
     const i = topic.levels.findIndex((l, j) => levelState(subjectId, topic, j) === "open");
@@ -179,6 +197,7 @@
     const T = Store.pathTopic(id, topicId);
     const done = masteredIn(id, topic);
     const next = nextIndex(id, topic);
+    const G = growth(id, topic);
     const rows = topic.levels
       .map((lv, i) => {
         const st = levelState(id, topic, i);
@@ -208,11 +227,17 @@
           <p>${esc(topic.summary)}</p>
           <span class="bar" aria-hidden="true"><i style="width:${pct(done, topic.levels.length)}%"></i></span>
           <div class="hero-actions">
-            <a class="btn primary" href="${href(id, topicId, CHECK_ID)}">${icon("target")} ${t("Find my level")}</a>
+            ${
+              G && G.mastered >= 0
+                ? `<a class="btn primary" href="${href(id, topicId, AGAIN_ID)}">${icon("target")} ${t("Check my progress")}</a>`
+                : `<a class="btn primary" href="${href(id, topicId, CHECK_ID)}">${icon("target")} ${t("Find my level")}</a>`
+            }
+            ${done === topic.levels.length ? `<a class="btn" href="#/certificate/${id}/${topicId}">🏅 ${t("Your certificate")}</a>` : ""}
             <button class="btn" data-act="zero">${t("Start from Level 0")}</button>
           </div>
         </div>
-        ${T.checked ? `<p class="small muted" style="margin:12px 2px 0">${t("Your starting check placed you at {level}.", { level: levelName(topic.levels[Math.min(T.start, topic.levels.length - 1)].level) })}</p>` : ""}
+        ${G && G.mastered >= 0 ? `<p class="small" style="margin:12px 2px 0">📈 ${t("Started at {a} · now at {b}", { a: levelNo(topic, G.before), b: levelNo(topic, G.now) })}</p>` : ""}
+        ${T.checked && !(G && G.mastered >= 0) ? `<p class="small muted" style="margin:12px 2px 0">${t("Your starting check placed you at {level}.", { level: levelName(topic.levels[Math.min(T.start, topic.levels.length - 1)].level) })}</p>` : ""}
         <h2 class="block-title">${t("The ladder")}</h2>
         <ol class="list" style="list-style:none;padding:0" aria-label="${t("Levels")}">${rows}</ol>
         <p class="tiny muted" style="margin-top:12px">${t("Score {n}% or more in a level to master it and unlock the next. You can still open any level.", { n: passPct() })}</p>`,
@@ -263,7 +288,7 @@
   }
 
   function levelPage([id, topicId, levelId]) {
-    if (levelId === CHECK_ID) return checkPage([id, topicId]);
+    if (levelId === CHECK_ID || levelId === AGAIN_ID) return checkPage([id, topicId]);
     const m = levelModel(id, topicId, levelId);
     if (!m) return notFound();
     const { topic, level, idx } = m;
@@ -369,6 +394,70 @@
     };
   }
 
+  // ---------- certificates ----------
+
+  // What a topic's certificate says, or null if the topic is not fully mastered: levels, average best score, the date the
+  // last level was mastered (the latest level `at`), and the before / now levels when the check was used.
+  function certData(subjectId, topic) {
+    const T = Store.pathTopic(subjectId, topic.id);
+    const rs = topic.levels.map((l) => T.levels[l.id]);
+    if (!rs.length || !rs.every((r) => r && r.mastered)) return null;
+    return { n: rs.length, avg: Math.round(rs.reduce((a, r) => a + (r.best || 0), 0) / rs.length), at: Math.max(...rs.map((r) => r.at || 0)), g: growth(subjectId, topic) };
+  }
+
+  // Every earned certificate of the student: [{ subject, path, topic, ...certData }] (for the Progress page).
+  function earned() {
+    const out = [];
+    for (const s of D.paths()) {
+      const path = D.path(s.id);
+      for (const topic of (path && path.topics) || []) {
+        const c = certData(s.id, topic);
+        if (c) out.push({ subject: s.id, path, topic, ...c });
+      }
+    }
+    return out;
+  }
+
+  function certificate([id, topicId]) {
+    const path = D.path(id);
+    const topic = path && path.topics.find((x) => x.id === topicId);
+    if (!topic) return notFound();
+    const c = certData(id, topic);
+    const back = href(id, topicId);
+    if (!c) {
+      const done = masteredIn(id, topic);
+      return {
+        title: t("Your certificate"),
+        html: `${topbar(t("Your certificate"), back)}
+          <div class="empty"><div class="big">🏅</div>
+            <h2>${t("Master every level to earn this certificate")}</h2>
+            <p class="muted">${esc(path.title)} · ${esc(topic.title)} · ${t("{a} of {b} levels", { a: done, b: topic.levels.length })}</p>
+            <span class="bar" aria-hidden="true" style="max-width:260px;margin:12px auto"><i style="width:${pct(done, topic.levels.length)}%"></i></span>
+            <a class="btn primary" href="${back}">${t("Back to the ladder")}</a></div>`,
+      };
+    }
+    const name = Store.state.profile.name || t("Student");
+    return {
+      title: t("Your certificate"),
+      html: `${topbar(t("Your certificate"), back, `<button class="icon-btn" onclick="printPage()" aria-label="${t("Print")}">${icon("print")}</button>`)}
+        <article class="cert" aria-label="${t("Your certificate")}">
+          <div class="cert-in">
+            <div class="cert-star" aria-hidden="true">🏅</div>
+            <div class="cert-app">Pocket Class India</div>
+            <div class="cert-small">${t("Certificate of mastery")}</div>
+            <div class="cert-name">${esc(name)}</div>
+            <div class="cert-small">${t("has mastered")}</div>
+            <h1 class="cert-topic">${esc(path.title)} · ${esc(topic.title)}</h1>
+            <p class="cert-line">${t("{n} {n:level|levels} mastered, average best score {p}%", { n: c.n, p: c.avg })}</p>
+            ${c.g ? `<p class="cert-line">${t("Started at {a} · now at {b}", { a: levelNo(topic, c.g.before), b: levelNo(topic, c.g.now) })}</p>` : ""}
+            <p class="cert-line">${t("Last level mastered on {date}", { date: `${when(c.at)} ${new Date(c.at).getFullYear()}` })}</p>
+            <div class="cert-star" aria-hidden="true">⭐ ⭐ ⭐</div>
+          </div>
+        </article>
+        <div class="no-print" style="text-align:center;margin-top:14px"><button class="btn primary" onclick="printPage()">${icon("print")} ${t("Print")}</button></div>`,
+    };
+  }
+
   // ---------- find my level ----------
 
   let chk = null; // the check in progress: { m: [models], st }
@@ -390,6 +479,7 @@
   }
 
   function runCheck(box, id, topic, models) {
+    const prev = growth(id, topic); // before this run: null the first time
     const pools = models.map((m) => (m ? checkItems(m) : []));
     const s = (chk = { box, li: 0, asked: 0, right: 0, item: null, picked: null, result: null });
     const take = () => {
@@ -399,7 +489,7 @@
     };
     const finish = (start, all) => {
       s.result = { start, all };
-      Store.setPathStart(id, topic.id, start, true);
+      Store.setPathStart(id, topic.id, start, true, all);
       announce(t("Your starting point is {level}.", { level: levelName(topic.levels[start].level) }));
       draw();
     };
@@ -464,16 +554,28 @@
     }
 
     function resultHTML() {
-      const { start, all } = s.result;
+      const { all } = s.result;
+      // A repeat never lowers where the student starts, so show the saved start.
+      const start = prev ? Math.max(s.result.start, Store.pathTopic(id, topic.id).start) : s.result.start;
       const lv = topic.levels[start];
+      const now = prev ? growth(id, topic).now : start;
+      const cmp = prev
+        ? `<div class="path-growth" style="margin-top:12px" aria-label="${t("Before and now")}">
+            <span class="pill">${t("Before: {level} ({date})", { level: levelNo(topic, prev.before), date: when(prev.at) })}</span>
+            <span aria-hidden="true"> → </span>
+            <span class="pill good">${t("Now: {level}", { level: levelNo(topic, now) })}</span>
+            <span class="bar" aria-hidden="true" style="margin-top:10px"><i style="width:${pct(now + 1, topic.levels.length)}%"></i></span>
+          </div>`
+        : "";
       return `<div class="card result-top" role="status">
           <div class="result-msg">${all ? t("You passed every level! 🌟") : t("Your starting point")}</div>
           <div class="ring" style="--p:${pct(start + (all ? 1 : 0), topic.levels.length)};--ring:var(--good)"><div><span class="v">${lv.level}</span><span class="l">${t("Level")}</span></div></div>
           <h2 style="font-size:20px;margin-top:6px">${esc(lv.title)}</h2>
           <p class="muted small" style="margin-top:6px">${all ? t("Try the top level to master it.") : esc(lv.goal)}</p>
+          ${cmp}
           <div class="result-actions">
             <a class="btn primary" href="${href(id, topic.id, lv.id)}">${t("Start {level}", { level: levelName(lv.level) })} ${icon("arrow")}</a>
-            <button class="btn" data-act="zero">${t("Start from Level 0")}</button>
+            ${prev ? "" : `<button class="btn" data-act="zero">${t("Start from Level 0")}</button>`}
             <a class="btn" href="${href(id, topic.id)}">${t("See the ladder")}</a>
           </div></div>`;
     }
@@ -498,7 +600,7 @@
       if (b.dataset.pick !== undefined) pick(Number(b.dataset.pick));
       else if (b.dataset.act === "next") advance();
       else if (b.dataset.act === "zero") {
-        Store.setPathStart(id, topic.id, 0, true);
+        Store.setPathStart(id, topic.id, 0, false);
         location.hash = href(id, topic.id, topic.levels[0].id);
       }
     };
@@ -524,5 +626,5 @@
     }
   });
 
-  Object.assign(Views, { pathsPicker: picker, pathsSubject: subjectPage, pathsTopic: topicPage, pathsLevel: levelPage, pathNeeds, levelModel });
+  Object.assign(Views, { pathsPicker: picker, pathsSubject: subjectPage, pathsTopic: topicPage, pathsLevel: levelPage, certificate, certificates: earned, pathNeeds, levelModel });
 })();
