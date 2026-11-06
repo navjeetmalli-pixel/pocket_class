@@ -13,7 +13,11 @@ const Quiz = (() => {
     s = {
       opts,
       // keepOrder: options that only make sense in a fixed order (assertion–reason).
-      items: opts.items.map((it) => ({ ...it, order: it.keepOrder ? [0, 1, 2, 3] : shuffle([0, 1, 2, 3]), picked: null })),
+      // True or false items (it.tf) have 2 options, always shown as True then False.
+      items: opts.items.map((it) => {
+        const idx = it.options && it.options.length === 2 ? [0, 1] : [0, 1, 2, 3];
+        return { ...it, order: it.keepOrder || it.tf ? idx : shuffle(idx), picked: null };
+      }),
       i: 0,
       started: Date.now(),
       ended: null,
@@ -304,7 +308,7 @@ const Quiz = (() => {
     const k = e.key.toLowerCase();
     const idx = "1234".indexOf(k) >= 0 ? "1234".indexOf(k) : "abcd".indexOf(k);
     if (idx >= 0 && k.length === 1) {
-      pick(it.order[idx]);
+      if (idx < it.order.length) pick(it.order[idx]);
       e.preventDefault();
     } else if (e.key === "Enter" && !onButton && (!s.opts.instant || it.picked !== null)) {
       next();

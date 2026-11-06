@@ -72,7 +72,7 @@
       visualise: diagrams.length > 0,
       explore: !!sims || labs.length > 0,
       play: Games.availableFor(c, subj, ch).length > 0,
-      practise: !!((ch.examples && ch.examples.length) || (ch.qa && ch.qa.length) || bank.written.length || bank.mcq.length || Gen.forChapter(c, subj.id, ch.id).length),
+      practise: !!((ch.examples && ch.examples.length) || (ch.qa && ch.qa.length) || bank.written.length || bank.mcq.length || Gen.forChapter(c, subj.id, ch.id).length || derivedGroups(c, subj, ch).length),
       master: true,
     };
 
@@ -85,6 +85,7 @@
     if (section && !have[section]) return { redirect: `${base}/understand` };
     section = section || "understand";
     if (masterMode && (masterMode.base !== base || section !== "master")) masterMode = null;
+    if (derivedMode && (derivedMode.base !== base || section !== "practise")) derivedMode = null;
 
     const r = Store.chapter(k);
     const marked = Store.isBookmarked(k);
@@ -118,7 +119,7 @@
     else if (section === "visualise") body = visualiseSection(c, subj, diagrams);
     else if (section === "explore") body = exploreSection(sims, labs);
     else if (section === "play") body = Views.playTab(c, subj, ch);
-    else if (section === "practise") body = practiseSection(c, subj, ch, bank, isYoung);
+    else if (section === "practise") body = practiseSection(c, subj, ch, bank, isYoung, base);
     else body = masterSection(c, subj, ch, base, r);
 
     const prev = chs[idx - 1];
@@ -165,7 +166,17 @@
             e.preventDefault();
             return App.render({ keepScroll: true });
           }
+          // Leaving a "More practice" round: back to the Practise page.
+          if (derivedMode && a && a.getAttribute("href") === `${base}/practise`) {
+            derivedMode = null;
+            e.preventDefault();
+            return App.render({ keepScroll: true });
+          }
           if (!b) return;
+          if (b.dataset.act === "derive") {
+            derivedMode = { base, group: b.dataset.group };
+            return App.render();
+          }
           if (b.dataset.act === "bookmark") {
             const on = Store.toggleBookmark(k);
             b.classList.toggle("on", on);
@@ -353,11 +364,33 @@
 
   // ---------- Practise ----------
 
-  function practiseSection(c, subj, ch, bank, isYoung) {
+  // "More practice": questions made automatically from the chapter (js/derive.js). Each group is a button that starts a round of 10.
+  const DERIVED = [
+    ["meaning", "Word meanings", ["meaning", "term"]],
+    ["tf", "True or false", ["tf"]],
+    ["blank", "Fill in the blank", ["blank"]],
+    ["dates", "Dates and order", ["when", "first"]],
+    ["map", "Map quiz", ["map"]],
+  ];
+  const DERIVED_ROUND = 10;
+  let derivedMode = null; // { base, group } while a "More practice" round is on screen
+  function derivedGroups(c, subj, ch) {
+    if (typeof Derive === "undefined" || ch.sources) return [];
+    const have = Derive.kinds(c, subj.id, ch);
+    return DERIVED.filter(([, , kinds]) => kinds.reduce((n, k) => n + (have[k] || 0), 0) >= 4);
+  }
+
+  function practiseSection(c, subj, ch, bank, isYoung, base) {
+    if (derivedMode) {
+      const g = DERIVED.find((x) => x[0] === derivedMode.group);
+      return `<p class="small muted sec-lead">${t(g ? g[1] : "More practice")}</p><div id="derived-mount"></div>`;
+    }
     const sheet = `#/worksheet/${c}/${subj.id}?ch=${ch.id}`;
     let h = `<div class="card row no-print" style="gap:12px;margin-bottom:6px">
       <div class="grow"><strong>${t("Practice sheet")}</strong><div class="small muted">${t("A printable sheet for this chapter, with an answer key. A new set every time.")}</div></div>
       <a class="btn primary" href="${sheet}">${icon("print")} ${t("Make sheet")}</a></div>`;
+    // Quick rounds first, near the top, so they are found: the long written questions follow.
+    h += moreHTML(c, subj, ch);
     if (Gen.forChapter(c, subj.id, ch.id).length)
       h += `<h2 class="block-title">${t("Fresh questions")} <span class="count">${t("new numbers every time, with worked steps")}</span></h2>
         <div id="gen-mount"></div>`;
@@ -372,12 +405,52 @@
     return h;
   }
 
+  function moreHTML(c, subj, ch) {
+    const groups = derivedGroups(c, subj, ch);
+    // The timeline data ("Dates and order") loads on its own; the card is drawn again when it has arrived.
+    const wait = typeof Derive !== "undefined" && !ch.sources && !D.timelinesLoaded();
+    if (!groups.length && !wait) return "";
+    return `<div id="more-practice" class="no-print" ${groups.length ? "" : "hidden"}>${moreInner(groups)}</div>`;
+  }
+  const moreInner = (groups) => `<h2 class="block-title">${t("More practice")}</h2>
+      <section class="card" aria-label="${t("More practice")}">
+        <p class="small muted" style="margin:0 0 12px">${t("Questions made from this chapter's words, notes and dates. A new set of {n} every time.", { n: DERIVED_ROUND })}</p>
+        <div class="chips">${groups.map(([id, label]) => `<button class="btn" data-act="derive" data-group="${id}">${t(label)}</button>`).join("")}</div>
+      </section>`;
+
   // Picture vocabulary questions ("Which one is a mango?") are answered by tapping a picture card: tap one to see if it is right.
   function genCards(q) {
     return picAnswers(q) ? optionsHTML(q, { order: shuffle(q.options.map((_, k) => k)), btn: (orig) => ({ cls: "option", attr: `data-g="${orig}"` }) }) : "";
   }
 
   function mountPractice(el, c, subj, ch) {
+    const derivedBox = el.querySelector("#derived-mount");
+    if (derivedBox && derivedMode) {
+      const g = DERIVED.find((x) => x[0] === derivedMode.group);
+      const base = derivedMode.base;
+      const from = `${subj.short} · ${ch.title}`;
+      const opts = () => ({
+        title: `${t(g[1])} · ${ch.title}`,
+        // Auto-made questions are never in mock tests or sample papers; here they are practice (the learning record says "practice").
+        items: Derive.forChapter(c, subj.id, ch, { kinds: g[2], count: DERIVED_ROUND, seed: Date.now() }).map((q) => ({ ...q, ref: { ...q.ref, from } })),
+        instant: true,
+        record: { subject: subj.id, cls: c, kind: "practice" },
+        backHref: `${base}/practise`,
+        backLabel: "Back to Practise",
+        retry: () => opts(),
+      });
+      return Quiz.mount(derivedBox, opts());
+    }
+    const more = el.querySelector("#more-practice");
+    if (more && typeof Derive !== "undefined" && !D.timelinesLoaded())
+      Derive.load().then(() => {
+        // Only if this chapter is still on screen: show the card with the groups the dates added.
+        const groups = derivedGroups(c, subj, ch);
+        if (more.isConnected && groups.length) {
+          more.innerHTML = moreInner(groups);
+          more.hidden = false;
+        }
+      });
     const gen = el.querySelector("#gen-mount");
     if (gen) {
       const draw = () => {

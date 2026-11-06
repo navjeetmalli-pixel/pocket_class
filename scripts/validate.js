@@ -967,6 +967,8 @@ if (process.argv.length <= 2) {
   genProblems += require("./check-evidence.js").problems;
   console.log("\nPicture games (word builder, habitat sort):");
   genProblems += require("./check-picture-games.js").problems;
+  console.log("\nAuto-made practice questions (js/derive.js, 20 seeds, every chapter):");
+  genProblems += require("./check-derive.js").problems;
   console.log("\nPicture answers (Classes 1-3, a summary only, never fails):");
   try {
     process.argv.push("--brief");

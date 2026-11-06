@@ -35,6 +35,7 @@ const ctx = vm.createContext({ StudyData: stub, console });
 ctx.globalThis = ctx;
 
 const seen = new Set(); // content hashes, to skip a byte-identical copy
+const counted = []; // [cls, subject] of every subject file that was counted (a copy is not)
 let skippedCopies = 0;
 function load(file) {
   const src = read(file);
@@ -44,6 +45,8 @@ function load(file) {
     return;
   }
   seen.add(h);
+  const m = /^data\/class(\d+)\/([\w-]+)\.js$/.exec(file);
+  if (m && m[2] !== "index" && m[2] !== "objectives") counted.push([Number(m[1]), m[2]]);
   vm.runInContext(src, ctx, { filename: file });
 }
 
@@ -142,6 +145,34 @@ for (const f of fs.readdirSync(path.join(root, "js", "games"))) {
   }
 }
 
+// Auto-made practice questions (js/derive.js): made from the terms, notes, timelines and India map above, so they are NOT part of the
+// hand-written counts. Counted over the same files (a byte-identical copy once), by kind.
+const derived = { total: 0, byKind: {} };
+try {
+  const dctx = vm.createContext({ console, Intl });
+  dctx.globalThis = dctx;
+  const drun = (f) => vm.runInContext(read(f), dctx, { filename: f });
+  drun("data/registry.js");
+  for (const [cls, subject] of counted) drun(`data/class${cls}/${subject}.js`);
+  drun("data/games/timelines.js");
+  drun("js/gen.js");
+  vm.runInContext("const t = (s) => s; const I18N = {};", dctx);
+  drun("js/labs/india-map.js");
+  const Derive = vm.runInContext(read("js/derive.js") + "\n;Derive", dctx);
+  const D = vm.runInContext("StudyData", dctx);
+  for (const [cls, subject] of counted) {
+    for (const ch of D.chapters(cls, subject)) {
+      for (const [kind, v] of Object.entries(Derive.kinds(cls, subject, ch))) {
+        if (kind === "match") continue; // match sets reuse the same terms
+        derived.byKind[kind] = (derived.byKind[kind] || 0) + v;
+        derived.total += v;
+      }
+    }
+  }
+} catch (e) {
+  console.error("Could not count the auto-made questions:", e.message);
+}
+
 const totals = {
   chapters: n.chapters,
   mcqs: n.quizMcq + n.practiceMcq + n.pathOwnMcq,
@@ -164,7 +195,7 @@ function down(x) {
 }
 
 if (process.argv.includes("--json")) {
-  console.log(JSON.stringify({ totals, detail: n, gameNames, skippedCopies }, null, 2));
+  console.log(JSON.stringify({ totals, detail: n, derived, gameNames, skippedCopies }, null, 2));
   process.exit(0);
 }
 
@@ -197,5 +228,8 @@ for (const [label, value] of rows) {
   const top = !label.startsWith(" ");
   console.log(label.padEnd(width), "  ", value.toLocaleString("en-IN").padStart(8), "  ", top ? down(value).toLocaleString("en-US") : "");
 }
+console.log("-".repeat(width + 28));
+console.log("Auto-made practice questions (not hand-written; from terms, notes, timelines and the map)".padEnd(width), "  ", derived.total.toLocaleString("en-IN").padStart(8), "  ", down(derived.total).toLocaleString("en-US"));
+for (const [kind, v] of Object.entries(derived.byKind)) console.log(`    ${kind}`.padEnd(width), "  ", v.toLocaleString("en-IN").padStart(8));
 console.log("\nGame types: " + gameNames.join(", "));
 if (skippedCopies) console.log(`\n${skippedCopies} byte-identical file(s) were counted once.`);

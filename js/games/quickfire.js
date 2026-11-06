@@ -1,11 +1,25 @@
 // Game: Quick-fire. 60 seconds of multiple-choice questions, three lives. Questions get harder as the streak grows
 // (each question's `level`: 1 easy, 2 medium, 3 hard). Content: the chapter's quiz and practice bank, plus freshly
-// generated questions where a generator fits (maths, physics). Wrong answers go to My mistakes, like the quiz.
+// generated questions where a generator fits (maths, physics) and questions made from the chapter's terms, notes and dates (js/derive.js). Wrong answers go to My mistakes, like the quiz.
 
 (() => {
   const SECONDS = 60;
   const LIVES = 3;
   const MIN = 5;
+
+  // Questions made automatically from the chapter (js/derive.js): word meanings, blanks, dates, capitals. True or false has two options, so
+  // it is left out here. At most as many as there are saved questions (at least 6, so a chapter with few saved ones still has variety).
+  const KINDS = ["meaning", "term", "blank", "when", "first", "map"];
+  const partsOf = (c, subj, ch) => ch.sources || [{ cls: c, subj, ch }];
+  const derivedPossible = (c, subj, ch) => (typeof Derive === "undefined" ? 0 : partsOf(c, subj, ch).reduce((n, p) => n + KINDS.reduce((m, k) => m + (Derive.kinds(p.cls, p.subj.id, p.ch)[k] || 0), 0), 0));
+  function derivedItems(c, subj, ch, saved, seed) {
+    if (typeof Derive === "undefined") return [];
+    const parts = partsOf(c, subj, ch);
+    const per = Math.ceil(Math.max(saved, 6) / parts.length);
+    return parts
+      .flatMap((p) => Derive.forChapter(p.cls, p.subj.id, p.ch, { kinds: KINDS, count: per, seed }).map((it) => ({ ...it, ref: { ...it.ref, from: `${subj.short} · ${ch.title}` } })))
+      .slice(0, Math.max(saved, 6));
+  }
 
   // The level wanted for a streak: easy to start, medium after 3 in a row, hard after 7.
   const want = (streak) => (streak >= 7 ? 3 : streak >= 3 ? 2 : 1);
@@ -17,14 +31,18 @@
     icon: "bolt",
     hud: { timer: "down", seconds: SECONDS, lives: LIVES, streak: true },
 
-    available: (c, subj, ch) => Games.mcqs(c, subj, ch).length + (Games.gens(c, subj, ch).length ? 6 : 0) >= MIN,
+    available: (c, subj, ch) => {
+      const saved = Games.mcqs(c, subj, ch).length;
+      return saved + (Games.gens(c, subj, ch).length ? 6 : 0) + Math.min(derivedPossible(c, subj, ch), Math.max(saved, 6)) >= MIN;
+    },
 
     // A shuffled pool of saved questions with some fresh ones mixed in, and how many right answers earn 3 stars here.
     build(c, subj, ch, seed) {
       const R = Games.rng(seed);
       const saved = Games.mcqs(c, subj, ch);
       const fresh = Games.genItems(c, subj, ch, 12, seed);
-      const items = Games.shuffled([...saved, ...fresh], R).map((it) => ({ ...it, level: it.level || 2 }));
+      const made = derivedItems(c, subj, ch, saved.length, seed);
+      const items = Games.shuffled([...saved, ...fresh, ...made], R).map((it) => ({ ...it, level: it.level || 2 }));
       return { items, target: c <= 3 ? 5 : c <= 5 ? 7 : 10 };
     },
 

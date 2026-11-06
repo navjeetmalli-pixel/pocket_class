@@ -80,6 +80,8 @@ test("match pairs: a wrong match counts, every pair can be matched, best stars a
 test("quick-fire: a right answer scores, wrong answers cost lives and go to My mistakes, three misses end the round", async ({ page }) => {
   await seed(page, { cls: 10 });
   await page.goto(gameUrl(10, "science", LIGHT, "quickfire"));
+  // Auto-made questions (js/derive.js) are not in the saved banks this test looks answers up in: switch them off here.
+  await page.evaluate(() => (Derive.forChapter = () => []));
   await start(page);
   await expect(page.locator("[data-hud=lives]")).toHaveAttribute("aria-label", "3 lives left");
 
