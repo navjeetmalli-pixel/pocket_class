@@ -6,6 +6,7 @@
 // by both boards), so counting files, and not catalog entries, never counts a shared copy twice. Files with
 // identical content (byte for byte) are counted once as well.
 //   --json   print the numbers as JSON
+//   --store  leave out the subjects js/release.js locks in the store apps (the counts STORE_LISTING.md may quote)
 // The "round down" column is what to write in text ("over 40,000").
 
 const fs = require("fs");
@@ -37,7 +38,11 @@ ctx.globalThis = ctx;
 const seen = new Set(); // content hashes, to skip a byte-identical copy
 const counted = []; // [cls, subject] of every subject file that was counted (a copy is not)
 let skippedCopies = 0;
+// With --store, skip the subjects the store release lock hides (their chapter files, practice banks and diagrams).
+const storeLocked = process.argv.includes("--store") ? (/lockedSubjects:\s*\[([^\]]*)\]/.exec(read("js/release.js")) || [, ""])[1].match(/[\w-]+/g) || [] : [];
 function load(file) {
+  const sm = /^data\/class\d+\/(?:practice\/|diagrams\/)?([a-z]+)(?:-\d+)?\.js$/.exec(file);
+  if (sm && storeLocked.includes(sm[1])) return;
   const src = read(file);
   const h = crypto.createHash("sha1").update(src).digest("hex");
   if (seen.has(h)) {
@@ -122,13 +127,15 @@ for (const t of timelines) {
   n.timelineEvents += len(t.events);
 }
 
-// Generator types: the question generators in js/gen.js (the names Gen exposes).
+// Generator types: the question generators in js/gen.js, plus the ones js/gen-lang.js and js/gen-sci.js add (Gen.add).
 let genTypes = 0;
 try {
-  const g = vm.createContext({ console, Math, Date, Number, String, Array, Object, Set, Map });
-  genTypes = vm.runInContext(read("js/gen.js") + "\n;Gen.names.length", g);
+  const g = vm.createContext({ console, Math, Date, Number, String, Array, Object, Set, Map, Intl });
+  g.globalThis = g;
+  for (const f of ["data/registry.js", "js/gen.js", "js/gen-lang.js", "js/gen-sci.js"]) vm.runInContext(read(f), g, { filename: f });
+  genTypes = vm.runInContext("Gen.names.length", g);
 } catch (e) {
-  console.error("Could not load js/gen.js:", e.message);
+  console.error("Could not load the generators:", e.message);
 }
 
 // Game types: one Games.register("type", ...) call per file in js/games/ (comments do not count).

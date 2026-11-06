@@ -79,3 +79,16 @@ test("practice by topic: find my level, master a level, the next one unlocks, pr
   await page.getByRole("link", { name: "Printable worksheet" }).click();
   await expect(page.locator("article.ws:not(.ws-key)")).toBeVisible();
 });
+
+test("ladders: two steps for the same class read as part 1 and part 2, never the same name twice", async ({ page }) => {
+  await seed(page, { name: "Asha", cls: 1 });
+  await page.goto("/#/paths/english/phonics");
+  const tags = page.locator(".chapter-row .ch-tag");
+  await expect(tags.first()).toBeVisible();
+  const names = await tags.allTextContents();
+  expect(names).toContain("Level 0, part 1");
+  expect(names).toContain("Level 0, part 2");
+  expect(new Set(names).size).toBe(names.length);
+  await page.locator(".chapter-row", { hasText: "Level 0, part 2" }).click();
+  await expect(page.locator(".eyebrow")).toContainText("Level 0, part 2");
+});

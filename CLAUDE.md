@@ -25,6 +25,8 @@ npx playwright test -c tests paths certificates   # just some specs
 node scripts/validate.js    # data, generators, labs, India map, objectives, Punjabi/Hindi translations
 npm run sync                # build www/ and copy into ios/ and android/ (run after any web change before a native build)
 npm run build:index         # rebuild data/classN/index.js after adding chapters
+node scripts/coverage.js    # every chapter's practice and gaps -> docs/coverage.csv + docs/COVERAGE.md
+node scripts/count-content.js [--store]   # totals for README / STORE_LISTING (--store: without locked subjects)
 ```
 
 - Dev server: the "vidya" entry in `.claude/launch.json` (`scripts/serve.js`, port 8765). Clear the service worker and caches in the page if it serves stale files.

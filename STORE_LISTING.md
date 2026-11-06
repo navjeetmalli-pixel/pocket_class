@@ -40,7 +40,7 @@ FOR EVERY CHAPTER
 • Quizzes with instant feedback and an explanation for every answer
 
 PRACTICE THAT NEVER RUNS OUT
-• Over 27,000 multiple-choice questions and 16,000 written questions with model answers
+• Over 31,000 multiple-choice questions and 17,000 written questions with model answers
 • Fresh maths and physics questions with new numbers every time, with worked steps
 • Printable practice sheets with an answer key
 • Full sample papers for Classes 9–12 in the board pattern (sections A–F, internal choices, marking scheme)
@@ -62,7 +62,7 @@ Pocket Class collects no data. Progress stays on your phone; you can back it up 
 
 Pocket Class India is an independent study app. It is not made by or connected with CBSE, NCERT or PSEB.
 
-FOR LATER (when Hindi and Punjabi are unlocked): "CBSE: ... and every lesson of the NCERT English and Hindi readers", "PSEB: ... English, Hindi, Punjabi ... with every lesson of the PSEB Punjabi and Hindi books", "Punjabi and Hindi content written in Gurmukhi and Devanagari", the app interface in Punjabi and Hindi, and the keywords Punjabi,Hindi. Do not use them while `js/release.js` locks those subjects. The counts above (over 27,000 MCQs, 16,000 written questions) leave out the locked Hindi and Punjabi subjects (about 15,000 MCQs and 8,000 written questions); with them unlocked, `node scripts/count-content.js` gives the full totals (over 43,000 and 23,000).
+FOR LATER (when Hindi and Punjabi are unlocked): "CBSE: ... and every lesson of the NCERT English and Hindi readers", "PSEB: ... English, Hindi, Punjabi ... with every lesson of the PSEB Punjabi and Hindi books", "Punjabi and Hindi content written in Gurmukhi and Devanagari", the app interface in Punjabi and Hindi, and the keywords Punjabi,Hindi. Do not use them while `js/release.js` locks those subjects. The counts above (over 31,000 MCQs, 17,000 written questions, from `node scripts/count-content.js --store`) leave out the locked Hindi and Punjabi subjects (about 15,000 MCQs and 8,000 written questions); with them unlocked, `node scripts/count-content.js` gives the full totals (over 46,000 and 25,000).
 
 INTERNATIONAL LISTINGS (outside India)
 For a listing aimed at students in Australia, Canada, the United Kingdom, the United States or New Zealand, use this paragraph instead of the CBSE and PSEB lines above, and keep the claim exactly this narrow: "Maths, English and Science practice by topic, from beginner to Year 12 level. Learn by topic with levels you climb, games and virtual labs, no account and no ads, works offline. It is not tied to any national curriculum (not Australian Curriculum, Common Core, the National Curriculum for England or any other), so use it alongside your school's own work." Questions and notes are in English and were written for Indian school books, so a few examples mention India or rupees (a known limit); money questions made by the app use A$, C$, £, $ or NZ$.

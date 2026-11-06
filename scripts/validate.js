@@ -705,8 +705,8 @@ for (const file of pathFiles) {
         levelIds.add(lv.id);
         if (!Number.isInteger(lv.level) || lv.level < 0 || lv.level > 12) err(at, "level must be a whole number from 0 to 12");
         else {
+          // Two steps for the same class are fine: the ladder shows them as "Level 3, part 1" and "part 2".
           if (lv.level < prev) err(at, `levels must go from easiest to hardest: level ${lv.level} comes after level ${prev}`);
-          else if (lv.level === prev) warn(at, `two levels in this topic are both Level ${lv.level}`);
           prev = lv.level;
         }
         for (const k of ["title", "goal"]) if (!isStr(lv[k])) err(at, `${k} is required`);

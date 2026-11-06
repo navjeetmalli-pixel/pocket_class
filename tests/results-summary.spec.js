@@ -48,21 +48,17 @@ test("a game round shows the summary above what you got wrong", async ({ page })
   await page.goto(`/#/play/10/science/${LIGHT}/quickfire`);
   await page.locator("[data-g=start]").click();
   await expect(page.locator(".game-hud")).toBeVisible();
-  await answer(page, "right");
-  await expect(page.locator("#qf-q")).toBeVisible();
   // Quick-fire mixes in made-up questions whose answer the helper can't know; it then taps the first option, which may be
-  // right (the game moves on by itself). Keep going until three answers really were wrong (each shows a Next button).
+  // right (the game moves on by itself) or wrong (a Next button). Wait for the feedback each time, then keep going until
+  // three answers really were wrong. The first answer aims to be right, so the summary has something on both sides.
   let wrongs = 0;
-  for (let i = 0; i < 12 && wrongs < 3; i++) {
-    await answer(page, "wrong");
-    const next = page.locator('[data-act="next"]');
-    try {
-      await next.waitFor({ timeout: 1500 });
-    } catch (e) {
-      continue;
-    }
-    await next.click();
-    wrongs++;
+  for (let i = 0; i < 30 && wrongs < 3; i++) {
+    await answer(page, i === 0 ? "right" : "wrong");
+    await page.locator(".feedback.bad, .feedback.good").first().waitFor();
+    if (await page.locator(".feedback.bad").count()) {
+      await page.locator('[data-act="next"]').click();
+      wrongs++;
+    } else await expect(page.locator(".feedback.good")).toHaveCount(0);
   }
   expect(wrongs).toBe(3);
   await expect(page.locator(".game-result")).toBeVisible();

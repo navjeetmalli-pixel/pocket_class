@@ -18,7 +18,21 @@
   const CHECK_ID = "find-my-level";
   const AGAIN_ID = "check-progress"; // the same check, run again to see growth
 
-  const levelName = (n) => t("Level {n}", { n });
+  // A topic can have two steps for the same class (Level 3, then a harder Level 3): those read "Level 3, part 1",
+  // "Level 3, part 2" so the ladder never shows the same name twice.
+  const levelPart = (lv, topic) => {
+    const same = topic ? topic.levels.filter((x) => x.level === lv.level) : [];
+    return same.length > 1 ? same.indexOf(lv) + 1 : 0;
+  };
+  const levelName = (lv, topic) => {
+    const p = levelPart(lv, topic);
+    return p ? t("Level {n}, part {p}", { n: lv.level, p }) : t("Level {n}", { n: lv.level });
+  };
+  // The short form for the number bubble and the result ring: 3, or 3a / 3b.
+  const levelShort = (lv, topic) => {
+    const p = levelPart(lv, topic);
+    return p ? `${lv.level}${"abcdef"[p - 1] || p}` : String(lv.level);
+  };
   const href = (...parts) => "#/paths/" + parts.join("/");
 
   // ---------- the model of one level ----------
@@ -81,7 +95,7 @@
     const mastered = topic.levels.reduce((a, l, i) => ((T.levels[l.id] || {}).mastered ? i : a), -1);
     return { before: top(checks[0]), at: checks[0].at, now: Math.max(top(checks[checks.length - 1]), mastered), checks: checks.length, mastered };
   }
-  const levelNo = (topic, i) => levelName(topic.levels[i].level);
+  const levelNo = (topic, i) => levelName(topic.levels[i], topic);
   const when = (at) => dateShort(new Date(at));
 
   // The level to work on next: the first one that is open and not mastered.
@@ -210,9 +224,9 @@
               ? `<span class="pill">${icon("lock").replace('class="i"', 'class="i" style="width:14px;height:14px;vertical-align:-2px"')} ${t("Skip ahead")}</span>`
               : `<span class="pill accent">${here ? t("Start here") : t("Unlocked")}${r.best ? ` · ${t("best {n}%", { n: r.best })}` : ""}</span>`;
         return `<li><a class="card chapter-row" href="${href(id, topicId, lv.id)}" style="--c:${subj.color}" ${here ? 'aria-current="step"' : ""}>
-          <span class="ch-num ${st === "mastered" ? "done" : ""}" aria-hidden="true">${st === "mastered" ? icon("check") : st === "locked" ? icon("lock") : lv.level}</span>
+          <span class="ch-num ${st === "mastered" ? "done" : ""}" aria-hidden="true">${st === "mastered" ? icon("check") : st === "locked" ? icon("lock") : levelShort(lv, topic)}</span>
           <span class="ch-body">
-            <span class="ch-tag">${levelName(lv.level)}</span>
+            <span class="ch-tag">${levelName(lv, topic)}</span>
             <span class="ch-title">${esc(lv.title)}</span>
             <span class="ch-sum">${esc(lv.goal)}</span>
           </span>${badge}</a></li>`;
@@ -237,7 +251,7 @@
           </div>
         </div>
         ${G && G.mastered >= 0 ? `<p class="small" style="margin:12px 2px 0">📈 ${t("Started at {a} · now at {b}", { a: levelNo(topic, G.before), b: levelNo(topic, G.now) })}</p>` : ""}
-        ${T.checked && !(G && G.mastered >= 0) ? `<p class="small muted" style="margin:12px 2px 0">${t("Your starting check placed you at {level}.", { level: levelName(topic.levels[Math.min(T.start, topic.levels.length - 1)].level) })}</p>` : ""}
+        ${T.checked && !(G && G.mastered >= 0) ? `<p class="small muted" style="margin:12px 2px 0">${t("Your starting check placed you at {level}.", { level: levelName(topic.levels[Math.min(T.start, topic.levels.length - 1)], topic) })}</p>` : ""}
         <h2 class="block-title">${t("The ladder")}</h2>
         <ol class="list" style="list-style:none;padding:0" aria-label="${t("Levels")}">${rows}</ol>
         <p class="tiny muted" style="margin-top:12px">${t("Score {n}% or more in a level to master it and unlock the next. You can still open any level.", { n: passPct() })}</p>`,
@@ -313,7 +327,7 @@
         const res = Store.recordLevel(id, topicId, levelId, pct(score, total));
         // Sticker book: a level mastered for the first time earns one.
         const sticker = res.mastered && !was ? Stickers.earn("level", `level:${id}/${topicId}/${levelId}`) : null;
-        announce(pct(score, total) >= passPct() ? (next ? t("Level mastered. {level} is unlocked.", { level: levelName(next.level) }) : t("Level mastered. You have finished this topic.")) : t("Not mastered yet. You need {n}%.", { n: passPct() }));
+        announce(pct(score, total) >= passPct() ? (next ? t("Level mastered. {level} is unlocked.", { level: levelName(next, topic) }) : t("Level mastered. You have finished this topic.")) : t("Not mastered yet. You need {n}%.", { n: passPct() }));
         return { ...res, sticker };
       },
       resultExtra(score, total) {
@@ -323,12 +337,12 @@
           <p class="small muted" style="margin-top:6px">${
             ok
               ? next
-                ? t("{level} is unlocked.", { level: levelName(next.level) })
+                ? t("{level} is unlocked.", { level: levelName(next, topic) })
                 : t("You have finished the top level of this topic.")
               : t("You need {n}% to master a level. Read the notes again, then try a new set.", { n: passPct() })
           }</p>
           <div class="row wrap" style="margin-top:10px">
-            ${ok && next ? `<a class="btn primary" href="${href(id, topicId, next.id)}">${t("Go to {level}", { level: levelName(next.level) })} ${icon("arrow")}</a>` : ""}
+            ${ok && next ? `<a class="btn primary" href="${href(id, topicId, next.id)}">${t("Go to {level}", { level: levelName(next, topic) })} ${icon("arrow")}</a>` : ""}
             <a class="btn" href="${href(id, topicId, levelId)}" data-act="notes">${t("Read the notes again")}</a>
           </div></div>`;
       },
@@ -338,17 +352,17 @@
     });
 
     return {
-      title: `${levelName(level.level)} · ${level.title}`,
+      title: `${levelName(level, topic)} · ${level.title}`,
       html: `${topbar(topic.title, ladder)}
         <div class="hero" style="--c:${subj.color}">
-          <div class="eyebrow">${esc(m.subjectName)} · ${levelName(level.level)}</div>
+          <div class="eyebrow">${esc(m.subjectName)} · ${levelName(level, topic)}</div>
           <h1>${esc(level.title)}</h1>
           <p>${esc(level.goal)}</p>
           <div class="row wrap" style="margin-top:12px">${st === "mastered" ? `<span class="pill good">${t("Mastered")} · ${r.best}%</span>` : r.best ? `<span class="pill accent">${t("best {n}%", { n: r.best })}</span>` : ""}</div>
         </div>
         ${
           st === "locked"
-            ? `<div class="card small mt" style="background:color-mix(in srgb, var(--gold) 14%, var(--surface))">${icon("lock").replace('class="i"', 'class="i" style="width:16px;height:16px;vertical-align:-3px"')} ${t("You are skipping ahead. This level opens fully when you master {level}, but you can try it now. If it feels hard, go back a level first. That is how everyone learns.", { level: levelName(prev.level) })}</div>`
+            ? `<div class="card small mt" style="background:color-mix(in srgb, var(--gold) 14%, var(--surface))">${icon("lock").replace('class="i"', 'class="i" style="width:16px;height:16px;vertical-align:-3px"')} ${t("You are skipping ahead. This level opens fully when you master {level}, but you can try it now. If it feels hard, go back a level first. That is how everyone learns.", { level: levelName(prev, topic) })}</div>`
             : ""
         }
         ${
@@ -373,8 +387,8 @@
             : emptyState("learn", t("This level has no questions yet."))
         }
         <div class="pager no-print" style="margin-top:22px">
-          ${prev ? `<a class="card" href="${href(id, topicId, prev.id)}"><div class="k">${t("← Previous")}</div><div class="t">${levelName(prev.level)} · ${esc(prev.title)}</div></a>` : "<span class='grow'></span>"}
-          ${next ? `<a class="card next" href="${href(id, topicId, next.id)}"><div class="k">${t("Next →")}</div><div class="t">${levelName(next.level)} · ${esc(next.title)}</div></a>` : "<span class='grow'></span>"}
+          ${prev ? `<a class="card" href="${href(id, topicId, prev.id)}"><div class="k">${t("← Previous")}</div><div class="t">${levelName(prev, topic)} · ${esc(prev.title)}</div></a>` : "<span class='grow'></span>"}
+          ${next ? `<a class="card next" href="${href(id, topicId, next.id)}"><div class="k">${t("Next →")}</div><div class="t">${levelName(next, topic)} · ${esc(next.title)}</div></a>` : "<span class='grow'></span>"}
         </div>`,
       mount(el) {
         const intro = el.querySelector("#level-intro");
@@ -494,7 +508,7 @@
     const finish = (start, all) => {
       s.result = { start, all };
       Store.setPathStart(id, topic.id, start, true, all);
-      announce(t("Your starting point is {level}.", { level: levelName(topic.levels[start].level) }));
+      announce(t("Your starting point is {level}.", { level: levelName(topic.levels[start], topic) }));
       draw();
     };
     // After an answer is shown: a level is passed by 2 right in 2, or 2 right in 3; two misses in a row stop the check there.
@@ -551,7 +565,7 @@
            <div class="quiz-nav"><button class="btn primary" data-act="next">${t("Next question")} ${icon("arrow")}</button></div>`
         : "";
       return `<div class="card">
-          <div class="quiz-head"><span>${t("Checking {level}", { level: levelName(lv.level) })}</span><span class="quiz-clock">${t("Question {n}", { n: s.asked + 1 })}</span></div>
+          <div class="quiz-head"><span>${t("Checking {level}", { level: levelName(lv, topic) })}</span><span class="quiz-clock">${t("Question {n}", { n: s.asked + 1 })}</span></div>
           ${picHTML(it)}<div class="quiz-q" id="quiz-q">${rich(it.q)}</div>
           ${Speech.listen(it, it.order, { auto: !locked })}
           ${options}
@@ -576,12 +590,12 @@
         : "";
       return `<div class="card result-top" role="status">
           <div class="result-msg">${all ? t("You passed every level! 🌟") : t("Your starting point")}</div>
-          <div class="ring" style="--p:${pct(start + (all ? 1 : 0), topic.levels.length)};--ring:var(--good)"><div><span class="v">${lv.level}</span><span class="l">${t("Level")}</span></div></div>
+          <div class="ring" style="--p:${pct(start + (all ? 1 : 0), topic.levels.length)};--ring:var(--good)"><div><span class="v">${levelShort(lv, topic)}</span><span class="l">${t("Level")}</span></div></div>
           <h2 style="font-size:20px;margin-top:6px">${esc(lv.title)}</h2>
           <p class="muted small" style="margin-top:6px">${all ? t("Try the top level to master it.") : esc(lv.goal)}</p>
           ${cmp}
           <div class="result-actions">
-            <a class="btn primary" href="${href(id, topic.id, lv.id)}">${t("Start {level}", { level: levelName(lv.level) })} ${icon("arrow")}</a>
+            <a class="btn primary" href="${href(id, topic.id, lv.id)}">${t("Start {level}", { level: levelName(lv, topic) })} ${icon("arrow")}</a>
             ${prev ? "" : `<button class="btn" data-act="zero">${t("Start from Level 0")}</button>`}
             <a class="btn" href="${href(id, topic.id)}">${t("See the ladder")}</a>
           </div></div>`;
