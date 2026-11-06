@@ -213,7 +213,7 @@ for (const file of practiceFiles) {
   if (part > parts) warn("file", `practiceCatalog in data/registry.js lists ${parts} part(s) for class ${cls} ${subj}, so this file won't load yet`);
   const chIds = new Set(ctx.StudyData.chapters(cls, subj).map((c) => c.id));
   const bank = ctx.StudyData;
-  let mcqN = 0, wN = 0;
+  let mcqN = 0, wN = 0, longestRight = 0;
   const seen = new Set();
   const norm = (t) => String(t).replace(/\*\*/g, "").trim().toLowerCase();
   for (const chId of chIds) {
@@ -230,6 +230,10 @@ for (const file of practiceFiles) {
         });
       }
       if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer > 3) err(at, "answer must be 0–3");
+      else if (Array.isArray(q.options) && q.options.every(isStr)) {
+        const L = q.options.map((o) => o.length);
+        if (L.every((l, i) => i === q.answer || L[q.answer] > l)) longestRight++;
+      }
       if (!isStr(q.explain)) err(at, "explain is required");
       if (![1, 2, 3].includes(q.level)) err(at, "level must be 1, 2 or 3");
       if (!q.keepOrder && POSITIONAL.test(q.explain || "")) warn(at, "explain refers to an option by position, but options are shuffled; reword it or set keepOrder: true");
@@ -248,6 +252,8 @@ for (const file of practiceFiles) {
     if (/<[a-z][^>]*>/i.test(all)) err(chId, "contains HTML tags, use plain text");
     if (/\\(frac|sqrt|times|theta|pi|alpha|circ)\b|\$[^$]+\$/.test(all)) err(chId, "contains LaTeX, use Unicode");
   }
+  // A student can guess by length when the right answer is usually the longest option.
+  if (mcqN >= 20 && longestRight / mcqN > 0.4) warn("file", `the right answer is the longest option in ${Math.round((100 * longestRight) / mcqN)}% of MCQs; make some wrong options as long (aim for about 25%)`);
   // Keys that aren't chapters of this subject would be silently ignored.
   const raw = fs.readFileSync(path.resolve(root, file), "utf8");
   const keyRe = /^\s{2}"?([a-z0-9-]+)"?:\s*\{/gm;
@@ -636,6 +642,8 @@ for (const file of pathFiles) {
       const gctx = { console };
       vm.createContext(gctx);
       Gen = vm.runInContext(fs.readFileSync(path.join(root, "js", "gen.js"), "utf8") + "\n;Gen", gctx);
+      vm.runInContext(fs.readFileSync(path.join(root, "js", "gen-lang.js"), "utf8"), gctx);
+      vm.runInContext(fs.readFileSync(path.join(root, "js", "gen-sci.js"), "utf8"), gctx);
     }
     vm.runInContext(fs.readFileSync(path.join(root, "data", "registry.js"), "utf8"), ctx);
     vm.runInContext(fs.readFileSync(path.resolve(root, file), "utf8"), ctx, { filename: file });

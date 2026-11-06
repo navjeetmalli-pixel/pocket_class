@@ -6,10 +6,10 @@ StudyData.addPractice(12, "englishpb", {
       { q: "Who runs the unusual school in the lesson?", options: ["Miss Beam", "Miss Marple", "Mrs Lucas", "Miss Bholi"], answer: 0, explain: "The narrator visits Miss Beam's school.", level: 1 },
       { q: "How many special 'days' does each child have in a term?", options: ["three", "four", "five", "ten"], answer: 2, explain: "Blind, lame, deaf, maimed and dumb days make five.", level: 1 },
       { q: "On the blind day the child's eyes are:", options: ["closed in sleep", "bandaged", "covered with spectacles", "painted"], answer: 1, explain: "The 'blind' child has a bandage over the eyes.", level: 1 },
-      { q: "The word 'maimed' in the lesson refers to a child with:", options: ["an injured arm that cannot be used", "a fever", "a missing book", "poor handwriting"], answer: 0, explain: "On the maimed day a limb, here an arm, is kept out of use.", level: 1 },
-      { q: "What is the real aim of the school?", options: ["to produce sportspersons", "to make children thoughtful, helpful and sympathetic", "to teach medicine", "to raise money"], answer: 1, explain: "Ordinary lessons are taught, but the real aim is sympathy and helpfulness.", level: 2 },
-      { q: "The children are not really hurt; they:", options: ["pretend for a day to experience a disability", "are patients of a hospital", "are punished for bad behaviour", "are rehearsing a play"], answer: 0, explain: "Each experiences a disability for a day to understand others' difficulties.", level: 2 },
-      { q: "Which day does Miss Beam say is the worst?", options: ["deaf day", "blind day", "dumb day", "lame day"], answer: 1, explain: "Miss Beam says the blind day is the worst, though some children dread the dumb day most.", level: 2 },
+      { q: "The word 'maimed' in the lesson refers to a child with:", options: ["an injured arm that cannot be used", "a fever with a very high temperature", "a missing book", "poor handwriting"], answer: 0, explain: "On the maimed day a limb, here an arm, is kept out of use.", level: 1 },
+      { q: "What is the real aim of the school?", options: ["to produce sportspersons who win medals for the school and country", "to make children thoughtful, helpful and sympathetic", "to teach medicine", "to raise money"], answer: 1, explain: "Ordinary lessons are taught, but the real aim is sympathy and helpfulness.", level: 2 },
+      { q: "The children are not really hurt; they:", options: ["pretend for a day to experience a disability", "are patients of a hospital for the blind and lame", "are punished for bad behaviour", "are rehearsing a play"], answer: 0, explain: "Each experiences a disability for a day to understand others' difficulties.", level: 2 },
+      { q: "Which day does Miss Beam say is the worst?", options: ["silent deaf day", "blind day", "dumb day", "lame day"], answer: 1, explain: "Miss Beam says the blind day is the worst, though some children dread the dumb day most.", level: 2 },
       {
         q: "Assertion (A): In Miss Beam's school both the disabled-for-the-day child and the helper are educated.\nReason (R): Others help and lead the children on their special days.",
         options: [
@@ -22,11 +22,11 @@ StudyData.addPractice(12, "englishpb", {
       },
       {
         q: "A school asks students to move around the campus for an hour with their eyes bandaged, guided by a classmate, and then write about the experience.\nWhich idea from the lesson does this activity follow?",
-        options: ["sympathy is best learnt through experience", "exams are unnecessary", "disabled people should stay at home", "teachers should not guide students"],
+        options: ["sympathy is best learnt through experience", "exams are unnecessary in any kind of school", "disabled people should stay at home", "teachers should not guide students"],
         answer: 0, explain: "The lesson shows that experiencing a difficulty makes children understand it.", level: 2
       },
       { q: "Which statement about the lesson's message is correct?", options: ["Education should build only knowledge.", "Education should build character and kindness, not only knowledge.", "Sympathy cannot be taught.", "Disability should be ignored."], answer: 1, explain: "The message is that education must also develop character and kindness.", level: 3 },
-      { q: "Why does Miss Beam's method work better than a lecture on kindness?", options: ["It is cheaper.", "The children feel the difficulty themselves, so they understand it.", "It requires no teachers.", "It avoids helping others."], answer: 1, explain: "Experience builds understanding in a way that talk alone cannot.", level: 3 },
+      { q: "Why does Miss Beam's method work better than a lecture on kindness?", options: ["It is cheaper and easier than running a regular school with teachers.", "The children feel the difficulty themselves, so they understand it.", "It requires no teachers.", "It avoids helping others."], answer: 1, explain: "Experience builds understanding in a way that talk alone cannot.", level: 3 },
       {
         q: "Assertion (A): The bandaged girl says that peeping would be cheating.\nReason (R): On the blind day the eyes are bandaged overnight and it is a point of honour not to peep.",
         options: [
@@ -59,13 +59,13 @@ StudyData.addPractice(12, "englishpb", {
   "a-chameleon": {
     mcq: [
       { q: "Who wrote 'A Chameleon'?", options: ["E. V. Lucas", "Anton Chekhov", "K. A. Abbas", "Mulk Raj Anand"], answer: 1, explain: "Anton Chekhov (1860–1904) was a Russian writer.", level: 1 },
-      { q: "The police superintendent in the story is:", options: ["Hryukin", "Yeldyrin", "Otchumyelov", "Chandu"], answer: 2, explain: "Police Superintendent Otchumyelov is the main character.", level: 1 },
-      { q: "Who is Hryukin?", options: ["a general", "a goldsmith whose finger is bitten", "a constable", "the dog's owner"], answer: 1, explain: "Hryukin is the goldsmith bitten by the puppy.", level: 1 },
+      { q: "The police superintendent in the story is:", options: ["Superintendent Hryukin", "Yeldyrin", "Otchumyelov", "Chandu"], answer: 2, explain: "Police Superintendent Otchumyelov is the main character.", level: 1 },
+      { q: "Who is Hryukin?", options: ["a general in the army of the Russian Tsar", "a goldsmith whose finger is bitten", "a constable", "the dog's owner"], answer: 1, explain: "Hryukin is the goldsmith bitten by the puppy.", level: 1 },
       { q: "What bites Hryukin's finger?", options: ["a snake", "a puppy", "a cat", "a rat"], answer: 1, explain: "A puppy bites the goldsmith's finger.", level: 1 },
       { q: "A chameleon is a lizard that:", options: ["flies", "changes colour", "sings", "lives in water only"], answer: 1, explain: "The title applies this trait to a person who keeps changing his stand.", level: 1 },
-      { q: "At first Otchumyelov says the dog should be:", options: ["rewarded", "destroyed, with the owner found and fined", "ignored", "adopted by the police"], answer: 1, explain: "He is stern at the start: find the owner, fine him, and destroy the dog as it may be mad.", level: 2 },
+      { q: "At first Otchumyelov says the dog should be:", options: ["rewarded for catching a thief in the market", "destroyed, with the owner found and fined", "ignored", "adopted by the police"], answer: 1, explain: "He is stern at the start: find the owner, fine him, and destroy the dog as it may be mad.", level: 2 },
       { q: "Why does the superintendent change his opinion again and again?", options: ["He gets new evidence about the bite.", "He keeps guessing who owns the dog and fears offending a powerful person.", "He forgets the case.", "He is following a court order."], answer: 1, explain: "Each guess about the owner changes his attitude according to the owner's power.", level: 2 },
-      { q: "Chekhov's story is mainly a:", options: ["satire on officials", "ghost story", "romance", "travelogue"], answer: 0, explain: "It exposes servility and corruption through humour.", level: 2 },
+      { q: "Chekhov's story is mainly a:", options: ["satire on officials", "ghost story for children", "romance", "travelogue"], answer: 0, explain: "It exposes servility and corruption through humour.", level: 2 },
       {
         q: "Assertion (A): The superintendent keeps taking off and putting on his coat.\nReason (R): His mood changes each time someone makes a new guess about the dog's owner.",
         options: [
@@ -115,12 +115,12 @@ StudyData.addPractice(12, "englishpb", {
   "bholi": {
     mcq: [
       { q: "Who wrote 'Bholi'?", options: ["Mulk Raj Anand", "K. A. Abbas", "Anton Chekhov", "E. V. Lucas"], answer: 1, explain: "K. A. Abbas (1914–1987) wrote the story.", level: 1 },
-      { q: "Bholi's real name is:", options: ["Sulekha", "Radha", "Sita", "Meena"], answer: 0, explain: "Sulekha was nicknamed Bholi.", level: 1 },
-      { q: "Bholi's father, Ramlal, was a:", options: ["village revenue official", "doctor", "teacher", "farmer"], answer: 0, explain: "Ramlal is described as a village revenue official.", level: 1 },
+      { q: "Bholi's real name is:", options: ["Sulekha", "Radha Devi", "Sita", "Meena"], answer: 0, explain: "Sulekha was nicknamed Bholi.", level: 1 },
+      { q: "Bholi's father, Ramlal, was a:", options: ["village revenue official", "doctor in the nearest town", "teacher", "farmer"], answer: 0, explain: "Ramlal is described as a village revenue official.", level: 1 },
       { q: "What marked Bholi's face in childhood?", options: ["smallpox", "a burn", "an accident with a fire", "an animal bite"], answer: 0, explain: "Smallpox left marks on her face and slowed her speech.", level: 1 },
       { q: "'Dowry' means:", options: ["a wedding feast", "money or goods demanded from the bride's family at marriage", "a bride's jewellery", "a gift from the groom"], answer: 1, explain: "It is a social evil and an offence under Indian law.", level: 1 },
-      { q: "Why were Bholi's parents persuaded to send her to school?", options: ["They believed she had no other future.", "She had won a prize.", "She demanded a job.", "The school was free of cost."], answer: 0, explain: "They thought she had no future, and were persuaded to try the new village school.", level: 2 },
-      { q: "How did the teacher help Bholi?", options: ["by punishing her", "by giving her confidence and teaching her to speak", "by getting her married", "by sending her away"], answer: 1, explain: "The kind teacher encouraged her and taught her to speak.", level: 2 },
+      { q: "Why were Bholi's parents persuaded to send her to school?", options: ["They believed she had no other future.", "She had won a prize in the district fair.", "She demanded a job.", "The school was free of cost."], answer: 0, explain: "They thought she had no future, and were persuaded to try the new village school.", level: 2 },
+      { q: "How did the teacher help Bholi?", options: ["by punishing her whenever she made a mistake in class", "by giving her confidence and teaching her to speak", "by getting her married", "by sending her away"], answer: 1, explain: "The kind teacher encouraged her and taught her to speak.", level: 2 },
       { q: "Why did Bholi refuse to marry at the wedding?", options: ["She disliked the groom's clothes.", "The groom, Bishamber Nath, demanded 5,000 rupees on seeing her face.", "She wanted to go abroad.", "Her sisters opposed it."], answer: 1, explain: "She refused to marry a greedy coward.", level: 2 },
       {
         q: "Assertion (A): Bholi's confidence grows after she attends school.\nReason (R): A kind teacher encourages her and teaches her to speak.",
@@ -170,14 +170,14 @@ StudyData.addPractice(12, "englishpb", {
   },
   "the-barbers-trade-union": {
     mcq: [
-      { q: "Who wrote 'The Barber's Trade Union'?", options: ["K. A. Abbas", "Mulk Raj Anand", "Anton Chekhov", "E. V. Lucas"], answer: 1, explain: "Mulk Raj Anand (1905–2004) is the author.", level: 1 },
+      { q: "Who wrote 'The Barber's Trade Union'?", options: ["K. A. Abbas of Bombay", "Mulk Raj Anand", "Anton Chekhov", "E. V. Lucas"], answer: 1, explain: "Mulk Raj Anand (1905–2004) is the author.", level: 1 },
       { q: "Who is the main character of the story?", options: ["Chandu", "Otchumyelov", "Bholi", "Miss Beam"], answer: 0, explain: "Chandu is the young village barber.", level: 1 },
-      { q: "Chandu takes over the work of:", options: ["his uncle", "his father, the village barber", "the landlord", "the moneylender"], answer: 1, explain: "He takes over after his father dies.", level: 1 },
+      { q: "Chandu takes over the work of:", options: ["his uncle, a potter in the next village", "his father, the village barber", "the landlord", "the moneylender"], answer: 1, explain: "He takes over after his father dies.", level: 1 },
       { q: "A trade union is an organisation of workers formed to:", options: ["protect their rights and wages", "collect taxes", "run a school", "plan a wedding"], answer: 0, explain: "That is the meaning of a trade union.", level: 1 },
       { q: "Chandu copies the dress of a:", options: ["police inspector", "doctor", "king", "soldier"], answer: 1, explain: "He wears a white turban, white rubber coat and pumps and carries a leather bag, like a doctor.", level: 1 },
       { q: "Why did the landlord drive Chandu out?", options: ["He overcharged him.", "He said Chandu was defiling the house with leather and foreign clothes.", "He refused to work.", "He insulted the narrator."], answer: 1, explain: "Chandu came dressed like a doctor, and the landlord Bijay Chand drove him out for 'defiling' the house.", level: 2 },
       { q: "Chandu's response to the insult was to:", options: ["beg forgiveness", "earn a rupee shaving in town, buy a bicycle and stop serving the elders", "leave the village forever", "work free for the elders"], answer: 1, explain: "He decided to teach the orthodox elders a lesson, earned money in town and bought a cheap bicycle for five rupees.", level: 2 },
-      { q: "'Dignity of labour' means:", options: ["all honest work deserves respect", "only manual work is noble", "labour is a punishment", "work should be avoided"], answer: 0, explain: "No honest work is low.", level: 2 },
+      { q: "'Dignity of labour' means:", options: ["all honest work deserves respect", "only manual work in the fields is noble", "labour is a punishment", "work should be avoided"], answer: 0, explain: "No honest work is low.", level: 2 },
       {
         q: "Assertion (A): The landlord and the Sahukar became a laughing stock.\nReason (R): Chandu stopped serving them, so they sat in the shop with long unshaved beards.",
         options: [

@@ -4,10 +4,10 @@ StudyData.addPractice(12, "englishpb", {
     mcq: [
       { q: "Who wrote 'Hassan's Attendance Problem'?", options: ["Ruskin Bond", "Sudha Murthy", "Anita Desai", "R. K. Narayan"], answer: 1, explain: "Sudha Murthy, a teacher and writer, narrates her own experience.", level: 1 },
       { q: "In which city does the narrator teach?", options: ["Mumbai", "Chennai", "Bangalore", "Hyderabad"], answer: 2, explain: "She teaches Master's in Computer Applications students in Bangalore.", level: 1 },
-      { q: "Hassan usually came to class only:", options: ["every morning", "before tests and exams", "on holidays", "never"], answer: 1, explain: "He appeared mainly around class tests and examinations.", level: 1 },
+      { q: "Hassan usually came to class only:", options: ["every morning without fail", "before tests and exams", "on holidays", "never"], answer: 1, explain: "He appeared mainly around class tests and examinations.", level: 1 },
       { q: "What grade did Hassan regularly get in exams?", options: ["First class", "Second class", "Third class", "He failed"], answer: 0, explain: "He was bright and invariably got first class.", level: 1 },
-      { q: "What did Hassan sell when he met his teacher again?", options: ["Books", "Computer hardware", "Software for high-school teaching", "Mobile phones"], answer: 2, explain: "He was selling a CD of educational software for Maths, Physics and Chemistry.", level: 1 },
-      { q: "Why did the teacher call Hassan's parents?", options: ["To praise him", "To ask them to look into his irregularity", "To ask for a donation", "To report a fight"], answer: 1, explain: "She hoped they would take his indiscipline seriously.", level: 2 },
+      { q: "What did Hassan sell when he met his teacher again?", options: ["Books and stationery for high schools", "Computer hardware", "Software for high-school teaching", "Mobile phones"], answer: 2, explain: "He was selling a CD of educational software for Maths, Physics and Chemistry.", level: 1 },
+      { q: "Why did the teacher call Hassan's parents?", options: ["To praise him for his very good marks in all the tests", "To ask them to look into his irregularity", "To ask for a donation", "To report a fight"], answer: 1, explain: "She hoped they would take his indiscipline seriously.", level: 2 },
       { q: "What had Hassan done in college to get marks?", options: ["Studied only before exams and guessed questions", "Copied from friends", "Studied every day", "Bribed examiners"], answer: 0, explain: "He skipped chapters and guessed probable questions.", level: 2 },
       {
         q: "Assertion (A): Hassan, though a first-class student, lost one job after another.\nReason (R): He lacked proper knowledge and kept his habits of lateness and irresponsibility.",
@@ -20,7 +20,7 @@ StudyData.addPractice(12, "englishpb", {
         answer: 0, explain: "Hassan studied only for exams and lacked real knowledge, which is why he failed to hold a job.", level: 2, keepOrder: true
       },
       { q: "A student who attends rarely but pleads for attendance before the exam resembles:", options: ["Hassan", "Chandu", "Datta", "Mann Singh"], answer: 0, explain: "Hassan's repeated pleading is the same pattern.", level: 2 },
-      { q: "Whom does Hassan call 'nerds'?", options: ["His teachers", "Hard-working classmates", "His employers", "His parents"], answer: 1, explain: "He mocked the diligent students, who later became millionaires.", level: 2 },
+      { q: "Whom does Hassan call 'nerds'?", options: ["His teachers and principal", "Hard-working classmates", "His employers", "His parents"], answer: 1, explain: "He mocked the diligent students, who later became millionaires.", level: 2 },
       { q: "Which statement best expresses the lesson's moral?", options: ["Marks alone guarantee success.", "Talent without discipline and real knowledge is wasted.", "Teachers should never forgive absences.", "Rich families need no work."], answer: 1, explain: "Hassan's talent was wasted by his habits.", level: 3 },
       {
         q: "Assertion (A): Hassan blamed his own habits for his present state.\nReason (R): Hassan's father was a busy man.",
@@ -33,7 +33,7 @@ StudyData.addPractice(12, "englishpb", {
         answer: 1, explain: "Both statements are true; the habit led to the failure.", level: 3, keepOrder: true
       },
       { q: "A company employee often misses deadlines, relies on guesswork and is sidelined while diligent colleagues rise.\nWhich character does he resemble most?", options: ["Hassan", "Karam Singh", "Datta", "Nicola"], answer: 0, explain: "He shares Hassan's carelessness and its consequences.", level: 3 },
-      { q: "The teacher tells Hassan, 'You may have lost a battle but you can still win the war.' This shows that she:", options: ["has given up on him", "encourages him to start afresh", "blames him", "asks him to leave"], answer: 1, explain: "She urges him that a new start is possible at any age.", level: 3 }
+      { q: "The teacher tells Hassan, 'You may have lost a battle but you can still win the war.' This shows that she:", options: ["has given up on him for ever now", "encourages him to start afresh", "blames him", "asks him to leave"], answer: 1, explain: "She urges him that a new start is possible at any age.", level: 3 }
     ],
     written: [
       { q: "Who was Hassan?", a: "He was a bright, tall and handsome student of the narrator, from a rich family, who rarely attended class.", marks: 1 },
@@ -51,10 +51,10 @@ StudyData.addPractice(12, "englishpb", {
   "thinking-out-of-the-box-lateral-thinking": {
     mcq: [
       { q: "What is the title of the lesson?", options: ["Thinking Out of the Box: Lateral Thinking", "The Moneylender", "Think Big", "Logic and Reason"], answer: 0, explain: "It is adapted from an article on lateral thinking.", level: 1 },
-      { q: "Who wanted to marry the farmer's daughter?", options: ["A landlord", "The moneylender", "A soldier", "A priest"], answer: 1, explain: "The old, ugly moneylender proposed the bargain.", level: 1 },
+      { q: "Who wanted to marry the farmer's daughter?", options: ["A rich village landlord", "The moneylender", "A soldier", "A priest"], answer: 1, explain: "The old, ugly moneylender proposed the bargain.", level: 1 },
       { q: "How many pebbles did the moneylender say he would put in the bag?", options: ["One", "Two (one black, one white)", "Three", "Ten"], answer: 1, explain: "One black and one white, in his story.", level: 1 },
       { q: "Which colour did everyone conclude the girl had picked, from the colour of the remaining pebble?", options: ["White", "Black", "Red", "Green"], answer: 0, explain: "The remaining pebble was black, so hers must have been white.", level: 1 },
-      { q: "Who is associated with the idea of lateral thinking in the lesson?", options: ["Edward de Bono", "Kerry Packer", "Thomas", "Aristotle"], answer: 0, explain: "De Bono popularised lateral thinking.", level: 1 },
+      { q: "Who is associated with the idea of lateral thinking in the lesson?", options: ["Edward de Bono", "Kerry Francis Packer", "Thomas", "Aristotle"], answer: 0, explain: "De Bono popularised lateral thinking.", level: 1 },
       { q: "Why did the girl drop the pebble on the path?", options: ["She was clumsy", "To make its colour impossible to check, so the bag would reveal her choice", "She wanted to refuse", "She was afraid"], answer: 1, explain: "The remaining pebble would show what she had picked.", level: 2 },
       { q: "Why did the moneylender not dare protest?", options: ["He was blind", "He feared exposing his own cheating", "He liked the girl", "He was a coward in battle"], answer: 1, explain: "Both pebbles were black, so protest would reveal his trick.", level: 2 },
       {
@@ -67,8 +67,8 @@ StudyData.addPractice(12, "englishpb", {
         ],
         answer: 0, explain: "The girl's solution came from thinking differently, not from the usual options.", level: 2, keepOrder: true
       },
-      { q: "A student solves a tough puzzle by changing the way she looks at it rather than following the usual steps.\nThis is an example of:", options: ["lateral thinking", "rote learning", "copying", "guesswork"], answer: 0, explain: "It involves seeing the problem differently.", level: 2 },
-      { q: "What did Thomas offer as security for a loan of 5000 dollars?", options: ["His house", "A Ferrari car", "Gold", "Shares"], answer: 1, explain: "He pointed to his new Ferrari outside the bank.", level: 2 },
+      { q: "A student solves a tough puzzle by changing the way she looks at it rather than following the usual steps.\nThis is an example of:", options: ["lateral thinking", "rote learning of answers", "copying", "guesswork"], answer: 0, explain: "It involves seeing the problem differently.", level: 2 },
+      { q: "What did Thomas offer as security for a loan of 5000 dollars?", options: ["His house in the city", "A Ferrari car", "Gold", "Shares"], answer: 1, explain: "He pointed to his new Ferrari outside the bank.", level: 2 },
       { q: "Thomas's real purpose in taking the loan was to:", options: ["buy a car", "park his valuable car safely and cheaply", "test the bank", "avoid taxes"], answer: 1, explain: "He paid about 15 dollars to park his car for two weeks.", level: 3 },
       {
         q: "Assertion (A): Kerry Packer's day-night matches are an example of lateral thinking.\nReason (R): The girl in the pebble story outwitted the moneylender.",
@@ -99,12 +99,12 @@ StudyData.addPractice(12, "englishpb", {
   "in-celebration-of-being-alive": {
     mcq: [
       { q: "Who is the author of 'In Celebration of Being Alive'?", options: ["Dr Christian Barnard", "Dr A. P. J. Abdul Kalam", "Sudha Murthy", "Albert Einstein"], answer: 0, explain: "The passage is condensed from a speech by the heart surgeon.", level: 1 },
-      { q: "What was Dr Barnard's profession?", options: ["Teacher", "Heart surgeon", "Engineer", "Lawyer"], answer: 1, explain: "He attempted pioneering heart transplants.", level: 1 },
+      { q: "What was Dr Barnard's profession?", options: ["School teacher", "Heart surgeon", "Engineer", "Lawyer"], answer: 1, explain: "He attempted pioneering heart transplants.", level: 1 },
       { q: "Where did the 'Grand Prix' take place?", options: ["Cape Town's Red Cross Children's Hospital", "A racetrack", "A school", "A park"], answer: 0, explain: "Two young patients raced a breakfast trolley.", level: 1 },
-      { q: "The 'mechanic' of the trolley was:", options: ["totally blind", "deaf", "one-armed", "lame"], answer: 0, explain: "He had lost both eyes in a burn accident.", level: 1 },
+      { q: "The 'mechanic' of the trolley was:", options: ["totally blind", "completely deaf", "one-armed", "lame"], answer: 0, explain: "He had lost both eyes in a burn accident.", level: 1 },
       { q: "The 'driver' of the trolley had:", options: ["lost an arm", "lost a leg", "lost his voice", "lost his memory"], answer: 0, explain: "His shoulder and arm had been amputated.", level: 1 },
       { q: "What accident gave Dr Barnard gloomy thoughts?", options: ["A car accident in which he and his wife were hurt", "A plane crash", "A fire", "A fall"], answer: 0, explain: "A car hit him and his wife; both were injured.", level: 2 },
-      { q: "What had Barnard's father said about suffering?", options: ["It is God's test and ennobles a person", "It is a punishment", "It is a joke", "It is avoidable"], answer: 0, explain: "His father would have called it God's will.", level: 2 },
+      { q: "What had Barnard's father said about suffering?", options: ["It is God's test and ennobles a person", "It is a punishment for past wrongs done by us", "It is a joke", "It is avoidable"], answer: 0, explain: "His father would have called it God's will.", level: 2 },
       {
         q: "Assertion (A): The two boys in the trolley race taught Dr Barnard a profound lesson.\nReason (R): Despite their suffering, they found joy and celebrated being alive.",
         options: [
@@ -117,7 +117,7 @@ StudyData.addPractice(12, "englishpb", {
       },
       { q: "A patient with a serious illness still laughs and encourages others in the ward.\nWhom does this person resemble?", options: ["The two boys of the Grand Prix", "Hassan", "Datta", "Ochumelov"], answer: 0, explain: "They too met suffering with courage and cheer.", level: 2 },
       { q: "Why did the mouldy biscuit matter to Barnard?", options: ["It was the last one his dead brother ate", "It was his favourite", "It was a gift", "It was expensive"], answer: 0, explain: "His brother, born with a heart defect, died soon after.", level: 2 },
-      { q: "According to Barnard, we become better persons because:", options: ["we are suffering", "we have experienced suffering", "we avoid pain", "we have riches"], answer: 1, explain: "Having known suffering we appreciate joy.", level: 3 },
+      { q: "According to Barnard, we become better persons because:", options: ["we are suffering now and always", "we have experienced suffering", "we avoid pain", "we have riches"], answer: 1, explain: "Having known suffering we appreciate joy.", level: 3 },
       {
         q: "Assertion (A): Barnard believed suffering ennobles people.\nReason (R): He had seen children's pain and found nothing noble in it.",
         options: [
@@ -147,10 +147,10 @@ StudyData.addPractice(12, "englishpb", {
   "prayer-of-the-woods": {
     mcq: [
       { q: "Who is the poet of 'Prayer of the Woods'?", options: ["Anonymous", "Robert Frost", "William Blake", "Milton"], answer: 0, explain: "The poet is not known.", level: 1 },
-      { q: "Who speaks in the poem?", options: ["A farmer", "The woods", "A poet", "A child"], answer: 1, explain: "The woods speak in the first person.", level: 1 },
-      { q: "The woods give us warmth during:", options: ["Cold winter nights", "Summer afternoons", "Rainy seasons", "Spring"], answer: 0, explain: "They are the heat of the hearth.", level: 1 },
+      { q: "Who speaks in the poem?", options: ["An old farmer", "The woods", "A poet", "A child"], answer: 1, explain: "The woods speak in the first person.", level: 1 },
+      { q: "The woods give us warmth during:", options: ["Cold winter nights", "Hot summer afternoons", "Rainy seasons", "Spring"], answer: 0, explain: "They are the heat of the hearth.", level: 1 },
       { q: "The woods' final request is:", options: ["Plant more trees", "Harm me not", "Water me", "Protect birds"], answer: 1, explain: "The poem ends with a plea.", level: 1 },
-      { q: "Which of these is NOT given by the woods in the poem?", options: ["Bed", "Cradle", "Computer", "Boat"], answer: 2, explain: "Bed, cradle and boat are mentioned.", level: 1 },
+      { q: "Which of these is NOT given by the woods in the poem?", options: ["Wooden bed", "Cradle", "Computer", "Boat"], answer: 2, explain: "Bed, cradle and boat are mentioned.", level: 1 },
       { q: "What do 'refreshing draughts' refer to?", options: ["Juice of fruits that quench thirst", "Breeze", "Rain", "River"], answer: 0, explain: "Fruits refresh travellers.", level: 2 },
       { q: "'The shell of your coffin' suggests that the woods serve us:", options: ["only in youth", "from cradle to coffin", "only in war", "never"], answer: 1, explain: "Wood is used from birth to death.", level: 2 },
       {
@@ -163,9 +163,9 @@ StudyData.addPractice(12, "englishpb", {
         ],
         answer: 0, explain: "The speaker is a tree, which is a form of personification.", level: 2, keepOrder: true
       },
-      { q: "A forest officer reads this poem to a village. What is he most likely trying to do?", options: ["Promote tree protection", "Sell wood", "Teach grammar", "Plan a road"], answer: 0, explain: "The poem pleads for the woods.", level: 2 },
+      { q: "A forest officer reads this poem to a village. What is he most likely trying to do?", options: ["Promote tree protection", "Sell wood to local carpenters", "Teach grammar", "Plan a road"], answer: 0, explain: "The poem pleads for the woods.", level: 2 },
       { q: "'The bread of kindness' is a:", options: ["Metaphor", "Simile", "Pun", "Hyperbole"], answer: 0, explain: "Kindness is described as bread without 'like' or 'as'.", level: 2 },
-      { q: "What tone does the poem have?", options: ["Gentle and pleading", "Angry", "Humorous", "Fearful"], answer: 0, explain: "It is a prayer, not a threat.", level: 3 },
+      { q: "What tone does the poem have?", options: ["Gentle and pleading", "Angry, bitter and scornful", "Humorous", "Fearful"], answer: 0, explain: "It is a prayer, not a threat.", level: 3 },
       {
         q: "Assertion (A): The poem ends with a request not to harm the woods.\nReason (R): The woods have served humans throughout their lives.",
         options: [
@@ -176,7 +176,7 @@ StudyData.addPractice(12, "englishpb", {
         ],
         answer: 0, explain: "The list of gifts leads to the plea.", level: 3, keepOrder: true
       },
-      { q: "Which line of thought best captures the poem's message?", options: ["Trees are useful and deserve protection", "Wood is cheap", "Forests are dangerous", "Houses should be made of stone"], answer: 0, explain: "The gifts are listed to inspire gratitude and care.", level: 3 },
+      { q: "Which line of thought best captures the poem's message?", options: ["Trees are useful and deserve protection", "Wood is cheap and plentiful, so use it freely", "Forests are dangerous", "Houses should be made of stone"], answer: 0, explain: "The gifts are listed to inspire gratitude and care.", level: 3 },
       { q: "The poem begins with 'I am' repeatedly. This helps to:", options: ["create a prayer-like rhythm and personal voice", "hide the meaning", "show anger", "make a rhyme"], answer: 0, explain: "Repetition gives the lines the feel of a prayer.", level: 3 }
     ],
     written: [
@@ -195,10 +195,10 @@ StudyData.addPractice(12, "englishpb", {
   "the-gold-frame": {
     mcq: [
       { q: "Who wrote 'The Gold Frame'?", options: ["R. K. Laxman", "R. K. Narayan", "K. A. Abbas", "Premchand"], answer: 0, explain: "R. K. Laxman is the famous cartoonist.", level: 1 },
-      { q: "What is Datta's profession?", options: ["Picture frame maker", "Painter", "Tailor", "Carpenter only"], answer: 0, explain: "He runs the Modern Frame Works.", level: 1 },
-      { q: "Whose photograph did the customer bring?", options: ["His late grandfather", "His wife", "A film star", "A leader"], answer: 0, explain: "He treated the old man like a god.", level: 1 },
+      { q: "What is Datta's profession?", options: ["Picture frame maker", "Portrait painter by trade", "Tailor", "Carpenter only"], answer: 0, explain: "He runs the Modern Frame Works.", level: 1 },
+      { q: "Whose photograph did the customer bring?", options: ["His late grandfather", "His wife's elder brother", "A film star", "A leader"], answer: 0, explain: "He treated the old man like a god.", level: 1 },
       { q: "How much did the frame, mount and glass cost?", options: ["Seventeen rupees", "Seven rupees", "Seventy rupees", "Seventeen hundred rupees"], answer: 0, explain: "Datta quoted seventeen rupees.", level: 1 },
-      { q: "What spilled on the photograph?", options: ["White enamel paint", "Ink", "Tea", "Glue"], answer: 0, explain: "The tin fell when Datta shook his dhoti.", level: 1 },
+      { q: "What spilled on the photograph?", options: ["White enamel paint", "Black fountain pen ink", "Tea", "Glue"], answer: 0, explain: "The tin fell when Datta shook his dhoti.", level: 1 },
       { q: "What did Datta do after ruining the photograph?", options: ["Ran away", "Found a lookalike photograph from his unclaimed box", "Told the customer", "Painted a portrait"], answer: 1, explain: "He picked an old print of a similar-looking man.", level: 2 },
       { q: "Datta always lost which item in his shop?", options: ["Hammer", "Pencil stub", "Glass cutter only", "Keys"], answer: 1, explain: "He kept searching for his pencil stub.", level: 2 },
       {
@@ -213,7 +213,7 @@ StudyData.addPractice(12, "englishpb", {
       },
       { q: "A tailor stitches a different cloth than the one given, and the customer only complains about the buttons.\nThis is closest to which part of the story?", options: ["The customer's complaint about the oval mount", "The paint accident", "The pencil search", "The German frame"], answer: 0, explain: "Both customers miss the real change.", level: 2 },
       { q: "Why did Datta describe the gold frame as 'German, imported'?", options: ["To impress and settle any doubt about quality", "Because it was true", "To raise the price", "To sell the shop"], answer: 0, explain: "He wanted to reassure the customer.", level: 2 },
-      { q: "The customer's final complaint is that the mount is:", options: ["square, not oval", "too small", "too big", "chipped"], answer: 0, explain: "He had asked for an oval cut mount.", level: 3 },
+      { q: "The customer's final complaint is that the mount is:", options: ["square, not oval", "too small for the photograph", "too big", "chipped"], answer: 0, explain: "He had asked for an oval cut mount.", level: 3 },
       {
         q: "Assertion (A): The story is humorous and ironic.\nReason (R): Datta fears detection, but the customer notices only a minor detail.",
         options: [
@@ -225,7 +225,7 @@ StudyData.addPractice(12, "englishpb", {
         answer: 0, explain: "The humour arises from this very irony.", level: 3, keepOrder: true
       },
       { q: "What does the ending of the story suggest about people?", options: ["They sometimes look at the outward form and miss the substance", "They are always wise", "They hate frames", "They love paint"], answer: 0, explain: "The customer cares about the frame, not the face.", level: 3 },
-      { q: "Which word best describes Datta's decision to substitute the picture?", options: ["Resourceful but risky", "Honest", "Careless", "Generous"], answer: 0, explain: "It saved him but was a great risk.", level: 3 }
+      { q: "Which word best describes Datta's decision to substitute the picture?", options: ["Resourceful but risky", "Honest, open and truthful", "Careless", "Generous"], answer: 0, explain: "It saved him but was a great risk.", level: 3 }
     ],
     written: [
       { q: "Who is R. K. Laxman?", a: "He was an Indian cartoonist and illustrator, famous for his creation 'The Common Man'.", marks: 1 },
@@ -242,13 +242,13 @@ StudyData.addPractice(12, "englishpb", {
   },
   "the-bull-beneath-the-earth": {
     mcq: [
-      { q: "Who wrote 'The Bull beneath the Earth'?", options: ["Kulwant Singh Virk", "Khushwant Singh", "Mulk Raj Anand", "K. A. Abbas"], answer: 0, explain: "He wrote mostly in Punjabi and also in English.", level: 1 },
+      { q: "Who wrote 'The Bull beneath the Earth'?", options: ["Kulwant Singh Virk", "Khushwant Singh the novelist", "Mulk Raj Anand", "K. A. Abbas"], answer: 0, explain: "He wrote mostly in Punjabi and also in English.", level: 1 },
       { q: "Which front were Mann Singh and Karam Singh on?", options: ["Burma", "Kashmir", "Africa", "China"], answer: 0, explain: "They served together in a battalion on the Burma front.", level: 1 },
-      { q: "What was Karam Singh's rank?", options: ["Havildar", "Naik", "Captain", "Subedar"], answer: 0, explain: "Mann Singh was a naik.", level: 1 },
-      { q: "What was Karam Singh famous for in his regiment?", options: ["Being a crack shot", "Singing", "Wrestling", "Cooking"], answer: 0, explain: "His bullets hit targets with great precision.", level: 1 },
+      { q: "What was Karam Singh's rank?", options: ["Havildar", "Lance Naik", "Captain", "Subedar"], answer: 0, explain: "Mann Singh was a naik.", level: 1 },
+      { q: "What was Karam Singh famous for in his regiment?", options: ["Being a crack shot", "Singing folk songs at fairs", "Wrestling", "Cooking"], answer: 0, explain: "His bullets hit targets with great precision.", level: 1 },
       { q: "What is the name of Karam Singh's younger brother?", options: ["Jaswant Singh", "Mann Singh", "Gurdit Singh", "Bhan Singh"], answer: 0, explain: "Jaswant Singh took Mann Singh to the gurdwaras.", level: 1 },
-      { q: "How did Karam Singh's father first greet Mann Singh?", options: ["With preoccupation and little warmth", "With a hug", "With anger", "With a feast"], answer: 0, explain: "He seemed perturbed and distracted.", level: 2 },
-      { q: "Who revealed the news of Karam Singh's death to Mann Singh?", options: ["The postman", "Jaswant", "The mother", "The child"], answer: 0, explain: "He mentioned Karam Singh's pension papers.", level: 2 },
+      { q: "How did Karam Singh's father first greet Mann Singh?", options: ["With preoccupation and little warmth", "With a long warm hug and a happy smile on his face", "With anger", "With a feast"], answer: 0, explain: "He seemed perturbed and distracted.", level: 2 },
+      { q: "Who revealed the news of Karam Singh's death to Mann Singh?", options: ["The postman", "Jaswant Singh", "The mother", "The child"], answer: 0, explain: "He mentioned Karam Singh's pension papers.", level: 2 },
       {
         q: "Assertion (A): Karam Singh's family hid the news of his death from Mann Singh.\nReason (R): They did not want to spoil his holiday.",
         options: [
@@ -259,7 +259,7 @@ StudyData.addPractice(12, "englishpb", {
         ],
         answer: 0, explain: "They had received the news but wanted Mann Singh to enjoy his holiday.", level: 2, keepOrder: true
       },
-      { q: "A man hides his own sorrow to avoid upsetting a guest.\nWhich character in the lesson is he like?", options: ["Karam Singh's father", "The postman", "Mann Singh", "Jaswant"], answer: 0, explain: "The old man bore his grief silently for another's comfort.", level: 2 },
+      { q: "A man hides his own sorrow to avoid upsetting a guest.\nWhich character in the lesson is he like?", options: ["Karam Singh's father", "The village postman Gurbax", "Mann Singh", "Jaswant"], answer: 0, explain: "The old man bore his grief silently for another's comfort.", level: 2 },
       { q: "Why did Karam Singh's father shout at the sight of his grandson with Mann Singh?", options: ["Mann Singh's words about 'going to his father' hurt him", "The child was naughty", "Dinner was late", "He was angry with the child"], answer: 0, explain: "The words pierced his heart.", level: 2 },
       { q: "What does the 'bull beneath the earth' stand for?", options: ["A man bearing others' burdens along with his own", "A real animal", "The army", "A farm"], answer: 0, explain: "Karam Singh's father seemed such a spirit.", level: 3 },
       {

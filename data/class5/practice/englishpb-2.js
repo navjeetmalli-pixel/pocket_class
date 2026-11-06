@@ -17,7 +17,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Who found the shoes in the morning?",
         "options": [
-          "His wife",
+          "His wife's sister",
           "The shoemaker",
           "A customer",
           "The elves"
@@ -30,7 +30,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "What does 'masterpiece' mean?",
         "options": [
           "Outstanding work",
-          "Poor work",
+          "Poor and careless work",
           "Old shoes",
           "A big shop"
         ],
@@ -53,7 +53,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "How did the elves feel when they saw the clothes?",
         "options": [
-          "Angry",
+          "Very angry",
           "Afraid",
           "Delighted",
           "Sleepy"
@@ -65,7 +65,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Why did the customer pay more?",
         "options": [
-          "He was rich",
+          "He was very rich and quite generous",
           "He was lost",
           "He liked the shoes very much",
           "He was in a hurry"
@@ -77,7 +77,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Why did the couple stay up one night?",
         "options": [
-          "To clean the shop",
+          "To clean the shop and the shelves",
           "To find out who was helping them",
           "To read a book",
           "To go out"
@@ -90,7 +90,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "What is 'gratitude'?",
         "options": [
           "Feeling thankful",
-          "Feeling angry",
+          "Feeling angry and upset",
           "Feeling sleepy",
           "Feeling proud"
         ],
@@ -186,7 +186,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "Where did the two frogs live?",
         "options": [
           "Near a pond in a village",
-          "On a mountain",
+          "On a high snowy mountain top",
           "In a city",
           "In a desert"
         ],
@@ -209,7 +209,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What does 'advancement' mean?",
         "options": [
-          "Danger",
+          "Great danger",
           "Silence",
           "Noise",
           "Progress"
@@ -221,7 +221,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What is the opposite of 'clean'?",
         "options": [
-          "calm",
+          "calm water",
           "cool",
           "dirty",
           "tall"
@@ -245,7 +245,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Why did Beero say their health was 'at stake'?",
         "options": [
-          "The pond was dry",
+          "The pond was dry for many long months",
           "Dirty surroundings spread diseases",
           "The buildings were tall",
           "The ducks left"
@@ -258,7 +258,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "What was wrong with the people of the village?",
         "options": [
           "They had toilets but did not use them",
-          "They had no homes",
+          "They had no proper homes to live in at all",
           "They did not like frogs",
           "They cut trees"
         ],
@@ -269,7 +269,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Which word describes Beero?",
         "options": [
-          "careless",
+          "very careless",
           "lazy",
           "selfish",
           "concerned"
@@ -281,7 +281,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Why did Pala agree to help?",
         "options": [
-          "He was scared",
+          "He was scared of the other frogs",
           "He was paid",
           "He too saw it was a good deed",
           "He was asked by a king"
@@ -305,7 +305,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Riya sees her friend throw a wrapper near a pond. What should she do?",
         "options": [
-          "Throw one too",
+          "Throw one too and walk away quickly",
           "Politely tell him to use a dustbin",
           "Laugh",
           "Ignore"
@@ -365,7 +365,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "The child is 'little-little' in a",
         "options": [
-          "small village",
+          "small quiet village",
           "green forest",
           "tiny room",
           "big, big world"
@@ -389,7 +389,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Which word means 'skin with lines'?",
         "options": [
-          "swift",
+          "very swift",
           "alien",
           "wrinkled",
           "little"
@@ -414,7 +414,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "What do the child and her grandmother do together?",
         "options": [
           "Smile and hug",
-          "Quarrel",
+          "Quarrel and shout",
           "Run",
           "Play cricket"
         ],
@@ -426,7 +426,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "Why do they 'sigh' at the adult world?",
         "options": [
           "They find it big, fast and strange",
-          "They are tired",
+          "They are tired of walking around all day",
           "They are hungry",
           "They are happy"
         ],
@@ -473,7 +473,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Which value does the poem teach?",
         "options": [
-          "Fear of adults",
+          "Fear of all the adults",
           "Love for grandparents",
           "Love for machines",
           "Hate for crowds"
@@ -486,7 +486,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "Riya's grandmother lives far away. How can she show love?",
         "options": [
           "Call her and visit her",
-          "Forget her",
+          "Forget her after a while",
           "Send nothing",
           "Avoid her"
         ],
@@ -497,7 +497,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Why does the child want to stay with her grandmother 'forever'?",
         "options": [
-          "She wants sweets",
+          "She wants sweets and toys from her",
           "She dislikes school",
           "She is scared of birds",
           "She feels safe and loved with her"
@@ -582,7 +582,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "After his retirement from the army, he became",
         "options": [
           "Director of Sports in Punjab",
-          "a doctor",
+          "a doctor in the army hospital",
           "a teacher",
           "a pilot"
         ],
@@ -605,7 +605,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What habit made Milkha Singh a good runner?",
         "options": [
-          "Playing cricket",
+          "Playing cricket every day",
           "Cycling",
           "Swimming",
           "Running to school daily"
@@ -642,7 +642,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "He was selected for the army on his fourth attempt. What quality does this show?",
         "options": [
           "Patience and hard work",
-          "Laziness",
+          "Laziness and anger with others",
           "Anger",
           "Carelessness"
         ],
@@ -665,7 +665,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Riya fails in her first try at a race, but keeps practising. Whom does she follow?",
         "options": [
-          "Akbar",
+          "Emperor Akbar",
           "Birbal",
           "Pala",
           "Milkha Singh"
@@ -773,7 +773,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "On what floor did Akbar draw the line?",
         "options": [
-          "Wood",
+          "Polished wood",
           "Mud",
           "Marble",
           "Tile"
@@ -810,7 +810,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "Which word means 'puzzled'?",
         "options": [
           "confused",
-          "pleased",
+          "very pleased",
           "angry",
           "sleepy"
         ],
@@ -821,7 +821,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What did Akbar say about Birbal at the end?",
         "options": [
-          "He is the slowest",
+          "He is the slowest man in the whole court",
           "He is the oldest",
           "He is the richest",
           "He is the cleverest in the court"
@@ -845,7 +845,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Riya is asked to make a pencil line look shorter without erasing it. What can she do like Birbal?",
         "options": [
-          "Erase it",
+          "Erase it with a rubber at once",
           "Cut the paper",
           "Draw a longer line beside it",
           "Colour it"
@@ -857,7 +857,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What quality of Birbal does this story show?",
         "options": [
-          "Anger",
+          "Anger and a short temper",
           "Presence of mind",
           "Fear",
           "Greed"
@@ -906,7 +906,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "What did Aman's mother ask his father to pay?",
         "options": [
           "The electricity bill",
-          "The school fee",
+          "The school fee receipt",
           "The phone bill only",
           "The tax"
         ],
@@ -918,7 +918,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "What is a deposit?",
         "options": [
           "Money put into the bank",
-          "Money taken out",
+          "Money taken out of the bank",
           "A cheque book",
           "A locker key"
         ],
@@ -929,7 +929,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What does 'withdraw' mean?",
         "options": [
-          "Put in",
+          "Put in again",
           "Count",
           "Lend",
           "Take out"
@@ -965,7 +965,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Why was the bill paid on that day?",
         "options": [
-          "It was a holiday",
+          "It was a holiday for the bank",
           "It was the last date to pay",
           "It was cheap",
           "It was Sunday"
@@ -1001,7 +1001,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "How does a bank remember all the deposits?",
         "options": [
-          "Its guards remember",
+          "Its guards remember every face",
           "A diary of the customer",
           "Its computers keep records",
           "It does not remember"
@@ -1038,7 +1038,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "Aman's father paid the bill without going out. What does this show about banks?",
         "options": [
           "They offer services we can use online",
-          "They are always closed",
+          "They are always closed on Sundays and holidays",
           "They only have lockers",
           "They do not use computers"
         ],
@@ -1109,7 +1109,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What does cutting trees give us?",
         "options": [
-          "A gift",
+          "A nice gift",
           "Rain",
           "A warning",
           "Food"
@@ -1123,7 +1123,7 @@ StudyData.addPractice(5, "englishpb", {
         "options": [
           "wind",
           "warning",
-          "trees",
+          "tall trees",
           "cold"
         ],
         "answer": 1,
@@ -1169,7 +1169,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Which is an example of vehicle emission?",
         "options": [
-          "Water from a tap",
+          "Water from a garden tap",
           "Wind in a field",
           "Smoke from a truck",
           "Light from a bulb"
@@ -1181,7 +1181,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What will happen if we do not control global warming?",
         "options": [
-          "Earth will become cooler",
+          "Earth will become cooler every year",
           "Life on Earth will become hard",
           "Summer will end",
           "Trees will grow faster"
@@ -1193,7 +1193,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Which of these causes pollution from farms?",
         "options": [
-          "Ploughing",
+          "Ploughing the field",
           "Burning stubble",
           "Sowing",
           "Watering"
@@ -1206,7 +1206,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "Riya's family uses a car for a short trip to the shop. What is a better choice?",
         "options": [
           "Walk or use a cycle",
-          "Use two cars",
+          "Use two cars together",
           "Burn rubbish",
           "Run the engine"
         ],
@@ -1289,7 +1289,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What does 'martyr' mean?",
         "options": [
-          "A king",
+          "A king who rules a small state in India",
           "A person who dies for a great cause",
           "A trader",
           "A farmer"
@@ -1374,7 +1374,7 @@ StudyData.addPractice(5, "englishpb", {
         "q": "What does 'spectator' mean?",
         "options": [
           "One who only watches",
-          "One who fights",
+          "One who fights in the arena",
           "One who sings",
           "One who writes"
         ],
@@ -1397,7 +1397,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "What lesson can we learn from the Kuka Sikhs?",
         "options": [
-          "Run from danger",
+          "Run from danger and hide away quickly",
           "Fight with friends",
           "Be brave and love our country",
           "Ignore problems"
@@ -1457,7 +1457,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Where was Sonia playing?",
         "options": [
-          "In the school",
+          "In the school playground",
           "In the backyard",
           "In the market",
           "In a temple"
@@ -1481,7 +1481,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Which word means 'not at ease'?",
         "options": [
-          "curious",
+          "extremely curious",
           "colourful",
           "beautiful",
           "uncomfortable"
@@ -1553,7 +1553,7 @@ StudyData.addPractice(5, "englishpb", {
       {
         "q": "Why should we tell our safe circle?",
         "options": [
-          "To scare them",
+          "To scare them and have some fun",
           "To play a game",
           "To stay silent",
           "They will protect us and help"

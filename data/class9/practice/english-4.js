@@ -2,18 +2,18 @@
 StudyData.addPractice(9, "english", {
   "how-i-taught-my-grandmother-to-read": {
     mcq: [
-      {"q":"In which region does the narrator spend her holidays with her grandparents?","options":["North Karnataka","Rajasthan","Kerala","Assam"],"answer":0,"explain":"The narrator stayed in a village in north Karnataka.","level":1},
+      {"q":"In which region does the narrator spend her holidays with her grandparents?","options":["North Karnataka","Southern Rajasthan","Kerala","Assam"],"answer":0,"explain":"The narrator stayed in a village in north Karnataka.","level":1},
       {"q":"What does the Kannada word 'Avva' mean?","options":["Teacher","Sister","Mother","Friend"],"answer":2,"explain":"The narrator uses it for her grandmother, and it means mother in that dialect.","level":1},
       {"q":"How did the magazines and papers reach the village?","options":["By bus, a day late","By train every morning","By post on weekends","By a local boy on a bicycle"],"answer":0,"explain":"The transport system was poor, so papers came by bus in the afternoon and the weekly a day late.","level":1},
       {"q":"Who wrote the novel Kashi Yatre?","options":["Sudha Murty","Irene Chua","Triveni","Temsula Ao"],"answer":2,"explain":"Triveni was a popular Kannada writer; Sudha Murty is the author of the lesson.","level":1},
-      {"q":"What does Avva do when she hears each new episode?","options":["Writes a review","Discusses it with her friends","Sells the magazine","Forgets it quickly"],"answer":1,"explain":"She joined friends at the temple courtyard to talk about the latest episode.","level":2},
-      {"q":"What does the old lady in Kashi Yatre finally do with her savings?","options":["Buys a house","Travels to Kashi","Donates them to a temple","Gives them for an orphan girl's wedding"],"answer":3,"explain":"She puts the girl's happiness above her pilgrimage.","level":2},
-      {"q":"Why does the narrator say Avva 'could repeat the entire text by heart'?","options":["To show she was bored","To show her strong memory and absorption","To show she could already read","To show she disliked the story"],"answer":1,"explain":"It shows how closely she listened even without reading.","level":2},
+      {"q":"What does Avva do when she hears each new episode?","options":["Writes a long review for the magazine","Discusses it with her friends","Sells the magazine","Forgets it quickly"],"answer":1,"explain":"She joined friends at the temple courtyard to talk about the latest episode.","level":2},
+      {"q":"What does the old lady in Kashi Yatre finally do with her savings?","options":["Buys a small house in the village for herself","Travels to Kashi","Donates them to a temple","Gives them for an orphan girl's wedding"],"answer":3,"explain":"She puts the girl's happiness above her pilgrimage.","level":2},
+      {"q":"Why does the narrator say Avva 'could repeat the entire text by heart'?","options":["To show she was bored and tired of the story","To show her strong memory and absorption","To show she could already read","To show she disliked the story"],"answer":1,"explain":"It shows how closely she listened even without reading.","level":2},
       {"q":"Which statement best describes Avva's reaction to the narrator's teasing?","options":["She became angry and gave up","She cried and left","She asked a neighbour to teach her","She stayed calm and unchanged in her resolve"],"answer":3,"explain":"Avva only smiled and said age is no bar for learning.","level":2},
-      {"q":"Why is the reversal of touching feet significant?","options":["It shows the narrator was careless","It was an ordinary custom","It shows respect for knowledge over age","It was a mistake"],"answer":2,"explain":"Elders normally do not touch youngsters' feet; Avva honoured her teacher.","level":2},
-      {"q":"Rani, aged 55, is shy about learning to use a smartphone because her grandchildren might laugh. Which line from the lesson would best encourage her?","options":["For learning there is no age bar","Money cannot buy happiness","Elders should avoid new things","Teachers must be young"],"answer":0,"explain":"Avva's words apply to any age and any skill.","level":3},
-      {"q":"Which pair of words best describes Avva's character?","options":["Cruel and proud","Lazy and careless","Determined and independent","Fearful and silent"],"answer":2,"explain":"She sets a deadline and works hard to be independent.","level":3},
-      {"q":"What is the author hinting at by saying she later became a Computer Science teacher?","options":["Her first student helped shape her career","She never wanted to teach","Computer science is easy","She forgot Avva"],"answer":0,"explain":"She notes that Avva was her first student, hinting at a lifelong role as teacher.","level":3}
+      {"q":"Why is the reversal of touching feet significant?","options":["It shows the narrator was careless and rude","It was an ordinary custom","It shows respect for knowledge over age","It was a mistake"],"answer":2,"explain":"Elders normally do not touch youngsters' feet; Avva honoured her teacher.","level":2},
+      {"q":"Rani, aged 55, is shy about learning to use a smartphone because her grandchildren might laugh. Which line from the lesson would best encourage her?","options":["For learning there is no age bar","Money cannot buy happiness or good health","Elders should avoid new things","Teachers must be young"],"answer":0,"explain":"Avva's words apply to any age and any skill.","level":3},
+      {"q":"Which pair of words best describes Avva's character?","options":["Cruel, proud and bad-tempered","Lazy and careless","Determined and independent","Fearful and silent"],"answer":2,"explain":"She sets a deadline and works hard to be independent.","level":3},
+      {"q":"What is the author hinting at by saying she later became a Computer Science teacher?","options":["Her first student helped shape her career","She never wanted to teach anyone at all in her life","Computer science is easy","She forgot Avva"],"answer":0,"explain":"She notes that Avva was her first student, hinting at a lifelong role as teacher.","level":3}
     ],
     written: [
       {"q":"Whom did Avva have to depend on to read Kashi Yatre?","a":"The narrator, her granddaughter.","marks":1},
@@ -31,13 +31,13 @@ StudyData.addPractice(9, "english", {
       {"q":"Subramania Bharati wrote originally in","options":["Hindi","Telugu","Bengali","Tamil"],"answer":3,"explain":"He was a Tamil poet.","level":1},
       {"q":"Which feature of nature is called mighty in the poem?","options":["Western Ghats","Himavant","Vindhyas","Nilgiris"],"answer":1,"explain":"The Himalayas are called the mighty Himavant.","level":1},
       {"q":"What is the poem a tribute to?","options":["A river","A king","A season","India"],"answer":3,"explain":"It praises Bharat.","level":1},
-      {"q":"What does 'peerless' mean?","options":["Very noisy","Without equal","Ancient","Brave"],"answer":1,"explain":"The poet says nobody can match the land.","level":1},
+      {"q":"What does 'peerless' mean?","options":["Very noisy and loud","Without equal","Ancient","Brave"],"answer":1,"explain":"The poet says nobody can match the land.","level":1},
       {"q":"In 'Many a sage has sanctified this land', 'sanctified' means","options":["Made holy","Made famous","Made rich","Made old"],"answer":0,"explain":"Sages have blessed and purified the land.","level":2},
-      {"q":"Why does the poet ask which river can match the Ganga?","options":["Because he does not know","To criticise rivers","To stress her unmatched grace","To start a debate"],"answer":2,"explain":"The rhetorical question shows she is the best.","level":2},
-      {"q":"The line about the Buddha preaching dhamma refers to India's","options":["Spiritual heritage","Military power","Trade","Modern cities"],"answer":0,"explain":"It mentions religious and philosophical teachers.","level":2},
+      {"q":"Why does the poet ask which river can match the Ganga?","options":["Because he does not know the rivers well","To criticise rivers","To stress her unmatched grace","To start a debate"],"answer":2,"explain":"The rhetorical question shows she is the best.","level":2},
+      {"q":"The line about the Buddha preaching dhamma refers to India's","options":["Spiritual heritage","Military power and strength","Trade","Modern cities"],"answer":0,"explain":"It mentions religious and philosophical teachers.","level":2},
       {"q":"The repeated line praising the land works as a","options":["Rhyme error","Stage direction","Refrain","Footnote"],"answer":2,"explain":"Repetition reinforces the pride.","level":2},
-      {"q":"The poem treats Bharat as a woman. This device is","options":["Alliteration","Personification","Onomatopoeia","Irony"],"answer":1,"explain":"The land is spoken of as 'she'.","level":2},
-      {"q":"Which idea best captures the poem's view of India's greatness?","options":["Only military might","Only wealth","Only modern technology","Nature and knowledge together"],"answer":3,"explain":"The poem joins mountains and rivers with scriptures and sages.","level":3},
+      {"q":"The poem treats Bharat as a woman. This device is","options":["Alliteration and rhyme","Personification","Onomatopoeia","Irony"],"answer":1,"explain":"The land is spoken of as 'she'.","level":2},
+      {"q":"Which idea best captures the poem's view of India's greatness?","options":["Only military might and weapons of war","Only wealth","Only modern technology","Nature and knowledge together"],"answer":3,"explain":"The poem joins mountains and rivers with scriptures and sages.","level":3},
       {"q":"A visitor to India says 'What a fine country; there are great rivers and old wisdom'. Which poem lines match?","options":["The Buddha and the warriors only","The Ganga and the Upanishads","Music alone","The golden sun only"],"answer":1,"explain":"These match the rivers and scriptures praised.","level":3},
       {"q":"How does the translation of the poem reflect India's diversity?","options":["It is written in Hindi","It uses folk words","It is a song","A Tamil poem is read by students across India"],"answer":3,"explain":"It shows a regional poet speaking for the whole nation.","level":3}
     ],
@@ -55,14 +55,14 @@ StudyData.addPractice(9, "english", {
   "the-pot-maker": {
     mcq: [
       {"q":"Who is Sentila's mother?","options":["Onula","Mesoba","Arenla","Sentila's aunt"],"answer":2,"explain":"Arenla is Sentila's mother; Onula supervises the dormitory.","level":1},
-      {"q":"Why did Arenla discourage pottery?","options":["It brought little money for hard work","The clay was unavailable","Pottery was banned","She disliked clay"],"answer":0,"explain":"She said the labour was heavy and the reward was a pittance.","level":1},
+      {"q":"Why did Arenla discourage pottery?","options":["It brought little money for hard work","The clay was unavailable in the nearby hills","Pottery was banned","She disliked clay"],"answer":0,"explain":"She said the labour was heavy and the reward was a pittance.","level":1},
       {"q":"Which tool does Sentila learn to use to dig clay?","options":["A hammer","A needle","A dao","A spade made of iron"],"answer":2,"explain":"She digs the clay with a dao.","level":1},
       {"q":"Who finally helps Sentila shape her pot?","options":["Onula","The village council","Her father","A potter from another village"],"answer":0,"explain":"Onula showed her how.","level":1},
       {"q":"Why did the village elders tell Mesoba that skills do not 'belong' to one person?","options":["Pot making is free","Experts must charge less","Pots belong to the council","Such skills symbolise community tradition and must be passed on"],"answer":3,"explain":"They stressed the duty to pass the skill on.","level":2},
-      {"q":"What was the problem with Sentila's first pots with Onula?","options":["The clay was dry","The mouth of the pot was wrong","The pot was too big","It cracked in the kiln"],"answer":1,"explain":"Onula pointed out the shape of the mouth.","level":2},
-      {"q":"How did Sentila learn to shape the mouth of a pot?","options":["By reading a book","By guesswork","By asking the council","By watching her mother carefully"],"answer":3,"explain":"Onula advised her to watch her mother's technique.","level":2},
-      {"q":"Why did Arenla go out saying she had a headache?","options":["To visit the potter","To leave Sentila to work alone","To rest at the riverbank","To call Onula"],"answer":1,"explain":"Her action gave Sentila the chance to try on her own.","level":2},
-      {"q":"What did Sentila do on finding her mother not breathing?","options":["Ran to the village for help","Called Onula to the shed","Sent for the council","Continued making pots"],"answer":0,"explain":"She ran towards the common area and the villagers came.","level":2},
+      {"q":"What was the problem with Sentila's first pots with Onula?","options":["The clay was dry and full of small stones","The mouth of the pot was wrong","The pot was too big","It cracked in the kiln"],"answer":1,"explain":"Onula pointed out the shape of the mouth.","level":2},
+      {"q":"How did Sentila learn to shape the mouth of a pot?","options":["By reading a book on pottery from the village","By guesswork","By asking the council","By watching her mother carefully"],"answer":3,"explain":"Onula advised her to watch her mother's technique.","level":2},
+      {"q":"Why did Arenla go out saying she had a headache?","options":["To visit the potter in the next village","To leave Sentila to work alone","To rest at the riverbank","To call Onula"],"answer":1,"explain":"Her action gave Sentila the chance to try on her own.","level":2},
+      {"q":"What did Sentila do on finding her mother not breathing?","options":["Ran to the village for help","Called Onula to the shed behind the house","Sent for the council","Continued making pots"],"answer":0,"explain":"She ran towards the common area and the villagers came.","level":2},
       {"q":"Which detail shows Onula's perceptiveness?","options":["She baked pots herself","She scolded Sentila","She could not tell the two rows of pots apart","She told the council"],"answer":2,"explain":"She realised two people made the pots and understood the meaning.","level":3},
       {"q":"The ending suggests which theme most strongly?","options":["Tradition continues through the next generation","Weaving is better than pottery","Elders are always right","Girls cannot take risks"],"answer":0,"explain":"Both rows of pots look the same, showing the craft's survival.","level":3},
       {"q":"A village wants to keep its folk dance alive. Which lesson from the story would help most?","options":["Hide the dance from outsiders","Only family may learn","Experienced people should teach willing learners","Replace it with machines"],"answer":2,"explain":"The elders stressed that skills belong to the community and should be shared.","level":3}
@@ -80,18 +80,18 @@ StudyData.addPractice(9, "english", {
   },
   "gifts-of-grace-honouring-our-vocations": {
     mcq: [
-      {"q":"What is a 'vocation'?","options":["A holiday","A trade or skilled occupation","A song","A festival"],"answer":1,"explain":"The poem celebrates different occupations.","level":1},
-      {"q":"Who is the poet of this poem?","options":["Tagore","Swain","Roth","Anonymous"],"answer":3,"explain":"The poet is unknown.","level":1},
-      {"q":"Which workers brighten our lives with wires and cables?","options":["Boatmen","Electricians","Cooks","Shoemakers"],"answer":1,"explain":"Electricians work with cables and wires.","level":1},
+      {"q":"What is a 'vocation'?","options":["A holiday spent away from home with family","A trade or skilled occupation","A song","A festival"],"answer":1,"explain":"The poem celebrates different occupations.","level":1},
+      {"q":"Who is the poet of this poem?","options":["Tagore himself","Swain","Roth","Anonymous"],"answer":3,"explain":"The poet is unknown.","level":1},
+      {"q":"Which workers brighten our lives with wires and cables?","options":["Boatmen on the river","Electricians","Cooks","Shoemakers"],"answer":1,"explain":"Electricians work with cables and wires.","level":1},
       {"q":"Which workers return with tales of life at sea?","options":["Carpenters","Masons","Designers","Boatmen"],"answer":3,"explain":"Boatmen gather nets and sail.","level":1},
       {"q":"How is the poem structured?","options":["Strict sonnet","Rhyming couplets","Free verse","Limerick"],"answer":2,"explain":"Lines vary and have no fixed rhyme.","level":2},
-      {"q":"The repeated phrase 'I hear Bharat celebrating' is","options":["A refrain","A rhyme","An error","A title"],"answer":0,"explain":"It frames the poem.","level":2},
+      {"q":"The repeated phrase 'I hear Bharat celebrating' is","options":["A refrain","A rhyme scheme","An error","A title"],"answer":0,"explain":"It frames the poem.","level":2},
       {"q":"What does 'The voice of their vocation is the voice of their identity' imply?","options":["People are known by their voices","Songs are important","Work reflects who a person is","Only singers have identity"],"answer":2,"explain":"Work shapes identity.","level":2},
-      {"q":"Which word best describes the tone?","options":["Reverent and joyful","Doubtful","Furious","Bored"],"answer":0,"explain":"The speaker admires each worker.","level":2},
-      {"q":"Which sense does the poem appeal to most?","options":["Taste","Touch","Smell","Hearing"],"answer":3,"explain":"Words like hear, humming, singing and echoing dominate.","level":2},
-      {"q":"Why does the poet include workers like shoemakers and electricians as well as artists?","options":["To list jobs alphabetically","To show all honest work deserves respect","To criticise them","To show only crafts are valuable"],"answer":1,"explain":"The poem honours all vocations equally.","level":3},
+      {"q":"Which word best describes the tone?","options":["Reverent and joyful","Doubtful and uncertain","Furious","Bored"],"answer":0,"explain":"The speaker admires each worker.","level":2},
+      {"q":"Which sense does the poem appeal to most?","options":["Taste and smell","Touch","Smell","Hearing"],"answer":3,"explain":"Words like hear, humming, singing and echoing dominate.","level":2},
+      {"q":"Why does the poet include workers like shoemakers and electricians as well as artists?","options":["To list jobs in alphabetical order for fun","To show all honest work deserves respect","To criticise them","To show only crafts are valuable"],"answer":1,"explain":"The poem honours all vocations equally.","level":3},
       {"q":"Which action best honours the poem's message?","options":["Ignoring traditional crafts","Preferring only machine products","Choosing jobs for money alone","Appreciating a local potter and buying handmade goods"],"answer":3,"explain":"This supports artisans and values skilled labour.","level":3},
-      {"q":"How does varying line length affect the poem?","options":["It breaks the rhyme scheme by mistake","It gives a natural, conversational rhythm","It makes the poem a song","It makes lines unclear"],"answer":1,"explain":"Free verse with unequal lines sounds like a spoken celebration.","level":3}
+      {"q":"How does varying line length affect the poem?","options":["It breaks the rhyme scheme by mistake of the poet","It gives a natural, conversational rhythm","It makes the poem a song","It makes lines unclear"],"answer":1,"explain":"Free verse with unequal lines sounds like a spoken celebration.","level":3}
     ],
     written: [
       {"q":"Name two vocations mentioned in the poem.","a":"For example carpenters and boatmen.","marks":1},
@@ -107,16 +107,16 @@ StudyData.addPractice(9, "english", {
   "winds-of-change": {
     mcq: [
       {"q":"The word 'pankha' comes from","options":["Pankh, a feather","Pankhi, a flower","Panna, a gem","Pakka, solid"],"answer":0,"explain":"The article says pankh means a bird's feather.","level":1},
-      {"q":"Where can evidence of the pankhi be seen?","options":["Taj Mahal inscriptions","Harappan seals","Buddhist wall paintings at Ajanta","Konark Temple only"],"answer":2,"explain":"The paintings date to the 2nd century CE.","level":1},
-      {"q":"Which material is used for Bengal's delicate fans?","options":["Sola pith","Leather","Brass","Silver"],"answer":0,"explain":"Sola is a spongy water plant.","level":1},
+      {"q":"Where can evidence of the pankhi be seen?","options":["Taj Mahal inscriptions on the walls","Harappan seals","Buddhist wall paintings at Ajanta","Konark Temple only"],"answer":2,"explain":"The paintings date to the 2nd century CE.","level":1},
+      {"q":"Which material is used for Bengal's delicate fans?","options":["Sola pith","Soft leather","Brass","Silver"],"answer":0,"explain":"Sola is a spongy water plant.","level":1},
       {"q":"What was a pankha used for in royal courts?","options":["Writing letters","Decorating windows","Fanning the king","Cooking"],"answer":2,"explain":"They were used to fan kings and deities.","level":1},
-      {"q":"How did pankhas spread across regions?","options":["By train","Through trade routes","By post","By royal order only"],"answer":1,"explain":"They became cultural goods distributed along trade routes.","level":2},
-      {"q":"The zardozi hand fan of Rajasthan is unusual for","options":["Mirror work","Bamboo","Wool","Glittering gold threadwork"],"answer":3,"explain":"Zardozi is rich gold embroidery.","level":2},
-      {"q":"Why are bead fans of Gujarat used as wall decorations?","options":["They are very large","They are dainty and colourful","They are made of leather","They are heavy"],"answer":1,"explain":"The article calls them dainty and decorative.","level":2},
-      {"q":"What threatens the pankha tradition today?","options":["War","Lack of materials","Government rules","Technology and changing preferences"],"answer":3,"explain":"New inventions reduce use of hand fans.","level":2},
-      {"q":"What does the writer mean by the 'cultural core' of a region?","options":["Its map","Its weather","Its values and traditions shown in craft","Its currency"],"answer":2,"explain":"Fan structure reflects local culture.","level":2},
+      {"q":"How did pankhas spread across regions?","options":["By train across the country","Through trade routes","By post","By royal order only"],"answer":1,"explain":"They became cultural goods distributed along trade routes.","level":2},
+      {"q":"The zardozi hand fan of Rajasthan is unusual for","options":["Mirror work with tiny beads","Bamboo","Wool","Glittering gold threadwork"],"answer":3,"explain":"Zardozi is rich gold embroidery.","level":2},
+      {"q":"Why are bead fans of Gujarat used as wall decorations?","options":["They are very large and sturdy","They are dainty and colourful","They are made of leather","They are heavy"],"answer":1,"explain":"The article calls them dainty and decorative.","level":2},
+      {"q":"What threatens the pankha tradition today?","options":["War and fighting in many parts of the region","Lack of materials","Government rules","Technology and changing preferences"],"answer":3,"explain":"New inventions reduce use of hand fans.","level":2},
+      {"q":"What does the writer mean by the 'cultural core' of a region?","options":["Its map, borders and boundaries drawn on a chart","Its weather","Its values and traditions shown in craft","Its currency"],"answer":2,"explain":"Fan structure reflects local culture.","level":2},
       {"q":"Which step helps preserve pankha making?","options":["Workshops and exhibitions","Banning machines","Selling to foreigners only","Replacing fans with TVs"],"answer":0,"explain":"The article suggests these initiatives.","level":3},
-      {"q":"A mela displays palm-leaf, bamboo and silk fans. Which idea from the lesson does it show?","options":["All fans are alike","Fans are modern inventions","Materials and designs vary by region","Only royals used fans"],"answer":2,"explain":"Different places use different materials.","level":3},
+      {"q":"A mela displays palm-leaf, bamboo and silk fans. Which idea from the lesson does it show?","options":["All fans are alike in every part of India","Fans are modern inventions","Materials and designs vary by region","Only royals used fans"],"answer":2,"explain":"Different places use different materials.","level":3},
       {"q":"Why does the article describe how pankhas moved from personal use to livelihood?","options":["To show craft can sustain artisans","To criticise sellers","To prove fans are expensive","To suggest fans are old-fashioned"],"answer":0,"explain":"It explains the new commercial role.","level":3}
     ],
     written: [
@@ -132,7 +132,7 @@ StudyData.addPractice(9, "english", {
   },
   "canvas-of-soil": {
     mcq: [
-      {"q":"The poem compares soil to","options":["A frame","A statue","A mirror","A palette"],"answer":3,"explain":"The earth is a palette rich and deep.","level":1},
+      {"q":"The poem compares soil to","options":["A wooden frame","A statue","A mirror","A palette"],"answer":3,"explain":"The earth is a palette rich and deep.","level":1},
       {"q":"What is the rhyme scheme?","options":["ABAB","AABB","ABBA","Free verse"],"answer":1,"explain":"The poem is in rhyming couplets.","level":1},
       {"q":"Who wrote the poem?","options":["Robert Frost","Rabindranath Tagore","Bryanna T. Perkins","Maya Anthony"],"answer":3,"explain":"The poet is Maya Anthony.","level":1},
       {"q":"Which season is awaited?","options":["Winter","Spring","Autumn","Monsoon"],"answer":1,"explain":"Seeds await spring's vibrant hue.","level":1},
@@ -140,8 +140,8 @@ StudyData.addPractice(9, "english", {
       {"q":"Which phrase is a metaphor?","options":["As bright as a flower","Like a painting","Brushstrokes of seeds","Quiet as a mouse"],"answer":2,"explain":"It states seeds are brushstrokes without 'like' or 'as'.","level":2},
       {"q":"What does 'Each plot, a canvas wide' suggest?","options":["Every garden is a place for creativity","Gardens are small","Canvas is cheap","Plots are for sale"],"answer":0,"explain":"It compares plots to artists' canvases.","level":2},
       {"q":"The mood of the poem is","options":["Gloomy","Tense","Joyful","Angry"],"answer":2,"explain":"It celebrates colour and growth.","level":2},
-      {"q":"Why are blossoms described as dancing in the morning light?","options":["To show they are dying","To give movement and life to them","To show wind","To show fear"],"answer":1,"explain":"Personification and imagery bring the garden alive.","level":2},
-      {"q":"If the poem is read as an allegory, the garden may stand for","options":["A shopping mall","A school","A war","Life's journey and growth"],"answer":3,"explain":"Allegory gives deeper meaning beyond a garden.","level":3},
+      {"q":"Why are blossoms described as dancing in the morning light?","options":["To show they are dying in the sunlight","To give movement and life to them","To show wind","To show fear"],"answer":1,"explain":"Personification and imagery bring the garden alive.","level":2},
+      {"q":"If the poem is read as an allegory, the garden may stand for","options":["A shopping mall in the city","A school","A war","Life's journey and growth"],"answer":3,"explain":"Allegory gives deeper meaning beyond a garden.","level":3},
       {"q":"Which line best shows art and life are joined?","options":["Palette of earth","Where art and life coincide","Shades of green","Dancing in the morning light"],"answer":1,"explain":"It states directly that they meet in the garden.","level":3},
       {"q":"A student paints a garden after planting seeds. How does this relate to the poem?","options":["The poem rejects painting","The poem is about farming for profit","The poem warns of rain","Gardening and painting are both creative acts"],"answer":3,"explain":"Both create beauty from simple materials.","level":3}
     ],
@@ -158,16 +158,16 @@ StudyData.addPractice(9, "english", {
   },
   "vitamin-m": {
     mcq: [
-      {"q":"What does Ravi's mother wish someone would invent?","options":["A walking stick","A new medicine for fever","A memory vitamin for old people","A talking clock"],"answer":2,"explain":"She wanted Vitamin-M to improve memory.","level":1},
-      {"q":"Grandpa's walking stick has a handle shaped like","options":["An eagle's head","A lion","A snake","A flower"],"answer":0,"explain":"It was brass and carved as an eagle's head.","level":1},
+      {"q":"What does Ravi's mother wish someone would invent?","options":["A walking stick","A new medicine for fever and cold","A memory vitamin for old people","A talking clock"],"answer":2,"explain":"She wanted Vitamin-M to improve memory.","level":1},
+      {"q":"Grandpa's walking stick has a handle shaped like","options":["An eagle's head","A roaring lion's head","A snake","A flower"],"answer":0,"explain":"It was brass and carved as an eagle's head.","level":1},
       {"q":"What is Grandpa's favourite game?","options":["Carrom","Cricket","Chess","Ludo"],"answer":2,"explain":"He played a great game of chess.","level":1},
-      {"q":"Who tricked Ravi on the bus?","options":["A man wearing Grandpa's cap","A conductor","A boy","A vendor"],"answer":0,"explain":"The stranger had a cap just like Grandpa's.","level":1},
+      {"q":"Who tricked Ravi on the bus?","options":["A man wearing Grandpa's cap","The bus conductor from the depot","A boy","A vendor"],"answer":0,"explain":"The stranger had a cap just like Grandpa's.","level":1},
       {"q":"Why was Grandpa brought to live with Ravi's family?","options":["He lost his job","He wanted a new house","Ravi missed him","He fell in the garden and lay outside all night"],"answer":3,"explain":"He was getting too old to live alone after the fall.","level":2},
-      {"q":"How does Grandpa show his sense of humour at the end?","options":["By hiding Ravi's book","By saying his daughter needs Vitamin-M","By scolding him","By ignoring them"],"answer":1,"explain":"He hints she forgot his birthday.","level":2},
-      {"q":"Why did Ravi decide to follow Grandpa?","options":["To spy for his mother","To buy him ice cream","To play a prank","To protect him without hurting his pride"],"answer":3,"explain":"He did not want to offend him but also not break his promise.","level":2},
-      {"q":"What was unusual about Grandpa's snack?","options":["He ate nothing","He ate things forbidden at home","He shared with Ravi","He skipped tea"],"answer":1,"explain":"He had sugary tea, bananas and ice cream.","level":2},
-      {"q":"Why did the vendors scold Ravi?","options":["He was hiding near their stalls","He stole goods","He sold goods","He broke a stall"],"answer":0,"explain":"They thought he was a new vendor or suspicious.","level":2},
-      {"q":"What does Grandpa's gift to Ravi hint?","options":["He wanted Ravi to be a lawyer","He disliked detective stories","He knew Ravi had been trailing him","He wanted to play chess"],"answer":2,"explain":"The book on avoiding being fooled is a joke on Ravi's trailing.","level":3},
+      {"q":"How does Grandpa show his sense of humour at the end?","options":["By hiding Ravi's favourite detective book","By saying his daughter needs Vitamin-M","By scolding him","By ignoring them"],"answer":1,"explain":"He hints she forgot his birthday.","level":2},
+      {"q":"Why did Ravi decide to follow Grandpa?","options":["To spy for his mother and report back to her","To buy him ice cream","To play a prank","To protect him without hurting his pride"],"answer":3,"explain":"He did not want to offend him but also not break his promise.","level":2},
+      {"q":"What was unusual about Grandpa's snack?","options":["He ate nothing at all on that day","He ate things forbidden at home","He shared with Ravi","He skipped tea"],"answer":1,"explain":"He had sugary tea, bananas and ice cream.","level":2},
+      {"q":"Why did the vendors scold Ravi?","options":["He was hiding near their stalls","He stole goods from their stalls","He sold goods","He broke a stall"],"answer":0,"explain":"They thought he was a new vendor or suspicious.","level":2},
+      {"q":"What does Grandpa's gift to Ravi hint?","options":["He wanted Ravi to become a famous lawyer","He disliked detective stories","He knew Ravi had been trailing him","He wanted to play chess"],"answer":2,"explain":"The book on avoiding being fooled is a joke on Ravi's trailing.","level":3},
       {"q":"What is the main conflict between Grandpa and Vidya?","options":["Care versus independence","Money versus time","City versus village only","School versus play"],"answer":0,"explain":"She worries; he wants to be treated like an adult.","level":3},
       {"q":"An elderly neighbour is always told to stay inside for safety. Which lesson from the story applies?","options":["Always forbid going out","Never help the elderly","Care should not take away dignity","Elders cannot decide"],"answer":2,"explain":"Grandpa resents being treated like a child.","level":3}
     ],
@@ -184,17 +184,17 @@ StudyData.addPractice(9, "english", {
   },
   "i-cannot-remember-my-mother": {
     mcq: [
-      {"q":"Who is the poet?","options":["Subramania Bharati","Rabindranath Tagore","David Roth","Charles Swain"],"answer":1,"explain":"The poem is by Tagore.","level":1},
-      {"q":"The speaker recalls a tune his mother","options":["Sang in the temple","Played on a flute","Whistled at night","Hummed while rocking his cradle"],"answer":3,"explain":"The tune hovered over his playthings.","level":1},
+      {"q":"Who is the poet?","options":["Subramania Bharati of Tamil Nadu","Rabindranath Tagore","David Roth","Charles Swain"],"answer":1,"explain":"The poem is by Tagore.","level":1},
+      {"q":"The speaker recalls a tune his mother","options":["Sang in the temple every evening","Played on a flute","Whistled at night","Hummed while rocking his cradle"],"answer":3,"explain":"The tune hovered over his playthings.","level":1},
       {"q":"What flower's smell reminds him of his mother?","options":["Rose","Shiuli","Lotus","Jasmine"],"answer":1,"explain":"Shiuli flowers in early autumn.","level":1},
-      {"q":"What does he feel spread across the sky?","options":["Her voice","Her laughter","Her hands","The stillness of her gaze"],"answer":3,"explain":"He looks at the blue distant sky.","level":1},
+      {"q":"What does he feel spread across the sky?","options":["Her voice","Her laughter and her voice","Her hands","The stillness of her gaze"],"answer":3,"explain":"He looks at the blue distant sky.","level":1},
       {"q":"Which sense is used in the second stanza?","options":["Hearing","Touch","Smell","Taste"],"answer":2,"explain":"The scent of shiuli is the focus.","level":2},
       {"q":"The line 'I cannot remember my mother' is repeated to","options":["Show absence while presenting her presence","Make the poem longer","Show anger","Make a joke"],"answer":0,"explain":"It frames each memory.","level":2},
       {"q":"The poem is written in","options":["Couplets","Sonnet form","Free verse","Ballad form"],"answer":2,"explain":"It has no regular rhyme scheme.","level":2},
-      {"q":"The mood of the poem is","options":["Wistful and tender","Joyful and noisy","Angry","Frightening"],"answer":0,"explain":"He feels loss and love.","level":2},
+      {"q":"The mood of the poem is","options":["Wistful and tender","Joyful, noisy and cheerful","Angry","Frightening"],"answer":0,"explain":"He feels loss and love.","level":2},
       {"q":"Why does the poet link the scent to the morning service in the temple?","options":["Temples smell of flowers only","He disliked temples","He wanted to pray","The smell brings back peaceful moments with mother"],"answer":3,"explain":"Sensory memory ties scent and mother.","level":2},
       {"q":"How does the poem show presence and absence coexisting?","options":["He sees her daily","He cannot remember her but feels her through senses","He forgets her fully","He hears her speaking"],"answer":1,"explain":"The senses make her felt.","level":3},
-      {"q":"Which statement best captures the central idea?","options":["Childhood is forgotten","Nature is cruel","Music is powerful","Love lives on in sensory memory"],"answer":3,"explain":"Even without clear memory, parental love stays with us.","level":3},
+      {"q":"Which statement best captures the central idea?","options":["Childhood is forgotten as one grows","Nature is cruel","Music is powerful","Love lives on in sensory memory"],"answer":3,"explain":"Even without clear memory, parental love stays with us.","level":3},
       {"q":"Meera smells her late grandmother's perfume in a shop and tears up. Which line parallels this?","options":["The tune of a song","The smell of shiuli flowers brings his mother","The blue sky","His bedroom window"],"answer":1,"explain":"Smell calls up emotional memory.","level":3}
     ],
     written: [
@@ -210,17 +210,17 @@ StudyData.addPractice(9, "english", {
   },
   "the-world-of-limitless-possibilities": {
     mcq: [
-      {"q":"Whom does the interview feature?","options":["Dr. Deepa Malik","Sheetal Devi","Sudha Murty","Mitra Phukan"],"answer":0,"explain":"Dr. Deepa Malik is the Paralympian interviewed.","level":1},
+      {"q":"Whom does the interview feature?","options":["Dr. Deepa Malik","Sheetal Devi of Jammu","Sudha Murty","Mitra Phukan"],"answer":0,"explain":"Dr. Deepa Malik is the Paralympian interviewed.","level":1},
       {"q":"What medal did she win at Rio 2016?","options":["Gold in javelin","Bronze in swimming","Silver in shot-put","Silver in archery"],"answer":2,"explain":"Her breakthrough was the silver in shot-put.","level":1},
       {"q":"What does 'trailblazer' mean?","options":["A pioneer","A runner","A teacher","A coach"],"answer":0,"explain":"The interviewer calls her the first Indian woman Paralympic medallist.","level":1},
-      {"q":"What sport did she enjoy before para-athletics?","options":["Chess","Hockey","Swimming","Cycling"],"answer":2,"explain":"She says she had been a swimmer too.","level":1},
-      {"q":"What did doctors say after her surgery?","options":["She would recover fully","She would be bound to a wheelchair","She would walk with sticks","She should rest"],"answer":1,"explain":"She was paralysed waist down.","level":2},
-      {"q":"What was the main obstacle she names?","options":["Lack of coaches","Language","Weather","Societal perceptions"],"answer":3,"explain":"People often underestimated her.","level":2},
+      {"q":"What sport did she enjoy before para-athletics?","options":["Chess and carrom","Hockey","Swimming","Cycling"],"answer":2,"explain":"She says she had been a swimmer too.","level":1},
+      {"q":"What did doctors say after her surgery?","options":["She would recover fully in a few months","She would be bound to a wheelchair","She would walk with sticks","She should rest"],"answer":1,"explain":"She was paralysed waist down.","level":2},
+      {"q":"What was the main obstacle she names?","options":["Lack of good coaches and grounds","Language","Weather","Societal perceptions"],"answer":3,"explain":"People often underestimated her.","level":2},
       {"q":"According to her, how do Paralympics change attitudes?","options":["By giving free tickets","By showing the strength and skill of para-athletes","By banning criticism","By making rules"],"answer":1,"explain":"Seeing their skill breaks preconceived notions.","level":2},
-      {"q":"What does 'ability beyond disability' mean?","options":["Disability is rare","Only the able win","Ability is luck","Ability matters more than limitation"],"answer":3,"explain":"She believes physical limits do not define potential.","level":2},
-      {"q":"Which of these does she support?","options":["Motor racing","Film making","Equipment for para sportspersons","Stock trading"],"answer":2,"explain":"She provides equipment and awareness sessions.","level":2},
-      {"q":"Which statement shows her resilience?","options":["She turned obstacles into stepping stones","She waited for help","She stayed at home","She accepted defeat"],"answer":0,"explain":"She used support and fortitude to move forward.","level":3},
-      {"q":"Why does she call a setback an 'opportunity'?","options":["It brings luck","It ends the journey","It lets one prove strength","It gives rest"],"answer":2,"explain":"Her advice is to take each setback as a chance to show strength.","level":3},
+      {"q":"What does 'ability beyond disability' mean?","options":["Disability is rare in most countries today","Only the able win","Ability is luck","Ability matters more than limitation"],"answer":3,"explain":"She believes physical limits do not define potential.","level":2},
+      {"q":"Which of these does she support?","options":["Motor racing for young drivers in cities","Film making","Equipment for para sportspersons","Stock trading"],"answer":2,"explain":"She provides equipment and awareness sessions.","level":2},
+      {"q":"Which statement shows her resilience?","options":["She turned obstacles into stepping stones","She waited patiently for help from others to come","She stayed at home","She accepted defeat"],"answer":0,"explain":"She used support and fortitude to move forward.","level":3},
+      {"q":"Why does she call a setback an 'opportunity'?","options":["It brings luck and good fortune","It ends the journey","It lets one prove strength","It gives rest"],"answer":2,"explain":"Her advice is to take each setback as a chance to show strength.","level":3},
       {"q":"A school plans an inclusive sports day. Which idea from the interview helps most?","options":["Giving every student a fair chance regardless of ability","Excluding weak players","Awarding only winners","Cancelling events"],"answer":0,"explain":"Her goal is a society that treats everyone with dignity and a fair chance.","level":3}
     ],
     written: [
@@ -238,15 +238,15 @@ StudyData.addPractice(9, "english", {
     mcq: [
       {"q":"Who wrote the poem?","options":["Robert Langley","Charles Swain","Maya Anthony","David Roth"],"answer":3,"explain":"The poet is David Roth.","level":1},
       {"q":"How many stanzas does the poem have?","options":["Four","Eight","Six","Ten"],"answer":1,"explain":"There are eight four-line stanzas.","level":1},
-      {"q":"Which event was being run?","options":["The relay","The marathon","The long jump","The hundred-yard dash"],"answer":3,"explain":"It is described in stanza 3.","level":1},
-      {"q":"What banner hung above the field?","options":["World Cup","Special Olympics","Olympics","School Sports"],"answer":1,"explain":"The banner could not have been more fitting.","level":1},
-      {"q":"What does 'anguish' mean?","options":["Extreme pain","Joy","Speed","Surprise"],"answer":0,"explain":"The fallen runner cried in anguish.","level":2},
-      {"q":"What happened to the smallest runner?","options":["He won","He quit","He stumbled and fell","He was disqualified"],"answer":2,"explain":"He fell on the asphalt.","level":2},
-      {"q":"How did the other eight react?","options":["They turned back to help him","They kept running","They laughed","They called the coach"],"answer":0,"explain":"They pulled up one by one and returned.","level":2},
+      {"q":"Which event was being run?","options":["The relay race for teams","The marathon","The long jump","The hundred-yard dash"],"answer":3,"explain":"It is described in stanza 3.","level":1},
+      {"q":"What banner hung above the field?","options":["World Cup Football","Special Olympics","Olympics","School Sports"],"answer":1,"explain":"The banner could not have been more fitting.","level":1},
+      {"q":"What does 'anguish' mean?","options":["Extreme pain","Quiet joy and calm","Speed","Surprise"],"answer":0,"explain":"The fallen runner cried in anguish.","level":2},
+      {"q":"What happened to the smallest runner?","options":["He won the race easily","He quit","He stumbled and fell","He was disqualified"],"answer":2,"explain":"He fell on the asphalt.","level":2},
+      {"q":"How did the other eight react?","options":["They turned back to help him","They kept running to the finish","They laughed","They called the coach"],"answer":0,"explain":"They pulled up one by one and returned.","level":2},
       {"q":"How did they finish the race?","options":["Running hard","Carrying him","Holding hands","Walking apart"],"answer":2,"explain":"They joined hands and walked.","level":2},
-      {"q":"The speaker says 'as sure as I'm standing here'. This suggests","options":["He is lying","He witnessed the event","He is a runner","He is a judge"],"answer":1,"explain":"It shows personal assurance.","level":2},
+      {"q":"The speaker says 'as sure as I'm standing here'. This suggests","options":["He is lying about the event","He witnessed the event","He is a runner","He is a judge"],"answer":1,"explain":"It shows personal assurance.","level":2},
       {"q":"Why does the poem end with beaming faces and a standing ovation?","options":["To show anger","To show the crowd was bored","To end the race","To show joy shared by all"],"answer":3,"explain":"Everyone celebrates the kindness.","level":3},
-      {"q":"What does the poem suggest about real victory?","options":["It lies in speed","It lies in lifting others","It lies in gold","It lies in silence"],"answer":1,"explain":"The athletes chose empathy over competition.","level":3},
+      {"q":"What does the poem suggest about real victory?","options":["It lies in speed and strength","It lies in lifting others","It lies in gold","It lies in silence"],"answer":1,"explain":"The athletes chose empathy over competition.","level":3},
       {"q":"In a quiz, a student helps a nervous teammate answer instead of racing ahead. Which message from the poem does this reflect?","options":["Competition is wrong","Teams are useless","Rules are unimportant","Support matters more than winning alone"],"answer":3,"explain":"The poem values empathy over individual victory.","level":3}
     ],
     written: [
@@ -265,15 +265,15 @@ StudyData.addPractice(9, "english", {
       {"q":"Who wrote the play?","options":["Sudha Murty","Temsula Ao","Mitra Phukan","Asha Nehemiah"],"answer":2,"explain":"The play is by Mitra Phukan.","level":1},
       {"q":"What instrument does Iqbal play?","options":["Flute","Violin","Tabla","Keyboard"],"answer":0,"explain":"Iqbal plays the flute.","level":1},
       {"q":"Whose room is the setting of Act I?","options":["Peter's","Shruti's","Iqbal's","Avinash's"],"answer":2,"explain":"The first scene is in Iqbal's room.","level":1},
-      {"q":"What does Shruti's mother call the rehearsals mockingly?","options":["Practice classes","Concerts","Assemblies","Lessons"],"answer":0,"explain":"Leela jokes about the practice classes.","level":1},
+      {"q":"What does Shruti's mother call the rehearsals mockingly?","options":["Practice classes","Grand evening concerts","Assemblies","Lessons"],"answer":0,"explain":"Leela jokes about the practice classes.","level":1},
       {"q":"Why was Shruti worried in Act I?","options":["She lost her violin","She forgot the tune","She was ill","She had not told her father about the concert"],"answer":3,"explain":"She feared his reaction.","level":2},
-      {"q":"What is Nabin's rule about performances?","options":["One every week","One performance every six months","None at all","Two a year"],"answer":1,"explain":"He said more than that breeds contempt.","level":2},
-      {"q":"What did Nabin say about fusion music?","options":["It is a new art form","It is only for kids","It is easy","It is noise that loses musicality"],"answer":3,"explain":"He mocked it and left.","level":2},
-      {"q":"How did Nabin react to the group's performance in Act III?","options":["He left angrily","He clapped and praised them","He corrected the notes","He cried"],"answer":1,"explain":"He said it was soulful.","level":2},
+      {"q":"What is Nabin's rule about performances?","options":["One performance every single week","One performance every six months","None at all","Two a year"],"answer":1,"explain":"He said more than that breeds contempt.","level":2},
+      {"q":"What did Nabin say about fusion music?","options":["It is a new art form for the young","It is only for kids","It is easy","It is noise that loses musicality"],"answer":3,"explain":"He mocked it and left.","level":2},
+      {"q":"How did Nabin react to the group's performance in Act III?","options":["He left angrily without a word","He clapped and praised them","He corrected the notes","He cried"],"answer":1,"explain":"He said it was soulful.","level":2},
       {"q":"What did Leela remind Nabin of?","options":["His own rebellion against his family to play the violin","His student days","His wedding","His cooking"],"answer":0,"explain":"His father had objected to the violin.","level":2},
-      {"q":"What does 'bite the bullet' mean?","options":["Eat quickly","Run away","Face a difficult thing bravely","Argue"],"answer":2,"explain":"Shruti decides to tell her parents.","level":3},
+      {"q":"What does 'bite the bullet' mean?","options":["Eat quickly before it gets cold","Run away","Face a difficult thing bravely","Argue"],"answer":2,"explain":"Shruti decides to tell her parents.","level":3},
       {"q":"Which line shows Nabin's change of heart?","options":["I will root for your group at the concert","No is the answer","Work on your art","There remains nothing to say"],"answer":0,"explain":"He supports them at the end.","level":3},
-      {"q":"Why does the play end with a hug?","options":["It shows anger","It shows rehearsal","It shows reconciliation of generations","It shows farewell"],"answer":2,"explain":"Father and daughter accept each other.","level":3}
+      {"q":"Why does the play end with a hug?","options":["It shows anger and distance between generations","It shows rehearsal","It shows reconciliation of generations","It shows farewell"],"answer":2,"explain":"Father and daughter accept each other.","level":3}
     ],
     written: [
       {"q":"Name two members of the fusion group.","a":"For example Iqbal and Peter.","marks":1},
@@ -288,18 +288,18 @@ StudyData.addPractice(9, "english", {
   },
   "a-friend-found-in-music": {
     mcq: [
-      {"q":"Who is the poet?","options":["Maya Anthony","Bryanna T. Perkins","David Roth","Robert Langley"],"answer":1,"explain":"The poem is by Perkins.","level":1},
+      {"q":"Who is the poet?","options":["Maya Anthony Collins","Bryanna T. Perkins","David Roth","Robert Langley"],"answer":1,"explain":"The poem is by Perkins.","level":1},
       {"q":"Music is called an","options":["Mountain","Desert","Island","Ocean"],"answer":3,"explain":"Music is the ocean that pulls the speaker to the shore.","level":1},
       {"q":"What does 'feel blue' mean?","options":["Feel cold","Feel sad","Feel proud","Feel sleepy"],"answer":1,"explain":"It is an idiom for sadness.","level":1},
-      {"q":"What does music lift?","options":["Heavy weights","A flag","A curtain","The speaker's spirits"],"answer":3,"explain":"Music lifts my spirits.","level":1},
-      {"q":"How many times is the word 'music' repeated?","options":["Once","Never","Many times","Twice"],"answer":2,"explain":"The poet repeats it to stress its importance.","level":2},
+      {"q":"What does music lift?","options":["Heavy weights in a gym","A flag","A curtain","The speaker's spirits"],"answer":3,"explain":"Music lifts my spirits.","level":1},
+      {"q":"How many times is the word 'music' repeated?","options":["Once","Never","Many times","Only about twice"],"answer":2,"explain":"The poet repeats it to stress its importance.","level":2},
       {"q":"The line 'That moves me to the core' is","options":["A figure of speech with dual meaning","A literal move","A question","A rhyme error"],"answer":0,"explain":"'Moves' means emotionally touches and physically stirs.","level":2},
       {"q":"Which words rhyme in the first stanza?","options":["Ocean and music","Rhythm and pulls","Shore and core","Me and the"],"answer":2,"explain":"Lines two and four rhyme.","level":2},
-      {"q":"The mood is best described as","options":["Warm and thoughtful","Playful","Frightening","Amused"],"answer":0,"explain":"The speaker finds comfort in music.","level":2},
+      {"q":"The mood is best described as","options":["Warm and thoughtful","Playful and mischievous","Frightening","Amused"],"answer":0,"explain":"The speaker finds comfort in music.","level":2},
       {"q":"What do 'times when I'm most cheerful' show?","options":["She dislikes music then","Music is silent","She sings alone","Music is with her in good times too"],"answer":3,"explain":"Music is there in joy and sorrow.","level":2},
       {"q":"Which statement shows music as a friend?","options":["Music is a rhythm","Music is the needed friend when no one seems to care","Music pulls me to shore","Music is an ocean"],"answer":1,"explain":"It directly calls music a friend.","level":3},
-      {"q":"Which metaphor can be rewritten as the simile 'Music is as calming as therapy'?","options":["Music is the ocean","Music is the rhythm","Music is the shore","Music is the therapy"],"answer":3,"explain":"Each metaphor can be rewritten with 'as'.","level":3},
-      {"q":"Rahul listens to his favourite songs when he is stressed before exams. Which line fits?","options":["Music is the ocean","Music lifts my spirits to pull through","Music is a rhythm","Music is a shore"],"answer":1,"explain":"He uses music as emotional support.","level":3}
+      {"q":"Which metaphor can be rewritten as the simile 'Music is as calming as therapy'?","options":["Music is the vast ocean","Music is the rhythm","Music is the shore","Music is the therapy"],"answer":3,"explain":"Each metaphor can be rewritten with 'as'.","level":3},
+      {"q":"Rahul listens to his favourite songs when he is stressed before exams. Which line fits?","options":["Music is the ocean beside the old shore","Music lifts my spirits to pull through","Music is a rhythm","Music is a shore"],"answer":1,"explain":"He uses music as emotional support.","level":3}
     ],
     written: [
       {"q":"Name the poet of the poem.","a":"Bryanna T. Perkins.","marks":1},
@@ -314,18 +314,18 @@ StudyData.addPractice(9, "english", {
   },
   "carrier-of-words": {
     mcq: [
-      {"q":"What is a 'dhaani'?","options":["A hamlet in the desert","A bag","A coin","A dune"],"answer":0,"explain":"Dhaanis are far-flung hamlets.","level":1},
+      {"q":"What is a 'dhaani'?","options":["A hamlet in the desert","A bag made of camel leather","A coin","A dune"],"answer":0,"explain":"Dhaanis are far-flung hamlets.","level":1},
       {"q":"What does GDS stand for?","options":["Great Desert Service","General Delivery Scheme","Gramin Dak Sewak","Government Dak Station"],"answer":2,"explain":"It means rural postal worker.","level":1},
       {"q":"What is the weight limit of the postman's bag?","options":["28 kilos","10 kilos","50 kilos","100 kilos"],"answer":0,"explain":"Regulations stipulate 28 kilos.","level":1},
-      {"q":"Where is Khetaram's post office?","options":["Jaipur","Delhi","Somarad","Leh"],"answer":2,"explain":"He is the sole postman of Somarad Branch Post Office.","level":1},
-      {"q":"Why does a temperature of 50 degrees get recorded as 49.9?","options":["Thermometers fail","Fifty would mean a state holiday","It is a mistake","Rules say so"],"answer":1,"explain":"The article makes this point.","level":2},
+      {"q":"Where is Khetaram's post office?","options":["Jaipur city","Delhi","Somarad","Leh"],"answer":2,"explain":"He is the sole postman of Somarad Branch Post Office.","level":1},
+      {"q":"Why does a temperature of 50 degrees get recorded as 49.9?","options":["Thermometers fail in the great heat","Fifty would mean a state holiday","It is a mistake","Rules say so"],"answer":1,"explain":"The article makes this point.","level":2},
       {"q":"Since when were delivery agents accepted as GDS?","options":["1947","1991","2020","2001"],"answer":3,"explain":"Till 2001 they were delivery agents.","level":2},
-      {"q":"Why can Khetaram dwell on any threshold?","options":["He owns houses","The villagers trust him","He is a landlord","He is rich"],"answer":1,"explain":"Trust makes him a warmly received man.","level":2},
-      {"q":"What does a torn right corner on an envelope signify?","options":["A wedding","A parcel","A bill","News of death"],"answer":3,"explain":"It signals Ashubh Samachar.","level":2},
-      {"q":"Why does Khetaram tear the letter that brings bad news?","options":["He is angry","He cannot read","He believes bad news must be destroyed","It is a rule"],"answer":2,"explain":"He mutters that bad news must be destroyed.","level":2},
+      {"q":"Why can Khetaram dwell on any threshold?","options":["He owns many houses there","The villagers trust him","He is a landlord","He is rich"],"answer":1,"explain":"Trust makes him a warmly received man.","level":2},
+      {"q":"What does a torn right corner on an envelope signify?","options":["A wedding in the family","A parcel","A bill","News of death"],"answer":3,"explain":"It signals Ashubh Samachar.","level":2},
+      {"q":"Why does Khetaram tear the letter that brings bad news?","options":["He is angry with the sender and the news","He cannot read","He believes bad news must be destroyed","It is a rule"],"answer":2,"explain":"He mutters that bad news must be destroyed.","level":2},
       {"q":"Why is the money order important to desert families?","options":["Survival partly depends on money sent by relatives","They like stamps","It brings tourists","It is optional"],"answer":0,"explain":"The post office is their trusted channel.","level":3},
-      {"q":"What does Khetaram mean when he says 'Main tayyar hoon'?","options":["He is leaving","He is tired","He is ready for change and work","He is sick"],"answer":2,"explain":"He is ready even if his work changes.","level":3},
-      {"q":"A courier in a hill village walks miles with parcels in snow. Which quality parallels Khetaram?","options":["Dedication to duty in harsh conditions","Laziness","Greed","Indifference"],"answer":0,"explain":"Both serve remote communities.","level":3}
+      {"q":"What does Khetaram mean when he says 'Main tayyar hoon'?","options":["He is leaving the village for the city","He is tired","He is ready for change and work","He is sick"],"answer":2,"explain":"He is ready even if his work changes.","level":3},
+      {"q":"A courier in a hill village walks miles with parcels in snow. Which quality parallels Khetaram?","options":["Dedication to duty in harsh conditions","Laziness and a lack of interest in work","Greed","Indifference"],"answer":0,"explain":"Both serve remote communities.","level":3}
     ],
     written: [
       {"q":"Name the desert where Khetaram works.","a":"The Thar desert.","marks":1},
@@ -341,16 +341,16 @@ StudyData.addPractice(9, "english", {
   "words": {
     mcq: [
       {"q":"Who wrote the poem 'Words'?","options":["Rabindranath Tagore","Maya Anthony","Robert Langley","Charles Swain"],"answer":3,"explain":"The poem is by Swain.","level":1},
-      {"q":"Words are compared to","options":["Winter snow","Summer birds","Rivers","Mountains"],"answer":1,"explain":"They depart and leave empty air.","level":1},
+      {"q":"Words are compared to","options":["Winter snow on the hills","Summer birds","Rivers","Mountains"],"answer":1,"explain":"They depart and leave empty air.","level":1},
       {"q":"The heart is called a","options":["Prince","Painter","Teacher","Pilgrim"],"answer":3,"explain":"The poem uses the metaphor of a pilgrim.","level":1},
-      {"q":"Which does the poet say gives deeper joy?","options":["Many words","A little said truly","Loud speeches","Silence"],"answer":1,"explain":"Few true words matter.","level":1},
+      {"q":"Which does the poet say gives deeper joy?","options":["Many words said quickly","A little said truly","Loud speeches","Silence"],"answer":1,"explain":"Few true words matter.","level":1},
       {"q":"Which device is 'words, like summer birds'?","options":["Simile","Metaphor","Onomatopoeia","Alliteration"],"answer":0,"explain":"It uses 'like'.","level":2},
       {"q":"'The heart, a pilgrim upon earth' is a","options":["Simile","Pun","Metaphor","Hyperbole"],"answer":2,"explain":"The heart is directly equated to a pilgrim.","level":2},
-      {"q":"Plants that bloom but bear no fruit stand for","options":["Empty showy words","Rich harvests","True love","Strong friends"],"answer":0,"explain":"They are insincere speech.","level":2},
+      {"q":"Plants that bloom but bear no fruit stand for","options":["Empty showy words","Rich harvests of the field","True love","Strong friends"],"answer":0,"explain":"They are insincere speech.","level":2},
       {"q":"Why does the poet say words may be worth as little as weeds?","options":["Weeds are expensive","Words are loud","They cannot meet the heart's real need","Words are rare"],"answer":2,"explain":"Empty words are useless to the heart.","level":2},
-      {"q":"The tone is","options":["Playful","Reflective","Furious","Mocking"],"answer":1,"explain":"The poet thinks deeply about speech.","level":2},
-      {"q":"The 'voice that wins its sunny way' refers to","options":["A loud speaker","A singer","A radio","A kind voice that says few words"],"answer":3,"explain":"It cheers a lonely home.","level":3},
-      {"q":"The poem's last stanza suggests that if words satisfied hunger","options":["Everyone would be silent","The world would hold a feast","Nobody would work","Birds would sing"],"answer":1,"explain":"It uses a feast to show words lack substance.","level":3},
+      {"q":"The tone is","options":["Playful and joyful","Reflective","Furious","Mocking"],"answer":1,"explain":"The poet thinks deeply about speech.","level":2},
+      {"q":"The 'voice that wins its sunny way' refers to","options":["A loud speaker at a public meeting","A singer","A radio","A kind voice that says few words"],"answer":3,"explain":"It cheers a lonely home.","level":3},
+      {"q":"The poem's last stanza suggests that if words satisfied hunger","options":["Everyone would be silent for a day","The world would hold a feast","Nobody would work","Birds would sing"],"answer":1,"explain":"It uses a feast to show words lack substance.","level":3},
       {"q":"A friend gives long speeches but never helps. Which idea from the poem applies?","options":["Speeches are best","Friends should not talk","Silence is always right","Sincere actions matter more than many words"],"answer":3,"explain":"Value lies in sincerity.","level":3}
     ],
     written: [
@@ -366,15 +366,15 @@ StudyData.addPractice(9, "english", {
   },
   "follow-that-dream": {
     mcq: [
-      {"q":"Who is Ming?","options":["The writer's friend","A teacher","The writer's daughter","A neighbour"],"answer":2,"explain":"The letter is addressed to Ming.","level":1},
+      {"q":"Who is Ming?","options":["The writer's friend and colleague","A teacher","The writer's daughter","A neighbour"],"answer":2,"explain":"The letter is addressed to Ming.","level":1},
       {"q":"In what year is the letter dated?","options":["1995","2005","1985","1975"],"answer":0,"explain":"The date is 19 June 1995.","level":1},
       {"q":"How does the letter close?","options":["Yours truly","Sincerely","Love, Mum","Regards"],"answer":2,"explain":"It ends affectionately.","level":1},
-      {"q":"What collection is the letter from?","options":["My Daughter, My Friend","A Mother's Love","Dear Ming","Letters Home"],"answer":0,"explain":"The book is by Irene Chua.","level":1},
-      {"q":"How many years of focus are needed for world-class standard?","options":["Two","Five","Fifty","At least ten"],"answer":3,"explain":"The mother says at least ten years.","level":2},
-      {"q":"What does 'plunge' suggest?","options":["Retreat","Commit completely","Hesitate","Postpone"],"answer":1,"explain":"It means to throw oneself into the task.","level":2},
-      {"q":"Why do award winners thank others?","options":["Law requires it","They are shy","They forgot","A group supported them"],"answer":3,"explain":"A support network stood by them.","level":2},
+      {"q":"What collection is the letter from?","options":["My Daughter, My Friend","A Mother's Love and Care","Dear Ming","Letters Home"],"answer":0,"explain":"The book is by Irene Chua.","level":1},
+      {"q":"How many years of focus are needed for world-class standard?","options":["Two or three years","Five","Fifty","At least ten"],"answer":3,"explain":"The mother says at least ten years.","level":2},
+      {"q":"What does 'plunge' suggest?","options":["Retreat and run away","Commit completely","Hesitate","Postpone"],"answer":1,"explain":"It means to throw oneself into the task.","level":2},
+      {"q":"Why do award winners thank others?","options":["The law requires it of them","They are shy","They forgot","A group supported them"],"answer":3,"explain":"A support network stood by them.","level":2},
       {"q":"Why did some people not fulfil their dreams?","options":["They were lazy","Circumstances such as war and family duties changed their lives","They disliked dreams","They moved abroad"],"answer":1,"explain":"The mother gives examples.","level":2},
-      {"q":"What does 'wet blanket' mean here?","options":["Discouraging someone's dreams","A cold cloth","A towel","A joke"],"answer":0,"explain":"She says she will not dampen Ming's dreams.","level":2},
+      {"q":"What does 'wet blanket' mean here?","options":["Discouraging someone's dreams","A cold wet cloth for treating a fever","A towel","A joke"],"answer":0,"explain":"She says she will not dampen Ming's dreams.","level":2},
       {"q":"Why does the writer ask Ming to 'count the cost'?","options":["To save money","To count pennies","To judge the effort and sacrifice required","To finish early"],"answer":2,"explain":"A dream needs realistic planning.","level":3},
       {"q":"How does the writer's own experience support her view?","options":["Her dream changed and took ten years to realise","She never had a dream","She quit","She gave up writing"],"answer":0,"explain":"She chased her book for ten years.","level":3},
       {"q":"Ananya wants to be a cricketer but her family cannot afford a coach. Which advice from the letter applies?","options":["Give up immediately","Ignore all costs","Count the cost and seek a support network","Trade her dream"],"answer":2,"explain":"The letter stresses realism and support.","level":3}
@@ -392,18 +392,18 @@ StudyData.addPractice(9, "english", {
   },
   "believe-in-yourself": {
     mcq: [
-      {"q":"Who wrote the poem?","options":["Robert Frost","Robert Langley","Charles Swain","David Roth"],"answer":1,"explain":"The poet is Robert Langley.","level":1},
+      {"q":"Who wrote the poem?","options":["Robert Lee Frost","Robert Langley","Charles Swain","David Roth"],"answer":1,"explain":"The poet is Robert Langley.","level":1},
       {"q":"How many lines does each stanza have?","options":["Six","Eight","Two","Four"],"answer":3,"explain":"The poem has four-line stanzas.","level":1},
-      {"q":"What is called the hardest?","options":["The last step","The first step","The middle","Waiting"],"answer":1,"explain":"The first step is the hardest.","level":1},
+      {"q":"What is called the hardest?","options":["The very last step","The first step","The middle","Waiting"],"answer":1,"explain":"The first step is the hardest.","level":1},
       {"q":"How does the poet address the reader?","options":["As 'we'","As 'he'","As 'they'","As 'you'"],"answer":3,"explain":"The speaker speaks directly.","level":1},
-      {"q":"What does 'status quo' mean?","options":["A new job","A prize","The existing situation","A secret"],"answer":2,"explain":"The poem says there is ease in comfort.","level":2},
+      {"q":"What does 'status quo' mean?","options":["A new job in another city","A prize","The existing situation","A secret"],"answer":2,"explain":"The poem says there is ease in comfort.","level":2},
       {"q":"What may the future do, according to stanza two?","options":["Pull you forward or push you back in fear","Disappear","Wait","Sleep"],"answer":0,"explain":"The future may pull or push.","level":2},
-      {"q":"What is the tone of the poem?","options":["Sorrowful","Sarcastic","Motivational","Playful"],"answer":2,"explain":"It encourages action.","level":2},
-      {"q":"Why does the poet say 'There is no crowd to see'?","options":["Facing challenges is personal","Crowds are noisy","No one cares","Stage is empty"],"answer":0,"explain":"The challenge is private.","level":2},
-      {"q":"What does the poem suggest about comfort?","options":["It is always good","It brings success","It is dangerous","It prevents growth"],"answer":3,"explain":"We are not made for ease.","level":2},
+      {"q":"What is the tone of the poem?","options":["Sorrowful and gloomy","Sarcastic","Motivational","Playful"],"answer":2,"explain":"It encourages action.","level":2},
+      {"q":"Why does the poet say 'There is no crowd to see'?","options":["Facing challenges is personal","Crowds are noisy and rowdy at games","No one cares","Stage is empty"],"answer":0,"explain":"The challenge is private.","level":2},
+      {"q":"What does the poem suggest about comfort?","options":["It is always good for us","It brings success","It is dangerous","It prevents growth"],"answer":3,"explain":"We are not made for ease.","level":2},
       {"q":"Which line shows there is no going back?","options":["Step up to the challenge","There is no turning back","Difficult are choices","It's just you and the future"],"answer":1,"explain":"It stresses commitment.","level":3},
-      {"q":"What is the speaker's role?","options":["A stranger","A critic","A judge","A guide who encourages the reader"],"answer":3,"explain":"He understands the struggle.","level":3},
-      {"q":"Kabir hesitates to join a debate team out of fear. Which message applies?","options":["Wait for others","Take the first step and trust yourself","Avoid challenges","Stay comfortable"],"answer":1,"explain":"The poem urges self-belief.","level":3}
+      {"q":"What is the speaker's role?","options":["A stranger who warns the reader of danger","A critic","A judge","A guide who encourages the reader"],"answer":3,"explain":"He understands the struggle.","level":3},
+      {"q":"Kabir hesitates to join a debate team out of fear. Which message applies?","options":["Wait for others to take the first step before you","Take the first step and trust yourself","Avoid challenges","Stay comfortable"],"answer":1,"explain":"The poem urges self-belief.","level":3}
     ],
     written: [
       {"q":"Name the poet of the poem.","a":"Robert Langley.","marks":1},

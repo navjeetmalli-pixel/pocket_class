@@ -26,6 +26,8 @@ ctx.window = ctx;
 const run = (f) => vm.runInContext(fs.readFileSync(path.join(root, f), "utf8"), ctx, { filename: f });
 run("data/registry.js");
 run("js/gen.js");
+run("js/gen-lang.js");
+run("js/gen-sci.js");
 run("js/pics.js");
 run("js/picdict.js");
 vm.runInContext(

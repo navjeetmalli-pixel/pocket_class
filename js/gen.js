@@ -906,5 +906,22 @@ const Gen = (() => {
   // `count` fresh questions for a chapter, cycling through its generators.
   const questions = (cls, subject, chapterId, count, seed) => fromNames(forChapter(cls, subject, chapterId), count, seed);
 
-  return { rng, forChapter, make, questions, fromNames, names: Object.keys(G), MAP, vocab: { cats: CATS, items: VOCAB } };
+  // Extension hook for generator files loaded after this one (js/gen-lang.js):
+  //   Gen.add(name, (R) => ({ q, a, wrong, steps, kinds? }))                 registers a generator (name must be new)
+  //   Gen.mapChapters(subject, { cls: { chapterId: [generatorNames] } })      adds generators to chapters (merged, never replaced)
+  const names = Object.keys(G);
+  function add(name, fn) {
+    if (G[name]) throw new Error("generator exists: " + name);
+    G[name] = fn;
+    names.push(name);
+  }
+  function mapChapters(subject, byClass) {
+    const subj = (MAP[subject] = MAP[subject] || {});
+    for (const [cls, chapters] of Object.entries(byClass)) {
+      const cur = (subj[cls] = { ...(subj[cls] || {}) }); // copy: some maps share one object between two subjects
+      for (const [id, list] of Object.entries(chapters)) cur[id] = [...new Set([...(cur[id] || []), ...list])];
+    }
+  }
+
+  return { rng, forChapter, make, questions, fromNames, names, MAP, add, mapChapters, vocab: { cats: CATS, items: VOCAB } };
 })();

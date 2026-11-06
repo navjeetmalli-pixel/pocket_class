@@ -26,6 +26,8 @@ const ctx = { console, ICONS: {} };
 vm.createContext(ctx);
 const run = (file) => vm.runInContext(fs.readFileSync(path.join(root, file), "utf8"), ctx, { filename: file });
 run("js/gen.js");
+run("js/gen-lang.js");
+run("js/gen-sci.js");
 vm.runInContext("globalThis.Gen = Gen;", ctx);
 vm.runInContext(
   `

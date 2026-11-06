@@ -346,15 +346,22 @@ test("learning record: a game writes its answers and one game event", async ({ p
   await page.goto(`/#/play/10/science/light-reflection-and-refraction/quickfire`);
   await page.locator("[data-g=start]").click();
   await expect(page.locator(".game-hud")).toBeVisible();
-  for (let i = 0; i < 3; i++) {
+  // Quick-fire also mixes in generated questions with no fixed key, so "wrong" can land on the right
+  // answer by chance (then it moves on by itself). Keep going until three lives are lost.
+  for (let wrong = 0, guard = 0; wrong < 3 && guard < 30; guard++) {
     await answer(page, "wrong");
-    await page.locator('[data-act="next"]').click();
+    const fb = page.locator(".feedback.bad, .feedback.good").first();
+    await fb.waitFor();
+    if (await page.locator(".feedback.bad").count()) {
+      wrong++;
+      await page.locator('[data-act="next"]').click();
+    } else await expect(page.locator(".feedback.good")).toHaveCount(0);
   }
   await expect(page.locator(".game-result")).toBeVisible();
   const ev = (await learnOf(page)).events;
   const answers = ev.filter((e) => e.type === "answer");
-  expect(answers.length).toBeGreaterThanOrEqual(3);
-  expect(answers.every((e) => e.source === "game" && e.ok === false && e.chapter === "light-reflection-and-refraction")).toBe(true);
+  expect(answers.filter((e) => e.ok === false).length).toBe(3);
+  expect(answers.every((e) => e.source === "game" && e.chapter === "light-reflection-and-refraction")).toBe(true);
   expect(ev.filter((e) => e.type === "game")).toHaveLength(1);
   expect(ev.find((e) => e.type === "game")).not.toHaveProperty("obj");
 });

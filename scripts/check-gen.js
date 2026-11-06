@@ -2,7 +2,8 @@
 // Checks the question generators in js/gen.js:
 //   1. every generator, 500 seeds: question and answer present, 3 distinct wrong answers (none equal to the
 //      answer), no NaN / undefined / Infinity / exponent notation ("e-7") in any text, at least one step;
-//   2. every chapter id in Gen.MAP exists in that class's subject file under data/.
+//   2. every chapter id in Gen.MAP exists in that class's subject file under data/;
+//   3. the science / physics / chemistry / accountancy / economics numericals (js/gen-sci.js) are recomputed independently (scripts/audit-sci.js).
 // Usage: node scripts/check-gen.js   (exit code 1 on any problem; also run by node scripts/validate.js)
 
 const fs = require("fs");
@@ -17,6 +18,8 @@ const picsFile = path.join(root, "js", "pics.js");
 const hasPics = fs.existsSync(picsFile);
 if (hasPics) vm.runInContext(fs.readFileSync(picsFile, "utf8") + "\n;globalThis.Pics = typeof Pics !== 'undefined' ? Pics : undefined", ctx);
 const Gen = vm.runInContext(fs.readFileSync(path.join(root, "js", "gen.js"), "utf8") + "\n;Gen", ctx);
+vm.runInContext(fs.readFileSync(path.join(root, "js", "gen-lang.js"), "utf8"), ctx, { filename: "js/gen-lang.js" }); // English / Hindi / Punjabi grammar generators
+vm.runInContext(fs.readFileSync(path.join(root, "js", "gen-sci.js"), "utf8"), ctx, { filename: "js/gen-sci.js" }); // science, physics, chemistry, accountancy, economics numericals
 
 let problems = 0;
 const bad = (msg) => {
@@ -68,6 +71,9 @@ for (const name of Gen.names) {
   if (kinds.length) bad(`${name}: ${kinds.map((k) => `${k} ×${fails[k]}`).join("; ")} ${fails.__shown || ""}`);
 }
 
+// ---- 1b. the language word lists (js/gen-lang.js): no duplicates, conflicts or entries that break their own rule ----
+if (Gen.lang && Gen.lang.check) for (const msg of Gen.lang.check()) bad("word list: " + msg);
+
 // ---- 2. every MAP chapter exists, and every generator it names exists ----
 const loaded = {};
 function chapterIds(cls, subject) {
@@ -100,6 +106,10 @@ for (const [subject, byClass] of Object.entries(Gen.MAP)) {
     }
   }
 }
+
+// ---- 3. independent recomputation of the science / physics / chemistry / accounts / economics numericals (scripts/audit-sci.js) ----
+const audited = require("./audit-sci.js").audit(Gen, bad, 300);
+console.log(`Audit: ${audited} numerical questions recomputed from their own text`);
 
 console.log(`Generators: ${Gen.names.length} checked, ${made} questions made, ${entries} chapter mappings checked`);
 console.log(problems ? `${problems} problem(s) in generators` : "Generators OK");

@@ -17,7 +17,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Where did the second son go?",
         "options": [
-          "To the jungle",
+          "To the jungle beyond the hills",
           "To the city of grapes",
           "To the sea",
           "To the mountain"
@@ -30,7 +30,7 @@ StudyData.addPractice(4, "englishpb", {
         "q": "Which word means 'a person who takes the place of a king'?",
         "options": [
           "successor",
-          "minister",
+          "chief minister",
           "servant",
           "guard"
         ],
@@ -53,7 +53,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What did the king announce at the end?",
         "options": [
-          "A holiday",
+          "A holiday for all the people of the town",
           "A war",
           "The third son as the future king",
           "A feast"
@@ -65,7 +65,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Why did the third son close the doors and windows?",
         "options": [
-          "To keep the cat out",
+          "To keep the cat out of the big royal hall now",
           "To hide the candles",
           "So the light would fill the room properly",
           "To sleep"
@@ -79,7 +79,7 @@ StudyData.addPractice(4, "englishpb", {
         "options": [
           "It flew away",
           "It covered only a part of the space",
-          "It was wet",
+          "It flew away through the open window",
           "It was too heavy"
         ],
         "answer": 1,
@@ -101,7 +101,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Who watched the test in the big room?",
         "options": [
-          "Only the sons",
+          "Only the sons and the queen of the land",
           "Only the queen",
           "Only the servants",
           "The king, the sons and the ministers"
@@ -137,7 +137,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What is the main lesson of the story?",
         "options": [
-          "Money is everything",
+          "Money is everything in this whole world",
           "Wisdom is better than only effort",
           "Kings are always right",
           "Grapes are better than cotton"
@@ -186,7 +186,7 @@ StudyData.addPractice(4, "englishpb", {
         "q": "Where was Surjit going?",
         "options": [
           "To the grain market",
-          "To school",
+          "To school in the town",
           "To a temple",
           "To his house"
         ],
@@ -209,7 +209,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What does 'ignore' mean?",
         "options": [
-          "To help",
+          "To help and support",
           "To thank",
           "To shout",
           "To take no notice"
@@ -233,7 +233,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Which word means 'a young person'?",
         "options": [
-          "farmer",
+          "old farmer",
           "youngster",
           "minister",
           "pilot"
@@ -258,7 +258,7 @@ StudyData.addPractice(4, "englishpb", {
         "q": "What did the farmer do first when the cart got stuck?",
         "options": [
           "He tried to pull it out himself",
-          "He went home",
+          "He went home to bring some friends",
           "He slept",
           "He sold the wheat"
         ],
@@ -269,7 +269,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What does the story teach?",
         "options": [
-          "We should ignore others",
+          "We should ignore others completely",
           "We should never travel",
           "We should not farm",
           "We should help people in need"
@@ -281,7 +281,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "The opposite of 'weak' is",
         "options": [
-          "old",
+          "very old",
           "heavy",
           "strong",
           "tired"
@@ -305,7 +305,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Riya sees an old man struggling with heavy bags. What should she do?",
         "options": [
-          "Walk away",
+          "Walk away without a word",
           "Offer to help him",
           "Laugh",
           "Take a photo"
@@ -377,7 +377,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What colour light means 'wait'?",
         "options": [
-          "Red",
+          "Bright red",
           "Green",
           "White",
           "Yellow"
@@ -389,7 +389,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Who is a pedestrian?",
         "options": [
-          "A bus driver",
+          "A bus driver of the city transport",
           "A policeman in a car",
           "A person who walks on the road",
           "A pilot"
@@ -401,7 +401,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "When did Dad promise to take Raman out?",
         "options": [
-          "On Sunday",
+          "On Sunday morning",
           "On Saturday",
           "On Monday",
           "On Friday"
@@ -414,7 +414,7 @@ StudyData.addPractice(4, "englishpb", {
         "q": "What did Raman do hurriedly?",
         "options": [
           "Finished his breakfast",
-          "Wore his shoes",
+          "Wore his shoes and socks",
           "Cleaned the car",
           "Sang a song"
         ],
@@ -426,7 +426,7 @@ StudyData.addPractice(4, "englishpb", {
         "q": "What mistake did Dad make at the signal?",
         "options": [
           "He stopped on the zebra crossing",
-          "He drove fast",
+          "He drove fast on a very busy road",
           "He did not wear a seat belt",
           "He used a horn"
         ],
@@ -461,7 +461,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Why should vehicles stop before the zebra crossing?",
         "options": [
-          "To save petrol",
+          "To save petrol and money for the family",
           "So pedestrians can cross safely",
           "To rest",
           "To honk"
@@ -497,7 +497,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Dad says, 'We do not wear a seat belt for the policeman.' Which idea is the same?",
         "options": [
-          "Rules are only for police",
+          "Rules are only for the police and officers",
           "Rules are boring",
           "We do not need rules",
           "We follow rules to keep ourselves safe"
@@ -557,7 +557,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Where do players shoot the basketball?",
         "options": [
-          "Into a pit",
+          "Into a deep pit in the ground",
           "Over a wall",
           "Through the hoop",
           "Under a bench"
@@ -582,7 +582,7 @@ StudyData.addPractice(4, "englishpb", {
         "q": "Which word rhymes with 'pass'?",
         "options": [
           "class",
-          "ball",
+          "ball game",
           "hoop",
           "goal"
         ],
@@ -605,7 +605,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What happens if nobody passes the baton?",
         "options": [
-          "The race ends happily",
+          "The race ends happily for everyone",
           "The baton gets lost",
           "The race becomes faster",
           "The relay race cannot go on"
@@ -617,7 +617,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What do we share when we work together?",
         "options": [
-          "Our homework only",
+          "Our homework only, nothing else",
           "The rain",
           "The joy of what we have done",
           "A bus ticket"
@@ -665,7 +665,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Riya's class wants to clean the school garden. Which action shows teamwork?",
         "options": [
-          "One child does all",
+          "One child does all the work",
           "Nobody helps",
           "Everyone plays instead",
           "Everyone does a small part"
@@ -737,7 +737,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What does 'lush' mean?",
         "options": [
-          "Dry and brown",
+          "Dry and brown like a desert",
           "Thick and green",
           "Very small",
           "Very hot"
@@ -761,7 +761,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Which animals were swimming in the pond?",
         "options": [
-          "Fish",
+          "Many small fish",
           "Cows",
           "Frogs",
           "White ducks"
@@ -773,7 +773,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What word describes the walnut tree?",
         "options": [
-          "weak",
+          "very weak",
           "small",
           "strong",
           "wet"
@@ -833,7 +833,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Which words describe Kashmir in the lesson?",
         "options": [
-          "A desert",
+          "A dry and hot desert land",
           "A busy city",
           "A cold ocean",
           "Paradise on earth"
@@ -845,7 +845,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Riya asks why the sky is blue and the grass is green. What should she do like Rahim?",
         "options": [
-          "Stop asking",
+          "Stop asking so many questions",
           "Stay silent",
           "Ask questions and learn",
           "Argue"
@@ -918,7 +918,7 @@ StudyData.addPractice(4, "englishpb", {
         "q": "What had Simran played with her friends?",
         "options": [
           "Football",
-          "Cricket",
+          "Cricket match",
           "Kabaddi",
           "Hockey"
         ],
@@ -929,7 +929,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Which food should we avoid?",
         "options": [
-          "Fruits",
+          "Fresh fruits",
           "Milk",
           "Dal",
           "Junk food"
@@ -953,7 +953,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Which word means 'to take part'?",
         "options": [
-          "celebrate",
+          "celebrate wildly",
           "participate",
           "severe",
           "drain"
@@ -965,7 +965,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Why was Simran sad?",
         "options": [
-          "She lost her book",
+          "She lost her favourite storybook",
           "She missed the school function",
           "She got a bad mark",
           "She lost her friend"
@@ -1013,7 +1013,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "When should we wash our hands?",
         "options": [
-          "Never",
+          "Never, if the hands look clean",
           "Only on Sundays",
           "After using the toilet",
           "Only after sleeping"
@@ -1025,7 +1025,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Riya comes from playing in the garden and wants to eat. What should she do first?",
         "options": [
-          "Start eating",
+          "Start eating her snacks at once",
           "Wash her hands with soap",
           "Wipe hands on her shirt",
           "Eat quickly"
@@ -1097,7 +1097,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Who helped the gang plant trees?",
         "options": [
-          "The police",
+          "The local police",
           "The teacher",
           "The doctor",
           "The Panchayat"
@@ -1109,7 +1109,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What do crackers do to the environment?",
         "options": [
-          "Clean it",
+          "Clean it nicely",
           "Cool it",
           "Pollute it",
           "Water it"
@@ -1146,7 +1146,7 @@ StudyData.addPractice(4, "englishpb", {
         "q": "Why did Golu wash the burnt hand with water?",
         "options": [
           "Running water eases the burn",
-          "To make it dirty",
+          "To make it dirty and sticky all over",
           "To scare the boy",
           "To play"
         ],
@@ -1157,7 +1157,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Why is a Green Diwali good?",
         "options": [
-          "It is louder",
+          "It is louder and more fun",
           "It costs more",
           "It makes smoke",
           "It protects the earth"
@@ -1181,7 +1181,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Why did Sonu laugh?",
         "options": [
-          "He was angry",
+          "He was angry with Golu's mother",
           "He asked if Golu was afraid",
           "He was sleepy",
           "He was ill"
@@ -1193,7 +1193,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Golu said he was afraid for",
         "options": [
-          "a ghost",
+          "a ghost in the dark",
           "Mother Earth",
           "an exam",
           "a dog"
@@ -1289,7 +1289,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Whom did he feed with the money?",
         "options": [
-          "Soldiers",
+          "Brave soldiers",
           "Hungry sadhus",
           "Traders",
           "Teachers"
@@ -1302,7 +1302,7 @@ StudyData.addPractice(4, "englishpb", {
         "q": "Japji Sahib is recited as a",
         "options": [
           "morning prayer",
-          "night song",
+          "night-time folk song",
           "school poem",
           "war cry"
         ],
@@ -1313,7 +1313,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "'Vand Chhako' means",
         "options": [
-          "work hard",
+          "work hard all day long",
           "pray only",
           "travel far",
           "share with others"
@@ -1325,7 +1325,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Why did he spend the money on food for sadhus?",
         "options": [
-          "He was careless",
+          "He was careless with all his money",
           "He lost it",
           "He liked sadhus only",
           "He wanted to help the hungry"
@@ -1337,7 +1337,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What does 'Kirat Karo' teach?",
         "options": [
-          "Run a shop",
+          "Run a shop in the main town",
           "Sleep early",
           "Earn your living honestly",
           "Pray all day"
@@ -1385,7 +1385,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Riya shares her tiffin with a hungry classmate. Which teaching does she follow?",
         "options": [
-          "Kirat Karo",
+          "Kirat Karo only",
           "Naam Japo",
           "Udasi",
           "Vand Chhako"
@@ -1445,7 +1445,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "Which word rhymes with 'seas'?",
         "options": [
-          "ship",
+          "big ship",
           "trees",
           "free",
           "snow"
@@ -1481,7 +1481,7 @@ StudyData.addPractice(4, "englishpb", {
       {
         "q": "What are elves?",
         "options": [
-          "Big animals",
+          "Big animals found in a deep jungle",
           "Planets",
           "Teachers",
           "Tiny magical people in stories"

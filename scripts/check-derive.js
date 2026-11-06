@@ -38,6 +38,8 @@ for (let c = 1; c <= 12; c++) {
 }
 run("data/games/timelines.js");
 run("js/gen.js");
+run("js/gen-lang.js");
+run("js/gen-sci.js");
 
 // The interface dictionaries (js/i18n.js), loaded on their own the way check-labs does.
 const i18n = vm.createContext({ currentLang: () => "en", Store: undefined });

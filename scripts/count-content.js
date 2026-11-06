@@ -156,6 +156,8 @@ try {
   for (const [cls, subject] of counted) drun(`data/class${cls}/${subject}.js`);
   drun("data/games/timelines.js");
   drun("js/gen.js");
+  drun("js/gen-lang.js");
+  drun("js/gen-sci.js");
   vm.runInContext("const t = (s) => s; const I18N = {};", dctx);
   drun("js/labs/india-map.js");
   const Derive = vm.runInContext(read("js/derive.js") + "\n;Derive", dctx);
