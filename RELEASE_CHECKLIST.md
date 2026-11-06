@@ -8,7 +8,7 @@ Do these in order. Stop at the first failure and fix it before going on.
 - [ ] `node scripts/build-index.js --check`: no `data/class*/index.js` is stale. If it reports any, run `node scripts/build-index.js` and look at the diff.
 - [ ] `npm test`: the whole Playwright suite passes (phone and desktop). Run it a second time if anything failed once; a test that passes only sometimes is a bug to chase, not to ignore. First time on a machine: `npx playwright install chromium`.
 
-- [ ] `node scripts/count-content.js`: run before updating store text. It counts chapters, MCQs, written questions, solved examples, flashcards, diagrams, generators, games, topics and timeline events from the data files. Make the numbers in `README.md` match, rounded down ("over 46,000"). While Hindi and Punjabi are locked, `STORE_LISTING.md` uses `node scripts/count-content.js --store`.
+- [ ] `node scripts/count-content.js`: run before updating store text. It counts chapters, MCQs, written questions, solved examples, flashcards, diagrams, generators, games, topics and timeline events from the data files. Make the numbers in `README.md` match, rounded down ("over 48,000"). While Hindi and Punjabi are locked, `STORE_LISTING.md` uses `node scripts/count-content.js --store`.
 
 ## 2. Make installed copies update
 

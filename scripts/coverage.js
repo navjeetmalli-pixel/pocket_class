@@ -3,7 +3,9 @@
 // numbers instead of guesses. It writes:
 //   docs/coverage.csv   every chapter (open in a spreadsheet; filter on the "gaps" column)
 //   docs/COVERAGE.md    a summary per board, class and subject, plus how many chapters have each gap
-// Usage:  node scripts/coverage.js            (about a minute; --quick skips the question-to-objective mapping)
+// Usage:  node scripts/coverage.js            (a few seconds; --quick skips the question-to-objective mapping)
+//         node scripts/coverage.js --worklist out.json   also writes the chapters with gaps (once each, both boards
+//                                                         merged) with their counts and the objectives that have no question
 //
 // Columns of the CSV:
 //   quiz            MCQs in the chapter's own quiz
@@ -81,6 +83,7 @@ const csvCell = (v) => {
 };
 
 const rows = [];
+const work = new Map(); // "cls/subject/chapter" -> the chapter's gaps, for --worklist
 const subjectSum = new Map(); // "board|cls|subject" -> sums
 for (const board of ["cbse", "pseb"]) {
   D.setBoard(board);
@@ -106,13 +109,15 @@ for (const board of ["cbse", "pseb"]) {
         const auto = Object.values(k).reduce((a, b) => a + (b || 0), 0);
         const objs = O.forChapter(cls, subj.id, ch);
         let objEmpty = "";
+        let emptyObjs = [];
         if (!quick && objs.length > 1) {
           const hits = new Map(objs.map((o) => [o.id, 0]));
           for (const q of [...ch.quiz, ...p.mcq]) {
             const o = O.forQuestion(cls, subj.id, ch, q);
             if (o && hits.has(o.id)) hits.set(o.id, hits.get(o.id) + 1);
           }
-          objEmpty = [...hits.values()].filter((n) => n === 0).length;
+          emptyObjs = objs.filter((o) => hits.get(o.id) === 0).map((o) => ({ id: o.id, text: o.text }));
+          objEmpty = emptyObjs.length;
         }
         const quiz = (ch.quiz || []).length;
         const qa = (ch.qa || []).length;
@@ -133,6 +138,12 @@ for (const board of ["cbse", "pseb"]) {
           objectives: `${objs.length} ${objs.length && objs[0].derived ? "derived" : "hand"}`, objectives_without_questions: objEmpty,
           review, gaps: gaps.join(" "),
         });
+        if (gaps.length) {
+          const wk = `${cls}/${subj.id}/${ch.id}`;
+          const w = work.get(wk) || { cls, subject: subj.id, chapter: ch.id, title: ch.title, boards: [], gaps, mcq: mcqAll, hard: lv[2], long: wLong, emptyObjectives: emptyObjs };
+          w.boards.push(board);
+          work.set(wk, w);
+        }
         sum.chapters++;
         sum.mcq += mcqAll;
         sum.written += p.written.length + qa;
@@ -180,5 +191,10 @@ for (const s of subjectSum.values()) {
 fs.writeFileSync(path.join(root, "docs", "COVERAGE.md"), md.join("\n") + "\n");
 
 console.log(`${rows.length} rows -> docs/coverage.csv, summary -> docs/COVERAGE.md`);
+const wl = process.argv.indexOf("--worklist");
+if (wl > 0 && process.argv[wl + 1]) {
+  fs.writeFileSync(process.argv[wl + 1], JSON.stringify([...work.values()], null, 1));
+  console.log(`  ${work.size} chapters with gaps -> ${process.argv[wl + 1]}`);
+}
 if (labsSkipped.length) console.log(`  (labs not counted, they need a browser to load: ${labsSkipped.join(", ")})`);
 for (const [g, text] of Object.entries(GAPS)) console.log(`  ${String(gapTotal[g] || 0).padStart(5)}  ${g.padEnd(10)} ${text}`);
