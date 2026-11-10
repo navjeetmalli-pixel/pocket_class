@@ -1,4 +1,4 @@
-const { test, expect, seed, readStore, current, chaptersOf, playInstantQuiz } = require("./helpers");
+const { test, expect, seed, readStore, current, chaptersOf, playInstantQuiz, openParent } = require("./helpers");
 
 const CH = chaptersOf(10, "maths")[0];
 const DAY = 86400000;
@@ -167,7 +167,7 @@ test("progress: concept learning and exam readiness are shown separately after a
   await expect(box.locator(".rd-ch", { hasText: CH.title })).toContainText("Mock tests");
 
   // The parent page says the same in plain words, with no label on the child.
-  await page.goto("/#/parent");
+  await openParent(page);
   await expect(page.locator(".rd-parent")).toContainText("In mock tests");
   await expect(page.locator(".rd-parent")).toContainText("skills started");
 });
@@ -209,7 +209,7 @@ test("settings: Show streak switch hides the streak everywhere and never shames 
   await page.goto("/#/progress");
   await expect(page.locator(".stat", { hasText: "day streak" })).toHaveCount(0);
   await expect(page.locator(".stat", { hasText: "skills started" })).toBeVisible();
-  await page.goto("/#/parent");
+  await openParent(page);
   await expect(page.locator(".stat", { hasText: "day streak" })).toHaveCount(0);
 
   await page.goto("/#/settings");

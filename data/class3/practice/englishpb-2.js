@@ -18,7 +18,7 @@ StudyData.addPractice(3, "englishpb", {
         "q": "Who likes to read holy books?",
         "options": [
           "Ravi's grandmother",
-          "Ravi's mother",
+          "Ravi's grandfather",
           "Ravi's aunt",
           "Ravi's sister"
         ],
@@ -42,7 +42,7 @@ StudyData.addPractice(3, "englishpb", {
         "q": "Which word is a naming word?",
         "options": [
           "kind",
-          "read",
+          "running",
           "very",
           "school"
         ],
@@ -54,7 +54,7 @@ StudyData.addPractice(3, "englishpb", {
         "q": "How old is Ravi's sister?",
         "options": [
           "ten",
-          "five",
+          "eleven",
           "seven",
           "nine"
         ],
@@ -114,7 +114,7 @@ StudyData.addPractice(3, "englishpb", {
         "q": "Which person in Ravi's family is the oldest?",
         "options": [
           "His father",
-          "His uncle",
+          "His eldest uncle",
           "His grandfather",
           "His brother"
         ],
@@ -233,7 +233,7 @@ StudyData.addPractice(3, "englishpb", {
       {
         "q": "What is running in the park?",
         "options": [
-          "A train",
+          "A fast train",
           "A fountain",
           "A bus",
           "A river"
@@ -318,7 +318,7 @@ StudyData.addPractice(3, "englishpb", {
         "q": "Sumit and Bittu enjoy slides while Komal likes swings. How many children enjoy a slide or a swing?",
         "options": [
           "Three",
-          "Two",
+          "Seven",
           "Four",
           "One"
         ],
@@ -437,7 +437,7 @@ StudyData.addPractice(3, "englishpb", {
       {
         "q": "Which word rhymes with 'night'?",
         "options": [
-          "tree",
+          "water",
           "grow",
           "cow",
           "light"
@@ -461,7 +461,7 @@ StudyData.addPractice(3, "englishpb", {
       {
         "q": "What do trees give to birds?",
         "options": [
-          "Food from the market",
+          "Food bought from the market",
           "A home among the branches",
           "A school",
           "A car"
@@ -606,7 +606,7 @@ StudyData.addPractice(3, "englishpb", {
         "q": "What does the narrator do at 5:00 p.m.?",
         "options": [
           "Goes to sleep",
-          "Goes to school",
+          "Goes to school again",
           "Goes out to play",
           "Takes breakfast"
         ],
@@ -773,7 +773,7 @@ StudyData.addPractice(3, "englishpb", {
       {
         "q": "Which word means 'a hole in the ground where a rabbit lives'?",
         "options": [
-          "cave",
+          "tunnel",
           "nest",
           "burrow",
           "pit"
@@ -989,7 +989,7 @@ StudyData.addPractice(3, "englishpb", {
       {
         "q": "Which habit is good for health?",
         "options": [
-          "Watching T.V. late at night",
+          "Watching T.V. very late at night",
           "Not brushing teeth",
           "Skipping a bath",
           "Sleeping early and waking early"
@@ -1004,7 +1004,7 @@ StudyData.addPractice(3, "englishpb", {
           "He had no friends",
           "He was ill",
           "He loved to stay at home",
-          "His mother stopped him"
+          "His mother always stopped him"
         ],
         "answer": 2,
         "explain": "The lesson says he loved to stay at home.",
@@ -1013,7 +1013,7 @@ StudyData.addPractice(3, "englishpb", {
       {
         "q": "'He never kept his promise.' This means Param",
         "options": [
-          "did everything he said",
+          "did everything that he said",
           "did not do what he said",
           "kept his bag",
           "forgot his name"
@@ -1146,7 +1146,7 @@ StudyData.addPractice(3, "englishpb", {
         "q": "Which word means 'very good'?",
         "options": [
           "early",
-          "behind",
+          "beautiful",
           "grass",
           "wonderful"
         ],
@@ -1266,7 +1266,7 @@ StudyData.addPractice(3, "englishpb", {
         "q": "Where is Sheena going today?",
         "options": [
           "To school",
-          "To a temple",
+          "To a big temple",
           "To the market",
           "To a park"
         ],
@@ -1303,7 +1303,7 @@ StudyData.addPractice(3, "englishpb", {
         "options": [
           "Stationery shop",
           "Toy shop",
-          "Shoe store",
+          "Shoe and bag shop",
           "Fruit shop"
         ],
         "answer": 0,
@@ -1313,7 +1313,7 @@ StudyData.addPractice(3, "englishpb", {
       {
         "q": "What did Sheena want from the toy shop?",
         "options": [
-          "A toy car",
+          "A toy aeroplane",
           "A doll",
           "A ball",
           "A toy ship"
@@ -1338,7 +1338,7 @@ StudyData.addPractice(3, "englishpb", {
         "q": "How many people went to the market?",
         "options": [
           "Two",
-          "Four",
+          "Seven",
           "Three",
           "Five"
         ],

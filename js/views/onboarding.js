@@ -337,7 +337,7 @@
           ${langSwitch("App language") ? `<div class="field"><span class="lab">${t("App language")}</span>${langSwitch("App language")}<span class="hint" style="margin:0">${t("Buttons and menus.")}</span></div>` : ""}
           ${intl() || lessonLangs.length < 2 ? "" : `<div class="field"><span class="lab">${t("Lesson language")}</span>
             <div class="seg" role="group" aria-label="${t("Lesson language")}">${lessonLangs.map(([v, l]) => `<button type="button" data-ll="${v}" class="${p.learnLang === v ? "on" : ""}" aria-pressed="${p.learnLang === v}">${t(l)}</button>`).join("")}</div>
-            <span class="hint" style="margin:0">${t("The language you like explanations in. Not every lesson has every language yet.")}</span></div>`}`,
+            <span class="hint" style="margin:0">${t("Key words in Maths, EVS, Science and Social Science (Classes 1–10) also show their name in this language. Notes and questions stay in English for now.")}</span></div>`}`,
         actions: primary(t("Continue")),
         mount(el) {
           el.querySelector("#ob-name").oninput = (e) => Store.setProfile({ name: e.target.value });

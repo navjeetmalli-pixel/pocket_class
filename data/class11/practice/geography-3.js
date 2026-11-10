@@ -6,10 +6,10 @@ StudyData.addPractice(11, "geography", {
       { q: "The Standard Meridian of India is:", options: ["68°7′ E", "82°30′ E", "97°25′ E", "75° E"], answer: 1, explain: "82°30′ E, passing through Mirzapur in Uttar Pradesh, is the Standard Meridian used for Indian Standard Time.", level: 1 },
       { q: "The Palk Strait and the Gulf of Mannar separate India from:", options: ["the Maldives", "Myanmar", "Bangladesh", "Sri Lanka"], answer: 3, explain: "These narrow seas lie between the south-eastern coast of India and Sri Lanka.", level: 1 },
       { q: "The Tropic of Cancer passes through how many states of India?", options: ["six", "seven", "eight", "nine"], answer: 2, explain: "It passes through Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram.", level: 1 },
-      { q: "In area, India is the ___ largest country of the world.", options: ["seventh", "fifth", "tenth", "second"], answer: 0, explain: "India has about 3.28 million sq km, which is nearly 2.4% of the world's land area, and ranks seventh.", level: 1 },
+      { q: "In area, India is the ___ largest country of the world.", options: ["seventh", "eleventh", "tenth", "second"], answer: 0, explain: "India has about 3.28 million sq km, which is nearly 2.4% of the world's land area, and ranks seventh.", level: 1 },
 
       { q: "When it is 12:00 noon by Greenwich Mean Time, the Indian Standard Time is:", options: ["6:30 pm", "5:30 pm", "6:30 am", "5:30 am"], answer: 1, explain: "IST is 5 hours 30 minutes ahead of GMT, so 12:00 noon GMT is 5:30 pm IST.", level: 2 },
-      { q: "Which of the following neighbours of India does NOT share a land border with it?", options: ["Nepal", "Bhutan", "Myanmar", "Sri Lanka"], answer: 3, explain: "Sri Lanka is an island country across the Palk Strait. Nepal, Bhutan and Myanmar all have land boundaries with India.", level: 2 },
+      { q: "Which of the following neighbours of India does NOT share a land border with it?", options: ["Nepal", "Bhutan", "Myanmar (Burma)", "Sri Lanka"], answer: 3, explain: "Sri Lanka is an island country across the Palk Strait. Nepal, Bhutan and Myanmar all have land boundaries with India.", level: 2 },
       { q: "Which of these states is NOT crossed by the Tropic of Cancer?", options: ["Tripura", "Jharkhand", "Odisha", "Mizoram"], answer: 2, explain: "Odisha lies south of the Tropic of Cancer. The other three are among the eight states it crosses.", level: 2 },
       {
         q: "Assertion (A): The opening of the Suez Canal increased India's importance in world trade.\nReason (R): It shortened the sea route between India and Europe by about 7,000 km.",
@@ -122,14 +122,14 @@ StudyData.addPractice(11, "geography", {
   },
   "climate-of-india": {
     mcq: [
-      { q: "The word monsoon comes from the Arabic word mausim, which means:", options: ["wind", "season", "rain", "cloud"], answer: 1, explain: "Mausim means season, referring to the seasonal reversal of winds.", level: 1 },
+      { q: "The word monsoon comes from the Arabic word mausim, which means:", options: ["wind", "season", "rainfall", "cloud"], answer: 1, explain: "Mausim means season, referring to the seasonal reversal of winds.", level: 1 },
       { q: "The south-west monsoon normally arrives on the Kerala coast about:", options: ["1 May", "15 May", "1 June", "1 July"], answer: 2, explain: "The onset at Kerala is around 1 June, and the monsoon covers the country by about mid-July.", level: 1 },
       { q: "Western disturbances, which bring winter rain to north-west India, originate in the:", options: ["Bay of Bengal", "Arabian Sea", "Pacific Ocean", "Mediterranean region"], answer: 3, explain: "They are weather systems from the Mediterranean region.", level: 1 },
       { q: "Loo is a:", options: ["hot, dry wind of the north-western plains in summer", "cold winter wind", "violent thunderstorm of Assam", "rain of the retreating monsoon"], answer: 0, explain: "Loo is a strong, hot, dry wind blowing in the north and north-west during the hot weather season.", level: 1 },
       { q: "Mawsynram, which has the highest rainfall in the world, lies in:", options: ["Assam", "Meghalaya", "Kerala", "Arunachal Pradesh"], answer: 1, explain: "Mawsynram is in the Khasi hills of Meghalaya, with about 1,141 cm of rain.", level: 1 },
 
       { q: "Which season gives about three-fourths of the annual rainfall in most of India?", options: ["Cold weather season", "Hot weather season", "South-west monsoon", "Retreating monsoon"], answer: 2, explain: "June to September, the south-west monsoon, brings about 75% of the annual rain in most parts.", level: 2 },
-      { q: "Kalbaisakhi, the violent evening thunderstorm of the hot weather season, occurs in:", options: ["West Bengal", "Kerala", "Rajasthan", "Punjab"], answer: 0, explain: "Kalbaisakhi (Nor'westers) occurs in West Bengal; Bardoichila is the similar storm of Assam.", level: 2 },
+      { q: "Kalbaisakhi, the violent evening thunderstorm of the hot weather season, occurs in:", options: ["West Bengal", "Kerala", "Uttar Pradesh", "Punjab"], answer: 0, explain: "Kalbaisakhi (Nor'westers) occurs in West Bengal; Bardoichila is the similar storm of Assam.", level: 2 },
       {
         q: "Assertion (A): Loo blows in the north-western plains in the hot weather season.\nReason (R): Temperatures rise sharply between March and May.",
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
@@ -143,7 +143,7 @@ StudyData.addPractice(11, "geography", {
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
         answer: 2, explain: "A is true. R is false: western disturbances originate in the Mediterranean region.", level: 3, keepOrder: true
       },
-      { q: "Annual rainfall at three stations (cm): T 140 (105 cm in June–September); U 100 (30 cm in June–September, 60 cm in October–November); V 55. Which is most likely on the Tamil Nadu coast?", options: ["T, because most of its rain falls in the south-west monsoon", "U, because most of its rain comes from the retreating monsoon", "V, because it is the driest", "T, because it has the highest rainfall"], answer: 1, explain: "U gets 60 cm in October–November and only 30 cm in the south-west monsoon, the pattern of the Tamil Nadu coast. T has 105/140 = 75% in the monsoon.", level: 3 },
+      { q: "Annual rainfall at three stations (cm): T 140 (105 cm in June–September); U 100 (30 cm in June–September, 60 cm in October–November); V 55. Which is most likely on the Tamil Nadu coast?", options: ["T, because most of its rain falls in the summer south-west monsoon", "U, because most of its rain comes from the retreating monsoon", "V, because it is the driest", "T, because it has the highest rainfall"], answer: 1, explain: "U gets 60 cm in October–November and only 30 cm in the south-west monsoon, the pattern of the Tamil Nadu coast. T has 105/140 = 75% in the monsoon.", level: 3 },
       { q: "Which statement about the Indian monsoon is correct?", options: ["The south-west monsoon is a single current with no branches.", "In winter, moist winds blow from the sea to the land in northern India.", "The monsoon is caused by high pressure over north-west India in summer.", "The south-west monsoon splits into the Arabian Sea branch and the Bay of Bengal branch, and El Nino can weaken it."], answer: 3, explain: "In summer low pressure over the north-west draws the monsoon winds, in two branches. In winter dry winds blow from land to sea.", level: 3 },
       { q: "Which pair is NOT correctly matched?", options: ["Bardoichila – Odisha", "Kalbaisakhi – West Bengal", "Loo – north-western plains", "Mango showers – Kerala and Karnataka"], answer: 0, explain: "Bardoichila is a thunderstorm of Assam, not Odisha.", level: 3 }
     ],
@@ -162,7 +162,7 @@ StudyData.addPractice(11, "geography", {
   },
   "natural-vegetation": {
     mcq: [
-      { q: "The Sundarbans mangrove forest is named after the:", options: ["sundari tree", "teak tree", "sal tree", "deodar tree"], answer: 0, explain: "The sundari tree is a common mangrove tree of the Sundarbans, home of the Royal Bengal tiger.", level: 1 },
+      { q: "The Sundarbans mangrove forest is named after the:", options: ["sundari tree", "teak tree", "sal tree", "deodar cedar tree"], answer: 0, explain: "The sundari tree is a common mangrove tree of the Sundarbans, home of the Royal Bengal tiger.", level: 1 },
       { q: "Forests that receive rainfall over 200 cm are the:", options: ["thorn forests", "tropical deciduous forests", "tropical evergreen forests", "montane forests"], answer: 2, explain: "Tropical evergreen forests need heavy rain and are green all year, with tall trees and a dense canopy.", level: 1 },
       { q: "Project Tiger was launched in:", options: ["1952", "1973", "1986", "1992"], answer: 1, explain: "Project Tiger began in 1973. Project Elephant began in 1992.", level: 1 },
       { q: "Pneumatophores, found in mangrove trees, are:", options: ["thorns", "flowers", "seeds", "breathing roots"], answer: 3, explain: "These roots grow up from the mud and take in air in waterlogged, salty soil.", level: 1 },
@@ -209,7 +209,7 @@ StudyData.addPractice(11, "geography", {
       { q: "A seismograph is used to record:", options: ["rainfall", "wind speed", "earthquake waves", "tides"], answer: 2, explain: "A seismograph records the waves released by an earthquake.", level: 1 },
 
       { q: "In India, cyclones strike most often on:", options: ["the Thar Desert", "the Deccan interior in January", "the east coast, mainly in October–November", "the Northern Plain in May"], answer: 2, explain: "Cyclones from the Bay of Bengal hit Odisha, Andhra Pradesh, Tamil Nadu and West Bengal, with high winds, rain and storm surge.", level: 2 },
-      { q: "Floods are most frequent in India in the basins of the:", options: ["Luni and Thar", "Western Ghats crest", "Deccan interior", "Ganga and Brahmaputra"], answer: 3, explain: "Assam, Bihar and Uttar Pradesh in the Ganga and Brahmaputra basins are repeatedly flooded.", level: 2 },
+      { q: "Floods are most frequent in India in the basins of the:", options: ["Luni and Thar", "Western Ghats crest zone", "Deccan interior", "Ganga and Brahmaputra"], answer: 3, explain: "Assam, Bihar and Uttar Pradesh in the Ganga and Brahmaputra basins are repeatedly flooded.", level: 2 },
       { q: "An agricultural drought occurs when:", options: ["rivers and reservoirs fall below normal", "rainfall is below normal for a long time", "soil moisture is too low for crops to grow", "a cyclone damages the crops"], answer: 2, explain: "Meteorological drought is low rainfall, hydrological drought is low water in rivers and reservoirs, and agricultural drought is low soil moisture for crops.", level: 2 },
       {
         q: "Assertion (A): A disaster occurs when a hazard strikes a vulnerable community.\nReason (R): An earthquake in a place where nobody lives is a hazard but not a disaster.",

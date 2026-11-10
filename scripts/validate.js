@@ -8,7 +8,7 @@ const path = require("path");
 const vm = require("vm");
 
 const root = path.join(__dirname, "..");
-let files = process.argv.slice(2).filter((f) => !/[\/\\](practice|diagrams|paths)[\/\\]/.test(f) && path.basename(f) !== "index.js" && path.basename(f) !== "objectives.js");
+let files = process.argv.slice(2).filter((f) => !/[\/\\](practice|diagrams|paths)[\/\\]/.test(f) && path.basename(f) !== "index.js" && path.basename(f) !== "objectives.js" && path.basename(f) !== "glossary.js");
 if (process.argv.length <= 2) {
   files = fs
     .readdirSync(path.join(root, "data"))
@@ -382,6 +382,39 @@ for (const file of diagramFiles) {
     console.log(`\n${errors.length ? "✗" : "✓"} ${file}`);
     errors.forEach((e) => console.log(`  ERROR ${e}`));
     summary.push(`timelines: ${list ? list.length : 0} chapters, ${n} events`);
+  }
+}
+
+// ---------- glossary (key terms in Hindi and Punjabi, for the lesson language) ----------
+// data/glossary.js: StudyData.addGlossary({ "english term in lower case": { hi?: Devanagari, pa?: Gurmukhi } }).
+{
+  const file = path.join("data", "glossary.js");
+  if (fs.existsSync(path.join(root, file)) && (process.argv.length <= 2 || process.argv.slice(2).includes(file))) {
+    const errors = [];
+    const err = (where, msg) => errors.push(`${where}: ${msg}`);
+    let g = null;
+    try {
+      vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), { StudyData: { addGlossary: (x) => (g = x) } }, { filename: file });
+    } catch (e) {
+      errors.push(`Could not load: ${e.message}`);
+    }
+    let hi = 0, pa = 0;
+    if (g) {
+      for (const [k, v] of Object.entries(g)) {
+        if (k !== k.trim().toLowerCase()) err(k, "key must be the English term in lower case");
+        if (!v || typeof v !== "object" || (!v.hi && !v.pa)) err(k, "needs hi or pa");
+        else {
+          if (v.hi !== undefined && !(isStr(v.hi) && /[\u0900-\u097F]/.test(v.hi) && !/[A-Za-z]/.test(v.hi))) err(k, "hi must be Devanagari, without Latin letters");
+          if (v.pa !== undefined && !(isStr(v.pa) && /[\u0A00-\u0A7F]/.test(v.pa) && !/[A-Za-z]/.test(v.pa))) err(k, "pa must be Gurmukhi, without Latin letters");
+          if (v.hi) hi++;
+          if (v.pa) pa++;
+        }
+      }
+    }
+    errorCount += errors.length;
+    console.log(`\n${errors.length ? "✗" : "✓"} ${file}`);
+    errors.forEach((e) => console.log(`  ERROR ${e}`));
+    summary.push(`glossary: ${g ? Object.keys(g).length : 0} terms, ${hi} in Hindi, ${pa} in Punjabi`);
   }
 }
 

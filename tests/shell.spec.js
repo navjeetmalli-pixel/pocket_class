@@ -80,7 +80,7 @@ test("shell: the profile menu opens every place it names, closes with Escape and
     ["Settings", /#\/settings$/],
     ["Parent area", /#\/parent$/],
     ["Timer", /#\/timer$/],
-    ["Downloads", /#\/settings\/offline$/],
+    ["Downloads", /#\/offline$/],
   ];
   for (const [name, url] of places) {
     await page.goto("/#/");
@@ -89,8 +89,8 @@ test("shell: the profile menu opens every place it names, closes with Escape and
     await expect(page).toHaveURL(url);
     await expect(page.locator("#menu-sheet")).toHaveCount(0); // the menu closes when a page opens
   }
-  // Downloads goes to the offline card.
-  await expect(page.locator("#offline-card")).toBeVisible();
+  // Downloads goes to the offline packs page.
+  await expect(page.locator("#packs")).toBeVisible();
 
   // Escape closes the menu and the profile button has focus again.
   await page.goto("/#/");

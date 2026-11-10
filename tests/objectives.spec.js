@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { test, expect, seed, readStore, current, chaptersOf, playInstantQuiz, answer } = require("./helpers");
+const { test, expect, seed, readStore, current, chaptersOf, playInstantQuiz, answer, openParent } = require("./helpers");
 
 const CH = chaptersOf(10, "maths")[0];
 const toast = (page) => page.locator("#toast");
@@ -56,7 +56,7 @@ test("learning objectives: a chapter quiz moves skills forward and the chapter p
   // Progress: counts per state for the subject. Parent page: plain-language lists.
   await page.goto("/#/progress");
   await expect(page.locator(".obj-counts").first()).toBeVisible();
-  await page.goto("/#/parent");
+  await openParent(page);
   await expect(page.getByRole("heading", { name: "Skills" })).toBeVisible();
   await expect(page.locator(".obj-groups")).toContainText(/Can do now|Practising/);
 });
@@ -250,7 +250,7 @@ test("mastery: an objective whose review has come round brings its chapter into 
   await expect(page.locator(".obj-panel .obj-chip.s-review-due")).toContainText("Review due");
 
   // Parent page and Progress: plain-language "To review" and a count by state.
-  await page.goto("/#/parent");
+  await openParent(page);
   await expect(page.locator(".obj-groups")).toContainText("To review");
   await page.goto("/#/progress");
   await expect(page.locator(".obj-counts .obj-chip.s-review-due")).toContainText("Review due");

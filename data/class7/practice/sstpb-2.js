@@ -5,13 +5,13 @@ StudyData.addPractice(7, "sstpb", {
       { q:"The tripartite struggle was fought for control of the city of",options:["Kannauj","Thanjavur","Surat","Lahore"],answer:0,explain:"The Pratiharas, Palas and Rashtrakutas fought over rich Kannauj on the Ganga.",level:1 },
       { q:"The Palas ruled over",options:["Gujarat and Malwa","Bengal and Bihar","Tamil Nadu","Kerala"],answer:1,explain:"The Palas ruled the north-east and east, in Bengal and Bihar.",level:1 },
       { q:"Mahmud of Ghazni raided the temple at Somnath in",options:["1191","1526","1025","1206"],answer:2,explain:"The raid on Somnath took place in 1025.",level:1 },
-      { q:"Who won the First Battle of Tarain (1191)?",options:["Prithviraj Chauhan","Muhammad of Ghor","Mahmud of Ghazni","Babur"],answer:0,explain:"Prithviraj Chauhan won in 1191. Muhammad of Ghor won the next year.",level:1 },
+      { q:"Who won the First Battle of Tarain (1191)?",options:["Prithviraj Chauhan", "Muhammad bin Tughlaq", "Mahmud of Ghazni", "Babur"],answer:0,explain:"Prithviraj Chauhan won in 1191. Muhammad of Ghor won the next year.",level:1 },
       { q:"The Rashtrakutas ruled in the",options:["Deccan","Punjab plains","Assam","Kashmir valley"],answer:0,explain:"The Rashtrakutas were a Deccan power.",level:1 },
       { q:"A samanta was a",options:["traveller from abroad","noble or chief who held land and served the king with troops","coin of the time","type of temple tower"],answer:1,explain:"Samantas held land in return for service to the king.",level:2 },
       { q:"The Chauhans ruled from",options:["Ajmer and Delhi","Madurai and Puri","Surat and Calicut","Kabul and Ghazni"],answer:0,explain:"The Chauhan clan ruled Ajmer and Delhi, and Prithviraj Chauhan belonged to it.",level:2 },
       { q:"Which result followed the Second Battle of Tarain (1192)?",options:["Prithviraj destroyed Ghor","The Palas took Delhi","Mahmud of Ghazni won Somnath","Prithviraj was defeated and Turkish rule opened up in north India"],answer:3,explain:"Muhammad of Ghor's win opened the way to Turkish rule in the north.",level:2 },
-      { q:"Kings of this period collected revenue mainly from",options:["selling fossils","tourist fees","taxes on land and trade","income tax on salaries"],answer:2,explain:"Land and trade taxes were the main income of kings.",level:2 },
-      { q:"Mahmud of Ghazni was the ruler of Ghazni, which lies in",options:["Afghanistan","Gujarat","Bengal","Morocco"],answer:0,explain:"Ghazni is in present-day Afghanistan.",level:2 },
+      { q:"Kings of this period collected revenue mainly from",options:["selling fossils", "tourist fees", "taxes on land and trade", "income tax on all salaries"],answer:2,explain:"Land and trade taxes were the main income of kings.",level:2 },
+      { q:"Mahmud of Ghazni was the ruler of Ghazni, which lies in",options:["Afghanistan", "Gujarat", "Bengal", "Saudi Arabia"],answer:0,explain:"Ghazni is in present-day Afghanistan.",level:2 },
       { q:"A warrior chief held a village from a king and supplied soldiers when asked. He was a",options:["merchant","samanta","pilgrim","Banjara"],answer:1,explain:"Holding land in return for service is the mark of a samanta.",level:3 },
       { q:"Assertion (A): Kannauj was fiercely contested by the Pratiharas, Palas and Rashtrakutas.\nReason (R): Kannauj was a rich city on the river Ganga.",options:["Both A and R are true, and R is the correct explanation of A.","Both A and R are true, but R is not the correct explanation of A.","A is true, but R is false.","A is false, but R is true."],answer:0,explain:"Its wealth and position on the Ganga made it a prize, so R explains A.",level:3,keepOrder:true },
       { q:"Which sequence of events is in the correct time order?",options:["Second Tarain, Raid on Somnath, First Tarain","First Tarain, Second Tarain, Raid on Somnath","Raid on Somnath, First Tarain, Second Tarain","Raid on Somnath, Second Tarain, First Tarain"],answer:2,explain:"The dates are 1025, 1191 and 1192.",level:3 },
@@ -32,7 +32,7 @@ StudyData.addPractice(7, "sstpb", {
     mcq: [
       { q:"The capital of the Cholas was",options:["Thanjavur","Delhi","Kanchipuram","Badami"],answer:0,explain:"The Cholas ruled from Thanjavur.",level:1 },
       { q:"The Brihadeshwara temple at Thanjavur was built by",options:["Rajaraja I","Akbar","Prithviraj","Shah Jahan"],answer:0,explain:"Rajaraja I built the great temple.",level:1 },
-      { q:"The Pallavas ruled from",options:["Kanchipuram","Thanjavur","Madurai","Lahore"],answer:0,explain:"Kanchipuram was the Pallava capital.",level:1 },
+      { q:"The Pallavas ruled from",options:["Kanchipuram", "Tiruchirappalli", "Madurai", "Lahore"],answer:0,explain:"Kanchipuram was the Pallava capital.",level:1 },
       { q:"The rock-cut temples at Mamallapuram were built by the",options:["Chauhans","Mughals","Pallavas","Lodis"],answer:2,explain:"The Mamallapuram temples are Pallava work.",level:1 },
       { q:"The main crop of the Chola region was",options:["wheat","rice","tea","apple"],answer:1,explain:"Farmers irrigated their fields with tanks and canals to grow rice.",level:1 },
       { q:"Rajendra I is remembered because he",options:["took the Chola empire to the Ganga region and overseas","founded the Delhi Sultanate","built the Qutb Minar","defeated Babur"],answer:0,explain:"Rajendra I, son of Rajaraja I, extended Chola power to the Ganga and across the sea.",level:2 },
@@ -40,9 +40,9 @@ StudyData.addPractice(7, "sstpb", {
       { q:"Why were temples important in Chola times?",options:["They were only forts","They were centres of religion, learning, art and the economy","They were used only as markets abroad","They had no role in village life"],answer:1,explain:"Temples gave work to craftsmen and supported art and learning.",level:2 },
       { q:"The Nataraja is a famous example of",options:["bronze sculpture","a coin","a fort","a canal"],answer:0,explain:"Chola artists made fine bronze images such as the Nataraja.",level:2 },
       { q:"The Cholas traded with South-East Asia, which shows that they had a strong",options:["cavalry only","post office","navy","printing press"],answer:2,explain:"Their navy allowed overseas trade and expeditions.",level:2 },
-      { q:"A Chola village needs to settle a dispute over the sharing of tank water. It would turn to the",options:["Mughal mansabdar","village sabha or ur","Sultan's muqti","Portuguese traders"],answer:1,explain:"Chola village assemblies handled irrigation and justice.",level:3 },
+      { q:"A Chola village needs to settle a dispute over the sharing of tank water. It would turn to the",options:["Mughal mansabdar or diwan", "village sabha or ur", "Sultan's muqti", "Portuguese traders"],answer:1,explain:"Chola village assemblies handled irrigation and justice.",level:3 },
       { q:"Assertion (A): Chola farmers dug tanks and canals.\nReason (R): Irrigation helped them to grow rice.",options:["Both A and R are true, and R is the correct explanation of A.","Both A and R are true, but R is not the correct explanation of A.","A is true, but R is false.","A is false, but R is true."],answer:0,explain:"Tanks and canals supplied the water that rice needs, so R explains A.",level:3,keepOrder:true },
-      { q:"Which pair of ruler and achievement is correct?",options:["Pallavas: Taj Mahal","Rajendra I: Fatehpur Sikri","Chalukyas: Qutb Minar","Rajaraja I: Brihadeshwara temple"],answer:3,explain:"Only Rajaraja I and the Brihadeshwara temple go together. The others belong to other periods or builders.",level:3 },
+      { q:"Which pair of ruler and achievement is correct?",options:["Pallavas: Taj Mahal", "Rajendra I: Fatehpur Sikri fort city", "Chalukyas: Qutb Minar", "Rajaraja I: Brihadeshwara temple"],answer:3,explain:"Only Rajaraja I and the Brihadeshwara temple go together. The others belong to other periods or builders.",level:3 },
       { q:"A student says, 'Temples were only places of worship in Chola times.' This is",options:["fully correct","incomplete, because they were also centres of learning, art and the economy","wrong because there were no temples","wrong because temples were only forts"],answer:1,explain:"Temples also supported artists, scholars and the local economy.",level:3 }
     ],
     written: [
@@ -61,7 +61,7 @@ StudyData.addPractice(7, "sstpb", {
       { q:"The Delhi Sultanate lasted from",options:["1206 to 1526","1000 to 1100","1556 to 1707","1740 to 1857"],answer:0,explain:"It began in 1206 and ended in 1526.",level:1 },
       { q:"The first dynasty of the Delhi Sultanate was the",options:["Mamluk (Slave) dynasty","Lodi dynasty","Mughal dynasty","Chola dynasty"],answer:0,explain:"Qutbuddin Aibak founded the Mamluk dynasty in 1206.",level:1 },
       { q:"The only woman ruler of the Delhi Sultanate was",options:["Noor Jahan","Mumtaz","Razia Sultan","Rani Durgavati"],answer:2,explain:"Razia Sultan ruled from 1236 to 1240.",level:1 },
-      { q:"Muhammad bin Tughlaq shifted his capital from Delhi to",options:["Daulatabad","Agra","Lahore","Thanjavur"],answer:0,explain:"The shift to Daulatabad failed.",level:1 },
+      { q:"Muhammad bin Tughlaq shifted his capital from Delhi to",options:["Daulatabad", "Agra", "Lahore", "Kanchipuram"],answer:0,explain:"The shift to Daulatabad failed.",level:1 },
       { q:"The last ruler of the Delhi Sultanate was",options:["Ibrahim Lodi","Babur","Akbar","Alauddin Khalji"],answer:0,explain:"Ibrahim Lodi lost at Panipat in 1526.",level:1 },
       { q:"Alauddin Khalji is known for",options:["building the Taj Mahal","fixing market prices and keeping a large army","founding the Mughal rule","moving the capital to Daulatabad"],answer:1,explain:"He controlled prices and defended the north against Mongols.",level:2 },
       { q:"An iqta was",options:["a province assigned to an officer to collect revenue and keep troops","a kind of coin","a mosque","a tax on salt"],answer:0,explain:"Its ruler was called a muqti.",level:2 },
@@ -88,7 +88,7 @@ StudyData.addPractice(7, "sstpb", {
     mcq: [
       { q:"The Mughal Empire was founded by",options:["Babur","Akbar","Shah Jahan","Aurangzeb"],answer:0,explain:"Babur won the First Battle of Panipat in 1526.",level:1 },
       { q:"Akbar became emperor in",options:["1526","1556","1707","1739"],answer:1,explain:"Akbar came to the throne in 1556 and ruled until 1605.",level:1 },
-      { q:"The Taj Mahal was built by",options:["Jahangir","Shah Jahan","Akbar","Humayun"],answer:1,explain:"Shah Jahan built it at Agra.",level:1 },
+      { q:"The Taj Mahal was built by",options:["Aurangzeb Alamgir", "Shah Jahan", "Akbar", "Humayun"],answer:1,explain:"Shah Jahan built it at Agra.",level:1 },
       { q:"The mansabdari system was organised by",options:["Akbar","Aurangzeb","Babur","Jahangir"],answer:0,explain:"Every officer held a rank (mansab) under Akbar.",level:1 },
       { q:"Nadir Shah invaded Delhi in",options:["1739","1398","1191","1025"],answer:0,explain:"Nadir Shah's invasion was in 1739.",level:1 },
       { q:"Sher Shah Suri is remembered for",options:["building the Red Fort","founding the Sultanate","founding Fatehpur Sikri","introducing the silver rupee and building roads"],answer:3,explain:"Sher Shah introduced the silver rupee and a road network.",level:2 },
@@ -115,7 +115,7 @@ StudyData.addPractice(7, "sstpb", {
   "architecture": {
     mcq: [
       { q:"The Qutb Minar is in",options:["Delhi","Agra","Thanjavur","Konark"],answer:0,explain:"The Qutb Minar stands in Delhi.",level:1 },
-      { q:"The Buland Darwaza is at",options:["Fatehpur Sikri","Konark","Chittor","Mamallapuram"],answer:0,explain:"Akbar built it at Fatehpur Sikri.",level:1 },
+      { q:"The Buland Darwaza is at",options:["Fatehpur Sikri", "Konark", "Chittorgarh fort", "Mamallapuram"],answer:0,explain:"Akbar built it at Fatehpur Sikri.",level:1 },
       { q:"A rounded roof like half a ball is a",options:["dome","minaret","arch","gopuram"],answer:0,explain:"A dome is a rounded roof.",level:1 },
       { q:"A tall slender tower attached to a mosque is a",options:["minaret","charbagh","dome","fort"],answer:0,explain:"A minaret is a slender tower.",level:1 },
       { q:"The Sun Temple is at",options:["Konark","Agra","Delhi","Lahore"],answer:0,explain:"The Sun Temple stands at Konark.",level:1 },
@@ -123,7 +123,7 @@ StudyData.addPractice(7, "sstpb", {
       { q:"A charbagh is a garden",options:["with no plan","divided into four equal parts","built only by Cholas","made of marble only"],answer:1,explain:"Mughals favoured the four-part formal garden.",level:2 },
       { q:"Humayun's tomb at Delhi is important because it was",options:["the model for later Mughal tombs","a Chola temple","a Rajput fort","a lighthouse"],answer:0,explain:"It served as the model for later tombs.",level:2 },
       { q:"Shah Jahan's buildings are known for",options:["red mud only","wood only","white marble and inlay work","iron only"],answer:2,explain:"Examples are the Taj Mahal and the Red Fort.",level:2 },
-      { q:"Sultanate builders used lime mortar to",options:["make buildings stronger","paint the walls","make arches smaller","grow plants"],answer:0,explain:"Lime mortar gave strength to walls and arches.",level:2 },
+      { q:"Sultanate builders used lime mortar to",options:["make buildings stronger", "paint the walls", "make the arches and domes smaller", "grow plants"],answer:0,explain:"Lime mortar gave strength to walls and arches.",level:2 },
       { q:"A visitor sees a fort at Chittor. It was built by",options:["Rajput rulers","Sultan Aibak","Shah Jahan alone","British"],answer:0,explain:"Rajput rulers built strong forts at Chittor and Jaisalmer.",level:3 },
       { q:"Assertion (A): Temples such as the Brihadeshwara temple had a tall tower over the main shrine.\nReason (R): The tower was a feature of temple architecture.",options:["Both A and R are true, and R is the correct explanation of A.","Both A and R are true, but R is not the correct explanation of A.","A is true, but R is false.","A is false, but R is true."],answer:1,explain:"Both statements are true, but R only restates the fact; it does not explain why.",level:3,keepOrder:true },
       { q:"A new mosque is built with an arch, a dome and slender towers. This blend shows the influence of",options:["Harappan building","Chola bronze work only","Sultanate architecture","Rajput forts only"],answer:2,explain:"The arch, dome and minarets came in the Sultanate period.",level:3 },
@@ -142,12 +142,12 @@ StudyData.addPractice(7, "sstpb", {
   },
   "towns-traders-craftsmen": {
     mcq: [
-      { q:"Which is a temple town?",options:["Thanjavur","Surat","Lahore","Agra"],answer:0,explain:"Thanjavur grew around its great temple.",level:1 },
+      { q:"Which is a temple town?",options:["Thanjavur", "Surat", "Lahore", "Fatehpur Sikri"],answer:0,explain:"Thanjavur grew around its great temple.",level:1 },
       { q:"Which is a port town?",options:["Surat","Madurai","Puri","Delhi"],answer:0,explain:"Surat was a port of overseas trade.",level:1 },
       { q:"A hundi was a",options:["written order for payment","kind of ship","temple tower","weapon"],answer:0,explain:"It allowed money to be sent safely.",level:1 },
-      { q:"The Banjaras carried",options:["grain and salt","only gold","only horses","only books"],answer:0,explain:"They carried grain and salt on bullocks.",level:1 },
+      { q:"The Banjaras carried",options:["grain and salt", "only gold", "only horses and elephants", "only books"],answer:0,explain:"They carried grain and salt on bullocks.",level:1 },
       { q:"The Portuguese reached Calicut in",options:["1498","1206","1526","1707"],answer:0,explain:"Vasco da Gama's route led to Calicut in 1498.",level:1 },
-      { q:"Craftspeople formed guilds to",options:["raise armies","build temples","grow rice","protect their trade"],answer:3,explain:"Guilds set rules for work and protected members.",level:2 },
+      { q:"Craftspeople formed guilds to",options:["raise armies", "build temples for the kings", "grow rice", "protect their trade"],answer:3,explain:"Guilds set rules for work and protected members.",level:2 },
       { q:"Temple towns grew because",options:["pilgrims, priests, craftsmen and traders settled there","there were no people","kings forbade trade","there were no temples"],answer:0,explain:"Temples attracted people, and markets grew.",level:2 },
       { q:"Delhi, Agra and Lahore were",options:["only villages","only ports","capital and market towns","only temple towns"],answer:2,explain:"They grew around royal courts and markets.",level:2 },
       { q:"Which item was carried in trade within India and abroad?",options:["Spices and cotton cloth","Computers","Petrol","Plastic"],answer:0,explain:"Spices, cotton cloth, indigo, salt and horses were traded.",level:2 },
@@ -155,7 +155,7 @@ StudyData.addPractice(7, "sstpb", {
       { q:"A weaver in a medieval town works for a temple and a royal court. This shows that",options:["weaving was unknown","craftspeople served temples, courts and markets","there were no towns","only farmers worked"],answer:1,explain:"Weavers, dyers and carpenters worked for several clients.",level:3 },
       { q:"Assertion (A): Merchants moved in caravans.\nReason (R): Groups travelling together were safer on long routes.",options:["Both A and R are true, and R is the correct explanation of A.","Both A and R are true, but R is not the correct explanation of A.","A is true, but R is false.","A is false, but R is true."],answer:0,explain:"Travelling together gave protection, so R explains A.",level:3,keepOrder:true },
       { q:"A trader wants to send money from Surat to Delhi without carrying coins. The best means is a",options:["hundi","caravan","guild","sabha"],answer:0,explain:"A hundi lets money be paid at another place.",level:3 },
-      { q:"Which pair is correct?",options:["Masulipatnam: port town","Puri: port town only","Calicut: capital town","Madurai: caravan"],answer:0,explain:"Masulipatnam was a port. Puri and Madurai were temple towns.",level:3 }
+      { q:"Which pair is correct?",options:["Masulipatnam: port town", "Puri: sea port town only", "Calicut: capital town", "Madurai: caravan"],answer:0,explain:"Masulipatnam was a port. Puri and Madurai were temple towns.",level:3 }
     ],
     written: [
       { q:"Name two port towns of medieval India.",a:"Surat and Calicut (or Masulipatnam).",marks:1 },
@@ -171,15 +171,15 @@ StudyData.addPractice(7, "sstpb", {
   "tribes-nomads-settled": {
     mcq: [
       { q:"Which tribe lived in central India?",options:["Gonds","Banjaras","Mughals","Cholas"],answer:0,explain:"The Gonds lived in forested central India.",level:1 },
-      { q:"The Gond kingdom was called",options:["Garha Katanga","Thanjavur","Fatehpur","Tarain"],answer:0,explain:"Garha Katanga was a Gond kingdom.",level:1 },
-      { q:"Nomads are people who",options:["move from place to place","never travel","live in cities only","are rulers"],answer:0,explain:"They move with animals in search of pastures.",level:1 },
-      { q:"The best-known trader-nomads were the",options:["Banjaras","Cholas","Palas","Lodis"],answer:0,explain:"The Banjaras carried grain on bullocks.",level:1 },
+      { q:"The Gond kingdom was called",options:["Garha Katanga", "Dwarasamudra Hoysala", "Fatehpur", "Tarain"],answer:0,explain:"Garha Katanga was a Gond kingdom.",level:1 },
+      { q:"Nomads are people who",options:["move from place to place", "never travel", "live in big cities all the time", "are rulers"],answer:0,explain:"They move with animals in search of pastures.",level:1 },
+      { q:"The best-known trader-nomads were the",options:["Banjaras", "Chalukyas", "Palas", "Lodis"],answer:0,explain:"The Banjaras carried grain on bullocks.",level:1 },
       { q:"Which of these is a tribe?",options:["Santhals","Rashtrakutas","Tughlaqs","Mansabdars"],answer:0,explain:"The Santhals are a tribal people.",level:1 },
       { q:"Shifting cultivation means",options:["farming a patch for some years and then moving","farming only in cities","never farming","fishing only"],answer:0,explain:"The cultivator moves to a new patch after some years.",level:2 },
       { q:"Tribal people usually earned a living by",options:["hunting, gathering, herding and shifting cultivation","trading in ports","working in mills","printing"],answer:0,explain:"They depended on forest and herds.",level:2 },
       { q:"Pastoral groups gave villagers",options:["bronze images","coins","forts","animals, milk and wool"],answer:3,explain:"They exchanged these for grain and cloth.",level:2 },
       { q:"Most tribes",options:["did not pay regular taxes to the state","paid heavy taxes","owned big ports","had no customs"],answer:0,explain:"They lived by their own customs and did not pay regular taxes.",level:2 },
-      { q:"As states grew, some tribal groups",options:["became settled farmers","vanished completely","built the Qutb Minar","became Sultans"],answer:0,explain:"They were drawn into the wider society.",level:2 },
+      { q:"As states grew, some tribal groups",options:["became settled farmers", "vanished from history completely", "built the Qutb Minar", "became Sultans"],answer:0,explain:"They were drawn into the wider society.",level:2 },
       { q:"A group of people moves with cattle in search of grass and trades milk for grain. They are",options:["urban craftsmen","court officials","pastoral nomads","temple priests"],answer:2,explain:"Moving herders exchanging produce are pastoral nomads.",level:3 },
       { q:"Assertion (A): Many tribes did not pay regular taxes.\nReason (R): They lived in forests and hills by their own customs.",options:["Both A and R are true, and R is the correct explanation of A.","Both A and R are true, but R is not the correct explanation of A.","A is true, but R is false.","A is false, but R is true."],answer:0,explain:"Their way of life and distance from the state meant they stayed outside the tax system, so R explains A.",level:3,keepOrder:true },
       { q:"Which statement is correct?",options:["All tribes became rulers","Some tribal chiefs became rulers, others lost land to strong neighbours","No tribe lost land","Tribes never changed"],answer:1,explain:"Different tribal groups had different fates.",level:3 },

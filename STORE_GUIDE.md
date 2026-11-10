@@ -9,7 +9,7 @@ own print dialog, and "Back up progress" opens the share sheet.
 - Node 20+ and `npm install` in this folder.
 - Xcode (for iOS) and Android Studio (for Android). Android builds need Android Studio's Java 21:
   `export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"`
-- App ID (both stores): `io.github.navjeetmallipixel.vidya`. Keep this stable for upgrades to existing installs; changing it creates a separate app.
+- App ID (both stores): `com.navjeetmalli.pocketclass` (chosen before the first upload; it was `io.github.navjeetmallipixel.vidya` in test builds). Never change it again: a new ID is a separate app, and the store cannot move users or their saved data to it.
   You can set it in `capacitor.config.json` before the first upload; after that it is fixed forever.
 
 ## After any change to the content or code

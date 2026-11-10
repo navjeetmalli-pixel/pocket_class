@@ -13,7 +13,7 @@ Counts are what the app holds. They don't mean a chapter matches the current syl
 | `no-hard`: Class 3+: no hard (level 3) bank MCQs | 0 |
 | `no-written`: no written practice (bank or chapter Q&A) | 0 |
 | `no-long`: Class 6+: no 4–5 mark written question | 0 |
-| `no-fresh`: no endless practice (no generator and no auto-made questions) | 1 |
+| `no-fresh`: no endless practice (no generator and no auto-made questions) | 0 |
 | `obj-empty`: an objective that no saved question maps to | 0 |
 
 ## Per subject
@@ -146,7 +146,7 @@ MCQs and written questions per chapter are averages. Fresh: chapters with endles
 | PSEB | 9 | Science | 12 | 21 | 13 | 12/12 | draft | none |
 | PSEB | 9 | Social Science | 20 | 20 | 12 | 20/20 | draft | none |
 | PSEB | 9 | English | 26 | 19 | 10 | 26/26 | draft | none |
-| PSEB | 9 | Hindi | 26 | 18 | 11 | 25/26 | draft | no-fresh 1 |
+| PSEB | 9 | Hindi | 26 | 18 | 11 | 26/26 | draft | none |
 | PSEB | 9 | Punjabi | 35 | 18 | 11 | 35/35 | draft | none |
 | PSEB | 10 | Mathematics | 14 | 19 | 17 | 14/14 | draft | none |
 | PSEB | 10 | Science | 13 | 49 | 25 | 13/13 | draft | none |

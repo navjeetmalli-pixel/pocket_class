@@ -6,7 +6,7 @@
 // The lesson (#/chapter/.../understand/lesson) runs on its own, without the hero or the section navigation.
 
 (() => {
-  const { D, cls, FORMULA_LABEL, TERMS_LABEL, topbar, chapterNumber, quizRound, cardKey, findChapter, notFound, writtenHTML, quizItems, genItems } = Views._;
+  const { D, cls, FORMULA_LABEL, TERMS_LABEL, topbar, chapterNumber, quizRound, cardKey, termAlt, termAltHTML, findChapter, notFound, writtenHTML, quizItems, genItems } = Views._;
 
   // [id, label, icon, colour]. Colour tokens: blue Understand / Visualise / Practise, green Explore, purple Play, amber Master.
   const SECTIONS = [
@@ -193,7 +193,7 @@
         };
         if (section === "understand") {
           if (ch.terms.length)
-            Cards.mount(el.querySelector("#cards-mount"), { cards: ch.terms.map((x) => ({ key: cardKey(c, subj.id, ch, x), front: x.term, back: x.meaning })) });
+            Cards.mount(el.querySelector("#cards-mount"), { cards: ch.terms.map((x) => ({ key: cardKey(c, subj.id, ch, x), front: x.term, alt: termAlt(x.term), back: x.meaning })) });
           if (sub === "terms") setTimeout(() => el.querySelector("#terms") && el.querySelector("#terms").scrollIntoView({ block: "start" }), 0);
         }
         if (section === "understand") buildFirstLater(el, c, subj.id, ch.id);
@@ -291,7 +291,7 @@
   function termsHTML(c, subj, ch, isYoung) {
     const rowHTML = (x) => {
       const pic = autoPic(x.term, { max: 1, size: 56, title: true });
-      return `<div${pic ? ' class="has-pic"' : ""}>${pic}<dt>${rich(x.term)}${Speech.btn(c, subj.id, `${x.term}. ${x.meaning}`)}</dt><dd>${rich(x.meaning)}</dd></div>`;
+      return `<div${pic ? ' class="has-pic"' : ""}>${pic}<dt>${rich(x.term)}${termAltHTML(x.term)}${Speech.btn(c, subj.id, `${x.term}. ${x.meaning}`)}</dt><dd>${rich(x.meaning)}</dd></div>`;
     };
     const n = isYoung ? 5 : 0;
     const first = n && ch.terms.length > n + 1 ? ch.terms.slice(0, n) : ch.terms;

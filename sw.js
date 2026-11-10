@@ -1,7 +1,7 @@
 // Offline support: caches the app shell on first visit, plus each class's index and each subject's data once it's opened.
 // Online, files come fresh from the network (and refresh the cache);
 // offline or on a very slow connection, the cached copy is used.
-const CACHE = "pocket-class-v72";
+const CACHE = "pocket-class-v73";
 
 const FILES = [
   "./",
@@ -23,6 +23,7 @@ const FILES = [
   "js/i18n.js",
   "js/international.js",
   "js/store.js",
+  "js/pin.js",
   "js/avatars.js",
   "js/mastery.js",
   "js/objectives.js",
@@ -84,6 +85,7 @@ const FILES = [
   "js/views/paths.js",
   "js/views/games.js",
   "js/views/settings.js",
+  "js/views/offline.js",
   "js/views/profile.js",
   "js/views/learn.js",
   "js/views/explore.js",
@@ -120,7 +122,17 @@ const FILES = [
   "icons/icon-512.png",
   "icons/icon-maskable-512.png",
 ];
-// Class indexes and subject files are cached when first opened (see the "cache" message below).
+// Class indexes and subject files (everything under data/) are cached when first opened (see the "cache" message
+// below) or saved as an offline pack (js/views/offline.js), in DATA_CACHE. That cache is not versioned, so an app update
+// keeps what was saved for offline; after an update its files are fetched again in the background (see "activate"),
+// and a file that can't be fetched (no connection) keeps its saved copy until it can.
+const DATA_CACHE = "pocket-class-data";
+// Data files outside the app's own list (FILES, which ships with each version and holds registry.js and the language games).
+const APP_DATA = new Set(FILES.filter((f) => f.startsWith("data/")).map((f) => new URL(f, self.location.href).pathname));
+const isData = (url) => {
+  const p = new URL(url, self.location.href).pathname;
+  return p.includes("/data/") && !APP_DATA.has(p);
+};
 
 self.addEventListener("install", (e) => {
   // Cache files one by one so a single missing file doesn't block the rest.
@@ -133,21 +145,43 @@ self.addEventListener("install", (e) => {
 self.addEventListener("message", (e) => {
   if (e.data && e.data.type === "skipWaiting") self.skipWaiting();
   if (e.data && e.data.type === "cache" && Array.isArray(e.data.urls)) {
-    e.waitUntil(caches.open(CACHE).then((c) => Promise.all(e.data.urls.map((u) => c.add(u).catch(() => {})))));
+    e.waitUntil(
+      Promise.all([caches.open(CACHE), caches.open(DATA_CACHE)]).then(([app, data]) => Promise.all(e.data.urls.map((u) => (isData(u) ? data : app).add(u).catch(() => {}))))
+    );
   }
 });
 
 self.addEventListener("activate", (e) => {
   // Other apps on the same domain share Cache Storage, so only remove this app's own old caches.
-  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => (k.startsWith("vidya-") || k.startsWith("pocket-class-")) && k !== CACHE).map((k) => caches.delete(k)))));
-  self.clients.claim();
+  // Moving old data is part of activation; the refresh after it is not (pages' requests wait until activation ends).
+  const ready = (async () => {
+    const keys = await caches.keys();
+    const old = keys.filter((k) => (k.startsWith("vidya-") || k.startsWith("pocket-class-")) && k !== CACHE && k !== DATA_CACHE);
+    const data = await caches.open(DATA_CACHE);
+    // Versions before DATA_CACHE kept data files in the versioned cache: move them over instead of losing them.
+    for (const k of old) {
+      const c = await caches.open(k);
+      for (const req of await c.keys()) if (isData(req.url) && !(await data.match(req))) await data.put(req, await c.match(req));
+      await caches.delete(k);
+    }
+    await self.clients.claim();
+  })();
+  e.waitUntil(ready);
+  // Then refresh the saved data files for the new version in the background (best effort; a failed fetch keeps the
+  // saved copy, and every file is refreshed again whenever it is opened online).
+  ready.then(async () => {
+    const data = await caches.open(DATA_CACHE);
+    const saved = await data.keys();
+    for (let i = 0; i < saved.length; i += 6)
+      await Promise.all(saved.slice(i, i + 6).map((req) => fetch(req.url, { cache: "no-cache" }).then((res) => res.ok && data.put(req, res)).catch(() => {})));
+  });
 });
 
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET" || new URL(e.request.url).origin !== location.origin) return;
   e.respondWith(
     (async () => {
-      const cache = await caches.open(CACHE);
+      const cache = await caches.open(isData(e.request.url) ? DATA_CACHE : CACHE);
       const cached = await cache.match(e.request, { ignoreSearch: true });
       const network = fetch(e.request).then((res) => {
         if (res.ok) cache.put(e.request, res.clone());

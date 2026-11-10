@@ -329,8 +329,20 @@ globalThis.StudyData = (function () {
   const loadTimelines = () => loadFiles([timelinesFile]);
   const timelinesLoaded = () => !!fileDone[timelinesFile];
 
+  // Key terms in Hindi and Punjabi (data/glossary.js: { "english term in lower case": { hi, pa } }), shown next to the
+  // English term when the student's lesson language is Hindi or Punjabi. Loads only for those students.
+  const glossary = {};
+  const glossaryFile = "data/glossary.js";
+  const addGlossary = (obj) => Object.assign(glossary, obj);
+  const loadGlossary = () => loadFiles([glossaryFile]);
+  const glossaryLoaded = () => !!fileDone[glossaryFile];
+  const termIn = (term, lang) => {
+    const g = glossary[String(term).replace(/\*\*/g, "").trim().toLowerCase()];
+    return (g && g[lang]) || "";
+  };
+
   return {
-    subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addIndex, addPractice, practiceFor, addDiagrams, diagramsFor, objectivesCatalog, addObjectives, objectivesFor, objectivesFile, hasObjectiveFile, loadObjectives, objectivesLoaded, addTimelines, timelinesFor, timelinesFile, chapters, syllabus,
+    subjects, classes, catalog, boards, boardCatalog, practiceCatalog, diagramCatalog, content, add, addIndex, addPractice, practiceFor, addDiagrams, diagramsFor, objectivesCatalog, addObjectives, objectivesFor, objectivesFile, hasObjectiveFile, loadObjectives, objectivesLoaded, addTimelines, timelinesFor, timelinesFile, addGlossary, loadGlossary, glossaryLoaded, glossaryFile, termIn, chapters, syllabus,
     INTL, INTL_SUBJECTS, PATH_SUBJECTS, PATH_PREFIX, addPath, paths, path, pathFile, pathLoaded, loadPath, refActive, refFiles, filesLoaded, loadFiles,
     subject, subjectsFor, locked, files, indexFile, practiceFiles, load, loadSubjects, subjectsLoaded, hasFull, loadPractice, practiceLoaded, loadTimelines, timelinesLoaded, hasBoardContent,
     isLoaded: (c) => !!ready[`${board}:${c}`],

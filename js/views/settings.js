@@ -148,6 +148,13 @@
           ${voiceCard()}
           ${reminderCard()}
           <a class="card row" href="#/parent"><span class="grow"><strong>${t("For parents")}</strong><span class="small muted" style="display:block">${t("A one-page summary of the week to show or print.")}</span></span>${icon("next")}</a>
+          <div class="card row" id="pin-card">
+            <div class="grow"><strong>${icon("lock")} ${t("Parent PIN")}</strong><div class="small muted">${Pin.isSet() ? t("On. The Parent area, deleting a student, resetting progress and restoring a backup ask for it.") : t("Off. Set a 4-digit PIN to keep the Parent area and actions that can't be undone away from children.")}</div></div>
+            <div class="row" style="gap:8px;flex-wrap:wrap;justify-content:flex-end">
+              <button class="btn" data-act="pin-set">${Pin.isSet() ? t("Change PIN") : t("Set PIN")}</button>
+              ${Pin.isSet() ? `<button class="btn" data-act="pin-off">${t("Turn off")}</button>` : ""}
+            </div>
+          </div>
           ${Native.is ? "" : `<div class="card">
             <strong>${t("Install on your phone")}</strong>
             <ul class="small muted" style="margin:8px 0 0;padding-left:20px">
@@ -164,10 +171,10 @@
               <input type="file" id="restore" accept=".json,application/json" hidden>
             </div>
           </div>
-          ${Native.is ? "" : `<div class="card row" id="offline-card" tabindex="-1">
-            <div class="grow"><strong>${t("Save every class for offline")}</strong><div class="small muted" id="offline-status">${t("Your own class is saved automatically. Use this if brothers or sisters share this phone (about 17 MB).")}</div></div>
-            <button class="btn" data-act="offline-all">${t("Save all")}</button>
-          </div>`}
+          ${Native.is ? "" : `<a class="card row" id="offline-card" tabindex="-1" href="#/offline">
+            <div class="grow"><strong>${t("Offline packs")}</strong><div class="small muted" id="offline-status">${t("Your own class is saved automatically. Choose more classes and subjects to keep for use without internet, for example for brothers or sisters.")}</div></div>
+            ${icon("next")}
+          </a>`}
           <div class="card row">
             <div class="grow"><strong>${t("Reset progress")}</strong><div class="small muted">${t("Clears this student's scores, streaks, bookmarks and mistakes.")}</div></div>
             <button class="btn bad" data-act="reset">${t("Reset")}</button>
@@ -236,19 +243,39 @@
           } else if (b.dataset.act === "backup") {
             saveTextFile(`pocket-class-progress-${dayKey()}.json`, Store.exportData()).catch(() => {});
             return;
-          } else if (b.dataset.act === "offline-all") {
-            saveAllOffline(el.querySelector("#offline-status"), b);
-            return;
           } else if (b.dataset.act === "restore") {
-            el.querySelector("#restore").click();
+            Pin.guard(t("Restoring a backup replaces the progress on this device."), () => el.querySelector("#restore").click());
+            return;
+          } else if (b.dataset.act === "pin-set") {
+            // Changing the PIN asks for the old one first; with none set, ask() itself creates one.
+            const had = Pin.isSet();
+            Pin.ask(t("To change the PIN, enter the one you have now.")).then((ok) => {
+              if (!ok) return;
+              if (had) {
+                Pin.remove();
+                Pin.ask().then(() => App.render({ keepScroll: true }));
+              } else App.render({ keepScroll: true });
+            });
+            return;
+          } else if (b.dataset.act === "pin-off") {
+            Pin.ask(t("To turn the PIN off, enter it.")).then((ok) => {
+              if (!ok) return;
+              Pin.remove();
+              toast(t("Parent PIN turned off"));
+              App.render({ keepScroll: true });
+            });
             return;
           } else if (b.dataset.theme) {
             Store.setTheme(b.dataset.theme);
             App.applyTheme();
           } else if (b.dataset.act === "reset") {
-            if (!confirm(t("Reset all of this student's progress? This can't be undone."))) return;
-            Store.reset();
-            toast(t("Progress reset"));
+            Pin.guard(t("Resetting progress can't be undone."), () => {
+              if (!confirm(t("Reset all of this student's progress? This can't be undone."))) return;
+              Store.reset();
+              toast(t("Progress reset"));
+              App.render({ keepScroll: true });
+            });
+            return;
           }
           App.render({ keepScroll: true });
         };
@@ -257,18 +284,5 @@
   }
 
   // Fetches every class's files through the service worker, which keeps a copy of each one.
-  async function saveAllOffline(status, btn) {
-    const urls = [...D.classes.flatMap((c) => [...D.files(c), ...D.practiceFiles(c)]), ...D.PATH_SUBJECTS.filter((id) => !D.locked(id)).map(D.pathFile), D.timelinesFile];
-    btn.disabled = true;
-    let done = 0, failed = 0;
-    for (let i = 0; i < urls.length; i += 6) {
-      await Promise.all(urls.slice(i, i + 6).map((u) => fetch(u, { cache: "no-cache" }).then((r) => { if (!r.ok) failed++; }).catch(() => failed++)));
-      done = Math.min(i + 6, urls.length);
-      status.textContent = t("Saving… {n}%", { n: Math.round((done / urls.length) * 100) });
-    }
-    btn.disabled = false;
-    status.textContent = failed ? t("{n} files couldn't be saved. Check your connection and try again.", { n: failed }) : t("All classes are saved on this device and work offline.");
-  }
-
   Object.assign(Views, { settings });
 })();

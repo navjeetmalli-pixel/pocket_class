@@ -6,9 +6,9 @@ StudyData.addPractice(3, "evs", {
       { q: "Your father's sister is called your:", options: ["Mausi", "Nani", "Cousin", "Bua (paternal aunt)"], answer: 3, explain: "A father's sister is called bua. A mother's sister is called mausi.", level: 1 },
       { q: "Your mother's brother is called:", options: ["Mama", "Chacha", "Dada", "Cousin"], answer: 0, explain: "A mother's brother is called mama.", level: 1 },
       { q: "Which of these is a joint family?", options: ["A mother, a father and one child", "Two friends sharing a room", "Neighbours living in the same lane", "Grandparents, parents, an uncle, an aunt and cousins in one home"], answer: 3, explain: "A joint family has many relatives, such as grandparents, uncles, aunts and cousins, living together.", level: 1 },
-      { q: "What do the members of a family do for one another?", options: ["Quarrel all day", "Care for and support each other", "Live far away from each other", "Never speak"], answer: 1, explain: "A family is a group of people who live together and care for each other.", level: 1 },
+      { q: "What do the members of a family do for one another?", options: ["Quarrel all day", "Care for and support each other", "Live far away from one another all year", "Never speak"], answer: 1, explain: "A family is a group of people who live together and care for each other.", level: 1 },
       { q: "Riya's grandparents, her parents, her chacha, chachi and two cousins all live in one house. Riya's family is a:", options: ["Nuclear family", "Joint family", "Neighbourhood", "School"], answer: 1, explain: "Many relatives living together make a joint family.", level: 2 },
-      { q: "Aman lives with his mother, father and sister only. His family is:", options: ["A joint family", "A community", "A nuclear family", "A neighbourhood"], answer: 2, explain: "Parents and their children make a nuclear family.", level: 2 },
+      { q: "Aman lives with his mother, father and sister only. His family is:", options: ["A joint family", "A large community", "A nuclear family", "A neighbourhood"], answer: 2, explain: "Parents and their children make a nuclear family.", level: 2 },
       { q: "Aman's father's mother is his:", options: ["Nani", "Bua", "Mausi", "Dadi"], answer: 3, explain: "A father's mother is called dadi. A mother's mother is called nani.", level: 2 },
       { q: "Meera's mama has a daughter named Tara. Tara is Meera's:", options: ["Aunt", "Cousin", "Niece", "Grandmother"], answer: 1, explain: "The child of an uncle or aunt is a cousin.", level: 2 },
       { q: "Why is it good to share the work at home?", options: ["Everyone gets time to rest, play and study", "Only one person gets tired", "Nobody needs to help", "The house becomes untidy"], answer: 0, explain: "When the work is shared, no one is overworked and everyone gets free time.", level: 2 },
@@ -27,13 +27,13 @@ StudyData.addPractice(3, "evs", {
   "plants-around-us": {
     mcq: [
       { q: "Which part of a plant holds it firmly in the soil?", options: ["Leaf", "Flower", "Roots", "Fruit"], answer: 2, explain: "Roots grow in the soil and hold the plant firmly.", level: 1 },
-      { q: "Which part of a plant makes seeds and fruits?", options: ["Flower", "Root", "Stem", "Soil"], answer: 0, explain: "Flowers make the seeds and fruits of a plant.", level: 1 },
+      { q: "Which part of a plant makes seeds and fruits?", options: ["Flower", "Leaves", "Stem", "Soil"], answer: 0, explain: "Flowers make the seeds and fruits of a plant.", level: 1 },
       { q: "Which part of a plant holds up the leaves and flowers?", options: ["Seed", "Root", "Fruit", "Stem"], answer: 3, explain: "The stem holds up the leaves and flowers and carries water and food.", level: 1 },
       { q: "Which of these do we get from plants?", options: ["Wool", "Wood", "Honey", "Milk"], answer: 1, explain: "Wood comes from trees. Wool comes from sheep, honey from bees and milk from animals.", level: 1 },
       { q: "A new plant can grow from a:", options: ["Pebble", "Cloud", "Seed", "Feather"], answer: 2, explain: "A seed can grow into a new plant.", level: 1 },
       { q: "Riya kept a potted plant in a dark cupboard for many days. Its leaves became pale and weak. What is the most likely reason?", options: ["It got too much sunlight", "It could not get sunlight to make food", "It had too many flowers", "It was too tall"], answer: 1, explain: "Leaves need sunlight to make food. Without it the plant becomes weak.", level: 2 },
       { q: "Which of these is NOT needed by leaves to make food?", options: ["Sunlight", "Water", "Air", "Milk"], answer: 3, explain: "Leaves use sunlight, air and water to make food. They do not need milk.", level: 2 },
-      { q: "Why do trees help to stop soil from washing away?", options: ["Their flowers cover the soil", "Their fruits press down the soil", "Their roots hold the soil together", "Their leaves drink all the rain"], answer: 2, explain: "Roots hold the soil together, so rain cannot wash it away easily.", level: 2 },
+      { q: "Why do trees help to stop soil from washing away?", options: ["Their flowers cover the soil", "Their fruits press down the soil", "Their roots hold the soil together", "Their leaves drink up all of the rain"], answer: 2, explain: "Roots hold the soil together, so rain cannot wash it away easily.", level: 2 },
       { q: "Birds build nests in trees. What does this show?", options: ["Trees make birds fly", "Birds make roots grow", "Trees need nests to live", "Trees give homes to birds and other animals"], answer: 3, explain: "Trees give homes and food to birds and other animals.", level: 2 },
       { q: "Water goes from the roots up to the leaves through the:", options: ["Stem", "Flower", "Fruit", "Seed"], answer: 0, explain: "The stem carries water between the roots and the leaves.", level: 2 },
       { q: "Which sentence about making food in plants is correct?", options: ["Roots use moonlight to make food", "Leaves use sunlight, air and water to make food and give out oxygen", "Flowers make food from soil alone", "Stems make food and give out only smoke"], answer: 1, explain: "Leaves make food by photosynthesis and release oxygen.", level: 3 },
@@ -51,14 +51,14 @@ StudyData.addPractice(3, "evs", {
   "animals-around-us": {
     mcq: [
       { q: "Which part do fish use to take in oxygen from water?", options: ["Fins", "Gills", "Tail", "Wings"], answer: 1, explain: "Fish breathe with gills.", level: 1 },
-      { q: "A rabbit lives in a:", options: ["Nest", "Hive", "Burrow", "Den"], answer: 2, explain: "A rabbit lives in a burrow dug in the ground.", level: 1 },
+      { q: "A rabbit lives in a:", options: ["Stable", "Hive", "Burrow", "Den"], answer: 2, explain: "A rabbit lives in a burrow dug in the ground.", level: 1 },
       { q: "Which animal eats only plants?", options: ["Tiger", "Lion", "Eagle", "Goat"], answer: 3, explain: "A goat is a herbivore. Tigers, lions and eagles eat other animals.", level: 1 },
       { q: "Which animal hops?", options: ["Kangaroo", "Earthworm", "Cow", "Fish"], answer: 0, explain: "A kangaroo hops. An earthworm crawls and a fish swims.", level: 1 },
-      { q: "Which animal hunts other animals for food?", options: ["Deer", "Cow", "Tiger", "Goat"], answer: 2, explain: "A tiger is a carnivore, so it hunts other animals.", level: 1 },
+      { q: "Which animal hunts other animals for food?", options: ["Rabbit", "Cow", "Tiger", "Goat"], answer: 2, explain: "A tiger is a carnivore, so it hunts other animals.", level: 1 },
       { q: "Riya sees a crow pecking at grains and also picking up a small insect. What kind of eater is the crow?", options: ["A herbivore", "A carnivore", "An omnivore", "A water animal"], answer: 2, explain: "A crow eats both plants and animals, so it is an omnivore.", level: 2 },
       { q: "Which pair is matched correctly?", options: ["Sparrow – burrow", "Rabbit – nest", "Lion – hive", "Honeybee – hive"], answer: 3, explain: "Honeybees live in a hive. A sparrow has a nest, a rabbit a burrow and a lion a den.", level: 2 },
       { q: "Which two animals are both herbivores?", options: ["Lion and goat", "Cow and deer", "Eagle and cow", "Tiger and deer"], answer: 1, explain: "Cows and deer eat only plants.", level: 2 },
-      { q: "Which animal crawls on the ground?", options: ["Sparrow", "Dolphin", "Eagle", "Earthworm"], answer: 3, explain: "An earthworm crawls. A sparrow and an eagle fly, and a dolphin swims.", level: 2 },
+      { q: "Which animal crawls on the ground?", options: ["Kingfisher", "Dolphin", "Eagle", "Earthworm"], answer: 3, explain: "An earthworm crawls. A sparrow and an eagle fly, and a dolphin swims.", level: 2 },
       { q: "Which of these is an omnivore?", options: ["Bear", "Deer", "Cow", "Goat"], answer: 0, explain: "Bears eat both plants and animals.", level: 2 },
       { q: "Which group lists a herbivore, a carnivore and an omnivore, in that order?", options: ["Lion, cow, bear", "Bear, cow, lion", "Cow, lion, bear", "Cow, bear, lion"], answer: 2, explain: "A cow eats plants, a lion eats animals and a bear eats both.", level: 3 },
       { q: "Which statement about animals is correct?", options: ["All animals eat the same food", "All animals need food, water, air and shelter, but they eat different kinds of food", "Only big animals need shelter", "Only land animals need food"], answer: 1, explain: "Every animal needs food, water, air and shelter, but each kind has its own food.", level: 3 }
@@ -85,7 +85,7 @@ StudyData.addPractice(3, "evs", {
       { q: "Peas and rice are eaten as which part of a plant?", options: ["Stems", "Seeds", "Leaves", "Roots"], answer: 1, explain: "Peas and rice grains are seeds.", level: 2 },
       { q: "Which meal is the most balanced?", options: ["Only biscuits", "Only fried snacks", "Roti or rice with dal, vegetables and curd", "Only sweets"], answer: 2, explain: "It has energy food, protein, vitamins and minerals together.", level: 2 },
       { q: "Which one is the odd one out?", options: ["Milk", "Curd", "Paneer", "Carrot"], answer: 3, explain: "Milk, curd and paneer are dairy foods that come from animals. Carrot comes from a plant.", level: 3 },
-      { q: "Which list has only foods that come from plants?", options: ["Milk, honey, rice, spinach", "Rice, wheat, spinach, mango", "Rice, egg, mango, wheat", "Wheat, fish, carrot, peas"], answer: 1, explain: "Rice, wheat, spinach and mango all come from plants. Milk, honey, egg and fish come from animals.", level: 3 }
+      { q: "Which list has only foods that come from plants?", options: ["Milk, honey, brown rice, spinach", "Rice, wheat, spinach, mango", "Rice, egg, mango, wheat", "Wheat, fish, carrot, peas"], answer: 1, explain: "Rice, wheat, spinach and mango all come from plants. Milk, honey, egg and fish come from animals.", level: 3 }
     ],
     written: [
       { q: "Name one food that gives us carbohydrates.", a: "Roti (or rice, potato).", marks: 1 },
@@ -106,7 +106,7 @@ StudyData.addPractice(3, "evs", {
       { q: "Riya notices that a tap in her school drips all day. What is the best thing for her to do?", options: ["Ignore it", "Open it fully", "Wait for it to stop", "Tell her teacher so that it can be repaired"], answer: 3, explain: "A leaking tap wastes water, so it should be repaired.", level: 2 },
       { q: "A block of ice is kept in a warm room. What will happen?", options: ["It turns into steam at once", "It gets bigger", "It melts into water", "It becomes a stone"], answer: 2, explain: "Warmth melts ice and turns it into liquid water.", level: 2 },
       { q: "Water poured from a glass into a round bowl:", options: ["Keeps the shape of the glass", "Takes the shape of the bowl", "Turns into ice", "Becomes a solid"], answer: 1, explain: "Water is a liquid, so it takes the shape of its container.", level: 2 },
-      { q: "Where is most of the Earth's water found?", options: ["In the sea", "In ponds", "In wells", "In taps"], answer: 0, explain: "Most of the water on Earth is in the sea.", level: 2 },
+      { q: "Where is most of the Earth's water found?", options: ["In the sea", "In small ponds", "In wells", "In taps"], answer: 0, explain: "Most of the water on Earth is in the sea.", level: 2 },
       { q: "Which habit saves water?", options: ["Letting the tap run while brushing", "Washing the floor with a running hose", "Bathing with a bucket", "Leaving the tap open when not in use"], answer: 2, explain: "Using a bucket for bathing uses less water than letting it run.", level: 2 },
       { q: "When ice is heated, and then the water is heated more, what is the correct order of change?", options: ["Steam, water, ice", "Ice, water, steam", "Water, ice, steam", "Ice, steam, water"], answer: 1, explain: "Ice melts into water, and water turns into steam when heated more.", level: 3 },
       { q: "Wet clothes dry in the sun because the water in them:", options: ["Turns into ice", "Goes back into the cloth", "Turns into water vapour and goes into the air", "Becomes sea water"], answer: 2, explain: "The sun's heat changes the water into invisible water vapour that mixes with the air.", level: 3 }
@@ -122,7 +122,7 @@ StudyData.addPractice(3, "evs", {
   },
   "houses-and-shelters": {
     mcq: [
-      { q: "Houses built on tall poles are called:", options: ["Igloos", "Stilt houses", "Houseboats", "Tents"], answer: 1, explain: "Houses raised on poles are called stilt houses.", level: 1 },
+      { q: "Houses built on tall poles are called:", options: ["Igloos", "Stilt houses", "Floating houseboats", "Tents"], answer: 1, explain: "Houses raised on poles are called stilt houses.", level: 1 },
       { q: "Which materials are used to build houses in cities?", options: ["Grass only", "Ice blocks", "Mud only", "Bricks and cement"], answer: 3, explain: "City houses are built with bricks, cement, steel and glass.", level: 1 },
       { q: "A houseboat is:", options: ["A boat that people live in", "A house made of ice", "A house on poles", "A tent in a desert"], answer: 0, explain: "A houseboat is a boat used as a home.", level: 1 },
       { q: "Houses made of bamboo are common in which part of India?", options: ["Thar Desert", "North-east India", "Snowy Arctic", "Middle of the ocean"], answer: 1, explain: "Bamboo grows well in parts of the north-east, so houses are built with it.", level: 1 },
@@ -130,7 +130,7 @@ StudyData.addPractice(3, "evs", {
       { q: "Riya visits a village in Assam near a big river and sees houses raised high on poles. Why are they built this way?", options: ["To keep snow off", "To keep floodwater from entering easily", "To look taller", "To save bamboo"], answer: 1, explain: "Raised houses stay above floodwater.", level: 2 },
       { q: "Why do village homes often use mud, grass and bamboo?", options: ["They are made in factories", "They are the costliest materials", "They are found only in cities", "They are found nearby"], answer: 3, explain: "People build with materials that are easy to find near them.", level: 2 },
       { q: "Where are sloping roofs especially useful?", options: ["A hilly area with heavy rain or snow", "A boat", "A swimming pool", "Inside a cave"], answer: 0, explain: "A slope helps rain and snow slide off.", level: 2 },
-      { q: "An igloo is a good home for a place that is:", options: ["Very hot and dry", "Rainy and flooded", "Very cold and snowy", "Dusty and sandy"], answer: 2, explain: "Igloos are made from snow or ice in very cold places.", level: 2 },
+      { q: "An igloo is a good home for a place that is:", options: ["Very hot and dry", "Rainy and often flooded", "Very cold and snowy", "Dusty and sandy"], answer: 2, explain: "Igloos are made from snow or ice in very cold places.", level: 2 },
       { q: "Which of these is a shelter for an animal?", options: ["A bicycle", "A school bag", "A road", "A burrow"], answer: 3, explain: "A burrow is a hole in the ground where some animals live.", level: 2 },
       { q: "Which pair is matched correctly?", options: ["Igloo – hot desert", "Stilt house – flood-prone area", "Houseboat – mountain top", "Sloping roof – a place that never gets rain"], answer: 1, explain: "Stilt houses keep floodwater out, so they suit flood-prone areas.", level: 3 },
       { q: "Why do houses look different in different places?", options: ["Because people have different names", "Because all houses are made in one factory", "Because it never rains", "Because the weather and the materials found nearby are different"], answer: 3, explain: "Houses are built to suit the local weather and with materials found nearby.", level: 3 }
@@ -147,13 +147,13 @@ StudyData.addPractice(3, "evs", {
   "our-body-and-senses": {
     mcq: [
       { q: "Which part of the body helps us see?", options: ["Ears", "Eyes", "Nose", "Skin"], answer: 1, explain: "We see with our eyes.", level: 1 },
-      { q: "Which organ do we taste with?", options: ["Skin", "Ear", "Tongue", "Eye"], answer: 2, explain: "The tongue helps us taste food.", level: 1 },
+      { q: "Which organ do we taste with?", options: ["Throat", "Ear", "Tongue", "Eye"], answer: 2, explain: "The tongue helps us taste food.", level: 1 },
       { q: "Our skin gives us the sense of:", options: ["Sight", "Hearing", "Smell", "Touch"], answer: 3, explain: "The skin helps us feel things, so it gives the sense of touch.", level: 1 },
-      { q: "What works with bones to help us move, run and jump?", options: ["Muscles", "Hair", "Nails", "Teeth"], answer: 0, explain: "Muscles work with bones to help the body move.", level: 1 },
+      { q: "What works with bones to help us move, run and jump?", options: ["Muscles", "Stomach", "Nails", "Teeth"], answer: 0, explain: "Muscles work with bones to help the body move.", level: 1 },
       { q: "Which of these is a taste that the tongue can sense?", options: ["Soft", "Salty", "Loud", "Bright"], answer: 1, explain: "The tongue tastes sweet, sour, salty and bitter flavours.", level: 1 },
       { q: "While playing, Riya smells something burning in the kitchen. Which sense organ tells her this?", options: ["Eyes", "Ears", "Nose", "Tongue"], answer: 2, explain: "We smell with the nose.", level: 2 },
       { q: "Aman holds a glass of ice-cold water. Which sense tells him it is cold?", options: ["Touch", "Sight", "Smell", "Hearing"], answer: 0, explain: "The skin gives the sense of touch, which feels hot and cold.", level: 2 },
-      { q: "Which sense lets you know that the school bell has rung?", options: ["Taste", "Hearing", "Touch", "Smell"], answer: 1, explain: "We hear sounds with our ears.", level: 2 },
+      { q: "Which sense lets you know that the school bell has rung?", options: ["Eyesight", "Hearing", "Touch", "Smell"], answer: 1, explain: "We hear sounds with our ears.", level: 2 },
       { q: "Which of these should we avoid to keep our ears safe?", options: ["Birdsong", "Soft music", "Whispers", "Very loud sounds"], answer: 3, explain: "Very loud sounds can damage our ears.", level: 2 },
       { q: "Which pair is matched correctly?", options: ["Eyes – hearing", "Ears – smell", "Tongue – taste", "Skin – sight"], answer: 2, explain: "The tongue is the organ of taste.", level: 2 },
       { q: "When Riya has a blocked nose, her food seems to have less flavour. What does this show?", options: ["The ears help in tasting", "The eyes help in tasting", "The skin tastes food", "Smell and taste work together"], answer: 3, explain: "We enjoy the flavour of food with both the nose and the tongue.", level: 3 },
@@ -172,7 +172,7 @@ StudyData.addPractice(3, "evs", {
     mcq: [
       { q: "Where should we cross the road?", options: ["Between parked cars", "In the middle of a bend", "At a zebra crossing", "Anywhere, but quickly"], answer: 2, explain: "A zebra crossing is a marked place for crossing safely.", level: 1 },
       { q: "A ferry travels on:", options: ["Rails", "Water", "Air", "Roads only"], answer: 1, explain: "A ferry is a boat that carries people across water.", level: 1 },
-      { q: "A helicopter travels:", options: ["On rails", "On water", "On roads", "In the air"], answer: 3, explain: "Helicopters and aeroplanes fly in the air.", level: 1 },
+      { q: "A helicopter travels:", options: ["On railways", "On water", "On roads", "In the air"], answer: 3, explain: "Helicopters and aeroplanes fly in the air.", level: 1 },
       { q: "A bullock cart is moved by:", options: ["Petrol", "Electricity", "Steam", "Bullocks"], answer: 3, explain: "Bullocks pull the cart.", level: 1 },
       { q: "Which safety item should we use when travelling in a car?", options: ["Seat belt", "Gloves", "Scarf", "Cap"], answer: 0, explain: "A seat belt keeps us safe in a car.", level: 1 },
       { q: "Riya's village is on the bank of a river. There is no bridge, and she wants to cross with her cycle. Which transport can take her across?", options: ["Metro train", "Ferry", "Scooter", "Auto-rickshaw"], answer: 1, explain: "A ferry carries people and vehicles across a river.", level: 2 },

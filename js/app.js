@@ -63,6 +63,7 @@ const App = {
     [/^parent$/, Views.parent],
     [/^search$/, Views.search],
     [/^settings(?:\/(offline))?$/, Views.settings],
+    [/^offline$/, Views.offline],
     [/^profile$/, Views.profile],
     [/^learn$/, Views.learn],
     [/^explore$/, Views.explore],
@@ -105,6 +106,7 @@ const App = {
     if (Native.is || !("serviceWorker" in navigator) || !location.protocol.startsWith("http")) return;
     navigator.serviceWorker.ready.then((reg) => reg.active && reg.active.postMessage({ type: "cache", urls }));
   }
+  App.keepOffline = keepOffline;
   // A class's index, or some of its subjects with their practice banks and diagrams.
   const offlineUrls = (c, ids) => (ids ? [...(ids === "all" ? StudyData.files(c) : StudyData.files(c, ids)), ...StudyData.practiceFiles(c, ids === "all" ? undefined : ids)] : [StudyData.indexFile(c)]);
 

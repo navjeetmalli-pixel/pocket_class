@@ -1,5 +1,5 @@
 {
-  "appId": "io.github.navjeetmallipixel.vidya",
+  "appId": "com.navjeetmalli.pocketclass",
   "appName": "Pocket Class",
   "webDir": "www",
   "ios": { "contentInset": "never" },

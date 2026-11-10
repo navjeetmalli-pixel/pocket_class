@@ -50,7 +50,7 @@
           </div>
           <div class="card stack">
             ${intl || Release.langLocked("hi") || Release.langLocked("pa") ? "" : `<div class="field"><label>${t("Lesson language")}</label>${seg("ll", [["en", "English"], ["hi", "Hindi"], ["pa", "Punjabi"]], p.learnLang)}
-              <span class="small muted">${t("The language you like explanations in. Not every lesson has every language yet.")}</span></div>`}
+              <span class="small muted">${t("Key words in Maths, EVS, Science and Social Science (Classes 1–10) also show their name in this language. Notes and questions stay in English for now.")}</span></div>`}
             <div class="field"><span class="lab" id="pf-goal" style="font-size:14px;font-weight:650;color:var(--muted)">${t("Daily goal")}</span>
               <div class="prof-chips" role="group" aria-labelledby="pf-goal">${[15, 20, 30].map((n) => chip("data-goal", n, t("{n} minutes", { n }), p.goal === n)).join("")}${chip("data-goal", "none", t("Decide later"), p.goal == null)}</div></div>
           </div>

@@ -3072,3 +3072,38 @@ body:is([data-band="1-2"], [data-band="3-5"]) .game-tile .gc-sub + .gc-sub { dis
   .ws-wordbox span { border-color: #444; }
   .ws-key .ws-answers { font-size: 12pt; }
 }
+
+/* Parent PIN dialog (js/pin.js) */
+.pin-back { position: fixed; inset: 0; z-index: 90; background: rgb(10 20 40 / 0.55); }
+.pin-box {
+  position: fixed; z-index: 91; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(360px, calc(100vw - 32px)); background: var(--surface); color: var(--text);
+  border-radius: 18px; padding: 20px 18px 16px; box-shadow: 0 16px 40px rgb(0 0 0 / 0.3); text-align: center;
+}
+.pin-box h2 { font-size: 19px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.pin-box h2 .i { width: 20px; height: 20px; }
+.pin-box p { margin: 8px 0 0; }
+.pin-in { margin: 14px auto 0; width: 9.5em; text-align: center; font-size: 26px; letter-spacing: 0.4em; padding: 10px 6px; }
+.pin-msg { min-height: 1.4em; color: var(--bad); margin-top: 6px !important; }
+.pin-actions { display: flex; gap: 10px; justify-content: center; margin-top: 8px; }
+.pin-box .linkish { margin-top: 12px; background: none; border: 0; color: var(--accent); text-decoration: underline; cursor: pointer; padding: 6px; }
+
+/* Lesson language: a key term's Hindi or Punjabi name next to the English one (data/glossary.js) */
+.term-lang { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; font-size: 0.85em; font-weight: 600; background: var(--accent-soft, color-mix(in srgb, var(--accent) 14%, transparent)); color: var(--text); vertical-align: 1px; }
+.card-flip .face.front .term-lang, .face.front .term-lang { display: block; margin: 8px auto 0; width: fit-content; font-size: 1.05em; }
+
+/* Worksheet maker: one-tap presets */
+.preset-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px; }
+.preset { display: flex; flex-direction: column; gap: 4px; text-align: left; padding: 12px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; font: inherit; }
+.preset strong { display: flex; align-items: center; gap: 6px; }
+.preset strong .i { width: 16px; height: 16px; }
+.preset:hover:not([disabled]) { border-color: var(--accent); }
+.preset[disabled] { opacity: .55; cursor: default; }
+
+/* Offline packs (js/views/offline.js) */
+.meter { height: 10px; border-radius: 999px; background: var(--border); overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--accent); transition: width .2s; }
+.pack-status { list-style: none; margin: 0; padding: 0; }
+.pack-status li { display: flex; align-items: center; gap: 10px; padding: 8px 2px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.pack-status li:last-child { border-bottom: 0; }
+.pack-status li[data-state="saved"] [data-st] { color: var(--good); font-weight: 650; }

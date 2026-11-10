@@ -75,10 +75,13 @@
       } else if (b.hasAttribute("data-del")) {
         const i = list.findIndex((s) => s.id === row.dataset.id);
         const name = studentName(list[i], i);
-        if (!confirm(t("Delete {name} and all their progress? This can't be undone.", { name }))) return;
-        Store.deleteStudent(row.dataset.id);
-        toast(t("{name} deleted", { name }));
-        App.render({ keepScroll: true });
+        const id = row.dataset.id;
+        Pin.guard(t("Deleting a student can't be undone."), () => {
+          if (!confirm(t("Delete {name} and all their progress? This can't be undone.", { name }))) return;
+          Store.deleteStudent(id);
+          toast(t("{name} deleted", { name }));
+          App.render({ keepScroll: true });
+        });
       } else {
         const name = box.querySelector("#new-name").value;
         Store.addStudent(name, Number(box.querySelector("#new-cls").value), box.querySelector("#new-board").value);

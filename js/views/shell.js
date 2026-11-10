@@ -48,7 +48,7 @@
           ${item("#/settings", "settings", t("Settings"))}
           ${item("#/parent", "lock", t("Parent area"))}
           ${item("#/timer", "timer", t("Timer"), timerBadge)}
-          ${Native.is ? "" : item("#/settings/offline", "download", t("Downloads"), `<span class="small muted">${t("Save for offline")}</span>`)}
+          ${Native.is ? "" : item("#/offline", "download", t("Downloads"), `<span class="small muted">${t("Save for offline")}</span>`)}
         </div>
       </div>`;
   }

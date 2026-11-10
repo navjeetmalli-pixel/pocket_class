@@ -139,6 +139,31 @@ const Views = (() => {
 
   const cardKey = (c, subjectId, ch, t) => `${Store.key(c, subjectId, ch.id)}/${itemId("t", t.term)}`;
 
+  // Lesson language (profile.learnLang): a key term's Hindi or Punjabi name from data/glossary.js, or "" (English, the
+  // International board, a language the store release hides, or a term with no entry). The first call loads the
+  // glossary and draws the page again when it arrives, so pages never wait for it.
+  function lessonLang() {
+    const L = Store.state.profile.learnLang;
+    return L === "hi" || L === "pa" ? (International.on() || Release.langLocked(L) ? null : L) : null;
+  }
+  function termAlt(term) {
+    const L = lessonLang();
+    if (!L) return "";
+    if (!D.glossaryLoaded()) {
+      D.loadGlossary().then((ok) => {
+        if (!ok) return;
+        App.keepOffline([D.glossaryFile]);
+        App.render({ keepScroll: true });
+      });
+      return "";
+    }
+    return D.termIn(term, L);
+  }
+  const termAltHTML = (term) => {
+    const w = termAlt(term);
+    return w ? ` <span class="term-lang" lang="${lessonLang()}">${esc(w)}</span>` : "";
+  };
+
   function findChapter(c, subjectId, chapterId) {
     const subj = D.subject(subjectId);
     const chs = D.chapters(c, subjectId);
@@ -194,7 +219,7 @@ const Views = (() => {
 
   const ui = { topbar, pageHead, emptyState, notFound, quizItems, genItems, findChapter, writtenHTML };
   // Helpers shared between the files in js/views/ (not for use outside them).
-  const _ = { D, cls, boardPicker, boardNote, sheetLabel, FORMULA_LABEL, TERMS_LABEL, topbar, pageHead, subjectStats, isGrouped, chapterNumber, chapterRow, quizItems, genItems, quizRound, cardKey, findChapter, emptyState, notFound, classGrid, langSwitch, writtenHTML };
+  const _ = { D, cls, boardPicker, boardNote, sheetLabel, FORMULA_LABEL, TERMS_LABEL, topbar, pageHead, subjectStats, isGrouped, chapterNumber, chapterRow, quizItems, genItems, quizRound, cardKey, termAlt, termAltHTML, lessonLang, findChapter, emptyState, notFound, classGrid, langSwitch, writtenHTML };
 
   return { ui, _, notFound };
 })();

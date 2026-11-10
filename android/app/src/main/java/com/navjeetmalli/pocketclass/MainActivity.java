@@ -1,4 +1,4 @@
-package io.github.navjeetmallipixel.vidya;
+package com.navjeetmalli.pocketclass;
 
 import android.os.Bundle;
 import com.getcapacitor.BridgeActivity;

@@ -1,7 +1,7 @@
 // Revise hub, My mistakes, formula sheets, flashcard decks and the spaced-revision rounds.
 
 (() => {
-  const { D, cls, sheetLabel, FORMULA_LABEL, topbar, pageHead, chapterRow, quizItems, genItems, cardKey, findChapter, emptyState, notFound } = Views._;
+  const { D, cls, sheetLabel, FORMULA_LABEL, topbar, pageHead, chapterRow, quizItems, genItems, cardKey, termAlt, findChapter, emptyState, notFound } = Views._;
 
   // ---------- spaced revision ----------
   const agoLabel = (days) => (days === 0 ? t("today") : days === 1 ? t("yesterday") : days < 30 ? t("{n} days ago", { n: days }) : t("a month or more ago"));
@@ -217,7 +217,7 @@
     const c = cls();
     const cards = [];
     D.chapters(c, id).forEach((ch) =>
-      ch.terms.forEach((t) => cards.push({ key: cardKey(c, id, ch, t), front: t.term, back: t.meaning, from: ch.title }))
+      ch.terms.forEach((t) => cards.push({ key: cardKey(c, id, ch, t), front: t.term, alt: termAlt(t.term), back: t.meaning, from: ch.title }))
     );
     return {
       title: t("{subject} flashcards", { subject: subj.short }),

@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Pocket Class</string>
     <string name="title_activity_main">Pocket Class</string>
-    <string name="package_name">io.github.navjeetmallipixel.vidya</string>
-    <string name="custom_url_scheme">io.github.navjeetmallipixel.vidya</string>
+    <string name="package_name">com.navjeetmalli.pocketclass</string>
+    <string name="custom_url_scheme">com.navjeetmalli.pocketclass</string>
 </resources>

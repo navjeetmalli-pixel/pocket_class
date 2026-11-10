@@ -4,9 +4,9 @@ StudyData.addPractice(12, "englishpb", {
     mcq: [
       { q: "The Ghadar Party was founded in:", options: ["1857", "1905", "1913", "1947"], answer: 2, explain: "Indian migrants on the Pacific coast of North America founded the party in 1913.", level: 1 },
       { q: "Who was the first president of the Ghadar Party?", options: ["Lala Har Dayal", "Sohan Singh Bhakna", "Kartar Singh Sarabha", "Harish K. Puri"], answer: 1, explain: "Sohan Singh Bhakna was the first president. Lala Har Dayal was a leading figure, Sarabha was hanged young, and Puri is the professor who wrote the account.", level: 1 },
-      { q: "The word 'Kalapani' in the lesson stands for:", options: ["the Cellular Jail at Port Blair", "the Lahore Central Jail", "a river in Punjab", "a ship that carried emigrants"], answer: 0, explain: "Kalapani (black water) was the name for the Cellular Jail in the Andamans, to which prisoners were transported.", level: 1 },
+      { q: "The word 'Kalapani' in the lesson stands for:", options: ["the Cellular Jail at Port Blair", "the Lahore Central Jail in Punjab", "a river in Punjab", "a ship that carried emigrants"], answer: 0, explain: "Kalapani (black water) was the name for the Cellular Jail in the Andamans, to which prisoners were transported.", level: 1 },
       { q: "The lesson is an account written by:", options: ["Sohan Singh Bhakna", "Harish K. Puri", "Lala Har Dayal", "Kartar Singh Sarabha"], answer: 1, explain: "Dr Harish K. Puri, a former professor of political science at Guru Nanak Dev University, wrote the account.", level: 1 },
-      { q: "The Ghadar Party's newspaper Ghadar called for:", options: ["reform of the land tax", "an armed overthrow of British rule", "a ban on foreign cloth", "equal wages for migrant workers"], answer: 1, explain: "Ghadar means revolt, and the paper urged armed rebellion against British rule.", level: 1 },
+      { q: "The Ghadar Party's newspaper Ghadar called for:", options: ["reform of the land tax and rent laws", "an armed overthrow of British rule", "a ban on foreign cloth", "equal wages for migrant workers"], answer: 1, explain: "Ghadar means revolt, and the paper urged armed rebellion against British rule.", level: 1 },
       { q: "Why did many Ghadar members return to India in 1914?", options: ["to escape a famine abroad", "to join the British army", "to rouse a revolt when the First World War began", "to start newspapers in Punjab"], answer: 2, explain: "They saw Britain's war preoccupation as a chance to start a revolt in 1915.", level: 2 },
       { q: "The Lahore Conspiracy Cases were held in:", options: ["1906", "1915–16", "1930–31", "1942"], answer: 1, explain: "The discovery of the plan led to trials in 1915–16.", level: 2 },
       { q: "Which feature of the Cellular Jail made it especially harsh?", options: ["solitary cells", "an open courtyard for all", "a large library", "free movement between blocks"], answer: 0, explain: "Each prisoner was kept in a small dark cell with no contact with others, along with hard labour and poor food.", level: 2 },
@@ -25,7 +25,7 @@ StudyData.addPractice(12, "englishpb", {
         options: ["She is right; the trials were held in Port Blair.", "The Babas were tried in the Lahore Conspiracy Cases and then transported to the Cellular Jail.", "They were never tried; they were sent directly to Kalapani.", "They were tried in North America and deported."],
         answer: 1, explain: "The trials took place in Lahore in 1915–16; transportation to Kalapani was the sentence that followed.", level: 2
       },
-      { q: "Which sequence of events is correct?", options: ["Revolt plan discovered, party founded, trials in Lahore, transportation", "Party founded, return to India in 1914, plan discovered, trials and transportation", "Trials in Lahore, party founded, return to India, jail built", "Transportation, trials, return to India, party founded"], answer: 1, explain: "1913 founding, 1914 return, discovery of the plan, then the 1915–16 trials and sentences of transportation.", level: 3 },
+      { q: "Which sequence of events is correct?", options: ["Revolt plan discovered, party founded, return to India in 1914, trials and transportation", "Party founded, return to India in 1914, plan discovered, trials and transportation", "Trials in Lahore, party founded, return to India, jail built", "Transportation, trials, return to India, party founded"], answer: 1, explain: "1913 founding, 1914 return, discovery of the plan, then the 1915–16 trials and sentences of transportation.", level: 3 },
       { q: "Kartar Singh Sarabha is mentioned in the lesson as one of those who were:", options: ["transported for life to Port Blair", "hanged at a young age", "released after the trials", "elected president of the party"], answer: 1, explain: "Several were hanged, including the young Kartar Singh Sarabha, while many others got transportation for life.", level: 3 },
       {
         q: "Assertion (A): The hunger strikes of political prisoners in the Cellular Jail were protests.\nReason (R): The prisoners were treated harshly and given poor food.",
@@ -61,11 +61,11 @@ StudyData.addPractice(12, "englishpb", {
       { q: "Who wrote 'On Friendship'?", options: ["Robert Frost", "William Blake", "Kahlil Gibran", "John Milton"], answer: 2, explain: "It is a prose-poem by Kahlil Gibran from The Prophet.", level: 1 },
       { q: "The poem 'On Friendship' comes from the book:", options: ["Songs of Innocence", "The Prophet", "Mountain Interval", "Paradise Lost"], answer: 1, explain: "The Prophet (1923) is Gibran's book of prose poems.", level: 1 },
       { q: "Gibran describes a friend as:", options: ["a rival to be tested", "the answer to our needs", "someone who must always agree", "a useful business partner"], answer: 1, explain: "The poem opens with the idea that a friend is the answer to our needs.", level: 1 },
-      { q: "Gibran was a poet from:", options: ["Nigeria", "America only", "Lebanon (later in America)", "Russia"], answer: 2, explain: "He was a Lebanese-American poet and artist.", level: 1 },
+      { q: "Gibran was a poet from:", options: ["Nigeria (later in the Americas)", "America only", "Lebanon (later in America)", "Russia"], answer: 2, explain: "He was a Lebanese-American poet and artist.", level: 1 },
       { q: "A prose poem is writing that has:", options: ["imagery and rhythm of poetry without line breaks or strict metre", "strict rhyme and metre", "only dialogue", "facts and figures"], answer: 0, explain: "It combines poetic imagery with a prose layout.", level: 1 },
       { q: "According to the poem, with a true friend one should be able to:", options: ["hide one's feelings", "speak one's mind, even say 'no', without fear", "keep a list of favours", "avoid silence at all times"], answer: 1, explain: "Friendship rests on honesty, so there is no fear of saying 'no'.", level: 2 },
-      { q: "The poet says the only purpose of friendship should be:", options: ["mutual profit", "deepening of the spirit", "passing time", "gaining popularity"], answer: 1, explain: "Seeking any other purpose is not real friendship.", level: 2 },
-      { q: "'The heart finds its morning' in the laughter and small joys of friends. This suggests that:", options: ["friends should meet only in the morning", "shared joy refreshes and wakes the heart", "friendship is short-lived", "laughter hides sorrow"], answer: 1, explain: "Morning is used as a metaphor for freshness and renewal through shared delight.", level: 2 },
+      { q: "The poet says the only purpose of friendship should be:", options: ["mutual profit and worldly gain", "deepening of the spirit", "passing time", "gaining popularity"], answer: 1, explain: "Seeking any other purpose is not real friendship.", level: 2 },
+      { q: "'The heart finds its morning' in the laughter and small joys of friends. This suggests that:", options: ["friends should meet only early in the morning", "shared joy refreshes and wakes the heart", "friendship is short-lived", "laughter hides sorrow"], answer: 1, explain: "Morning is used as a metaphor for freshness and renewal through shared delight.", level: 2 },
       {
         q: "Assertion (A): In 'On Friendship', the poet advises giving one's best to a friend.\nReason (R): True friendship is unselfish and aims at the deepening of the spirit.",
         options: [
@@ -78,10 +78,10 @@ StudyData.addPractice(12, "englishpb", {
       },
       {
         q: "Harpreet always agrees with his friend Aman, even when Aman is wrong, because he is afraid of losing him.\nWhich idea in the poem does this go against?",
-        options: ["laughter and small joys", "freedom to speak one's mind honestly", "companionship in silence", "sowing and reaping"],
+        options: ["laughter, small joys and shared meals", "freedom to speak one's mind honestly", "companionship in silence", "sowing and reaping"],
         answer: 1, explain: "The poem says friends should be honest and not afraid to say 'no'.", level: 2
       },
-      { q: "Which is the best summary of the poem's theme?", options: ["Friends are useful for gaining status.", "Friendship is sincere, unselfish and shared in joy.", "Friendship must be avoided to stay free.", "Friends should be tested regularly."], answer: 1, explain: "The theme is stated as sincerity, unselfishness and shared joy.", level: 3 },
+      { q: "Which is the best summary of the poem's theme?", options: ["Friends are useful for gaining status.", "Friendship is sincere, unselfish and shared in joy.", "Friendship must be avoided if one wants to stay free.", "Friends should be tested regularly."], answer: 1, explain: "The theme is stated as sincerity, unselfishness and shared joy.", level: 3 },
       { q: "Why does the poet use images from nature such as sowing and reaping?", options: ["to teach farming", "to show friendship as something nurtured with care and rewarded", "to criticise rural life", "to show that friends are always rivals"], answer: 1, explain: "Nature imagery makes the language lyrical and suggests that care yields a harvest of companionship.", level: 3 },
       {
         q: "Assertion (A): A friendship formed only for gain does not fit Gibran's idea.\nReason (R): For Gibran, friendship has no purpose except the deepening of the spirit.",
@@ -121,7 +121,7 @@ StudyData.addPractice(12, "englishpb", {
       { q: "What is a 'green' in the poem's title?", options: ["a colour of paint", "an open grassy common in a village", "a type of bird", "a season"], answer: 1, explain: "A green is an open grassy space in a village.", level: 1 },
       { q: "At the end of the poem the tired children:", options: ["keep playing in the dark", "go home to rest in their mothers' laps", "sing on the hill", "board a train"], answer: 1, explain: "As the sun sets, the green becomes quiet and the children rest.", level: 2 },
       { q: "The movement of the poem from morning to evening stands for:", options: ["a journey by road", "the stages of human life", "the changing of seasons only", "the work of farmers"], answer: 1, explain: "The day mirrors childhood, old age and the end of life.", level: 2 },
-      { q: "The title 'echoing' green is appropriate because:", options: ["the poem repeats words and sounds that echo", "a mountain stands near the green", "the green is in a cave", "the old folk shout loudly"], answer: 0, explain: "Repeated words and song-like rhythm create an echo effect.", level: 2 },
+      { q: "The title 'echoing' green is appropriate because:", options: ["the poem repeats words and sounds that echo", "a mountain stands near the green", "the green is in a cave", "the old folk shout loudly across the fields"], answer: 0, explain: "Repeated words and song-like rhythm create an echo effect.", level: 2 },
       {
         q: "Assertion (A): The old folk in the poem take delight in watching the children.\nReason (R): They remember their own youthful games, so there is continuity between generations.",
         options: [
@@ -137,8 +137,8 @@ StudyData.addPractice(12, "englishpb", {
         options: ["the setting sun alone", "the old folk watching the children and remembering", "the children going home", "the singing birds"],
         answer: 1, explain: "The old folk in the poem likewise watch the young and recall their own games.", level: 2
       },
-      { q: "The poem uses images of light giving way to shade at the end. This hints at:", options: ["a storm", "the cycle of life", "a city at night", "the poet's anger"], answer: 1, explain: "The fading light suggests the cycle of life and the end of a day, as of a life.", level: 3 },
-      { q: "Which pair is correctly matched?", options: ["Innocence – joy, play and harmony with nature", "Imagery – a sound that repeats", "Personification – a group of lines", "Echo – giving human traits to objects"], answer: 0, explain: "Blake shows innocence as joy and harmony with nature. The other pairs mix up the terms.", level: 3 },
+      { q: "The poem uses images of light giving way to shade at the end. This hints at:", options: ["the coming of a storm", "the cycle of life", "a city at night", "the poet's anger"], answer: 1, explain: "The fading light suggests the cycle of life and the end of a day, as of a life.", level: 3 },
+      { q: "Which pair is correctly matched?", options: ["Innocence – joy, play and harmony with nature", "Imagery – a sound that repeats", "Personification – a group of lines", "Echo – giving human traits to animals and objects"], answer: 0, explain: "Blake shows innocence as joy and harmony with nature. The other pairs mix up the terms.", level: 3 },
       {
         q: "Assertion (A): The setting of the sun suggests more than the end of a day.\nReason (R): In the poem, the day's stages stand for childhood, old age and the end of life.",
         options: [
@@ -174,10 +174,10 @@ StudyData.addPractice(12, "englishpb", {
       { q: "The poet Gabriel Okara belongs to:", options: ["India", "Nigeria", "Russia", "England"], answer: 1, explain: "Okara (1921–2019) was a Nigerian poet and writer.", level: 1 },
       { q: "The speaker of the poem is:", options: ["a teacher", "a father talking to his son", "a mother", "a king"], answer: 1, explain: "A father tells his son how people have learned to be false.", level: 1 },
       { q: "The poem is written in:", options: ["a sonnet form", "free verse", "ballad form", "blank verse in iambs"], answer: 1, explain: "It has no regular rhyme or metre.", level: 1 },
-      { q: "What does the father ask the boy to teach him?", options: ["to read", "to laugh with real feeling", "to swim", "to speak many languages"], answer: 1, explain: "He wants to unlearn false smiles and be sincere again.", level: 1 },
+      { q: "What does the father ask the boy to teach him?", options: ["to read many books quickly", "to laugh with real feeling", "to swim", "to speak many languages"], answer: 1, explain: "He wants to unlearn false smiles and be sincere again.", level: 1 },
       { q: "'Smiling with the teeth while the eyes show nothing' conveys:", options: ["good health", "insincerity", "joy", "shyness"], answer: 1, explain: "It pictures a smile that is a mere gesture without feeling.", level: 2 },
-      { q: "The main contrast in the poem is between:", options: ["city and village", "then (sincere) and now (false)", "rich and poor", "summer and winter"], answer: 1, explain: "The poet contrasts past sincerity with present hypocrisy.", level: 2 },
-      { q: "The title echoes fairy tales to suggest that:", options: ["the poem is a children's story", "sincerity now belongs to a far-off past", "the poet loves fairy tales", "the story has a happy ending"], answer: 1, explain: "The 'once upon a time' phrasing places honest feeling in a distant past.", level: 2 },
+      { q: "The main contrast in the poem is between:", options: ["life in the city and in the village", "then (sincere) and now (false)", "rich and poor", "summer and winter"], answer: 1, explain: "The poet contrasts past sincerity with present hypocrisy.", level: 2 },
+      { q: "The title echoes fairy tales to suggest that:", options: ["the poem is simply a children's bedtime story", "sincerity now belongs to a far-off past", "the poet loves fairy tales", "the story has a happy ending"], answer: 1, explain: "The 'once upon a time' phrasing places honest feeling in a distant past.", level: 2 },
       {
         q: "Assertion (A): The speaker asks his son to teach him to laugh again.\nReason (R): The child represents honesty and innocence.",
         options: [
@@ -190,10 +190,10 @@ StudyData.addPractice(12, "englishpb", {
       },
       {
         q: "At a family function, Rohan's uncle shakes hands with everyone, but his eyes stay cold and he checks his phone. Rohan thinks of a poem he has studied.\nWhich idea of the poem does the uncle's behaviour illustrate?",
-        options: ["innocence of childhood", "empty gestures without real feeling", "love of nature", "fear of death"],
+        options: ["the innocence and games of childhood", "empty gestures without real feeling", "love of nature", "fear of death"],
         answer: 1, explain: "The poet criticises handshakes and smiles that carry no real feeling.", level: 2
       },
-      { q: "The speaker admits that he too has learned these false ways. This makes the poem:", options: ["an attack on others only", "a confession as well as a criticism", "a humorous story", "an advertisement"], answer: 1, explain: "He includes himself, which makes the poem honest and self-critical.", level: 3 },
+      { q: "The speaker admits that he too has learned these false ways. This makes the poem:", options: ["an attack on other people's habits only", "a confession as well as a criticism", "a humorous story", "an advertisement"], answer: 1, explain: "He includes himself, which makes the poem honest and self-critical.", level: 3 },
       { q: "Why does the poet use body images such as hands, eyes and teeth?", options: ["to describe a medical problem", "to show false feeling through physical gestures", "to praise health", "to show racial differences"], answer: 1, explain: "These images show how outward gestures replace real feeling.", level: 3 },
       {
         q: "Assertion (A): The poem is a criticism of hypocrisy in modern life.\nReason (R): People wear different 'faces' to suit different situations.",
@@ -227,8 +227,8 @@ StudyData.addPractice(12, "englishpb", {
   "father-returning-home": {
     mcq: [
       { q: "Who wrote 'Father Returning Home'?", options: ["Gabriel Okara", "Dilip Chitre", "Robert Frost", "William Blake"], answer: 1, explain: "It is a poem by Dilip Chitre (1938–2009), from Travelling in a Cage.", level: 1 },
-      { q: "Dilip Chitre wrote in:", options: ["Marathi and English", "Hindi and Urdu", "Punjabi only", "Bengali and French"], answer: 0, explain: "He wrote in both Marathi and English; the PSEB text is his English poem.", level: 1 },
-      { q: "The father in the poem travels home by:", options: ["a bullock cart", "a crowded suburban train", "an aeroplane", "a ship"], answer: 1, explain: "He returns on a crowded Mumbai suburban train.", level: 1 },
+      { q: "Dilip Chitre wrote in:", options: ["Marathi and English", "Hindi and Urdu", "Punjabi only", "Bengali and Portuguese"], answer: 0, explain: "He wrote in both Marathi and English; the PSEB text is his English poem.", level: 1 },
+      { q: "The father in the poem travels home by:", options: ["a bullock cart through the fields", "a crowded suburban train", "an aeroplane", "a ship"], answer: 1, explain: "He returns on a crowded Mumbai suburban train.", level: 1 },
       { q: "A person who travels regularly between home and work is a:", options: ["commuter", "tourist", "pilgrim", "refugee"], answer: 0, explain: "Commuter is the word for such a traveller.", level: 1 },
       { q: "The poem is written in:", options: ["rhymed couplets", "a sonnet", "free verse", "a ballad"], answer: 2, explain: "It is free verse in plain language with concrete everyday images.", level: 1 },
       { q: "The father is described as:", options: ["rich and cheerful", "an ageing, tired man in a mud-stained raincoat with a bag of books", "a stern officer", "a young student"], answer: 1, explain: "He is soaked, his raincoat is mud-stained, his bag of books is falling apart and his eyes are dimmed by age.", level: 2 },
@@ -250,7 +250,7 @@ StudyData.addPractice(12, "englishpb", {
         answer: 1, explain: "The poem shows a lonely father cut off from his sullen children, a generation gap.", level: 2
       },
       { q: "Why is the poem called 'tender but unsentimental'?", options: ["It mocks the father.", "It shows affection without exaggerating emotion.", "It is full of tears.", "It avoids describing the father."], answer: 1, explain: "The son sees his father with love but in plain, factual detail.", level: 3 },
-      { q: "From whose point of view is the father seen?", options: ["his employer's", "his grown-up son's, the poet's", "a stranger's on the train", "his wife's"], answer: 1, explain: "The poem is the grown-up son's tender view of his father.", level: 3 },
+      { q: "From whose point of view is the father seen?", options: ["his employer's", "his grown-up son's, the poet's", "a stranger's sitting on the train", "his wife's"], answer: 1, explain: "The poem is the grown-up son's tender view of his father.", level: 3 },
       {
         q: "Assertion (A): Concrete images of the train and the evening make the poem effective.\nReason (R): Plain, everyday language lets the reader feel the weariness of the ordinary working man.",
         options: [
@@ -284,12 +284,12 @@ StudyData.addPractice(12, "englishpb", {
     mcq: [
       { q: "Who wrote 'The Road Not Taken'?", options: ["William Blake", "Robert Frost", "John Milton", "Kahlil Gibran"], answer: 1, explain: "Robert Frost (1874–1963) is the poet.", level: 1 },
       { q: "The poem comes from the collection:", options: ["Songs of Innocence", "The Prophet", "Mountain Interval", "North of Boston only"], answer: 2, explain: "It is from Mountain Interval (1916).", level: 1 },
-      { q: "In which season is the wood in the poem?", options: ["spring with blossoms", "autumn with yellow leaves", "winter with snow", "monsoon"], answer: 1, explain: "The wood is a yellow autumn wood.", level: 1 },
+      { q: "In which season is the wood in the poem?", options: ["spring with fresh green leaves", "autumn with yellow leaves", "winter with snow", "monsoon"], answer: 1, explain: "The wood is a yellow autumn wood.", level: 1 },
       { q: "How many stanzas does the poem have?", options: ["two", "three", "four", "five"], answer: 2, explain: "It has four stanzas of five lines each.", level: 1 },
-      { q: "The two roads in the poem symbolise:", options: ["rivers", "choices in life", "two villages", "friends"], answer: 1, explain: "The fork stands for the choices we must make in life.", level: 1 },
+      { q: "The two roads in the poem symbolise:", options: ["rivers", "choices in life", "two distant villages", "friends"], answer: 1, explain: "The fork stands for the choices we must make in life.", level: 1 },
       { q: "The rhyme scheme of each stanza is:", options: ["AABBA", "ABAAB", "ABCDE", "AAAAA"], answer: 1, explain: "Each stanza is rhymed ABAAB.", level: 2 },
       { q: "The speaker took the road that seemed:", options: ["more crowded", "less worn", "paved", "flooded"], answer: 1, explain: "He chose the road that seemed less worn, though he admits both were much alike.", level: 2 },
-      { q: "The speaker keeps the first road 'for another day' but doubts that he will return. This shows that:", options: ["he will definitely come back", "choices in life cannot be undone", "he dislikes travel", "the road is closed"], answer: 1, explain: "Once a choice is made, we seldom get to go back and try the other path.", level: 2 },
+      { q: "The speaker keeps the first road 'for another day' but doubts that he will return. This shows that:", options: ["he will definitely come back soon", "choices in life cannot be undone", "he dislikes travel", "the road is closed"], answer: 1, explain: "Once a choice is made, we seldom get to go back and try the other path.", level: 2 },
       {
         q: "Assertion (A): The speaker will tell his story 'with a sigh' in the future.\nReason (R): He will look back with a mix of wonder and regret and can never know what the other path would have brought.",
         options: [
@@ -302,11 +302,11 @@ StudyData.addPractice(12, "englishpb", {
       },
       {
         q: "After Class 10, Navdeep has to choose between the science and arts streams. He cannot try both and says he will wonder about the other for years.\nWhich idea of the poem does his situation match?",
-        options: ["a choice that cannot be undone", "praise of autumn", "the beauty of a wood", "a journey by train"],
+        options: ["a choice that cannot be undone", "praise of autumn leaves and weather", "the beauty of a wood", "a journey by train"],
         answer: 0, explain: "The fork symbolises an irreversible choice, with the other road never explored.", level: 2
       },
-      { q: "The tone of the poem is best described as:", options: ["angry and bitter", "thoughtful and gently ironic", "comic", "boastful"], answer: 1, explain: "The speaker may be telling himself a neat story about his past.", level: 3 },
-      { q: "Why does the poem say both roads were 'really much alike' yet the choice 'made all the difference'?", options: ["It contradicts itself by mistake.", "We often make our choices look special afterwards.", "The roads were indeed very different.", "The poet forgot the details."], answer: 1, explain: "The irony suggests the speaker may exaggerate the uniqueness of his choice in hindsight.", level: 3 },
+      { q: "The tone of the poem is best described as:", options: ["angry, bitter and completely hopeless", "thoughtful and gently ironic", "comic", "boastful"], answer: 1, explain: "The speaker may be telling himself a neat story about his past.", level: 3 },
+      { q: "Why does the poem say both roads were 'really much alike' yet the choice 'made all the difference'?", options: ["It contradicts itself by mistake.", "We often make our choices look special afterwards.", "The roads were indeed very different, and he knew it.", "The poet forgot the details."], answer: 1, explain: "The irony suggests the speaker may exaggerate the uniqueness of his choice in hindsight.", level: 3 },
       {
         q: "Assertion (A): The poem is sometimes read as praise of individuality.\nReason (R): The speaker seems to choose the less-travelled road.",
         options: [
@@ -339,13 +339,13 @@ StudyData.addPractice(12, "englishpb", {
   "on-his-blindness": {
     mcq: [
       { q: "Who wrote 'On His Blindness'?", options: ["Robert Frost", "John Milton", "William Blake", "Dilip Chitre"], answer: 1, explain: "It is a sonnet by John Milton (1608–1674).", level: 1 },
-      { q: "A sonnet has how many lines?", options: ["ten", "twelve", "fourteen", "sixteen"], answer: 2, explain: "A sonnet is a fourteen-line poem with a fixed rhyme pattern.", level: 1 },
+      { q: "A sonnet has how many lines?", options: ["ten", "eighteen", "fourteen", "sixteen"], answer: 2, explain: "A sonnet is a fourteen-line poem with a fixed rhyme pattern.", level: 1 },
       { q: "In a Petrarchan sonnet the first eight lines are called the:", options: ["sestet", "octave", "couplet", "refrain"], answer: 1, explain: "The octave raises the problem; the sestet resolves it.", level: 1 },
       { q: "Who answers the poet's complaint in the poem?", options: ["God directly", "Patience", "his wife", "an angel named Hope"], answer: 1, explain: "Patience, personified, replies to the poet.", level: 1 },
       { q: "Milton lost his sight completely by about:", options: ["1608", "1652", "1700", "1590"], answer: 1, explain: "He was blind by about 1652; he later wrote Paradise Lost.", level: 1 },
       { q: "The 'talent' in the poem refers to:", options: ["only a coin", "his poetic gift and the Biblical parable of the talents", "his musical ability", "a farm"], answer: 1, explain: "It means both his gift of poetry and the parable's coin.", level: 2 },
       { q: "What does the poet fear in the octave?", options: ["that he cannot use his gift in God's service now that he is blind", "that he will lose his home", "that his book will be burned", "that his friends have left him"], answer: 0, explain: "He worries that his talent lies unused and that he may be blamed.", level: 2 },
-      { q: "According to Patience, God:", options: ["needs man's work and gifts", "needs neither man's work nor his gifts", "wants only wealth", "punishes the blind"], answer: 1, explain: "God needs no work or gift; those who bear his gentle yoke best serve him.", level: 2 },
+      { q: "According to Patience, God:", options: ["needs man's daily work and costly gifts", "needs neither man's work nor his gifts", "wants only wealth", "punishes the blind"], answer: 1, explain: "God needs no work or gift; those who bear his gentle yoke best serve him.", level: 2 },
       {
         q: "Assertion (A): The poet moves from complaint to calm acceptance.\nReason (R): Patience tells him that those who stand and wait also serve.",
         options: [
@@ -358,11 +358,11 @@ StudyData.addPractice(12, "englishpb", {
       },
       {
         q: "A cricketer, injured before a big match, feels useless and frustrated. His coach says, 'Supporting your team and staying prepared is also a contribution.'\nWhich idea from the poem does the coach's advice reflect?",
-        options: ["only active work counts as service", "patient endurance can also be service", "talent should be hidden", "blindness is a punishment"],
+        options: ["only active, visible work counts as service", "patient endurance can also be service", "talent should be hidden", "blindness is a punishment"],
         answer: 1, explain: "The poem says those who stand and wait also serve.", level: 2
       },
-      { q: "'Personification' in the poem refers to:", options: ["the poet's name", "Patience speaking as a person", "the sonnet's rhyme", "the octave's length"], answer: 1, explain: "Patience is given human qualities and answers the poet.", level: 3 },
-      { q: "The structure of the sonnet matches its argument because:", options: ["the octave poses the problem and the sestet resolves it", "the octave resolves and the sestet poses the problem", "both parts give the same complaint", "there is no relation"], answer: 0, explain: "In a Petrarchan sonnet, the 8 lines raise the question and the 6 lines answer it.", level: 3 },
+      { q: "'Personification' in the poem refers to:", options: ["the poet's name", "Patience speaking as a person", "the rhyme scheme of the sonnet", "the octave's length"], answer: 1, explain: "Patience is given human qualities and answers the poet.", level: 3 },
+      { q: "The structure of the sonnet matches its argument because:", options: ["the octave poses the problem and the sestet resolves it", "the octave resolves the issue and the sestet poses a problem", "both parts give the same complaint", "there is no relation"], answer: 0, explain: "In a Petrarchan sonnet, the 8 lines raise the question and the 6 lines answer it.", level: 3 },
       {
         q: "Assertion (A): The poem treats patient endurance as a form of faith.\nReason (R): Service is not only in action.",
         options: [

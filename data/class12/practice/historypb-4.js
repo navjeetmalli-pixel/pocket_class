@@ -9,7 +9,7 @@ StudyData.addPractice(12, "historypb", {
       { q: "The Sikhs defeated Fateh Khan in 1813 at the Battle of:", options: ["Jamrud", "Naushera", "Haidru", "Chillianwala"], answer: 2, explain: "At Haidru the Sikhs won and held Attock.", level: 1 },
       { q: "Why did Ranjit Singh want to control Peshawar?", options: ["It was the capital of the British", "It guarded the way to the Khyber Pass, the invasion route", "It was near Delhi", "It lay on the sea coast"], answer: 1, explain: "Holding Peshawar made the north-west frontier secure.", level: 2 },
       { q: "How did the Afghan quarrels help Ranjit Singh?", options: ["The Afghans joined him against the British", "Divided Afghan rulers could not defend their Punjab claims", "The Afghans gave him Kabul", "The Afghans left India entirely"], answer: 1, explain: "Disputes over the throne weakened the Afghans.", level: 2 },
-      { q: "Which forts did Ranjit Singh build on the frontier?", options: ["Fatehpur Sikri and Agra", "Jamrud, Attock and Khairabad", "Gobindgarh and Red Fort", "Daulatabad and Golconda"], answer: 1, explain: "These forts guarded the Indus and the Khyber approach.", level: 2 },
+      { q: "Which forts did Ranjit Singh build on the frontier?", options: ["Fatehpur Sikri and the Agra Fort", "Jamrud, Attock and Khairabad", "Gobindgarh and Red Fort", "Daulatabad and Golconda"], answer: 1, explain: "These forts guarded the Indus and the Khyber approach.", level: 2 },
       {
         q: "Assertion (A): Ranjit Singh built forts and kept strong garrisons on the frontier.\nReason (R): The fierce tribes of the region were difficult to control by ordinary methods.",
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
@@ -23,7 +23,7 @@ StudyData.addPractice(12, "historypb", {
         answer: 3, explain: "A is false: the Afghans withdrew and the Sikhs kept Jamrud. R is true, since Hari Singh Nalwa fell.", level: 3, keepOrder: true
       },
       { q: "Why was the north-west frontier costly for the Sikh state?", options: ["It produced no revenue at all", "Constant garrisons and revolts by tribes drained money and men", "The British charged rent", "The Afghans paid for its defence"], answer: 1, explain: "Holding the turbulent region required many troops and forts.", level: 3 },
-      { q: "Read: 'After Hari Singh Nalwa's death, the Afghans under Akbar Khan could not take Jamrud, and Sikh reinforcements arrived.' What does this show?", options: ["Hari Singh's death ended the Sikh hold on the frontier at once", "The Sikh frontier remained firm despite the loss of a great general", "The Sikhs gave up Peshawar", "Dost Muhammad became Maharaja"], answer: 1, explain: "Jamrud stayed in Sikh hands.", level: 3 }
+      { q: "Read: 'After Hari Singh Nalwa's death, the Afghans under Akbar Khan could not take Jamrud, and Sikh reinforcements arrived.' What does this show?", options: ["Hari Singh's death ended the Sikh hold on the frontier at once and for ever", "The Sikh frontier remained firm despite the loss of a great general", "The Sikhs gave up Peshawar", "Dost Muhammad became Maharaja"], answer: 1, explain: "Jamrud stayed in Sikh hands.", level: 3 }
     ],
     written: [
       { q: "In which year was the Battle of Jamrud fought?", a: "In April 1837.", marks: 1 },
@@ -43,7 +43,7 @@ StudyData.addPractice(12, "historypb", {
       { q: "The governor of a province under Ranjit Singh was called a:", options: ["kardar", "nazim", "qazi", "sardar"], answer: 1, explain: "A nazim headed each suba.", level: 1 },
       { q: "The regular army of Ranjit Singh was the:", options: ["Fauj-i-Ain", "Fauj-i-Be-Qawaid", "Ghorchara", "Akali Dal"], answer: 0, explain: "Fauj-i-Ain was the drilled regular force.", level: 1 },
       { q: "Which system divided the crop between state and farmer?", options: ["Kankut", "Ijara", "Batai", "Jagir"], answer: 2, explain: "Batai meant sharing the crop.", level: 1 },
-      { q: "Who was Ranjit Singh's foreign minister?", options: ["Fakir Azizuddin", "Dhian Singh", "Lal Singh", "Tej Singh"], answer: 0, explain: "Fakir Azizuddin handled foreign affairs.", level: 1 },
+      { q: "Who was Ranjit Singh's foreign minister?", options: ["Fakir Azizuddin", "Raja Dhian Singh", "Lal Singh", "Tej Singh"], answer: 0, explain: "Fakir Azizuddin handled foreign affairs.", level: 1 },
       { q: "Which of these was a European officer in Ranjit Singh's service?", options: ["Metcalfe", "Hardinge", "Ventura", "Dalhousie"], answer: 2, explain: "Ventura and Allard trained the army.", level: 1 },
       { q: "What was the main source of income of the Sikh state?", options: ["Customs", "Land revenue", "Fines", "Tribute alone"], answer: 1, explain: "Land revenue gave most income.", level: 2 },
       { q: "Local cases in villages were mainly decided by:", options: ["panchayats", "British judges", "the Maharaja alone", "military courts"], answer: 0, explain: "Village panchayats handled local disputes.", level: 2 },
@@ -53,7 +53,7 @@ StudyData.addPractice(12, "historypb", {
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
         answer: 1, explain: "Both are true, but the absence of a written code does not by itself explain the preference for fines, so R is not the explanation.", level: 2, keepOrder: true
       },
-      { q: "A cultivator is asked to give half of his estimated crop as revenue, assessed before the harvest. Which method is this?", options: ["Batai", "Kankut", "Ijara", "Rakhi"], answer: 1, explain: "Kankut was an estimate of the standing crop.", level: 2 },
+      { q: "A cultivator is asked to give half of his estimated crop as revenue, assessed before the harvest. Which method is this?", options: ["Jagirdari", "Kankut", "Ijara", "Rakhi"], answer: 1, explain: "Kankut was an estimate of the standing crop.", level: 2 },
       { q: "Which feature made Ranjit Singh's army different from the old Sikh bands?", options: ["Regular pay, drill and uniforms", "Only cavalry", "No cannon", "No leaders"], answer: 0, explain: "The Fauj-i-Ain had drill, uniform and regular pay.", level: 3 },
       {
         q: "Assertion (A): Ranjit Singh's government was not entirely a Sikh one in personnel.\nReason (R): He appointed Hindus and Muslims to high offices.",
@@ -82,7 +82,7 @@ StudyData.addPractice(12, "historypb", {
       { q: "In childhood Ranjit Singh lost the sight of one eye after:", options: ["a battle wound", "smallpox", "an accident", "a fall from a horse"], answer: 1, explain: "Smallpox caused the loss.", level: 1 },
       { q: "Which of these was a Muslim minister of Ranjit Singh?", options: ["Dhian Singh", "Diwan Mohkam Chand", "Fakir Azizuddin", "Tej Singh"], answer: 2, explain: "Fakir Azizuddin was his foreign minister.", level: 1 },
       { q: "Ranjit Singh's years of life were:", options: ["1699-1739", "1780-1839", "1780-1849", "1750-1809"], answer: 1, explain: "Born 1780, died 1839.", level: 1 },
-      { q: "Which shrine did he help to adorn with gilding?", options: ["Harmandir Sahib", "Jama Masjid", "Golconda", "Somnath"], answer: 0, explain: "Harmandir Sahib received gilded plates.", level: 1 },
+      { q: "Which shrine did he help to adorn with gilding?", options: ["Harmandir Sahib", "Jama Masjid of Delhi", "Golconda", "Somnath"], answer: 0, explain: "Harmandir Sahib received gilded plates.", level: 1 },
       { q: "Why is Ranjit Singh's rule called tolerant?", options: ["He forced all to become Sikhs", "He respected all religions and gave grants to temples, mosques and gurdwaras", "He banned all religion", "He closed the temples"], answer: 1, explain: "Equal respect to all religions.", level: 2 },
       { q: "How did Ranjit Singh treat defeated opponents?", options: ["Executed them", "Often leniently, giving jagirs", "Exiled them to Kabul", "Sold them as slaves"], answer: 1, explain: "He was wise and lenient.", level: 2 },
       { q: "How did he choose his officers?", options: ["By birth only", "By ability, irrespective of religion", "By lottery", "Only from his own family"], answer: 1, explain: "He chose capable men whatever their faith.", level: 2 },
@@ -91,14 +91,14 @@ StudyData.addPractice(12, "historypb", {
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
         answer: 0, explain: "These achievements explain the title.", level: 2, keepOrder: true
       },
-      { q: "A Muslim scholar is given a land grant by the Sikh Maharaja and a Hindu temple receives a donation in the same year. Which quality does this show?", options: ["Religious tolerance", "Hatred of Sikhs", "Weak government", "British influence"], answer: 0, explain: "Equal respect for faiths.", level: 2 },
+      { q: "A Muslim scholar is given a land grant by the Sikh Maharaja and a Hindu temple receives a donation in the same year. Which quality does this show?", options: ["Religious tolerance", "Hatred of Sikhs", "Weak government", "British colonial influence"], answer: 0, explain: "Equal respect for faiths.", level: 2 },
       { q: "Which limitation of his rule led to the collapse of the kingdom?", options: ["The state depended on his person and no successor was prepared", "He ruled for too short a time", "He lost his battles", "The British ruled the Punjab"], answer: 0, explain: "Weak institutions and a poor succession led to collapse.", level: 3 },
       {
         q: "Assertion (A): Ranjit Singh preferred diplomacy to war where possible.\nReason (R): He accepted the Sutlej boundary of 1809 and avoided a clash with the British.",
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
         answer: 0, explain: "The treaty shows his practical diplomacy.", level: 3, keepOrder: true
       },
-      { q: "Which pair names court factions that became powerful after his death?", options: ["Dogras and Sandhawalias", "Ahluwalias and Bhangis", "Marathas and Rohillas", "Barakzais and Durranis"], answer: 0, explain: "The Dogras and Sandhawalias.", level: 3 },
+      { q: "Which pair names court factions that became powerful after his death?", options: ["Dogras and Sandhawalias", "Ahluwalias and the Bhangis", "Marathas and Rohillas", "Barakzais and Durranis"], answer: 0, explain: "The Dogras and Sandhawalias.", level: 3 },
       { q: "Read: 'A historian says that Ranjit Singh built a kingdom but not a system that could survive him.' Which fact supports this?", options: ["His kingdom fell within ten years of his death", "He founded many universities", "He lived to a great age", "He never fought a war"], answer: 0, explain: "The empire fell apart by 1849.", level: 3 }
     ],
     written: [
@@ -116,7 +116,7 @@ StudyData.addPractice(12, "historypb", {
   },
   "first-anglo-sikh-war": {
     mcq: [
-      { q: "The decisive battle of the First Anglo-Sikh War was:", options: ["Mudki", "Sobraon", "Aliwal", "Gujrat"], answer: 1, explain: "Sobraon (10 February 1846) was decisive.", level: 1 },
+      { q: "The decisive battle of the First Anglo-Sikh War was:", options: ["Mudki", "Sobraon", "Buddowal", "Gujrat"], answer: 1, explain: "Sobraon (10 February 1846) was decisive.", level: 1 },
       { q: "The Treaty of Lahore was signed in:", options: ["1839", "1849", "1846", "1843"], answer: 2, explain: "On 9 March 1846.", level: 1 },
       { q: "The British annexed Sindh in:", options: ["1843", "1845", "1809", "1853"], answer: 0, explain: "In 1843.", level: 1 },
       { q: "The Sikh Maharaja during the war was:", options: ["Sher Singh", "Kharak Singh", "Nau Nihal Singh", "Dalip Singh"], answer: 3, explain: "The child Dalip Singh.", level: 1 },
@@ -157,7 +157,7 @@ StudyData.addPractice(12, "historypb", {
       { q: "The Punjab was annexed on:", options: ["10 February 1846", "29 March 1849", "21 February 1849", "9 March 1846"], answer: 1, explain: "Annexed by Lord Dalhousie on 29 March 1849.", level: 1 },
       { q: "Who rebelled at Multan in 1848?", options: ["Mulraj", "Sher Singh", "Lal Singh", "Gulab Singh"], answer: 0, explain: "Diwan Mulraj.", level: 1 },
       { q: "The decisive battle of the war was:", options: ["Ramnagar", "Gujrat", "Chillianwala", "Mudki"], answer: 1, explain: "Gujrat, 21 February 1849.", level: 1 },
-      { q: "Who was Governor-General at the time of annexation?", options: ["Lord Hardinge", "Lord Dalhousie", "Lord Minto", "Lord Curzon"], answer: 1, explain: "Lord Dalhousie.", level: 1 },
+      { q: "Who was Governor-General at the time of annexation?", options: ["Lord Cornwallis", "Lord Dalhousie", "Lord Minto", "Lord Curzon"], answer: 1, explain: "Lord Dalhousie.", level: 1 },
       { q: "The Kohinoor was given to:", options: ["Queen Victoria", "Lord Dalhousie", "Gulab Singh", "Dost Muhammad"], answer: 0, explain: "Handed to Queen Victoria.", level: 1 },
       { q: "Why is Gujrat called the battle of the guns?", options: ["The Sikhs used no guns", "British heavy artillery decided the battle", "It was fought on a gun-making site", "Only cannon were used by Afghans"], answer: 1, explain: "British artillery smashed the Sikh positions.", level: 2 },
       { q: "Who joined the rebels after being sent against Mulraj?", options: ["Sher Singh Attariwala", "Tej Singh", "Lal Singh", "Dhian Singh"], answer: 0, explain: "Sher Singh Attariwala.", level: 2 },
@@ -167,7 +167,7 @@ StudyData.addPractice(12, "historypb", {
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
         answer: 0, explain: "Heavy British losses are explained by the Sikh resistance.", level: 2, keepOrder: true
       },
-      { q: "After the annexation, Dalip Singh was:", options: ["made Governor of Lahore", "sent away with a pension", "executed", "given Kashmir"], answer: 1, explain: "Pensioned and sent away.", level: 2 },
+      { q: "After the annexation, Dalip Singh was:", options: ["made the Governor of Lahore", "sent away with a pension", "executed", "given Kashmir"], answer: 1, explain: "Pensioned and sent away.", level: 2 },
       { q: "Which sequence is right?", options: ["Gujrat, Chillianwala, Ramnagar", "Ramnagar, Chillianwala, Gujrat", "Chillianwala, Ramnagar, Gujrat", "Ramnagar, Gujrat, Chillianwala"], answer: 1, explain: "Nov 1848, Jan 1849, Feb 1849.", level: 3 },
       {
         q: "Assertion (A): Dalhousie annexed the Punjab in 1849.\nReason (R): He was eager to use the revolt to end Sikh rule.",

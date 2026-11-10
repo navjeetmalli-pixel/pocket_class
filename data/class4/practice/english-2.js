@@ -2,7 +2,7 @@
 StudyData.addPractice(4, "english", {
   "together-we-can": {
     mcq: [
-      { q: "What is the poem “Together We Can” about?", options: ["Teamwork","Cooking","Travel","Rain"], answer: 0, explain: "It is about standing together and helping each other.", level: 1 },
+      { q: "What is the poem “Together We Can” about?", options: ["Teamwork", "Cooking food", "Travel", "Rain"], answer: 0, explain: "It is about standing together and helping each other.", level: 1 },
       { q: "A group of bees is called a…", options: ["herd","pack","swarm","bunch"], answer: 2, explain: "Bees fly together in a swarm.", level: 1 },
       { q: "A group of sheep is called a…", options: ["herd","grove","bouquet","choir"], answer: 0, explain: "Sheep live in a herd.", level: 1 },
       { q: "Which word means a close link of friendship or love?", options: ["goal","bond","race","cheer"], answer: 1, explain: "A bond is a close link between people.", level: 1 },
@@ -11,7 +11,7 @@ StudyData.addPractice(4, "english", {
       { q: "Which sentence is about the future?", options: ["Lubang helped his friend.","Lubang is helping his friend.","Lubang will help his friend.","Lubang helps his friend."], answer: 2, explain: "“Will” shows something that has not yet happened.", level: 2 },
       { q: "A group of trees is called a…", options: ["grove","herd","swarm","pack"], answer: 0, explain: "A grove is a small group of trees.", level: 2 },
       { q: "Which two words have almost the opposite meaning?", options: ["win – lose","cheer – shout","bond – tie","goal – aim"], answer: 0, explain: "To win is the opposite of to lose.", level: 2 },
-      { q: "Meera and her two friends are making a school project. Two of them argue about the colours. What is the best thing Meera can do as a team leader?", options: ["Do all the work herself","Listen to both and help them agree","Leave the group","Choose only her favourite colours"], answer: 1, explain: "A good leader listens and brings the team together.", level: 2 },
+      { q: "Meera and her two friends are making a school project. Two of them argue about the colours. What is the best thing Meera can do as a team leader?", options: ["Do all the work herself", "Listen to both and help them agree", "Leave the group", "Choose only her own favourite colours"], answer: 1, explain: "A good leader listens and brings the team together.", level: 2 },
       { q: "Which sentence uses a collective noun correctly?", options: ["A herd of keys fell down.","A swarm of bees flew away.","A pack of flowers was bought.","A grove of boys sang."], answer: 1, explain: "Bees move as a swarm.", level: 3 },
       { q: "In “The bank is between the school and the post office”, what does ‘between’ tell us?", options: ["The bank is in the middle of the two places","The bank is behind both","The bank is far away","The bank is closed"], answer: 0, explain: "Between means in the middle of two things.", level: 3 }
     ],
@@ -32,7 +32,7 @@ StudyData.addPractice(4, "english", {
       { q: "Who comforted Chinna at home?", options: ["His mother","His teacher","Chacha","His friend"], answer: 0, explain: "Kamala hugged him and comforted him.", level: 1 },
       { q: "A baby goat is called a…", options: ["calf","kid","cub","foal"], answer: 1, explain: "A goat under six months is a kid.", level: 1 },
       { q: "Why did Chinna return the extra ten rupees?", options: ["He was scared","He remembered how sad he felt when he lost his money","The seller was his uncle","He did not like chocolates"], answer: 1, explain: "His mother reminded him of the feeling.", level: 2 },
-      { q: "Which is the opposite of “reward”?", options: ["prize","gift","praise","punishment"], answer: 3, explain: "A reward is the opposite of a punishment.", level: 2 },
+      { q: "Which is the opposite of “reward”?", options: ["prize", "gift", "kind praise", "punishment"], answer: 3, explain: "A reward is the opposite of a punishment.", level: 2 },
       { q: "“Kamala bought two pineapples at forty-five rupees each.” How much did she pay in all?", options: ["₹45","₹90","₹100","₹80"], answer: 1, explain: "45 + 45 = 90.", level: 2 },
       { q: "Choose the correct word: “Charu is ___ than Chinna.”", options: ["tall","tallest","taller","tallst"], answer: 2, explain: "We add -er and use “than” to compare two.", level: 2 },
       { q: "Rohan finds a ₹20 note on the school playground. Following the lesson, what should he do?", options: ["Keep it","Spend it on sweets","Give it to a teacher so the owner can be found","Throw it away"], answer: 2, explain: "Honesty means not keeping what is not ours.", level: 2 },
@@ -60,7 +60,7 @@ StudyData.addPractice(4, "english", {
       { q: "Which is an unsafe habit?", options: ["Crossing at the zebra crossing","Walking on the footpath","Playing near the road","Holding an adult’s hand"], answer: 2, explain: "Play near the road can lead to accidents.", level: 2 },
       { q: "The pedestrian signal is red. What should you do?", options: ["Run across","Wait for it to turn green","Cross slowly","Cross at the corner"], answer: 1, explain: "Wait for green before crossing.", level: 2 },
       { q: "Isha is walking home at 6 p.m. in winter when it is getting dark. Which is the best safety step?", options: ["Wear dark clothes","Stick reflective stickers on her bag or clothes","Walk in the middle of the road","Put on headphones"], answer: 1, explain: "Reflective stickers help drivers see her.", level: 2 },
-      { q: "Which sentence has a countable noun underlined correctly? “Peel two bananas and pour milk.”", options: ["bananas is countable, milk is uncountable","milk is countable, bananas uncountable","both are uncountable","both are countable"], answer: 0, explain: "You can count bananas but not milk.", level: 3 },
+      { q: "Which sentence has a countable noun underlined correctly? “Peel two bananas and pour milk.”", options: ["bananas is countable, milk is uncountable", "milk is countable, but bananas are uncountable", "both are uncountable", "both are countable"], answer: 0, explain: "You can count bananas but not milk.", level: 3 },
       { q: "Why does the letter say “never run across the road”?", options: ["Running is tiring","Drivers may not be able to stop, and you may trip","It is rude","It is slow"], answer: 1, explain: "Walking calmly is safer.", level: 3 }
     ],
     written: [
@@ -75,13 +75,13 @@ StudyData.addPractice(4, "english", {
   "one-thing-at-a-time": {
     mcq: [
       { q: "The poem says we should work while we…", options: ["sleep","work","play","eat"], answer: 1, explain: "It says work while you work.", level: 1 },
-      { q: "“Might” means…", options: ["strength","help","sound","hope"], answer: 0, explain: "All your might means all your strength.", level: 1 },
+      { q: "“Might” means…", options: ["strength", "help", "loud sound", "hope"], answer: 0, explain: "All your might means all your strength.", level: 1 },
       { q: "Which word rhymes with “play”?", options: ["way","work","well","right"], answer: 0, explain: "Play and way end the same.", level: 1 },
       { q: "Which word has a silent ‘l’?", options: ["ball","calm","lamp","lion"], answer: 1, explain: "In calm we do not say the l.", level: 1 },
       { q: "Which time is before noon?", options: ["8 a.m.","8 p.m.","3 p.m.","11 p.m."], answer: 0, explain: "a.m. is used for time before noon.", level: 1 },
       { q: "“Things done by halves are never done right” means…", options: ["Half the class is absent","Work done carelessly is not good","We should cut things","Take half a day off"], answer: 1, explain: "Do a task fully and carefully.", level: 2 },
       { q: "Which answer solves the riddle: “Thirty white horses on a red hill”?", options: ["Teeth","Clouds","Milk","Ants"], answer: 0, explain: "Teeth are white, set in red gums.", level: 2 },
-      { q: "Which is a correct sentence?", options: ["Two girls are going to school.","Two girl is going to school.","Two girls is going school.","Two girls going to school."], answer: 0, explain: "It follows the pattern who + are + action word + ing.", level: 2 },
+      { q: "Which is a correct sentence?", options: ["Two girls are going to school.", "Two girl is going to the school.", "Two girls is going school.", "Two girls going to school."], answer: 0, explain: "It follows the pattern who + are + action word + ing.", level: 2 },
       { q: "Which pair rhymes?", options: ["well – tell","work – might","moments – away","useful – done"], answer: 0, explain: "Well and tell sound the same.", level: 2 },
       { q: "Ravi is doing homework but keeps checking the TV. What does the poem advise?", options: ["Do one thing at a time with full attention","Do both together","Stop homework","Watch TV only"], answer: 0, explain: "Focus on one thing and do it well.", level: 2 },
       { q: "Which activity helps focus?", options: ["Deep breathing","Shouting","Running around","Playing loudly"], answer: 0, explain: "Calm breathing helps the mind settle.", level: 3 },
@@ -98,9 +98,9 @@ StudyData.addPractice(4, "english", {
   },
   "the-old-stag": {
     mcq: [
-      { q: "The story is adapted from the…", options: ["Panchatantra","Ramayana","Jataka","Mahabharata"], answer: 0, explain: "It is a Panchatantra tale.", level: 1 },
+      { q: "The story is adapted from the…", options: ["Panchatantra", "Ramayana", "Jataka", "Mahabharata epic"], answer: 0, explain: "It is a Panchatantra tale.", level: 1 },
       { q: "A stag is a…", options: ["male deer","female deer","small bird","bull"], answer: 0, explain: "A stag is a male deer.", level: 1 },
-      { q: "Where did the stag stay?", options: ["On a hillock","In a pond","In a cave","In a field"], answer: 0, explain: "He stayed on a hillock with tender grass.", level: 1 },
+      { q: "Where did the stag stay?", options: ["On a hillock", "In a pond", "In a cave", "In a wide field"], answer: 0, explain: "He stayed on a hillock with tender grass.", level: 1 },
       { q: "What did the visitors eat?", options: ["Fruits","Tender grass","Roots","Leaves from trees"], answer: 1, explain: "They ate the tender grass of the hillock.", level: 1 },
       { q: "Which word means “soft and young”?", options: ["tender","lush","speedy","shady"], answer: 0, explain: "Tender grass is soft and young.", level: 1 },
       { q: "Why did the animals feel ashamed?", options: ["They lost a game","Their greed had made the stag weaker","They were late","They were scared"], answer: 1, explain: "They had eaten the stag’s grass.", level: 2 },
@@ -109,7 +109,7 @@ StudyData.addPractice(4, "english", {
       { q: "“Speedy recovery” means…", options: ["Fast healing","Slow work","Quick running","Loud noise"], answer: 0, explain: "Recovery is getting well again.", level: 2 },
       { q: "A class eats all the sweets from a bowl before some children get any. Which lesson from the story applies?", options: ["Share and use things wisely so there is enough for everybody","Eat fast","Hide sweets","Never bring sweets"], answer: 0, explain: "Nature and shared things are enough if used wisely.", level: 2 },
       { q: "Which is the best moral of the story?", options: ["Be greedy","Think of others and use resources wisely","Always stay on hills","Do not visit sick friends"], answer: 1, explain: "The animals understood this at the end.", level: 3 },
-      { q: "Which pair of adverbs best fits: “The rabbit ___ ate the carrots and ___ ran away”?", options: ["quickly – quietly","green – tall","forest – hill","happy – sad"], answer: 0, explain: "Quickly and quietly tell how the actions were done.", level: 3 }
+      { q: "Which pair of adverbs best fits: “The rabbit ___ ate the carrots and ___ ran away”?", options: ["quickly – quietly", "green – tall", "forest – small hill", "happy – sad"], answer: 0, explain: "Quickly and quietly tell how the actions were done.", level: 3 }
     ],
     written: [
       { q: "Why was the stag loved by all?", a: "He was kind and greeted everyone warmly each day.", marks: 1 },
@@ -124,13 +124,13 @@ StudyData.addPractice(4, "english", {
     mcq: [
       { q: "Who invented the Braille alphabet in its simple form?", options: ["Louis Braille","Charles Barbier","Newton","Edison"], answer: 0, explain: "Louis simplified Night Writing to make Braille.", level: 1 },
       { q: "Braille is read by…", options: ["touch","sound","smell","taste"], answer: 0, explain: "Fingers feel raised dots.", level: 1 },
-      { q: "Louis Braille’s father was a…", options: ["blacksmith","teacher","soldier","baker"], answer: 0, explain: "He worked with iron tools.", level: 1 },
-      { q: "In which country did Louis live?", options: ["France","Spain","Italy","India"], answer: 0, explain: "He lived in France.", level: 1 },
-      { q: "Braille uses…", options: ["raised dots","colours","songs","sticks"], answer: 0, explain: "Letters are shown by raised dots.", level: 1 },
+      { q: "Louis Braille’s father was a…", options: ["blacksmith", "teacher", "soldier", "village baker"], answer: 0, explain: "He worked with iron tools.", level: 1 },
+      { q: "In which country did Louis live?", options: ["France", "Germany", "Italy", "India"], answer: 0, explain: "He lived in France.", level: 1 },
+      { q: "Braille uses…", options: ["raised dots", "bright colours", "songs", "sticks"], answer: 0, explain: "Letters are shown by raised dots.", level: 1 },
       { q: "Why was Night Writing not a success?", options: ["It was too difficult","It was too colourful","It was too cheap","It was too short"], answer: 0, explain: "Soldiers found it hard to read.", level: 2 },
-      { q: "Why is a Braille book thicker than a printed book?", options: ["Dots need more space","Pages are wet","It has more words","Paper is soft"], answer: 0, explain: "Dots cannot be placed too close.", level: 2 },
+      { q: "Why is a Braille book thicker than a printed book?", options: ["Dots need more space", "Pages are wet", "It has many more words", "Paper is soft"], answer: 0, explain: "Dots cannot be placed too close.", level: 2 },
       { q: "Choose the correct sentence.", options: ["Sheeba was writing a letter.","Sheeba were writing a letter.","Sheeba am writing a letter.","Sheeba be writing a letter."], answer: 0, explain: "A single person takes “was”.", level: 2 },
-      { q: "“The dogs are barking” in the past is…", options: ["The dogs were barking.","The dogs was barking.","The dogs barks.","The dogs is barked."], answer: 0, explain: "Plural uses “were + verb + ing”.", level: 2 },
+      { q: "“The dogs are barking” in the past is…", options: ["The dogs were barking.", "The dogs was barking loudly.", "The dogs barks.", "The dogs is barked."], answer: 0, explain: "Plural uses “were + verb + ing”.", level: 2 },
       { q: "Rina’s classmate has low vision. Which is the kindest help?", options: ["Give a printout in large letters","Laugh at him","Hide his book","Ignore him"], answer: 0, explain: "Large print helps him read.", level: 2 },
       { q: "Why does the lesson say that “a blind person taught the world to see”?", options: ["His invention helps many people read","He taught art","He made glasses","He taught music"], answer: 0, explain: "Braille opened reading to blind people everywhere.", level: 3 },
       { q: "Which action protects our eyes from harm?", options: ["Staying away from firecrackers when they burst","Rubbing eyes with dirty hands","Playing with sharp tools","Looking at the sun"], answer: 0, explain: "Keeping a safe distance protects the eyes.", level: 3 }
@@ -150,10 +150,10 @@ StudyData.addPractice(4, "english", {
       { q: "Who plays the guitar?", options: ["Lhamo","Meena","Geeta","Shabana"], answer: 0, explain: "Lhamo proudly plays the guitar.", level: 1 },
       { q: "Which sport does Shabana enjoy?", options: ["Cycling","Swimming","Archery","Boxing"], answer: 0, explain: "She wins a cycle race.", level: 1 },
       { q: "“Swift” means…", options: ["very fast","very slow","very loud","very big"], answer: 0, explain: "A swift girl is quick.", level: 1 },
-      { q: "A word that describes a noun is an…", options: ["adjective","verb","adverb","article"], answer: 0, explain: "Adjectives tell more about nouns.", level: 1 },
+      { q: "A word that describes a noun is an…", options: ["adjective", "verb", "adverb", "preposition"], answer: 0, explain: "Adjectives tell more about nouns.", level: 1 },
       { q: "Which word rhymes with “race”?", options: ["pace","play","rock","skate"], answer: 0, explain: "Race and pace sound alike.", level: 2 },
       { q: "Which word has double letters?", options: ["carrot","table","pencil","kite"], answer: 0, explain: "Carrot has double r.", level: 2 },
-      { q: "In “hardworking children”, the adjective is…", options: ["hardworking","children","in","are"], answer: 0, explain: "It describes the noun children.", level: 2 },
+      { q: "In “hardworking children”, the adjective is…", options: ["hardworking", "the children", "in", "are"], answer: 0, explain: "It describes the noun children.", level: 2 },
       { q: "Which pair rhymes in the poem?", options: ["skates – mistakes","hockey – guitar","Meena – race","joy – rock"], answer: 0, explain: "Skates and mistakes end the same.", level: 2 },
       { q: "Rohit wants to stay healthy and happy. Which plan fits the poem best?", options: ["Study, play and enjoy music in a balanced way","Only study","Only watch TV","Stay indoors always"], answer: 0, explain: "The poem says play and fitness help body and mind.", level: 2 },
       { q: "Why does the poem call Geeta graceful and say she learns daily?", options: ["She improves by learning from her mistakes","She never skates","She is shy","She wins every race"], answer: 0, explain: "She learns daily from mistakes while skating.", level: 3 },
@@ -171,11 +171,11 @@ StudyData.addPractice(4, "english", {
   "the-lagori-champions": {
     mcq: [
       { q: "How many stones are used in Lagori?", options: ["Seven","Five","Ten","Three"], answer: 0, explain: "Seven flat stones are stacked.", level: 1 },
-      { q: "What is Deepa’s team called?", options: ["Sundarpur Tigers","Green Warriors","Red Lions","Blue Eagles"], answer: 0, explain: "She is captain of the Sundarpur Tigers.", level: 1 },
-      { q: "What is Lagori called in Rajasthan?", options: ["Satoliya","Hekko","Kabaddi","Kancha"], answer: 0, explain: "Prakash calls it Satoliya.", level: 1 },
+      { q: "What is Deepa’s team called?", options: ["Sundarpur Tigers", "Green Valley Warriors", "Red Lions", "Blue Eagles"], answer: 0, explain: "She is captain of the Sundarpur Tigers.", level: 1 },
+      { q: "What is Lagori called in Rajasthan?", options: ["Satoliya", "Hekko", "Gilli-danda", "Kancha"], answer: 0, explain: "Prakash calls it Satoliya.", level: 1 },
       { q: "Who blew the whistle?", options: ["The referee","Deepa","Imran","Nidhi"], answer: 0, explain: "The referee starts and ends the match.", level: 1 },
       { q: "Who is Prakash to Ravi?", options: ["His cousin","His brother","His teacher","His neighbour"], answer: 0, explain: "Ravi introduces him as his cousin.", level: 1 },
-      { q: "Why was Prakash chosen?", options: ["He is a good runner","He is tall","He is the captain","He has a bat"], answer: 0, explain: "Guneet says he is a good runner.", level: 2 },
+      { q: "Why was Prakash chosen?", options: ["He is a good runner", "He is tall", "He is the captain", "He has a new cricket bat"], answer: 0, explain: "Guneet says he is a good runner.", level: 2 },
       { q: "What does “dodge” mean?", options: ["Move quickly to avoid","Throw hard","Sit down","Shout"], answer: 0, explain: "Deepa dodged the ball.", level: 2 },
       { q: "A group of players on the same side is a…", options: ["team","stone","boundary","whistle"], answer: 0, explain: "The Tigers are a team.", level: 2 },
       { q: "Which is a sentence that asks something?", options: ["Where do you stay?","This flower is red.","I like rain.","Run fast."], answer: 0, explain: "It ends with a question mark.", level: 2 },
@@ -194,7 +194,7 @@ StudyData.addPractice(4, "english", {
   },
   "hekko": {
     mcq: [
-      { q: "In which state is Hekko played?", options: ["Nagaland","Punjab","Goa","Bihar"], answer: 0, explain: "It is played in Mokokchung, Nagaland.", level: 1 },
+      { q: "In which state is Hekko played?", options: ["Nagaland", "Rajasthan", "Goa", "Bihar"], answer: 0, explain: "It is played in Mokokchung, Nagaland.", level: 1 },
       { q: "What does ‘Hekko’ mean?", options: ["Challenging the tiger","Running fast","Hide and seek","Stone throwing"], answer: 0, explain: "Hek is to challenge and ko is tiger.", level: 1 },
       { q: "How many players are in each team?", options: ["11","7","5","15"], answer: 0, explain: "Each team has 11 players.", level: 1 },
       { q: "Which team is the tiger team?", options: ["Aakho","Aami","Khozuba","Joko"], answer: 0, explain: "Aakho means the tiger.", level: 1 },
@@ -227,8 +227,8 @@ StudyData.addPractice(4, "english", {
       { q: "In “We watch a play”, the word play is a…", options: ["noun","verb","adverb","preposition"], answer: 0, explain: "It names a thing.", level: 2 },
       { q: "“A bee is ___ the flower.” Best word for sitting on top?", options: ["on","between","behind","under"], answer: 0, explain: "On shows contact on top.", level: 2 },
       { q: "Which sentence is the longest and most detailed?", options: ["Jeevan waited for the bus all morning.","Jeevan waited.","Jeevan waited for the bus.","Jeevan sat."], answer: 0, explain: "It adds more information.", level: 2 },
-      { q: "Sana is on a swing and sees a river, a tree and cows. Which word describes how these look from far up?", options: ["countryside","kitchen","classroom","market"], answer: 0, explain: "These are seen over the countryside.", level: 2 },
-      { q: "Which pair shows the same word as noun and verb?", options: ["I swing on a swing.","I run a race.","She sings a song.","He eats food."], answer: 0, explain: "Swing is a verb first and a noun second.", level: 3 },
+      { q: "Sana is on a swing and sees a river, a tree and cows. Which word describes how these look from far up?", options: ["countryside", "neighbourhood", "classroom", "market"], answer: 0, explain: "These are seen over the countryside.", level: 2 },
+      { q: "Which pair shows the same word as noun and verb?", options: ["I swing on a swing.", "I run in a school race.", "She sings a song.", "He eats food."], answer: 0, explain: "Swing is a verb first and a noun second.", level: 3 },
       { q: "What do ‘up’ and ‘down’ show in the poem?", options: ["Movement of the swing","Time passing","Fear","A quarrel"], answer: 0, explain: "The words move like the swing.", level: 3 }
     ],
     written: [
@@ -246,14 +246,14 @@ StudyData.addPractice(4, "english", {
       { q: "What did she pack?", options: ["Rotis with achaar","Pizza","Noodles","Cake"], answer: 0, explain: "Rotis with achaar and apples.", level: 1 },
       { q: "Tallest mountain in the world?", options: ["Mount Everest","Mount Abu","Nilgiri","Vindhya"], answer: 0, explain: "Grandfather points to Everest.", level: 1 },
       { q: "Yaks give…", options: ["milk and wool","silk","honey","gold"], answer: 0, explain: "They also carry loads.", level: 1 },
-      { q: "What did Minam make in the snow?", options: ["A snowman","A boat","A kite","A house"], answer: 0, explain: "She made a small snowman.", level: 1 },
+      { q: "What did Minam make in the snow?", options: ["A snowman", "A paper boat", "A kite", "A house"], answer: 0, explain: "She made a small snowman.", level: 1 },
       { q: "A Sherpa is a…", options: ["mountain guide","tailor","farmer","singer"], answer: 0, explain: "Sherpas guide climbers.", level: 2 },
       { q: "Which conjunction shows a choice?", options: ["or","and","but","because"], answer: 0, explain: "Or gives a choice.", level: 2 },
       { q: "“I was tired, ___ I finished my work.” Which word fits?", options: ["but","or","because","so"], answer: 0, explain: "But shows contrast.", level: 2 },
-      { q: "The ‘foot’ of a mountain means…", options: ["its bottom","its top","its tree","its river"], answer: 0, explain: "Foot is the lowest part.", level: 2 },
+      { q: "The ‘foot’ of a mountain means…", options: ["its bottom", "its top", "its tree", "its small river"], answer: 0, explain: "Foot is the lowest part.", level: 2 },
       { q: "On a hike, Arun sees rubbish near a stream. What would Minam do?", options: ["Pick it up and keep nature clean","Ignore it","Throw more","Burn it"], answer: 0, explain: "She promised to protect the mountains.", level: 2 },
       { q: "Which animals are good at climbing rocks?", options: ["Mountain goats","Cows","Ducks","Crocodiles"], answer: 0, explain: "They jump from rock to rock.", level: 3 },
-      { q: "“Neck of the bottle” uses a body part. Which is similar?", options: ["Hands of the clock","Colour of the sky","Walk of the dog","Smell of rain"], answer: 0, explain: "Hands is a body-part word used for an object.", level: 3 }
+      { q: "“Neck of the bottle” uses a body part. Which is similar?", options: ["Hands of the clock", "Colour of the blue sky", "Walk of the dog", "Smell of rain"], answer: 0, explain: "Hands is a body-part word used for an object.", level: 3 }
     ],
     written: [
       { q: "Who is Minam’s grandfather?", a: "He is a former Sherpa.", marks: 1 },
@@ -268,7 +268,7 @@ StudyData.addPractice(4, "english", {
     mcq: [
       { q: "Who built Maheshwar Fort?", options: ["Ahilya Bai","Rani Laxmibai","Shah Jahan","Ashoka"], answer: 0, explain: "Queen Ahilya Bai.", level: 1 },
       { q: "Maheshwar is in which state?", options: ["Madhya Pradesh","Gujarat","Punjab","Kerala"], answer: 0, explain: "It is in Madhya Pradesh.", level: 1 },
-      { q: "Which river flows by it?", options: ["Narmada","Ganga","Kaveri","Sutlej"], answer: 0, explain: "The fort is on the Narmada.", level: 1 },
+      { q: "Which river flows by it?", options: ["Narmada", "Godavari", "Kaveri", "Sutlej"], answer: 0, explain: "The fort is on the Narmada.", level: 1 },
       { q: "Famous cloth of Maheshwar?", options: ["Maheshwari sarees","Pashmina","Khadi","Silk"], answer: 0, explain: "Weavers make Maheshwari sarees.", level: 1 },
       { q: "How tall is the queen’s statue?", options: ["13 feet","5 feet","50 feet","100 feet"], answer: 0, explain: "It is a 13-feet tall statue.", level: 1 },
       { q: "Which words mean almost the same?", options: ["happy – cheerful","hot – cold","big – tiny","up – down"], answer: 0, explain: "They are synonyms.", level: 2 },
@@ -277,7 +277,7 @@ StudyData.addPractice(4, "english", {
       { q: "“I saw ___ elephant.”", options: ["an","a","the","no word"], answer: 0, explain: "Elephant starts with a vowel sound.", level: 2 },
       { q: "Kabir wants to know about an old fort near his town. What should he do first?", options: ["Ask elders and collect facts and pictures","Guess","Ignore it","Break it"], answer: 0, explain: "The lesson suggests asking elders and collecting information.", level: 2 },
       { q: "Why is the queen’s statue compared to a guardian?", options: ["It seems to watch over her land","It is armed","It is moving","It is hidden"], answer: 0, explain: "It stands in front of the palace looking over her land.", level: 3 },
-      { q: "Which words describe the fort?", options: ["majestic and grand","tiny and plain","noisy and quick","soft and wet"], answer: 0, explain: "The fort is grand with balconies and temples.", level: 3 }
+      { q: "Which words describe the fort?", options: ["majestic and grand", "tiny and very plain", "noisy and quick", "soft and wet"], answer: 0, explain: "The fort is grand with balconies and temples.", level: 3 }
     ],
     written: [
       { q: "Where is Maheshwar Fort?", a: "On the banks of the Narmada River in Madhya Pradesh.", marks: 1 },

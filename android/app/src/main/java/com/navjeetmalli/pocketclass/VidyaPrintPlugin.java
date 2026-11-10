@@ -1,4 +1,4 @@
-package io.github.navjeetmallipixel.vidya;
+package com.navjeetmalli.pocketclass;
 
 import android.content.Context;
 import android.print.PrintAttributes;

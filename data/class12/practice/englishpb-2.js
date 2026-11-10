@@ -4,12 +4,12 @@ StudyData.addPractice(12, "englishpb", {
     mcq: [
       { q: "Headlines usually use the simple present tense to report:", options: ["past events", "future events", "wishes", "commands"], answer: 0, explain: "'PM visits flood area' reports something that has already happened.", level: 1 },
       { q: "'Govt to open new schools' means:", options: ["The government has opened new schools.", "The government will open new schools.", "The government never opens schools.", "The government opened old schools."], answer: 1, explain: "'To + verb' in a headline shows a future action.", level: 1 },
-      { q: "In a headline, 'probe' means:", options: ["a tool", "a celebration", "a dispute", "an investigation"], answer: 3, explain: "'Probe' is the short headline word for an investigation.", level: 1 },
+      { q: "In a headline, 'probe' means:", options: ["a tool", "a public celebration", "a dispute", "an investigation"], answer: 3, explain: "'Probe' is the short headline word for an investigation.", level: 1 },
       { q: "'Hike' in a headline such as 'Bus fares hiked' means:", options: ["increased", "reduced", "cancelled", "checked"], answer: 0, explain: "A hike is an increase.", level: 1 },
-      { q: "Headlines usually leave out:", options: ["all nouns", "articles and auxiliary verbs", "every verb", "names of places"], answer: 1, explain: "Articles (a, an, the) and auxiliaries (is, has, was) are dropped to save space.", level: 1 },
-      { q: "'Two held' in a headline means:", options: ["Two meetings were held.", "Two people lost their way.", "Two people have been arrested.", "Two things were kept."], answer: 2, explain: "The past participle 'held' has a passive sense: arrested.", level: 2 },
+      { q: "Headlines usually leave out:", options: ["all nouns and names of people", "articles and auxiliary verbs", "every verb", "names of places"], answer: 1, explain: "Articles (a, an, the) and auxiliaries (is, has, was) are dropped to save space.", level: 1 },
+      { q: "'Two held' in a headline means:", options: ["Two meetings were held.", "Two people lost their way home.", "Two people have been arrested.", "Two things were kept."], answer: 2, explain: "The past participle 'held' has a passive sense: arrested.", level: 2 },
       { q: "Which is the best expansion of 'Minister quits'?", options: ["The minister has resigned.", "The minister has been killed.", "The minister will quit smoking.", "The minister is quiet."], answer: 0, explain: "'Quit' is a short headline word for 'resign'.", level: 2 },
-      { q: "'Bid to save tigers' means:", options: ["Tigers are sold at an auction.", "An attempt is being made to save tigers.", "Tigers have been saved by a prize.", "Tigers refuse to move."], answer: 1, explain: "'Bid' means an attempt.", level: 2 },
+      { q: "'Bid to save tigers' means:", options: ["Tigers are being sold at a public auction.", "An attempt is being made to save tigers.", "Tigers have been saved by a prize.", "Tigers refuse to move."], answer: 1, explain: "'Bid' means an attempt.", level: 2 },
       {
         q: "Tanya reads the headline 'PM to visit flood area' and tells her friend that the Prime Minister visited it yesterday. What is her mistake?",
         options: ["She ignored that 'PM' is an abbreviation.", "She treated 'to visit' as past, but it shows a future action.", "She thought 'visit' was a noun.", "There is no mistake."],
@@ -25,8 +25,8 @@ StudyData.addPractice(12, "englishpb", {
         ],
         answer: 0, explain: "The participle 'held' means 'have been held (arrested)', which is the passive sense the reason mentions.", level: 2, keepOrder: true
       },
-      { q: "Which is the correct expansion of 'Bus hits truck, 5 hurt'?", options: ["A bus will hit a truck and five hurt others.", "Bus hitting truck, five hurting.", "A bus hit by a truck, five hurt others.", "A bus has hit a truck and five people have been injured."], answer: 3, explain: "Present = past event; 'hurt' is a passive participle meaning injured; articles and auxiliaries are restored.", level: 3 },
-      { q: "'CM to curb illegal mining' is best expanded as:", options: ["The Chief Minister has curved illegal mining.", "The Chief Minister will restrict illegal mining.", "The Chief Minister was restricted from mining.", "The Chief Minister mines illegally."], answer: 1, explain: "'Curb' means restrict; 'to + verb' shows the future; 'CM' is Chief Minister.", level: 3 },
+      { q: "Which is the correct expansion of 'Bus hits truck, 5 hurt'?", options: ["A bus will hit a truck and five people will be hurt later.", "Bus hitting truck, five hurting.", "A bus hit by a truck, five hurt others.", "A bus has hit a truck and five people have been injured."], answer: 3, explain: "Present = past event; 'hurt' is a passive participle meaning injured; articles and auxiliaries are restored.", level: 3 },
+      { q: "'CM to curb illegal mining' is best expanded as:", options: ["The Chief Minister has curved illegal mining.", "The Chief Minister will restrict illegal mining.", "The Chief Minister has been restricted from mining.", "The Chief Minister mines illegally."], answer: 1, explain: "'Curb' means restrict; 'to + verb' shows the future; 'CM' is Chief Minister.", level: 3 },
       {
         q: "A student expands the headline 'Probe ordered into school fire' as 'A probe ordered a school fire.' Which expansion is correct?",
         options: ["An investigation has been ordered into the fire at a school.", "A school fire ordered a probe.", "A probe is going to start a school fire.", "The school ordered a fire investigation."],
@@ -63,16 +63,16 @@ StudyData.addPractice(12, "englishpb", {
   "e-mail-writing": {
     mcq: [
       { q: "In an e-mail, 'Cc' stands for:", options: ["carbon copy", "closed copy", "common copy", "clear copy"], answer: 0, explain: "Cc means carbon copy: the people who receive a copy of the message.", level: 1 },
-      { q: "Recipients in the 'Bcc' field are:", options: ["shown to everyone", "hidden from the other recipients", "unable to read the message", "the main senders"], answer: 1, explain: "Bcc is a blind carbon copy; other recipients cannot see these addresses.", level: 1 },
-      { q: "A good subject line is:", options: ["left blank", "a long paragraph", "short and specific", "a joke"], answer: 2, explain: "It tells the reader the purpose at a glance, for example 'Request for leave on 12 March'.", level: 1 },
+      { q: "Recipients in the 'Bcc' field are:", options: ["shown to everyone", "hidden from the other recipients", "unable to read the message at all", "the main senders"], answer: 1, explain: "Bcc is a blind carbon copy; other recipients cannot see these addresses.", level: 1 },
+      { q: "A good subject line is:", options: ["left blank", "a long paragraph of text", "short and specific", "a joke"], answer: 2, explain: "It tells the reader the purpose at a glance, for example 'Request for leave on 12 March'.", level: 1 },
       { q: "Writing an entire e-mail in capital letters suggests:", options: ["politeness", "formality", "brevity", "shouting"], answer: 3, explain: "Capitals are read as a raised voice.", level: 1 },
-      { q: "The correct salutation for an unknown person in a formal e-mail is:", options: ["Hi mate", "Dear Sir/Madam", "Hey", "Yo"], answer: 1, explain: "It is the standard formal greeting.", level: 1 },
-      { q: "If you attach a file to your e-mail, you should:", options: ["say nothing about it", "mention it in the body", "rename it 'file'", "send it twice"], answer: 1, explain: "Mentioning the attachment prevents it from being missed.", level: 2 },
-      { q: "A formal e-mail to a principal should avoid:", options: ["complete sentences", "emoticons and slang", "a polite closing", "a clear request"], answer: 1, explain: "Formal e-mails use a professional, polite tone.", level: 2 },
+      { q: "The correct salutation for an unknown person in a formal e-mail is:", options: ["Hello my friend", "Dear Sir/Madam", "Hey", "Yo"], answer: 1, explain: "It is the standard formal greeting.", level: 1 },
+      { q: "If you attach a file to your e-mail, you should:", options: ["say nothing at all about it", "mention it in the body", "rename it 'file'", "send it twice"], answer: 1, explain: "Mentioning the attachment prevents it from being missed.", level: 2 },
+      { q: "A formal e-mail to a principal should avoid:", options: ["complete, polite sentences", "emoticons and slang", "a polite closing", "a clear request"], answer: 1, explain: "Formal e-mails use a professional, polite tone.", level: 2 },
       { q: "Which is the best subject line for a leave request from 12 to 14 March?", options: ["Hi", "Please read", "Request for leave from 12 to 14 March", "URGENT!!!"], answer: 2, explain: "It states the purpose and dates specifically.", level: 2 },
       {
         q: "Ankit receives an e-mail from an unknown sender saying he has won a prize and must click a link. What should he do?",
-        options: ["Click the link at once", "Forward it to all his friends", "Not open the link; delete or report it", "Reply with his address"],
+        options: ["Click the link at once", "Forward it to all his friends and relatives", "Not open the link; delete or report it", "Reply with his address"],
         answer: 2, explain: "Do not open attachments or links from unknown senders; they may be unsafe.", level: 2
       },
       {
@@ -125,7 +125,7 @@ StudyData.addPractice(12, "englishpb", {
       { q: "The usual word order of an English sentence is:", options: ["Subject + Object + Verb", "Verb + Subject + Object", "Object + Verb + Subject", "Subject + Verb + Object"], answer: 3, explain: "English follows S-V-O, unlike the S-O-V order of Punjabi and Hindi.", level: 1 },
       { q: "In Punjabi and Hindi sentences the verb usually comes:", options: ["at the end", "at the beginning", "after the subject only", "never"], answer: 0, explain: "These languages are subject-object-verb languages.", level: 1 },
       { q: "A good translation aims to convey:", options: ["every word separately", "the meaning naturally", "only the nouns", "only the first line"], answer: 1, explain: "Meaning, not word-for-word matching, is the goal.", level: 1 },
-      { q: "A native idiom should be translated by:", options: ["a literal word-for-word rendering", "skipping it", "an English idiom of the same meaning", "leaving it in the original script"], answer: 2, explain: "An equivalent idiom keeps the sense.", level: 1 },
+      { q: "A native idiom should be translated by:", options: ["a literal, word-for-word rendering of it", "skipping it", "an English idiom of the same meaning", "leaving it in the original script"], answer: 2, explain: "An equivalent idiom keeps the sense.", level: 1 },
       { q: "A Punjabi or Hindi postposition becomes in English a:", options: ["conjunction", "pronoun", "article", "preposition"], answer: 3, explain: "English places a preposition before the noun (on, in, at, with).", level: 1 },
       { q: "'He has been teaching here ___ 2010.'", options: ["for", "since", "from", "by"], answer: 1, explain: "'Since' goes with a point in time; 'for' goes with a period.", level: 2 },
       { q: "A literal translation reads 'I Delhi to went yesterday.' The correct version is:", options: ["I went to Delhi yesterday.", "I go to Delhi yesterday.", "Yesterday Delhi I went to.", "I have gone Delhi yesterday."], answer: 0, explain: "The verb moves next to the subject and the preposition 'to' comes before the noun; 'yesterday' needs the simple past.", level: 2 },
@@ -149,7 +149,7 @@ StudyData.addPractice(12, "englishpb", {
       { q: "A Hindi sentence means 'I have been studying here for five years.' Which tense does it need in English?", options: ["Simple present", "Present perfect continuous", "Past continuous", "Simple past"], answer: 1, explain: "An action that began in the past and still continues, with a time period 'for five years', uses 'have been studying'.", level: 3 },
       {
         q: "Ravi translated 'वह कल से बीमार है' as 'He is ill from yesterday.' What is the correct English?",
-        options: ["He was ill from yesterday.", "He is ill since yesterday.", "He has been ill since yesterday.", "He will be ill from yesterday."],
+        options: ["He was ill from yesterday.", "He is ill since yesterday morning.", "He has been ill since yesterday.", "He will be ill from yesterday."],
         answer: 2, explain: "A state that began in the past and continues now takes the present perfect with 'since'.", level: 3
       },
       {
@@ -242,14 +242,14 @@ StudyData.addPractice(12, "englishpb", {
   },
   "on-saying-please": {
     mcq: [
-      { q: "Who wrote the essay 'On Saying Please'?", options: ["Charles Lamb", "A. G. Gardiner", "George Orwell", "Oscar Wilde"], answer: 1, explain: "It is an essay by A. G. Gardiner.", level: 1 },
+      { q: "Who wrote the essay 'On Saying Please'?", options: ["Charles Dickens", "A. G. Gardiner", "George Orwell", "Oscar Wilde"], answer: 1, explain: "It is an essay by A. G. Gardiner.", level: 1 },
       { q: "Gardiner wrote under the pen-name:", options: ["Elia", "Saki", "Alpha of the Plough", "Boz"], answer: 2, explain: "He wrote essays under the name Alpha of the Plough.", level: 1 },
       { q: "The main subject of the essay is:", options: ["politics", "everyday courtesy and good manners", "travel", "science"], answer: 1, explain: "It argues for small courtesies like 'please' and 'thank you'.", level: 1 },
-      { q: "Gardiner calls 'please' and 'thank you' the:", options: ["gold coins of social life", "small change of social life", "swords of social life", "laws of social life"], answer: 1, explain: "They are the small change of social life and keep it running smoothly.", level: 1 },
+      { q: "Gardiner calls 'please' and 'thank you' the:", options: ["gold coins of everyday social life", "small change of social life", "swords of social life", "laws of social life"], answer: 1, explain: "They are the small change of social life and keep it running smoothly.", level: 1 },
       { q: "What did the lift-man do to the passenger who said just 'Top' without 'please'?", options: ["He hurled him out of the lift", "He took him to the top politely", "He reported him to the police", "He refused to speak"], answer: 0, explain: "The lift-man hurled the passenger out of his lift and was fined.", level: 1 },
       { q: "What was the result of the lift-man's action?", options: ["He was fined", "He was praised", "He was promoted", "He was sent abroad"], answer: 0, explain: "Gardiner says he was wrong: rudeness is not a legal offence and the law does not allow violence in return.", level: 2 },
-      { q: "Why does Gardiner say bad temper is like an infection?", options: ["It spreads from person to person", "It can be cured by medicine", "It affects only the rude person", "It is caught only in lifts"], answer: 0, explain: "Bad manners spread, but good manners are as infectious as bad ones.", level: 2 },
-      { q: "What did the author find when the polite bus conductor booked him through without money?", options: ["He later found a shilling and could pay", "The conductor made him get off", "He had to walk home", "The bus was free"], answer: 0, explain: "The conductor kindly booked him through and asked him to pay some other day; by luck the author found a shilling.", level: 2 },
+      { q: "Why does Gardiner say bad temper is like an infection?", options: ["It spreads from person to person", "It can always be cured by medicine", "It affects only the rude person", "It is caught only in lifts"], answer: 0, explain: "Bad manners spread, but good manners are as infectious as bad ones.", level: 2 },
+      { q: "What did the author find when the polite bus conductor booked him through without money?", options: ["He later found a shilling and could pay", "The conductor made him get off at the next stop", "He had to walk home", "The bus was free"], answer: 0, explain: "The conductor kindly booked him through and asked him to pay some other day; by luck the author found a shilling.", level: 2 },
       {
         q: "Rina snaps at the school bus conductor when she is late, though he is working hard for long hours. Which idea from the essay applies?",
         options: ["Rude commanding comes from a vulgar mind; politeness turns service into friendly co-operation", "Rudeness is a sign of strong character", "Conductors should not be polite", "Only teachers deserve courtesy"],
@@ -303,10 +303,10 @@ StudyData.addPractice(12, "englishpb", {
   "the-story-of-my-life": {
     mcq: [
       { q: "Who wrote 'The Story of My Life'?", options: ["Anne Sullivan", "Helen Keller", "Florence Nightingale", "Maria Montessori"], answer: 1, explain: "It is Helen Keller's autobiography.", level: 1 },
-      { q: "Helen Keller became deaf and blind because of:", options: ["a childhood illness", "a road accident", "a fall from a tree", "a fire"], answer: 0, explain: "An illness in infancy left her deaf and blind.", level: 1 },
+      { q: "Helen Keller became deaf and blind because of:", options: ["a childhood illness", "a serious road accident", "a fall from a tree", "a fire"], answer: 0, explain: "An illness in infancy left her deaf and blind.", level: 1 },
       { q: "Who was Helen Keller's teacher?", options: ["Anne Sullivan", "Emily Dickinson", "Mary Curie", "Laura Bridgman"], answer: 0, explain: "Anne Sullivan arrived in March 1887.", level: 1 },
       { q: "Anne Sullivan communicated by:", options: ["speaking loudly", "writing on paper", "spelling words into Helen's hand", "singing"], answer: 2, explain: "She used the manual alphabet, spelling into Helen's palm.", level: 1 },
-      { q: "A work in which a person tells the story of his or her own life is called a(n):", options: ["biography", "novel", "autobiography", "play"], answer: 2, explain: "Auto means self; Keller wrote her own life story.", level: 1 },
+      { q: "A work in which a person tells the story of his or her own life is called a(n):", options: ["biography", "historical novel", "autobiography", "play"], answer: 2, explain: "Auto means self; Keller wrote her own life story.", level: 1 },
       { q: "What was the turning point in Helen's learning?", options: ["Visiting a zoo", "Winning a prize", "Reading in Braille", "Understanding at the well-house that a finger-spelled word meant water"], answer: 3, explain: "At the well-house she grasped that the word 'water' meant the cool flowing thing, and that everything has a name.", level: 2 },
       { q: "Before Anne Sullivan arrived, Helen was:", options: ["isolated and frustrated", "happy at school", "a famous writer", "learning the manual alphabet"], answer: 0, explain: "She was unable to express herself and grew frustrated.", level: 2 },
       { q: "What did Miss Sullivan give Helen the morning after she arrived?", options: ["A doll", "A book", "A necklace", "A hat"], answer: 0, explain: "She gave Helen a doll and spelled 'd-o-l-l' into her hand.", level: 2 },
@@ -363,9 +363,9 @@ StudyData.addPractice(12, "englishpb", {
   "two-gentlemen-of-verona": {
     mcq: [
       { q: "Who wrote 'Two Gentlemen of Verona' (the story in the lesson)?", options: ["A. G. Gardiner", "A. J. Cronin", "E. V. Lucas", "Oscar Wilde"], answer: 1, explain: "It is by A. J. Cronin, a Scottish doctor and novelist.", level: 1 },
-      { q: "What are the names of the two boys?", options: ["Marco and Luigi", "Nicola and Jacopo", "Luigi and Nicola", "Jacopo and Marco"], answer: 1, explain: "Nicola and Jacopo; Luigi is the narrator's driver.", level: 1 },
+      { q: "What are the names of the two boys?", options: ["Marco and Giovanni", "Nicola and Jacopo", "Luigi and Nicola", "Jacopo and Marco"], answer: 1, explain: "Nicola and Jacopo; Luigi is the narrator's driver.", level: 1 },
       { q: "From what disease was their sister Lucia suffering?", options: ["Malaria", "Tuberculosis of the spine", "Blindness", "A broken leg"], answer: 1, explain: "She was in a hospital at Poleta with tuberculosis of the spine.", level: 1 },
-      { q: "What did the narrator first buy from the boys near Verona?", options: ["Newspapers", "Shoe polish", "Wild strawberries", "Postcards"], answer: 2, explain: "The narrator and his driver bought wild strawberries from the boys.", level: 1 },
+      { q: "What did the narrator first buy from the boys near Verona?", options: ["Newspapers", "Shoe polish", "Wild strawberries", "Postcards and stamps"], answer: 2, explain: "The narrator and his driver bought wild strawberries from the boys.", level: 1 },
       { q: "In which country is the story set?", options: ["France", "Spain", "Italy", "Greece"], answer: 2, explain: "Verona is in Italy, and the story is set after the Second World War.", level: 1 },
       { q: "Why did the boys do all kinds of odd jobs?", options: ["To buy toys", "To pay for their sister's treatment", "To travel to America", "To start a shop"], answer: 1, explain: "They paid for Lucia's treatment from their earnings.", level: 2 },
       { q: "Where did the boys ask the narrator to drive them?", options: ["Poleta", "Rome", "Milan", "Venice"], answer: 0, explain: "Poleta, a village outside the city, where the hospital stood.", level: 2 },
@@ -386,7 +386,7 @@ StudyData.addPractice(12, "englishpb", {
         answer: 0, explain: "He is moved by their sacrifice and stays silent so that they may keep their secret.", level: 2, keepOrder: true
       },
       { q: "Why does the title echo Shakespeare's comedy, though the 'gentlemen' are poor boys?", options: ["They are rich gentlemen.", "They are true gentlemen by character, not by wealth or class.", "They are actors.", "They are soldiers."], answer: 1, explain: "The boys' nobility of character is the point of the title.", level: 3 },
-      { q: "Which of the following is NOT a theme of the story?", options: ["Selfless family love", "Dignity in poverty", "Maturity beyond one's years", "The pursuit of wealth at any cost"], answer: 3, explain: "The boys earn only for their sister and never pursue wealth for itself.", level: 3 },
+      { q: "Which of the following is NOT a theme of the story?", options: ["Selfless family love", "Dignity in poverty", "Maturity beyond one's tender years", "The pursuit of wealth at any cost"], answer: 3, explain: "The boys earn only for their sister and never pursue wealth for itself.", level: 3 },
       {
         q: "A student writes, 'The boys kept their troubles secret because they were ashamed of their sister.' What is wrong with this?",
         options: ["Nothing is wrong.", "They actually kept it secret out of quiet dignity and love, not shame.", "They did not have a sister.", "They had told everyone."],

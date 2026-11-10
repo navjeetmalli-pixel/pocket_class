@@ -5,7 +5,7 @@ StudyData.addPractice(11, "historypb", {
       { q: "The Harappan site of Harappa lies on the bank of the river:", options: ["Indus", "Sutlej", "Ravi", "Beas"], answer: 2, explain: "Harappa stood on the Ravi, while Mohenjo-daro stood on the Indus.", level: 1 },
       { q: "Mohenjo-daro is located in the present-day region of:", options: ["Gujarat", "Sindh", "Haryana", "Rajasthan"], answer: 1, explain: "Mohenjo-daro lies in Sindh, on the Indus.", level: 1 },
       { q: "Which of these crops did the Harappan farmers NOT grow?", options: ["Maize", "Wheat", "Barley", "Cotton"], answer: 0, explain: "Maize came from the Americas much later. Harappans grew wheat, barley, peas and cotton.", level: 1 },
-      { q: "Kalibangan, a major Harappan site, is in present-day:", options: ["Gujarat", "Punjab", "Haryana", "Rajasthan"], answer: 3, explain: "Kalibangan is in Rajasthan; Lothal and Dholavira are in Gujarat.", level: 1 },
+      { q: "Kalibangan, a major Harappan site, is in present-day:", options: ["Maharashtra", "Punjab", "Haryana", "Rajasthan"], answer: 3, explain: "Kalibangan is in Rajasthan; Lothal and Dholavira are in Gujarat.", level: 1 },
       { q: "Small stamp seals found at Harappan sites were mainly used for:", options: ["marking goods in trade", "playing board games", "decorating temple walls", "recording royal victories"], answer: 0, explain: "Seals carved with an animal and script were pressed on goods and packages in trade.", level: 1 },
       { q: "Covered drains running along Harappan streets show that the cities had:", options: ["planned arrangements for sanitation", "no system of government", "only temporary huts", "no contact with other lands"], answer: 0, explain: "Covered drains, wells and bathrooms point to careful civic planning.", level: 2 },
       {
@@ -42,7 +42,7 @@ StudyData.addPractice(11, "historypb", {
     mcq: [
       { q: "In the Rig Vedic age, the tribe was called the:", options: ["rajan", "jana", "sabha", "varna"], answer: 1, explain: "The tribe was the jana; the rajan was its chief.", level: 1 },
       { q: "Agni was worshipped as the god of:", options: ["rain", "wind", "the sea", "fire"], answer: 3, explain: "Agni was the fire god; Indra was linked with rain and war.", level: 1 },
-      { q: "The Rig Vedic Aryans lived chiefly in the land of the Sapta Sindhu, which means:", options: ["the land of seven rivers", "the land of seven hills", "the seven kingdoms", "the seven seas"], answer: 0, explain: "Sapta Sindhu means the land of seven rivers, in the north-west.", level: 1 },
+      { q: "The Rig Vedic Aryans lived chiefly in the land of the Sapta Sindhu, which means:", options: ["the land of seven rivers", "the land of the seven hills", "the seven kingdoms", "the seven seas"], answer: 0, explain: "Sapta Sindhu means the land of seven rivers, in the north-west.", level: 1 },
       { q: "The Sama Veda is mainly a collection of:", options: ["magic spells", "laws for kings", "melodies and chants set to music", "stories of battles"], answer: 2, explain: "The Sama Veda contains verses arranged as chants for singing at sacrifices.", level: 1 },
       { q: "The head of a Vedic tribe was known as the:", options: ["samiti", "rajan", "sangha", "senani of the village"], answer: 1, explain: "The tribal chief was the rajan, assisted by assemblies.", level: 1 },
       { q: "The use of iron in the Later Vedic period helped mainly to:", options: ["clear forests and expand farming in the Ganga-Yamuna region", "stop all warfare", "end the use of cattle", "introduce the Brahmi script"], answer: 0, explain: "Iron tools made it easier to clear land and farm, supporting larger settlements and kingdoms.", level: 2 },
@@ -80,10 +80,10 @@ StudyData.addPractice(11, "historypb", {
     mcq: [
       { q: "Mahavira was the Tirthankara number:", options: ["20th", "23rd", "22nd", "24th"], answer: 3, explain: "Mahavira was the 24th Tirthankara; Parshvanatha was the 23rd.", level: 1 },
       { q: "Siddhartha Gautama was born at:", options: ["Lumbini", "Sarnath", "Kushinagar", "Bodh Gaya"], answer: 0, explain: "He was born at Lumbini; Bodh Gaya is where he attained enlightenment.", level: 1 },
-      { q: "Gautama Buddha passed away at:", options: ["Sarnath", "Lumbini", "Kushinagar", "Vaishali"], answer: 2, explain: "Buddha died at Kushinagar.", level: 1 },
+      { q: "Gautama Buddha passed away at:", options: ["Pataliputra", "Lumbini", "Kushinagar", "Vaishali"], answer: 2, explain: "Buddha died at Kushinagar.", level: 1 },
       { q: "The Buddhist order of monks is called the:", options: ["Sangha", "Samiti", "Triratna", "Dhamma"], answer: 0, explain: "The Sangha is the monastic order of Buddhism.", level: 1 },
       { q: "Which Jain vow means non-violence?", options: ["Satya", "Asteya", "Ahimsa", "Aparigraha"], answer: 2, explain: "Ahimsa is non-violence; satya is truth.", level: 1 },
-      { q: "The Four Noble Truths say that the cause of suffering is:", options: ["fate alone", "desire or craving", "the king's rule", "the stars"], answer: 1, explain: "The second Noble Truth is that suffering arises from desire.", level: 2 },
+      { q: "The Four Noble Truths say that the cause of suffering is:", options: ["fate alone", "desire or craving", "the king's rule", "the position of stars"], answer: 1, explain: "The second Noble Truth is that suffering arises from desire.", level: 2 },
       { q: "The Buddha's 'Middle Path' means:", options: ["worshipping many gods", "avoiding both luxury and extreme self-denial", "living only in monasteries", "giving up all travel"], answer: 1, explain: "It is the eightfold way that avoids the extremes of indulgence and austerity.", level: 2 },
       {
         q: "Assertion (A): Buddhism and Jainism won support among many ordinary people.\nReason (R): They opposed costly sacrifices and the dominance of priests, and taught in local languages.",
@@ -155,7 +155,7 @@ StudyData.addPractice(11, "historypb", {
   "guptas": {
     mcq: [
       { q: "The Prayag Prashasti (Allahabad pillar inscription) describes the campaigns of:", options: ["Chandragupta II", "Skandagupta", "Samudragupta", "Kumaragupta"], answer: 2, explain: "Harisena composed it to praise Samudragupta.", level: 1 },
-      { q: "The Gupta era begins in:", options: ["319–20 CE", "78 CE", "606 CE", "1000 CE"], answer: 0, explain: "The Gupta era is dated from 319–20 CE.", level: 1 },
+      { q: "The Gupta era begins in:", options: ["319–20 CE", "78 CE", "606–07 CE", "1000 CE"], answer: 0, explain: "The Gupta era is dated from 319–20 CE.", level: 1 },
       { q: "The Chinese monk Fa-Hien visited India in the reign of:", options: ["Chandragupta II", "Samudragupta", "Harsha", "Ashoka"], answer: 0, explain: "Fa-Hien came in the time of Chandragupta II (Vikramaditya).", level: 1 },
       { q: "Kalidasa wrote the play:", options: ["Ratnavali", "Abhijnanashakuntalam", "Harshacharita", "Indica"], answer: 1, explain: "Abhijnanashakuntalam is by Kalidasa; Ratnavali is by Harsha.", level: 1 },
       { q: "The iron pillar of the Gupta period stands at:", options: ["Sarnath", "Nalanda", "Mehrauli, Delhi", "Ajanta"], answer: 2, explain: "It is at Mehrauli and shows the skill of metalworkers.", level: 1 },
@@ -167,7 +167,7 @@ StudyData.addPractice(11, "historypb", {
       },
       { q: "Chandragupta I strengthened his position by marrying:", options: ["a Shaka princess", "the Licchavi princess Kumaradevi", "a Chola princess", "a Maurya princess"], answer: 1, explain: "The marriage to Kumaradevi of the Licchavi family is widely noted.", level: 2 },
       { q: "A teacher says, 'Place value and zero grew in this period, and Aryabhata wrote on the earth's rotation.' She refers to:", options: ["Mathematics and astronomy of the Gupta age", "Vedic ritual", "Mauryan statecraft", "Chola temples"], answer: 0, explain: "Aryabhata (born 476 CE) and the decimal system belong to the Gupta age.", level: 2 },
-      { q: "The Gupta provinces and districts were called:", options: ["iqtas and parganas", "bhuktis and vishayas", "subas and sarkars", "nadus and kurrams"], answer: 1, explain: "Provinces were bhuktis and districts were vishayas.", level: 2 },
+      { q: "The Gupta provinces and districts were called:", options: ["iqtas and the parganas", "bhuktis and vishayas", "subas and sarkars", "nadus and kurrams"], answer: 1, explain: "Provinces were bhuktis and districts were vishayas.", level: 2 },
       {
         q: "Assertion (A): Some historians avoid calling the Gupta age a 'golden age' without qualification.\nReason (R): The period also had social inequalities.",
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
@@ -193,7 +193,7 @@ StudyData.addPractice(11, "historypb", {
   "vardhanas": {
     mcq: [
       { q: "Harsha shifted his capital to:", options: ["Thanesar", "Pataliputra", "Kanauj", "Delhi"], answer: 2, explain: "Harsha, whose family came from Thanesar, moved to Kanauj.", level: 1 },
-      { q: "The author of the Harshacharita was:", options: ["Harisena", "Banabhatta", "Kalidasa", "Xuanzang"], answer: 1, explain: "Banabhatta wrote the Harshacharita, the main source on Harsha's life.", level: 1 },
+      { q: "The author of the Harshacharita was:", options: ["Harisena", "Banabhatta", "Kalidasa", "Fa-Hien (Faxian)"], answer: 1, explain: "Banabhatta wrote the Harshacharita, the main source on Harsha's life.", level: 1 },
       { q: "The Chinese pilgrim who visited India in Harsha's time was:", options: ["Fa-Hien", "I-tsing", "Xuanzang", "Marco Polo"], answer: 2, explain: "Xuanzang (Hiuen Tsang) visited in the 7th century and studied at Nalanda.", level: 1 },
       { q: "Harsha ruled in the years:", options: ["606–647 CE", "319–335 CE", "375–415 CE", "1206–1210 CE"], answer: 0, explain: "Harsha ruled 606–647 CE.", level: 1 },
       { q: "The Shore Temple at Mahabalipuram was built by the:", options: ["Pallavas", "Cholas", "Chalukyas", "Rashtrakutas"], answer: 0, explain: "The Pallavas of Kanchi built temples at Mahabalipuram.", level: 1 },

@@ -652,7 +652,7 @@ const Guided = (() => {
     if (figs.length) body = figs.map((d) => `<figure class="card diagram"><h3>${esc(d.title)}</h3><div class="diagram-art" role="img" aria-label="${esc(d.title)}">${d.svg}</div>${d.caption ? `<figcaption>${rich(d.caption)}</figcaption>` : ""}</figure>`).join("");
     else if (s.simId && typeof Sims !== "undefined") body = Sims.cards(s.c, s.subj, s.ch);
     else if (s.gameType) body = gameBox();
-    else body = `<dl class="terms card">${(s.ch.terms || []).slice(0, 8).map((x) => `<div><dt>${rich(x.term)}</dt><dd>${rich(x.meaning)}</dd></div>`).join("")}</dl>`;
+    else body = `<dl class="terms card">${(s.ch.terms || []).slice(0, 8).map((x) => `<div><dt>${rich(x.term)}${Views._.termAltHTML(x.term)}</dt><dd>${rich(x.meaning)}</dd></div>`).join("")}</dl>`;
     return `
       ${reasonBox("alt:" + id)}
       ${o ? `<p class="lp-obj">${esc(o.text)}</p>` : ""}

@@ -7,7 +7,25 @@ const Sheets = (() => {
   const cls = () => Store.state.profile.cls;
 
   // Remembered while the app is open.
-  const cfg = { subject: null, chapters: null, m: 10, s: 5, l: 2, g: 5, d: 0, k: 1, b: 0, x: 0, f: 0, w: 0, dt: 0, pic: [], pn: 4 };
+  const cfg = { subject: null, chapters: null, m: 10, s: 5, l: 2, g: 5, d: 0, k: 1, b: 0, x: 0, f: 0, w: 0, dt: 0, pic: [], pn: 4, o: "" };
+
+  // One-tap sheets: the settings each preset fills in (counts are capped by what the chosen chapters have).
+  const PRESETS = {
+    quick: { label: "10-minute practice", hint: "5 multiple choice, 2 short answers and a few true or false", set: { m: 5, s: 2, l: 0, g: 0, d: 0, b: 0, x: 0, f: 5, w: 0, dt: 0 } },
+    exam: { label: "Exam practice", hint: "A full paper: multiple choice, short and long answers, and numericals where the subject has them", set: { m: 20, s: 8, l: 3, g: 5, d: 0, b: 0, x: 0, f: 0, w: 0, dt: 0 } },
+    challenge: { label: "Challenge sheet", hint: "Hard multiple choice and long answers", set: { m: 10, s: 0, l: 3, g: 5, d: 3, b: 0, x: 0, f: 0, w: 0, dt: 0 } },
+    weak: { label: "My weak chapters", hint: "Chapters with open mistakes or a quiz score under 60%", set: { m: 15, s: 5, l: 1, g: 5, d: 0, b: 0, x: 0, f: 5, w: 0, dt: 0 } },
+  };
+  // This subject's chapters with an open mistake or a best quiz score under 60%.
+  function weakChapters(c, sid) {
+    const withMistakes = new Set(Store.mistakesFor(c).map(Store.parseKey).filter((k) => k.cls === c && k.subject === sid).map((k) => k.chapterId));
+    return D.chapters(c, sid)
+      .filter((ch) => {
+        const r = Store.chapter(Store.key(c, sid, ch.id));
+        return withMistakes.has(ch.id) || (r && r.best != null && r.attempts && r.best < 60);
+      })
+      .map((ch) => ch.id);
+  }
 
   const COUNTS = { m: [0, 5, 10, 15, 20, 30], s: [0, 3, 5, 8, 10], l: [0, 1, 2, 3, 5], g: [0, 5, 10, 15, 20], b: [0, 5, 8, 10, 15], x: [0, 1, 2, 3], f: [0, 5, 8, 10, 15], w: [0, 5, 8, 10], dt: [0, 5, 8, 10] };
   // The sections made from the chapter's own terms, notes and timelines (js/derive.js): sheet key -> Derive kinds, and the least a chapter set needs.
@@ -44,7 +62,9 @@ const Sheets = (() => {
   const levelOk = (q, d) => !d || (q.level ? q.level === d : d === 2);
 
   // Everything a sheet could draw on, per chapter.
-  function sources(c, subj, chs, d) {
+  // `obj` (optional): keep only the questions of that learning objective (js/objectives.js), for a one-skill sheet.
+  function sources(c, subj, chs, d, obj) {
+    const mine = (ch) => (q) => !obj || (typeof Objectives !== "undefined" && (Objectives.forQuestion(c, subj.id, ch, q) || {}).id === obj);
     return chs.map((ch) => {
       const bank = D.practiceFor(c, subj.id, ch.id);
       const written = [
@@ -52,12 +72,13 @@ const Sheets = (() => {
         ...(ch.qa || []).map((x) => ({ ...x, marks: 3 })),
         ...(ch.examples || []).map((x) => ({ q: x.q, a: [...x.steps, x.answer].join("\n"), marks: 3 })),
       ];
+      const ok = mine(ch);
       return {
         ch,
-        mcq: Views.ui.quizItems(c, subj, ch).filter((q) => levelOk(q, d)),
-        short: written.filter((x) => (x.marks || 3) <= 3),
-        long: written.filter((x) => (x.marks || 3) >= 4),
-        gen: Gen.forChapter(c, subj.id, ch.id).length,
+        mcq: Views.ui.quizItems(c, subj, ch).filter((q) => levelOk(q, d) && ok(q)),
+        short: written.filter((x) => (x.marks || 3) <= 3 && ok(x)),
+        long: written.filter((x) => (x.marks || 3) >= 4 && ok(x)),
+        gen: obj ? 0 : Gen.forChapter(c, subj.id, ch.id).length,
       };
     });
   }
@@ -82,6 +103,7 @@ const Sheets = (() => {
       rev: p.get("rev") === "1" ? 1 : 0,
       pic: p.get("pic") ? p.get("pic").split(",").filter((x) => PIC_TYPES.includes(x)) : [],
       pn: Math.max(2, Math.min(8, Number(p.get("pn")) || 4)),
+      o: /^[\w-]{1,80}$/.test(p.get("o") || "") ? p.get("o") : "",
     };
   }
 
@@ -90,7 +112,8 @@ const Sheets = (() => {
     `ch=${(o.ch || []).join(",")}&m=${o.m}&s=${o.s}&l=${o.l}&g=${o.g}&d=${o.d}&k=${o.k}&n=${o.n}` +
     ["b", "x", "f", "w", "dt"].map((k) => (o[k] ? `&${k}=${o[k]}` : "")).join("") +
     (o.rev ? "&rev=1" : "") +
-    (o.pic && o.pic.length ? `&pic=${o.pic.join(",")}&pn=${o.pn || 4}` : "");
+    (o.pic && o.pic.length ? `&pic=${o.pic.join(",")}&pn=${o.pn || 4}` : "") +
+    (o.o ? `&o=${o.o}` : "");
 
   // ---------- picture worksheets (Classes 1 to 3) ----------
 
@@ -322,11 +345,20 @@ const Sheets = (() => {
         draw();
         withTimelines();
         box.onclick = (e) => {
-          const b = e.target.closest("[data-subj],[data-set],[data-act],[data-pictype]");
+          const b = e.target.closest("[data-subj],[data-set],[data-act],[data-pictype],[data-preset],[data-obj]");
           if (!b) return;
-          if (b.dataset.subj) {
+          if (b.dataset.preset) {
+            const pr = PRESETS[b.dataset.preset];
+            const chs = b.dataset.preset === "weak" ? weakChapters(c, cfg.subject) : cfg.chapters || D.chapters(c, cfg.subject).map((x) => x.id);
+            if (!chs.length) return;
+            location.hash = `#/worksheet/${c}/${cfg.subject}?${query({ ...cfg, ...pr.set, ch: chs, pic: [], n: 1, o: "", k: cfg.k })}`;
+            return;
+          } else if (b.dataset.obj !== undefined) {
+            cfg.o = b.dataset.obj;
+          } else if (b.dataset.subj) {
             cfg.subject = b.dataset.subj;
             cfg.chapters = null;
+            cfg.o = "";
             // The new subject may still need to load: go through the router, which shows "Loading…" meanwhile.
             if (!D.subjectsLoaded(c, [cfg.subject]) || !D.practiceLoaded(c, cfg.subject))
               return location.hash === "#/sheets" ? App.render({ keepScroll: true }) : (location.hash = "#/sheets");
@@ -336,11 +368,11 @@ const Sheets = (() => {
           } else if (b.dataset.pictype) {
             const k = b.dataset.pictype;
             cfg.pic = cfg.pic.includes(k) ? cfg.pic.filter((x) => x !== k) : PIC_TYPES.filter((x) => x === k || cfg.pic.includes(x));
-          } else if (b.dataset.act === "all") cfg.chapters = null;
-          else if (b.dataset.act === "none") cfg.chapters = [];
+          } else if (b.dataset.act === "all") (cfg.chapters = null), (cfg.o = "");
+          else if (b.dataset.act === "none") (cfg.chapters = []), (cfg.o = "");
           else if (b.dataset.act === "make") {
             const chs = cfg.chapters || D.chapters(c, cfg.subject).map((x) => x.id);
-            location.hash = `#/worksheet/${c}/${cfg.subject}?${query({ ...cfg, ch: chs, pic: [], n: 1 })}`;
+            location.hash = `#/worksheet/${c}/${cfg.subject}?${query({ ...cfg, ch: chs, pic: [], n: 1, o: chs.length === 1 ? cfg.o : "" })}`;
             return;
           } else if (b.dataset.act === "pics") {
             const types = picTypes(c, cfg.subject).filter((k) => cfg.pic.includes(k));
@@ -360,7 +392,10 @@ const Sheets = (() => {
           draw();
         };
         box.onchange = (e) => {
-          if (e.target.dataset.ch !== undefined) cfg.chapters = [...box.querySelectorAll("[data-ch]")].filter((x) => x.checked).map((x) => x.dataset.ch);
+          if (e.target.dataset.ch !== undefined) {
+            cfg.chapters = [...box.querySelectorAll("[data-ch]")].filter((x) => x.checked).map((x) => x.dataset.ch);
+            cfg.o = "";
+          }
           else if (e.target.id === "key") cfg.k = e.target.checked ? 1 : 0;
           draw();
         };
@@ -372,7 +407,10 @@ const Sheets = (() => {
     const subj = D.subject(cfg.subject);
     const all = D.chapters(c, subj.id);
     const sel = cfg.chapters || all.map((x) => x.id);
-    const src = sources(c, subj, all.filter((ch) => sel.includes(ch.id)), cfg.d);
+    const one = sel.length === 1 ? all.find((ch) => ch.id === sel[0]) : null;
+    const objs = one && typeof Objectives !== "undefined" ? Objectives.forChapter(c, subj.id, one) : [];
+    if (!objs.some((x) => x.id === cfg.o)) cfg.o = "";
+    const src = sources(c, subj, all.filter((ch) => sel.includes(ch.id)), cfg.d, cfg.o);
     const have = {
       m: src.reduce((a, x) => a + x.mcq.length, 0),
       s: src.reduce((a, x) => a + x.short.length, 0),
@@ -418,10 +456,26 @@ const Sheets = (() => {
         <div class="chips" style="margin-top:6px">${[2, 3, 4, 6].map((v) => `<button class="chip ${cfg.pn === v ? "on" : ""}" data-set="pn:${v}">${v}</button>`).join("")}</div>
         <button class="btn primary block" style="margin-top:12px" data-act="pics" ${ptypes.some((k) => cfg.pic.includes(k)) ? "" : "disabled"}>${icon("print")} ${t("Make picture worksheet")}</button></div>` : "";
 
+    const weakN = weakChapters(c, subj.id).length;
+    const presetCard = `<div class="card" data-testid="preset-card">
+        <strong>${t("Quick sheets")}</strong>
+        <div class="small muted">${t("One tap makes a sheet from the chapters selected below.")}</div>
+        <div class="preset-grid">${Object.entries(PRESETS)
+          .map(([k, p]) => {
+            const off = k === "weak" ? !weakN : !sel.length;
+            return `<button class="preset" data-preset="${k}" ${off ? "disabled" : ""}><strong>${icon("print")} ${t(p.label)}${k === "weak" && weakN ? ` (${weakN})` : ""}</strong><span class="small muted">${k === "weak" && !weakN ? t("Nothing to fix yet") : t(p.hint)}</span></button>`;
+          })
+          .join("")}</div></div>`;
+    const skillCard = objs.length > 1
+      ? `<div class="card" data-testid="skill-card"><strong>${t("One skill only")}</strong>
+          <div class="small muted">${t("Keep only the questions about one skill of this chapter.")}</div>
+          <div class="chips" style="margin-top:10px"><button class="chip ${cfg.o ? "" : "on"}" data-obj="">${t("All skills")}</button>${objs.map((x) => `<button class="chip ${cfg.o === x.id ? "on" : ""}" data-obj="${x.id}">${esc(x.text.replace(/^Understand: /, ""))}</button>`).join("")}</div></div>`
+      : "";
     return `<div class="stack">
       <div class="card"><strong>${t("Subject")}</strong><div class="chips" style="margin-top:10px">${subs
         .map((s) => `<button class="chip ${s.id === subj.id ? "on" : ""}" data-subj="${s.id}">${SubjectIcons.html(s)} ${esc(s.short)}</button>`)
         .join("")}</div></div>
+      ${presetCard}
       <div class="card">
         <div class="row"><strong class="grow">${t("Chapters")}</strong><span class="small muted">${t("{a} of {b} selected", { a: sel.length, b: all.length })}</span></div>
         <div class="row" style="margin-top:8px"><button class="chip" data-act="all">${t("Select all")}</button><button class="chip" data-act="none">${t("Clear")}</button></div>
@@ -429,6 +483,7 @@ const Sheets = (() => {
           .map((ch) => `<label><input type="checkbox" data-ch="${ch.id}" ${sel.includes(ch.id) ? "checked" : ""}><span>${esc(ch.title)}</span></label>`)
           .join("")}</div>
       </div>
+      ${skillCard}
       ${row("m", t("Multiple choice"), t("1 mark each"))}
       ${row("s", t("Short answer"), t("1–3 marks each, with space to write"))}
       ${row("l", t("Long answer"), t("4–5 marks each"))}
@@ -462,7 +517,7 @@ const Sheets = (() => {
     const classLine = t("Class {n} · {subject}", { n: c, subject: esc(subj.name) });
     return sheetPage({
       o,
-      src: sources(c, subj, chs, o.d).map((x) => ({ ...x, c, sid: subjectId })),
+      src: sources(c, subj, chs, o.d, chs.length === 1 ? o.o : "").map((x) => ({ ...x, c, sid: subjectId })),
       // Same settings + same sheet number = same sheet.
       seedKey: `${c}/${subjectId}/${query({ ...o, n: 0 })}`,
       subjectId,
@@ -472,10 +527,17 @@ const Sheets = (() => {
       barTitle: o.rev ? t("Revision sheet: {subject}, chapters {range}", { subject: subj.short, range: rangeOf(all, chs) }) : t("{subject} · Sheet {n}", { subject: subj.short, n: o.n }),
       heading: o.rev ? t("Revision sheet: {subject}, chapters {range}", { subject: esc(subj.short), range: rangeOf(all, chs) }) : null,
       classLine,
-      chNames: chs.length === all.length ? t("All chapters") : chs.map((x) => x.title).join(", "),
+      chNames: (chs.length === all.length ? t("All chapters") : chs.map((x) => x.title).join(", ")) + skillName(c, subj, chs, o.o),
       footer: t("Pocket Class India · Class {c} {subject} · Sheet {n}", { c, subject: esc(subj.name), n: o.n }),
       query,
     });
+  }
+
+  // " · Skill: …" for a one-skill sheet, else "".
+  function skillName(c, subj, chs, obj) {
+    if (!obj || chs.length !== 1 || typeof Objectives === "undefined") return "";
+    const x = Objectives.forChapter(c, subj.id, chs[0]).find((y) => y.id === obj);
+    return x ? ` · ${t("Skill: {name}", { name: esc(x.text.replace(/^Understand: /, "")) })}` : "";
   }
 
   // "1–6" or "1–3, 5, 8–9": the chapters' numbers in the subject, as ranges.

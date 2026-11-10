@@ -14,6 +14,7 @@ const Store = (() => {
     theme: "system",
     lang: "en", // interface language: "en" | "pa" | "hi"
     reminder: { on: false, time: "18:00" }, // daily practice reminder (phone apps only)
+    pin: null, // parent PIN as { salt, hash } (js/pin.js), or null when none is set; never in a backup
   });
 
   const newId = () => "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
@@ -147,6 +148,7 @@ const Store = (() => {
     theme: ["light", "dark"].includes(d.theme) ? d.theme : "system",
     lang: d.lang === "pa" || d.lang === "hi" ? d.lang : "en",
     reminder: d.reminder && typeof d.reminder === "object" ? Object.assign(deviceDefaults().reminder, d.reminder) : deviceDefaults().reminder,
+    pin: d.pin && typeof d.pin.salt === "string" && typeof d.pin.hash === "string" ? { salt: d.pin.salt, hash: d.pin.hash } : null,
   });
 
   try {
@@ -177,7 +179,7 @@ const Store = (() => {
 
   function save() {
     try {
-      localStorage.setItem(KEY, JSON.stringify({ v: 2, pv: PROFILE_V, theme: device.theme, lang: device.lang, reminder: device.reminder, current: state.id, students }));
+      localStorage.setItem(KEY, JSON.stringify({ v: 2, pv: PROFILE_V, theme: device.theme, lang: device.lang, reminder: device.reminder, ...(device.pin ? { pin: device.pin } : {}), current: state.id, students }));
     } catch (e) {
       /* storage full or blocked: keep working in memory */
     }
@@ -305,6 +307,12 @@ const Store = (() => {
     },
     setLang(lang) {
       state.lang = lang === "pa" || lang === "hi" ? lang : "en";
+      save();
+    },
+    // The parent PIN (js/pin.js): { salt, hash } or null.
+    pin: () => device.pin,
+    setPin(p) {
+      device.pin = p && p.salt && p.hash ? { salt: String(p.salt), hash: String(p.hash) } : null;
       save();
     },
     setReminder(on, time) {
@@ -683,7 +691,7 @@ const Store = (() => {
         if (!list.length) return false;
         students = list.map((s) => bind(Object.assign(studentDefaults(), s)));
         state = students.find((s) => s.id === data.current) || students[0];
-        device = Object.assign(device, validDevice(data), { reminder: device.reminder });
+        device = Object.assign(device, validDevice(data), { reminder: device.reminder, pin: device.pin }); // the parent PIN stays this device's
       } else {
         const s = data.state;
         if (!s || !okProfile(s.profile)) return false;
@@ -691,7 +699,7 @@ const Store = (() => {
         // device is kept (older backups have none).
         const lang = device.lang;
         const fresh = bind(Object.assign(studentDefaults(), s, { id: state.id }));
-        device = Object.assign(device, validDevice(s), { lang, reminder: device.reminder });
+        device = Object.assign(device, validDevice(s), { lang, reminder: device.reminder, pin: device.pin });
         students[students.indexOf(state)] = state = fresh;
       }
       StudyData.classes.filter(StudyData.isLoaded).forEach(this.migrate);

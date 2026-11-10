@@ -6,7 +6,7 @@ StudyData.addPractice(11, "historypb", {
       { q: "The Dilwara Jain temples are on:", options: ["Mount Abu", "Mount Kailash", "Girnar hill only", "the Vindhyas at Gwalior"], answer: 0, explain: "The Dilwara temples are on Mount Abu in Rajasthan.", level: 1 },
       { q: "Mahmud of Ghazni sacked the temple of:", options: ["Konark", "Somnath", "Madurai", "Puri"], answer: 1, explain: "The sack of Somnath (about 1025–26) is his best-known raid.", level: 1 },
       { q: "In the Second Battle of Tarain (1192), Prithviraj III was defeated by:", options: ["Mahmud of Ghazni", "Timur", "Muhammad of Ghor", "Babur"], answer: 2, explain: "Muhammad of Ghor won in 1192, after losing at Tarain in 1191.", level: 1 },
-      { q: "Which Rajput clan was a part of the 'tripartite struggle' for Kanauj?", options: ["Pratiharas", "Chauhans", "Paramaras", "Solankis"], answer: 0, explain: "The Pratiharas, Palas and Rashtrakutas fought the tripartite struggle.", level: 1 },
+      { q: "Which Rajput clan was a part of the 'tripartite struggle' for Kanauj?", options: ["Pratiharas", "Chauhans of Ajmer", "Paramaras", "Solankis"], answer: 0, explain: "The Pratiharas, Palas and Rashtrakutas fought the tripartite struggle.", level: 1 },
       { q: "The Rajput political order is often described as feudal because:", options: ["the king ruled without any chiefs", "kings granted lands to chiefs who gave military service", "all land belonged to merchants", "there was no army"], answer: 1, explain: "Land was granted in return for military service.", level: 2 },
       {
         q: "Assertion (A): The Rajputs lost to Muhammad of Ghor despite their courage.\nReason (R): Disunity, quarrels among clans and outdated tactics are cited as causes.",
@@ -22,7 +22,7 @@ StudyData.addPractice(11, "historypb", {
         answer: 1, explain: "Both are true, but the raiding activity alone does not explain why no lasting empire followed; the notes call them raids.", level: 3, keepOrder: true
       },
       { q: "A student arranges events: Second Tarain, First Tarain, Somnath raid. The correct chronological order is:", options: ["Somnath raid, First Tarain, Second Tarain", "First Tarain, Somnath raid, Second Tarain", "Second Tarain, First Tarain, Somnath raid", "Somnath raid, Second Tarain, First Tarain"], answer: 0, explain: "Somnath about 1025–26; Tarain I in 1191; Tarain II in 1192.", level: 3 },
-      { q: "A chief holds land from his king and in return brings 500 horsemen when called. This arrangement best fits:", options: ["feudal military service", "a modern salary system", "the jizya", "a village panchayat"], answer: 0, explain: "Land granted in exchange for military service is feudal.", level: 3 },
+      { q: "A chief holds land from his king and in return brings 500 horsemen when called. This arrangement best fits:", options: ["feudal military service", "a modern fixed salary system", "the jizya", "a village panchayat"], answer: 0, explain: "Land granted in exchange for military service is feudal.", level: 3 },
       { q: "Which pairing is correct?", options: ["Chandelas – Khajuraho", "Chauhans – Dilwara", "Paramaras – Somnath", "Pratiharas – Tarain 1192 victory"], answer: 0, explain: "Khajuraho was a Chandela work; Prithviraj III was a Chauhan; Dilwara is a Jain temple complex on Mount Abu.", level: 3 }
     ],
     written: [
@@ -78,7 +78,7 @@ StudyData.addPractice(11, "historypb", {
   },
   "bahmani-vijayanagar": {
     mcq: [
-      { q: "The Vijayanagar empire was founded in 1336 by:", options: ["Krishnadevaraya", "Harihara and Bukka", "Hasan Gangu", "Mahmud Gawan"], answer: 1, explain: "Harihara and Bukka of the Sangama family founded it.", level: 1 },
+      { q: "The Vijayanagar empire was founded in 1336 by:", options: ["Deva Raya and Krishnadevaraya", "Harihara and Bukka", "Hasan Gangu", "Mahmud Gawan"], answer: 1, explain: "Harihara and Bukka of the Sangama family founded it.", level: 1 },
       { q: "The Bahmani kingdom was founded in:", options: ["1336", "1347", "1526", "1565"], answer: 1, explain: "Hasan Gangu founded it in 1347.", level: 1 },
       { q: "Vijayanagar was defeated at the Battle of:", options: ["Talikota (1565)", "Panipat", "Khanwa", "Tarain"], answer: 0, explain: "The combined Deccan sultanates won at Talikota in 1565.", level: 1 },
       { q: "The Vitthala and Virupaksha temples are at:", options: ["Hampi", "Gulbarga", "Bidar", "Madurai"], answer: 0, explain: "They are at Hampi, the capital of Vijayanagar.", level: 1 },
@@ -98,7 +98,7 @@ StudyData.addPractice(11, "historypb", {
         answer: 1, explain: "Both are true, but R lists the states and does not explain why the split occurred.", level: 3, keepOrder: true
       },
       { q: "Which pair is correctly matched?", options: ["Hasan Gangu – Vijayanagar", "Krishnadevaraya – Amuktamalyada", "Bukka – Bahmani", "Mahmud Gawan – Talikota winner of 1565"], answer: 1, explain: "Krishnadevaraya wrote the Telugu work Amuktamalyada.", level: 3 },
-      { q: "A visitor to Hampi finds a ruined, plundered city, with a note that it fell to a joint force of sultanates. This refers to:", options: ["Panipat 1526", "Talikota 1565", "Khanwa 1527", "Chausa 1539"], answer: 1, explain: "After Talikota (1565) Hampi was plundered.", level: 3 },
+      { q: "A visitor to Hampi finds a ruined, plundered city, with a note that it fell to a joint force of sultanates. This refers to:", options: ["First Panipat 1526", "Talikota 1565", "Khanwa 1527", "Chausa 1539"], answer: 1, explain: "After Talikota (1565) Hampi was plundered.", level: 3 },
       { q: "The Bahmani state was founded by a rebel against the Tughlaqs. This tells us the Tughlaq control in the Deccan was:", options: ["very strong", "weakening in the 14th century", "unchallenged", "unknown"], answer: 1, explain: "Hasan Gangu's rebellion in 1347 shows weakening Tughlaq power in the Deccan.", level: 3 }
     ],
     written: [
@@ -117,11 +117,11 @@ StudyData.addPractice(11, "historypb", {
   "bhakti-saints": {
     mcq: [
       { q: "The Alvars were devotees of:", options: ["Shiva", "Vishnu", "Durga", "Buddha"], answer: 1, explain: "The Alvars worshipped Vishnu; the Nayanars worshipped Shiva.", level: 1 },
-      { q: "The author of the Ramcharitmanas was:", options: ["Surdas", "Kabir", "Tulsidas", "Namdev"], answer: 2, explain: "Tulsidas wrote it.", level: 1 },
+      { q: "The author of the Ramcharitmanas was:", options: ["Chaitanya", "Kabir", "Tulsidas", "Namdev"], answer: 2, explain: "Tulsidas wrote it.", level: 1 },
       { q: "Chaitanya popularised Krishna devotion through:", options: ["kirtan", "sacrifice", "pilgrimage only", "debate"], answer: 0, explain: "He taught through kirtan.", level: 1 },
       { q: "Baba Farid was a:", options: ["Sufi of Punjab", "Bhakti poet of Bengal", "Chola king", "Mughal officer"], answer: 0, explain: "Baba Farid's verses are included in the Guru Granth Sahib.", level: 1 },
       { q: "Which saint stressed one formless God and Hindu-Muslim unity?", options: ["Tulsidas", "Kabir", "Chaitanya", "Mirabai"], answer: 1, explain: "Kabir criticised empty ritual and preached unity.", level: 1 },
-      { q: "A common feature of Bhakti teaching was:", options: ["use of local languages", "use of Sanskrit only", "caste-based worship", "ban on singing"], answer: 0, explain: "Saints preached in local languages.", level: 2 },
+      { q: "A common feature of Bhakti teaching was:", options: ["use of local languages", "use of Sanskrit only in worship", "caste-based worship", "ban on singing"], answer: 0, explain: "Saints preached in local languages.", level: 2 },
       {
         q: "Assertion (A): Bhakti and Sufi saints reduced religious hatred.\nReason (R): They stressed devotion, love of God and service to humanity over ritual.",
         options: ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],

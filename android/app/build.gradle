@@ -6,10 +6,10 @@ def keystoreFile = rootProject.file('keystore.properties')
 if (keystoreFile.exists()) keystoreFile.withInputStream { keystoreProps.load(it) }
 
 android {
-    namespace = "io.github.navjeetmallipixel.vidya"
+    namespace = "com.navjeetmalli.pocketclass"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "io.github.navjeetmallipixel.vidya"
+        applicationId "com.navjeetmalli.pocketclass"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

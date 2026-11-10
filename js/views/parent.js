@@ -61,7 +61,27 @@
   }
 
   // One printable page for the current student, built only from what the app already keeps.
+  // Behind the parent PIN (js/pin.js): until it is entered, a locked card that asks for it (the first visit sets one).
+  function locked() {
+    return {
+      title: t("For parents"),
+      html: `${topbar(t("For parents"), "#/progress")}
+        <div class="card stack center pin-locked" style="padding:28px 18px">
+          <div style="font-size:40px" aria-hidden="true">🔒</div>
+          <h2 style="font-size:20px">${Pin.isSet() ? t("The Parent area is locked") : t("Set a parent PIN")}</h2>
+          <p class="small muted">${Pin.isSet() ? t("Enter the parent PIN to see the summary.") : t("The first time, choose a 4-digit PIN. After that the Parent area asks for it.")}</p>
+          <button class="btn primary" data-act="unlock">${Pin.isSet() ? t("Enter PIN") : t("Set PIN")}</button>
+        </div>`,
+      mount(el) {
+        const go = () => Pin.ask().then((ok) => ok && /^#\/parent$/.test(location.hash) && App.render());
+        el.querySelector("[data-act=unlock]").onclick = go;
+        go();
+      },
+    };
+  }
+
   function parent() {
+    if (!Pin.isSet() || !Pin.unlocked()) return locked();
     const st = Store.state;
     const c = cls();
     const days = [...Array(7)].map((_, i) => {

@@ -235,4 +235,19 @@ async function onboard(page, { name = "Asha", cls = 10, board = "cbse", view = "
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste");
 }
 
-module.exports = { onboard, openTools, tab, openMenu, test, expect, KEY, CLASSES, BOARDS, registry, loadStudyData, expectedSubjects, expectedSubjectIds, chaptersOf, seed, readStore, current, correctPick, answer, playInstantQuiz, quickQuiz, home, watch };
+// Opens the Parent area through the parent PIN: the first time it creates PIN 1234, later it enters it.
+async function openParent(page, pin = "1234") {
+  await page.goto("/#/parent");
+  const box = page.locator(".pin-box");
+  await box.waitFor();
+  const creating = /Choose/.test(await box.locator("h2").textContent());
+  await page.locator("#pin-in").fill(pin);
+  if (creating) {
+    await expect(box.locator("h2")).toContainText("again");
+    await page.locator("#pin-in").fill(pin);
+  }
+  await expect(box).toHaveCount(0);
+  await expect(page.locator(".pin-locked")).toHaveCount(0);
+}
+
+module.exports = { openParent, onboard, openTools, tab, openMenu, test, expect, KEY, CLASSES, BOARDS, registry, loadStudyData, expectedSubjects, expectedSubjectIds, chaptersOf, seed, readStore, current, correctPick, answer, playInstantQuiz, quickQuiz, home, watch };

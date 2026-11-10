@@ -48,7 +48,7 @@ node scripts/count-content.js [--store]   # totals for README / STORE_LISTING (-
 
 - `js/store.js`: everything saved, per student.
   - It lives in localStorage `"vidya:v1"` (`v: 2`, `students[]`, `current`).
-  - Internal "vidya" names (storage key, backup app id, app ID) are kept on purpose for compatibility.
+  - Internal "vidya" names (storage key, backup app id, the Android print plugin) are kept on purpose for compatibility. The store app ID is `com.navjeetmalli.pocketclass` (fixed; never change it).
 - `data/registry.js` (`StudyData`): loads each subject from `data/classN/index.js`, and holds `addPath`, `addObjectives`, `addTimelines`, `practiceCatalog`.
 - Content: `data/classN/*`, `data/paths/{maths,english,science,punjabi}.js` (Practice by topic ladders), `data/games/*`. See CONTENT_GUIDE.md.
 - Views: `js/views/*.js`.
@@ -65,12 +65,14 @@ node scripts/count-content.js [--store]   # totals for README / STORE_LISTING (-
   - To unlock, empty `lockedSubjects` and `lockedLangs`. Then restore the full counts in STORE_LISTING.md.
 - `js/games/trace.js`: letter tracing is hidden (`STROKES_REVIEWED = false`) until a teacher checks `docs/strokes.html`. `window.POCKET_PREVIEW = true` shows it.
 - `js/util.js` `printPage()`: use this to print; `window.print()` does nothing in the app web views.
+- `js/pin.js`: parent PIN (Parent area, delete student, reset, restore). Stored as `pin` {salt, hash} with the device settings.
+- `js/views/offline.js`: offline packs (website). Data files live in the `pocket-class-data` cache, which updates keep (sw.js).
+- `data/glossary.js`: key terms in Hindi/Punjabi for the lesson language (`profile.learnLang`); unreviewed draft.
 
 ## Release status
 
 - See RELEASE_CHECKLIST.md, STORE_GUIDE.md and STORE_LISTING.md.
 - Still open:
-  - Decide whether to rename the app ID (`io.github.navjeetmallipixel.vidya`). This must happen before the first store upload.
   - Teacher and language review.
   - Store accounts and screenshots.
   - The 14-day Play closed test.

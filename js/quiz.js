@@ -382,7 +382,7 @@ const Cards = (() => {
           <span class="face front" ${s.flipped ? 'aria-hidden="true"' : ""}>
             ${c.from ? `<span class="from">${esc(c.from)}</span>` : ""}
             ${autoPic(plain(c.front), { max: 1, size: 88, title: true })}
-            <span class="term">${rich(c.front)}</span>
+            <span class="term">${rich(c.front)}</span>${c.alt ? `<span class="term-lang">${esc(c.alt)}</span>` : ""}
             <span class="hint">${t("Tap to see the meaning")}</span>
           </span>
           <span class="face back" ${s.flipped ? "" : 'aria-hidden="true"'}>

@@ -6,10 +6,10 @@ StudyData.addPractice(12, "englishpb", {
       { q: "___ people attended the dull lecture, so the hall looked empty. Choose the word that means 'almost none'.", options: ["A few", "Few", "A little", "Much"], answer: 1, explain: "'Few' has a negative sense (hardly any); 'a few' would mean some.", level: 1 },
       { q: "The determiner 'either' refers to:", options: ["all of many things", "one of two things", "none of many things", "some of a large group"], answer: 1, explain: "'Either' means one of two; 'neither' means not one of two.", level: 1 },
       { q: "Which of these is a demonstrative determiner?", options: ["these", "their", "some", "each"], answer: 0, explain: "This, that, these and those point out nouns. 'Their' is possessive, 'some' a quantifier and 'each' a distributive.", level: 1 },
-      { q: "There is ___ milk left in the jug, so we cannot make tea.", options: ["few", "a few", "little", "many"], answer: 2, explain: "Milk is uncountable and the sense is 'almost none', so 'little' is used.", level: 1 },
+      { q: "There is ___ milk left in the jug, so we cannot make tea.", options: ["very few", "a few", "little", "many"], answer: 2, explain: "Milk is uncountable and the sense is 'almost none', so 'little' is used.", level: 1 },
       { q: "Which sentence is correct?", options: ["Every boys has a ticket.", "Every boy have a ticket.", "Every boys have a ticket.", "Every boy has a ticket."], answer: 3, explain: "'Every' takes a singular noun and a singular verb.", level: 2 },
       { q: "He gave me ___ advice about my career.", options: ["a", "an", "some", "many"], answer: 2, explain: "'Advice' is uncountable, so it cannot take 'a/an' or 'many'; 'some' fits.", level: 2 },
-      { q: "Few of his friends came to the function, but ___ who came helped him a great deal.", options: ["a few", "the few", "few", "little"], answer: 1, explain: "'The few' means all of those, however small in number, who are being referred to.", level: 2 },
+      { q: "Few of his friends came to the function, but ___ who came helped him a great deal.", options: ["very few", "the few", "few", "little"], answer: 1, explain: "'The few' means all of those, however small in number, who are being referred to.", level: 2 },
       {
         q: "At a charity camp, Meena wrote: 'Only a few volunteers turned up, but the few who came worked all day.'\nWhat does 'the few' refer to?",
         options: ["all the volunteers who did come, small in number though they were", "volunteers who never came", "most of the volunteers in the city", "exactly three volunteers"],
@@ -25,7 +25,7 @@ StudyData.addPractice(12, "englishpb", {
         ],
         answer: 2, explain: "'An hour' is correct, but the rule depends on sound, not letter: 'hour' begins with the vowel sound because h is silent, though h is a consonant letter.", level: 2, keepOrder: true
       },
-      { q: "Which sentence uses 'a little' in the sense of 'some, enough to be of help'?", options: ["Little help came from the villagers.", "He took a little help from the villagers.", "He took little help from the villagers.", "Little did the villagers help."], answer: 1, explain: "'A little' is positive. 'Little' alone says almost none.", level: 3 },
+      { q: "Which sentence uses 'a little' in the sense of 'some, enough to be of help'?", options: ["Little help came to him from the villagers.", "He took a little help from the villagers.", "He took little help from the villagers.", "Little did the villagers help."], answer: 1, explain: "'A little' is positive. 'Little' alone says almost none.", level: 3 },
       { q: "How many errors are there in: 'Each of the boys are happy and every girl are proud.'?", options: ["None", "One", "Two", "Three"], answer: 2, explain: "Both 'each' and 'every' are singular, so the correct text is 'Each of the boys is happy and every girl is proud.' Two verbs need correction.", level: 3 },
       {
         q: "A canteen sign says 'We have a little sugar left.' A student says 'We have little sugar left.' Which is true?",
@@ -124,7 +124,7 @@ StudyData.addPractice(12, "englishpb", {
     mcq: [
       { q: "Which is the negative form of 'He is rich'?", options: ["He is poor.", "He is not rich.", "He is not poor.", "He was not poor."], answer: 2, explain: "To keep the meaning we use an opposite word with 'not': not poor.", level: 1 },
       { q: "A compound sentence has:", options: ["two or more main clauses", "one main clause and one subordinate clause", "only one clause", "no verb"], answer: 0, explain: "Compound sentences join independent clauses with and, but, or, so.", level: 1 },
-      { q: "Interrogative form of 'It is a fine day.':", options: ["Is it fine day?", "Isn't it a fine day?", "Was it a fine day?", "Does it a fine day?"], answer: 1, explain: "The sentence is turned into a question by inverting is and it; the negative adds emphasis.", level: 1 },
+      { q: "Interrogative form of 'It is a fine day.':", options: ["Is it fine day?", "Isn't it a fine day?", "Was it not a fine day?", "Does it a fine day?"], answer: 1, explain: "The sentence is turned into a question by inverting is and it; the negative adds emphasis.", level: 1 },
       { q: "'Who does not love his country?' means:", options: ["Nobody loves his country.", "Some people love their country.", "Everyone loves his country.", "The speaker wants an answer."], answer: 2, explain: "A negative rhetorical question carries an affirmative sense.", level: 1 },
       { q: "Positive degree of 'Gold is the most precious metal.':", options: ["Gold is as precious as other metals.", "Gold is more precious than any metal.", "Gold is not as precious as other metals.", "No other metal is as precious as gold."], answer: 3, explain: "Superlative → positive: 'No other ... is as ... as ...'.", level: 1 },
       { q: "Simple form of 'He is so weak that he cannot walk.':", options: ["He is very weak to walk.", "He is weak enough to walk.", "He is too weak to walk.", "He is too weak walking."], answer: 2, explain: "'So ... that ... cannot' = 'too ... to'.", level: 2 },
@@ -145,7 +145,7 @@ StudyData.addPractice(12, "englishpb", {
         ],
         answer: 1, explain: "A is true (comparative with 'than any other'). R is also true, but it does not explain why the sentence is comparative.", level: 2, keepOrder: true
       },
-      { q: "Complex form of 'In spite of his illness, he attended the meeting.':", options: ["Because he was ill, he attended the meeting.", "Although he was ill, he attended the meeting.", "He was ill; so he attended the meeting.", "If he was ill, he attended the meeting."], answer: 1, explain: "'In spite of' shows contrast, so the clause begins with 'Although/Though'.", level: 3 },
+      { q: "Complex form of 'In spite of his illness, he attended the meeting.':", options: ["Because he was ill, he still attended the meeting.", "Although he was ill, he attended the meeting.", "He was ill; so he attended the meeting.", "If he was ill, he attended the meeting."], answer: 1, explain: "'In spite of' shows contrast, so the clause begins with 'Although/Though'.", level: 3 },
       { q: "Which pair is NOT equal in meaning?", options: ["Rahul is taller than Mohit. / Mohit is not as tall as Rahul.", "He is too tired to speak. / He is so tired that he cannot speak.", "Tea is as good as coffee. / Coffee is better than tea.", "Nobody is as brave as Arjun. / Arjun is the bravest."], answer: 2, explain: "'As good as' means equal, while 'better than' means unequal, so the meaning changes.", level: 3 },
       {
         q: "A student turns 'As soon as the bell rang, the students left' into a simple sentence. Which version is correct?",
@@ -184,12 +184,12 @@ StudyData.addPractice(12, "englishpb", {
     mcq: [
       { q: "Passive of 'Rita writes a letter.':", options: ["A letter wrote by Rita.", "A letter was written by Rita.", "A letter is written by Rita.", "Rita is written by a letter."], answer: 2, explain: "Simple present active becomes is/am/are + V3 in the passive.", level: 1 },
       { q: "The passive voice is formed with:", options: ["have + base verb", "be + past participle", "do + past tense", "will + base verb"], answer: 1, explain: "A form of 'be' plus the third form (V3) of the verb.", level: 1 },
-      { q: "Which verb cannot normally be used in the passive?", options: ["resemble", "write", "open", "break"], answer: 0, explain: "'Resemble' is a stative verb and has no passive.", level: 1 },
+      { q: "Which verb cannot normally be used in the passive?", options: ["resemble", "describe", "open", "break"], answer: 0, explain: "'Resemble' is a stative verb and has no passive.", level: 1 },
       { q: "Passive of 'Open the window.':", options: ["Let the window be opened.", "The window opened.", "The window is opened.", "The window was open."], answer: 0, explain: "Commands change to 'Let + object + be + V3'.", level: 1 },
       { q: "Passive of 'They are repairing the road.':", options: ["The road is repaired by them.", "The road has been repaired.", "The road was being repaired by them.", "The road is being repaired by them."], answer: 3, explain: "Present continuous passive: is/am/are being + V3.", level: 1 },
       { q: "Passive of 'Who wrote this poem?':", options: ["Whom was this poem written by?", "By whom was this poem written?", "By who this poem was written?", "Who was this poem wrote?"], answer: 1, explain: "The question word becomes 'By whom' and the question form is kept.", level: 2 },
       { q: "Active form of 'The work must be finished by us.':", options: ["We must finish the work.", "We must have finished the work.", "We finished the work must.", "We must be finishing the work."], answer: 0, explain: "'Modal + be + V3' becomes 'modal + base verb' in the active.", level: 2 },
-      { q: "Passive of 'Please help me.':", options: ["Let me be helped please.", "I am requested to help you.", "You are requested to help me.", "Help be done by you."], answer: 2, explain: "Requests use 'You are requested to ...'.", level: 2 },
+      { q: "Passive of 'Please help me.':", options: ["Let me be helped please.", "I am requested to help you now.", "You are requested to help me.", "Help be done by you."], answer: 2, explain: "Requests use 'You are requested to ...'.", level: 2 },
       {
         q: "A newspaper reports: 'The bridge was damaged during the storm.' Why does the writer use the passive voice?",
         options: ["The sentence has no verb", "The doer is unknown or unimportant, and the result matters", "Bridges cannot be the subject of an active verb", "The passive is always more polite"],
@@ -206,7 +206,7 @@ StudyData.addPractice(12, "englishpb", {
         answer: 0, explain: "An intransitive verb has no object, so there is nothing to become the new subject; this is why it has no passive.", level: 2, keepOrder: true
       },
       { q: "'She gave me a book.' Which passive version is NOT correct?", options: ["I was given a book by her.", "A book was given to me by her.", "A book was given me by her.", "She was given a book by me."], answer: 3, explain: "The doer 'she' must stay as the agent; 'She was given a book by me' reverses the meaning.", level: 3 },
-      { q: "Passive of 'The class laughed at him.':", options: ["He was laughed by the class.", "He laughed at by the class.", "He was laughed at by the class.", "Laughed at him was the class."], answer: 2, explain: "A verb with a preposition keeps the preposition in the passive: 'was laughed at'.", level: 3 },
+      { q: "Passive of 'The class laughed at him.':", options: ["He was laughed by the whole class.", "He laughed at by the class.", "He was laughed at by the class.", "Laughed at him was the class."], answer: 2, explain: "A verb with a preposition keeps the preposition in the passive: 'was laughed at'.", level: 3 },
       {
         q: "A school rule says 'Do not litter the campus.' The principal wants a passive notice. Which is best?",
         options: ["Let the campus not be littered.", "The campus is not littered.", "Let the campus be littered.", "The campus will not litter."],
@@ -252,7 +252,7 @@ StudyData.addPractice(12, "englishpb", {
       { q: "Indirect form of: The teacher said, 'The earth moves round the sun.'", options: ["The teacher said that the earth moved round the sun.", "The teacher said that the earth had moved round the sun.", "The teacher said that the earth moves round the sun.", "The teacher said the earth moving round the sun."], answer: 2, explain: "A universal truth keeps its present tense in indirect speech.", level: 2 },
       {
         q: "Gurleen's mother said to her, 'Will you help me tomorrow?' Gurleen later reports it the next day. Which report is correct?",
-        options: ["Mother asked me if I will help her tomorrow.", "Mother asked me would I help her the next day.", "Mother told me if I would help her the next day.", "Mother asked me if I would help her the next day."],
+        options: ["Mother asked me if I will help her tomorrow.", "Mother asked me would I help her the next day.", "Mother told me if I would help her on the next day.", "Mother asked me if I would help her the next day."],
         answer: 3, explain: "A yes/no question uses 'asked if', will → would, and 'tomorrow' → 'the next day', with statement word order.", level: 2
       },
       {
@@ -265,7 +265,7 @@ StudyData.addPractice(12, "englishpb", {
         ],
         answer: 0, explain: "The report uses 'exclaimed with joy' for the feeling and shifts the tense to 'had won', exactly as the rule says.", level: 2, keepOrder: true
       },
-      { q: "Indirect form of: He said to her, 'Please wait here until I return.'", options: ["He requested her to wait here until I returned.", "He told her wait there until he returned.", "He requested her to wait there until he returned.", "He requested her that she waits there."], answer: 2, explain: "A request uses 'requested ... to', here → there, and I → he.", level: 3 },
+      { q: "Indirect form of: He said to her, 'Please wait here until I return.'", options: ["He requested her to wait here until I returned home.", "He told her wait there until he returned.", "He requested her to wait there until he returned.", "He requested her that she waits there."], answer: 2, explain: "A request uses 'requested ... to', here → there, and I → he.", level: 3 },
       { q: "Indirect form of: 'Let us go for a walk,' said Rohan.", options: ["Rohan said that let us go for a walk.", "Rohan suggested that they should go for a walk.", "Rohan asked to go for a walk us.", "Rohan ordered that they go for walk."], answer: 1, explain: "'Let us' suggests a proposal, so it is reported with 'suggested that ... should'.", level: 3 },
       {
         q: "At a press meet the minister said, 'We have completed the bridge, and we shall open it next week.' Which is the correct indirect speech?",
@@ -329,7 +329,7 @@ StudyData.addPractice(12, "englishpb", {
       { q: "The passage says, 'Nikhil said, \"I will go tomorrow.\"' Which sentence suits a précis?", options: ["Nikhil said, \"I will go tomorrow.\"", "Nikhil said that he will go tomorrow.", "I will go tomorrow, said Nikhil.", "Nikhil decided to go the next day."], answer: 3, explain: "It is in indirect speech, third person, and the time word has been adjusted; 'Nikhil said that he will go tomorrow' keeps the wrong tense and time word.", level: 3 },
       {
         q: "A passage describes how Ritu climbed a hill every morning for five years to feed the birds. It also has long descriptions of flowers on the hill and the morning mist. Which detail must stay in the précis?",
-        options: ["Ritu's daily climb to feed birds for five years", "The colours of the flowers", "A poetic comparison of the hill to a painting", "Repeated mention of the mist"],
+        options: ["Ritu's daily climb to feed birds for five years", "The colours of the flowers", "A poetic comparison of the hill to a beautiful painting", "Repeated mention of the mist"],
         answer: 0, explain: "The central action belongs in the précis; descriptive decoration is dropped.", level: 3
       },
       {
@@ -364,7 +364,7 @@ StudyData.addPractice(12, "englishpb", {
     mcq: [
       { q: "Which salutation goes with the subscription 'Yours faithfully'?", options: ["Dear Rohit", "Dear Sir", "Dear Aunty", "My dear Seema"], answer: 1, explain: "'Yours faithfully' matches an impersonal salutation such as Dear Sir/Madam.", level: 1 },
       { q: "A letter to the editor of a newspaper is addressed to:", options: ["The Editor, name of newspaper, city", "The Principal", "Dear friend", "The shopkeeper"], answer: 0, explain: "It is addressed to the editor, with the name and city of the newspaper.", level: 1 },
-      { q: "The subject line of a formal letter should be:", options: ["omitted", "a full paragraph", "brief and specific", "humorous"], answer: 2, explain: "It states the issue in a few words.", level: 1 },
+      { q: "The subject line of a formal letter should be:", options: ["omitted", "a full long paragraph", "brief and specific", "humorous"], answer: 2, explain: "It states the issue in a few words.", level: 1 },
       { q: "A school application traditionally ends with:", options: ["Love", "Cheers", "Bye", "Yours obediently"], answer: 3, explain: "'Yours obediently' is the traditional close for applications to the head of the school.", level: 1 },
       { q: "A job application should enclose a:", options: ["résumé", "photograph of a pet", "friend's mark sheet", "diary"], answer: 0, explain: "A résumé summarises education, skills and experience.", level: 1 },
       { q: "Which is the best opening for a letter to the Municipal Commissioner about garbage?", options: ["Dear friend, hope you are fine.", "Sir, I wish to draw your attention to the heaps of garbage in our locality.", "Hey!", "Dear Commissioner Uncle"], answer: 1, explain: "A formal letter states the issue politely and directly.", level: 2 },

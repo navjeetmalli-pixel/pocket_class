@@ -112,7 +112,10 @@ test("update: a new service worker shows 'A new version is ready' and Reload act
     await page.goto(`${proxy.url}/#/`);
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Asha");
     await reloadUnderWorker(page);
-    await expect.poll(() => page.evaluate(() => caches.keys())).toEqual([CACHE_NAME]);
+    // The app's versioned cache, plus the data cache (lesson files saved for offline), which updates keep.
+    await expect.poll(() => page.evaluate(async () => (await caches.keys()).sort())).toEqual([CACHE_NAME, "pocket-class-data"].sort());
+    const savedBefore = await page.evaluate(async () => (await (await caches.open("pocket-class-data")).keys()).map((r) => new URL(r.url).pathname));
+    expect(savedBefore.some((p) => p.includes("/data/class10/"))).toBe(true);
     await expect(page.locator("#update-bar")).toHaveCount(0);
 
     // A new release: sw.js now names a different cache.
@@ -137,7 +140,10 @@ test("update: a new service worker shows 'A new version is ready' and Reload act
     // The new worker took over: the old cache is gone, the new one is in use, and the app works.
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Namaste, Asha");
     await controlled(page);
-    await expect.poll(() => page.evaluate(() => caches.keys())).toEqual([NEW_CACHE]);
+    await expect.poll(() => page.evaluate(async () => (await caches.keys()).sort())).toEqual([NEW_CACHE, "pocket-class-data"].sort());
+    // The lesson files saved before the update are still there (refreshed in the background, never dropped).
+    const savedAfter = await page.evaluate(async () => (await (await caches.open("pocket-class-data")).keys()).map((r) => new URL(r.url).pathname));
+    for (const p of savedBefore) expect(savedAfter).toContain(p);
     await expect(page.locator("#update-bar")).toHaveCount(0);
     expect(await page.evaluate(async () => {
       const r = await navigator.serviceWorker.getRegistration();

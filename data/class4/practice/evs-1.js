@@ -28,11 +28,11 @@ StudyData.addPractice(4, "evs", {
     mcq: [
       { q: "A carrot has which kind of root?", options: ["Fibrous root", "Tap root", "Flower root", "Stem root"], answer: 1, explain: "A carrot has a thick main root, which is a tap root.", level: 1 },
       { q: "Where in a plant is food made?", options: ["Roots", "Soil", "Leaves", "Seeds only"], answer: 2, explain: "Green leaves make food by photosynthesis.", level: 1 },
-      { q: "Which gas do leaves take in to make food?", options: ["Carbon dioxide", "Smoke", "Nitrogen only", "Steam"], answer: 0, explain: "Leaves take in carbon dioxide through the stomata.", level: 1 },
+      { q: "Which gas do leaves take in to make food?", options: ["Carbon dioxide", "Smoke", "Nitrogen gas only", "Steam"], answer: 0, explain: "Leaves take in carbon dioxide through the stomata.", level: 1 },
       { q: "Which gas do plants give out during photosynthesis?", options: ["Carbon dioxide", "Smoke", "Petrol", "Oxygen"], answer: 3, explain: "Plants give out oxygen, which we breathe.", level: 1 },
       { q: "Leaves of grass have which pattern of veins?", options: ["Net-like", "Parallel", "Round", "No veins"], answer: 1, explain: "Grass leaves have parallel veins. Mango leaves have net-like veins.", level: 1 },
-      { q: "Which pair of plants both have tap roots?", options: ["Wheat and grass", "Maize and wheat", "Mustard and gram", "Grass and maize"], answer: 2, explain: "Mustard and gram have tap roots. Wheat, maize and grass have fibrous roots.", level: 2 },
-      { q: "Riya pulls up a small grass plant and sees many thin roots of about the same size. These roots are:", options: ["Tap roots", "Leaf roots", "Stem roots", "Fibrous roots"], answer: 3, explain: "Many thin roots of similar size are fibrous roots.", level: 2 },
+      { q: "Which pair of plants both have tap roots?", options: ["Wheat and lawn grass", "Maize and wheat", "Mustard and gram", "Grass and maize"], answer: 2, explain: "Mustard and gram have tap roots. Wheat, maize and grass have fibrous roots.", level: 2 },
+      { q: "Riya pulls up a small grass plant and sees many thin roots of about the same size. These roots are:", options: ["Tap roots", "Leaf roots", "Prop stem roots", "Fibrous roots"], answer: 3, explain: "Many thin roots of similar size are fibrous roots.", level: 2 },
       { q: "A potato is a:", options: ["Root that grows in the air", "Leaf that stores food", "Fruit of the plant", "Stem that grows underground and stores food"], answer: 3, explain: "The potato is a stem that grows under the soil and stores food.", level: 2 },
       { q: "Which three things does a leaf need to make food?", options: ["Sunlight, water and carbon dioxide", "Moonlight, soil and oxygen", "Wind, sand and smoke", "Milk, water and oxygen"], answer: 0, explain: "Photosynthesis needs sunlight, water and carbon dioxide.", level: 2 },
       { q: "A mango leaf has veins that form a:", options: ["Straight line only", "Net-like pattern", "Parallel pattern", "Circle"], answer: 1, explain: "Mango leaves have net-like veins.", level: 2 },
@@ -50,7 +50,7 @@ StudyData.addPractice(4, "evs", {
   },
   "animals-and-their-homes": {
     mcq: [
-      { q: "A mongoose lives in a:", options: ["Burrow", "Hive", "Nest", "Boat"], answer: 0, explain: "Mongooses and rabbits live in burrows dug in the ground.", level: 1 },
+      { q: "A mongoose lives in a:", options: ["Burrow", "Beehive", "Nest", "Boat"], answer: 0, explain: "Mongooses and rabbits live in burrows dug in the ground.", level: 1 },
       { q: "Birds build which kind of home to hold their eggs and chicks?", options: ["Hive", "Den", "Nest", "Burrow"], answer: 2, explain: "Birds make nests for their eggs and chicks.", level: 1 },
       { q: "A fox may live in a:", options: ["Hive", "Nest", "Pond", "Den"], answer: 3, explain: "Foxes use dens as shelters.", level: 1 },
       { q: "Polar bears live in the cold:", options: ["Desert", "Arctic", "Rainforest", "River"], answer: 1, explain: "Polar bears live in the very cold Arctic.", level: 1 },
@@ -74,11 +74,11 @@ StudyData.addPractice(4, "evs", {
   },
   "where-food-comes-from": {
     mcq: [
-      { q: "The plough is used by farmers to:", options: ["Cut the crops", "Loosen the soil", "Store grain", "Carry water"], answer: 1, explain: "A plough loosens and turns the soil.", level: 1 },
+      { q: "The plough is used by farmers to:", options: ["Cut the standing crops", "Loosen the soil", "Store grain", "Carry water"], answer: 1, explain: "A plough loosens and turns the soil.", level: 1 },
       { q: "The sickle is a tool used for:", options: ["Digging wells", "Making milk", "Watering plants", "Cutting crops"], answer: 3, explain: "A sickle is used to cut crops at harvest.", level: 1 },
-      { q: "Which farm gives us eggs and chicken?", options: ["Poultry farm", "Dairy farm", "Cotton farm", "Rice farm"], answer: 0, explain: "A poultry farm gives eggs and chicken.", level: 1 },
+      { q: "Which farm gives us eggs and chicken?", options: ["Poultry farm", "Dairy cow farm", "Cotton farm", "Rice farm"], answer: 0, explain: "A poultry farm gives eggs and chicken.", level: 1 },
       { q: "Rabi crops are sown in:", options: ["The monsoon", "Summer", "Winter", "Midnight"], answer: 2, explain: "Rabi crops are sown in winter, from about October to December.", level: 1 },
-      { q: "Rice is a:", options: ["Rabi crop", "Kharif crop", "Fruit", "Pulse root"], answer: 1, explain: "Rice is a kharif crop, sown in the monsoon.", level: 1 },
+      { q: "Rice is a:", options: ["Rabi season crop", "Kharif crop", "Fruit", "Pulse root"], answer: 1, explain: "Rice is a kharif crop, sown in the monsoon.", level: 1 },
       { q: "Which crop is a kharif crop?", options: ["Cotton", "Mustard", "Gram", "Peas"], answer: 0, explain: "Cotton is a kharif crop. Mustard, gram and peas are rabi crops.", level: 2 },
       { q: "Kharif crops are harvested around:", options: ["March and April only", "September and October", "January only", "They are never harvested"], answer: 1, explain: "Kharif crops are harvested around September and October.", level: 2 },
       { q: "Which pair of crops are both rabi crops?", options: ["Rice and maize", "Wheat and rice", "Soybean and cotton", "Gram and mustard"], answer: 3, explain: "Gram and mustard are both rabi crops.", level: 2 },
@@ -100,7 +100,7 @@ StudyData.addPractice(4, "evs", {
     mcq: [
       { q: "A wall built across a river to store its water is called a:", options: ["Well", "Canal", "Dam", "Handpump"], answer: 2, explain: "A dam stores river water in a large lake.", level: 1 },
       { q: "Water that comes out of a well or a handpump is:", options: ["Surface water", "Groundwater", "Sea water", "Steam"], answer: 1, explain: "Wells and handpumps reach groundwater.", level: 1 },
-      { q: "Drip irrigation gives water to plants:", options: ["From a big flood", "Only in the rain", "Through the leaves only", "Drop by drop at the roots"], answer: 3, explain: "Drip irrigation waters the roots drop by drop and saves water.", level: 1 },
+      { q: "Drip irrigation gives water to plants:", options: ["From a big flood", "Only in the rain", "Through the green leaves only", "Drop by drop at the roots"], answer: 3, explain: "Drip irrigation waters the roots drop by drop and saves water.", level: 1 },
       { q: "Collecting rainwater from roofs into tanks is called:", options: ["Rainwater harvesting", "Photosynthesis", "Migration", "Irrigation"], answer: 0, explain: "Rainwater harvesting means collecting and storing rainwater for later use.", level: 1 },
       { q: "A lake is an example of:", options: ["Groundwater", "Surface water", "A tube well", "Rainwater tank"], answer: 1, explain: "Lakes, rivers and ponds are surface water that we can see.", level: 1 },
       { q: "Out of every 100 parts of the Earth's water, about how many parts are fresh water?", options: ["3", "50", "97", "75"], answer: 0, explain: "About 97 parts are salty, so only about 3 parts are fresh.", level: 2 },
@@ -130,7 +130,7 @@ StudyData.addPractice(4, "evs", {
       { q: "Why do houses in the Thar Desert have thick mud or stone walls?", options: ["To let in hot air", "To make the house heavy", "To keep the inside cool", "To block the rain"], answer: 2, explain: "Thick walls keep the inside of the house cool.", level: 2 },
       { q: "Why do houses in Kerala have sloping tiled roofs?", options: ["To collect snow", "To drain the heavy monsoon rain", "To hide from the sun", "To save bricks"], answer: 1, explain: "Sloping roofs let heavy rain run off quickly.", level: 2 },
       { q: "Why are houses built on stilts in marshy or flood-prone areas?", options: ["To look taller than clouds", "To keep out the cold", "To save wood", "To keep the house above water"], answer: 3, explain: "A house raised on stilts stays above floodwater.", level: 2 },
-      { q: "Riya's cousin lives in Ladakh. Which features is her house most likely to have?", options: ["Thick walls and small windows", "Thin walls and huge windows", "Roof made of cloth", "No walls"], answer: 0, explain: "Thick walls and small windows keep the warmth in during the cold.", level: 2 },
+      { q: "Riya's cousin lives in Ladakh. Which features is her house most likely to have?", options: ["Thick walls and small windows", "Thin walls and huge open windows", "Roof made of cloth", "No walls"], answer: 0, explain: "Thick walls and small windows keep the warmth in during the cold.", level: 2 },
       { q: "Why does a desert house often have a courtyard in the middle?", options: ["To store snow", "To grow rice", "To bring in fresh air and light", "To park a ship"], answer: 2, explain: "A courtyard brings fresh air and light into the house.", level: 2 },
       { q: "Which pair of place and house feature is matched correctly?", options: ["Hilly area – flat roof", "Hilly area – sloping roof", "Desert – huge windows", "Flood-prone area – built underground"], answer: 1, explain: "Hilly areas have sloping roofs so that rain and snow slide off.", level: 3 },
       { q: "A new house is being planned in an area that floods often and gets heavy monsoon rain. Which features are most suitable?", options: ["Raised on stilts or a mound with a sloping roof", "Built on low ground with a flat roof", "Very thick walls and no roof", "Built inside a pond"], answer: 0, explain: "Raising the house keeps it above water and a sloping roof drains the rain.", level: 3 }
@@ -150,7 +150,7 @@ StudyData.addPractice(4, "evs", {
       { q: "How many milk teeth do children have?", options: ["32", "20", "10", "60"], answer: 1, explain: "Children have 20 milk teeth.", level: 1 },
       { q: "Where does digestion begin?", options: ["In the mouth", "In the large intestine", "In the stomach only", "In the food pipe"], answer: 0, explain: "Digestion begins in the mouth, where saliva mixes with food.", level: 1 },
       { q: "Which teeth grind the food?", options: ["Incisors and canines", "Only the front teeth", "Milk teeth only", "Premolars and molars"], answer: 3, explain: "The back teeth, premolars and molars, grind food.", level: 1 },
-      { q: "The food pipe carries food from the mouth to the:", options: ["Heart", "Stomach", "Nose", "Ear"], answer: 1, explain: "Swallowed food passes through the food pipe to the stomach.", level: 1 },
+      { q: "The food pipe carries food from the mouth to the:", options: ["Kidneys", "Stomach", "Nose", "Ear"], answer: 1, explain: "Swallowed food passes through the food pipe to the stomach.", level: 1 },
       { q: "At about what age do milk teeth start to fall out?", options: ["Two years", "Twelve years", "Six years", "Fifty years"], answer: 2, explain: "Milk teeth start falling at about the age of six.", level: 2 },
       { q: "Which part of the digestive system absorbs water from the leftover food?", options: ["Mouth", "Stomach", "Food pipe", "Large intestine"], answer: 3, explain: "The large intestine absorbs water, and the leftover waste leaves the body.", level: 2 },
       { q: "Which is the correct path of food?", options: ["Mouth → stomach → food pipe → large intestine", "Mouth → food pipe → stomach → small intestine → large intestine", "Stomach → mouth → small intestine", "Mouth → large intestine → stomach"], answer: 1, explain: "Food goes from the mouth through the food pipe to the stomach, then the small intestine and the large intestine.", level: 2 },
@@ -198,14 +198,14 @@ StudyData.addPractice(4, "evs", {
       { q: "Who delivers our letters?", options: ["Postal worker", "Mason", "Potter", "Weaver"], answer: 0, explain: "A postal worker delivers letters.", level: 1 },
       { q: "Who takes care of people who are ill?", options: ["Tailors", "Doctors and nurses", "Potters", "Masons"], answer: 1, explain: "Doctors and nurses care for sick people.", level: 1 },
       { q: "Who carries people and goods from place to place?", options: ["Weaver", "Teacher", "Potter", "Driver"], answer: 3, explain: "Drivers carry people and goods.", level: 1 },
-      { q: "The work a person does to earn a living is called an:", options: ["Chore", "Occupation", "Habitat", "Landmark"], answer: 1, explain: "An occupation is the work a person does to earn a living.", level: 1 },
+      { q: "The work a person does to earn a living is called an:", options: ["Daily chore", "Occupation", "Habitat", "Landmark"], answer: 1, explain: "An occupation is the work a person does to earn a living.", level: 1 },
       { q: "A tailor needs cloth to stitch clothes. Who makes the cloth?", options: ["Weaver", "Mason", "Baker", "Postal worker"], answer: 0, explain: "A weaver makes cloth on a loom.", level: 2 },
       { q: "Which sentence about jobs is correct?", options: ["Only some jobs matter", "Jobs never depend on each other", "Every job depends on other jobs", "Only jobs in offices matter"], answer: 2, explain: "A baker needs a farmer's wheat and a tailor needs a weaver's cloth, so jobs depend on each other.", level: 2 },
       { q: "Which worker has to learn a special skill to fix wires safely?", options: ["Potter", "Farmer", "Teacher", "Electrician"], answer: 3, explain: "An electrician learns the skill of fixing wires safely.", level: 2 },
       { q: "Riya's family needs a new wooden door for their home. Whom should they call?", options: ["A potter", "A carpenter", "A weaver", "A postal worker"], answer: 1, explain: "A carpenter makes doors.", level: 2 },
       { q: "Which attitude towards workers is right?", options: ["Every honest job is important and deserves respect", "Some jobs are not worth respect", "Only rich workers matter", "Never thank workers"], answer: 0, explain: "Every honest job helps others and deserves respect.", level: 2 },
       { q: "Which order shows how we get a stitched shirt?", options: ["Tailor stitches, then weaver weaves", "Customer buys, then weaver weaves, then tailor stitches", "Weaver makes cloth, then tailor stitches it", "Tailor makes cloth, then weaver stitches"], answer: 2, explain: "The weaver makes the cloth first and the tailor then stitches it into a shirt.", level: 3 },
-      { q: "Which two workers help us build and furnish a home?", options: ["Potter and weaver", "Doctor and driver", "Farmer and baker", "Mason and carpenter"], answer: 3, explain: "A mason builds the walls and a carpenter makes doors and furniture.", level: 3 }
+      { q: "Which two workers help us build and furnish a home?", options: ["Potter and cloth weaver", "Doctor and driver", "Farmer and baker", "Mason and carpenter"], answer: 3, explain: "A mason builds the walls and a carpenter makes doors and furniture.", level: 3 }
     ],
     written: [
       { q: "Name two things that a potter makes.", a: "Pots and diyas (from clay).", marks: 1 },
@@ -225,7 +225,7 @@ StudyData.addPractice(4, "evs", {
       { q: "Which of these is a public place open to everyone?", options: ["A private bedroom", "A library", "A locked store room", "A friend's kitchen"], answer: 1, explain: "A library is a public place for everyone.", level: 1 },
       { q: "Riya's neighbour is unwell and his family is away. What is a kind thing for Riya to do?", options: ["Ask an elder how the family can help", "Make loud noise outside his house", "Ignore him", "Take his things"], answer: 0, explain: "Neighbours help each other in times of need.", level: 2 },
       { q: "Which is a good habit for a neighbour?", options: ["Playing loud music at midnight", "Throwing garbage on the road", "Blocking the lane", "Keeping noise low at night"], answer: 3, explain: "Keeping noise low, especially at night and early morning, is considerate.", level: 2 },
-      { q: "A fire breaks out in a market. Which number can people dial in India for help?", options: ["10", "50", "5", "112"], answer: 3, explain: "112 is India's single emergency number. Firefighters put out fires and rescue people.", level: 2 },
+      { q: "A fire breaks out in a market. Which number can people dial in India for help?", options: ["10", "555", "5", "112"], answer: 3, explain: "112 is India's single emergency number. Firefighters put out fires and rescue people.", level: 2 },
       { q: "Why should we keep parks and libraries clean?", options: ["Because nobody uses them", "Because everyone uses them", "Because they belong to one person", "Because they are never visited"], answer: 1, explain: "Public places are used by everyone, so everyone should care for them.", level: 2 },
       { q: "A community is:", options: ["A group of people who live in the same area and share their needs", "A single house", "A kind of tool", "A type of crop"], answer: 0, explain: "A community is a group of people who live in the same area and share their needs and values.", level: 2 },
       { q: "Which helper is matched with the right work?", options: ["Sanitation worker – delivers letters", "Doctor – puts out fires", "Postal worker – treats the sick", "Firefighter – rescues people from fires"], answer: 3, explain: "Firefighters put out fires and rescue people.", level: 3 },
