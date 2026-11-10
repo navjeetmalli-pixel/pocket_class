@@ -3,15 +3,15 @@
 // does not offer them while the lock applies, and saved Hindi / Punjabi settings are kept (shown as English) so that
 // unlocking later restores them.
 //
-//   Unlock:                 empty both arrays below ([]).
-//   Lock the website too:   applies: () => true   (or set window.POCKET_LOCK = true before the scripts load; tests do this).
-//   Default:                locked in the store apps only (Native.is); the website keeps everything, because existing
-//                           web users already have Punjabi and Hindi progress and settings.
+//   Now:                    UNLOCKED everywhere (the owner lifted the lock for the store apps, November 2026). The lock
+//                           still applies with window.POCKET_LOCK = true or ?lock=1 (tests and store screenshots use it).
+//   Lock the store apps again: applies: () => Native.is || window.POCKET_LOCK === true || …
+//   Lock everything:        applies: () => true.
 // See "Release lock" in README.md and RELEASE_CHECKLIST.md.
 const Release = {
   lockedSubjects: ["hindi", "hindipb", "punjabi"],
   lockedLangs: ["pa", "hi"],
-  applies: () => Native.is || window.POCKET_LOCK === true || /[?&]lock=1\b/.test(location.search),
+  applies: () => window.POCKET_LOCK === true || /[?&]lock=1\b/.test(location.search),
   // A subject id (also a Practice-by-topic pseudo subject such as "path-punjabi") that is hidden right now.
   subjectLocked(id) {
     id = String(id == null ? "" : id);

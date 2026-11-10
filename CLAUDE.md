@@ -60,9 +60,8 @@ node scripts/count-content.js [--store]   # totals for README / STORE_LISTING (-
   - `js/loop.js` (adaptation rules), `js/plan.js` (Today's plan)
 - Games: `js/games/engine.js` (`Games.register`, best scores, results) plus one file per game. The race has a ghost of the best run.
 - Labs: `js/labs/*.js` (`Labs.register`, `Labs.forChapter`).
-- `js/release.js`: **store release lock**.
-  - It hides Hindi and Punjabi subjects and app languages in the native apps (`Native.is`, or `?lock=1` / `window.POCKET_LOCK` on the web).
-  - To unlock, empty `lockedSubjects` and `lockedLangs`. Then restore the full counts in STORE_LISTING.md.
+- `js/release.js`: **release lock**, now **lifted** (Nov 2026): Hindi and Punjabi show in the apps too.
+  - It still applies with `?lock=1` / `window.POCKET_LOCK` (tests, store screenshots). To lock the apps again, add `Native.is ||` back to `applies` and use the `--store` counts in STORE_LISTING.md.
 - `js/games/trace.js`: letter tracing is hidden (`STROKES_REVIEWED = false`) until a teacher checks `docs/strokes.html`. `window.POCKET_PREVIEW = true` shows it.
 - `js/util.js` `printPage()`: use this to print; `window.print()` does nothing in the app web views.
 - `js/pin.js`: parent PIN (Parent area, delete student, reset, restore). Stored as `pin` {salt, hash} with the device settings.

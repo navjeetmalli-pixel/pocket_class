@@ -14,7 +14,7 @@ Copy these into Play Console and App Store Connect. Character limits are in brac
 
 Offline notes, quizzes and sample papers for CBSE & PSEB Classes 1 to 12.
 
-Punjabi and Hindi short descriptions: for later. The first store release locks Hindi and Punjabi (see "Release lock" in `README.md`), so the app is in English only and does not claim Punjabi or Hindi. When the lock is lifted, add them back:
+Punjabi and Hindi short descriptions (Hindi and Punjabi are unlocked in the apps; add these as translations):
 - Punjabi: ਕਲਾਸ 1–12 ਲਈ ਬਿਨਾਂ ਇੰਟਰਨੈੱਟ ਨੋਟਸ, ਕਵਿਜ਼ ਅਤੇ ਨਮੂਨਾ ਪੇਪਰ — CBSE ਅਤੇ PSEB।
 - Hindi: कक्षा 1–12 के लिए बिना इंटरनेट नोट्स, क्विज़ और सैंपल पेपर — CBSE और PSEB।
 
@@ -24,11 +24,11 @@ Every chapter of Classes 1–12, CBSE and PSEB, in your pocket: notes, diagrams,
 
 ## App Store keywords (100)
 
-CBSE,PSEB,NCERT,class 10,class 12,notes,quiz,sample paper,maths,science,english,offline,study
+CBSE,PSEB,NCERT,class 10,class 12,notes,quiz,sample paper,maths,science,Punjabi,Hindi,offline,study
 
 ## Full description (Play 4000 / App Store 4000)
 
-Written for the locked launch: English interface, no Hindi or Punjabi subjects. After the lock is lifted, restore the Hindi and Punjabi lines (see "For later" at the end of this section).
+Written for the unlocked apps: English, Punjabi and Hindi interface, with the Hindi and Punjabi subjects.
 
 Pocket Class India is a complete study companion for Indian school students in Classes 1 to 12. It follows the CBSE / NCERT syllabus and the Punjab School Education Board (PSEB) syllabus, and everything works offline, with no account and no ads.
 
@@ -40,7 +40,7 @@ FOR EVERY CHAPTER
 • Quizzes with instant feedback and an explanation for every answer
 
 PRACTICE THAT NEVER RUNS OUT
-• Over 32,000 multiple-choice questions and 17,000 written questions with model answers
+• Over 48,000 multiple-choice questions and 25,000 written questions with model answers
 • Fresh maths and physics questions with new numbers every time, with worked steps
 • Printable practice sheets with an answer key
 • Full sample papers for Classes 9–12 in the board pattern (sections A–F, internal choices, marking scheme)
@@ -53,16 +53,17 @@ STUDY SMARTER
 • Search across all notes, bookmarks, light and dark theme
 
 BOOKS AND BOARDS
-• CBSE: the current NCERT books, including the new Classes 1–9 books, and every lesson of the NCERT English reader, summarised in our own words
-• PSEB: PSEB's own Social Science, English, Punjab History and Culture, History and Political Science, plus the NCERT Maths and Science the board uses
-• The app is in English
+• CBSE: the current NCERT books, including the new Classes 1–9 books, and every lesson of the NCERT English and Hindi readers, summarised in our own words
+• PSEB: PSEB's own Social Science, English, Hindi, Punjabi, Punjab History and Culture, History and Political Science, with every lesson of the PSEB Punjabi and Hindi books, plus the NCERT Maths and Science the board uses
+• Punjabi and Hindi content written in Gurmukhi and Devanagari
+• The app itself can be used in English, Punjabi (ਪੰਜਾਬੀ) or Hindi (हिंदी), and key terms can be shown in Punjabi or Hindi
 
 PRIVATE BY DESIGN
 Pocket Class collects no data. Progress stays on your phone; you can back it up to a file and restore it on another phone.
 
 Pocket Class India is an independent study app. It is not made by or connected with CBSE, NCERT or PSEB.
 
-FOR LATER (when Hindi and Punjabi are unlocked): "CBSE: ... and every lesson of the NCERT English and Hindi readers", "PSEB: ... English, Hindi, Punjabi ... with every lesson of the PSEB Punjabi and Hindi books", "Punjabi and Hindi content written in Gurmukhi and Devanagari", the app interface in Punjabi and Hindi, and the keywords Punjabi,Hindi. Do not use them while `js/release.js` locks those subjects. The counts above (over 32,000 MCQs, 17,000 written questions, from `node scripts/count-content.js --store`) leave out the locked Hindi and Punjabi subjects (about 16,000 MCQs and 8,000 written questions); with them unlocked, `node scripts/count-content.js` gives the full totals (over 48,000 and 25,000).
+Counts: `node scripts/count-content.js` (the full totals; Hindi and Punjabi are unlocked). If the apps are ever locked again (`js/release.js`), use `--store` counts and take out the Hindi and Punjabi lines.
 
 INTERNATIONAL LISTINGS (outside India)
 For a listing aimed at students in Australia, Canada, the United Kingdom, the United States or New Zealand, use this paragraph instead of the CBSE and PSEB lines above, and keep the claim exactly this narrow: "Maths, English and Science practice by topic, from beginner to Year 12 level. Learn by topic with levels you climb, games and virtual labs, no account and no ads, works offline. It is not tied to any national curriculum (not Australian Curriculum, Common Core, the National Curriculum for England or any other), so use it alongside your school's own work." Questions and notes are in English and were written for Indian school books, so a few examples mention India or rupees (a known limit); money questions made by the app use A$, C$, £, $ or NZ$.
