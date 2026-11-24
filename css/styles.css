@@ -3107,3 +3107,7 @@ body:is([data-band="1-2"], [data-band="3-5"]) .game-tile .gc-sub + .gc-sub { dis
 .pack-status li { display: flex; align-items: center; gap: 10px; padding: 8px 2px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
 .pack-status li:last-child { border-bottom: 0; }
 .pack-status li[data-state="saved"] [data-st] { color: var(--good); font-weight: 650; }
+
+/* Chapter outside the board exam (chapter.scope) */
+.scope-note { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px !important; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; background: color-mix(in srgb, var(--gold, #c90) 18%, transparent); }
+.scope-note .i { width: 16px; height: 16px; }

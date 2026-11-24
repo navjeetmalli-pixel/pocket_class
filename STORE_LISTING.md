@@ -53,7 +53,7 @@ STUDY SMARTER
 • Search across all notes, bookmarks, light and dark theme
 
 BOOKS AND BOARDS
-• CBSE: the current NCERT books, including the new Classes 1–9 books, and every lesson of the NCERT English and Hindi readers, summarised in our own words
+• CBSE: the current NCERT books for Classes 6–12 (including the new Classes 6–9 books) and every lesson of the NCERT English and Hindi readers, summarised in our own words; Classes 1–5 are arranged by topic to match the syllabus, not page by page with a book
 • PSEB: PSEB's own Social Science, English, Hindi, Punjabi, Punjab History and Culture, History and Political Science, with every lesson of the PSEB Punjabi and Hindi books, plus the NCERT Maths and Science the board uses
 • Punjabi and Hindi content written in Gurmukhi and Devanagari
 • The app itself can be used in English, Punjabi (ਪੰਜਾਬੀ) or Hindi (हिंदी), and key terms can be shown in Punjabi or Hindi

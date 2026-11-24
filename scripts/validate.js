@@ -43,6 +43,7 @@ function checkChapters(chapters, subj, err, warn) {
     ids.add(ch.id);
     for (const k of ["title", "section", "summary"]) if (!isStr(ch[k])) err(at, `${k} is required`);
     if (ch.source !== undefined && !isStr(ch.source)) err(at, "source must be a string, e.g. \"Ganita Prakash Ch 3, pp. 45–62\"");
+    if (ch.scope !== undefined && !["formative", "outside"].includes(ch.scope)) err(at, 'scope must be "formative" (internal assessment only) or "outside" (not in the current syllabus)');
 
     if (!Array.isArray(ch.notes) || ch.notes.length < 2) err(at, "notes needs at least 2 topics");
     else

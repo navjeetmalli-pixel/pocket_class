@@ -99,9 +99,9 @@ globalThis.StudyData = (function () {
     7: { maths: 3, science: 4, sst: 5, english: 4, hindi: 3, punjabi: 3, mathspb: 3, sciencepb: 2, sstpb: 3, englishpb: 4, hindipb: 3 },
     8: { maths: 2, science: 4, sst: 3, english: 4, hindi: 4, punjabi: 3, mathspb: 3, sciencepb: 3, sstpb: 5, englishpb: 5, hindipb: 4 },
     9: { english: 5, hindi: 4, punjabi: 4, sstpb: 3, englishpb: 6, mathspb: 3, sciencepb: 3, hindipb: 3, maths: 2, science: 4, sst: 4 },
-    10: { maths: 3, science: 6, sst: 6, english: 3, hindi: 3, punjabi: 3, sstpb: 4, phc: 2, englishpb: 5, hindipb: 4 },
-    11: { physics: 3, chemistry: 3, maths: 3, biology: 4, accountancy: 3, business: 3, economics: 3, history: 2, geography: 4, polsci: 4, english: 5, hindi: 4, punjabi: 4, historypb: 4, polscipb: 4, englishpb: 6, hindipb: 3 },
-    12: { chemistry: 3, physics: 3, maths: 3, biology: 3, accountancy: 3, business: 3, economics: 3, history: 3, geography: 4, polsci: 3, english: 5, hindi: 4, punjabi: 3, historypb: 5, polscipb: 5, englishpb: 6, hindipb: 4 },
+    10: { maths: 3, science: 7, sst: 6, english: 4, hindi: 3, punjabi: 3, sstpb: 4, phc: 2, englishpb: 5, hindipb: 4 },
+    11: { physics: 3, chemistry: 3, maths: 4, biology: 5, accountancy: 3, business: 3, economics: 3, history: 2, geography: 4, polsci: 4, english: 5, hindi: 4, punjabi: 4, historypb: 4, polscipb: 4, englishpb: 6, hindipb: 3 },
+    12: { chemistry: 3, physics: 3, maths: 3, biology: 4, accountancy: 3, business: 3, economics: 3, history: 3, geography: 4, polsci: 3, english: 5, hindi: 4, punjabi: 3, historypb: 5, polscipb: 5, englishpb: 6, hindipb: 4 },
   };
 
   // Labelled diagrams live in data/class{N}/diagrams/{subject}.js, one file per subject, and load with the

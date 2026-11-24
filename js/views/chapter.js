@@ -8,6 +8,15 @@
 (() => {
   const { D, cls, FORMULA_LABEL, TERMS_LABEL, topbar, chapterNumber, quizRound, cardKey, termAlt, termAltHTML, findChapter, notFound, writtenHTML, quizItems, genItems } = Views._;
 
+  // A chapter's place in the current syllabus (chapter.scope, see CONTENT_GUIDE.md): "formative" = internal assessment
+  // only, "outside" = not in the 2026–27 syllabus (kept for extra reading). Sample papers leave both out.
+  const scopeNote = (ch) =>
+    ch.scope === "formative"
+      ? `<p class="scope-note" data-scope="formative">${icon("target")} ${t("For internal assessment only: not in the 2026–27 board exam.")}</p>`
+      : ch.scope === "outside"
+        ? `<p class="scope-note" data-scope="outside">${icon("target")} ${t("Not in the 2026–27 syllabus. Kept for extra reading.")}</p>`
+        : "";
+
   // [id, label, icon, colour]. Colour tokens: blue Understand / Visualise / Practise, green Explore, purple Play, amber Master.
   const SECTIONS = [
     ["understand", "Understand", "notes", "var(--ink-learn)"],
@@ -137,6 +146,7 @@
           <div class="eyebrow"><span class="hub-ic">${SubjectIcons.html(subj, { size: 20 })}</span> ${International.on() ? t("Level {c} · {section}", { c, section: esc(ch.section) }) : t("Class {c} · {section} · Chapter {n}", { c, section: esc(ch.section), n: chapterNumber(chs, idx) })}</div>
           <h1>${esc(ch.title)}</h1>
           <p>${rich(ch.summary)}</p>
+          ${scopeNote(ch)}
           ${r.done || r.best != null ? `<div class="row wrap" style="margin-top:12px">${r.done ? `<span class="pill good">${icon("check")} ${t("✓ Complete").replace(/^✓\s*/, "")}</span>` : ""}${r.best != null ? `<span class="pill accent">${t("Best quiz score {n}%", { n: r.best })}</span>` : ""}</div>` : ""}
         </div>
         <div class="hub">

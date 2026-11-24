@@ -3,7 +3,7 @@
 Made by `node scripts/coverage.js` from the data files; don't edit by hand. Every chapter is in `docs/coverage.csv`.
 Counts are what the app holds. They don't mean a chapter matches the current syllabus or that its answers were checked by a teacher.
 
-2,979 board-class-subject-chapter rows (a chapter used by both boards is listed under each).
+2,990 board-class-subject-chapter rows (a chapter used by both boards is listed under each).
 
 ## Gaps
 
@@ -70,15 +70,15 @@ MCQs and written questions per chapter are averages. Fresh: chapters with endles
 | CBSE | 9 | Hindi | 19 | 19 | 11 | 19/19 | draft | none |
 | CBSE | 9 | Punjabi | 35 | 18 | 11 | 35/35 | draft | none |
 | CBSE | 10 | Mathematics | 14 | 19 | 17 | 14/14 | draft | none |
-| CBSE | 10 | Science | 13 | 49 | 25 | 13/13 | draft | none |
+| CBSE | 10 | Science | 15 | 48 | 24 | 15/15 | draft | none |
 | CBSE | 10 | Social Science | 22 | 45 | 22 | 22/22 | draft | none |
-| CBSE | 10 | English | 35 | 19 | 11 | 35/35 | draft | none |
+| CBSE | 10 | English | 36 | 19 | 11 | 36/36 | draft | none |
 | CBSE | 10 | Hindi | 24 | 20 | 11 | 24/24 | draft | none |
 | CBSE | 10 | Punjabi | 23 | 19 | 11 | 23/23 | draft | none |
 | CBSE | 11 | Physics | 14 | 21 | 13 | 14/14 | draft | none |
 | CBSE | 11 | Chemistry | 9 | 21 | 13 | 9/9 | draft | none |
-| CBSE | 11 | Mathematics | 14 | 19 | 17 | 14/14 | draft | none |
-| CBSE | 11 | Biology | 19 | 21 | 13 | 19/19 | draft | none |
+| CBSE | 11 | Mathematics | 15 | 21 | 17 | 15/15 | draft | none |
+| CBSE | 11 | Biology | 20 | 22 | 13 | 20/20 | draft | none |
 | CBSE | 11 | Accountancy | 9 | 22 | 14 | 9/9 | draft | none |
 | CBSE | 11 | Business Studies | 10 | 22 | 14 | 10/10 | draft | none |
 | CBSE | 11 | Economics | 12 | 21 | 13 | 12/12 | draft | none |
@@ -91,7 +91,7 @@ MCQs and written questions per chapter are averages. Fresh: chapters with endles
 | CBSE | 12 | Physics | 14 | 21 | 13 | 14/14 | draft | none |
 | CBSE | 12 | Chemistry | 10 | 21 | 13 | 10/10 | draft | none |
 | CBSE | 12 | Mathematics | 13 | 20 | 13 | 13/13 | draft | none |
-| CBSE | 12 | Biology | 13 | 20 | 13 | 13/13 | draft | none |
+| CBSE | 12 | Biology | 14 | 22 | 13 | 14/14 | draft | none |
 | CBSE | 12 | Accountancy | 12 | 22 | 14 | 12/12 | draft | none |
 | CBSE | 12 | Business Studies | 12 | 22 | 14 | 12/12 | draft | none |
 | CBSE | 12 | Economics | 14 | 22 | 14 | 14/14 | draft | none |
@@ -149,7 +149,7 @@ MCQs and written questions per chapter are averages. Fresh: chapters with endles
 | PSEB | 9 | Hindi | 26 | 18 | 11 | 26/26 | draft | none |
 | PSEB | 9 | Punjabi | 35 | 18 | 11 | 35/35 | draft | none |
 | PSEB | 10 | Mathematics | 14 | 19 | 17 | 14/14 | draft | none |
-| PSEB | 10 | Science | 13 | 49 | 25 | 13/13 | draft | none |
+| PSEB | 10 | Science | 15 | 48 | 24 | 15/15 | draft | none |
 | PSEB | 10 | Social Science | 28 | 24 | 15 | 28/28 | draft | none |
 | PSEB | 10 | English | 25 | 18 | 11 | 25/25 | draft | none |
 | PSEB | 10 | Hindi | 32 | 18 | 11 | 32/32 | draft | none |
@@ -157,8 +157,8 @@ MCQs and written questions per chapter are averages. Fresh: chapters with endles
 | PSEB | 10 | Punjab History and Culture | 9 | 24 | 15 | 9/9 | draft | none |
 | PSEB | 11 | Physics | 14 | 21 | 13 | 14/14 | draft | none |
 | PSEB | 11 | Chemistry | 9 | 21 | 13 | 9/9 | draft | none |
-| PSEB | 11 | Mathematics | 14 | 19 | 17 | 14/14 | draft | none |
-| PSEB | 11 | Biology | 19 | 21 | 13 | 19/19 | draft | none |
+| PSEB | 11 | Mathematics | 15 | 21 | 17 | 15/15 | draft | none |
+| PSEB | 11 | Biology | 20 | 22 | 13 | 20/20 | draft | none |
 | PSEB | 11 | Accountancy | 9 | 22 | 14 | 9/9 | draft | none |
 | PSEB | 11 | Business Studies | 10 | 22 | 14 | 10/10 | draft | none |
 | PSEB | 11 | Economics | 12 | 21 | 13 | 12/12 | draft | none |
@@ -170,7 +170,7 @@ MCQs and written questions per chapter are averages. Fresh: chapters with endles
 | PSEB | 12 | Physics | 14 | 21 | 13 | 14/14 | draft | none |
 | PSEB | 12 | Chemistry | 10 | 21 | 13 | 10/10 | draft | none |
 | PSEB | 12 | Mathematics | 13 | 20 | 13 | 13/13 | draft | none |
-| PSEB | 12 | Biology | 13 | 20 | 13 | 13/13 | draft | none |
+| PSEB | 12 | Biology | 14 | 22 | 13 | 14/14 | draft | none |
 | PSEB | 12 | Accountancy | 12 | 22 | 14 | 12/12 | draft | none |
 | PSEB | 12 | Business Studies | 12 | 22 | 14 | 12/12 | draft | none |
 | PSEB | 12 | Economics | 14 | 22 | 14 | 14/14 | draft | none |

@@ -581,6 +581,194 @@ StudyData.add(10, "science", {
 
     // ------------------------------------------------------------------
     {
+      id: "periodic-classification-of-elements",
+      title: "Periodic Classification of Elements",
+      section: "Chemistry",
+      scope: "formative",
+      summary: "Elements are arranged in a table so that their properties repeat in a pattern. This chapter follows the early attempts (Döbereiner, Newlands, Mendeleev), the modern periodic table based on atomic number, and the trends in valency, atomic size and metallic character.",
+      notes: [
+        {
+          heading: "Early Attempts at Classification",
+          points: [
+            "**Döbereiner's triads:** he grouped elements in threes with similar properties, where the atomic mass of the **middle element** is roughly the mean of the other two (e.g. Li, Na, K; Ca, Sr, Ba; Cl, Br, I).",
+            "Only a few triads could be found, so the idea could not classify all the elements known.",
+            "**Newlands' Law of Octaves:** arranged in increasing atomic mass, every **eighth element** had properties like the first, like the notes of a musical octave.",
+            "The octave pattern held only up to calcium; it failed for heavier elements, and some unlike elements were forced into the same slot."
+          ]
+        },
+        {
+          heading: "Mendeleev's Periodic Table",
+          points: [
+            "**Periodic Law:** Mendeleev stated that the properties of elements are a periodic function of their **atomic masses**.",
+            "He arranged the 63 elements known then in **rows (periods)** and **columns (groups)**, placing elements with similar properties in the same group.",
+            "He **left gaps** for undiscovered elements and predicted their properties: **eka-aluminium** (later gallium) and **eka-silicon** (later germanium).",
+            "**Limitations:** the position of **hydrogen** was unclear, isotopes had no place of their own, and atomic mass did not always increase in order (e.g. cobalt and nickel).",
+            "The **noble gases**, discovered later, could be fitted in as a new group without disturbing the table."
+          ]
+        },
+        {
+          heading: "The Modern Periodic Table",
+          points: [
+            "**Modern Periodic Law:** the properties of elements are a periodic function of their **atomic number**, a result that follows Moseley's work.",
+            "The table has **18 groups** (vertical columns) and **7 periods** (horizontal rows).",
+            "**Position:** an element's period equals the **number of shells** its atoms have, and the group is found from its **valence electrons**.",
+            "For Groups 1 and 2, the group number equals the valence electrons; for Groups 13 to 18, it is the number of valence electrons plus 10.",
+            "**Example:** an element with configuration 2, 8, 2 has 3 shells and 2 valence electrons, so it is in Period 3, Group 2 (magnesium).",
+            "**Metals** are on the left and centre, **non-metals** on the right, and **metalloids** such as silicon lie along the zig-zag line between them."
+          ]
+        },
+        {
+          heading: "Trends in the Modern Periodic Table",
+          points: [
+            "**Valency:** across a period it first rises (1, 2, 3, 4) then falls (3, 2, 1, 0); down a group it stays the **same**, as the valence electrons are equal.",
+            "**Atomic size:** it **decreases across a period**, as the nucleus pulls the electrons in more strongly, and **increases down a group**, as new shells are added.",
+            "**Metallic character:** it **decreases across a period** and increases down a group, since atoms lose electrons more easily when large.",
+            "**Non-metallic character:** it increases across a period and decreases down a group.",
+            "**Oxides:** metal oxides are generally basic, and non-metal oxides are generally acidic."
+          ]
+        }
+      ],
+      formulas: [
+        "Döbereiner: mass of the middle element ≈ mean of the other two",
+        "Newlands: every 8th element repeats properties (Law of Octaves)",
+        "Mendeleev: properties are periodic functions of atomic mass; modern law: of atomic number",
+        "Modern table: 18 groups, 7 periods; period = number of shells",
+        "Across a period: size ↓, metallic character ↓; down a group: size ↑, metallic character ↑"
+      ],
+      terms: [
+        { term: "Triad", meaning: "A group of **three elements** with similar properties, the middle one having the mean atomic mass." },
+        { term: "Law of Octaves", meaning: "Newlands' idea that **every eighth element** shows properties similar to the first." },
+        { term: "Periodic Law", meaning: "Properties of elements repeat at regular intervals when arranged by **atomic number** (modern form)." },
+        { term: "Group", meaning: "A **vertical column** of the periodic table; its elements have similar properties." },
+        { term: "Period", meaning: "A **horizontal row** of the periodic table; the elements in it have the same number of shells." },
+        { term: "Atomic number", meaning: "The **number of protons** in the nucleus of an atom; it identifies the element." },
+        { term: "Valency", meaning: "The **combining capacity** of an element, related to its valence electrons." },
+        { term: "Atomic size", meaning: "The **distance from the nucleus** to the outermost shell of an atom." },
+        { term: "Metalloid", meaning: "An element with properties **between metals and non-metals**, e.g. silicon." },
+        { term: "Noble gases", meaning: "Group 18 elements, with **full outer shells**, very unreactive, valency zero." }
+      ],
+      examples: [
+        {
+          q: "An element has atomic number 17. Find its electronic configuration, group, period and valency.",
+          steps: [
+            "Electronic configuration: 2, 8, 7",
+            "Shells = 3, so it is in Period 3",
+            "Valence electrons = 7, so Group = 7 + 10 = 17",
+            "It needs 1 electron to complete its octet, so valency = 8 − 7 = 1"
+          ],
+          answer: "Period 3, Group 17 (halogen, chlorine), valency 1"
+        }
+      ],
+      qa: [
+        {
+          q: "State two limitations of Newlands' Law of Octaves.",
+          a: "The law worked only up to **calcium**; beyond it, elements did not follow the pattern. It also placed **dissimilar elements** in the same group to fit the rule, and could not make room for newly discovered elements."
+        },
+        {
+          q: "Why did Mendeleev leave gaps in his periodic table?",
+          a: "He believed that some elements had **not yet been discovered**. He left blanks and predicted their properties, naming them **eka-aluminium** and **eka-silicon**. Their later discovery as gallium and germanium confirmed his table."
+        },
+        {
+          q: "How does atomic size change across a period and down a group? Give reasons.",
+          a: "Across a period, size **decreases** because the nuclear charge rises while the electrons are added to the same shell, so the nucleus pulls them closer. Down a group, size **increases** because each element has an extra shell."
+        },
+        {
+          q: "Why do elements of the same group have similar chemical properties?",
+          a: "They have the **same number of valence electrons**, and chemical properties depend on these electrons, so they form similar ions and compounds."
+        },
+        {
+          q: "What is the difference between Mendeleev's periodic law and the modern periodic law?",
+          a: "Mendeleev arranged elements by **atomic mass**, while the modern law uses **atomic number**. Atomic number removes problems like the cobalt and nickel order and gives a more regular table."
+        },
+        {
+          q: "Why are noble gases placed in Group 18 and called inert?",
+          a: "Their outer shells are **complete** (8 electrons, or 2 for helium), so they have no tendency to gain, lose or share electrons and their valency is **zero**."
+        }
+      ],
+      quiz: [
+        {
+          q: "Which scientist grouped elements into triads?",
+          options: ["Döbereiner", "Newlands", "Mendeleev", "Moseley"],
+          answer: 0,
+          explain: "**Döbereiner** arranged similar elements in groups of three."
+        },
+        {
+          q: "Newlands' Law of Octaves says that the properties of every ___ element repeat.",
+          options: ["third", "eighth", "tenth", "second"],
+          answer: 1,
+          explain: "Like a musical octave, every **eighth** element resembled the first."
+        },
+        {
+          q: "Mendeleev arranged the elements in order of increasing",
+          options: ["atomic number", "number of neutrons", "atomic mass", "number of shells"],
+          answer: 2,
+          explain: "Mendeleev's periodic law was based on **atomic mass**."
+        },
+        {
+          q: "The modern periodic law is based on",
+          options: ["atomic mass", "density", "number of isotopes", "atomic number"],
+          answer: 3,
+          explain: "The properties are a periodic function of **atomic number**."
+        },
+        {
+          q: "The modern periodic table has",
+          options: ["18 groups and 7 periods", "8 groups and 7 periods", "18 groups and 8 periods", "7 groups and 18 periods"],
+          answer: 0,
+          explain: "It has **18 vertical groups** and **7 horizontal periods**."
+        },
+        {
+          q: "The element eka-silicon predicted by Mendeleev was later named",
+          options: ["gallium", "germanium", "scandium", "silicon"],
+          answer: 1,
+          explain: "Eka-silicon turned out to be **germanium**; eka-aluminium was gallium."
+        },
+        {
+          q: "An atom has the configuration 2, 8, 2. It lies in",
+          options: ["Period 2, Group 3", "Period 3, Group 12", "Period 3, Group 2", "Period 2, Group 2"],
+          answer: 2,
+          explain: "It has **3 shells** (Period 3) and **2 valence electrons** (Group 2)."
+        },
+        {
+          q: "Moving from left to right across a period, the atomic size generally",
+          options: ["increases", "first increases then decreases", "stays the same", "decreases"],
+          answer: 3,
+          explain: "More nuclear charge pulls the same shells closer, so size **decreases**."
+        },
+        {
+          q: "Moving down a group, the metallic character",
+          options: ["increases", "decreases", "stays constant", "becomes zero"],
+          answer: 0,
+          explain: "Atoms get larger and **lose electrons more easily**, so metallic character increases."
+        },
+        {
+          q: "All the elements in a group have the same",
+          options: ["number of shells", "atomic mass", "number of valence electrons", "number of neutrons"],
+          answer: 2,
+          explain: "Same **valence electrons**, hence the same valency and similar properties."
+        },
+        {
+          q: "Which of the following is a triad?",
+          options: ["Na, Mg, Al", "Cl, Br, I", "C, N, O", "He, Ne, Li"],
+          answer: 1,
+          explain: "**Cl, Br, I** is a Döbereiner triad; the middle atomic mass is about the mean."
+        },
+        {
+          q: "The valency of an element in Group 17 is",
+          options: ["7", "17", "0", "1"],
+          answer: 3,
+          explain: "It has 7 valence electrons and needs **one more** to complete the octet."
+        },
+        {
+          q: "Which statement about Mendeleev's table is a limitation?",
+          options: ["It had no rows", "Hydrogen's position could not be fixed", "It used atomic number", "It left no gaps"],
+          answer: 1,
+          explain: "Hydrogen resembles both alkali metals and halogens, so its position was **uncertain**."
+        }
+      ]
+    },
+
+    // ------------------------------------------------------------------
+    {
       id: "life-processes",
       title: "Life Processes",
       section: "Biology",
@@ -1078,6 +1266,198 @@ StudyData.add(10, "science", {
           options: ["carbohydrates", "fats", "proteins", "vitamins"],
           answer: 2,
           explain: "A gene is a section of DNA that codes for a **protein**, such as an enzyme."
+        }
+      ]
+    },
+
+    // ------------------------------------------------------------------
+    {
+      id: "evolution",
+      title: "Evolution",
+      section: "Biology",
+      scope: "formative",
+      summary: "Evolution is the gradual change in living things over many generations. This chapter covers acquired and inherited traits, how new species form, how evolution connects with classification, fossils, evolution in stages, and the origin of humans.",
+      notes: [
+        {
+          heading: "Acquired and Inherited Traits",
+          points: [
+            "**Inherited traits:** traits that pass from parents to offspring through the **DNA of the germ cells** (eggs and sperms).",
+            "**Acquired traits:** changes gained during a lifetime, such as a beetle becoming thin from lack of food, which change only the **body (somatic) cells**.",
+            "Acquired traits **do not change the DNA** of the germ cells, so they are not passed on to the next generation.",
+            "**Variations** in DNA arising during reproduction are the raw material of evolution; those that help survival tend to be inherited by more offspring."
+          ]
+        },
+        {
+          heading: "Speciation",
+          points: [
+            "**Speciation** is the formation of a **new species** from an existing one.",
+            "Causes of speciation include **natural selection**, **genetic drift** (chance changes in gene frequency, especially in small groups), and accumulating variation.",
+            "**Geographical isolation**, for example by a mountain or river, stops two groups from breeding together, so they slowly become different.",
+            "Over many generations the groups differ so much that they **can no longer interbreed**, and become separate species.",
+            "**Gene flow** (interbreeding between groups) tends to keep populations similar, while isolation reduces it."
+          ]
+        },
+        {
+          heading: "Evolution and Classification",
+          points: [
+            "**Classification** groups organisms by their similarities, and the more traits two organisms share, the more **closely related** they are.",
+            "**Homologous organs** have the same basic design but different functions, e.g. the forelimbs of a frog, lizard, bird and human, and they show **common ancestry**.",
+            "**Analogous organs** have different origin and design but the same function, e.g. the wings of a bat and a bird; they do not show close relationship.",
+            "Organisms with **older, simpler body designs** are called primitive in the sense that their basic design has changed little, not that they are inferior.",
+            "A classification chart therefore works like a **family tree** of life."
+          ]
+        },
+        {
+          heading: "Fossils",
+          points: [
+            "**Fossils** are the preserved remains or impressions of organisms that lived long ago, found in rocks.",
+            "**Relative dating:** fossils nearer the surface are generally **more recent**, and deeper ones are older.",
+            "**Radioactive dating:** the ratio of an element's isotopes, such as **carbon-14**, helps to find the age of fossils more exactly.",
+            "**Archaeopteryx** had feathers like a bird but also reptile features like teeth, claws and a tail, showing that **birds evolved from reptiles**."
+          ]
+        },
+        {
+          heading: "Evolution by Stages",
+          points: [
+            "**Complex organs** do not appear at once; they develop in **small steps** over a long time, each step useful to the organism.",
+            "**Eye:** simple eye-like structures, as in the flatworm Planaria, gradually improved into complex eyes.",
+            "**Feathers:** some dinosaurs had feathers, probably for **warmth**; later, birds used them for **flight**.",
+            "**Artificial selection:** humans have bred wild cabbage into cabbage, broccoli, cauliflower, kale and kohlrabi, showing how selection brings change."
+          ]
+        },
+        {
+          heading: "Evolution is not Progress, and Human Evolution",
+          points: [
+            "**Not progress:** evolution only produces **branching diversity**. It has no goal and does not make species 'better'; humans are not the final result of evolution.",
+            "Changes may help one organism to survive in its **own environment** and not in another; each species is suited to its habitat.",
+            "**Humans:** the earliest members of our species, Homo sapiens, **originated in Africa**, and spread across the world in groups.",
+            "Studies of **DNA, fossils and tools** help scientists trace how human groups moved and how human traits, such as skin colour, varied."
+          ]
+        }
+      ],
+      formulas: [
+        "Inherited trait: change in germ-cell DNA, passed on; acquired trait: change in body cells, not passed on",
+        "Homologous organs: same structure, different function (common ancestry)",
+        "Analogous organs: different structure, same function (no close ancestry)",
+        "Speciation = variation + natural selection + genetic drift + isolation",
+        "Evolution is branching change over generations, not progress"
+      ],
+      terms: [
+        { term: "Evolution", meaning: "**Gradual change** in living organisms over many generations." },
+        { term: "Acquired trait", meaning: "A change **gained in a lifetime**, which is not passed to offspring." },
+        { term: "Inherited trait", meaning: "A trait **passed through the DNA** of germ cells to the next generation." },
+        { term: "Speciation", meaning: "The formation of a **new species** from an existing species." },
+        { term: "Genetic drift", meaning: "A **chance change** in the frequency of genes in a population over generations." },
+        { term: "Homologous organs", meaning: "Organs with the **same basic structure** but different functions, showing common origin." },
+        { term: "Analogous organs", meaning: "Organs with **different structure** but the same function." },
+        { term: "Fossil", meaning: "The **preserved remains or impression** of an ancient organism." },
+        { term: "Natural selection", meaning: "The process in which organisms with **useful variations** survive and reproduce more." },
+        { term: "Geographical isolation", meaning: "Separation of groups by barriers such as mountains or rivers, which **prevents interbreeding**." }
+      ],
+      qa: [
+        {
+          q: "Distinguish between acquired and inherited traits, with one example each.",
+          a: "**Inherited traits** pass through the DNA of germ cells to the offspring, e.g. eye colour. **Acquired traits** are gained during life and affect only body cells, so they are not inherited, e.g. a beetle's low body weight caused by lack of food."
+        },
+        {
+          q: "Explain how geographical isolation can lead to the formation of a new species.",
+          a: "A barrier such as a mountain or river splits a population into groups that cannot **interbreed**. Each group faces different conditions, gains different variations and undergoes natural selection and genetic drift. After many generations they become so different that they **cannot breed together**, forming new species."
+        },
+        {
+          q: "What are homologous and analogous organs? Give an example of each.",
+          a: "**Homologous organs** have the same basic structure but different functions, e.g. the forelimbs of a human and a bird, showing a common ancestor. **Analogous organs** have different structure but the same function, e.g. the wings of a bat and a bird."
+        },
+        {
+          q: "How do fossils help us to understand evolution?",
+          a: "Fossils are remains of ancient organisms. By comparing them with living forms we can see how organisms **changed over time**. Their age is found by their depth in rock layers and by methods such as **carbon-14 dating**. Fossils like Archaeopteryx show links between groups, here reptiles and birds."
+        },
+        {
+          q: "'Evolution should not be equated with progress.' Explain.",
+          a: "Evolution produces **diversity by branching**, not a ladder towards a goal. A change only helps an organism in its own environment, and many ancient forms like bacteria still survive. Humans are one branch among many, not the end of evolution."
+        },
+        {
+          q: "Where did the earliest humans originate, and how do we know about their spread?",
+          a: "Homo sapiens **originated in Africa**. Scientists trace the movement of human groups to other continents using **fossils, tools and DNA studies**."
+        }
+      ],
+      quiz: [
+        {
+          q: "Which of these is an inherited trait?",
+          options: ["A scar from an injury", "A weak body due to poor food", "Eye colour", "A skill learnt by practice"],
+          answer: 2,
+          explain: "Eye colour is controlled by **genes** and is passed through germ cells."
+        },
+        {
+          q: "Acquired traits are not inherited because they",
+          options: ["are harmful", "do not change the DNA of germ cells", "occur only in animals", "appear in old age"],
+          answer: 1,
+          explain: "They affect **body cells**, not the DNA of eggs or sperms."
+        },
+        {
+          q: "The formation of a new species is called",
+          options: ["fossilisation", "classification", "variation", "speciation"],
+          answer: 3,
+          explain: "**Speciation** is the origin of new species."
+        },
+        {
+          q: "Which of the following can lead to speciation?",
+          options: ["Geographical isolation", "Use of tools", "Growing taller", "Eating more food"],
+          answer: 0,
+          explain: "**Isolation** stops interbreeding, so groups drift apart."
+        },
+        {
+          q: "The forelimbs of a human and a bird are",
+          options: ["analogous organs", "vestigial organs", "homologous organs", "artificial organs"],
+          answer: 2,
+          explain: "Same basic design, different use: **homologous** organs."
+        },
+        {
+          q: "The wings of a bat and a bird are",
+          options: ["homologous organs", "analogous organs", "fossils", "inherited traits"],
+          answer: 1,
+          explain: "Their origin differs but the function (flying) is the same: **analogous**."
+        },
+        {
+          q: "Archaeopteryx is a fossil linking",
+          options: ["fish and frogs", "reptiles and mammals", "frogs and reptiles", "reptiles and birds"],
+          answer: 3,
+          explain: "It had **feathers and also teeth and claws**, linking reptiles and birds."
+        },
+        {
+          q: "Which isotope is commonly used to date fossils?",
+          options: ["Carbon-14", "Hydrogen-2", "Oxygen-16", "Uranium-235 only"],
+          answer: 0,
+          explain: "**Carbon-14** dating helps to find the age of fossils."
+        },
+        {
+          q: "Feathers in some dinosaurs were probably first used for",
+          options: ["swimming", "hunting", "warmth", "digging"],
+          answer: 2,
+          explain: "They provided **insulation**; later birds adapted them for flight."
+        },
+        {
+          q: "Wild cabbage was bred by humans into cabbage, broccoli and cauliflower. This is an example of",
+          options: ["natural selection", "artificial selection", "speciation", "fossil dating"],
+          answer: 1,
+          explain: "People chose the varieties they liked: **artificial selection**."
+        },
+        {
+          q: "The earliest members of Homo sapiens originated in",
+          options: ["Europe", "Australia", "America", "Africa"],
+          answer: 3,
+          explain: "Homo sapiens **originated in Africa** and then spread."
+        },
+        {
+          q: "Which statement about evolution is correct?",
+          options: ["It always leads to better organisms", "It is a ladder with humans at the top", "It has no fixed goal and produces diverse forms", "It happens within one lifetime"],
+          answer: 2,
+          explain: "Evolution is **branching**, not a march of progress."
+        },
+        {
+          q: "A chance change in gene frequency in a small population is called",
+          options: ["genetic drift", "acquired trait", "classification", "fossilisation"],
+          answer: 0,
+          explain: "This random change is **genetic drift**."
         }
       ]
     },

@@ -1661,6 +1661,214 @@ StudyData.add(12, "biology", {
           explain: "The **dodo** was lost from **Mauritius**; Steller's sea cow from Russia and the thylacine from Australia."
         }
       ]
+    },
+
+    // ------------------------------------------------------------------
+    {
+      id: "environmental-issues",
+      title: "Environmental Issues",
+      section: "Ecology",
+      scope: "formative",
+      summary: "Human activities pollute air and water and degrade resources. This chapter covers air and water pollution and their control, solid and radioactive wastes, the greenhouse effect, ozone depletion and deforestation, with the steps people have taken to solve these problems.",
+      notes: [
+        {
+          heading: "Air Pollution and Its Control",
+          points: [
+            "**Air pollutants** are gases and particles from industry, vehicles and burning of fuels that harm living things. The **Air (Prevention and Control of Pollution) Act, 1981** was passed to control them and was amended in **1987** to include noise as a pollutant.",
+            "An **electrostatic precipitator** removes over **99 per cent of particulate matter** from the exhaust of a thermal power plant: electrode wires give the particles a charge and the collecting plates attract them. A **scrubber** removes gases such as sulphur dioxide by passing the exhaust through water or lime.",
+            "A **catalytic converter** in a car has the expensive metals **platinum, palladium and rhodium**. It changes unburnt hydrocarbons into CO₂ and water, carbon monoxide into CO₂, and nitric oxide into nitrogen gas.",
+            "Cars with catalytic converters must use **unleaded petrol**, because lead in petrol inactivates the catalyst.",
+            "Cleaner fuels, such as the **switch of public transport in Delhi to CNG**, and tighter vehicle emission norms have reduced air pollution in cities."
+          ]
+        },
+        {
+          heading: "Water Pollution and Its Control",
+          points: [
+            "The **Water (Prevention and Control of Pollution) Act, 1974** was passed to safeguard water quality. **Domestic sewage** and industrial effluents are the main sources of pollution.",
+            "**BOD (biochemical oxygen demand)** is the amount of oxygen needed by bacteria to break down the organic matter in a given volume of water. The **higher the BOD, the more polluted** the water.",
+            "**Eutrophication** is the ageing of a lake by enrichment with nutrients. Nitrates and phosphates from fertilisers and sewage cause **algal blooms**, which use up the oxygen and kill fish. The human-caused, rapid form is called **cultural (accelerated) eutrophication**.",
+            "**Biomagnification** is the rise in concentration of a toxic substance, such as **DDT or mercury**, at each successive trophic level. High DDT in birds causes thinning of eggshells and falls in bird populations. Mercury in water caused **Minamata disease** in Japan.",
+            "**Sewage treatment** is done in two stages: **primary** treatment (physical removal of floating and suspended solids by filtration and sedimentation) and **secondary biological** treatment (bacteria form flocs in aerated tanks, which lowers BOD, and the **activated sludge** settles out). The water is then released into streams or rivers.",
+            "**Water hyacinth** (*Eichhornia*) is an invasive plant that grows very fast, blocks water bodies and reduces oxygen. **Ecological sanitation** uses dry composting toilets, which return human waste to the soil safely."
+          ]
+        },
+        {
+          heading: "Solid and Radioactive Wastes",
+          points: [
+            "**Solid wastes** include municipal waste, such as paper, food, plastic and glass, from homes, offices and shops. Dumps and **landfills** are used, but they take up land and pollute groundwater.",
+            "Waste should be **segregated**: biodegradable waste can be composted, recyclable waste (paper, metal, glass) goes for recycling and the rest is sent to landfill. Burning waste in **incinerators** reduces volume but produces gases.",
+            "**E-waste** means irreparable computers and other electronic goods. It contains metals such as copper, iron and silicon, and some toxic materials, so it is **recycled** in a safe way.",
+            "**Nuclear waste** gives off harmful radiation that can cause **mutations** at a high rate and cancer. Accidents at **Three Mile Island** and **Chernobyl** showed the danger.",
+            "Nuclear waste is stored in suitably shielded containers and buried deep in rocks, about 500 m below the surface."
+          ]
+        },
+        {
+          heading: "Greenhouse Effect and Global Warming",
+          points: [
+            "The **greenhouse effect** is a natural process: gases in the atmosphere trap some of the heat radiated by the earth. Without it the average temperature would be about **−18 °C** instead of about **15 °C**, and life would not be possible.",
+            "The main **greenhouse gases** are **carbon dioxide (about 60 per cent of the added warming), methane (about 20 per cent), CFCs (about 14 per cent) and nitrous oxide (about 6 per cent)**.",
+            "Human activities such as burning fossil fuels and cutting forests have raised the gas levels, leading to **global warming**: the earth's average temperature has risen by about 0.6 °C in the last century.",
+            "Effects include **melting of ice caps and glaciers**, rise in sea level, flooding of coasts and changes in rainfall and in the habitats of plants and animals.",
+            "Ways to slow it down: use **less fossil fuel**, improve energy efficiency, **reduce deforestation**, plant trees, and slow down the growth of the human population."
+          ]
+        },
+        {
+          heading: "Ozone Depletion in the Stratosphere",
+          points: [
+            "**Ozone** in the **stratosphere** forms a protective layer that absorbs most of the Sun's harmful **UV radiation**.",
+            "**CFCs (chlorofluorocarbons)** from refrigerators and aerosols rise to the stratosphere, where UV releases **chlorine atoms**. These act as catalysts and convert ozone into oxygen, so one chlorine atom can destroy very many ozone molecules.",
+            "The **ozone hole** is the large thinning of the layer over the **Antarctic** region, seen each spring.",
+            "More **UV-B** reaches the earth, damaging **DNA** and causing mutations, **skin cancer**, cataract and inflammation of the cornea (snow-blindness).",
+            "The **Montreal Protocol (1987)** is an international agreement to control the emission of ozone-depleting substances."
+          ]
+        },
+        {
+          heading: "Degradation by Improper Resource Use and Deforestation",
+          points: [
+            "**Soil erosion, waterlogging and salinity** damage land. Over-irrigation and poor drainage cause waterlogging and salt build-up, so crops fail.",
+            "**Deforestation** means converting forest into non-forest land. Causes are timber, fuel wood, agriculture, mining, and roads and dams. It raises CO₂, loses habitats and biodiversity and causes soil erosion.",
+            "**Jhum cultivation** (slash and burn) in the north-east, where land is cleared by fire and farmed for a few years before moving on, adds to forest loss.",
+            "**People's efforts:** in 1731, **Amrita Devi Bishnoi** and others gave their lives in Khejarli, Rajasthan, to save Khejri trees. The **Chipko movement** in the Garhwal Himalayas had people hug trees to stop felling.",
+            "**Joint Forest Management (JFM)** was introduced by the Government of India in the 1980s so that local communities work with the forest department to protect and use forests."
+          ]
+        }
+      ],
+      formulas: [
+        "Greenhouse gases (share of added warming): CO₂ ~60%, CH₄ ~20%, CFCs ~14%, N₂O ~6%",
+        "Air Act: 1981 (amended 1987); Water Act: 1974; Montreal Protocol: 1987",
+        "Higher BOD = more organic pollution = lower dissolved oxygen",
+        "Electrostatic precipitator: removes over 99% of particulate matter",
+        "Catalytic converter metals: platinum, palladium, rhodium; needs unleaded petrol"
+      ],
+      terms: [
+        { term: "BOD", meaning: "**Biochemical oxygen demand**: the oxygen bacteria need to break down organic matter in a volume of water." },
+        { term: "Eutrophication", meaning: "**Nutrient enrichment** of a water body that causes algal blooms and a fall in oxygen." },
+        { term: "Biomagnification", meaning: "**Increase in concentration** of a toxic substance at each higher trophic level." },
+        { term: "Electrostatic precipitator", meaning: "A device that **removes particulate matter** from exhaust gases using electric charge." },
+        { term: "Catalytic converter", meaning: "A device in vehicles that **changes harmful exhaust gases** into harmless ones." },
+        { term: "Activated sludge", meaning: "The **bacterial flocs** in secondary sewage treatment that digest organic matter." },
+        { term: "Greenhouse effect", meaning: "**Trapping of heat** by atmospheric gases that keeps the earth warm." },
+        { term: "Ozone hole", meaning: "The **thinning of the stratospheric ozone layer** over Antarctica." },
+        { term: "Montreal Protocol", meaning: "A **1987 treaty** to control the release of ozone-depleting substances." },
+        { term: "Deforestation", meaning: "**Conversion of forest** into non-forest land." },
+        { term: "Joint Forest Management", meaning: "A scheme in which **local communities and the forest department** share forest protection." }
+      ],
+      qa: [
+        { q: "How does a catalytic converter reduce vehicle pollution? Why must unleaded petrol be used?", a: "It has **platinum, palladium and rhodium** as catalysts. It converts unburnt hydrocarbons into CO₂ and water, carbon monoxide into CO₂, and nitric oxide into nitrogen. **Lead** in petrol coats and inactivates the catalyst, so unleaded petrol must be used." },
+        { q: "What is BOD? What does a high BOD value show?", a: "**BOD** is the amount of oxygen needed by bacteria to break down the organic matter in a given volume of water. A **high BOD** shows that the water has much biodegradable organic matter, so it is **more polluted** and has less oxygen for fish." },
+        { q: "Explain eutrophication and its effects.", a: "It is the enrichment of a water body with nutrients such as nitrates and phosphates from sewage and fertilisers. It causes **algal blooms**. The algae die and bacteria decompose them, using up oxygen, so **fish and other animals die**. The water gets a bad smell, and the lake ages quickly." },
+        { q: "What is biomagnification? Give an example.", a: "It is the increase in the concentration of a **toxic, non-degradable substance** at each successive trophic level. For example, **DDT** is small in water but is much higher in fish-eating birds, where it causes **thin eggshells** and a fall in the bird population." },
+        { q: "How do CFCs damage the ozone layer? State two effects of the damage.", a: "CFCs reach the stratosphere, where UV releases **chlorine atoms**. They act as catalysts and convert ozone to oxygen, so the layer thins. More **UV-B** reaches the earth, which damages DNA and causes **skin cancer** and **cataract**." },
+        { q: "Describe the two stages of sewage treatment.", a: "**Primary treatment** removes floating and suspended solids by filtration and sedimentation. **Secondary (biological) treatment** passes the water through aerated tanks, where bacteria form flocs and digest organic matter, lowering **BOD**. The **activated sludge** is settled out and the treated water is released." },
+        { q: "What was the Chipko movement and what does it teach?", a: "It was a people's movement in the **Garhwal Himalayas** in which villagers, many of them women, **hugged trees** to stop contractors from felling them. It shows that communities can protect forests, and it influenced ideas such as **Joint Forest Management**." }
+      ],
+      quiz: [
+        {
+          q: "Which device removes over 99 per cent of particulate matter from the exhaust of a thermal power plant?",
+          options: ["Scrubber", "Catalytic converter", "Electrostatic precipitator", "Incinerator"],
+          answer: 2,
+          explain: "An **electrostatic precipitator** charges the particles so that they stick to collecting plates.",
+          level: 1
+        },
+        {
+          q: "The metals used in a catalytic converter are:",
+          options: ["platinum, palladium and rhodium", "copper, zinc and iron", "lead, mercury and cadmium", "gold, silver and tin"],
+          answer: 0,
+          explain: "The catalysts are the expensive metals **platinum, palladium and rhodium**.",
+          level: 1
+        },
+        {
+          q: "A high BOD value of a water sample indicates:",
+          options: ["clean drinking water", "a high level of dissolved oxygen", "a lot of organic matter and so more pollution", "more fish in the water"],
+          answer: 2,
+          explain: "A **high BOD** means a lot of biodegradable matter, so bacteria use up much oxygen.",
+          level: 1
+        },
+        {
+          q: "Algal bloom in a lake is caused by:",
+          options: ["excess nutrients such as nitrates and phosphates", "heavy metals", "excess oxygen", "UV radiation"],
+          answer: 0,
+          explain: "Nutrients from fertilisers and sewage cause **eutrophication** and algal blooms.",
+          level: 1
+        },
+        {
+          q: "Minamata disease is caused by pollution with:",
+          options: ["lead", "cadmium", "arsenic", "mercury"],
+          answer: 3,
+          explain: "In Minamata, Japan, **mercury** in industrial waste built up in fish and caused the disease.",
+          level: 2
+        },
+        {
+          q: "Biomagnification of DDT leads to:",
+          options: ["thinning of eggshells in birds", "increase of oxygen in water", "growth of algae", "ozone depletion"],
+          answer: 0,
+          explain: "DDT disturbs calcium metabolism in birds at high trophic levels, so **eggshells become thin**.",
+          level: 2
+        },
+        {
+          q: "Which gas contributes most to the greenhouse effect among the added gases?",
+          options: ["Methane", "Nitrous oxide", "CFCs", "Carbon dioxide"],
+          answer: 3,
+          explain: "**CO₂** contributes about 60 per cent; methane about 20, CFCs about 14 and nitrous oxide about 6.",
+          level: 1
+        },
+        {
+          q: "The ozone layer is found in the:",
+          options: ["troposphere", "stratosphere", "mesosphere", "thermosphere"],
+          answer: 1,
+          explain: "Ozone in the **stratosphere** absorbs harmful UV radiation.",
+          level: 1
+        },
+        {
+          q: "The international treaty to limit ozone-depleting substances is the:",
+          options: ["Kyoto Protocol", "Rio Declaration", "Montreal Protocol", "Ramsar Convention"],
+          answer: 2,
+          explain: "The **Montreal Protocol (1987)** controls the emission of ozone-depleting substances such as CFCs.",
+          level: 2
+        },
+        {
+          q: "Which radiation, increased by ozone depletion, causes skin cancer and cataract?",
+          options: ["UV-B", "Infra-red", "Radio waves", "Visible light"],
+          answer: 0,
+          explain: "More **UV-B** damages DNA and causes mutations, skin cancer and eye damage.",
+          level: 2
+        },
+        {
+          q: "The Chipko movement was started to protect:",
+          options: ["wetlands", "trees", "tigers", "coral reefs"],
+          answer: 1,
+          explain: "In the Garhwal Himalayas villagers **hugged trees** to stop them from being cut.",
+          level: 1
+        },
+        {
+          q: "Amrita Devi Bishnoi gave her life in 1731 to save:",
+          options: ["Neem trees", "Banyan trees", "Sal trees", "Khejri trees"],
+          answer: 3,
+          explain: "Amrita Devi and others in **Khejarli, Rajasthan** died protecting **Khejri** trees.",
+          level: 2
+        },
+        {
+          q: "Which statement about secondary sewage treatment is correct?",
+          options: ["It removes only floating debris", "It uses bacterial flocs to lower BOD", "It adds chlorine to produce ozone", "It uses an electrostatic precipitator"],
+          answer: 1,
+          explain: "In the aerated tank, **bacteria form flocs** that digest organic matter, lowering the BOD.",
+          level: 3
+        },
+        {
+          q: "Why do cars with catalytic converters need unleaded petrol?",
+          options: ["Lead makes the engine too hot", "Lead is costly", "Lead gives off CO₂", "Lead inactivates the catalyst"],
+          answer: 3,
+          explain: "**Lead** coats the catalyst metals and stops them from working.",
+          level: 3
+        },
+        {
+          q: "Joint Forest Management involves:",
+          options: ["local communities working with the forest department", "banning all use of forests", "handing forests to industry", "converting forest to farm"],
+          answer: 0,
+          explain: "In **JFM** local people and the forest department share protection and benefits.",
+          level: 2
+        }
+      ]
     }
   ]
 });

@@ -3888,6 +3888,184 @@ StudyData.add(10, "english", {
           explain: "She will serve her parents and **teach at the school**."
         }
       ]
+    },
+
+    {
+      id: "the-book-that-saved-the-earth",
+      title: "The Book that Saved the Earth",
+      section: "Footprints without Feet",
+      summary: "Claire Boiko's comic science-fiction play, set in the far future. Martians who plan to conquer Earth find an old book of nursery rhymes, misread it as a guide to Earth's dangerous weapons, and flee in fear.",
+      notes: [
+        {
+          heading: "The play and its plot",
+          points: [
+            "**Genre:** it is a **play** by Claire Boiko, a comic piece of science fiction in which a historian of the far future looks back at a failed Martian invasion of Earth.",
+            "**Mission:** a group of Martians travels to Earth to take it over. Before they act, they want to know how strong Earth's people are.",
+            "**The find:** they come across an old Earth book and hope it will tell them everything about the planet. The book is only a collection of **children's nursery rhymes**.",
+            "**The misreading:** the Martians read each rhyme as a serious record of Earth's powers. For example, a cow that jumps over the moon becomes proof of **super-strong, high-flying animals**.",
+            "**The result:** frightened by what they think Earth has, the Martians give up the attack and **leave in a hurry**. The humble book has saved the Earth."
+          ]
+        },
+        {
+          heading: "Humour and irony",
+          points: [
+            "**Irony:** the 'weapons' that scare the invaders are only playful rhymes, and the book that saves the planet is a children's book, not a military one.",
+            "**Misunderstanding:** the humour comes from reading ordinary, silly lines **literally**, with no knowledge of Earth's language, customs or imagination.",
+            "**Exaggeration:** the Martians' serious tone while discussing rhymes makes the play funny, and the audience knows far more than they do.",
+            "**Contrast:** the mighty invaders are scared by something harmless, while Earth is protected without a single fight."
+          ]
+        },
+        {
+          heading: "Characters",
+          points: [
+            "**Martians:** clever in science and machines, but anxious, over-cautious and quick to trust their own wrong reading.",
+            "**Think-Tank:** the vain Martian commander, who thinks he is the greatest brain in the universe; he works out the rhymes' 'meaning' with great confidence, and gets it all wrong.",
+            "**Noodle and the crew:** Noodle is Think-Tank's assistant; Captain Omega, Lieutenant Iota and Sergeant Oop are the crew who land on Earth and find the book in a library.",
+            "**Group behaviour:** once one Martian sounds sure, the others accept his view, and fear spreads through the group."
+          ]
+        },
+        {
+          heading: "Themes and message",
+          points: [
+            "**Power of books:** even a simple book can protect a people, since knowledge and imagination are strong in themselves.",
+            "**Wrong interpretation:** a text read without context can lead to dangerous conclusions; we must **understand before we judge**.",
+            "**Fear and ignorance:** fear of the unknown makes people overestimate an enemy, and here it stops a war.",
+            "**Against war:** the play suggests that conflicts can be avoided, and that violence is often based on wrong beliefs."
+          ]
+        },
+        {
+          heading: "Answering questions on the play",
+          points: [
+            "**Style:** a play is written as **dialogue** with stage directions; quote briefly and explain what each speaker shows.",
+            "**Setting:** mention the far-future setting and the Martian point of view when asked about the background.",
+            "**Value-based questions:** link the story to the idea that books preserve knowledge, and that peace is better than conquest.",
+            "**Long answers:** state the plot in order (arrival, finding the book, misreading, retreat), then add the irony and the message."
+          ]
+        }
+      ],
+      formulas: [
+        "Author: Claire Boiko (a play); last lesson of Footprints without Feet",
+        "Setting: a historian of the far future looks back; invaders: Martians",
+        "Book found: a collection of nursery rhymes, misread as a guide to Earth's power",
+        "Key ideas: irony, misunderstanding, the power of books, peace over war"
+      ],
+      terms: [
+        { term: "Play", meaning: "A story written to be **acted on stage**, mostly as dialogue between characters." },
+        { term: "Science fiction", meaning: "Fiction set in an imagined future or other worlds, built on **science and technology**." },
+        { term: "Irony", meaning: "When the outcome is the **opposite of what is expected**, e.g. a children's book defeating an invasion." },
+        { term: "Nursery rhyme", meaning: "A short, playful verse for young children, such as the one about a cow jumping over the moon." },
+        { term: "Invader", meaning: "A person who **enters a place by force** to take control of it." },
+        { term: "Misinterpret", meaning: "To **understand something wrongly**, giving it a meaning it does not have." },
+        { term: "Stage directions", meaning: "Instructions in a play's script about how characters move, speak or behave." },
+        { term: "Dialogue", meaning: "The **spoken exchange** between characters in a story or play." },
+        { term: "Satire", meaning: "Humour used to **point out foolishness**, here the foolishness of war and of hasty conclusions." }
+      ],
+      qa: [
+        {
+          q: "What is the central idea of the play 'The Book that Saved the Earth'?",
+          a: "The play shows that **ignorance and fear** can lead to dangerous mistakes, and that **knowledge and imagination** have power of their own. The Martians misread a book of nursery rhymes as a record of Earth's strength and abandon their invasion, so a simple book saves the planet."
+        },
+        {
+          q: "How did the Martians misunderstand the book they found?",
+          a: "They treated the **nursery rhymes as serious facts** about Earth. A rhyme about a cow jumping over the moon seemed to prove that Earth had **powerful, flying animals**. Without any knowledge of Earth's culture, they took playful lines literally."
+        },
+        {
+          q: "Why did the Martians finally decide to leave Earth?",
+          a: "They believed the book showed that Earth's people and creatures were **far too strong** to conquer. Afraid of defeat, they called off the attack and **left quickly**, without fighting."
+        },
+        {
+          q: "Why is the title of the play ironic?",
+          a: "People expect a planet to be saved by **weapons or armies**. Here it is saved by a **children's book**, and not through the book's contents but through the Martians' own wrong reading of it."
+        },
+        {
+          q: "What message does the play give about war and peace?",
+          a: "It suggests that wars often begin from **fear, wrong ideas and lack of understanding**. When people try to understand before acting, conflict can be avoided, and peace is better than conquest."
+        },
+        {
+          q: "What does the play teach us about the value of books?",
+          a: "Books **store knowledge and imagination** from many generations. Even a very simple one shapes how people think, and in this play one book changes the course of a whole invasion."
+        }
+      ],
+      quiz: [
+        {
+          q: "Who wrote the play 'The Book that Saved the Earth'?",
+          options: ["Claire Boiko", "H.G. Wells", "Robert Arthur", "Anton Chekhov"],
+          answer: 0,
+          explain: "The play was written by **Claire Boiko**."
+        },
+        {
+          q: "Which group comes to Earth as invaders in the play?",
+          options: ["Venusians", "Martians", "Moon dwellers", "Jupiter's guards"],
+          answer: 1,
+          explain: "The invaders in the play are **Martians**."
+        },
+        {
+          q: "What kind of book did the Martians find?",
+          options: ["A book of Earth's weapons", "A history of wars", "A collection of nursery rhymes", "A manual of space travel"],
+          answer: 2,
+          explain: "It was a **book of children's nursery rhymes**, not a military guide."
+        },
+        {
+          q: "Which type of literature is 'The Book that Saved the Earth'?",
+          options: ["An essay", "A biography", "A poem", "A comic science-fiction play"],
+          answer: 3,
+          explain: "It is a **play**, written mostly as dialogue, with comic science fiction in it."
+        },
+        {
+          q: "Who is the commander of the Martians in the play?",
+          options: ["Think-Tank", "Noodle", "Captain Omega", "Sergeant Oop"],
+          answer: 0,
+          explain: "**Think-Tank** is the proud Martian commander; Noodle is his assistant and Omega, Iota and Oop are the crew on Earth."
+        },
+        {
+          q: "Why did the Martians decide not to attack Earth?",
+          options: ["They ran out of fuel", "They believed Earth was strong and dangerous", "They were ordered back home by a treaty", "Earth's people asked them to leave"],
+          answer: 1,
+          explain: "Their **misreading of the book** convinced them that Earth was too powerful."
+        },
+        {
+          q: "What does the cow-jumping-over-the-moon rhyme suggest to the Martians?",
+          options: ["Earth has a poor army", "Earth has no moon", "Cows are sacred on Earth", "Earth has animals of great strength"],
+          answer: 3,
+          explain: "They read it as proof of **powerful, high-leaping animals**."
+        },
+        {
+          q: "The main source of humour in the play is the Martians'",
+          options: ["wrong, literal reading of simple rhymes", "clumsy space travel", "fight with Earth's people", "funny costumes"],
+          answer: 0,
+          explain: "The comedy comes from **misreading** playful rhymes as serious facts."
+        },
+        {
+          q: "What is ironic about the book in the play?",
+          options: ["It is very old", "It is written in a Martian language", "It is a harmless children's book, yet it saves the planet", "It was written by Martians"],
+          answer: 2,
+          explain: "A **children's book**, not a weapon, ends the threat to Earth."
+        },
+        {
+          q: "Which theme does the play highlight?",
+          options: ["Space travel is impossible", "Machines are better than books", "Winning a war needs strong weapons", "Knowledge and understanding can prevent conflict"],
+          answer: 3,
+          explain: "The play shows **understanding, not force**, avoiding war, and the power of books."
+        },
+        {
+          q: "What does 'misinterpret' mean?",
+          options: ["Translate perfectly", "Understand wrongly", "Read quickly", "Memorise fully"],
+          answer: 1,
+          explain: "To **misinterpret** is to give something a wrong meaning."
+        },
+        {
+          q: "What does the play suggest is the result of fear and ignorance?",
+          options: ["Wise decisions", "Faster travel", "Strong friendships", "Wrong judgements and needless conflict"],
+          answer: 3,
+          explain: "The Martians judge wrongly because of **fear and ignorance** of Earth."
+        },
+        {
+          q: "How does the play end for the Martians?",
+          options: ["They leave Earth in haste", "They win the war", "They settle on Earth", "They take the book home as a gift"],
+          answer: 0,
+          explain: "They abandon the invasion and **hurry away**."
+        }
+      ]
     }
   ]
 });

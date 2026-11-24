@@ -1982,6 +1982,7 @@ StudyData.add(11, "english", {
       section: "Hornbill",
       summary: "Nani Palkhivala's 1994 essay on the Green Movement: the earth is a living organism in poor health, forests and other life-support systems are being destroyed, population growth makes it worse, and everyone, including industry, must act responsibly for future generations.",
       source: "Hornbill (Reprint 2026-27) Ch 4, pp. 35–40",
+      scope: "outside", // the CBSE 2026–27 English Core syllabus leaves this lesson out (docs/SYLLABUS_CHECK.md)
       notes: [
         {
           heading: "The Green Movement and a new view of the earth",

@@ -31,7 +31,7 @@ function indexFor(dir) {
     if (!data) throw new Error(`${dir}/${f} does not add content for class ${cls}`);
     index[path.basename(f, ".js")] = {
       syllabus: data.syllabus,
-      chapters: data.chapters.map((c) => ({ id: c.id, title: c.title, section: c.section, summary: c.summary, nTerms: (c.terms || []).length })),
+      chapters: data.chapters.map((c) => ({ id: c.id, title: c.title, section: c.section, summary: c.summary, nTerms: (c.terms || []).length, ...(c.scope ? { scope: c.scope } : {}) })),
     };
   }
   return (

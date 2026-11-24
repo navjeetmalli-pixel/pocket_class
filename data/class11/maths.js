@@ -450,6 +450,244 @@ StudyData.add(11, "maths", {
       ]
     },
 
+    // ───────────────────────────── 3a. Principle of Mathematical Induction ─────────────────────────────
+    {
+      id: "principle-of-mathematical-induction",
+      title: "Principle of Mathematical Induction",
+      section: "Algebra",
+      scope: "formative",
+      summary: "A method of proving that a statement holds for every natural number: check the first case, then show that if it holds for one number it holds for the next. Used for sum formulas, divisibility and inequalities.",
+      notes: [
+        {
+          heading: "The principle",
+          points: [
+            "A statement **P(n)** depends on a natural number n, for example P(n): 1 + 2 + … + n = n(n + 1)/2. We want to show P(n) is true for **every** n ≥ 1.",
+            "**Step 1 (base case):** show that P(1) is true (or the first value n₀ if the statement starts later).",
+            "**Step 2 (inductive step):** assume P(k) is true for some natural number k, then prove that P(k + 1) is true.",
+            "If both steps are done, P(n) is true for all natural numbers n. Think of a line of dominoes: the base case knocks over the first one, and the inductive step says each one knocks over the next.",
+            "The assumption \"P(k) is true\" is called the **inductive hypothesis**. It is an assumption for one k only, not the claim for all n."
+          ]
+        },
+        {
+          heading: "Writing a proof",
+          points: [
+            "**State** P(n) clearly, then write P(1), P(k) and P(k + 1) so you know exactly what must be reached.",
+            "In the inductive step, **start from P(k)** and change one side so that it turns into the form of P(k + 1). For a sum, add the next term to both sides.",
+            "**Use the hypothesis** at the right moment: replace the first k terms by the formula in P(k). Never begin by assuming P(k + 1).",
+            "**Finish** with a sentence: \"P(1) is true and P(k) ⇒ P(k + 1), so by the principle of mathematical induction P(n) is true for all natural numbers n.\"",
+            "Some statements are true only from a later number, such as 2ⁿ > n² for n ≥ 5. Then the base case is P(5) and the conclusion is for all n ≥ 5."
+          ]
+        },
+        {
+          heading: "Sum formulas",
+          points: [
+            "**Sum of natural numbers:** 1 + 2 + 3 + … + n = n(n + 1)/2.",
+            "**Sum of odd numbers:** 1 + 3 + 5 + … + (2n − 1) = n², and of even numbers 2 + 4 + … + 2n = n(n + 1).",
+            "**Sum of squares:** 1² + 2² + … + n² = n(n + 1)(2n + 1)/6. **Sum of cubes:** 1³ + 2³ + … + n³ = [n(n + 1)/2]².",
+            "**Telescoping sum:** 1/(1·2) + 1/(2·3) + … + 1/[n(n + 1)] = n/(n + 1).",
+            "To prove a sum formula, add the (k + 1)th term to the formula for k terms and show that the result equals the formula with n replaced by k + 1."
+          ]
+        },
+        {
+          heading: "Divisibility and inequalities",
+          points: [
+            "To prove that an expression f(n) is **divisible by m**, assume f(k) = m × (some integer), then rewrite f(k + 1) as (a multiple of f(k)) + (a multiple of m).",
+            "Example: 7ᵏ⁺¹ − 3ᵏ⁺¹ = 7(7ᵏ − 3ᵏ) + 4·3ᵏ. The first part is divisible by 4 by the hypothesis and the second part has the factor 4.",
+            "For an **inequality**, multiply or add to the hypothesis, then compare the result with the target. For 2ⁿ > n: 2ᵏ⁺¹ = 2·2ᵏ > 2k ≥ k + 1.",
+            "Other standard results: n³ + 2n is divisible by 3, 2³ⁿ − 1 is divisible by 7, xⁿ − yⁿ is divisible by x − y.",
+            "n! > 2ⁿ is true for n ≥ 4, so the base case there is n = 4."
+          ]
+        },
+        {
+          heading: "Common mistakes",
+          points: [
+            "**Skipping the base case.** P(n): \"n² + n + 1 is even\" has a working inductive step, because (k + 1)² + (k + 1) + 1 differs from k² + k + 1 by 2k + 2. But P(1) is false, since 3 is odd, so the statement is false for every n.",
+            "**Checking some values is not a proof.** n² − n + 41 is prime for n = 1 to 40, yet for n = 41 it equals 41², which is not prime.",
+            "**Assuming what is to be proved.** The hypothesis is P(k), never P(k + 1).",
+            "**Wrong starting value.** If the statement fails for small n, the base case must be the first n from which it is true."
+          ]
+        }
+      ],
+      formulas: [
+        "1 + 2 + … + n = n(n + 1)/2",
+        "1 + 3 + 5 + … + (2n − 1) = n²",
+        "1² + 2² + … + n² = n(n + 1)(2n + 1)/6",
+        "1³ + 2³ + … + n³ = [n(n + 1)/2]²",
+        "1/(1·2) + 1/(2·3) + … + 1/[n(n + 1)] = n/(n + 1)",
+        "Principle: P(1) true and P(k) ⇒ P(k + 1) ⟹ P(n) true for all n"
+      ],
+      terms: [
+        { term: "Mathematical induction", meaning: "A method of proof that shows a statement is true for **all natural numbers** using a base case and an inductive step." },
+        { term: "Base case", meaning: "The **first step** of the proof: checking that the statement is true for n = 1 (or the first value n₀)." },
+        { term: "Inductive step", meaning: "Proving that **if P(k) is true then P(k + 1) is true**." },
+        { term: "Inductive hypothesis", meaning: "The **assumption that P(k) is true** for some natural number k, used in the inductive step." },
+        { term: "Natural numbers", meaning: "The counting numbers **1, 2, 3, …** over which the induction runs." },
+        { term: "Telescoping sum", meaning: "A sum in which each term splits so that most parts **cancel**, as in 1/[n(n + 1)] = 1/n − 1/(n + 1)." },
+        { term: "Divisible", meaning: "A number a is divisible by m if **a = m × an integer**." },
+        { term: "Statement P(n)", meaning: "A **claim depending on n** that is either true or false for each natural number n." },
+        { term: "Counter-example", meaning: "A **single case where the statement fails**, which is enough to disprove it for all n." }
+      ],
+      examples: [
+        {
+          q: "Prove by induction that 1 + 3 + 5 + … + (2n − 1) = n² for all natural numbers n.",
+          steps: [
+            "P(1): the left side is 1 and the right side is 1² = 1, so P(1) is true.",
+            "Assume P(k): 1 + 3 + 5 + … + (2k − 1) = k².",
+            "Add the next term 2k + 1 to both sides: 1 + 3 + … + (2k − 1) + (2k + 1) = k² + 2k + 1.",
+            "The right side is k² + 2k + 1 = (k + 1)², which is the right side of P(k + 1).",
+            "So P(k + 1) is true whenever P(k) is true."
+          ],
+          answer: "True for all n by the principle of mathematical induction."
+        },
+        {
+          q: "Prove that 1/(1·2) + 1/(2·3) + … + 1/[n(n + 1)] = n/(n + 1) for all natural numbers n.",
+          steps: [
+            "P(1): the left side is 1/(1·2) = 1/2 and the right side is 1/(1 + 1) = 1/2, so P(1) is true.",
+            "Assume P(k): 1/(1·2) + … + 1/[k(k + 1)] = k/(k + 1).",
+            "Add the next term 1/[(k + 1)(k + 2)]: the left side becomes k/(k + 1) + 1/[(k + 1)(k + 2)].",
+            "Combine: [k(k + 2) + 1]/[(k + 1)(k + 2)] = (k² + 2k + 1)/[(k + 1)(k + 2)] = (k + 1)²/[(k + 1)(k + 2)].",
+            "Cancel (k + 1): the sum equals (k + 1)/(k + 2), which is P(k + 1)."
+          ],
+          answer: "True for all n by induction."
+        },
+        {
+          q: "Prove that 1² + 2² + … + n² = n(n + 1)(2n + 1)/6 for all natural numbers n.",
+          steps: [
+            "P(1): the left side is 1 and the right side is 1 × 2 × 3/6 = 1, so P(1) is true.",
+            "Assume P(k): 1² + 2² + … + k² = k(k + 1)(2k + 1)/6.",
+            "Add (k + 1)² to both sides: the right side becomes k(k + 1)(2k + 1)/6 + (k + 1)².",
+            "Take out (k + 1)/6: (k + 1)[k(2k + 1) + 6(k + 1)]/6 = (k + 1)(2k² + 7k + 6)/6.",
+            "Factorise 2k² + 7k + 6 = (k + 2)(2k + 3), so the sum is (k + 1)(k + 2)(2k + 3)/6, which is P(k + 1)."
+          ],
+          answer: "True for all n by induction."
+        },
+        {
+          q: "Prove that 7ⁿ − 3ⁿ is divisible by 4 for every natural number n.",
+          steps: [
+            "P(1): 7 − 3 = 4, which is divisible by 4, so P(1) is true.",
+            "Assume P(k): 7ᵏ − 3ᵏ = 4m for some integer m.",
+            "Write 7ᵏ⁺¹ − 3ᵏ⁺¹ = 7·7ᵏ − 3·3ᵏ = 7(7ᵏ − 3ᵏ) + 7·3ᵏ − 3·3ᵏ.",
+            "So 7ᵏ⁺¹ − 3ᵏ⁺¹ = 7 × 4m + 4·3ᵏ = 4(7m + 3ᵏ).",
+            "This is a multiple of 4, so P(k + 1) is true."
+          ],
+          answer: "7ⁿ − 3ⁿ is divisible by 4 for all n."
+        },
+        {
+          q: "Prove that 2ⁿ > n for every natural number n.",
+          steps: [
+            "P(1): 2¹ = 2 > 1, so P(1) is true.",
+            "Assume P(k): 2ᵏ > k.",
+            "Multiply both sides by 2: 2ᵏ⁺¹ > 2k.",
+            "Since k ≥ 1, we have 2k = k + k ≥ k + 1, so 2ᵏ⁺¹ > k + 1.",
+            "This is P(k + 1)."
+          ],
+          answer: "2ⁿ > n for all n."
+        }
+      ],
+      qa: [
+        { q: "State the principle of mathematical induction.", a: "Let P(n) be a statement about natural numbers. If **(i) P(1) is true** and **(ii) whenever P(k) is true for a natural number k, P(k + 1) is also true**, then P(n) is true for **all natural numbers n**." },
+        { q: "Why is the base case necessary? Give an example.", a: "The inductive step only passes truth from one number to the next, so without a true first case the chain never starts. For P(n): \"n² + n + 1 is even\", the step works because (k + 1)² + (k + 1) + 1 = (k² + k + 1) + 2(k + 1). But **P(1) is false** (the value is 3), so the statement is false." },
+        { q: "Prove that 2 + 4 + 6 + … + 2n = n(n + 1).", a: "P(1): 2 = 1 × 2, true. Assume 2 + 4 + … + 2k = k(k + 1). Adding 2(k + 1) gives k(k + 1) + 2(k + 1) = (k + 1)(k + 2), which is P(k + 1). So the formula holds for **all n** by induction." },
+        { q: "Prove that n³ + 2n is divisible by 3 for all natural numbers n.", a: "P(1): 1 + 2 = 3, divisible by 3. Assume k³ + 2k = 3m. Then (k + 1)³ + 2(k + 1) = k³ + 3k² + 3k + 1 + 2k + 2 = (k³ + 2k) + 3(k² + k + 1) = 3m + 3(k² + k + 1) = 3(m + k² + k + 1). So P(k + 1) is true and the result holds for **all n**." },
+        { q: "Prove that 1³ + 2³ + … + n³ = [n(n + 1)/2]².", a: "P(1): 1 = (1 × 2/2)² = 1, true. Assume the formula for k and add (k + 1)³: [k(k + 1)/2]² + (k + 1)³ = (k + 1)²[k²/4 + (k + 1)] = (k + 1)²(k² + 4k + 4)/4 = (k + 1)²(k + 2)²/4 = [(k + 1)(k + 2)/2]². This is P(k + 1), so it holds for **all n**." },
+        { q: "Prove that n! > 2ⁿ for all natural numbers n ≥ 4.", a: "P(4): 4! = 24 > 16 = 2⁴, true. Assume k! > 2ᵏ for some k ≥ 4. Then (k + 1)! = (k + 1) × k! > (k + 1) × 2ᵏ ≥ 5 × 2ᵏ > 2 × 2ᵏ = 2ᵏ⁺¹. So P(k + 1) is true and the result holds for **all n ≥ 4**." },
+        { q: "A student checks that n² − n + 41 is prime for n = 1, 2, …, 40 and concludes it is prime for all n. Is this correct?", a: "No. Checking cases is not a proof. For **n = 41** the value is 41² − 41 + 41 = 41², which is not prime. A single counter-example disproves the claim, and induction would need a valid inductive step, which this statement does not have." }
+      ],
+      quiz: [
+        {
+          q: "In a proof by induction, the assumption \"P(k) is true\" is called the:",
+          options: ["inductive hypothesis", "base case", "conclusion", "contradiction"],
+          answer: 0,
+          explain: "Assuming P(k) for one value k and proving P(k + 1) from it is the **inductive step**; the assumption is the **inductive hypothesis**.",
+          level: 1
+        },
+        {
+          q: "If P(1) is true and P(k) ⇒ P(k + 1) for every natural number k, then P(n) is true for:",
+          options: ["only n = 1", "only n ≤ k", "all natural numbers n", "only odd n"],
+          answer: 2,
+          explain: "The two steps together give truth for **every natural number**: P(1) ⇒ P(2) ⇒ P(3) ⇒ …",
+          level: 1
+        },
+        {
+          q: "For P(n): 1 + 2 + … + n = n(n + 1)/2, the statement P(k + 1) reads:",
+          options: ["1 + 2 + … + k = (k + 1)(k + 2)/2", "1 + 2 + … + (k + 1) = k(k + 1)/2", "1 + 2 + … + (k + 1) = (k + 1)(k + 3)/2", "1 + 2 + … + (k + 1) = (k + 1)(k + 2)/2"],
+          answer: 3,
+          explain: "Replace n by k + 1 everywhere: the sum runs to k + 1 and the formula becomes **(k + 1)(k + 2)/2**.",
+          level: 1
+        },
+        {
+          q: "The sum of the first 10 odd natural numbers is:",
+          options: ["55", "100", "110", "20"],
+          answer: 1,
+          explain: "1 + 3 + … + (2n − 1) = n², so for n = 10 the sum is **100**.",
+          level: 1
+        },
+        {
+          q: "The value of 1² + 2² + 3² + 4² + 5² is:",
+          options: ["225", "50", "65", "55"],
+          answer: 3,
+          explain: "n(n + 1)(2n + 1)/6 with n = 5 gives 5 × 6 × 11/6 = **55**. (225 is the sum of the cubes, 15².)",
+          level: 2
+        },
+        {
+          q: "The sum 1³ + 2³ + … + n³ equals:",
+          options: ["n(n + 1)/2", "[n(n + 1)/2]²", "n(n + 1)(2n + 1)/6", "n²(n + 1)"],
+          answer: 1,
+          explain: "The sum of the first n cubes is the **square of the sum of the first n natural numbers**.",
+          level: 2
+        },
+        {
+          q: "When adding the next term in the proof for 1/(1·2) + … + 1/[n(n + 1)] = n/(n + 1), the term added is:",
+          options: ["1/[k(k + 1)]", "1/[(k + 1)(k + 2)]", "1/(k + 2)", "1/[(k + 1)(k + 1)]"],
+          answer: 1,
+          explain: "The (k + 1)th term is the general term with n = k + 1, which is **1/[(k + 1)(k + 2)]**.",
+          level: 2
+        },
+        {
+          q: "For 1/(1·2) + 1/(2·3) + … + 1/(9·10), the sum is:",
+          options: ["9/10", "1", "10/11", "8/9"],
+          answer: 0,
+          explain: "Using n/(n + 1) with n = 9, the sum is **9/10**.",
+          level: 2
+        },
+        {
+          q: "7ⁿ − 3ⁿ is divisible by:",
+          options: ["3", "7", "4", "10"],
+          answer: 2,
+          explain: "For n = 1 the value is 4, so it cannot be divisible by 3, 7 or 10. The induction proof shows divisibility by **4** for every n.",
+          level: 2
+        },
+        {
+          q: "In the divisibility proof we write 7ᵏ⁺¹ − 3ᵏ⁺¹ = 7(7ᵏ − 3ᵏ) + ___:",
+          options: ["3·3ᵏ", "4·3ᵏ", "7·3ᵏ", "4·7ᵏ"],
+          answer: 1,
+          explain: "7(7ᵏ − 3ᵏ) = 7ᵏ⁺¹ − 7·3ᵏ, so we must add 7·3ᵏ − 3·3ᵏ = **4·3ᵏ** to get 7ᵏ⁺¹ − 3ᵏ⁺¹.",
+          level: 3
+        },
+        {
+          q: "The inequality 2ⁿ > n² is true for all natural numbers n ≥:",
+          options: ["1", "3", "4", "5"],
+          answer: 3,
+          explain: "It fails for n = 2, 3 and 4 (4 = 4, 8 < 9, 16 = 16) and holds for n = **5** (32 > 25), so induction starts at 5.",
+          level: 3
+        },
+        {
+          q: "A statement P(n) has a valid inductive step (P(k) ⇒ P(k + 1)) but P(1) is false. What can we conclude?",
+          options: ["P(n) is true for all n ≥ 2", "P(n) is true for all natural numbers", "Nothing: the statement may be false for every n", "P(n) is true for all even n"],
+          answer: 2,
+          explain: "Without a true base case the chain never starts, as with \"n² + n + 1 is even\". We **cannot conclude** that it is true anywhere.",
+          level: 3
+        },
+        {
+          q: "Which of these is NOT a valid proof that P(n) is true for all natural numbers n?",
+          options: ["Checking P(n) for n = 1, 2, …, 100 only", "Proving P(1) and then P(k) ⇒ P(k + 1)", "Proving P(5), then P(k) ⇒ P(k + 1) for k ≥ 5, for a statement about n ≥ 5", "Proving P(1) and P(k) ⇒ P(k + 1) for every k"],
+          answer: 0,
+          explain: "Checking many cases only gives evidence. The statement may still fail later, as n² − n + 41 does at n = 41.",
+          level: 3
+        }
+      ]
+    },
+
     // ───────────────────────────── 4. Complex Numbers and Quadratic Equations ─────────────────────────────
     {
       id: "complex-numbers-and-quadratic-equations",

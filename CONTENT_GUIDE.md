@@ -46,6 +46,8 @@ StudyData.add(10, "maths", {
       section: "Algebra",                 // group label shown in the chapter list
       summary: "One or two sentences on what this chapter is about.",
       source: "Mathematics (2023 reprint) Ch 1, pp. 1–14",  // OPTIONAL. Book, edition/year, chapter and pages it was checked against
+      scope: "formative",                 // OPTIONAL. "formative": internal assessment only, not in the board exam; "outside": not in the
+                                          // current syllabus (kept for extra reading). The chapter page says so; sample papers leave it out.
 
       notes: [                            // 3–6 topics, the core revision notes
         {

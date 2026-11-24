@@ -1701,6 +1701,204 @@ StudyData.add(11, "biology", {
 
     // ------------------------------------------------------------------
     {
+      id: "digestion-and-absorption",
+      title: "Digestion and Absorption",
+      section: "Human Physiology",
+      scope: "formative",
+      summary: "Food is broken down into small, absorbable molecules by the digestive system. This chapter covers the alimentary canal and digestive glands, the enzymes that act on carbohydrates, proteins and fats, absorption, hormonal control and common disorders.",
+      notes: [
+        {
+          heading: "Human Digestive System",
+          points: [
+            "The system has the **alimentary canal** (mouth, pharynx, oesophagus, stomach, small intestine, large intestine, rectum and anus) and the **digestive glands**: salivary glands, liver and pancreas.",
+            "Humans have **thecodont** (teeth in sockets), **diphyodont** (two sets: milk and permanent) and **heterodont** (different types) teeth. The adult **dental formula** is **2123/2123**, giving 32 teeth. Enamel is the hardest substance in the body.",
+            "The **stomach** has four regions: cardiac, fundus, body and pyloric. Its inner surface has folds called **rugae**.",
+            "The **small intestine** has three parts: **duodenum, jejunum and ileum**. The mucosa has finger-like **villi**, and the cells on them have **microvilli** (brush border), which greatly increase the surface for absorption.",
+            "The **large intestine** has the caecum, colon and rectum. The **vermiform appendix** is a small, finger-like outgrowth from the caecum. The wall of the canal has four layers: **serosa, muscularis, submucosa and mucosa**."
+          ]
+        },
+        {
+          heading: "Digestive Glands and Their Secretions",
+          points: [
+            "**Saliva** comes from three pairs of salivary glands (parotid, sub-maxillary and sub-lingual). It contains **salivary amylase**, which begins the digestion of starch into maltose, and lysozyme, which acts against bacteria.",
+            "**Gastric glands** in the stomach have **chief cells** (secrete pepsinogen), **parietal cells** (secrete HCl and intrinsic factor) and **mucus-secreting cells**. HCl makes the stomach contents strongly acidic and turns pepsinogen into active **pepsin**.",
+            "The **liver** is the largest gland. Its cells secrete **bile**, which is stored in the gall bladder. Bile contains bile salts and the pigments **bilirubin and biliverdin** but **no digestive enzymes**.",
+            "**Pancreatic juice** has inactive trypsinogen, chymotrypsinogen and procarboxypeptidases, and also amylases, lipases and nucleases. **Enterokinase**, from the intestinal mucosa, activates trypsinogen into **trypsin**.",
+            "**Succus entericus** (intestinal juice) contains disaccharidases, dipeptidases, lipases and nucleosidases. The bile duct and pancreatic duct join to form the **hepatopancreatic duct**, which opens into the duodenum, guarded by the **sphincter of Oddi**."
+          ]
+        },
+        {
+          heading: "Digestion of Food",
+          points: [
+            "**Mouth:** chewing mixes the food with saliva to form a **bolus**. Salivary amylase converts about 30 per cent of the starch into maltose.",
+            "**Stomach:** pepsin breaks proteins into **proteoses and peptones**. HCl kills most bacteria. The food becomes a semi-fluid mass called **chyme**, and mucus protects the stomach lining.",
+            "**Small intestine:** **bile emulsifies fats** into tiny droplets and activates lipases. Pancreatic amylase digests starch, trypsin and chymotrypsin digest proteins into peptides, and lipases digest fats into fatty acids and glycerol.",
+            "The brush-border enzymes finish the job: **maltose → glucose; lactose → glucose + galactose; sucrose → glucose + fructose; dipeptides → amino acids**.",
+            "The **large intestine** has no major digestive role. It absorbs water and minerals and stores the undigested residue as **faeces**, which are eliminated through the anus (egestion)."
+          ]
+        },
+        {
+          heading: "Absorption of Digested Products",
+          points: [
+            "**Absorption** is the passage of digested end products into blood or lymph. The **small intestine is the main site**; only small amounts are absorbed in the mouth and stomach (for example water, simple sugars and alcohol in the stomach).",
+            "**Glucose and amino acids** are absorbed by **active transport** along with sodium ions. **Fructose** moves by facilitated transport, and water by osmosis.",
+            "**Fatty acids and glycerol** cannot dissolve in water. They are first incorporated into small droplets called **micelles**, which move into the intestinal cells. There they are re-formed into protein-coated fat globules called **chylomicrons**.",
+            "Chylomicrons enter the **lacteals** (lymph vessels in the villi) and reach the blood through the lymph. Other nutrients go into blood capillaries and, through the **hepatic portal vein**, to the liver.",
+            "The **ileo-caecal valve** prevents backflow from the large intestine into the ileum. The absorbed nutrients are used by body cells in **assimilation**."
+          ]
+        },
+        {
+          heading: "Movement and Control",
+          points: [
+            "**Peristalsis** is a wave of muscular contraction that pushes food along the alimentary canal. In **swallowing (deglutition)** the epiglottis closes the glottis so that food does not enter the windpipe.",
+            "Digestive secretions are controlled by **nerves** (the sight, smell or thought of food starts saliva and gastric juice) and by **hormones** from the gut wall.",
+            "**Gastrin** stimulates gastric glands. **Secretin** acts on the pancreas to release bicarbonate-rich juice. **Cholecystokinin (CCK)** makes the pancreas release enzymes and the gall bladder release bile.",
+            "**Gastric inhibitory peptide (GIP)** slows gastric secretion and movement. The **defecation reflex** is triggered when the rectum is filled with faeces."
+          ]
+        },
+        {
+          heading: "Disorders of the Digestive System",
+          points: [
+            "**Jaundice:** the liver is affected and bile pigments build up, so the skin and eyes turn yellow.",
+            "**Vomiting** is the ejection of stomach contents through the mouth. It is a reflex controlled by the vomit centre in the **medulla**.",
+            "**Diarrhoea** is the abnormal frequency of bowel movement with increased liquidity of the faeces. It reduces absorption of food and can cause dehydration.",
+            "**Constipation:** the faeces are retained in the rectum because bowel movements are irregular.",
+            "**Indigestion:** food is not properly digested and the person feels full. Causes include too little enzyme secretion, anxiety, over-eating, spicy food and food poisoning."
+          ]
+        }
+      ],
+      formulas: [
+        "Dental formula of an adult human: I 2/2, C 1/1, PM 2/2, M 3/3 = 32 teeth",
+        "Starch → (salivary and pancreatic amylase) → maltose → (maltase) → glucose",
+        "Proteins → (pepsin) → proteoses and peptones → (trypsin, chymotrypsin) → peptides → (dipeptidases) → amino acids",
+        "Fats → (bile emulsifies; lipases) → fatty acids + glycerol → micelles → chylomicrons → lacteals",
+        "Pepsinogen → pepsin (by HCl); trypsinogen → trypsin (by enterokinase)"
+      ],
+      terms: [
+        { term: "Peristalsis", meaning: "**Waves of contraction** of the gut wall muscles that push food forward." },
+        { term: "Chyme", meaning: "The **semi-fluid, partly digested food** formed in the stomach." },
+        { term: "Bile", meaning: "A fluid made by the liver that **emulsifies fats**; it contains bile salts and pigments but no enzymes." },
+        { term: "Enterokinase", meaning: "An **enzyme of the intestinal mucosa** that activates trypsinogen into trypsin." },
+        { term: "Villi", meaning: "**Finger-like folds** of the small intestine mucosa that increase the surface area for absorption." },
+        { term: "Micelles", meaning: "**Small droplets** in which fatty acids and glycerol are carried into the intestinal cells." },
+        { term: "Chylomicrons", meaning: "**Protein-coated fat globules** formed in intestinal cells that enter the lacteals." },
+        { term: "Lacteal", meaning: "A **lymph vessel in a villus** that carries absorbed fats." },
+        { term: "Thecodont", meaning: "Teeth that are **fixed in sockets** of the jaw bone." },
+        { term: "Hepatic portal vein", meaning: "The vein that **carries absorbed nutrients from the intestine to the liver**." }
+      ],
+      qa: [
+        { q: "Name the digestive glands and state one secretion of each.", a: "The **salivary glands** secrete saliva with salivary amylase. The **liver** secretes bile (bile salts and pigments). The **pancreas** secretes pancreatic juice containing trypsinogen, amylase and lipase. The **gastric glands** and **intestinal glands** also contribute gastric juice (HCl, pepsinogen) and succus entericus." },
+        { q: "How is the small intestine adapted for absorption?", a: "It is long and its mucosa has **villi**, whose cells have **microvilli**, so the surface area is very large. Each villus has a network of **blood capillaries** and a **lacteal**, and the walls are thin, so absorbed substances quickly enter the blood or lymph." },
+        { q: "What is the role of bile in digestion?", a: "Bile has **no enzymes**. Its salts **emulsify fats** into very small droplets, giving lipases a larger surface to act on, and help activate lipases. Bile also helps in the absorption of fatty acids and fat-soluble vitamins." },
+        { q: "Describe how fats are absorbed.", a: "Fats are digested into **fatty acids and glycerol**, which cannot dissolve in water. They are packed into **micelles** and enter the intestinal cells, where they are re-formed into **chylomicrons**. Chylomicrons enter the **lacteals** and reach the blood through the lymph." },
+        { q: "Give the digestion of proteins in the stomach and small intestine.", a: "In the stomach, HCl activates pepsinogen into **pepsin**, which breaks proteins into proteoses and peptones. In the small intestine, **trypsin and chymotrypsin** from the pancreas act on them, and intestinal peptidases finally give **amino acids**." },
+        { q: "Name the hormones that control digestive secretions and state their action.", a: "**Gastrin** stimulates the gastric glands. **Secretin** makes the pancreas release bicarbonate-rich juice. **CCK** makes the pancreas release enzymes and the gall bladder release bile. **GIP** inhibits gastric secretion and movement." },
+        { q: "Differentiate between diarrhoea and constipation.", a: "In **diarrhoea** the bowel movements are abnormally frequent and the faeces are watery, which can cause dehydration. In **constipation** the faeces are retained in the rectum because bowel movements are irregular." }
+      ],
+      quiz: [
+        {
+          q: "The dental formula of an adult human is:",
+          options: ["2123/2123", "2102/2102", "3123/3123", "2123/2113"],
+          answer: 0,
+          explain: "Each half jaw has 2 incisors, 1 canine, 2 premolars and 3 molars, giving **32 teeth**.",
+          level: 1
+        },
+        {
+          q: "Bile is produced by the:",
+          options: ["gall bladder", "liver", "pancreas", "duodenum"],
+          answer: 1,
+          explain: "Bile is made in the **liver** and stored in the gall bladder.",
+          level: 1
+        },
+        {
+          q: "The enzyme that begins the digestion of starch in the mouth is:",
+          options: ["pepsin", "lipase", "trypsin", "salivary amylase"],
+          answer: 3,
+          explain: "**Salivary amylase** converts starch into maltose.",
+          level: 1
+        },
+        {
+          q: "HCl in gastric juice is secreted by:",
+          options: ["chief cells", "goblet cells", "parietal cells", "Kupffer cells"],
+          answer: 2,
+          explain: "**Parietal (oxyntic) cells** secrete HCl and intrinsic factor; chief cells secrete pepsinogen.",
+          level: 1
+        },
+        {
+          q: "Trypsinogen is activated by:",
+          options: ["enterokinase", "HCl", "bile", "pepsin"],
+          answer: 0,
+          explain: "**Enterokinase** from the intestinal mucosa converts trypsinogen into trypsin.",
+          level: 2
+        },
+        {
+          q: "Which of these does bile contain?",
+          options: ["Lipase", "Bile salts and pigments", "Amylase", "Trypsin"],
+          answer: 1,
+          explain: "Bile has **bile salts and pigments** (bilirubin, biliverdin) but no enzymes.",
+          level: 2
+        },
+        {
+          q: "Fatty acids and glycerol are carried into the intestinal cells in:",
+          options: ["chylomicrons", "villi", "micelles", "lacteals"],
+          answer: 2,
+          explain: "**Micelles** carry them into the cells, where they are re-formed into chylomicrons.",
+          level: 2
+        },
+        {
+          q: "Protein-coated fat globules enter the:",
+          options: ["hepatic portal vein", "bile duct", "blood capillaries of villi", "lacteals"],
+          answer: 3,
+          explain: "**Chylomicrons** pass into the **lacteals** and then the lymph.",
+          level: 2
+        },
+        {
+          q: "The hormone that makes the gall bladder release bile is:",
+          options: ["gastrin", "secretin", "cholecystokinin", "GIP"],
+          answer: 2,
+          explain: "**CCK** acts on the pancreas and gall bladder; secretin gives bicarbonate-rich pancreatic juice.",
+          level: 2
+        },
+        {
+          q: "Which structure guards the opening of the hepatopancreatic duct into the duodenum?",
+          options: ["Pyloric sphincter", "Sphincter of Oddi", "Ileo-caecal valve", "Cardiac sphincter"],
+          answer: 1,
+          explain: "The **sphincter of Oddi** guards the opening into the duodenum.",
+          level: 3
+        },
+        {
+          q: "The main site of absorption of digested food is the:",
+          options: ["stomach", "oesophagus", "large intestine", "small intestine"],
+          answer: 3,
+          explain: "The **small intestine** with its villi and microvilli absorbs most nutrients.",
+          level: 1
+        },
+        {
+          q: "Which disaccharide is converted into glucose and fructose?",
+          options: ["Lactose", "Maltose", "Sucrose", "Cellobiose"],
+          answer: 2,
+          explain: "**Sucrose** is split by sucrase into glucose and fructose; lactose gives glucose and galactose.",
+          level: 2
+        },
+        {
+          q: "Yellowing of the skin and eyes because of the build-up of bile pigments is called:",
+          options: ["jaundice", "diarrhoea", "constipation", "indigestion"],
+          answer: 0,
+          explain: "In **jaundice** the liver is affected and bile pigments accumulate in the body.",
+          level: 2
+        },
+        {
+          q: "Which statement about glucose absorption is correct?",
+          options: ["It is absorbed in the mouth", "It is absorbed through lacteals", "It enters by active transport with sodium ions", "It needs bile salts to be absorbed"],
+          answer: 2,
+          explain: "Glucose and amino acids are absorbed by **active transport with Na⁺**, then enter the blood capillaries.",
+          level: 3
+        }
+      ]
+    },
+
+    // ------------------------------------------------------------------
+    {
       id: "breathing-and-exchange-of-gases",
       title: "Breathing and Exchange of Gases",
       section: "Human Physiology",

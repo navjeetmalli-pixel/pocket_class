@@ -27,7 +27,8 @@ const Papers = (() => {
 
   // Question pools per chapter, keyed by kind.
   function pools(c, subj) {
-    return D.chapters(c, subj.id).map((ch) => {
+    // Chapters outside the board exam (scope "formative" or "outside") are left out of board-pattern papers.
+    return D.chapters(c, subj.id).filter((ch) => !ch.scope).map((ch) => {
       const p = { mcq: [], ar: [], w2: [], w3: [], w5: [], case: [] };
       for (const q of Views.ui.quizItems(c, subj, ch)) (q.keepOrder ? p.ar : p.mcq).push(q);
       for (const w of D.practiceFor(c, subj.id, ch.id).written) {

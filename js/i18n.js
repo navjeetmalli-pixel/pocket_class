@@ -3575,3 +3575,13 @@ Object.assign(I18N.hi, {
   "Not saved": "नहीं सहेजा",
   "Your own class is saved automatically. Choose more classes and subjects to keep for use without internet, for example for brothers or sisters.": "आपकी अपनी कक्षा अपने-आप सहेजी जाती है। बिना इंटरनेट के उपयोग के लिए और कक्षाएँ और विषय चुनें, जैसे भाई-बहनों के लिए।",
 });
+
+// Chapter scope (js/views/chapter.js).
+Object.assign(I18N.pa, {
+  "For internal assessment only: not in the 2026–27 board exam.": "ਸਿਰਫ਼ ਅੰਦਰੂਨੀ ਮੁਲਾਂਕਣ ਲਈ: 2026–27 ਦੀ ਬੋਰਡ ਪ੍ਰੀਖਿਆ ਵਿੱਚ ਨਹੀਂ।",
+  "Not in the 2026–27 syllabus. Kept for extra reading.": "2026–27 ਦੇ ਸਿਲੇਬਸ ਵਿੱਚ ਨਹੀਂ। ਵਾਧੂ ਪੜ੍ਹਾਈ ਲਈ ਰੱਖਿਆ ਗਿਆ ਹੈ।",
+});
+Object.assign(I18N.hi, {
+  "For internal assessment only: not in the 2026–27 board exam.": "केवल आंतरिक मूल्यांकन के लिए: 2026–27 की बोर्ड परीक्षा में नहीं।",
+  "Not in the 2026–27 syllabus. Kept for extra reading.": "2026–27 के पाठ्यक्रम में नहीं। अतिरिक्त पढ़ाई के लिए रखा गया है।",
+});

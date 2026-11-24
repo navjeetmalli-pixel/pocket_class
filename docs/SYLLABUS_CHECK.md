@@ -190,6 +190,17 @@ Our PSEB lists have the following chapter counts, for reference when someone che
 
 ---
 
+## Done since this check (November 2026)
+
+- Store listing: Classes 1–5 are described as arranged by topic, not as following the new NCERT books.
+- Added Class 10 English "The Book that Saved the Earth".
+- Added Class 10 Science "Periodic Classification of Elements" and "Evolution" (marked formative: internal assessment only).
+- Added Class 11 Maths "Principle of Mathematical Induction", Class 11 Biology "Digestion and Absorption" and Class 12 Biology "Environmental Issues" (formative).
+- Class 11 English "The Ailing Planet" is marked as not in the 2026–27 syllabus (`scope: "outside"`).
+- Chapters with a `scope` show a note on the chapter page and are left out of board-pattern sample papers.
+
+All new chapters are unreviewed drafts.
+
 ## What to do next, in order of impact
 
 1. **Class 9 Social Science, Part 2.** The syllabus and the book disagree on themes 4 and 5. Open the printed book, decide, and rewrite the two chapters if needed. This is the only place where we might be teaching content that is not in the syllabus.
