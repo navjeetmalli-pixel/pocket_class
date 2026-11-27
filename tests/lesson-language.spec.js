@@ -53,3 +53,16 @@ test("lesson language in the store apps: Hindi is locked, so nothing shows", asy
   await expect(page.locator(".term-lang")).toHaveCount(0);
   expect(asked).toHaveLength(0);
 });
+
+test("lesson language: Class 11–12 key terms have Hindi names too (real glossary)", async ({ page }) => {
+  await seed(page, { student: { profile: { name: "Asha", cls: 11, board: "cbse", learnLang: "hi" } } });
+  await page.goto("/#/");
+  const id = await page.evaluate(async () => {
+    await StudyData.loadSubjects(11, ["physics"]);
+    return StudyData.chapters(11, "physics")[1].id;
+  });
+  await page.goto(`/#/chapter/11/physics/${id}/notes`);
+  await expect(page.locator("dl.terms dt .term-lang").first()).toBeVisible();
+  const n = await page.locator("dl.terms dt .term-lang").count();
+  expect(n).toBeGreaterThan(2);
+});

@@ -66,7 +66,7 @@ node scripts/count-content.js [--store]   # totals for README / STORE_LISTING (-
 - `js/util.js` `printPage()`: use this to print; `window.print()` does nothing in the app web views.
 - `js/pin.js`: parent PIN (Parent area, delete student, reset, restore). Stored as `pin` {salt, hash} with the device settings.
 - `js/views/offline.js`: offline packs (website). Data files live in the `pocket-class-data` cache, which updates keep (sw.js).
-- `data/glossary.js`: key terms in Hindi/Punjabi for the lesson language (`profile.learnLang`); unreviewed draft.
+- `data/glossary.js`: key terms in Hindi/Punjabi (Classes 1–12 non-language subjects, about 3,200) for the lesson language (`profile.learnLang`); unreviewed draft.
 
 ## Release status
 
